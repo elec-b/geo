@@ -4,19 +4,26 @@
 Un juego educativo para dominar la geografía mundial a través de la exploración interactiva en un globo terráqueo 3D y cuestionarios gamificados.
 La aplicación se divide en dos experiencias principales: **Aprender** (exploración sin presión) y **Jugar** (retos con puntuación (XP)).
 
+## Lista de países y capitales
+Se utilizará el estándar internacional de países y capitales según la ONU -> 195 países a 28 de enero de 2026.
+
 ## Aprender
 Un espacio seguro para explorar. El objetivo es familiarizarse con la ubicación y las formas de los países, así como con sus capitales.
 
 Tipos de repaso:
-*   **Repaso de países**: Toca un país -> se ilumina -> sale su ficha de pasaporte.
+*   **Repaso de países**: sobre el mapa (globo 3D) el usuario puede tocar un país -> se ilumina -> sale su ficha de pasaporte.
     *   **Ficha de pasaporte**: Muestra bandera, nombre, capital, continente, población (y ranking población), superficie (y ranking superficie), moneda y gentilicio.
-*   **Repaso de capitales**: Lista de países con sus capitales. 
+    *   **Capital**: hay una pequeña marca sobre la capital en el mapa.
+*   **Repaso de capitales**: sobre una lista de países con sus capitales el usuario puede repasar cuál es la capital de cada país.
     *   Al tocar una capital, la cámara hace un **zoom de precisión** al punto exacto de la ciudad y coloca un pin distintivo. El país se resalta.
-    *   Al tocar un país, la cámara hace un **zoom de precisión** al país. El país se resalta. Un pin aparece (menos distintivo) aparece sobre la capital
+    *   Al tocar un país, la cámara hace un **zoom de precisión** al país. El país se resalta. Un circulito aparece sobre la capital
 
 Para ambos tipos de repaso:
 *   **Filtros**: Botones rápidos para aislar continentes (ej. «solo África»).
-*   **Globo 3d**: Cuando se señalen los países y las capitales sobre el mapa, este siempre será un globo terráqueo 3D. 
+*   **Globo 3d**: Cuando se señalen los países y las capitales sobre el mapa, este siempre será un globo terráqueo 3D.
+
+Para el repaso de países:
+*   **Etiquetas**: el usuario puede activar o desactivar las etiquetas de los países y/o las capitales - como si estuviese viendo una visión ultra-simplificada de google earth.
 
 ## Jugar
 
@@ -37,26 +44,25 @@ Para ambos tipos de repaso:
 *   **Pregunta**: «**Madrid**»
 *   **Acción**: El usuario debe tocar la capital del país correcto (España). Para simplificar en móviles: tocar el país que contiene la capital es válido.
 
-#### E. ¡Nómbralo! (mapa -> texto)
+#### E. ¡Nombra el país! (mapa -> texto)
 *   **Pregunta**: «¿Qué país está resaltado?» (El país brilla en dorado).
 *   **Opciones**: Brasil, Argentina, Perú, Chile.
 
-## Lista de países y capitales
-Se utilizará el estándar internacional de países y capitales según la ONU -> 195 países a 28 de enero de 2026.
+#### F. ¡Nombra la capital! (mapa -> texto)
+*   **Pregunta**: «¿Cuál es la capital de este país?» (El país brilla en dorado y pequeño círculo sobre la capital).
+*   **Opciones**: Brasil, Argentina, Perú, Chile.
 
-## Gamificación y journey
-El contenido de esta sección (y subsecciones anidadas) aplica solo para la experiencia de Jugar, no para la de Aprender.
-
-### Público: 8+ años
+### Gamificación y journey
+#### Público: 8+ años
 El público objetivo es personas con edad entre 8 y 15 años. Pero idealmente debe ser entretenido de jugar también para adultos y personas mayores.
 
-### Dinámica de juego
+#### Dinámica de juego
 El objetivo del juego es conseguir puntos, con los distintos tipos de juegos, para conseguir sellos sobre un pasaporte virtual. De esta manera, el usuario avanzará por los 15 niveles del juego.
 
 Clasificamos los niveles dentro de 3 grupos:
-*   **Turista**: Niveles 1-4
-*   **Mochilero**: Niveles 5-9
-*   **Guía**: Niveles 10-15
+*   **Turista**: Niveles 1-5 -> el usuario conoce los países y capitales más poblados de cada uno de los 5 continentes. (el top 10 de todos los continentes, excepto de Oceanía, que es el top 5)
+*   **Mochilero**: Niveles 6-10 -> el usuario conoce muchos de los países y capitales de cada uno de los 5 continentes (60% de los países)
+*   **Guía**: Niveles 11-15 -> el usuario conoce todos los países y capitales de cada uno de los 5 continentes (100% de los países)
 
 En Turista, el usuario solo podrá jugar con / recibirá preguntas sobre los países y capitales más poblados y famosos.
 
@@ -64,23 +70,17 @@ En Mochilero, el usuario podrá jugar con / recibir preguntas sobre los  países
 
 En Guía, el usuario podrá jugar con / recibir preguntas sobre los países más grandes y famosos.
 
-Rondas de preguntas cuyo número depende del nivel:
-*   **Niveles 1-4 (turista)**: 10 preguntas por ronda.
-*   **Niveles 5-9 (mochilero)**: 15 preguntas por ronda.
-*   **Niveles 10-15 (guía)**: 20 preguntas por ronda.
+TBD - Rondas de preguntas cuyo número depende del nivel:
+*   **Niveles 1-5 (turista)**: 10 preguntas por ronda.
+*   **Niveles 6-10 (mochilero)**: 15 preguntas por ronda.
+*   **Niveles 11-15 (guía)**: 20 preguntas por ronda.
 
 ### Metáfora: «El pasaporte de explorador»
 El objetivo es llenar de sellos un pasaporte e ir subiendo de nivel.
 
-### Sistema de puntos (XP)
+### TBD - Sistema de puntos (XP)
 *   **Base**: +10 puntos por acierto. -5 puntos por cada fallo (suelo de 0 puntos por ronda, no hay puntuación negativa).
 *   **Racha (combo)**: x2 puntos a partir de 3 aciertos seguidos. Mostrar visual cuando se active multiplicador.
-
-### Recompensas y desbloqueos
-El «nivel» indicará tu rango de explorador.
-1.  **Niveles 1-4 (turista)**: Solo países muy grandes y famosos.
-2.  **Niveles 5-9 (mochilero)**: Se desbloquean continentes completos.
-3.  **Niveles 10-15 (guía)**: Países más pequeños y capitales difíciles.
 
 ## Fuentes de datos (decisión técnica) [pendiente refinar]
 Para garantizar precisión y rendimiento:
@@ -88,7 +88,7 @@ Para garantizar precisión y rendimiento:
 2.  **Datos (texto)**: **REST Countries API** (o un dump estático de este dataset). Nos da: capital, población, bandera (SVG), y nombres nativos/traducciones.
     *   *Nota*: Usaremos un JSON estático local para no depender de la API en tiempo real (offline-first).
 
-[TO DOUBLE-VALIDATE] -> considerar utilizar https://restcountries.com/ para obtener datos de países / capitales y todo lo necesario para la ficha de país.
+[TO DOUBLE-VALIDATE] -> considerar utilizar https://restcountries.com/ para obtener datos de países / capitales y todo lo necesario para la ficha de país. Por otro lado, utilizar ISO 3166 para los códigos de los países.
 
 
 ## Consideraciones visuales
