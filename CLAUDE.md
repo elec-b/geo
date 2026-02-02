@@ -38,6 +38,7 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 
 1. **Documentación primero**: Las actualizaciones en `OVERVIEW.md` deben preceder a los cambios de código para características importantes.
 2. **Vista mobile first**: Diseña para la interacción táctil (dedos en la pantalla) incluso si desarrollas en escritorio.
+3. **Documentación MECE**: Toda la documentación del proyecto se escribe en archivos `.md` en la raíz del repositorio. El contenido debe ser **MECE** (Mutually Exclusive, Collectively Exhaustive): sin solapamientos entre documentos y cubriendo todos los aspectos necesarios.
 
 ### 3.1 Preferencias de idioma (prioridad alta)
 Todas las explicaciones, comentarios de código y documentación deben estar en **español**.

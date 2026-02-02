@@ -53,8 +53,8 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 
 | Sello | Descripción | Tipo de juego |
 |-------|-------------|---------------|
-| **Sello de Territorios** | Ubicar cualquier país del nivel en el mapa | Tipo C (texto → mapa) |
-| **Sello de Capitales** | Ubicar cualquier capital del nivel en el mapa | Tipo D (texto → mapa) |
+| **Sello de Países** | Ubicar cualquier país del nivel en el mapa | Tipo A (texto → mapa) |
+| **Sello de Capitales** | Ubicar cualquier capital del nivel en el mapa | Tipo B (texto → mapa) |
 
 *   **Ambos sellos son necesarios** para completar un nivel-continente.
 *   Máximo **3 intentos diarios** por sello y continente (se reinician cada día).
@@ -62,6 +62,7 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 ### Registro de fallos
 *   Cuando el usuario falla, se guarda el país/capital fallado.
 *   **Jugar** utilizará estos fallos para reforzar el aprendizaje.
+*   Y cuando el usuario vuelva a acertar el país/capital fallado, se actualiza la lista (no contemplándolo como fallo)
 
 ---
 
@@ -70,48 +71,48 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 **La piedra angular de la app.** El camino guiado para ir subiendo de nivel progresivamente. Es la experiencia más divertida y la que más tiempo ocupará.
 
 ### Flujo para cada nivel-continente
-1.  **Entrenamiento**: Preguntas variadas de los tipos A-F (solo países/capitales del nivel actual).
-2.  **Refuerzo de fallos**: Repasos específicos de lo que el usuario suele fallar.
-3.  **Prueba de sellos**: Cuando el usuario está preparado (acierta consistentemente), intenta conseguir el Sello de Territorios y el Sello de Capitales para certificar su nivel.
+1.  **Entrenamiento libre**: Preguntas variadas de los tipos A-F (solo países/capitales del nivel actual). No hay rondas fijas; el usuario juega libremente.
+2.  **Refuerzo de fallos**: El algoritmo intercala repasos específicos de lo que el usuario suele fallar.
+3.  **Prueba de sellos**: Cuando el algoritmo detecta que el usuario está preparado (acierta consistentemente), se le invita a conseguir el Sello de Países y el Sello de Capitales para certificar su nivel. Los sellos se consiguen teniendo 0 errores en las pruebas (tipo A y B respectivamente). El número de preguntas por prueba es fijo según el nivel-continente.
+
+### Barra de progreso
+El algoritmo muestra una **barra de progreso** que indica cómo de preparado está el usuario para afrontar las pruebas de sello con garantías. Esta barra se actualiza en función de los aciertos recientes en los tipos A y B durante el entrenamiento.
 
 ### Tipos de juego
 
-#### A. Desafío capital → país (texto → texto)
+#### A. Prueba de Países (texto → mapa) — Sello de Países
+*   **Pregunta**: «**Brasil**»
+*   **Acción**: Rotar globo y tocar la geometría correcta.
+*   **Uso**: Entrenamiento + prueba para el Sello de Países.
+
+#### B. Prueba de Capitales (texto → mapa) — Sello de Capitales
+*   **Pregunta**: «**Madrid**»
+*   **Acción**: Tocar la capital (o el país que la contiene, para facilitar en móviles).
+*   **Uso**: Entrenamiento + prueba para el Sello de Capitales.
+
+#### C. Capital → País (texto → texto)
 *   **Pregunta**: «¿Cuál es la capital de **Francia**?»
 *   **Opciones**: París, Londres, Roma, Berlín.
 *   **Visual**: Cámara viaja al país.
 
-#### B. Desafío país → capital (texto → texto)
+#### D. País → Capital (texto → texto)
 *   **Pregunta**: «**París** es la capital de...?»
 *   **Opciones**: Francia, España, Italia, Alemania.
 *   **Visual**: Pin en la ciudad.
 
-#### C. Encuentra el país (texto → mapa) — Sello de Territorios
-*   **Pregunta**: «**Brasil**»
-*   **Acción**: Rotar globo y tocar la geometría correcta.
-
-#### D. Encuentra la capital (texto → mapa) — Sello de Capitales
-*   **Pregunta**: «**Madrid**»
-*   **Acción**: Tocar la capital (o el país que la contiene, para facilitar en móviles).
-
-#### E. ¡Nombra el país! (mapa → texto)
+#### E. Selecciona el país (mapa → texto)
 *   **Pregunta**: «¿Qué país está resaltado?» (brilla en dorado)
 *   **Opciones**: Brasil, Argentina, Perú, Chile.
 
-#### F. ¡Nombra la capital! (mapa → texto)
+#### F. Selecciona la capital (mapa → texto)
 *   **Pregunta**: «¿Cuál es la capital de este país?» (país en dorado + círculo en capital)
 *   **Opciones**: Brasilia, Buenos Aires, Lima, Santiago.
-
-### Rondas de preguntas (TBD)
-*   **Turista**: 10 preguntas por ronda.
-*   **Mochilero**: 15 preguntas por ronda.
-*   **Guía**: 20 preguntas por ronda.
 
 ---
 
 ## Explorar
 
-Un espacio seguro para explorar. El objetivo es familiarizarse con la ubicación y las formas de los países, así como con sus capitales.
+Un espacio seguro para explorar. El objetivo es familiarizarse con la ubicación y las formas de los países, así como con sus capitales, de manera libre.
 
 ### Repaso de países
 Sobre el mapa (globo 3D) el usuario puede tocar un país → se ilumina → sale su ficha de país.
@@ -140,7 +141,7 @@ Matriz visual de **niveles × continentes** (3 filas × 5 columnas). Cada celda 
 - Sello de Capitales: conseguido o pendiente
 
 ### Acceso a los sellos
-Desde el dashboard, el usuario puede intentar conseguir cualquier sello pendiente (respetando el límite de 3 intentos diarios por sello y continente).
+Desde el dashboard, el usuario puede intentar conseguir cualquier sello pendiente. Habrá un límite de 3 intentos diarios por sello y continente.
 
 ---
 
