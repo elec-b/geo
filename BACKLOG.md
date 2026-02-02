@@ -13,16 +13,12 @@
 - [x] Interacción táctil básica (click en países)
 - [x] Tema espacial con fondo negro y estrellas
 - [x] Colores simplificados: gris uniforme para todos los países
-- [x] Resolución 10m para incluir todas las islas (Baleares, Canarias, etc.)
+- [x] Resolución 50m (equilibrio detalle/rendimiento, incluye Baleares, Canarias, Caribe, Oceanía)
+  - ⚠️ Falta Tuvalu (11,000 hab.) — no incluido en 50m, requeriría 10m que causa fallo de WebGL
 
 ---
 
 ## En progreso
-
-### ⚠️ Problema con resolución del mapa
-- Se cambió de 110m a 10m para incluir islas (Baleares, Canarias)
-- **Resultado**: El mapa no carga (archivo de 3.7 MB demasiado pesado)
-- **Próximo paso**: Probar con 50m (756 KB) o investigar alternativas (Natural Earth directo, lazy loading)
 
 ### Globo base
 - [ ] Mejorar rendimiento en móvil (throttle de eventos)

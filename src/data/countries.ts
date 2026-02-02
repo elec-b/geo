@@ -3,8 +3,9 @@ import * as topojson from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { FeatureCollection, Feature, Geometry } from 'geojson';
 
-// Importamos el TopoJSON de world-atlas (10m = máxima resolución, incluye todas las islas)
-import worldData from 'world-atlas/countries-10m.json';
+// Importamos el TopoJSON de world-atlas (50m = equilibrio entre detalle y rendimiento)
+// 10m causaba fallo silencioso de WebGL por exceso de vértices (~477K)
+import worldData from 'world-atlas/countries-50m.json';
 
 // Interfaz para las propiedades de cada país en el GeoJSON
 export interface CountryProperties {
