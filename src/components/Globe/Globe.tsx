@@ -87,11 +87,8 @@ export function Globe({ onCountryClick }: GlobeProps) {
     return 'rgba(255, 255, 255, 0.1)';
   }, []);
 
-  // Función para la altitud del polígono (efecto 3D en hover)
-  const polygonAltitude = useCallback((d: any) => {
-    const isHovered = hoverCountry && d.properties?.name === hoverCountry.properties?.name;
-    return isHovered ? 0.02 : 0.01;
-  }, [hoverCountry]);
+  // Altitud mínima para evitar z-fighting (manchas) sin crear efecto "cubito"
+  const polygonAltitude = useCallback(() => 0.01, []);
 
   if (!countriesData) {
     return (
@@ -130,6 +127,7 @@ export function Globe({ onCountryClick }: GlobeProps) {
 
         // Rendimiento
         animateIn={true}
+        polygonCapCurvatureResolution={10}  // Menos caras por polígono = mejor rendimiento
       />
     </div>
   );

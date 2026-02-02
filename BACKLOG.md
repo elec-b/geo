@@ -21,6 +21,8 @@
 ## En progreso
 
 ### Globo base
+- [ ] Mejorar tiempo de renderización inicial (~30s tras F5) — investigar code splitting o lazy loading
+- [ ] Detener rotación automática al interactuar (click/touch), no solo al seleccionar país
 - [ ] Mejorar rendimiento en móvil (throttle de eventos)
 - [ ] Añadir animación de entrada suave
 
