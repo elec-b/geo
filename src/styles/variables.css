@@ -1,0 +1,64 @@
+/* Variables del tema espacial - GeoExpert */
+:root {
+  /* Colores base */
+  --color-bg-primary: #0a0a1a;
+  --color-bg-secondary: #12122a;
+  --color-bg-tertiary: #1a1a3a;
+
+  /* Acentos neón */
+  --color-accent-cyan: #00f0ff;
+  --color-accent-purple: #a855f7;
+  --color-accent-amber: #f59e0b;
+
+  /* Colores de feedback */
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+
+  /* Texto */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #52525b;
+
+  /* Colores de continentes */
+  --color-africa: #f59e0b;
+  --color-america: #22c55e;
+  --color-asia: #ef4444;
+  --color-europe: #3b82f6;
+  --color-oceania: #a855f7;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 10px;
+
+  /* Sombras */
+  --shadow-glow-cyan: 0 0 20px rgba(0, 240, 255, 0.3);
+  --shadow-glow-purple: 0 0 20px rgba(168, 85, 247, 0.3);
+
+  /* Tipografía */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+
+  /* Espaciado */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Transiciones */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+}
