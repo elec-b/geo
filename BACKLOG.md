@@ -6,13 +6,14 @@
 
 ## Completado
 
-### 2025-02 — Setup inicial
+### Setup inicial
 - [x] Proyecto React + Vite configurado
 - [x] Globo 3D con `react-globe.gl` funcionando
 - [x] Carga de países desde `world-atlas` (TopoJSON → GeoJSON)
 - [x] Interacción táctil básica (click en países)
 - [x] Tema espacial con fondo negro y estrellas
 - [x] Colores simplificados: gris uniforme para todos los países
+- [x] Resolución 10m para incluir todas las islas (Baleares, Canarias, etc.)
 
 ---
 
@@ -28,23 +29,25 @@
 
 ### Datos de países
 - [ ] Integrar REST Countries v3.1 (nombres, banderas, capitales)
-- [ ] Crear JSON local con coordenadas de capitales
-- [ ] Mapear IDs de Natural Earth a códigos ISO
+- [ ] Crear `capitals.json` con coordenadas de 195 capitales
+- [ ] Mapear IDs de Natural Earth a códigos ISO (cca2)
 
-### Modo de juego: Localiza
-- [ ] Diseñar UI del modo «Localiza el país»
-- [ ] Implementar selección de país y feedback visual
-- [ ] Sistema de puntuación basado en distancia
+### Experiencia: Explorar
+- [ ] Ficha de país al tocar (nombre, bandera, capital, población, superficie)
+- [ ] Filtros por continente
+- [ ] Marcador de capital sobre el mapa
+
+### Experiencia: Jugar
+- [ ] Tipo A: Localizar país en el mapa (texto → mapa)
+- [ ] Tipo B: Localizar capital en el mapa (texto → mapa)
+- [ ] Feedback visual: verde/rojo según acierto
+- [ ] Barra de progreso
+
+### Experiencia: Mi Pasaporte
+- [ ] Vista de matriz niveles × continentes
+- [ ] Sistema de sellos (Países y Capitales)
 
 ### Infraestructura
 - [ ] Configurar Zustand para estado global
+- [ ] Sistema de perfiles de usuario
 - [ ] Añadir Capacitor para build iOS
-- [ ] Probar en simulador iPhone
-
----
-
-## Ideas futuras
-- Modo «Capitales»: localizar capitales en el mapa
-- Modo «Banderas»: identificar país por su bandera
-- Sistema de niveles por continente
-- Estadísticas de progreso del usuario

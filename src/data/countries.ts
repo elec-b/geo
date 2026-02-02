@@ -3,8 +3,8 @@ import * as topojson from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { FeatureCollection, Feature, Geometry } from 'geojson';
 
-// Importamos el TopoJSON de world-atlas (110m = resolución media, suficiente para móvil)
-import worldData from 'world-atlas/countries-110m.json';
+// Importamos el TopoJSON de world-atlas (10m = máxima resolución, incluye todas las islas)
+import worldData from 'world-atlas/countries-10m.json';
 
 // Interfaz para las propiedades de cada país en el GeoJSON
 export interface CountryProperties {
