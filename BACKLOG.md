@@ -19,6 +19,11 @@
 
 ## En progreso
 
+### ⚠️ Problema con resolución del mapa
+- Se cambió de 110m a 10m para incluir islas (Baleares, Canarias)
+- **Resultado**: El mapa no carga (archivo de 3.7 MB demasiado pesado)
+- **Próximo paso**: Probar con 50m (756 KB) o investigar alternativas (Natural Earth directo, lazy loading)
+
 ### Globo base
 - [ ] Mejorar rendimiento en móvil (throttle de eventos)
 - [ ] Añadir animación de entrada suave
