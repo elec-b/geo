@@ -1,7 +1,7 @@
 # GeoExpert
 
 ## Filosofía de diseño
-- **Estética**: «Premium dark mode». Azules profundos, negros, acentos neón (cian/púrpura/ámbar).
+- **Estética**: «Premium dark mode». Diseño limpio, oscuro y minimalista. Azules profundos, negros, acentos neón (cian/púrpura/ámbar).
 - **Interacción**: Animaciones fluidas. Sin recargas de página bruscas. El globo siempre es el protagonista.
 - **Feedback**: Corrección visual inmediata (destellos verde/rojo), háptica en móvil. Sin efectos de sonido (por ahora).
 

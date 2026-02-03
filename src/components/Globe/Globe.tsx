@@ -127,7 +127,7 @@ export function Globe({ onCountryClick }: GlobeProps) {
 
         // Rendimiento
         animateIn={true}
-        polygonCapCurvatureResolution={10}  // Menos caras por polígono = mejor rendimiento
+        polygonCapCurvatureResolution={5}  // Mayor resolución (número menor) evita z-fighting en áreas grandes
       />
     </div>
   );

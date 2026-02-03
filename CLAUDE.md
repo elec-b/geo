@@ -20,7 +20,7 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 
 ### Estilo
 - **CSS**: Vanilla CSS con variables (tema espacial)
-- **UI**: Glassmorphism, animaciones CSS
+- **UI**: Diseño limpio, oscuro y minimalista con animaciones fluidas. Prioridad a la legibilidad y rendimiento.
 
 ### Datos geográficos
 - **Geometrías**: `world-atlas` (TopoJSON)
