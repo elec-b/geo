@@ -1,7 +1,7 @@
 // Componente principal del globo 3D
 import { useRef, useEffect, useState, useCallback } from 'react';
 import GlobeGL from 'react-globe.gl';
-import { getCountriesGeoJson, getCountryColor, getCountryHoverColor } from '../../data/countries';
+import { loadCountriesGeoJson, getCountryColor, getCountryHoverColor } from '../../data/countries';
 import type { CountryFeature } from '../../data/countries';
 
 // Props del componente (vacío por ahora, añadiremos callbacks después)
@@ -19,10 +19,9 @@ export function Globe({ onCountryClick }: GlobeProps) {
   // Estado para el país en hover
   const [hoverCountry, setHoverCountry] = useState<CountryFeature | null>(null);
 
-  // Cargar datos de países al montar
+  // Cargar datos de países al montar (asíncrono)
   useEffect(() => {
-    const geojson = getCountriesGeoJson();
-    setCountriesData(geojson);
+    loadCountriesGeoJson().then(setCountriesData);
   }, []);
 
   // Configurar el globo después de cargar

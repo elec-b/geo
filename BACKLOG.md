@@ -30,6 +30,8 @@
 - [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos)
 - [ ] Aumentar zoom máximo para países pequeños (Liechtenstein, Andorra, Singapur) — problema "Fat Finger"
 - [ ] Mejorar tiempo de carga inicial (~17s en Simulator) — splash screen, code splitting o lazy loading
+  - WIP: Implementado splash screen HTML, lazy loading de Globe, TopoJSON externalizado, Vite code splitting
+  - Pendiente: verificar que funciona correctamente y medir mejora real
 - [ ] Detener rotación automática al interactuar (click/touch), no solo al seleccionar país
 - [ ] Añadir animación de entrada suave
 

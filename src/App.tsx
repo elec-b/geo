@@ -1,6 +1,10 @@
 // GeoExpert - Aplicación principal
-import { Globe } from './components/Globe';
+import { lazy, Suspense } from 'react';
+import { LoadingScreen } from './components/UI/LoadingScreen';
 import type { CountryFeature } from './data/countries';
+
+// Lazy load del globo - se carga en segundo plano mientras se muestra LoadingScreen
+const Globe = lazy(() => import('./components/Globe'));
 
 function App() {
   // Handler cuando se hace click en un país
@@ -10,7 +14,9 @@ function App() {
   };
 
   return (
-    <Globe onCountryClick={handleCountryClick} />
+    <Suspense fallback={<LoadingScreen />}>
+      <Globe onCountryClick={handleCountryClick} />
+    </Suspense>
   );
 }
 

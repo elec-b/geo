@@ -3,10 +3,6 @@ import * as topojson from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { FeatureCollection, Feature, Geometry } from 'geojson';
 
-// Importamos el TopoJSON de world-atlas (50m = equilibrio entre detalle y rendimiento)
-// 10m causaba fallo silencioso de WebGL por exceso de vértices (~477K)
-import worldData from 'world-atlas/countries-50m.json';
-
 // Interfaz para las propiedades de cada país en el GeoJSON
 export interface CountryProperties {
   name: string;
@@ -16,12 +12,24 @@ export interface CountryProperties {
 // Tipo para un Feature de país
 export type CountryFeature = Feature<Geometry, CountryProperties>;
 
+// Caché del GeoJSON para evitar múltiples fetches
+let cachedGeoJson: FeatureCollection<Geometry, CountryProperties> | null = null;
+
 /**
- * Convierte el TopoJSON de world-atlas a GeoJSON
- * @returns FeatureCollection con todos los países
+ * Carga y convierte el TopoJSON de world-atlas a GeoJSON
+ * Los datos se cargan desde public/data/ (empaquetado en la app, sin red)
+ * 50m = equilibrio entre detalle y rendimiento
+ * @returns Promise con FeatureCollection de todos los países
  */
-export function getCountriesGeoJson(): FeatureCollection<Geometry, CountryProperties> {
-  const topology = worldData as unknown as Topology<{
+export async function loadCountriesGeoJson(): Promise<FeatureCollection<Geometry, CountryProperties>> {
+  // Retornar caché si ya se cargó
+  if (cachedGeoJson) return cachedGeoJson;
+
+  // Cargar TopoJSON desde public/data (archivo local en Capacitor)
+  const response = await fetch('/data/countries-50m.json');
+  const worldData = await response.json();
+
+  const topology = worldData as Topology<{
     countries: GeometryCollection<CountryProperties>;
   }>;
 
@@ -31,6 +39,8 @@ export function getCountriesGeoJson(): FeatureCollection<Geometry, CountryProper
     topology.objects.countries
   ) as FeatureCollection<Geometry, CountryProperties>;
 
+  // Guardar en caché
+  cachedGeoJson = geojson;
   return geojson;
 }
 
