@@ -32,7 +32,10 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 2. Capacitor empaqueta web como app nativa sin reescribir código
 3. Rendimiento >60 FPS en iPhone 12+
 4. 100% offline con datos locales
-5. Una codebase para iOS, Android y web (si se quiere)
+
+### Plataformas objetivo
+- **iOS y Android**: Prioridad principal (App Store y Google Play)
+- **Web**: No es prioridad. Solo si resulta trivial publicar.
 
 ## 3. Reglas operativas
 

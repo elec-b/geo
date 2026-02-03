@@ -15,15 +15,28 @@
 - [x] Colores simplificados: gris uniforme para todos los países
 - [x] Resolución 50m (equilibrio detalle/rendimiento, incluye Baleares, Canarias, Caribe, Oceanía)
   - ⚠️ Falta Tuvalu (11,000 hab.) — no incluido en 50m, requeriría 10m que causa fallo de WebGL
+- [x] Capacitor iOS configurado y probado en Simulator (iPhone 16e, iOS 26.1)
+  - Tiempo de carga ~17s en Simulator (sin GPU real, no representativo)
+  - Rendimiento fluido una vez cargado
+  - Interacción táctil (zoom, rotación) funciona correctamente
+
+---
+
+## Bugs pendientes
+
+### Globo 3D
+- [ ] Quitar luz del polo norte (point light visible)
+- [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos)
+- [ ] Arreglar z-fighting (manchas) sobre Groenlandia y otros territorios
+- [ ] Aumentar zoom máximo para poder seleccionar países pequeños (Liechtenstein, Andorra, Singapur, etc.) — problema "Fat Finger"
 
 ---
 
 ## En progreso
 
 ### Globo base
-- [ ] Mejorar tiempo de renderización inicial (~30s tras F5) — investigar code splitting o lazy loading
+- [ ] Mejorar tiempo de carga inicial (~17s en Simulator) — splash screen, code splitting o lazy loading
 - [ ] Detener rotación automática al interactuar (click/touch), no solo al seleccionar país
-- [ ] Mejorar rendimiento en móvil (throttle de eventos)
 - [ ] Añadir animación de entrada suave
 
 ---
@@ -53,4 +66,4 @@
 ### Infraestructura
 - [ ] Configurar Zustand para estado global
 - [ ] Sistema de perfiles de usuario
-- [ ] Añadir Capacitor para build iOS
+- [ ] Añadir Capacitor para build Android
