@@ -19,22 +19,16 @@
   - Tiempo de carga ~17s en Simulator (sin GPU real, no representativo)
   - Rendimiento fluido una vez cargado
   - Interacción táctil (zoom, rotación) funciona correctamente
-
----
-
-## Bugs pendientes
-
-### Globo 3D
-- [ ] Quitar luz del polo norte (point light visible)
-- [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos)
-- [ ] Arreglar z-fighting (manchas) sobre Groenlandia y otros territorios
-- [ ] Aumentar zoom máximo para poder seleccionar países pequeños (Liechtenstein, Andorra, Singapur, etc.) — problema "Fat Finger"
+- [x] Z-fighting en áreas grandes (Groenlandia) corregido con `polygonCapCurvatureResolution: 5`
 
 ---
 
 ## En progreso
 
 ### Globo base
+- [ ] Quitar luz del polo norte (point light visible)
+- [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos)
+- [ ] Aumentar zoom máximo para países pequeños (Liechtenstein, Andorra, Singapur) — problema "Fat Finger"
 - [ ] Mejorar tiempo de carga inicial (~17s en Simulator) — splash screen, code splitting o lazy loading
 - [ ] Detener rotación automática al interactuar (click/touch), no solo al seleccionar país
 - [ ] Añadir animación de entrada suave

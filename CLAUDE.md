@@ -42,7 +42,12 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 1. **Documentación primero**: Las actualizaciones en `OVERVIEW.md` deben preceder a los cambios de código para características importantes.
 2. **Vista mobile first**: Diseña para la interacción táctil (dedos en la pantalla) incluso si desarrollas en escritorio.
 3. **Documentación MECE**: Toda la documentación del proyecto se escribe en archivos `.md` en la raíz del repositorio. El contenido debe ser **MECE** (Mutually Exclusive, Collectively Exhaustive): sin solapamientos entre documentos y cubriendo todos los aspectos necesarios.
-4. **Backlog**: `BACKLOG.md` contiene el historial de desarrollo más reciente y próximos pasos. Actualízalo al completar tareas importantes.
+4. **Backlog**: `BACKLOG.md` organiza el trabajo en 3 secciones:
+   - **Completado**: Tareas terminadas (historial reciente; para historial completo, usar git)
+   - **En progreso**: Tareas activas o con trabajo parcial
+   - **Próximos pasos**: Tareas planificadas pero no iniciadas
+
+   Actualízalo al completar tareas importantes. No usamos categoría de "bugs" — todo son tareas.
 
 ### 3.1 Preferencias de idioma (prioridad alta)
 Todas las explicaciones, comentarios de código y documentación deben estar en **español**.
