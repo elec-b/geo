@@ -137,7 +137,7 @@ El dashboard que muestra el progreso del usuario: su pasaporte con los sellos co
 
 ### Dashboard
 Matriz visual de **niveles × continentes** (3 filas × 5 columnas). Cada celda muestra:
-- Sello de Territorios: conseguido o pendiente
+- Sello de Países: conseguido o pendiente
 - Sello de Capitales: conseguido o pendiente
 
 ### Acceso a los sellos
