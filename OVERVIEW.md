@@ -8,7 +8,7 @@
 ---
 
 ## Datos base
-*   **Países y capitales**: Estándar internacional según la ONU → 195 países (a enero 2026).
+*   **Países y capitales**: Estándar internacional según la ONU (ver sección «Estándar de países» más abajo).
 *   **Continentes**: 5 (África, América, Asia, Europa, Oceanía).
 
 ---
@@ -181,8 +181,9 @@ Configuración **ultra-sencilla**. Solo lo esencial:
 
 ### Datos geométricos (mapas)
 - **Fuente**: Natural Earth Data vía `world-atlas` (NPM)
-- **Resolución**: 1:110m (suficiente para globo móvil)
-- **Formato**: TopoJSON (comprimido, ~20 KB)
+- **Resolución**: 1:50m (incluye Baleares, Canarias, Caribe, Oceanía; equilibrio detalle/rendimiento)
+  - ⚠️ Tuvalu (11 000 hab.) no está incluido en 50m; 10m causa fallo de WebGL
+- **Formato**: TopoJSON
 - **Almacenamiento**: Empaquetado en el bundle de la app
 
 ### Datos de países
@@ -216,7 +217,7 @@ Configuración **ultra-sencilla**. Solo lo esencial:
 ### Estructura de archivos de datos
 ```
 public/data/
-├── world-110m.json    # TopoJSON de países
+├── countries-50m.json # TopoJSON de países (1:50m)
 ├── countries.json     # Dump de REST Countries
 └── capitals.json      # Coordenadas de capitales
 ```

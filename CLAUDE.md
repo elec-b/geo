@@ -23,9 +23,10 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 - **UI**: Diseño limpio, oscuro y minimalista con animaciones fluidas. Prioridad a la legibilidad y rendimiento.
 
 ### Datos geográficos
-- **Geometrías**: `world-atlas` (TopoJSON)
+- **Geometrías**: `world-atlas` (TopoJSON, 1:50m)
 - **Países**: REST Countries v3.1 (dump estático)
 - **Capitales**: JSON local con coordenadas
+- Ver `OVERVIEW.md` § «Fuentes de datos» para especificación completa
 
 ### Por qué Capacitor + react-globe.gl
 1. `react-globe.gl` soporta GeoJSON nativo con selección táctil

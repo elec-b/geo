@@ -26,14 +26,14 @@
 ## En progreso
 
 ### Globo base
-- [ ] Quitar luz del polo norte (point light visible)
-- [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos)
-- [ ] Aumentar zoom máximo para países pequeños (Liechtenstein, Andorra, Singapur) — problema "Fat Finger"
+- [ ] Eliminar extrusión 3D de las fronteras de países (efecto de elevación innecesario; puede mejorar rendimiento)
 - [ ] Mejorar tiempo de carga inicial (~17s en Simulator) — splash screen, code splitting o lazy loading
   - WIP: Implementado splash screen HTML, lazy loading de Globe, TopoJSON externalizado, Vite code splitting
   - Pendiente: verificar que funciona correctamente y medir mejora real
+- [ ] Quitar luz del polo norte (point light visible)
+- [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos)
+- [ ] Aumentar zoom máximo para poder seleccionar países pequeños (Liechtenstein, Andorra, Singapur) — problema "Fat Finger"
 - [ ] Detener rotación automática al interactuar (click/touch), no solo al seleccionar país
-- [ ] Añadir animación de entrada suave
 
 ---
 
@@ -59,7 +59,19 @@
 - [ ] Vista de matriz niveles × continentes
 - [ ] Sistema de sellos (Países y Capitales)
 
+### Perfiles de usuario
+- [ ] Pantalla de creación de perfil (nombre + avatar)
+- [ ] Selector de perfil (cambio rápido desde cualquier pantalla)
+- [ ] Persistencia de perfiles (Capacitor Preferences o SQLite)
+- [ ] Progreso independiente por perfil (pasaporte, sellos, fallos)
+
 ### Infraestructura
 - [ ] Configurar Zustand para estado global
-- [ ] Sistema de perfiles de usuario
 - [ ] Añadir Capacitor para build Android
+- [ ] Actualización silenciosa de datos vía CDN (ver OVERVIEW.md § «Actualización automática»)
+- [ ] Implementar feedback háptico (vibración en aciertos/errores)
+
+### Internacionalización
+- [ ] Elegir librería de i18n (i18next, react-intl u otra)
+- [ ] Externalizar textos de la app a archivos de traducción
+- [ ] Traducción a idiomas disponibles en iOS y Android
