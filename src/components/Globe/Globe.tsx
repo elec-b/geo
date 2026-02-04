@@ -16,8 +16,8 @@ export function Globe({ onCountryClick }: GlobeProps) {
   // Estado para los datos de países
   const [countriesData, setCountriesData] = useState<any>(null);
 
-  // Estado para el país en hover
-  const [hoverCountry, setHoverCountry] = useState<CountryFeature | null>(null);
+  // Estado para el país seleccionado (click)
+  const [selectedCountry, setSelectedCountry] = useState<CountryFeature | null>(null);
 
   // Cargar datos de países al montar (asíncrono)
   useEffect(() => {
@@ -46,6 +46,7 @@ export function Globe({ onCountryClick }: GlobeProps) {
   const handlePolygonClick = useCallback((polygon: any) => {
     if (polygon) {
       console.log('País seleccionado:', polygon.properties?.name || 'Desconocido');
+      setSelectedCountry(polygon as CountryFeature);
 
       // Detener rotación automática al hacer click
       if (globeRef.current) {
@@ -62,32 +63,24 @@ export function Globe({ onCountryClick }: GlobeProps) {
     }
   }, [onCountryClick]);
 
-  // Handler para hover
+  // Handler para hover (solo cambia cursor, sin resaltar)
   const handlePolygonHover = useCallback((polygon: any) => {
-    setHoverCountry(polygon as CountryFeature | null);
-
-    // Cambiar cursor
     document.body.style.cursor = polygon ? 'pointer' : 'grab';
   }, []);
 
-  // Función para obtener el color del polígono
+  // Función para obtener el color del polígono (resalta solo el seleccionado)
   const polygonCapColor = useCallback((d: any) => {
-    const isHovered = hoverCountry && d.properties?.name === hoverCountry.properties?.name;
+    const isSelected = selectedCountry && d.properties?.name === selectedCountry.properties?.name;
     const countryId = d.id || d.properties?.id || '0';
 
-    if (isHovered) {
+    if (isSelected) {
       return getCountryHoverColor(countryId);
     }
     return getCountryColor(countryId);
-  }, [hoverCountry]);
+  }, [selectedCountry]);
 
-  // Función para el color del borde
-  const polygonSideColor = useCallback(() => {
-    return 'rgba(255, 255, 255, 0.1)';
-  }, []);
-
-  // Altitud mínima para evitar z-fighting (manchas) sin crear efecto "cubito"
-  const polygonAltitude = useCallback(() => 0.01, []);
+  // Altitud mínima para evitar z-fighting, sin extrusión visible
+  const polygonAltitude = useCallback(() => 0.008, []);
 
   if (!countriesData) {
     return (
@@ -116,7 +109,6 @@ export function Globe({ onCountryClick }: GlobeProps) {
         // Datos de polígonos (países)
         polygonsData={countriesData.features}
         polygonCapColor={polygonCapColor}
-        polygonSideColor={polygonSideColor}
         polygonStrokeColor={() => 'rgba(255, 255, 255, 0.2)'}
         polygonAltitude={polygonAltitude}
 

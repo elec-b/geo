@@ -46,7 +46,7 @@ export async function loadCountriesGeoJson(): Promise<FeatureCollection<Geometry
 
 // Colores uniformes para todos los países (diseño minimalista)
 const COUNTRY_COLOR = '#3a3a4a';       // Gris oscuro
-const COUNTRY_HOVER_COLOR = '#5a5a6a'; // Gris más claro para hover
+const COUNTRY_HOVER_COLOR = '#8a7d5a'; // Tono cálido amarillento para hover
 
 /**
  * Obtiene el color base de un país
