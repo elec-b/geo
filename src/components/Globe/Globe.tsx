@@ -39,6 +39,21 @@ export function Globe({ onCountryClick }: GlobeProps) {
 
       // Posición inicial de la cámara (vista de Europa/África)
       globeRef.current.pointOfView({ lat: 20, lng: 0, altitude: 2.5 });
+
+      // Eliminar luces direccionales/puntuales del polo norte (añadidas por three-globe).
+      // Se usa un delay porque three-globe puede añadirlas tras la inicialización.
+      const removeExtraLights = () => {
+        const scene = globeRef.current?.scene();
+        if (!scene) return;
+        scene.traverse((obj: any) => {
+          if (obj.type === 'PointLight' || obj.type === 'DirectionalLight') {
+            obj.intensity = 0;
+          }
+        });
+      };
+      removeExtraLights();
+      const timer = setTimeout(removeExtraLights, 500);
+      return () => clearTimeout(timer);
     }
   }, [countriesData]);
 
