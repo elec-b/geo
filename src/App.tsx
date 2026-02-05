@@ -1,5 +1,5 @@
 // GeoExpert - Aplicación principal
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState, useCallback } from 'react';
 import { LoadingScreen } from './components/UI/LoadingScreen';
 import type { CountryFeature } from './data/countries';
 
@@ -7,16 +7,21 @@ import type { CountryFeature } from './data/countries';
 const Globe = lazy(() => import('./components/Globe'));
 
 function App() {
-  // Handler cuando se hace click en un país
-  const handleCountryClick = (country: CountryFeature) => {
+  const [globeReady, setGlobeReady] = useState(false);
+
+  const handleCountryClick = useCallback((country: CountryFeature) => {
     console.log('Click en:', country.properties?.name);
-    // Aquí luego mostraremos la ficha del país
-  };
+  }, []);
+
+  const handleGlobeReady = useCallback(() => setGlobeReady(true), []);
 
   return (
-    <Suspense fallback={<LoadingScreen />}>
-      <Globe onCountryClick={handleCountryClick} />
-    </Suspense>
+    <>
+      <LoadingScreen visible={!globeReady} />
+      <Suspense fallback={null}>
+        <Globe onCountryClick={handleCountryClick} onReady={handleGlobeReady} />
+      </Suspense>
+    </>
   );
 }
 

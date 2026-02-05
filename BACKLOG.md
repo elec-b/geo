@@ -20,17 +20,16 @@
   - Rendimiento fluido una vez cargado
   - Interacción táctil (zoom, rotación) funciona correctamente
 - [x] Z-fighting en áreas grandes (Groenlandia) corregido con `polygonCapCurvatureResolution: 5`
+- [x] Eliminar extrusión 3D de las fronteras de países (efecto de elevación innecesario; puede mejorar rendimiento)
+- [x] Quitar luz del polo norte (point light visible)
 
 ---
 
 ## En progreso
 
 ### Globo base
-- [ ] Eliminar extrusión 3D de las fronteras de países (efecto de elevación innecesario; puede mejorar rendimiento)
-- [ ] Mejorar tiempo de carga inicial (~17s en Simulator) — splash screen, code splitting o lazy loading
-  - WIP: Implementado splash screen HTML, lazy loading de Globe, TopoJSON externalizado, Vite code splitting
-  - Pendiente: verificar que funciona correctamente y medir mejora real
-- [ ] Quitar luz del polo norte (point light visible)
+
+- [ ] Mejorar tiempo de carga inicial 
 - [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos)
 - [ ] Aumentar zoom máximo para poder seleccionar países pequeños (Liechtenstein, Andorra, Singapur) — problema "Fat Finger"
 - [ ] Detener rotación automática al interactuar (click/touch), no solo al seleccionar país

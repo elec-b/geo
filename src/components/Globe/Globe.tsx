@@ -4,12 +4,12 @@ import GlobeGL from 'react-globe.gl';
 import { loadCountriesGeoJson, getCountryColor, getCountryHoverColor } from '../../data/countries';
 import type { CountryFeature } from '../../data/countries';
 
-// Props del componente (vacío por ahora, añadiremos callbacks después)
 interface GlobeProps {
   onCountryClick?: (country: CountryFeature) => void;
+  onReady?: () => void;
 }
 
-export function Globe({ onCountryClick }: GlobeProps) {
+export function Globe({ onCountryClick, onReady }: GlobeProps) {
   // Referencia al componente del globo para controlar la cámara
   const globeRef = useRef<any>(null);
 
@@ -52,7 +52,11 @@ export function Globe({ onCountryClick }: GlobeProps) {
         });
       };
       removeExtraLights();
-      const timer = setTimeout(removeExtraLights, 500);
+      // Delay breve para que Three.js termine el primer render, luego señalizar
+      const timer = setTimeout(() => {
+        removeExtraLights();
+        onReady?.();
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [countriesData]);
@@ -98,16 +102,7 @@ export function Globe({ onCountryClick }: GlobeProps) {
   const polygonAltitude = useCallback(() => 0.008, []);
 
   if (!countriesData) {
-    return (
-      <div className="globe-container" style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: 'var(--color-text-secondary)'
-      }}>
-        Cargando globo...
-      </div>
-    );
+    return <div className="globe-container" />;
   }
 
   return (
