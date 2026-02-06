@@ -1,0 +1,1 @@
+lee todos los .md que hay en el repo, excepto README.md
