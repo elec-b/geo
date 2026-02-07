@@ -1,8 +1,29 @@
-// Componente principal del globo 3D
-import { useRef, useEffect, useState, useCallback } from 'react';
-import GlobeGL from 'react-globe.gl';
-import { loadCountriesGeoJson, getCountryColor, getCountryHoverColor } from '../../data/countries';
+// Componente principal del globo 3D (MapLibre GL JS v5, globe projection)
+import { useRef, useEffect, useCallback, useState } from 'react';
+import { Map, type MapRef, Source, Layer } from 'react-map-gl/maplibre';
+import type { MapLayerMouseEvent, MapGeoJSONFeature } from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
+import { loadCountriesGeoJson } from '../../data/countries';
 import type { CountryFeature } from '../../data/countries';
+import type { FeatureCollection, Geometry } from 'geojson';
+
+// Colores del tema espacial
+const COUNTRY_FILL_COLOR = '#3a3a4a';
+const COUNTRY_SELECTED_COLOR = '#8a7d5a';
+const BORDER_COLOR = 'rgba(255, 255, 255, 0.2)';
+
+// Estilo base offline (sin tile server)
+const EMPTY_STYLE = {
+  version: 8 as const,
+  sources: {},
+  layers: [
+    {
+      id: 'background',
+      type: 'background' as const,
+      paint: { 'background-color': '#000000' },
+    },
+  ],
+};
 
 interface GlobeProps {
   onCountryClick?: (country: CountryFeature) => void;
@@ -10,126 +31,184 @@ interface GlobeProps {
 }
 
 export function Globe({ onCountryClick, onReady }: GlobeProps) {
-  // Referencia al componente del globo para controlar la cámara
-  const globeRef = useRef<any>(null);
+  const mapRef = useRef<MapRef>(null);
+  const [geojsonData, setGeojsonData] = useState<FeatureCollection<Geometry> | null>(null);
+  const [selectedId, setSelectedId] = useState<string | number | null>(null);
+  const rotationRef = useRef<number | null>(null);
+  const isRotatingRef = useRef(true);
 
-  // Estado para los datos de países
-  const [countriesData, setCountriesData] = useState<any>(null);
-
-  // Estado para el país seleccionado (click)
-  const [selectedCountry, setSelectedCountry] = useState<CountryFeature | null>(null);
-
-  // Cargar datos de países al montar (asíncrono)
+  // Cargar datos GeoJSON al montar
   useEffect(() => {
-    loadCountriesGeoJson().then(setCountriesData);
+    loadCountriesGeoJson().then(setGeojsonData);
   }, []);
 
-  // Configurar el globo después de cargar
-  useEffect(() => {
-    if (globeRef.current) {
-      // Configurar controles de cámara
-      const controls = globeRef.current.controls();
-      if (controls) {
-        controls.autoRotate = true;
-        controls.autoRotateSpeed = 0.5; // Rotación lenta
-        controls.enableZoom = true;
-        controls.minDistance = 150; // Zoom mínimo (más cerca)
-        controls.maxDistance = 500; // Zoom máximo (más lejos)
-      }
+  // Rotación automática
+  const startAutoRotation = useCallback(() => {
+    const map = mapRef.current?.getMap();
+    if (!map) return;
 
-      // Posición inicial de la cámara (vista de Europa/África)
-      globeRef.current.pointOfView({ lat: 20, lng: 0, altitude: 2.5 });
+    isRotatingRef.current = true;
+    let lastTime = performance.now();
 
-      // Eliminar luces direccionales/puntuales del polo norte (añadidas por three-globe).
-      // Se usa un delay porque three-globe puede añadirlas tras la inicialización.
-      const removeExtraLights = () => {
-        const scene = globeRef.current?.scene();
-        if (!scene) return;
-        scene.traverse((obj: any) => {
-          if (obj.type === 'PointLight' || obj.type === 'DirectionalLight') {
-            obj.intensity = 0;
-          }
-        });
-      };
-      removeExtraLights();
-      // Delay breve para que Three.js termine el primer render, luego señalizar
-      const timer = setTimeout(() => {
-        removeExtraLights();
-        onReady?.();
-      }, 500);
-      return () => clearTimeout(timer);
+    const rotate = () => {
+      if (!isRotatingRef.current) return;
+      const now = performance.now();
+      const delta = (now - lastTime) / 1000;
+      lastTime = now;
+
+      const center = map.getCenter();
+      // ~6°/s de rotación (lenta y suave)
+      map.setCenter({ lng: center.lng + 6 * delta, lat: center.lat });
+      rotationRef.current = requestAnimationFrame(rotate);
+    };
+    rotationRef.current = requestAnimationFrame(rotate);
+  }, []);
+
+  // Parar rotación
+  const stopAutoRotation = useCallback(() => {
+    isRotatingRef.current = false;
+    if (rotationRef.current !== null) {
+      cancelAnimationFrame(rotationRef.current);
+      rotationRef.current = null;
     }
-  }, [countriesData]);
+  }, []);
 
-  // Handler para click en país
-  const handlePolygonClick = useCallback((polygon: any) => {
-    if (polygon) {
-      console.log('País seleccionado:', polygon.properties?.name || 'Desconocido');
-      setSelectedCountry(polygon as CountryFeature);
+  // Evento: mapa cargado
+  const handleMapLoad = useCallback(() => {
+    const map = mapRef.current?.getMap();
+    if (!map) return;
 
-      // Detener rotación automática al hacer click
-      if (globeRef.current) {
-        const controls = globeRef.current.controls();
-        if (controls) {
-          controls.autoRotate = false;
+    // Configurar atmósfera del globo con colores del tema espacial
+    map.setSky({ 'atmosphere-blend': 0.5 });
+
+    startAutoRotation();
+    onReady?.();
+  }, [onReady, startAutoRotation]);
+
+  // Click en un país
+  const handleClick = useCallback(
+    (e: MapLayerMouseEvent) => {
+      stopAutoRotation();
+
+      const map = mapRef.current?.getMap();
+      if (!map) return;
+
+      const features = e.features;
+      if (!features || features.length === 0) {
+        // Click en el océano — deseleccionar
+        if (selectedId !== null) {
+          map.setFeatureState(
+            { source: 'countries', id: selectedId },
+            { selected: false }
+          );
+          setSelectedId(null);
         }
+        return;
       }
 
-      // Callback externo si existe
+      const feature = features[0] as MapGeoJSONFeature;
+      const featureId = feature.id;
+      const name = feature.properties?.name ?? 'Desconocido';
+
+      console.log('País seleccionado:', name);
+
+      // Deseleccionar el anterior
+      if (selectedId !== null) {
+        map.setFeatureState(
+          { source: 'countries', id: selectedId },
+          { selected: false }
+        );
+      }
+
+      // Seleccionar el nuevo
+      if (featureId !== undefined) {
+        map.setFeatureState(
+          { source: 'countries', id: featureId },
+          { selected: true }
+        );
+        setSelectedId(featureId);
+      }
+
+      // Callback externo
       if (onCountryClick) {
-        onCountryClick(polygon as CountryFeature);
+        onCountryClick(feature as unknown as CountryFeature);
       }
-    }
-  }, [onCountryClick]);
+    },
+    [selectedId, onCountryClick, stopAutoRotation]
+  );
 
-  // Handler para hover (solo cambia cursor, sin resaltar)
-  const handlePolygonHover = useCallback((polygon: any) => {
-    document.body.style.cursor = polygon ? 'pointer' : 'grab';
+  // Hover → cursor pointer
+  const handleMouseMove = useCallback((e: MapLayerMouseEvent) => {
+    const map = mapRef.current?.getMap();
+    if (!map) return;
+    map.getCanvas().style.cursor = e.features && e.features.length > 0 ? 'pointer' : 'grab';
   }, []);
 
-  // Función para obtener el color del polígono (resalta solo el seleccionado)
-  const polygonCapColor = useCallback((d: any) => {
-    const isSelected = selectedCountry && d.properties?.name === selectedCountry.properties?.name;
-    const countryId = d.id || d.properties?.id || '0';
+  const handleMouseLeave = useCallback(() => {
+    const map = mapRef.current?.getMap();
+    if (!map) return;
+    map.getCanvas().style.cursor = 'grab';
+  }, []);
 
-    if (isSelected) {
-      return getCountryHoverColor(countryId);
-    }
-    return getCountryColor(countryId);
-  }, [selectedCountry]);
-
-  // Altitud mínima para evitar z-fighting, sin extrusión visible
-  const polygonAltitude = useCallback(() => 0.008, []);
-
-  if (!countriesData) {
-    return <div className="globe-container" />;
-  }
+  // Cleanup de la rotación al desmontar
+  useEffect(() => {
+    return () => stopAutoRotation();
+  }, [stopAutoRotation]);
 
   return (
     <div className="globe-container">
-      <GlobeGL
-        ref={globeRef}
-        // Configuración del globo
-        globeImageUrl=""
-        backgroundColor="rgba(0,0,0,0)"
-        showAtmosphere={true}
-        atmosphereColor="#00f0ff"
-        atmosphereAltitude={0.15}
-
-        // Datos de polígonos (países)
-        polygonsData={countriesData.features}
-        polygonCapColor={polygonCapColor}
-        polygonStrokeColor={() => 'rgba(255, 255, 255, 0.2)'}
-        polygonAltitude={polygonAltitude}
-
-        // Interacciones
-        onPolygonClick={handlePolygonClick}
-        onPolygonHover={handlePolygonHover}
-
-        // Rendimiento
-        animateIn={true}
-        polygonCapCurvatureResolution={5}  // Mayor resolución (número menor) evita z-fighting en áreas grandes
-      />
+      <Map
+        ref={mapRef}
+        initialViewState={{
+          latitude: 20,
+          longitude: 0,
+          zoom: 1.5,
+        }}
+        minZoom={1}
+        maxZoom={7}
+        mapStyle={EMPTY_STYLE}
+        projection="globe"
+        onLoad={handleMapLoad}
+        onClick={handleClick}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        interactiveLayerIds={['countries-fill']}
+        style={{ width: '100%', height: '100%' }}
+        attributionControl={false}
+      >
+        {geojsonData && (
+          <Source
+            id="countries"
+            type="geojson"
+            data={geojsonData}
+            promoteId="name"
+          >
+            {/* Relleno de países */}
+            <Layer
+              id="countries-fill"
+              type="fill"
+              paint={{
+                'fill-color': [
+                  'case',
+                  ['boolean', ['feature-state', 'selected'], false],
+                  COUNTRY_SELECTED_COLOR,
+                  COUNTRY_FILL_COLOR,
+                ],
+                'fill-opacity': 0.9,
+              }}
+            />
+            {/* Bordes de países */}
+            <Layer
+              id="countries-border"
+              type="line"
+              paint={{
+                'line-color': BORDER_COLOR,
+                'line-width': 0.5,
+              }}
+            />
+          </Source>
+        )}
+      </Map>
     </div>
   );
 }

@@ -3,12 +3,8 @@ import { lazy, Suspense, useState, useCallback } from 'react';
 import { LoadingScreen } from './components/UI/LoadingScreen';
 import type { CountryFeature } from './data/countries';
 
-// Toggle A/B: cambiar a false para usar react-globe.gl original
-const USE_MAPLIBRE = true;
-
-// Lazy load de ambos componentes
+// Lazy load del globo - se carga en segundo plano mientras se muestra LoadingScreen
 const Globe = lazy(() => import('./components/Globe'));
-const MapLibreGlobe = lazy(() => import('./components/Globe/MapLibreGlobe'));
 
 function App() {
   const [globeReady, setGlobeReady] = useState(false);
@@ -19,13 +15,11 @@ function App() {
 
   const handleGlobeReady = useCallback(() => setGlobeReady(true), []);
 
-  const GlobeComponent = USE_MAPLIBRE ? MapLibreGlobe : Globe;
-
   return (
     <>
       <LoadingScreen visible={!globeReady} />
       <Suspense fallback={null}>
-        <GlobeComponent onCountryClick={handleCountryClick} onReady={handleGlobeReady} />
+        <Globe onCountryClick={handleCountryClick} onReady={handleGlobeReady} />
       </Suspense>
     </>
   );

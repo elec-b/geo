@@ -43,25 +43,3 @@ export async function loadCountriesGeoJson(): Promise<FeatureCollection<Geometry
   cachedGeoJson = geojson;
   return geojson;
 }
-
-// Colores uniformes para todos los países (diseño minimalista)
-const COUNTRY_COLOR = '#3a3a4a';       // Gris oscuro
-const COUNTRY_HOVER_COLOR = '#8a7d5a'; // Tono cálido amarillento para hover
-
-/**
- * Obtiene el color base de un país
- * @param _countryId - ID del país (no usado, color uniforme)
- * @returns Color hexadecimal gris
- */
-export function getCountryColor(_countryId: string | number): string {
-  return COUNTRY_COLOR;
-}
-
-/**
- * Obtiene el color para el estado hover
- * @param _countryId - ID del país (no usado, color uniforme)
- * @returns Color hexadecimal gris claro
- */
-export function getCountryHoverColor(_countryId: string | number): string {
-  return COUNTRY_HOVER_COLOR;
-}
