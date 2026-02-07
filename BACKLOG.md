@@ -23,7 +23,7 @@
 
 ### Globo base
 - [ ] Quitar artefactos visuales (bandas/seams en tile boundaries) de la capa fill en globe projection
-  - **Causa raíz**: `geojson-vt` corta polígonos en tile boundaries y al reproyectarlos en la esfera aparecen bandas visibles. Es un issue abierto en MapLibre (#5084, #4367) sin fix.
+  - **Causa raíz (posible, pero no ultra-confirmada)**: `geojson-vt` corta polígonos en tile boundaries y al reproyectarlos en la esfera aparecen bandas visibles. Es un issue abierto en MapLibre (#5084, #4367) sin fix.
   - **Ya probado sin éxito**: fill-antialias:false, buffer:512, fill-opacity:1, topojson.mesh(), quitar setSky(), fill-extrusion con height:0, maxzoom:2
   - **maxzoom:0 elimina las bandas** pero distorsiona los polos (Antártida rota)
   - **Pista**: explorar https://maplibre.org — hay buenos mapas que no tienen este problema. Posiblemente usan vector tiles nativos o un approach diferente al GeoJSON source
