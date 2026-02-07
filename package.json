@@ -13,9 +13,11 @@
     "@capacitor/cli": "^8.0.2",
     "@capacitor/core": "^8.0.2",
     "@capacitor/ios": "^8.0.2",
+    "maplibre-gl": "^5.17.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-globe.gl": "^2.37.0",
+    "react-map-gl": "^8.1.0",
     "topojson-client": "^3.1.0",
     "world-atlas": "^2.0.2",
     "zustand": "^5.0.11"

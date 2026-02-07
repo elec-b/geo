@@ -27,9 +27,16 @@
 
 ## En progreso
 
-### Globo base
+### Spike: Validación de MapLibre GL JS v5
+> react-globe.gl tarda ~17s en cargar 195 países (production build, iOS Simulator). MapLibre GL JS v5 es la alternativa recomendada. Ver `docs/spikes/maplibre_validation.md` para criterios y resultados.
 
-- [ ] Mejorar tiempo de carga inicial 
+- [ ] Implementar componente MapLibreGlobe.tsx con funcionalidad equivalente a Globe.tsx
+- [ ] Medir rendimiento: tiempo de carga <3s, FPS >30, picking preciso
+- [ ] Probar en iOS Simulator (production build)
+- [ ] Documentar resultados y decisión en `docs/spikes/maplibre_validation.md`
+
+### Globo base (pendiente de resultado del spike)
+
 - [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos)
 - [ ] Aumentar zoom máximo para poder seleccionar países pequeños (Liechtenstein, Andorra, Singapur) — problema "Fat Finger"
 - [ ] Detener rotación automática al interactuar (click/touch), no solo al seleccionar país

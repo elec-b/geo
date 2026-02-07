@@ -9,6 +9,7 @@ export default defineConfig({
       output: {
         // Separar vendors en chunks para mejor caching y carga paralela
         manualChunks: {
+          'maplibre': ['maplibre-gl'],
           'three': ['three'],
           'globe': ['react-globe.gl', 'globe.gl'],
           'react-vendor': ['react', 'react-dom'],

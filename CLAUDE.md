@@ -12,7 +12,7 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 ### Núcleo
 - **Framework**: React 18 + Vite
 - **Empaquetado móvil**: Capacitor (iOS primero, Android después)
-- **Motor 3D**: `react-globe.gl` (Three.js + WebGL)
+- **Motor 3D**: MapLibre GL JS v5 (globe projection, tile-based rendering) — en validación via spike
 
 ### Estado y datos
 - **Gestión de estado**: Zustand
@@ -28,11 +28,12 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 - **Capitales**: JSON local con coordenadas
 - Ver `OVERVIEW.md` § «Fuentes de datos» para especificación completa
 
-### Por qué Capacitor + react-globe.gl
-1. `react-globe.gl` soporta GeoJSON nativo con selección táctil
-2. Capacitor empaqueta web como app nativa sin reescribir código
-3. Rendimiento >60 FPS en iPhone 12+
-4. 100% offline con datos locales
+### Por qué Capacitor + MapLibre GL JS v5
+1. MapLibre v5 tiene globe projection nativa con tile-based rendering y frustum culling
+2. `geojson-vt` integrado: convierte GeoJSON a vector tiles al vuelo, sin tile server
+3. Capacitor empaqueta web como app nativa sin reescribir código
+4. 100% offline con datos locales, sin token, licencia BSD-3
+5. React wrapper maduro: `react-map-gl/maplibre`
 
 ### Plataformas objetivo
 - **iOS y Android**: Prioridad principal (App Store y Google Play)
@@ -42,7 +43,10 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 
 1. **Documentación primero**: Las actualizaciones en `OVERVIEW.md` deben preceder a los cambios de código para características importantes.
 2. **Vista mobile first**: Diseña para la interacción táctil (dedos en la pantalla) incluso si desarrollas en escritorio.
-3. **Documentación MECE**: Toda la documentación del proyecto se escribe en archivos `.md` en la raíz del repositorio. El contenido debe ser **MECE** (Mutually Exclusive, Collectively Exhaustive): sin solapamientos entre documentos y cubriendo todos los aspectos necesarios.
+3. **Documentación MECE**: El contenido debe ser **MECE** (Mutually Exclusive, Collectively Exhaustive): sin solapamientos entre documentos y cubriendo todos los aspectos necesarios. Estructura:
+   - **Raíz**: documentos core del proyecto (`CLAUDE.md`, `OVERVIEW.md`, `BACKLOG.md`, `README.md`)
+   - **`docs/research/`**: investigaciones técnicas
+   - **`docs/spikes/`**: resultados de spikes de validación
 4. **Backlog**: `BACKLOG.md` organiza el trabajo en 3 secciones:
    - **Completado**: Tareas terminadas (historial reciente; para historial completo, usar git)
    - **En progreso**: Tareas activas o con trabajo parcial
