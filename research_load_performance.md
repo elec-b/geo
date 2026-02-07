@@ -38,7 +38,7 @@ react-globe.gl ejecuta un pipeline pesado para cada polígono:
 | Compilación de shaders WebGL | 1-3s | ~5% |
 | animateIn + setTimeout(500ms) | ~1.7s | ~5% |
 
-**Nota importante** (del adversario de autopsia): parte de los 30s puede ser overhead de Vite dev mode. Nunca se midió en production build (`npm run build`). El tiempo real en producción podría ser significativamente menor.
+**Nota importante** (del adversario de autopsia): parte de los 30s es overhead de Vite dev mode. **Medido en production build (Simulator iOS): ~17 segundos.** Vite dev mode añadía ~13s, pero 17s sigue muy por encima del umbral aceptable de 5s. Esto confirma que el cuello de botella es la teselación, no el tooling de desarrollo.
 
 ### Resultado: ~1.25 millones de triángulos en ~500 meshes separados
 - ~500 polígonos × ~2500 triángulos = ~1.25M triángulos
@@ -114,24 +114,14 @@ Google Earth usa un motor **nativo C++** que accede directamente a Metal (iOS) /
 
 ## Recomendación Final
 
-### Paso 1 (inmediato, 30 minutos): Medir en producción
+### ~~Paso 1: Medir en producción~~ ✅ Completado
 
-**Antes de tomar ninguna decisión, medir el tiempo REAL en production build.** Los 30 segundos pueden incluir mucho overhead de Vite dev mode que desaparece en producción.
+Medido en production build + Simulator iOS: **~17 segundos**. Muy por encima del umbral de 5s.
+Los quick wins (`animateIn={false}`, `antialias: false`, etc.) podrían raspar 2-3s adicionales, pero no resuelven el problema de fondo (~12-14s de teselación síncrona).
 
-```bash
-npm run build && npx serve dist
-```
+**Decisión: proceder con la migración a MapLibre GL JS v5.**
 
-Además, probar estas optimizaciones rápidas en react-globe.gl:
-- `animateIn={false}` (ahorra ~1.2s)
-- `polygonsTransitionDuration={0}` (ahorra ~1s)
-- `rendererConfig={{ antialias: false }}` (reportado como 2x FPS mejora)
-- Eliminar el `setTimeout(500ms)` en Globe.tsx
-- Probar `polygonCapCurvatureResolution={12}` o superior
-
-**Si el tiempo en producción baja a <5 segundos**: react-globe.gl es viable con estas optimizaciones. Seguir con él.
-
-### Paso 2 (si producción sigue >5s): Migrar a MapLibre GL JS v5
+### Paso 2: Migrar a MapLibre GL JS v5
 
 MapLibre es la mejor alternativa porque:
 1. **Resuelve el problema de raíz**: usa tile-based rendering con culling, no teselación bruta de todos los polígonos
