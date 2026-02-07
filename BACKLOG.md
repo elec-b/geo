@@ -22,12 +22,20 @@
 ## En progreso
 
 ### Globo base
-- [ ] quitar algunos "paralelos" que aparecen en los polos y hacia el medio de Brasil - aportar imágenes
-- [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos)
+- [ ] Quitar artefactos visuales (bandas/seams en tile boundaries) de la capa fill en globe projection
+  - **Causa raíz**: `geojson-vt` corta polígonos en tile boundaries y al reproyectarlos en la esfera aparecen bandas visibles. Es un issue abierto en MapLibre (#5084, #4367) sin fix.
+  - **Ya probado sin éxito**: fill-antialias:false, buffer:512, fill-opacity:1, topojson.mesh(), quitar setSky(), fill-extrusion con height:0, maxzoom:2
+  - **maxzoom:0 elimina las bandas** pero distorsiona los polos (Antártida rota)
+  - **Pista**: explorar https://maplibre.org — hay buenos mapas que no tienen este problema. Posiblemente usan vector tiles nativos o un approach diferente al GeoJSON source
+  - **Refactor ya hecho**: bordes separados con `topojson.mesh()` en `countries.ts` y `Globe.tsx` (vale la pena conservar independientemente)
+- [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos) — (probablemente) añadir `maxPitch={85}` al componente Map
 
 ---
 
 ## Próximos pasos
+
+### Globo base
+- [ ] Eliminar luz en la parte superior izquierda del globo (representa la luz del sol tocando el planeta, pero no nos interesa para nuestra app)
 
 ### Datos de países
 - [ ] Integrar REST Countries v3.1 (nombres, banderas, capitales)

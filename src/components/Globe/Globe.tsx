@@ -3,9 +3,9 @@ import { useRef, useEffect, useCallback, useState } from 'react';
 import { Map, type MapRef, Source, Layer } from 'react-map-gl/maplibre';
 import type { MapLayerMouseEvent, MapGeoJSONFeature } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import { loadCountriesGeoJson } from '../../data/countries';
+import { loadCountriesGeoJson, loadBordersGeoJson } from '../../data/countries';
 import type { CountryFeature } from '../../data/countries';
-import type { FeatureCollection, Geometry } from 'geojson';
+import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geojson';
 
 // Colores del tema espacial
 const COUNTRY_FILL_COLOR = '#3a3a4a';
@@ -33,13 +33,19 @@ interface GlobeProps {
 export function Globe({ onCountryClick, onReady }: GlobeProps) {
   const mapRef = useRef<MapRef>(null);
   const [geojsonData, setGeojsonData] = useState<FeatureCollection<Geometry> | null>(null);
+  const [bordersData, setBordersData] = useState<Feature<MultiLineString> | null>(null);
   const [selectedId, setSelectedId] = useState<string | number | null>(null);
   const rotationRef = useRef<number | null>(null);
   const isRotatingRef = useRef(true);
 
-  // Cargar datos GeoJSON al montar
+  // Cargar datos GeoJSON al montar (polígonos + bordes en paralelo)
   useEffect(() => {
-    loadCountriesGeoJson().then(setGeojsonData);
+    Promise.all([loadCountriesGeoJson(), loadBordersGeoJson()]).then(
+      ([countries, borders]) => {
+        setGeojsonData(countries);
+        setBordersData(borders);
+      }
+    );
   }, []);
 
   // Rotación automática
@@ -197,7 +203,11 @@ export function Globe({ onCountryClick, onReady }: GlobeProps) {
                 'fill-opacity': 0.9,
               }}
             />
-            {/* Bordes de países */}
+          </Source>
+        )}
+        {/* Bordes: source separada con topojson.mesh() para evitar artefactos de tile clipping */}
+        {bordersData && (
+          <Source id="borders" type="geojson" data={bordersData}>
             <Layer
               id="countries-border"
               type="line"
