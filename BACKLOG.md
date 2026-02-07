@@ -22,9 +22,8 @@
 ## En progreso
 
 ### Globo base
-
+- [ ] quitar algunos "paralelos" que aparecen en los polos y hacia el medio de Brasil - aportar imágenes
 - [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos)
-- [ ] Aumentar zoom máximo para poder seleccionar países pequeños (Liechtenstein, Andorra, Singapur) — problema "Fat Finger"
 - [ ] Detener rotación automática al interactuar (click/touch), no solo al seleccionar país
 
 ---
