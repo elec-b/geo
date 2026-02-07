@@ -8,34 +8,20 @@
 
 ### Setup inicial
 - [x] Proyecto React + Vite configurado
-- [x] Globo 3D con `react-globe.gl` funcionando
+- [x] Globo 3D con MapLibre GL JS v5 (globe projection)
 - [x] Carga de países desde `world-atlas` (TopoJSON → GeoJSON)
 - [x] Interacción táctil básica (click en países)
 - [x] Tema espacial con fondo negro y estrellas
 - [x] Colores simplificados: gris uniforme para todos los países
 - [x] Resolución 50m (equilibrio detalle/rendimiento, incluye Baleares, Canarias, Caribe, Oceanía)
-  - ⚠️ Falta Tuvalu (11,000 hab.) — no incluido en 50m, requeriría 10m que causa fallo de WebGL
+  - ⚠️ Falta Tuvalu (11,000 hab.) — no incluido en 50m (limitación del dataset, no del motor)
 - [x] Capacitor iOS configurado y probado en Simulator (iPhone 16e, iOS 26.1)
-  - Tiempo de carga ~17s en Simulator (sin GPU real, no representativo)
-  - Rendimiento fluido una vez cargado
-  - Interacción táctil (zoom, rotación) funciona correctamente
-- [x] Z-fighting en áreas grandes (Groenlandia) corregido con `polygonCapCurvatureResolution: 5`
-- [x] Eliminar extrusión 3D de las fronteras de países (efecto de elevación innecesario; puede mejorar rendimiento)
-- [x] Quitar luz del polo norte (point light visible)
 
 ---
 
 ## En progreso
 
-### Spike: Validación de MapLibre GL JS v5
-> react-globe.gl tarda ~17s en cargar 195 países (production build, iOS Simulator). MapLibre GL JS v5 es la alternativa recomendada. Ver `docs/spikes/maplibre_validation.md` para criterios y resultados.
-
-- [ ] Implementar componente MapLibreGlobe.tsx con funcionalidad equivalente a Globe.tsx
-- [ ] Medir rendimiento: tiempo de carga <3s, FPS >30, picking preciso
-- [ ] Probar en iOS Simulator (production build)
-- [ ] Documentar resultados y decisión en `docs/spikes/maplibre_validation.md`
-
-### Globo base (pendiente de resultado del spike)
+### Globo base
 
 - [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos)
 - [ ] Aumentar zoom máximo para poder seleccionar países pequeños (Liechtenstein, Andorra, Singapur) — problema "Fat Finger"

@@ -179,9 +179,9 @@ Configuración **ultra-sencilla**. Solo lo esencial:
 
 ## Motor de renderizado
 
-### MapLibre GL JS v5 (en validación)
+### MapLibre GL JS v5
 
-La app usa **MapLibre GL JS v5** con **globe projection** para renderizar el globo terráqueo. Esta decisión reemplaza a `react-globe.gl`, que tenía un tiempo de carga de ~17s en iOS Simulator debido a la teselación síncrona de ~500 polígonos.
+La app usa **MapLibre GL JS v5** con **globe projection** para renderizar el globo terráqueo.
 
 **Características clave**:
 - **Globe projection**: esfera 3D rotable, estable desde v5.0.0 (enero 2025)
@@ -190,8 +190,9 @@ La app usa **MapLibre GL JS v5** con **globe projection** para renderizar el glo
 - **100% offline**: funciona con estilo vacío + GeoJSON local, sin token ni servicios externos
 - **Wrapper React**: `react-map-gl/maplibre` (por vis.gl)
 - **Licencia**: BSD-3-Clause
+- **Bundle**: ~275 KB gzip
 
-**Estado**: En validación mediante spike (`docs/spikes/maplibre_validation.md`). Los detalles de la investigación están en `docs/research/`.
+**Nota técnica**: React 19 StrictMode es incompatible con MapLibre GL en desarrollo (el doble mount/unmount pierde el contexto WebGL). StrictMode está desactivado en `main.tsx`. No afecta a producción.
 
 ---
 

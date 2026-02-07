@@ -12,7 +12,7 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 ### Núcleo
 - **Framework**: React 18 + Vite
 - **Empaquetado móvil**: Capacitor (iOS primero, Android después)
-- **Motor 3D**: MapLibre GL JS v5 (globe projection, tile-based rendering) — en validación via spike
+- **Motor 3D**: MapLibre GL JS v5 (globe projection, tile-based rendering)
 
 ### Estado y datos
 - **Gestión de estado**: Zustand
