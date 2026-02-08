@@ -1,1 +1,1 @@
-lee todos los .md que hay en el repo, excepto README.md
+lee todos los .md que hay en la raíz del repo, excepto README.md
