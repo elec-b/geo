@@ -29,10 +29,12 @@
 
 ### Migración a D3.js
 - [ ] Adoptar `GlobeD3.tsx` como componente principal del globo (reemplazar MapLibre)
-- [ ] Implementar zoom (pinch/wheel → `projection.scale()`)
+- [ ] Implementar zoom (pinch/wheel → `projection.scale()`), asegurar que se ven bien los países / fronteras cuando se hace zoom-in
 - [ ] Añadir inercia al drag (momentum al soltar)
+- [ ] Giro de la tierra de Oeste a Este
 - [ ] Probar en iOS Simulator vía Capacitor
 - [ ] Limpiar código de MapLibre y PMTiles (tras validar en móvil)
+
 
 ---
 
