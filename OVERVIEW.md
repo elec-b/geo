@@ -179,20 +179,20 @@ Configuración **ultra-sencilla**. Solo lo esencial:
 
 ## Motor de renderizado
 
-### MapLibre GL JS v5
+### D3.js con proyección ortográfica + Canvas 2D
 
-La app usa **MapLibre GL JS v5** con **globe projection** para renderizar el globo terráqueo.
+La app usa **D3.js (`d3-geo`)** con **proyección ortográfica** sobre **Canvas 2D** para renderizar el globo terráqueo.
 
 **Características clave**:
-- **Globe projection**: esfera 3D rotable, estable desde v5.0.0 (enero 2025)
-- **Tile-based rendering**: `geojson-vt` convierte GeoJSON a vector tiles al vuelo en el browser, sin tile server
-- **Optimizaciones automáticas**: frustum culling, horizon culling, LOD adaptativo
-- **100% offline**: funciona con estilo vacío + GeoJSON local, sin token ni servicios externos
-- **Wrapper React**: `react-map-gl/maplibre` (por vis.gl)
-- **Licencia**: BSD-3-Clause
-- **Bundle**: ~275 KB gzip
+- **Proyección ortográfica**: simula la vista de la Tierra desde el espacio. Fiel a las superficies reales de los países (sin distorsión Mercator)
+- **Canvas 2D**: rendering directo sin WebGL ni tiles. Elimina artefactos de tile boundaries
+- **100% offline**: funciona con GeoJSON local empaquetado, sin servicios externos
+- **Licencia**: ISC (D3.js)
+- **Bundle**: ~30 KB gzip (`d3-geo`)
 
-**Nota técnica**: React 19 StrictMode es incompatible con MapLibre GL en desarrollo (el doble mount/unmount pierde el contexto WebGL). StrictMode está desactivado en `main.tsx`. No afecta a producción.
+**Por qué D3 y no MapLibre**: MapLibre GL JS v5 tiene globe projection, pero produce artefactos visibles (seams en tile boundaries) al reproyectar tiles Mercator sobre la esfera. Es un problema arquitectural sin solución a corto plazo (ver `docs/spikes/pmtiles-vs-d3.md`). D3 renderiza los polígonos directamente sobre la esfera sin tiles intermedios, eliminando los artefactos por completo.
+
+**Nota sobre la proyección**: `geoOrthographic()` no es una proyección de áreas iguales, pero la distorsión es mínima en el centro de la vista y equivalente a mirar un globo terráqueo físico desde cualquier ángulo. El usuario puede rotar para centrar cualquier país.
 
 ---
 
@@ -201,7 +201,7 @@ La app usa **MapLibre GL JS v5** con **globe projection** para renderizar el glo
 ### Datos geométricos (mapas)
 - **Fuente**: Natural Earth Data vía `world-atlas` (NPM)
 - **Resolución**: 1:50m (incluye Baleares, Canarias, Caribe, Oceanía; equilibrio detalle/rendimiento)
-  - ⚠️ Tuvalu (11 000 hab.) no está incluido en 50m; 10m causa fallo de WebGL
+  - ⚠️ Tuvalu (11 000 hab.) no está incluido en 50m
 - **Formato**: TopoJSON
 - **Almacenamiento**: Empaquetado en el bundle de la app
 

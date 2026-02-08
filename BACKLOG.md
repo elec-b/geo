@@ -17,25 +17,30 @@
   - ⚠️ Falta Tuvalu (11,000 hab.) — no incluido en 50m (limitación del dataset, no del motor)
 - [x] Capacitor iOS configurado y probado en Simulator (iPhone 16e, iOS 26.1)
 
+### Spike: motor de renderizado del globo
+- [x] Spike PMTiles vs D3.js ortográfico (ver `docs/spikes/pmtiles-vs-d3.md`)
+  - PMTiles (tippecanoe) → **FALLA**: los seams son inherentes a la reproyección Mercator→esfera de MapLibre, no a `geojson-vt`
+  - D3.js ortográfico + Canvas 2D → **PASA**: sin artefactos, sin tiles, rendimiento fluido
+  - **Decisión**: migrar a D3.js `geoOrthographic()` sobre Canvas 2D como motor del globo
+
 ---
 
 ## En progreso
 
-### Globo base
-- [ ] Quitar artefactos visuales (bandas/seams en tile boundaries) de la capa fill en globe projection
-  - **Causa raíz (posible, pero no ultra-confirmada)**: `geojson-vt` corta polígonos en tile boundaries y al reproyectarlos en la esfera aparecen bandas visibles. Es un issue abierto en MapLibre (#5084, #4367) sin fix.
-  - **Ya probado sin éxito**: fill-antialias:false, buffer:512, fill-opacity:1, topojson.mesh(), quitar setSky(), fill-extrusion con height:0, maxzoom:2
-  - **maxzoom:0 elimina las bandas** pero distorsiona los polos (Antártida rota)
-  - **Pista**: explorar https://maplibre.org — hay buenos mapas que no tienen este problema. Posiblemente usan vector tiles nativos o un approach diferente al GeoJSON source
-  - **Refactor ya hecho**: bordes separados con `topojson.mesh()` en `countries.ts` y `Globe.tsx` (vale la pena conservar independientemente)
-- [ ] Permitir rotación vertical completa (actualmente se bloquea al llegar a los polos) — (probablemente) añadir `maxPitch={85}` al componente Map
+### Migración a D3.js
+- [ ] Adoptar `GlobeD3.tsx` como componente principal del globo (reemplazar MapLibre)
+- [ ] Implementar zoom (pinch/wheel → `projection.scale()`)
+- [ ] Añadir inercia al drag (momentum al soltar)
+- [ ] Probar en iOS Simulator vía Capacitor
+- [ ] Limpiar código de MapLibre y PMTiles (tras validar en móvil)
 
 ---
 
 ## Próximos pasos
 
-### Globo base
-- [ ] Eliminar luz en la parte superior izquierda del globo (representa la luz del sol tocando el planeta, pero no nos interesa para nuestra app)
+### Globo base (post-migración D3)
+- [ ] Ajustar tema visual del globo D3 (atmósfera, colores finales)
+- [ ] Optimizar hit testing si hay lag en dispositivos lentos
 
 ### Datos de países
 - [ ] Integrar REST Countries v3.1 (nombres, banderas, capitales)

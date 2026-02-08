@@ -10,9 +10,9 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 ## 2. Stack tecnológico
 
 ### Núcleo
-- **Framework**: React 18 + Vite
+- **Framework**: React 19 + Vite
 - **Empaquetado móvil**: Capacitor (iOS primero, Android después)
-- **Motor 3D**: MapLibre GL JS v5 (globe projection, tile-based rendering)
+- **Motor del globo**: D3.js (`d3-geo`) con proyección ortográfica sobre Canvas 2D
 
 ### Estado y datos
 - **Gestión de estado**: Zustand
@@ -28,12 +28,15 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 - **Capitales**: JSON local con coordenadas
 - Ver `OVERVIEW.md` § «Fuentes de datos» para especificación completa
 
-### Por qué Capacitor + MapLibre GL JS v5
-1. MapLibre v5 tiene globe projection nativa con tile-based rendering y frustum culling
-2. `geojson-vt` integrado: convierte GeoJSON a vector tiles al vuelo, sin tile server
-3. Capacitor empaqueta web como app nativa sin reescribir código
-4. 100% offline con datos locales, sin token, licencia BSD-3
-5. React wrapper maduro: `react-map-gl/maplibre`
+### Por qué D3.js + Capacitor
+1. D3 `geoOrthographic()` renderiza el globo sin tiles — elimina artefactos de tile boundaries
+2. Canvas 2D: sin WebGL, sin riesgos de WKWebView, excelente rendimiento
+3. Proyección ortográfica: fiel a la superficie real de los países (vista desde el espacio)
+4. Capacitor empaqueta web como app nativa sin reescribir código
+5. 100% offline con datos locales, sin token ni servicios externos
+6. Bundle ligero: `d3-geo` ≈ 30 KB gzip
+
+**Nota histórica**: Se evaluó MapLibre GL JS v5 (globe projection) pero se descartó por artefactos visuales irresolubles en tile boundaries. Ver `docs/spikes/pmtiles-vs-d3.md`.
 
 ### Plataformas objetivo
 - **iOS y Android**: Prioridad principal (App Store y Google Play)
