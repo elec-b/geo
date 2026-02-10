@@ -23,24 +23,34 @@
   - D3.js ortográfico + Canvas 2D → **PASA**: sin artefactos, sin tiles, rendimiento fluido
   - **Decisión**: migrar a D3.js `geoOrthographic()` sobre Canvas 2D como motor del globo
 
+### Migración a D3.js
+- [x] Adoptar `GlobeD3.tsx` como componente principal del globo (reemplazar MapLibre)
+- [x] Giro de la Tierra de Oeste a Este
+- [x] Implementar zoom (pinch/wheel → `projection.scale()`)
+  - Zoom máximo ×200 para poder ver microestados (Vaticano, Mónaco, San Marino)
+  - Bordes y sensibilidad del drag se ajustan proporcionalmente al nivel de zoom
+- [x] Añadir inercia al drag (momentum al soltar)
+  - Solo se activa si el usuario suelta "en movimiento" (pausa >80 ms la cancela)
+  - Auto-rotación se detiene permanentemente tras la primera interacción del usuario
+- [x] Limpiar código de MapLibre y PMTiles
+  - Eliminados `Globe.tsx`, `GlobePMTiles.tsx`, `pmtiles-protocol.ts`, `world.pmtiles`
+  - Eliminadas dependencias `maplibre-gl`, `react-map-gl`, `pmtiles` (~1.2 MB menos)
+  - Rehabilitado `StrictMode` en `main.tsx` (ya no hay WebGL)
+- [x] Probar en iOS Simulator vía Capacitor
+
 ---
 
 ## En progreso
 
-### Migración a D3.js
-- [ ] Adoptar `GlobeD3.tsx` como componente principal del globo (reemplazar MapLibre)
-- [ ] Implementar zoom (pinch/wheel → `projection.scale()`), asegurar que se ven bien los países / fronteras cuando se hace zoom-in
-- [ ] Añadir inercia al drag (momentum al soltar)
-- [ ] Giro de la tierra de Oeste a Este
-- [ ] Probar en iOS Simulator vía Capacitor
-- [ ] Limpiar código de MapLibre y PMTiles (tras validar en móvil)
-
+*(Sin tareas en progreso)*
 
 ---
 
 ## Próximos pasos
 
 ### Globo base (post-migración D3)
+- [ ] Probar en dispositivo real si el zoom actual es suficiente para seleccionar microestados (Vaticano, Mónaco) o si hay problema de fat finger
+- [ ] Añadir marcadores sobre el globo para facilitar la selección de microestados (Andorra, Mónaco, Vaticano…). El usuario podrá activar/desactivar los marcadores en la configuración
 - [ ] Ajustar tema visual del globo D3 (atmósfera, colores finales)
 - [ ] Optimizar hit testing si hay lag en dispositivos lentos
 

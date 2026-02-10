@@ -1,7 +1,7 @@
-// Spike Opción C: Globo con D3.js proyección ortográfica sobre Canvas 2D.
+// Globo con D3.js proyección ortográfica sobre Canvas 2D.
 // Sin tiles, sin WebGL — renderiza GeoJSON directamente sobre una esfera 2D.
 // Elimina por completo los artefactos de tile boundaries.
-import { useRef, useEffect, useCallback, useState } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import { geoOrthographic, geoPath, geoContains } from 'd3-geo';
 import type { GeoProjection, GeoPath } from 'd3-geo';
 import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geojson';
@@ -16,8 +16,18 @@ const COUNTRY_HOVER_COLOR = '#2a2a3a';
 const BORDER_COLOR = 'rgba(255, 255, 255, 0.2)';
 const ATMOSPHERE_COLOR = 'rgba(100, 150, 255, 0.08)';
 
-// Velocidad de rotación automática (°/s, misma que Globe.tsx)
+// Velocidad de rotación automática (°/s)
 const ROTATION_SPEED = 6;
+
+// Zoom
+const MIN_SCALE = 0.8;
+const MAX_SCALE = 200.0;
+const ZOOM_WHEEL_FACTOR = 0.001;
+
+// Inercia
+const INERTIA_FRICTION = 0.85;
+const INERTIA_MIN_VELOCITY = 0.5; // °/s
+const VELOCITY_SAMPLES = 5;
 
 interface GlobeD3Props {
   onCountryClick?: (country: CountryFeature) => void;
@@ -33,7 +43,6 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
   const bordersRef = useRef<Feature<MultiLineString> | null>(null);
 
   // Estado de interacción
-  const [selectedName, setSelectedName] = useState<string | null>(null);
   const selectedRef = useRef<string | null>(null);
   const hoveredRef = useRef<string | null>(null);
 
@@ -44,6 +53,15 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
   const dragStartRef = useRef<{ x: number; y: number; rotation: [number, number] } | null>(null);
   const animFrameRef = useRef<number | null>(null);
   const lastTimeRef = useRef(performance.now());
+
+  // Zoom
+  const scaleRef = useRef(1.0);
+  const pinchRef = useRef<{ startDist: number; startScale: number } | null>(null);
+
+  // Inercia
+  const velocityRef = useRef<[number, number]>([0, 0]); // [vx, vy] en °/s
+  const isInertiaRef = useRef(false);
+  const dragSamplesRef = useRef<Array<{ x: number; y: number; time: number }>>([]);
 
   // Proyección y path (se recrean en cada redibujado)
   const projectionRef = useRef<GeoProjection | null>(null);
@@ -69,9 +87,10 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
     const cx = width / 2;
     const cy = height / 2;
 
-    // Configurar proyección
+    // Configurar proyección (radio escalado por zoom)
+    const scaledRadius = radius * scaleRef.current;
     const projection = geoOrthographic()
-      .scale(radius)
+      .scale(scaledRadius)
       .translate([cx, cy])
       .clipAngle(90)
       .rotate(rotationRef.current);
@@ -84,7 +103,7 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
     ctx.clearRect(0, 0, width, height);
 
     // Atmósfera (halo exterior)
-    const gradient = ctx.createRadialGradient(cx, cy, radius * 0.95, cx, cy, radius * 1.15);
+    const gradient = ctx.createRadialGradient(cx, cy, scaledRadius * 0.95, cx, cy, scaledRadius * 1.15);
     gradient.addColorStop(0, ATMOSPHERE_COLOR);
     gradient.addColorStop(1, 'transparent');
     ctx.fillStyle = gradient;
@@ -118,22 +137,37 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
       ctx.beginPath();
       path(borders);
       ctx.strokeStyle = BORDER_COLOR;
-      ctx.lineWidth = 0.5;
+      ctx.lineWidth = Math.max(0.3, 0.5 / Math.sqrt(scaleRef.current));
       ctx.stroke();
     }
   }, []);
 
   /**
-   * Loop de animación: rotación automática + redibujado.
+   * Loop de animación: rotación automática + inercia + redibujado.
    */
   const animate = useCallback(() => {
     const now = performance.now();
     const delta = (now - lastTimeRef.current) / 1000;
     lastTimeRef.current = now;
 
-    if (isAutoRotatingRef.current && !isDraggingRef.current) {
+    if (isInertiaRef.current) {
+      // Aplicar velocidad de inercia
+      const [vx, vy] = velocityRef.current;
       const [lambda, phi] = rotationRef.current;
-      rotationRef.current = [lambda - ROTATION_SPEED * delta, phi];
+      rotationRef.current = [
+        lambda + vx * delta,
+        Math.max(-80, Math.min(80, phi + vy * delta)),
+      ];
+      // Aplicar fricción
+      velocityRef.current = [vx * INERTIA_FRICTION, vy * INERTIA_FRICTION];
+      // Detener cuando la velocidad es muy baja
+      if (Math.hypot(velocityRef.current[0], velocityRef.current[1]) < INERTIA_MIN_VELOCITY) {
+        isInertiaRef.current = false;
+        velocityRef.current = [0, 0];
+      }
+    } else if (isAutoRotatingRef.current && !isDraggingRef.current) {
+      const [lambda, phi] = rotationRef.current;
+      rotationRef.current = [lambda + ROTATION_SPEED * delta, phi];
     }
 
     draw();
@@ -216,6 +250,65 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
     return () => observer.disconnect();
   }, [resize]);
 
+  // --- Zoom: wheel + pinch (listeners nativos en el canvas) ---
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    // Distancia entre dos puntos táctiles
+    const touchDist = (t1: Touch, t2: Touch) =>
+      Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      isAutoRotatingRef.current = false;
+      const factor = 1 - e.deltaY * ZOOM_WHEEL_FACTOR;
+      scaleRef.current = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scaleRef.current * factor));
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        isAutoRotatingRef.current = false;
+        const dist = touchDist(e.touches[0], e.touches[1]);
+        pinchRef.current = { startDist: dist, startScale: scaleRef.current };
+        // Cancelar drag si estaba activo
+        isDraggingRef.current = false;
+        dragStartRef.current = null;
+      }
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length === 2 && pinchRef.current) {
+        e.preventDefault();
+        const dist = touchDist(e.touches[0], e.touches[1]);
+        const ratio = dist / pinchRef.current.startDist;
+        scaleRef.current = Math.max(
+          MIN_SCALE,
+          Math.min(MAX_SCALE, pinchRef.current.startScale * ratio),
+        );
+      }
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (e.touches.length < 2) {
+        pinchRef.current = null;
+      }
+    };
+
+    canvas.addEventListener('wheel', handleWheel, { passive: false });
+    canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+    canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+    canvas.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      canvas.removeEventListener('wheel', handleWheel);
+      canvas.removeEventListener('touchstart', handleTouchStart);
+      canvas.removeEventListener('touchmove', handleTouchMove);
+      canvas.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, []);
+
   // --- Eventos de interacción ---
 
   // Coordenadas del pointer relativas al canvas
@@ -227,8 +320,16 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
   }, []);
 
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
+    // Si hay pinch activo, ignorar (el pinch tiene prioridad)
+    if (pinchRef.current) return;
+
+    // Cancelar inercia
+    isInertiaRef.current = false;
+    velocityRef.current = [0, 0];
+
     isDraggingRef.current = true;
     isAutoRotatingRef.current = false;
+    dragSamplesRef.current = [];
     const [x, y] = getCanvasPos(e);
     dragStartRef.current = {
       x,
@@ -241,13 +342,18 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
   const handlePointerMove = useCallback((e: React.PointerEvent) => {
     const [x, y] = getCanvasPos(e);
 
-    if (isDraggingRef.current && dragStartRef.current) {
+    if (isDraggingRef.current && dragStartRef.current && !pinchRef.current) {
       const dx = x - dragStartRef.current.x;
       const dy = y - dragStartRef.current.y;
+      const sensitivity = DRAG_SENSITIVITY / scaleRef.current;
       rotationRef.current = [
-        dragStartRef.current.rotation[0] + dx * DRAG_SENSITIVITY,
-        Math.max(-80, Math.min(80, dragStartRef.current.rotation[1] - dy * DRAG_SENSITIVITY)),
+        dragStartRef.current.rotation[0] + dx * sensitivity,
+        Math.max(-80, Math.min(80, dragStartRef.current.rotation[1] - dy * sensitivity)),
       ];
+      // Acumular muestras para cálculo de velocidad (inercia)
+      const samples = dragSamplesRef.current;
+      samples.push({ x, y, time: performance.now() });
+      if (samples.length > VELOCITY_SAMPLES) samples.shift();
     } else {
       // Hover: detectar país
       const feature = hitTest(x, y);
@@ -279,7 +385,6 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
         console.log('País seleccionado (D3):', name);
 
         selectedRef.current = name;
-        setSelectedName(name);
 
         if (onCountryClick) {
           onCountryClick(feature as CountryFeature);
@@ -287,11 +392,30 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
       } else {
         // Click en océano — deseleccionar
         selectedRef.current = null;
-        setSelectedName(null);
+      }
+    } else {
+      // Fue un drag real — calcular velocidad para inercia
+      const samples = dragSamplesRef.current;
+      const now = performance.now();
+      const last = samples[samples.length - 1];
+      // Solo aplicar inercia si el usuario estaba moviendo justo antes de soltar
+      if (samples.length >= 2 && last && (now - last.time) < 80) {
+        const first = samples[0];
+        const dt = (last.time - first.time) / 1000; // segundos
+        if (dt > 0.01) {
+          const sensitivity = DRAG_SENSITIVITY / scaleRef.current;
+          const vx = ((last.x - first.x) * sensitivity) / dt;
+          const vy = (-(last.y - first.y) * sensitivity) / dt;
+          if (Math.hypot(vx, vy) > INERTIA_MIN_VELOCITY) {
+            velocityRef.current = [vx, vy];
+            isInertiaRef.current = true;
+          }
+        }
       }
     }
 
     dragStartRef.current = null;
+    dragSamplesRef.current = [];
   }, [getCanvasPos, hitTest, onCountryClick]);
 
   return (

@@ -1,1 +1,1 @@
-lee todos los .md que hay en la raíz del repo, excepto README.md
+Usa la herramienta Glob con el patrón "*.md" en la raíz del repo para encontrar los archivos .md. Luego lee todos con Read, excepto README.md.
