@@ -38,6 +38,12 @@
   - Rehabilitado `StrictMode` en `main.tsx` (ya no hay WebGL)
 - [x] Probar en iOS Simulator vía Capacitor
 
+### Prueba en dispositivo real (iPhone)
+- [x] Probar interacción táctil del globo en dispositivo real
+  - Drag, pinch zoom y selección de países funcionan correctamente en general
+  - Se pueden seleccionar la mayoría de microestados (Andorra, Mónaco, San Marino) con zoom alto
+  - ⚠️ Vaticano no se puede seleccionar (demasiado pequeño incluso con zoom máximo) → se necesitan marcadores
+
 ---
 
 ## En progreso
@@ -49,7 +55,9 @@
 ## Próximos pasos
 
 ### Globo base (post-migración D3)
-- [ ] Probar en dispositivo real si el zoom actual es suficiente para seleccionar microestados (Vaticano, Mónaco) o si hay problema de fat finger
+- [ ] Corregir selección accidental de países durante pinch zoom (al hacer zoom con dos dedos, algunos países se marcan en gris como si estuvieran seleccionados)
+- [ ] Permitir mover el globo mientras se hace pinch zoom (actualmente el pinch solo hace zoom, sin rotar simultáneamente)
+- [ ] Eliminar la franja de luz vertical del fondo (la línea que atraviesa la pantalla detrás del globo de arriba a abajo)
 - [ ] Añadir marcadores sobre el globo para facilitar la selección de microestados (Andorra, Mónaco, Vaticano…). El usuario podrá activar/desactivar los marcadores en la configuración
 - [ ] Ajustar tema visual del globo D3 (atmósfera, colores finales)
 - [ ] Optimizar hit testing si hay lag en dispositivos lentos
@@ -90,3 +98,6 @@
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
 - [ ] Traducción a idiomas disponibles en iOS y Android
+
+### Tema visual
+- [ ] Diseñar e implementar tema claro (light mode) como alternativa al dark mode (baja prioridad, casi al final del desarrollo)

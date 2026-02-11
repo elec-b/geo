@@ -1,7 +1,7 @@
 # GeoExpert
 
 ## Filosofía de diseño
-- **Estética**: «Premium dark mode». Diseño limpio, oscuro y minimalista. Azules profundos, negros, acentos neón (cian/púrpura/ámbar).
+- **Estética**: «Premium dark mode» (con tema claro como opción futura). Diseño limpio, oscuro y minimalista. Azules profundos, negros, acentos neón (cian/púrpura/ámbar).
 - **Interacción**: Animaciones fluidas. Sin recargas de página bruscas. El globo siempre es el protagonista.
 - **Feedback**: Corrección visual inmediata (destellos verde/rojo), háptica en móvil. Sin efectos de sonido (por ahora).
 
@@ -163,13 +163,30 @@ La app soporta **múltiples perfiles** en un mismo dispositivo.
 
 ## Configuración
 
-Configuración **ultra-sencilla**. Solo lo esencial:
+Configuración **ultra-sencilla**. Solo lo esencial, organizada en dos niveles:
+
+### a) Configuración global (pantalla de inicio)
 
 | Ajuste | Opciones | Por defecto |
 |--------|----------|-------------|
 | Perfil activo | Selector de perfiles | Último usado |
+| Marcadores de microestados | On/Off | On |
 | Vibración | On/Off | On |
 | Idioma de la app | Todos los soportados por iOS/Android | Idioma del teléfono (fallback: inglés) |
+| Tema claro/oscuro | Claro / Oscuro | Oscuro |
+
+### b) Configuración del globo (durante la interacción)
+
+Subconjunto de la configuración global, accesible mientras se interactúa con el globo:
+
+| Ajuste | Opciones | Por defecto |
+|--------|----------|-------------|
+| Marcadores de microestados | On/Off | On |
+| Tema claro/oscuro | Claro / Oscuro | Oscuro |
+
+**Nota sobre tema claro/oscuro**: Tarea de baja prioridad, a implementar cuando la app esté prácticamente terminada. La identidad visual principal sigue siendo el dark mode.
+
+**Nota sobre etiquetas de países/capitales**: Son controles exclusivos de la experiencia Explorar (ver § Explorar), no forman parte de la configuración general.
 
 **Filosofía**: Sin menús complicados. La app debe funcionar bien "out of the box".
 
