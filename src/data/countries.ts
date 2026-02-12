@@ -2,11 +2,13 @@
 import * as topojson from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geojson';
+import { ISO_NUMERIC_TO_ALPHA2 } from './isoMapping';
 
 // Interfaz para las propiedades de cada país en el GeoJSON
 export interface CountryProperties {
   name: string;
-  // Podemos añadir más propiedades después (código ISO, continente, etc.)
+  cca2: string | null;    // null para geometrías no reconocidas (Kosovo, Somaliland…)
+  isUNMember: boolean;
 }
 
 // Tipo para un Feature de país
@@ -48,6 +50,13 @@ export async function loadCountriesGeoJson(): Promise<FeatureCollection<Geometry
     topology,
     topology.objects.countries
   ) as FeatureCollection<Geometry, CountryProperties>;
+
+  // Enriquecer cada feature con cca2 e isUNMember
+  for (const feature of geojson.features) {
+    const numericId = (feature as any).id as string | undefined;
+    const cca2 = numericId ? (ISO_NUMERIC_TO_ALPHA2[numericId] ?? null) : null;
+    feature.properties = { ...feature.properties, cca2, isUNMember: cca2 !== null };
+  }
 
   cachedGeoJson = geojson;
   return geojson;

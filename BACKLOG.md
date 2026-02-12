@@ -59,6 +59,19 @@
 - [x] Mejorar visibilidad de fronteras al hacer zoom
   - `lineWidth` mínimo subido de 0.3 a 0.5px, opacidad de 0.2 a 0.3
 
+### Datos y estado
+- [x] Tabla de mapeo ISO numeric → alpha-2 (`src/data/isoMapping.ts`, 195 entradas)
+- [x] Enriquecer GeoJSON con `cca2` e `isUNMember`; migrar selección/hover/marcadores de `name` a `cca2`
+- [x] Integrar REST Countries v3.1 → `public/data/countries.json` (195 países) y `public/data/capitals.json` (195 capitales con coordenadas)
+  - Script de generación: `npm run fetch-data` (`scripts/fetch-countries.ts`)
+  - Mapeo `region` → 5 continentes en español
+- [x] Tipos centrales y loader con caché (`src/data/types.ts`, `src/data/countryData.ts`)
+- [x] Zustand store para estado global multi-perfil (`src/stores/appStore.ts`)
+  - Acciones: `createProfile`, `setActiveProfile`, `deleteProfile`, `updateSettings`
+  - `showMarkers` del store conectado al globo en tiempo real
+- [x] Definición de niveles por continente (`src/data/levels.ts`)
+  - Turista: top 10 por población (top 5 en Oceanía), Mochilero: 60%, Guía: 100%
+
 ---
 
 ## En progreso
@@ -70,14 +83,6 @@
 ## Próximos pasos
 
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
-
-### Datos y estado
-- [ ] Mapear IDs de Natural Earth a códigos ISO cca2 (cuello de botella: sin esto, hit testing y selección se rompen al integrar REST Countries)
-- [ ] Integrar REST Countries v3.1 (nombres, banderas, capitales, población, superficie, moneda, gentilicio, continente)
-  - Incluye mapeo de `region` de REST Countries a los 5 continentes de la app (América = North + South America)
-- [ ] Crear `capitals.json` con coordenadas de 195 capitales
-- [ ] Configurar Zustand para estado global (diseñar modelo de datos con soporte multi-perfil desde el inicio)
-- [ ] Definir estructura de datos de niveles (Turista/Mochilero/Guía × 5 continentes: qué países incluye cada nivel)
 
 ### Navegación
 - [ ] Diseñar e implementar navegación principal entre las 3 experiencias (Jugar, Explorar, Mi Pasaporte)

@@ -1,1 +1,1 @@
-Usa la herramienta Glob con el patrón "*.md" en la raíz del repo para encontrar los archivos .md. Luego lee todos con Read, excepto README.md.
+lee DESIGN.md y BACKLOG.md (entiendo que has leído completamente CLAUDE.md, pero si no, hazlo)

@@ -245,9 +245,8 @@ La app usa **D3.js (`d3-geo`)** con **proyección ortográfica** sobre **Canvas 
 - **Offline**: La app siempre funciona con datos locales empaquetados
 
 ### Coordenadas de capitales
-- **Problema**: REST Countries no incluye lat/lng de capitales
-- **Solución**: JSON local con coordenadas de 195 capitales
-- **Fuente inicial**: Compilación manual + geodatos.net
+- **Fuente**: REST Countries v3.1 (`capitalInfo.latlng`)
+- **Formato**: JSON local generado por `npm run fetch-data`
 - **Tamaño**: ~8 KB
 
 ### Estructura de archivos de datos

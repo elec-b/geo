@@ -35,40 +35,13 @@ const MARKER_HIT_RADIUS_MIN = 20;  // zona táctil a zoom bajo
 const MARKER_HIT_RADIUS_MAX = 30;  // zona táctil a zoom alto
 const MARKER_HIT_ZOOM_MAX = 20;    // zoom a partir del cual el radio táctil es máximo
 
-// Nombres exactos de Natural Earth 50m para países difíciles de seleccionar
-const MICROSTATES: string[] = [
-  'Vatican',
-  'Monaco',
-  'San Marino',
-  'Liechtenstein',
-  'Andorra',
-  'Malta',
-  'Singapore',
-  'Bahrain',
-  'Luxembourg',
-  'Comoros',
-  'Mauritius',
-  'São Tomé and Principe',
-  'Cabo Verde',
-  'Seychelles',
-  'Maldives',
-  'Brunei',
-  'Trinidad and Tobago',
-  'Antigua and Barb.',
-  'Barbados',
-  'Saint Lucia',
-  'Grenada',
-  'St. Vin. and Gren.',
-  'Dominica',
-  'St. Kitts and Nevis',
-  'Palau',
-  'Marshall Is.',
-  'Micronesia',
-  'Nauru',
-  'Kiribati',
-  'Tonga',
-  'Samoa',
-];
+// Códigos cca2 de microestados (países difíciles de seleccionar por su tamaño)
+const MICROSTATE_CODES = new Set([
+  'VA', 'MC', 'SM', 'LI', 'AD', 'MT', 'SG', 'BH', 'LU', 'KM',
+  'MU', 'ST', 'CV', 'SC', 'MV', 'BN', 'TT', 'AG', 'BB', 'LC',
+  'GD', 'VC', 'DM', 'KN', 'PW', 'MH', 'FM', 'NR', 'KI', 'TO',
+  'WS',
+]);
 
 // Inercia
 const INERTIA_FRICTION = 0.85;
@@ -177,12 +150,12 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
 
     // Países (relleno)
     for (const feature of countries.features) {
-      const name = feature.properties?.name;
+      const cca2 = feature.properties?.cca2;
       let fillColor = COUNTRY_FILL_COLOR;
 
-      if (name === selectedRef.current) {
+      if (cca2 && cca2 === selectedRef.current) {
         fillColor = COUNTRY_SELECTED_COLOR;
-      } else if (name === hoveredRef.current) {
+      } else if (cca2 && cca2 === hoveredRef.current) {
         fillColor = COUNTRY_HOVER_COLOR;
       }
 
@@ -275,11 +248,11 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
       // Radio táctil dinámico: crece con el zoom
       const zoomT = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_HIT_ZOOM_MAX - MARKER_ZOOM_START));
       const hitRadius = MARKER_HIT_RADIUS_MIN + zoomT * (MARKER_HIT_RADIUS_MAX - MARKER_HIT_RADIUS_MIN);
-      for (const [name, centroid] of microstateCentroidsRef.current) {
+      for (const [cca2, centroid] of microstateCentroidsRef.current) {
         const pos = projection(centroid);
         if (!pos) continue;
         if (Math.hypot(x - pos[0], y - pos[1]) < hitRadius) {
-          const feature = countries.features.find(f => f.properties?.name === name);
+          const feature = countries.features.find(f => f.properties?.cca2 === cca2);
           if (feature) return feature as Feature<Geometry, CountryProperties>;
         }
       }
@@ -331,13 +304,12 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
         countriesRef.current = countries;
         bordersRef.current = borders;
 
-        // Calcular centroides de microestados (una sola vez)
+        // Calcular centroides de microestados (una sola vez, indexados por cca2)
         const centroidsMap = new Map<string, [number, number]>();
-        const microstateSet = new Set(MICROSTATES);
         for (const feature of countries.features) {
-          const name = feature.properties?.name;
-          if (name && microstateSet.has(name)) {
-            centroidsMap.set(name, geoCentroid(feature) as [number, number]);
+          const cca2 = feature.properties?.cca2;
+          if (cca2 && MICROSTATE_CODES.has(cca2)) {
+            centroidsMap.set(cca2, geoCentroid(feature) as [number, number]);
           }
         }
         microstateCentroidsRef.current = centroidsMap;
@@ -498,11 +470,11 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
     } else if (!gestureWasPinchRef.current) {
       // Hover: detectar país (suprimido durante/después de pinch)
       const feature = hitTest(x, y);
-      const name = feature?.properties?.name ?? null;
-      if (name !== hoveredRef.current) {
-        hoveredRef.current = name;
+      const cca2 = feature?.properties?.cca2 ?? null;
+      if (cca2 !== hoveredRef.current) {
+        hoveredRef.current = cca2;
         const canvas = canvasRef.current;
-        if (canvas) canvas.style.cursor = name ? 'pointer' : 'grab';
+        if (canvas) canvas.style.cursor = cca2 ? 'pointer' : 'grab';
       }
     }
   }, [getCanvasPos, hitTest]);
@@ -525,10 +497,10 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
       const feature = hitTest(x, y);
 
       if (feature) {
-        const name = feature.properties?.name ?? null;
-        console.log('País seleccionado (D3):', name);
+        const cca2 = feature.properties?.cca2 ?? null;
+        console.log('País seleccionado (D3):', cca2, feature.properties?.name);
 
-        selectedRef.current = name;
+        selectedRef.current = cca2;
 
         if (onCountryClick) {
           onCountryClick(feature as CountryFeature);
