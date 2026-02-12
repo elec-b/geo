@@ -2,7 +2,7 @@
 // Sin tiles, sin WebGL — renderiza GeoJSON directamente sobre una esfera 2D.
 // Elimina por completo los artefactos de tile boundaries.
 import { useRef, useEffect, useCallback } from 'react';
-import { geoOrthographic, geoPath, geoContains } from 'd3-geo';
+import { geoOrthographic, geoPath, geoContains, geoCentroid, geoDistance } from 'd3-geo';
 import type { GeoProjection, GeoPath } from 'd3-geo';
 import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geojson';
 import { loadCountriesGeoJson, loadBordersGeoJson } from '../../data/countries';
@@ -13,7 +13,7 @@ const OCEAN_COLOR = '#0a0a1a';
 const COUNTRY_FILL_COLOR = '#3a3a4a';
 const COUNTRY_SELECTED_COLOR = '#8a7d5a';
 const COUNTRY_HOVER_COLOR = '#2a2a3a';
-const BORDER_COLOR = 'rgba(255, 255, 255, 0.2)';
+const BORDER_COLOR = 'rgba(255, 255, 255, 0.3)';
 const ATMOSPHERE_COLOR = 'rgba(100, 150, 255, 0.08)';
 
 // Velocidad de rotación automática (°/s)
@@ -24,6 +24,52 @@ const MIN_SCALE = 0.8;
 const MAX_SCALE = 200.0;
 const ZOOM_WHEEL_FACTOR = 0.001;
 
+// Marcadores de microestados
+const MARKER_RADIUS = 8;        // px en pantalla (radio visual del anillo)
+const MARKER_LINE_WIDTH = 1.0;
+const MARKER_MAX_OPACITY = 0.5;
+const MARKER_DASH = [3, 3];
+const MARKER_ZOOM_START = 3;    // zoom a partir del cual empiezan a aparecer
+const MARKER_ZOOM_FULL = 5;     // zoom a partir del cual tienen opacidad completa
+const MARKER_HIT_RADIUS_MIN = 20;  // zona táctil a zoom bajo
+const MARKER_HIT_RADIUS_MAX = 30;  // zona táctil a zoom alto
+const MARKER_HIT_ZOOM_MAX = 20;    // zoom a partir del cual el radio táctil es máximo
+
+// Nombres exactos de Natural Earth 50m para países difíciles de seleccionar
+const MICROSTATES: string[] = [
+  'Vatican',
+  'Monaco',
+  'San Marino',
+  'Liechtenstein',
+  'Andorra',
+  'Malta',
+  'Singapore',
+  'Bahrain',
+  'Luxembourg',
+  'Comoros',
+  'Mauritius',
+  'São Tomé and Principe',
+  'Cabo Verde',
+  'Seychelles',
+  'Maldives',
+  'Brunei',
+  'Trinidad and Tobago',
+  'Antigua and Barb.',
+  'Barbados',
+  'Saint Lucia',
+  'Grenada',
+  'St. Vin. and Gren.',
+  'Dominica',
+  'St. Kitts and Nevis',
+  'Palau',
+  'Marshall Is.',
+  'Micronesia',
+  'Nauru',
+  'Kiribati',
+  'Tonga',
+  'Samoa',
+];
+
 // Inercia
 const INERTIA_FRICTION = 0.85;
 const INERTIA_MIN_VELOCITY = 0.5; // °/s
@@ -32,9 +78,10 @@ const VELOCITY_SAMPLES = 5;
 interface GlobeD3Props {
   onCountryClick?: (country: CountryFeature) => void;
   onReady?: () => void;
+  showMarkers?: boolean;
 }
 
-export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
+export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -56,12 +103,25 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
 
   // Zoom
   const scaleRef = useRef(1.0);
-  const pinchRef = useRef<{ startDist: number; startScale: number } | null>(null);
+  const pinchRef = useRef<{
+    startDist: number;
+    startScale: number;
+    prevMidX: number;
+    prevMidY: number;
+  } | null>(null);
+
+  // Flag para suprimir selección/hover accidental durante y después de un pinch
+  const gestureWasPinchRef = useRef(false);
 
   // Inercia
   const velocityRef = useRef<[number, number]>([0, 0]); // [vx, vy] en °/s
   const isInertiaRef = useRef(false);
   const dragSamplesRef = useRef<Array<{ x: number; y: number; time: number }>>([]);
+
+  // Marcadores de microestados
+  const microstateCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
+  const showMarkersRef = useRef(showMarkers);
+  showMarkersRef.current = showMarkers;
 
   // Proyección y path (se recrean en cada redibujado)
   const projectionRef = useRef<GeoProjection | null>(null);
@@ -137,8 +197,31 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
       ctx.beginPath();
       path(borders);
       ctx.strokeStyle = BORDER_COLOR;
-      ctx.lineWidth = Math.max(0.3, 0.5 / Math.sqrt(scaleRef.current));
+      ctx.lineWidth = Math.max(0.5, 1.0 / Math.sqrt(scaleRef.current));
       ctx.stroke();
+    }
+
+    // Marcadores de microestados (anillos con fade-in según zoom)
+    const zoom = scaleRef.current;
+    if (showMarkersRef.current && zoom >= MARKER_ZOOM_START && microstateCentroidsRef.current.size > 0) {
+      // Opacidad progresiva entre ZOOM_START y ZOOM_FULL
+      const t = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_ZOOM_FULL - MARKER_ZOOM_START));
+      const opacity = t * MARKER_MAX_OPACITY;
+      const rotation = rotationRef.current;
+      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+      ctx.lineWidth = MARKER_LINE_WIDTH;
+      ctx.setLineDash(MARKER_DASH);
+      for (const [, centroid] of microstateCentroidsRef.current) {
+        // Solo dibujar si está en el hemisferio visible
+        if (geoDistance(centroid, viewCenter) > Math.PI / 2) continue;
+        const pos = projection(centroid);
+        if (!pos) continue;
+        ctx.beginPath();
+        ctx.arc(pos[0], pos[1], MARKER_RADIUS, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
     }
   }, []);
 
@@ -182,16 +265,36 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
     const countries = countriesRef.current;
     if (!projection || !countries) return null;
 
-    // Convertir coordenadas de pantalla a coordenadas geográficas
+    const zoom = scaleRef.current;
+    const markersVisible = showMarkersRef.current && zoom >= MARKER_ZOOM_START
+      && microstateCentroidsRef.current.size > 0;
+
+    // 1. Si los marcadores son visibles, comprobar proximidad a marcadores PRIMERO
+    //    (prioridad invertida: el usuario ve el anillo y toca sobre él)
+    if (markersVisible) {
+      // Radio táctil dinámico: crece con el zoom
+      const zoomT = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_HIT_ZOOM_MAX - MARKER_ZOOM_START));
+      const hitRadius = MARKER_HIT_RADIUS_MIN + zoomT * (MARKER_HIT_RADIUS_MAX - MARKER_HIT_RADIUS_MIN);
+      for (const [name, centroid] of microstateCentroidsRef.current) {
+        const pos = projection(centroid);
+        if (!pos) continue;
+        if (Math.hypot(x - pos[0], y - pos[1]) < hitRadius) {
+          const feature = countries.features.find(f => f.properties?.name === name);
+          if (feature) return feature as Feature<Geometry, CountryProperties>;
+        }
+      }
+    }
+
+    // 2. Búsqueda normal por geometría
     const coords = projection.invert?.([x, y]);
     if (!coords) return null;
 
-    // Buscar el país que contiene esas coordenadas
     for (const feature of countries.features) {
       if (geoContains(feature, coords)) {
         return feature as Feature<Geometry, CountryProperties>;
       }
     }
+
     return null;
   }, []);
 
@@ -227,6 +330,17 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
         if (cancelled) return;
         countriesRef.current = countries;
         bordersRef.current = borders;
+
+        // Calcular centroides de microestados (una sola vez)
+        const centroidsMap = new Map<string, [number, number]>();
+        const microstateSet = new Set(MICROSTATES);
+        for (const feature of countries.features) {
+          const name = feature.properties?.name;
+          if (name && microstateSet.has(name)) {
+            centroidsMap.set(name, geoCentroid(feature) as [number, number]);
+          }
+        }
+        microstateCentroidsRef.current = centroidsMap;
 
         resize();
         lastTimeRef.current = performance.now();
@@ -270,8 +384,16 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
       if (e.touches.length === 2) {
         e.preventDefault();
         isAutoRotatingRef.current = false;
+        gestureWasPinchRef.current = true;
         const dist = touchDist(e.touches[0], e.touches[1]);
-        pinchRef.current = { startDist: dist, startScale: scaleRef.current };
+        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        pinchRef.current = {
+          startDist: dist,
+          startScale: scaleRef.current,
+          prevMidX: midX,
+          prevMidY: midY,
+        };
         // Cancelar drag si estaba activo
         isDraggingRef.current = false;
         dragStartRef.current = null;
@@ -281,18 +403,37 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
     const handleTouchMove = (e: TouchEvent) => {
       if (e.touches.length === 2 && pinchRef.current) {
         e.preventDefault();
+
+        // Zoom (ratio de distancia entre dedos)
         const dist = touchDist(e.touches[0], e.touches[1]);
         const ratio = dist / pinchRef.current.startDist;
         scaleRef.current = Math.max(
           MIN_SCALE,
           Math.min(MAX_SCALE, pinchRef.current.startScale * ratio),
         );
+
+        // Rotación simultánea (delta incremental del punto medio)
+        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        const dx = midX - pinchRef.current.prevMidX;
+        const dy = midY - pinchRef.current.prevMidY;
+        const sensitivity = DRAG_SENSITIVITY / scaleRef.current;
+        rotationRef.current = [
+          rotationRef.current[0] + dx * sensitivity,
+          Math.max(-80, Math.min(80, rotationRef.current[1] - dy * sensitivity)),
+        ];
+        pinchRef.current.prevMidX = midX;
+        pinchRef.current.prevMidY = midY;
       }
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
       if (e.touches.length < 2) {
         pinchRef.current = null;
+      }
+      // Resetear flag de pinch solo cuando todos los dedos se levantan
+      if (e.touches.length === 0) {
+        gestureWasPinchRef.current = false;
       }
     };
 
@@ -354,8 +495,8 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
       const samples = dragSamplesRef.current;
       samples.push({ x, y, time: performance.now() });
       if (samples.length > VELOCITY_SAMPLES) samples.shift();
-    } else {
-      // Hover: detectar país
+    } else if (!gestureWasPinchRef.current) {
+      // Hover: detectar país (suprimido durante/después de pinch)
       const feature = hitTest(x, y);
       const name = feature?.properties?.name ?? null;
       if (name !== hoveredRef.current) {
@@ -369,6 +510,9 @@ export function GlobeD3({ onCountryClick, onReady }: GlobeD3Props) {
   const handlePointerUp = useCallback((e: React.PointerEvent) => {
     const wasDragging = isDraggingRef.current;
     isDraggingRef.current = false;
+
+    // Suprimir tap/selección si el gesto incluyó un pinch
+    if (gestureWasPinchRef.current) return;
 
     if (!wasDragging || !dragStartRef.current) return;
 

@@ -44,6 +44,21 @@
   - Se pueden seleccionar la mayoría de microestados (Andorra, Mónaco, San Marino) con zoom alto
   - ⚠️ Vaticano no se puede seleccionar (demasiado pequeño incluso con zoom máximo) → se necesitan marcadores
 
+### Mejoras de interacción y visuales del globo
+- [x] Corregir selección accidental de países durante pinch zoom
+  - Flag `gestureWasPinchRef` suprime hover y selección mientras haya pinch activo
+- [x] Permitir mover el globo mientras se hace pinch zoom
+  - Rotación simultánea basada en el desplazamiento incremental del punto medio entre dedos
+- [x] Eliminar la franja de luz vertical del fondo
+  - Gradientes radiales `at top`/`at bottom` reemplazados por uno centrado
+- [x] Añadir marcadores de microestados sobre el globo (31 países)
+  - Anillos discontinuos (dashed) con fade-in gradual (zoom ×3→×5)
+  - Hit testing con prioridad invertida: marcadores antes que geometría cuando son visibles
+  - Radio táctil dinámico (20→30px según zoom)
+  - Prop `showMarkers` para activar/desactivar (default: `true`)
+- [x] Mejorar visibilidad de fronteras al hacer zoom
+  - `lineWidth` mínimo subido de 0.3 a 0.5px, opacidad de 0.2 a 0.3
+
 ---
 
 ## En progreso
@@ -53,14 +68,6 @@
 ---
 
 ## Próximos pasos
-
-### Globo base (post-migración D3)
-- [ ] Corregir selección accidental de países durante pinch zoom (al hacer zoom con dos dedos, algunos países se marcan en gris como si estuvieran seleccionados)
-- [ ] Permitir mover el globo mientras se hace pinch zoom (actualmente el pinch solo hace zoom, sin rotar simultáneamente)
-- [ ] Eliminar la franja de luz vertical del fondo (la línea que atraviesa la pantalla detrás del globo de arriba a abajo)
-- [ ] Añadir marcadores sobre el globo para facilitar la selección de microestados (Andorra, Mónaco, Vaticano…). El usuario podrá activar/desactivar los marcadores en la configuración
-- [ ] Ajustar tema visual del globo D3 (atmósfera, colores finales)
-- [ ] Optimizar hit testing si hay lag en dispositivos lentos
 
 ### Datos de países
 - [ ] Integrar REST Countries v3.1 (nombres, banderas, capitales)

@@ -26,11 +26,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Fondo con gradiente espacial */
+  /* Fondo con gradiente espacial (centrado para evitar franjas verticales) */
   background:
-    radial-gradient(ellipse at top, var(--color-bg-secondary) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom, var(--color-bg-tertiary) 0%, transparent 50%),
-    var(--color-bg-primary);
+    radial-gradient(ellipse at center, var(--color-bg-secondary) 0%, var(--color-bg-primary) 70%);
 }
 
 /* Estrellas de fondo (pseudo-elementos simulados con puntos) */
