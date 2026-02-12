@@ -69,42 +69,67 @@
 
 ## Próximos pasos
 
-### Datos de países
-- [ ] Integrar REST Countries v3.1 (nombres, banderas, capitales)
+> Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
+
+### Datos y estado
+- [ ] Mapear IDs de Natural Earth a códigos ISO cca2 (cuello de botella: sin esto, hit testing y selección se rompen al integrar REST Countries)
+- [ ] Integrar REST Countries v3.1 (nombres, banderas, capitales, población, superficie, moneda, gentilicio, continente)
+  - Incluye mapeo de `region` de REST Countries a los 5 continentes de la app (América = North + South America)
 - [ ] Crear `capitals.json` con coordenadas de 195 capitales
-- [ ] Mapear IDs de Natural Earth a códigos ISO (cca2)
+- [ ] Configurar Zustand para estado global (diseñar modelo de datos con soporte multi-perfil desde el inicio)
+- [ ] Definir estructura de datos de niveles (Turista/Mochilero/Guía × 5 continentes: qué países incluye cada nivel)
+
+### Navegación
+- [ ] Diseñar e implementar navegación principal entre las 3 experiencias (Jugar, Explorar, Mi Pasaporte)
 
 ### Experiencia: Explorar
-- [ ] Ficha de país al tocar (nombre, bandera, capital, población, superficie)
-- [ ] Filtros por continente
-- [ ] Marcador de capital sobre el mapa
+- [ ] Ficha de país al tocar (bandera, nombre, capital, continente, población y ranking, superficie y ranking, moneda, gentilicio)
+- [ ] Marcador de capital sobre el mapa (pin al tocar un país)
+- [ ] Filtros por continente (botones rápidos para aislar un continente)
+- [ ] Etiquetas de países/capitales (toggle, exclusivo de Explorar)
+- [ ] Modo «Repaso de capitales» (lista de capitales + zoom al punto exacto + pin distintivo)
 
 ### Experiencia: Jugar
-- [ ] Tipo A: Localizar país en el mapa (texto → mapa)
-- [ ] Tipo B: Localizar capital en el mapa (texto → mapa)
+- [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)
+- [ ] Tipo A: Localizar país en el mapa (texto → mapa) — Sello de Países
+- [ ] Tipo B: Localizar capital en el mapa (texto → mapa) — Sello de Capitales
 - [ ] Feedback visual: verde/rojo según acierto
-- [ ] Barra de progreso
+- [ ] Tipo C: Capital → País (texto → texto, opciones múltiples)
+- [ ] Tipo D: País → Capital (texto → texto, opciones múltiples)
+- [ ] Tipo E: Seleccionar país resaltado (mapa → texto, opciones múltiples)
+- [ ] Tipo F: Seleccionar capital de país resaltado (mapa → texto, opciones múltiples)
+- [ ] Algoritmo de generación de distractores (opciones plausibles: mismo continente, nombre similar, etc.)
+- [ ] Algoritmo de entrenamiento libre (mezcla tipos A-F, refuerzo de fallos)
+- [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
+- [ ] Barra de progreso (indica preparación para prueba de sello)
+- [ ] Sistema de pruebas de sello (invitación automática, 0 errores, límite 3 intentos diarios)
 
 ### Experiencia: Mi Pasaporte
-- [ ] Vista de matriz niveles × continentes
-- [ ] Sistema de sellos (Países y Capitales)
+- [ ] Vista de matriz niveles × continentes (3 filas × 5 columnas)
+- [ ] Sistema de sellos (Países y Capitales) con estado conseguido/pendiente
+- [ ] Acceso directo a pruebas de sello desde el dashboard
+- [ ] Indicador de intentos restantes (3 diarios por sello y continente)
+- [ ] Color del pasaporte según nivel global (verde/azul/dorado)
 
 ### Perfiles de usuario
-- [ ] Pantalla de creación de perfil (nombre + avatar)
-- [ ] Selector de perfil (cambio rápido desde cualquier pantalla)
-- [ ] Persistencia de perfiles (Capacitor Preferences o SQLite)
+- [ ] Pantalla de creación de perfil (nombre por defecto «Explorador» + numeración automática)
+- [ ] Selector de avatares (12-15 iconos de animales representativos de los 5 continentes: tierra, mar y aire)
+- [ ] Selector de perfil (cambio rápido desde cualquier pantalla, tap en avatar)
 - [ ] Progreso independiente por perfil (pasaporte, sellos, fallos)
 
-### Infraestructura
-- [ ] Configurar Zustand para estado global
-- [ ] Añadir Capacitor para build Android
-- [ ] Actualización silenciosa de datos vía CDN (ver OVERVIEW.md § «Actualización automática»)
-- [ ] Implementar feedback háptico (vibración en aciertos/errores)
+### Configuración
+- [ ] Pantalla de configuración global (perfil activo, marcadores de microestados, vibración, idioma, tema)
+- [ ] Configuración del globo en overlay (marcadores de microestados, tema)
 
 ### Internacionalización
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
 - [ ] Traducción a idiomas disponibles en iOS y Android
+
+### Infraestructura y acabados
+- [ ] Implementar feedback háptico (vibración en aciertos/errores)
+- [ ] Añadir Capacitor para build Android
+- [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md § «Actualización automática»)
 
 ### Tema visual
 - [ ] Diseñar e implementar tema claro (light mode) como alternativa al dark mode (baja prioridad, casi al final del desarrollo)

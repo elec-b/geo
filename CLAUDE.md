@@ -1,6 +1,6 @@
 # Instrucciones para el desarrollo de GeoExpert
 
-> **Rol**: Eres un experto desarrollador full stack y diseñador de juegos. Asegúrate siempre de que tus acciones se alineen con las decisiones registradas aquí y en `OVERVIEW.md`.
+> **Rol**: Eres un experto desarrollador full stack y diseñador de juegos. Asegúrate siempre de que tus acciones se alineen con las decisiones registradas aquí y en `DESIGN.md`.
 
 ## 1. Misión del proyecto
 Crear una **aplicación de aprendizaje de geografía interactiva en 3D y premium** que gamifique la experiencia de aprender países y capitales (mostrando banderas como info). La app debe sentirse moderna, fluida, sencilla y muy entretenida de jugar, diferenciándose de las apps de cuestionarios «estáticas».
@@ -9,45 +9,27 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 
 ## 2. Stack tecnológico
 
-### Núcleo
-- **Framework**: React 19 + Vite
-- **Empaquetado móvil**: Capacitor (iOS primero, Android después)
-- **Motor del globo**: D3.js (`d3-geo`) con proyección ortográfica sobre Canvas 2D
+| Capa | Tecnología |
+|------|-----------|
+| Framework | React 19 + Vite |
+| Empaquetado móvil | Capacitor (iOS primero, Android después) |
+| Motor del globo | D3.js (`d3-geo`) — proyección ortográfica sobre Canvas 2D |
+| Estado | Zustand |
+| Persistencia | Capacitor Preferences (key-value) o SQLite |
+| Estilo | Vanilla CSS con variables (tema espacial, dark mode) |
+| Datos geográficos | `world-atlas` (TopoJSON 1:50m), REST Countries v3.1, capitales JSON local |
 
-### Estado y datos
-- **Gestión de estado**: Zustand
-- **Persistencia local**: Capacitor Preferences (key-value) o SQLite
-
-### Estilo
-- **CSS**: Vanilla CSS con variables (tema espacial)
-- **UI**: Diseño limpio, oscuro y minimalista con animaciones fluidas. Prioridad a la legibilidad y rendimiento.
-
-### Datos geográficos
-- **Geometrías**: `world-atlas` (TopoJSON, 1:50m)
-- **Países**: REST Countries v3.1 (dump estático)
-- **Capitales**: JSON local con coordenadas
-- Ver `OVERVIEW.md` § «Fuentes de datos» para especificación completa
-
-### Por qué D3.js + Capacitor
-1. D3 `geoOrthographic()` renderiza el globo sin tiles — elimina artefactos de tile boundaries
-2. Canvas 2D: sin WebGL, sin riesgos de WKWebView, excelente rendimiento
-3. Proyección ortográfica: fiel a la superficie real de los países (vista desde el espacio)
-4. Capacitor empaqueta web como app nativa sin reescribir código
-5. 100% offline con datos locales, sin token ni servicios externos
-6. Bundle ligero: `d3-geo` ≈ 30 KB gzip
-
-**Nota histórica**: Se evaluó MapLibre GL JS v5 (globe projection) pero se descartó por artefactos visuales irresolubles en tile boundaries. Ver `docs/spikes/pmtiles-vs-d3.md`.
-
-### Plataformas objetivo
-- **iOS y Android**: Prioridad principal (App Store y Google Play)
-- **Web**: No es prioridad. Solo si resulta trivial publicar.
+- **Plataformas**: iOS y Android (App Store y Google Play). Web no es prioridad.
+- **Justificación técnica del stack**: ver `DESIGN.md` § «Motor de renderizado»
+- **Fuentes de datos (detalle)**: ver `DESIGN.md` § «Fuentes de datos»
+- **Nota histórica**: Se evaluó MapLibre GL JS v5 y se descartó. Ver `docs/spikes/pmtiles-vs-d3.md`
 
 ## 3. Reglas operativas
 
-1. **Documentación primero**: Las actualizaciones en `OVERVIEW.md` deben preceder a los cambios de código para características importantes.
+1. **Documentación primero**: Las actualizaciones en `DESIGN.md` deben preceder a los cambios de código para características importantes.
 2. **Vista mobile first**: Diseña para la interacción táctil (dedos en la pantalla) incluso si desarrollas en escritorio.
 3. **Documentación MECE**: El contenido debe ser **MECE** (Mutually Exclusive, Collectively Exhaustive): sin solapamientos entre documentos y cubriendo todos los aspectos necesarios. Estructura:
-   - **Raíz**: documentos core del proyecto (`CLAUDE.md`, `OVERVIEW.md`, `BACKLOG.md`, `README.md`)
+   - **Raíz**: documentos core del proyecto (`CLAUDE.md`, `DESIGN.md`, `BACKLOG.md`)
    - **`docs/research/`**: investigaciones técnicas
    - **`docs/spikes/`**: resultados de spikes de validación
 4. **Backlog**: `BACKLOG.md` organiza el trabajo en 3 secciones:
