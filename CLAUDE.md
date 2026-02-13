@@ -28,11 +28,12 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 
 1. **Documentación primero**: Las actualizaciones en `DESIGN.md` deben preceder a los cambios de código para características importantes.
 2. **Vista mobile first**: Diseña para la interacción táctil (dedos en la pantalla) incluso si desarrollas en escritorio.
-3. **Documentación MECE**: El contenido debe ser **MECE** (Mutually Exclusive, Collectively Exhaustive): sin solapamientos entre documentos y cubriendo todos los aspectos necesarios. Estructura:
+3. **Diseño responsivo**: Todos los tamaños de UI (fuentes, botones, espaciado, dimensiones de layout) deben usar unidades relativas (`rem`). Reservar `px` exclusivamente para bordes decorativos (`1px solid`), sombras y blur. Las variables CSS en `variables.css` son la base — usar siempre variables, nunca valores hardcoded.
+4. **Documentación MECE**: El contenido debe ser **MECE** (Mutually Exclusive, Collectively Exhaustive): sin solapamientos entre documentos y cubriendo todos los aspectos necesarios. Estructura:
    - **Raíz**: documentos core del proyecto (`CLAUDE.md`, `DESIGN.md`, `BACKLOG.md`)
    - **`docs/research/`**: investigaciones técnicas
    - **`docs/spikes/`**: resultados de spikes de validación
-4. **Backlog**: `BACKLOG.md` organiza el trabajo en 3 secciones:
+5. **Backlog**: `BACKLOG.md` organiza el trabajo en 3 secciones:
    - **Completado**: Tareas terminadas (historial reciente; para historial completo, usar git)
    - **En progreso**: Tareas activas o con trabajo parcial
    - **Próximos pasos**: Tareas planificadas pero no iniciadas

@@ -98,7 +98,28 @@ Primera implementación funcional completada. **Pendiente de feedback del usuari
 - [x] Modo «Repaso de capitales» (tabla país–capital; al tocar país → zoom al país + marca en capital; al tocar capital → zoom al punto exacto + pin + país resaltado)
 - [x] Segmented control ("Países" | "Capitales") para cambiar entre modos
 - [x] API imperativa del globo: `flyTo(lon, lat, zoom?, duration?)` con animación suave
-- [ ] Aplicar feedback del usuario (pendiente)
+- [ ] Feedback — Cambios de diseño:
+  - [ ] Renombrar modos: "Países" → "Globo", "Capitales" → "Tabla" en segmented control y textos UI
+  - [ ] Filtro de continente: al seleccionar, `flyTo` al centro del continente (orientar el globo)
+  - [ ] Anti-solapamiento de etiquetas: algoritmo de densidad por zoom (mostrar solo países relevantes a zoom lejano, más conforme se acerca)
+  - [ ] Revisar centroides de etiquetas: Francia y otros países con forma irregular (centroide geométrico ≠ centro visual)
+  - [ ] No solapar etiqueta de país con la de su propia capital
+  - [ ] Circulitos de capital permanentes cuando toggle "Capitales" está activo (no solo al seleccionar un país)
+  - [ ] Tabla: añadir columna de población con formato adaptado ("1.4B", "45M", "800k")
+  - [ ] Tabla: headers ordenables (tap para alternar asc/desc por país, capital o población)
+  - [ ] Tabla: tabla única cuando filtro es "Todos" (sin agrupación por continentes)
+  - [ ] Tabla: indicador visual en nombres de países/capitales para sugerir que son tappables
+  - [ ] Territorios no-ONU (ej. Sáhara Occidental): hacer seleccionables con ficha + disclaimer de «no reconocido por la ONU»
+  - [ ] Territorios no-ONU: asignar continente para que los filtros funcionen (ej. Sáhara Occidental no se oscurece al filtrar por América)
+- [ ] Feedback — Bugs y ajustes de layout:
+  - [ ] Tab bar no visible en modo tabla: ajustar z-index o padding
+  - [ ] Tabla aparece abajo: revisar posicionamiento (debería cubrir desde arriba)
+  - [ ] Botón "volver a la tabla" se solapa con filtros de continente: ajustar posición
+  - [ ] Pills de filtro ("Todos", "Oceanía") se salen de la pantalla: revisar scroll horizontal
+  - [ ] Menú de controles (segmented + filtros + toggles) demasiado abajo en pantalla: subir
+  - [ ] Iconos de perfil y configuración demasiado arriba: bajar mínimamente
+- [ ] Feedback — Diseño responsivo:
+  - [ ] Auditar y convertir px fijos a rem en toda la app: `--header-height`, `--tabbar-height`, botones AppHeader, iconos TabBar, `font-size: 11px` hardcoded, pills ContinentFilter, CountryCard
 
 ---
 

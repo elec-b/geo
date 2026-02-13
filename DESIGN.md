@@ -114,20 +114,36 @@ El algoritmo muestra una **barra de progreso** que indica cómo de preparado est
 
 Un espacio seguro para explorar. El objetivo es familiarizarse con la ubicación y las formas de los países, así como con sus capitales, de manera libre.
 
-### Repaso de países
-Sobre el mapa (globo 3D) el usuario puede tocar un país → se ilumina → sale su ficha de país.
-*   **Ficha de país**: Bandera, nombre, capital, continente, población (y ranking), superficie (y ranking), moneda y gentilicio.
-*   **Capital**: Pequeña marca sobre la capital en el mapa.
+La experiencia ofrece dos modos de exploración, accesibles mediante un control segmentado:
 
-### Repaso de capitales
-Lista de países con sus capitales para repasar.
-*   Al tocar una **capital**: zoom de precisión al punto exacto + pin distintivo. El país se resalta.
-*   Al tocar un **país**: zoom de precisión al país + circulito sobre la capital.
+### Globo
+Vista interactiva del globo terráqueo. El usuario puede tocar un país → se ilumina → aparece su ficha de país.
+*   **Ficha de país**: Bandera, nombre, capital, continente, población (y ranking), superficie (y ranking), moneda y gentilicio.
+*   **Capital**: Círculo cian sobre la ubicación de la capital. Se muestra al seleccionar un país y también permanentemente cuando el toggle de etiquetas de capitales está activo.
+
+### Tabla
+Tabla de países con sus capitales y población, diseñada para facilitar el repaso.
+*   **Columnas**: País (con bandera), Capital, Población (formato adaptado: «1.4B», «45M», «800k»).
+*   **Ordenamiento**: Los headers de columna son tappables y permiten ordenar ascendente/descendente por país, capital o población.
+*   **Agrupación**: Si el filtro es un continente específico → tabla de ese continente. Si el filtro es «Todos» → tabla única sin agrupación por continentes.
+*   **Interacción — tocar país**: Zoom al país + marca en la capital + se muestra el globo.
+*   **Interacción — tocar capital**: Zoom de precisión al punto exacto + pin distintivo + país resaltado + se muestra el globo.
+*   **Affordance**: Los nombres de países y capitales deben tener un indicador visual sutil que sugiera que son tappables.
 
 ### Controles comunes
-*   **Filtros**: Botones rápidos para aislar continentes (ej. «solo África»).
-*   **Etiquetas** (solo en repaso de países): Activar/desactivar nombres de países y/o capitales.
+*   **Filtros de continente**: Pills horizontales para aislar continentes (ej. «solo África»). Al seleccionar un continente, el globo rota automáticamente para orientar la vista hacia él.
+*   **Etiquetas** (solo en modo Globo):
+    - Toggle «Nombres»: Activa/desactiva nombres de países sobre el globo.
+    - Toggle «Capitales»: Activa/desactiva nombres de capitales sobre el globo. Cuando está activo, los círculos de las capitales se muestran permanentemente.
 *   **Globo 3D**: Siempre se usa el globo terráqueo, nunca mapas planos.
+
+### Anti-solapamiento de etiquetas
+Las etiquetas de países y capitales sobre el globo deben ser legibles a cualquier nivel de zoom:
+*   **Zoom lejano**: Mostrar solo países con mayor superficie o relevancia visual, evitando solapamiento.
+*   **Zoom progresivo**: Añadir más etiquetas conforme aumenta el zoom.
+*   **Zoom cercano**: Mostrar todas las etiquetas de la región visible.
+*   **País y capital propios**: La etiqueta de un país no debe solaparse con la de su propia capital, especialmente cuando la capital está centrada en el país.
+*   **Centro visual**: Revisar la ubicación de etiquetas para países con formas irregulares (ej. Francia) — el centroide geométrico no siempre es el mejor punto visual.
 
 ---
 
@@ -264,5 +280,14 @@ public/data/
 ### Estándar de países
 - **Criterio**: Solo países reconocidos por la ONU
 - **Total**: 195 países (193 miembros + 2 observadores: Vaticano y Palestina)
-- **Excluidos**: Territorios no reconocidos (Kosovo, Taiwán, etc.) quedan fuera por estándar
+- **Fuera del juego**: Territorios no reconocidos (Kosovo, Taiwán, etc.) no participan en el sistema de niveles/sellos (ver subsección siguiente)
 - **Ventaja**: Evita controversias políticas y simplifica mantenimiento
+
+### Territorios no reconocidos por la ONU
+Algunos territorios aparecen en los datos geográficos (Natural Earth 1:50m) pero no son miembros ni observadores de la ONU (ej. Sáhara Occidental, Kosovo, Taiwán):
+
+*   **Son seleccionables** en la experiencia Explorar: al tocar, se muestra la ficha de país con un indicador claro de que NO es reconocido por la ONU.
+*   Se muestran todos los datos disponibles (bandera, capital, población, superficie, moneda, gentilicio).
+*   **No participan en el sistema de juego** (niveles, sellos, pruebas) — solo son visibles en Explorar.
+*   **Continente asignado**: Cada territorio debe tener un continente asignado para que los filtros de continente funcionen correctamente (ej. Sáhara Occidental → África). Al filtrar por otro continente, se oscurecen como cualquier otro país.
+*   **Datos**: El script `fetch-countries.ts` debe incluir estos territorios marcados con `unMember: false`.
