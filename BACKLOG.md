@@ -72,6 +72,19 @@
 - [x] Definición de niveles por continente (`src/data/levels.ts`)
   - Turista: top 10 por población (top 5 en Oceanía), Mochilero: 60%, Guía: 100%
 
+### Navegación
+- [x] Implementar tab bar inferior con 3 tabs (Jugar, Explorar, Mi Pasaporte)
+  - Glassmorphism + `safe-area-inset-bottom` para home indicator iOS
+  - Iconos SVG inline, micro-animación `scale(1.1)` en tab activo, glow cian en "Jugar"
+  - Roles ARIA (`tablist`, `tab`, `aria-selected`)
+- [x] Header superior con placeholders de avatar y configuración
+  - Transparente con `pointer-events: none`, solo botones interactivos
+- [x] Sistema de z-index centralizado en variables CSS (`--z-stars` hasta `--z-modal`)
+- [x] Overlays placeholder para tabs "Jugar" y "Mi Pasaporte" (próximamente)
+  - Renderizado condicional (no opacity toggle) para evitar bug de touch en iOS WebKit
+  - Efecto blur en "Pasaporte" via `backdrop-filter` en overlay (sin wrapper sobre el globo)
+- [x] Tab por defecto: Explorar (globo interactivo, sin overlay)
+
 ---
 
 ## En progreso
@@ -83,9 +96,6 @@
 ## Próximos pasos
 
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
-
-### Navegación
-- [ ] Diseñar e implementar navegación principal entre las 3 experiencias (Jugar, Explorar, Mi Pasaporte)
 
 ### Experiencia: Explorar
 - [ ] Ficha de país al tocar (bandera, nombre, capital, continente, población y ranking, superficie y ranking, moneda, gentilicio)
