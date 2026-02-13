@@ -1,0 +1,112 @@
+/* ExploreView — controles de la experiencia Explorar */
+
+/* Barra de controles flotante (sobre el globo) */
+.explore-controls {
+  position: fixed;
+  top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + var(--spacing-xs));
+  left: 0;
+  right: 0;
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  pointer-events: none;
+}
+
+.explore-controls > * {
+  pointer-events: auto;
+}
+
+/* Segmented control */
+.explore-segmented {
+  display: flex;
+  background: rgba(12, 12, 30, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  padding: 2px;
+}
+
+.explore-segmented__btn {
+  padding: 6px 20px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.explore-segmented__btn--active {
+  background: var(--color-accent-cyan);
+  color: var(--color-bg-primary);
+  font-weight: 600;
+}
+
+.explore-segmented__btn:not(.explore-segmented__btn--active):active {
+  color: var(--color-text-primary);
+}
+
+/* Toggles de etiquetas */
+.explore-labels {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.explore-labels__btn {
+  padding: 3px 10px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.explore-labels__btn--active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Botón "Volver a la tabla" */
+.explore-back-btn {
+  position: fixed;
+  top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 60px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-overlay);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 8px 16px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  background: rgba(12, 12, 30, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  animation: explore-fade-in 200ms ease-out;
+}
+
+.explore-back-btn:active {
+  background: rgba(12, 12, 30, 0.95);
+}
+
+@keyframes explore-fade-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}

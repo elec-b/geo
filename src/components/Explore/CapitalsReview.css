@@ -1,0 +1,104 @@
+/* CapitalsReview — tabla de capitales a pantalla completa */
+
+.capitals-review {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-overlay);
+  background: rgba(10, 10, 26, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: capitals-fade-in 250ms ease-out;
+}
+
+@keyframes capitals-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.capitals-review__scroll {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* Espacio para header + controles arriba y tab bar abajo */
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 90px);
+  padding-bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px) + var(--spacing-md));
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+/* Sección por continente */
+.capitals-review__section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.capitals-review__continent-header {
+  margin: 0 0 var(--spacing-sm);
+  padding: var(--spacing-xs) 0;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Tabla */
+.capitals-review__table {
+  display: flex;
+  flex-direction: column;
+}
+
+.capitals-review__table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Fila */
+.capitals-review__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Celda tappable */
+.capitals-review__cell {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 10px var(--spacing-sm);
+  border: none;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--transition-fast);
+}
+
+.capitals-review__cell:active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.capitals-review__cell--capital {
+  color: var(--color-accent-cyan);
+}
+
+/* Bandera mini */
+.capitals-review__flag {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}

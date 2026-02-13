@@ -1,0 +1,40 @@
+/* Filtro por continente — pills horizontales */
+
+.continent-filter {
+  display: flex;
+  gap: var(--spacing-xs);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 var(--spacing-xs);
+}
+
+.continent-filter::-webkit-scrollbar {
+  display: none;
+}
+
+.continent-filter__pill {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--pill-color, var(--glass-border));
+  background: transparent;
+  color: var(--pill-color, var(--color-text-secondary));
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+
+.continent-filter__pill--active {
+  background: var(--pill-color, var(--color-accent-cyan));
+  color: var(--color-bg-primary);
+  border-color: var(--pill-color, var(--color-accent-cyan));
+  font-weight: 600;
+}
+
+.continent-filter__pill:not(.continent-filter__pill--active):active {
+  background: rgba(255, 255, 255, 0.08);
+}

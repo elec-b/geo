@@ -89,20 +89,22 @@
 
 ## En progreso
 
-*(Sin tareas en progreso)*
+### Experiencia: Explorar
+Primera implementación funcional completada. **Pendiente de feedback del usuario** para ajustes.
+- [x] Ficha de país al tocar (bandera, nombre, capital, continente, población y ranking, superficie y ranking, moneda, gentilicio)
+- [x] Marcador de capital sobre el mapa (pin cian al tocar un país)
+- [x] Filtros por continente (pills horizontales con colores por continente)
+- [x] Etiquetas de países/capitales (toggles "Nombres" y "Capitales")
+- [x] Modo «Repaso de capitales» (tabla país–capital; al tocar país → zoom al país + marca en capital; al tocar capital → zoom al punto exacto + pin + país resaltado)
+- [x] Segmented control ("Países" | "Capitales") para cambiar entre modos
+- [x] API imperativa del globo: `flyTo(lon, lat, zoom?, duration?)` con animación suave
+- [ ] Aplicar feedback del usuario (pendiente)
 
 ---
 
 ## Próximos pasos
 
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
-
-### Experiencia: Explorar
-- [ ] Ficha de país al tocar (bandera, nombre, capital, continente, población y ranking, superficie y ranking, moneda, gentilicio)
-- [ ] Marcador de capital sobre el mapa (pin al tocar un país)
-- [ ] Filtros por continente (botones rápidos para aislar un continente)
-- [ ] Etiquetas de países/capitales (toggle, exclusivo de Explorar)
-- [ ] Modo «Repaso de capitales» (lista de capitales + zoom al punto exacto + pin distintivo)
 
 ### Experiencia: Jugar
 - [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)

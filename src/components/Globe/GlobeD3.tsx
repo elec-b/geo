@@ -1,14 +1,16 @@
 // Globo con D3.js proyección ortográfica sobre Canvas 2D.
 // Sin tiles, sin WebGL — renderiza GeoJSON directamente sobre una esfera 2D.
 // Elimina por completo los artefactos de tile boundaries.
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from 'react';
 import { geoOrthographic, geoPath, geoContains, geoCentroid, geoDistance } from 'd3-geo';
 import type { GeoProjection, GeoPath } from 'd3-geo';
 import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geojson';
 import { loadCountriesGeoJson, loadBordersGeoJson } from '../../data/countries';
 import type { CountryFeature, CountryProperties } from '../../data/countries';
+import type { CapitalCoords } from '../../data/types';
 
-// Colores del tema espacial (mismos que Globe.tsx)
+// --- Constantes del tema espacial ---
+
 const OCEAN_COLOR = '#0a0a1a';
 const COUNTRY_FILL_COLOR = '#3a3a4a';
 const COUNTRY_SELECTED_COLOR = '#8a7d5a';
@@ -16,7 +18,7 @@ const COUNTRY_HOVER_COLOR = '#2a2a3a';
 const BORDER_COLOR = 'rgba(255, 255, 255, 0.3)';
 const ATMOSPHERE_COLOR = 'rgba(100, 150, 255, 0.08)';
 
-// Velocidad de rotación automática (°/s)
+// Rotación automática (°/s)
 const ROTATION_SPEED = 6;
 
 // Zoom
@@ -25,17 +27,16 @@ const MAX_SCALE = 200.0;
 const ZOOM_WHEEL_FACTOR = 0.001;
 
 // Marcadores de microestados
-const MARKER_RADIUS = 8;        // px en pantalla (radio visual del anillo)
+const MARKER_RADIUS = 8;
 const MARKER_LINE_WIDTH = 1.0;
 const MARKER_MAX_OPACITY = 0.5;
 const MARKER_DASH = [3, 3];
-const MARKER_ZOOM_START = 3;    // zoom a partir del cual empiezan a aparecer
-const MARKER_ZOOM_FULL = 5;     // zoom a partir del cual tienen opacidad completa
-const MARKER_HIT_RADIUS_MIN = 20;  // zona táctil a zoom bajo
-const MARKER_HIT_RADIUS_MAX = 30;  // zona táctil a zoom alto
-const MARKER_HIT_ZOOM_MAX = 20;    // zoom a partir del cual el radio táctil es máximo
+const MARKER_ZOOM_START = 3;
+const MARKER_ZOOM_FULL = 5;
+const MARKER_HIT_RADIUS_MIN = 20;
+const MARKER_HIT_RADIUS_MAX = 30;
+const MARKER_HIT_ZOOM_MAX = 20;
 
-// Códigos cca2 de microestados (países difíciles de seleccionar por su tamaño)
 const MICROSTATE_CODES = new Set([
   'VA', 'MC', 'SM', 'LI', 'AD', 'MT', 'SG', 'BH', 'LU', 'KM',
   'MU', 'ST', 'CV', 'SC', 'MV', 'BN', 'TT', 'AG', 'BB', 'LC',
@@ -45,29 +46,82 @@ const MICROSTATE_CODES = new Set([
 
 // Inercia
 const INERTIA_FRICTION = 0.85;
-const INERTIA_MIN_VELOCITY = 0.5; // °/s
+const INERTIA_MIN_VELOCITY = 0.5;
 const VELOCITY_SAMPLES = 5;
 
-interface GlobeD3Props {
+// Pin de capital
+const CAPITAL_PIN_INNER = 4;
+const CAPITAL_PIN_OUTER = 7;
+const CAPITAL_PIN_COLOR = '#00f0ff';
+
+// Etiquetas
+const LABEL_COLOR = 'rgba(255, 255, 255, 0.8)';
+const LABEL_CAPITAL_COLOR = 'rgba(0, 240, 255, 0.7)';
+const LABEL_SHADOW = 'rgba(0, 0, 0, 0.7)';
+const LABEL_FONT_BASE = 9;
+
+// Opacidad de países fuera del filtro de continente
+const DIMMED_ALPHA = 0.15;
+
+// --- Interfaces ---
+
+export interface GlobeD3Props {
   onCountryClick?: (country: CountryFeature) => void;
+  onCountryDeselect?: () => void;
   onReady?: () => void;
   showMarkers?: boolean;
+  /** País seleccionado (controlado). undefined = modo interno. */
+  selectedCountryCca2?: string | null;
+  /** Coordenadas [lon, lat] para mostrar pin de capital */
+  capitalPin?: [number, number] | null;
+  /** Set de cca2 a resaltar (filtro continente). null = todos visibles. */
+  highlightedCountries?: Set<string> | null;
+  showCountryLabels?: boolean;
+  showCapitalLabels?: boolean;
+  /** Datos de capitales para etiquetas (Map<cca2, CapitalCoords>) */
+  capitalLabelsData?: Map<string, CapitalCoords> | null;
 }
 
-export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3Props) {
+export interface GlobeD3Ref {
+  flyTo(lon: number, lat: number, zoom?: number, duration?: number): void;
+}
+
+// --- Utilidades ---
+
+function easeInOutCubic(t: number): number {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+// --- Componente ---
+
+export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
+  {
+    onCountryClick,
+    onCountryDeselect,
+    onReady,
+    showMarkers = true,
+    selectedCountryCca2,
+    capitalPin,
+    highlightedCountries,
+    showCountryLabels = false,
+    showCapitalLabels = false,
+    capitalLabelsData,
+  },
+  ref,
+) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Estado de datos cargados
+  // Datos cargados
   const countriesRef = useRef<FeatureCollection<Geometry, CountryProperties> | null>(null);
   const bordersRef = useRef<Feature<MultiLineString> | null>(null);
 
-  // Estado de interacción
+  // Interacción (estado interno para modo no controlado)
   const selectedRef = useRef<string | null>(null);
   const hoveredRef = useRef<string | null>(null);
 
-  // Estado de rotación y drag
-  const rotationRef = useRef<[number, number]>([-10, -20]); // [lambda, phi]
+  // Rotación y drag
+  const rotationRef = useRef<[number, number]>([-10, -20]);
   const isAutoRotatingRef = useRef(true);
   const isDraggingRef = useRef(false);
   const dragStartRef = useRef<{ x: number; y: number; rotation: [number, number] } | null>(null);
@@ -82,30 +136,75 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
     prevMidX: number;
     prevMidY: number;
   } | null>(null);
-
-  // Flag para suprimir selección/hover accidental durante y después de un pinch
   const gestureWasPinchRef = useRef(false);
 
   // Inercia
-  const velocityRef = useRef<[number, number]>([0, 0]); // [vx, vy] en °/s
+  const velocityRef = useRef<[number, number]>([0, 0]);
   const isInertiaRef = useRef(false);
   const dragSamplesRef = useRef<Array<{ x: number; y: number; time: number }>>([]);
 
-  // Marcadores de microestados
+  // Marcadores y centroides
   const microstateCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
+  const countryCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   const showMarkersRef = useRef(showMarkers);
   showMarkersRef.current = showMarkers;
 
-  // Proyección y path (se recrean en cada redibujado)
+  // Proyección y tamaño
   const projectionRef = useRef<GeoProjection | null>(null);
   const sizeRef = useRef<{ width: number; height: number }>({ width: 0, height: 0 });
-
-  // Sensibilidad del drag (grados por pixel)
   const DRAG_SENSITIVITY = 0.35;
 
-  /**
-   * Dibuja todo el globo en el canvas.
-   */
+  // Refs sincronizados con props (acceso en callbacks sin re-creación)
+  const selectedCca2PropRef = useRef(selectedCountryCca2);
+  selectedCca2PropRef.current = selectedCountryCca2;
+  const isControlledRef = useRef(selectedCountryCca2 !== undefined);
+  isControlledRef.current = selectedCountryCca2 !== undefined;
+  const capitalPinRef = useRef(capitalPin);
+  capitalPinRef.current = capitalPin;
+  const highlightedRef = useRef(highlightedCountries);
+  highlightedRef.current = highlightedCountries;
+  const showCountryLabelsRef = useRef(showCountryLabels);
+  showCountryLabelsRef.current = showCountryLabels;
+  const showCapitalLabelsRef = useRef(showCapitalLabels);
+  showCapitalLabelsRef.current = showCapitalLabels;
+  const capitalLabelsRef = useRef(capitalLabelsData);
+  capitalLabelsRef.current = capitalLabelsData;
+  const onDeselectRef = useRef(onCountryDeselect);
+  onDeselectRef.current = onCountryDeselect;
+
+  // Animación flyTo
+  const flyToAnimRef = useRef<{
+    startRotation: [number, number];
+    endRotation: [number, number];
+    startScale: number;
+    endScale: number;
+    startTime: number;
+    duration: number;
+  } | null>(null);
+
+  // --- API imperativa (flyTo) ---
+
+  useImperativeHandle(ref, () => ({
+    flyTo(lon: number, lat: number, zoom?: number, duration = 800) {
+      isAutoRotatingRef.current = false;
+      isInertiaRef.current = false;
+      velocityRef.current = [0, 0];
+      isDraggingRef.current = false;
+      dragStartRef.current = null;
+
+      flyToAnimRef.current = {
+        startRotation: [...rotationRef.current] as [number, number],
+        endRotation: [-lon, -lat],
+        startScale: scaleRef.current,
+        endScale: zoom ?? scaleRef.current,
+        startTime: performance.now(),
+        duration,
+      };
+    },
+  }));
+
+  // --- Renderizado del globo ---
+
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext('2d');
@@ -119,9 +218,9 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
     const radius = Math.min(width, height) / 2 - 20;
     const cx = width / 2;
     const cy = height / 2;
+    const zoom = scaleRef.current;
+    const scaledRadius = radius * zoom;
 
-    // Configurar proyección (radio escalado por zoom)
-    const scaledRadius = radius * scaleRef.current;
     const projection = geoOrthographic()
       .scale(scaledRadius)
       .translate([cx, cy])
@@ -129,10 +228,8 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
       .rotate(rotationRef.current);
 
     projectionRef.current = projection;
-
     const path: GeoPath = geoPath().projection(projection).context(ctx);
 
-    // Limpiar canvas
     ctx.clearRect(0, 0, width, height);
 
     // Atmósfera (halo exterior)
@@ -142,27 +239,39 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, width, height);
 
-    // Océano (esfera de fondo)
+    // Océano
     ctx.beginPath();
     path({ type: 'Sphere' });
     ctx.fillStyle = OCEAN_COLOR;
     ctx.fill();
+
+    // País seleccionado efectivo (controlado vs interno)
+    const effectiveSelected = isControlledRef.current
+      ? selectedCca2PropRef.current
+      : selectedRef.current;
+    const filter = highlightedRef.current;
 
     // Países (relleno)
     for (const feature of countries.features) {
       const cca2 = feature.properties?.cca2;
       let fillColor = COUNTRY_FILL_COLOR;
 
-      if (cca2 && cca2 === selectedRef.current) {
+      if (cca2 && cca2 === effectiveSelected) {
         fillColor = COUNTRY_SELECTED_COLOR;
       } else if (cca2 && cca2 === hoveredRef.current) {
         fillColor = COUNTRY_HOVER_COLOR;
       }
 
+      // Dimming por filtro de continente
+      const isDimmed = filter != null && cca2 != null && !filter.has(cca2);
+      if (isDimmed) ctx.globalAlpha = DIMMED_ALPHA;
+
       ctx.beginPath();
       path(feature);
       ctx.fillStyle = fillColor;
       ctx.fill();
+
+      if (isDimmed) ctx.globalAlpha = 1;
     }
 
     // Bordes
@@ -170,14 +279,12 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
       ctx.beginPath();
       path(borders);
       ctx.strokeStyle = BORDER_COLOR;
-      ctx.lineWidth = Math.max(0.5, 1.0 / Math.sqrt(scaleRef.current));
+      ctx.lineWidth = Math.max(0.5, 1.0 / Math.sqrt(zoom));
       ctx.stroke();
     }
 
     // Marcadores de microestados (anillos con fade-in según zoom)
-    const zoom = scaleRef.current;
     if (showMarkersRef.current && zoom >= MARKER_ZOOM_START && microstateCentroidsRef.current.size > 0) {
-      // Opacidad progresiva entre ZOOM_START y ZOOM_FULL
       const t = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_ZOOM_FULL - MARKER_ZOOM_START));
       const opacity = t * MARKER_MAX_OPACITY;
       const rotation = rotationRef.current;
@@ -186,7 +293,6 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
       ctx.lineWidth = MARKER_LINE_WIDTH;
       ctx.setLineDash(MARKER_DASH);
       for (const [, centroid] of microstateCentroidsRef.current) {
-        // Solo dibujar si está en el hemisferio visible
         if (geoDistance(centroid, viewCenter) > Math.PI / 2) continue;
         const pos = projection(centroid);
         if (!pos) continue;
@@ -196,27 +302,114 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
       }
       ctx.setLineDash([]);
     }
+
+    // Pin de capital (circulito relleno + anillo exterior)
+    const pinCoords = capitalPinRef.current;
+    if (pinCoords) {
+      const rotation = rotationRef.current;
+      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      if (geoDistance(pinCoords, viewCenter) < Math.PI / 2) {
+        const pos = projection(pinCoords);
+        if (pos) {
+          ctx.beginPath();
+          ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER, 0, Math.PI * 2);
+          ctx.strokeStyle = CAPITAL_PIN_COLOR;
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(pos[0], pos[1], CAPITAL_PIN_INNER, 0, Math.PI * 2);
+          ctx.fillStyle = CAPITAL_PIN_COLOR;
+          ctx.fill();
+        }
+      }
+    }
+
+    // Etiquetas de países
+    if (showCountryLabelsRef.current && countryCentroidsRef.current.size > 0) {
+      const rotation = rotationRef.current;
+      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      const fontSize = Math.round(LABEL_FONT_BASE + Math.sqrt(zoom) * 2.5);
+
+      ctx.font = `500 ${fontSize}px -apple-system, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.shadowColor = LABEL_SHADOW;
+      ctx.shadowBlur = 3;
+
+      for (const feature of countries.features) {
+        const cca2 = feature.properties?.cca2;
+        if (!cca2) continue;
+        if (filter && !filter.has(cca2)) continue;
+
+        const centroid = countryCentroidsRef.current.get(cca2);
+        if (!centroid) continue;
+        if (geoDistance(centroid, viewCenter) > Math.PI / 2) continue;
+
+        const pos = projection(centroid);
+        if (!pos) continue;
+
+        ctx.fillStyle = LABEL_COLOR;
+        ctx.fillText(feature.properties.name, pos[0], pos[1]);
+      }
+      ctx.shadowBlur = 0;
+    }
+
+    // Etiquetas de capitales
+    if (showCapitalLabelsRef.current && capitalLabelsRef.current) {
+      const rotation = rotationRef.current;
+      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      const fontSize = Math.round(LABEL_FONT_BASE - 1 + Math.sqrt(zoom) * 2);
+
+      ctx.font = `${fontSize}px -apple-system, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.shadowColor = LABEL_SHADOW;
+      ctx.shadowBlur = 3;
+
+      for (const [cca2, capital] of capitalLabelsRef.current) {
+        if (filter && !filter.has(cca2)) continue;
+        const coords: [number, number] = [capital.latlng[1], capital.latlng[0]];
+        if (geoDistance(coords, viewCenter) > Math.PI / 2) continue;
+
+        const pos = projection(coords);
+        if (!pos) continue;
+
+        ctx.fillStyle = LABEL_CAPITAL_COLOR;
+        ctx.fillText(capital.name, pos[0], pos[1] + 6);
+      }
+      ctx.shadowBlur = 0;
+    }
   }, []);
 
-  /**
-   * Loop de animación: rotación automática + inercia + redibujado.
-   */
+  // --- Loop de animación ---
+
   const animate = useCallback(() => {
     const now = performance.now();
     const delta = (now - lastTimeRef.current) / 1000;
     lastTimeRef.current = now;
 
-    if (isInertiaRef.current) {
-      // Aplicar velocidad de inercia
+    // flyTo tiene prioridad sobre inercia y auto-rotación
+    const flyTo = flyToAnimRef.current;
+    if (flyTo) {
+      const elapsed = now - flyTo.startTime;
+      const t = Math.min(1, elapsed / flyTo.duration);
+      const ease = easeInOutCubic(t);
+
+      rotationRef.current = [
+        flyTo.startRotation[0] + (flyTo.endRotation[0] - flyTo.startRotation[0]) * ease,
+        flyTo.startRotation[1] + (flyTo.endRotation[1] - flyTo.startRotation[1]) * ease,
+      ];
+      scaleRef.current = flyTo.startScale + (flyTo.endScale - flyTo.startScale) * ease;
+
+      if (t >= 1) flyToAnimRef.current = null;
+    } else if (isInertiaRef.current) {
       const [vx, vy] = velocityRef.current;
       const [lambda, phi] = rotationRef.current;
       rotationRef.current = [
         lambda + vx * delta,
         Math.max(-80, Math.min(80, phi + vy * delta)),
       ];
-      // Aplicar fricción
       velocityRef.current = [vx * INERTIA_FRICTION, vy * INERTIA_FRICTION];
-      // Detener cuando la velocidad es muy baja
       if (Math.hypot(velocityRef.current[0], velocityRef.current[1]) < INERTIA_MIN_VELOCITY) {
         isInertiaRef.current = false;
         velocityRef.current = [0, 0];
@@ -230,9 +423,8 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
     animFrameRef.current = requestAnimationFrame(animate);
   }, [draw]);
 
-  /**
-   * Detecta qué país está bajo un punto [x, y] del canvas.
-   */
+  // --- Hit test ---
+
   const hitTest = useCallback((x: number, y: number): Feature<Geometry, CountryProperties> | null => {
     const projection = projectionRef.current;
     const countries = countriesRef.current;
@@ -242,10 +434,8 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
     const markersVisible = showMarkersRef.current && zoom >= MARKER_ZOOM_START
       && microstateCentroidsRef.current.size > 0;
 
-    // 1. Si los marcadores son visibles, comprobar proximidad a marcadores PRIMERO
-    //    (prioridad invertida: el usuario ve el anillo y toca sobre él)
+    // Prioridad a marcadores de microestados (el usuario ve el anillo y toca sobre él)
     if (markersVisible) {
-      // Radio táctil dinámico: crece con el zoom
       const zoomT = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_HIT_ZOOM_MAX - MARKER_ZOOM_START));
       const hitRadius = MARKER_HIT_RADIUS_MIN + zoomT * (MARKER_HIT_RADIUS_MAX - MARKER_HIT_RADIUS_MIN);
       for (const [cca2, centroid] of microstateCentroidsRef.current) {
@@ -258,7 +448,7 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
       }
     }
 
-    // 2. Búsqueda normal por geometría
+    // Búsqueda normal por geometría
     const coords = projection.invert?.([x, y]);
     if (!coords) return null;
 
@@ -271,9 +461,8 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
     return null;
   }, []);
 
-  /**
-   * Ajusta el tamaño del canvas al contenedor (responsive + devicePixelRatio).
-   */
+  // --- Resize ---
+
   const resize = useCallback(() => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
@@ -294,7 +483,8 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
     draw();
   }, [draw]);
 
-  // Cargar datos y arrancar
+  // --- Carga de datos ---
+
   useEffect(() => {
     let cancelled = false;
 
@@ -304,21 +494,27 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
         countriesRef.current = countries;
         bordersRef.current = borders;
 
-        // Calcular centroides de microestados (una sola vez, indexados por cca2)
-        const centroidsMap = new Map<string, [number, number]>();
+        // Pre-calcular centroides de todos los países (etiquetas + microestados)
+        const allCentroids = new Map<string, [number, number]>();
+        const microCentroids = new Map<string, [number, number]>();
         for (const feature of countries.features) {
           const cca2 = feature.properties?.cca2;
-          if (cca2 && MICROSTATE_CODES.has(cca2)) {
-            centroidsMap.set(cca2, geoCentroid(feature) as [number, number]);
+          if (cca2) {
+            const centroid = geoCentroid(feature) as [number, number];
+            allCentroids.set(cca2, centroid);
+            if (MICROSTATE_CODES.has(cca2)) {
+              microCentroids.set(cca2, centroid);
+            }
           }
         }
-        microstateCentroidsRef.current = centroidsMap;
+        countryCentroidsRef.current = allCentroids;
+        microstateCentroidsRef.current = microCentroids;
 
         resize();
         lastTimeRef.current = performance.now();
         animFrameRef.current = requestAnimationFrame(animate);
         onReady?.();
-      }
+      },
     );
 
     return () => {
@@ -336,18 +532,19 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
     return () => observer.disconnect();
   }, [resize]);
 
-  // --- Zoom: wheel + pinch (listeners nativos en el canvas) ---
+  // --- Zoom: wheel + pinch (listeners nativos) ---
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Distancia entre dos puntos táctiles
     const touchDist = (t1: Touch, t2: Touch) =>
       Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
 
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
       isAutoRotatingRef.current = false;
+      flyToAnimRef.current = null;
       const factor = 1 - e.deltaY * ZOOM_WHEEL_FACTOR;
       scaleRef.current = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scaleRef.current * factor));
     };
@@ -356,6 +553,7 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
       if (e.touches.length === 2) {
         e.preventDefault();
         isAutoRotatingRef.current = false;
+        flyToAnimRef.current = null;
         gestureWasPinchRef.current = true;
         const dist = touchDist(e.touches[0], e.touches[1]);
         const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
@@ -366,7 +564,6 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
           prevMidX: midX,
           prevMidY: midY,
         };
-        // Cancelar drag si estaba activo
         isDraggingRef.current = false;
         dragStartRef.current = null;
       }
@@ -376,7 +573,6 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
       if (e.touches.length === 2 && pinchRef.current) {
         e.preventDefault();
 
-        // Zoom (ratio de distancia entre dedos)
         const dist = touchDist(e.touches[0], e.touches[1]);
         const ratio = dist / pinchRef.current.startDist;
         scaleRef.current = Math.max(
@@ -384,7 +580,6 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
           Math.min(MAX_SCALE, pinchRef.current.startScale * ratio),
         );
 
-        // Rotación simultánea (delta incremental del punto medio)
         const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
         const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
         const dx = midX - pinchRef.current.prevMidX;
@@ -400,13 +595,8 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
-      if (e.touches.length < 2) {
-        pinchRef.current = null;
-      }
-      // Resetear flag de pinch solo cuando todos los dedos se levantan
-      if (e.touches.length === 0) {
-        gestureWasPinchRef.current = false;
-      }
+      if (e.touches.length < 2) pinchRef.current = null;
+      if (e.touches.length === 0) gestureWasPinchRef.current = false;
     };
 
     canvas.addEventListener('wheel', handleWheel, { passive: false });
@@ -424,7 +614,6 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
 
   // --- Eventos de interacción ---
 
-  // Coordenadas del pointer relativas al canvas
   const getCanvasPos = useCallback((e: React.PointerEvent): [number, number] => {
     const canvas = canvasRef.current;
     if (!canvas) return [0, 0];
@@ -433,12 +622,11 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
   }, []);
 
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
-    // Si hay pinch activo, ignorar (el pinch tiene prioridad)
     if (pinchRef.current) return;
 
-    // Cancelar inercia
     isInertiaRef.current = false;
     velocityRef.current = [0, 0];
+    flyToAnimRef.current = null;
 
     isDraggingRef.current = true;
     isAutoRotatingRef.current = false;
@@ -463,12 +651,11 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
         dragStartRef.current.rotation[0] + dx * sensitivity,
         Math.max(-80, Math.min(80, dragStartRef.current.rotation[1] - dy * sensitivity)),
       ];
-      // Acumular muestras para cálculo de velocidad (inercia)
       const samples = dragSamplesRef.current;
       samples.push({ x, y, time: performance.now() });
       if (samples.length > VELOCITY_SAMPLES) samples.shift();
     } else if (!gestureWasPinchRef.current) {
-      // Hover: detectar país (suprimido durante/después de pinch)
+      // Hover: detectar país (suprimido durante pinch)
       const feature = hitTest(x, y);
       const cca2 = feature?.properties?.cca2 ?? null;
       if (cca2 !== hoveredRef.current) {
@@ -483,41 +670,37 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
     const wasDragging = isDraggingRef.current;
     isDraggingRef.current = false;
 
-    // Suprimir tap/selección si el gesto incluyó un pinch
     if (gestureWasPinchRef.current) return;
-
     if (!wasDragging || !dragStartRef.current) return;
 
     const [x, y] = getCanvasPos(e);
     const dx = Math.abs(x - dragStartRef.current.x);
     const dy = Math.abs(y - dragStartRef.current.y);
 
-    // Si el movimiento fue mínimo, es un click (no un drag)
     if (dx < 5 && dy < 5) {
+      // Click (no drag)
       const feature = hitTest(x, y);
 
       if (feature) {
-        const cca2 = feature.properties?.cca2 ?? null;
-        console.log('País seleccionado (D3):', cca2, feature.properties?.name);
-
-        selectedRef.current = cca2;
-
-        if (onCountryClick) {
-          onCountryClick(feature as CountryFeature);
+        if (!isControlledRef.current) {
+          selectedRef.current = feature.properties?.cca2 ?? null;
         }
+        onCountryClick?.(feature as CountryFeature);
       } else {
-        // Click en océano — deseleccionar
-        selectedRef.current = null;
+        // Click en océano → deseleccionar
+        if (!isControlledRef.current) {
+          selectedRef.current = null;
+        }
+        onDeselectRef.current?.();
       }
     } else {
-      // Fue un drag real — calcular velocidad para inercia
+      // Drag real → calcular velocidad para inercia
       const samples = dragSamplesRef.current;
       const now = performance.now();
       const last = samples[samples.length - 1];
-      // Solo aplicar inercia si el usuario estaba moviendo justo antes de soltar
       if (samples.length >= 2 && last && (now - last.time) < 80) {
         const first = samples[0];
-        const dt = (last.time - first.time) / 1000; // segundos
+        const dt = (last.time - first.time) / 1000;
         if (dt > 0.01) {
           const sensitivity = DRAG_SENSITIVITY / scaleRef.current;
           const vx = ((last.x - first.x) * sensitivity) / dt;
@@ -549,6 +732,6 @@ export function GlobeD3({ onCountryClick, onReady, showMarkers = true }: GlobeD3
       />
     </div>
   );
-}
+});
 
 export default GlobeD3;
