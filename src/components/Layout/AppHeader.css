@@ -1,0 +1,47 @@
+/* Header superior - avatar y configuración */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  padding-top: env(safe-area-inset-top);
+  z-index: var(--z-header);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+
+  /* Transparente — el globo se ve detrás */
+  pointer-events: none;
+}
+
+/* Solo los botones reciben eventos táctiles */
+.app-header__button {
+  pointer-events: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--transition-fast);
+}
+
+.app-header__button:active {
+  color: var(--color-text-primary);
+}
+
+.app-header__icon {
+  width: 20px;
+  height: 20px;
+}
