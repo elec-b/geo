@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px));
+  bottom: 0;
   z-index: var(--z-overlay);
   background: rgba(10, 10, 26, 0.95);
   backdrop-filter: blur(8px);
@@ -23,8 +23,8 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   /* Espacio para header + controles arriba */
-  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 5rem);
-  padding-bottom: var(--spacing-md);
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 4rem);
+  padding-bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px) + var(--spacing-md));
   padding-left: var(--spacing-md);
   padding-right: var(--spacing-md);
 }

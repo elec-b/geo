@@ -90,36 +90,39 @@
 ## En progreso
 
 ### Experiencia: Explorar
-Primera implementación funcional completada. **Pendiente de feedback del usuario** para ajustes.
+Primera implementación funcional completada. Feedback del usuario aplicado parcialmente.
 - [x] Ficha de país al tocar (bandera, nombre, capital, continente, población y ranking, superficie y ranking, moneda, gentilicio)
 - [x] Marcador de capital sobre el mapa (pin cian al tocar un país)
 - [x] Filtros por continente (pills horizontales con colores por continente)
 - [x] Etiquetas de países/capitales (toggles "Nombres" y "Capitales")
 - [x] Modo «Repaso de capitales» (tabla país–capital; al tocar país → zoom al país + marca en capital; al tocar capital → zoom al punto exacto + pin + país resaltado)
-- [x] Segmented control ("Países" | "Capitales") para cambiar entre modos
+- [x] Segmented control ("Globo" | "Tabla") para cambiar entre modos
 - [x] API imperativa del globo: `flyTo(lon, lat, zoom?, duration?)` con animación suave
-- [ ] Feedback — Cambios de diseño:
-  - [ ] Renombrar modos: "Países" → "Globo", "Capitales" → "Tabla" en segmented control y textos UI
-  - [ ] Filtro de continente: al seleccionar, `flyTo` al centro del continente (orientar el globo)
-  - [ ] Anti-solapamiento de etiquetas: algoritmo de densidad por zoom (mostrar solo países relevantes a zoom lejano, más conforme se acerca)
-  - [ ] Revisar centroides de etiquetas: Francia y otros países con forma irregular (centroide geométrico ≠ centro visual)
-  - [ ] No solapar etiqueta de país con la de su propia capital
-  - [ ] Circulitos de capital permanentes cuando toggle "Capitales" está activo (no solo al seleccionar un país)
-  - [ ] Tabla: añadir columna de población con formato adaptado ("1.4B", "45M", "800k")
-  - [ ] Tabla: headers ordenables (tap para alternar asc/desc por país, capital o población)
-  - [ ] Tabla: tabla única cuando filtro es "Todos" (sin agrupación por continentes)
-  - [ ] Tabla: indicador visual en nombres de países/capitales para sugerir que son tappables
-  - [ ] Territorios no-ONU (ej. Sáhara Occidental): hacer seleccionables con ficha + disclaimer de «no reconocido por la ONU»
-  - [ ] Territorios no-ONU: asignar continente para que los filtros funcionen (ej. Sáhara Occidental no se oscurece al filtrar por América)
-- [ ] Feedback — Bugs y ajustes de layout:
-  - [ ] Tab bar no visible en modo tabla: ajustar z-index o padding
-  - [ ] Tabla aparece abajo: revisar posicionamiento (debería cubrir desde arriba)
-  - [ ] Botón "volver a la tabla" se solapa con filtros de continente: ajustar posición
-  - [ ] Pills de filtro ("Todos", "Oceanía") se salen de la pantalla: revisar scroll horizontal
-  - [ ] Menú de controles (segmented + filtros + toggles) demasiado abajo en pantalla: subir
-  - [ ] Iconos de perfil y configuración demasiado arriba: bajar mínimamente
-- [ ] Feedback — Diseño responsivo:
-  - [ ] Auditar y convertir px fijos a rem en toda la app: `--header-height`, `--tabbar-height`, botones AppHeader, iconos TabBar, `font-size: 11px` hardcoded, pills ContinentFilter, CountryCard
+- [x] Feedback — Cambios de diseño (aplicados):
+  - [x] Renombrar modos: "Países" → "Globo", "Capitales" → "Tabla"
+  - [x] Filtro de continente: `flyTo` al centro del continente al seleccionar
+  - [x] Anti-solapamiento de etiquetas: zoom progresivo por `geoArea` + colisión de bounding boxes
+  - [x] Override de centroides para países con forma irregular (FR, US, RU, etc.)
+  - [x] No solapar etiqueta de país con la de su propia capital
+  - [x] Circulitos permanentes de capital cuando toggle "Capitales" está activo
+  - [x] Tabla: columna de población con formato adaptado ("1.4B", "45M", "800k")
+  - [x] Tabla: headers ordenables (tap para alternar asc/desc)
+  - [x] Tabla: vista plana cuando filtro es "Todos" (sin agrupación por continentes)
+  - [x] Tabla: affordance visual (underline) en celdas tappables
+  - [x] Territorios no-ONU: seleccionables con ficha + disclaimer «no reconocido por la ONU»
+  - [x] Territorios no-ONU: continente asignado para que funcionen los filtros
+- [x] Feedback — Bugs resueltos:
+  - [x] Botón "volver a la tabla" se solapaba con filtros → reposicionado dentro del bloque de controles
+  - [x] Controles demasiado abajo en pantalla → subidos bajo el header
+- [x] Feedback — Diseño responsivo:
+  - [x] Auditoría px → rem en toda la app (`variables.css`, `AppHeader`, `TabBar`, `ExploreView`, `ContinentFilter`, `CapitalsReview`, `CountryCard`, `AppShell`)
+- [ ] Feedback — Bugs pendientes (testado en iPhone):
+  - [ ] Filtros de contintentes y selección globo/tabla no visible en modo tabla (el fix de `bottom` no es suficiente)
+  - [x] Tabla posicionada demasiado abajo en pantalla (debería arrancar más arriba)
+  - [ ] Pills de filtro se salen de la pantalla (el padding extra no resuelve el overflow)
+  - [x] Guyana (América del Sur) se identifica como Brunei: error en mapeo de país del TopoJSON
+  - [x] Antártida: definir tratamiento (no es un país, no pertenece a un continente; actualmente se resalta con cualquier filtro)
+  - [x] Sáhara Occidental: capital mal ubicada, `flyTo` apunta al centro de África en vez de a El Aaiún
 
 ---
 
@@ -163,6 +166,9 @@ Primera implementación funcional completada. **Pendiente de feedback del usuari
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
 - [ ] Traducción a idiomas disponibles en iOS y Android
+
+### Layout y UI general
+- [ ] Iconos de perfil y configuración del header demasiado arriba en pantalla: bajar mínimamente respecto al safe area
 
 ### Infraestructura y acabados
 - [ ] Implementar feedback háptico (vibración en aciertos/errores)

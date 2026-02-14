@@ -284,7 +284,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
 
       // Dimming por filtro de continente
-      const isDimmed = filter != null && cca2 != null && !filter.has(cca2);
+      const isDimmed = filter != null && (cca2 == null || !filter.has(cca2));
       if (isDimmed) ctx.globalAlpha = DIMMED_ALPHA;
 
       ctx.beginPath();
