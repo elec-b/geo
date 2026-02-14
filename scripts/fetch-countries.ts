@@ -2,6 +2,8 @@
  * Script para descargar datos de REST Countries v3.1 y generar
  * public/data/countries.json y public/data/capitals.json.
  *
+ * Incluye los 195 países ONU + territorios no reconocidos visibles en el mapa.
+ *
  * Ejecutar: npm run fetch-data
  */
 
@@ -9,8 +11,8 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// Importar la lista de 195 códigos reconocidos desde el proyecto
-import { UN_COUNTRY_CODES } from '../src/data/isoMapping.js';
+// Importar mapeos desde el proyecto
+import { UN_COUNTRY_CODES, NON_UN_CODES } from '../src/data/isoMapping.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = resolve(__dirname, '..', 'public', 'data');
@@ -22,7 +24,7 @@ const REGION_MAP: Record<string, string> = {
   Asia: 'Asia',
   Europe: 'Europa',
   Oceania: 'Oceanía',
-  Antarctic: 'Antártida', // No debería aparecer en los 195, pero por si acaso
+  Antarctic: 'Antártida',
 };
 
 interface RestCountry {
@@ -52,6 +54,7 @@ interface CountryEntry {
   currencies: string[];
   languages: string[];
   demonym: string;
+  unMember: boolean;
 }
 
 interface CapitalEntry {
@@ -59,49 +62,8 @@ interface CapitalEntry {
   latlng: [number, number];
 }
 
-async function main() {
-  console.log('Descargando datos de REST Countries v3.1...');
-
-  // Usamos /independent para obtener estados soberanos (v3.1 requiere endpoint específico)
-  const response = await fetch('https://restcountries.com/v3.1/independent?status=true');
-  if (!response.ok) {
-    throw new Error(`Error HTTP: ${response.status} ${response.statusText}`);
-  }
-
-  const mainCountries: RestCountry[] = await response.json();
-  console.log(`Recibidos ${mainCountries.length} registros de la API`);
-
-  // Filtrar a los que están en nuestro set de 195
-  const filtered = mainCountries.filter((c) => UN_COUNTRY_CODES.has(c.cca2));
-
-  // Detectar faltantes (ej: Palestina no aparece como independent)
-  const present = new Set(filtered.map((c) => c.cca2));
-  const missing = [...UN_COUNTRY_CODES].filter((code) => !present.has(code));
-
-  if (missing.length > 0) {
-    console.log(`Buscando ${missing.length} países faltantes: ${missing.join(', ')}`);
-    const resp2 = await fetch(`https://restcountries.com/v3.1/alpha?codes=${missing.join(',')}`);
-    if (resp2.ok) {
-      const extra: RestCountry[] = await resp2.json();
-      for (const c of extra) {
-        if (UN_COUNTRY_CODES.has(c.cca2)) filtered.push(c);
-      }
-    }
-  }
-
-  console.log(`Total: ${filtered.length} países reconocidos`);
-
-  if (filtered.length !== 195) {
-    const stillPresent = new Set(filtered.map((c) => c.cca2));
-    const stillMissing = [...UN_COUNTRY_CODES].filter((code) => !stillPresent.has(code));
-    console.warn(`⚠ Faltan ${stillMissing.length} países: ${stillMissing.join(', ')}`);
-  }
-
-  // Ordenar alfabéticamente por cca2
-  filtered.sort((a, b) => a.cca2.localeCompare(b.cca2));
-
-  // Generar countries.json
-  const countries: CountryEntry[] = filtered.map((c) => ({
+function toCountryEntry(c: RestCountry, isUN: boolean): CountryEntry {
+  return {
     cca2: c.cca2,
     ccn3: c.ccn3 ?? '',
     name: c.name.common,
@@ -113,19 +75,89 @@ async function main() {
     currencies: c.currencies ? Object.values(c.currencies).map((cur) => cur.name) : [],
     languages: c.languages ? Object.values(c.languages) : [],
     demonym: c.demonyms?.eng?.m ?? '',
-  }));
+    unMember: isUN,
+  };
+}
+
+async function main() {
+  console.log('Descargando datos de REST Countries v3.1...');
+
+  // --- 1. Países ONU (195) ---
+
+  const response = await fetch('https://restcountries.com/v3.1/independent?status=true');
+  if (!response.ok) {
+    throw new Error(`Error HTTP: ${response.status} ${response.statusText}`);
+  }
+
+  const mainCountries: RestCountry[] = await response.json();
+  console.log(`Recibidos ${mainCountries.length} registros de la API`);
+
+  // Filtrar a los que están en nuestro set de 195
+  const unFiltered = mainCountries.filter((c) => UN_COUNTRY_CODES.has(c.cca2));
+
+  // Detectar faltantes (ej: Palestina no aparece como independent)
+  const present = new Set(unFiltered.map((c) => c.cca2));
+  const missing = [...UN_COUNTRY_CODES].filter((code) => !present.has(code));
+
+  if (missing.length > 0) {
+    console.log(`Buscando ${missing.length} países faltantes: ${missing.join(', ')}`);
+    const resp2 = await fetch(`https://restcountries.com/v3.1/alpha?codes=${missing.join(',')}`);
+    if (resp2.ok) {
+      const extra: RestCountry[] = await resp2.json();
+      for (const c of extra) {
+        if (UN_COUNTRY_CODES.has(c.cca2)) unFiltered.push(c);
+      }
+    }
+  }
+
+  console.log(`Países ONU: ${unFiltered.length}/195`);
+
+  if (unFiltered.length !== 195) {
+    const stillPresent = new Set(unFiltered.map((c) => c.cca2));
+    const stillMissing = [...UN_COUNTRY_CODES].filter((code) => !stillPresent.has(code));
+    console.warn(`⚠ Faltan ${stillMissing.length} países ONU: ${stillMissing.join(', ')}`);
+  }
+
+  // --- 2. Territorios no-ONU ---
+
+  // Filtrar solo los que tienen códigos de REST Countries (excluir SOL, CYN que no existen en la API)
+  const nonUnApiCodes = [...NON_UN_CODES].filter((c) => c.length === 2);
+  console.log(`Buscando ${nonUnApiCodes.length} territorios no-ONU...`);
+
+  const nonUnFiltered: RestCountry[] = [];
+  // Hacer en lotes de 20 para no sobrecargar la API
+  for (let i = 0; i < nonUnApiCodes.length; i += 20) {
+    const batch = nonUnApiCodes.slice(i, i + 20);
+    const resp = await fetch(`https://restcountries.com/v3.1/alpha?codes=${batch.join(',')}`);
+    if (resp.ok) {
+      const data: RestCountry[] = await resp.json();
+      nonUnFiltered.push(...data);
+    }
+  }
+
+  console.log(`Territorios no-ONU descargados: ${nonUnFiltered.length}`);
+
+  // --- 3. Generar salida ---
+
+  const countries: CountryEntry[] = [
+    ...unFiltered.map((c) => toCountryEntry(c, true)),
+    ...nonUnFiltered.map((c) => toCountryEntry(c, false)),
+  ];
+
+  // Ordenar alfabéticamente por cca2
+  countries.sort((a, b) => a.cca2.localeCompare(b.cca2));
 
   // Generar capitals.json (keyed por cca2)
+  const allApiCountries = [...unFiltered, ...nonUnFiltered];
   const capitals: Record<string, CapitalEntry> = {};
   const warnings: string[] = [];
 
-  for (const c of filtered) {
+  for (const c of allApiCountries) {
     const capitalName = c.capital?.[0] ?? '';
     const latlng = c.capitalInfo?.latlng;
 
     if (!latlng || latlng.length < 2) {
       warnings.push(`${c.cca2} (${c.name.common}): sin coordenadas de capital`);
-      // Usar [0, 0] como placeholder
       capitals[c.cca2] = { name: capitalName, latlng: [0, 0] };
     } else {
       capitals[c.cca2] = { name: capitalName, latlng: [latlng[0], latlng[1]] };
@@ -144,7 +176,6 @@ async function main() {
   writeFileSync(capitalsPath, JSON.stringify(capitals, null, 2), 'utf-8');
   console.log(`✓ ${Object.keys(capitals).length} capitales escritas → ${capitalsPath}`);
 
-  // Mostrar warnings
   if (warnings.length > 0) {
     console.log(`\n⚠ ${warnings.length} capitales sin coordenadas:`);
     for (const w of warnings) {

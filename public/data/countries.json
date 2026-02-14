@@ -14,7 +14,8 @@
     "languages": [
       "Catalan"
     ],
-    "demonym": "Andorran"
+    "demonym": "Andorran",
+    "unMember": true
   },
   {
     "cca2": "AE",
@@ -31,7 +32,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Emirati"
+    "demonym": "Emirati",
+    "unMember": true
   },
   {
     "cca2": "AF",
@@ -50,7 +52,8 @@
       "Pashto",
       "Turkmen"
     ],
-    "demonym": "Afghan"
+    "demonym": "Afghan",
+    "unMember": true
   },
   {
     "cca2": "AG",
@@ -67,7 +70,26 @@
     "languages": [
       "English"
     ],
-    "demonym": "Antiguan, Barbudan"
+    "demonym": "Antiguan, Barbudan",
+    "unMember": true
+  },
+  {
+    "cca2": "AI",
+    "ccn3": "660",
+    "name": "Anguilla",
+    "capital": "The Valley",
+    "continent": "América",
+    "population": 16010,
+    "area": 91,
+    "flagSvg": "https://flagcdn.com/ai.svg",
+    "currencies": [
+      "Eastern Caribbean dollar"
+    ],
+    "languages": [
+      "English"
+    ],
+    "demonym": "Anguillian",
+    "unMember": false
   },
   {
     "cca2": "AL",
@@ -84,7 +106,8 @@
     "languages": [
       "Albanian"
     ],
-    "demonym": "Albanian"
+    "demonym": "Albanian",
+    "unMember": true
   },
   {
     "cca2": "AM",
@@ -101,7 +124,8 @@
     "languages": [
       "Armenian"
     ],
-    "demonym": "Armenian"
+    "demonym": "Armenian",
+    "unMember": true
   },
   {
     "cca2": "AO",
@@ -118,7 +142,8 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Angolan"
+    "demonym": "Angolan",
+    "unMember": true
   },
   {
     "cca2": "AR",
@@ -136,7 +161,27 @@
       "Guaraní",
       "Spanish"
     ],
-    "demonym": "Argentine"
+    "demonym": "Argentine",
+    "unMember": true
+  },
+  {
+    "cca2": "AS",
+    "ccn3": "016",
+    "name": "American Samoa",
+    "capital": "Pago Pago",
+    "continent": "Oceanía",
+    "population": 49710,
+    "area": 199,
+    "flagSvg": "https://flagcdn.com/as.svg",
+    "currencies": [
+      "United States dollar"
+    ],
+    "languages": [
+      "English",
+      "Samoan"
+    ],
+    "demonym": "American Samoan",
+    "unMember": false
   },
   {
     "cca2": "AT",
@@ -153,7 +198,8 @@
     "languages": [
       "German"
     ],
-    "demonym": "Austrian"
+    "demonym": "Austrian",
+    "unMember": true
   },
   {
     "cca2": "AU",
@@ -170,7 +216,45 @@
     "languages": [
       "English"
     ],
-    "demonym": "Australian"
+    "demonym": "Australian",
+    "unMember": true
+  },
+  {
+    "cca2": "AW",
+    "ccn3": "533",
+    "name": "Aruba",
+    "capital": "Oranjestad",
+    "continent": "América",
+    "population": 107566,
+    "area": 180,
+    "flagSvg": "https://flagcdn.com/aw.svg",
+    "currencies": [
+      "Aruban florin"
+    ],
+    "languages": [
+      "Dutch",
+      "Papiamento"
+    ],
+    "demonym": "Aruban",
+    "unMember": false
+  },
+  {
+    "cca2": "AX",
+    "ccn3": "248",
+    "name": "Åland Islands",
+    "capital": "Mariehamn",
+    "continent": "Europa",
+    "population": 30654,
+    "area": 1580,
+    "flagSvg": "https://flagcdn.com/ax.svg",
+    "currencies": [
+      "euro"
+    ],
+    "languages": [
+      "Swedish"
+    ],
+    "demonym": "Ålandish",
+    "unMember": false
   },
   {
     "cca2": "AZ",
@@ -187,7 +271,8 @@
     "languages": [
       "Azerbaijani"
     ],
-    "demonym": "Azerbaijani"
+    "demonym": "Azerbaijani",
+    "unMember": true
   },
   {
     "cca2": "BA",
@@ -206,7 +291,8 @@
       "Croatian",
       "Serbian"
     ],
-    "demonym": "Bosnian, Herzegovinian"
+    "demonym": "Bosnian, Herzegovinian",
+    "unMember": true
   },
   {
     "cca2": "BB",
@@ -223,7 +309,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Barbadian"
+    "demonym": "Barbadian",
+    "unMember": true
   },
   {
     "cca2": "BD",
@@ -240,7 +327,8 @@
     "languages": [
       "Bengali"
     ],
-    "demonym": "Bangladeshi"
+    "demonym": "Bangladeshi",
+    "unMember": true
   },
   {
     "cca2": "BE",
@@ -259,7 +347,8 @@
       "French",
       "Dutch"
     ],
-    "demonym": "Belgian"
+    "demonym": "Belgian",
+    "unMember": true
   },
   {
     "cca2": "BF",
@@ -276,7 +365,8 @@
     "languages": [
       "French"
     ],
-    "demonym": "Burkinabe"
+    "demonym": "Burkinabe",
+    "unMember": true
   },
   {
     "cca2": "BG",
@@ -293,7 +383,8 @@
     "languages": [
       "Bulgarian"
     ],
-    "demonym": "Bulgarian"
+    "demonym": "Bulgarian",
+    "unMember": true
   },
   {
     "cca2": "BH",
@@ -310,7 +401,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Bahraini"
+    "demonym": "Bahraini",
+    "unMember": true
   },
   {
     "cca2": "BI",
@@ -328,7 +420,8 @@
       "French",
       "Kirundi"
     ],
-    "demonym": "Burundian"
+    "demonym": "Burundian",
+    "unMember": true
   },
   {
     "cca2": "BJ",
@@ -345,7 +438,44 @@
     "languages": [
       "French"
     ],
-    "demonym": "Beninese"
+    "demonym": "Beninese",
+    "unMember": true
+  },
+  {
+    "cca2": "BL",
+    "ccn3": "652",
+    "name": "Saint Barthélemy",
+    "capital": "Gustavia",
+    "continent": "América",
+    "population": 10562,
+    "area": 21,
+    "flagSvg": "https://flagcdn.com/bl.svg",
+    "currencies": [
+      "euro"
+    ],
+    "languages": [
+      "French"
+    ],
+    "demonym": "Saint Barthélemy Islander",
+    "unMember": false
+  },
+  {
+    "cca2": "BM",
+    "ccn3": "060",
+    "name": "Bermuda",
+    "capital": "Hamilton",
+    "continent": "América",
+    "population": 64055,
+    "area": 54,
+    "flagSvg": "https://flagcdn.com/bm.svg",
+    "currencies": [
+      "Bermudian dollar"
+    ],
+    "languages": [
+      "English"
+    ],
+    "demonym": "Bermudian",
+    "unMember": false
   },
   {
     "cca2": "BN",
@@ -363,7 +493,8 @@
     "languages": [
       "Malay"
     ],
-    "demonym": "Bruneian"
+    "demonym": "Bruneian",
+    "unMember": true
   },
   {
     "cca2": "BO",
@@ -383,7 +514,8 @@
       "Quechua",
       "Spanish"
     ],
-    "demonym": "Bolivian"
+    "demonym": "Bolivian",
+    "unMember": true
   },
   {
     "cca2": "BR",
@@ -400,7 +532,8 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Brazilian"
+    "demonym": "Brazilian",
+    "unMember": true
   },
   {
     "cca2": "BS",
@@ -418,7 +551,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Bahamian"
+    "demonym": "Bahamian",
+    "unMember": true
   },
   {
     "cca2": "BT",
@@ -436,7 +570,8 @@
     "languages": [
       "Dzongkha"
     ],
-    "demonym": "Bhutanese"
+    "demonym": "Bhutanese",
+    "unMember": true
   },
   {
     "cca2": "BW",
@@ -454,7 +589,8 @@
       "English",
       "Tswana"
     ],
-    "demonym": "Motswana"
+    "demonym": "Motswana",
+    "unMember": true
   },
   {
     "cca2": "BY",
@@ -472,7 +608,8 @@
       "Belarusian",
       "Russian"
     ],
-    "demonym": "Belarusian"
+    "demonym": "Belarusian",
+    "unMember": true
   },
   {
     "cca2": "BZ",
@@ -491,7 +628,8 @@
       "English",
       "Spanish"
     ],
-    "demonym": "Belizean"
+    "demonym": "Belizean",
+    "unMember": true
   },
   {
     "cca2": "CA",
@@ -509,7 +647,8 @@
       "English",
       "French"
     ],
-    "demonym": "Canadian"
+    "demonym": "Canadian",
+    "unMember": true
   },
   {
     "cca2": "CD",
@@ -530,7 +669,8 @@
       "Tshiluba",
       "Swahili"
     ],
-    "demonym": "Congolese"
+    "demonym": "Congolese",
+    "unMember": true
   },
   {
     "cca2": "CF",
@@ -548,7 +688,8 @@
       "French",
       "Sango"
     ],
-    "demonym": "Central African"
+    "demonym": "Central African",
+    "unMember": true
   },
   {
     "cca2": "CG",
@@ -567,7 +708,8 @@
       "Kikongo",
       "Lingala"
     ],
-    "demonym": "Congolese"
+    "demonym": "Congolese",
+    "unMember": true
   },
   {
     "cca2": "CH",
@@ -587,7 +729,8 @@
       "Italian",
       "Romansh"
     ],
-    "demonym": "Swiss"
+    "demonym": "Swiss",
+    "unMember": true
   },
   {
     "cca2": "CI",
@@ -604,7 +747,28 @@
     "languages": [
       "French"
     ],
-    "demonym": "Ivorian"
+    "demonym": "Ivorian",
+    "unMember": true
+  },
+  {
+    "cca2": "CK",
+    "ccn3": "184",
+    "name": "Cook Islands",
+    "capital": "Avarua",
+    "continent": "Oceanía",
+    "population": 15040,
+    "area": 236,
+    "flagSvg": "https://flagcdn.com/ck.svg",
+    "currencies": [
+      "Cook Islands dollar",
+      "New Zealand dollar"
+    ],
+    "languages": [
+      "English",
+      "Cook Islands Māori"
+    ],
+    "demonym": "Cook Islander",
+    "unMember": false
   },
   {
     "cca2": "CL",
@@ -621,7 +785,8 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Chilean"
+    "demonym": "Chilean",
+    "unMember": true
   },
   {
     "cca2": "CM",
@@ -639,7 +804,8 @@
       "English",
       "French"
     ],
-    "demonym": "Cameroonian"
+    "demonym": "Cameroonian",
+    "unMember": true
   },
   {
     "cca2": "CN",
@@ -656,7 +822,8 @@
     "languages": [
       "Chinese"
     ],
-    "demonym": "Chinese"
+    "demonym": "Chinese",
+    "unMember": true
   },
   {
     "cca2": "CO",
@@ -673,7 +840,8 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Colombian"
+    "demonym": "Colombian",
+    "unMember": true
   },
   {
     "cca2": "CR",
@@ -690,7 +858,8 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Costa Rican"
+    "demonym": "Costa Rican",
+    "unMember": true
   },
   {
     "cca2": "CU",
@@ -708,7 +877,8 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Cuban"
+    "demonym": "Cuban",
+    "unMember": true
   },
   {
     "cca2": "CV",
@@ -725,7 +895,28 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Cape Verdian"
+    "demonym": "Cape Verdian",
+    "unMember": true
+  },
+  {
+    "cca2": "CW",
+    "ccn3": "531",
+    "name": "Curaçao",
+    "capital": "Willemstad",
+    "continent": "América",
+    "population": 156115,
+    "area": 444,
+    "flagSvg": "https://flagcdn.com/cw.svg",
+    "currencies": [
+      "Netherlands Antillean guilder"
+    ],
+    "languages": [
+      "English",
+      "Dutch",
+      "Papiamento"
+    ],
+    "demonym": "Curaçaoan",
+    "unMember": false
   },
   {
     "cca2": "CY",
@@ -743,7 +934,8 @@
       "Greek",
       "Turkish"
     ],
-    "demonym": "Cypriot"
+    "demonym": "Cypriot",
+    "unMember": true
   },
   {
     "cca2": "CZ",
@@ -761,7 +953,8 @@
       "Czech",
       "Slovak"
     ],
-    "demonym": "Czech"
+    "demonym": "Czech",
+    "unMember": true
   },
   {
     "cca2": "DE",
@@ -778,7 +971,8 @@
     "languages": [
       "German"
     ],
-    "demonym": "German"
+    "demonym": "German",
+    "unMember": true
   },
   {
     "cca2": "DJ",
@@ -796,7 +990,8 @@
       "Arabic",
       "French"
     ],
-    "demonym": "Djibouti"
+    "demonym": "Djibouti",
+    "unMember": true
   },
   {
     "cca2": "DK",
@@ -813,7 +1008,8 @@
     "languages": [
       "Danish"
     ],
-    "demonym": "Danish"
+    "demonym": "Danish",
+    "unMember": true
   },
   {
     "cca2": "DM",
@@ -830,7 +1026,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Dominican"
+    "demonym": "Dominican",
+    "unMember": true
   },
   {
     "cca2": "DO",
@@ -847,7 +1044,8 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Dominican"
+    "demonym": "Dominican",
+    "unMember": true
   },
   {
     "cca2": "DZ",
@@ -864,7 +1062,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Algerian"
+    "demonym": "Algerian",
+    "unMember": true
   },
   {
     "cca2": "EC",
@@ -881,7 +1080,8 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Ecuadorean"
+    "demonym": "Ecuadorean",
+    "unMember": true
   },
   {
     "cca2": "EE",
@@ -898,7 +1098,8 @@
     "languages": [
       "Estonian"
     ],
-    "demonym": "Estonian"
+    "demonym": "Estonian",
+    "unMember": true
   },
   {
     "cca2": "EG",
@@ -915,7 +1116,30 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Egyptian"
+    "demonym": "Egyptian",
+    "unMember": true
+  },
+  {
+    "cca2": "EH",
+    "ccn3": "732",
+    "name": "Western Sahara",
+    "capital": "El Aaiún",
+    "continent": "África",
+    "population": 600904,
+    "area": 266000,
+    "flagSvg": "https://flagcdn.com/eh.svg",
+    "currencies": [
+      "Algerian dinar",
+      "Moroccan dirham",
+      "Mauritanian ouguiya"
+    ],
+    "languages": [
+      "Berber",
+      "Hassaniya",
+      "Spanish"
+    ],
+    "demonym": "Sahrawi",
+    "unMember": false
   },
   {
     "cca2": "ER",
@@ -934,7 +1158,8 @@
       "English",
       "Tigrinya"
     ],
-    "demonym": "Eritrean"
+    "demonym": "Eritrean",
+    "unMember": true
   },
   {
     "cca2": "ES",
@@ -954,7 +1179,8 @@
       "Basque",
       "Galician"
     ],
-    "demonym": "Spanish"
+    "demonym": "Spanish",
+    "unMember": true
   },
   {
     "cca2": "ET",
@@ -971,7 +1197,8 @@
     "languages": [
       "Amharic"
     ],
-    "demonym": "Ethiopian"
+    "demonym": "Ethiopian",
+    "unMember": true
   },
   {
     "cca2": "FI",
@@ -989,7 +1216,8 @@
       "Finnish",
       "Swedish"
     ],
-    "demonym": "Finnish"
+    "demonym": "Finnish",
+    "unMember": true
   },
   {
     "cca2": "FJ",
@@ -1008,7 +1236,26 @@
       "Fijian",
       "Fiji Hindi"
     ],
-    "demonym": "Fijian"
+    "demonym": "Fijian",
+    "unMember": true
+  },
+  {
+    "cca2": "FK",
+    "ccn3": "238",
+    "name": "Falkland Islands",
+    "capital": "Stanley",
+    "continent": "América",
+    "population": 3662,
+    "area": 12173,
+    "flagSvg": "https://flagcdn.com/fk.svg",
+    "currencies": [
+      "Falkland Islands pound"
+    ],
+    "languages": [
+      "English"
+    ],
+    "demonym": "Falkland Islander",
+    "unMember": false
   },
   {
     "cca2": "FM",
@@ -1025,7 +1272,28 @@
     "languages": [
       "English"
     ],
-    "demonym": "Micronesian"
+    "demonym": "Micronesian",
+    "unMember": true
+  },
+  {
+    "cca2": "FO",
+    "ccn3": "234",
+    "name": "Faroe Islands",
+    "capital": "Tórshavn",
+    "continent": "Europa",
+    "population": 54885,
+    "area": 1393,
+    "flagSvg": "https://flagcdn.com/fo.svg",
+    "currencies": [
+      "Danish krone",
+      "Faroese króna"
+    ],
+    "languages": [
+      "Danish",
+      "Faroese"
+    ],
+    "demonym": "Faroese",
+    "unMember": false
   },
   {
     "cca2": "FR",
@@ -1042,7 +1310,8 @@
     "languages": [
       "French"
     ],
-    "demonym": "French"
+    "demonym": "French",
+    "unMember": true
   },
   {
     "cca2": "GA",
@@ -1059,7 +1328,8 @@
     "languages": [
       "French"
     ],
-    "demonym": "Gabonese"
+    "demonym": "Gabonese",
+    "unMember": true
   },
   {
     "cca2": "GB",
@@ -1076,7 +1346,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "British"
+    "demonym": "British",
+    "unMember": true
   },
   {
     "cca2": "GD",
@@ -1093,7 +1364,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Grenadian"
+    "demonym": "Grenadian",
+    "unMember": true
   },
   {
     "cca2": "GE",
@@ -1110,7 +1382,29 @@
     "languages": [
       "Georgian"
     ],
-    "demonym": "Georgian"
+    "demonym": "Georgian",
+    "unMember": true
+  },
+  {
+    "cca2": "GG",
+    "ccn3": "831",
+    "name": "Guernsey",
+    "capital": "St. Peter Port",
+    "continent": "Europa",
+    "population": 64781,
+    "area": 78,
+    "flagSvg": "https://flagcdn.com/gg.svg",
+    "currencies": [
+      "British pound",
+      "Guernsey pound"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Guernésiais"
+    ],
+    "demonym": "Channel Islander",
+    "unMember": false
   },
   {
     "cca2": "GH",
@@ -1127,7 +1421,26 @@
     "languages": [
       "English"
     ],
-    "demonym": "Ghanaian"
+    "demonym": "Ghanaian",
+    "unMember": true
+  },
+  {
+    "cca2": "GL",
+    "ccn3": "304",
+    "name": "Greenland",
+    "capital": "Nuuk",
+    "continent": "América",
+    "population": 56542,
+    "area": 2166086,
+    "flagSvg": "https://flagcdn.com/gl.svg",
+    "currencies": [
+      "krone"
+    ],
+    "languages": [
+      "Greenlandic"
+    ],
+    "demonym": "Greenlandic",
+    "unMember": false
   },
   {
     "cca2": "GM",
@@ -1144,7 +1457,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Gambian"
+    "demonym": "Gambian",
+    "unMember": true
   },
   {
     "cca2": "GN",
@@ -1161,7 +1475,8 @@
     "languages": [
       "French"
     ],
-    "demonym": "Guinean"
+    "demonym": "Guinean",
+    "unMember": true
   },
   {
     "cca2": "GQ",
@@ -1180,7 +1495,8 @@
       "Portuguese",
       "Spanish"
     ],
-    "demonym": "Equatorial Guinean"
+    "demonym": "Equatorial Guinean",
+    "unMember": true
   },
   {
     "cca2": "GR",
@@ -1197,7 +1513,8 @@
     "languages": [
       "Greek"
     ],
-    "demonym": "Greek"
+    "demonym": "Greek",
+    "unMember": true
   },
   {
     "cca2": "GT",
@@ -1214,7 +1531,28 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Guatemalan"
+    "demonym": "Guatemalan",
+    "unMember": true
+  },
+  {
+    "cca2": "GU",
+    "ccn3": "316",
+    "name": "Guam",
+    "capital": "Hagåtña",
+    "continent": "Oceanía",
+    "population": 153836,
+    "area": 549,
+    "flagSvg": "https://flagcdn.com/gu.svg",
+    "currencies": [
+      "United States dollar"
+    ],
+    "languages": [
+      "Chamorro",
+      "English",
+      "Spanish"
+    ],
+    "demonym": "Guamanian",
+    "unMember": false
   },
   {
     "cca2": "GW",
@@ -1232,7 +1570,8 @@
       "Portuguese",
       "Upper Guinea Creole"
     ],
-    "demonym": "Guinea-Bissauan"
+    "demonym": "Guinea-Bissauan",
+    "unMember": true
   },
   {
     "cca2": "GY",
@@ -1249,7 +1588,27 @@
     "languages": [
       "English"
     ],
-    "demonym": "Guyanese"
+    "demonym": "Guyanese",
+    "unMember": true
+  },
+  {
+    "cca2": "HK",
+    "ccn3": "344",
+    "name": "Hong Kong",
+    "capital": "City of Victoria",
+    "continent": "Asia",
+    "population": 7527500,
+    "area": 1104,
+    "flagSvg": "https://flagcdn.com/hk.svg",
+    "currencies": [
+      "Hong Kong dollar"
+    ],
+    "languages": [
+      "English",
+      "Chinese"
+    ],
+    "demonym": "Hong Konger",
+    "unMember": false
   },
   {
     "cca2": "HN",
@@ -1266,7 +1625,8 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Honduran"
+    "demonym": "Honduran",
+    "unMember": true
   },
   {
     "cca2": "HR",
@@ -1283,7 +1643,8 @@
     "languages": [
       "Croatian"
     ],
-    "demonym": "Croatian"
+    "demonym": "Croatian",
+    "unMember": true
   },
   {
     "cca2": "HT",
@@ -1301,7 +1662,8 @@
       "French",
       "Haitian Creole"
     ],
-    "demonym": "Haitian"
+    "demonym": "Haitian",
+    "unMember": true
   },
   {
     "cca2": "HU",
@@ -1318,7 +1680,8 @@
     "languages": [
       "Hungarian"
     ],
-    "demonym": "Hungarian"
+    "demonym": "Hungarian",
+    "unMember": true
   },
   {
     "cca2": "ID",
@@ -1335,7 +1698,8 @@
     "languages": [
       "Indonesian"
     ],
-    "demonym": "Indonesian"
+    "demonym": "Indonesian",
+    "unMember": true
   },
   {
     "cca2": "IE",
@@ -1353,7 +1717,8 @@
       "English",
       "Irish"
     ],
-    "demonym": "Irish"
+    "demonym": "Irish",
+    "unMember": true
   },
   {
     "cca2": "IL",
@@ -1371,7 +1736,28 @@
       "Arabic",
       "Hebrew"
     ],
-    "demonym": "Israeli"
+    "demonym": "Israeli",
+    "unMember": true
+  },
+  {
+    "cca2": "IM",
+    "ccn3": "833",
+    "name": "Isle of Man",
+    "capital": "Douglas",
+    "continent": "Europa",
+    "population": 84530,
+    "area": 572,
+    "flagSvg": "https://flagcdn.com/im.svg",
+    "currencies": [
+      "British pound",
+      "Manx pound"
+    ],
+    "languages": [
+      "English",
+      "Manx"
+    ],
+    "demonym": "Manx",
+    "unMember": false
   },
   {
     "cca2": "IN",
@@ -1390,7 +1776,8 @@
       "Hindi",
       "Tamil"
     ],
-    "demonym": "Indian"
+    "demonym": "Indian",
+    "unMember": true
   },
   {
     "cca2": "IQ",
@@ -1409,7 +1796,8 @@
       "Aramaic",
       "Sorani"
     ],
-    "demonym": "Iraqi"
+    "demonym": "Iraqi",
+    "unMember": true
   },
   {
     "cca2": "IR",
@@ -1426,7 +1814,8 @@
     "languages": [
       "Persian (Farsi)"
     ],
-    "demonym": "Iranian"
+    "demonym": "Iranian",
+    "unMember": true
   },
   {
     "cca2": "IS",
@@ -1443,7 +1832,8 @@
     "languages": [
       "Icelandic"
     ],
-    "demonym": "Icelander"
+    "demonym": "Icelander",
+    "unMember": true
   },
   {
     "cca2": "IT",
@@ -1461,7 +1851,29 @@
       "Italian",
       "Catalan"
     ],
-    "demonym": "Italian"
+    "demonym": "Italian",
+    "unMember": true
+  },
+  {
+    "cca2": "JE",
+    "ccn3": "832",
+    "name": "Jersey",
+    "capital": "Saint Helier",
+    "continent": "Europa",
+    "population": 103267,
+    "area": 116,
+    "flagSvg": "https://flagcdn.com/je.svg",
+    "currencies": [
+      "British pound",
+      "Jersey pound"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Jèrriais"
+    ],
+    "demonym": "Channel Islander",
+    "unMember": false
   },
   {
     "cca2": "JM",
@@ -1479,7 +1891,8 @@
       "English",
       "Jamaican Patois"
     ],
-    "demonym": "Jamaican"
+    "demonym": "Jamaican",
+    "unMember": true
   },
   {
     "cca2": "JO",
@@ -1496,7 +1909,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Jordanian"
+    "demonym": "Jordanian",
+    "unMember": true
   },
   {
     "cca2": "JP",
@@ -1513,7 +1927,8 @@
     "languages": [
       "Japanese"
     ],
-    "demonym": "Japanese"
+    "demonym": "Japanese",
+    "unMember": true
   },
   {
     "cca2": "KE",
@@ -1531,7 +1946,8 @@
       "English",
       "Swahili"
     ],
-    "demonym": "Kenyan"
+    "demonym": "Kenyan",
+    "unMember": true
   },
   {
     "cca2": "KG",
@@ -1549,7 +1965,8 @@
       "Kyrgyz",
       "Russian"
     ],
-    "demonym": "Kirghiz"
+    "demonym": "Kirghiz",
+    "unMember": true
   },
   {
     "cca2": "KH",
@@ -1567,7 +1984,8 @@
     "languages": [
       "Khmer"
     ],
-    "demonym": "Cambodian"
+    "demonym": "Cambodian",
+    "unMember": true
   },
   {
     "cca2": "KI",
@@ -1586,7 +2004,8 @@
       "English",
       "Gilbertese"
     ],
-    "demonym": "I-Kiribati"
+    "demonym": "I-Kiribati",
+    "unMember": true
   },
   {
     "cca2": "KM",
@@ -1605,7 +2024,8 @@
       "French",
       "Comorian"
     ],
-    "demonym": "Comoran"
+    "demonym": "Comoran",
+    "unMember": true
   },
   {
     "cca2": "KN",
@@ -1622,7 +2042,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Kittitian or Nevisian"
+    "demonym": "Kittitian or Nevisian",
+    "unMember": true
   },
   {
     "cca2": "KP",
@@ -1639,7 +2060,8 @@
     "languages": [
       "Korean"
     ],
-    "demonym": "North Korean"
+    "demonym": "North Korean",
+    "unMember": true
   },
   {
     "cca2": "KR",
@@ -1656,7 +2078,8 @@
     "languages": [
       "Korean"
     ],
-    "demonym": "South Korean"
+    "demonym": "South Korean",
+    "unMember": true
   },
   {
     "cca2": "KW",
@@ -1673,7 +2096,26 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Kuwaiti"
+    "demonym": "Kuwaiti",
+    "unMember": true
+  },
+  {
+    "cca2": "KY",
+    "ccn3": "136",
+    "name": "Cayman Islands",
+    "capital": "George Town",
+    "continent": "América",
+    "population": 84738,
+    "area": 264,
+    "flagSvg": "https://flagcdn.com/ky.svg",
+    "currencies": [
+      "Cayman Islands dollar"
+    ],
+    "languages": [
+      "English"
+    ],
+    "demonym": "Caymanian",
+    "unMember": false
   },
   {
     "cca2": "KZ",
@@ -1691,7 +2133,8 @@
       "Kazakh",
       "Russian"
     ],
-    "demonym": "Kazakhstani"
+    "demonym": "Kazakhstani",
+    "unMember": true
   },
   {
     "cca2": "LA",
@@ -1708,7 +2151,8 @@
     "languages": [
       "Lao"
     ],
-    "demonym": "Laotian"
+    "demonym": "Laotian",
+    "unMember": true
   },
   {
     "cca2": "LB",
@@ -1726,7 +2170,8 @@
       "Arabic",
       "French"
     ],
-    "demonym": "Lebanese"
+    "demonym": "Lebanese",
+    "unMember": true
   },
   {
     "cca2": "LC",
@@ -1743,7 +2188,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Saint Lucian"
+    "demonym": "Saint Lucian",
+    "unMember": true
   },
   {
     "cca2": "LI",
@@ -1760,7 +2206,8 @@
     "languages": [
       "German"
     ],
-    "demonym": "Liechtensteiner"
+    "demonym": "Liechtensteiner",
+    "unMember": true
   },
   {
     "cca2": "LK",
@@ -1778,7 +2225,8 @@
       "Sinhala",
       "Tamil"
     ],
-    "demonym": "Sri Lankan"
+    "demonym": "Sri Lankan",
+    "unMember": true
   },
   {
     "cca2": "LR",
@@ -1795,7 +2243,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Liberian"
+    "demonym": "Liberian",
+    "unMember": true
   },
   {
     "cca2": "LS",
@@ -1814,7 +2263,8 @@
       "English",
       "Sotho"
     ],
-    "demonym": "Mosotho"
+    "demonym": "Mosotho",
+    "unMember": true
   },
   {
     "cca2": "LT",
@@ -1831,7 +2281,8 @@
     "languages": [
       "Lithuanian"
     ],
-    "demonym": "Lithuanian"
+    "demonym": "Lithuanian",
+    "unMember": true
   },
   {
     "cca2": "LU",
@@ -1850,7 +2301,8 @@
       "French",
       "Luxembourgish"
     ],
-    "demonym": "Luxembourger"
+    "demonym": "Luxembourger",
+    "unMember": true
   },
   {
     "cca2": "LV",
@@ -1867,7 +2319,8 @@
     "languages": [
       "Latvian"
     ],
-    "demonym": "Latvian"
+    "demonym": "Latvian",
+    "unMember": true
   },
   {
     "cca2": "LY",
@@ -1884,7 +2337,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Libyan"
+    "demonym": "Libyan",
+    "unMember": true
   },
   {
     "cca2": "MA",
@@ -1902,7 +2356,8 @@
       "Arabic",
       "Berber"
     ],
-    "demonym": "Moroccan"
+    "demonym": "Moroccan",
+    "unMember": true
   },
   {
     "cca2": "MC",
@@ -1919,7 +2374,8 @@
     "languages": [
       "French"
     ],
-    "demonym": "Monegasque"
+    "demonym": "Monegasque",
+    "unMember": true
   },
   {
     "cca2": "MD",
@@ -1936,7 +2392,8 @@
     "languages": [
       "Romanian"
     ],
-    "demonym": "Moldovan"
+    "demonym": "Moldovan",
+    "unMember": true
   },
   {
     "cca2": "ME",
@@ -1953,7 +2410,26 @@
     "languages": [
       "Montenegrin"
     ],
-    "demonym": "Montenegrin"
+    "demonym": "Montenegrin",
+    "unMember": true
+  },
+  {
+    "cca2": "MF",
+    "ccn3": "663",
+    "name": "Saint Martin",
+    "capital": "Marigot",
+    "continent": "América",
+    "population": 31496,
+    "area": 53,
+    "flagSvg": "https://flagcdn.com/mf.svg",
+    "currencies": [
+      "euro"
+    ],
+    "languages": [
+      "French"
+    ],
+    "demonym": "Saint Martin Islander",
+    "unMember": false
   },
   {
     "cca2": "MG",
@@ -1971,7 +2447,8 @@
       "French",
       "Malagasy"
     ],
-    "demonym": "Malagasy"
+    "demonym": "Malagasy",
+    "unMember": true
   },
   {
     "cca2": "MH",
@@ -1989,7 +2466,8 @@
       "English",
       "Marshallese"
     ],
-    "demonym": "Marshallese"
+    "demonym": "Marshallese",
+    "unMember": true
   },
   {
     "cca2": "MK",
@@ -2006,7 +2484,8 @@
     "languages": [
       "Macedonian"
     ],
-    "demonym": "Macedonian"
+    "demonym": "Macedonian",
+    "unMember": true
   },
   {
     "cca2": "ML",
@@ -2023,7 +2502,8 @@
     "languages": [
       "French"
     ],
-    "demonym": "Malian"
+    "demonym": "Malian",
+    "unMember": true
   },
   {
     "cca2": "MM",
@@ -2040,7 +2520,8 @@
     "languages": [
       "Burmese"
     ],
-    "demonym": "Burmese"
+    "demonym": "Burmese",
+    "unMember": true
   },
   {
     "cca2": "MN",
@@ -2057,7 +2538,47 @@
     "languages": [
       "Mongolian"
     ],
-    "demonym": "Mongolian"
+    "demonym": "Mongolian",
+    "unMember": true
+  },
+  {
+    "cca2": "MO",
+    "ccn3": "446",
+    "name": "Macau",
+    "capital": "",
+    "continent": "Asia",
+    "population": 685900,
+    "area": 30,
+    "flagSvg": "https://flagcdn.com/mo.svg",
+    "currencies": [
+      "Macanese pataca"
+    ],
+    "languages": [
+      "Portuguese",
+      "Chinese"
+    ],
+    "demonym": "Macanese",
+    "unMember": false
+  },
+  {
+    "cca2": "MP",
+    "ccn3": "580",
+    "name": "Northern Mariana Islands",
+    "capital": "Saipan",
+    "continent": "Oceanía",
+    "population": 47329,
+    "area": 464,
+    "flagSvg": "https://flagcdn.com/mp.svg",
+    "currencies": [
+      "United States dollar"
+    ],
+    "languages": [
+      "Carolinian",
+      "Chamorro",
+      "English"
+    ],
+    "demonym": "American",
+    "unMember": false
   },
   {
     "cca2": "MR",
@@ -2074,7 +2595,26 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Mauritanian"
+    "demonym": "Mauritanian",
+    "unMember": true
+  },
+  {
+    "cca2": "MS",
+    "ccn3": "500",
+    "name": "Montserrat",
+    "capital": "Plymouth",
+    "continent": "América",
+    "population": 4386,
+    "area": 102,
+    "flagSvg": "https://flagcdn.com/ms.svg",
+    "currencies": [
+      "Eastern Caribbean dollar"
+    ],
+    "languages": [
+      "English"
+    ],
+    "demonym": "Montserratian",
+    "unMember": false
   },
   {
     "cca2": "MT",
@@ -2092,7 +2632,8 @@
       "English",
       "Maltese"
     ],
-    "demonym": "Maltese"
+    "demonym": "Maltese",
+    "unMember": true
   },
   {
     "cca2": "MU",
@@ -2111,7 +2652,8 @@
       "French",
       "Mauritian Creole"
     ],
-    "demonym": "Mauritian"
+    "demonym": "Mauritian",
+    "unMember": true
   },
   {
     "cca2": "MV",
@@ -2128,7 +2670,8 @@
     "languages": [
       "Maldivian"
     ],
-    "demonym": "Maldivan"
+    "demonym": "Maldivan",
+    "unMember": true
   },
   {
     "cca2": "MW",
@@ -2146,7 +2689,8 @@
       "English",
       "Chewa"
     ],
-    "demonym": "Malawian"
+    "demonym": "Malawian",
+    "unMember": true
   },
   {
     "cca2": "MX",
@@ -2163,7 +2707,8 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Mexican"
+    "demonym": "Mexican",
+    "unMember": true
   },
   {
     "cca2": "MY",
@@ -2181,7 +2726,8 @@
       "English",
       "Malay"
     ],
-    "demonym": "Malaysian"
+    "demonym": "Malaysian",
+    "unMember": true
   },
   {
     "cca2": "MZ",
@@ -2198,7 +2744,8 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Mozambican"
+    "demonym": "Mozambican",
+    "unMember": true
   },
   {
     "cca2": "NA",
@@ -2224,7 +2771,26 @@
       "Ndonga",
       "Tswana"
     ],
-    "demonym": "Namibian"
+    "demonym": "Namibian",
+    "unMember": true
+  },
+  {
+    "cca2": "NC",
+    "ccn3": "540",
+    "name": "New Caledonia",
+    "capital": "Nouméa",
+    "continent": "Oceanía",
+    "population": 264596,
+    "area": 18575,
+    "flagSvg": "https://flagcdn.com/nc.svg",
+    "currencies": [
+      "CFP franc"
+    ],
+    "languages": [
+      "French"
+    ],
+    "demonym": "New Caledonian",
+    "unMember": false
   },
   {
     "cca2": "NE",
@@ -2241,7 +2807,27 @@
     "languages": [
       "French"
     ],
-    "demonym": "Nigerien"
+    "demonym": "Nigerien",
+    "unMember": true
+  },
+  {
+    "cca2": "NF",
+    "ccn3": "574",
+    "name": "Norfolk Island",
+    "capital": "Kingston",
+    "continent": "Oceanía",
+    "population": 2188,
+    "area": 36,
+    "flagSvg": "https://flagcdn.com/nf.svg",
+    "currencies": [
+      "Australian dollar"
+    ],
+    "languages": [
+      "English",
+      "Norfuk"
+    ],
+    "demonym": "Norfolk Islander",
+    "unMember": false
   },
   {
     "cca2": "NG",
@@ -2258,7 +2844,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Nigerian"
+    "demonym": "Nigerian",
+    "unMember": true
   },
   {
     "cca2": "NI",
@@ -2275,7 +2862,8 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Nicaraguan"
+    "demonym": "Nicaraguan",
+    "unMember": true
   },
   {
     "cca2": "NL",
@@ -2292,7 +2880,8 @@
     "languages": [
       "Dutch"
     ],
-    "demonym": "Dutch"
+    "demonym": "Dutch",
+    "unMember": true
   },
   {
     "cca2": "NO",
@@ -2311,7 +2900,8 @@
       "Norwegian Bokmål",
       "Sami"
     ],
-    "demonym": "Norwegian"
+    "demonym": "Norwegian",
+    "unMember": true
   },
   {
     "cca2": "NP",
@@ -2328,7 +2918,8 @@
     "languages": [
       "Nepali"
     ],
-    "demonym": "Nepalese"
+    "demonym": "Nepalese",
+    "unMember": true
   },
   {
     "cca2": "NR",
@@ -2346,7 +2937,27 @@
       "English",
       "Nauru"
     ],
-    "demonym": "Nauruan"
+    "demonym": "Nauruan",
+    "unMember": true
+  },
+  {
+    "cca2": "NU",
+    "ccn3": "570",
+    "name": "Niue",
+    "capital": "Alofi",
+    "continent": "Oceanía",
+    "population": 1681,
+    "area": 260,
+    "flagSvg": "https://flagcdn.com/nu.svg",
+    "currencies": [
+      "New Zealand dollar"
+    ],
+    "languages": [
+      "English",
+      "Niuean"
+    ],
+    "demonym": "Niuean",
+    "unMember": false
   },
   {
     "cca2": "NZ",
@@ -2365,7 +2976,8 @@
       "Māori",
       "New Zealand Sign Language"
     ],
-    "demonym": "New Zealander"
+    "demonym": "New Zealander",
+    "unMember": true
   },
   {
     "cca2": "OM",
@@ -2382,7 +2994,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Omani"
+    "demonym": "Omani",
+    "unMember": true
   },
   {
     "cca2": "PA",
@@ -2400,7 +3013,8 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Panamanian"
+    "demonym": "Panamanian",
+    "unMember": true
   },
   {
     "cca2": "PE",
@@ -2419,7 +3033,26 @@
       "Quechua",
       "Spanish"
     ],
-    "demonym": "Peruvian"
+    "demonym": "Peruvian",
+    "unMember": true
+  },
+  {
+    "cca2": "PF",
+    "ccn3": "258",
+    "name": "French Polynesia",
+    "capital": "Papeetē",
+    "continent": "Oceanía",
+    "population": 279500,
+    "area": 4167,
+    "flagSvg": "https://flagcdn.com/pf.svg",
+    "currencies": [
+      "CFP franc"
+    ],
+    "languages": [
+      "French"
+    ],
+    "demonym": "French Polynesian",
+    "unMember": false
   },
   {
     "cca2": "PG",
@@ -2438,7 +3071,8 @@
       "Hiri Motu",
       "Tok Pisin"
     ],
-    "demonym": "Papua New Guinean"
+    "demonym": "Papua New Guinean",
+    "unMember": true
   },
   {
     "cca2": "PH",
@@ -2456,7 +3090,8 @@
       "English",
       "Filipino"
     ],
-    "demonym": "Filipino"
+    "demonym": "Filipino",
+    "unMember": true
   },
   {
     "cca2": "PK",
@@ -2474,7 +3109,8 @@
       "English",
       "Urdu"
     ],
-    "demonym": "Pakistani"
+    "demonym": "Pakistani",
+    "unMember": true
   },
   {
     "cca2": "PL",
@@ -2491,7 +3127,63 @@
     "languages": [
       "Polish"
     ],
-    "demonym": "Polish"
+    "demonym": "Polish",
+    "unMember": true
+  },
+  {
+    "cca2": "PM",
+    "ccn3": "666",
+    "name": "Saint Pierre and Miquelon",
+    "capital": "Saint-Pierre",
+    "continent": "América",
+    "population": 5819,
+    "area": 242,
+    "flagSvg": "https://flagcdn.com/pm.svg",
+    "currencies": [
+      "euro"
+    ],
+    "languages": [
+      "French"
+    ],
+    "demonym": "Saint-Pierrais, Miquelonnais",
+    "unMember": false
+  },
+  {
+    "cca2": "PN",
+    "ccn3": "612",
+    "name": "Pitcairn Islands",
+    "capital": "Adamstown",
+    "continent": "Oceanía",
+    "population": 35,
+    "area": 47,
+    "flagSvg": "https://flagcdn.com/pn.svg",
+    "currencies": [
+      "New Zealand dollar"
+    ],
+    "languages": [
+      "English"
+    ],
+    "demonym": "Pitcairn Islander",
+    "unMember": false
+  },
+  {
+    "cca2": "PR",
+    "ccn3": "630",
+    "name": "Puerto Rico",
+    "capital": "San Juan",
+    "continent": "América",
+    "population": 3203295,
+    "area": 8870,
+    "flagSvg": "https://flagcdn.com/pr.svg",
+    "currencies": [
+      "United States dollar"
+    ],
+    "languages": [
+      "English",
+      "Spanish"
+    ],
+    "demonym": "Puerto Rican",
+    "unMember": false
   },
   {
     "cca2": "PS",
@@ -2510,7 +3202,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Palestinian"
+    "demonym": "Palestinian",
+    "unMember": true
   },
   {
     "cca2": "PT",
@@ -2527,7 +3220,8 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Portuguese"
+    "demonym": "Portuguese",
+    "unMember": true
   },
   {
     "cca2": "PW",
@@ -2545,7 +3239,8 @@
       "English",
       "Palauan"
     ],
-    "demonym": "Palauan"
+    "demonym": "Palauan",
+    "unMember": true
   },
   {
     "cca2": "PY",
@@ -2563,7 +3258,8 @@
       "Guaraní",
       "Spanish"
     ],
-    "demonym": "Paraguayan"
+    "demonym": "Paraguayan",
+    "unMember": true
   },
   {
     "cca2": "QA",
@@ -2580,7 +3276,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Qatari"
+    "demonym": "Qatari",
+    "unMember": true
   },
   {
     "cca2": "RO",
@@ -2597,7 +3294,8 @@
     "languages": [
       "Romanian"
     ],
-    "demonym": "Romanian"
+    "demonym": "Romanian",
+    "unMember": true
   },
   {
     "cca2": "RS",
@@ -2614,7 +3312,8 @@
     "languages": [
       "Serbian"
     ],
-    "demonym": "Serbian"
+    "demonym": "Serbian",
+    "unMember": true
   },
   {
     "cca2": "RU",
@@ -2631,7 +3330,8 @@
     "languages": [
       "Russian"
     ],
-    "demonym": "Russian"
+    "demonym": "Russian",
+    "unMember": true
   },
   {
     "cca2": "RW",
@@ -2650,7 +3350,8 @@
       "French",
       "Kinyarwanda"
     ],
-    "demonym": "Rwandan"
+    "demonym": "Rwandan",
+    "unMember": true
   },
   {
     "cca2": "SA",
@@ -2667,7 +3368,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Saudi Arabian"
+    "demonym": "Saudi Arabian",
+    "unMember": true
   },
   {
     "cca2": "SB",
@@ -2684,7 +3386,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Solomon Islander"
+    "demonym": "Solomon Islander",
+    "unMember": true
   },
   {
     "cca2": "SC",
@@ -2703,7 +3406,8 @@
       "English",
       "French"
     ],
-    "demonym": "Seychellois"
+    "demonym": "Seychellois",
+    "unMember": true
   },
   {
     "cca2": "SD",
@@ -2721,7 +3425,8 @@
       "Arabic",
       "English"
     ],
-    "demonym": "Sudanese"
+    "demonym": "Sudanese",
+    "unMember": true
   },
   {
     "cca2": "SE",
@@ -2738,7 +3443,8 @@
     "languages": [
       "Swedish"
     ],
-    "demonym": "Swedish"
+    "demonym": "Swedish",
+    "unMember": true
   },
   {
     "cca2": "SG",
@@ -2758,7 +3464,27 @@
       "Malay",
       "Tamil"
     ],
-    "demonym": "Singaporean"
+    "demonym": "Singaporean",
+    "unMember": true
+  },
+  {
+    "cca2": "SH",
+    "ccn3": "654",
+    "name": "Saint Helena, Ascension and Tristan da Cunha",
+    "capital": "Jamestown",
+    "continent": "África",
+    "population": 5651,
+    "area": 394,
+    "flagSvg": "https://flagcdn.com/sh.svg",
+    "currencies": [
+      "Pound sterling",
+      "Saint Helena pound"
+    ],
+    "languages": [
+      "English"
+    ],
+    "demonym": "Saint Helenian",
+    "unMember": false
   },
   {
     "cca2": "SI",
@@ -2775,7 +3501,8 @@
     "languages": [
       "Slovene"
     ],
-    "demonym": "Slovene"
+    "demonym": "Slovene",
+    "unMember": true
   },
   {
     "cca2": "SK",
@@ -2792,7 +3519,8 @@
     "languages": [
       "Slovak"
     ],
-    "demonym": "Slovak"
+    "demonym": "Slovak",
+    "unMember": true
   },
   {
     "cca2": "SL",
@@ -2809,7 +3537,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Sierra Leonean"
+    "demonym": "Sierra Leonean",
+    "unMember": true
   },
   {
     "cca2": "SM",
@@ -2826,7 +3555,8 @@
     "languages": [
       "Italian"
     ],
-    "demonym": "Sammarinese"
+    "demonym": "Sammarinese",
+    "unMember": true
   },
   {
     "cca2": "SN",
@@ -2843,7 +3573,8 @@
     "languages": [
       "French"
     ],
-    "demonym": "Senegalese"
+    "demonym": "Senegalese",
+    "unMember": true
   },
   {
     "cca2": "SO",
@@ -2861,7 +3592,8 @@
       "Arabic",
       "Somali"
     ],
-    "demonym": "Somali"
+    "demonym": "Somali",
+    "unMember": true
   },
   {
     "cca2": "SR",
@@ -2878,7 +3610,8 @@
     "languages": [
       "Dutch"
     ],
-    "demonym": "Surinamer"
+    "demonym": "Surinamer",
+    "unMember": true
   },
   {
     "cca2": "SS",
@@ -2895,7 +3628,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "South Sudanese"
+    "demonym": "South Sudanese",
+    "unMember": true
   },
   {
     "cca2": "ST",
@@ -2912,7 +3646,8 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Sao Tomean"
+    "demonym": "Sao Tomean",
+    "unMember": true
   },
   {
     "cca2": "SV",
@@ -2929,7 +3664,28 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Salvadoran"
+    "demonym": "Salvadoran",
+    "unMember": true
+  },
+  {
+    "cca2": "SX",
+    "ccn3": "534",
+    "name": "Sint Maarten",
+    "capital": "Philipsburg",
+    "continent": "América",
+    "population": 41349,
+    "area": 34,
+    "flagSvg": "https://flagcdn.com/sx.svg",
+    "currencies": [
+      "Netherlands Antillean guilder"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Dutch"
+    ],
+    "demonym": "St. Maartener",
+    "unMember": false
   },
   {
     "cca2": "SY",
@@ -2946,7 +3702,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Syrian"
+    "demonym": "Syrian",
+    "unMember": true
   },
   {
     "cca2": "SZ",
@@ -2965,7 +3722,26 @@
       "English",
       "Swazi"
     ],
-    "demonym": "Swazi"
+    "demonym": "Swazi",
+    "unMember": true
+  },
+  {
+    "cca2": "TC",
+    "ccn3": "796",
+    "name": "Turks and Caicos Islands",
+    "capital": "Cockburn Town",
+    "continent": "América",
+    "population": 50828,
+    "area": 948,
+    "flagSvg": "https://flagcdn.com/tc.svg",
+    "currencies": [
+      "United States dollar"
+    ],
+    "languages": [
+      "English"
+    ],
+    "demonym": "Turks and Caicos Islander",
+    "unMember": false
   },
   {
     "cca2": "TD",
@@ -2983,7 +3759,8 @@
       "Arabic",
       "French"
     ],
-    "demonym": "Chadian"
+    "demonym": "Chadian",
+    "unMember": true
   },
   {
     "cca2": "TG",
@@ -3000,7 +3777,8 @@
     "languages": [
       "French"
     ],
-    "demonym": "Togolese"
+    "demonym": "Togolese",
+    "unMember": true
   },
   {
     "cca2": "TH",
@@ -3017,7 +3795,8 @@
     "languages": [
       "Thai"
     ],
-    "demonym": "Thai"
+    "demonym": "Thai",
+    "unMember": true
   },
   {
     "cca2": "TJ",
@@ -3035,7 +3814,8 @@
       "Russian",
       "Tajik"
     ],
-    "demonym": "Tadzhik"
+    "demonym": "Tadzhik",
+    "unMember": true
   },
   {
     "cca2": "TL",
@@ -3053,7 +3833,8 @@
       "Portuguese",
       "Tetum"
     ],
-    "demonym": "East Timorese"
+    "demonym": "East Timorese",
+    "unMember": true
   },
   {
     "cca2": "TM",
@@ -3071,7 +3852,8 @@
       "Russian",
       "Turkmen"
     ],
-    "demonym": "Turkmen"
+    "demonym": "Turkmen",
+    "unMember": true
   },
   {
     "cca2": "TN",
@@ -3088,7 +3870,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Tunisian"
+    "demonym": "Tunisian",
+    "unMember": true
   },
   {
     "cca2": "TO",
@@ -3106,7 +3889,8 @@
       "English",
       "Tongan"
     ],
-    "demonym": "Tongan"
+    "demonym": "Tongan",
+    "unMember": true
   },
   {
     "cca2": "TR",
@@ -3123,7 +3907,8 @@
     "languages": [
       "Turkish"
     ],
-    "demonym": "Turkish"
+    "demonym": "Turkish",
+    "unMember": true
   },
   {
     "cca2": "TT",
@@ -3140,7 +3925,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Trinidadian"
+    "demonym": "Trinidadian",
+    "unMember": true
   },
   {
     "cca2": "TV",
@@ -3159,7 +3945,26 @@
       "English",
       "Tuvaluan"
     ],
-    "demonym": "Tuvaluan"
+    "demonym": "Tuvaluan",
+    "unMember": true
+  },
+  {
+    "cca2": "TW",
+    "ccn3": "158",
+    "name": "Taiwan",
+    "capital": "Taipei",
+    "continent": "Asia",
+    "population": 23317031,
+    "area": 36197,
+    "flagSvg": "https://flagcdn.com/tw.svg",
+    "currencies": [
+      "New Taiwan dollar"
+    ],
+    "languages": [
+      "Chinese"
+    ],
+    "demonym": "Taiwanese",
+    "unMember": false
   },
   {
     "cca2": "TZ",
@@ -3177,7 +3982,8 @@
       "English",
       "Swahili"
     ],
-    "demonym": "Tanzanian"
+    "demonym": "Tanzanian",
+    "unMember": true
   },
   {
     "cca2": "UA",
@@ -3194,7 +4000,8 @@
     "languages": [
       "Ukrainian"
     ],
-    "demonym": "Ukrainian"
+    "demonym": "Ukrainian",
+    "unMember": true
   },
   {
     "cca2": "UG",
@@ -3212,7 +4019,8 @@
       "English",
       "Swahili"
     ],
-    "demonym": "Ugandan"
+    "demonym": "Ugandan",
+    "unMember": true
   },
   {
     "cca2": "US",
@@ -3229,7 +4037,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "American"
+    "demonym": "American",
+    "unMember": true
   },
   {
     "cca2": "UY",
@@ -3246,7 +4055,8 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Uruguayan"
+    "demonym": "Uruguayan",
+    "unMember": true
   },
   {
     "cca2": "UZ",
@@ -3264,7 +4074,8 @@
       "Russian",
       "Uzbek"
     ],
-    "demonym": "Uzbekistani"
+    "demonym": "Uzbekistani",
+    "unMember": true
   },
   {
     "cca2": "VA",
@@ -3282,7 +4093,8 @@
       "Italian",
       "Latin"
     ],
-    "demonym": "Vatican"
+    "demonym": "Vatican",
+    "unMember": true
   },
   {
     "cca2": "VC",
@@ -3299,7 +4111,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Saint Vincentian"
+    "demonym": "Saint Vincentian",
+    "unMember": true
   },
   {
     "cca2": "VE",
@@ -3316,7 +4129,44 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Venezuelan"
+    "demonym": "Venezuelan",
+    "unMember": true
+  },
+  {
+    "cca2": "VG",
+    "ccn3": "092",
+    "name": "British Virgin Islands",
+    "capital": "Road Town",
+    "continent": "América",
+    "population": 39471,
+    "area": 151,
+    "flagSvg": "https://flagcdn.com/vg.svg",
+    "currencies": [
+      "United States dollar"
+    ],
+    "languages": [
+      "English"
+    ],
+    "demonym": "Virgin Islander",
+    "unMember": false
+  },
+  {
+    "cca2": "VI",
+    "ccn3": "850",
+    "name": "United States Virgin Islands",
+    "capital": "Charlotte Amalie",
+    "continent": "América",
+    "population": 87146,
+    "area": 347,
+    "flagSvg": "https://flagcdn.com/vi.svg",
+    "currencies": [
+      "United States dollar"
+    ],
+    "languages": [
+      "English"
+    ],
+    "demonym": "Virgin Islander",
+    "unMember": false
   },
   {
     "cca2": "VN",
@@ -3333,7 +4183,8 @@
     "languages": [
       "Vietnamese"
     ],
-    "demonym": "Vietnamese"
+    "demonym": "Vietnamese",
+    "unMember": true
   },
   {
     "cca2": "VU",
@@ -3352,7 +4203,26 @@
       "English",
       "French"
     ],
-    "demonym": "Ni-Vanuatu"
+    "demonym": "Ni-Vanuatu",
+    "unMember": true
+  },
+  {
+    "cca2": "WF",
+    "ccn3": "876",
+    "name": "Wallis and Futuna",
+    "capital": "Mata-Utu",
+    "continent": "Oceanía",
+    "population": 11620,
+    "area": 142,
+    "flagSvg": "https://flagcdn.com/wf.svg",
+    "currencies": [
+      "CFP franc"
+    ],
+    "languages": [
+      "French"
+    ],
+    "demonym": "Wallis and Futuna Islander",
+    "unMember": false
   },
   {
     "cca2": "WS",
@@ -3370,7 +4240,27 @@
       "English",
       "Samoan"
     ],
-    "demonym": "Samoan"
+    "demonym": "Samoan",
+    "unMember": true
+  },
+  {
+    "cca2": "XK",
+    "ccn3": "",
+    "name": "Kosovo",
+    "capital": "Pristina",
+    "continent": "Europa",
+    "population": 1585566,
+    "area": 10908,
+    "flagSvg": "https://flagcdn.com/xk.svg",
+    "currencies": [
+      "euro"
+    ],
+    "languages": [
+      "Albanian",
+      "Serbian"
+    ],
+    "demonym": "Kosovar",
+    "unMember": false
   },
   {
     "cca2": "YE",
@@ -3387,7 +4277,8 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Yemeni"
+    "demonym": "Yemeni",
+    "unMember": true
   },
   {
     "cca2": "ZA",
@@ -3414,7 +4305,8 @@
       "Xhosa",
       "Zulu"
     ],
-    "demonym": "South African"
+    "demonym": "South African",
+    "unMember": true
   },
   {
     "cca2": "ZM",
@@ -3431,7 +4323,8 @@
     "languages": [
       "English"
     ],
-    "demonym": "Zambian"
+    "demonym": "Zambian",
+    "unMember": true
   },
   {
     "cca2": "ZW",
@@ -3462,6 +4355,7 @@
       "Xhosa",
       "Zimbabwean Sign Language"
     ],
-    "demonym": "Zimbabwean"
+    "demonym": "Zimbabwean",
+    "unMember": true
   }
 ]

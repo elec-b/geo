@@ -2,7 +2,7 @@
 // Sin tiles, sin WebGL — renderiza GeoJSON directamente sobre una esfera 2D.
 // Elimina por completo los artefactos de tile boundaries.
 import { useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from 'react';
-import { geoOrthographic, geoPath, geoContains, geoCentroid, geoDistance } from 'd3-geo';
+import { geoOrthographic, geoPath, geoContains, geoCentroid, geoDistance, geoArea } from 'd3-geo';
 import type { GeoProjection, GeoPath } from 'd3-geo';
 import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geojson';
 import { loadCountriesGeoJson, loadBordersGeoJson } from '../../data/countries';
@@ -62,6 +62,26 @@ const LABEL_FONT_BASE = 9;
 
 // Opacidad de países fuera del filtro de continente
 const DIMMED_ALPHA = 0.15;
+
+// Overrides de centroides visuales para países con forma irregular.
+// [lon, lat] del centro visual del territorio principal (no el centroide geométrico).
+const CENTROID_OVERRIDES: Record<string, [number, number]> = {
+  'FR': [2.5, 46.5],     // Francia metropolitana (no Guayana)
+  'US': [-98, 39],        // EE.UU. continental (no Alaska/Hawái)
+  'RU': [55, 60],         // Rusia (centro visual, no Siberia oriental)
+  'NZ': [174, -41],       // Nueva Zelanda (islas principales)
+  'NL': [5.3, 52.2],      // Países Bajos (no Caribe)
+  'CL': [-71, -35],       // Chile (centro visual)
+  'NO': [10, 62],         // Noruega (no Svalbard)
+  'MY': [109, 4],         // Malasia (entre Península y Borneo)
+  'ID': [118, -3],        // Indonesia (centro del archipiélago)
+  'JP': [138, 36],        // Japón (Honshū)
+  'GB': [-2, 53],         // Reino Unido (Gran Bretaña)
+  'DK': [10, 56],         // Dinamarca (no Groenlandia)
+  'PT': [-8, 39.5],       // Portugal (no Azores)
+  'ES': [-3.7, 40],       // España (peninsular)
+  'CA': [-100, 56],       // Canadá (centro visual)
+};
 
 // --- Interfaces ---
 
@@ -143,9 +163,10 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const isInertiaRef = useRef(false);
   const dragSamplesRef = useRef<Array<{ x: number; y: number; time: number }>>([]);
 
-  // Marcadores y centroides
+  // Marcadores, centroides y zoom mínimo para etiquetas
   const microstateCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   const countryCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
+  const labelMinZoomRef = useRef<Map<string, number>>(new Map());
   const showMarkersRef = useRef(showMarkers);
   showMarkersRef.current = showMarkers;
 
@@ -303,7 +324,26 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       ctx.setLineDash([]);
     }
 
-    // Pin de capital (circulito relleno + anillo exterior)
+    // Circulitos de todas las capitales (cuando toggle "Capitales" está activo)
+    if (showCapitalLabelsRef.current && capitalLabelsRef.current) {
+      const rotation = rotationRef.current;
+      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      for (const [cca2, capital] of capitalLabelsRef.current) {
+        if (filter && !filter.has(cca2)) continue;
+        const coords: [number, number] = [capital.latlng[1], capital.latlng[0]];
+        if (geoDistance(coords, viewCenter) > Math.PI / 2) continue;
+        const pos = projection(coords);
+        if (!pos) continue;
+        ctx.beginPath();
+        ctx.arc(pos[0], pos[1], 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = CAPITAL_PIN_COLOR;
+        ctx.globalAlpha = 0.6;
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    // Pin de capital seleccionada (circulito relleno + anillo exterior)
     const pinCoords = capitalPinRef.current;
     if (pinCoords) {
       const rotation = rotationRef.current;
@@ -324,60 +364,113 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
     }
 
-    // Etiquetas de países
-    if (showCountryLabelsRef.current && countryCentroidsRef.current.size > 0) {
+    // Etiquetas de países y capitales (con anti-solapamiento)
+    const showCountryLbls = showCountryLabelsRef.current && countryCentroidsRef.current.size > 0;
+    const showCapitalLbls = showCapitalLabelsRef.current && capitalLabelsRef.current;
+
+    if (showCountryLbls || showCapitalLbls) {
       const rotation = rotationRef.current;
       const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
-      const fontSize = Math.round(LABEL_FONT_BASE + Math.sqrt(zoom) * 2.5);
 
-      ctx.font = `500 ${fontSize}px -apple-system, sans-serif`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.shadowColor = LABEL_SHADOW;
-      ctx.shadowBlur = 3;
+      // Array compartido de bounding boxes para colisión entre etiquetas
+      const usedRects: Array<[number, number, number, number]> = []; // [x, y, w, h]
 
-      for (const feature of countries.features) {
-        const cca2 = feature.properties?.cca2;
-        if (!cca2) continue;
-        if (filter && !filter.has(cca2)) continue;
+      const collides = (rect: [number, number, number, number]) =>
+        usedRects.some(([rx, ry, rw, rh]) =>
+          rect[0] < rx + rw && rect[0] + rect[2] > rx &&
+          rect[1] < ry + rh && rect[1] + rect[3] > ry
+        );
 
-        const centroid = countryCentroidsRef.current.get(cca2);
-        if (!centroid) continue;
-        if (geoDistance(centroid, viewCenter) > Math.PI / 2) continue;
+      // --- Etiquetas de países ---
+      if (showCountryLbls) {
+        const fontSize = Math.round(LABEL_FONT_BASE + Math.sqrt(zoom) * 2.5);
+        ctx.font = `500 ${fontSize}px -apple-system, sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.shadowColor = LABEL_SHADOW;
+        ctx.shadowBlur = 3;
 
-        const pos = projection(centroid);
-        if (!pos) continue;
+        for (const feature of countries.features) {
+          const cca2 = feature.properties?.cca2;
+          if (!cca2) continue;
+          if (filter && !filter.has(cca2)) continue;
 
-        ctx.fillStyle = LABEL_COLOR;
-        ctx.fillText(feature.properties.name, pos[0], pos[1]);
+          // Filtro por zoom mínimo (anti-solapamiento por densidad)
+          const minZoom = labelMinZoomRef.current.get(cca2);
+          if (minZoom !== undefined && zoom < minZoom) continue;
+
+          const centroid = countryCentroidsRef.current.get(cca2);
+          if (!centroid) continue;
+          if (geoDistance(centroid, viewCenter) > Math.PI / 2) continue;
+
+          const pos = projection(centroid);
+          if (!pos) continue;
+
+          // Desplazar si la capital está muy cerca (evitar solapamiento país-capital)
+          let yOffset = 0;
+          if (showCapitalLbls && capitalLabelsRef.current) {
+            const capData = capitalLabelsRef.current.get(cca2);
+            if (capData) {
+              const capCoords: [number, number] = [capData.latlng[1], capData.latlng[0]];
+              const capPos = projection(capCoords);
+              if (capPos) {
+                const dist = Math.hypot(pos[0] - capPos[0], pos[1] - capPos[1]);
+                if (dist < fontSize * 1.5) {
+                  yOffset = -fontSize * 0.8;
+                }
+              }
+            }
+          }
+
+          // Estimación de bounding box (evita measureText por frame)
+          const textW = fontSize * feature.properties.name.length * 0.55;
+          const rect: [number, number, number, number] = [
+            pos[0] - textW / 2, pos[1] + yOffset - fontSize / 2, textW, fontSize,
+          ];
+          if (collides(rect)) continue;
+          usedRects.push(rect);
+
+          ctx.fillStyle = LABEL_COLOR;
+          ctx.fillText(feature.properties.name, pos[0], pos[1] + yOffset);
+        }
+        ctx.shadowBlur = 0;
       }
-      ctx.shadowBlur = 0;
-    }
 
-    // Etiquetas de capitales
-    if (showCapitalLabelsRef.current && capitalLabelsRef.current) {
-      const rotation = rotationRef.current;
-      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
-      const fontSize = Math.round(LABEL_FONT_BASE - 1 + Math.sqrt(zoom) * 2);
+      // --- Etiquetas de capitales ---
+      if (showCapitalLbls && capitalLabelsRef.current) {
+        const fontSize = Math.round(LABEL_FONT_BASE - 1 + Math.sqrt(zoom) * 2);
+        ctx.font = `${fontSize}px -apple-system, sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        ctx.shadowColor = LABEL_SHADOW;
+        ctx.shadowBlur = 3;
 
-      ctx.font = `${fontSize}px -apple-system, sans-serif`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      ctx.shadowColor = LABEL_SHADOW;
-      ctx.shadowBlur = 3;
+        for (const [cca2, capital] of capitalLabelsRef.current) {
+          if (filter && !filter.has(cca2)) continue;
 
-      for (const [cca2, capital] of capitalLabelsRef.current) {
-        if (filter && !filter.has(cca2)) continue;
-        const coords: [number, number] = [capital.latlng[1], capital.latlng[0]];
-        if (geoDistance(coords, viewCenter) > Math.PI / 2) continue;
+          // Capitales también respetan zoom mínimo del país al que pertenecen
+          const minZoom = labelMinZoomRef.current.get(cca2);
+          if (minZoom !== undefined && zoom < minZoom) continue;
 
-        const pos = projection(coords);
-        if (!pos) continue;
+          const coords: [number, number] = [capital.latlng[1], capital.latlng[0]];
+          if (geoDistance(coords, viewCenter) > Math.PI / 2) continue;
 
-        ctx.fillStyle = LABEL_CAPITAL_COLOR;
-        ctx.fillText(capital.name, pos[0], pos[1] + 6);
+          const pos = projection(coords);
+          if (!pos) continue;
+
+          const yPos = pos[1] + 6;
+          const textW = fontSize * capital.name.length * 0.55;
+          const rect: [number, number, number, number] = [
+            pos[0] - textW / 2, yPos, textW, fontSize,
+          ];
+          if (collides(rect)) continue;
+          usedRects.push(rect);
+
+          ctx.fillStyle = LABEL_CAPITAL_COLOR;
+          ctx.fillText(capital.name, pos[0], yPos);
+        }
+        ctx.shadowBlur = 0;
       }
-      ctx.shadowBlur = 0;
     }
   }, []);
 
@@ -494,21 +587,38 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         countriesRef.current = countries;
         bordersRef.current = borders;
 
-        // Pre-calcular centroides de todos los países (etiquetas + microestados)
+        // Pre-calcular centroides (con overrides visuales) y zoom mínimo por importancia
         const allCentroids = new Map<string, [number, number]>();
         const microCentroids = new Map<string, [number, number]>();
+        const areas = new Map<string, number>();
+
         for (const feature of countries.features) {
           const cca2 = feature.properties?.cca2;
           if (cca2) {
-            const centroid = geoCentroid(feature) as [number, number];
+            const centroid = CENTROID_OVERRIDES[cca2] ?? (geoCentroid(feature) as [number, number]);
             allCentroids.set(cca2, centroid);
             if (MICROSTATE_CODES.has(cca2)) {
               microCentroids.set(cca2, centroid);
             }
+            areas.set(cca2, geoArea(feature));
           }
         }
+
+        // Asignar zoom mínimo para anti-solapamiento de etiquetas
+        const sortedByArea = [...areas.entries()].sort((a, b) => b[1] - a[1]);
+        const total = sortedByArea.length;
+        const minZoomMap = new Map<string, number>();
+        sortedByArea.forEach(([cca2], i) => {
+          const pct = i / total;
+          if (pct < 0.15) minZoomMap.set(cca2, 1.0);       // Top 15%: siempre visibles
+          else if (pct < 0.4) minZoomMap.set(cca2, 2.0);    // Top 40%: zoom ×2
+          else if (pct < 0.7) minZoomMap.set(cca2, 4.0);    // Top 70%: zoom ×4
+          else minZoomMap.set(cca2, 8.0);                    // Resto: zoom ×8
+        });
+
         countryCentroidsRef.current = allCentroids;
         microstateCentroidsRef.current = microCentroids;
+        labelMinZoomRef.current = minZoomMap;
 
         resize();
         lastTimeRef.current = performance.now();

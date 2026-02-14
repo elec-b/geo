@@ -14,7 +14,7 @@ const CONTINENT_COLORS: Record<string, string> = {
 
 interface CountryCardProps {
   country: CountryData;
-  rankings: CountryRankings;
+  rankings?: CountryRankings;
   onClose: () => void;
 }
 
@@ -28,6 +28,13 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
 
   return (
     <div className="country-card" role="dialog" aria-label={`Ficha de ${country.name}`}>
+      {/* Disclaimer para territorios no-ONU */}
+      {!country.unMember && (
+        <div className="country-card__disclaimer">
+          Territorio no reconocido por la ONU
+        </div>
+      )}
+
       {/* Cabecera: bandera + nombre + cerrar */}
       <div className="country-card__header">
         <img
@@ -61,20 +68,20 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
       <div className="country-card__grid">
         <div className="country-card__field">
           <span className="country-card__label">Capital</span>
-          <span className="country-card__value">{country.capital}</span>
+          <span className="country-card__value">{country.capital || '—'}</span>
         </div>
         <div className="country-card__field">
           <span className="country-card__label">Población</span>
           <span className="country-card__value">
             {formatNumber(country.population)} hab.
-            <span className="country-card__rank"> #{rankings.populationRank}</span>
+            {rankings && <span className="country-card__rank"> #{rankings.populationRank}</span>}
           </span>
         </div>
         <div className="country-card__field">
           <span className="country-card__label">Superficie</span>
           <span className="country-card__value">
             {formatNumber(country.area)} km²
-            <span className="country-card__rank"> #{rankings.areaRank}</span>
+            {rankings && <span className="country-card__rank"> #{rankings.areaRank}</span>}
           </span>
         </div>
         <div className="country-card__field">

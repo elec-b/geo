@@ -39,8 +39,8 @@
 }
 
 .tab-placeholder__icon {
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   color: var(--color-text-muted);
 }
 

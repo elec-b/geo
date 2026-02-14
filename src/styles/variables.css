@@ -63,8 +63,8 @@
   --radius-full: 9999px;
 
   /* Dimensiones de layout */
-  --header-height: 56px;
-  --tabbar-height: 60px;
+  --header-height: 3.5rem;
+  --tabbar-height: 3.75rem;
 
   /* Capas z-index */
   --z-stars: 0;

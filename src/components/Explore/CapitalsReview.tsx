@@ -1,9 +1,11 @@
-// CapitalsReview — tabla país-capital a pantalla completa
-import { useMemo } from 'react';
+// CapitalsReview — tabla país-capital-población a pantalla completa
+// Soporta ordenamiento por columna y vista plana o agrupada por continente.
+import { useState, useMemo } from 'react';
 import type { CountryData, Continent } from '../../data/types';
 import './CapitalsReview.css';
 
-const CONTINENT_ORDER: Continent[] = ['África', 'América', 'Asia', 'Europa', 'Oceanía'];
+type SortKey = 'name' | 'capital' | 'population';
+type SortDir = 'asc' | 'desc';
 
 interface CapitalsReviewProps {
   countries: Map<string, CountryData>;
@@ -12,30 +14,31 @@ interface CapitalsReviewProps {
   onCapitalTap: (cca2: string) => void;
 }
 
-/** Agrupa países por continente, ordenados alfabéticamente dentro de cada grupo */
-function groupByContinent(
-  countries: Map<string, CountryData>,
-  filter: Continent | null,
-): Map<Continent, CountryData[]> {
-  const groups = new Map<Continent, CountryData[]>();
+/** Formato compacto de población: 1.4B, 45M, 800k */
+function formatPopulation(n: number): string {
+  if (n >= 1_000_000_000) return `${(n / 1_000_000_000).toFixed(1)}B`;
+  if (n >= 1_000_000) return `${Math.round(n / 1_000_000)}M`;
+  if (n >= 1_000) return `${Math.round(n / 1_000)}k`;
+  return n.toString();
+}
 
-  for (const continent of CONTINENT_ORDER) {
-    if (filter && filter !== continent) continue;
-    groups.set(continent, []);
-  }
+/** Ordena una lista de países según key y dirección */
+function sortCountries(list: CountryData[], key: SortKey, dir: SortDir): CountryData[] {
+  const sorted = [...list];
+  sorted.sort((a, b) => {
+    let cmp: number;
+    if (key === 'name') cmp = a.name.localeCompare(b.name);
+    else if (key === 'capital') cmp = a.capital.localeCompare(b.capital);
+    else cmp = a.population - b.population;
+    return dir === 'asc' ? cmp : -cmp;
+  });
+  return sorted;
+}
 
-  for (const country of countries.values()) {
-    if (filter && country.continent !== filter) continue;
-    const list = groups.get(country.continent);
-    if (list) list.push(country);
-  }
-
-  // Ordenar cada grupo alfabéticamente por nombre
-  for (const list of groups.values()) {
-    list.sort((a, b) => a.name.localeCompare(b.name));
-  }
-
-  return groups;
+/** Indicador de dirección de ordenamiento */
+function SortIndicator({ active, dir }: { active: boolean; dir: SortDir }) {
+  if (!active) return null;
+  return <span className="capitals-review__sort-indicator">{dir === 'asc' ? ' ▲' : ' ▼'}</span>;
 }
 
 export function CapitalsReview({
@@ -44,47 +47,98 @@ export function CapitalsReview({
   onCountryTap,
   onCapitalTap,
 }: CapitalsReviewProps) {
-  const groups = useMemo(
-    () => groupByContinent(countries, continentFilter),
-    [countries, continentFilter],
+  const [sortKey, setSortKey] = useState<SortKey>('name');
+  const [sortDir, setSortDir] = useState<SortDir>('asc');
+
+  const toggleSort = (key: SortKey) => {
+    if (sortKey === key) {
+      setSortDir(d => d === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortKey(key);
+      setSortDir(key === 'population' ? 'desc' : 'asc');
+    }
+  };
+
+  // Lista plana filtrada y ordenada (para modo "Todos")
+  const flatList = useMemo(() => {
+    const list: CountryData[] = [];
+    for (const country of countries.values()) {
+      if (continentFilter && country.continent !== continentFilter) continue;
+      list.push(country);
+    }
+    return sortCountries(list, sortKey, sortDir);
+  }, [countries, continentFilter, sortKey, sortDir]);
+
+  // Lista agrupada por continente (para filtro de un continente)
+  const groupedList = useMemo(() => {
+    if (!continentFilter) return null;
+    const list: CountryData[] = [];
+    for (const country of countries.values()) {
+      if (country.continent !== continentFilter) continue;
+      list.push(country);
+    }
+    return sortCountries(list, sortKey, sortDir);
+  }, [countries, continentFilter, sortKey, sortDir]);
+
+  const renderHeader = () => (
+    <div className="capitals-review__table-header">
+      <button className="capitals-review__header-btn" onClick={() => toggleSort('name')}>
+        País<SortIndicator active={sortKey === 'name'} dir={sortDir} />
+      </button>
+      <button className="capitals-review__header-btn" onClick={() => toggleSort('capital')}>
+        Capital<SortIndicator active={sortKey === 'capital'} dir={sortDir} />
+      </button>
+      <button className="capitals-review__header-btn capitals-review__header-btn--right" onClick={() => toggleSort('population')}>
+        Pob.<SortIndicator active={sortKey === 'population'} dir={sortDir} />
+      </button>
+    </div>
+  );
+
+  const renderRow = (country: CountryData) => (
+    <div key={country.cca2} className="capitals-review__row">
+      <button
+        className="capitals-review__cell capitals-review__cell--country"
+        onClick={() => onCountryTap(country.cca2)}
+      >
+        <img
+          className="capitals-review__flag"
+          src={country.flagSvg}
+          alt=""
+          loading="lazy"
+        />
+        <span>{country.name}</span>
+      </button>
+      <button
+        className="capitals-review__cell capitals-review__cell--capital"
+        onClick={() => onCapitalTap(country.cca2)}
+      >
+        {country.capital}
+      </button>
+      <span className="capitals-review__cell capitals-review__cell--population">
+        {formatPopulation(country.population)}
+      </span>
+    </div>
   );
 
   return (
     <div className="capitals-review">
       <div className="capitals-review__scroll">
-        {Array.from(groups).map(([continent, list]) => (
-          <section key={continent} className="capitals-review__section">
-            <h3 className="capitals-review__continent-header">{continent}</h3>
+        {continentFilter === null ? (
+          // Tabla única sin agrupación cuando filtro es "Todos"
+          <div className="capitals-review__table">
+            {renderHeader()}
+            {flatList.map(renderRow)}
+          </div>
+        ) : (
+          // Tabla con header de continente cuando hay filtro
+          <section className="capitals-review__section">
+            <h3 className="capitals-review__continent-header">{continentFilter}</h3>
             <div className="capitals-review__table">
-              <div className="capitals-review__table-header">
-                <span>País</span>
-                <span>Capital</span>
-              </div>
-              {list.map(country => (
-                <div key={country.cca2} className="capitals-review__row">
-                  <button
-                    className="capitals-review__cell capitals-review__cell--country"
-                    onClick={() => onCountryTap(country.cca2)}
-                  >
-                    <img
-                      className="capitals-review__flag"
-                      src={country.flagSvg}
-                      alt=""
-                      loading="lazy"
-                    />
-                    <span>{country.name}</span>
-                  </button>
-                  <button
-                    className="capitals-review__cell capitals-review__cell--capital"
-                    onClick={() => onCapitalTap(country.cca2)}
-                  >
-                    {country.capital}
-                  </button>
-                </div>
-              ))}
+              {renderHeader()}
+              {(groupedList ?? []).map(renderRow)}
             </div>
           </section>
-        ))}
+        )}
       </div>
     </div>
   );

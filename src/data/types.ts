@@ -19,6 +19,8 @@ export interface CountryData {
   currencies: string[];
   languages: string[];
   demonym: string;
+  /** true = miembro o estado observador ONU (195). false = territorio no reconocido */
+  unMember: boolean;
 }
 
 /** Coordenadas de una capital (provenientes de capitals.json) */

@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px));
   z-index: var(--z-overlay);
   background: rgba(10, 10, 26, 0.95);
   backdrop-filter: blur(8px);
@@ -22,9 +22,9 @@
   height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  /* Espacio para header + controles arriba y tab bar abajo */
-  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 90px);
-  padding-bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px) + var(--spacing-md));
+  /* Espacio para header + controles arriba */
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 5rem);
+  padding-bottom: var(--spacing-md);
   padding-left: var(--spacing-md);
   padding-right: var(--spacing-md);
 }
@@ -53,18 +53,41 @@
 
 .capitals-review__table-header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr;
   padding: var(--spacing-xs) var(--spacing-sm);
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
+/* Botones de header ordenable */
+.capitals-review__header-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.capitals-review__header-btn--right {
+  text-align: right;
+}
+
+.capitals-review__sort-indicator {
+  font-size: 0.625rem;
+}
+
 /* Fila */
 .capitals-review__row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -73,7 +96,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  padding: 10px var(--spacing-sm);
+  padding: 0.625rem var(--spacing-sm);
   border: none;
   background: transparent;
   color: var(--color-text-primary);
@@ -89,16 +112,33 @@
   background: rgba(255, 255, 255, 0.06);
 }
 
+.capitals-review__cell--country span,
+.capitals-review__cell--capital {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+  text-underline-offset: 0.125rem;
+}
+
 .capitals-review__cell--capital {
   color: var(--color-accent-cyan);
 }
 
+/* Celda de población (no tappable) */
+.capitals-review__cell--population {
+  cursor: default;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
 /* Bandera mini */
 .capitals-review__flag {
-  width: 24px;
-  height: 16px;
+  width: 1.5rem;
+  height: 1rem;
   object-fit: cover;
-  border-radius: 2px;
+  border-radius: 0.125rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
 }

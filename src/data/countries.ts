@@ -2,7 +2,7 @@
 import * as topojson from 'topojson-client';
 import type { Topology, GeometryCollection } from 'topojson-specification';
 import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geojson';
-import { ISO_NUMERIC_TO_ALPHA2 } from './isoMapping';
+import { ISO_NUMERIC_TO_ALPHA2, NON_UN_TERRITORIES_BY_ID, NON_UN_TERRITORIES_BY_NAME } from './isoMapping';
 
 // Interfaz para las propiedades de cada país en el GeoJSON
 export interface CountryProperties {
@@ -54,8 +54,24 @@ export async function loadCountriesGeoJson(): Promise<FeatureCollection<Geometry
   // Enriquecer cada feature con cca2 e isUNMember
   for (const feature of geojson.features) {
     const numericId = (feature as any).id as string | undefined;
-    const cca2 = numericId ? (ISO_NUMERIC_TO_ALPHA2[numericId] ?? null) : null;
-    feature.properties = { ...feature.properties, cca2, isUNMember: cca2 !== null };
+    const name = feature.properties?.name;
+
+    // Primero buscar en los 195 países ONU
+    let cca2: string | null = numericId ? (ISO_NUMERIC_TO_ALPHA2[numericId] ?? null) : null;
+    let isUNMember = cca2 !== null;
+
+    // Si no es ONU, buscar en territorios no reconocidos (por ID o por nombre)
+    if (!cca2) {
+      const byId = numericId ? NON_UN_TERRITORIES_BY_ID[numericId] : undefined;
+      const byName = name ? NON_UN_TERRITORIES_BY_NAME[name] : undefined;
+      const territory = byId ?? byName;
+      if (territory) {
+        cca2 = territory.cca2;
+        isUNMember = false;
+      }
+    }
+
+    feature.properties = { ...feature.properties, cca2, isUNMember };
   }
 
   cachedGeoJson = geojson;

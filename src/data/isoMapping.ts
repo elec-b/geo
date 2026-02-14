@@ -233,3 +233,67 @@ export const ISO_ALPHA2_TO_NUMERIC: Record<string, string> = Object.fromEntries(
 export const UN_COUNTRY_CODES: ReadonlySet<string> = new Set(
   Object.values(ISO_NUMERIC_TO_ALPHA2),
 );
+
+// --- Territorios no reconocidos por la ONU ---
+// Aparecen en Natural Earth 50m pero no son miembros ni observadores de la ONU.
+// Son seleccionables en Explorar con ficha + disclaimer, pero no participan en el juego.
+
+import type { Continent } from './types';
+
+interface NonUnTerritory {
+  cca2: string;
+  continent: Continent;
+}
+
+/** Mapeo por ID numérico del TopoJSON → territorio no-ONU */
+export const NON_UN_TERRITORIES_BY_ID: Record<string, NonUnTerritory> = {
+  '158': { cca2: 'TW', continent: 'Asia' },           // Taiwán
+  '732': { cca2: 'EH', continent: 'África' },          // Sáhara Occidental
+  '630': { cca2: 'PR', continent: 'América' },         // Puerto Rico
+  '304': { cca2: 'GL', continent: 'América' },         // Groenlandia
+  '344': { cca2: 'HK', continent: 'Asia' },            // Hong Kong
+  '446': { cca2: 'MO', continent: 'Asia' },            // Macao
+  '540': { cca2: 'NC', continent: 'Oceanía' },         // Nueva Caledonia
+  '258': { cca2: 'PF', continent: 'Oceanía' },         // Polinesia Francesa
+  '533': { cca2: 'AW', continent: 'América' },         // Aruba
+  '531': { cca2: 'CW', continent: 'América' },         // Curazao
+  '238': { cca2: 'FK', continent: 'América' },         // Islas Malvinas
+  '060': { cca2: 'BM', continent: 'América' },         // Bermudas
+  '316': { cca2: 'GU', continent: 'Oceanía' },         // Guam
+  '016': { cca2: 'AS', continent: 'Oceanía' },         // Samoa Americana
+  '580': { cca2: 'MP', continent: 'Oceanía' },         // Islas Marianas del Norte
+  '850': { cca2: 'VI', continent: 'América' },         // Islas Vírgenes de EE.UU.
+  '092': { cca2: 'VG', continent: 'América' },         // Islas Vírgenes Británicas
+  '136': { cca2: 'KY', continent: 'América' },         // Islas Caimán
+  '796': { cca2: 'TC', continent: 'América' },         // Islas Turcas y Caicos
+  '234': { cca2: 'FO', continent: 'Europa' },          // Islas Feroe
+  '832': { cca2: 'JE', continent: 'Europa' },          // Jersey
+  '831': { cca2: 'GG', continent: 'Europa' },          // Guernsey
+  '833': { cca2: 'IM', continent: 'Europa' },          // Isla de Man
+  '248': { cca2: 'AX', continent: 'Europa' },          // Åland
+  '570': { cca2: 'NU', continent: 'Oceanía' },         // Niue
+  '184': { cca2: 'CK', continent: 'Oceanía' },         // Islas Cook
+  '500': { cca2: 'MS', continent: 'América' },         // Montserrat
+  '660': { cca2: 'AI', continent: 'América' },         // Anguila
+  '666': { cca2: 'PM', continent: 'América' },         // San Pedro y Miquelón
+  '534': { cca2: 'SX', continent: 'América' },         // Sint Maarten
+  '663': { cca2: 'MF', continent: 'América' },         // San Martín
+  '652': { cca2: 'BL', continent: 'América' },         // San Bartolomé
+  '654': { cca2: 'SH', continent: 'África' },          // Santa Elena
+  '876': { cca2: 'WF', continent: 'Oceanía' },         // Wallis y Futuna
+  '574': { cca2: 'NF', continent: 'Oceanía' },         // Isla Norfolk
+  '612': { cca2: 'PN', continent: 'Oceanía' },         // Islas Pitcairn
+};
+
+/** Mapeo por nombre para territorios sin ID numérico en el TopoJSON */
+export const NON_UN_TERRITORIES_BY_NAME: Record<string, NonUnTerritory> = {
+  'Kosovo':       { cca2: 'XK', continent: 'Europa' },
+  'Somaliland':   { cca2: 'SOL', continent: 'África' },  // Sin código ISO oficial
+  'N. Cyprus':    { cca2: 'CYN', continent: 'Europa' },  // Sin código ISO oficial
+};
+
+/** Set con todos los códigos alpha-2 de territorios no-ONU */
+export const NON_UN_CODES: ReadonlySet<string> = new Set([
+  ...Object.values(NON_UN_TERRITORIES_BY_ID).map(t => t.cca2),
+  ...Object.values(NON_UN_TERRITORIES_BY_NAME).map(t => t.cca2),
+]);

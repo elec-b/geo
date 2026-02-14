@@ -155,6 +155,26 @@ export function ExploreView({
     setSelectedCca2(null);
   }, []);
 
+  // Cambio de filtro de continente con flyTo
+  const CONTINENT_CENTERS: Record<Continent, [number, number]> = {
+    'África': [20, 0],
+    'América': [-80, 10],
+    'Asia': [90, 35],
+    'Europa': [15, 50],
+    'Oceanía': [140, -25],
+  };
+
+  const handleContinentChange = useCallback(
+    (continent: Continent | null) => {
+      setContinentFilter(continent);
+      if (continent && globeRef.current) {
+        const [lon, lat] = CONTINENT_CENTERS[continent];
+        globeRef.current.flyTo(lon, lat, undefined, 800);
+      }
+    },
+    [globeRef],
+  );
+
   // Cambio de modo
   const switchMode = useCallback((newMode: ExploreMode) => {
     setMode(newMode);
@@ -165,7 +185,7 @@ export function ExploreView({
   // --- Datos del país seleccionado ---
 
   const selectedCountry = selectedCca2 ? countries.get(selectedCca2) : null;
-  const selectedRankings = selectedCca2 ? rankings.get(selectedCca2) : null;
+  const selectedRankings = selectedCca2 ? rankings.get(selectedCca2) : undefined;
   const showCapitalsTable = mode === 'capitals' && !capitalsGlobeView;
 
   return (
@@ -180,7 +200,7 @@ export function ExploreView({
             role="tab"
             aria-selected={mode === 'countries'}
           >
-            Países
+            Globo
           </button>
           <button
             className={`explore-segmented__btn ${mode === 'capitals' ? 'explore-segmented__btn--active' : ''}`}
@@ -188,12 +208,22 @@ export function ExploreView({
             role="tab"
             aria-selected={mode === 'capitals'}
           >
-            Capitales
+            Tabla
           </button>
         </div>
 
         {/* Filtros de continente */}
-        <ContinentFilter active={continentFilter} onChange={setContinentFilter} />
+        <ContinentFilter active={continentFilter} onChange={handleContinentChange} />
+
+        {/* Botón volver a tabla (modo tabla, vista globo) */}
+        {mode === 'capitals' && capitalsGlobeView && (
+          <button className="explore-back-btn" onClick={handleBackToTable}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+            Volver a la tabla
+          </button>
+        )}
 
         {/* Toggles de etiquetas (solo modo países) */}
         {mode === 'countries' && (
@@ -216,16 +246,6 @@ export function ExploreView({
         )}
       </div>
 
-      {/* Botón volver a tabla (modo capitales, vista globo) */}
-      {mode === 'capitals' && capitalsGlobeView && (
-        <button className="explore-back-btn" onClick={handleBackToTable}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-          Volver a la tabla
-        </button>
-      )}
-
       {/* Tabla de capitales (pantalla completa) */}
       {showCapitalsTable && (
         <CapitalsReview
@@ -237,7 +257,7 @@ export function ExploreView({
       )}
 
       {/* Ficha de país (bottom sheet, modo países) */}
-      {mode === 'countries' && selectedCountry && selectedRankings && (
+      {mode === 'countries' && selectedCountry && (
         <CountryCard
           country={selectedCountry}
           rankings={selectedRankings}

@@ -13,7 +13,8 @@ export interface CountryRankings {
  * Se ejecuta una sola vez al cargar los datos.
  */
 export function buildRankings(countries: Map<string, CountryData>): Map<string, CountryRankings> {
-  const entries = Array.from(countries.values());
+  // Solo países ONU participan en rankings
+  const entries = Array.from(countries.values()).filter(c => c.unMember !== false);
   const total = entries.length;
 
   // Ordenar por población descendente
