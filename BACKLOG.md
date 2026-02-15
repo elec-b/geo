@@ -94,7 +94,7 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
 - [x] Ficha de país al tocar (bandera, nombre, capital, continente, población y ranking, superficie y ranking, moneda, gentilicio)
 - [x] Marcador de capital sobre el mapa (pin cian al tocar un país)
 - [x] Filtros por continente (pills horizontales con colores por continente)
-- [x] Etiquetas de países/capitales (toggles "Nombres" y "Capitales")
+- [x] Etiquetas de países/capitales (toggles "Países" y "Capitales")
 - [x] Modo «Repaso de capitales» (tabla país–capital; al tocar país → zoom al país + marca en capital; al tocar capital → zoom al punto exacto + pin + país resaltado)
 - [x] Segmented control ("Globo" | "Tabla") para cambiar entre modos
 - [x] API imperativa del globo: `flyTo(lon, lat, zoom?, duration?)` con animación suave
@@ -116,13 +116,14 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
   - [x] Controles demasiado abajo en pantalla → subidos bajo el header
 - [x] Feedback — Diseño responsivo:
   - [x] Auditoría px → rem en toda la app (`variables.css`, `AppHeader`, `TabBar`, `ExploreView`, `ContinentFilter`, `CapitalsReview`, `CountryCard`, `AppShell`)
-- [ ] Feedback — Bugs pendientes (testado en iPhone):
-  - [ ] Filtros de contintentes y selección globo/tabla no visible en modo tabla (el fix de `bottom` no es suficiente)
+- [x] Feedback — Bugs pendientes (testado en iPhone):
+  - [x] Filtros de continentes y selección globo/tabla no visible en modo tabla → fix de z-index (`--z-controls: 15`)
   - [x] Tabla posicionada demasiado abajo en pantalla (debería arrancar más arriba)
-  - [ ] Pills de filtro se salen de la pantalla (el padding extra no resuelve el overflow)
+  - [x] Pills de filtro se salen de la pantalla → padding reducido + `justify-content: center`
   - [x] Guyana (América del Sur) se identifica como Brunei: error en mapeo de país del TopoJSON
   - [x] Antártida: definir tratamiento (no es un país, no pertenece a un continente; actualmente se resalta con cualquier filtro)
   - [x] Sáhara Occidental: capital mal ubicada, `flyTo` apunta al centro de África en vez de a El Aaiún
+- [ ] Feedback adicional del usuario pendiente de incorporar
 
 ---
 

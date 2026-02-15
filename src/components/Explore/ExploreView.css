@@ -6,10 +6,10 @@
   top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
   left: 0;
   right: 0;
-  z-index: var(--z-overlay);
+  z-index: var(--z-controls);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: var(--spacing-xs);
   pointer-events: none;
 }
@@ -20,6 +20,7 @@
 
 /* Segmented control */
 .explore-segmented {
+  align-self: center;
   display: flex;
   background: rgba(12, 12, 30, 0.8);
   backdrop-filter: blur(12px);
@@ -55,6 +56,7 @@
 
 /* Toggles de etiquetas */
 .explore-labels {
+  align-self: center;
   display: flex;
   gap: var(--spacing-xs);
 }
@@ -80,6 +82,7 @@
 
 /* Botón "Volver a la tabla" (dentro de explore-controls) */
 .explore-back-btn {
+  align-self: center;
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-xs);

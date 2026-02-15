@@ -133,7 +133,7 @@ Tabla de países con sus capitales y población, diseñada para facilitar el rep
 ### Controles comunes
 *   **Filtros de continente**: Pills horizontales para aislar continentes (ej. «solo África»). Al seleccionar un continente, el globo rota automáticamente para orientar la vista hacia él.
 *   **Etiquetas** (solo en modo Globo):
-    - Toggle «Nombres»: Activa/desactiva nombres de países sobre el globo.
+    - Toggle «Países»: Activa/desactiva nombres de países sobre el globo.
     - Toggle «Capitales»: Activa/desactiva nombres de capitales sobre el globo. Cuando está activo, los círculos de las capitales se muestran permanentemente.
 *   **Globo 3D**: Siempre se usa el globo terráqueo, nunca mapas planos.
 

@@ -23,7 +23,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   /* Espacio para header + controles arriba */
-  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 4rem);
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 5rem);
   padding-bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px) + var(--spacing-md));
   padding-left: var(--spacing-md);
   padding-right: var(--spacing-md);

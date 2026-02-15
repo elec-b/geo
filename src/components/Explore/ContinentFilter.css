@@ -2,12 +2,13 @@
 
 .continent-filter {
   display: flex;
+  justify-content: center;
   gap: var(--spacing-xs);
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  padding: 0 var(--spacing-md);
-  align-self: stretch;
+  padding: 0 var(--spacing-sm);
+  max-width: 100%;
 }
 
 .continent-filter::-webkit-scrollbar {

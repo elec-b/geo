@@ -233,7 +233,7 @@ export function ExploreView({
               onClick={() => setShowCountryLabels(prev => !prev)}
               aria-pressed={showCountryLabels}
             >
-              Nombres
+              Países
             </button>
             <button
               className={`explore-labels__btn ${showCapitalLabels ? 'explore-labels__btn--active' : ''}`}
