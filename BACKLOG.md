@@ -125,12 +125,20 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
   - [x] Sáhara Occidental: capital mal ubicada, `flyTo` apunta al centro de África en vez de a El Aaiún
 - [ ] Feedback adicional del usuario (pendiente de incorporar):
   - [x] Renombrar `CapitalsReview.tsx/.css` → `TableView.tsx/.css` (el nombre ya no refleja la UI "Tabla")
-  - [ ] Etiqueta de Australia no se ve (país enorme); solucionar y revisar que no haya más casos similares
-  - [ ] Etiquetas país + capital: cuando ambas están activas y hay espacio suficiente, mostrar las dos en vez de eliminar una. Actualmente si tienden al mismo punto una desaparece, incluso habiendo espacio libre alrededor (ej. España + Madrid al hacer zoom-in)
   - [x] Eliminar botón "volver a tabla" — redundante con el segmented control "Globo | Tabla"
-  - [ ] Tabla → Globo: al tocar un país o capital en la tabla, se muestra el mapa (correcto). Pero el segmented control debe iluminar "Globo", y al volver a "Tabla" debe posicionarse en el país que se había seleccionado
+  - [x] Pills de continente: "Todos" y "Oceanía" se salían por los lados. Ancho y tamaño de letra completamente relativos para que quepan todos con el mismo tamaño de letra
+  - [x] Etiquetas país + capital: cuando ambas están activas y hay espacio suficiente, mostrar las dos en vez de eliminar una
+    - *Intento 1*: se modificó colisión para excluir el rect del país padre (`collidesExcluding`) y se añadió separación vertical simétrica. Mejora parcial — en ciertos niveles de zoom siguen solapándose país y capital
+    - *Intento 2*: tras calcular el rect de la capital, se comprueba si solapa con el rect del país padre; si solapan, se desplaza la capital justo debajo del padre (+2px gap). Resuelve el problema
+  - [x] Tabla → Globo: al tocar un país o capital en la tabla, el segmented ilumina "Globo", y al volver a "Tabla" se preserva la posición exacta de scroll
+    - *Intento 1*: segmented control ahora ilumina "Globo" correctamente (usa `visualMode` derivado). Se implementó `scrollIntoView` al volver, pero el comportamiento correcto es preservar el offset exacto, no hacer scroll al país seleccionado
+    - *Intento 2*: en vez de desmontar `<TableView>` con renderizado condicional, se mantiene montado y se oculta con `display: none`. El DOM y el scrollTop se preservan automáticamente. Se eliminó `scrollToCca2`, `scrollRef` y `data-cca2` (limpieza del intento 1). Resuelve el problema
+  - [ ] Etiqueta de Australia no se ve (país enorme); solucionar y revisar que no haya más casos similares
+    - *Intento 1*: se añadió override de centroide `'AU': [134, -25]` (y otros 7 países grandes). No resolvió el problema — la causa no es el centroide. Investigar: ¿colisión con Indonesia/PNG? ¿zoom mínimo asignado por `geoArea` demasiado alto?
+    - *Intento 2*: se pre-ordenaron las features por `geoArea` descendente (`sortedFeaturesRef`) para que países grandes dibujen primero y ganen la colisión de bounding boxes. Se sigue sin ver Australia (y aparece el punto con la capital, pero no su nombre). La causa no es el orden de iteración — investigar si hay colisión con otro país grande visible desde la vista de Oceanía (ej. India, China) o si el problema es diferente
   - [ ] Tabla: headers (País, Capital, Pob.) fijos (sticky) al hacer scroll, solo el contenido se desplaza. Evita solapamiento con el menú superior
-  - [ ] Pills de continente: "Todos" y "Oceanía" aún se salen por los lados. Ancho y tamaño de letra deben ser completamente relativos para que siempre quepan todos, con un mismo tamaño de letra para todos los pills
+    - *Intento 1*: se añadió `position: sticky; top: 0` al header. El header se pega correctamente, pero las filas de la tabla se ven por encima de los controles flotantes (menú + pills) al hacer scroll — falta clipear el contenido visible
+    - *Intento 2*: se añadió `background: rgba(10,10,26,0.92)` + `backdrop-filter: blur(12px)` a `.explore-controls`. Oculta las filas pero queda mal visualmente con el globo (pierde transparencia). Revertir y buscar otra solución: clipear el scroll de la tabla para que las filas no se rendericen por encima del header, sin tocar la transparencia de los controles
 
 ---
 
