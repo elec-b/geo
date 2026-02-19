@@ -115,7 +115,7 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
   - [x] Botón "volver a la tabla" se solapaba con filtros → reposicionado dentro del bloque de controles
   - [x] Controles demasiado abajo en pantalla → subidos bajo el header
 - [x] Feedback — Diseño responsivo:
-  - [x] Auditoría px → rem en toda la app (`variables.css`, `AppHeader`, `TabBar`, `ExploreView`, `ContinentFilter`, `CapitalsReview`, `CountryCard`, `AppShell`)
+  - [x] Auditoría px → rem en toda la app (`variables.css`, `AppHeader`, `TabBar`, `ExploreView`, `ContinentFilter`, `TableView`, `CountryCard`, `AppShell`)
 - [x] Feedback — Bugs pendientes (testado en iPhone):
   - [x] Filtros de continentes y selección globo/tabla no visible en modo tabla → fix de z-index (`--z-controls: 15`)
   - [x] Tabla posicionada demasiado abajo en pantalla (debería arrancar más arriba)
@@ -123,7 +123,14 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
   - [x] Guyana (América del Sur) se identifica como Brunei: error en mapeo de país del TopoJSON
   - [x] Antártida: definir tratamiento (no es un país, no pertenece a un continente; actualmente se resalta con cualquier filtro)
   - [x] Sáhara Occidental: capital mal ubicada, `flyTo` apunta al centro de África en vez de a El Aaiún
-- [ ] Feedback adicional del usuario pendiente de incorporar
+- [ ] Feedback adicional del usuario (pendiente de incorporar):
+  - [x] Renombrar `CapitalsReview.tsx/.css` → `TableView.tsx/.css` (el nombre ya no refleja la UI "Tabla")
+  - [ ] Etiqueta de Australia no se ve (país enorme); solucionar y revisar que no haya más casos similares
+  - [ ] Etiquetas país + capital: cuando ambas están activas y hay espacio suficiente, mostrar las dos en vez de eliminar una. Actualmente si tienden al mismo punto una desaparece, incluso habiendo espacio libre alrededor (ej. España + Madrid al hacer zoom-in)
+  - [x] Eliminar botón "volver a tabla" — redundante con el segmented control "Globo | Tabla"
+  - [ ] Tabla → Globo: al tocar un país o capital en la tabla, se muestra el mapa (correcto). Pero el segmented control debe iluminar "Globo", y al volver a "Tabla" debe posicionarse en el país que se había seleccionado
+  - [ ] Tabla: headers (País, Capital, Pob.) fijos (sticky) al hacer scroll, solo el contenido se desplaza. Evita solapamiento con el menú superior
+  - [ ] Pills de continente: "Todos" y "Oceanía" aún se salen por los lados. Ancho y tamaño de letra deben ser completamente relativos para que siempre quepan todos, con un mismo tamaño de letra para todos los pills
 
 ---
 

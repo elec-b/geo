@@ -7,7 +7,7 @@ import type { CountryData, CapitalCoords, Continent } from '../../data/types';
 import type { CountryRankings } from '../../data/rankings';
 import { CountryCard } from './CountryCard';
 import { ContinentFilter } from './ContinentFilter';
-import { CapitalsReview } from './CapitalsReview';
+import { TableView } from './TableView';
 import './ExploreView.css';
 
 type ExploreMode = 'countries' | 'capitals';
@@ -150,10 +150,6 @@ export function ExploreView({
     [capitals, globeRef],
   );
 
-  const handleBackToTable = useCallback(() => {
-    setCapitalsGlobeView(false);
-    setSelectedCca2(null);
-  }, []);
 
   // Cambio de filtro de continente con flyTo
   const CONTINENT_CENTERS: Record<Continent, [number, number]> = {
@@ -215,16 +211,6 @@ export function ExploreView({
         {/* Filtros de continente */}
         <ContinentFilter active={continentFilter} onChange={handleContinentChange} />
 
-        {/* Botón volver a tabla (modo tabla, vista globo) */}
-        {mode === 'capitals' && capitalsGlobeView && (
-          <button className="explore-back-btn" onClick={handleBackToTable}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-            Volver a la tabla
-          </button>
-        )}
-
         {/* Toggles de etiquetas (solo modo países) */}
         {mode === 'countries' && (
           <div className="explore-labels">
@@ -248,7 +234,7 @@ export function ExploreView({
 
       {/* Tabla de capitales (pantalla completa) */}
       {showCapitalsTable && (
-        <CapitalsReview
+        <TableView
           countries={countries}
           continentFilter={continentFilter}
           onCountryTap={handleCapitalsCountryTap}

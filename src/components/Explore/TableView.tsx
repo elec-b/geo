@@ -1,13 +1,13 @@
-// CapitalsReview — tabla país-capital-población a pantalla completa
+// TableView — tabla país-capital-población a pantalla completa
 // Soporta ordenamiento por columna y vista plana o agrupada por continente.
 import { useState, useMemo } from 'react';
 import type { CountryData, Continent } from '../../data/types';
-import './CapitalsReview.css';
+import './TableView.css';
 
 type SortKey = 'name' | 'capital' | 'population';
 type SortDir = 'asc' | 'desc';
 
-interface CapitalsReviewProps {
+interface TableViewProps {
   countries: Map<string, CountryData>;
   continentFilter: Continent | null;
   onCountryTap: (cca2: string) => void;
@@ -38,15 +38,15 @@ function sortCountries(list: CountryData[], key: SortKey, dir: SortDir): Country
 /** Indicador de dirección de ordenamiento */
 function SortIndicator({ active, dir }: { active: boolean; dir: SortDir }) {
   if (!active) return null;
-  return <span className="capitals-review__sort-indicator">{dir === 'asc' ? ' ▲' : ' ▼'}</span>;
+  return <span className="table-view__sort-indicator">{dir === 'asc' ? ' ▲' : ' ▼'}</span>;
 }
 
-export function CapitalsReview({
+export function TableView({
   countries,
   continentFilter,
   onCountryTap,
   onCapitalTap,
-}: CapitalsReviewProps) {
+}: TableViewProps) {
   const [sortKey, setSortKey] = useState<SortKey>('name');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
 
@@ -81,27 +81,27 @@ export function CapitalsReview({
   }, [countries, continentFilter, sortKey, sortDir]);
 
   const renderHeader = () => (
-    <div className="capitals-review__table-header">
-      <button className="capitals-review__header-btn" onClick={() => toggleSort('name')}>
+    <div className="table-view__table-header">
+      <button className="table-view__header-btn" onClick={() => toggleSort('name')}>
         País<SortIndicator active={sortKey === 'name'} dir={sortDir} />
       </button>
-      <button className="capitals-review__header-btn" onClick={() => toggleSort('capital')}>
+      <button className="table-view__header-btn" onClick={() => toggleSort('capital')}>
         Capital<SortIndicator active={sortKey === 'capital'} dir={sortDir} />
       </button>
-      <button className="capitals-review__header-btn capitals-review__header-btn--right" onClick={() => toggleSort('population')}>
+      <button className="table-view__header-btn table-view__header-btn--right" onClick={() => toggleSort('population')}>
         Pob.<SortIndicator active={sortKey === 'population'} dir={sortDir} />
       </button>
     </div>
   );
 
   const renderRow = (country: CountryData) => (
-    <div key={country.cca2} className="capitals-review__row">
+    <div key={country.cca2} className="table-view__row">
       <button
-        className="capitals-review__cell capitals-review__cell--country"
+        className="table-view__cell table-view__cell--country"
         onClick={() => onCountryTap(country.cca2)}
       >
         <img
-          className="capitals-review__flag"
+          className="table-view__flag"
           src={country.flagSvg}
           alt=""
           loading="lazy"
@@ -109,31 +109,31 @@ export function CapitalsReview({
         <span>{country.name}</span>
       </button>
       <button
-        className="capitals-review__cell capitals-review__cell--capital"
+        className="table-view__cell table-view__cell--capital"
         onClick={() => onCapitalTap(country.cca2)}
       >
         {country.capital}
       </button>
-      <span className="capitals-review__cell capitals-review__cell--population">
+      <span className="table-view__cell table-view__cell--population">
         {formatPopulation(country.population)}
       </span>
     </div>
   );
 
   return (
-    <div className="capitals-review">
-      <div className="capitals-review__scroll">
+    <div className="table-view">
+      <div className="table-view__scroll">
         {continentFilter === null ? (
           // Tabla única sin agrupación cuando filtro es "Todos"
-          <div className="capitals-review__table">
+          <div className="table-view__table">
             {renderHeader()}
             {flatList.map(renderRow)}
           </div>
         ) : (
           // Tabla con header de continente cuando hay filtro
-          <section className="capitals-review__section">
-            <h3 className="capitals-review__continent-header">{continentFilter}</h3>
-            <div className="capitals-review__table">
+          <section className="table-view__section">
+            <h3 className="table-view__continent-header">{continentFilter}</h3>
+            <div className="table-view__table">
               {renderHeader()}
               {(groupedList ?? []).map(renderRow)}
             </div>

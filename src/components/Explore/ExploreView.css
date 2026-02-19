@@ -80,31 +80,3 @@
   border-color: rgba(255, 255, 255, 0.25);
 }
 
-/* Botón "Volver a la tabla" (dentro de explore-controls) */
-.explore-back-btn {
-  align-self: center;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-full);
-  background: rgba(12, 12, 30, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: var(--color-text-primary);
-  font-size: var(--font-size-sm);
-  font-family: var(--font-family);
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  animation: explore-fade-in 200ms ease-out;
-}
-
-.explore-back-btn:active {
-  background: rgba(12, 12, 30, 0.95);
-}
-
-@keyframes explore-fade-in {
-  from { opacity: 0; transform: translateY(-0.5rem); }
-  to { opacity: 1; transform: translateY(0); }
-}

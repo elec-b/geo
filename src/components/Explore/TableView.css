@@ -1,6 +1,6 @@
-/* CapitalsReview — tabla de capitales a pantalla completa */
+/* TableView — tabla de capitales a pantalla completa */
 
-.capitals-review {
+.table-view {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,15 +10,15 @@
   background: rgba(10, 10, 26, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  animation: capitals-fade-in 250ms ease-out;
+  animation: table-view-fade-in 250ms ease-out;
 }
 
-@keyframes capitals-fade-in {
+@keyframes table-view-fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-.capitals-review__scroll {
+.table-view__scroll {
   height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -30,11 +30,11 @@
 }
 
 /* Sección por continente */
-.capitals-review__section {
+.table-view__section {
   margin-bottom: var(--spacing-lg);
 }
 
-.capitals-review__continent-header {
+.table-view__continent-header {
   margin: 0 0 var(--spacing-sm);
   padding: var(--spacing-xs) 0;
   font-size: var(--font-size-sm);
@@ -46,12 +46,12 @@
 }
 
 /* Tabla */
-.capitals-review__table {
+.table-view__table {
   display: flex;
   flex-direction: column;
 }
 
-.capitals-review__table-header {
+.table-view__table-header {
   display: grid;
   grid-template-columns: 2fr 2fr 1fr;
   padding: var(--spacing-xs) var(--spacing-sm);
@@ -62,7 +62,7 @@
 }
 
 /* Botones de header ordenable */
-.capitals-review__header-btn {
+.table-view__header-btn {
   background: none;
   border: none;
   color: var(--color-text-muted);
@@ -76,23 +76,23 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.capitals-review__header-btn--right {
+.table-view__header-btn--right {
   text-align: right;
 }
 
-.capitals-review__sort-indicator {
+.table-view__sort-indicator {
   font-size: 0.625rem;
 }
 
 /* Fila */
-.capitals-review__row {
+.table-view__row {
   display: grid;
   grid-template-columns: 2fr 2fr 1fr;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 /* Celda tappable */
-.capitals-review__cell {
+.table-view__cell {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
@@ -108,24 +108,24 @@
   transition: background var(--transition-fast);
 }
 
-.capitals-review__cell:active {
+.table-view__cell:active {
   background: rgba(255, 255, 255, 0.06);
 }
 
-.capitals-review__cell--country span,
-.capitals-review__cell--capital {
+.table-view__cell--country span,
+.table-view__cell--capital {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-decoration-color: rgba(255, 255, 255, 0.2);
   text-underline-offset: 0.125rem;
 }
 
-.capitals-review__cell--capital {
+.table-view__cell--capital {
   color: var(--color-accent-cyan);
 }
 
 /* Celda de población (no tappable) */
-.capitals-review__cell--population {
+.table-view__cell--population {
   cursor: default;
   color: var(--color-text-secondary);
   font-size: var(--font-size-xs);
@@ -134,7 +134,7 @@
 }
 
 /* Bandera mini */
-.capitals-review__flag {
+.table-view__flag {
   width: 1.5rem;
   height: 1rem;
   object-fit: cover;
