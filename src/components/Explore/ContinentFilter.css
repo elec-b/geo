@@ -4,20 +4,12 @@
   display: flex;
   justify-content: center;
   gap: var(--spacing-xs);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 var(--spacing-sm);
+  padding: 0 var(--spacing-xs);
   max-width: 100%;
 }
 
-.continent-filter::-webkit-scrollbar {
-  display: none;
-}
-
 .continent-filter__pill {
-  flex-shrink: 0;
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.5rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--pill-color, var(--glass-border));
   background: transparent;

@@ -182,7 +182,27 @@ export function ExploreView({
 
   const selectedCountry = selectedCca2 ? countries.get(selectedCca2) : null;
   const selectedRankings = selectedCca2 ? rankings.get(selectedCca2) : undefined;
-  const showCapitalsTable = mode === 'capitals' && !capitalsGlobeView;
+  // Modo visual: refleja lo que el usuario ve (globo o tabla)
+  const visualMode = (mode === 'capitals' && capitalsGlobeView) ? 'countries' : mode;
+
+  // Handlers del segmented adaptados al contexto
+  const handleGlobeClick = useCallback(() => {
+    if (mode === 'capitals' && capitalsGlobeView) {
+      // Ya ve el globo desde tabla → cambio normal a modo países
+      switchMode('countries');
+    } else {
+      switchMode('countries');
+    }
+  }, [mode, capitalsGlobeView, switchMode]);
+
+  const handleTableClick = useCallback(() => {
+    if (mode === 'capitals' && capitalsGlobeView) {
+      // Volver a tabla sin resetear selección
+      setCapitalsGlobeView(false);
+    } else {
+      switchMode('capitals');
+    }
+  }, [mode, capitalsGlobeView, switchMode]);
 
   return (
     <>
@@ -191,18 +211,18 @@ export function ExploreView({
         {/* Segmented control */}
         <div className="explore-segmented" role="tablist">
           <button
-            className={`explore-segmented__btn ${mode === 'countries' ? 'explore-segmented__btn--active' : ''}`}
-            onClick={() => switchMode('countries')}
+            className={`explore-segmented__btn ${visualMode === 'countries' ? 'explore-segmented__btn--active' : ''}`}
+            onClick={handleGlobeClick}
             role="tab"
-            aria-selected={mode === 'countries'}
+            aria-selected={visualMode === 'countries'}
           >
             Globo
           </button>
           <button
-            className={`explore-segmented__btn ${mode === 'capitals' ? 'explore-segmented__btn--active' : ''}`}
-            onClick={() => switchMode('capitals')}
+            className={`explore-segmented__btn ${visualMode === 'capitals' ? 'explore-segmented__btn--active' : ''}`}
+            onClick={handleTableClick}
             role="tab"
-            aria-selected={mode === 'capitals'}
+            aria-selected={visualMode === 'capitals'}
           >
             Tabla
           </button>
@@ -232,13 +252,14 @@ export function ExploreView({
         )}
       </div>
 
-      {/* Tabla de capitales (pantalla completa) */}
-      {showCapitalsTable && (
+      {/* Tabla de capitales (pantalla completa, se oculta con display:none para preservar scroll) */}
+      {mode === 'capitals' && (
         <TableView
           countries={countries}
           continentFilter={continentFilter}
           onCountryTap={handleCapitalsCountryTap}
           onCapitalTap={handleCapitalsCapitalTap}
+          style={{ display: capitalsGlobeView ? 'none' : undefined }}
         />
       )}
 

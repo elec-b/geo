@@ -116,6 +116,7 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
   - [x] Controles demasiado abajo en pantalla → subidos bajo el header
 - [x] Feedback — Diseño responsivo:
   - [x] Auditoría px → rem en toda la app (`variables.css`, `AppHeader`, `TabBar`, `ExploreView`, `ContinentFilter`, `TableView`, `CountryCard`, `AppShell`)
+- [ ] Feedback adicional del usuario pendiente de recibir (probar en dispositivo real)
 - [x] Feedback — Bugs pendientes (testado en iPhone):
   - [x] Filtros de continentes y selección globo/tabla no visible en modo tabla → fix de z-index (`--z-controls: 15`)
   - [x] Tabla posicionada demasiado abajo en pantalla (debería arrancar más arriba)
@@ -133,12 +134,14 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
   - [x] Tabla → Globo: al tocar un país o capital en la tabla, el segmented ilumina "Globo", y al volver a "Tabla" se preserva la posición exacta de scroll
     - *Intento 1*: segmented control ahora ilumina "Globo" correctamente (usa `visualMode` derivado). Se implementó `scrollIntoView` al volver, pero el comportamiento correcto es preservar el offset exacto, no hacer scroll al país seleccionado
     - *Intento 2*: en vez de desmontar `<TableView>` con renderizado condicional, se mantiene montado y se oculta con `display: none`. El DOM y el scrollTop se preservan automáticamente. Se eliminó `scrollToCca2`, `scrollRef` y `data-cca2` (limpieza del intento 1). Resuelve el problema
-  - [ ] Etiqueta de Australia no se ve (país enorme); solucionar y revisar que no haya más casos similares
+  - [x] Etiqueta de Australia no se ve (país enorme); solucionar y revisar que no haya más casos similares
     - *Intento 1*: se añadió override de centroide `'AU': [134, -25]` (y otros 7 países grandes). No resolvió el problema — la causa no es el centroide. Investigar: ¿colisión con Indonesia/PNG? ¿zoom mínimo asignado por `geoArea` demasiado alto?
     - *Intento 2*: se pre-ordenaron las features por `geoArea` descendente (`sortedFeaturesRef`) para que países grandes dibujen primero y ganen la colisión de bounding boxes. Se sigue sin ver Australia (y aparece el punto con la capital, pero no su nombre). La causa no es el orden de iteración — investigar si hay colisión con otro país grande visible desde la vista de Oceanía (ej. India, China) o si el problema es diferente
-  - [ ] Tabla: headers (País, Capital, Pob.) fijos (sticky) al hacer scroll, solo el contenido se desplaza. Evita solapamiento con el menú superior
+    - *Intento 3 (resuelve)*: la causa raíz era un duplicado en el TopoJSON — dos features con ID '036' (Australia principal + Ashmore & Cartier Islands). El loop de `geoArea` sobrescribía el área real (~0.19 sr) con ~0, asignando `minZoom = 8.0`. Fix: en el loop de cálculo, solo registrar un feature por `cca2` si tiene mayor área; filtrar duplicados en `sortedFeaturesRef`
+  - [x] Tabla: headers (País, Capital, Pob.) fijos (sticky) al hacer scroll, solo el contenido se desplaza. Evita solapamiento con el menú superior
     - *Intento 1*: se añadió `position: sticky; top: 0` al header. El header se pega correctamente, pero las filas de la tabla se ven por encima de los controles flotantes (menú + pills) al hacer scroll — falta clipear el contenido visible
     - *Intento 2*: se añadió `background: rgba(10,10,26,0.92)` + `backdrop-filter: blur(12px)` a `.explore-controls`. Oculta las filas pero queda mal visualmente con el globo (pierde transparencia). Revertir y buscar otra solución: clipear el scroll de la tabla para que las filas no se rendericen por encima del header, sin tocar la transparencia de los controles
+    - *Intento 3 (resuelve)*: reemplazar `padding-top` + `height: 100%` por posicionamiento absoluto (`top` + `bottom`) en `.table-view__scroll`. El `overflow-y: auto` recorta naturalmente el contenido por encima del `top`. Revertido el fondo opaco de `.explore-controls` (controles transparentes de nuevo)
 
 ---
 

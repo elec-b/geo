@@ -12,6 +12,7 @@ interface TableViewProps {
   continentFilter: Continent | null;
   onCountryTap: (cca2: string) => void;
   onCapitalTap: (cca2: string) => void;
+  style?: React.CSSProperties;
 }
 
 /** Formato compacto de población: 1.4B, 45M, 800k */
@@ -46,6 +47,7 @@ export function TableView({
   continentFilter,
   onCountryTap,
   onCapitalTap,
+  style,
 }: TableViewProps) {
   const [sortKey, setSortKey] = useState<SortKey>('name');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
@@ -121,7 +123,7 @@ export function TableView({
   );
 
   return (
-    <div className="table-view">
+    <div className="table-view" style={style}>
       <div className="table-view__scroll">
         {continentFilter === null ? (
           // Tabla única sin agrupación cuando filtro es "Todos"

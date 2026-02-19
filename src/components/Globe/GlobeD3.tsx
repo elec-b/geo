@@ -81,6 +81,14 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
   'PT': [-8, 39.5],       // Portugal (no Azores)
   'ES': [-3.7, 40],       // España (peninsular)
   'CA': [-100, 56],       // Canadá (centro visual)
+  'AU': [134, -25],       // Australia (centro del continente)
+  'BR': [-53, -14],       // Brasil (centro visual)
+  'CN': [104, 35],        // China (centro visual)
+  'IN': [79, 22],         // India (centro visual)
+  'KZ': [67, 48],         // Kazajistán (centro visual)
+  'SA': [44, 24],         // Arabia Saudita (centro visual)
+  'MX': [-102, 23],       // México (centro visual)
+  'AR': [-64, -34],       // Argentina (centro visual)
 };
 
 // --- Interfaces ---
@@ -163,10 +171,11 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const isInertiaRef = useRef(false);
   const dragSamplesRef = useRef<Array<{ x: number; y: number; time: number }>>([]);
 
-  // Marcadores, centroides y zoom mínimo para etiquetas
+  // Marcadores, centroides, zoom mínimo y features ordenados para etiquetas
   const microstateCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   const countryCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   const labelMinZoomRef = useRef<Map<string, number>>(new Map());
+  const sortedFeaturesRef = useRef<CountryFeature[]>([]);
   const showMarkersRef = useRef(showMarkers);
   showMarkersRef.current = showMarkers;
 
@@ -375,8 +384,12 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       // Array compartido de bounding boxes para colisión entre etiquetas
       const usedRects: Array<[number, number, number, number]> = []; // [x, y, w, h]
 
-      const collides = (rect: [number, number, number, number]) =>
-        usedRects.some(([rx, ry, rw, rh]) =>
+      // Mapa cca2 → índice en usedRects (para excluir rect del padre al dibujar capitales)
+      const countryRectIndex = new Map<string, number>();
+
+      const collidesExcluding = (rect: [number, number, number, number], excludeIdx?: number) =>
+        usedRects.some(([rx, ry, rw, rh], i) =>
+          i !== excludeIdx &&
           rect[0] < rx + rw && rect[0] + rect[2] > rx &&
           rect[1] < ry + rh && rect[1] + rect[3] > ry
         );
@@ -390,7 +403,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         ctx.shadowColor = LABEL_SHADOW;
         ctx.shadowBlur = 3;
 
-        for (const feature of countries.features) {
+        // Iterar features ordenados por área descendente: países grandes tienen prioridad visual
+        for (const feature of sortedFeaturesRef.current) {
           const cca2 = feature.properties?.cca2;
           if (!cca2) continue;
           if (filter && !filter.has(cca2)) continue;
@@ -406,7 +420,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           const pos = projection(centroid);
           if (!pos) continue;
 
-          // Desplazar si la capital está muy cerca (evitar solapamiento país-capital)
+          // Separación vertical simétrica si la capital está muy cerca
           let yOffset = 0;
           if (showCapitalLbls && capitalLabelsRef.current) {
             const capData = capitalLabelsRef.current.get(cca2);
@@ -416,7 +430,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
               if (capPos) {
                 const dist = Math.hypot(pos[0] - capPos[0], pos[1] - capPos[1]);
                 if (dist < fontSize * 1.5) {
-                  yOffset = -fontSize * 0.8;
+                  yOffset = -fontSize * 0.7;
                 }
               }
             }
@@ -427,7 +441,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           const rect: [number, number, number, number] = [
             pos[0] - textW / 2, pos[1] + yOffset - fontSize / 2, textW, fontSize,
           ];
-          if (collides(rect)) continue;
+          if (collidesExcluding(rect)) continue;
+          countryRectIndex.set(cca2, usedRects.length);
           usedRects.push(rect);
 
           ctx.fillStyle = LABEL_COLOR;
@@ -458,12 +473,25 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           const pos = projection(coords);
           if (!pos) continue;
 
-          const yPos = pos[1] + 6;
+          let yPos = pos[1] + 6;
           const textW = fontSize * capital.name.length * 0.55;
           const rect: [number, number, number, number] = [
             pos[0] - textW / 2, yPos, textW, fontSize,
           ];
-          if (collides(rect)) continue;
+          // Si solapa con el rect del país padre, mover justo debajo (+2px gap)
+          const parentIdx = countryRectIndex.get(cca2);
+          if (parentIdx !== undefined) {
+            const parentRect = usedRects[parentIdx];
+            if (
+              rect[0] < parentRect[0] + parentRect[2] && rect[0] + rect[2] > parentRect[0] &&
+              rect[1] < parentRect[1] + parentRect[3] && rect[1] + rect[3] > parentRect[1]
+            ) {
+              yPos = parentRect[1] + parentRect[3] + 2;
+              rect[1] = yPos;
+            }
+          }
+          // Excluir el rect del país padre para que la capital solo compita contra OTROS
+          if (collidesExcluding(rect, parentIdx)) continue;
           usedRects.push(rect);
 
           ctx.fillStyle = LABEL_CAPITAL_COLOR;
@@ -595,12 +623,16 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         for (const feature of countries.features) {
           const cca2 = feature.properties?.cca2;
           if (cca2) {
+            const area = geoArea(feature);
+            // Si ya existe un feature con más área para este cca2, ignorar el duplicado
+            if (areas.has(cca2) && area <= areas.get(cca2)!) continue;
+
             const centroid = CENTROID_OVERRIDES[cca2] ?? (geoCentroid(feature) as [number, number]);
             allCentroids.set(cca2, centroid);
             if (MICROSTATE_CODES.has(cca2)) {
               microCentroids.set(cca2, centroid);
             }
-            areas.set(cca2, geoArea(feature));
+            areas.set(cca2, area);
           }
         }
 
@@ -615,6 +647,18 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           else if (pct < 0.7) minZoomMap.set(cca2, 4.0);    // Top 70%: zoom ×4
           else minZoomMap.set(cca2, 8.0);                    // Resto: zoom ×8
         });
+
+        // Features ordenados por área descendente (países grandes primero para prioridad de etiquetas)
+        // Filtrar duplicados de cca2 para evitar iteraciones desperdiciadas
+        const seenCca2 = new Set<string>();
+        sortedFeaturesRef.current = [...countries.features]
+          .sort((a, b) => (areas.get(b.properties?.cca2 ?? '') ?? 0) - (areas.get(a.properties?.cca2 ?? '') ?? 0))
+          .filter(f => {
+            const cca2 = f.properties?.cca2;
+            if (!cca2 || seenCca2.has(cca2)) return false;
+            seenCca2.add(cca2);
+            return true;
+          }) as CountryFeature[];
 
         countryCentroidsRef.current = allCentroids;
         microstateCentroidsRef.current = microCentroids;
