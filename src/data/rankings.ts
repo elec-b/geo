@@ -5,6 +5,7 @@ import type { CountryData } from './types';
 export interface CountryRankings {
   populationRank: number; // 1 = más poblado
   areaRank: number;       // 1 = más grande
+  densityRank: number;    // 1 = más denso (hab/km²)
   totalCountries: number; // 195
 }
 
@@ -27,12 +28,20 @@ export function buildRankings(countries: Map<string, CountryData>): Map<string, 
   const areaRankMap = new Map<string, number>();
   byArea.forEach((c, i) => areaRankMap.set(c.cca2, i + 1));
 
+  // Ordenar por densidad de población descendente (hab/km²)
+  const byDensity = [...entries]
+    .filter(c => c.area > 0)
+    .sort((a, b) => (b.population / b.area) - (a.population / a.area));
+  const densityRankMap = new Map<string, number>();
+  byDensity.forEach((c, i) => densityRankMap.set(c.cca2, i + 1));
+
   // Construir Map de rankings
   const rankings = new Map<string, CountryRankings>();
   for (const country of entries) {
     rankings.set(country.cca2, {
       populationRank: popRankMap.get(country.cca2)!,
       areaRank: areaRankMap.get(country.cca2)!,
+      densityRank: densityRankMap.get(country.cca2) ?? total,
       totalCountries: total,
     });
   }

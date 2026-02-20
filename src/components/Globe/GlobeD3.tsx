@@ -56,7 +56,9 @@ const CAPITAL_PIN_COLOR = '#00f0ff';
 
 // Etiquetas
 const LABEL_COLOR = 'rgba(255, 255, 255, 0.8)';
+const LABEL_NON_UN_COLOR = 'rgba(255, 180, 50, 0.6)';
 const LABEL_CAPITAL_COLOR = 'rgba(0, 240, 255, 0.7)';
+const LABEL_CAPITAL_NON_UN_COLOR = 'rgba(255, 180, 50, 0.5)';
 const LABEL_SHADOW = 'rgba(0, 0, 0, 0.7)';
 const LABEL_FONT_BASE = 9;
 
@@ -120,6 +122,11 @@ function easeInOutCubic(t: number): number {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 }
 
+/** Normaliza longitud al rango [-180, 180) para evitar acumulación por auto-rotación */
+function wrapLon(lon: number): number {
+  return ((lon % 360) + 540) % 360 - 180;
+}
+
 // --- Componente ---
 
 export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
@@ -149,7 +156,11 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const hoveredRef = useRef<string | null>(null);
 
   // Rotación y drag
-  const rotationRef = useRef<[number, number]>([-10, -20]);
+  // Posición inicial aleatoria para que cada sesión arranque en un punto distinto
+  const rotationRef = useRef<[number, number]>([
+    Math.random() * 360 - 180,
+    -(Math.random() * 100 - 50),
+  ]);
   const isAutoRotatingRef = useRef(true);
   const isDraggingRef = useRef(false);
   const dragStartRef = useRef<{ x: number; y: number; rotation: [number, number] } | null>(null);
@@ -176,6 +187,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const countryCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   const labelMinZoomRef = useRef<Map<string, number>>(new Map());
   const sortedFeaturesRef = useRef<CountryFeature[]>([]);
+  const nonUnCodesRef = useRef<Set<string>>(new Set());
   const showMarkersRef = useRef(showMarkers);
   showMarkersRef.current = showMarkers;
 
@@ -222,9 +234,16 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       isDraggingRef.current = false;
       dragStartRef.current = null;
 
+      // Normalizar longitud de inicio y calcular delta por camino más corto
+      const startLon = wrapLon(rotationRef.current[0]);
+      const endLon = -lon;
+      let deltaLon = endLon - startLon;
+      if (deltaLon > 180) deltaLon -= 360;
+      if (deltaLon < -180) deltaLon += 360;
+
       flyToAnimRef.current = {
-        startRotation: [...rotationRef.current] as [number, number],
-        endRotation: [-lon, -lat],
+        startRotation: [startLon, rotationRef.current[1]],
+        endRotation: [startLon + deltaLon, -lat],
         startScale: scaleRef.current,
         endScale: zoom ?? scaleRef.current,
         startTime: performance.now(),
@@ -445,7 +464,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           countryRectIndex.set(cca2, usedRects.length);
           usedRects.push(rect);
 
-          ctx.fillStyle = LABEL_COLOR;
+          ctx.fillStyle = feature.properties.isUNMember ? LABEL_COLOR : LABEL_NON_UN_COLOR;
           ctx.fillText(feature.properties.name, pos[0], pos[1] + yOffset);
         }
         ctx.shadowBlur = 0;
@@ -494,7 +513,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           if (collidesExcluding(rect, parentIdx)) continue;
           usedRects.push(rect);
 
-          ctx.fillStyle = LABEL_CAPITAL_COLOR;
+          ctx.fillStyle = nonUnCodesRef.current.has(cca2) ? LABEL_CAPITAL_NON_UN_COLOR : LABEL_CAPITAL_COLOR;
           ctx.fillText(capital.name, pos[0], yPos);
         }
         ctx.shadowBlur = 0;
@@ -527,7 +546,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       const [vx, vy] = velocityRef.current;
       const [lambda, phi] = rotationRef.current;
       rotationRef.current = [
-        lambda + vx * delta,
+        wrapLon(lambda + vx * delta),
         Math.max(-80, Math.min(80, phi + vy * delta)),
       ];
       velocityRef.current = [vx * INERTIA_FRICTION, vy * INERTIA_FRICTION];
@@ -537,7 +556,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
     } else if (isAutoRotatingRef.current && !isDraggingRef.current) {
       const [lambda, phi] = rotationRef.current;
-      rotationRef.current = [lambda + ROTATION_SPEED * delta, phi];
+      rotationRef.current = [wrapLon(lambda + ROTATION_SPEED * delta), phi];
     }
 
     draw();
@@ -659,6 +678,14 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
             seenCca2.add(cca2);
             return true;
           }) as CountryFeature[];
+
+        // Construir set de códigos no-ONU para diferenciar etiquetas de capitales
+        const nonUn = new Set<string>();
+        for (const feature of countries.features) {
+          const cca2 = feature.properties?.cca2;
+          if (cca2 && !feature.properties.isUNMember) nonUn.add(cca2);
+        }
+        nonUnCodesRef.current = nonUn;
 
         countryCentroidsRef.current = allCentroids;
         microstateCentroidsRef.current = microCentroids;

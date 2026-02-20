@@ -263,8 +263,8 @@ export function ExploreView({
         />
       )}
 
-      {/* Ficha de país (bottom sheet, modo países) */}
-      {mode === 'countries' && selectedCountry && (
+      {/* Ficha de país (bottom sheet, visible en modo países o al volver de tabla) */}
+      {visualMode === 'countries' && selectedCountry && (
         <CountryCard
           country={selectedCountry}
           rankings={selectedRankings}

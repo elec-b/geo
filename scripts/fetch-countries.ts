@@ -152,15 +152,25 @@ async function main() {
   const capitals: Record<string, CapitalEntry> = {};
   const warnings: string[] = [];
 
+  // Overrides de coordenadas de capital (la API devuelve datos incorrectos para algunos países)
+  const CAPITAL_OVERRIDES: Record<string, [number, number]> = {
+    'GD': [12.05, -61.75], // St. George's, Grenada (API devuelve coords de Bermuda)
+  };
+
   for (const c of allApiCountries) {
     const capitalName = c.capital?.[0] ?? '';
-    const latlng = c.capitalInfo?.latlng;
+    const override = CAPITAL_OVERRIDES[c.cca2];
 
-    if (!latlng || latlng.length < 2) {
-      warnings.push(`${c.cca2} (${c.name.common}): sin coordenadas de capital`);
-      capitals[c.cca2] = { name: capitalName, latlng: [0, 0] };
+    if (override) {
+      capitals[c.cca2] = { name: capitalName, latlng: override };
     } else {
-      capitals[c.cca2] = { name: capitalName, latlng: [latlng[0], latlng[1]] };
+      const latlng = c.capitalInfo?.latlng;
+      if (!latlng || latlng.length < 2) {
+        warnings.push(`${c.cca2} (${c.name.common}): sin coordenadas de capital`);
+        capitals[c.cca2] = { name: capitalName, latlng: [0, 0] };
+      } else {
+        capitals[c.cca2] = { name: capitalName, latlng: [latlng[0], latlng[1]] };
+      }
     }
   }
 

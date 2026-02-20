@@ -84,6 +84,15 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
             {rankings && <span className="country-card__rank"> #{rankings.areaRank}</span>}
           </span>
         </div>
+        {country.area > 0 && (
+          <div className="country-card__field">
+            <span className="country-card__label">Densidad</span>
+            <span className="country-card__value">
+              {formatNumber(Math.round(country.population / country.area))} hab/km²
+              {rankings && <span className="country-card__rank"> #{rankings.densityRank}</span>}
+            </span>
+          </div>
+        )}
         <div className="country-card__field">
           <span className="country-card__label">Moneda</span>
           <span className="country-card__value">{country.currencies.join(', ') || '—'}</span>

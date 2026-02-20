@@ -58,9 +58,6 @@
   font-weight: 600;
   color: var(--color-text-primary);
   line-height: 1.2;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .country-card__continent {
