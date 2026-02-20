@@ -156,11 +156,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const hoveredRef = useRef<string | null>(null);
 
   // Rotación y drag
-  // Posición inicial aleatoria para que cada sesión arranque en un punto distinto
-  const rotationRef = useRef<[number, number]>([
-    Math.random() * 360 - 180,
-    -(Math.random() * 100 - 50),
-  ]);
+  // Posición inicial aleatoria (solo longitud) para que cada sesión arranque en un punto distinto
+  const rotationRef = useRef<[number, number]>([Math.random() * 360 - 180, 0]);
   const isAutoRotatingRef = useRef(true);
   const isDraggingRef = useRef(false);
   const dragStartRef = useRef<{ x: number; y: number; rotation: [number, number] } | null>(null);

@@ -149,10 +149,12 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
   - [x] Ficha de país: nombre completo sin truncar — eliminado `white-space: nowrap` + `text-overflow: ellipsis`, permite multilínea
   - [x] Grenada: coordenadas de capital corregidas de [32.38, -64.68] (Bermuda) a [12.05, -61.75]. Añadido `CAPITAL_OVERRIDES` en `fetch-countries.ts` para proteger contra sobrescritura
   - [x] São Tomé y Príncipe: no es un bug — el pin es correcto (país ONU, ISO `ST`); la isla es demasiado pequeña para verse a zoom bajo
-  - [ ] Globo: posición inicial aleatoria cada vez que se abre la app
+  - [x] Globo: posición inicial aleatoria cada vez que se abre la app
     - *Iteración 1*: implementado con longitud y latitud aleatorias. Feedback: mantener ecuador centrado (aleatorio solo este-oeste, sin variación norte-sur)
-  - [ ] Tabla → Globo → ficha de país: al tocar un país en la tabla y volver al globo, la ficha no debería mostrarse automáticamente. Solo debe aparecer si el usuario toca el país directamente en el globo
+    - *Iteración 2*: latitud fija en 0 (ecuador centrado), solo longitud aleatoria
+  - [x] Tabla → Globo → ficha de país: al tocar un país en la tabla, el globo muestra país iluminado + pin de capital, sin ficha. La ficha aparece solo al tocar el país directamente en el globo
     - *Iteración 1*: se cambió condición de render de `mode === 'countries'` a `visualMode === 'countries'`. Feedback: click en tabla solo debe navegar al globo sin ficha; la ficha aparece solo al tocar el país en el globo
+    - *Iteración 2*: nuevo estado `showCard` — se activa solo en `handleCountryClick` (tap en globo), no en handlers de tabla. País se ilumina + pin de capital al navegar desde tabla, pero sin ficha
   - [ ] Tabla: añadir toggle (interruptor) para mostrar/ocultar territorios no reconocidos por la ONU. Por defecto: solo mostrar países ONU *(ver DESIGN.md § «Explorar > Tabla» y «Territorios no reconocidos»)*
   - [ ] Etiquetas: Vaticano / Ciudad del Vaticano se superpone sobre Italia / Roma cuando ambos toggles (Países + Capitales) están activos. Implementar prioridad por población *(ver DESIGN.md § «Anti-solapamiento de etiquetas»)*
   - [ ] Ficha de país: verificar que aparece pegada al borde inferior de la pantalla (encima del tab bar), sin gap visual — comprobar en dispositivo real

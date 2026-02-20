@@ -49,6 +49,7 @@ export function ExploreView({
   const [showCountryLabels, setShowCountryLabels] = useState(false);
   const [showCapitalLabels, setShowCapitalLabels] = useState(false);
   const [capitalsGlobeView, setCapitalsGlobeView] = useState(false);
+  const [showCard, setShowCard] = useState(false);
 
   // --- Estado derivado ---
 
@@ -107,6 +108,7 @@ export function ExploreView({
       const cca2 = feature.properties?.cca2;
       if (!cca2) return;
       setSelectedCca2(cca2);
+      setShowCard(true);
       const cap = capitals.get(cca2);
       if (cap && globeRef.current) {
         globeRef.current.flyTo(cap.latlng[1], cap.latlng[0]);
@@ -118,16 +120,18 @@ export function ExploreView({
   // Click en océano o cierre de ficha
   const handleDeselect = useCallback(() => {
     setSelectedCca2(null);
+    setShowCard(false);
   }, []);
 
   // Registrar handlers en refs para bridge con App.tsx
   onCountryClickRef.current = handleCountryClick;
   onCountryDeselectRef.current = handleDeselect;
 
-  // Modo capitales: tap en fila de la tabla → país
+  // Modo capitales: tap en fila de la tabla → globo (país iluminado + pin, sin ficha)
   const handleCapitalsCountryTap = useCallback(
     (cca2: string) => {
       setSelectedCca2(cca2);
+      setShowCard(false);
       setCapitalsGlobeView(true);
       const cap = capitals.get(cca2);
       if (cap && globeRef.current) {
@@ -137,10 +141,11 @@ export function ExploreView({
     [capitals, globeRef],
   );
 
-  // Modo capitales: tap en fila de la tabla → capital
+  // Modo capitales: tap en fila de la tabla → globo con zoom a capital (país iluminado, sin ficha)
   const handleCapitalsCapitalTap = useCallback(
     (cca2: string) => {
       setSelectedCca2(cca2);
+      setShowCard(false);
       setCapitalsGlobeView(true);
       const cap = capitals.get(cca2);
       if (cap && globeRef.current) {
@@ -176,6 +181,7 @@ export function ExploreView({
     setMode(newMode);
     setCapitalsGlobeView(false);
     setSelectedCca2(null);
+    setShowCard(false);
   }, []);
 
   // --- Datos del país seleccionado ---
@@ -263,8 +269,8 @@ export function ExploreView({
         />
       )}
 
-      {/* Ficha de país (bottom sheet, visible en modo países o al volver de tabla) */}
-      {visualMode === 'countries' && selectedCountry && (
+      {/* Ficha de país (bottom sheet, solo al tocar país en el globo) */}
+      {visualMode === 'countries' && selectedCountry && showCard && (
         <CountryCard
           country={selectedCountry}
           rankings={selectedRankings}
