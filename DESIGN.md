@@ -118,7 +118,8 @@ La experiencia ofrece dos modos de exploración, accesibles mediante un control 
 
 ### Globo
 Vista interactiva del globo terráqueo. El usuario puede tocar un país → se ilumina → aparece su ficha de país.
-*   **Ficha de país**: Bandera, nombre, capital, continente, población (y ranking), superficie (y ranking), moneda y gentilicio.
+*   **Posición inicial**: Cada vez que se abre la app, el globo comienza en una posición aleatoria (longitud y latitud), para que el usuario no siempre vea la misma región.
+*   **Ficha de país**: Bandera, nombre completo del país (sin truncar), capital, continente, población (y ranking), superficie (y ranking), densidad de población (y ranking), moneda y gentilicio. La ficha se muestra pegada al borde inferior de la pantalla (encima del tab bar).
 *   **Capital**: Círculo cian sobre la ubicación de la capital. Se muestra al seleccionar un país y también permanentemente cuando el toggle de etiquetas de capitales está activo.
 
 ### Tabla
@@ -129,6 +130,7 @@ Tabla de países con sus capitales y población, diseñada para facilitar el rep
 *   **Interacción — tocar país**: Zoom al país + marca en la capital + se muestra el globo.
 *   **Interacción — tocar capital**: Zoom de precisión al punto exacto + pin distintivo + país resaltado + se muestra el globo.
 *   **Affordance**: Los nombres de países y capitales deben tener un indicador visual sutil que sugiera que son tappables.
+*   **Toggle territorios no-ONU**: Interruptor para mostrar/ocultar territorios no reconocidos por la ONU. Por defecto: solo territorios ONU.
 
 ### Controles comunes
 *   **Filtros de continente**: Pills horizontales para aislar continentes (ej. «solo África»). Al seleccionar un continente, el globo rota automáticamente para orientar la vista hacia él.
@@ -144,6 +146,7 @@ Las etiquetas de países y capitales sobre el globo deben ser legibles a cualqui
 *   **Zoom cercano**: Mostrar todas las etiquetas de la región visible.
 *   **País y capital propios**: La etiqueta de un país no debe solaparse con la de su propia capital, especialmente cuando la capital está centrada en el país.
 *   **Centro visual**: Revisar la ubicación de etiquetas para países con formas irregulares (ej. Francia) — el centroide geométrico no siempre es el mejor punto visual.
+*   **Prioridad por población**: Cuando etiquetas de distintos países o capitales compiten por el mismo espacio (ej. Roma vs. Ciudad del Vaticano), priorizar la de mayor población. Solo al hacer zoom suficiente se muestran todas. Esto aplica tanto a etiquetas de capitales entre sí como a la mezcla de etiquetas de países y capitales.
 
 ---
 
@@ -289,5 +292,7 @@ Algunos territorios aparecen en los datos geográficos (Natural Earth 1:50m) per
 *   **Son seleccionables** en la experiencia Explorar: al tocar, se muestra la ficha de país con un indicador claro de que NO es reconocido por la ONU.
 *   Se muestran todos los datos disponibles (bandera, capital, población, superficie, moneda, gentilicio).
 *   **No participan en el sistema de juego** (niveles, sellos, pruebas) — solo son visibles en Explorar.
+*   **Color de etiquetas diferenciado**: En el globo, las etiquetas (nombre de país y capital) de estos territorios se muestran en un color distinto al de los países ONU, para distinguirlos visualmente.
+*   **Visibilidad en la tabla**: ver § «Explorar > Tabla > Toggle territorios no-ONU».
 *   **Continente asignado**: Cada territorio debe tener un continente asignado para que los filtros de continente funcionen correctamente (ej. Sáhara Occidental → África). Al filtrar por otro continente, se oscurecen como cualquier otro país.
 *   **Datos**: El script `fetch-countries.ts` debe incluir estos territorios marcados con `unMember: false`.
