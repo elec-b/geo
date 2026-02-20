@@ -8,6 +8,7 @@ import type { CountryRankings } from '../../data/rankings';
 import { CountryCard } from './CountryCard';
 import { ContinentFilter } from './ContinentFilter';
 import { TableView } from './TableView';
+import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
 import './ExploreView.css';
 
 type ExploreMode = 'countries' | 'capitals';
@@ -58,6 +59,12 @@ export function ExploreView({
     const set = new Set<string>();
     for (const [cca2, data] of countries) {
       if (data.continent === continentFilter) set.add(cca2);
+    }
+    // Territorios sin entrada en countries.json (códigos de 3 caracteres)
+    for (const territory of Object.values(NON_UN_TERRITORIES_BY_NAME)) {
+      if (territory.continent === continentFilter && !set.has(territory.cca2)) {
+        set.add(territory.cca2);
+      }
     }
     return set;
   }, [continentFilter, countries]);

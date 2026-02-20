@@ -160,7 +160,8 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
   - [ ] Tabla: añadir toggle (interruptor) para mostrar/ocultar territorios no reconocidos por la ONU. Por defecto: solo mostrar países ONU *(ver DESIGN.md § «Explorar > Tabla» y «Territorios no reconocidos»)*
   - [ ] Etiquetas: Vaticano / Ciudad del Vaticano se superpone sobre Italia / Roma cuando ambos toggles (Países + Capitales) están activos. Implementar prioridad por población *(ver DESIGN.md § «Anti-solapamiento de etiquetas»)*
   - [ ] Ficha de país: verificar que aparece pegada al borde inferior de la pantalla (encima del tab bar), sin gap visual — comprobar en dispositivo real
-  - [ ] Filtro de continente: Somalilandia no se ilumina con el filtro de África. Causa raíz: `SOL` no existe en `countries.json`
+  - [x] Filtro de continente: Somalilandia no se ilumina con el filtro de África. Causa raíz: `SOL` no existe en `countries.json`. Fix: extender memo `highlightedCountries` para incluir territorios de `NON_UN_TERRITORIES_BY_NAME`
+  - [ ] Globo: al seleccionar Somalilandia o Chipre del Norte no aparece ficha de país. Pensar si debería aparecer ficha en estos casos
 
 ---
 
