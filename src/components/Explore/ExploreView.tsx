@@ -238,7 +238,7 @@ export function ExploreView({
         <ContinentFilter active={continentFilter} onChange={handleContinentChange} />
 
         {/* Toggles de etiquetas (solo modo países) */}
-        {mode === 'countries' && (
+        {visualMode === 'countries' && (
           <div className="explore-labels">
             <button
               className={`explore-labels__btn ${showCountryLabels ? 'explore-labels__btn--active' : ''}`}
