@@ -78,4 +78,9 @@ npx cap add ios       # Añadir plataforma iOS (solo 1 vez)
 npx cap sync          # Sincronizar código web → iOS
 npx cap open ios      # Abrir en Xcode
 npx cap run ios       # Build y ejecutar en simulador/dispositivo
+
+# Despliegue directo a iPhone (inalámbrico)
+npm run device        # Build + sync + compilar + instalar + lanzar en iPhone
 ```
+
+> **Nota**: `npm run device` requiere un archivo `.env.local` en la raíz con los IDs del dispositivo (`IOS_DEVICE_UDID`, `IOS_DEVICE_ID`, `IOS_BUNDLE_ID`). Este archivo no se sube a git. Para obtener los IDs, ejecutar `xcrun devicectl list devices`.
