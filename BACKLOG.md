@@ -85,93 +85,21 @@
   - Efecto blur en "Pasaporte" via `backdrop-filter` en overlay (sin wrapper sobre el globo)
 - [x] Tab por defecto: Explorar (globo interactivo, sin overlay)
 
----
-
-## En progreso
-
 ### Experiencia: Explorar
-Primera implementación funcional completada. Feedback del usuario aplicado parcialmente.
-- [x] Ficha de país al tocar (bandera, nombre, capital, continente, población y ranking, superficie y ranking, moneda, gentilicio)
-- [x] Marcador de capital sobre el mapa (pin cian al tocar un país)
-- [x] Filtros por continente (pills horizontales con colores por continente)
-- [x] Etiquetas de países/capitales (toggles "Países" y "Capitales")
-- [x] Modo «Repaso de capitales» (tabla país–capital; al tocar país → zoom al país + marca en capital; al tocar capital → zoom al punto exacto + pin + país resaltado)
-- [x] Segmented control ("Globo" | "Tabla") para cambiar entre modos
-- [x] API imperativa del globo: `flyTo(lon, lat, zoom?, duration?)` con animación suave
-- [x] Feedback — Cambios de diseño (aplicados):
-  - [x] Renombrar modos: "Países" → "Globo", "Capitales" → "Tabla"
-  - [x] Filtro de continente: `flyTo` al centro del continente al seleccionar
-  - [x] Anti-solapamiento de etiquetas: zoom progresivo por `geoArea` + colisión de bounding boxes
-  - [x] Override de centroides para países con forma irregular (FR, US, RU, etc.)
-  - [x] No solapar etiqueta de país con la de su propia capital
-  - [x] Circulitos permanentes de capital cuando toggle "Capitales" está activo
-  - [x] Tabla: columna de población con formato adaptado ("1.4B", "45M", "800k")
-  - [x] Tabla: headers ordenables (tap para alternar asc/desc)
-  - [x] Tabla: vista plana cuando filtro es "Todos" (sin agrupación por continentes)
-  - [x] Tabla: affordance visual (underline) en celdas tappables
-  - [x] Territorios no-ONU: seleccionables con ficha + disclaimer «no reconocido por la ONU»
-  - [x] Territorios no-ONU: continente asignado para que funcionen los filtros
-- [x] Feedback — Bugs resueltos:
-  - [x] Botón "volver a la tabla" se solapaba con filtros → reposicionado dentro del bloque de controles
-  - [x] Controles demasiado abajo en pantalla → subidos bajo el header
-- [x] Feedback — Diseño responsivo:
-  - [x] Auditoría px → rem en toda la app (`variables.css`, `AppHeader`, `TabBar`, `ExploreView`, `ContinentFilter`, `TableView`, `CountryCard`, `AppShell`)
-- [x] Feedback adicional del usuario pendiente de recibir (probar en dispositivo real)
-- [x] Feedback — Bugs pendientes (testado en iPhone):
-  - [x] Filtros de continentes y selección globo/tabla no visible en modo tabla → fix de z-index (`--z-controls: 15`)
-  - [x] Tabla posicionada demasiado abajo en pantalla (debería arrancar más arriba)
-  - [x] Pills de filtro se salen de la pantalla → padding reducido + `justify-content: center`
-  - [x] Guyana (América del Sur) se identifica como Brunei: error en mapeo de país del TopoJSON
-  - [x] Antártida: definir tratamiento (no es un país, no pertenece a un continente; actualmente se resalta con cualquier filtro)
-  - [x] Sáhara Occidental: capital mal ubicada, `flyTo` apunta al centro de África en vez de a El Aaiún
-- [x] Feedback adicional del usuario (primera ronda — incorporado):
-  - [x] Renombrar `CapitalsReview.tsx/.css` → `TableView.tsx/.css` (el nombre ya no refleja la UI "Tabla")
-  - [x] Eliminar botón "volver a tabla" — redundante con el segmented control "Globo | Tabla"
-  - [x] Pills de continente: "Todos" y "Oceanía" se salían por los lados. Ancho y tamaño de letra completamente relativos para que quepan todos con el mismo tamaño de letra
-  - [x] Etiquetas país + capital: cuando ambas están activas y hay espacio suficiente, mostrar las dos en vez de eliminar una
-    - *Intento 1*: se modificó colisión para excluir el rect del país padre (`collidesExcluding`) y se añadió separación vertical simétrica. Mejora parcial — en ciertos niveles de zoom siguen solapándose país y capital
-    - *Intento 2*: tras calcular el rect de la capital, se comprueba si solapa con el rect del país padre; si solapan, se desplaza la capital justo debajo del padre (+2px gap). Resuelve el problema
-  - [x] Tabla → Globo: al tocar un país o capital en la tabla, el segmented ilumina "Globo", y al volver a "Tabla" se preserva la posición exacta de scroll
-    - *Intento 1*: segmented control ahora ilumina "Globo" correctamente (usa `visualMode` derivado). Se implementó `scrollIntoView` al volver, pero el comportamiento correcto es preservar el offset exacto, no hacer scroll al país seleccionado
-    - *Intento 2*: en vez de desmontar `<TableView>` con renderizado condicional, se mantiene montado y se oculta con `display: none`. El DOM y el scrollTop se preservan automáticamente. Se eliminó `scrollToCca2`, `scrollRef` y `data-cca2` (limpieza del intento 1). Resuelve el problema
-  - [x] Etiqueta de Australia no se ve (país enorme); solucionar y revisar que no haya más casos similares
-    - *Intento 1*: se añadió override de centroide `'AU': [134, -25]` (y otros 7 países grandes). No resolvió el problema — la causa no es el centroide. Investigar: ¿colisión con Indonesia/PNG? ¿zoom mínimo asignado por `geoArea` demasiado alto?
-    - *Intento 2*: se pre-ordenaron las features por `geoArea` descendente (`sortedFeaturesRef`) para que países grandes dibujen primero y ganen la colisión de bounding boxes. Se sigue sin ver Australia (y aparece el punto con la capital, pero no su nombre). La causa no es el orden de iteración — investigar si hay colisión con otro país grande visible desde la vista de Oceanía (ej. India, China) o si el problema es diferente
-    - *Intento 3 (resuelve)*: la causa raíz era un duplicado en el TopoJSON — dos features con ID '036' (Australia principal + Ashmore & Cartier Islands). El loop de `geoArea` sobrescribía el área real (~0.19 sr) con ~0, asignando `minZoom = 8.0`. Fix: en el loop de cálculo, solo registrar un feature por `cca2` si tiene mayor área; filtrar duplicados en `sortedFeaturesRef`
-  - [x] Tabla: headers (País, Capital, Pob.) fijos (sticky) al hacer scroll, solo el contenido se desplaza. Evita solapamiento con el menú superior
-    - *Intento 1*: se añadió `position: sticky; top: 0` al header. El header se pega correctamente, pero las filas de la tabla se ven por encima de los controles flotantes (menú + pills) al hacer scroll — falta clipear el contenido visible
-    - *Intento 2*: se añadió `background: rgba(10,10,26,0.92)` + `backdrop-filter: blur(12px)` a `.explore-controls`. Oculta las filas pero queda mal visualmente con el globo (pierde transparencia). Revertir y buscar otra solución: clipear el scroll de la tabla para que las filas no se rendericen por encima del header, sin tocar la transparencia de los controles
-    - *Intento 3 (resuelve)*: reemplazar `padding-top` + `height: 100%` por posicionamiento absoluto (`top` + `bottom`) en `.table-view__scroll`. El `overflow-y: auto` recorta naturalmente el contenido por encima del `top`. Revertido el fondo opaco de `.explore-controls` (controles transparentes de nuevo)
-- Feedback adicional del usuario (segunda ronda):
-  - [x] Etiquetas de territorios no-ONU: color ámbar diferenciado tanto para nombre de país como para capital (`LABEL_NON_UN_COLOR`, `LABEL_CAPITAL_NON_UN_COLOR`)
-  - [x] Globo: bug de rotación por «camino largo» corregido. Helper `wrapLon()` normaliza longitud a [-180, 180]; `flyTo()` calcula delta por camino más corto; auto-rotación e inercia aplican `wrapLon` para evitar acumulación
-  - [x] Ficha de país: densidad de población (hab/km²) con ranking `#N`. Nuevo campo `densityRank` en `CountryRankings`
-  - [x] Ficha de país: nombre completo sin truncar — eliminado `white-space: nowrap` + `text-overflow: ellipsis`, permite multilínea
-  - [x] Grenada: coordenadas de capital corregidas de [32.38, -64.68] (Bermuda) a [12.05, -61.75]. Añadido `CAPITAL_OVERRIDES` en `fetch-countries.ts` para proteger contra sobrescritura
-  - [x] São Tomé y Príncipe: no es un bug — el pin es correcto (país ONU, ISO `ST`); la isla es demasiado pequeña para verse a zoom bajo
-  - [x] Globo: posición inicial aleatoria cada vez que se abre la app
-    - *Iteración 1*: implementado con longitud y latitud aleatorias. Feedback: mantener ecuador centrado (aleatorio solo este-oeste, sin variación norte-sur)
-    - *Iteración 2*: latitud fija en 0 (ecuador centrado), solo longitud aleatoria
-  - [x] Tabla → Globo → ficha de país: al tocar un país en la tabla, el globo muestra país iluminado + pin de capital, sin ficha. La ficha aparece solo al tocar el país directamente en el globo
-    - *Iteración 1*: se cambió condición de render de `mode === 'countries'` a `visualMode === 'countries'`. Feedback: click en tabla solo debe navegar al globo sin ficha; la ficha aparece solo al tocar el país en el globo
-    - *Iteración 2*: nuevo estado `showCard` — se activa solo en `handleCountryClick` (tap en globo), no en handlers de tabla. País se ilumina + pin de capital al navegar desde tabla, pero sin ficha
-  - [x] Tabla → Globo: al navegar desde la tabla al globo, no se muestran los toggles de etiquetas (Países / Capitales). Solo aparecen al pulsar manualmente el pill «Globo». Causa: la condición de render de los toggles usa `mode === 'countries'`, pero al venir de tabla `mode` sigue siendo `'capitals'` (con `capitalsGlobeView = true`). Fix: usar `visualMode` en vez de `mode` (mismo patrón que la ficha de país)
-  - [x] Filtro de continente: Somalilandia no se ilumina con el filtro de África. Causa raíz: `SOL` no existe en `countries.json`. Fix: extender memo `highlightedCountries` para incluir territorios de `NON_UN_TERRITORIES_BY_NAME`
-  - [x] Globo: al seleccionar un país, el `flyTo` centra el país en la pantalla, pero la ficha de país (bottom sheet) tapa gran parte del territorio
-    - *Iteración 1*: `flyTo()` acepta parámetro `latOffset` (+15°) que desplaza el target de rotación. Feedback: el offset va en dirección contraria — el país aparece más abajo en vez de más arriba. La fórmula `-(lat + latOffset)` centra al norte del país, dejándolo en la mitad inferior. Corregir signo
-    - *Iteración 2*: corregido signo `-(lat + latOffset)` → `-(lat - latOffset)`. Funciona bien para países pequeños y con capital centrada (España, Nueva Zelanda). Feedback: para países grandes con capital descentrada (Australia, USA), el flyTo centra la capital y no la superficie del país — queda mal
-    - *Iteración 3 (resuelve)*: `handleCountryClick` usa `getCentroid(cca2)` (centroide visual con overrides para 23 países irregulares) en vez de la capital. Fallback a capital si no hay centroide. Los handlers de tabla siguen usando la capital (el usuario quiere ver el pin)
-  - [x] Tabla: toggle para mostrar/ocultar territorios no-ONU. Por defecto: solo países ONU. Switch con color ámbar coherente con las etiquetas no-ONU del globo
-    - *Iteración 1*: funcional. Feedback: mover el texto «Territorios no-ONU» a la derecha, pegado al toggle
-    - *Iteración 2*: layout cambiado de `space-between` a `flex-end` + `gap`. Texto y toggle alineados a la derecha
-  - [ ] Etiquetas: prioridad por población (no por geoArea) para colisión de bounding boxes. Italia/Roma deben ganar sobre Vaticano/Ciudad del Vaticano. `countryPopulations` se pasa como prop directa App→GlobeD3
-    - *Iteración 1*: `sortedFeaturesRef` ordenado por población — corrige prioridad de etiquetas de país. Feedback: NO corrige capitales — el loop de etiquetas de capitales itera `capitalLabelsRef.current` (Map sin orden de población), así que Vatican City sigue ganando la colisión sobre Roma. Hay que ordenar también la iteración de capitales por población
-    - *Iteración 2*: loop de capitales ordenado por población descendente. Roma gana sobre Vatican City. Feedback: funciona, pero a zoom alto con espacio suficiente, ambas capitales deberían verse (la colisión es demasiado agresiva)
-    - *Iteración 3*: escala de `minZoom` separada para capitales (`capitalMinZoomRef`): `[1.0, 1.5, 2.5, 4.0]` vs `[1.0, 2.0, 4.0, 8.0]` de países. Vatican City pasa de `minZoom=8` a `minZoom=4`. Feedback: aún no funciona en dispositivo — pendiente de investigar
-  - [x] Ficha de país: `bottom` simplificado a `var(--tabbar-height)` (eliminado `env(safe-area-inset-bottom)` redundante con `box-sizing: border-box` del TabBar)
-  - [x] Globo: ficha de Somalilandia y Chipre del Norte. Datos sintéticos inyectados en `countryData.ts` (SOL, CYN). Renderizado condicional de bandera cuando `flagSvg` está vacío. Nombres hardcodeados en español (pendiente de i18n)
-  - [ ] Globo: hit area ampliado para microestados no-ONU (26 territorios). Misma lógica de radio que microestados ONU, activado a partir de zoom ×3, sin marcador visual
-    - *Iteración 1*: hit area funciona correctamente. Feedback: al tocar un microestado no-ONU, el flyTo desplaza demasiado hacia arriba (mismo bug que el offset de la ficha — se aplica `latOffset=15` a todos los `handleCountryClick`)
+- [x] Ficha de país al tocar (bandera, nombre completo, capital, continente, población, superficie, densidad — todos con ranking — moneda, gentilicio)
+- [x] Marcador de capital (pin cian al tocar un país; circulitos permanentes con toggle "Capitales")
+- [x] Filtros por continente (pills horizontales, `flyTo` al centro del continente)
+- [x] Etiquetas de países/capitales (toggles independientes, anti-solapamiento por `geoArea` + colisión de bounding boxes, centroides con override para 23 países irregulares, etiqueta de país no solapa con su propia capital)
+- [x] Tabla de países (headers sticky y ordenables, población formateada, affordance visual en celdas tappables, vista plana con filtro "Todos", toggle no-ONU con color ámbar)
+- [x] Segmented control "Globo | Tabla" (preserva scroll al volver a tabla, toggles de etiquetas visibles al venir de tabla)
+- [x] API imperativa `flyTo(lon, lat, zoom?, duration?)` con animación suave, camino más corto (`wrapLon`)
+- [x] Territorios no-ONU: seleccionables con ficha + disclaimer, continente asignado, etiquetas en color ámbar
+- [x] Ficha de Somalilandia y Chipre del Norte (datos sintéticos en `countryData.ts`)
+- [x] Posición inicial aleatoria del globo (longitud aleatoria, latitud fija en 0)
+- [x] Bugs resueltos: z-index tabla, pills responsive, Guyana/Brunei, Antártida, Sáhara Occidental, Grenada, Australia duplicada en TopoJSON
+- [x] Auditoría diseño responsivo: px → rem en toda la app
+- [x] `flyTo` offset dinámico: `latOffset` se divide por el zoom objetivo (`targetScale`) dentro de `flyTo()`. A zoom 5× el offset pasa de 15° a ~3°; a zoom 20× baja a ~0.75°. Resuelve desplazamiento excesivo en microestados y territorios no-ONU
+- [x] Etiquetas: `ctx.measureText()` reemplaza estimación `fontSize * length * 0.55` para bounding boxes precisas; capitales que colisionan entre sí se apilan verticalmente (+2px gap) en vez de descartarse (Roma + Ciudad del Vaticano coexisten)
 
 ---
 

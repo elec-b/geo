@@ -247,6 +247,10 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       isDraggingRef.current = false;
       dragStartRef.current = null;
 
+      const targetScale = zoom ?? scaleRef.current;
+      // Offset proporcional: a mayor zoom, menor desplazamiento angular
+      const effectiveOffset = targetScale > 1 ? latOffset / targetScale : latOffset;
+
       // Normalizar longitud de inicio y calcular delta por camino más corto
       const startLon = wrapLon(rotationRef.current[0]);
       const endLon = -lon;
@@ -256,9 +260,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
       flyToAnimRef.current = {
         startRotation: [startLon, rotationRef.current[1]],
-        endRotation: [startLon + deltaLon, -(lat - latOffset)],
+        endRotation: [startLon + deltaLon, -(lat - effectiveOffset)],
         startScale: scaleRef.current,
-        endScale: zoom ?? scaleRef.current,
+        endScale: targetScale,
         startTime: performance.now(),
         duration,
       };
@@ -471,8 +475,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
             }
           }
 
-          // Estimación de bounding box (evita measureText por frame)
-          const textW = fontSize * feature.properties.name.length * 0.55;
+          const textW = ctx.measureText(feature.properties.name).width;
           const rect: [number, number, number, number] = [
             pos[0] - textW / 2, pos[1] + yOffset - fontSize / 2, textW, fontSize,
           ];
@@ -515,7 +518,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           if (!pos) continue;
 
           let yPos = pos[1] + 6;
-          const textW = fontSize * capital.name.length * 0.55;
+          const textW = ctx.measureText(capital.name).width;
           const rect: [number, number, number, number] = [
             pos[0] - textW / 2, yPos, textW, fontSize,
           ];
@@ -532,7 +535,20 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
             }
           }
           // Excluir el rect del país padre para que la capital solo compita contra OTROS
-          if (collidesExcluding(rect, parentIdx)) continue;
+          if (collidesExcluding(rect, parentIdx)) {
+            // Intentar apilar debajo del rect que colisiona
+            const collidingIdx = usedRects.findIndex(([rx, ry, rw, rh], i) =>
+              i !== parentIdx &&
+              rect[0] < rx + rw && rect[0] + rect[2] > rx &&
+              rect[1] < ry + rh && rect[1] + rect[3] > ry
+            );
+            if (collidingIdx === -1) continue;
+            const collidingRect = usedRects[collidingIdx];
+            yPos = collidingRect[1] + collidingRect[3] + 2;
+            rect[1] = yPos;
+            // Re-verificar tras desplazamiento
+            if (collidesExcluding(rect, parentIdx)) continue;
+          }
           usedRects.push(rect);
 
           ctx.fillStyle = nonUnCodesRef.current.has(cca2) ? LABEL_CAPITAL_NON_UN_COLOR : LABEL_CAPITAL_COLOR;
