@@ -156,12 +156,17 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
     - *Iteración 1*: se cambió condición de render de `mode === 'countries'` a `visualMode === 'countries'`. Feedback: click en tabla solo debe navegar al globo sin ficha; la ficha aparece solo al tocar el país en el globo
     - *Iteración 2*: nuevo estado `showCard` — se activa solo en `handleCountryClick` (tap en globo), no en handlers de tabla. País se ilumina + pin de capital al navegar desde tabla, pero sin ficha
   - [x] Tabla → Globo: al navegar desde la tabla al globo, no se muestran los toggles de etiquetas (Países / Capitales). Solo aparecen al pulsar manualmente el pill «Globo». Causa: la condición de render de los toggles usa `mode === 'countries'`, pero al venir de tabla `mode` sigue siendo `'capitals'` (con `capitalsGlobeView = true`). Fix: usar `visualMode` en vez de `mode` (mismo patrón que la ficha de país)
-  - [ ] Globo: al seleccionar un país, el `flyTo` centra el país en la pantalla, pero la ficha de país (bottom sheet) tapa gran parte del territorio. Buscar solución para que el país quede visible por encima de la ficha (ej. centrar en el tercio superior del viewport, ajustar target de `flyTo` según altura de la ficha, o similar)
-  - [ ] Tabla: añadir toggle (interruptor) para mostrar/ocultar territorios no reconocidos por la ONU. Por defecto: solo mostrar países ONU *(ver DESIGN.md § «Explorar > Tabla» y «Territorios no reconocidos»)*
-  - [ ] Etiquetas: Vaticano / Ciudad del Vaticano se superpone sobre Italia / Roma cuando ambos toggles (Países + Capitales) están activos. Implementar prioridad por población *(ver DESIGN.md § «Anti-solapamiento de etiquetas»)*
-  - [ ] Ficha de país: verificar que aparece pegada al borde inferior de la pantalla (encima del tab bar), sin gap visual — comprobar en dispositivo real
   - [x] Filtro de continente: Somalilandia no se ilumina con el filtro de África. Causa raíz: `SOL` no existe en `countries.json`. Fix: extender memo `highlightedCountries` para incluir territorios de `NON_UN_TERRITORIES_BY_NAME`
-  - [ ] Globo: al seleccionar Somalilandia o Chipre del Norte no aparece ficha de país. Pensar si debería aparecer ficha en estos casos
+  - [ ] Globo: al seleccionar un país, el `flyTo` centra el país en la pantalla, pero la ficha de país (bottom sheet) tapa gran parte del territorio
+    - *Iteración 1*: `flyTo()` acepta parámetro `latOffset` (+15°) que desplaza el target de rotación. Feedback: el offset va en dirección contraria — el país aparece más abajo en vez de más arriba. La fórmula `-(lat + latOffset)` centra al norte del país, dejándolo en la mitad inferior. Corregir signo
+  - [x] Tabla: toggle para mostrar/ocultar territorios no-ONU. Por defecto: solo países ONU. Switch con color ámbar coherente con las etiquetas no-ONU del globo
+    - *Iteración 1*: funcional. Feedback: mover el texto «Territorios no-ONU» a la derecha, pegado al toggle
+  - [ ] Etiquetas: prioridad por población (no por geoArea) para colisión de bounding boxes. Italia/Roma deben ganar sobre Vaticano/Ciudad del Vaticano. `countryPopulations` se pasa como prop directa App→GlobeD3
+    - *Iteración 1*: `sortedFeaturesRef` ordenado por población — corrige prioridad de etiquetas de país. Feedback: NO corrige capitales — el loop de etiquetas de capitales itera `capitalLabelsRef.current` (Map sin orden de población), así que Vatican City sigue ganando la colisión sobre Roma. Hay que ordenar también la iteración de capitales por población
+  - [x] Ficha de país: `bottom` simplificado a `var(--tabbar-height)` (eliminado `env(safe-area-inset-bottom)` redundante con `box-sizing: border-box` del TabBar)
+  - [x] Globo: ficha de Somalilandia y Chipre del Norte. Datos sintéticos inyectados en `countryData.ts` (SOL, CYN). Renderizado condicional de bandera cuando `flagSvg` está vacío
+  - [ ] Globo: hit area ampliado para microestados no-ONU (26 territorios). Misma lógica de radio que microestados ONU, activado a partir de zoom ×3, sin marcador visual
+    - *Iteración 1*: hit area funciona correctamente. Feedback: al tocar un microestado no-ONU, el flyTo desplaza demasiado hacia arriba (mismo bug que el offset de la ficha — se aplica `latOffset=15` a todos los `handleCountryClick`)
 
 ---
 

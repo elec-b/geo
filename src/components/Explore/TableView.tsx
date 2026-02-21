@@ -51,6 +51,7 @@ export function TableView({
 }: TableViewProps) {
   const [sortKey, setSortKey] = useState<SortKey>('name');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
+  const [showNonUN, setShowNonUN] = useState(false);
 
   const toggleSort = (key: SortKey) => {
     if (sortKey === key) {
@@ -65,22 +66,24 @@ export function TableView({
   const flatList = useMemo(() => {
     const list: CountryData[] = [];
     for (const country of countries.values()) {
+      if (!showNonUN && !country.unMember) continue;
       if (continentFilter && country.continent !== continentFilter) continue;
       list.push(country);
     }
     return sortCountries(list, sortKey, sortDir);
-  }, [countries, continentFilter, sortKey, sortDir]);
+  }, [countries, continentFilter, sortKey, sortDir, showNonUN]);
 
   // Lista agrupada por continente (para filtro de un continente)
   const groupedList = useMemo(() => {
     if (!continentFilter) return null;
     const list: CountryData[] = [];
     for (const country of countries.values()) {
+      if (!showNonUN && !country.unMember) continue;
       if (country.continent !== continentFilter) continue;
       list.push(country);
     }
     return sortCountries(list, sortKey, sortDir);
-  }, [countries, continentFilter, sortKey, sortDir]);
+  }, [countries, continentFilter, sortKey, sortDir, showNonUN]);
 
   const renderHeader = () => (
     <div className="table-view__table-header">
@@ -102,12 +105,14 @@ export function TableView({
         className="table-view__cell table-view__cell--country"
         onClick={() => onCountryTap(country.cca2)}
       >
-        <img
-          className="table-view__flag"
-          src={country.flagSvg}
-          alt=""
-          loading="lazy"
-        />
+        {country.flagSvg && (
+          <img
+            className="table-view__flag"
+            src={country.flagSvg}
+            alt=""
+            loading="lazy"
+          />
+        )}
         <span>{country.name}</span>
       </button>
       <button
@@ -125,6 +130,18 @@ export function TableView({
   return (
     <div className="table-view" style={style}>
       <div className="table-view__scroll">
+        {/* Toggle de territorios no-ONU */}
+        <div className="table-view__toggle-row">
+          <span className="table-view__toggle-label">Territorios no-ONU</span>
+          <button
+            className={`table-view__toggle ${showNonUN ? 'table-view__toggle--active' : ''}`}
+            role="switch"
+            aria-checked={showNonUN}
+            onClick={() => setShowNonUN(v => !v)}
+          >
+            <span className="table-view__toggle-thumb" />
+          </button>
+        </div>
         {continentFilter === null ? (
           // Tabla única sin agrupación cuando filtro es "Todos"
           <div className="table-view__table">

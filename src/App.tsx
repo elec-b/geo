@@ -1,5 +1,5 @@
 // GeoExpert - Aplicación principal
-import { lazy, Suspense, useState, useCallback, useEffect, useRef } from 'react';
+import { lazy, Suspense, useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { LoadingScreen } from './components/UI/LoadingScreen';
 import { TabBar } from './components/Navigation/TabBar';
 import { AppHeader } from './components/Layout/AppHeader';
@@ -77,6 +77,16 @@ function App() {
     });
   }, []);
 
+  // Mapa de poblaciones para prioridad de etiquetas en el globo
+  const countryPopulations = useMemo(() => {
+    if (!countries) return null;
+    const map = new Map<string, number>();
+    for (const [cca2, data] of countries) {
+      map.set(cca2, data.population);
+    }
+    return map;
+  }, [countries]);
+
   const dataReady = countries && capitals && rankings;
 
   return (
@@ -99,6 +109,7 @@ function App() {
           showCountryLabels={globeControl.showCountryLabels}
           showCapitalLabels={globeControl.showCapitalLabels}
           capitalLabelsData={globeControl.capitalLabelsData}
+          countryPopulations={countryPopulations}
         />
       </Suspense>
 

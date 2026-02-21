@@ -44,6 +44,13 @@ const MICROSTATE_CODES = new Set([
   'WS',
 ]);
 
+// Territorios no-ONU pequeños que necesitan hit area ampliado (sin marcador visual)
+const NON_UN_MICROSTATE_CODES = new Set([
+  'JE', 'GG', 'IM', 'MO', 'BM', 'AX', 'AI', 'MS', 'VG', 'KY', 'TC',
+  'BL', 'MF', 'SX', 'PM', 'AS', 'GU', 'MP', 'WF', 'NF', 'CK',
+  'AW', 'CW', 'VI', 'SH', 'FO', 'FK',
+]);
+
 // Inercia
 const INERTIA_FRICTION = 0.85;
 const INERTIA_MIN_VELOCITY = 0.5;
@@ -110,10 +117,12 @@ export interface GlobeD3Props {
   showCapitalLabels?: boolean;
   /** Datos de capitales para etiquetas (Map<cca2, CapitalCoords>) */
   capitalLabelsData?: Map<string, CapitalCoords> | null;
+  /** Población por país (Map<cca2, population>) para prioridad de etiquetas */
+  countryPopulations?: Map<string, number> | null;
 }
 
 export interface GlobeD3Ref {
-  flyTo(lon: number, lat: number, zoom?: number, duration?: number): void;
+  flyTo(lon: number, lat: number, zoom?: number, duration?: number, latOffset?: number): void;
 }
 
 // --- Utilidades ---
@@ -141,6 +150,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     showCountryLabels = false,
     showCapitalLabels = false,
     capitalLabelsData,
+    countryPopulations,
   },
   ref,
 ) {
@@ -181,10 +191,12 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
   // Marcadores, centroides, zoom mínimo y features ordenados para etiquetas
   const microstateCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
+  const nonUnMicroCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   const countryCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   const labelMinZoomRef = useRef<Map<string, number>>(new Map());
   const sortedFeaturesRef = useRef<CountryFeature[]>([]);
   const nonUnCodesRef = useRef<Set<string>>(new Set());
+  const geoAreasRef = useRef<Map<string, number>>(new Map());
   const showMarkersRef = useRef(showMarkers);
   showMarkersRef.current = showMarkers;
 
@@ -210,6 +222,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   capitalLabelsRef.current = capitalLabelsData;
   const onDeselectRef = useRef(onCountryDeselect);
   onDeselectRef.current = onCountryDeselect;
+  const countryPopulationsRef = useRef(countryPopulations);
+  countryPopulationsRef.current = countryPopulations;
 
   // Animación flyTo
   const flyToAnimRef = useRef<{
@@ -224,7 +238,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   // --- API imperativa (flyTo) ---
 
   useImperativeHandle(ref, () => ({
-    flyTo(lon: number, lat: number, zoom?: number, duration = 800) {
+    flyTo(lon: number, lat: number, zoom?: number, duration = 800, latOffset = 0) {
       isAutoRotatingRef.current = false;
       isInertiaRef.current = false;
       velocityRef.current = [0, 0];
@@ -240,7 +254,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
       flyToAnimRef.current = {
         startRotation: [startLon, rotationRef.current[1]],
-        endRotation: [startLon + deltaLon, -lat],
+        endRotation: [startLon + deltaLon, -(lat + latOffset)],
         startScale: scaleRef.current,
         endScale: zoom ?? scaleRef.current,
         startTime: performance.now(),
@@ -585,6 +599,20 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
     }
 
+    // Hit area ampliado para microestados no-ONU (sin marcador visual, mismo radio)
+    if (zoom >= MARKER_ZOOM_START && nonUnMicroCentroidsRef.current.size > 0) {
+      const zoomT = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_HIT_ZOOM_MAX - MARKER_ZOOM_START));
+      const hitRadius = MARKER_HIT_RADIUS_MIN + zoomT * (MARKER_HIT_RADIUS_MAX - MARKER_HIT_RADIUS_MIN);
+      for (const [cca2, centroid] of nonUnMicroCentroidsRef.current) {
+        const pos = projection(centroid);
+        if (!pos) continue;
+        if (Math.hypot(x - pos[0], y - pos[1]) < hitRadius) {
+          const feature = countries.features.find(f => f.properties?.cca2 === cca2);
+          if (feature) return feature as Feature<Geometry, CountryProperties>;
+        }
+      }
+    }
+
     // Búsqueda normal por geometría
     const coords = projection.invert?.([x, y]);
     if (!coords) return null;
@@ -634,6 +662,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         // Pre-calcular centroides (con overrides visuales) y zoom mínimo por importancia
         const allCentroids = new Map<string, [number, number]>();
         const microCentroids = new Map<string, [number, number]>();
+        const nonUnMicroCentroids = new Map<string, [number, number]>();
         const areas = new Map<string, number>();
 
         for (const feature of countries.features) {
@@ -647,6 +676,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
             allCentroids.set(cca2, centroid);
             if (MICROSTATE_CODES.has(cca2)) {
               microCentroids.set(cca2, centroid);
+            }
+            if (NON_UN_MICROSTATE_CODES.has(cca2)) {
+              nonUnMicroCentroids.set(cca2, centroid);
             }
             areas.set(cca2, area);
           }
@@ -664,11 +696,22 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           else minZoomMap.set(cca2, 8.0);                    // Resto: zoom ×8
         });
 
-        // Features ordenados por área descendente (países grandes primero para prioridad de etiquetas)
-        // Filtrar duplicados de cca2 para evitar iteraciones desperdiciadas
+        // Guardar áreas para re-ordenamiento posterior cuando lleguen datos de población
+        geoAreasRef.current = areas;
+
+        // Features ordenados por población descendente (fallback a geoArea).
+        // Población se carga async; al inicio puede no estar disponible, se re-ordena en useEffect.
+        const pops = countryPopulationsRef.current;
         const seenCca2 = new Set<string>();
         sortedFeaturesRef.current = [...countries.features]
-          .sort((a, b) => (areas.get(b.properties?.cca2 ?? '') ?? 0) - (areas.get(a.properties?.cca2 ?? '') ?? 0))
+          .sort((a, b) => {
+            const cca2A = a.properties?.cca2 ?? '';
+            const cca2B = b.properties?.cca2 ?? '';
+            const popA = pops?.get(cca2A) ?? 0;
+            const popB = pops?.get(cca2B) ?? 0;
+            if (popA || popB) return popB - popA;
+            return (areas.get(cca2B) ?? 0) - (areas.get(cca2A) ?? 0);
+          })
           .filter(f => {
             const cca2 = f.properties?.cca2;
             if (!cca2 || seenCca2.has(cca2)) return false;
@@ -686,6 +729,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
         countryCentroidsRef.current = allCentroids;
         microstateCentroidsRef.current = microCentroids;
+        nonUnMicroCentroidsRef.current = nonUnMicroCentroids;
         labelMinZoomRef.current = minZoomMap;
 
         resize();
@@ -702,6 +746,20 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
     };
   }, [animate, resize, onReady]);
+
+  // Re-ordenar features por población cuando los datos llegan (carga async)
+  useEffect(() => {
+    if (!countryPopulations || sortedFeaturesRef.current.length === 0) return;
+    const areas = geoAreasRef.current;
+    sortedFeaturesRef.current = [...sortedFeaturesRef.current].sort((a, b) => {
+      const cca2A = a.properties?.cca2 ?? '';
+      const cca2B = b.properties?.cca2 ?? '';
+      const popA = countryPopulations.get(cca2A) ?? 0;
+      const popB = countryPopulations.get(cca2B) ?? 0;
+      if (popA || popB) return popB - popA;
+      return (areas.get(cca2B) ?? 0) - (areas.get(cca2A) ?? 0);
+    });
+  }, [countryPopulations]);
 
   // Responsive
   useEffect(() => {

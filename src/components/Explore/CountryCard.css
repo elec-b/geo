@@ -2,7 +2,7 @@
 
 .country-card {
   position: fixed;
-  bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px));
+  bottom: var(--tabbar-height);
   left: 0;
   right: 0;
   z-index: var(--z-overlay);

@@ -118,7 +118,7 @@ export function ExploreView({
       setShowCard(true);
       const cap = capitals.get(cca2);
       if (cap && globeRef.current) {
-        globeRef.current.flyTo(cap.latlng[1], cap.latlng[0]);
+        globeRef.current.flyTo(cap.latlng[1], cap.latlng[0], undefined, undefined, 15);
       }
     },
     [capitals, globeRef],

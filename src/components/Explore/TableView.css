@@ -150,3 +150,50 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
 }
+
+/* Toggle de territorios no-ONU */
+.table-view__toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.table-view__toggle-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.table-view__toggle {
+  position: relative;
+  width: 2.75rem;
+  height: 1.5rem;
+  border: none;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--transition-fast);
+}
+
+.table-view__toggle--active {
+  background: var(--color-accent-amber);
+}
+
+.table-view__toggle-thumb {
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: var(--radius-full);
+  background: #fff;
+  transition: transform var(--transition-fast);
+}
+
+.table-view__toggle--active .table-view__toggle-thumb {
+  transform: translateX(1.25rem);
+}

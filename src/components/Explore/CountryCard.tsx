@@ -37,12 +37,14 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
 
       {/* Cabecera: bandera + nombre + cerrar */}
       <div className="country-card__header">
-        <img
-          className="country-card__flag"
-          src={country.flagSvg}
-          alt={`Bandera de ${country.name}`}
-          loading="eager"
-        />
+        {country.flagSvg && (
+          <img
+            className="country-card__flag"
+            src={country.flagSvg}
+            alt={`Bandera de ${country.name}`}
+            loading="eager"
+          />
+        )}
         <div className="country-card__title-group">
           <h2 className="country-card__name">{country.name}</h2>
           <span
