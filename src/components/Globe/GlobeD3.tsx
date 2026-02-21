@@ -254,7 +254,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
       flyToAnimRef.current = {
         startRotation: [startLon, rotationRef.current[1]],
-        endRotation: [startLon + deltaLon, -(lat + latOffset)],
+        endRotation: [startLon + deltaLon, -(lat - latOffset)],
         startScale: scaleRef.current,
         endScale: zoom ?? scaleRef.current,
         startTime: performance.now(),
@@ -490,7 +490,13 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         ctx.shadowColor = LABEL_SHADOW;
         ctx.shadowBlur = 3;
 
-        for (const [cca2, capital] of capitalLabelsRef.current) {
+        const sortedCapitals = [...capitalLabelsRef.current.entries()]
+          .sort((a, b) => {
+            const popA = countryPopulationsRef.current?.get(a[0]) ?? 0;
+            const popB = countryPopulationsRef.current?.get(b[0]) ?? 0;
+            return popB - popA;
+          });
+        for (const [cca2, capital] of sortedCapitals) {
           if (filter && !filter.has(cca2)) continue;
 
           // Capitales también respetan zoom mínimo del país al que pertenecen

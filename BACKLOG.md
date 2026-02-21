@@ -159,12 +159,15 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
   - [x] Filtro de continente: Somalilandia no se ilumina con el filtro de África. Causa raíz: `SOL` no existe en `countries.json`. Fix: extender memo `highlightedCountries` para incluir territorios de `NON_UN_TERRITORIES_BY_NAME`
   - [ ] Globo: al seleccionar un país, el `flyTo` centra el país en la pantalla, pero la ficha de país (bottom sheet) tapa gran parte del territorio
     - *Iteración 1*: `flyTo()` acepta parámetro `latOffset` (+15°) que desplaza el target de rotación. Feedback: el offset va en dirección contraria — el país aparece más abajo en vez de más arriba. La fórmula `-(lat + latOffset)` centra al norte del país, dejándolo en la mitad inferior. Corregir signo
+    - *Iteración 2*: corregido signo `-(lat + latOffset)` → `-(lat - latOffset)`. Funciona bien para países pequeños y con capital centrada (España, Nueva Zelanda). Feedback: para países grandes con capital descentrada (Australia, USA), el flyTo centra la capital y no la superficie del país — queda mal
   - [x] Tabla: toggle para mostrar/ocultar territorios no-ONU. Por defecto: solo países ONU. Switch con color ámbar coherente con las etiquetas no-ONU del globo
     - *Iteración 1*: funcional. Feedback: mover el texto «Territorios no-ONU» a la derecha, pegado al toggle
+    - *Iteración 2*: layout cambiado de `space-between` a `flex-end` + `gap`. Texto y toggle alineados a la derecha
   - [ ] Etiquetas: prioridad por población (no por geoArea) para colisión de bounding boxes. Italia/Roma deben ganar sobre Vaticano/Ciudad del Vaticano. `countryPopulations` se pasa como prop directa App→GlobeD3
     - *Iteración 1*: `sortedFeaturesRef` ordenado por población — corrige prioridad de etiquetas de país. Feedback: NO corrige capitales — el loop de etiquetas de capitales itera `capitalLabelsRef.current` (Map sin orden de población), así que Vatican City sigue ganando la colisión sobre Roma. Hay que ordenar también la iteración de capitales por población
+    - *Iteración 2*: loop de capitales ordenado por población descendente. Roma gana sobre Vatican City. Feedback: funciona, pero a zoom alto con espacio suficiente, ambas capitales deberían verse (la colisión es demasiado agresiva)
   - [x] Ficha de país: `bottom` simplificado a `var(--tabbar-height)` (eliminado `env(safe-area-inset-bottom)` redundante con `box-sizing: border-box` del TabBar)
-  - [x] Globo: ficha de Somalilandia y Chipre del Norte. Datos sintéticos inyectados en `countryData.ts` (SOL, CYN). Renderizado condicional de bandera cuando `flagSvg` está vacío
+  - [x] Globo: ficha de Somalilandia y Chipre del Norte. Datos sintéticos inyectados en `countryData.ts` (SOL, CYN). Renderizado condicional de bandera cuando `flagSvg` está vacío. Nombres hardcodeados en español (pendiente de i18n)
   - [ ] Globo: hit area ampliado para microestados no-ONU (26 territorios). Misma lógica de radio que microestados ONU, activado a partir de zoom ×3, sin marcador visual
     - *Iteración 1*: hit area funciona correctamente. Feedback: al tocar un microestado no-ONU, el flyTo desplaza demasiado hacia arriba (mismo bug que el offset de la ficha — se aplica `latOffset=15` a todos los `handleCountryClick`)
 
@@ -209,6 +212,7 @@ Primera implementación funcional completada. Feedback del usuario aplicado parc
 ### Internacionalización
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
+  - ⚠️ Los datos sintéticos de SOL y CYN en `countryData.ts` tienen nombres hardcodeados en español (el resto de países usan REST Countries API, que soporta múltiples idiomas). Integrar en el sistema de traducción
 - [ ] Traducción a idiomas disponibles en iOS y Android
 
 ### Layout y UI general
