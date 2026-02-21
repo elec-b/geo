@@ -123,6 +123,7 @@ export interface GlobeD3Props {
 
 export interface GlobeD3Ref {
   flyTo(lon: number, lat: number, zoom?: number, duration?: number, latOffset?: number): void;
+  getCentroid(cca2: string): [number, number] | null;
 }
 
 // --- Utilidades ---
@@ -194,6 +195,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const nonUnMicroCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   const countryCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   const labelMinZoomRef = useRef<Map<string, number>>(new Map());
+  const capitalMinZoomRef = useRef<Map<string, number>>(new Map());
   const sortedFeaturesRef = useRef<CountryFeature[]>([]);
   const nonUnCodesRef = useRef<Set<string>>(new Set());
   const geoAreasRef = useRef<Map<string, number>>(new Map());
@@ -260,6 +262,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         startTime: performance.now(),
         duration,
       };
+    },
+    getCentroid(cca2: string): [number, number] | null {
+      return countryCentroidsRef.current.get(cca2) ?? null;
     },
   }));
 
@@ -499,8 +504,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         for (const [cca2, capital] of sortedCapitals) {
           if (filter && !filter.has(cca2)) continue;
 
-          // Capitales también respetan zoom mínimo del país al que pertenecen
-          const minZoom = labelMinZoomRef.current.get(cca2);
+          // Capitales usan escala de zoom más permisiva (compiten por colisión)
+          const minZoom = capitalMinZoomRef.current.get(cca2);
           if (minZoom !== undefined && zoom < minZoom) continue;
 
           const coords: [number, number] = [capital.latlng[1], capital.latlng[0]];
@@ -702,6 +707,16 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           else minZoomMap.set(cca2, 8.0);                    // Resto: zoom ×8
         });
 
+        // Escala más permisiva para capitales (entran antes al loop, compiten en colisión)
+        const capitalMinZoomMap = new Map<string, number>();
+        sortedByArea.forEach(([cca2], i) => {
+          const pct = i / total;
+          if (pct < 0.15) capitalMinZoomMap.set(cca2, 1.0);
+          else if (pct < 0.4) capitalMinZoomMap.set(cca2, 1.5);
+          else if (pct < 0.7) capitalMinZoomMap.set(cca2, 2.5);
+          else capitalMinZoomMap.set(cca2, 4.0);
+        });
+
         // Guardar áreas para re-ordenamiento posterior cuando lleguen datos de población
         geoAreasRef.current = areas;
 
@@ -737,6 +752,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         microstateCentroidsRef.current = microCentroids;
         nonUnMicroCentroidsRef.current = nonUnMicroCentroids;
         labelMinZoomRef.current = minZoomMap;
+        capitalMinZoomRef.current = capitalMinZoomMap;
 
         resize();
         lastTimeRef.current = performance.now();

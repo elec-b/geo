@@ -109,16 +109,21 @@ export function ExploreView({
 
   // --- Handlers de interacción ---
 
-  // Modo países: click en país del globo
+  // Modo países: click en país del globo → flyTo al centroide visual del país
   const handleCountryClick = useCallback(
     (feature: CountryFeature) => {
       const cca2 = feature.properties?.cca2;
       if (!cca2) return;
       setSelectedCca2(cca2);
       setShowCard(true);
-      const cap = capitals.get(cca2);
-      if (cap && globeRef.current) {
-        globeRef.current.flyTo(cap.latlng[1], cap.latlng[0], undefined, undefined, 15);
+      if (globeRef.current) {
+        const centroid = globeRef.current.getCentroid(cca2);
+        if (centroid) {
+          globeRef.current.flyTo(centroid[0], centroid[1], undefined, undefined, 15);
+        } else {
+          const cap = capitals.get(cca2);
+          if (cap) globeRef.current.flyTo(cap.latlng[1], cap.latlng[0], undefined, undefined, 15);
+        }
       }
     },
     [capitals, globeRef],
