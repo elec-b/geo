@@ -107,6 +107,20 @@
 
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
+### Datos en español
+- [ ] Crear archivo `scripts/data/capitals-es.json` con traducciones de capitales al español (las que difieren del inglés: Londres, Roma, Pekín, etc.)
+- [ ] Modificar `fetch-countries.ts`: usar `translations.spa.common` para países, archivo suplementario para capitales, `demonyms.spa.m` para gentilicios. Sin fallback a inglés — reportar error si falta traducción
+- [ ] Regenerar `countries.json` y `capitals.json` con datos en español
+- [ ] Etiquetas del globo en español: nueva prop `countryNames` en GlobeD3 (capitales salen del JSON regenerado automáticamente)
+- [ ] Verificar ordenamiento de tabla con locale español (ñ, tildes)
+
+### Explorar: Antártida
+- [ ] Reconocer Antártida (ID `010`) en el GeoJSON → `cca2: 'AQ'` (ver DESIGN.md § «Antártida»)
+- [ ] Datos sintéticos: nombre, superficie (~14M km²), sin capital/población/moneda
+- [ ] Ficha especial: superficie + texto informativo del Tratado Antártico (1959)
+- [ ] Etiqueta ámbar en el globo (aparece automáticamente via sistema existente)
+- [ ] Excluir de la tabla (no es un país)
+
 ### Experiencia: Jugar
 - [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)
 - [ ] Tipo A: Localizar país en el mapa (texto → mapa) — Sello de Países
@@ -139,10 +153,11 @@
 - [ ] Pantalla de configuración global (perfil activo, marcadores de microestados, vibración, idioma, tema)
 - [ ] Configuración del globo en overlay (marcadores de microestados, tema)
 
-### Internacionalización
+### Internacionalización (UI completa)
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
-  - ⚠️ Los datos sintéticos de SOL y CYN en `countryData.ts` tienen nombres hardcodeados en español (el resto de países usan REST Countries API, que soporta múltiples idiomas). Integrar en el sistema de traducción
+  - ⚠️ Los datos sintéticos en `countryData.ts` (SOL, CYN, y AQ cuando se implemente) tienen nombres hardcodeados en español. Integrar en el sistema de traducción
+- [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
 - [ ] Traducción a idiomas disponibles en iOS y Android
 
 ### Layout y UI general

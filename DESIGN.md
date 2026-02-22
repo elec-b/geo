@@ -272,9 +272,23 @@ La app usa **D3.js (`d3-geo`)** con **proyección ortográfica** sobre **Canvas 
 ```
 public/data/
 ├── countries-50m.json # TopoJSON de países (1:50m)
-├── countries.json     # Dump de REST Countries
-└── capitals.json      # Coordenadas de capitales
+├── countries.json     # Datos de países (generado por fetch-countries.ts)
+└── capitals.json      # Coordenadas y nombres de capitales
+
+scripts/data/
+└── capitals-{lang}.json  # Traducciones de capitales (suplementario, ver § Internacionalización de datos)
 ```
+
+### Internacionalización de datos
+El script `fetch-countries.ts` genera `countries.json` y `capitals.json` en el idioma configurado. Sin fallback a inglés: si falta una traducción, el script reporta error.
+
+*   **Nombres de países**: `translations.{lang}.common` de REST Countries v3.1. Disponible para ~25 idiomas.
+*   **Nombres de capitales**: REST Countries no traduce capitales. Se usa un archivo suplementario `scripts/data/capitals-{lang}.json` con las traducciones necesarias.
+*   **Gentilicios**: `demonyms.{lang}.m` de REST Countries. Para países sin gentilicio en el idioma destino, se completa en el archivo suplementario.
+*   **Fuente suplementaria (multi-idioma)**: Wikidata (SPARQL) para capitales traducidas y datos que REST Countries no cubra. Para español solo, basta el archivo manual `capitals-es.json`.
+*   **Validación con LLM**: Como capa final de QA, un LLM revisa el dataset generado y reporta anomalías (nombres en idioma incorrecto, ortografía, incoherencias). No genera traducciones — solo valida.
+*   **Pipeline completo**: REST Countries → Wikidata (gaps) → Validación LLM → Revisión humana (si hay flags) → CDN.
+*   **Idioma actual de generación**: Español (`spa`). Cuando se implemente i18n completa, se generarán archivos por idioma o un JSON multi-idioma.
 
 ### Identificadores
 - **Clave primaria**: ISO 3166-1 alpha-2 (`cca2`)
@@ -296,3 +310,13 @@ Algunos territorios aparecen en los datos geográficos (Natural Earth 1:50m) per
 *   **Visibilidad en la tabla**: ver § «Explorar > Tabla > Toggle territorios no-ONU».
 *   **Continente asignado**: Cada territorio debe tener un continente asignado para que los filtros de continente funcionen correctamente (ej. Sáhara Occidental → África). Al filtrar por otro continente, se oscurecen como cualquier otro país.
 *   **Datos**: El script `fetch-countries.ts` debe incluir estos territorios marcados con `unMember: false`.
+
+### Antártida
+A diferencia de los territorios no-ONU (que son estados de facto con población y gobierno), la Antártida es un caso especial único: no es un país ni un territorio soberano. Está gobernada por el Tratado Antártico (1959, 53 países firmantes). No tiene población permanente, capital, moneda ni gentilicio.
+
+*   **Etiqueta en el globo**: Sí. Es el territorio más grande (~14M km²) sin ser un país; omitir su nombre sería un gap evidente en una app de geografía.
+*   **Seleccionable con ficha especial**: Al tocar, muestra superficie y texto informativo sobre el Tratado Antártico. No muestra campos vacíos/irrelevantes (capital, población, moneda...).
+*   **No aparece en la tabla**: No es un país — no tiene capital ni población.
+*   **No participa en el juego**: No es un país.
+*   **Color de etiqueta**: Ámbar (como territorios no-ONU).
+*   **Continente**: Valor especial — no pertenece a ninguno de los 5 continentes de la app. Los filtros de continente la ignoran.
