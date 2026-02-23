@@ -87,6 +87,16 @@ function App() {
     return map;
   }, [countries]);
 
+  // Mapa de nombres en español para etiquetas del globo
+  const countryNames = useMemo(() => {
+    if (!countries) return null;
+    const map = new Map<string, string>();
+    for (const [cca2, data] of countries) {
+      map.set(cca2, data.name);
+    }
+    return map;
+  }, [countries]);
+
   const dataReady = countries && capitals && rankings;
 
   return (
@@ -110,6 +120,7 @@ function App() {
           showCapitalLabels={globeControl.showCapitalLabels}
           capitalLabelsData={globeControl.capitalLabelsData}
           countryPopulations={countryPopulations}
+          countryNames={countryNames}
         />
       </Suspense>
 

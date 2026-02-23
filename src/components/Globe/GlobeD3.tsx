@@ -119,6 +119,8 @@ export interface GlobeD3Props {
   capitalLabelsData?: Map<string, CapitalCoords> | null;
   /** Población por país (Map<cca2, population>) para prioridad de etiquetas */
   countryPopulations?: Map<string, number> | null;
+  /** Nombres de países en español (Map<cca2, nombre>) para etiquetas del globo */
+  countryNames?: Map<string, string> | null;
 }
 
 export interface GlobeD3Ref {
@@ -152,6 +154,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     showCapitalLabels = false,
     capitalLabelsData,
     countryPopulations,
+    countryNames,
   },
   ref,
 ) {
@@ -226,6 +229,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   onDeselectRef.current = onCountryDeselect;
   const countryPopulationsRef = useRef(countryPopulations);
   countryPopulationsRef.current = countryPopulations;
+  const countryNamesRef = useRef(countryNames);
+  countryNamesRef.current = countryNames;
 
   // Animación flyTo
   const flyToAnimRef = useRef<{
@@ -475,7 +480,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
             }
           }
 
-          const textW = ctx.measureText(feature.properties.name).width;
+          const labelName = countryNamesRef.current?.get(cca2) ?? feature.properties.name;
+          const textW = ctx.measureText(labelName).width;
           const rect: [number, number, number, number] = [
             pos[0] - textW / 2, pos[1] + yOffset - fontSize / 2, textW, fontSize,
           ];
@@ -484,7 +490,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           usedRects.push(rect);
 
           ctx.fillStyle = feature.properties.isUNMember ? LABEL_COLOR : LABEL_NON_UN_COLOR;
-          ctx.fillText(feature.properties.name, pos[0], pos[1] + yOffset);
+          ctx.fillText(labelName, pos[0], pos[1] + yOffset);
         }
         ctx.shadowBlur = 0;
       }

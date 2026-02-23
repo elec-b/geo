@@ -28,8 +28,8 @@ function sortCountries(list: CountryData[], key: SortKey, dir: SortDir): Country
   const sorted = [...list];
   sorted.sort((a, b) => {
     let cmp: number;
-    if (key === 'name') cmp = a.name.localeCompare(b.name);
-    else if (key === 'capital') cmp = a.capital.localeCompare(b.capital);
+    if (key === 'name') cmp = a.name.localeCompare(b.name, 'es');
+    else if (key === 'capital') cmp = a.capital.localeCompare(b.capital, 'es');
     else cmp = a.population - b.population;
     return dir === 'asc' ? cmp : -cmp;
   });
@@ -66,6 +66,7 @@ export function TableView({
   const flatList = useMemo(() => {
     const list: CountryData[] = [];
     for (const country of countries.values()) {
+      if (country.cca2 === 'AQ') continue;
       if (!showNonUN && !country.unMember) continue;
       if (continentFilter && country.continent !== continentFilter) continue;
       list.push(country);
@@ -78,6 +79,7 @@ export function TableView({
     if (!continentFilter) return null;
     const list: CountryData[] = [];
     for (const country of countries.values()) {
+      if (country.cca2 === 'AQ') continue;
       if (!showNonUN && !country.unMember) continue;
       if (country.continent !== continentFilter) continue;
       list.push(country);

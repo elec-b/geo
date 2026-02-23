@@ -119,7 +119,10 @@ La experiencia ofrece dos modos de exploración, accesibles mediante un control 
 ### Globo
 Vista interactiva del globo terráqueo. El usuario puede tocar un país → se ilumina → aparece su ficha de país.
 *   **Posición inicial**: Cada vez que se abre la app, el globo comienza en una posición aleatoria (longitud y latitud), para que el usuario no siempre vea la misma región.
-*   **Ficha de país**: Bandera, nombre completo del país (sin truncar), capital, continente, población (y ranking), superficie (y ranking), densidad de población (y ranking), moneda y gentilicio. La ficha se muestra pegada al borde inferior de la pantalla (encima del tab bar).
+*   **Ficha de país**: Bandera, nombre completo del país (sin truncar), capital, continente, población (y ranking), superficie (y ranking), densidad de población (y ranking), moneda, idioma(s), gentilicio y enlace a Wikipedia. La ficha se muestra pegada al borde inferior de la pantalla (encima del tab bar). Todos los campos textuales se muestran en el idioma de la app.
+    - **Moneda**: Nombre traducido al idioma de la app + símbolo universal entre paréntesis. Ej: "Euro (€)", "Dólar estadounidense ($)".
+    - **Idioma(s)**: Idiomas oficiales del país, ordenados de más a menos hablantes, separados por coma. Máximo 3 visibles; si hay más, se trunca con "...". Los nombres se muestran en el idioma de la app (ej. "Francés", no "French").
+    - **Enlace a Wikipedia**: Botón que abre el artículo del país en Wikipedia en el idioma de la app. Si el artículo no existe en ese idioma, enlaza a la versión en inglés.
 *   **Capital**: Círculo cian sobre la ubicación de la capital. Se muestra al seleccionar un país y también permanentemente cuando el toggle de etiquetas de capitales está activo.
 
 ### Tabla
@@ -246,11 +249,13 @@ La app usa **D3.js (`d3-geo`)** con **proyección ortográfica** sobre **Canvas 
 - **Filtro**: Solo países reconocidos por la ONU (193 miembros + 2 observadores = 195)
 - **Campos utilizados**:
   - `cca2`: Código ISO 3166-1 alpha-2 (clave primaria)
-  - `name.common`: Nombre del país
-  - `capital`: Nombre de la capital
+  - `translations.{lang}.common`: Nombre del país en el idioma destino
+  - `capital`: Nombre de la capital (traducido vía archivo suplementario)
   - `population`, `area`: Para la ficha
   - `flags.svg`: URL de bandera
-  - `currencies`, `languages`: Info adicional
+  - `currencies`: Nombre (traducido vía suplementario) y símbolo
+  - `languages`: Idiomas oficiales (traducidos vía suplementario)
+  - `demonyms`: Gentilicio (completado vía suplementario)
 - **Tamaño**: ~150 KB (gzipped)
 
 ### Actualización automática de datos
@@ -285,7 +290,11 @@ El script `fetch-countries.ts` genera `countries.json` y `capitals.json` en el i
 *   **Nombres de países**: `translations.{lang}.common` de REST Countries v3.1. Disponible para ~25 idiomas.
 *   **Nombres de capitales**: REST Countries no traduce capitales. Se usa un archivo suplementario `scripts/data/capitals-{lang}.json` con las traducciones necesarias.
 *   **Gentilicios**: `demonyms.{lang}.m` de REST Countries. Para países sin gentilicio en el idioma destino, se completa en el archivo suplementario.
-*   **Fuente suplementaria (multi-idioma)**: Wikidata (SPARQL) para capitales traducidas y datos que REST Countries no cubra. Para español solo, basta el archivo manual `capitals-es.json`.
+*   **Nombres de monedas**: REST Countries devuelve `currencies[].name` solo en inglés. Se traducen en el archivo suplementario.
+*   **Símbolos de monedas**: `currencies[].symbol` de REST Countries es universal (€, $, ¥) — no requiere traducción.
+*   **Nombres de idiomas**: REST Countries devuelve `languages` en inglés. Se traducen en el archivo suplementario.
+*   **Slugs de Wikipedia**: Slug del artículo Wikipedia para cada país y cada idioma soportado. Se construyen y validan en el pipeline de datos. Se almacenan en los datos estáticos para evitar links rotos en runtime.
+*   **Fuente suplementaria (multi-idioma)**: Wikidata (SPARQL) para capitales, monedas, idiomas, slugs de Wikipedia y otros datos que REST Countries no cubra. Para español solo, basta un archivo manual por idioma (actualmente `scripts/data/capitals-es.json`; se ampliará con los campos adicionales).
 *   **Validación con LLM**: Como capa final de QA, un LLM revisa el dataset generado y reporta anomalías (nombres en idioma incorrecto, ortografía, incoherencias). No genera traducciones — solo valida.
 *   **Pipeline completo**: REST Countries → Wikidata (gaps) → Validación LLM → Revisión humana (si hay flags) → CDN.
 *   **Idioma actual de generación**: Español (`spa`). Cuando se implemente i18n completa, se generarán archivos por idioma o un JSON multi-idioma.

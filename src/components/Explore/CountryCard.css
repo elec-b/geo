@@ -113,6 +113,17 @@
   font-size: var(--font-size-xs);
 }
 
+/* Campo que ocupa ambas columnas (texto informativo) */
+.country-card__field--full {
+  grid-column: 1 / -1;
+}
+
+.country-card__value--info {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
 /* Disclaimer para territorios no reconocidos por la ONU */
 .country-card__disclaimer {
   padding: var(--spacing-xs) var(--spacing-sm);

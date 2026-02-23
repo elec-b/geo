@@ -7,7 +7,7 @@
  * Ejecutar: npm run fetch-data
  */
 
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -31,6 +31,7 @@ interface RestCountry {
   cca2: string;
   ccn3?: string;
   name: { common: string; official: string };
+  translations?: Record<string, { official: string; common: string }>;
   capital?: string[];
   capitalInfo?: { latlng?: [number, number] };
   region: string;
@@ -40,6 +41,11 @@ interface RestCountry {
   currencies?: Record<string, { name: string; symbol?: string }>;
   languages?: Record<string, string>;
   demonyms?: Record<string, { m: string; f: string }>;
+}
+
+interface SupplementaryEntry {
+  capital: string;
+  demonym: string;
 }
 
 interface CountryEntry {
@@ -62,24 +68,38 @@ interface CapitalEntry {
   latlng: [number, number];
 }
 
-function toCountryEntry(c: RestCountry, isUN: boolean): CountryEntry {
+function toCountryEntry(c: RestCountry, isUN: boolean, supp: Record<string, SupplementaryEntry>): CountryEntry {
+  // Nombre del país en español (desde REST Countries translations.spa)
+  const name = c.translations?.spa?.common;
+  if (!name) throw new Error(`Sin traducción española para ${c.cca2} (${c.name.common})`);
+
+  // Capital y gentilicio en español (desde archivo suplementario)
+  const suppEntry = supp[c.cca2];
+  if (!suppEntry) throw new Error(`Sin datos suplementarios para ${c.cca2} (${c.name.common})`);
+
   return {
     cca2: c.cca2,
     ccn3: c.ccn3 ?? '',
-    name: c.name.common,
-    capital: c.capital?.[0] ?? '',
+    name,
+    capital: suppEntry.capital,
     continent: REGION_MAP[c.region] ?? c.region,
     population: c.population,
     area: c.area,
     flagSvg: c.flags.svg,
     currencies: c.currencies ? Object.values(c.currencies).map((cur) => cur.name) : [],
     languages: c.languages ? Object.values(c.languages) : [],
-    demonym: c.demonyms?.eng?.m ?? '',
+    demonym: suppEntry.demonym,
     unMember: isUN,
   };
 }
 
 async function main() {
+  // Cargar datos suplementarios (capitales y gentilicios en español)
+  const SUPP_PATH = resolve(__dirname, 'data', 'capitals-es.json');
+  const supplementary: Record<string, SupplementaryEntry> =
+    JSON.parse(readFileSync(SUPP_PATH, 'utf-8'));
+  console.log(`Datos suplementarios cargados: ${Object.keys(supplementary).length} entradas`);
+
   console.log('Descargando datos de REST Countries v3.1...');
 
   // --- 1. Países ONU (195) ---
@@ -140,8 +160,8 @@ async function main() {
   // --- 3. Generar salida ---
 
   const countries: CountryEntry[] = [
-    ...unFiltered.map((c) => toCountryEntry(c, true)),
-    ...nonUnFiltered.map((c) => toCountryEntry(c, false)),
+    ...unFiltered.map((c) => toCountryEntry(c, true, supplementary)),
+    ...nonUnFiltered.map((c) => toCountryEntry(c, false, supplementary)),
   ];
 
   // Ordenar alfabéticamente por cca2
@@ -158,7 +178,7 @@ async function main() {
   };
 
   for (const c of allApiCountries) {
-    const capitalName = c.capital?.[0] ?? '';
+    const capitalName = supplementary[c.cca2]?.capital ?? c.capital?.[0] ?? '';
     const override = CAPITAL_OVERRIDES[c.cca2];
 
     if (override) {

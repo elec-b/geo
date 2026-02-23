@@ -14,14 +14,14 @@
     "languages": [
       "Catalan"
     ],
-    "demonym": "Andorran",
+    "demonym": "andorrano",
     "unMember": true
   },
   {
     "cca2": "AE",
     "ccn3": "784",
-    "name": "United Arab Emirates",
-    "capital": "Abu Dhabi",
+    "name": "Emiratos Árabes Unidos",
+    "capital": "Abu Dabi",
     "continent": "Asia",
     "population": 11294243,
     "area": 83600,
@@ -32,13 +32,13 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Emirati",
+    "demonym": "emiratí",
     "unMember": true
   },
   {
     "cca2": "AF",
     "ccn3": "004",
-    "name": "Afghanistan",
+    "name": "Afganistán",
     "capital": "Kabul",
     "continent": "Asia",
     "population": 43844000,
@@ -52,13 +52,13 @@
       "Pashto",
       "Turkmen"
     ],
-    "demonym": "Afghan",
+    "demonym": "afgano",
     "unMember": true
   },
   {
     "cca2": "AG",
     "ccn3": "028",
-    "name": "Antigua and Barbuda",
+    "name": "Antigua y Barbuda",
     "capital": "Saint John's",
     "continent": "América",
     "population": 103603,
@@ -70,7 +70,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Antiguan, Barbudan",
+    "demonym": "antigüeño",
     "unMember": true
   },
   {
@@ -88,7 +88,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Anguillian",
+    "demonym": "anguilense",
     "unMember": false
   },
   {
@@ -106,14 +106,14 @@
     "languages": [
       "Albanian"
     ],
-    "demonym": "Albanian",
+    "demonym": "albanés",
     "unMember": true
   },
   {
     "cca2": "AM",
     "ccn3": "051",
     "name": "Armenia",
-    "capital": "Yerevan",
+    "capital": "Ereván",
     "continent": "Asia",
     "population": 3076200,
     "area": 29743,
@@ -124,7 +124,7 @@
     "languages": [
       "Armenian"
     ],
-    "demonym": "Armenian",
+    "demonym": "armenio",
     "unMember": true
   },
   {
@@ -142,7 +142,7 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Angolan",
+    "demonym": "angoleño",
     "unMember": true
   },
   {
@@ -161,13 +161,13 @@
       "Guaraní",
       "Spanish"
     ],
-    "demonym": "Argentine",
+    "demonym": "argentino",
     "unMember": true
   },
   {
     "cca2": "AS",
     "ccn3": "016",
-    "name": "American Samoa",
+    "name": "Samoa Americana",
     "capital": "Pago Pago",
     "continent": "Oceanía",
     "population": 49710,
@@ -180,14 +180,14 @@
       "English",
       "Samoan"
     ],
-    "demonym": "American Samoan",
+    "demonym": "samoano americano",
     "unMember": false
   },
   {
     "cca2": "AT",
     "ccn3": "040",
     "name": "Austria",
-    "capital": "Vienna",
+    "capital": "Viena",
     "continent": "Europa",
     "population": 9200931,
     "area": 83871,
@@ -198,7 +198,7 @@
     "languages": [
       "German"
     ],
-    "demonym": "Austrian",
+    "demonym": "austriaco",
     "unMember": true
   },
   {
@@ -216,7 +216,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Australian",
+    "demonym": "australiano",
     "unMember": true
   },
   {
@@ -235,13 +235,13 @@
       "Dutch",
       "Papiamento"
     ],
-    "demonym": "Aruban",
+    "demonym": "arubeño",
     "unMember": false
   },
   {
     "cca2": "AX",
     "ccn3": "248",
-    "name": "Åland Islands",
+    "name": "Alandia",
     "capital": "Mariehamn",
     "continent": "Europa",
     "population": 30654,
@@ -253,14 +253,14 @@
     "languages": [
       "Swedish"
     ],
-    "demonym": "Ålandish",
+    "demonym": "alandés",
     "unMember": false
   },
   {
     "cca2": "AZ",
     "ccn3": "031",
-    "name": "Azerbaijan",
-    "capital": "Baku",
+    "name": "Azerbaiyán",
+    "capital": "Bakú",
     "continent": "Asia",
     "population": 10241722,
     "area": 86600,
@@ -271,13 +271,13 @@
     "languages": [
       "Azerbaijani"
     ],
-    "demonym": "Azerbaijani",
+    "demonym": "azerbaiyano",
     "unMember": true
   },
   {
     "cca2": "BA",
     "ccn3": "070",
-    "name": "Bosnia and Herzegovina",
+    "name": "Bosnia y Herzegovina",
     "capital": "Sarajevo",
     "continent": "Europa",
     "population": 3422000,
@@ -291,7 +291,7 @@
       "Croatian",
       "Serbian"
     ],
-    "demonym": "Bosnian, Herzegovinian",
+    "demonym": "bosnio",
     "unMember": true
   },
   {
@@ -309,14 +309,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Barbadian",
+    "demonym": "barbadense",
     "unMember": true
   },
   {
     "cca2": "BD",
     "ccn3": "050",
     "name": "Bangladesh",
-    "capital": "Dhaka",
+    "capital": "Daca",
     "continent": "Asia",
     "population": 169828911,
     "area": 147570,
@@ -327,14 +327,14 @@
     "languages": [
       "Bengali"
     ],
-    "demonym": "Bangladeshi",
+    "demonym": "bangladesí",
     "unMember": true
   },
   {
     "cca2": "BE",
     "ccn3": "056",
-    "name": "Belgium",
-    "capital": "Brussels",
+    "name": "Bélgica",
+    "capital": "Bruselas",
     "continent": "Europa",
     "population": 11825551,
     "area": 30528,
@@ -347,14 +347,14 @@
       "French",
       "Dutch"
     ],
-    "demonym": "Belgian",
+    "demonym": "belga",
     "unMember": true
   },
   {
     "cca2": "BF",
     "ccn3": "854",
     "name": "Burkina Faso",
-    "capital": "Ouagadougou",
+    "capital": "Uagadugú",
     "continent": "África",
     "population": 24070553,
     "area": 272967,
@@ -365,14 +365,14 @@
     "languages": [
       "French"
     ],
-    "demonym": "Burkinabe",
+    "demonym": "burkinés",
     "unMember": true
   },
   {
     "cca2": "BG",
     "ccn3": "100",
     "name": "Bulgaria",
-    "capital": "Sofia",
+    "capital": "Sofía",
     "continent": "Europa",
     "population": 6437360,
     "area": 110879,
@@ -383,13 +383,13 @@
     "languages": [
       "Bulgarian"
     ],
-    "demonym": "Bulgarian",
+    "demonym": "búlgaro",
     "unMember": true
   },
   {
     "cca2": "BH",
     "ccn3": "048",
-    "name": "Bahrain",
+    "name": "Bahrein",
     "capital": "Manama",
     "continent": "Asia",
     "population": 1594654,
@@ -401,7 +401,7 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Bahraini",
+    "demonym": "bareiní",
     "unMember": true
   },
   {
@@ -420,14 +420,14 @@
       "French",
       "Kirundi"
     ],
-    "demonym": "Burundian",
+    "demonym": "burundés",
     "unMember": true
   },
   {
     "cca2": "BJ",
     "ccn3": "204",
-    "name": "Benin",
-    "capital": "Porto-Novo",
+    "name": "Benín",
+    "capital": "Porto Novo",
     "continent": "África",
     "population": 13224860,
     "area": 112622,
@@ -438,13 +438,13 @@
     "languages": [
       "French"
     ],
-    "demonym": "Beninese",
+    "demonym": "beninés",
     "unMember": true
   },
   {
     "cca2": "BL",
     "ccn3": "652",
-    "name": "Saint Barthélemy",
+    "name": "San Bartolomé",
     "capital": "Gustavia",
     "continent": "América",
     "population": 10562,
@@ -456,13 +456,13 @@
     "languages": [
       "French"
     ],
-    "demonym": "Saint Barthélemy Islander",
+    "demonym": "sanbartolomeño",
     "unMember": false
   },
   {
     "cca2": "BM",
     "ccn3": "060",
-    "name": "Bermuda",
+    "name": "Bermudas",
     "capital": "Hamilton",
     "continent": "América",
     "population": 64055,
@@ -474,7 +474,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Bermudian",
+    "demonym": "bermudeño",
     "unMember": false
   },
   {
@@ -493,7 +493,7 @@
     "languages": [
       "Malay"
     ],
-    "demonym": "Bruneian",
+    "demonym": "bruneano",
     "unMember": true
   },
   {
@@ -514,14 +514,14 @@
       "Quechua",
       "Spanish"
     ],
-    "demonym": "Bolivian",
+    "demonym": "boliviano",
     "unMember": true
   },
   {
     "cca2": "BR",
     "ccn3": "076",
-    "name": "Brazil",
-    "capital": "Brasília",
+    "name": "Brasil",
+    "capital": "Brasilia",
     "continent": "América",
     "population": 213421037,
     "area": 8515767,
@@ -532,14 +532,14 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Brazilian",
+    "demonym": "brasileño",
     "unMember": true
   },
   {
     "cca2": "BS",
     "ccn3": "044",
     "name": "Bahamas",
-    "capital": "Nassau",
+    "capital": "Nasáu",
     "continent": "América",
     "population": 398165,
     "area": 13943,
@@ -551,14 +551,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Bahamian",
+    "demonym": "bahameño",
     "unMember": true
   },
   {
     "cca2": "BT",
     "ccn3": "064",
-    "name": "Bhutan",
-    "capital": "Thimphu",
+    "name": "Bután",
+    "capital": "Timbu",
     "continent": "Asia",
     "population": 784043,
     "area": 38394,
@@ -570,7 +570,7 @@
     "languages": [
       "Dzongkha"
     ],
-    "demonym": "Bhutanese",
+    "demonym": "butanés",
     "unMember": true
   },
   {
@@ -589,13 +589,13 @@
       "English",
       "Tswana"
     ],
-    "demonym": "Motswana",
+    "demonym": "botsuano",
     "unMember": true
   },
   {
     "cca2": "BY",
     "ccn3": "112",
-    "name": "Belarus",
+    "name": "Bielorrusia",
     "capital": "Minsk",
     "continent": "Europa",
     "population": 9109280,
@@ -608,14 +608,14 @@
       "Belarusian",
       "Russian"
     ],
-    "demonym": "Belarusian",
+    "demonym": "bielorruso",
     "unMember": true
   },
   {
     "cca2": "BZ",
     "ccn3": "084",
-    "name": "Belize",
-    "capital": "Belmopan",
+    "name": "Belice",
+    "capital": "Belmopán",
     "continent": "América",
     "population": 417634,
     "area": 22966,
@@ -628,13 +628,13 @@
       "English",
       "Spanish"
     ],
-    "demonym": "Belizean",
+    "demonym": "beliceño",
     "unMember": true
   },
   {
     "cca2": "CA",
     "ccn3": "124",
-    "name": "Canada",
+    "name": "Canadá",
     "capital": "Ottawa",
     "continent": "América",
     "population": 41651653,
@@ -647,14 +647,14 @@
       "English",
       "French"
     ],
-    "demonym": "Canadian",
+    "demonym": "canadiense",
     "unMember": true
   },
   {
     "cca2": "CD",
     "ccn3": "180",
-    "name": "DR Congo",
-    "capital": "Kinshasa",
+    "name": "Congo (Rep. Dem.)",
+    "capital": "Kinsasa",
     "continent": "África",
     "population": 112832000,
     "area": 2344858,
@@ -669,13 +669,13 @@
       "Tshiluba",
       "Swahili"
     ],
-    "demonym": "Congolese",
+    "demonym": "congoleño",
     "unMember": true
   },
   {
     "cca2": "CF",
     "ccn3": "140",
-    "name": "Central African Republic",
+    "name": "República Centroafricana",
     "capital": "Bangui",
     "continent": "África",
     "population": 6470307,
@@ -688,13 +688,13 @@
       "French",
       "Sango"
     ],
-    "demonym": "Central African",
+    "demonym": "centroafricano",
     "unMember": true
   },
   {
     "cca2": "CG",
     "ccn3": "178",
-    "name": "Republic of the Congo",
+    "name": "Congo",
     "capital": "Brazzaville",
     "continent": "África",
     "population": 6142180,
@@ -708,14 +708,14 @@
       "Kikongo",
       "Lingala"
     ],
-    "demonym": "Congolese",
+    "demonym": "congoleño",
     "unMember": true
   },
   {
     "cca2": "CH",
     "ccn3": "756",
-    "name": "Switzerland",
-    "capital": "Bern",
+    "name": "Suiza",
+    "capital": "Berna",
     "continent": "Europa",
     "population": 9082848,
     "area": 41284,
@@ -729,14 +729,14 @@
       "Italian",
       "Romansh"
     ],
-    "demonym": "Swiss",
+    "demonym": "suizo",
     "unMember": true
   },
   {
     "cca2": "CI",
     "ccn3": "384",
-    "name": "Ivory Coast",
-    "capital": "Yamoussoukro",
+    "name": "Costa de Marfil",
+    "capital": "Yamusukro",
     "continent": "África",
     "population": 31719275,
     "area": 322463,
@@ -747,13 +747,13 @@
     "languages": [
       "French"
     ],
-    "demonym": "Ivorian",
+    "demonym": "marfileño",
     "unMember": true
   },
   {
     "cca2": "CK",
     "ccn3": "184",
-    "name": "Cook Islands",
+    "name": "Islas Cook",
     "capital": "Avarua",
     "continent": "Oceanía",
     "population": 15040,
@@ -767,7 +767,7 @@
       "English",
       "Cook Islands Māori"
     ],
-    "demonym": "Cook Islander",
+    "demonym": "cookiano",
     "unMember": false
   },
   {
@@ -785,14 +785,14 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Chilean",
+    "demonym": "chileno",
     "unMember": true
   },
   {
     "cca2": "CM",
     "ccn3": "120",
-    "name": "Cameroon",
-    "capital": "Yaoundé",
+    "name": "Camerún",
+    "capital": "Yaundé",
     "continent": "África",
     "population": 29442327,
     "area": 475442,
@@ -804,14 +804,14 @@
       "English",
       "French"
     ],
-    "demonym": "Cameroonian",
+    "demonym": "camerunés",
     "unMember": true
   },
   {
     "cca2": "CN",
     "ccn3": "156",
     "name": "China",
-    "capital": "Beijing",
+    "capital": "Pekín",
     "continent": "Asia",
     "population": 1408280000,
     "area": 9706961,
@@ -822,7 +822,7 @@
     "languages": [
       "Chinese"
     ],
-    "demonym": "Chinese",
+    "demonym": "chino",
     "unMember": true
   },
   {
@@ -840,7 +840,7 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Colombian",
+    "demonym": "colombiano",
     "unMember": true
   },
   {
@@ -858,14 +858,14 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Costa Rican",
+    "demonym": "costarricense",
     "unMember": true
   },
   {
     "cca2": "CU",
     "ccn3": "192",
     "name": "Cuba",
-    "capital": "Havana",
+    "capital": "La Habana",
     "continent": "América",
     "population": 9748007,
     "area": 109884,
@@ -877,13 +877,13 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Cuban",
+    "demonym": "cubano",
     "unMember": true
   },
   {
     "cca2": "CV",
     "ccn3": "132",
-    "name": "Cape Verde",
+    "name": "Cabo Verde",
     "capital": "Praia",
     "continent": "África",
     "population": 491233,
@@ -895,13 +895,13 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Cape Verdian",
+    "demonym": "caboverdiano",
     "unMember": true
   },
   {
     "cca2": "CW",
     "ccn3": "531",
-    "name": "Curaçao",
+    "name": "Curazao",
     "capital": "Willemstad",
     "continent": "América",
     "population": 156115,
@@ -915,13 +915,13 @@
       "Dutch",
       "Papiamento"
     ],
-    "demonym": "Curaçaoan",
+    "demonym": "curazaleño",
     "unMember": false
   },
   {
     "cca2": "CY",
     "ccn3": "196",
-    "name": "Cyprus",
+    "name": "Chipre",
     "capital": "Nicosia",
     "continent": "Europa",
     "population": 1442614,
@@ -934,14 +934,14 @@
       "Greek",
       "Turkish"
     ],
-    "demonym": "Cypriot",
+    "demonym": "chipriota",
     "unMember": true
   },
   {
     "cca2": "CZ",
     "ccn3": "203",
-    "name": "Czechia",
-    "capital": "Prague",
+    "name": "Chequia",
+    "capital": "Praga",
     "continent": "Europa",
     "population": 10882341,
     "area": 78865,
@@ -953,14 +953,14 @@
       "Czech",
       "Slovak"
     ],
-    "demonym": "Czech",
+    "demonym": "checo",
     "unMember": true
   },
   {
     "cca2": "DE",
     "ccn3": "276",
-    "name": "Germany",
-    "capital": "Berlin",
+    "name": "Alemania",
+    "capital": "Berlín",
     "continent": "Europa",
     "population": 83491249,
     "area": 357114,
@@ -971,14 +971,14 @@
     "languages": [
       "German"
     ],
-    "demonym": "German",
+    "demonym": "alemán",
     "unMember": true
   },
   {
     "cca2": "DJ",
     "ccn3": "262",
     "name": "Djibouti",
-    "capital": "Djibouti",
+    "capital": "Yibuti",
     "continent": "África",
     "population": 1066809,
     "area": 23200,
@@ -990,14 +990,14 @@
       "Arabic",
       "French"
     ],
-    "demonym": "Djibouti",
+    "demonym": "yibutiano",
     "unMember": true
   },
   {
     "cca2": "DK",
     "ccn3": "208",
-    "name": "Denmark",
-    "capital": "Copenhagen",
+    "name": "Dinamarca",
+    "capital": "Copenhague",
     "continent": "Europa",
     "population": 6011488,
     "area": 43094,
@@ -1008,7 +1008,7 @@
     "languages": [
       "Danish"
     ],
-    "demonym": "Danish",
+    "demonym": "danés",
     "unMember": true
   },
   {
@@ -1026,13 +1026,13 @@
     "languages": [
       "English"
     ],
-    "demonym": "Dominican",
+    "demonym": "dominiqués",
     "unMember": true
   },
   {
     "cca2": "DO",
     "ccn3": "214",
-    "name": "Dominican Republic",
+    "name": "República Dominicana",
     "capital": "Santo Domingo",
     "continent": "América",
     "population": 10771504,
@@ -1044,14 +1044,14 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Dominican",
+    "demonym": "dominicano",
     "unMember": true
   },
   {
     "cca2": "DZ",
     "ccn3": "012",
-    "name": "Algeria",
-    "capital": "Algiers",
+    "name": "Argelia",
+    "capital": "Argel",
     "continent": "África",
     "population": 47400000,
     "area": 2381741,
@@ -1062,7 +1062,7 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Algerian",
+    "demonym": "argelino",
     "unMember": true
   },
   {
@@ -1080,14 +1080,14 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Ecuadorean",
+    "demonym": "ecuatoriano",
     "unMember": true
   },
   {
     "cca2": "EE",
     "ccn3": "233",
     "name": "Estonia",
-    "capital": "Tallinn",
+    "capital": "Tallin",
     "continent": "Europa",
     "population": 1369995,
     "area": 45227,
@@ -1098,14 +1098,14 @@
     "languages": [
       "Estonian"
     ],
-    "demonym": "Estonian",
+    "demonym": "estonio",
     "unMember": true
   },
   {
     "cca2": "EG",
     "ccn3": "818",
-    "name": "Egypt",
-    "capital": "Cairo",
+    "name": "Egipto",
+    "capital": "El Cairo",
     "continent": "África",
     "population": 107271260,
     "area": 1002450,
@@ -1116,13 +1116,13 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Egyptian",
+    "demonym": "egipcio",
     "unMember": true
   },
   {
     "cca2": "EH",
     "ccn3": "732",
-    "name": "Western Sahara",
+    "name": "Sahara Occidental",
     "capital": "El Aaiún",
     "continent": "África",
     "population": 600904,
@@ -1138,7 +1138,7 @@
       "Hassaniya",
       "Spanish"
     ],
-    "demonym": "Sahrawi",
+    "demonym": "saharaui",
     "unMember": false
   },
   {
@@ -1158,13 +1158,13 @@
       "English",
       "Tigrinya"
     ],
-    "demonym": "Eritrean",
+    "demonym": "eritreo",
     "unMember": true
   },
   {
     "cca2": "ES",
     "ccn3": "724",
-    "name": "Spain",
+    "name": "España",
     "capital": "Madrid",
     "continent": "Europa",
     "population": 49315949,
@@ -1179,14 +1179,14 @@
       "Basque",
       "Galician"
     ],
-    "demonym": "Spanish",
+    "demonym": "español",
     "unMember": true
   },
   {
     "cca2": "ET",
     "ccn3": "231",
-    "name": "Ethiopia",
-    "capital": "Addis Ababa",
+    "name": "Etiopía",
+    "capital": "Adís Abeba",
     "continent": "África",
     "population": 111652998,
     "area": 1104300,
@@ -1197,13 +1197,13 @@
     "languages": [
       "Amharic"
     ],
-    "demonym": "Ethiopian",
+    "demonym": "etíope",
     "unMember": true
   },
   {
     "cca2": "FI",
     "ccn3": "246",
-    "name": "Finland",
+    "name": "Finlandia",
     "capital": "Helsinki",
     "continent": "Europa",
     "population": 5650325,
@@ -1216,13 +1216,13 @@
       "Finnish",
       "Swedish"
     ],
-    "demonym": "Finnish",
+    "demonym": "finlandés",
     "unMember": true
   },
   {
     "cca2": "FJ",
     "ccn3": "242",
-    "name": "Fiji",
+    "name": "Fiyi",
     "capital": "Suva",
     "continent": "Oceanía",
     "population": 900869,
@@ -1236,13 +1236,13 @@
       "Fijian",
       "Fiji Hindi"
     ],
-    "demonym": "Fijian",
+    "demonym": "fiyiano",
     "unMember": true
   },
   {
     "cca2": "FK",
     "ccn3": "238",
-    "name": "Falkland Islands",
+    "name": "Islas Malvinas",
     "capital": "Stanley",
     "continent": "América",
     "population": 3662,
@@ -1254,7 +1254,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Falkland Islander",
+    "demonym": "malvinense",
     "unMember": false
   },
   {
@@ -1272,13 +1272,13 @@
     "languages": [
       "English"
     ],
-    "demonym": "Micronesian",
+    "demonym": "micronesio",
     "unMember": true
   },
   {
     "cca2": "FO",
     "ccn3": "234",
-    "name": "Faroe Islands",
+    "name": "Islas Faroe",
     "capital": "Tórshavn",
     "continent": "Europa",
     "population": 54885,
@@ -1292,14 +1292,14 @@
       "Danish",
       "Faroese"
     ],
-    "demonym": "Faroese",
+    "demonym": "feroés",
     "unMember": false
   },
   {
     "cca2": "FR",
     "ccn3": "250",
-    "name": "France",
-    "capital": "Paris",
+    "name": "Francia",
+    "capital": "París",
     "continent": "Europa",
     "population": 66351959,
     "area": 543908,
@@ -1310,13 +1310,13 @@
     "languages": [
       "French"
     ],
-    "demonym": "French",
+    "demonym": "francés",
     "unMember": true
   },
   {
     "cca2": "GA",
     "ccn3": "266",
-    "name": "Gabon",
+    "name": "Gabón",
     "capital": "Libreville",
     "continent": "África",
     "population": 2469296,
@@ -1328,14 +1328,14 @@
     "languages": [
       "French"
     ],
-    "demonym": "Gabonese",
+    "demonym": "gabonés",
     "unMember": true
   },
   {
     "cca2": "GB",
     "ccn3": "826",
-    "name": "United Kingdom",
-    "capital": "London",
+    "name": "Reino Unido",
+    "capital": "Londres",
     "continent": "Europa",
     "population": 69281437,
     "area": 244376,
@@ -1346,14 +1346,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "British",
+    "demonym": "británico",
     "unMember": true
   },
   {
     "cca2": "GD",
     "ccn3": "308",
     "name": "Grenada",
-    "capital": "St. George's",
+    "capital": "Saint George",
     "continent": "América",
     "population": 109021,
     "area": 344,
@@ -1364,14 +1364,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Grenadian",
+    "demonym": "granadino",
     "unMember": true
   },
   {
     "cca2": "GE",
     "ccn3": "268",
     "name": "Georgia",
-    "capital": "Tbilisi",
+    "capital": "Tiflis",
     "continent": "Asia",
     "population": 4000921,
     "area": 69700,
@@ -1382,14 +1382,14 @@
     "languages": [
       "Georgian"
     ],
-    "demonym": "Georgian",
+    "demonym": "georgiano",
     "unMember": true
   },
   {
     "cca2": "GG",
     "ccn3": "831",
     "name": "Guernsey",
-    "capital": "St. Peter Port",
+    "capital": "Saint Peter Port",
     "continent": "Europa",
     "population": 64781,
     "area": 78,
@@ -1403,14 +1403,14 @@
       "French",
       "Guernésiais"
     ],
-    "demonym": "Channel Islander",
+    "demonym": "guerneseyés",
     "unMember": false
   },
   {
     "cca2": "GH",
     "ccn3": "288",
     "name": "Ghana",
-    "capital": "Accra",
+    "capital": "Acra",
     "continent": "África",
     "population": 33742380,
     "area": 238533,
@@ -1421,13 +1421,13 @@
     "languages": [
       "English"
     ],
-    "demonym": "Ghanaian",
+    "demonym": "ghanés",
     "unMember": true
   },
   {
     "cca2": "GL",
     "ccn3": "304",
-    "name": "Greenland",
+    "name": "Groenlandia",
     "capital": "Nuuk",
     "continent": "América",
     "population": 56542,
@@ -1439,7 +1439,7 @@
     "languages": [
       "Greenlandic"
     ],
-    "demonym": "Greenlandic",
+    "demonym": "groenlandés",
     "unMember": false
   },
   {
@@ -1457,14 +1457,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Gambian",
+    "demonym": "gambiano",
     "unMember": true
   },
   {
     "cca2": "GN",
     "ccn3": "324",
     "name": "Guinea",
-    "capital": "Conakry",
+    "capital": "Conakri",
     "continent": "África",
     "population": 14363931,
     "area": 245857,
@@ -1475,13 +1475,13 @@
     "languages": [
       "French"
     ],
-    "demonym": "Guinean",
+    "demonym": "guineano",
     "unMember": true
   },
   {
     "cca2": "GQ",
     "ccn3": "226",
-    "name": "Equatorial Guinea",
+    "name": "Guinea Ecuatorial",
     "capital": "Malabo",
     "continent": "África",
     "population": 1668768,
@@ -1495,14 +1495,14 @@
       "Portuguese",
       "Spanish"
     ],
-    "demonym": "Equatorial Guinean",
+    "demonym": "ecuatoguineano",
     "unMember": true
   },
   {
     "cca2": "GR",
     "ccn3": "300",
-    "name": "Greece",
-    "capital": "Athens",
+    "name": "Grecia",
+    "capital": "Atenas",
     "continent": "Europa",
     "population": 10400720,
     "area": 131990,
@@ -1513,14 +1513,14 @@
     "languages": [
       "Greek"
     ],
-    "demonym": "Greek",
+    "demonym": "griego",
     "unMember": true
   },
   {
     "cca2": "GT",
     "ccn3": "320",
     "name": "Guatemala",
-    "capital": "Guatemala City",
+    "capital": "Ciudad de Guatemala",
     "continent": "América",
     "population": 18079810,
     "area": 108889,
@@ -1531,7 +1531,7 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Guatemalan",
+    "demonym": "guatemalteco",
     "unMember": true
   },
   {
@@ -1551,14 +1551,14 @@
       "English",
       "Spanish"
     ],
-    "demonym": "Guamanian",
+    "demonym": "guameño",
     "unMember": false
   },
   {
     "cca2": "GW",
     "ccn3": "624",
-    "name": "Guinea-Bissau",
-    "capital": "Bissau",
+    "name": "Guinea-Bisáu",
+    "capital": "Bisáu",
     "continent": "África",
     "population": 1781308,
     "area": 36125,
@@ -1570,7 +1570,7 @@
       "Portuguese",
       "Upper Guinea Creole"
     ],
-    "demonym": "Guinea-Bissauan",
+    "demonym": "guineano-bisauense",
     "unMember": true
   },
   {
@@ -1588,14 +1588,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Guyanese",
+    "demonym": "guyanés",
     "unMember": true
   },
   {
     "cca2": "HK",
     "ccn3": "344",
     "name": "Hong Kong",
-    "capital": "City of Victoria",
+    "capital": "Victoria",
     "continent": "Asia",
     "population": 7527500,
     "area": 1104,
@@ -1607,7 +1607,7 @@
       "English",
       "Chinese"
     ],
-    "demonym": "Hong Konger",
+    "demonym": "hongkonés",
     "unMember": false
   },
   {
@@ -1625,13 +1625,13 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Honduran",
+    "demonym": "hondureño",
     "unMember": true
   },
   {
     "cca2": "HR",
     "ccn3": "191",
-    "name": "Croatia",
+    "name": "Croacia",
     "capital": "Zagreb",
     "continent": "Europa",
     "population": 3866233,
@@ -1643,14 +1643,14 @@
     "languages": [
       "Croatian"
     ],
-    "demonym": "Croatian",
+    "demonym": "croata",
     "unMember": true
   },
   {
     "cca2": "HT",
     "ccn3": "332",
-    "name": "Haiti",
-    "capital": "Port-au-Prince",
+    "name": "Haití",
+    "capital": "Puerto Príncipe",
     "continent": "América",
     "population": 11867032,
     "area": 27750,
@@ -1662,13 +1662,13 @@
       "French",
       "Haitian Creole"
     ],
-    "demonym": "Haitian",
+    "demonym": "haitiano",
     "unMember": true
   },
   {
     "cca2": "HU",
     "ccn3": "348",
-    "name": "Hungary",
+    "name": "Hungría",
     "capital": "Budapest",
     "continent": "Europa",
     "population": 9539502,
@@ -1680,14 +1680,14 @@
     "languages": [
       "Hungarian"
     ],
-    "demonym": "Hungarian",
+    "demonym": "húngaro",
     "unMember": true
   },
   {
     "cca2": "ID",
     "ccn3": "360",
     "name": "Indonesia",
-    "capital": "Jakarta",
+    "capital": "Yakarta",
     "continent": "Asia",
     "population": 284438782,
     "area": 1904569,
@@ -1698,14 +1698,14 @@
     "languages": [
       "Indonesian"
     ],
-    "demonym": "Indonesian",
+    "demonym": "indonesio",
     "unMember": true
   },
   {
     "cca2": "IE",
     "ccn3": "372",
-    "name": "Ireland",
-    "capital": "Dublin",
+    "name": "Irlanda",
+    "capital": "Dublín",
     "continent": "Europa",
     "population": 5458600,
     "area": 70273,
@@ -1717,14 +1717,14 @@
       "English",
       "Irish"
     ],
-    "demonym": "Irish",
+    "demonym": "irlandés",
     "unMember": true
   },
   {
     "cca2": "IL",
     "ccn3": "376",
     "name": "Israel",
-    "capital": "Jerusalem",
+    "capital": "Jerusalén",
     "continent": "Asia",
     "population": 10134800,
     "area": 21937,
@@ -1736,13 +1736,13 @@
       "Arabic",
       "Hebrew"
     ],
-    "demonym": "Israeli",
+    "demonym": "israelí",
     "unMember": true
   },
   {
     "cca2": "IM",
     "ccn3": "833",
-    "name": "Isle of Man",
+    "name": "Isla de Man",
     "capital": "Douglas",
     "continent": "Europa",
     "population": 84530,
@@ -1756,14 +1756,14 @@
       "English",
       "Manx"
     ],
-    "demonym": "Manx",
+    "demonym": "manés",
     "unMember": false
   },
   {
     "cca2": "IN",
     "ccn3": "356",
     "name": "India",
-    "capital": "New Delhi",
+    "capital": "Nueva Delhi",
     "continent": "Asia",
     "population": 1417492000,
     "area": 3287263,
@@ -1776,14 +1776,14 @@
       "Hindi",
       "Tamil"
     ],
-    "demonym": "Indian",
+    "demonym": "indio",
     "unMember": true
   },
   {
     "cca2": "IQ",
     "ccn3": "368",
-    "name": "Iraq",
-    "capital": "Baghdad",
+    "name": "Irak",
+    "capital": "Bagdad",
     "continent": "Asia",
     "population": 46118793,
     "area": 438317,
@@ -1796,14 +1796,14 @@
       "Aramaic",
       "Sorani"
     ],
-    "demonym": "Iraqi",
+    "demonym": "iraquí",
     "unMember": true
   },
   {
     "cca2": "IR",
     "ccn3": "364",
     "name": "Iran",
-    "capital": "Tehran",
+    "capital": "Teherán",
     "continent": "Asia",
     "population": 85961000,
     "area": 1648195,
@@ -1814,14 +1814,14 @@
     "languages": [
       "Persian (Farsi)"
     ],
-    "demonym": "Iranian",
+    "demonym": "iraní",
     "unMember": true
   },
   {
     "cca2": "IS",
     "ccn3": "352",
-    "name": "Iceland",
-    "capital": "Reykjavik",
+    "name": "Islandia",
+    "capital": "Reikiavik",
     "continent": "Europa",
     "population": 391810,
     "area": 103000,
@@ -1832,14 +1832,14 @@
     "languages": [
       "Icelandic"
     ],
-    "demonym": "Icelander",
+    "demonym": "islandés",
     "unMember": true
   },
   {
     "cca2": "IT",
     "ccn3": "380",
-    "name": "Italy",
-    "capital": "Rome",
+    "name": "Italia",
+    "capital": "Roma",
     "continent": "Europa",
     "population": 58927633,
     "area": 301336,
@@ -1851,7 +1851,7 @@
       "Italian",
       "Catalan"
     ],
-    "demonym": "Italian",
+    "demonym": "italiano",
     "unMember": true
   },
   {
@@ -1872,7 +1872,7 @@
       "French",
       "Jèrriais"
     ],
-    "demonym": "Channel Islander",
+    "demonym": "jerseyés",
     "unMember": false
   },
   {
@@ -1891,14 +1891,14 @@
       "English",
       "Jamaican Patois"
     ],
-    "demonym": "Jamaican",
+    "demonym": "jamaicano",
     "unMember": true
   },
   {
     "cca2": "JO",
     "ccn3": "400",
-    "name": "Jordan",
-    "capital": "Amman",
+    "name": "Jordania",
+    "capital": "Amán",
     "continent": "Asia",
     "population": 11734000,
     "area": 89342,
@@ -1909,14 +1909,14 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Jordanian",
+    "demonym": "jordano",
     "unMember": true
   },
   {
     "cca2": "JP",
     "ccn3": "392",
-    "name": "Japan",
-    "capital": "Tokyo",
+    "name": "Japón",
+    "capital": "Tokio",
     "continent": "Asia",
     "population": 123210000,
     "area": 377930,
@@ -1927,13 +1927,13 @@
     "languages": [
       "Japanese"
     ],
-    "demonym": "Japanese",
+    "demonym": "japonés",
     "unMember": true
   },
   {
     "cca2": "KE",
     "ccn3": "404",
-    "name": "Kenya",
+    "name": "Kenia",
     "capital": "Nairobi",
     "continent": "África",
     "population": 53330978,
@@ -1946,14 +1946,14 @@
       "English",
       "Swahili"
     ],
-    "demonym": "Kenyan",
+    "demonym": "keniata",
     "unMember": true
   },
   {
     "cca2": "KG",
     "ccn3": "417",
-    "name": "Kyrgyzstan",
-    "capital": "Bishkek",
+    "name": "Kirguizistán",
+    "capital": "Biskek",
     "continent": "Asia",
     "population": 7281800,
     "area": 199951,
@@ -1965,14 +1965,14 @@
       "Kyrgyz",
       "Russian"
     ],
-    "demonym": "Kirghiz",
+    "demonym": "kirguís",
     "unMember": true
   },
   {
     "cca2": "KH",
     "ccn3": "116",
-    "name": "Cambodia",
-    "capital": "Phnom Penh",
+    "name": "Camboya",
+    "capital": "Nom Pen",
     "continent": "Asia",
     "population": 17577760,
     "area": 181035,
@@ -1984,14 +1984,14 @@
     "languages": [
       "Khmer"
     ],
-    "demonym": "Cambodian",
+    "demonym": "camboyano",
     "unMember": true
   },
   {
     "cca2": "KI",
     "ccn3": "296",
     "name": "Kiribati",
-    "capital": "South Tarawa",
+    "capital": "Tarawa Sur",
     "continent": "Oceanía",
     "population": 120740,
     "area": 811,
@@ -2004,13 +2004,13 @@
       "English",
       "Gilbertese"
     ],
-    "demonym": "I-Kiribati",
+    "demonym": "kiribatiano",
     "unMember": true
   },
   {
     "cca2": "KM",
     "ccn3": "174",
-    "name": "Comoros",
+    "name": "Comoras",
     "capital": "Moroni",
     "continent": "África",
     "population": 919901,
@@ -2024,13 +2024,13 @@
       "French",
       "Comorian"
     ],
-    "demonym": "Comoran",
+    "demonym": "comorense",
     "unMember": true
   },
   {
     "cca2": "KN",
     "ccn3": "659",
-    "name": "Saint Kitts and Nevis",
+    "name": "San Cristóbal y Nieves",
     "capital": "Basseterre",
     "continent": "América",
     "population": 51320,
@@ -2042,14 +2042,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Kittitian or Nevisian",
+    "demonym": "sancrístobalense",
     "unMember": true
   },
   {
     "cca2": "KP",
     "ccn3": "408",
-    "name": "North Korea",
-    "capital": "Pyongyang",
+    "name": "Corea del Norte",
+    "capital": "Pionyang",
     "continent": "Asia",
     "population": 25950000,
     "area": 120538,
@@ -2060,14 +2060,14 @@
     "languages": [
       "Korean"
     ],
-    "demonym": "North Korean",
+    "demonym": "norcoreano",
     "unMember": true
   },
   {
     "cca2": "KR",
     "ccn3": "410",
-    "name": "South Korea",
-    "capital": "Seoul",
+    "name": "Corea del Sur",
+    "capital": "Seúl",
     "continent": "Asia",
     "population": 51159889,
     "area": 100210,
@@ -2078,14 +2078,14 @@
     "languages": [
       "Korean"
     ],
-    "demonym": "South Korean",
+    "demonym": "surcoreano",
     "unMember": true
   },
   {
     "cca2": "KW",
     "ccn3": "414",
     "name": "Kuwait",
-    "capital": "Kuwait City",
+    "capital": "Ciudad de Kuwait",
     "continent": "Asia",
     "population": 4881254,
     "area": 17818,
@@ -2096,13 +2096,13 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Kuwaiti",
+    "demonym": "kuwaití",
     "unMember": true
   },
   {
     "cca2": "KY",
     "ccn3": "136",
-    "name": "Cayman Islands",
+    "name": "Islas Caimán",
     "capital": "George Town",
     "continent": "América",
     "population": 84738,
@@ -2114,14 +2114,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Caymanian",
+    "demonym": "caimanés",
     "unMember": false
   },
   {
     "cca2": "KZ",
     "ccn3": "398",
-    "name": "Kazakhstan",
-    "capital": "Astana",
+    "name": "Kazajistán",
+    "capital": "Astaná",
     "continent": "Asia",
     "population": 20426568,
     "area": 2724900,
@@ -2133,14 +2133,14 @@
       "Kazakh",
       "Russian"
     ],
-    "demonym": "Kazakhstani",
+    "demonym": "kazajo",
     "unMember": true
   },
   {
     "cca2": "LA",
     "ccn3": "418",
     "name": "Laos",
-    "capital": "Vientiane",
+    "capital": "Vientián",
     "continent": "Asia",
     "population": 7647000,
     "area": 236800,
@@ -2151,13 +2151,13 @@
     "languages": [
       "Lao"
     ],
-    "demonym": "Laotian",
+    "demonym": "laosiano",
     "unMember": true
   },
   {
     "cca2": "LB",
     "ccn3": "422",
-    "name": "Lebanon",
+    "name": "Líbano",
     "capital": "Beirut",
     "continent": "Asia",
     "population": 5490000,
@@ -2170,13 +2170,13 @@
       "Arabic",
       "French"
     ],
-    "demonym": "Lebanese",
+    "demonym": "libanés",
     "unMember": true
   },
   {
     "cca2": "LC",
     "ccn3": "662",
-    "name": "Saint Lucia",
+    "name": "Santa Lucía",
     "capital": "Castries",
     "continent": "América",
     "population": 184100,
@@ -2188,7 +2188,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Saint Lucian",
+    "demonym": "santalucense",
     "unMember": true
   },
   {
@@ -2206,7 +2206,7 @@
     "languages": [
       "German"
     ],
-    "demonym": "Liechtensteiner",
+    "demonym": "liechtensteiniano",
     "unMember": true
   },
   {
@@ -2225,7 +2225,7 @@
       "Sinhala",
       "Tamil"
     ],
-    "demonym": "Sri Lankan",
+    "demonym": "ceilanés",
     "unMember": true
   },
   {
@@ -2243,7 +2243,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Liberian",
+    "demonym": "liberiano",
     "unMember": true
   },
   {
@@ -2263,14 +2263,14 @@
       "English",
       "Sotho"
     ],
-    "demonym": "Mosotho",
+    "demonym": "lesotense",
     "unMember": true
   },
   {
     "cca2": "LT",
     "ccn3": "440",
-    "name": "Lithuania",
-    "capital": "Vilnius",
+    "name": "Lituania",
+    "capital": "Vilna",
     "continent": "Europa",
     "population": 2894886,
     "area": 65300,
@@ -2281,14 +2281,14 @@
     "languages": [
       "Lithuanian"
     ],
-    "demonym": "Lithuanian",
+    "demonym": "lituano",
     "unMember": true
   },
   {
     "cca2": "LU",
     "ccn3": "442",
-    "name": "Luxembourg",
-    "capital": "Luxembourg",
+    "name": "Luxemburgo",
+    "capital": "Luxemburgo",
     "continent": "Europa",
     "population": 681973,
     "area": 2586,
@@ -2301,13 +2301,13 @@
       "French",
       "Luxembourgish"
     ],
-    "demonym": "Luxembourger",
+    "demonym": "luxemburgués",
     "unMember": true
   },
   {
     "cca2": "LV",
     "ccn3": "428",
-    "name": "Latvia",
+    "name": "Letonia",
     "capital": "Riga",
     "continent": "Europa",
     "population": 1829000,
@@ -2319,14 +2319,14 @@
     "languages": [
       "Latvian"
     ],
-    "demonym": "Latvian",
+    "demonym": "letón",
     "unMember": true
   },
   {
     "cca2": "LY",
     "ccn3": "434",
-    "name": "Libya",
-    "capital": "Tripoli",
+    "name": "Libia",
+    "capital": "Trípoli",
     "continent": "África",
     "population": 7459000,
     "area": 1759540,
@@ -2337,13 +2337,13 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Libyan",
+    "demonym": "libio",
     "unMember": true
   },
   {
     "cca2": "MA",
     "ccn3": "504",
-    "name": "Morocco",
+    "name": "Marruecos",
     "capital": "Rabat",
     "continent": "África",
     "population": 36828330,
@@ -2356,14 +2356,14 @@
       "Arabic",
       "Berber"
     ],
-    "demonym": "Moroccan",
+    "demonym": "marroquí",
     "unMember": true
   },
   {
     "cca2": "MC",
     "ccn3": "492",
-    "name": "Monaco",
-    "capital": "Monaco",
+    "name": "Mónaco",
+    "capital": "Mónaco",
     "continent": "Europa",
     "population": 38423,
     "area": 2.02,
@@ -2374,14 +2374,14 @@
     "languages": [
       "French"
     ],
-    "demonym": "Monegasque",
+    "demonym": "monegasco",
     "unMember": true
   },
   {
     "cca2": "MD",
     "ccn3": "498",
-    "name": "Moldova",
-    "capital": "Chișinău",
+    "name": "Moldavia",
+    "capital": "Chisináu",
     "continent": "Europa",
     "population": 2749076,
     "area": 33847,
@@ -2392,7 +2392,7 @@
     "languages": [
       "Romanian"
     ],
-    "demonym": "Moldovan",
+    "demonym": "moldavo",
     "unMember": true
   },
   {
@@ -2410,7 +2410,7 @@
     "languages": [
       "Montenegrin"
     ],
-    "demonym": "Montenegrin",
+    "demonym": "montenegrino",
     "unMember": true
   },
   {
@@ -2428,7 +2428,7 @@
     "languages": [
       "French"
     ],
-    "demonym": "Saint Martin Islander",
+    "demonym": "sanmartinense",
     "unMember": false
   },
   {
@@ -2447,13 +2447,13 @@
       "French",
       "Malagasy"
     ],
-    "demonym": "Malagasy",
+    "demonym": "malgache",
     "unMember": true
   },
   {
     "cca2": "MH",
     "ccn3": "584",
-    "name": "Marshall Islands",
+    "name": "Islas Marshall",
     "capital": "Majuro",
     "continent": "Oceanía",
     "population": 42418,
@@ -2466,14 +2466,14 @@
       "English",
       "Marshallese"
     ],
-    "demonym": "Marshallese",
+    "demonym": "marshalés",
     "unMember": true
   },
   {
     "cca2": "MK",
     "ccn3": "807",
-    "name": "North Macedonia",
-    "capital": "Skopje",
+    "name": "Macedonia del Norte",
+    "capital": "Skopie",
     "continent": "Europa",
     "population": 1822612,
     "area": 25713,
@@ -2484,7 +2484,7 @@
     "languages": [
       "Macedonian"
     ],
-    "demonym": "Macedonian",
+    "demonym": "macedonio",
     "unMember": true
   },
   {
@@ -2502,14 +2502,14 @@
     "languages": [
       "French"
     ],
-    "demonym": "Malian",
+    "demonym": "maliense",
     "unMember": true
   },
   {
     "cca2": "MM",
     "ccn3": "104",
     "name": "Myanmar",
-    "capital": "Naypyidaw",
+    "capital": "Naipyidó",
     "continent": "Asia",
     "population": 51316756,
     "area": 676578,
@@ -2520,14 +2520,14 @@
     "languages": [
       "Burmese"
     ],
-    "demonym": "Burmese",
+    "demonym": "birmano",
     "unMember": true
   },
   {
     "cca2": "MN",
     "ccn3": "496",
     "name": "Mongolia",
-    "capital": "Ulan Bator",
+    "capital": "Ulán Bator",
     "continent": "Asia",
     "population": 3544835,
     "area": 1564110,
@@ -2538,13 +2538,13 @@
     "languages": [
       "Mongolian"
     ],
-    "demonym": "Mongolian",
+    "demonym": "mongol",
     "unMember": true
   },
   {
     "cca2": "MO",
     "ccn3": "446",
-    "name": "Macau",
+    "name": "Macao",
     "capital": "",
     "continent": "Asia",
     "population": 685900,
@@ -2557,14 +2557,14 @@
       "Portuguese",
       "Chinese"
     ],
-    "demonym": "Macanese",
+    "demonym": "macaense",
     "unMember": false
   },
   {
     "cca2": "MP",
     "ccn3": "580",
-    "name": "Northern Mariana Islands",
-    "capital": "Saipan",
+    "name": "Islas Marianas del Norte",
+    "capital": "Saipán",
     "continent": "Oceanía",
     "population": 47329,
     "area": 464,
@@ -2577,14 +2577,14 @@
       "Chamorro",
       "English"
     ],
-    "demonym": "American",
+    "demonym": "marianense",
     "unMember": false
   },
   {
     "cca2": "MR",
     "ccn3": "478",
     "name": "Mauritania",
-    "capital": "Nouakchott",
+    "capital": "Nuakchot",
     "continent": "África",
     "population": 4927532,
     "area": 1030700,
@@ -2595,7 +2595,7 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Mauritanian",
+    "demonym": "mauritano",
     "unMember": true
   },
   {
@@ -2613,14 +2613,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Montserratian",
+    "demonym": "monserratense",
     "unMember": false
   },
   {
     "cca2": "MT",
     "ccn3": "470",
     "name": "Malta",
-    "capital": "Valletta",
+    "capital": "La Valeta",
     "continent": "Europa",
     "population": 574250,
     "area": 316,
@@ -2632,13 +2632,13 @@
       "English",
       "Maltese"
     ],
-    "demonym": "Maltese",
+    "demonym": "maltés",
     "unMember": true
   },
   {
     "cca2": "MU",
     "ccn3": "480",
-    "name": "Mauritius",
+    "name": "Mauricio",
     "capital": "Port Louis",
     "continent": "África",
     "population": 1243741,
@@ -2652,13 +2652,13 @@
       "French",
       "Mauritian Creole"
     ],
-    "demonym": "Mauritian",
+    "demonym": "mauriciano",
     "unMember": true
   },
   {
     "cca2": "MV",
     "ccn3": "462",
-    "name": "Maldives",
+    "name": "Maldivas",
     "capital": "Malé",
     "continent": "Asia",
     "population": 515132,
@@ -2670,14 +2670,14 @@
     "languages": [
       "Maldivian"
     ],
-    "demonym": "Maldivan",
+    "demonym": "maldivo",
     "unMember": true
   },
   {
     "cca2": "MW",
     "ccn3": "454",
     "name": "Malawi",
-    "capital": "Lilongwe",
+    "capital": "Lilongüe",
     "continent": "África",
     "population": 20734262,
     "area": 118484,
@@ -2689,14 +2689,14 @@
       "English",
       "Chewa"
     ],
-    "demonym": "Malawian",
+    "demonym": "malauí",
     "unMember": true
   },
   {
     "cca2": "MX",
     "ccn3": "484",
-    "name": "Mexico",
-    "capital": "Mexico City",
+    "name": "México",
+    "capital": "Ciudad de México",
     "continent": "América",
     "population": 130575786,
     "area": 1964375,
@@ -2707,13 +2707,13 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Mexican",
+    "demonym": "mexicano",
     "unMember": true
   },
   {
     "cca2": "MY",
     "ccn3": "458",
-    "name": "Malaysia",
+    "name": "Malasia",
     "capital": "Kuala Lumpur",
     "continent": "Asia",
     "population": 34231700,
@@ -2726,7 +2726,7 @@
       "English",
       "Malay"
     ],
-    "demonym": "Malaysian",
+    "demonym": "malasio",
     "unMember": true
   },
   {
@@ -2744,7 +2744,7 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Mozambican",
+    "demonym": "mozambiqueño",
     "unMember": true
   },
   {
@@ -2771,14 +2771,14 @@
       "Ndonga",
       "Tswana"
     ],
-    "demonym": "Namibian",
+    "demonym": "namibio",
     "unMember": true
   },
   {
     "cca2": "NC",
     "ccn3": "540",
-    "name": "New Caledonia",
-    "capital": "Nouméa",
+    "name": "Nueva Caledonia",
+    "capital": "Numea",
     "continent": "Oceanía",
     "population": 264596,
     "area": 18575,
@@ -2789,13 +2789,13 @@
     "languages": [
       "French"
     ],
-    "demonym": "New Caledonian",
+    "demonym": "neocaledonio",
     "unMember": false
   },
   {
     "cca2": "NE",
     "ccn3": "562",
-    "name": "Niger",
+    "name": "Níger",
     "capital": "Niamey",
     "continent": "África",
     "population": 26312034,
@@ -2807,13 +2807,13 @@
     "languages": [
       "French"
     ],
-    "demonym": "Nigerien",
+    "demonym": "nigerino",
     "unMember": true
   },
   {
     "cca2": "NF",
     "ccn3": "574",
-    "name": "Norfolk Island",
+    "name": "Isla de Norfolk",
     "capital": "Kingston",
     "continent": "Oceanía",
     "population": 2188,
@@ -2826,14 +2826,14 @@
       "English",
       "Norfuk"
     ],
-    "demonym": "Norfolk Islander",
+    "demonym": "norfolkense",
     "unMember": false
   },
   {
     "cca2": "NG",
     "ccn3": "566",
     "name": "Nigeria",
-    "capital": "Abuja",
+    "capital": "Abuya",
     "continent": "África",
     "population": 223800000,
     "area": 923768,
@@ -2844,7 +2844,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Nigerian",
+    "demonym": "nigeriano",
     "unMember": true
   },
   {
@@ -2862,14 +2862,14 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Nicaraguan",
+    "demonym": "nicaragüense",
     "unMember": true
   },
   {
     "cca2": "NL",
     "ccn3": "528",
-    "name": "Netherlands",
-    "capital": "Amsterdam",
+    "name": "Países Bajos",
+    "capital": "Ámsterdam",
     "continent": "Europa",
     "population": 18100436,
     "area": 41865,
@@ -2880,13 +2880,13 @@
     "languages": [
       "Dutch"
     ],
-    "demonym": "Dutch",
+    "demonym": "neerlandés",
     "unMember": true
   },
   {
     "cca2": "NO",
     "ccn3": "578",
-    "name": "Norway",
+    "name": "Noruega",
     "capital": "Oslo",
     "continent": "Europa",
     "population": 5606944,
@@ -2900,14 +2900,14 @@
       "Norwegian Bokmål",
       "Sami"
     ],
-    "demonym": "Norwegian",
+    "demonym": "noruego",
     "unMember": true
   },
   {
     "cca2": "NP",
     "ccn3": "524",
     "name": "Nepal",
-    "capital": "Kathmandu",
+    "capital": "Katmandú",
     "continent": "Asia",
     "population": 29911840,
     "area": 147181,
@@ -2918,7 +2918,7 @@
     "languages": [
       "Nepali"
     ],
-    "demonym": "Nepalese",
+    "demonym": "nepalí",
     "unMember": true
   },
   {
@@ -2937,7 +2937,7 @@
       "English",
       "Nauru"
     ],
-    "demonym": "Nauruan",
+    "demonym": "nauruano",
     "unMember": true
   },
   {
@@ -2956,13 +2956,13 @@
       "English",
       "Niuean"
     ],
-    "demonym": "Niuean",
+    "demonym": "niueño",
     "unMember": false
   },
   {
     "cca2": "NZ",
     "ccn3": "554",
-    "name": "New Zealand",
+    "name": "Nueva Zelanda",
     "capital": "Wellington",
     "continent": "Oceanía",
     "population": 5324700,
@@ -2976,14 +2976,14 @@
       "Māori",
       "New Zealand Sign Language"
     ],
-    "demonym": "New Zealander",
+    "demonym": "neozelandés",
     "unMember": true
   },
   {
     "cca2": "OM",
     "ccn3": "512",
-    "name": "Oman",
-    "capital": "Muscat",
+    "name": "Omán",
+    "capital": "Mascate",
     "continent": "Asia",
     "population": 5343630,
     "area": 309500,
@@ -2994,14 +2994,14 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Omani",
+    "demonym": "omaní",
     "unMember": true
   },
   {
     "cca2": "PA",
     "ccn3": "591",
-    "name": "Panama",
-    "capital": "Panama City",
+    "name": "Panamá",
+    "capital": "Ciudad de Panamá",
     "continent": "América",
     "population": 4064780,
     "area": 75417,
@@ -3013,13 +3013,13 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Panamanian",
+    "demonym": "panameño",
     "unMember": true
   },
   {
     "cca2": "PE",
     "ccn3": "604",
-    "name": "Peru",
+    "name": "Perú",
     "capital": "Lima",
     "continent": "América",
     "population": 34350244,
@@ -3033,14 +3033,14 @@
       "Quechua",
       "Spanish"
     ],
-    "demonym": "Peruvian",
+    "demonym": "peruano",
     "unMember": true
   },
   {
     "cca2": "PF",
     "ccn3": "258",
-    "name": "French Polynesia",
-    "capital": "Papeetē",
+    "name": "Polinesia Francesa",
+    "capital": "Papeete",
     "continent": "Oceanía",
     "population": 279500,
     "area": 4167,
@@ -3051,13 +3051,13 @@
     "languages": [
       "French"
     ],
-    "demonym": "French Polynesian",
+    "demonym": "polinesio francés",
     "unMember": false
   },
   {
     "cca2": "PG",
     "ccn3": "598",
-    "name": "Papua New Guinea",
+    "name": "Papúa Nueva Guinea",
     "capital": "Port Moresby",
     "continent": "Oceanía",
     "population": 11781559,
@@ -3071,13 +3071,13 @@
       "Hiri Motu",
       "Tok Pisin"
     ],
-    "demonym": "Papua New Guinean",
+    "demonym": "papú",
     "unMember": true
   },
   {
     "cca2": "PH",
     "ccn3": "608",
-    "name": "Philippines",
+    "name": "Filipinas",
     "capital": "Manila",
     "continent": "Asia",
     "population": 114123600,
@@ -3090,13 +3090,13 @@
       "English",
       "Filipino"
     ],
-    "demonym": "Filipino",
+    "demonym": "filipino",
     "unMember": true
   },
   {
     "cca2": "PK",
     "ccn3": "586",
-    "name": "Pakistan",
+    "name": "Pakistán",
     "capital": "Islamabad",
     "continent": "Asia",
     "population": 241499431,
@@ -3109,14 +3109,14 @@
       "English",
       "Urdu"
     ],
-    "demonym": "Pakistani",
+    "demonym": "pakistaní",
     "unMember": true
   },
   {
     "cca2": "PL",
     "ccn3": "616",
-    "name": "Poland",
-    "capital": "Warsaw",
+    "name": "Polonia",
+    "capital": "Varsovia",
     "continent": "Europa",
     "population": 37392000,
     "area": 312679,
@@ -3127,13 +3127,13 @@
     "languages": [
       "Polish"
     ],
-    "demonym": "Polish",
+    "demonym": "polaco",
     "unMember": true
   },
   {
     "cca2": "PM",
     "ccn3": "666",
-    "name": "Saint Pierre and Miquelon",
+    "name": "San Pedro y Miquelón",
     "capital": "Saint-Pierre",
     "continent": "América",
     "population": 5819,
@@ -3145,13 +3145,13 @@
     "languages": [
       "French"
     ],
-    "demonym": "Saint-Pierrais, Miquelonnais",
+    "demonym": "miquelonense",
     "unMember": false
   },
   {
     "cca2": "PN",
     "ccn3": "612",
-    "name": "Pitcairn Islands",
+    "name": "Islas Pitcairn",
     "capital": "Adamstown",
     "continent": "Oceanía",
     "population": 35,
@@ -3163,7 +3163,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Pitcairn Islander",
+    "demonym": "pitcairnense",
     "unMember": false
   },
   {
@@ -3182,14 +3182,14 @@
       "English",
       "Spanish"
     ],
-    "demonym": "Puerto Rican",
+    "demonym": "puertorriqueño",
     "unMember": false
   },
   {
     "cca2": "PS",
     "ccn3": "275",
-    "name": "Palestine",
-    "capital": "Ramallah",
+    "name": "Palestina",
+    "capital": "Ramala",
     "continent": "Asia",
     "population": 5483450,
     "area": 6220,
@@ -3202,14 +3202,14 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Palestinian",
+    "demonym": "palestino",
     "unMember": true
   },
   {
     "cca2": "PT",
     "ccn3": "620",
     "name": "Portugal",
-    "capital": "Lisbon",
+    "capital": "Lisboa",
     "continent": "Europa",
     "population": 10749635,
     "area": 92090,
@@ -3220,7 +3220,7 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Portuguese",
+    "demonym": "portugués",
     "unMember": true
   },
   {
@@ -3239,7 +3239,7 @@
       "English",
       "Palauan"
     ],
-    "demonym": "Palauan",
+    "demonym": "palauano",
     "unMember": true
   },
   {
@@ -3258,13 +3258,13 @@
       "Guaraní",
       "Spanish"
     ],
-    "demonym": "Paraguayan",
+    "demonym": "paraguayo",
     "unMember": true
   },
   {
     "cca2": "QA",
     "ccn3": "634",
-    "name": "Qatar",
+    "name": "Catar",
     "capital": "Doha",
     "continent": "Asia",
     "population": 3173024,
@@ -3276,14 +3276,14 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Qatari",
+    "demonym": "catarí",
     "unMember": true
   },
   {
     "cca2": "RO",
     "ccn3": "642",
-    "name": "Romania",
-    "capital": "Bucharest",
+    "name": "Rumania",
+    "capital": "Bucarest",
     "continent": "Europa",
     "population": 19036031,
     "area": 238391,
@@ -3294,14 +3294,14 @@
     "languages": [
       "Romanian"
     ],
-    "demonym": "Romanian",
+    "demonym": "rumano",
     "unMember": true
   },
   {
     "cca2": "RS",
     "ccn3": "688",
     "name": "Serbia",
-    "capital": "Belgrade",
+    "capital": "Belgrado",
     "continent": "Europa",
     "population": 6567783,
     "area": 77589,
@@ -3312,14 +3312,14 @@
     "languages": [
       "Serbian"
     ],
-    "demonym": "Serbian",
+    "demonym": "serbio",
     "unMember": true
   },
   {
     "cca2": "RU",
     "ccn3": "643",
-    "name": "Russia",
-    "capital": "Moscow",
+    "name": "Rusia",
+    "capital": "Moscú",
     "continent": "Europa",
     "population": 146028325,
     "area": 17098246,
@@ -3330,13 +3330,13 @@
     "languages": [
       "Russian"
     ],
-    "demonym": "Russian",
+    "demonym": "ruso",
     "unMember": true
   },
   {
     "cca2": "RW",
     "ccn3": "646",
-    "name": "Rwanda",
+    "name": "Ruanda",
     "capital": "Kigali",
     "continent": "África",
     "population": 14104969,
@@ -3350,14 +3350,14 @@
       "French",
       "Kinyarwanda"
     ],
-    "demonym": "Rwandan",
+    "demonym": "ruandés",
     "unMember": true
   },
   {
     "cca2": "SA",
     "ccn3": "682",
-    "name": "Saudi Arabia",
-    "capital": "Riyadh",
+    "name": "Arabia Saudí",
+    "capital": "Riad",
     "continent": "Asia",
     "population": 35300280,
     "area": 2149690,
@@ -3368,13 +3368,13 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Saudi Arabian",
+    "demonym": "saudí",
     "unMember": true
   },
   {
     "cca2": "SB",
     "ccn3": "090",
-    "name": "Solomon Islands",
+    "name": "Islas Salomón",
     "capital": "Honiara",
     "continent": "Oceanía",
     "population": 750325,
@@ -3386,7 +3386,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Solomon Islander",
+    "demonym": "salomonense",
     "unMember": true
   },
   {
@@ -3406,14 +3406,14 @@
       "English",
       "French"
     ],
-    "demonym": "Seychellois",
+    "demonym": "seychelense",
     "unMember": true
   },
   {
     "cca2": "SD",
     "ccn3": "729",
-    "name": "Sudan",
-    "capital": "Khartoum",
+    "name": "Sudán",
+    "capital": "Jartum",
     "continent": "África",
     "population": 51662000,
     "area": 1886068,
@@ -3425,14 +3425,14 @@
       "Arabic",
       "English"
     ],
-    "demonym": "Sudanese",
+    "demonym": "sudanés",
     "unMember": true
   },
   {
     "cca2": "SE",
     "ccn3": "752",
-    "name": "Sweden",
-    "capital": "Stockholm",
+    "name": "Suecia",
+    "capital": "Estocolmo",
     "continent": "Europa",
     "population": 10605098,
     "area": 450295,
@@ -3443,14 +3443,14 @@
     "languages": [
       "Swedish"
     ],
-    "demonym": "Swedish",
+    "demonym": "sueco",
     "unMember": true
   },
   {
     "cca2": "SG",
     "ccn3": "702",
-    "name": "Singapore",
-    "capital": "Singapore",
+    "name": "Singapur",
+    "capital": "Singapur",
     "continent": "Asia",
     "population": 6110200,
     "area": 710,
@@ -3464,13 +3464,13 @@
       "Malay",
       "Tamil"
     ],
-    "demonym": "Singaporean",
+    "demonym": "singapurense",
     "unMember": true
   },
   {
     "cca2": "SH",
     "ccn3": "654",
-    "name": "Saint Helena, Ascension and Tristan da Cunha",
+    "name": "Santa Elena, Ascensión y Tristán de Acuña",
     "capital": "Jamestown",
     "continent": "África",
     "population": 5651,
@@ -3483,14 +3483,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Saint Helenian",
+    "demonym": "santahelenense",
     "unMember": false
   },
   {
     "cca2": "SI",
     "ccn3": "705",
-    "name": "Slovenia",
-    "capital": "Ljubljana",
+    "name": "Eslovenia",
+    "capital": "Liubliana",
     "continent": "Europa",
     "population": 2130638,
     "area": 20273,
@@ -3501,13 +3501,13 @@
     "languages": [
       "Slovene"
     ],
-    "demonym": "Slovene",
+    "demonym": "esloveno",
     "unMember": true
   },
   {
     "cca2": "SK",
     "ccn3": "703",
-    "name": "Slovakia",
+    "name": "República Eslovaca",
     "capital": "Bratislava",
     "continent": "Europa",
     "population": 5413813,
@@ -3519,7 +3519,7 @@
     "languages": [
       "Slovak"
     ],
-    "demonym": "Slovak",
+    "demonym": "eslovaco",
     "unMember": true
   },
   {
@@ -3537,14 +3537,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Sierra Leonean",
+    "demonym": "sierraleonés",
     "unMember": true
   },
   {
     "cca2": "SM",
     "ccn3": "674",
     "name": "San Marino",
-    "capital": "City of San Marino",
+    "capital": "San Marino",
     "continent": "Europa",
     "population": 34132,
     "area": 61,
@@ -3555,7 +3555,7 @@
     "languages": [
       "Italian"
     ],
-    "demonym": "Sammarinese",
+    "demonym": "sanmarinense",
     "unMember": true
   },
   {
@@ -3573,14 +3573,14 @@
     "languages": [
       "French"
     ],
-    "demonym": "Senegalese",
+    "demonym": "senegalés",
     "unMember": true
   },
   {
     "cca2": "SO",
     "ccn3": "706",
     "name": "Somalia",
-    "capital": "Mogadishu",
+    "capital": "Mogadiscio",
     "continent": "África",
     "population": 19655000,
     "area": 637657,
@@ -3592,13 +3592,13 @@
       "Arabic",
       "Somali"
     ],
-    "demonym": "Somali",
+    "demonym": "somalí",
     "unMember": true
   },
   {
     "cca2": "SR",
     "ccn3": "740",
-    "name": "Suriname",
+    "name": "Surinam",
     "capital": "Paramaribo",
     "continent": "América",
     "population": 616500,
@@ -3610,14 +3610,14 @@
     "languages": [
       "Dutch"
     ],
-    "demonym": "Surinamer",
+    "demonym": "surinamés",
     "unMember": true
   },
   {
     "cca2": "SS",
     "ccn3": "728",
-    "name": "South Sudan",
-    "capital": "Juba",
+    "name": "Sudán del Sur",
+    "capital": "Yuba",
     "continent": "África",
     "population": 15786898,
     "area": 619745,
@@ -3628,14 +3628,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "South Sudanese",
+    "demonym": "sursudanés",
     "unMember": true
   },
   {
     "cca2": "ST",
     "ccn3": "678",
-    "name": "São Tomé and Príncipe",
-    "capital": "São Tomé",
+    "name": "Santo Tomé y Príncipe",
+    "capital": "Santo Tomé",
     "continent": "África",
     "population": 209607,
     "area": 964,
@@ -3646,7 +3646,7 @@
     "languages": [
       "Portuguese"
     ],
-    "demonym": "Sao Tomean",
+    "demonym": "santotomense",
     "unMember": true
   },
   {
@@ -3664,7 +3664,7 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Salvadoran",
+    "demonym": "salvadoreño",
     "unMember": true
   },
   {
@@ -3684,14 +3684,14 @@
       "French",
       "Dutch"
     ],
-    "demonym": "St. Maartener",
+    "demonym": "sanmartinense",
     "unMember": false
   },
   {
     "cca2": "SY",
     "ccn3": "760",
-    "name": "Syria",
-    "capital": "Damascus",
+    "name": "Siria",
+    "capital": "Damasco",
     "continent": "Asia",
     "population": 25620000,
     "area": 185180,
@@ -3702,13 +3702,13 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Syrian",
+    "demonym": "sirio",
     "unMember": true
   },
   {
     "cca2": "SZ",
     "ccn3": "748",
-    "name": "Eswatini",
+    "name": "Suazilandia",
     "capital": "Mbabane",
     "continent": "África",
     "population": 1235549,
@@ -3722,13 +3722,13 @@
       "English",
       "Swazi"
     ],
-    "demonym": "Swazi",
+    "demonym": "suazi",
     "unMember": true
   },
   {
     "cca2": "TC",
     "ccn3": "796",
-    "name": "Turks and Caicos Islands",
+    "name": "Islas Turks y Caicos",
     "capital": "Cockburn Town",
     "continent": "América",
     "population": 50828,
@@ -3740,14 +3740,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Turks and Caicos Islander",
+    "demonym": "turcocaiqueño",
     "unMember": false
   },
   {
     "cca2": "TD",
     "ccn3": "148",
     "name": "Chad",
-    "capital": "N'Djamena",
+    "capital": "Yamena",
     "continent": "África",
     "population": 19340757,
     "area": 1284000,
@@ -3759,7 +3759,7 @@
       "Arabic",
       "French"
     ],
-    "demonym": "Chadian",
+    "demonym": "chadiano",
     "unMember": true
   },
   {
@@ -3777,13 +3777,13 @@
     "languages": [
       "French"
     ],
-    "demonym": "Togolese",
+    "demonym": "togolés",
     "unMember": true
   },
   {
     "cca2": "TH",
     "ccn3": "764",
-    "name": "Thailand",
+    "name": "Tailandia",
     "capital": "Bangkok",
     "continent": "Asia",
     "population": 65859640,
@@ -3795,14 +3795,14 @@
     "languages": [
       "Thai"
     ],
-    "demonym": "Thai",
+    "demonym": "tailandés",
     "unMember": true
   },
   {
     "cca2": "TJ",
     "ccn3": "762",
-    "name": "Tajikistan",
-    "capital": "Dushanbe",
+    "name": "Tayikistán",
+    "capital": "Dusambé",
     "continent": "Asia",
     "population": 10499000,
     "area": 143100,
@@ -3814,13 +3814,13 @@
       "Russian",
       "Tajik"
     ],
-    "demonym": "Tadzhik",
+    "demonym": "tayiko",
     "unMember": true
   },
   {
     "cca2": "TL",
     "ccn3": "626",
-    "name": "Timor-Leste",
+    "name": "Timor Oriental",
     "capital": "Dili",
     "continent": "Asia",
     "population": 1391221,
@@ -3833,14 +3833,14 @@
       "Portuguese",
       "Tetum"
     ],
-    "demonym": "East Timorese",
+    "demonym": "timorense",
     "unMember": true
   },
   {
     "cca2": "TM",
     "ccn3": "795",
-    "name": "Turkmenistan",
-    "capital": "Ashgabat",
+    "name": "Turkmenistán",
+    "capital": "Asjabad",
     "continent": "Asia",
     "population": 7057841,
     "area": 488100,
@@ -3852,14 +3852,14 @@
       "Russian",
       "Turkmen"
     ],
-    "demonym": "Turkmen",
+    "demonym": "turcomano",
     "unMember": true
   },
   {
     "cca2": "TN",
     "ccn3": "788",
-    "name": "Tunisia",
-    "capital": "Tunis",
+    "name": "Túnez",
+    "capital": "Túnez",
     "continent": "África",
     "population": 11972169,
     "area": 163610,
@@ -3870,14 +3870,14 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Tunisian",
+    "demonym": "tunecino",
     "unMember": true
   },
   {
     "cca2": "TO",
     "ccn3": "776",
     "name": "Tonga",
-    "capital": "Nuku'alofa",
+    "capital": "Nukualofa",
     "continent": "Oceanía",
     "population": 100179,
     "area": 747,
@@ -3889,13 +3889,13 @@
       "English",
       "Tongan"
     ],
-    "demonym": "Tongan",
+    "demonym": "tongano",
     "unMember": true
   },
   {
     "cca2": "TR",
     "ccn3": "792",
-    "name": "Turkey",
+    "name": "Turquía",
     "capital": "Ankara",
     "continent": "Asia",
     "population": 85664944,
@@ -3907,14 +3907,14 @@
     "languages": [
       "Turkish"
     ],
-    "demonym": "Turkish",
+    "demonym": "turco",
     "unMember": true
   },
   {
     "cca2": "TT",
     "ccn3": "780",
-    "name": "Trinidad and Tobago",
-    "capital": "Port of Spain",
+    "name": "Trinidad y Tobago",
+    "capital": "Puerto España",
     "continent": "América",
     "population": 1367764,
     "area": 5130,
@@ -3925,7 +3925,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Trinidadian",
+    "demonym": "trinitense",
     "unMember": true
   },
   {
@@ -3945,14 +3945,14 @@
       "English",
       "Tuvaluan"
     ],
-    "demonym": "Tuvaluan",
+    "demonym": "tuvaluano",
     "unMember": true
   },
   {
     "cca2": "TW",
     "ccn3": "158",
-    "name": "Taiwan",
-    "capital": "Taipei",
+    "name": "Taiwán",
+    "capital": "Taipéi",
     "continent": "Asia",
     "population": 23317031,
     "area": 36197,
@@ -3963,7 +3963,7 @@
     "languages": [
       "Chinese"
     ],
-    "demonym": "Taiwanese",
+    "demonym": "taiwanés",
     "unMember": false
   },
   {
@@ -3982,14 +3982,14 @@
       "English",
       "Swahili"
     ],
-    "demonym": "Tanzanian",
+    "demonym": "tanzano",
     "unMember": true
   },
   {
     "cca2": "UA",
     "ccn3": "804",
-    "name": "Ukraine",
-    "capital": "Kyiv",
+    "name": "Ucrania",
+    "capital": "Kiev",
     "continent": "Europa",
     "population": 32862000,
     "area": 603550,
@@ -4000,7 +4000,7 @@
     "languages": [
       "Ukrainian"
     ],
-    "demonym": "Ukrainian",
+    "demonym": "ucraniano",
     "unMember": true
   },
   {
@@ -4019,14 +4019,14 @@
       "English",
       "Swahili"
     ],
-    "demonym": "Ugandan",
+    "demonym": "ugandés",
     "unMember": true
   },
   {
     "cca2": "US",
     "ccn3": "840",
-    "name": "United States",
-    "capital": "Washington, D.C.",
+    "name": "Estados Unidos",
+    "capital": "Washington D. C.",
     "continent": "América",
     "population": 340110988,
     "area": 9525067,
@@ -4037,7 +4037,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "American",
+    "demonym": "estadounidense",
     "unMember": true
   },
   {
@@ -4055,14 +4055,14 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Uruguayan",
+    "demonym": "uruguayo",
     "unMember": true
   },
   {
     "cca2": "UZ",
     "ccn3": "860",
-    "name": "Uzbekistan",
-    "capital": "Tashkent",
+    "name": "Uzbekistán",
+    "capital": "Taskent",
     "continent": "Asia",
     "population": 37859698,
     "area": 447400,
@@ -4074,14 +4074,14 @@
       "Russian",
       "Uzbek"
     ],
-    "demonym": "Uzbekistani",
+    "demonym": "uzbeko",
     "unMember": true
   },
   {
     "cca2": "VA",
     "ccn3": "336",
-    "name": "Vatican City",
-    "capital": "Vatican City",
+    "name": "Ciudad del Vaticano",
+    "capital": "Ciudad del Vaticano",
     "continent": "Europa",
     "population": 882,
     "area": 0.49,
@@ -4093,13 +4093,13 @@
       "Italian",
       "Latin"
     ],
-    "demonym": "Vatican",
+    "demonym": "vaticano",
     "unMember": true
   },
   {
     "cca2": "VC",
     "ccn3": "670",
-    "name": "Saint Vincent and the Grenadines",
+    "name": "San Vicente y Granadinas",
     "capital": "Kingstown",
     "continent": "América",
     "population": 110872,
@@ -4111,7 +4111,7 @@
     "languages": [
       "English"
     ],
-    "demonym": "Saint Vincentian",
+    "demonym": "sanvicentino",
     "unMember": true
   },
   {
@@ -4129,13 +4129,13 @@
     "languages": [
       "Spanish"
     ],
-    "demonym": "Venezuelan",
+    "demonym": "venezolano",
     "unMember": true
   },
   {
     "cca2": "VG",
     "ccn3": "092",
-    "name": "British Virgin Islands",
+    "name": "Islas Vírgenes del Reino Unido",
     "capital": "Road Town",
     "continent": "América",
     "population": 39471,
@@ -4147,13 +4147,13 @@
     "languages": [
       "English"
     ],
-    "demonym": "Virgin Islander",
+    "demonym": "virgenense británico",
     "unMember": false
   },
   {
     "cca2": "VI",
     "ccn3": "850",
-    "name": "United States Virgin Islands",
+    "name": "Islas Vírgenes de los Estados Unidos",
     "capital": "Charlotte Amalie",
     "continent": "América",
     "population": 87146,
@@ -4165,14 +4165,14 @@
     "languages": [
       "English"
     ],
-    "demonym": "Virgin Islander",
+    "demonym": "virgenense estadounidense",
     "unMember": false
   },
   {
     "cca2": "VN",
     "ccn3": "704",
     "name": "Vietnam",
-    "capital": "Hanoi",
+    "capital": "Hanói",
     "continent": "Asia",
     "population": 101343800,
     "area": 331212,
@@ -4183,7 +4183,7 @@
     "languages": [
       "Vietnamese"
     ],
-    "demonym": "Vietnamese",
+    "demonym": "vietnamita",
     "unMember": true
   },
   {
@@ -4203,13 +4203,13 @@
       "English",
       "French"
     ],
-    "demonym": "Ni-Vanuatu",
+    "demonym": "vanuatuense",
     "unMember": true
   },
   {
     "cca2": "WF",
     "ccn3": "876",
-    "name": "Wallis and Futuna",
+    "name": "Wallis y Futuna",
     "capital": "Mata-Utu",
     "continent": "Oceanía",
     "population": 11620,
@@ -4221,7 +4221,7 @@
     "languages": [
       "French"
     ],
-    "demonym": "Wallis and Futuna Islander",
+    "demonym": "walisiano",
     "unMember": false
   },
   {
@@ -4240,7 +4240,7 @@
       "English",
       "Samoan"
     ],
-    "demonym": "Samoan",
+    "demonym": "samoano",
     "unMember": true
   },
   {
@@ -4259,14 +4259,14 @@
       "Albanian",
       "Serbian"
     ],
-    "demonym": "Kosovar",
+    "demonym": "kosovar",
     "unMember": false
   },
   {
     "cca2": "YE",
     "ccn3": "887",
     "name": "Yemen",
-    "capital": "Sana'a",
+    "capital": "Saná",
     "continent": "Asia",
     "population": 32684503,
     "area": 527968,
@@ -4277,13 +4277,13 @@
     "languages": [
       "Arabic"
     ],
-    "demonym": "Yemeni",
+    "demonym": "yemení",
     "unMember": true
   },
   {
     "cca2": "ZA",
     "ccn3": "710",
-    "name": "South Africa",
+    "name": "Sudáfrica",
     "capital": "Pretoria",
     "continent": "África",
     "population": 63100945,
@@ -4305,7 +4305,7 @@
       "Xhosa",
       "Zulu"
     ],
-    "demonym": "South African",
+    "demonym": "sudafricano",
     "unMember": true
   },
   {
@@ -4323,13 +4323,13 @@
     "languages": [
       "English"
     ],
-    "demonym": "Zambian",
+    "demonym": "zambiano",
     "unMember": true
   },
   {
     "cca2": "ZW",
     "ccn3": "716",
-    "name": "Zimbabwe",
+    "name": "Zimbabue",
     "capital": "Harare",
     "continent": "África",
     "population": 17073087,
@@ -4355,7 +4355,7 @@
       "Xhosa",
       "Zimbabwean Sign Language"
     ],
-    "demonym": "Zimbabwean",
+    "demonym": "zimbabuense",
     "unMember": true
   }
 ]

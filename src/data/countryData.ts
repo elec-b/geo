@@ -34,6 +34,20 @@ const SYNTHETIC_COUNTRIES: CountryData[] = [
     demonym: 'Turcochipriota',
     unMember: false,
   },
+  {
+    cca2: 'AQ',
+    ccn3: '010',
+    name: 'Antártida',
+    capital: '',
+    continent: 'Antártida',
+    population: 0,
+    area: 14200000,
+    flagSvg: '',
+    currencies: [],
+    languages: [],
+    demonym: '',
+    unMember: false,
+  },
 ];
 
 const SYNTHETIC_CAPITALS: Array<[string, CapitalCoords]> = [

@@ -101,25 +101,24 @@
 - [x] `flyTo` offset dinámico: `latOffset` se divide por el zoom objetivo (`targetScale`) dentro de `flyTo()`. A zoom 5× el offset pasa de 15° a ~3°; a zoom 20× baja a ~0.75°. Resuelve desplazamiento excesivo en microestados y territorios no-ONU
 - [x] Etiquetas: `ctx.measureText()` reemplaza estimación `fontSize * length * 0.55` para bounding boxes precisas; capitales que colisionan entre sí se apilan verticalmente (+2px gap) en vez de descartarse (Roma + Ciudad del Vaticano coexisten)
 
+### i18n de datos y Antártida
+- [x] Archivo suplementario `scripts/data/capitals-es.json` con 232 capitales y gentilicios en español
+- [x] `fetch-countries.ts`: usa `translations.spa` para nombres, archivo suplementario para capitales y gentilicios
+- [x] Regenerados `countries.json` y `capitals.json` con datos en español
+- [x] Etiquetas del globo en español (nueva prop `countryNames` en GlobeD3)
+- [x] Ordenamiento de tabla con locale español (`localeCompare('es')`)
+- [x] Antártida: mapeo ID 010 → AQ, datos sintéticos, ficha especial (Tratado Antártico), etiqueta ámbar, excluida de tabla
+
 ---
 
 ## Próximos pasos
 
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
-### Datos en español
-- [ ] Crear archivo `scripts/data/capitals-es.json` con traducciones de capitales al español (las que difieren del inglés: Londres, Roma, Pekín, etc.)
-- [ ] Modificar `fetch-countries.ts`: usar `translations.spa.common` para países, archivo suplementario para capitales, `demonyms.spa.m` para gentilicios. Sin fallback a inglés — reportar error si falta traducción
-- [ ] Regenerar `countries.json` y `capitals.json` con datos en español
-- [ ] Etiquetas del globo en español: nueva prop `countryNames` en GlobeD3 (capitales salen del JSON regenerado automáticamente)
-- [ ] Verificar ordenamiento de tabla con locale español (ñ, tildes)
-
-### Explorar: Antártida
-- [ ] Reconocer Antártida (ID `010`) en el GeoJSON → `cca2: 'AQ'` (ver DESIGN.md § «Antártida»)
-- [ ] Datos sintéticos: nombre, superficie (~14M km²), sin capital/población/moneda
-- [ ] Ficha especial: superficie + texto informativo del Tratado Antártico (1959)
-- [ ] Etiqueta ámbar en el globo (aparece automáticamente via sistema existente)
-- [ ] Excluir de la tabla (no es un país)
+### Ficha de país: mejoras
+- [ ] Traducir monedas al idioma de la app (ampliar archivo suplementario; incluir símbolo: "Euro (€)"). REST Countries da `currencies[].name` solo en inglés y `currencies[].symbol` como dato universal
+- [ ] Nuevo campo de idioma(s): idiomas oficiales ordenados por hablantes, max 3 visibles + "...". Traducir nombres al idioma de la app (ampliar archivo suplementario). REST Countries da `languages` solo en inglés y no indica orden por hablantes — investigar fuente para el orden (Wikidata, Ethnologue, o curación manual)
+- [ ] Enlace a Wikipedia localizado: URL en el idioma de la app, fallback a inglés. Validar links en el pipeline de datos con petición HEAD. Alternativa más robusta y preferida: usar Wikidata Q-IDs para resolver URLs por idioma (inmune a renombrados de artículos). Es importante que el contenido de la app se mantenga sólido (sin errores) y actualizado (sin imprecisiones) conforme pasa el tiempo y de manera automática. Leer más sobre esto en design.md
 
 ### Experiencia: Jugar
 - [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)
@@ -156,7 +155,7 @@
 ### Internacionalización (UI completa)
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
-  - ⚠️ Los datos sintéticos en `countryData.ts` (SOL, CYN, y AQ cuando se implemente) tienen nombres hardcodeados en español. Integrar en el sistema de traducción
+  - ⚠️ Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español. Integrar en el sistema de traducción
 - [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
 - [ ] Traducción a idiomas disponibles en iOS y Android
 

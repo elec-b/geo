@@ -10,6 +10,7 @@ const CONTINENT_COLORS: Record<string, string> = {
   'Asia': 'var(--color-asia)',
   'Europa': 'var(--color-europe)',
   'Oceanía': 'var(--color-oceania)',
+  'Antártida': 'var(--color-accent-amber)',
 };
 
 interface CountryCardProps {
@@ -25,15 +26,20 @@ function formatNumber(n: number): string {
 
 export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
   const continentColor = CONTINENT_COLORS[country.continent] ?? 'var(--color-text-secondary)';
+  const isAntarctica = country.cca2 === 'AQ';
 
   return (
     <div className="country-card" role="dialog" aria-label={`Ficha de ${country.name}`}>
-      {/* Disclaimer para territorios no-ONU */}
-      {!country.unMember && (
+      {/* Disclaimer contextual */}
+      {isAntarctica ? (
+        <div className="country-card__disclaimer">
+          Territorio internacional — Tratado Antártico (1959)
+        </div>
+      ) : !country.unMember ? (
         <div className="country-card__disclaimer">
           Territorio no reconocido por la ONU
         </div>
-      )}
+      ) : null}
 
       {/* Cabecera: bandera + nombre + cerrar */}
       <div className="country-card__header">
@@ -66,44 +72,60 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
         </button>
       </div>
 
-      {/* Datos */}
-      <div className="country-card__grid">
-        <div className="country-card__field">
-          <span className="country-card__label">Capital</span>
-          <span className="country-card__value">{country.capital || '—'}</span>
-        </div>
-        <div className="country-card__field">
-          <span className="country-card__label">Población</span>
-          <span className="country-card__value">
-            {formatNumber(country.population)} hab.
-            {rankings && <span className="country-card__rank"> #{rankings.populationRank}</span>}
-          </span>
-        </div>
-        <div className="country-card__field">
-          <span className="country-card__label">Superficie</span>
-          <span className="country-card__value">
-            {formatNumber(country.area)} km²
-            {rankings && <span className="country-card__rank"> #{rankings.areaRank}</span>}
-          </span>
-        </div>
-        {country.area > 0 && (
+      {/* Datos: layout especial para Antártida */}
+      {isAntarctica ? (
+        <div className="country-card__grid">
           <div className="country-card__field">
-            <span className="country-card__label">Densidad</span>
-            <span className="country-card__value">
-              {formatNumber(Math.round(country.population / country.area))} hab/km²
-              {rankings && <span className="country-card__rank"> #{rankings.densityRank}</span>}
+            <span className="country-card__label">Superficie</span>
+            <span className="country-card__value">{formatNumber(country.area)} km²</span>
+          </div>
+          <div className="country-card__field country-card__field--full">
+            <span className="country-card__value country-card__value--info">
+              La Antártida no pertenece a ningún país. El Tratado Antártico, firmado en 1959, la
+              reserva para la investigación científica y prohíbe la actividad militar y la
+              explotación de sus recursos.
             </span>
           </div>
-        )}
-        <div className="country-card__field">
-          <span className="country-card__label">Moneda</span>
-          <span className="country-card__value">{country.currencies.join(', ') || '—'}</span>
         </div>
-        <div className="country-card__field">
-          <span className="country-card__label">Gentilicio</span>
-          <span className="country-card__value">{country.demonym || '—'}</span>
+      ) : (
+        <div className="country-card__grid">
+          <div className="country-card__field">
+            <span className="country-card__label">Capital</span>
+            <span className="country-card__value">{country.capital || '—'}</span>
+          </div>
+          <div className="country-card__field">
+            <span className="country-card__label">Población</span>
+            <span className="country-card__value">
+              {formatNumber(country.population)} hab.
+              {rankings && <span className="country-card__rank"> #{rankings.populationRank}</span>}
+            </span>
+          </div>
+          <div className="country-card__field">
+            <span className="country-card__label">Superficie</span>
+            <span className="country-card__value">
+              {formatNumber(country.area)} km²
+              {rankings && <span className="country-card__rank"> #{rankings.areaRank}</span>}
+            </span>
+          </div>
+          {country.area > 0 && (
+            <div className="country-card__field">
+              <span className="country-card__label">Densidad</span>
+              <span className="country-card__value">
+                {formatNumber(Math.round(country.population / country.area))} hab/km²
+                {rankings && <span className="country-card__rank"> #{rankings.densityRank}</span>}
+              </span>
+            </div>
+          )}
+          <div className="country-card__field">
+            <span className="country-card__label">Moneda</span>
+            <span className="country-card__value">{country.currencies.join(', ') || '—'}</span>
+          </div>
+          <div className="country-card__field">
+            <span className="country-card__label">Gentilicio</span>
+            <span className="country-card__value">{country.demonym || '—'}</span>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

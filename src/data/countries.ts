@@ -71,6 +71,12 @@ export async function loadCountriesGeoJson(): Promise<FeatureCollection<Geometry
       }
     }
 
+    // Caso especial: Antártida (no es un país ni territorio soberano)
+    if (!cca2 && numericId === '010') {
+      cca2 = 'AQ';
+      isUNMember = false;
+    }
+
     feature.properties = { ...feature.properties, cca2, isUNMember };
   }
 

@@ -3,6 +3,9 @@
 /** Continentes (5 regiones del mundo) */
 export type Continent = 'África' | 'América' | 'Asia' | 'Europa' | 'Oceanía';
 
+/** Continente extendido para incluir Antártida (no es un continente habitado) */
+export type ContinentOrSpecial = Continent | 'Antártida';
+
 /** Niveles de dificultad del juego */
 export type GameLevel = 'turista' | 'mochilero' | 'guía';
 
@@ -12,7 +15,7 @@ export interface CountryData {
   ccn3: string;
   name: string;
   capital: string;
-  continent: Continent;
+  continent: ContinentOrSpecial;
   population: number;
   area: number;
   flagSvg: string;
