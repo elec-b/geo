@@ -46,6 +46,8 @@ interface RestCountry {
 interface SupplementaryEntry {
   capital: string;
   demonym: string;
+  currencies?: { name: string; symbol: string }[];
+  languages?: string[];
 }
 
 interface CountryEntry {
@@ -57,9 +59,11 @@ interface CountryEntry {
   population: number;
   area: number;
   flagSvg: string;
-  currencies: string[];
+  currencies: { name: string; symbol: string }[];
   languages: string[];
   demonym: string;
+  hdi: number | null;
+  ihdi: number | null;
   unMember: boolean;
 }
 
@@ -68,7 +72,17 @@ interface CapitalEntry {
   latlng: [number, number];
 }
 
-function toCountryEntry(c: RestCountry, isUN: boolean, supp: Record<string, SupplementaryEntry>): CountryEntry {
+interface HdiEntry {
+  hdi: number;
+  ihdi: number | null;
+}
+
+function toCountryEntry(
+  c: RestCountry,
+  isUN: boolean,
+  supp: Record<string, SupplementaryEntry>,
+  hdiData: Record<string, HdiEntry>,
+): CountryEntry {
   // Nombre del país en español (desde REST Countries translations.spa)
   const name = c.translations?.spa?.common;
   if (!name) throw new Error(`Sin traducción española para ${c.cca2} (${c.name.common})`);
@@ -76,6 +90,19 @@ function toCountryEntry(c: RestCountry, isUN: boolean, supp: Record<string, Supp
   // Capital y gentilicio en español (desde archivo suplementario)
   const suppEntry = supp[c.cca2];
   if (!suppEntry) throw new Error(`Sin datos suplementarios para ${c.cca2} (${c.name.common})`);
+
+  // Monedas: preferir suplementario (español), fallback a REST Countries
+  const currencies: { name: string; symbol: string }[] = suppEntry.currencies
+    ?? (c.currencies
+      ? Object.values(c.currencies).map((cur) => ({ name: cur.name, symbol: cur.symbol ?? '' }))
+      : []);
+
+  // Idiomas: preferir suplementario (español), fallback a REST Countries
+  const languages: string[] = suppEntry.languages
+    ?? (c.languages ? Object.values(c.languages) : []);
+
+  // HDI / IHDI
+  const hdi = hdiData[c.cca2] ?? null;
 
   return {
     cca2: c.cca2,
@@ -86,19 +113,27 @@ function toCountryEntry(c: RestCountry, isUN: boolean, supp: Record<string, Supp
     population: c.population,
     area: c.area,
     flagSvg: c.flags.svg,
-    currencies: c.currencies ? Object.values(c.currencies).map((cur) => cur.name) : [],
-    languages: c.languages ? Object.values(c.languages) : [],
+    currencies,
+    languages,
     demonym: suppEntry.demonym,
+    hdi: hdi?.hdi ?? null,
+    ihdi: hdi?.ihdi ?? null,
     unMember: isUN,
   };
 }
 
 async function main() {
-  // Cargar datos suplementarios (capitales y gentilicios en español)
+  // Cargar datos suplementarios (capitales, gentilicios, monedas e idiomas en español)
   const SUPP_PATH = resolve(__dirname, 'data', 'capitals-es.json');
   const supplementary: Record<string, SupplementaryEntry> =
     JSON.parse(readFileSync(SUPP_PATH, 'utf-8'));
   console.log(`Datos suplementarios cargados: ${Object.keys(supplementary).length} entradas`);
+
+  // Cargar datos HDI / IHDI
+  const HDI_PATH = resolve(__dirname, 'data', 'hdi.json');
+  const hdiData: Record<string, HdiEntry> =
+    JSON.parse(readFileSync(HDI_PATH, 'utf-8'));
+  console.log(`Datos HDI cargados: ${Object.keys(hdiData).length} entradas`);
 
   console.log('Descargando datos de REST Countries v3.1...');
 
@@ -160,8 +195,8 @@ async function main() {
   // --- 3. Generar salida ---
 
   const countries: CountryEntry[] = [
-    ...unFiltered.map((c) => toCountryEntry(c, true, supplementary)),
-    ...nonUnFiltered.map((c) => toCountryEntry(c, false, supplementary)),
+    ...unFiltered.map((c) => toCountryEntry(c, true, supplementary, hdiData)),
+    ...nonUnFiltered.map((c) => toCountryEntry(c, false, supplementary, hdiData)),
   ];
 
   // Ordenar alfabéticamente por cca2

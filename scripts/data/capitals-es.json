@@ -1,234 +1,1394 @@
 {
-  "AD": { "capital": "Andorra la Vella", "demonym": "andorrano" },
-  "AE": { "capital": "Abu Dabi", "demonym": "emiratí" },
-  "AF": { "capital": "Kabul", "demonym": "afgano" },
-  "AG": { "capital": "Saint John's", "demonym": "antigüeño" },
-  "AI": { "capital": "The Valley", "demonym": "anguilense" },
-  "AL": { "capital": "Tirana", "demonym": "albanés" },
-  "AM": { "capital": "Ereván", "demonym": "armenio" },
-  "AO": { "capital": "Luanda", "demonym": "angoleño" },
-  "AR": { "capital": "Buenos Aires", "demonym": "argentino" },
-  "AS": { "capital": "Pago Pago", "demonym": "samoano americano" },
-  "AT": { "capital": "Viena", "demonym": "austriaco" },
-  "AU": { "capital": "Canberra", "demonym": "australiano" },
-  "AW": { "capital": "Oranjestad", "demonym": "arubeño" },
-  "AX": { "capital": "Mariehamn", "demonym": "alandés" },
-  "AZ": { "capital": "Bakú", "demonym": "azerbaiyano" },
-  "BA": { "capital": "Sarajevo", "demonym": "bosnio" },
-  "BB": { "capital": "Bridgetown", "demonym": "barbadense" },
-  "BD": { "capital": "Daca", "demonym": "bangladesí" },
-  "BE": { "capital": "Bruselas", "demonym": "belga" },
-  "BF": { "capital": "Uagadugú", "demonym": "burkinés" },
-  "BG": { "capital": "Sofía", "demonym": "búlgaro" },
-  "BH": { "capital": "Manama", "demonym": "bareiní" },
-  "BI": { "capital": "Gitega", "demonym": "burundés" },
-  "BJ": { "capital": "Porto Novo", "demonym": "beninés" },
-  "BL": { "capital": "Gustavia", "demonym": "sanbartolomeño" },
-  "BM": { "capital": "Hamilton", "demonym": "bermudeño" },
-  "BN": { "capital": "Bandar Seri Begawan", "demonym": "bruneano" },
-  "BO": { "capital": "Sucre", "demonym": "boliviano" },
-  "BR": { "capital": "Brasilia", "demonym": "brasileño" },
-  "BS": { "capital": "Nasáu", "demonym": "bahameño" },
-  "BT": { "capital": "Timbu", "demonym": "butanés" },
-  "BW": { "capital": "Gaborone", "demonym": "botsuano" },
-  "BY": { "capital": "Minsk", "demonym": "bielorruso" },
-  "BZ": { "capital": "Belmopán", "demonym": "beliceño" },
-  "CA": { "capital": "Ottawa", "demonym": "canadiense" },
-  "CD": { "capital": "Kinsasa", "demonym": "congoleño" },
-  "CF": { "capital": "Bangui", "demonym": "centroafricano" },
-  "CG": { "capital": "Brazzaville", "demonym": "congoleño" },
-  "CH": { "capital": "Berna", "demonym": "suizo" },
-  "CI": { "capital": "Yamusukro", "demonym": "marfileño" },
-  "CK": { "capital": "Avarua", "demonym": "cookiano" },
-  "CL": { "capital": "Santiago", "demonym": "chileno" },
-  "CM": { "capital": "Yaundé", "demonym": "camerunés" },
-  "CN": { "capital": "Pekín", "demonym": "chino" },
-  "CO": { "capital": "Bogotá", "demonym": "colombiano" },
-  "CR": { "capital": "San José", "demonym": "costarricense" },
-  "CU": { "capital": "La Habana", "demonym": "cubano" },
-  "CV": { "capital": "Praia", "demonym": "caboverdiano" },
-  "CW": { "capital": "Willemstad", "demonym": "curazaleño" },
-  "CY": { "capital": "Nicosia", "demonym": "chipriota" },
-  "CZ": { "capital": "Praga", "demonym": "checo" },
-  "DE": { "capital": "Berlín", "demonym": "alemán" },
-  "DJ": { "capital": "Yibuti", "demonym": "yibutiano" },
-  "DK": { "capital": "Copenhague", "demonym": "danés" },
-  "DM": { "capital": "Roseau", "demonym": "dominiqués" },
-  "DO": { "capital": "Santo Domingo", "demonym": "dominicano" },
-  "DZ": { "capital": "Argel", "demonym": "argelino" },
-  "EC": { "capital": "Quito", "demonym": "ecuatoriano" },
-  "EE": { "capital": "Tallin", "demonym": "estonio" },
-  "EG": { "capital": "El Cairo", "demonym": "egipcio" },
-  "EH": { "capital": "El Aaiún", "demonym": "saharaui" },
-  "ER": { "capital": "Asmara", "demonym": "eritreo" },
-  "ES": { "capital": "Madrid", "demonym": "español" },
-  "ET": { "capital": "Adís Abeba", "demonym": "etíope" },
-  "FI": { "capital": "Helsinki", "demonym": "finlandés" },
-  "FJ": { "capital": "Suva", "demonym": "fiyiano" },
-  "FK": { "capital": "Stanley", "demonym": "malvinense" },
-  "FM": { "capital": "Palikir", "demonym": "micronesio" },
-  "FO": { "capital": "Tórshavn", "demonym": "feroés" },
-  "FR": { "capital": "París", "demonym": "francés" },
-  "GA": { "capital": "Libreville", "demonym": "gabonés" },
-  "GB": { "capital": "Londres", "demonym": "británico" },
-  "GD": { "capital": "Saint George", "demonym": "granadino" },
-  "GE": { "capital": "Tiflis", "demonym": "georgiano" },
-  "GG": { "capital": "Saint Peter Port", "demonym": "guerneseyés" },
-  "GH": { "capital": "Acra", "demonym": "ghanés" },
-  "GL": { "capital": "Nuuk", "demonym": "groenlandés" },
-  "GM": { "capital": "Banjul", "demonym": "gambiano" },
-  "GN": { "capital": "Conakri", "demonym": "guineano" },
-  "GQ": { "capital": "Malabo", "demonym": "ecuatoguineano" },
-  "GR": { "capital": "Atenas", "demonym": "griego" },
-  "GT": { "capital": "Ciudad de Guatemala", "demonym": "guatemalteco" },
-  "GU": { "capital": "Hagåtña", "demonym": "guameño" },
-  "GW": { "capital": "Bisáu", "demonym": "guineano-bisauense" },
-  "GY": { "capital": "Georgetown", "demonym": "guyanés" },
-  "HK": { "capital": "Victoria", "demonym": "hongkonés" },
-  "HN": { "capital": "Tegucigalpa", "demonym": "hondureño" },
-  "HR": { "capital": "Zagreb", "demonym": "croata" },
-  "HT": { "capital": "Puerto Príncipe", "demonym": "haitiano" },
-  "HU": { "capital": "Budapest", "demonym": "húngaro" },
-  "ID": { "capital": "Yakarta", "demonym": "indonesio" },
-  "IE": { "capital": "Dublín", "demonym": "irlandés" },
-  "IL": { "capital": "Jerusalén", "demonym": "israelí" },
-  "IM": { "capital": "Douglas", "demonym": "manés" },
-  "IN": { "capital": "Nueva Delhi", "demonym": "indio" },
-  "IQ": { "capital": "Bagdad", "demonym": "iraquí" },
-  "IR": { "capital": "Teherán", "demonym": "iraní" },
-  "IS": { "capital": "Reikiavik", "demonym": "islandés" },
-  "IT": { "capital": "Roma", "demonym": "italiano" },
-  "JE": { "capital": "Saint Helier", "demonym": "jerseyés" },
-  "JM": { "capital": "Kingston", "demonym": "jamaicano" },
-  "JO": { "capital": "Amán", "demonym": "jordano" },
-  "JP": { "capital": "Tokio", "demonym": "japonés" },
-  "KE": { "capital": "Nairobi", "demonym": "keniata" },
-  "KG": { "capital": "Biskek", "demonym": "kirguís" },
-  "KH": { "capital": "Nom Pen", "demonym": "camboyano" },
-  "KI": { "capital": "Tarawa Sur", "demonym": "kiribatiano" },
-  "KM": { "capital": "Moroni", "demonym": "comorense" },
-  "KN": { "capital": "Basseterre", "demonym": "sancrístobalense" },
-  "KP": { "capital": "Pionyang", "demonym": "norcoreano" },
-  "KR": { "capital": "Seúl", "demonym": "surcoreano" },
-  "KW": { "capital": "Ciudad de Kuwait", "demonym": "kuwaití" },
-  "KY": { "capital": "George Town", "demonym": "caimanés" },
-  "KZ": { "capital": "Astaná", "demonym": "kazajo" },
-  "LA": { "capital": "Vientián", "demonym": "laosiano" },
-  "LB": { "capital": "Beirut", "demonym": "libanés" },
-  "LC": { "capital": "Castries", "demonym": "santalucense" },
-  "LI": { "capital": "Vaduz", "demonym": "liechtensteiniano" },
-  "LK": { "capital": "Sri Jayawardenepura Kotte", "demonym": "ceilanés" },
-  "LR": { "capital": "Monrovia", "demonym": "liberiano" },
-  "LS": { "capital": "Maseru", "demonym": "lesotense" },
-  "LT": { "capital": "Vilna", "demonym": "lituano" },
-  "LU": { "capital": "Luxemburgo", "demonym": "luxemburgués" },
-  "LV": { "capital": "Riga", "demonym": "letón" },
-  "LY": { "capital": "Trípoli", "demonym": "libio" },
-  "MA": { "capital": "Rabat", "demonym": "marroquí" },
-  "MC": { "capital": "Mónaco", "demonym": "monegasco" },
-  "MD": { "capital": "Chisináu", "demonym": "moldavo" },
-  "ME": { "capital": "Podgorica", "demonym": "montenegrino" },
-  "MF": { "capital": "Marigot", "demonym": "sanmartinense" },
-  "MG": { "capital": "Antananarivo", "demonym": "malgache" },
-  "MH": { "capital": "Majuro", "demonym": "marshalés" },
-  "MK": { "capital": "Skopie", "demonym": "macedonio" },
-  "ML": { "capital": "Bamako", "demonym": "maliense" },
-  "MM": { "capital": "Naipyidó", "demonym": "birmano" },
-  "MN": { "capital": "Ulán Bator", "demonym": "mongol" },
-  "MO": { "capital": "", "demonym": "macaense" },
-  "MP": { "capital": "Saipán", "demonym": "marianense" },
-  "MR": { "capital": "Nuakchot", "demonym": "mauritano" },
-  "MS": { "capital": "Plymouth", "demonym": "monserratense" },
-  "MT": { "capital": "La Valeta", "demonym": "maltés" },
-  "MU": { "capital": "Port Louis", "demonym": "mauriciano" },
-  "MV": { "capital": "Malé", "demonym": "maldivo" },
-  "MW": { "capital": "Lilongüe", "demonym": "malauí" },
-  "MX": { "capital": "Ciudad de México", "demonym": "mexicano" },
-  "MY": { "capital": "Kuala Lumpur", "demonym": "malasio" },
-  "MZ": { "capital": "Maputo", "demonym": "mozambiqueño" },
-  "NA": { "capital": "Windhoek", "demonym": "namibio" },
-  "NC": { "capital": "Numea", "demonym": "neocaledonio" },
-  "NE": { "capital": "Niamey", "demonym": "nigerino" },
-  "NF": { "capital": "Kingston", "demonym": "norfolkense" },
-  "NG": { "capital": "Abuya", "demonym": "nigeriano" },
-  "NI": { "capital": "Managua", "demonym": "nicaragüense" },
-  "NL": { "capital": "Ámsterdam", "demonym": "neerlandés" },
-  "NO": { "capital": "Oslo", "demonym": "noruego" },
-  "NP": { "capital": "Katmandú", "demonym": "nepalí" },
-  "NR": { "capital": "Yaren", "demonym": "nauruano" },
-  "NU": { "capital": "Alofi", "demonym": "niueño" },
-  "NZ": { "capital": "Wellington", "demonym": "neozelandés" },
-  "OM": { "capital": "Mascate", "demonym": "omaní" },
-  "PA": { "capital": "Ciudad de Panamá", "demonym": "panameño" },
-  "PE": { "capital": "Lima", "demonym": "peruano" },
-  "PF": { "capital": "Papeete", "demonym": "polinesio francés" },
-  "PG": { "capital": "Port Moresby", "demonym": "papú" },
-  "PH": { "capital": "Manila", "demonym": "filipino" },
-  "PK": { "capital": "Islamabad", "demonym": "pakistaní" },
-  "PL": { "capital": "Varsovia", "demonym": "polaco" },
-  "PM": { "capital": "Saint-Pierre", "demonym": "miquelonense" },
-  "PN": { "capital": "Adamstown", "demonym": "pitcairnense" },
-  "PR": { "capital": "San Juan", "demonym": "puertorriqueño" },
-  "PS": { "capital": "Ramala", "demonym": "palestino" },
-  "PT": { "capital": "Lisboa", "demonym": "portugués" },
-  "PW": { "capital": "Ngerulmud", "demonym": "palauano" },
-  "PY": { "capital": "Asunción", "demonym": "paraguayo" },
-  "QA": { "capital": "Doha", "demonym": "catarí" },
-  "RO": { "capital": "Bucarest", "demonym": "rumano" },
-  "RS": { "capital": "Belgrado", "demonym": "serbio" },
-  "RU": { "capital": "Moscú", "demonym": "ruso" },
-  "RW": { "capital": "Kigali", "demonym": "ruandés" },
-  "SA": { "capital": "Riad", "demonym": "saudí" },
-  "SB": { "capital": "Honiara", "demonym": "salomonense" },
-  "SC": { "capital": "Victoria", "demonym": "seychelense" },
-  "SD": { "capital": "Jartum", "demonym": "sudanés" },
-  "SE": { "capital": "Estocolmo", "demonym": "sueco" },
-  "SG": { "capital": "Singapur", "demonym": "singapurense" },
-  "SH": { "capital": "Jamestown", "demonym": "santahelenense" },
-  "SI": { "capital": "Liubliana", "demonym": "esloveno" },
-  "SK": { "capital": "Bratislava", "demonym": "eslovaco" },
-  "SL": { "capital": "Freetown", "demonym": "sierraleonés" },
-  "SM": { "capital": "San Marino", "demonym": "sanmarinense" },
-  "SN": { "capital": "Dakar", "demonym": "senegalés" },
-  "SO": { "capital": "Mogadiscio", "demonym": "somalí" },
-  "SR": { "capital": "Paramaribo", "demonym": "surinamés" },
-  "SS": { "capital": "Yuba", "demonym": "sursudanés" },
-  "ST": { "capital": "Santo Tomé", "demonym": "santotomense" },
-  "SV": { "capital": "San Salvador", "demonym": "salvadoreño" },
-  "SX": { "capital": "Philipsburg", "demonym": "sanmartinense" },
-  "SY": { "capital": "Damasco", "demonym": "sirio" },
-  "SZ": { "capital": "Mbabane", "demonym": "suazi" },
-  "TC": { "capital": "Cockburn Town", "demonym": "turcocaiqueño" },
-  "TD": { "capital": "Yamena", "demonym": "chadiano" },
-  "TG": { "capital": "Lomé", "demonym": "togolés" },
-  "TH": { "capital": "Bangkok", "demonym": "tailandés" },
-  "TJ": { "capital": "Dusambé", "demonym": "tayiko" },
-  "TL": { "capital": "Dili", "demonym": "timorense" },
-  "TM": { "capital": "Asjabad", "demonym": "turcomano" },
-  "TN": { "capital": "Túnez", "demonym": "tunecino" },
-  "TO": { "capital": "Nukualofa", "demonym": "tongano" },
-  "TR": { "capital": "Ankara", "demonym": "turco" },
-  "TT": { "capital": "Puerto España", "demonym": "trinitense" },
-  "TV": { "capital": "Funafuti", "demonym": "tuvaluano" },
-  "TW": { "capital": "Taipéi", "demonym": "taiwanés" },
-  "TZ": { "capital": "Dodoma", "demonym": "tanzano" },
-  "UA": { "capital": "Kiev", "demonym": "ucraniano" },
-  "UG": { "capital": "Kampala", "demonym": "ugandés" },
-  "US": { "capital": "Washington D. C.", "demonym": "estadounidense" },
-  "UY": { "capital": "Montevideo", "demonym": "uruguayo" },
-  "UZ": { "capital": "Taskent", "demonym": "uzbeko" },
-  "VA": { "capital": "Ciudad del Vaticano", "demonym": "vaticano" },
-  "VC": { "capital": "Kingstown", "demonym": "sanvicentino" },
-  "VE": { "capital": "Caracas", "demonym": "venezolano" },
-  "VG": { "capital": "Road Town", "demonym": "virgenense británico" },
-  "VI": { "capital": "Charlotte Amalie", "demonym": "virgenense estadounidense" },
-  "VN": { "capital": "Hanói", "demonym": "vietnamita" },
-  "VU": { "capital": "Port Vila", "demonym": "vanuatuense" },
-  "WF": { "capital": "Mata-Utu", "demonym": "walisiano" },
-  "WS": { "capital": "Apia", "demonym": "samoano" },
-  "XK": { "capital": "Pristina", "demonym": "kosovar" },
-  "YE": { "capital": "Saná", "demonym": "yemení" },
-  "ZA": { "capital": "Pretoria", "demonym": "sudafricano" },
-  "ZM": { "capital": "Lusaka", "demonym": "zambiano" },
-  "ZW": { "capital": "Harare", "demonym": "zimbabuense" }
+  "AD": {
+    "capital": "Andorra la Vella",
+    "demonym": "andorrano",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Catalán"]
+  },
+  "AE": {
+    "capital": "Abu Dabi",
+    "demonym": "emiratí",
+    "currencies": [{ "name": "Dírham de los Emiratos Árabes Unidos", "symbol": "د.إ" }],
+    "languages": ["Árabe"]
+  },
+  "AF": {
+    "capital": "Kabul",
+    "demonym": "afgano",
+    "currencies": [{ "name": "Afgani afgano", "symbol": "؋" }],
+    "languages": ["Darí", "Pastún"]
+  },
+  "AG": {
+    "capital": "Saint John's",
+    "demonym": "antigüeño",
+    "currencies": [{ "name": "Dólar del Caribe Oriental", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "AI": {
+    "capital": "The Valley",
+    "demonym": "anguilense",
+    "currencies": [{ "name": "Dólar del Caribe Oriental", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "AL": {
+    "capital": "Tirana",
+    "demonym": "albanés",
+    "currencies": [{ "name": "Lek albanés", "symbol": "L" }],
+    "languages": ["Albanés"]
+  },
+  "AM": {
+    "capital": "Ereván",
+    "demonym": "armenio",
+    "currencies": [{ "name": "Dram armenio", "symbol": "֏" }],
+    "languages": ["Armenio"]
+  },
+  "AO": {
+    "capital": "Luanda",
+    "demonym": "angoleño",
+    "currencies": [{ "name": "Kwanza angoleño", "symbol": "Kz" }],
+    "languages": ["Portugués"]
+  },
+  "AR": {
+    "capital": "Buenos Aires",
+    "demonym": "argentino",
+    "currencies": [{ "name": "Peso argentino", "symbol": "$" }],
+    "languages": ["Español"]
+  },
+  "AS": {
+    "capital": "Pago Pago",
+    "demonym": "samoano americano",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Inglés", "Samoano"]
+  },
+  "AT": {
+    "capital": "Viena",
+    "demonym": "austriaco",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Alemán"]
+  },
+  "AU": {
+    "capital": "Canberra",
+    "demonym": "australiano",
+    "currencies": [{ "name": "Dólar australiano", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "AW": {
+    "capital": "Oranjestad",
+    "demonym": "arubeño",
+    "currencies": [{ "name": "Florín arubeño", "symbol": "ƒ" }],
+    "languages": ["Neerlandés", "Papiamento"]
+  },
+  "AX": {
+    "capital": "Mariehamn",
+    "demonym": "alandés",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Sueco"]
+  },
+  "AZ": {
+    "capital": "Bakú",
+    "demonym": "azerbaiyano",
+    "currencies": [{ "name": "Manat azerbaiyano", "symbol": "₼" }],
+    "languages": ["Azerbaiyano"]
+  },
+  "BA": {
+    "capital": "Sarajevo",
+    "demonym": "bosnio",
+    "currencies": [{ "name": "Marco convertible de Bosnia y Herzegovina", "symbol": "KM" }],
+    "languages": ["Bosnio", "Croata", "Serbio"]
+  },
+  "BB": {
+    "capital": "Bridgetown",
+    "demonym": "barbadense",
+    "currencies": [{ "name": "Dólar barbadense", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "BD": {
+    "capital": "Daca",
+    "demonym": "bangladesí",
+    "currencies": [{ "name": "Taka bangladesí", "symbol": "৳" }],
+    "languages": ["Bengalí"]
+  },
+  "BE": {
+    "capital": "Bruselas",
+    "demonym": "belga",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Neerlandés", "Francés", "Alemán"]
+  },
+  "BF": {
+    "capital": "Uagadugú",
+    "demonym": "burkinés",
+    "currencies": [{ "name": "Franco CFA de África Occidental", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "BG": {
+    "capital": "Sofía",
+    "demonym": "búlgaro",
+    "currencies": [{ "name": "Lev búlgaro", "symbol": "лв" }],
+    "languages": ["Búlgaro"]
+  },
+  "BH": {
+    "capital": "Manama",
+    "demonym": "bareiní",
+    "currencies": [{ "name": "Dinar bareiní", "symbol": ".د.ب" }],
+    "languages": ["Árabe"]
+  },
+  "BI": {
+    "capital": "Gitega",
+    "demonym": "burundés",
+    "currencies": [{ "name": "Franco burundés", "symbol": "Fr" }],
+    "languages": ["Kirundi", "Francés"]
+  },
+  "BJ": {
+    "capital": "Porto Novo",
+    "demonym": "beninés",
+    "currencies": [{ "name": "Franco CFA de África Occidental", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "BL": {
+    "capital": "Gustavia",
+    "demonym": "sanbartolomeño",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Francés"]
+  },
+  "BM": {
+    "capital": "Hamilton",
+    "demonym": "bermudeño",
+    "currencies": [{ "name": "Dólar bermudeño", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "BN": {
+    "capital": "Bandar Seri Begawan",
+    "demonym": "bruneano",
+    "currencies": [{ "name": "Dólar de Brunéi", "symbol": "$" }],
+    "languages": ["Malayo"]
+  },
+  "BO": {
+    "capital": "Sucre",
+    "demonym": "boliviano",
+    "currencies": [{ "name": "Boliviano", "symbol": "Bs." }],
+    "languages": ["Español", "Quechua", "Aimara"]
+  },
+  "BR": {
+    "capital": "Brasilia",
+    "demonym": "brasileño",
+    "currencies": [{ "name": "Real brasileño", "symbol": "R$" }],
+    "languages": ["Portugués"]
+  },
+  "BS": {
+    "capital": "Nasáu",
+    "demonym": "bahameño",
+    "currencies": [{ "name": "Dólar bahameño", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "BT": {
+    "capital": "Timbu",
+    "demonym": "butanés",
+    "currencies": [{ "name": "Ngultrum butanés", "symbol": "Nu." }],
+    "languages": ["Dzongkha"]
+  },
+  "BW": {
+    "capital": "Gaborone",
+    "demonym": "botsuano",
+    "currencies": [{ "name": "Pula botsuano", "symbol": "P" }],
+    "languages": ["Inglés", "Setsuana"]
+  },
+  "BY": {
+    "capital": "Minsk",
+    "demonym": "bielorruso",
+    "currencies": [{ "name": "Rublo bielorruso", "symbol": "Br" }],
+    "languages": ["Bielorruso", "Ruso"]
+  },
+  "BZ": {
+    "capital": "Belmopán",
+    "demonym": "beliceño",
+    "currencies": [{ "name": "Dólar beliceño", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "CA": {
+    "capital": "Ottawa",
+    "demonym": "canadiense",
+    "currencies": [{ "name": "Dólar canadiense", "symbol": "$" }],
+    "languages": ["Inglés", "Francés"]
+  },
+  "CD": {
+    "capital": "Kinsasa",
+    "demonym": "congoleño",
+    "currencies": [{ "name": "Franco congoleño", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "CF": {
+    "capital": "Bangui",
+    "demonym": "centroafricano",
+    "currencies": [{ "name": "Franco CFA de África Central", "symbol": "Fr" }],
+    "languages": ["Francés", "Sango"]
+  },
+  "CG": {
+    "capital": "Brazzaville",
+    "demonym": "congoleño",
+    "currencies": [{ "name": "Franco CFA de África Central", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "CH": {
+    "capital": "Berna",
+    "demonym": "suizo",
+    "currencies": [{ "name": "Franco suizo", "symbol": "Fr" }],
+    "languages": ["Alemán", "Francés", "Italiano", "Romanche"]
+  },
+  "CI": {
+    "capital": "Yamusukro",
+    "demonym": "marfileño",
+    "currencies": [{ "name": "Franco CFA de África Occidental", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "CK": {
+    "capital": "Avarua",
+    "demonym": "cookiano",
+    "currencies": [{ "name": "Dólar neozelandés", "symbol": "$" }],
+    "languages": ["Inglés", "Maorí de las Islas Cook"]
+  },
+  "CL": {
+    "capital": "Santiago",
+    "demonym": "chileno",
+    "currencies": [{ "name": "Peso chileno", "symbol": "$" }],
+    "languages": ["Español"]
+  },
+  "CM": {
+    "capital": "Yaundé",
+    "demonym": "camerunés",
+    "currencies": [{ "name": "Franco CFA de África Central", "symbol": "Fr" }],
+    "languages": ["Francés", "Inglés"]
+  },
+  "CN": {
+    "capital": "Pekín",
+    "demonym": "chino",
+    "currencies": [{ "name": "Yuan chino", "symbol": "¥" }],
+    "languages": ["Chino mandarín"]
+  },
+  "CO": {
+    "capital": "Bogotá",
+    "demonym": "colombiano",
+    "currencies": [{ "name": "Peso colombiano", "symbol": "$" }],
+    "languages": ["Español"]
+  },
+  "CR": {
+    "capital": "San José",
+    "demonym": "costarricense",
+    "currencies": [{ "name": "Colón costarricense", "symbol": "₡" }],
+    "languages": ["Español"]
+  },
+  "CU": {
+    "capital": "La Habana",
+    "demonym": "cubano",
+    "currencies": [{ "name": "Peso cubano", "symbol": "$" }],
+    "languages": ["Español"]
+  },
+  "CV": {
+    "capital": "Praia",
+    "demonym": "caboverdiano",
+    "currencies": [{ "name": "Escudo caboverdiano", "symbol": "$" }],
+    "languages": ["Portugués"]
+  },
+  "CW": {
+    "capital": "Willemstad",
+    "demonym": "curazaleño",
+    "currencies": [{ "name": "Florín antillano neerlandés", "symbol": "ƒ" }],
+    "languages": ["Neerlandés", "Papiamento"]
+  },
+  "CY": {
+    "capital": "Nicosia",
+    "demonym": "chipriota",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Griego", "Turco"]
+  },
+  "CZ": {
+    "capital": "Praga",
+    "demonym": "checo",
+    "currencies": [{ "name": "Corona checa", "symbol": "Kč" }],
+    "languages": ["Checo"]
+  },
+  "DE": {
+    "capital": "Berlín",
+    "demonym": "alemán",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Alemán"]
+  },
+  "DJ": {
+    "capital": "Yibuti",
+    "demonym": "yibutiano",
+    "currencies": [{ "name": "Franco yibutiano", "symbol": "Fr" }],
+    "languages": ["Francés", "Árabe"]
+  },
+  "DK": {
+    "capital": "Copenhague",
+    "demonym": "danés",
+    "currencies": [{ "name": "Corona danesa", "symbol": "kr" }],
+    "languages": ["Danés"]
+  },
+  "DM": {
+    "capital": "Roseau",
+    "demonym": "dominiqués",
+    "currencies": [{ "name": "Dólar del Caribe Oriental", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "DO": {
+    "capital": "Santo Domingo",
+    "demonym": "dominicano",
+    "currencies": [{ "name": "Peso dominicano", "symbol": "$" }],
+    "languages": ["Español"]
+  },
+  "DZ": {
+    "capital": "Argel",
+    "demonym": "argelino",
+    "currencies": [{ "name": "Dinar argelino", "symbol": "د.ج" }],
+    "languages": ["Árabe", "Tamazight"]
+  },
+  "EC": {
+    "capital": "Quito",
+    "demonym": "ecuatoriano",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Español"]
+  },
+  "EE": {
+    "capital": "Tallin",
+    "demonym": "estonio",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Estonio"]
+  },
+  "EG": {
+    "capital": "El Cairo",
+    "demonym": "egipcio",
+    "currencies": [{ "name": "Libra egipcia", "symbol": "£" }],
+    "languages": ["Árabe"]
+  },
+  "EH": {
+    "capital": "El Aaiún",
+    "demonym": "saharaui",
+    "currencies": [{ "name": "Dírham marroquí", "symbol": "د.م." }],
+    "languages": ["Árabe"]
+  },
+  "ER": {
+    "capital": "Asmara",
+    "demonym": "eritreo",
+    "currencies": [{ "name": "Nakfa eritreo", "symbol": "Nfk" }],
+    "languages": ["Tigriña", "Árabe", "Inglés"]
+  },
+  "ES": {
+    "capital": "Madrid",
+    "demonym": "español",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Español"]
+  },
+  "ET": {
+    "capital": "Adís Abeba",
+    "demonym": "etíope",
+    "currencies": [{ "name": "Birr etíope", "symbol": "Br" }],
+    "languages": ["Amárico"]
+  },
+  "FI": {
+    "capital": "Helsinki",
+    "demonym": "finlandés",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Finés", "Sueco"]
+  },
+  "FJ": {
+    "capital": "Suva",
+    "demonym": "fiyiano",
+    "currencies": [{ "name": "Dólar fiyiano", "symbol": "$" }],
+    "languages": ["Inglés", "Fiyiano", "Hindi fiyiano"]
+  },
+  "FK": {
+    "capital": "Stanley",
+    "demonym": "malvinense",
+    "currencies": [{ "name": "Libra malvinense", "symbol": "£" }],
+    "languages": ["Inglés"]
+  },
+  "FM": {
+    "capital": "Palikir",
+    "demonym": "micronesio",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "FO": {
+    "capital": "Tórshavn",
+    "demonym": "feroés",
+    "currencies": [{ "name": "Corona danesa", "symbol": "kr" }],
+    "languages": ["Feroés", "Danés"]
+  },
+  "FR": {
+    "capital": "París",
+    "demonym": "francés",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Francés"]
+  },
+  "GA": {
+    "capital": "Libreville",
+    "demonym": "gabonés",
+    "currencies": [{ "name": "Franco CFA de África Central", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "GB": {
+    "capital": "Londres",
+    "demonym": "británico",
+    "currencies": [{ "name": "Libra esterlina", "symbol": "£" }],
+    "languages": ["Inglés"]
+  },
+  "GD": {
+    "capital": "Saint George",
+    "demonym": "granadino",
+    "currencies": [{ "name": "Dólar del Caribe Oriental", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "GE": {
+    "capital": "Tiflis",
+    "demonym": "georgiano",
+    "currencies": [{ "name": "Lari georgiano", "symbol": "₾" }],
+    "languages": ["Georgiano"]
+  },
+  "GG": {
+    "capital": "Saint Peter Port",
+    "demonym": "guerneseyés",
+    "currencies": [{ "name": "Libra esterlina", "symbol": "£" }],
+    "languages": ["Inglés", "Francés"]
+  },
+  "GH": {
+    "capital": "Acra",
+    "demonym": "ghanés",
+    "currencies": [{ "name": "Cedi ghanés", "symbol": "₵" }],
+    "languages": ["Inglés"]
+  },
+  "GL": {
+    "capital": "Nuuk",
+    "demonym": "groenlandés",
+    "currencies": [{ "name": "Corona danesa", "symbol": "kr" }],
+    "languages": ["Groenlandés"]
+  },
+  "GM": {
+    "capital": "Banjul",
+    "demonym": "gambiano",
+    "currencies": [{ "name": "Dalasi gambiano", "symbol": "D" }],
+    "languages": ["Inglés"]
+  },
+  "GN": {
+    "capital": "Conakri",
+    "demonym": "guineano",
+    "currencies": [{ "name": "Franco guineano", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "GQ": {
+    "capital": "Malabo",
+    "demonym": "ecuatoguineano",
+    "currencies": [{ "name": "Franco CFA de África Central", "symbol": "Fr" }],
+    "languages": ["Español", "Francés", "Portugués"]
+  },
+  "GR": {
+    "capital": "Atenas",
+    "demonym": "griego",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Griego"]
+  },
+  "GT": {
+    "capital": "Ciudad de Guatemala",
+    "demonym": "guatemalteco",
+    "currencies": [{ "name": "Quetzal guatemalteco", "symbol": "Q" }],
+    "languages": ["Español"]
+  },
+  "GU": {
+    "capital": "Hagåtña",
+    "demonym": "guameño",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Inglés", "Chamorro"]
+  },
+  "GW": {
+    "capital": "Bisáu",
+    "demonym": "guineano-bisauense",
+    "currencies": [{ "name": "Franco CFA de África Occidental", "symbol": "Fr" }],
+    "languages": ["Portugués"]
+  },
+  "GY": {
+    "capital": "Georgetown",
+    "demonym": "guyanés",
+    "currencies": [{ "name": "Dólar guyanés", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "HK": {
+    "capital": "Victoria",
+    "demonym": "hongkonés",
+    "currencies": [{ "name": "Dólar de Hong Kong", "symbol": "$" }],
+    "languages": ["Chino", "Inglés"]
+  },
+  "HN": {
+    "capital": "Tegucigalpa",
+    "demonym": "hondureño",
+    "currencies": [{ "name": "Lempira hondureño", "symbol": "L" }],
+    "languages": ["Español"]
+  },
+  "HR": {
+    "capital": "Zagreb",
+    "demonym": "croata",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Croata"]
+  },
+  "HT": {
+    "capital": "Puerto Príncipe",
+    "demonym": "haitiano",
+    "currencies": [{ "name": "Gurda haitiana", "symbol": "G" }],
+    "languages": ["Francés", "Criollo haitiano"]
+  },
+  "HU": {
+    "capital": "Budapest",
+    "demonym": "húngaro",
+    "currencies": [{ "name": "Forinto húngaro", "symbol": "Ft" }],
+    "languages": ["Húngaro"]
+  },
+  "ID": {
+    "capital": "Yakarta",
+    "demonym": "indonesio",
+    "currencies": [{ "name": "Rupia indonesia", "symbol": "Rp" }],
+    "languages": ["Indonesio"]
+  },
+  "IE": {
+    "capital": "Dublín",
+    "demonym": "irlandés",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Irlandés", "Inglés"]
+  },
+  "IL": {
+    "capital": "Jerusalén",
+    "demonym": "israelí",
+    "currencies": [{ "name": "Nuevo séquel israelí", "symbol": "₪" }],
+    "languages": ["Hebreo", "Árabe"]
+  },
+  "IM": {
+    "capital": "Douglas",
+    "demonym": "manés",
+    "currencies": [{ "name": "Libra esterlina", "symbol": "£" }],
+    "languages": ["Inglés", "Manés"]
+  },
+  "IN": {
+    "capital": "Nueva Delhi",
+    "demonym": "indio",
+    "currencies": [{ "name": "Rupia india", "symbol": "₹" }],
+    "languages": ["Hindi", "Inglés"]
+  },
+  "IQ": {
+    "capital": "Bagdad",
+    "demonym": "iraquí",
+    "currencies": [{ "name": "Dinar iraquí", "symbol": "ع.د" }],
+    "languages": ["Árabe", "Kurdo"]
+  },
+  "IR": {
+    "capital": "Teherán",
+    "demonym": "iraní",
+    "currencies": [{ "name": "Rial iraní", "symbol": "﷼" }],
+    "languages": ["Persa"]
+  },
+  "IS": {
+    "capital": "Reikiavik",
+    "demonym": "islandés",
+    "currencies": [{ "name": "Corona islandesa", "symbol": "kr" }],
+    "languages": ["Islandés"]
+  },
+  "IT": {
+    "capital": "Roma",
+    "demonym": "italiano",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Italiano"]
+  },
+  "JE": {
+    "capital": "Saint Helier",
+    "demonym": "jerseyés",
+    "currencies": [{ "name": "Libra esterlina", "symbol": "£" }],
+    "languages": ["Inglés", "Francés"]
+  },
+  "JM": {
+    "capital": "Kingston",
+    "demonym": "jamaicano",
+    "currencies": [{ "name": "Dólar jamaicano", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "JO": {
+    "capital": "Amán",
+    "demonym": "jordano",
+    "currencies": [{ "name": "Dinar jordano", "symbol": "د.ا" }],
+    "languages": ["Árabe"]
+  },
+  "JP": {
+    "capital": "Tokio",
+    "demonym": "japonés",
+    "currencies": [{ "name": "Yen japonés", "symbol": "¥" }],
+    "languages": ["Japonés"]
+  },
+  "KE": {
+    "capital": "Nairobi",
+    "demonym": "keniata",
+    "currencies": [{ "name": "Chelín keniano", "symbol": "KSh" }],
+    "languages": ["Suajili", "Inglés"]
+  },
+  "KG": {
+    "capital": "Biskek",
+    "demonym": "kirguís",
+    "currencies": [{ "name": "Som kirguís", "symbol": "С" }],
+    "languages": ["Kirguís", "Ruso"]
+  },
+  "KH": {
+    "capital": "Nom Pen",
+    "demonym": "camboyano",
+    "currencies": [{ "name": "Riel camboyano", "symbol": "៛" }],
+    "languages": ["Jemer"]
+  },
+  "KI": {
+    "capital": "Tarawa Sur",
+    "demonym": "kiribatiano",
+    "currencies": [{ "name": "Dólar australiano", "symbol": "$" }],
+    "languages": ["Inglés", "Gilbertés"]
+  },
+  "KM": {
+    "capital": "Moroni",
+    "demonym": "comorense",
+    "currencies": [{ "name": "Franco comorense", "symbol": "Fr" }],
+    "languages": ["Comorense", "Árabe", "Francés"]
+  },
+  "KN": {
+    "capital": "Basseterre",
+    "demonym": "sancrístobalense",
+    "currencies": [{ "name": "Dólar del Caribe Oriental", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "KP": {
+    "capital": "Pionyang",
+    "demonym": "norcoreano",
+    "currencies": [{ "name": "Won norcoreano", "symbol": "₩" }],
+    "languages": ["Coreano"]
+  },
+  "KR": {
+    "capital": "Seúl",
+    "demonym": "surcoreano",
+    "currencies": [{ "name": "Won surcoreano", "symbol": "₩" }],
+    "languages": ["Coreano"]
+  },
+  "KW": {
+    "capital": "Ciudad de Kuwait",
+    "demonym": "kuwaití",
+    "currencies": [{ "name": "Dinar kuwaití", "symbol": "د.ك" }],
+    "languages": ["Árabe"]
+  },
+  "KY": {
+    "capital": "George Town",
+    "demonym": "caimanés",
+    "currencies": [{ "name": "Dólar de las Islas Caimán", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "KZ": {
+    "capital": "Astaná",
+    "demonym": "kazajo",
+    "currencies": [{ "name": "Tenge kazajo", "symbol": "₸" }],
+    "languages": ["Kazajo", "Ruso"]
+  },
+  "LA": {
+    "capital": "Vientián",
+    "demonym": "laosiano",
+    "currencies": [{ "name": "Kip laosiano", "symbol": "₭" }],
+    "languages": ["Lao"]
+  },
+  "LB": {
+    "capital": "Beirut",
+    "demonym": "libanés",
+    "currencies": [{ "name": "Libra libanesa", "symbol": "ل.ل" }],
+    "languages": ["Árabe"]
+  },
+  "LC": {
+    "capital": "Castries",
+    "demonym": "santalucense",
+    "currencies": [{ "name": "Dólar del Caribe Oriental", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "LI": {
+    "capital": "Vaduz",
+    "demonym": "liechtensteiniano",
+    "currencies": [{ "name": "Franco suizo", "symbol": "Fr" }],
+    "languages": ["Alemán"]
+  },
+  "LK": {
+    "capital": "Sri Jayawardenepura Kotte",
+    "demonym": "ceilanés",
+    "currencies": [{ "name": "Rupia ceilanesa", "symbol": "Rs" }],
+    "languages": ["Cingalés", "Tamil"]
+  },
+  "LR": {
+    "capital": "Monrovia",
+    "demonym": "liberiano",
+    "currencies": [{ "name": "Dólar liberiano", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "LS": {
+    "capital": "Maseru",
+    "demonym": "lesotense",
+    "currencies": [{ "name": "Loti lesotense", "symbol": "L" }],
+    "languages": ["Sesoto", "Inglés"]
+  },
+  "LT": {
+    "capital": "Vilna",
+    "demonym": "lituano",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Lituano"]
+  },
+  "LU": {
+    "capital": "Luxemburgo",
+    "demonym": "luxemburgués",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Luxemburgués", "Francés", "Alemán"]
+  },
+  "LV": {
+    "capital": "Riga",
+    "demonym": "letón",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Letón"]
+  },
+  "LY": {
+    "capital": "Trípoli",
+    "demonym": "libio",
+    "currencies": [{ "name": "Dinar libio", "symbol": "ل.د" }],
+    "languages": ["Árabe"]
+  },
+  "MA": {
+    "capital": "Rabat",
+    "demonym": "marroquí",
+    "currencies": [{ "name": "Dírham marroquí", "symbol": "د.م." }],
+    "languages": ["Árabe", "Tamazight"]
+  },
+  "MC": {
+    "capital": "Mónaco",
+    "demonym": "monegasco",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Francés"]
+  },
+  "MD": {
+    "capital": "Chisináu",
+    "demonym": "moldavo",
+    "currencies": [{ "name": "Leu moldavo", "symbol": "L" }],
+    "languages": ["Rumano"]
+  },
+  "ME": {
+    "capital": "Podgorica",
+    "demonym": "montenegrino",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Montenegrino"]
+  },
+  "MF": {
+    "capital": "Marigot",
+    "demonym": "sanmartinense",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Francés"]
+  },
+  "MG": {
+    "capital": "Antananarivo",
+    "demonym": "malgache",
+    "currencies": [{ "name": "Ariari malgache", "symbol": "Ar" }],
+    "languages": ["Malgache", "Francés"]
+  },
+  "MH": {
+    "capital": "Majuro",
+    "demonym": "marshalés",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Marshalés", "Inglés"]
+  },
+  "MK": {
+    "capital": "Skopie",
+    "demonym": "macedonio",
+    "currencies": [{ "name": "Denar macedonio", "symbol": "ден" }],
+    "languages": ["Macedonio"]
+  },
+  "ML": {
+    "capital": "Bamako",
+    "demonym": "maliense",
+    "currencies": [{ "name": "Franco CFA de África Occidental", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "MM": {
+    "capital": "Naipyidó",
+    "demonym": "birmano",
+    "currencies": [{ "name": "Kiat birmano", "symbol": "K" }],
+    "languages": ["Birmano"]
+  },
+  "MN": {
+    "capital": "Ulán Bator",
+    "demonym": "mongol",
+    "currencies": [{ "name": "Tugrik mongol", "symbol": "₮" }],
+    "languages": ["Mongol"]
+  },
+  "MO": {
+    "capital": "",
+    "demonym": "macaense",
+    "currencies": [{ "name": "Pataca macaense", "symbol": "MOP$" }],
+    "languages": ["Chino", "Portugués"]
+  },
+  "MP": {
+    "capital": "Saipán",
+    "demonym": "marianense",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Inglés", "Chamorro", "Carolinio"]
+  },
+  "MR": {
+    "capital": "Nuakchot",
+    "demonym": "mauritano",
+    "currencies": [{ "name": "Uguiya mauritana", "symbol": "UM" }],
+    "languages": ["Árabe"]
+  },
+  "MS": {
+    "capital": "Plymouth",
+    "demonym": "monserratense",
+    "currencies": [{ "name": "Dólar del Caribe Oriental", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "MT": {
+    "capital": "La Valeta",
+    "demonym": "maltés",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Maltés", "Inglés"]
+  },
+  "MU": {
+    "capital": "Port Louis",
+    "demonym": "mauriciano",
+    "currencies": [{ "name": "Rupia mauriciana", "symbol": "₨" }],
+    "languages": ["Inglés", "Francés"]
+  },
+  "MV": {
+    "capital": "Malé",
+    "demonym": "maldivo",
+    "currencies": [{ "name": "Rufiya maldiva", "symbol": "Rf" }],
+    "languages": ["Divehi"]
+  },
+  "MW": {
+    "capital": "Lilongüe",
+    "demonym": "malauí",
+    "currencies": [{ "name": "Kwacha malauí", "symbol": "MK" }],
+    "languages": ["Inglés", "Chichewa"]
+  },
+  "MX": {
+    "capital": "Ciudad de México",
+    "demonym": "mexicano",
+    "currencies": [{ "name": "Peso mexicano", "symbol": "$" }],
+    "languages": ["Español"]
+  },
+  "MY": {
+    "capital": "Kuala Lumpur",
+    "demonym": "malasio",
+    "currencies": [{ "name": "Ringgit malasio", "symbol": "RM" }],
+    "languages": ["Malayo"]
+  },
+  "MZ": {
+    "capital": "Maputo",
+    "demonym": "mozambiqueño",
+    "currencies": [{ "name": "Metical mozambiqueño", "symbol": "MT" }],
+    "languages": ["Portugués"]
+  },
+  "NA": {
+    "capital": "Windhoek",
+    "demonym": "namibio",
+    "currencies": [{ "name": "Dólar namibio", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "NC": {
+    "capital": "Numea",
+    "demonym": "neocaledonio",
+    "currencies": [{ "name": "Franco CFP", "symbol": "₣" }],
+    "languages": ["Francés"]
+  },
+  "NE": {
+    "capital": "Niamey",
+    "demonym": "nigerino",
+    "currencies": [{ "name": "Franco CFA de África Occidental", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "NF": {
+    "capital": "Kingston",
+    "demonym": "norfolkense",
+    "currencies": [{ "name": "Dólar australiano", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "NG": {
+    "capital": "Abuya",
+    "demonym": "nigeriano",
+    "currencies": [{ "name": "Naira nigeriana", "symbol": "₦" }],
+    "languages": ["Inglés"]
+  },
+  "NI": {
+    "capital": "Managua",
+    "demonym": "nicaragüense",
+    "currencies": [{ "name": "Córdoba nicaragüense", "symbol": "C$" }],
+    "languages": ["Español"]
+  },
+  "NL": {
+    "capital": "Ámsterdam",
+    "demonym": "neerlandés",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Neerlandés"]
+  },
+  "NO": {
+    "capital": "Oslo",
+    "demonym": "noruego",
+    "currencies": [{ "name": "Corona noruega", "symbol": "kr" }],
+    "languages": ["Noruego"]
+  },
+  "NP": {
+    "capital": "Katmandú",
+    "demonym": "nepalí",
+    "currencies": [{ "name": "Rupia nepalesa", "symbol": "₨" }],
+    "languages": ["Nepalí"]
+  },
+  "NR": {
+    "capital": "Yaren",
+    "demonym": "nauruano",
+    "currencies": [{ "name": "Dólar australiano", "symbol": "$" }],
+    "languages": ["Inglés", "Nauruano"]
+  },
+  "NU": {
+    "capital": "Alofi",
+    "demonym": "niueño",
+    "currencies": [{ "name": "Dólar neozelandés", "symbol": "$" }],
+    "languages": ["Inglés", "Niueño"]
+  },
+  "NZ": {
+    "capital": "Wellington",
+    "demonym": "neozelandés",
+    "currencies": [{ "name": "Dólar neozelandés", "symbol": "$" }],
+    "languages": ["Inglés", "Maorí"]
+  },
+  "OM": {
+    "capital": "Mascate",
+    "demonym": "omaní",
+    "currencies": [{ "name": "Rial omaní", "symbol": "ر.ع." }],
+    "languages": ["Árabe"]
+  },
+  "PA": {
+    "capital": "Ciudad de Panamá",
+    "demonym": "panameño",
+    "currencies": [{ "name": "Balboa panameño", "symbol": "B/." }, { "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Español"]
+  },
+  "PE": {
+    "capital": "Lima",
+    "demonym": "peruano",
+    "currencies": [{ "name": "Sol peruano", "symbol": "S/." }],
+    "languages": ["Español", "Quechua", "Aimara"]
+  },
+  "PF": {
+    "capital": "Papeete",
+    "demonym": "polinesio francés",
+    "currencies": [{ "name": "Franco CFP", "symbol": "₣" }],
+    "languages": ["Francés"]
+  },
+  "PG": {
+    "capital": "Port Moresby",
+    "demonym": "papú",
+    "currencies": [{ "name": "Kina papuana", "symbol": "K" }],
+    "languages": ["Inglés", "Tok Pisin", "Hiri Motu"]
+  },
+  "PH": {
+    "capital": "Manila",
+    "demonym": "filipino",
+    "currencies": [{ "name": "Peso filipino", "symbol": "₱" }],
+    "languages": ["Filipino", "Inglés"]
+  },
+  "PK": {
+    "capital": "Islamabad",
+    "demonym": "pakistaní",
+    "currencies": [{ "name": "Rupia pakistaní", "symbol": "₨" }],
+    "languages": ["Urdu", "Inglés"]
+  },
+  "PL": {
+    "capital": "Varsovia",
+    "demonym": "polaco",
+    "currencies": [{ "name": "Esloti polaco", "symbol": "zł" }],
+    "languages": ["Polaco"]
+  },
+  "PM": {
+    "capital": "Saint-Pierre",
+    "demonym": "miquelonense",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Francés"]
+  },
+  "PN": {
+    "capital": "Adamstown",
+    "demonym": "pitcairnense",
+    "currencies": [{ "name": "Dólar neozelandés", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "PR": {
+    "capital": "San Juan",
+    "demonym": "puertorriqueño",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Español", "Inglés"]
+  },
+  "PS": {
+    "capital": "Ramala",
+    "demonym": "palestino",
+    "currencies": [{ "name": "Nuevo séquel israelí", "symbol": "₪" }],
+    "languages": ["Árabe"]
+  },
+  "PT": {
+    "capital": "Lisboa",
+    "demonym": "portugués",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Portugués"]
+  },
+  "PW": {
+    "capital": "Ngerulmud",
+    "demonym": "palauano",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Palauano", "Inglés"]
+  },
+  "PY": {
+    "capital": "Asunción",
+    "demonym": "paraguayo",
+    "currencies": [{ "name": "Guaraní paraguayo", "symbol": "₲" }],
+    "languages": ["Español", "Guaraní"]
+  },
+  "QA": {
+    "capital": "Doha",
+    "demonym": "catarí",
+    "currencies": [{ "name": "Rial catarí", "symbol": "ر.ق" }],
+    "languages": ["Árabe"]
+  },
+  "RO": {
+    "capital": "Bucarest",
+    "demonym": "rumano",
+    "currencies": [{ "name": "Leu rumano", "symbol": "lei" }],
+    "languages": ["Rumano"]
+  },
+  "RS": {
+    "capital": "Belgrado",
+    "demonym": "serbio",
+    "currencies": [{ "name": "Dinar serbio", "symbol": "din." }],
+    "languages": ["Serbio"]
+  },
+  "RU": {
+    "capital": "Moscú",
+    "demonym": "ruso",
+    "currencies": [{ "name": "Rublo ruso", "symbol": "₽" }],
+    "languages": ["Ruso"]
+  },
+  "RW": {
+    "capital": "Kigali",
+    "demonym": "ruandés",
+    "currencies": [{ "name": "Franco ruandés", "symbol": "Fr" }],
+    "languages": ["Kinyarwanda", "Francés", "Inglés"]
+  },
+  "SA": {
+    "capital": "Riad",
+    "demonym": "saudí",
+    "currencies": [{ "name": "Rial saudí", "symbol": "ر.س" }],
+    "languages": ["Árabe"]
+  },
+  "SB": {
+    "capital": "Honiara",
+    "demonym": "salomonense",
+    "currencies": [{ "name": "Dólar de las Islas Salomón", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "SC": {
+    "capital": "Victoria",
+    "demonym": "seychelense",
+    "currencies": [{ "name": "Rupia seychelense", "symbol": "₨" }],
+    "languages": ["Criollo seychelense", "Francés", "Inglés"]
+  },
+  "SD": {
+    "capital": "Jartum",
+    "demonym": "sudanés",
+    "currencies": [{ "name": "Libra sudanesa", "symbol": "ج.س." }],
+    "languages": ["Árabe", "Inglés"]
+  },
+  "SE": {
+    "capital": "Estocolmo",
+    "demonym": "sueco",
+    "currencies": [{ "name": "Corona sueca", "symbol": "kr" }],
+    "languages": ["Sueco"]
+  },
+  "SG": {
+    "capital": "Singapur",
+    "demonym": "singapurense",
+    "currencies": [{ "name": "Dólar de Singapur", "symbol": "$" }],
+    "languages": ["Inglés", "Malayo", "Chino mandarín", "Tamil"]
+  },
+  "SH": {
+    "capital": "Jamestown",
+    "demonym": "santahelenense",
+    "currencies": [{ "name": "Libra de Santa Helena", "symbol": "£" }],
+    "languages": ["Inglés"]
+  },
+  "SI": {
+    "capital": "Liubliana",
+    "demonym": "esloveno",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Esloveno"]
+  },
+  "SK": {
+    "capital": "Bratislava",
+    "demonym": "eslovaco",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Eslovaco"]
+  },
+  "SL": {
+    "capital": "Freetown",
+    "demonym": "sierraleonés",
+    "currencies": [{ "name": "Leone sierraleonés", "symbol": "Le" }],
+    "languages": ["Inglés"]
+  },
+  "SM": {
+    "capital": "San Marino",
+    "demonym": "sanmarinense",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Italiano"]
+  },
+  "SN": {
+    "capital": "Dakar",
+    "demonym": "senegalés",
+    "currencies": [{ "name": "Franco CFA de África Occidental", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "SO": {
+    "capital": "Mogadiscio",
+    "demonym": "somalí",
+    "currencies": [{ "name": "Chelín somalí", "symbol": "Sh" }],
+    "languages": ["Somalí", "Árabe"]
+  },
+  "SR": {
+    "capital": "Paramaribo",
+    "demonym": "surinamés",
+    "currencies": [{ "name": "Dólar surinamés", "symbol": "$" }],
+    "languages": ["Neerlandés"]
+  },
+  "SS": {
+    "capital": "Yuba",
+    "demonym": "sursudanés",
+    "currencies": [{ "name": "Libra sursudanesa", "symbol": "£" }],
+    "languages": ["Inglés"]
+  },
+  "ST": {
+    "capital": "Santo Tomé",
+    "demonym": "santotomense",
+    "currencies": [{ "name": "Dobra santotomense", "symbol": "Db" }],
+    "languages": ["Portugués"]
+  },
+  "SV": {
+    "capital": "San Salvador",
+    "demonym": "salvadoreño",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Español"]
+  },
+  "SX": {
+    "capital": "Philipsburg",
+    "demonym": "sanmartinense",
+    "currencies": [{ "name": "Florín antillano neerlandés", "symbol": "ƒ" }],
+    "languages": ["Neerlandés", "Inglés"]
+  },
+  "SY": {
+    "capital": "Damasco",
+    "demonym": "sirio",
+    "currencies": [{ "name": "Libra siria", "symbol": "£" }],
+    "languages": ["Árabe"]
+  },
+  "SZ": {
+    "capital": "Mbabane",
+    "demonym": "suazi",
+    "currencies": [{ "name": "Lilangeni suazi", "symbol": "E" }],
+    "languages": ["Suazi", "Inglés"]
+  },
+  "TC": {
+    "capital": "Cockburn Town",
+    "demonym": "turcocaiqueño",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "TD": {
+    "capital": "Yamena",
+    "demonym": "chadiano",
+    "currencies": [{ "name": "Franco CFA de África Central", "symbol": "Fr" }],
+    "languages": ["Francés", "Árabe"]
+  },
+  "TG": {
+    "capital": "Lomé",
+    "demonym": "togolés",
+    "currencies": [{ "name": "Franco CFA de África Occidental", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "TH": {
+    "capital": "Bangkok",
+    "demonym": "tailandés",
+    "currencies": [{ "name": "Baht tailandés", "symbol": "฿" }],
+    "languages": ["Tailandés"]
+  },
+  "TJ": {
+    "capital": "Dusambé",
+    "demonym": "tayiko",
+    "currencies": [{ "name": "Somoni tayiko", "symbol": "SM" }],
+    "languages": ["Tayiko"]
+  },
+  "TL": {
+    "capital": "Dili",
+    "demonym": "timorense",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Portugués", "Tetún"]
+  },
+  "TM": {
+    "capital": "Asjabad",
+    "demonym": "turcomano",
+    "currencies": [{ "name": "Manat turcomano", "symbol": "T" }],
+    "languages": ["Turcomano"]
+  },
+  "TN": {
+    "capital": "Túnez",
+    "demonym": "tunecino",
+    "currencies": [{ "name": "Dinar tunecino", "symbol": "د.ت" }],
+    "languages": ["Árabe"]
+  },
+  "TO": {
+    "capital": "Nukualofa",
+    "demonym": "tongano",
+    "currencies": [{ "name": "Paanga tongano", "symbol": "T$" }],
+    "languages": ["Tongano", "Inglés"]
+  },
+  "TR": {
+    "capital": "Ankara",
+    "demonym": "turco",
+    "currencies": [{ "name": "Lira turca", "symbol": "₺" }],
+    "languages": ["Turco"]
+  },
+  "TT": {
+    "capital": "Puerto España",
+    "demonym": "trinitense",
+    "currencies": [{ "name": "Dólar de Trinidad y Tobago", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "TV": {
+    "capital": "Funafuti",
+    "demonym": "tuvaluano",
+    "currencies": [{ "name": "Dólar australiano", "symbol": "$" }],
+    "languages": ["Tuvaluano", "Inglés"]
+  },
+  "TW": {
+    "capital": "Taipéi",
+    "demonym": "taiwanés",
+    "currencies": [{ "name": "Nuevo dólar taiwanés", "symbol": "NT$" }],
+    "languages": ["Chino mandarín"]
+  },
+  "TZ": {
+    "capital": "Dodoma",
+    "demonym": "tanzano",
+    "currencies": [{ "name": "Chelín tanzano", "symbol": "TSh" }],
+    "languages": ["Suajili", "Inglés"]
+  },
+  "UA": {
+    "capital": "Kiev",
+    "demonym": "ucraniano",
+    "currencies": [{ "name": "Grivna ucraniana", "symbol": "₴" }],
+    "languages": ["Ucraniano"]
+  },
+  "UG": {
+    "capital": "Kampala",
+    "demonym": "ugandés",
+    "currencies": [{ "name": "Chelín ugandés", "symbol": "USh" }],
+    "languages": ["Inglés", "Suajili"]
+  },
+  "US": {
+    "capital": "Washington D. C.",
+    "demonym": "estadounidense",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "UY": {
+    "capital": "Montevideo",
+    "demonym": "uruguayo",
+    "currencies": [{ "name": "Peso uruguayo", "symbol": "$" }],
+    "languages": ["Español"]
+  },
+  "UZ": {
+    "capital": "Taskent",
+    "demonym": "uzbeko",
+    "currencies": [{ "name": "Som uzbeko", "symbol": "сўм" }],
+    "languages": ["Uzbeko"]
+  },
+  "VA": {
+    "capital": "Ciudad del Vaticano",
+    "demonym": "vaticano",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Italiano", "Latín"]
+  },
+  "VC": {
+    "capital": "Kingstown",
+    "demonym": "sanvicentino",
+    "currencies": [{ "name": "Dólar del Caribe Oriental", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "VE": {
+    "capital": "Caracas",
+    "demonym": "venezolano",
+    "currencies": [{ "name": "Bolívar venezolano", "symbol": "Bs." }],
+    "languages": ["Español"]
+  },
+  "VG": {
+    "capital": "Road Town",
+    "demonym": "virgenense británico",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "VI": {
+    "capital": "Charlotte Amalie",
+    "demonym": "virgenense estadounidense",
+    "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
+    "languages": ["Inglés"]
+  },
+  "VN": {
+    "capital": "Hanói",
+    "demonym": "vietnamita",
+    "currencies": [{ "name": "Dong vietnamita", "symbol": "₫" }],
+    "languages": ["Vietnamita"]
+  },
+  "VU": {
+    "capital": "Port Vila",
+    "demonym": "vanuatuense",
+    "currencies": [{ "name": "Vatu vanuatuense", "symbol": "VT" }],
+    "languages": ["Bislama", "Inglés", "Francés"]
+  },
+  "WF": {
+    "capital": "Mata-Utu",
+    "demonym": "walisiano",
+    "currencies": [{ "name": "Franco CFP", "symbol": "₣" }],
+    "languages": ["Francés"]
+  },
+  "WS": {
+    "capital": "Apia",
+    "demonym": "samoano",
+    "currencies": [{ "name": "Tala samoano", "symbol": "T" }],
+    "languages": ["Samoano", "Inglés"]
+  },
+  "XK": {
+    "capital": "Pristina",
+    "demonym": "kosovar",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Albanés", "Serbio"]
+  },
+  "YE": {
+    "capital": "Saná",
+    "demonym": "yemení",
+    "currencies": [{ "name": "Rial yemení", "symbol": "﷼" }],
+    "languages": ["Árabe"]
+  },
+  "ZA": {
+    "capital": "Pretoria",
+    "demonym": "sudafricano",
+    "currencies": [{ "name": "Rand sudafricano", "symbol": "R" }],
+    "languages": ["Zulú", "Xhosa", "Afrikáans", "Inglés"]
+  },
+  "ZM": {
+    "capital": "Lusaka",
+    "demonym": "zambiano",
+    "currencies": [{ "name": "Kwacha zambiano", "symbol": "ZK" }],
+    "languages": ["Inglés"]
+  },
+  "ZW": {
+    "capital": "Harare",
+    "demonym": "zimbabuense",
+    "currencies": [{ "name": "Dólar zimbabuense", "symbol": "$" }],
+    "languages": ["Inglés", "Shona", "Ndebele"]
+  }
 }

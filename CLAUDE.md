@@ -84,3 +84,5 @@ npm run device        # Build + sync + compilar + instalar + lanzar en iPhone
 ```
 
 > **Nota**: `npm run device` requiere un archivo `.env.local` en la raíz con los IDs del dispositivo (`IOS_DEVICE_UDID`, `IOS_DEVICE_ID`, `IOS_BUNDLE_ID`). Este archivo no se sube a git. Para obtener los IDs, ejecutar `xcrun devicectl list devices`.
+
+> **Verificación preferida**: Para testear cambios, usar `npm run device` (despliegue directo al iPhone) en vez de `npm run dev`. El testing real se hace siempre en dispositivo. Preguntar siempre al usuario antes de usar `npm run device`.

@@ -9,12 +9,17 @@
     "area": 468,
     "flagSvg": "https://flagcdn.com/ad.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Catalan"
+      "Catalán"
     ],
     "demonym": "andorrano",
+    "hdi": 0.884,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -27,12 +32,17 @@
     "area": 83600,
     "flagSvg": "https://flagcdn.com/ae.svg",
     "currencies": [
-      "United Arab Emirates dirham"
+      {
+        "name": "Dírham de los Emiratos Árabes Unidos",
+        "symbol": "د.إ"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "emiratí",
+    "hdi": 0.937,
+    "ihdi": 0.824,
     "unMember": true
   },
   {
@@ -45,14 +55,18 @@
     "area": 652230,
     "flagSvg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
     "currencies": [
-      "Afghan afghani"
+      {
+        "name": "Afgani afgano",
+        "symbol": "؋"
+      }
     ],
     "languages": [
-      "Dari",
-      "Pashto",
-      "Turkmen"
+      "Darí",
+      "Pastún"
     ],
     "demonym": "afgano",
+    "hdi": 0.462,
+    "ihdi": 0.306,
     "unMember": true
   },
   {
@@ -65,12 +79,17 @@
     "area": 442,
     "flagSvg": "https://flagcdn.com/ag.svg",
     "currencies": [
-      "Eastern Caribbean dollar"
+      {
+        "name": "Dólar del Caribe Oriental",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "antigüeño",
+    "hdi": 0.814,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -83,12 +102,17 @@
     "area": 91,
     "flagSvg": "https://flagcdn.com/ai.svg",
     "currencies": [
-      "Eastern Caribbean dollar"
+      {
+        "name": "Dólar del Caribe Oriental",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "anguilense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -101,12 +125,17 @@
     "area": 28748,
     "flagSvg": "https://flagcdn.com/al.svg",
     "currencies": [
-      "Albanian lek"
+      {
+        "name": "Lek albanés",
+        "symbol": "L"
+      }
     ],
     "languages": [
-      "Albanian"
+      "Albanés"
     ],
     "demonym": "albanés",
+    "hdi": 0.789,
+    "ihdi": 0.706,
     "unMember": true
   },
   {
@@ -119,12 +148,17 @@
     "area": 29743,
     "flagSvg": "https://flagcdn.com/am.svg",
     "currencies": [
-      "Armenian dram"
+      {
+        "name": "Dram armenio",
+        "symbol": "֏"
+      }
     ],
     "languages": [
-      "Armenian"
+      "Armenio"
     ],
     "demonym": "armenio",
+    "hdi": 0.786,
+    "ihdi": 0.691,
     "unMember": true
   },
   {
@@ -137,12 +171,17 @@
     "area": 1246700,
     "flagSvg": "https://flagcdn.com/ao.svg",
     "currencies": [
-      "Angolan kwanza"
+      {
+        "name": "Kwanza angoleño",
+        "symbol": "Kz"
+      }
     ],
     "languages": [
-      "Portuguese"
+      "Portugués"
     ],
     "demonym": "angoleño",
+    "hdi": 0.586,
+    "ihdi": 0.377,
     "unMember": true
   },
   {
@@ -155,13 +194,17 @@
     "area": 2780400,
     "flagSvg": "https://flagcdn.com/ar.svg",
     "currencies": [
-      "Argentine peso"
+      {
+        "name": "Peso argentino",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Guaraní",
-      "Spanish"
+      "Español"
     ],
     "demonym": "argentino",
+    "hdi": 0.842,
+    "ihdi": 0.714,
     "unMember": true
   },
   {
@@ -174,13 +217,18 @@
     "area": 199,
     "flagSvg": "https://flagcdn.com/as.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Samoan"
+      "Inglés",
+      "Samoano"
     ],
     "demonym": "samoano americano",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -193,12 +241,17 @@
     "area": 83871,
     "flagSvg": "https://flagcdn.com/at.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "German"
+      "Alemán"
     ],
     "demonym": "austriaco",
+    "hdi": 0.926,
+    "ihdi": 0.851,
     "unMember": true
   },
   {
@@ -211,12 +264,17 @@
     "area": 7692024,
     "flagSvg": "https://flagcdn.com/au.svg",
     "currencies": [
-      "Australian dollar"
+      {
+        "name": "Dólar australiano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "australiano",
+    "hdi": 0.946,
+    "ihdi": 0.876,
     "unMember": true
   },
   {
@@ -229,13 +287,18 @@
     "area": 180,
     "flagSvg": "https://flagcdn.com/aw.svg",
     "currencies": [
-      "Aruban florin"
+      {
+        "name": "Florín arubeño",
+        "symbol": "ƒ"
+      }
     ],
     "languages": [
-      "Dutch",
+      "Neerlandés",
       "Papiamento"
     ],
     "demonym": "arubeño",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -248,12 +311,17 @@
     "area": 1580,
     "flagSvg": "https://flagcdn.com/ax.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Swedish"
+      "Sueco"
     ],
     "demonym": "alandés",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -266,12 +334,17 @@
     "area": 86600,
     "flagSvg": "https://flagcdn.com/az.svg",
     "currencies": [
-      "Azerbaijani manat"
+      {
+        "name": "Manat azerbaiyano",
+        "symbol": "₼"
+      }
     ],
     "languages": [
-      "Azerbaijani"
+      "Azerbaiyano"
     ],
     "demonym": "azerbaiyano",
+    "hdi": 0.76,
+    "ihdi": 0.668,
     "unMember": true
   },
   {
@@ -284,14 +357,19 @@
     "area": 51209,
     "flagSvg": "https://flagcdn.com/ba.svg",
     "currencies": [
-      "Bosnia and Herzegovina convertible mark"
+      {
+        "name": "Marco convertible de Bosnia y Herzegovina",
+        "symbol": "KM"
+      }
     ],
     "languages": [
-      "Bosnian",
-      "Croatian",
-      "Serbian"
+      "Bosnio",
+      "Croata",
+      "Serbio"
     ],
     "demonym": "bosnio",
+    "hdi": 0.779,
+    "ihdi": 0.67,
     "unMember": true
   },
   {
@@ -304,12 +382,17 @@
     "area": 430,
     "flagSvg": "https://flagcdn.com/bb.svg",
     "currencies": [
-      "Barbadian dollar"
+      {
+        "name": "Dólar barbadense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "barbadense",
+    "hdi": 0.809,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -322,12 +405,17 @@
     "area": 147570,
     "flagSvg": "https://flagcdn.com/bd.svg",
     "currencies": [
-      "Bangladeshi taka"
+      {
+        "name": "Taka bangladesí",
+        "symbol": "৳"
+      }
     ],
     "languages": [
-      "Bengali"
+      "Bengalí"
     ],
     "demonym": "bangladesí",
+    "hdi": 0.67,
+    "ihdi": 0.496,
     "unMember": true
   },
   {
@@ -340,14 +428,19 @@
     "area": 30528,
     "flagSvg": "https://flagcdn.com/be.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "German",
-      "French",
-      "Dutch"
+      "Neerlandés",
+      "Francés",
+      "Alemán"
     ],
     "demonym": "belga",
+    "hdi": 0.942,
+    "ihdi": 0.878,
     "unMember": true
   },
   {
@@ -360,12 +453,17 @@
     "area": 272967,
     "flagSvg": "https://flagcdn.com/bf.svg",
     "currencies": [
-      "West African CFA franc"
+      {
+        "name": "Franco CFA de África Occidental",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "burkinés",
+    "hdi": 0.449,
+    "ihdi": 0.296,
     "unMember": true
   },
   {
@@ -378,12 +476,17 @@
     "area": 110879,
     "flagSvg": "https://flagcdn.com/bg.svg",
     "currencies": [
-      "Bulgarian lev"
+      {
+        "name": "Lev búlgaro",
+        "symbol": "лв"
+      }
     ],
     "languages": [
-      "Bulgarian"
+      "Búlgaro"
     ],
     "demonym": "búlgaro",
+    "hdi": 0.799,
+    "ihdi": 0.71,
     "unMember": true
   },
   {
@@ -396,12 +499,17 @@
     "area": 765,
     "flagSvg": "https://flagcdn.com/bh.svg",
     "currencies": [
-      "Bahraini dinar"
+      {
+        "name": "Dinar bareiní",
+        "symbol": ".د.ب"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "bareiní",
+    "hdi": 0.888,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -414,13 +522,18 @@
     "area": 27834,
     "flagSvg": "https://flagcdn.com/bi.svg",
     "currencies": [
-      "Burundian franc"
+      {
+        "name": "Franco burundés",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French",
-      "Kirundi"
+      "Kirundi",
+      "Francés"
     ],
     "demonym": "burundés",
+    "hdi": 0.426,
+    "ihdi": 0.296,
     "unMember": true
   },
   {
@@ -433,12 +546,17 @@
     "area": 112622,
     "flagSvg": "https://flagcdn.com/bj.svg",
     "currencies": [
-      "West African CFA franc"
+      {
+        "name": "Franco CFA de África Occidental",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "beninés",
+    "hdi": 0.504,
+    "ihdi": 0.327,
     "unMember": true
   },
   {
@@ -451,12 +569,17 @@
     "area": 21,
     "flagSvg": "https://flagcdn.com/bl.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "sanbartolomeño",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -469,12 +592,17 @@
     "area": 54,
     "flagSvg": "https://flagcdn.com/bm.svg",
     "currencies": [
-      "Bermudian dollar"
+      {
+        "name": "Dólar bermudeño",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "bermudeño",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -487,13 +615,17 @@
     "area": 5765,
     "flagSvg": "https://flagcdn.com/bn.svg",
     "currencies": [
-      "Brunei dollar",
-      "Singapore dollar"
+      {
+        "name": "Dólar de Brunéi",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Malay"
+      "Malayo"
     ],
     "demonym": "bruneano",
+    "hdi": 0.829,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -506,15 +638,19 @@
     "area": 1098581,
     "flagSvg": "https://flagcdn.com/bo.svg",
     "currencies": [
-      "Bolivian boliviano"
+      {
+        "name": "Boliviano",
+        "symbol": "Bs."
+      }
     ],
     "languages": [
-      "Aymara",
-      "Guaraní",
+      "Español",
       "Quechua",
-      "Spanish"
+      "Aimara"
     ],
     "demonym": "boliviano",
+    "hdi": 0.698,
+    "ihdi": 0.512,
     "unMember": true
   },
   {
@@ -527,12 +663,17 @@
     "area": 8515767,
     "flagSvg": "https://flagcdn.com/br.svg",
     "currencies": [
-      "Brazilian real"
+      {
+        "name": "Real brasileño",
+        "symbol": "R$"
+      }
     ],
     "languages": [
-      "Portuguese"
+      "Portugués"
     ],
     "demonym": "brasileño",
+    "hdi": 0.76,
+    "ihdi": 0.576,
     "unMember": true
   },
   {
@@ -545,13 +686,17 @@
     "area": 13943,
     "flagSvg": "https://flagcdn.com/bs.svg",
     "currencies": [
-      "Bahamian dollar",
-      "United States dollar"
+      {
+        "name": "Dólar bahameño",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "bahameño",
+    "hdi": 0.812,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -564,13 +709,17 @@
     "area": 38394,
     "flagSvg": "https://flagcdn.com/bt.svg",
     "currencies": [
-      "Bhutanese ngultrum",
-      "Indian rupee"
+      {
+        "name": "Ngultrum butanés",
+        "symbol": "Nu."
+      }
     ],
     "languages": [
       "Dzongkha"
     ],
     "demonym": "butanés",
+    "hdi": 0.781,
+    "ihdi": 0.637,
     "unMember": true
   },
   {
@@ -583,13 +732,18 @@
     "area": 582000,
     "flagSvg": "https://flagcdn.com/bw.svg",
     "currencies": [
-      "Botswana pula"
+      {
+        "name": "Pula botsuano",
+        "symbol": "P"
+      }
     ],
     "languages": [
-      "English",
-      "Tswana"
+      "Inglés",
+      "Setsuana"
     ],
     "demonym": "botsuano",
+    "hdi": 0.708,
+    "ihdi": 0.456,
     "unMember": true
   },
   {
@@ -602,13 +756,18 @@
     "area": 207600,
     "flagSvg": "https://flagcdn.com/by.svg",
     "currencies": [
-      "Belarusian ruble"
+      {
+        "name": "Rublo bielorruso",
+        "symbol": "Br"
+      }
     ],
     "languages": [
-      "Belarusian",
-      "Russian"
+      "Bielorruso",
+      "Ruso"
     ],
     "demonym": "bielorruso",
+    "hdi": 0.801,
+    "ihdi": 0.729,
     "unMember": true
   },
   {
@@ -621,14 +780,17 @@
     "area": 22966,
     "flagSvg": "https://flagcdn.com/bz.svg",
     "currencies": [
-      "Belize dollar"
+      {
+        "name": "Dólar beliceño",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Belizean Creole",
-      "English",
-      "Spanish"
+      "Inglés"
     ],
     "demonym": "beliceño",
+    "hdi": 0.7,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -641,13 +803,18 @@
     "area": 9984670,
     "flagSvg": "https://flagcdn.com/ca.svg",
     "currencies": [
-      "Canadian dollar"
+      {
+        "name": "Dólar canadiense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "French"
+      "Inglés",
+      "Francés"
     ],
     "demonym": "canadiense",
+    "hdi": 0.935,
+    "ihdi": 0.86,
     "unMember": true
   },
   {
@@ -660,16 +827,17 @@
     "area": 2344858,
     "flagSvg": "https://flagcdn.com/cd.svg",
     "currencies": [
-      "Congolese franc"
+      {
+        "name": "Franco congoleño",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French",
-      "Kikongo",
-      "Lingala",
-      "Tshiluba",
-      "Swahili"
+      "Francés"
     ],
     "demonym": "congoleño",
+    "hdi": 0.479,
+    "ihdi": 0.311,
     "unMember": true
   },
   {
@@ -682,13 +850,18 @@
     "area": 622984,
     "flagSvg": "https://flagcdn.com/cf.svg",
     "currencies": [
-      "Central African CFA franc"
+      {
+        "name": "Franco CFA de África Central",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French",
+      "Francés",
       "Sango"
     ],
     "demonym": "centroafricano",
+    "hdi": 0.387,
+    "ihdi": 0.236,
     "unMember": true
   },
   {
@@ -701,14 +874,17 @@
     "area": 342000,
     "flagSvg": "https://flagcdn.com/cg.svg",
     "currencies": [
-      "Central African CFA franc"
+      {
+        "name": "Franco CFA de África Central",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French",
-      "Kikongo",
-      "Lingala"
+      "Francés"
     ],
     "demonym": "congoleño",
+    "hdi": 0.571,
+    "ihdi": 0.381,
     "unMember": true
   },
   {
@@ -721,15 +897,20 @@
     "area": 41284,
     "flagSvg": "https://flagcdn.com/ch.svg",
     "currencies": [
-      "Swiss franc"
+      {
+        "name": "Franco suizo",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French",
-      "Swiss German",
-      "Italian",
-      "Romansh"
+      "Alemán",
+      "Francés",
+      "Italiano",
+      "Romanche"
     ],
     "demonym": "suizo",
+    "hdi": 0.967,
+    "ihdi": 0.894,
     "unMember": true
   },
   {
@@ -742,12 +923,17 @@
     "area": 322463,
     "flagSvg": "https://flagcdn.com/ci.svg",
     "currencies": [
-      "West African CFA franc"
+      {
+        "name": "Franco CFA de África Occidental",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "marfileño",
+    "hdi": 0.55,
+    "ihdi": 0.365,
     "unMember": true
   },
   {
@@ -760,14 +946,18 @@
     "area": 236,
     "flagSvg": "https://flagcdn.com/ck.svg",
     "currencies": [
-      "Cook Islands dollar",
-      "New Zealand dollar"
+      {
+        "name": "Dólar neozelandés",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Cook Islands Māori"
+      "Inglés",
+      "Maorí de las Islas Cook"
     ],
     "demonym": "cookiano",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -780,12 +970,17 @@
     "area": 756102,
     "flagSvg": "https://flagcdn.com/cl.svg",
     "currencies": [
-      "Chilean peso"
+      {
+        "name": "Peso chileno",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "chileno",
+    "hdi": 0.86,
+    "ihdi": 0.709,
     "unMember": true
   },
   {
@@ -798,13 +993,18 @@
     "area": 475442,
     "flagSvg": "https://flagcdn.com/cm.svg",
     "currencies": [
-      "Central African CFA franc"
+      {
+        "name": "Franco CFA de África Central",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "English",
-      "French"
+      "Francés",
+      "Inglés"
     ],
     "demonym": "camerunés",
+    "hdi": 0.587,
+    "ihdi": 0.381,
     "unMember": true
   },
   {
@@ -817,12 +1017,17 @@
     "area": 9706961,
     "flagSvg": "https://flagcdn.com/cn.svg",
     "currencies": [
-      "Chinese yuan"
+      {
+        "name": "Yuan chino",
+        "symbol": "¥"
+      }
     ],
     "languages": [
-      "Chinese"
+      "Chino mandarín"
     ],
     "demonym": "chino",
+    "hdi": 0.788,
+    "ihdi": 0.637,
     "unMember": true
   },
   {
@@ -835,12 +1040,17 @@
     "area": 1141748,
     "flagSvg": "https://flagcdn.com/co.svg",
     "currencies": [
-      "Colombian peso"
+      {
+        "name": "Peso colombiano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "colombiano",
+    "hdi": 0.758,
+    "ihdi": 0.571,
     "unMember": true
   },
   {
@@ -853,12 +1063,17 @@
     "area": 51100,
     "flagSvg": "https://flagcdn.com/cr.svg",
     "currencies": [
-      "Costa Rican colón"
+      {
+        "name": "Colón costarricense",
+        "symbol": "₡"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "costarricense",
+    "hdi": 0.806,
+    "ihdi": 0.654,
     "unMember": true
   },
   {
@@ -871,13 +1086,17 @@
     "area": 109884,
     "flagSvg": "https://flagcdn.com/cu.svg",
     "currencies": [
-      "Cuban convertible peso",
-      "Cuban peso"
+      {
+        "name": "Peso cubano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "cubano",
+    "hdi": 0.764,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -890,12 +1109,17 @@
     "area": 4033,
     "flagSvg": "https://flagcdn.com/cv.svg",
     "currencies": [
-      "Cape Verdean escudo"
+      {
+        "name": "Escudo caboverdiano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Portuguese"
+      "Portugués"
     ],
     "demonym": "caboverdiano",
+    "hdi": 0.662,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -908,14 +1132,18 @@
     "area": 444,
     "flagSvg": "https://flagcdn.com/cw.svg",
     "currencies": [
-      "Netherlands Antillean guilder"
+      {
+        "name": "Florín antillano neerlandés",
+        "symbol": "ƒ"
+      }
     ],
     "languages": [
-      "English",
-      "Dutch",
+      "Neerlandés",
       "Papiamento"
     ],
     "demonym": "curazaleño",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -928,13 +1156,18 @@
     "area": 9251,
     "flagSvg": "https://flagcdn.com/cy.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Greek",
-      "Turkish"
+      "Griego",
+      "Turco"
     ],
     "demonym": "chipriota",
+    "hdi": 0.907,
+    "ihdi": 0.815,
     "unMember": true
   },
   {
@@ -947,13 +1180,17 @@
     "area": 78865,
     "flagSvg": "https://flagcdn.com/cz.svg",
     "currencies": [
-      "Czech koruna"
+      {
+        "name": "Corona checa",
+        "symbol": "Kč"
+      }
     ],
     "languages": [
-      "Czech",
-      "Slovak"
+      "Checo"
     ],
     "demonym": "checo",
+    "hdi": 0.9,
+    "ihdi": 0.847,
     "unMember": true
   },
   {
@@ -966,12 +1203,17 @@
     "area": 357114,
     "flagSvg": "https://flagcdn.com/de.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "German"
+      "Alemán"
     ],
     "demonym": "alemán",
+    "hdi": 0.95,
+    "ihdi": 0.883,
     "unMember": true
   },
   {
@@ -984,13 +1226,18 @@
     "area": 23200,
     "flagSvg": "https://flagcdn.com/dj.svg",
     "currencies": [
-      "Djiboutian franc"
+      {
+        "name": "Franco yibutiano",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "Arabic",
-      "French"
+      "Francés",
+      "Árabe"
     ],
     "demonym": "yibutiano",
+    "hdi": 0.509,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -1003,12 +1250,17 @@
     "area": 43094,
     "flagSvg": "https://flagcdn.com/dk.svg",
     "currencies": [
-      "Danish krone"
+      {
+        "name": "Corona danesa",
+        "symbol": "kr"
+      }
     ],
     "languages": [
-      "Danish"
+      "Danés"
     ],
     "demonym": "danés",
+    "hdi": 0.952,
+    "ihdi": 0.91,
     "unMember": true
   },
   {
@@ -1021,12 +1273,17 @@
     "area": 751,
     "flagSvg": "https://flagcdn.com/dm.svg",
     "currencies": [
-      "Eastern Caribbean dollar"
+      {
+        "name": "Dólar del Caribe Oriental",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "dominiqués",
+    "hdi": 0.72,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -1039,12 +1296,17 @@
     "area": 48671,
     "flagSvg": "https://flagcdn.com/do.svg",
     "currencies": [
-      "Dominican peso"
+      {
+        "name": "Peso dominicano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "dominicano",
+    "hdi": 0.766,
+    "ihdi": 0.583,
     "unMember": true
   },
   {
@@ -1057,12 +1319,18 @@
     "area": 2381741,
     "flagSvg": "https://flagcdn.com/dz.svg",
     "currencies": [
-      "Algerian dinar"
+      {
+        "name": "Dinar argelino",
+        "symbol": "د.ج"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe",
+      "Tamazight"
     ],
     "demonym": "argelino",
+    "hdi": 0.745,
+    "ihdi": 0.584,
     "unMember": true
   },
   {
@@ -1075,12 +1343,17 @@
     "area": 276841,
     "flagSvg": "https://flagcdn.com/ec.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "ecuatoriano",
+    "hdi": 0.765,
+    "ihdi": 0.589,
     "unMember": true
   },
   {
@@ -1093,12 +1366,17 @@
     "area": 45227,
     "flagSvg": "https://flagcdn.com/ee.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Estonian"
+      "Estonio"
     ],
     "demonym": "estonio",
+    "hdi": 0.899,
+    "ihdi": 0.848,
     "unMember": true
   },
   {
@@ -1111,12 +1389,17 @@
     "area": 1002450,
     "flagSvg": "https://flagcdn.com/eg.svg",
     "currencies": [
-      "Egyptian pound"
+      {
+        "name": "Libra egipcia",
+        "symbol": "£"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "egipcio",
+    "hdi": 0.731,
+    "ihdi": 0.518,
     "unMember": true
   },
   {
@@ -1129,16 +1412,17 @@
     "area": 266000,
     "flagSvg": "https://flagcdn.com/eh.svg",
     "currencies": [
-      "Algerian dinar",
-      "Moroccan dirham",
-      "Mauritanian ouguiya"
+      {
+        "name": "Dírham marroquí",
+        "symbol": "د.م."
+      }
     ],
     "languages": [
-      "Berber",
-      "Hassaniya",
-      "Spanish"
+      "Árabe"
     ],
     "demonym": "saharaui",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -1151,14 +1435,19 @@
     "area": 117600,
     "flagSvg": "https://flagcdn.com/er.svg",
     "currencies": [
-      "Eritrean nakfa"
+      {
+        "name": "Nakfa eritreo",
+        "symbol": "Nfk"
+      }
     ],
     "languages": [
-      "Arabic",
-      "English",
-      "Tigrinya"
+      "Tigriña",
+      "Árabe",
+      "Inglés"
     ],
     "demonym": "eritreo",
+    "hdi": 0.492,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -1171,15 +1460,17 @@
     "area": 505992,
     "flagSvg": "https://flagcdn.com/es.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Spanish",
-      "Catalan",
-      "Basque",
-      "Galician"
+      "Español"
     ],
     "demonym": "español",
+    "hdi": 0.911,
+    "ihdi": 0.788,
     "unMember": true
   },
   {
@@ -1192,12 +1483,17 @@
     "area": 1104300,
     "flagSvg": "https://flagcdn.com/et.svg",
     "currencies": [
-      "Ethiopian birr"
+      {
+        "name": "Birr etíope",
+        "symbol": "Br"
+      }
     ],
     "languages": [
-      "Amharic"
+      "Amárico"
     ],
     "demonym": "etíope",
+    "hdi": 0.492,
+    "ihdi": 0.347,
     "unMember": true
   },
   {
@@ -1210,13 +1506,18 @@
     "area": 338455,
     "flagSvg": "https://flagcdn.com/fi.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Finnish",
-      "Swedish"
+      "Finés",
+      "Sueco"
     ],
     "demonym": "finlandés",
+    "hdi": 0.942,
+    "ihdi": 0.89,
     "unMember": true
   },
   {
@@ -1229,14 +1530,19 @@
     "area": 18272,
     "flagSvg": "https://flagcdn.com/fj.svg",
     "currencies": [
-      "Fijian dollar"
+      {
+        "name": "Dólar fiyiano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Fijian",
-      "Fiji Hindi"
+      "Inglés",
+      "Fiyiano",
+      "Hindi fiyiano"
     ],
     "demonym": "fiyiano",
+    "hdi": 0.729,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -1249,12 +1555,17 @@
     "area": 12173,
     "flagSvg": "https://flagcdn.com/fk.svg",
     "currencies": [
-      "Falkland Islands pound"
+      {
+        "name": "Libra malvinense",
+        "symbol": "£"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "malvinense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -1267,12 +1578,17 @@
     "area": 702,
     "flagSvg": "https://flagcdn.com/fm.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "micronesio",
+    "hdi": 0.628,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -1285,14 +1601,18 @@
     "area": 1393,
     "flagSvg": "https://flagcdn.com/fo.svg",
     "currencies": [
-      "Danish krone",
-      "Faroese króna"
+      {
+        "name": "Corona danesa",
+        "symbol": "kr"
+      }
     ],
     "languages": [
-      "Danish",
-      "Faroese"
+      "Feroés",
+      "Danés"
     ],
     "demonym": "feroés",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -1305,12 +1625,17 @@
     "area": 543908,
     "flagSvg": "https://flagcdn.com/fr.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "francés",
+    "hdi": 0.91,
+    "ihdi": 0.82,
     "unMember": true
   },
   {
@@ -1323,12 +1648,17 @@
     "area": 267668,
     "flagSvg": "https://flagcdn.com/ga.svg",
     "currencies": [
-      "Central African CFA franc"
+      {
+        "name": "Franco CFA de África Central",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "gabonés",
+    "hdi": 0.706,
+    "ihdi": 0.517,
     "unMember": true
   },
   {
@@ -1341,12 +1671,17 @@
     "area": 244376,
     "flagSvg": "https://flagcdn.com/gb.svg",
     "currencies": [
-      "British pound"
+      {
+        "name": "Libra esterlina",
+        "symbol": "£"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "británico",
+    "hdi": 0.94,
+    "ihdi": 0.867,
     "unMember": true
   },
   {
@@ -1359,12 +1694,17 @@
     "area": 344,
     "flagSvg": "https://flagcdn.com/gd.svg",
     "currencies": [
-      "Eastern Caribbean dollar"
+      {
+        "name": "Dólar del Caribe Oriental",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "granadino",
+    "hdi": 0.795,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -1377,12 +1717,17 @@
     "area": 69700,
     "flagSvg": "https://flagcdn.com/ge.svg",
     "currencies": [
-      "lari"
+      {
+        "name": "Lari georgiano",
+        "symbol": "₾"
+      }
     ],
     "languages": [
-      "Georgian"
+      "Georgiano"
     ],
     "demonym": "georgiano",
+    "hdi": 0.814,
+    "ihdi": 0.71,
     "unMember": true
   },
   {
@@ -1395,15 +1740,18 @@
     "area": 78,
     "flagSvg": "https://flagcdn.com/gg.svg",
     "currencies": [
-      "British pound",
-      "Guernsey pound"
+      {
+        "name": "Libra esterlina",
+        "symbol": "£"
+      }
     ],
     "languages": [
-      "English",
-      "French",
-      "Guernésiais"
+      "Inglés",
+      "Francés"
     ],
     "demonym": "guerneseyés",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -1416,12 +1764,17 @@
     "area": 238533,
     "flagSvg": "https://flagcdn.com/gh.svg",
     "currencies": [
-      "Ghanaian cedi"
+      {
+        "name": "Cedi ghanés",
+        "symbol": "₵"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "ghanés",
+    "hdi": 0.602,
+    "ihdi": 0.418,
     "unMember": true
   },
   {
@@ -1434,12 +1787,17 @@
     "area": 2166086,
     "flagSvg": "https://flagcdn.com/gl.svg",
     "currencies": [
-      "krone"
+      {
+        "name": "Corona danesa",
+        "symbol": "kr"
+      }
     ],
     "languages": [
-      "Greenlandic"
+      "Groenlandés"
     ],
     "demonym": "groenlandés",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -1452,12 +1810,17 @@
     "area": 10689,
     "flagSvg": "https://flagcdn.com/gm.svg",
     "currencies": [
-      "dalasi"
+      {
+        "name": "Dalasi gambiano",
+        "symbol": "D"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "gambiano",
+    "hdi": 0.5,
+    "ihdi": 0.332,
     "unMember": true
   },
   {
@@ -1470,12 +1833,17 @@
     "area": 245857,
     "flagSvg": "https://flagcdn.com/gn.svg",
     "currencies": [
-      "Guinean franc"
+      {
+        "name": "Franco guineano",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "guineano",
+    "hdi": 0.465,
+    "ihdi": 0.296,
     "unMember": true
   },
   {
@@ -1488,14 +1856,19 @@
     "area": 28051,
     "flagSvg": "https://flagcdn.com/gq.svg",
     "currencies": [
-      "Central African CFA franc"
+      {
+        "name": "Franco CFA de África Central",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French",
-      "Portuguese",
-      "Spanish"
+      "Español",
+      "Francés",
+      "Portugués"
     ],
     "demonym": "ecuatoguineano",
+    "hdi": 0.648,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -1508,12 +1881,17 @@
     "area": 131990,
     "flagSvg": "https://flagcdn.com/gr.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Greek"
+      "Griego"
     ],
     "demonym": "griego",
+    "hdi": 0.893,
+    "ihdi": 0.791,
     "unMember": true
   },
   {
@@ -1526,12 +1904,17 @@
     "area": 108889,
     "flagSvg": "https://flagcdn.com/gt.svg",
     "currencies": [
-      "Guatemalan quetzal"
+      {
+        "name": "Quetzal guatemalteco",
+        "symbol": "Q"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "guatemalteco",
+    "hdi": 0.629,
+    "ihdi": 0.44,
     "unMember": true
   },
   {
@@ -1544,14 +1927,18 @@
     "area": 549,
     "flagSvg": "https://flagcdn.com/gu.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Chamorro",
-      "English",
-      "Spanish"
+      "Inglés",
+      "Chamorro"
     ],
     "demonym": "guameño",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -1564,13 +1951,17 @@
     "area": 36125,
     "flagSvg": "https://flagcdn.com/gw.svg",
     "currencies": [
-      "West African CFA franc"
+      {
+        "name": "Franco CFA de África Occidental",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "Portuguese",
-      "Upper Guinea Creole"
+      "Portugués"
     ],
     "demonym": "guineano-bisauense",
+    "hdi": 0.483,
+    "ihdi": 0.297,
     "unMember": true
   },
   {
@@ -1583,12 +1974,17 @@
     "area": 214969,
     "flagSvg": "https://flagcdn.com/gy.svg",
     "currencies": [
-      "Guyanese dollar"
+      {
+        "name": "Dólar guyanés",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "guyanés",
+    "hdi": 0.742,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -1601,13 +1997,18 @@
     "area": 1104,
     "flagSvg": "https://flagcdn.com/hk.svg",
     "currencies": [
-      "Hong Kong dollar"
+      {
+        "name": "Dólar de Hong Kong",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Chinese"
+      "Chino",
+      "Inglés"
     ],
     "demonym": "hongkonés",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -1620,12 +2021,17 @@
     "area": 112492,
     "flagSvg": "https://flagcdn.com/hn.svg",
     "currencies": [
-      "Honduran lempira"
+      {
+        "name": "Lempira hondureño",
+        "symbol": "L"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "hondureño",
+    "hdi": 0.624,
+    "ihdi": 0.443,
     "unMember": true
   },
   {
@@ -1638,12 +2044,17 @@
     "area": 56594,
     "flagSvg": "https://flagcdn.com/hr.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Croatian"
+      "Croata"
     ],
     "demonym": "croata",
+    "hdi": 0.878,
+    "ihdi": 0.809,
     "unMember": true
   },
   {
@@ -1656,13 +2067,18 @@
     "area": 27750,
     "flagSvg": "https://flagcdn.com/ht.svg",
     "currencies": [
-      "Haitian gourde"
+      {
+        "name": "Gurda haitiana",
+        "symbol": "G"
+      }
     ],
     "languages": [
-      "French",
-      "Haitian Creole"
+      "Francés",
+      "Criollo haitiano"
     ],
     "demonym": "haitiano",
+    "hdi": 0.535,
+    "ihdi": 0.323,
     "unMember": true
   },
   {
@@ -1675,12 +2091,17 @@
     "area": 93028,
     "flagSvg": "https://flagcdn.com/hu.svg",
     "currencies": [
-      "Hungarian forint"
+      {
+        "name": "Forinto húngaro",
+        "symbol": "Ft"
+      }
     ],
     "languages": [
-      "Hungarian"
+      "Húngaro"
     ],
     "demonym": "húngaro",
+    "hdi": 0.851,
+    "ihdi": 0.789,
     "unMember": true
   },
   {
@@ -1693,12 +2114,17 @@
     "area": 1904569,
     "flagSvg": "https://flagcdn.com/id.svg",
     "currencies": [
-      "Indonesian rupiah"
+      {
+        "name": "Rupia indonesia",
+        "symbol": "Rp"
+      }
     ],
     "languages": [
-      "Indonesian"
+      "Indonesio"
     ],
     "demonym": "indonesio",
+    "hdi": 0.713,
+    "ihdi": 0.563,
     "unMember": true
   },
   {
@@ -1711,13 +2137,18 @@
     "area": 70273,
     "flagSvg": "https://flagcdn.com/ie.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "English",
-      "Irish"
+      "Irlandés",
+      "Inglés"
     ],
     "demonym": "irlandés",
+    "hdi": 0.95,
+    "ihdi": 0.886,
     "unMember": true
   },
   {
@@ -1730,13 +2161,18 @@
     "area": 21937,
     "flagSvg": "https://flagcdn.com/il.svg",
     "currencies": [
-      "Israeli new shekel"
+      {
+        "name": "Nuevo séquel israelí",
+        "symbol": "₪"
+      }
     ],
     "languages": [
-      "Arabic",
-      "Hebrew"
+      "Hebreo",
+      "Árabe"
     ],
     "demonym": "israelí",
+    "hdi": 0.915,
+    "ihdi": 0.809,
     "unMember": true
   },
   {
@@ -1749,14 +2185,18 @@
     "area": 572,
     "flagSvg": "https://flagcdn.com/im.svg",
     "currencies": [
-      "British pound",
-      "Manx pound"
+      {
+        "name": "Libra esterlina",
+        "symbol": "£"
+      }
     ],
     "languages": [
-      "English",
-      "Manx"
+      "Inglés",
+      "Manés"
     ],
     "demonym": "manés",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -1769,14 +2209,18 @@
     "area": 3287263,
     "flagSvg": "https://flagcdn.com/in.svg",
     "currencies": [
-      "Indian rupee"
+      {
+        "name": "Rupia india",
+        "symbol": "₹"
+      }
     ],
     "languages": [
-      "English",
       "Hindi",
-      "Tamil"
+      "Inglés"
     ],
     "demonym": "indio",
+    "hdi": 0.644,
+    "ihdi": 0.46,
     "unMember": true
   },
   {
@@ -1789,14 +2233,18 @@
     "area": 438317,
     "flagSvg": "https://flagcdn.com/iq.svg",
     "currencies": [
-      "Iraqi dinar"
+      {
+        "name": "Dinar iraquí",
+        "symbol": "ع.د"
+      }
     ],
     "languages": [
-      "Arabic",
-      "Aramaic",
-      "Sorani"
+      "Árabe",
+      "Kurdo"
     ],
     "demonym": "iraquí",
+    "hdi": 0.686,
+    "ihdi": 0.502,
     "unMember": true
   },
   {
@@ -1809,12 +2257,17 @@
     "area": 1648195,
     "flagSvg": "https://flagcdn.com/ir.svg",
     "currencies": [
-      "Iranian rial"
+      {
+        "name": "Rial iraní",
+        "symbol": "﷼"
+      }
     ],
     "languages": [
-      "Persian (Farsi)"
+      "Persa"
     ],
     "demonym": "iraní",
+    "hdi": 0.78,
+    "ihdi": 0.589,
     "unMember": true
   },
   {
@@ -1827,12 +2280,17 @@
     "area": 103000,
     "flagSvg": "https://flagcdn.com/is.svg",
     "currencies": [
-      "Icelandic króna"
+      {
+        "name": "Corona islandesa",
+        "symbol": "kr"
+      }
     ],
     "languages": [
-      "Icelandic"
+      "Islandés"
     ],
     "demonym": "islandés",
+    "hdi": 0.959,
+    "ihdi": 0.915,
     "unMember": true
   },
   {
@@ -1845,13 +2303,17 @@
     "area": 301336,
     "flagSvg": "https://flagcdn.com/it.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Italian",
-      "Catalan"
+      "Italiano"
     ],
     "demonym": "italiano",
+    "hdi": 0.907,
+    "ihdi": 0.79,
     "unMember": true
   },
   {
@@ -1864,15 +2326,18 @@
     "area": 116,
     "flagSvg": "https://flagcdn.com/je.svg",
     "currencies": [
-      "British pound",
-      "Jersey pound"
+      {
+        "name": "Libra esterlina",
+        "symbol": "£"
+      }
     ],
     "languages": [
-      "English",
-      "French",
-      "Jèrriais"
+      "Inglés",
+      "Francés"
     ],
     "demonym": "jerseyés",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -1885,13 +2350,17 @@
     "area": 10991,
     "flagSvg": "https://flagcdn.com/jm.svg",
     "currencies": [
-      "Jamaican dollar"
+      {
+        "name": "Dólar jamaicano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Jamaican Patois"
+      "Inglés"
     ],
     "demonym": "jamaicano",
+    "hdi": 0.709,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -1904,12 +2373,17 @@
     "area": 89342,
     "flagSvg": "https://flagcdn.com/jo.svg",
     "currencies": [
-      "Jordanian dinar"
+      {
+        "name": "Dinar jordano",
+        "symbol": "د.ا"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "jordano",
+    "hdi": 0.736,
+    "ihdi": 0.617,
     "unMember": true
   },
   {
@@ -1922,12 +2396,17 @@
     "area": 377930,
     "flagSvg": "https://flagcdn.com/jp.svg",
     "currencies": [
-      "Japanese yen"
+      {
+        "name": "Yen japonés",
+        "symbol": "¥"
+      }
     ],
     "languages": [
-      "Japanese"
+      "Japonés"
     ],
     "demonym": "japonés",
+    "hdi": 0.92,
+    "ihdi": 0.85,
     "unMember": true
   },
   {
@@ -1940,13 +2419,18 @@
     "area": 580367,
     "flagSvg": "https://flagcdn.com/ke.svg",
     "currencies": [
-      "Kenyan shilling"
+      {
+        "name": "Chelín keniano",
+        "symbol": "KSh"
+      }
     ],
     "languages": [
-      "English",
-      "Swahili"
+      "Suajili",
+      "Inglés"
     ],
     "demonym": "keniata",
+    "hdi": 0.601,
+    "ihdi": 0.426,
     "unMember": true
   },
   {
@@ -1959,13 +2443,18 @@
     "area": 199951,
     "flagSvg": "https://flagcdn.com/kg.svg",
     "currencies": [
-      "Kyrgyzstani som"
+      {
+        "name": "Som kirguís",
+        "symbol": "С"
+      }
     ],
     "languages": [
-      "Kyrgyz",
-      "Russian"
+      "Kirguís",
+      "Ruso"
     ],
     "demonym": "kirguís",
+    "hdi": 0.701,
+    "ihdi": 0.592,
     "unMember": true
   },
   {
@@ -1978,13 +2467,17 @@
     "area": 181035,
     "flagSvg": "https://flagcdn.com/kh.svg",
     "currencies": [
-      "Cambodian riel",
-      "United States dollar"
+      {
+        "name": "Riel camboyano",
+        "symbol": "៛"
+      }
     ],
     "languages": [
-      "Khmer"
+      "Jemer"
     ],
     "demonym": "camboyano",
+    "hdi": 0.6,
+    "ihdi": 0.44,
     "unMember": true
   },
   {
@@ -1997,14 +2490,18 @@
     "area": 811,
     "flagSvg": "https://flagcdn.com/ki.svg",
     "currencies": [
-      "Australian dollar",
-      "Kiribati dollar"
+      {
+        "name": "Dólar australiano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Gilbertese"
+      "Inglés",
+      "Gilbertés"
     ],
     "demonym": "kiribatiano",
+    "hdi": 0.623,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2017,14 +2514,19 @@
     "area": 1862,
     "flagSvg": "https://flagcdn.com/km.svg",
     "currencies": [
-      "Comorian franc"
+      {
+        "name": "Franco comorense",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "Arabic",
-      "French",
-      "Comorian"
+      "Comorense",
+      "Árabe",
+      "Francés"
     ],
     "demonym": "comorense",
+    "hdi": 0.596,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2037,12 +2539,17 @@
     "area": 261,
     "flagSvg": "https://flagcdn.com/kn.svg",
     "currencies": [
-      "Eastern Caribbean dollar"
+      {
+        "name": "Dólar del Caribe Oriental",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "sancrístobalense",
+    "hdi": 0.777,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2055,12 +2562,17 @@
     "area": 120538,
     "flagSvg": "https://flagcdn.com/kp.svg",
     "currencies": [
-      "North Korean won"
+      {
+        "name": "Won norcoreano",
+        "symbol": "₩"
+      }
     ],
     "languages": [
-      "Korean"
+      "Coreano"
     ],
     "demonym": "norcoreano",
+    "hdi": 0.733,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2073,12 +2585,17 @@
     "area": 100210,
     "flagSvg": "https://flagcdn.com/kr.svg",
     "currencies": [
-      "South Korean won"
+      {
+        "name": "Won surcoreano",
+        "symbol": "₩"
+      }
     ],
     "languages": [
-      "Korean"
+      "Coreano"
     ],
     "demonym": "surcoreano",
+    "hdi": 0.929,
+    "ihdi": 0.872,
     "unMember": true
   },
   {
@@ -2091,12 +2608,17 @@
     "area": 17818,
     "flagSvg": "https://flagcdn.com/kw.svg",
     "currencies": [
-      "Kuwaiti dinar"
+      {
+        "name": "Dinar kuwaití",
+        "symbol": "د.ك"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "kuwaití",
+    "hdi": 0.847,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2109,12 +2631,17 @@
     "area": 264,
     "flagSvg": "https://flagcdn.com/ky.svg",
     "currencies": [
-      "Cayman Islands dollar"
+      {
+        "name": "Dólar de las Islas Caimán",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "caimanés",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -2127,13 +2654,18 @@
     "area": 2724900,
     "flagSvg": "https://flagcdn.com/kz.svg",
     "currencies": [
-      "Kazakhstani tenge"
+      {
+        "name": "Tenge kazajo",
+        "symbol": "₸"
+      }
     ],
     "languages": [
-      "Kazakh",
-      "Russian"
+      "Kazajo",
+      "Ruso"
     ],
     "demonym": "kazajo",
+    "hdi": 0.802,
+    "ihdi": 0.706,
     "unMember": true
   },
   {
@@ -2146,12 +2678,17 @@
     "area": 236800,
     "flagSvg": "https://flagcdn.com/la.svg",
     "currencies": [
-      "Lao kip"
+      {
+        "name": "Kip laosiano",
+        "symbol": "₭"
+      }
     ],
     "languages": [
       "Lao"
     ],
     "demonym": "laosiano",
+    "hdi": 0.62,
+    "ihdi": 0.461,
     "unMember": true
   },
   {
@@ -2164,13 +2701,17 @@
     "area": 10452,
     "flagSvg": "https://flagcdn.com/lb.svg",
     "currencies": [
-      "Lebanese pound"
+      {
+        "name": "Libra libanesa",
+        "symbol": "ل.ل"
+      }
     ],
     "languages": [
-      "Arabic",
-      "French"
+      "Árabe"
     ],
     "demonym": "libanés",
+    "hdi": 0.723,
+    "ihdi": 0.575,
     "unMember": true
   },
   {
@@ -2183,12 +2724,17 @@
     "area": 616,
     "flagSvg": "https://flagcdn.com/lc.svg",
     "currencies": [
-      "Eastern Caribbean dollar"
+      {
+        "name": "Dólar del Caribe Oriental",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "santalucense",
+    "hdi": 0.725,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2201,12 +2747,17 @@
     "area": 160,
     "flagSvg": "https://flagcdn.com/li.svg",
     "currencies": [
-      "Swiss franc"
+      {
+        "name": "Franco suizo",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "German"
+      "Alemán"
     ],
     "demonym": "liechtensteiniano",
+    "hdi": 0.935,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2219,13 +2770,18 @@
     "area": 65610,
     "flagSvg": "https://flagcdn.com/lk.svg",
     "currencies": [
-      "Sri Lankan rupee"
+      {
+        "name": "Rupia ceilanesa",
+        "symbol": "Rs"
+      }
     ],
     "languages": [
-      "Sinhala",
+      "Cingalés",
       "Tamil"
     ],
     "demonym": "ceilanés",
+    "hdi": 0.78,
+    "ihdi": 0.661,
     "unMember": true
   },
   {
@@ -2238,12 +2794,17 @@
     "area": 111369,
     "flagSvg": "https://flagcdn.com/lr.svg",
     "currencies": [
-      "Liberian dollar"
+      {
+        "name": "Dólar liberiano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "liberiano",
+    "hdi": 0.421,
+    "ihdi": 0.272,
     "unMember": true
   },
   {
@@ -2256,14 +2817,18 @@
     "area": 30355,
     "flagSvg": "https://flagcdn.com/ls.svg",
     "currencies": [
-      "Lesotho loti",
-      "South African rand"
+      {
+        "name": "Loti lesotense",
+        "symbol": "L"
+      }
     ],
     "languages": [
-      "English",
-      "Sotho"
+      "Sesoto",
+      "Inglés"
     ],
     "demonym": "lesotense",
+    "hdi": 0.514,
+    "ihdi": 0.33,
     "unMember": true
   },
   {
@@ -2276,12 +2841,17 @@
     "area": 65300,
     "flagSvg": "https://flagcdn.com/lt.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Lithuanian"
+      "Lituano"
     ],
     "demonym": "lituano",
+    "hdi": 0.879,
+    "ihdi": 0.812,
     "unMember": true
   },
   {
@@ -2294,14 +2864,19 @@
     "area": 2586,
     "flagSvg": "https://flagcdn.com/lu.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "German",
-      "French",
-      "Luxembourgish"
+      "Luxemburgués",
+      "Francés",
+      "Alemán"
     ],
     "demonym": "luxemburgués",
+    "hdi": 0.927,
+    "ihdi": 0.85,
     "unMember": true
   },
   {
@@ -2314,12 +2889,17 @@
     "area": 64559,
     "flagSvg": "https://flagcdn.com/lv.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Latvian"
+      "Letón"
     ],
     "demonym": "letón",
+    "hdi": 0.866,
+    "ihdi": 0.8,
     "unMember": true
   },
   {
@@ -2332,12 +2912,17 @@
     "area": 1759540,
     "flagSvg": "https://flagcdn.com/ly.svg",
     "currencies": [
-      "Libyan dinar"
+      {
+        "name": "Dinar libio",
+        "symbol": "ل.د"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "libio",
+    "hdi": 0.718,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2350,13 +2935,18 @@
     "area": 446550,
     "flagSvg": "https://flagcdn.com/ma.svg",
     "currencies": [
-      "Moroccan dirham"
+      {
+        "name": "Dírham marroquí",
+        "symbol": "د.م."
+      }
     ],
     "languages": [
-      "Arabic",
-      "Berber"
+      "Árabe",
+      "Tamazight"
     ],
     "demonym": "marroquí",
+    "hdi": 0.698,
+    "ihdi": 0.492,
     "unMember": true
   },
   {
@@ -2369,12 +2959,17 @@
     "area": 2.02,
     "flagSvg": "https://flagcdn.com/mc.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "monegasco",
+    "hdi": null,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2387,12 +2982,17 @@
     "area": 33847,
     "flagSvg": "https://flagcdn.com/md.svg",
     "currencies": [
-      "Moldovan leu"
+      {
+        "name": "Leu moldavo",
+        "symbol": "L"
+      }
     ],
     "languages": [
-      "Romanian"
+      "Rumano"
     ],
     "demonym": "moldavo",
+    "hdi": 0.763,
+    "ihdi": 0.668,
     "unMember": true
   },
   {
@@ -2405,12 +3005,17 @@
     "area": 13812,
     "flagSvg": "https://flagcdn.com/me.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Montenegrin"
+      "Montenegrino"
     ],
     "demonym": "montenegrino",
+    "hdi": 0.844,
+    "ihdi": 0.759,
     "unMember": true
   },
   {
@@ -2423,12 +3028,17 @@
     "area": 53,
     "flagSvg": "https://flagcdn.com/mf.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "sanmartinense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -2441,13 +3051,18 @@
     "area": 587041,
     "flagSvg": "https://flagcdn.com/mg.svg",
     "currencies": [
-      "Malagasy ariary"
+      {
+        "name": "Ariari malgache",
+        "symbol": "Ar"
+      }
     ],
     "languages": [
-      "French",
-      "Malagasy"
+      "Malgache",
+      "Francés"
     ],
     "demonym": "malgache",
+    "hdi": 0.487,
+    "ihdi": 0.339,
     "unMember": true
   },
   {
@@ -2460,13 +3075,18 @@
     "area": 181,
     "flagSvg": "https://flagcdn.com/mh.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Marshallese"
+      "Marshalés",
+      "Inglés"
     ],
     "demonym": "marshalés",
+    "hdi": null,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2479,12 +3099,17 @@
     "area": 25713,
     "flagSvg": "https://flagcdn.com/mk.svg",
     "currencies": [
-      "denar"
+      {
+        "name": "Denar macedonio",
+        "symbol": "ден"
+      }
     ],
     "languages": [
-      "Macedonian"
+      "Macedonio"
     ],
     "demonym": "macedonio",
+    "hdi": 0.77,
+    "ihdi": 0.685,
     "unMember": true
   },
   {
@@ -2497,12 +3122,17 @@
     "area": 1240192,
     "flagSvg": "https://flagcdn.com/ml.svg",
     "currencies": [
-      "West African CFA franc"
+      {
+        "name": "Franco CFA de África Occidental",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "maliense",
+    "hdi": 0.41,
+    "ihdi": 0.261,
     "unMember": true
   },
   {
@@ -2515,12 +3145,17 @@
     "area": 676578,
     "flagSvg": "https://flagcdn.com/mm.svg",
     "currencies": [
-      "Burmese kyat"
+      {
+        "name": "Kiat birmano",
+        "symbol": "K"
+      }
     ],
     "languages": [
-      "Burmese"
+      "Birmano"
     ],
     "demonym": "birmano",
+    "hdi": 0.585,
+    "ihdi": 0.424,
     "unMember": true
   },
   {
@@ -2533,12 +3168,17 @@
     "area": 1564110,
     "flagSvg": "https://flagcdn.com/mn.svg",
     "currencies": [
-      "Mongolian tögrög"
+      {
+        "name": "Tugrik mongol",
+        "symbol": "₮"
+      }
     ],
     "languages": [
-      "Mongolian"
+      "Mongol"
     ],
     "demonym": "mongol",
+    "hdi": 0.741,
+    "ihdi": 0.622,
     "unMember": true
   },
   {
@@ -2551,13 +3191,18 @@
     "area": 30,
     "flagSvg": "https://flagcdn.com/mo.svg",
     "currencies": [
-      "Macanese pataca"
+      {
+        "name": "Pataca macaense",
+        "symbol": "MOP$"
+      }
     ],
     "languages": [
-      "Portuguese",
-      "Chinese"
+      "Chino",
+      "Portugués"
     ],
     "demonym": "macaense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -2570,14 +3215,19 @@
     "area": 464,
     "flagSvg": "https://flagcdn.com/mp.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Carolinian",
+      "Inglés",
       "Chamorro",
-      "English"
+      "Carolinio"
     ],
     "demonym": "marianense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -2590,12 +3240,17 @@
     "area": 1030700,
     "flagSvg": "https://flagcdn.com/mr.svg",
     "currencies": [
-      "Mauritanian ouguiya"
+      {
+        "name": "Uguiya mauritana",
+        "symbol": "UM"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "mauritano",
+    "hdi": 0.54,
+    "ihdi": 0.365,
     "unMember": true
   },
   {
@@ -2608,12 +3263,17 @@
     "area": 102,
     "flagSvg": "https://flagcdn.com/ms.svg",
     "currencies": [
-      "Eastern Caribbean dollar"
+      {
+        "name": "Dólar del Caribe Oriental",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "monserratense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -2626,13 +3286,18 @@
     "area": 316,
     "flagSvg": "https://flagcdn.com/mt.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "English",
-      "Maltese"
+      "Maltés",
+      "Inglés"
     ],
     "demonym": "maltés",
+    "hdi": 0.915,
+    "ihdi": 0.826,
     "unMember": true
   },
   {
@@ -2645,14 +3310,18 @@
     "area": 2040,
     "flagSvg": "https://flagcdn.com/mu.svg",
     "currencies": [
-      "Mauritian rupee"
+      {
+        "name": "Rupia mauriciana",
+        "symbol": "₨"
+      }
     ],
     "languages": [
-      "English",
-      "French",
-      "Mauritian Creole"
+      "Inglés",
+      "Francés"
     ],
     "demonym": "mauriciano",
+    "hdi": 0.796,
+    "ihdi": 0.67,
     "unMember": true
   },
   {
@@ -2665,12 +3334,17 @@
     "area": 300,
     "flagSvg": "https://flagcdn.com/mv.svg",
     "currencies": [
-      "Maldivian rufiyaa"
+      {
+        "name": "Rufiya maldiva",
+        "symbol": "Rf"
+      }
     ],
     "languages": [
-      "Maldivian"
+      "Divehi"
     ],
     "demonym": "maldivo",
+    "hdi": 0.762,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2683,13 +3357,18 @@
     "area": 118484,
     "flagSvg": "https://flagcdn.com/mw.svg",
     "currencies": [
-      "Malawian kwacha"
+      {
+        "name": "Kwacha malauí",
+        "symbol": "MK"
+      }
     ],
     "languages": [
-      "English",
-      "Chewa"
+      "Inglés",
+      "Chichewa"
     ],
     "demonym": "malauí",
+    "hdi": 0.508,
+    "ihdi": 0.348,
     "unMember": true
   },
   {
@@ -2702,12 +3381,17 @@
     "area": 1964375,
     "flagSvg": "https://flagcdn.com/mx.svg",
     "currencies": [
-      "Mexican peso"
+      {
+        "name": "Peso mexicano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "mexicano",
+    "hdi": 0.781,
+    "ihdi": 0.595,
     "unMember": true
   },
   {
@@ -2720,13 +3404,17 @@
     "area": 330803,
     "flagSvg": "https://flagcdn.com/my.svg",
     "currencies": [
-      "Malaysian ringgit"
+      {
+        "name": "Ringgit malasio",
+        "symbol": "RM"
+      }
     ],
     "languages": [
-      "English",
-      "Malay"
+      "Malayo"
     ],
     "demonym": "malasio",
+    "hdi": 0.807,
+    "ihdi": 0.686,
     "unMember": true
   },
   {
@@ -2739,12 +3427,17 @@
     "area": 801590,
     "flagSvg": "https://flagcdn.com/mz.svg",
     "currencies": [
-      "Mozambican metical"
+      {
+        "name": "Metical mozambiqueño",
+        "symbol": "MT"
+      }
     ],
     "languages": [
-      "Portuguese"
+      "Portugués"
     ],
     "demonym": "mozambiqueño",
+    "hdi": 0.461,
+    "ihdi": 0.293,
     "unMember": true
   },
   {
@@ -2757,21 +3450,17 @@
     "area": 825615,
     "flagSvg": "https://flagcdn.com/na.svg",
     "currencies": [
-      "Namibian dollar",
-      "South African rand"
+      {
+        "name": "Dólar namibio",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Afrikaans",
-      "German",
-      "English",
-      "Herero",
-      "Khoekhoe",
-      "Kwangali",
-      "Lozi",
-      "Ndonga",
-      "Tswana"
+      "Inglés"
     ],
     "demonym": "namibio",
+    "hdi": 0.615,
+    "ihdi": 0.389,
     "unMember": true
   },
   {
@@ -2784,12 +3473,17 @@
     "area": 18575,
     "flagSvg": "https://flagcdn.com/nc.svg",
     "currencies": [
-      "CFP franc"
+      {
+        "name": "Franco CFP",
+        "symbol": "₣"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "neocaledonio",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -2802,12 +3496,17 @@
     "area": 1267000,
     "flagSvg": "https://flagcdn.com/ne.svg",
     "currencies": [
-      "West African CFA franc"
+      {
+        "name": "Franco CFA de África Occidental",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "nigerino",
+    "hdi": 0.394,
+    "ihdi": 0.262,
     "unMember": true
   },
   {
@@ -2820,13 +3519,17 @@
     "area": 36,
     "flagSvg": "https://flagcdn.com/nf.svg",
     "currencies": [
-      "Australian dollar"
+      {
+        "name": "Dólar australiano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Norfuk"
+      "Inglés"
     ],
     "demonym": "norfolkense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -2839,12 +3542,17 @@
     "area": 923768,
     "flagSvg": "https://flagcdn.com/ng.svg",
     "currencies": [
-      "Nigerian naira"
+      {
+        "name": "Naira nigeriana",
+        "symbol": "₦"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "nigeriano",
+    "hdi": 0.548,
+    "ihdi": 0.333,
     "unMember": true
   },
   {
@@ -2857,12 +3565,17 @@
     "area": 130373,
     "flagSvg": "https://flagcdn.com/ni.svg",
     "currencies": [
-      "Nicaraguan córdoba"
+      {
+        "name": "Córdoba nicaragüense",
+        "symbol": "C$"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "nicaragüense",
+    "hdi": 0.667,
+    "ihdi": 0.483,
     "unMember": true
   },
   {
@@ -2875,12 +3588,17 @@
     "area": 41865,
     "flagSvg": "https://flagcdn.com/nl.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Dutch"
+      "Neerlandés"
     ],
     "demonym": "neerlandés",
+    "hdi": 0.946,
+    "ihdi": 0.878,
     "unMember": true
   },
   {
@@ -2893,14 +3611,17 @@
     "area": 386224,
     "flagSvg": "https://flagcdn.com/no.svg",
     "currencies": [
-      "Norwegian krone"
+      {
+        "name": "Corona noruega",
+        "symbol": "kr"
+      }
     ],
     "languages": [
-      "Norwegian Nynorsk",
-      "Norwegian Bokmål",
-      "Sami"
+      "Noruego"
     ],
     "demonym": "noruego",
+    "hdi": 0.966,
+    "ihdi": 0.908,
     "unMember": true
   },
   {
@@ -2913,12 +3634,17 @@
     "area": 147181,
     "flagSvg": "https://flagcdn.com/np.svg",
     "currencies": [
-      "Nepalese rupee"
+      {
+        "name": "Rupia nepalesa",
+        "symbol": "₨"
+      }
     ],
     "languages": [
-      "Nepali"
+      "Nepalí"
     ],
     "demonym": "nepalí",
+    "hdi": 0.601,
+    "ihdi": 0.43,
     "unMember": true
   },
   {
@@ -2931,13 +3657,18 @@
     "area": 21,
     "flagSvg": "https://flagcdn.com/nr.svg",
     "currencies": [
-      "Australian dollar"
+      {
+        "name": "Dólar australiano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Nauru"
+      "Inglés",
+      "Nauruano"
     ],
     "demonym": "nauruano",
+    "hdi": 0.74,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -2950,13 +3681,18 @@
     "area": 260,
     "flagSvg": "https://flagcdn.com/nu.svg",
     "currencies": [
-      "New Zealand dollar"
+      {
+        "name": "Dólar neozelandés",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Niuean"
+      "Inglés",
+      "Niueño"
     ],
     "demonym": "niueño",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -2969,14 +3705,18 @@
     "area": 268838,
     "flagSvg": "https://flagcdn.com/nz.svg",
     "currencies": [
-      "New Zealand dollar"
+      {
+        "name": "Dólar neozelandés",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Māori",
-      "New Zealand Sign Language"
+      "Inglés",
+      "Maorí"
     ],
     "demonym": "neozelandés",
+    "hdi": 0.939,
+    "ihdi": 0.86,
     "unMember": true
   },
   {
@@ -2989,12 +3729,17 @@
     "area": 309500,
     "flagSvg": "https://flagcdn.com/om.svg",
     "currencies": [
-      "Omani rial"
+      {
+        "name": "Rial omaní",
+        "symbol": "ر.ع."
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "omaní",
+    "hdi": 0.816,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3007,13 +3752,21 @@
     "area": 75417,
     "flagSvg": "https://flagcdn.com/pa.svg",
     "currencies": [
-      "Panamanian balboa",
-      "United States dollar"
+      {
+        "name": "Balboa panameño",
+        "symbol": "B/."
+      },
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "panameño",
+    "hdi": 0.82,
+    "ihdi": 0.623,
     "unMember": true
   },
   {
@@ -3026,14 +3779,19 @@
     "area": 1285216,
     "flagSvg": "https://flagcdn.com/pe.svg",
     "currencies": [
-      "Peruvian sol"
+      {
+        "name": "Sol peruano",
+        "symbol": "S/."
+      }
     ],
     "languages": [
-      "Aymara",
+      "Español",
       "Quechua",
-      "Spanish"
+      "Aimara"
     ],
     "demonym": "peruano",
+    "hdi": 0.762,
+    "ihdi": 0.58,
     "unMember": true
   },
   {
@@ -3046,12 +3804,17 @@
     "area": 4167,
     "flagSvg": "https://flagcdn.com/pf.svg",
     "currencies": [
-      "CFP franc"
+      {
+        "name": "Franco CFP",
+        "symbol": "₣"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "polinesio francés",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -3064,14 +3827,19 @@
     "area": 462840,
     "flagSvg": "https://flagcdn.com/pg.svg",
     "currencies": [
-      "Papua New Guinean kina"
+      {
+        "name": "Kina papuana",
+        "symbol": "K"
+      }
     ],
     "languages": [
-      "English",
-      "Hiri Motu",
-      "Tok Pisin"
+      "Inglés",
+      "Tok Pisin",
+      "Hiri Motu"
     ],
     "demonym": "papú",
+    "hdi": 0.558,
+    "ihdi": 0.37,
     "unMember": true
   },
   {
@@ -3084,13 +3852,18 @@
     "area": 342353,
     "flagSvg": "https://flagcdn.com/ph.svg",
     "currencies": [
-      "Philippine peso"
+      {
+        "name": "Peso filipino",
+        "symbol": "₱"
+      }
     ],
     "languages": [
-      "English",
-      "Filipino"
+      "Filipino",
+      "Inglés"
     ],
     "demonym": "filipino",
+    "hdi": 0.71,
+    "ihdi": 0.537,
     "unMember": true
   },
   {
@@ -3103,13 +3876,18 @@
     "area": 796095,
     "flagSvg": "https://flagcdn.com/pk.svg",
     "currencies": [
-      "Pakistani rupee"
+      {
+        "name": "Rupia pakistaní",
+        "symbol": "₨"
+      }
     ],
     "languages": [
-      "English",
-      "Urdu"
+      "Urdu",
+      "Inglés"
     ],
     "demonym": "pakistaní",
+    "hdi": 0.544,
+    "ihdi": 0.37,
     "unMember": true
   },
   {
@@ -3122,12 +3900,17 @@
     "area": 312679,
     "flagSvg": "https://flagcdn.com/pl.svg",
     "currencies": [
-      "Polish złoty"
+      {
+        "name": "Esloti polaco",
+        "symbol": "zł"
+      }
     ],
     "languages": [
-      "Polish"
+      "Polaco"
     ],
     "demonym": "polaco",
+    "hdi": 0.881,
+    "ihdi": 0.821,
     "unMember": true
   },
   {
@@ -3140,12 +3923,17 @@
     "area": 242,
     "flagSvg": "https://flagcdn.com/pm.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "miquelonense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -3158,12 +3946,17 @@
     "area": 47,
     "flagSvg": "https://flagcdn.com/pn.svg",
     "currencies": [
-      "New Zealand dollar"
+      {
+        "name": "Dólar neozelandés",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "pitcairnense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -3176,13 +3969,18 @@
     "area": 8870,
     "flagSvg": "https://flagcdn.com/pr.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Spanish"
+      "Español",
+      "Inglés"
     ],
     "demonym": "puertorriqueño",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -3195,14 +3993,17 @@
     "area": 6220,
     "flagSvg": "https://flagcdn.com/ps.svg",
     "currencies": [
-      "Egyptian pound",
-      "Israeli new shekel",
-      "Jordanian dinar"
+      {
+        "name": "Nuevo séquel israelí",
+        "symbol": "₪"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "palestino",
+    "hdi": 0.716,
+    "ihdi": 0.584,
     "unMember": true
   },
   {
@@ -3215,12 +4016,17 @@
     "area": 92090,
     "flagSvg": "https://flagcdn.com/pt.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Portuguese"
+      "Portugués"
     ],
     "demonym": "portugués",
+    "hdi": 0.874,
+    "ihdi": 0.779,
     "unMember": true
   },
   {
@@ -3233,13 +4039,18 @@
     "area": 459,
     "flagSvg": "https://flagcdn.com/pw.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Palauan"
+      "Palauano",
+      "Inglés"
     ],
     "demonym": "palauano",
+    "hdi": 0.814,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3252,13 +4063,18 @@
     "area": 406752,
     "flagSvg": "https://flagcdn.com/py.svg",
     "currencies": [
-      "Paraguayan guaraní"
+      {
+        "name": "Guaraní paraguayo",
+        "symbol": "₲"
+      }
     ],
     "languages": [
-      "Guaraní",
-      "Spanish"
+      "Español",
+      "Guaraní"
     ],
     "demonym": "paraguayo",
+    "hdi": 0.717,
+    "ihdi": 0.537,
     "unMember": true
   },
   {
@@ -3271,12 +4087,17 @@
     "area": 11586,
     "flagSvg": "https://flagcdn.com/qa.svg",
     "currencies": [
-      "Qatari riyal"
+      {
+        "name": "Rial catarí",
+        "symbol": "ر.ق"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "catarí",
+    "hdi": 0.875,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3289,12 +4110,17 @@
     "area": 238391,
     "flagSvg": "https://flagcdn.com/ro.svg",
     "currencies": [
-      "Romanian leu"
+      {
+        "name": "Leu rumano",
+        "symbol": "lei"
+      }
     ],
     "languages": [
-      "Romanian"
+      "Rumano"
     ],
     "demonym": "rumano",
+    "hdi": 0.827,
+    "ihdi": 0.726,
     "unMember": true
   },
   {
@@ -3307,12 +4133,17 @@
     "area": 77589,
     "flagSvg": "https://flagcdn.com/rs.svg",
     "currencies": [
-      "Serbian dinar"
+      {
+        "name": "Dinar serbio",
+        "symbol": "din."
+      }
     ],
     "languages": [
-      "Serbian"
+      "Serbio"
     ],
     "demonym": "serbio",
+    "hdi": 0.805,
+    "ihdi": 0.71,
     "unMember": true
   },
   {
@@ -3325,12 +4156,17 @@
     "area": 17098246,
     "flagSvg": "https://flagcdn.com/ru.svg",
     "currencies": [
-      "Russian ruble"
+      {
+        "name": "Rublo ruso",
+        "symbol": "₽"
+      }
     ],
     "languages": [
-      "Russian"
+      "Ruso"
     ],
     "demonym": "ruso",
+    "hdi": 0.822,
+    "ihdi": 0.743,
     "unMember": true
   },
   {
@@ -3343,14 +4179,19 @@
     "area": 26338,
     "flagSvg": "https://flagcdn.com/rw.svg",
     "currencies": [
-      "Rwandan franc"
+      {
+        "name": "Franco ruandés",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "English",
-      "French",
-      "Kinyarwanda"
+      "Kinyarwanda",
+      "Francés",
+      "Inglés"
     ],
     "demonym": "ruandés",
+    "hdi": 0.548,
+    "ihdi": 0.385,
     "unMember": true
   },
   {
@@ -3363,12 +4204,17 @@
     "area": 2149690,
     "flagSvg": "https://flagcdn.com/sa.svg",
     "currencies": [
-      "Saudi riyal"
+      {
+        "name": "Rial saudí",
+        "symbol": "ر.س"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "saudí",
+    "hdi": 0.875,
+    "ihdi": 0.759,
     "unMember": true
   },
   {
@@ -3381,12 +4227,17 @@
     "area": 28896,
     "flagSvg": "https://flagcdn.com/sb.svg",
     "currencies": [
-      "Solomon Islands dollar"
+      {
+        "name": "Dólar de las Islas Salomón",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "salomonense",
+    "hdi": 0.702,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3399,14 +4250,19 @@
     "area": 452,
     "flagSvg": "https://flagcdn.com/sc.svg",
     "currencies": [
-      "Seychellois rupee"
+      {
+        "name": "Rupia seychelense",
+        "symbol": "₨"
+      }
     ],
     "languages": [
-      "Seychellois Creole",
-      "English",
-      "French"
+      "Criollo seychelense",
+      "Francés",
+      "Inglés"
     ],
     "demonym": "seychelense",
+    "hdi": 0.785,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3419,13 +4275,18 @@
     "area": 1886068,
     "flagSvg": "https://flagcdn.com/sd.svg",
     "currencies": [
-      "Sudanese pound"
+      {
+        "name": "Libra sudanesa",
+        "symbol": "ج.س."
+      }
     ],
     "languages": [
-      "Arabic",
-      "English"
+      "Árabe",
+      "Inglés"
     ],
     "demonym": "sudanés",
+    "hdi": 0.51,
+    "ihdi": 0.332,
     "unMember": true
   },
   {
@@ -3438,12 +4299,17 @@
     "area": 450295,
     "flagSvg": "https://flagcdn.com/se.svg",
     "currencies": [
-      "Swedish krona"
+      {
+        "name": "Corona sueca",
+        "symbol": "kr"
+      }
     ],
     "languages": [
-      "Swedish"
+      "Sueco"
     ],
     "demonym": "sueco",
+    "hdi": 0.952,
+    "ihdi": 0.911,
     "unMember": true
   },
   {
@@ -3456,15 +4322,20 @@
     "area": 710,
     "flagSvg": "https://flagcdn.com/sg.svg",
     "currencies": [
-      "Singapore dollar"
+      {
+        "name": "Dólar de Singapur",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Chinese",
-      "Malay",
+      "Inglés",
+      "Malayo",
+      "Chino mandarín",
       "Tamil"
     ],
     "demonym": "singapurense",
+    "hdi": 0.949,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3477,13 +4348,17 @@
     "area": 394,
     "flagSvg": "https://flagcdn.com/sh.svg",
     "currencies": [
-      "Pound sterling",
-      "Saint Helena pound"
+      {
+        "name": "Libra de Santa Helena",
+        "symbol": "£"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "santahelenense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -3496,12 +4371,17 @@
     "area": 20273,
     "flagSvg": "https://flagcdn.com/si.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Slovene"
+      "Esloveno"
     ],
     "demonym": "esloveno",
+    "hdi": 0.926,
+    "ihdi": 0.876,
     "unMember": true
   },
   {
@@ -3514,12 +4394,17 @@
     "area": 49037,
     "flagSvg": "https://flagcdn.com/sk.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Slovak"
+      "Eslovaco"
     ],
     "demonym": "eslovaco",
+    "hdi": 0.855,
+    "ihdi": 0.799,
     "unMember": true
   },
   {
@@ -3532,12 +4417,17 @@
     "area": 71740,
     "flagSvg": "https://flagcdn.com/sl.svg",
     "currencies": [
-      "Leone"
+      {
+        "name": "Leone sierraleonés",
+        "symbol": "Le"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "sierraleonés",
+    "hdi": 0.477,
+    "ihdi": 0.3,
     "unMember": true
   },
   {
@@ -3550,12 +4440,17 @@
     "area": 61,
     "flagSvg": "https://flagcdn.com/sm.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Italian"
+      "Italiano"
     ],
     "demonym": "sanmarinense",
+    "hdi": 0.853,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3568,12 +4463,17 @@
     "area": 196722,
     "flagSvg": "https://flagcdn.com/sn.svg",
     "currencies": [
-      "West African CFA franc"
+      {
+        "name": "Franco CFA de África Occidental",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "senegalés",
+    "hdi": 0.517,
+    "ihdi": 0.345,
     "unMember": true
   },
   {
@@ -3586,13 +4486,18 @@
     "area": 637657,
     "flagSvg": "https://flagcdn.com/so.svg",
     "currencies": [
-      "Somali shilling"
+      {
+        "name": "Chelín somalí",
+        "symbol": "Sh"
+      }
     ],
     "languages": [
-      "Arabic",
-      "Somali"
+      "Somalí",
+      "Árabe"
     ],
     "demonym": "somalí",
+    "hdi": 0.38,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3605,12 +4510,17 @@
     "area": 163820,
     "flagSvg": "https://flagcdn.com/sr.svg",
     "currencies": [
-      "Surinamese dollar"
+      {
+        "name": "Dólar surinamés",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Dutch"
+      "Neerlandés"
     ],
     "demonym": "surinamés",
+    "hdi": 0.695,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3623,12 +4533,17 @@
     "area": 619745,
     "flagSvg": "https://flagcdn.com/ss.svg",
     "currencies": [
-      "South Sudanese pound"
+      {
+        "name": "Libra sursudanesa",
+        "symbol": "£"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "sursudanés",
+    "hdi": 0.385,
+    "ihdi": 0.198,
     "unMember": true
   },
   {
@@ -3641,12 +4556,17 @@
     "area": 964,
     "flagSvg": "https://flagcdn.com/st.svg",
     "currencies": [
-      "São Tomé and Príncipe dobra"
+      {
+        "name": "Dobra santotomense",
+        "symbol": "Db"
+      }
     ],
     "languages": [
-      "Portuguese"
+      "Portugués"
     ],
     "demonym": "santotomense",
+    "hdi": 0.613,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3659,12 +4579,17 @@
     "area": 21041,
     "flagSvg": "https://flagcdn.com/sv.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "salvadoreño",
+    "hdi": 0.674,
+    "ihdi": 0.502,
     "unMember": true
   },
   {
@@ -3677,14 +4602,18 @@
     "area": 34,
     "flagSvg": "https://flagcdn.com/sx.svg",
     "currencies": [
-      "Netherlands Antillean guilder"
+      {
+        "name": "Florín antillano neerlandés",
+        "symbol": "ƒ"
+      }
     ],
     "languages": [
-      "English",
-      "French",
-      "Dutch"
+      "Neerlandés",
+      "Inglés"
     ],
     "demonym": "sanmartinense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -3697,12 +4626,17 @@
     "area": 185180,
     "flagSvg": "https://flagcdn.com/sy.svg",
     "currencies": [
-      "Syrian pound"
+      {
+        "name": "Libra siria",
+        "symbol": "£"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "sirio",
+    "hdi": 0.577,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3715,14 +4649,18 @@
     "area": 17364,
     "flagSvg": "https://flagcdn.com/sz.svg",
     "currencies": [
-      "Swazi lilangeni",
-      "South African rand"
+      {
+        "name": "Lilangeni suazi",
+        "symbol": "E"
+      }
     ],
     "languages": [
-      "English",
-      "Swazi"
+      "Suazi",
+      "Inglés"
     ],
     "demonym": "suazi",
+    "hdi": 0.597,
+    "ihdi": 0.39,
     "unMember": true
   },
   {
@@ -3735,12 +4673,17 @@
     "area": 948,
     "flagSvg": "https://flagcdn.com/tc.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "turcocaiqueño",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -3753,13 +4696,18 @@
     "area": 1284000,
     "flagSvg": "https://flagcdn.com/td.svg",
     "currencies": [
-      "Central African CFA franc"
+      {
+        "name": "Franco CFA de África Central",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "Arabic",
-      "French"
+      "Francés",
+      "Árabe"
     ],
     "demonym": "chadiano",
+    "hdi": 0.394,
+    "ihdi": 0.238,
     "unMember": true
   },
   {
@@ -3772,12 +4720,17 @@
     "area": 56785,
     "flagSvg": "https://flagcdn.com/tg.svg",
     "currencies": [
-      "West African CFA franc"
+      {
+        "name": "Franco CFA de África Occidental",
+        "symbol": "Fr"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "togolés",
+    "hdi": 0.547,
+    "ihdi": 0.367,
     "unMember": true
   },
   {
@@ -3790,12 +4743,17 @@
     "area": 513120,
     "flagSvg": "https://flagcdn.com/th.svg",
     "currencies": [
-      "Thai baht"
+      {
+        "name": "Baht tailandés",
+        "symbol": "฿"
+      }
     ],
     "languages": [
-      "Thai"
+      "Tailandés"
     ],
     "demonym": "tailandés",
+    "hdi": 0.803,
+    "ihdi": 0.649,
     "unMember": true
   },
   {
@@ -3808,13 +4766,17 @@
     "area": 143100,
     "flagSvg": "https://flagcdn.com/tj.svg",
     "currencies": [
-      "Tajikistani somoni"
+      {
+        "name": "Somoni tayiko",
+        "symbol": "SM"
+      }
     ],
     "languages": [
-      "Russian",
-      "Tajik"
+      "Tayiko"
     ],
     "demonym": "tayiko",
+    "hdi": 0.679,
+    "ihdi": 0.56,
     "unMember": true
   },
   {
@@ -3827,13 +4789,18 @@
     "area": 14874,
     "flagSvg": "https://flagcdn.com/tl.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Portuguese",
-      "Tetum"
+      "Portugués",
+      "Tetún"
     ],
     "demonym": "timorense",
+    "hdi": 0.607,
+    "ihdi": 0.42,
     "unMember": true
   },
   {
@@ -3846,13 +4813,17 @@
     "area": 488100,
     "flagSvg": "https://flagcdn.com/tm.svg",
     "currencies": [
-      "Turkmenistan manat"
+      {
+        "name": "Manat turcomano",
+        "symbol": "T"
+      }
     ],
     "languages": [
-      "Russian",
-      "Turkmen"
+      "Turcomano"
     ],
     "demonym": "turcomano",
+    "hdi": 0.745,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3865,12 +4836,17 @@
     "area": 163610,
     "flagSvg": "https://flagcdn.com/tn.svg",
     "currencies": [
-      "Tunisian dinar"
+      {
+        "name": "Dinar tunecino",
+        "symbol": "د.ت"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "tunecino",
+    "hdi": 0.732,
+    "ihdi": 0.565,
     "unMember": true
   },
   {
@@ -3883,13 +4859,18 @@
     "area": 747,
     "flagSvg": "https://flagcdn.com/to.svg",
     "currencies": [
-      "Tongan paʻanga"
+      {
+        "name": "Paanga tongano",
+        "symbol": "T$"
+      }
     ],
     "languages": [
-      "English",
-      "Tongan"
+      "Tongano",
+      "Inglés"
     ],
     "demonym": "tongano",
+    "hdi": 0.745,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3902,12 +4883,17 @@
     "area": 783562,
     "flagSvg": "https://flagcdn.com/tr.svg",
     "currencies": [
-      "Turkish lira"
+      {
+        "name": "Lira turca",
+        "symbol": "₺"
+      }
     ],
     "languages": [
-      "Turkish"
+      "Turco"
     ],
     "demonym": "turco",
+    "hdi": 0.838,
+    "ihdi": 0.698,
     "unMember": true
   },
   {
@@ -3920,12 +4906,17 @@
     "area": 5130,
     "flagSvg": "https://flagcdn.com/tt.svg",
     "currencies": [
-      "Trinidad and Tobago dollar"
+      {
+        "name": "Dólar de Trinidad y Tobago",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "trinitense",
+    "hdi": 0.814,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3938,14 +4929,18 @@
     "area": 26,
     "flagSvg": "https://flagcdn.com/tv.svg",
     "currencies": [
-      "Australian dollar",
-      "Tuvaluan dollar"
+      {
+        "name": "Dólar australiano",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English",
-      "Tuvaluan"
+      "Tuvaluano",
+      "Inglés"
     ],
     "demonym": "tuvaluano",
+    "hdi": 0.641,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -3958,12 +4953,17 @@
     "area": 36197,
     "flagSvg": "https://flagcdn.com/tw.svg",
     "currencies": [
-      "New Taiwan dollar"
+      {
+        "name": "Nuevo dólar taiwanés",
+        "symbol": "NT$"
+      }
     ],
     "languages": [
-      "Chinese"
+      "Chino mandarín"
     ],
     "demonym": "taiwanés",
+    "hdi": 0.926,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -3976,13 +4976,18 @@
     "area": 947303,
     "flagSvg": "https://flagcdn.com/tz.svg",
     "currencies": [
-      "Tanzanian shilling"
+      {
+        "name": "Chelín tanzano",
+        "symbol": "TSh"
+      }
     ],
     "languages": [
-      "English",
-      "Swahili"
+      "Suajili",
+      "Inglés"
     ],
     "demonym": "tanzano",
+    "hdi": 0.532,
+    "ihdi": 0.383,
     "unMember": true
   },
   {
@@ -3995,12 +5000,17 @@
     "area": 603550,
     "flagSvg": "https://flagcdn.com/ua.svg",
     "currencies": [
-      "Ukrainian hryvnia"
+      {
+        "name": "Grivna ucraniana",
+        "symbol": "₴"
+      }
     ],
     "languages": [
-      "Ukrainian"
+      "Ucraniano"
     ],
     "demonym": "ucraniano",
+    "hdi": 0.773,
+    "ihdi": 0.694,
     "unMember": true
   },
   {
@@ -4013,13 +5023,18 @@
     "area": 241550,
     "flagSvg": "https://flagcdn.com/ug.svg",
     "currencies": [
-      "Ugandan shilling"
+      {
+        "name": "Chelín ugandés",
+        "symbol": "USh"
+      }
     ],
     "languages": [
-      "English",
-      "Swahili"
+      "Inglés",
+      "Suajili"
     ],
     "demonym": "ugandés",
+    "hdi": 0.55,
+    "ihdi": 0.377,
     "unMember": true
   },
   {
@@ -4032,12 +5047,17 @@
     "area": 9525067,
     "flagSvg": "https://flagcdn.com/us.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "estadounidense",
+    "hdi": 0.927,
+    "ihdi": 0.837,
     "unMember": true
   },
   {
@@ -4050,12 +5070,17 @@
     "area": 181034,
     "flagSvg": "https://flagcdn.com/uy.svg",
     "currencies": [
-      "Uruguayan peso"
+      {
+        "name": "Peso uruguayo",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "uruguayo",
+    "hdi": 0.83,
+    "ihdi": 0.699,
     "unMember": true
   },
   {
@@ -4068,13 +5093,17 @@
     "area": 447400,
     "flagSvg": "https://flagcdn.com/uz.svg",
     "currencies": [
-      "Uzbekistani soʻm"
+      {
+        "name": "Som uzbeko",
+        "symbol": "сўм"
+      }
     ],
     "languages": [
-      "Russian",
-      "Uzbek"
+      "Uzbeko"
     ],
     "demonym": "uzbeko",
+    "hdi": 0.727,
+    "ihdi": 0.62,
     "unMember": true
   },
   {
@@ -4087,13 +5116,18 @@
     "area": 0.49,
     "flagSvg": "https://flagcdn.com/va.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Italian",
-      "Latin"
+      "Italiano",
+      "Latín"
     ],
     "demonym": "vaticano",
+    "hdi": null,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -4106,12 +5140,17 @@
     "area": 389,
     "flagSvg": "https://flagcdn.com/vc.svg",
     "currencies": [
-      "Eastern Caribbean dollar"
+      {
+        "name": "Dólar del Caribe Oriental",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "sanvicentino",
+    "hdi": 0.733,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -4124,12 +5163,17 @@
     "area": 916445,
     "flagSvg": "https://flagcdn.com/ve.svg",
     "currencies": [
-      "Venezuelan bolívar soberano"
+      {
+        "name": "Bolívar venezolano",
+        "symbol": "Bs."
+      }
     ],
     "languages": [
-      "Spanish"
+      "Español"
     ],
     "demonym": "venezolano",
+    "hdi": 0.699,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -4142,12 +5186,17 @@
     "area": 151,
     "flagSvg": "https://flagcdn.com/vg.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "virgenense británico",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -4160,12 +5209,17 @@
     "area": 347,
     "flagSvg": "https://flagcdn.com/vi.svg",
     "currencies": [
-      "United States dollar"
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "virgenense estadounidense",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -4178,12 +5232,17 @@
     "area": 331212,
     "flagSvg": "https://flagcdn.com/vn.svg",
     "currencies": [
-      "Vietnamese đồng"
+      {
+        "name": "Dong vietnamita",
+        "symbol": "₫"
+      }
     ],
     "languages": [
-      "Vietnamese"
+      "Vietnamita"
     ],
     "demonym": "vietnamita",
+    "hdi": 0.726,
+    "ihdi": 0.58,
     "unMember": true
   },
   {
@@ -4196,14 +5255,19 @@
     "area": 12189,
     "flagSvg": "https://flagcdn.com/vu.svg",
     "currencies": [
-      "Vanuatu vatu"
+      {
+        "name": "Vatu vanuatuense",
+        "symbol": "VT"
+      }
     ],
     "languages": [
       "Bislama",
-      "English",
-      "French"
+      "Inglés",
+      "Francés"
     ],
     "demonym": "vanuatuense",
+    "hdi": 0.604,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -4216,12 +5280,17 @@
     "area": 142,
     "flagSvg": "https://flagcdn.com/wf.svg",
     "currencies": [
-      "CFP franc"
+      {
+        "name": "Franco CFP",
+        "symbol": "₣"
+      }
     ],
     "languages": [
-      "French"
+      "Francés"
     ],
     "demonym": "walisiano",
+    "hdi": null,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -4234,13 +5303,18 @@
     "area": 2842,
     "flagSvg": "https://flagcdn.com/ws.svg",
     "currencies": [
-      "Samoan tālā"
+      {
+        "name": "Tala samoano",
+        "symbol": "T"
+      }
     ],
     "languages": [
-      "English",
-      "Samoan"
+      "Samoano",
+      "Inglés"
     ],
     "demonym": "samoano",
+    "hdi": 0.707,
+    "ihdi": null,
     "unMember": true
   },
   {
@@ -4253,13 +5327,18 @@
     "area": 10908,
     "flagSvg": "https://flagcdn.com/xk.svg",
     "currencies": [
-      "euro"
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
     ],
     "languages": [
-      "Albanian",
-      "Serbian"
+      "Albanés",
+      "Serbio"
     ],
     "demonym": "kosovar",
+    "hdi": 0.75,
+    "ihdi": null,
     "unMember": false
   },
   {
@@ -4272,12 +5351,17 @@
     "area": 527968,
     "flagSvg": "https://flagcdn.com/ye.svg",
     "currencies": [
-      "Yemeni rial"
+      {
+        "name": "Rial yemení",
+        "symbol": "﷼"
+      }
     ],
     "languages": [
-      "Arabic"
+      "Árabe"
     ],
     "demonym": "yemení",
+    "hdi": 0.424,
+    "ihdi": 0.274,
     "unMember": true
   },
   {
@@ -4290,22 +5374,20 @@
     "area": 1221037,
     "flagSvg": "https://flagcdn.com/za.svg",
     "currencies": [
-      "South African rand"
+      {
+        "name": "Rand sudafricano",
+        "symbol": "R"
+      }
     ],
     "languages": [
-      "Afrikaans",
-      "English",
-      "Southern Ndebele",
-      "Northern Sotho",
-      "Southern Sotho",
-      "Swazi",
-      "Tswana",
-      "Tsonga",
-      "Venda",
+      "Zulú",
       "Xhosa",
-      "Zulu"
+      "Afrikáans",
+      "Inglés"
     ],
     "demonym": "sudafricano",
+    "hdi": 0.717,
+    "ihdi": 0.461,
     "unMember": true
   },
   {
@@ -4318,12 +5400,17 @@
     "area": 752612,
     "flagSvg": "https://flagcdn.com/zm.svg",
     "currencies": [
-      "Zambian kwacha"
+      {
+        "name": "Kwacha zambiano",
+        "symbol": "ZK"
+      }
     ],
     "languages": [
-      "English"
+      "Inglés"
     ],
     "demonym": "zambiano",
+    "hdi": 0.565,
+    "ihdi": 0.37,
     "unMember": true
   },
   {
@@ -4336,26 +5423,19 @@
     "area": 390757,
     "flagSvg": "https://flagcdn.com/zw.svg",
     "currencies": [
-      "Zimbabwean dollar"
+      {
+        "name": "Dólar zimbabuense",
+        "symbol": "$"
+      }
     ],
     "languages": [
-      "Chibarwe",
-      "English",
-      "Kalanga",
-      "Khoisan",
-      "Ndau",
-      "Northern Ndebele",
-      "Chewa",
+      "Inglés",
       "Shona",
-      "Sotho",
-      "Tonga",
-      "Tswana",
-      "Tsonga",
-      "Venda",
-      "Xhosa",
-      "Zimbabwean Sign Language"
+      "Ndebele"
     ],
     "demonym": "zimbabuense",
+    "hdi": 0.55,
+    "ihdi": 0.38,
     "unMember": true
   }
 ]

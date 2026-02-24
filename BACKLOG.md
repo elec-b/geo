@@ -109,20 +109,22 @@
 - [x] Ordenamiento de tabla con locale español (`localeCompare('es')`)
 - [x] Antártida: mapeo ID 010 → AQ, datos sintéticos, ficha especial (Tratado Antártico), etiqueta ámbar, excluida de tabla
 
+### Ficha de país: monedas, idiomas, IDH
+- [x] Monedas traducidas al español con símbolo: "Euro (€)", "Dólar estadounidense ($)". Ampliado `capitals-es.json` con campo `currencies` (232 entradas). Pipeline con fallback a REST Countries
+- [x] Idiomas oficiales nacionales en español. Ampliado `capitals-es.json` con campo `languages` (232 entradas). Criterio: solo idiomas oficiales a nivel nacional/constitucional (ver DESIGN.md). Max 3 visibles + "…"
+- [x] IDH e IDH-D (UNDP 2023/2024): nuevo `scripts/data/hdi.json` (194 entradas). Rankings en ficha. Tooltips (i) con descripción. IDH-D muestra "N/D" cuando no disponible
+- [x] Tabla ordenada por población descendente por defecto
+- [x] Header: iconos con más aire respecto al safe area (`--spacing-sm`)
+- [x] Gentilicio con mayúscula inicial en la ficha
+
 ---
 
 ## Próximos pasos
 
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
-### Ficha de país: mejoras
-- [ ] Traducir monedas al idioma de la app (ampliar archivo suplementario; incluir símbolo: "Euro (€)"). REST Countries da `currencies[].name` solo en inglés y `currencies[].symbol` como dato universal
-- [ ] Nuevo campo de idioma(s): idiomas oficiales ordenados por hablantes, max 3 visibles + "...". Traducir nombres al idioma de la app (ampliar archivo suplementario). REST Countries da `languages` solo en inglés y no indica orden por hablantes — investigar fuente para el orden (Wikidata, Ethnologue, o curación manual)
+### Ficha de país: mejoras pendientes
 - [ ] Enlace a Wikipedia localizado: URL en el idioma de la app, fallback a inglés. Validar links en el pipeline de datos con petición HEAD. Alternativa más robusta y preferida: usar Wikidata Q-IDs para resolver URLs por idioma (inmune a renombrados de artículos). Es importante que el contenido de la app se mantenga sólido (sin errores) y actualizado (sin imprecisiones) conforme pasa el tiempo y de manera automática. Leer más sobre esto en design.md
-- [ ] Nuevos campos HDI e IHDI: añadir HDI (Índice de Desarrollo Humano) e IHDI (ajustado por desigualdad), ambos con ranking. Fuente: UNDP Human Development Reports (mantenidos por la ONU). IHDI no está disponible para todos los países ONU — mostrar "N/D" cuando no exista. Integrar en el pipeline de datos con actualización automática (los informes UNDP se publican anualmente). En la ficha, cada métrica lleva un mini-icono de información (i) que al pulsar muestra una breve descripción de qué mide (tooltip o mini-modal)
-
-### Explorar: ajustes menores
-- [ ] Ordenamiento por defecto de la tabla: asegurar que al abrir la tabla siempre se ordena de mayor a menor población (ya definido en DESIGN.md)
 
 ### Experiencia: Jugar
 - [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)
@@ -163,13 +165,11 @@
 - [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
 - [ ] Traducción a idiomas disponibles en iOS y Android
 
-### Layout y UI general
-- [ ] Iconos de perfil y configuración del header demasiado arriba en pantalla: bajar mínimamente respecto al safe area
-
 ### Infraestructura y acabados
 - [ ] Implementar feedback háptico (vibración en aciertos/errores)
 - [ ] Añadir Capacitor para build Android
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md § «Actualización automática»)
+- [ ] Sección "Acerca de" en la app: explicar los criterios utilizados (países ONU, idiomas oficiales nacionales, fuentes de datos UNDP, REST Countries, etc.). Implementar cuando la app esté en fase de acabados
 
 ### Tema visual
 - [ ] Diseñar e implementar tema claro (light mode) como alternativa al dark mode (baja prioridad, casi al final del desarrollo)

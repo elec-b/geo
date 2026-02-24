@@ -19,9 +19,11 @@ export interface CountryData {
   population: number;
   area: number;
   flagSvg: string;
-  currencies: string[];
+  currencies: { name: string; symbol: string }[];
   languages: string[];
   demonym: string;
+  hdi: number | null;
+  ihdi: number | null;
   /** true = miembro o estado observador ONU (195). false = territorio no reconocido */
   unMember: boolean;
 }

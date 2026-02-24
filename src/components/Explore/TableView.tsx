@@ -49,8 +49,8 @@ export function TableView({
   onCapitalTap,
   style,
 }: TableViewProps) {
-  const [sortKey, setSortKey] = useState<SortKey>('name');
-  const [sortDir, setSortDir] = useState<SortDir>('asc');
+  const [sortKey, setSortKey] = useState<SortKey>('population');
+  const [sortDir, setSortDir] = useState<SortDir>('desc');
   const [showNonUN, setShowNonUN] = useState(false);
 
   const toggleSort = (key: SortKey) => {
