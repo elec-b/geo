@@ -119,6 +119,10 @@
 - [ ] Traducir monedas al idioma de la app (ampliar archivo suplementario; incluir símbolo: "Euro (€)"). REST Countries da `currencies[].name` solo en inglés y `currencies[].symbol` como dato universal
 - [ ] Nuevo campo de idioma(s): idiomas oficiales ordenados por hablantes, max 3 visibles + "...". Traducir nombres al idioma de la app (ampliar archivo suplementario). REST Countries da `languages` solo en inglés y no indica orden por hablantes — investigar fuente para el orden (Wikidata, Ethnologue, o curación manual)
 - [ ] Enlace a Wikipedia localizado: URL en el idioma de la app, fallback a inglés. Validar links en el pipeline de datos con petición HEAD. Alternativa más robusta y preferida: usar Wikidata Q-IDs para resolver URLs por idioma (inmune a renombrados de artículos). Es importante que el contenido de la app se mantenga sólido (sin errores) y actualizado (sin imprecisiones) conforme pasa el tiempo y de manera automática. Leer más sobre esto en design.md
+- [ ] Nuevos campos HDI e IHDI: añadir HDI (Índice de Desarrollo Humano) e IHDI (ajustado por desigualdad), ambos con ranking. Fuente: UNDP Human Development Reports (mantenidos por la ONU). IHDI no está disponible para todos los países ONU — mostrar "N/D" cuando no exista. Integrar en el pipeline de datos con actualización automática (los informes UNDP se publican anualmente). En la ficha, cada métrica lleva un mini-icono de información (i) que al pulsar muestra una breve descripción de qué mide (tooltip o mini-modal)
+
+### Explorar: ajustes menores
+- [ ] Ordenamiento por defecto de la tabla: asegurar que al abrir la tabla siempre se ordena de mayor a menor población (ya definido en DESIGN.md)
 
 ### Experiencia: Jugar
 - [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)

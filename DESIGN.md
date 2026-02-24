@@ -119,7 +119,7 @@ La experiencia ofrece dos modos de exploración, accesibles mediante un control 
 ### Globo
 Vista interactiva del globo terráqueo. El usuario puede tocar un país → se ilumina → aparece su ficha de país.
 *   **Posición inicial**: Cada vez que se abre la app, el globo comienza en una posición aleatoria (longitud y latitud), para que el usuario no siempre vea la misma región.
-*   **Ficha de país**: Bandera, nombre completo del país (sin truncar), capital, continente, población (y ranking), superficie (y ranking), densidad de población (y ranking), moneda, idioma(s), gentilicio y enlace a Wikipedia. La ficha se muestra pegada al borde inferior de la pantalla (encima del tab bar). Todos los campos textuales se muestran en el idioma de la app.
+*   **Ficha de país**: Bandera, nombre completo del país (sin truncar), capital, continente, población (y ranking), superficie (y ranking), densidad de población (y ranking), moneda, idioma(s), HDI (y ranking), IHDI (y ranking), gentilicio y enlace a Wikipedia. La ficha se muestra pegada al borde inferior de la pantalla (encima del tab bar). Todos los campos textuales se muestran en el idioma de la app.
     - **Moneda**: Nombre traducido al idioma de la app + símbolo universal entre paréntesis. Ej: "Euro (€)", "Dólar estadounidense ($)".
     - **Idioma(s)**: Idiomas oficiales del país, ordenados de más a menos hablantes, separados por coma. Máximo 3 visibles; si hay más, se trunca con "...". Los nombres se muestran en el idioma de la app (ej. "Francés", no "French").
     - **Enlace a Wikipedia**: Botón que abre el artículo del país en Wikipedia en el idioma de la app. Si el artículo no existe en ese idioma, enlaza a la versión en inglés.
@@ -128,7 +128,7 @@ Vista interactiva del globo terráqueo. El usuario puede tocar un país → se i
 ### Tabla
 Tabla de países con sus capitales y población, diseñada para facilitar el repaso.
 *   **Columnas**: País (con bandera), Capital, Población (formato adaptado: «1.4B», «45M», «800k»).
-*   **Ordenamiento**: Los headers de columna son tappables y permiten ordenar ascendente/descendente por país, capital o población.
+*   **Ordenamiento**: Los headers de columna son tappables y permiten ordenar ascendente/descendente por país, capital o población. Por defecto siempre se ordena de mayor a menor población.
 *   **Agrupación**: Si el filtro es un continente específico → tabla de ese continente. Si el filtro es «Todos» → tabla única sin agrupación por continentes.
 *   **Interacción — tocar país**: Zoom al país + marca en la capital + se muestra el globo.
 *   **Interacción — tocar capital**: Zoom de precisión al punto exacto + pin distintivo + país resaltado + se muestra el globo.
