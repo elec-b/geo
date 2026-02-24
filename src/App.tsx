@@ -4,13 +4,14 @@ import { LoadingScreen } from './components/UI/LoadingScreen';
 import { TabBar } from './components/Navigation/TabBar';
 import { AppHeader } from './components/Layout/AppHeader';
 import { ExploreView, type GlobeControlProps } from './components/Explore/ExploreView';
+import { JugarView } from './components/Game/JugarView';
 import { loadCountryData, loadCapitals } from './data/countryData';
 import { buildRankings, type CountryRankings } from './data/rankings';
 import { buildLevelDefinitions } from './data/levels';
 import { useAppStore } from './stores/appStore';
 import type { GlobeD3Ref } from './components/Globe';
 import type { CountryFeature } from './data/countries';
-import type { CountryData, CapitalCoords } from './data/types';
+import type { CountryData, CapitalCoords, LevelDefinition } from './data/types';
 import type { TabId } from './components/Navigation/types';
 import './components/Layout/AppShell.css';
 
@@ -35,24 +36,36 @@ function App() {
   const [countries, setCountries] = useState<Map<string, CountryData> | null>(null);
   const [capitals, setCapitals] = useState<Map<string, CapitalCoords> | null>(null);
   const [rankings, setRankings] = useState<Map<string, CountryRankings> | null>(null);
+  const [levels, setLevels] = useState<Map<string, LevelDefinition> | null>(null);
 
   // Ref del globo (para flyTo)
   const globeRef = useRef<GlobeD3Ref>(null);
 
-  // Props controladas del globo (gestionadas por ExploreView)
+  // Props controladas del globo (gestionadas por el tab activo)
   const [globeControl, setGlobeControl] = useState<GlobeControlProps>(DEFAULT_GLOBE_CONTROL);
 
-  // Bridge de handlers: ExploreView registra sus callbacks aquí
+  // Ref del tab activo (para evitar re-render del globo al cambiar de tab)
+  const activeTabRef = useRef<TabId>(activeTab);
+  activeTabRef.current = activeTab;
+
+  // Bridge de handlers: cada tab registra sus callbacks aquí
   const exploreClickRef = useRef<((f: CountryFeature) => void) | undefined>(undefined);
   const exploreDeselectRef = useRef<(() => void) | undefined>(undefined);
+  const jugarClickRef = useRef<((f: CountryFeature) => void) | undefined>(undefined);
 
-  // Callbacks estables para el globo (delegan a ExploreView via refs)
+  // Callback estable para el globo (delega al tab activo via refs)
   const handleCountryClick = useCallback((feature: CountryFeature) => {
-    exploreClickRef.current?.(feature);
+    if (activeTabRef.current === 'explore') {
+      exploreClickRef.current?.(feature);
+    } else if (activeTabRef.current === 'play') {
+      jugarClickRef.current?.(feature);
+    }
   }, []);
 
   const handleCountryDeselect = useCallback(() => {
-    exploreDeselectRef.current?.();
+    if (activeTabRef.current === 'explore') {
+      exploreDeselectRef.current?.();
+    }
   }, []);
 
   const handleGlobeReady = useCallback(() => setGlobeReady(true), []);
@@ -61,19 +74,11 @@ function App() {
   useEffect(() => {
     Promise.all([loadCountryData(), loadCapitals()]).then(([countriesData, capitalsData]) => {
       const ranksData = buildRankings(countriesData);
+      const levelsData = buildLevelDefinitions(countriesData);
       setCountries(countriesData);
       setCapitals(capitalsData);
       setRankings(ranksData);
-
-      // Verificación temporal de niveles
-      const levels = buildLevelDefinitions(countriesData);
-      const continents = ['África', 'América', 'Asia', 'Europa', 'Oceanía'] as const;
-      for (const continent of continents) {
-        const t = levels.get(`turista-${continent}`)!.countries.length;
-        const m = levels.get(`mochilero-${continent}`)!.countries.length;
-        const g = levels.get(`guía-${continent}`)!.countries.length;
-        console.log(`${continent}: T=${t}, M=${m}, G=${g}`);
-      }
+      setLevels(levelsData);
     });
   }, []);
 
@@ -97,7 +102,7 @@ function App() {
     return map;
   }, [countries]);
 
-  const dataReady = countries && capitals && rankings;
+  const dataReady = countries && capitals && rankings && levels;
 
   return (
     <>
@@ -109,8 +114,8 @@ function App() {
       <Suspense fallback={null}>
         <GlobeD3
           ref={globeRef}
-          onCountryClick={activeTab === 'explore' ? handleCountryClick : undefined}
-          onCountryDeselect={activeTab === 'explore' ? handleCountryDeselect : undefined}
+          onCountryClick={(activeTab === 'explore' || activeTab === 'play') ? handleCountryClick : undefined}
+          onCountryDeselect={(activeTab === 'explore' || activeTab === 'play') ? handleCountryDeselect : undefined}
           onReady={handleGlobeReady}
           showMarkers={showMarkers}
           selectedCountryCca2={globeControl.selectedCountryCca2}
@@ -137,18 +142,15 @@ function App() {
         />
       )}
 
-      {/* Placeholders de tabs no implementados */}
-      {activeTab === 'play' && (
-        <div className="tab-overlay tab-overlay--active">
-          <div className="tab-placeholder">
-            <svg className="tab-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none" />
-            </svg>
-            <span className="tab-placeholder__title">Jugar</span>
-            <span className="tab-placeholder__subtitle">Próximamente</span>
-          </div>
-        </div>
+      {/* Experiencia Jugar */}
+      {activeTab === 'play' && dataReady && (
+        <JugarView
+          globeRef={globeRef}
+          countries={countries}
+          levels={levels}
+          onGlobePropsChange={setGlobeControl}
+          onCountryClickRef={jugarClickRef}
+        />
       )}
 
       {activeTab === 'passport' && (

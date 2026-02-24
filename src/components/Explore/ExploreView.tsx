@@ -9,6 +9,7 @@ import { CountryCard } from './CountryCard';
 import { ContinentFilter } from './ContinentFilter';
 import { TableView } from './TableView';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
+import { CONTINENT_CENTERS } from '../../data/continents';
 import './ExploreView.css';
 
 type ExploreMode = 'countries' | 'capitals';
@@ -169,14 +170,6 @@ export function ExploreView({
 
 
   // Cambio de filtro de continente con flyTo
-  const CONTINENT_CENTERS: Record<Continent, [number, number]> = {
-    'África': [20, 0],
-    'América': [-80, 10],
-    'Asia': [90, 35],
-    'Europa': [15, 50],
-    'Oceanía': [140, -25],
-  };
-
   const handleContinentChange = useCallback(
     (continent: Continent | null) => {
       setContinentFilter(continent);

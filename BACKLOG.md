@@ -129,11 +129,21 @@
 
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
-### Experiencia: Jugar
+### Experiencia: Jugar — Fase 1 (arquitectura + Tipo A)
+- [x] Arquitectura base: event bridge unificado en App.tsx (`activeTabRef` + `jugarClickRef`) para delegar clicks del globo al tab activo sin re-renders
+- [x] Extraer `CONTINENT_CENTERS` a módulo compartido (`src/data/continents.ts`)
+- [x] Generación de preguntas tipo A (`src/data/gameQuestions.ts`): shuffle Fisher-Yates, evita repetición inmediata, regeneración cíclica
+- [x] Hook `useGameSession`: estado efímero de sesión (sin Zustand), game loop completo (start/submitAnswer/nextQuestion/end)
+- [x] `LevelSelector`: selector de continente (5 pills con flyTo) + nivel (turista/mochilero/guía con nº de países) + botón Empezar
+- [x] `QuestionBanner`: banner "Localiza [país]" con animación slide-down
+- [x] `GameFeedback`: overlay verde/rojo con auto-avance (1.2s acierto, 2s error + flyTo al país correcto)
+- [x] `ScoreBar`: barra compacta con aciertos/errores/pregunta actual + botón Salir
+- [x] `JugarView`: contenedor principal con flujo selector→playing, highlight de continente, control del globo
+- [x] Precomputo de niveles (`buildLevelDefinitions`) en App.tsx y paso como prop a JugarView
+
+### Experiencia: Jugar — Fases siguientes
 - [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)
-- [ ] Tipo A: Localizar país en el mapa (texto → mapa) — Sello de Países
 - [ ] Tipo B: Localizar capital en el mapa (texto → mapa) — Sello de Capitales
-- [ ] Feedback visual: verde/rojo según acierto
 - [ ] Tipo C: Capital → País (texto → texto, opciones múltiples)
 - [ ] Tipo D: País → Capital (texto → texto, opciones múltiples)
 - [ ] Tipo E: Seleccionar país resaltado (mapa → texto, opciones múltiples)
