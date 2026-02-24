@@ -1,0 +1,1030 @@
+{
+  "AD": {
+    "slug": "Andorra",
+    "lang": "es"
+  },
+  "AE": {
+    "slug": "Emiratos_Árabes_Unidos",
+    "lang": "es"
+  },
+  "AF": {
+    "slug": "Afganistán",
+    "lang": "es"
+  },
+  "AG": {
+    "slug": "Antigua_y_Barbuda",
+    "lang": "es"
+  },
+  "AI": {
+    "slug": "Anguila_(territorio_británico_de_ultramar)",
+    "lang": "es"
+  },
+  "AL": {
+    "slug": "Albania",
+    "lang": "es"
+  },
+  "AM": {
+    "slug": "Armenia",
+    "lang": "es"
+  },
+  "AN": {
+    "slug": "Antillas_Neerlandesas",
+    "lang": "es"
+  },
+  "AO": {
+    "slug": "Angola",
+    "lang": "es"
+  },
+  "AQ": {
+    "slug": "Antártida",
+    "lang": "es"
+  },
+  "AR": {
+    "slug": "Argentina",
+    "lang": "es"
+  },
+  "AS": {
+    "slug": "Samoa_Americana",
+    "lang": "es"
+  },
+  "AT": {
+    "slug": "Austria",
+    "lang": "es"
+  },
+  "AU": {
+    "slug": "Australia",
+    "lang": "es"
+  },
+  "AW": {
+    "slug": "Aruba",
+    "lang": "es"
+  },
+  "AX": {
+    "slug": "Åland",
+    "lang": "es"
+  },
+  "AZ": {
+    "slug": "Azerbaiyán",
+    "lang": "es"
+  },
+  "BA": {
+    "slug": "Bosnia_y_Herzegovina",
+    "lang": "es"
+  },
+  "BB": {
+    "slug": "Barbados",
+    "lang": "es"
+  },
+  "BD": {
+    "slug": "Bangladés",
+    "lang": "es"
+  },
+  "BE": {
+    "slug": "Bélgica",
+    "lang": "es"
+  },
+  "BF": {
+    "slug": "Burkina_Faso",
+    "lang": "es"
+  },
+  "BG": {
+    "slug": "Bulgaria",
+    "lang": "es"
+  },
+  "BH": {
+    "slug": "Baréin",
+    "lang": "es"
+  },
+  "BI": {
+    "slug": "Burundi",
+    "lang": "es"
+  },
+  "BJ": {
+    "slug": "Benín",
+    "lang": "es"
+  },
+  "BL": {
+    "slug": "San_Bartolomé_(Francia)",
+    "lang": "es"
+  },
+  "BM": {
+    "slug": "Bermudas",
+    "lang": "es"
+  },
+  "BN": {
+    "slug": "Brunéi",
+    "lang": "es"
+  },
+  "BO": {
+    "slug": "Bolivia",
+    "lang": "es"
+  },
+  "BQ": {
+    "slug": "Caribe_Neerlandés",
+    "lang": "es"
+  },
+  "BR": {
+    "slug": "Brasil",
+    "lang": "es"
+  },
+  "BS": {
+    "slug": "Bahamas",
+    "lang": "es"
+  },
+  "BT": {
+    "slug": "Bután",
+    "lang": "es"
+  },
+  "BV": {
+    "slug": "Isla_Bouvet",
+    "lang": "es"
+  },
+  "BW": {
+    "slug": "Botsuana",
+    "lang": "es"
+  },
+  "BY": {
+    "slug": "Bielorrusia",
+    "lang": "es"
+  },
+  "BZ": {
+    "slug": "Belice",
+    "lang": "es"
+  },
+  "CA": {
+    "slug": "Canadá",
+    "lang": "es"
+  },
+  "CC": {
+    "slug": "Islas_Cocos",
+    "lang": "es"
+  },
+  "CD": {
+    "slug": "República_Democrática_del_Congo",
+    "lang": "es"
+  },
+  "CF": {
+    "slug": "República_Centroafricana",
+    "lang": "es"
+  },
+  "CG": {
+    "slug": "República_del_Congo",
+    "lang": "es"
+  },
+  "CH": {
+    "slug": "Suiza",
+    "lang": "es"
+  },
+  "CI": {
+    "slug": "Costa_de_Marfil",
+    "lang": "es"
+  },
+  "CK": {
+    "slug": "Islas_Cook",
+    "lang": "es"
+  },
+  "CL": {
+    "slug": "Chile",
+    "lang": "es"
+  },
+  "CM": {
+    "slug": "Camerún",
+    "lang": "es"
+  },
+  "CN": {
+    "slug": "República_Popular_China",
+    "lang": "es"
+  },
+  "CO": {
+    "slug": "Colombia",
+    "lang": "es"
+  },
+  "CP": {
+    "slug": "Isla_Clipperton",
+    "lang": "es"
+  },
+  "CQ": {
+    "slug": "Sark",
+    "lang": "es"
+  },
+  "CR": {
+    "slug": "Costa_Rica",
+    "lang": "es"
+  },
+  "CU": {
+    "slug": "Cuba",
+    "lang": "es"
+  },
+  "CV": {
+    "slug": "Cabo_Verde",
+    "lang": "es"
+  },
+  "CW": {
+    "slug": "Curazao",
+    "lang": "es"
+  },
+  "CX": {
+    "slug": "Isla_de_Navidad",
+    "lang": "es"
+  },
+  "CY": {
+    "slug": "Chipre_(isla)",
+    "lang": "es"
+  },
+  "CZ": {
+    "slug": "República_Checa",
+    "lang": "es"
+  },
+  "DD": {
+    "slug": "República_Democrática_Alemana",
+    "lang": "es"
+  },
+  "DE": {
+    "slug": "Alemania",
+    "lang": "es"
+  },
+  "DG": {
+    "slug": "Diego_García",
+    "lang": "es"
+  },
+  "DJ": {
+    "slug": "Yibuti",
+    "lang": "es"
+  },
+  "DK": {
+    "slug": "Dinamarca",
+    "lang": "es"
+  },
+  "DM": {
+    "slug": "Dominica",
+    "lang": "es"
+  },
+  "DO": {
+    "slug": "República_Dominicana",
+    "lang": "es"
+  },
+  "DZ": {
+    "slug": "Argelia",
+    "lang": "es"
+  },
+  "EC": {
+    "slug": "Ecuador",
+    "lang": "es"
+  },
+  "EE": {
+    "slug": "Estonia",
+    "lang": "es"
+  },
+  "EG": {
+    "slug": "Egipto",
+    "lang": "es"
+  },
+  "EH": {
+    "slug": "Sahara_Occidental",
+    "lang": "es"
+  },
+  "ER": {
+    "slug": "Eritrea",
+    "lang": "es"
+  },
+  "ES": {
+    "slug": "España",
+    "lang": "es"
+  },
+  "ET": {
+    "slug": "Etiopía",
+    "lang": "es"
+  },
+  "FI": {
+    "slug": "Finlandia",
+    "lang": "es"
+  },
+  "FJ": {
+    "slug": "Fiyi",
+    "lang": "es"
+  },
+  "FK": {
+    "slug": "Islas_Malvinas_(territorio_británico_de_ultramar)",
+    "lang": "es"
+  },
+  "FM": {
+    "slug": "Estados_Federados_de_Micronesia",
+    "lang": "es"
+  },
+  "FO": {
+    "slug": "Islas_Feroe",
+    "lang": "es"
+  },
+  "FR": {
+    "slug": "Francia",
+    "lang": "es"
+  },
+  "GA": {
+    "slug": "Gabón",
+    "lang": "es"
+  },
+  "GB": {
+    "slug": "Reino_Unido",
+    "lang": "es"
+  },
+  "GD": {
+    "slug": "Granada_(país)",
+    "lang": "es"
+  },
+  "GE": {
+    "slug": "Georgia",
+    "lang": "es"
+  },
+  "GF": {
+    "slug": "Guayana_Francesa",
+    "lang": "es"
+  },
+  "GG": {
+    "slug": "Bailía_de_Guernsey",
+    "lang": "es"
+  },
+  "GH": {
+    "slug": "Ghana",
+    "lang": "es"
+  },
+  "GI": {
+    "slug": "Gibraltar",
+    "lang": "es"
+  },
+  "GL": {
+    "slug": "Groenlandia",
+    "lang": "es"
+  },
+  "GM": {
+    "slug": "Gambia",
+    "lang": "es"
+  },
+  "GN": {
+    "slug": "Guinea",
+    "lang": "es"
+  },
+  "GP": {
+    "slug": "Guadalupe_(Francia)",
+    "lang": "es"
+  },
+  "GQ": {
+    "slug": "Guinea_Ecuatorial",
+    "lang": "es"
+  },
+  "GR": {
+    "slug": "Grecia",
+    "lang": "es"
+  },
+  "GS": {
+    "slug": "Islas_Georgias_del_Sur_y_Sandwich_del_Sur",
+    "lang": "es"
+  },
+  "GT": {
+    "slug": "Guatemala",
+    "lang": "es"
+  },
+  "GU": {
+    "slug": "Guam",
+    "lang": "es"
+  },
+  "GW": {
+    "slug": "Guinea-Bisáu",
+    "lang": "es"
+  },
+  "GY": {
+    "slug": "Guyana",
+    "lang": "es"
+  },
+  "HK": {
+    "slug": "Hong_Kong",
+    "lang": "es"
+  },
+  "HM": {
+    "slug": "Territorio_de_las_Islas_Heard_y_McDonald",
+    "lang": "es"
+  },
+  "HN": {
+    "slug": "Honduras",
+    "lang": "es"
+  },
+  "HR": {
+    "slug": "Croacia",
+    "lang": "es"
+  },
+  "HT": {
+    "slug": "Haití",
+    "lang": "es"
+  },
+  "HU": {
+    "slug": "Hungría",
+    "lang": "es"
+  },
+  "ID": {
+    "slug": "Indonesia",
+    "lang": "es"
+  },
+  "IE": {
+    "slug": "Irlanda",
+    "lang": "es"
+  },
+  "IL": {
+    "slug": "Israel",
+    "lang": "es"
+  },
+  "IM": {
+    "slug": "Isla_de_Man",
+    "lang": "es"
+  },
+  "IN": {
+    "slug": "India",
+    "lang": "es"
+  },
+  "IO": {
+    "slug": "Territorio_Británico_del_Océano_Índico",
+    "lang": "es"
+  },
+  "IQ": {
+    "slug": "Irak",
+    "lang": "es"
+  },
+  "IR": {
+    "slug": "Irán",
+    "lang": "es"
+  },
+  "IS": {
+    "slug": "Islandia",
+    "lang": "es"
+  },
+  "IT": {
+    "slug": "Italia",
+    "lang": "es"
+  },
+  "JE": {
+    "slug": "Jersey",
+    "lang": "es"
+  },
+  "JM": {
+    "slug": "Jamaica",
+    "lang": "es"
+  },
+  "JO": {
+    "slug": "Jordania",
+    "lang": "es"
+  },
+  "JP": {
+    "slug": "Japón",
+    "lang": "es"
+  },
+  "KE": {
+    "slug": "Kenia",
+    "lang": "es"
+  },
+  "KG": {
+    "slug": "Kirguistán",
+    "lang": "es"
+  },
+  "KH": {
+    "slug": "Camboya",
+    "lang": "es"
+  },
+  "KI": {
+    "slug": "Kiribati",
+    "lang": "es"
+  },
+  "KM": {
+    "slug": "Comoras",
+    "lang": "es"
+  },
+  "KN": {
+    "slug": "San_Cristóbal_y_Nieves",
+    "lang": "es"
+  },
+  "KP": {
+    "slug": "Corea_del_Norte",
+    "lang": "es"
+  },
+  "KR": {
+    "slug": "Corea_del_Sur",
+    "lang": "es"
+  },
+  "KW": {
+    "slug": "Kuwait",
+    "lang": "es"
+  },
+  "KY": {
+    "slug": "Islas_Caimán",
+    "lang": "es"
+  },
+  "KZ": {
+    "slug": "Kazajistán",
+    "lang": "es"
+  },
+  "LA": {
+    "slug": "Laos",
+    "lang": "es"
+  },
+  "LB": {
+    "slug": "Líbano",
+    "lang": "es"
+  },
+  "LC": {
+    "slug": "Santa_Lucía",
+    "lang": "es"
+  },
+  "LI": {
+    "slug": "Liechtenstein",
+    "lang": "es"
+  },
+  "LK": {
+    "slug": "Sri_Lanka",
+    "lang": "es"
+  },
+  "LR": {
+    "slug": "Liberia",
+    "lang": "es"
+  },
+  "LS": {
+    "slug": "Lesoto",
+    "lang": "es"
+  },
+  "LT": {
+    "slug": "Lituania",
+    "lang": "es"
+  },
+  "LU": {
+    "slug": "Luxemburgo",
+    "lang": "es"
+  },
+  "LV": {
+    "slug": "Letonia",
+    "lang": "es"
+  },
+  "LY": {
+    "slug": "Libia",
+    "lang": "es"
+  },
+  "MA": {
+    "slug": "Marruecos",
+    "lang": "es"
+  },
+  "MC": {
+    "slug": "Mónaco",
+    "lang": "es"
+  },
+  "MD": {
+    "slug": "Moldavia",
+    "lang": "es"
+  },
+  "ME": {
+    "slug": "Montenegro",
+    "lang": "es"
+  },
+  "MF": {
+    "slug": "San_Martín_(Francia)",
+    "lang": "es"
+  },
+  "MG": {
+    "slug": "Madagascar",
+    "lang": "es"
+  },
+  "MH": {
+    "slug": "Islas_Marshall",
+    "lang": "es"
+  },
+  "MK": {
+    "slug": "Macedonia_del_Norte",
+    "lang": "es"
+  },
+  "ML": {
+    "slug": "Mali",
+    "lang": "es"
+  },
+  "MM": {
+    "slug": "Birmania",
+    "lang": "es"
+  },
+  "MN": {
+    "slug": "Mongolia",
+    "lang": "es"
+  },
+  "MO": {
+    "slug": "Macao",
+    "lang": "es"
+  },
+  "MP": {
+    "slug": "Islas_Marianas_del_Norte",
+    "lang": "es"
+  },
+  "MQ": {
+    "slug": "Martinica",
+    "lang": "es"
+  },
+  "MR": {
+    "slug": "Mauritania",
+    "lang": "es"
+  },
+  "MS": {
+    "slug": "Montserrat",
+    "lang": "es"
+  },
+  "MT": {
+    "slug": "Malta",
+    "lang": "es"
+  },
+  "MU": {
+    "slug": "Mauricio",
+    "lang": "es"
+  },
+  "MV": {
+    "slug": "Maldivas",
+    "lang": "es"
+  },
+  "MW": {
+    "slug": "Malaui",
+    "lang": "es"
+  },
+  "MX": {
+    "slug": "México",
+    "lang": "es"
+  },
+  "MY": {
+    "slug": "Malasia",
+    "lang": "es"
+  },
+  "MZ": {
+    "slug": "Mozambique",
+    "lang": "es"
+  },
+  "NA": {
+    "slug": "Namibia",
+    "lang": "es"
+  },
+  "NC": {
+    "slug": "Nueva_Caledonia",
+    "lang": "es"
+  },
+  "NE": {
+    "slug": "Níger",
+    "lang": "es"
+  },
+  "NF": {
+    "slug": "Isla_Norfolk",
+    "lang": "es"
+  },
+  "NG": {
+    "slug": "Nigeria",
+    "lang": "es"
+  },
+  "NI": {
+    "slug": "Nicaragua",
+    "lang": "es"
+  },
+  "NL": {
+    "slug": "Reino_de_los_Países_Bajos",
+    "lang": "es"
+  },
+  "NO": {
+    "slug": "Noruega",
+    "lang": "es"
+  },
+  "NP": {
+    "slug": "Nepal",
+    "lang": "es"
+  },
+  "NR": {
+    "slug": "Nauru",
+    "lang": "es"
+  },
+  "NU": {
+    "slug": "Niue",
+    "lang": "es"
+  },
+  "NZ": {
+    "slug": "Nueva_Zelanda",
+    "lang": "es"
+  },
+  "OM": {
+    "slug": "Omán",
+    "lang": "es"
+  },
+  "PA": {
+    "slug": "Panamá",
+    "lang": "es"
+  },
+  "PC": {
+    "slug": "Territorio_en_Fideicomiso_de_las_Islas_del_Pacífico",
+    "lang": "es"
+  },
+  "PE": {
+    "slug": "Perú",
+    "lang": "es"
+  },
+  "PF": {
+    "slug": "Polinesia_Francesa",
+    "lang": "es"
+  },
+  "PG": {
+    "slug": "Papúa_Nueva_Guinea",
+    "lang": "es"
+  },
+  "PH": {
+    "slug": "Filipinas",
+    "lang": "es"
+  },
+  "PK": {
+    "slug": "Pakistán",
+    "lang": "es"
+  },
+  "PL": {
+    "slug": "Polonia",
+    "lang": "es"
+  },
+  "PM": {
+    "slug": "San_Pedro_y_Miquelón",
+    "lang": "es"
+  },
+  "PN": {
+    "slug": "Islas_Pitcairn",
+    "lang": "es"
+  },
+  "PR": {
+    "slug": "Puerto_Rico",
+    "lang": "es"
+  },
+  "PS": {
+    "slug": "Palestina",
+    "lang": "es"
+  },
+  "PT": {
+    "slug": "Portugal",
+    "lang": "es"
+  },
+  "PW": {
+    "slug": "Palaos",
+    "lang": "es"
+  },
+  "PY": {
+    "slug": "Paraguay",
+    "lang": "es"
+  },
+  "QA": {
+    "slug": "Catar",
+    "lang": "es"
+  },
+  "RE": {
+    "slug": "Reunión_(Francia)",
+    "lang": "es"
+  },
+  "RO": {
+    "slug": "Rumania",
+    "lang": "es"
+  },
+  "RS": {
+    "slug": "Serbia",
+    "lang": "es"
+  },
+  "RU": {
+    "slug": "Rusia",
+    "lang": "es"
+  },
+  "RW": {
+    "slug": "Ruanda",
+    "lang": "es"
+  },
+  "SA": {
+    "slug": "Arabia_Saudita",
+    "lang": "es"
+  },
+  "SB": {
+    "slug": "Islas_Salomón",
+    "lang": "es"
+  },
+  "SC": {
+    "slug": "Seychelles",
+    "lang": "es"
+  },
+  "SD": {
+    "slug": "Sudán",
+    "lang": "es"
+  },
+  "SE": {
+    "slug": "Suecia",
+    "lang": "es"
+  },
+  "SG": {
+    "slug": "Singapur",
+    "lang": "es"
+  },
+  "SH": {
+    "slug": "Santa_Elena,_Ascensión_y_Tristán_de_Acuña",
+    "lang": "es"
+  },
+  "SI": {
+    "slug": "Eslovenia",
+    "lang": "es"
+  },
+  "SJ": {
+    "slug": "Svalbard_y_Jan_Mayen",
+    "lang": "es"
+  },
+  "SK": {
+    "slug": "Eslovaquia",
+    "lang": "es"
+  },
+  "SL": {
+    "slug": "Sierra_Leona",
+    "lang": "es"
+  },
+  "SM": {
+    "slug": "San_Marino",
+    "lang": "es"
+  },
+  "SN": {
+    "slug": "Senegal",
+    "lang": "es"
+  },
+  "SO": {
+    "slug": "Somalia",
+    "lang": "es"
+  },
+  "SR": {
+    "slug": "Surinam",
+    "lang": "es"
+  },
+  "SS": {
+    "slug": "Sudán_del_Sur",
+    "lang": "es"
+  },
+  "ST": {
+    "slug": "Santo_Tomé_y_Príncipe",
+    "lang": "es"
+  },
+  "SV": {
+    "slug": "El_Salvador",
+    "lang": "es"
+  },
+  "SX": {
+    "slug": "San_Martín_(Países_Bajos)",
+    "lang": "es"
+  },
+  "SY": {
+    "slug": "Siria",
+    "lang": "es"
+  },
+  "SZ": {
+    "slug": "Suazilandia",
+    "lang": "es"
+  },
+  "TC": {
+    "slug": "Islas_Turcas_y_Caicos",
+    "lang": "es"
+  },
+  "TD": {
+    "slug": "Chad",
+    "lang": "es"
+  },
+  "TF": {
+    "slug": "Tierras_Australes_y_Antárticas_Francesas",
+    "lang": "es"
+  },
+  "TG": {
+    "slug": "Togo",
+    "lang": "es"
+  },
+  "TH": {
+    "slug": "Tailandia",
+    "lang": "es"
+  },
+  "TJ": {
+    "slug": "Tayikistán",
+    "lang": "es"
+  },
+  "TK": {
+    "slug": "Tokelau",
+    "lang": "es"
+  },
+  "TL": {
+    "slug": "Timor_Oriental",
+    "lang": "es"
+  },
+  "TM": {
+    "slug": "Turkmenistán",
+    "lang": "es"
+  },
+  "TN": {
+    "slug": "Túnez",
+    "lang": "es"
+  },
+  "TO": {
+    "slug": "Tonga",
+    "lang": "es"
+  },
+  "TR": {
+    "slug": "Turquía",
+    "lang": "es"
+  },
+  "TT": {
+    "slug": "Trinidad_y_Tobago",
+    "lang": "es"
+  },
+  "TV": {
+    "slug": "Tuvalu",
+    "lang": "es"
+  },
+  "TW": {
+    "slug": "República_de_China",
+    "lang": "es"
+  },
+  "TZ": {
+    "slug": "Tanzania",
+    "lang": "es"
+  },
+  "UA": {
+    "slug": "Ucrania",
+    "lang": "es"
+  },
+  "UG": {
+    "slug": "Uganda",
+    "lang": "es"
+  },
+  "UM": {
+    "slug": "Islas_Ultramarinas_Menores_de_los_Estados_Unidos",
+    "lang": "es"
+  },
+  "US": {
+    "slug": "Estados_Unidos",
+    "lang": "es"
+  },
+  "UY": {
+    "slug": "Uruguay",
+    "lang": "es"
+  },
+  "UZ": {
+    "slug": "Uzbekistán",
+    "lang": "es"
+  },
+  "VA": {
+    "slug": "Ciudad_del_Vaticano",
+    "lang": "es"
+  },
+  "VC": {
+    "slug": "San_Vicente_y_las_Granadinas",
+    "lang": "es"
+  },
+  "VE": {
+    "slug": "Venezuela",
+    "lang": "es"
+  },
+  "VG": {
+    "slug": "Islas_Vírgenes_Británicas",
+    "lang": "es"
+  },
+  "VI": {
+    "slug": "Islas_Vírgenes_de_los_Estados_Unidos",
+    "lang": "es"
+  },
+  "VN": {
+    "slug": "Vietnam",
+    "lang": "es"
+  },
+  "VU": {
+    "slug": "Vanuatu",
+    "lang": "es"
+  },
+  "WF": {
+    "slug": "Wallis_y_Futuna",
+    "lang": "es"
+  },
+  "WS": {
+    "slug": "Samoa",
+    "lang": "es"
+  },
+  "XK": {
+    "slug": "Kosovo",
+    "lang": "es"
+  },
+  "YE": {
+    "slug": "Yemen",
+    "lang": "es"
+  },
+  "YT": {
+    "slug": "Mayotte",
+    "lang": "es"
+  },
+  "YU": {
+    "slug": "Yugoslavia",
+    "lang": "es"
+  },
+  "ZA": {
+    "slug": "Sudáfrica",
+    "lang": "es"
+  },
+  "ZM": {
+    "slug": "Zambia",
+    "lang": "es"
+  },
+  "ZW": {
+    "slug": "Zimbabue",
+    "lang": "es"
+  }
+}

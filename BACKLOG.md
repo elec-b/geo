@@ -117,14 +117,17 @@
 - [x] Header: iconos con más aire respecto al safe area (`--spacing-sm`)
 - [x] Gentilicio con mayúscula inicial en la ficha
 
+### Ficha de país: enlace a Wikipedia
+- [x] Script `fetch-wikipedia.ts`: consulta Wikidata SPARQL (P297 → sitelinks es/en), validación HEAD, genera `scripts/data/wikipedia-es.json` (257 entradas, cobertura 100%)
+- [x] Pipeline `fetch-countries.ts` integra `wikipediaSlug` en `countries.json`
+- [x] Botón Wikipedia en CountryCard (full-width, icono enlace externo, abre artículo en Safari)
+- [x] Datos sintéticos (SOL, CYN, AQ) con slug manual
+
 ---
 
 ## Próximos pasos
 
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
-
-### Ficha de país: mejoras pendientes
-- [ ] Enlace a Wikipedia localizado: URL en el idioma de la app, fallback a inglés. Validar links en el pipeline de datos con petición HEAD. Alternativa más robusta y preferida: usar Wikidata Q-IDs para resolver URLs por idioma (inmune a renombrados de artículos). Es importante que el contenido de la app se mantenga sólido (sin errores) y actualizado (sin imprecisiones) conforme pasa el tiempo y de manera automática. Leer más sobre esto en design.md
 
 ### Experiencia: Jugar
 - [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)

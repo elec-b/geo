@@ -24,6 +24,8 @@ export interface CountryData {
   demonym: string;
   hdi: number | null;
   ihdi: number | null;
+  /** Slug de Wikipedia (ej: "España"). Prefijo "en:" si el artículo es en inglés */
+  wikipediaSlug: string | null;
   /** true = miembro o estado observador ONU (195). false = territorio no reconocido */
   unMember: boolean;
 }

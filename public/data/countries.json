@@ -20,6 +20,7 @@
     "demonym": "andorrano",
     "hdi": 0.884,
     "ihdi": null,
+    "wikipediaSlug": "Andorra",
     "unMember": true
   },
   {
@@ -43,6 +44,7 @@
     "demonym": "emiratí",
     "hdi": 0.937,
     "ihdi": 0.824,
+    "wikipediaSlug": "Emiratos_Árabes_Unidos",
     "unMember": true
   },
   {
@@ -67,6 +69,7 @@
     "demonym": "afgano",
     "hdi": 0.462,
     "ihdi": 0.306,
+    "wikipediaSlug": "Afganistán",
     "unMember": true
   },
   {
@@ -90,6 +93,7 @@
     "demonym": "antigüeño",
     "hdi": 0.814,
     "ihdi": null,
+    "wikipediaSlug": "Antigua_y_Barbuda",
     "unMember": true
   },
   {
@@ -113,6 +117,7 @@
     "demonym": "anguilense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Anguila_(territorio_británico_de_ultramar)",
     "unMember": false
   },
   {
@@ -136,6 +141,7 @@
     "demonym": "albanés",
     "hdi": 0.789,
     "ihdi": 0.706,
+    "wikipediaSlug": "Albania",
     "unMember": true
   },
   {
@@ -159,6 +165,7 @@
     "demonym": "armenio",
     "hdi": 0.786,
     "ihdi": 0.691,
+    "wikipediaSlug": "Armenia",
     "unMember": true
   },
   {
@@ -182,6 +189,7 @@
     "demonym": "angoleño",
     "hdi": 0.586,
     "ihdi": 0.377,
+    "wikipediaSlug": "Angola",
     "unMember": true
   },
   {
@@ -205,6 +213,7 @@
     "demonym": "argentino",
     "hdi": 0.842,
     "ihdi": 0.714,
+    "wikipediaSlug": "Argentina",
     "unMember": true
   },
   {
@@ -229,6 +238,7 @@
     "demonym": "samoano americano",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Samoa_Americana",
     "unMember": false
   },
   {
@@ -252,6 +262,7 @@
     "demonym": "austriaco",
     "hdi": 0.926,
     "ihdi": 0.851,
+    "wikipediaSlug": "Austria",
     "unMember": true
   },
   {
@@ -275,6 +286,7 @@
     "demonym": "australiano",
     "hdi": 0.946,
     "ihdi": 0.876,
+    "wikipediaSlug": "Australia",
     "unMember": true
   },
   {
@@ -299,6 +311,7 @@
     "demonym": "arubeño",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Aruba",
     "unMember": false
   },
   {
@@ -322,6 +335,7 @@
     "demonym": "alandés",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Åland",
     "unMember": false
   },
   {
@@ -345,6 +359,7 @@
     "demonym": "azerbaiyano",
     "hdi": 0.76,
     "ihdi": 0.668,
+    "wikipediaSlug": "Azerbaiyán",
     "unMember": true
   },
   {
@@ -370,6 +385,7 @@
     "demonym": "bosnio",
     "hdi": 0.779,
     "ihdi": 0.67,
+    "wikipediaSlug": "Bosnia_y_Herzegovina",
     "unMember": true
   },
   {
@@ -393,6 +409,7 @@
     "demonym": "barbadense",
     "hdi": 0.809,
     "ihdi": null,
+    "wikipediaSlug": "Barbados",
     "unMember": true
   },
   {
@@ -416,6 +433,7 @@
     "demonym": "bangladesí",
     "hdi": 0.67,
     "ihdi": 0.496,
+    "wikipediaSlug": "Bangladés",
     "unMember": true
   },
   {
@@ -441,6 +459,7 @@
     "demonym": "belga",
     "hdi": 0.942,
     "ihdi": 0.878,
+    "wikipediaSlug": "Bélgica",
     "unMember": true
   },
   {
@@ -464,6 +483,7 @@
     "demonym": "burkinés",
     "hdi": 0.449,
     "ihdi": 0.296,
+    "wikipediaSlug": "Burkina_Faso",
     "unMember": true
   },
   {
@@ -487,6 +507,7 @@
     "demonym": "búlgaro",
     "hdi": 0.799,
     "ihdi": 0.71,
+    "wikipediaSlug": "Bulgaria",
     "unMember": true
   },
   {
@@ -510,6 +531,7 @@
     "demonym": "bareiní",
     "hdi": 0.888,
     "ihdi": null,
+    "wikipediaSlug": "Baréin",
     "unMember": true
   },
   {
@@ -534,6 +556,7 @@
     "demonym": "burundés",
     "hdi": 0.426,
     "ihdi": 0.296,
+    "wikipediaSlug": "Burundi",
     "unMember": true
   },
   {
@@ -557,6 +580,7 @@
     "demonym": "beninés",
     "hdi": 0.504,
     "ihdi": 0.327,
+    "wikipediaSlug": "Benín",
     "unMember": true
   },
   {
@@ -580,6 +604,7 @@
     "demonym": "sanbartolomeño",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "San_Bartolomé_(Francia)",
     "unMember": false
   },
   {
@@ -603,6 +628,7 @@
     "demonym": "bermudeño",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Bermudas",
     "unMember": false
   },
   {
@@ -626,6 +652,7 @@
     "demonym": "bruneano",
     "hdi": 0.829,
     "ihdi": null,
+    "wikipediaSlug": "Brunéi",
     "unMember": true
   },
   {
@@ -651,6 +678,7 @@
     "demonym": "boliviano",
     "hdi": 0.698,
     "ihdi": 0.512,
+    "wikipediaSlug": "Bolivia",
     "unMember": true
   },
   {
@@ -674,6 +702,7 @@
     "demonym": "brasileño",
     "hdi": 0.76,
     "ihdi": 0.576,
+    "wikipediaSlug": "Brasil",
     "unMember": true
   },
   {
@@ -697,6 +726,7 @@
     "demonym": "bahameño",
     "hdi": 0.812,
     "ihdi": null,
+    "wikipediaSlug": "Bahamas",
     "unMember": true
   },
   {
@@ -720,6 +750,7 @@
     "demonym": "butanés",
     "hdi": 0.781,
     "ihdi": 0.637,
+    "wikipediaSlug": "Bután",
     "unMember": true
   },
   {
@@ -744,6 +775,7 @@
     "demonym": "botsuano",
     "hdi": 0.708,
     "ihdi": 0.456,
+    "wikipediaSlug": "Botsuana",
     "unMember": true
   },
   {
@@ -768,6 +800,7 @@
     "demonym": "bielorruso",
     "hdi": 0.801,
     "ihdi": 0.729,
+    "wikipediaSlug": "Bielorrusia",
     "unMember": true
   },
   {
@@ -791,6 +824,7 @@
     "demonym": "beliceño",
     "hdi": 0.7,
     "ihdi": null,
+    "wikipediaSlug": "Belice",
     "unMember": true
   },
   {
@@ -815,6 +849,7 @@
     "demonym": "canadiense",
     "hdi": 0.935,
     "ihdi": 0.86,
+    "wikipediaSlug": "Canadá",
     "unMember": true
   },
   {
@@ -838,6 +873,7 @@
     "demonym": "congoleño",
     "hdi": 0.479,
     "ihdi": 0.311,
+    "wikipediaSlug": "República_Democrática_del_Congo",
     "unMember": true
   },
   {
@@ -862,6 +898,7 @@
     "demonym": "centroafricano",
     "hdi": 0.387,
     "ihdi": 0.236,
+    "wikipediaSlug": "República_Centroafricana",
     "unMember": true
   },
   {
@@ -885,6 +922,7 @@
     "demonym": "congoleño",
     "hdi": 0.571,
     "ihdi": 0.381,
+    "wikipediaSlug": "República_del_Congo",
     "unMember": true
   },
   {
@@ -911,6 +949,7 @@
     "demonym": "suizo",
     "hdi": 0.967,
     "ihdi": 0.894,
+    "wikipediaSlug": "Suiza",
     "unMember": true
   },
   {
@@ -934,6 +973,7 @@
     "demonym": "marfileño",
     "hdi": 0.55,
     "ihdi": 0.365,
+    "wikipediaSlug": "Costa_de_Marfil",
     "unMember": true
   },
   {
@@ -958,6 +998,7 @@
     "demonym": "cookiano",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Islas_Cook",
     "unMember": false
   },
   {
@@ -981,6 +1022,7 @@
     "demonym": "chileno",
     "hdi": 0.86,
     "ihdi": 0.709,
+    "wikipediaSlug": "Chile",
     "unMember": true
   },
   {
@@ -1005,6 +1047,7 @@
     "demonym": "camerunés",
     "hdi": 0.587,
     "ihdi": 0.381,
+    "wikipediaSlug": "Camerún",
     "unMember": true
   },
   {
@@ -1028,6 +1071,7 @@
     "demonym": "chino",
     "hdi": 0.788,
     "ihdi": 0.637,
+    "wikipediaSlug": "República_Popular_China",
     "unMember": true
   },
   {
@@ -1051,6 +1095,7 @@
     "demonym": "colombiano",
     "hdi": 0.758,
     "ihdi": 0.571,
+    "wikipediaSlug": "Colombia",
     "unMember": true
   },
   {
@@ -1074,6 +1119,7 @@
     "demonym": "costarricense",
     "hdi": 0.806,
     "ihdi": 0.654,
+    "wikipediaSlug": "Costa_Rica",
     "unMember": true
   },
   {
@@ -1097,6 +1143,7 @@
     "demonym": "cubano",
     "hdi": 0.764,
     "ihdi": null,
+    "wikipediaSlug": "Cuba",
     "unMember": true
   },
   {
@@ -1120,6 +1167,7 @@
     "demonym": "caboverdiano",
     "hdi": 0.662,
     "ihdi": null,
+    "wikipediaSlug": "Cabo_Verde",
     "unMember": true
   },
   {
@@ -1144,6 +1192,7 @@
     "demonym": "curazaleño",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Curazao",
     "unMember": false
   },
   {
@@ -1168,6 +1217,7 @@
     "demonym": "chipriota",
     "hdi": 0.907,
     "ihdi": 0.815,
+    "wikipediaSlug": "Chipre_(isla)",
     "unMember": true
   },
   {
@@ -1191,6 +1241,7 @@
     "demonym": "checo",
     "hdi": 0.9,
     "ihdi": 0.847,
+    "wikipediaSlug": "República_Checa",
     "unMember": true
   },
   {
@@ -1214,6 +1265,7 @@
     "demonym": "alemán",
     "hdi": 0.95,
     "ihdi": 0.883,
+    "wikipediaSlug": "Alemania",
     "unMember": true
   },
   {
@@ -1238,6 +1290,7 @@
     "demonym": "yibutiano",
     "hdi": 0.509,
     "ihdi": null,
+    "wikipediaSlug": "Yibuti",
     "unMember": true
   },
   {
@@ -1261,6 +1314,7 @@
     "demonym": "danés",
     "hdi": 0.952,
     "ihdi": 0.91,
+    "wikipediaSlug": "Dinamarca",
     "unMember": true
   },
   {
@@ -1284,6 +1338,7 @@
     "demonym": "dominiqués",
     "hdi": 0.72,
     "ihdi": null,
+    "wikipediaSlug": "Dominica",
     "unMember": true
   },
   {
@@ -1307,6 +1362,7 @@
     "demonym": "dominicano",
     "hdi": 0.766,
     "ihdi": 0.583,
+    "wikipediaSlug": "República_Dominicana",
     "unMember": true
   },
   {
@@ -1331,6 +1387,7 @@
     "demonym": "argelino",
     "hdi": 0.745,
     "ihdi": 0.584,
+    "wikipediaSlug": "Argelia",
     "unMember": true
   },
   {
@@ -1354,6 +1411,7 @@
     "demonym": "ecuatoriano",
     "hdi": 0.765,
     "ihdi": 0.589,
+    "wikipediaSlug": "Ecuador",
     "unMember": true
   },
   {
@@ -1377,6 +1435,7 @@
     "demonym": "estonio",
     "hdi": 0.899,
     "ihdi": 0.848,
+    "wikipediaSlug": "Estonia",
     "unMember": true
   },
   {
@@ -1400,6 +1459,7 @@
     "demonym": "egipcio",
     "hdi": 0.731,
     "ihdi": 0.518,
+    "wikipediaSlug": "Egipto",
     "unMember": true
   },
   {
@@ -1423,6 +1483,7 @@
     "demonym": "saharaui",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Sahara_Occidental",
     "unMember": false
   },
   {
@@ -1448,6 +1509,7 @@
     "demonym": "eritreo",
     "hdi": 0.492,
     "ihdi": null,
+    "wikipediaSlug": "Eritrea",
     "unMember": true
   },
   {
@@ -1471,6 +1533,7 @@
     "demonym": "español",
     "hdi": 0.911,
     "ihdi": 0.788,
+    "wikipediaSlug": "España",
     "unMember": true
   },
   {
@@ -1494,6 +1557,7 @@
     "demonym": "etíope",
     "hdi": 0.492,
     "ihdi": 0.347,
+    "wikipediaSlug": "Etiopía",
     "unMember": true
   },
   {
@@ -1518,6 +1582,7 @@
     "demonym": "finlandés",
     "hdi": 0.942,
     "ihdi": 0.89,
+    "wikipediaSlug": "Finlandia",
     "unMember": true
   },
   {
@@ -1543,6 +1608,7 @@
     "demonym": "fiyiano",
     "hdi": 0.729,
     "ihdi": null,
+    "wikipediaSlug": "Fiyi",
     "unMember": true
   },
   {
@@ -1566,6 +1632,7 @@
     "demonym": "malvinense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Islas_Malvinas_(territorio_británico_de_ultramar)",
     "unMember": false
   },
   {
@@ -1589,6 +1656,7 @@
     "demonym": "micronesio",
     "hdi": 0.628,
     "ihdi": null,
+    "wikipediaSlug": "Estados_Federados_de_Micronesia",
     "unMember": true
   },
   {
@@ -1613,6 +1681,7 @@
     "demonym": "feroés",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Islas_Feroe",
     "unMember": false
   },
   {
@@ -1636,6 +1705,7 @@
     "demonym": "francés",
     "hdi": 0.91,
     "ihdi": 0.82,
+    "wikipediaSlug": "Francia",
     "unMember": true
   },
   {
@@ -1659,6 +1729,7 @@
     "demonym": "gabonés",
     "hdi": 0.706,
     "ihdi": 0.517,
+    "wikipediaSlug": "Gabón",
     "unMember": true
   },
   {
@@ -1682,6 +1753,7 @@
     "demonym": "británico",
     "hdi": 0.94,
     "ihdi": 0.867,
+    "wikipediaSlug": "Reino_Unido",
     "unMember": true
   },
   {
@@ -1705,6 +1777,7 @@
     "demonym": "granadino",
     "hdi": 0.795,
     "ihdi": null,
+    "wikipediaSlug": "Granada_(país)",
     "unMember": true
   },
   {
@@ -1728,6 +1801,7 @@
     "demonym": "georgiano",
     "hdi": 0.814,
     "ihdi": 0.71,
+    "wikipediaSlug": "Georgia",
     "unMember": true
   },
   {
@@ -1752,6 +1826,7 @@
     "demonym": "guerneseyés",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Bailía_de_Guernsey",
     "unMember": false
   },
   {
@@ -1775,6 +1850,7 @@
     "demonym": "ghanés",
     "hdi": 0.602,
     "ihdi": 0.418,
+    "wikipediaSlug": "Ghana",
     "unMember": true
   },
   {
@@ -1798,6 +1874,7 @@
     "demonym": "groenlandés",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Groenlandia",
     "unMember": false
   },
   {
@@ -1821,6 +1898,7 @@
     "demonym": "gambiano",
     "hdi": 0.5,
     "ihdi": 0.332,
+    "wikipediaSlug": "Gambia",
     "unMember": true
   },
   {
@@ -1844,6 +1922,7 @@
     "demonym": "guineano",
     "hdi": 0.465,
     "ihdi": 0.296,
+    "wikipediaSlug": "Guinea",
     "unMember": true
   },
   {
@@ -1869,6 +1948,7 @@
     "demonym": "ecuatoguineano",
     "hdi": 0.648,
     "ihdi": null,
+    "wikipediaSlug": "Guinea_Ecuatorial",
     "unMember": true
   },
   {
@@ -1892,6 +1972,7 @@
     "demonym": "griego",
     "hdi": 0.893,
     "ihdi": 0.791,
+    "wikipediaSlug": "Grecia",
     "unMember": true
   },
   {
@@ -1915,6 +1996,7 @@
     "demonym": "guatemalteco",
     "hdi": 0.629,
     "ihdi": 0.44,
+    "wikipediaSlug": "Guatemala",
     "unMember": true
   },
   {
@@ -1939,6 +2021,7 @@
     "demonym": "guameño",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Guam",
     "unMember": false
   },
   {
@@ -1962,6 +2045,7 @@
     "demonym": "guineano-bisauense",
     "hdi": 0.483,
     "ihdi": 0.297,
+    "wikipediaSlug": "Guinea-Bisáu",
     "unMember": true
   },
   {
@@ -1985,6 +2069,7 @@
     "demonym": "guyanés",
     "hdi": 0.742,
     "ihdi": null,
+    "wikipediaSlug": "Guyana",
     "unMember": true
   },
   {
@@ -2009,6 +2094,7 @@
     "demonym": "hongkonés",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Hong_Kong",
     "unMember": false
   },
   {
@@ -2032,6 +2118,7 @@
     "demonym": "hondureño",
     "hdi": 0.624,
     "ihdi": 0.443,
+    "wikipediaSlug": "Honduras",
     "unMember": true
   },
   {
@@ -2055,6 +2142,7 @@
     "demonym": "croata",
     "hdi": 0.878,
     "ihdi": 0.809,
+    "wikipediaSlug": "Croacia",
     "unMember": true
   },
   {
@@ -2079,6 +2167,7 @@
     "demonym": "haitiano",
     "hdi": 0.535,
     "ihdi": 0.323,
+    "wikipediaSlug": "Haití",
     "unMember": true
   },
   {
@@ -2102,6 +2191,7 @@
     "demonym": "húngaro",
     "hdi": 0.851,
     "ihdi": 0.789,
+    "wikipediaSlug": "Hungría",
     "unMember": true
   },
   {
@@ -2125,6 +2215,7 @@
     "demonym": "indonesio",
     "hdi": 0.713,
     "ihdi": 0.563,
+    "wikipediaSlug": "Indonesia",
     "unMember": true
   },
   {
@@ -2149,6 +2240,7 @@
     "demonym": "irlandés",
     "hdi": 0.95,
     "ihdi": 0.886,
+    "wikipediaSlug": "Irlanda",
     "unMember": true
   },
   {
@@ -2173,6 +2265,7 @@
     "demonym": "israelí",
     "hdi": 0.915,
     "ihdi": 0.809,
+    "wikipediaSlug": "Israel",
     "unMember": true
   },
   {
@@ -2197,6 +2290,7 @@
     "demonym": "manés",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Isla_de_Man",
     "unMember": false
   },
   {
@@ -2221,6 +2315,7 @@
     "demonym": "indio",
     "hdi": 0.644,
     "ihdi": 0.46,
+    "wikipediaSlug": "India",
     "unMember": true
   },
   {
@@ -2245,6 +2340,7 @@
     "demonym": "iraquí",
     "hdi": 0.686,
     "ihdi": 0.502,
+    "wikipediaSlug": "Irak",
     "unMember": true
   },
   {
@@ -2268,6 +2364,7 @@
     "demonym": "iraní",
     "hdi": 0.78,
     "ihdi": 0.589,
+    "wikipediaSlug": "Irán",
     "unMember": true
   },
   {
@@ -2291,6 +2388,7 @@
     "demonym": "islandés",
     "hdi": 0.959,
     "ihdi": 0.915,
+    "wikipediaSlug": "Islandia",
     "unMember": true
   },
   {
@@ -2314,6 +2412,7 @@
     "demonym": "italiano",
     "hdi": 0.907,
     "ihdi": 0.79,
+    "wikipediaSlug": "Italia",
     "unMember": true
   },
   {
@@ -2338,6 +2437,7 @@
     "demonym": "jerseyés",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Jersey",
     "unMember": false
   },
   {
@@ -2361,6 +2461,7 @@
     "demonym": "jamaicano",
     "hdi": 0.709,
     "ihdi": null,
+    "wikipediaSlug": "Jamaica",
     "unMember": true
   },
   {
@@ -2384,6 +2485,7 @@
     "demonym": "jordano",
     "hdi": 0.736,
     "ihdi": 0.617,
+    "wikipediaSlug": "Jordania",
     "unMember": true
   },
   {
@@ -2407,6 +2509,7 @@
     "demonym": "japonés",
     "hdi": 0.92,
     "ihdi": 0.85,
+    "wikipediaSlug": "Japón",
     "unMember": true
   },
   {
@@ -2431,6 +2534,7 @@
     "demonym": "keniata",
     "hdi": 0.601,
     "ihdi": 0.426,
+    "wikipediaSlug": "Kenia",
     "unMember": true
   },
   {
@@ -2455,6 +2559,7 @@
     "demonym": "kirguís",
     "hdi": 0.701,
     "ihdi": 0.592,
+    "wikipediaSlug": "Kirguistán",
     "unMember": true
   },
   {
@@ -2478,6 +2583,7 @@
     "demonym": "camboyano",
     "hdi": 0.6,
     "ihdi": 0.44,
+    "wikipediaSlug": "Camboya",
     "unMember": true
   },
   {
@@ -2502,6 +2608,7 @@
     "demonym": "kiribatiano",
     "hdi": 0.623,
     "ihdi": null,
+    "wikipediaSlug": "Kiribati",
     "unMember": true
   },
   {
@@ -2527,6 +2634,7 @@
     "demonym": "comorense",
     "hdi": 0.596,
     "ihdi": null,
+    "wikipediaSlug": "Comoras",
     "unMember": true
   },
   {
@@ -2550,6 +2658,7 @@
     "demonym": "sancrístobalense",
     "hdi": 0.777,
     "ihdi": null,
+    "wikipediaSlug": "San_Cristóbal_y_Nieves",
     "unMember": true
   },
   {
@@ -2573,6 +2682,7 @@
     "demonym": "norcoreano",
     "hdi": 0.733,
     "ihdi": null,
+    "wikipediaSlug": "Corea_del_Norte",
     "unMember": true
   },
   {
@@ -2596,6 +2706,7 @@
     "demonym": "surcoreano",
     "hdi": 0.929,
     "ihdi": 0.872,
+    "wikipediaSlug": "Corea_del_Sur",
     "unMember": true
   },
   {
@@ -2619,6 +2730,7 @@
     "demonym": "kuwaití",
     "hdi": 0.847,
     "ihdi": null,
+    "wikipediaSlug": "Kuwait",
     "unMember": true
   },
   {
@@ -2642,6 +2754,7 @@
     "demonym": "caimanés",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Islas_Caimán",
     "unMember": false
   },
   {
@@ -2666,6 +2779,7 @@
     "demonym": "kazajo",
     "hdi": 0.802,
     "ihdi": 0.706,
+    "wikipediaSlug": "Kazajistán",
     "unMember": true
   },
   {
@@ -2689,6 +2803,7 @@
     "demonym": "laosiano",
     "hdi": 0.62,
     "ihdi": 0.461,
+    "wikipediaSlug": "Laos",
     "unMember": true
   },
   {
@@ -2712,6 +2827,7 @@
     "demonym": "libanés",
     "hdi": 0.723,
     "ihdi": 0.575,
+    "wikipediaSlug": "Líbano",
     "unMember": true
   },
   {
@@ -2735,6 +2851,7 @@
     "demonym": "santalucense",
     "hdi": 0.725,
     "ihdi": null,
+    "wikipediaSlug": "Santa_Lucía",
     "unMember": true
   },
   {
@@ -2758,6 +2875,7 @@
     "demonym": "liechtensteiniano",
     "hdi": 0.935,
     "ihdi": null,
+    "wikipediaSlug": "Liechtenstein",
     "unMember": true
   },
   {
@@ -2782,6 +2900,7 @@
     "demonym": "ceilanés",
     "hdi": 0.78,
     "ihdi": 0.661,
+    "wikipediaSlug": "Sri_Lanka",
     "unMember": true
   },
   {
@@ -2805,6 +2924,7 @@
     "demonym": "liberiano",
     "hdi": 0.421,
     "ihdi": 0.272,
+    "wikipediaSlug": "Liberia",
     "unMember": true
   },
   {
@@ -2829,6 +2949,7 @@
     "demonym": "lesotense",
     "hdi": 0.514,
     "ihdi": 0.33,
+    "wikipediaSlug": "Lesoto",
     "unMember": true
   },
   {
@@ -2852,6 +2973,7 @@
     "demonym": "lituano",
     "hdi": 0.879,
     "ihdi": 0.812,
+    "wikipediaSlug": "Lituania",
     "unMember": true
   },
   {
@@ -2877,6 +2999,7 @@
     "demonym": "luxemburgués",
     "hdi": 0.927,
     "ihdi": 0.85,
+    "wikipediaSlug": "Luxemburgo",
     "unMember": true
   },
   {
@@ -2900,6 +3023,7 @@
     "demonym": "letón",
     "hdi": 0.866,
     "ihdi": 0.8,
+    "wikipediaSlug": "Letonia",
     "unMember": true
   },
   {
@@ -2923,6 +3047,7 @@
     "demonym": "libio",
     "hdi": 0.718,
     "ihdi": null,
+    "wikipediaSlug": "Libia",
     "unMember": true
   },
   {
@@ -2947,6 +3072,7 @@
     "demonym": "marroquí",
     "hdi": 0.698,
     "ihdi": 0.492,
+    "wikipediaSlug": "Marruecos",
     "unMember": true
   },
   {
@@ -2970,6 +3096,7 @@
     "demonym": "monegasco",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Mónaco",
     "unMember": true
   },
   {
@@ -2993,6 +3120,7 @@
     "demonym": "moldavo",
     "hdi": 0.763,
     "ihdi": 0.668,
+    "wikipediaSlug": "Moldavia",
     "unMember": true
   },
   {
@@ -3016,6 +3144,7 @@
     "demonym": "montenegrino",
     "hdi": 0.844,
     "ihdi": 0.759,
+    "wikipediaSlug": "Montenegro",
     "unMember": true
   },
   {
@@ -3039,6 +3168,7 @@
     "demonym": "sanmartinense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "San_Martín_(Francia)",
     "unMember": false
   },
   {
@@ -3063,6 +3193,7 @@
     "demonym": "malgache",
     "hdi": 0.487,
     "ihdi": 0.339,
+    "wikipediaSlug": "Madagascar",
     "unMember": true
   },
   {
@@ -3087,6 +3218,7 @@
     "demonym": "marshalés",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Islas_Marshall",
     "unMember": true
   },
   {
@@ -3110,6 +3242,7 @@
     "demonym": "macedonio",
     "hdi": 0.77,
     "ihdi": 0.685,
+    "wikipediaSlug": "Macedonia_del_Norte",
     "unMember": true
   },
   {
@@ -3133,6 +3266,7 @@
     "demonym": "maliense",
     "hdi": 0.41,
     "ihdi": 0.261,
+    "wikipediaSlug": "Mali",
     "unMember": true
   },
   {
@@ -3156,6 +3290,7 @@
     "demonym": "birmano",
     "hdi": 0.585,
     "ihdi": 0.424,
+    "wikipediaSlug": "Birmania",
     "unMember": true
   },
   {
@@ -3179,6 +3314,7 @@
     "demonym": "mongol",
     "hdi": 0.741,
     "ihdi": 0.622,
+    "wikipediaSlug": "Mongolia",
     "unMember": true
   },
   {
@@ -3203,6 +3339,7 @@
     "demonym": "macaense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Macao",
     "unMember": false
   },
   {
@@ -3228,6 +3365,7 @@
     "demonym": "marianense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Islas_Marianas_del_Norte",
     "unMember": false
   },
   {
@@ -3251,6 +3389,7 @@
     "demonym": "mauritano",
     "hdi": 0.54,
     "ihdi": 0.365,
+    "wikipediaSlug": "Mauritania",
     "unMember": true
   },
   {
@@ -3274,6 +3413,7 @@
     "demonym": "monserratense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Montserrat",
     "unMember": false
   },
   {
@@ -3298,6 +3438,7 @@
     "demonym": "maltés",
     "hdi": 0.915,
     "ihdi": 0.826,
+    "wikipediaSlug": "Malta",
     "unMember": true
   },
   {
@@ -3322,6 +3463,7 @@
     "demonym": "mauriciano",
     "hdi": 0.796,
     "ihdi": 0.67,
+    "wikipediaSlug": "Mauricio",
     "unMember": true
   },
   {
@@ -3345,6 +3487,7 @@
     "demonym": "maldivo",
     "hdi": 0.762,
     "ihdi": null,
+    "wikipediaSlug": "Maldivas",
     "unMember": true
   },
   {
@@ -3369,6 +3512,7 @@
     "demonym": "malauí",
     "hdi": 0.508,
     "ihdi": 0.348,
+    "wikipediaSlug": "Malaui",
     "unMember": true
   },
   {
@@ -3392,6 +3536,7 @@
     "demonym": "mexicano",
     "hdi": 0.781,
     "ihdi": 0.595,
+    "wikipediaSlug": "México",
     "unMember": true
   },
   {
@@ -3415,6 +3560,7 @@
     "demonym": "malasio",
     "hdi": 0.807,
     "ihdi": 0.686,
+    "wikipediaSlug": "Malasia",
     "unMember": true
   },
   {
@@ -3438,6 +3584,7 @@
     "demonym": "mozambiqueño",
     "hdi": 0.461,
     "ihdi": 0.293,
+    "wikipediaSlug": "Mozambique",
     "unMember": true
   },
   {
@@ -3461,6 +3608,7 @@
     "demonym": "namibio",
     "hdi": 0.615,
     "ihdi": 0.389,
+    "wikipediaSlug": "Namibia",
     "unMember": true
   },
   {
@@ -3484,6 +3632,7 @@
     "demonym": "neocaledonio",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Nueva_Caledonia",
     "unMember": false
   },
   {
@@ -3507,6 +3656,7 @@
     "demonym": "nigerino",
     "hdi": 0.394,
     "ihdi": 0.262,
+    "wikipediaSlug": "Níger",
     "unMember": true
   },
   {
@@ -3530,6 +3680,7 @@
     "demonym": "norfolkense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Isla_Norfolk",
     "unMember": false
   },
   {
@@ -3553,6 +3704,7 @@
     "demonym": "nigeriano",
     "hdi": 0.548,
     "ihdi": 0.333,
+    "wikipediaSlug": "Nigeria",
     "unMember": true
   },
   {
@@ -3576,6 +3728,7 @@
     "demonym": "nicaragüense",
     "hdi": 0.667,
     "ihdi": 0.483,
+    "wikipediaSlug": "Nicaragua",
     "unMember": true
   },
   {
@@ -3599,6 +3752,7 @@
     "demonym": "neerlandés",
     "hdi": 0.946,
     "ihdi": 0.878,
+    "wikipediaSlug": "Reino_de_los_Países_Bajos",
     "unMember": true
   },
   {
@@ -3622,6 +3776,7 @@
     "demonym": "noruego",
     "hdi": 0.966,
     "ihdi": 0.908,
+    "wikipediaSlug": "Noruega",
     "unMember": true
   },
   {
@@ -3645,6 +3800,7 @@
     "demonym": "nepalí",
     "hdi": 0.601,
     "ihdi": 0.43,
+    "wikipediaSlug": "Nepal",
     "unMember": true
   },
   {
@@ -3669,6 +3825,7 @@
     "demonym": "nauruano",
     "hdi": 0.74,
     "ihdi": null,
+    "wikipediaSlug": "Nauru",
     "unMember": true
   },
   {
@@ -3693,6 +3850,7 @@
     "demonym": "niueño",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Niue",
     "unMember": false
   },
   {
@@ -3717,6 +3875,7 @@
     "demonym": "neozelandés",
     "hdi": 0.939,
     "ihdi": 0.86,
+    "wikipediaSlug": "Nueva_Zelanda",
     "unMember": true
   },
   {
@@ -3740,6 +3899,7 @@
     "demonym": "omaní",
     "hdi": 0.816,
     "ihdi": null,
+    "wikipediaSlug": "Omán",
     "unMember": true
   },
   {
@@ -3767,6 +3927,7 @@
     "demonym": "panameño",
     "hdi": 0.82,
     "ihdi": 0.623,
+    "wikipediaSlug": "Panamá",
     "unMember": true
   },
   {
@@ -3792,6 +3953,7 @@
     "demonym": "peruano",
     "hdi": 0.762,
     "ihdi": 0.58,
+    "wikipediaSlug": "Perú",
     "unMember": true
   },
   {
@@ -3815,6 +3977,7 @@
     "demonym": "polinesio francés",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Polinesia_Francesa",
     "unMember": false
   },
   {
@@ -3840,6 +4003,7 @@
     "demonym": "papú",
     "hdi": 0.558,
     "ihdi": 0.37,
+    "wikipediaSlug": "Papúa_Nueva_Guinea",
     "unMember": true
   },
   {
@@ -3864,6 +4028,7 @@
     "demonym": "filipino",
     "hdi": 0.71,
     "ihdi": 0.537,
+    "wikipediaSlug": "Filipinas",
     "unMember": true
   },
   {
@@ -3888,6 +4053,7 @@
     "demonym": "pakistaní",
     "hdi": 0.544,
     "ihdi": 0.37,
+    "wikipediaSlug": "Pakistán",
     "unMember": true
   },
   {
@@ -3911,6 +4077,7 @@
     "demonym": "polaco",
     "hdi": 0.881,
     "ihdi": 0.821,
+    "wikipediaSlug": "Polonia",
     "unMember": true
   },
   {
@@ -3934,6 +4101,7 @@
     "demonym": "miquelonense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "San_Pedro_y_Miquelón",
     "unMember": false
   },
   {
@@ -3957,6 +4125,7 @@
     "demonym": "pitcairnense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Islas_Pitcairn",
     "unMember": false
   },
   {
@@ -3981,6 +4150,7 @@
     "demonym": "puertorriqueño",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Puerto_Rico",
     "unMember": false
   },
   {
@@ -4004,6 +4174,7 @@
     "demonym": "palestino",
     "hdi": 0.716,
     "ihdi": 0.584,
+    "wikipediaSlug": "Palestina",
     "unMember": true
   },
   {
@@ -4027,6 +4198,7 @@
     "demonym": "portugués",
     "hdi": 0.874,
     "ihdi": 0.779,
+    "wikipediaSlug": "Portugal",
     "unMember": true
   },
   {
@@ -4051,6 +4223,7 @@
     "demonym": "palauano",
     "hdi": 0.814,
     "ihdi": null,
+    "wikipediaSlug": "Palaos",
     "unMember": true
   },
   {
@@ -4075,6 +4248,7 @@
     "demonym": "paraguayo",
     "hdi": 0.717,
     "ihdi": 0.537,
+    "wikipediaSlug": "Paraguay",
     "unMember": true
   },
   {
@@ -4098,6 +4272,7 @@
     "demonym": "catarí",
     "hdi": 0.875,
     "ihdi": null,
+    "wikipediaSlug": "Catar",
     "unMember": true
   },
   {
@@ -4121,6 +4296,7 @@
     "demonym": "rumano",
     "hdi": 0.827,
     "ihdi": 0.726,
+    "wikipediaSlug": "Rumania",
     "unMember": true
   },
   {
@@ -4144,6 +4320,7 @@
     "demonym": "serbio",
     "hdi": 0.805,
     "ihdi": 0.71,
+    "wikipediaSlug": "Serbia",
     "unMember": true
   },
   {
@@ -4167,6 +4344,7 @@
     "demonym": "ruso",
     "hdi": 0.822,
     "ihdi": 0.743,
+    "wikipediaSlug": "Rusia",
     "unMember": true
   },
   {
@@ -4192,6 +4370,7 @@
     "demonym": "ruandés",
     "hdi": 0.548,
     "ihdi": 0.385,
+    "wikipediaSlug": "Ruanda",
     "unMember": true
   },
   {
@@ -4215,6 +4394,7 @@
     "demonym": "saudí",
     "hdi": 0.875,
     "ihdi": 0.759,
+    "wikipediaSlug": "Arabia_Saudita",
     "unMember": true
   },
   {
@@ -4238,6 +4418,7 @@
     "demonym": "salomonense",
     "hdi": 0.702,
     "ihdi": null,
+    "wikipediaSlug": "Islas_Salomón",
     "unMember": true
   },
   {
@@ -4263,6 +4444,7 @@
     "demonym": "seychelense",
     "hdi": 0.785,
     "ihdi": null,
+    "wikipediaSlug": "Seychelles",
     "unMember": true
   },
   {
@@ -4287,6 +4469,7 @@
     "demonym": "sudanés",
     "hdi": 0.51,
     "ihdi": 0.332,
+    "wikipediaSlug": "Sudán",
     "unMember": true
   },
   {
@@ -4310,6 +4493,7 @@
     "demonym": "sueco",
     "hdi": 0.952,
     "ihdi": 0.911,
+    "wikipediaSlug": "Suecia",
     "unMember": true
   },
   {
@@ -4336,6 +4520,7 @@
     "demonym": "singapurense",
     "hdi": 0.949,
     "ihdi": null,
+    "wikipediaSlug": "Singapur",
     "unMember": true
   },
   {
@@ -4359,6 +4544,7 @@
     "demonym": "santahelenense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Santa_Elena,_Ascensión_y_Tristán_de_Acuña",
     "unMember": false
   },
   {
@@ -4382,6 +4568,7 @@
     "demonym": "esloveno",
     "hdi": 0.926,
     "ihdi": 0.876,
+    "wikipediaSlug": "Eslovenia",
     "unMember": true
   },
   {
@@ -4405,6 +4592,7 @@
     "demonym": "eslovaco",
     "hdi": 0.855,
     "ihdi": 0.799,
+    "wikipediaSlug": "Eslovaquia",
     "unMember": true
   },
   {
@@ -4428,6 +4616,7 @@
     "demonym": "sierraleonés",
     "hdi": 0.477,
     "ihdi": 0.3,
+    "wikipediaSlug": "Sierra_Leona",
     "unMember": true
   },
   {
@@ -4451,6 +4640,7 @@
     "demonym": "sanmarinense",
     "hdi": 0.853,
     "ihdi": null,
+    "wikipediaSlug": "San_Marino",
     "unMember": true
   },
   {
@@ -4474,6 +4664,7 @@
     "demonym": "senegalés",
     "hdi": 0.517,
     "ihdi": 0.345,
+    "wikipediaSlug": "Senegal",
     "unMember": true
   },
   {
@@ -4498,6 +4689,7 @@
     "demonym": "somalí",
     "hdi": 0.38,
     "ihdi": null,
+    "wikipediaSlug": "Somalia",
     "unMember": true
   },
   {
@@ -4521,6 +4713,7 @@
     "demonym": "surinamés",
     "hdi": 0.695,
     "ihdi": null,
+    "wikipediaSlug": "Surinam",
     "unMember": true
   },
   {
@@ -4544,6 +4737,7 @@
     "demonym": "sursudanés",
     "hdi": 0.385,
     "ihdi": 0.198,
+    "wikipediaSlug": "Sudán_del_Sur",
     "unMember": true
   },
   {
@@ -4567,6 +4761,7 @@
     "demonym": "santotomense",
     "hdi": 0.613,
     "ihdi": null,
+    "wikipediaSlug": "Santo_Tomé_y_Príncipe",
     "unMember": true
   },
   {
@@ -4590,6 +4785,7 @@
     "demonym": "salvadoreño",
     "hdi": 0.674,
     "ihdi": 0.502,
+    "wikipediaSlug": "El_Salvador",
     "unMember": true
   },
   {
@@ -4614,6 +4810,7 @@
     "demonym": "sanmartinense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "San_Martín_(Países_Bajos)",
     "unMember": false
   },
   {
@@ -4637,6 +4834,7 @@
     "demonym": "sirio",
     "hdi": 0.577,
     "ihdi": null,
+    "wikipediaSlug": "Siria",
     "unMember": true
   },
   {
@@ -4661,6 +4859,7 @@
     "demonym": "suazi",
     "hdi": 0.597,
     "ihdi": 0.39,
+    "wikipediaSlug": "Suazilandia",
     "unMember": true
   },
   {
@@ -4684,6 +4883,7 @@
     "demonym": "turcocaiqueño",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Islas_Turcas_y_Caicos",
     "unMember": false
   },
   {
@@ -4708,6 +4908,7 @@
     "demonym": "chadiano",
     "hdi": 0.394,
     "ihdi": 0.238,
+    "wikipediaSlug": "Chad",
     "unMember": true
   },
   {
@@ -4731,6 +4932,7 @@
     "demonym": "togolés",
     "hdi": 0.547,
     "ihdi": 0.367,
+    "wikipediaSlug": "Togo",
     "unMember": true
   },
   {
@@ -4754,6 +4956,7 @@
     "demonym": "tailandés",
     "hdi": 0.803,
     "ihdi": 0.649,
+    "wikipediaSlug": "Tailandia",
     "unMember": true
   },
   {
@@ -4777,6 +4980,7 @@
     "demonym": "tayiko",
     "hdi": 0.679,
     "ihdi": 0.56,
+    "wikipediaSlug": "Tayikistán",
     "unMember": true
   },
   {
@@ -4801,6 +5005,7 @@
     "demonym": "timorense",
     "hdi": 0.607,
     "ihdi": 0.42,
+    "wikipediaSlug": "Timor_Oriental",
     "unMember": true
   },
   {
@@ -4824,6 +5029,7 @@
     "demonym": "turcomano",
     "hdi": 0.745,
     "ihdi": null,
+    "wikipediaSlug": "Turkmenistán",
     "unMember": true
   },
   {
@@ -4847,6 +5053,7 @@
     "demonym": "tunecino",
     "hdi": 0.732,
     "ihdi": 0.565,
+    "wikipediaSlug": "Túnez",
     "unMember": true
   },
   {
@@ -4871,6 +5078,7 @@
     "demonym": "tongano",
     "hdi": 0.745,
     "ihdi": null,
+    "wikipediaSlug": "Tonga",
     "unMember": true
   },
   {
@@ -4894,6 +5102,7 @@
     "demonym": "turco",
     "hdi": 0.838,
     "ihdi": 0.698,
+    "wikipediaSlug": "Turquía",
     "unMember": true
   },
   {
@@ -4917,6 +5126,7 @@
     "demonym": "trinitense",
     "hdi": 0.814,
     "ihdi": null,
+    "wikipediaSlug": "Trinidad_y_Tobago",
     "unMember": true
   },
   {
@@ -4941,6 +5151,7 @@
     "demonym": "tuvaluano",
     "hdi": 0.641,
     "ihdi": null,
+    "wikipediaSlug": "Tuvalu",
     "unMember": true
   },
   {
@@ -4964,6 +5175,7 @@
     "demonym": "taiwanés",
     "hdi": 0.926,
     "ihdi": null,
+    "wikipediaSlug": "República_de_China",
     "unMember": false
   },
   {
@@ -4988,6 +5200,7 @@
     "demonym": "tanzano",
     "hdi": 0.532,
     "ihdi": 0.383,
+    "wikipediaSlug": "Tanzania",
     "unMember": true
   },
   {
@@ -5011,6 +5224,7 @@
     "demonym": "ucraniano",
     "hdi": 0.773,
     "ihdi": 0.694,
+    "wikipediaSlug": "Ucrania",
     "unMember": true
   },
   {
@@ -5035,6 +5249,7 @@
     "demonym": "ugandés",
     "hdi": 0.55,
     "ihdi": 0.377,
+    "wikipediaSlug": "Uganda",
     "unMember": true
   },
   {
@@ -5058,6 +5273,7 @@
     "demonym": "estadounidense",
     "hdi": 0.927,
     "ihdi": 0.837,
+    "wikipediaSlug": "Estados_Unidos",
     "unMember": true
   },
   {
@@ -5081,6 +5297,7 @@
     "demonym": "uruguayo",
     "hdi": 0.83,
     "ihdi": 0.699,
+    "wikipediaSlug": "Uruguay",
     "unMember": true
   },
   {
@@ -5104,6 +5321,7 @@
     "demonym": "uzbeko",
     "hdi": 0.727,
     "ihdi": 0.62,
+    "wikipediaSlug": "Uzbekistán",
     "unMember": true
   },
   {
@@ -5128,6 +5346,7 @@
     "demonym": "vaticano",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Ciudad_del_Vaticano",
     "unMember": true
   },
   {
@@ -5151,6 +5370,7 @@
     "demonym": "sanvicentino",
     "hdi": 0.733,
     "ihdi": null,
+    "wikipediaSlug": "San_Vicente_y_las_Granadinas",
     "unMember": true
   },
   {
@@ -5174,6 +5394,7 @@
     "demonym": "venezolano",
     "hdi": 0.699,
     "ihdi": null,
+    "wikipediaSlug": "Venezuela",
     "unMember": true
   },
   {
@@ -5197,6 +5418,7 @@
     "demonym": "virgenense británico",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Islas_Vírgenes_Británicas",
     "unMember": false
   },
   {
@@ -5220,6 +5442,7 @@
     "demonym": "virgenense estadounidense",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Islas_Vírgenes_de_los_Estados_Unidos",
     "unMember": false
   },
   {
@@ -5243,6 +5466,7 @@
     "demonym": "vietnamita",
     "hdi": 0.726,
     "ihdi": 0.58,
+    "wikipediaSlug": "Vietnam",
     "unMember": true
   },
   {
@@ -5268,6 +5492,7 @@
     "demonym": "vanuatuense",
     "hdi": 0.604,
     "ihdi": null,
+    "wikipediaSlug": "Vanuatu",
     "unMember": true
   },
   {
@@ -5291,6 +5516,7 @@
     "demonym": "walisiano",
     "hdi": null,
     "ihdi": null,
+    "wikipediaSlug": "Wallis_y_Futuna",
     "unMember": false
   },
   {
@@ -5315,6 +5541,7 @@
     "demonym": "samoano",
     "hdi": 0.707,
     "ihdi": null,
+    "wikipediaSlug": "Samoa",
     "unMember": true
   },
   {
@@ -5339,6 +5566,7 @@
     "demonym": "kosovar",
     "hdi": 0.75,
     "ihdi": null,
+    "wikipediaSlug": "Kosovo",
     "unMember": false
   },
   {
@@ -5362,6 +5590,7 @@
     "demonym": "yemení",
     "hdi": 0.424,
     "ihdi": 0.274,
+    "wikipediaSlug": "Yemen",
     "unMember": true
   },
   {
@@ -5388,6 +5617,7 @@
     "demonym": "sudafricano",
     "hdi": 0.717,
     "ihdi": 0.461,
+    "wikipediaSlug": "Sudáfrica",
     "unMember": true
   },
   {
@@ -5411,6 +5641,7 @@
     "demonym": "zambiano",
     "hdi": 0.565,
     "ihdi": 0.37,
+    "wikipediaSlug": "Zambia",
     "unMember": true
   },
   {
@@ -5436,6 +5667,7 @@
     "demonym": "zimbabuense",
     "hdi": 0.55,
     "ihdi": 0.38,
+    "wikipediaSlug": "Zimbabue",
     "unMember": true
   }
 ]

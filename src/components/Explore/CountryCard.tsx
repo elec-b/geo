@@ -61,6 +61,17 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
   const isAntarctica = country.cca2 === 'AQ';
   const [activeTooltip, setActiveTooltip] = useState<TooltipId>(null);
 
+  // URL de Wikipedia derivada del slug
+  const wikipediaUrl = country.wikipediaSlug
+    ? (() => {
+        const hasLangPrefix = country.wikipediaSlug.includes(':') && !country.wikipediaSlug.startsWith('http');
+        const colonIdx = country.wikipediaSlug.indexOf(':');
+        const lang = hasLangPrefix ? country.wikipediaSlug.slice(0, colonIdx) : 'es';
+        const slug = hasLangPrefix ? country.wikipediaSlug.slice(colonIdx + 1) : country.wikipediaSlug;
+        return `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(slug)}`;
+      })()
+    : null;
+
   const toggleTooltip = (id: TooltipId) => {
     setActiveTooltip(prev => prev === id ? null : id);
   };
@@ -224,6 +235,22 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
             </>
           )}
         </div>
+      )}
+
+      {/* Botón Wikipedia */}
+      {wikipediaUrl && (
+        <button
+          className="country-card__wikipedia"
+          onClick={() => window.open(wikipediaUrl, '_blank')}
+          aria-label={`Abrir ${country.name} en Wikipedia`}
+        >
+          <svg className="country-card__wikipedia-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+          Wikipedia
+        </button>
       )}
     </div>
   );

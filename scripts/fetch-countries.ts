@@ -64,7 +64,13 @@ interface CountryEntry {
   demonym: string;
   hdi: number | null;
   ihdi: number | null;
+  wikipediaSlug: string | null;
   unMember: boolean;
+}
+
+interface WikiEntry {
+  slug: string;
+  lang: string;
 }
 
 interface CapitalEntry {
@@ -82,6 +88,7 @@ function toCountryEntry(
   isUN: boolean,
   supp: Record<string, SupplementaryEntry>,
   hdiData: Record<string, HdiEntry>,
+  wikiData: Record<string, WikiEntry>,
 ): CountryEntry {
   // Nombre del país en español (desde REST Countries translations.spa)
   const name = c.translations?.spa?.common;
@@ -104,6 +111,12 @@ function toCountryEntry(
   // HDI / IHDI
   const hdi = hdiData[c.cca2] ?? null;
 
+  // Wikipedia slug (preferir es, prefijo "en:" si solo hay artículo en inglés)
+  const wiki = wikiData[c.cca2] ?? null;
+  const wikipediaSlug = wiki
+    ? (wiki.lang === 'es' ? wiki.slug : `${wiki.lang}:${wiki.slug}`)
+    : null;
+
   return {
     cca2: c.cca2,
     ccn3: c.ccn3 ?? '',
@@ -118,6 +131,7 @@ function toCountryEntry(
     demonym: suppEntry.demonym,
     hdi: hdi?.hdi ?? null,
     ihdi: hdi?.ihdi ?? null,
+    wikipediaSlug,
     unMember: isUN,
   };
 }
@@ -134,6 +148,12 @@ async function main() {
   const hdiData: Record<string, HdiEntry> =
     JSON.parse(readFileSync(HDI_PATH, 'utf-8'));
   console.log(`Datos HDI cargados: ${Object.keys(hdiData).length} entradas`);
+
+  // Cargar datos de Wikipedia (slugs en español)
+  const WIKI_PATH = resolve(__dirname, 'data', 'wikipedia-es.json');
+  const wikiData: Record<string, WikiEntry> =
+    JSON.parse(readFileSync(WIKI_PATH, 'utf-8'));
+  console.log(`Datos Wikipedia cargados: ${Object.keys(wikiData).length} entradas`);
 
   console.log('Descargando datos de REST Countries v3.1...');
 
@@ -195,8 +215,8 @@ async function main() {
   // --- 3. Generar salida ---
 
   const countries: CountryEntry[] = [
-    ...unFiltered.map((c) => toCountryEntry(c, true, supplementary, hdiData)),
-    ...nonUnFiltered.map((c) => toCountryEntry(c, false, supplementary, hdiData)),
+    ...unFiltered.map((c) => toCountryEntry(c, true, supplementary, hdiData, wikiData)),
+    ...nonUnFiltered.map((c) => toCountryEntry(c, false, supplementary, hdiData, wikiData)),
   ];
 
   // Ordenar alfabéticamente por cca2

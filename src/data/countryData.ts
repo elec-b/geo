@@ -20,6 +20,7 @@ const SYNTHETIC_COUNTRIES: CountryData[] = [
     demonym: 'Somalilándés',
     hdi: null,
     ihdi: null,
+    wikipediaSlug: 'Somalilandia',
     unMember: false,
   },
   {
@@ -36,6 +37,7 @@ const SYNTHETIC_COUNTRIES: CountryData[] = [
     demonym: 'Turcochipriota',
     hdi: null,
     ihdi: null,
+    wikipediaSlug: 'República_Turca_del_Norte_de_Chipre',
     unMember: false,
   },
   {
@@ -52,6 +54,7 @@ const SYNTHETIC_COUNTRIES: CountryData[] = [
     demonym: '',
     hdi: null,
     ihdi: null,
+    wikipediaSlug: 'Antártida',
     unMember: false,
   },
 ];
