@@ -218,6 +218,17 @@ Subconjunto de la configuración global, accesible mientras se interactúa con e
 
 ---
 
+## Solicitud de valoración (In-App Review)
+
+La app invita al usuario a valorarla en App Store / Google Play de forma **no intrusiva**, usando las APIs nativas de cada plataforma:
+
+- **Mecanismo**: `SKStoreReviewController` (iOS) y Google Play In-App Review API (Android). Ambas muestran un diálogo nativo del sistema — no un popup custom de la app.
+- **Momento**: Se muestra tras una experiencia positiva (ej. conseguir un sello, subir de nivel) y solo después de un uso mínimo (varias sesiones o varios días desde la instalación).
+- **Frecuencia**: iOS limita automáticamente a 3 solicitudes por app y año. Android tiene restricciones similares. La app respeta estos límites y no insiste.
+- **Sin bloqueo**: Nunca interrumpe una partida ni un flujo activo. El usuario puede ignorar el diálogo sin consecuencia alguna.
+
+---
+
 ## Motor de renderizado
 
 ### D3.js con proyección ortográfica + Canvas 2D
