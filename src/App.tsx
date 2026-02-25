@@ -147,6 +147,7 @@ function App() {
         <JugarView
           globeRef={globeRef}
           countries={countries}
+          capitals={capitals}
           levels={levels}
           onGlobePropsChange={setGlobeControl}
           onCountryClickRef={jugarClickRef}

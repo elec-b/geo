@@ -1,8 +1,8 @@
-/* QuestionBanner — nombre del país a localizar */
+/* QuestionBanner — pregunta del juego */
 
 .question-banner {
   position: fixed;
-  top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + var(--spacing-sm));
+  top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
   left: 50%;
   transform: translateX(-50%);
   z-index: var(--z-controls);
@@ -22,7 +22,7 @@
 
 .question-banner__label {
   font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 500;
@@ -33,6 +33,15 @@
   font-weight: 700;
   color: var(--color-text-primary);
   white-space: nowrap;
+}
+
+/* Tipos C-F: texto de pregunta más compacto */
+.question-banner__country--choice {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  white-space: normal;
+  text-align: center;
+  max-width: 20rem;
 }
 
 @keyframes question-banner-enter {

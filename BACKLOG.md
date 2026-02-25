@@ -141,18 +141,25 @@
 - [x] `JugarView`: contenedor principal con flujo selector→playing, highlight de continente, control del globo
 - [x] Precomputo de niveles (`buildLevelDefinitions`) en App.tsx y paso como prop a JugarView
 
-### Experiencia: Jugar — Pulido Tipo A
-- [ ] Zoom in al continente al pulsar "Empezar" (que ocupe prácticamente toda la pantalla)
-- [ ] Mejorar legibilidad del texto "Localiza" en QuestionBanner (color más visible) y subir la caja para maximizar espacio del mapa
+### Experiencia: Jugar — Pulido Tipo A + Tipos B-F
+- [x] Zoom in al continente al pulsar "Empezar" (`CONTINENT_ZOOM` en `continents.ts`, `flyTo` en `handleStart`)
+- [x] Mejorar legibilidad del texto "Localiza" en QuestionBanner (`--color-text-secondary`) y subir la caja (eliminar `--spacing-sm` del `top`)
+- [x] Tipo B: Localizar capital en el mapa (texto → mapa)
+- [x] Tipo C: "¿Cuál es la capital de X?" → 4 opciones (capitales)
+- [x] Tipo D: "X es la capital de..." → 4 opciones (países)
+- [x] Tipo E: "¿Qué país está resaltado?" → 4 opciones (países). Resalta país en dorado antes de responder
+- [x] Tipo F: "¿Cuál es la capital de este país?" → 4 opciones (capitales). Resalta país en dorado antes de responder
+- [x] Algoritmo de distractores del mismo nivel/continente (`pickOptions` en `gameQuestions.ts`)
+- [x] Algoritmo de entrenamiento libre: mezcla todos los tipos, una pregunta aleatoria por país (`generateMixedQuestions`)
+- [x] Union discriminada `GameQuestion = GameQuestionMap | GameQuestionChoice`
+- [x] `ChoicePanel`: panel de 4 opciones con feedback visual (verde/rojo)
+- [x] `useGameSession`: `submitAnswer` polimórfico (cca2 para A/B, texto para C-F), `applyHighlight` para E/F
 
-### Experiencia: Jugar — Fases siguientes
-- [ ] Tipo B: Localizar capital en el mapa (texto → mapa) — Sello de Capitales
-- [ ] Tipo C: Capital → País (texto → texto, opciones múltiples)
-- [ ] Tipo D: País → Capital (texto → texto, opciones múltiples)
-- [ ] Tipo E: Seleccionar país resaltado (mapa → texto, opciones múltiples)
-- [ ] Tipo F: Seleccionar capital de país resaltado (mapa → texto, opciones múltiples)
-- [ ] Algoritmo de generación de distractores (opciones plausibles: mismo continente, nombre similar, etc.)
-- [ ] Algoritmo de entrenamiento libre (mezcla tipos A-F, refuerzo de fallos)
+### Experiencia: Jugar — Pulido tipos A-F
+- [ ] ChoicePanel: la opción inferior se superpone con el ScoreBar — ajustar posición
+- [ ] Preguntas con capital (B/F): mostrar el pin de capital en el mapa
+- [ ] QuestionBanner: subir más la caja, casi a la altura de los iconos de settings/usuario
+- [ ] Selector provisional de tipo de pregunta para testing (elegir A/B/C/D/E/F antes de empezar)
 - [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
 - [ ] Barra de progreso (indica preparación para prueba de sello)
 - [ ] Sistema de pruebas de sello (invitación automática, 0 errores, sin límite de intentos)

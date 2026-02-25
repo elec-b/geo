@@ -1,7 +1,7 @@
 // Hook de sesión de juego — gestiona el game loop de una partida
 import { useState, useCallback, useRef } from 'react';
-import { generateQuestions, type GameQuestion } from '../data/gameQuestions';
-import type { CountryData, Continent, GameLevel } from '../data/types';
+import { generateMixedQuestions, type GameQuestion } from '../data/gameQuestions';
+import type { CountryData, CapitalCoords, Continent, GameLevel } from '../data/types';
 import type { LevelDefinition } from '../data/types';
 
 export type FeedbackState = 'idle' | 'correct' | 'incorrect';
@@ -16,7 +16,7 @@ export interface GameSessionState {
   currentQuestion: GameQuestion | null;
   score: GameScore;
   feedbackState: FeedbackState;
-  /** cca2 del país correcto (para resaltar en dorado tras respuesta) */
+  /** cca2 del país correcto (para resaltar en dorado) */
   correctCca2: string | null;
   isActive: boolean;
   /** Nivel y continente actuales */
@@ -26,7 +26,7 @@ export interface GameSessionState {
 
 interface GameSessionActions {
   start: (level: GameLevel, continent: Continent) => void;
-  submitAnswer: (cca2: string) => 'correct' | 'incorrect' | 'ignored';
+  submitAnswer: (answer: string) => 'correct' | 'incorrect' | 'ignored';
   nextQuestion: () => void;
   end: () => void;
 }
@@ -40,6 +40,7 @@ const INITIAL_SCORE: GameScore = { correct: 0, incorrect: 0, total: 0 };
 export function useGameSession(
   levels: Map<string, LevelDefinition>,
   countries: Map<string, CountryData>,
+  capitals: Map<string, CapitalCoords>,
 ): GameSessionState & GameSessionActions {
   const [currentQuestion, setCurrentQuestion] = useState<GameQuestion | null>(null);
   const [score, setScore] = useState<GameScore>(INITIAL_SCORE);
@@ -54,6 +55,16 @@ export function useGameSession(
   // Referencia al nivel actual para regenerar preguntas
   const levelKeyRef = useRef<string>('');
 
+  /** Configura correctCca2 según el tipo de pregunta */
+  const applyHighlight = useCallback((question: GameQuestion) => {
+    // E/F: resaltar el país ANTES de responder (el usuario debe identificarlo)
+    if (question.type === 'E' || question.type === 'F') {
+      setCorrectCca2(question.targetCca2);
+    } else {
+      setCorrectCca2(null);
+    }
+  }, []);
+
   const start = useCallback(
     (newLevel: GameLevel, newContinent: Continent) => {
       const key = `${newLevel}-${newContinent}`;
@@ -61,25 +72,31 @@ export function useGameSession(
       if (!def) return;
 
       levelKeyRef.current = key;
-      const questions = generateQuestions(def.countries, countries);
+      const questions = generateMixedQuestions(def.countries, countries, capitals);
       questionsRef.current = questions.slice(1);
 
       setLevel(newLevel);
       setContinent(newContinent);
       setScore(INITIAL_SCORE);
       setFeedbackState('idle');
-      setCorrectCca2(null);
       setCurrentQuestion(questions[0]);
       setIsActive(true);
+      applyHighlight(questions[0]);
     },
-    [levels, countries],
+    [levels, countries, capitals, applyHighlight],
   );
 
   const submitAnswer = useCallback(
-    (cca2: string): 'correct' | 'incorrect' | 'ignored' => {
+    (answer: string): 'correct' | 'incorrect' | 'ignored' => {
       if (feedbackState !== 'idle' || !currentQuestion) return 'ignored';
 
-      const isCorrect = cca2 === currentQuestion.targetCca2;
+      // A/B: comparar cca2; C-F: comparar texto de la opción
+      const isCorrect =
+        currentQuestion.type === 'A' || currentQuestion.type === 'B'
+          ? answer === currentQuestion.targetCca2
+          : answer === (currentQuestion as { correctAnswer: string }).correctAnswer;
+
+      // Tras responder, siempre mostrar el país correcto en dorado
       setCorrectCca2(currentQuestion.targetCca2);
 
       if (isCorrect) {
@@ -109,15 +126,21 @@ export function useGameSession(
       const def = levels.get(levelKeyRef.current);
       if (def) {
         const lastCca2 = currentQuestion?.targetCca2;
-        questionsRef.current = generateQuestions(def.countries, countries, lastCca2);
+        questionsRef.current = generateMixedQuestions(
+          def.countries, countries, capitals, lastCca2,
+        );
       }
     }
 
     const next = questionsRef.current.shift() ?? null;
     setCurrentQuestion(next);
     setFeedbackState('idle');
-    setCorrectCca2(null);
-  }, [levels, countries, currentQuestion]);
+    if (next) {
+      applyHighlight(next);
+    } else {
+      setCorrectCca2(null);
+    }
+  }, [levels, countries, capitals, currentQuestion, applyHighlight]);
 
   const end = useCallback(() => {
     setIsActive(false);

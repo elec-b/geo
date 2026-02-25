@@ -9,3 +9,12 @@ export const CONTINENT_CENTERS: Record<Continent, [number, number]> = {
   'Europa': [15, 50],
   'Oceanía': [140, -25],
 };
+
+/** Escala de zoom por continente para que llene la pantalla al empezar */
+export const CONTINENT_ZOOM: Record<Continent, number> = {
+  'África': 2.2,
+  'América': 1.6,
+  'Asia': 1.8,
+  'Europa': 3.5,
+  'Oceanía': 2.5,
+};
