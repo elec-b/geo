@@ -1,6 +1,6 @@
 // Hook de sesión de juego — gestiona el game loop de una partida
 import { useState, useCallback, useRef } from 'react';
-import { generateMixedQuestions, type GameQuestion } from '../data/gameQuestions';
+import { generateMixedQuestions, generateQuestionsByType, type GameQuestion, type QuestionTypeFilter } from '../data/gameQuestions';
 import type { CountryData, CapitalCoords, Continent, GameLevel } from '../data/types';
 import type { LevelDefinition } from '../data/types';
 
@@ -25,7 +25,7 @@ export interface GameSessionState {
 }
 
 interface GameSessionActions {
-  start: (level: GameLevel, continent: Continent) => void;
+  start: (level: GameLevel, continent: Continent, questionType?: QuestionTypeFilter) => void;
   submitAnswer: (answer: string) => 'correct' | 'incorrect' | 'ignored';
   nextQuestion: () => void;
   end: () => void;
@@ -54,6 +54,8 @@ export function useGameSession(
   const questionsRef = useRef<GameQuestion[]>([]);
   // Referencia al nivel actual para regenerar preguntas
   const levelKeyRef = useRef<string>('');
+  // Tipo de pregunta seleccionado (para regenerar ciclos)
+  const questionTypeRef = useRef<QuestionTypeFilter>('mixed');
 
   /** Configura correctCca2 según el tipo de pregunta */
   const applyHighlight = useCallback((question: GameQuestion) => {
@@ -65,14 +67,27 @@ export function useGameSession(
     }
   }, []);
 
+  /** Genera preguntas según el tipo seleccionado */
+  const generateQuestions = useCallback(
+    (levelCountries: string[], lastCca2?: string) => {
+      const qt = questionTypeRef.current;
+      if (qt === 'mixed') {
+        return generateMixedQuestions(levelCountries, countries, capitals, lastCca2);
+      }
+      return generateQuestionsByType(qt, levelCountries, countries, capitals, lastCca2);
+    },
+    [countries, capitals],
+  );
+
   const start = useCallback(
-    (newLevel: GameLevel, newContinent: Continent) => {
+    (newLevel: GameLevel, newContinent: Continent, questionType: QuestionTypeFilter = 'mixed') => {
       const key = `${newLevel}-${newContinent}`;
       const def = levels.get(key);
       if (!def) return;
 
       levelKeyRef.current = key;
-      const questions = generateMixedQuestions(def.countries, countries, capitals);
+      questionTypeRef.current = questionType;
+      const questions = generateQuestions(def.countries);
       questionsRef.current = questions.slice(1);
 
       setLevel(newLevel);
@@ -83,7 +98,7 @@ export function useGameSession(
       setIsActive(true);
       applyHighlight(questions[0]);
     },
-    [levels, countries, capitals, applyHighlight],
+    [levels, generateQuestions, applyHighlight],
   );
 
   const submitAnswer = useCallback(
@@ -126,9 +141,7 @@ export function useGameSession(
       const def = levels.get(levelKeyRef.current);
       if (def) {
         const lastCca2 = currentQuestion?.targetCca2;
-        questionsRef.current = generateMixedQuestions(
-          def.countries, countries, capitals, lastCca2,
-        );
+        questionsRef.current = generateQuestions(def.countries, lastCca2);
       }
     }
 
@@ -140,7 +153,7 @@ export function useGameSession(
     } else {
       setCorrectCca2(null);
     }
-  }, [levels, countries, capitals, currentQuestion, applyHighlight]);
+  }, [levels, generateQuestions, currentQuestion, applyHighlight]);
 
   const end = useCallback(() => {
     setIsActive(false);

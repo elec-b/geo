@@ -162,6 +162,53 @@ export function generateQuestionsTypeF(
     });
 }
 
+/** Filtro de tipo de pregunta para el selector provisional */
+export type QuestionTypeFilter = 'mixed' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
+
+/**
+ * Genera preguntas de un tipo específico, barajadas.
+ * Dispatcher que delega al generador correspondiente.
+ */
+export function generateQuestionsByType(
+  type: Exclude<QuestionTypeFilter, 'mixed'>,
+  levelCountries: string[],
+  countries: Map<string, CountryData>,
+  capitals: Map<string, CapitalCoords>,
+  lastAskedCca2?: string,
+): GameQuestion[] {
+  let questions: GameQuestion[];
+
+  switch (type) {
+    case 'A':
+      questions = generateQuestionsTypeA(levelCountries, countries);
+      break;
+    case 'B':
+      questions = generateQuestionsTypeB(levelCountries, capitals);
+      break;
+    case 'C':
+      questions = generateQuestionsTypeC(levelCountries, countries);
+      break;
+    case 'D':
+      questions = generateQuestionsTypeD(levelCountries, countries);
+      break;
+    case 'E':
+      questions = generateQuestionsTypeE(levelCountries, countries);
+      break;
+    case 'F':
+      questions = generateQuestionsTypeF(levelCountries, countries);
+      break;
+  }
+
+  shuffle(questions);
+
+  // Evitar que la primera pregunta repita la última del ciclo anterior
+  if (lastAskedCca2 && questions[0]?.targetCca2 === lastAskedCca2 && questions.length > 1) {
+    [questions[0], questions[1]] = [questions[1], questions[0]];
+  }
+
+  return questions;
+}
+
 /**
  * Genera una mezcla de todos los tipos de pregunta.
  * Una pregunta de tipo aleatorio por país, luego baraja todo.

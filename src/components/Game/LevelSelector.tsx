@@ -1,6 +1,7 @@
 // Selector de continente + nivel para iniciar una partida
 import { useState, useCallback } from 'react';
 import type { Continent, GameLevel, LevelDefinition } from '../../data/types';
+import type { QuestionTypeFilter } from '../../data/gameQuestions';
 import './LevelSelector.css';
 
 const CONTINENTS: { id: Continent; label: string; cssVar: string }[] = [
@@ -17,15 +18,26 @@ const LEVELS: { id: GameLevel; label: string; emoji: string }[] = [
   { id: 'guía', label: 'Guía', emoji: '🗺️' },
 ];
 
+const QUESTION_TYPES: { id: QuestionTypeFilter; label: string }[] = [
+  { id: 'mixed', label: 'Mixto' },
+  { id: 'A', label: 'A' },
+  { id: 'B', label: 'B' },
+  { id: 'C', label: 'C' },
+  { id: 'D', label: 'D' },
+  { id: 'E', label: 'E' },
+  { id: 'F', label: 'F' },
+];
+
 interface LevelSelectorProps {
   levels: Map<string, LevelDefinition>;
-  onStart: (level: GameLevel, continent: Continent) => void;
+  onStart: (level: GameLevel, continent: Continent, questionType?: QuestionTypeFilter) => void;
   onContinentSelect: (continent: Continent) => void;
 }
 
 export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelectorProps) {
   const [selectedContinent, setSelectedContinent] = useState<Continent | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<GameLevel>('turista');
+  const [selectedType, setSelectedType] = useState<QuestionTypeFilter>('mixed');
 
   const handleContinentSelect = useCallback(
     (continent: Continent) => {
@@ -37,8 +49,8 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
 
   const handleStart = useCallback(() => {
     if (!selectedContinent) return;
-    onStart(selectedLevel, selectedContinent);
-  }, [selectedLevel, selectedContinent, onStart]);
+    onStart(selectedLevel, selectedContinent, selectedType);
+  }, [selectedLevel, selectedContinent, selectedType, onStart]);
 
   const getCountryCount = (level: GameLevel, continent: Continent): number => {
     const def = levels.get(`${level}-${continent}`);
@@ -85,6 +97,20 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
                   </button>
                 );
               })}
+            </div>
+
+            {/* Pills de tipo de pregunta (provisional para testing) */}
+            <h2 className="level-selector__title level-selector__title--level">Tipo de pregunta</h2>
+            <div className="level-selector__types">
+              {QUESTION_TYPES.map(({ id, label }) => (
+                <button
+                  key={id}
+                  className={`level-selector__type-pill ${selectedType === id ? 'level-selector__type-pill--active' : ''}`}
+                  onClick={() => setSelectedType(id)}
+                >
+                  {label}
+                </button>
+              ))}
             </div>
 
             {/* Botón empezar */}

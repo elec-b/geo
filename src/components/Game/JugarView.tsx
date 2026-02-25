@@ -4,8 +4,8 @@ import { useState, useCallback, useMemo, useEffect, type RefObject, type Mutable
 import type { GlobeD3Ref } from '../Globe';
 import type { GlobeControlProps } from '../Explore/ExploreView';
 import type { CountryFeature } from '../../data/countries';
-import type { GameQuestionChoice } from '../../data/gameQuestions';
-import type { CountryData, CapitalCoords, Continent, LevelDefinition } from '../../data/types';
+import type { GameQuestionChoice, QuestionTypeFilter } from '../../data/gameQuestions';
+import type { CountryData, CapitalCoords, Continent, GameLevel, LevelDefinition } from '../../data/types';
 import { CONTINENT_CENTERS, CONTINENT_ZOOM } from '../../data/continents';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
 import { useGameSession } from '../../hooks/useGameSession';
@@ -58,18 +58,27 @@ export function JugarView({
     return set;
   }, [session.continent, countries]);
 
+  // --- Pin de capital para tipos B/F ---
+
+  const capitalPin = useMemo((): [number, number] | null => {
+    const q = session.currentQuestion;
+    if (!q || (q.type !== 'B' && q.type !== 'F')) return null;
+    const cap = capitals.get(q.targetCca2);
+    return cap ? [cap.latlng[1], cap.latlng[0]] : null;
+  }, [session.currentQuestion, capitals]);
+
   // --- Sincronización de props del globo ---
 
   useEffect(() => {
     onGlobePropsChange({
       selectedCountryCca2: session.correctCca2,
-      capitalPin: null,
+      capitalPin,
       highlightedCountries,
       showCountryLabels: false,
       showCapitalLabels: false,
       capitalLabelsData: null,
     });
-  }, [session.correctCca2, highlightedCountries, onGlobePropsChange]);
+  }, [session.correctCca2, capitalPin, highlightedCountries, onGlobePropsChange]);
 
   // Reset al desmontar (cambio de tab)
   useEffect(() => {
@@ -138,8 +147,8 @@ export function JugarView({
 
   // Inicio de partida — zoom al continente
   const handleStart = useCallback(
-    (level: Parameters<typeof session.start>[0], continent: Parameters<typeof session.start>[1]) => {
-      session.start(level, continent);
+    (level: GameLevel, continent: Continent, questionType?: QuestionTypeFilter) => {
+      session.start(level, continent, questionType);
       setScreen('playing');
       setSelectedChoice(null);
 

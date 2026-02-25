@@ -156,10 +156,12 @@
 - [x] `useGameSession`: `submitAnswer` polimórfico (cca2 para A/B, texto para C-F), `applyHighlight` para E/F
 
 ### Experiencia: Jugar — Pulido tipos A-F
-- [ ] ChoicePanel: la opción inferior se superpone con el ScoreBar — ajustar posición
-- [ ] Preguntas con capital (B/F): mostrar el pin de capital en el mapa
-- [ ] QuestionBanner: subir más la caja, casi a la altura de los iconos de settings/usuario
-- [ ] Selector provisional de tipo de pregunta para testing (elegir A/B/C/D/E/F antes de empezar)
+- [x] ChoicePanel: la opción inferior se superpone con el ScoreBar — ajustar posición (`bottom` +1rem)
+- [x] Preguntas con capital (B/F): mostrar el pin de capital en el mapa (`capitalPin` memo en JugarView)
+- [x] QuestionBanner: subir más la caja, casi a la altura de los iconos de settings/usuario
+- [x] Selector provisional de tipo de pregunta para testing (pills Mixto/A-F en LevelSelector)
+- [ ] **Feedback pendiente**: testear en iPhone las 4 mejoras (solapamiento, pin B/F, posición banner, selector tipo)
+- [ ] Eliminar selector provisional de tipo de juego/pregunta cuando se hayan testeado todos los juegos
 - [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
 - [ ] Barra de progreso (indica preparación para prueba de sello)
 - [ ] Sistema de pruebas de sello (invitación automática, 0 errores, sin límite de intentos)

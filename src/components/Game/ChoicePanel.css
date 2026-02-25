@@ -2,7 +2,7 @@
 
 .choice-panel {
   position: fixed;
-  bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px) + 3.5rem);
+  bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px) + 4.5rem);
   left: 50%;
   transform: translateX(-50%);
   z-index: var(--z-controls);
