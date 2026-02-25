@@ -141,8 +141,11 @@
 - [x] `JugarView`: contenedor principal con flujo selector→playing, highlight de continente, control del globo
 - [x] Precomputo de niveles (`buildLevelDefinitions`) en App.tsx y paso como prop a JugarView
 
+### Experiencia: Jugar — Pulido Tipo A
+- [ ] Zoom in al continente al pulsar "Empezar" (que ocupe prácticamente toda la pantalla)
+- [ ] Mejorar legibilidad del texto "Localiza" en QuestionBanner (color más visible) y subir la caja para maximizar espacio del mapa
+
 ### Experiencia: Jugar — Fases siguientes
-- [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)
 - [ ] Tipo B: Localizar capital en el mapa (texto → mapa) — Sello de Capitales
 - [ ] Tipo C: Capital → País (texto → texto, opciones múltiples)
 - [ ] Tipo D: País → Capital (texto → texto, opciones múltiples)
@@ -152,13 +155,12 @@
 - [ ] Algoritmo de entrenamiento libre (mezcla tipos A-F, refuerzo de fallos)
 - [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
 - [ ] Barra de progreso (indica preparación para prueba de sello)
-- [ ] Sistema de pruebas de sello (invitación automática, 0 errores, límite 3 intentos diarios)
+- [ ] Sistema de pruebas de sello (invitación automática, 0 errores, sin límite de intentos)
 
 ### Experiencia: Mi Pasaporte
 - [ ] Vista de matriz niveles × continentes (3 filas × 5 columnas)
 - [ ] Sistema de sellos (Países y Capitales) con estado conseguido/pendiente
 - [ ] Acceso directo a pruebas de sello desde el dashboard
-- [ ] Indicador de intentos restantes (3 diarios por sello y continente)
 - [ ] Color del pasaporte según nivel global (verde/azul/dorado)
 
 ### Perfiles de usuario
@@ -177,6 +179,9 @@
   - ⚠️ Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español. Integrar en el sistema de traducción
 - [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
 - [ ] Traducción a idiomas disponibles en iOS y Android
+
+### Testing
+- [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)
 
 ### Infraestructura y acabados
 - [ ] Implementar feedback háptico (vibración en aciertos/errores)

@@ -57,7 +57,7 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 | **Sello de Capitales** | Ubicar cualquier capital del nivel en el mapa | Tipo B (texto → mapa) |
 
 *   **Ambos sellos son necesarios** para completar un nivel-continente.
-*   Máximo **3 intentos diarios** por sello y continente (se reinician cada día).
+*   **Sin límite de intentos**: el usuario puede repetir la prueba de sello tantas veces como quiera. El requisito de 0 errores ya es filtro suficiente, y cada reintento es práctica valiosa.
 
 ### Registro de fallos
 *   Cuando el usuario falla, se guarda el país/capital fallado.
@@ -165,7 +165,7 @@ Matriz visual de **niveles × continentes** (3 filas × 5 columnas). Cada celda 
 - Sello de Capitales: conseguido o pendiente
 
 ### Acceso a los sellos
-Desde el dashboard, el usuario puede intentar conseguir cualquier sello pendiente. Habrá un límite de 3 intentos diarios por sello y continente.
+Desde el dashboard, el usuario puede intentar conseguir cualquier sello pendiente (sin límite de intentos).
 
 ---
 
