@@ -6,16 +6,20 @@ import './GameFeedback.css';
 interface GameFeedbackProps {
   state: FeedbackState;
   onAnimationEnd: () => void;
+  /** Nombre del país/capital que el usuario tocó (error) */
+  incorrectLabel?: string;
+  /** Nombre del país/capital correcto (error) */
+  correctLabel?: string;
 }
 
-export function GameFeedback({ state, onAnimationEnd }: GameFeedbackProps) {
+export function GameFeedback({ state, onAnimationEnd, incorrectLabel, correctLabel }: GameFeedbackProps) {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (state === 'idle') return;
 
-    // Acierto: avance rápido (1.2s), error: más lento para ver el país correcto (2s)
-    const duration = state === 'correct' ? 1200 : 2000;
+    // Acierto: avance rápido (1.2s), error: más lento para leer los labels (2.5s)
+    const duration = state === 'correct' ? 1200 : 2500;
     timerRef.current = setTimeout(onAnimationEnd, duration);
 
     return () => {
@@ -25,6 +29,8 @@ export function GameFeedback({ state, onAnimationEnd }: GameFeedbackProps) {
 
   if (state === 'idle') return null;
 
+  const showDetails = state === 'incorrect' && (incorrectLabel || correctLabel);
+
   return (
     <div
       className={`game-feedback game-feedback--${state}`}
@@ -33,6 +39,16 @@ export function GameFeedback({ state, onAnimationEnd }: GameFeedbackProps) {
       <span className="game-feedback__icon">
         {state === 'correct' ? '✓' : '✗'}
       </span>
+      {showDetails && (
+        <div className="game-feedback__details">
+          {incorrectLabel && (
+            <span className="game-feedback__wrong">{incorrectLabel}</span>
+          )}
+          {correctLabel && (
+            <span className="game-feedback__right">{correctLabel}</span>
+          )}
+        </div>
+      )}
     </div>
   );
 }

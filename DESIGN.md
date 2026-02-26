@@ -70,6 +70,9 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 
 **La piedra angular de la app.** El camino guiado para ir subiendo de nivel progresivamente. Es la experiencia más divertida y la que más tiempo ocupará.
 
+### Selector de tipo de juego
+> **Pendiente de aterrizar.** La idea original era que el entrenamiento libre fuese siempre en modo mixto (todos los tipos A-F). Sin embargo, durante el testing se valoró mantener un selector que permita al usuario elegir un tipo concreto (A, B, C, D, E o F) o jugar en modo mixto. Esto podría ayudar a practicar habilidades específicas (ej. solo ubicar capitales). Hay que definir el diseño final del selector (actualmente es un prototipo con pills) y decidir si se ofrece siempre o solo en ciertos contextos.
+
 ### Flujo para cada nivel-continente
 1.  **Entrenamiento libre**: Preguntas variadas de los tipos A-F (solo países/capitales del nivel actual). No hay rondas fijas; el usuario juega libremente.
 2.  **Refuerzo de fallos**: El algoritmo intercala repasos específicos de lo que el usuario suele fallar.

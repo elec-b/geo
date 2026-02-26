@@ -100,6 +100,55 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
   'AR': [-64, -34],       // Argentina (centro visual)
 };
 
+// --- Archipiélagos (hit testing mejorado) ---
+
+// Países insulares cuyo mar entre islas debe contar como hit area
+const ARCHIPELAGO_CODES = new Set([
+  'PH', 'ID', 'JP', 'NZ', 'FJ', 'SB', 'VU', 'PG', 'GB', 'DK', 'GR', 'HR',
+  'BS', 'CU', 'CV', 'KM', 'TO', 'WS', 'MY', 'TT', 'EE', 'SE', 'FI', 'CL',
+  'NO',
+]);
+
+/** Convex hull — Andrew's monotone chain, O(n log n) */
+function computeConvexHull(points: [number, number][]): [number, number][] {
+  if (points.length < 3) return points;
+
+  const sorted = [...points].sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  const cross = (o: [number, number], a: [number, number], b: [number, number]) =>
+    (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+
+  const lower: [number, number][] = [];
+  for (const p of sorted) {
+    while (lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], p) <= 0) lower.pop();
+    lower.push(p);
+  }
+
+  const upper: [number, number][] = [];
+  for (let i = sorted.length - 1; i >= 0; i--) {
+    const p = sorted[i];
+    while (upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], p) <= 0) upper.pop();
+    upper.push(p);
+  }
+
+  lower.pop();
+  upper.pop();
+  return lower.concat(upper);
+}
+
+/** Point-in-polygon — ray casting, O(n) */
+function pointInPolygon(point: [number, number], polygon: [number, number][]): boolean {
+  let inside = false;
+  const [px, py] = point;
+  for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+    const [xi, yi] = polygon[i];
+    const [xj, yj] = polygon[j];
+    if ((yi > py) !== (yj > py) && px < ((xj - xi) * (py - yi)) / (yj - yi) + xi) {
+      inside = !inside;
+    }
+  }
+  return inside;
+}
+
 // --- Interfaces ---
 
 export interface GlobeD3Props {
@@ -109,8 +158,8 @@ export interface GlobeD3Props {
   showMarkers?: boolean;
   /** País seleccionado (controlado). undefined = modo interno. */
   selectedCountryCca2?: string | null;
-  /** Coordenadas [lon, lat] para mostrar pin de capital */
-  capitalPin?: [number, number] | null;
+  /** Array de coordenadas [lon, lat] para mostrar pines de capitales */
+  capitalPins?: [number, number][];
   /** Set de cca2 a resaltar (filtro continente). null = todos visibles. */
   highlightedCountries?: Set<string> | null;
   showCountryLabels?: boolean;
@@ -148,7 +197,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     onReady,
     showMarkers = true,
     selectedCountryCca2,
-    capitalPin,
+    capitalPins = [],
     highlightedCountries,
     showCountryLabels = false,
     showCapitalLabels = false,
@@ -202,6 +251,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const sortedFeaturesRef = useRef<CountryFeature[]>([]);
   const nonUnCodesRef = useRef<Set<string>>(new Set());
   const geoAreasRef = useRef<Map<string, number>>(new Map());
+  const archipelagoHullsRef = useRef<Map<string, [number, number][]>>(new Map());
   const showMarkersRef = useRef(showMarkers);
   showMarkersRef.current = showMarkers;
 
@@ -215,8 +265,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   selectedCca2PropRef.current = selectedCountryCca2;
   const isControlledRef = useRef(selectedCountryCca2 !== undefined);
   isControlledRef.current = selectedCountryCca2 !== undefined;
-  const capitalPinRef = useRef(capitalPin);
-  capitalPinRef.current = capitalPin;
+  const capitalPinsRef = useRef(capitalPins);
+  capitalPinsRef.current = capitalPins;
   const highlightedRef = useRef(highlightedCountries);
   highlightedRef.current = highlightedCountries;
   const showCountryLabelsRef = useRef(showCountryLabels);
@@ -396,24 +446,24 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       ctx.globalAlpha = 1;
     }
 
-    // Pin de capital seleccionada (circulito relleno + anillo exterior)
-    const pinCoords = capitalPinRef.current;
-    if (pinCoords) {
+    // Pines de capitales (circulito relleno + anillo exterior)
+    const pins = capitalPinsRef.current;
+    if (pins.length > 0) {
       const rotation = rotationRef.current;
       const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
-      if (geoDistance(pinCoords, viewCenter) < Math.PI / 2) {
+      for (const pinCoords of pins) {
+        if (geoDistance(pinCoords, viewCenter) >= Math.PI / 2) continue;
         const pos = projection(pinCoords);
-        if (pos) {
-          ctx.beginPath();
-          ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER, 0, Math.PI * 2);
-          ctx.strokeStyle = CAPITAL_PIN_COLOR;
-          ctx.lineWidth = 1.5;
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.arc(pos[0], pos[1], CAPITAL_PIN_INNER, 0, Math.PI * 2);
-          ctx.fillStyle = CAPITAL_PIN_COLOR;
-          ctx.fill();
-        }
+        if (!pos) continue;
+        ctx.beginPath();
+        ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER, 0, Math.PI * 2);
+        ctx.strokeStyle = CAPITAL_PIN_COLOR;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(pos[0], pos[1], CAPITAL_PIN_INNER, 0, Math.PI * 2);
+        ctx.fillStyle = CAPITAL_PIN_COLOR;
+        ctx.fill();
       }
     }
 
@@ -656,6 +706,30 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
     }
 
+    // Fallback: convex hulls de archipiélagos (tocar mar entre islas)
+    const hulls = archipelagoHullsRef.current;
+    if (hulls.size > 0) {
+      let bestFeature: Feature<Geometry, CountryProperties> | null = null;
+      let bestDist = Infinity;
+      for (const [cca2, hull] of hulls) {
+        if (!pointInPolygon(coords as [number, number], hull)) continue;
+        const feature = countries.features.find(f => f.properties?.cca2 === cca2);
+        if (!feature) continue;
+        // Si hay hulls solapados, elegir el más cercano al centroide
+        const centroid = countryCentroidsRef.current.get(cca2);
+        if (centroid) {
+          const dist = geoDistance(coords as [number, number], centroid);
+          if (dist < bestDist) {
+            bestDist = dist;
+            bestFeature = feature as Feature<Geometry, CountryProperties>;
+          }
+        } else {
+          bestFeature = feature as Feature<Geometry, CountryProperties>;
+        }
+      }
+      if (bestFeature) return bestFeature;
+    }
+
     return null;
   }, []);
 
@@ -738,6 +812,39 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           else if (pct < 0.7) capitalMinZoomMap.set(cca2, 2.5);
           else capitalMinZoomMap.set(cca2, 4.0);
         });
+
+        // Convex hulls para archipiélagos (hit testing del mar entre islas)
+        const hullsByCca2 = new Map<string, [number, number][]>();
+        const coordsByCca2 = new Map<string, [number, number][]>();
+
+        for (const feature of countries.features) {
+          const cca2 = feature.properties?.cca2;
+          if (!cca2 || !ARCHIPELAGO_CODES.has(cca2)) continue;
+
+          // Extraer coordenadas de la geometría
+          const geom = feature.geometry;
+          const coords = coordsByCca2.get(cca2) ?? [];
+          const extract = (ring: number[][]) => {
+            for (const pt of ring) coords.push([pt[0], pt[1]]);
+          };
+
+          if (geom.type === 'Polygon') {
+            for (const ring of geom.coordinates) extract(ring as number[][]);
+          } else if (geom.type === 'MultiPolygon') {
+            for (const poly of geom.coordinates)
+              for (const ring of poly) extract(ring as number[][]);
+          }
+          coordsByCca2.set(cca2, coords);
+        }
+
+        for (const [cca2, coords] of coordsByCca2) {
+          if (coords.length < 3) continue;
+          // Excluir países que cruzan el antimeridiano (hulls gigantes)
+          const lons = coords.map(c => c[0]);
+          if (Math.max(...lons) - Math.min(...lons) > 180) continue;
+          hullsByCca2.set(cca2, computeConvexHull(coords));
+        }
+        archipelagoHullsRef.current = hullsByCca2;
 
         // Guardar áreas para re-ordenamiento posterior cuando lleguen datos de población
         geoAreasRef.current = areas;

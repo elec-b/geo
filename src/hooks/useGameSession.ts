@@ -18,6 +18,8 @@ export interface GameSessionState {
   feedbackState: FeedbackState;
   /** cca2 del país correcto (para resaltar en dorado) */
   correctCca2: string | null;
+  /** Última respuesta incorrecta (cca2 para A/B, texto para C-F). null si acertó o idle. */
+  lastAnswer: string | null;
   isActive: boolean;
   /** Nivel y continente actuales */
   level: GameLevel | null;
@@ -46,6 +48,7 @@ export function useGameSession(
   const [score, setScore] = useState<GameScore>(INITIAL_SCORE);
   const [feedbackState, setFeedbackState] = useState<FeedbackState>('idle');
   const [correctCca2, setCorrectCca2] = useState<string | null>(null);
+  const [lastAnswer, setLastAnswer] = useState<string | null>(null);
   const [isActive, setIsActive] = useState(false);
   const [level, setLevel] = useState<GameLevel | null>(null);
   const [continent, setContinent] = useState<Continent | null>(null);
@@ -116,6 +119,7 @@ export function useGameSession(
 
       if (isCorrect) {
         setFeedbackState('correct');
+        setLastAnswer(null);
         setScore((prev) => ({
           correct: prev.correct + 1,
           incorrect: prev.incorrect,
@@ -124,6 +128,7 @@ export function useGameSession(
         return 'correct';
       } else {
         setFeedbackState('incorrect');
+        setLastAnswer(answer);
         setScore((prev) => ({
           correct: prev.correct,
           incorrect: prev.incorrect + 1,
@@ -148,6 +153,7 @@ export function useGameSession(
     const next = questionsRef.current.shift() ?? null;
     setCurrentQuestion(next);
     setFeedbackState('idle');
+    setLastAnswer(null);
     if (next) {
       applyHighlight(next);
     } else {
@@ -160,6 +166,7 @@ export function useGameSession(
     setCurrentQuestion(null);
     setFeedbackState('idle');
     setCorrectCca2(null);
+    setLastAnswer(null);
     setScore(INITIAL_SCORE);
     setLevel(null);
     setContinent(null);
@@ -171,6 +178,7 @@ export function useGameSession(
     score,
     feedbackState,
     correctCca2,
+    lastAnswer,
     isActive,
     level,
     continent,

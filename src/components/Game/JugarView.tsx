@@ -58,34 +58,54 @@ export function JugarView({
     return set;
   }, [session.continent, countries]);
 
-  // --- Pin de capital para tipos B/F ---
+  // --- Pines de capitales ---
+  // B/C: todas las capitales del continente en juego
+  // F: solo pin del país objetivo
+  // Otros: vacío
 
-  const capitalPin = useMemo((): [number, number] | null => {
+  const capitalPins = useMemo((): [number, number][] => {
     const q = session.currentQuestion;
-    if (!q || (q.type !== 'B' && q.type !== 'F')) return null;
-    const cap = capitals.get(q.targetCca2);
-    return cap ? [cap.latlng[1], cap.latlng[0]] : null;
-  }, [session.currentQuestion, capitals]);
+    if (!q) return [];
+
+    if (q.type === 'B' || q.type === 'C') {
+      // Mostrar todas las capitales del continente
+      if (!session.continent) return [];
+      const pins: [number, number][] = [];
+      for (const [cca2, data] of countries) {
+        if (data.continent !== session.continent) continue;
+        const cap = capitals.get(cca2);
+        if (cap) pins.push([cap.latlng[1], cap.latlng[0]]);
+      }
+      return pins;
+    }
+
+    if (q.type === 'F') {
+      const cap = capitals.get(q.targetCca2);
+      return cap ? [[cap.latlng[1], cap.latlng[0]]] : [];
+    }
+
+    return [];
+  }, [session.currentQuestion, session.continent, countries, capitals]);
 
   // --- Sincronización de props del globo ---
 
   useEffect(() => {
     onGlobePropsChange({
       selectedCountryCca2: session.correctCca2,
-      capitalPin,
+      capitalPins,
       highlightedCountries,
       showCountryLabels: false,
       showCapitalLabels: false,
       capitalLabelsData: null,
     });
-  }, [session.correctCca2, capitalPin, highlightedCountries, onGlobePropsChange]);
+  }, [session.correctCca2, capitalPins, highlightedCountries, onGlobePropsChange]);
 
   // Reset al desmontar (cambio de tab)
   useEffect(() => {
     return () => {
       onGlobePropsChange({
         selectedCountryCca2: null,
-        capitalPin: null,
+        capitalPins: [],
         highlightedCountries: null,
         showCountryLabels: false,
         showCapitalLabels: false,
@@ -166,17 +186,24 @@ export function JugarView({
     (answer: string) => {
       if (session.feedbackState !== 'idle') return;
       setSelectedChoice(answer);
+      const q = session.currentQuestion;
       const result = session.submitAnswer(answer);
 
-      // En error: flyTo al país correcto
-      if (result === 'incorrect' && session.currentQuestion && globeRef.current) {
-        const centroid = globeRef.current.getCentroid(session.currentQuestion.targetCca2);
+      if (result === 'incorrect' && q && globeRef.current) {
+        // En error: flyTo al país correcto
+        const centroid = globeRef.current.getCentroid(q.targetCca2);
         if (centroid) {
           globeRef.current.flyTo(centroid[0], centroid[1], undefined, 600);
         }
+      } else if (result === 'correct' && q && (q.type === 'C' || q.type === 'D') && globeRef.current) {
+        // Acierto en C/D: flyTo a la capital para asociar visualmente
+        const cap = capitals.get(q.targetCca2);
+        if (cap) {
+          globeRef.current.flyTo(cap.latlng[1], cap.latlng[0], undefined, 600);
+        }
       }
     },
-    [session, globeRef],
+    [session, globeRef, capitals],
   );
 
   // Fin de animación de feedback → siguiente pregunta
@@ -191,6 +218,39 @@ export function JugarView({
     setScreen('selector');
     setSelectedChoice(null);
   }, [session]);
+
+  // --- Labels de feedback (solo tipos A/B) ---
+
+  const feedbackLabels = useMemo(() => {
+    const q = session.currentQuestion;
+    const answer = session.lastAnswer;
+    if (!q || !answer) return { incorrectLabel: undefined, correctLabel: undefined };
+
+    if (q.type === 'A') {
+      // Tipo A: nombres de países
+      const wrongName = countries.get(answer)?.name ?? answer;
+      const rightName = countries.get(q.targetCca2)?.name ?? q.targetCca2;
+      return { incorrectLabel: wrongName, correctLabel: rightName };
+    }
+
+    if (q.type === 'B') {
+      // Tipo B: "País — Capital"
+      const wrongCountry = countries.get(answer);
+      const wrongCap = capitals.get(answer);
+      const rightCountry = countries.get(q.targetCca2);
+      const rightCap = capitals.get(q.targetCca2);
+      const wrongLabel = wrongCountry && wrongCap
+        ? `${wrongCountry.name} — ${wrongCap.name}`
+        : (wrongCountry?.name ?? answer);
+      const rightLabel = rightCountry && rightCap
+        ? `${rightCountry.name} — ${rightCap.name}`
+        : (rightCountry?.name ?? q.targetCca2);
+      return { incorrectLabel: wrongLabel, correctLabel: rightLabel };
+    }
+
+    // Tipos C-F: el ChoicePanel ya muestra feedback visual
+    return { incorrectLabel: undefined, correctLabel: undefined };
+  }, [session.currentQuestion, session.lastAnswer, countries, capitals]);
 
   // --- Render ---
 
@@ -229,7 +289,12 @@ export function JugarView({
         />
       )}
 
-      <GameFeedback state={session.feedbackState} onAnimationEnd={handleFeedbackEnd} />
+      <GameFeedback
+        state={session.feedbackState}
+        onAnimationEnd={handleFeedbackEnd}
+        incorrectLabel={feedbackLabels.incorrectLabel}
+        correctLabel={feedbackLabels.correctLabel}
+      />
 
       <ScoreBar score={session.score} onExit={handleExit} />
     </>

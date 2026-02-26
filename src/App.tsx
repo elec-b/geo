@@ -20,7 +20,7 @@ const GlobeD3 = lazy(() => import('./components/Globe/GlobeD3'));
 /** Estado inicial de las props controladas del globo */
 const DEFAULT_GLOBE_CONTROL: GlobeControlProps = {
   selectedCountryCca2: null,
-  capitalPin: null,
+  capitalPins: [],
   highlightedCountries: null,
   showCountryLabels: false,
   showCapitalLabels: false,
@@ -119,7 +119,7 @@ function App() {
           onReady={handleGlobeReady}
           showMarkers={showMarkers}
           selectedCountryCca2={globeControl.selectedCountryCca2}
-          capitalPin={globeControl.capitalPin}
+          capitalPins={globeControl.capitalPins}
           highlightedCountries={globeControl.highlightedCountries}
           showCountryLabels={globeControl.showCountryLabels}
           showCapitalLabels={globeControl.showCapitalLabels}

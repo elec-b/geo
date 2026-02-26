@@ -161,9 +161,19 @@
 - [x] QuestionBanner: subir más la caja, casi a la altura de los iconos de settings/usuario
 - [x] Selector provisional de tipo de pregunta para testing (pills Mixto/A-F en LevelSelector)
 - [ ] **Feedback pendiente**: testear en iPhone las 4 mejoras (solapamiento, pin B/F, posición banner, selector tipo)
-- [ ] Eliminar selector provisional de tipo de juego/pregunta cuando se hayan testeado todos los juegos
+  - [ ] Tipo A — feedback en error: mostrar brevemente el nombre del país equivocado (para aprendizaje) + flyTo al correcto (ya existe). Debe quedar claro cuál es el equivocado y cuál el correcto
+    - [ ]Feedback iteración 1: los nombres deben mostrarse sobre los países (idea: podemos utilizar las etiquetas?). Quizás esto deba ocurrir en dos pasos, se muestra el nombre del país equivocado, después flyto al país correcto.
+  - [X] Tipo B — pines de todas las capitales: mostrar los pines de capital de todos los países del continente en juego, no solo el del país objetivo (actualmente se da la respuesta al usuario)
+  - [ ] Tipo B — feedback en error: mostrar nombre del país y capital seleccionados (equivocados) + flyTo a la capital correcta (ya existe). Mismo principio que tipo A
+    - [ ] Feedback iteración 1: igual que para tipo A -> nombres en el sitio adecuado y en dos pasos.
+  - [X] Tipo C — flyTo en acierto: al acertar, hacer flyTo a la capital correcta manteniendo el highlight del país (ya funciona). Actualmente no hay flyTo al acertar
+  - [X] Tipo C — pines de todas las capitales: mostrar los pines de capital de todos los países del continente en juego (coherente con tipo B)
+  - [ ] Tipo D — flyTo en acierto: al acertar, hacer flyTo a la capital correcta manteniendo el highlight del país (misma mejora que tipo C)
+    - [ ] Feedback iteración 1: debe mostrarse el pin de la capital del país correcto - solo después de que el usuario seleccione una de las cuatro opciones
+  - [X] Selección de archipiélagos: facilitar la selección de países formados por grupos de islas (ej. Filipinas). Ampliar el área de hit cuando el usuario toca mar entre islas del mismo país. Aplica también a Explorar y a la interacción con el globo en general
 - [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
 - [ ] Barra de progreso (indica preparación para prueba de sello)
+- [ ] Selector de tipo de juego: decidir diseño final y comportamiento (ver DESIGN.md § «Selector de tipo de juego»). Actualmente es un prototipo con pills
 - [ ] Sistema de pruebas de sello (invitación automática, 0 errores, sin límite de intentos)
 
 ### Experiencia: Mi Pasaporte

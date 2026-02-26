@@ -17,7 +17,7 @@ type ExploreMode = 'countries' | 'capitals';
 /** Props que ExploreView controla en el globo */
 export interface GlobeControlProps {
   selectedCountryCca2: string | null;
-  capitalPin: [number, number] | null;
+  capitalPins: [number, number][];
   highlightedCountries: Set<string> | null;
   showCountryLabels: boolean;
   showCapitalLabels: boolean;
@@ -75,10 +75,10 @@ export function ExploreView({
     [showCapitalLabels, capitals],
   );
 
-  const capitalPin = useMemo((): [number, number] | null => {
-    if (!selectedCca2) return null;
+  const capitalPins = useMemo((): [number, number][] => {
+    if (!selectedCca2) return [];
     const cap = capitals.get(selectedCca2);
-    return cap ? [cap.latlng[1], cap.latlng[0]] : null;
+    return cap ? [[cap.latlng[1], cap.latlng[0]]] : [];
   }, [selectedCca2, capitals]);
 
   // --- Sincronización de props del globo ---
@@ -86,20 +86,20 @@ export function ExploreView({
   useEffect(() => {
     onGlobePropsChange({
       selectedCountryCca2: selectedCca2,
-      capitalPin,
+      capitalPins,
       highlightedCountries,
       showCountryLabels,
       showCapitalLabels,
       capitalLabelsData,
     });
-  }, [selectedCca2, capitalPin, highlightedCountries, showCountryLabels, showCapitalLabels, capitalLabelsData, onGlobePropsChange]);
+  }, [selectedCca2, capitalPins, highlightedCountries, showCountryLabels, showCapitalLabels, capitalLabelsData, onGlobePropsChange]);
 
   // Reset al desmontar (cambio de tab)
   useEffect(() => {
     return () => {
       onGlobePropsChange({
         selectedCountryCca2: null,
-        capitalPin: null,
+        capitalPins: [],
         highlightedCountries: null,
         showCountryLabels: false,
         showCapitalLabels: false,
