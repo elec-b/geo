@@ -160,20 +160,15 @@
 - [x] Preguntas con capital (B/F): mostrar el pin de capital en el mapa (`capitalPin` memo en JugarView)
 - [x] QuestionBanner: subir más la caja, casi a la altura de los iconos de settings/usuario
 - [x] Selector provisional de tipo de pregunta para testing (pills Mixto/A-F en LevelSelector)
-- [ ] **Feedback pendiente**: testear en iPhone las 4 mejoras (solapamiento, pin B/F, posición banner, selector tipo)
-  - [ ] Tipo A — feedback en error: mostrar brevemente el nombre del país equivocado (para aprendizaje) + flyTo al correcto (ya existe). Debe quedar claro cuál es el equivocado y cuál el correcto
-    - [x] Feedback iteración 1: los nombres deben mostrarse sobre los países (idea: podemos utilizar las etiquetas?). Quizás esto deba ocurrir en dos pasos, se muestra el nombre del país equivocado, después flyto al país correcto.
-    - [ ] Feedback iteración 2: en step2 (flyTo al correcto) ocultar la cruz roja del overlay (mantener tinte rojizo de fondo) para que se vea mejor el país correcto. Texto del país/capital correcto en blanco o negro (no verde), eligiendo el que mejor contraste tenga.
-  - [X] Tipo B — pines de todas las capitales: mostrar los pines de capital de todos los países del continente en juego, no solo el del país objetivo (actualmente se da la respuesta al usuario)
-  - [ ] Tipo B — feedback en error: mostrar nombre del país y capital seleccionados (equivocados) + flyTo a la capital correcta (ya existe). Mismo principio que tipo A
-    - [x] Feedback iteración 1: igual que para tipo A -> nombres en el sitio adecuado y en dos pasos.
-    - [ ] Feedback iteración 2: mismas mejoras que tipo A (ocultar cruz en step2, texto correcto en blanco/negro).
-  - [X] Tipo C — flyTo en acierto: al acertar, hacer flyTo a la capital correcta manteniendo el highlight del país (ya funciona). Actualmente no hay flyTo al acertar
-  - [X] Tipo C — pines de todas las capitales: mostrar los pines de capital de todos los países del continente en juego (coherente con tipo B)
-  - [x] Tipo D — flyTo en acierto: al acertar, hacer flyTo a la capital correcta manteniendo el highlight del país (misma mejora que tipo C)
-    - [x] Feedback iteración 1: debe mostrarse el pin de la capital del país correcto - solo después de que el usuario seleccione una de las cuatro opciones
-  - [X] Selección de archipiélagos: facilitar la selección de países formados por grupos de islas (ej. Filipinas). Ampliar el área de hit cuando el usuario toca mar entre islas del mismo país. Aplica también a Explorar y a la interacción con el globo en general
-- [ ] Bug: "Sierra Leone" en vez de "Sierra Leona" en `countries.json` — falta traducción `spa` en REST Countries o en el suplementario
+- [x] **Feedback testeado en iPhone**: solapamiento ChoicePanel, pin B/F, posición banner, selector tipo, pines de capitales B/C, flyTo C/D, archipiélagos, feedback geográfico A/B en dos pasos (etiquetas sobre el globo), pin capital tipo D. **Nota**: queda pendiente iterar el feedback de error A/B (ocultar cruz en step2, color del texto correcto) — ver sub-tareas abajo
+  - [x] Tipo A — feedback en error con etiquetas sobre el globo en dos pasos (step1: rojo equivocado → step2: flyTo + correcto)
+    - [ ] Feedback iteración 2: en step2 ocultar la cruz roja del overlay (mantener tinte rojizo) y texto del país correcto en blanco (no verde)
+  - [x] Tipo B — pines de todas las capitales del continente + feedback en error en dos pasos (igual que tipo A)
+    - [ ] Feedback iteración 2: mismas mejoras que tipo A (ocultar cruz en step2, texto correcto en blanco)
+  - [x] Tipo C — flyTo en acierto + pines de todas las capitales del continente
+  - [x] Tipo D — flyTo en acierto + pin de capital del país correcto tras responder
+  - [x] Selección de archipiélagos (hit area ampliada entre islas del mismo país)
+- [x] Bug: "Sierra Leone" → "Sierra Leona" — REST Countries devuelve nombre sin traducir; corregido vía campo `name` en suplementario (`capitals-es.json`)
 - [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
 - [ ] Barra de progreso (indica preparación para prueba de sello)
 - [ ] Selector de tipo de juego: decidir diseño final y comportamiento (ver DESIGN.md § «Selector de tipo de juego»). Actualmente es un prototipo con pills

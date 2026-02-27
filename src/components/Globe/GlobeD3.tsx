@@ -489,7 +489,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         const pos = projection(label.coords);
         if (!pos) continue;
 
-        const color = label.kind === 'incorrect' ? '#ef4444' : '#22c55e';
+        const color = label.kind === 'incorrect' ? '#ef4444' : '#ffffff';
         const lines = label.text.split('\n');
         const mainSize = Math.round(12 + Math.sqrt(zoom) * 2);
         const subSize = Math.round(mainSize * 0.75);

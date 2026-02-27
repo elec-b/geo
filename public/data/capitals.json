@@ -1,158 +1,4 @@
 {
-  "VN": {
-    "name": "Hanói",
-    "latlng": [
-      21.03,
-      105.85
-    ]
-  },
-  "PG": {
-    "name": "Port Moresby",
-    "latlng": [
-      -9.45,
-      147.18
-    ]
-  },
-  "CL": {
-    "name": "Santiago",
-    "latlng": [
-      -33.45,
-      -70.67
-    ]
-  },
-  "HU": {
-    "name": "Budapest",
-    "latlng": [
-      47.5,
-      19.08
-    ]
-  },
-  "CO": {
-    "name": "Bogotá",
-    "latlng": [
-      4.71,
-      -74.07
-    ]
-  },
-  "DJ": {
-    "name": "Yibuti",
-    "latlng": [
-      11.58,
-      43.15
-    ]
-  },
-  "TO": {
-    "name": "Nukualofa",
-    "latlng": [
-      -21.13,
-      -175.2
-    ]
-  },
-  "DK": {
-    "name": "Copenhague",
-    "latlng": [
-      55.67,
-      12.58
-    ]
-  },
-  "DO": {
-    "name": "Santo Domingo",
-    "latlng": [
-      18.47,
-      -69.9
-    ]
-  },
-  "MX": {
-    "name": "Ciudad de México",
-    "latlng": [
-      19.43,
-      -99.13
-    ]
-  },
-  "GB": {
-    "name": "Londres",
-    "latlng": [
-      51.5,
-      -0.08
-    ]
-  },
-  "TR": {
-    "name": "Ankara",
-    "latlng": [
-      39.93,
-      32.87
-    ]
-  },
-  "MK": {
-    "name": "Skopie",
-    "latlng": [
-      42,
-      21.43
-    ]
-  },
-  "UA": {
-    "name": "Kiev",
-    "latlng": [
-      50.43,
-      30.52
-    ]
-  },
-  "VE": {
-    "name": "Caracas",
-    "latlng": [
-      10.48,
-      -66.87
-    ]
-  },
-  "BF": {
-    "name": "Uagadugú",
-    "latlng": [
-      12.37,
-      -1.52
-    ]
-  },
-  "ER": {
-    "name": "Asmara",
-    "latlng": [
-      15.33,
-      38.93
-    ]
-  },
-  "LU": {
-    "name": "Luxemburgo",
-    "latlng": [
-      49.6,
-      6.12
-    ]
-  },
-  "TV": {
-    "name": "Funafuti",
-    "latlng": [
-      -8.52,
-      179.22
-    ]
-  },
-  "CR": {
-    "name": "San José",
-    "latlng": [
-      9.93,
-      -84.09
-    ]
-  },
-  "RO": {
-    "name": "Bucarest",
-    "latlng": [
-      44.43,
-      26.1
-    ]
-  },
-  "GR": {
-    "name": "Atenas",
-    "latlng": [
-      37.98,
-      23.73
-    ]
-  },
   "ZW": {
     "name": "Harare",
     "latlng": [
@@ -160,18 +6,11 @@
       31.03
     ]
   },
-  "MC": {
-    "name": "Mónaco",
+  "KI": {
+    "name": "Tarawa Sur",
     "latlng": [
-      43.73,
-      7.42
-    ]
-  },
-  "CA": {
-    "name": "Ottawa",
-    "latlng": [
-      45.42,
-      -75.7
+      1.33,
+      172.98
     ]
   },
   "GH": {
@@ -181,60 +20,11 @@
       -0.22
     ]
   },
-  "CI": {
-    "name": "Yamusukro",
+  "KP": {
+    "name": "Pionyang",
     "latlng": [
-      6.82,
-      -5.27
-    ]
-  },
-  "MM": {
-    "name": "Naipyidó",
-    "latlng": [
-      19.76,
-      96.07
-    ]
-  },
-  "MR": {
-    "name": "Nuakchot",
-    "latlng": [
-      18.07,
-      -15.97
-    ]
-  },
-  "JM": {
-    "name": "Kingston",
-    "latlng": [
-      17.99702,
-      -76.79358
-    ]
-  },
-  "SS": {
-    "name": "Yuba",
-    "latlng": [
-      4.85,
-      31.62
-    ]
-  },
-  "BN": {
-    "name": "Bandar Seri Begawan",
-    "latlng": [
-      4.88,
-      114.93
-    ]
-  },
-  "SG": {
-    "name": "Singapur",
-    "latlng": [
-      1.28,
-      103.85
-    ]
-  },
-  "NZ": {
-    "name": "Wellington",
-    "latlng": [
-      -41.3,
-      174.78
+      39.02,
+      125.75
     ]
   },
   "ES": {
@@ -244,74 +34,25 @@
       -3.68
     ]
   },
-  "PH": {
-    "name": "Manila",
+  "JO": {
+    "name": "Amán",
     "latlng": [
-      14.6,
-      120.97
+      31.95,
+      35.93
     ]
   },
-  "PL": {
-    "name": "Varsovia",
+  "SM": {
+    "name": "San Marino",
     "latlng": [
-      52.25,
-      21
+      43.94,
+      12.45
     ]
   },
-  "CG": {
-    "name": "Brazzaville",
+  "CI": {
+    "name": "Yamusukro",
     "latlng": [
-      -4.25,
-      15.28
-    ]
-  },
-  "AZ": {
-    "name": "Bakú",
-    "latlng": [
-      40.38,
-      49.87
-    ]
-  },
-  "IT": {
-    "name": "Roma",
-    "latlng": [
-      41.9,
-      12.48
-    ]
-  },
-  "DZ": {
-    "name": "Argel",
-    "latlng": [
-      36.75,
-      3.05
-    ]
-  },
-  "AD": {
-    "name": "Andorra la Vella",
-    "latlng": [
-      42.5,
-      1.52
-    ]
-  },
-  "IS": {
-    "name": "Reikiavik",
-    "latlng": [
-      64.15,
-      -21.95
-    ]
-  },
-  "TD": {
-    "name": "Yamena",
-    "latlng": [
-      12.1,
-      15.03
-    ]
-  },
-  "BS": {
-    "name": "Nasáu",
-    "latlng": [
-      25.08,
-      -77.35
+      6.82,
+      -5.27
     ]
   },
   "BR": {
@@ -321,25 +62,11 @@
       -47.88
     ]
   },
-  "TH": {
-    "name": "Bangkok",
+  "CO": {
+    "name": "Bogotá",
     "latlng": [
-      13.75,
-      100.52
-    ]
-  },
-  "FM": {
-    "name": "Palikir",
-    "latlng": [
-      6.92,
-      158.15
-    ]
-  },
-  "IL": {
-    "name": "Jerusalén",
-    "latlng": [
-      31.77,
-      35.23
+      4.71,
+      -74.07
     ]
   },
   "DM": {
@@ -349,284 +76,11 @@
       -61.4
     ]
   },
-  "ML": {
-    "name": "Bamako",
+  "DJ": {
+    "name": "Yibuti",
     "latlng": [
-      12.65,
-      -8
-    ]
-  },
-  "MZ": {
-    "name": "Maputo",
-    "latlng": [
-      -25.95,
-      32.58
-    ]
-  },
-  "SY": {
-    "name": "Damasco",
-    "latlng": [
-      33.5,
-      36.3
-    ]
-  },
-  "YE": {
-    "name": "Saná",
-    "latlng": [
-      15.37,
-      44.19
-    ]
-  },
-  "SK": {
-    "name": "Bratislava",
-    "latlng": [
-      48.15,
-      17.12
-    ]
-  },
-  "VC": {
-    "name": "Kingstown",
-    "latlng": [
-      13.13,
-      -61.22
-    ]
-  },
-  "GY": {
-    "name": "Georgetown",
-    "latlng": [
-      6.8,
-      -58.15
-    ]
-  },
-  "ME": {
-    "name": "Podgorica",
-    "latlng": [
-      42.43,
-      19.27
-    ]
-  },
-  "QA": {
-    "name": "Doha",
-    "latlng": [
-      25.28,
-      51.53
-    ]
-  },
-  "ST": {
-    "name": "Santo Tomé",
-    "latlng": [
-      0.34,
-      6.73
-    ]
-  },
-  "UZ": {
-    "name": "Taskent",
-    "latlng": [
-      41.32,
-      69.25
-    ]
-  },
-  "SE": {
-    "name": "Estocolmo",
-    "latlng": [
-      59.33,
-      18.05
-    ]
-  },
-  "NR": {
-    "name": "Yaren",
-    "latlng": [
-      -0.55,
-      166.92
-    ]
-  },
-  "NI": {
-    "name": "Managua",
-    "latlng": [
-      12.13,
-      -86.25
-    ]
-  },
-  "VU": {
-    "name": "Port Vila",
-    "latlng": [
-      -17.73,
-      168.32
-    ]
-  },
-  "CN": {
-    "name": "Pekín",
-    "latlng": [
-      39.92,
-      116.38
-    ]
-  },
-  "KP": {
-    "name": "Pionyang",
-    "latlng": [
-      39.02,
-      125.75
-    ]
-  },
-  "ID": {
-    "name": "Yakarta",
-    "latlng": [
-      -6.17,
-      106.82
-    ]
-  },
-  "BE": {
-    "name": "Bruselas",
-    "latlng": [
-      50.83,
-      4.33
-    ]
-  },
-  "CZ": {
-    "name": "Praga",
-    "latlng": [
-      50.08,
-      14.47
-    ]
-  },
-  "CF": {
-    "name": "Bangui",
-    "latlng": [
-      4.37,
-      18.58
-    ]
-  },
-  "PA": {
-    "name": "Ciudad de Panamá",
-    "latlng": [
-      8.97,
-      -79.53
-    ]
-  },
-  "AE": {
-    "name": "Abu Dabi",
-    "latlng": [
-      24.47,
-      54.37
-    ]
-  },
-  "GW": {
-    "name": "Bisáu",
-    "latlng": [
-      11.85,
-      -15.58
-    ]
-  },
-  "BJ": {
-    "name": "Porto Novo",
-    "latlng": [
-      6.48,
-      2.62
-    ]
-  },
-  "MD": {
-    "name": "Chisináu",
-    "latlng": [
-      47.01,
-      28.9
-    ]
-  },
-  "WS": {
-    "name": "Apia",
-    "latlng": [
-      -13.82,
-      -171.77
-    ]
-  },
-  "TN": {
-    "name": "Túnez",
-    "latlng": [
-      36.8,
-      10.18
-    ]
-  },
-  "EC": {
-    "name": "Quito",
-    "latlng": [
-      -0.22,
-      -78.5
-    ]
-  },
-  "NE": {
-    "name": "Niamey",
-    "latlng": [
-      13.52,
-      2.12
-    ]
-  },
-  "AG": {
-    "name": "Saint John's",
-    "latlng": [
-      17.12,
-      -61.85
-    ]
-  },
-  "MY": {
-    "name": "Kuala Lumpur",
-    "latlng": [
-      3.17,
-      101.7
-    ]
-  },
-  "OM": {
-    "name": "Mascate",
-    "latlng": [
-      23.62,
-      58.58
-    ]
-  },
-  "KR": {
-    "name": "Seúl",
-    "latlng": [
-      37.55,
-      126.98
-    ]
-  },
-  "BA": {
-    "name": "Sarajevo",
-    "latlng": [
-      43.87,
-      18.42
-    ]
-  },
-  "LS": {
-    "name": "Maseru",
-    "latlng": [
-      -29.32,
-      27.48
-    ]
-  },
-  "JP": {
-    "name": "Tokio",
-    "latlng": [
-      35.68,
-      139.75
-    ]
-  },
-  "TM": {
-    "name": "Asjabad",
-    "latlng": [
-      37.95,
-      58.38
-    ]
-  },
-  "HR": {
-    "name": "Zagreb",
-    "latlng": [
-      45.8,
-      16
-    ]
-  },
-  "BT": {
-    "name": "Timbu",
-    "latlng": [
-      27.47,
-      89.63
+      11.58,
+      43.15
     ]
   },
   "SI": {
@@ -636,333 +90,11 @@
       14.52
     ]
   },
-  "LA": {
-    "name": "Vientián",
+  "MK": {
+    "name": "Skopie",
     "latlng": [
-      17.97,
-      102.6
-    ]
-  },
-  "LB": {
-    "name": "Beirut",
-    "latlng": [
-      33.87,
-      35.5
-    ]
-  },
-  "MT": {
-    "name": "La Valeta",
-    "latlng": [
-      35.88,
-      14.5
-    ]
-  },
-  "RS": {
-    "name": "Belgrado",
-    "latlng": [
-      44.83,
-      20.5
-    ]
-  },
-  "LV": {
-    "name": "Riga",
-    "latlng": [
-      56.95,
-      24.1
-    ]
-  },
-  "CD": {
-    "name": "Kinsasa",
-    "latlng": [
-      -4.32,
-      15.3
-    ]
-  },
-  "CY": {
-    "name": "Nicosia",
-    "latlng": [
-      35.17,
-      33.37
-    ]
-  },
-  "GA": {
-    "name": "Libreville",
-    "latlng": [
-      0.38,
-      9.45
-    ]
-  },
-  "SL": {
-    "name": "Freetown",
-    "latlng": [
-      8.48,
-      -13.23
-    ]
-  },
-  "IQ": {
-    "name": "Bagdad",
-    "latlng": [
-      33.33,
-      44.4
-    ]
-  },
-  "BW": {
-    "name": "Gaborone",
-    "latlng": [
-      -24.63,
-      25.9
-    ]
-  },
-  "SO": {
-    "name": "Mogadiscio",
-    "latlng": [
-      2.07,
-      45.33
-    ]
-  },
-  "MU": {
-    "name": "Port Louis",
-    "latlng": [
-      -20.15,
-      57.48
-    ]
-  },
-  "GE": {
-    "name": "Tiflis",
-    "latlng": [
-      41.68,
-      44.83
-    ]
-  },
-  "MG": {
-    "name": "Antananarivo",
-    "latlng": [
-      -18.92,
-      47.52
-    ]
-  },
-  "LY": {
-    "name": "Trípoli",
-    "latlng": [
-      32.88,
-      13.17
-    ]
-  },
-  "AT": {
-    "name": "Viena",
-    "latlng": [
-      48.2,
-      16.37
-    ]
-  },
-  "ET": {
-    "name": "Adís Abeba",
-    "latlng": [
-      9.03,
-      38.7
-    ]
-  },
-  "CM": {
-    "name": "Yaundé",
-    "latlng": [
-      3.85,
-      11.5
-    ]
-  },
-  "EG": {
-    "name": "El Cairo",
-    "latlng": [
-      30.05,
-      31.25
-    ]
-  },
-  "PW": {
-    "name": "Ngerulmud",
-    "latlng": [
-      7.5,
-      134.62
-    ]
-  },
-  "LC": {
-    "name": "Castries",
-    "latlng": [
-      14,
-      -61
-    ]
-  },
-  "AF": {
-    "name": "Kabul",
-    "latlng": [
-      34.52,
-      69.18
-    ]
-  },
-  "AL": {
-    "name": "Tirana",
-    "latlng": [
-      41.32,
-      19.82
-    ]
-  },
-  "RU": {
-    "name": "Moscú",
-    "latlng": [
-      55.75,
-      37.6
-    ]
-  },
-  "GD": {
-    "name": "Saint George",
-    "latlng": [
-      12.05,
-      -61.75
-    ]
-  },
-  "BI": {
-    "name": "Gitega",
-    "latlng": [
-      -3.43,
-      29.93
-    ]
-  },
-  "KM": {
-    "name": "Moroni",
-    "latlng": [
-      -11.7,
-      43.23
-    ]
-  },
-  "BY": {
-    "name": "Minsk",
-    "latlng": [
-      53.9,
-      27.57
-    ]
-  },
-  "TZ": {
-    "name": "Dodoma",
-    "latlng": [
-      -6.16,
-      35.75
-    ]
-  },
-  "BG": {
-    "name": "Sofía",
-    "latlng": [
-      42.68,
-      23.32
-    ]
-  },
-  "SV": {
-    "name": "San Salvador",
-    "latlng": [
-      13.7,
-      -89.2
-    ]
-  },
-  "NL": {
-    "name": "Ámsterdam",
-    "latlng": [
-      52.35,
-      4.92
-    ]
-  },
-  "VA": {
-    "name": "Ciudad del Vaticano",
-    "latlng": [
-      41.9,
-      12.45
-    ]
-  },
-  "LK": {
-    "name": "Sri Jayawardenepura Kotte",
-    "latlng": [
-      6.89,
-      79.9
-    ]
-  },
-  "FI": {
-    "name": "Helsinki",
-    "latlng": [
-      60.17,
-      24.93
-    ]
-  },
-  "MV": {
-    "name": "Malé",
-    "latlng": [
-      4.17,
-      73.51
-    ]
-  },
-  "PY": {
-    "name": "Asunción",
-    "latlng": [
-      -25.28,
-      -57.57
-    ]
-  },
-  "SZ": {
-    "name": "Mbabane",
-    "latlng": [
-      -26.32,
-      31.13
-    ]
-  },
-  "CH": {
-    "name": "Berna",
-    "latlng": [
-      46.92,
-      7.47
-    ]
-  },
-  "FJ": {
-    "name": "Suva",
-    "latlng": [
-      -18.13,
-      178.42
-    ]
-  },
-  "ZA": {
-    "name": "Pretoria",
-    "latlng": [
-      -25.7,
-      28.22
-    ]
-  },
-  "JO": {
-    "name": "Amán",
-    "latlng": [
-      31.95,
-      35.93
-    ]
-  },
-  "BZ": {
-    "name": "Belmopán",
-    "latlng": [
-      17.25,
-      -88.77
-    ]
-  },
-  "PE": {
-    "name": "Lima",
-    "latlng": [
-      -12.05,
-      -77.05
-    ]
-  },
-  "TJ": {
-    "name": "Dusambé",
-    "latlng": [
-      38.55,
-      68.77
-    ]
-  },
-  "GN": {
-    "name": "Conakri",
-    "latlng": [
-      9.5,
-      -13.7
+      42,
+      21.43
     ]
   },
   "SB": {
@@ -972,60 +104,39 @@
       159.95
     ]
   },
-  "SN": {
-    "name": "Dakar",
+  "TD": {
+    "name": "Yamena",
     "latlng": [
-      14.73,
-      -17.63
+      12.1,
+      15.03
     ]
   },
-  "LT": {
-    "name": "Vilna",
+  "BI": {
+    "name": "Gitega",
     "latlng": [
-      54.68,
-      25.32
+      -3.43,
+      29.93
     ]
   },
-  "MN": {
-    "name": "Ulán Bator",
+  "IT": {
+    "name": "Roma",
     "latlng": [
-      47.92,
-      106.91
+      41.9,
+      12.48
     ]
   },
-  "BO": {
-    "name": "Sucre",
+  "ET": {
+    "name": "Adís Abeba",
     "latlng": [
-      -19.02,
-      -65.26
+      9.03,
+      38.7
     ]
   },
-  "KZ": {
-    "name": "Astaná",
+  "VN": {
+    "name": "Hanói",
     "latlng": [
-      51.16,
-      71.45
-    ]
-  },
-  "AR": {
-    "name": "Buenos Aires",
-    "latlng": [
-      -34.58,
-      -58.67
-    ]
-  },
-  "AM": {
-    "name": "Ereván",
-    "latlng": [
-      40.17,
-      44.5
-    ]
-  },
-  "AO": {
-    "name": "Luanda",
-    "latlng": [
-      -8.83,
-      13.22
+      21.03,
+      105.85
     ]
   },
   "TG": {
@@ -1035,11 +146,543 @@
       1.21
     ]
   },
+  "PL": {
+    "name": "Varsovia",
+    "latlng": [
+      52.25,
+      21
+    ]
+  },
+  "PT": {
+    "name": "Lisboa",
+    "latlng": [
+      38.72,
+      -9.13
+    ]
+  },
+  "IL": {
+    "name": "Jerusalén",
+    "latlng": [
+      31.77,
+      35.23
+    ]
+  },
+  "AR": {
+    "name": "Buenos Aires",
+    "latlng": [
+      -34.58,
+      -58.67
+    ]
+  },
+  "AF": {
+    "name": "Kabul",
+    "latlng": [
+      34.52,
+      69.18
+    ]
+  },
+  "PG": {
+    "name": "Port Moresby",
+    "latlng": [
+      -9.45,
+      147.18
+    ]
+  },
+  "NZ": {
+    "name": "Wellington",
+    "latlng": [
+      -41.3,
+      174.78
+    ]
+  },
+  "SV": {
+    "name": "San Salvador",
+    "latlng": [
+      13.7,
+      -89.2
+    ]
+  },
+  "CZ": {
+    "name": "Praga",
+    "latlng": [
+      50.08,
+      14.47
+    ]
+  },
+  "CM": {
+    "name": "Yaundé",
+    "latlng": [
+      3.85,
+      11.5
+    ]
+  },
+  "YE": {
+    "name": "Saná",
+    "latlng": [
+      15.37,
+      44.19
+    ]
+  },
+  "PA": {
+    "name": "Ciudad de Panamá",
+    "latlng": [
+      8.97,
+      -79.53
+    ]
+  },
+  "TL": {
+    "name": "Dili",
+    "latlng": [
+      -8.58,
+      125.6
+    ]
+  },
+  "CU": {
+    "name": "La Habana",
+    "latlng": [
+      23.12,
+      -82.35
+    ]
+  },
+  "RU": {
+    "name": "Moscú",
+    "latlng": [
+      55.75,
+      37.6
+    ]
+  },
+  "AG": {
+    "name": "Saint John's",
+    "latlng": [
+      17.12,
+      -61.85
+    ]
+  },
+  "BO": {
+    "name": "Sucre",
+    "latlng": [
+      -19.02,
+      -65.26
+    ]
+  },
+  "AU": {
+    "name": "Canberra",
+    "latlng": [
+      -35.27,
+      149.13
+    ]
+  },
+  "FJ": {
+    "name": "Suva",
+    "latlng": [
+      -18.13,
+      178.42
+    ]
+  },
+  "MM": {
+    "name": "Naipyidó",
+    "latlng": [
+      19.76,
+      96.07
+    ]
+  },
+  "ST": {
+    "name": "Santo Tomé",
+    "latlng": [
+      0.34,
+      6.73
+    ]
+  },
+  "MG": {
+    "name": "Antananarivo",
+    "latlng": [
+      -18.92,
+      47.52
+    ]
+  },
+  "TV": {
+    "name": "Funafuti",
+    "latlng": [
+      -8.52,
+      179.22
+    ]
+  },
+  "HU": {
+    "name": "Budapest",
+    "latlng": [
+      47.5,
+      19.08
+    ]
+  },
+  "EG": {
+    "name": "El Cairo",
+    "latlng": [
+      30.05,
+      31.25
+    ]
+  },
+  "KG": {
+    "name": "Biskek",
+    "latlng": [
+      42.87,
+      74.6
+    ]
+  },
+  "ID": {
+    "name": "Yakarta",
+    "latlng": [
+      -6.17,
+      106.82
+    ]
+  },
+  "TN": {
+    "name": "Túnez",
+    "latlng": [
+      36.8,
+      10.18
+    ]
+  },
+  "OM": {
+    "name": "Mascate",
+    "latlng": [
+      23.62,
+      58.58
+    ]
+  },
+  "US": {
+    "name": "Washington D. C.",
+    "latlng": [
+      38.89,
+      -77.05
+    ]
+  },
+  "SR": {
+    "name": "Paramaribo",
+    "latlng": [
+      5.83,
+      -55.17
+    ]
+  },
+  "AZ": {
+    "name": "Bakú",
+    "latlng": [
+      40.38,
+      49.87
+    ]
+  },
+  "NL": {
+    "name": "Ámsterdam",
+    "latlng": [
+      52.35,
+      4.92
+    ]
+  },
+  "SK": {
+    "name": "Bratislava",
+    "latlng": [
+      48.15,
+      17.12
+    ]
+  },
+  "UG": {
+    "name": "Kampala",
+    "latlng": [
+      0.32,
+      32.55
+    ]
+  },
+  "LC": {
+    "name": "Castries",
+    "latlng": [
+      14,
+      -61
+    ]
+  },
+  "LY": {
+    "name": "Trípoli",
+    "latlng": [
+      32.88,
+      13.17
+    ]
+  },
+  "AM": {
+    "name": "Ereván",
+    "latlng": [
+      40.17,
+      44.5
+    ]
+  },
+  "KM": {
+    "name": "Moroni",
+    "latlng": [
+      -11.7,
+      43.23
+    ]
+  },
+  "GY": {
+    "name": "Georgetown",
+    "latlng": [
+      6.8,
+      -58.15
+    ]
+  },
+  "AE": {
+    "name": "Abu Dabi",
+    "latlng": [
+      24.47,
+      54.37
+    ]
+  },
+  "TR": {
+    "name": "Ankara",
+    "latlng": [
+      39.93,
+      32.87
+    ]
+  },
+  "WS": {
+    "name": "Apia",
+    "latlng": [
+      -13.82,
+      -171.77
+    ]
+  },
+  "DE": {
+    "name": "Berlín",
+    "latlng": [
+      52.52,
+      13.4
+    ]
+  },
+  "GM": {
+    "name": "Banjul",
+    "latlng": [
+      13.45,
+      -16.57
+    ]
+  },
+  "MN": {
+    "name": "Ulán Bator",
+    "latlng": [
+      47.92,
+      106.91
+    ]
+  },
+  "RS": {
+    "name": "Belgrado",
+    "latlng": [
+      44.83,
+      20.5
+    ]
+  },
+  "CN": {
+    "name": "Pekín",
+    "latlng": [
+      39.92,
+      116.38
+    ]
+  },
+  "ME": {
+    "name": "Podgorica",
+    "latlng": [
+      42.43,
+      19.27
+    ]
+  },
+  "KH": {
+    "name": "Nom Pen",
+    "latlng": [
+      11.55,
+      104.92
+    ]
+  },
+  "LI": {
+    "name": "Vaduz",
+    "latlng": [
+      47.13,
+      9.52
+    ]
+  },
+  "SN": {
+    "name": "Dakar",
+    "latlng": [
+      14.73,
+      -17.63
+    ]
+  },
+  "GB": {
+    "name": "Londres",
+    "latlng": [
+      51.5,
+      -0.08
+    ]
+  },
+  "BF": {
+    "name": "Uagadugú",
+    "latlng": [
+      12.37,
+      -1.52
+    ]
+  },
+  "QA": {
+    "name": "Doha",
+    "latlng": [
+      25.28,
+      51.53
+    ]
+  },
+  "UA": {
+    "name": "Kiev",
+    "latlng": [
+      50.43,
+      30.52
+    ]
+  },
+  "MX": {
+    "name": "Ciudad de México",
+    "latlng": [
+      19.43,
+      -99.13
+    ]
+  },
+  "AL": {
+    "name": "Tirana",
+    "latlng": [
+      41.32,
+      19.82
+    ]
+  },
+  "CY": {
+    "name": "Nicosia",
+    "latlng": [
+      35.17,
+      33.37
+    ]
+  },
+  "GT": {
+    "name": "Ciudad de Guatemala",
+    "latlng": [
+      14.62,
+      -90.52
+    ]
+  },
+  "NR": {
+    "name": "Yaren",
+    "latlng": [
+      -0.55,
+      166.92
+    ]
+  },
+  "LV": {
+    "name": "Riga",
+    "latlng": [
+      56.95,
+      24.1
+    ]
+  },
+  "MT": {
+    "name": "La Valeta",
+    "latlng": [
+      35.88,
+      14.5
+    ]
+  },
+  "KR": {
+    "name": "Seúl",
+    "latlng": [
+      37.55,
+      126.98
+    ]
+  },
+  "MZ": {
+    "name": "Maputo",
+    "latlng": [
+      -25.95,
+      32.58
+    ]
+  },
+  "LU": {
+    "name": "Luxemburgo",
+    "latlng": [
+      49.6,
+      6.12
+    ]
+  },
+  "IE": {
+    "name": "Dublín",
+    "latlng": [
+      53.32,
+      -6.23
+    ]
+  },
+  "NG": {
+    "name": "Abuya",
+    "latlng": [
+      9.08,
+      7.53
+    ]
+  },
+  "BS": {
+    "name": "Nasáu",
+    "latlng": [
+      25.08,
+      -77.35
+    ]
+  },
   "MH": {
     "name": "Majuro",
     "latlng": [
       7.1,
       171.38
+    ]
+  },
+  "GR": {
+    "name": "Atenas",
+    "latlng": [
+      37.98,
+      23.73
+    ]
+  },
+  "MV": {
+    "name": "Malé",
+    "latlng": [
+      4.17,
+      73.51
+    ]
+  },
+  "SY": {
+    "name": "Damasco",
+    "latlng": [
+      33.5,
+      36.3
+    ]
+  },
+  "EC": {
+    "name": "Quito",
+    "latlng": [
+      -0.22,
+      -78.5
+    ]
+  },
+  "TM": {
+    "name": "Asjabad",
+    "latlng": [
+      37.95,
+      58.38
+    ]
+  },
+  "BN": {
+    "name": "Bandar Seri Begawan",
+    "latlng": [
+      4.88,
+      114.93
+    ]
+  },
+  "UZ": {
+    "name": "Taskent",
+    "latlng": [
+      41.32,
+      69.25
     ]
   },
   "BH": {
@@ -1049,6 +692,41 @@
       50.57
     ]
   },
+  "MD": {
+    "name": "Chisináu",
+    "latlng": [
+      47.01,
+      28.9
+    ]
+  },
+  "MU": {
+    "name": "Port Louis",
+    "latlng": [
+      -20.15,
+      57.48
+    ]
+  },
+  "TO": {
+    "name": "Nukualofa",
+    "latlng": [
+      -21.13,
+      -175.2
+    ]
+  },
+  "SC": {
+    "name": "Victoria",
+    "latlng": [
+      -4.62,
+      55.45
+    ]
+  },
+  "AO": {
+    "name": "Luanda",
+    "latlng": [
+      -8.83,
+      13.22
+    ]
+  },
   "EE": {
     "name": "Tallin",
     "latlng": [
@@ -1056,18 +734,256 @@
       24.72
     ]
   },
+  "PH": {
+    "name": "Manila",
+    "latlng": [
+      14.6,
+      120.97
+    ]
+  },
+  "VA": {
+    "name": "Ciudad del Vaticano",
+    "latlng": [
+      41.9,
+      12.45
+    ]
+  },
+  "VE": {
+    "name": "Caracas",
+    "latlng": [
+      10.48,
+      -66.87
+    ]
+  },
+  "BB": {
+    "name": "Bridgetown",
+    "latlng": [
+      13.1,
+      -59.62
+    ]
+  },
+  "IN": {
+    "name": "Nueva Delhi",
+    "latlng": [
+      28.6,
+      77.2
+    ]
+  },
+  "ML": {
+    "name": "Bamako",
+    "latlng": [
+      12.65,
+      -8
+    ]
+  },
+  "BY": {
+    "name": "Minsk",
+    "latlng": [
+      53.9,
+      27.57
+    ]
+  },
+  "KN": {
+    "name": "Basseterre",
+    "latlng": [
+      17.3,
+      -62.72
+    ]
+  },
+  "LT": {
+    "name": "Vilna",
+    "latlng": [
+      54.68,
+      25.32
+    ]
+  },
+  "NE": {
+    "name": "Niamey",
+    "latlng": [
+      13.52,
+      2.12
+    ]
+  },
   "GQ": {
     "name": "Malabo",
     "latlng": [
-      3.75,
-      8.78
+      1.35,
+      10.49
     ]
   },
-  "NG": {
-    "name": "Abuya",
+  "IQ": {
+    "name": "Bagdad",
     "latlng": [
-      9.08,
-      7.53
+      33.33,
+      44.4
+    ]
+  },
+  "MR": {
+    "name": "Nuakchot",
+    "latlng": [
+      18.07,
+      -15.97
+    ]
+  },
+  "GE": {
+    "name": "Tiflis",
+    "latlng": [
+      41.68,
+      44.83
+    ]
+  },
+  "PY": {
+    "name": "Asunción",
+    "latlng": [
+      -25.28,
+      -57.57
+    ]
+  },
+  "SL": {
+    "name": "Freetown",
+    "latlng": [
+      8.48,
+      -13.23
+    ]
+  },
+  "BW": {
+    "name": "Gaborone",
+    "latlng": [
+      -24.63,
+      25.9
+    ]
+  },
+  "FI": {
+    "name": "Helsinki",
+    "latlng": [
+      60.17,
+      24.93
+    ]
+  },
+  "SE": {
+    "name": "Estocolmo",
+    "latlng": [
+      59.33,
+      18.05
+    ]
+  },
+  "LK": {
+    "name": "Sri Jayawardenepura Kotte",
+    "latlng": [
+      6.89,
+      79.9
+    ]
+  },
+  "TH": {
+    "name": "Bangkok",
+    "latlng": [
+      13.75,
+      100.52
+    ]
+  },
+  "BG": {
+    "name": "Sofía",
+    "latlng": [
+      42.68,
+      23.32
+    ]
+  },
+  "KE": {
+    "name": "Nairobi",
+    "latlng": [
+      -1.28,
+      36.82
+    ]
+  },
+  "RO": {
+    "name": "Bucarest",
+    "latlng": [
+      44.43,
+      26.1
+    ]
+  },
+  "MW": {
+    "name": "Lilongüe",
+    "latlng": [
+      -13.97,
+      33.78
+    ]
+  },
+  "CG": {
+    "name": "Brazzaville",
+    "latlng": [
+      -4.25,
+      15.28
+    ]
+  },
+  "HN": {
+    "name": "Tegucigalpa",
+    "latlng": [
+      14.1,
+      -87.22
+    ]
+  },
+  "MC": {
+    "name": "Mónaco",
+    "latlng": [
+      43.73,
+      7.42
+    ]
+  },
+  "ZM": {
+    "name": "Lusaka",
+    "latlng": [
+      -15.42,
+      28.28
+    ]
+  },
+  "AD": {
+    "name": "Andorra la Vella",
+    "latlng": [
+      42.5,
+      1.52
+    ]
+  },
+  "LR": {
+    "name": "Monrovia",
+    "latlng": [
+      6.3,
+      -10.8
+    ]
+  },
+  "TZ": {
+    "name": "Dodoma",
+    "latlng": [
+      -6.16,
+      35.75
+    ]
+  },
+  "IR": {
+    "name": "Teherán",
+    "latlng": [
+      35.7,
+      51.42
+    ]
+  },
+  "IS": {
+    "name": "Reikiavik",
+    "latlng": [
+      64.15,
+      -21.95
+    ]
+  },
+  "GN": {
+    "name": "Conakri",
+    "latlng": [
+      9.5,
+      -13.7
+    ]
+  },
+  "KW": {
+    "name": "Ciudad de Kuwait",
+    "latlng": [
+      29.37,
+      47.97
     ]
   },
   "MA": {
@@ -1084,32 +1000,312 @@
       17.08
     ]
   },
-  "SC": {
-    "name": "Victoria",
+  "TJ": {
+    "name": "Dusambé",
     "latlng": [
-      -4.62,
-      55.45
+      38.55,
+      68.77
     ]
   },
-  "ZM": {
-    "name": "Lusaka",
+  "VU": {
+    "name": "Port Vila",
     "latlng": [
-      -15.42,
-      28.28
+      -17.73,
+      168.32
     ]
   },
-  "KH": {
-    "name": "Nom Pen",
+  "JM": {
+    "name": "Kingston",
     "latlng": [
-      11.55,
-      104.92
+      17.99702,
+      -76.79358
     ]
   },
-  "IE": {
-    "name": "Dublín",
+  "PW": {
+    "name": "Ngerulmud",
     "latlng": [
-      53.32,
-      -6.23
+      7.5,
+      134.62
+    ]
+  },
+  "UY": {
+    "name": "Montevideo",
+    "latlng": [
+      -34.85,
+      -56.17
+    ]
+  },
+  "BT": {
+    "name": "Timbu",
+    "latlng": [
+      27.47,
+      89.63
+    ]
+  },
+  "CD": {
+    "name": "Kinsasa",
+    "latlng": [
+      -4.32,
+      15.3
+    ]
+  },
+  "KZ": {
+    "name": "Astaná",
+    "latlng": [
+      51.16,
+      71.45
+    ]
+  },
+  "ER": {
+    "name": "Asmara",
+    "latlng": [
+      15.33,
+      38.93
+    ]
+  },
+  "GA": {
+    "name": "Libreville",
+    "latlng": [
+      0.38,
+      9.45
+    ]
+  },
+  "PE": {
+    "name": "Lima",
+    "latlng": [
+      -12.05,
+      -77.05
+    ]
+  },
+  "DK": {
+    "name": "Copenhague",
+    "latlng": [
+      55.67,
+      12.58
+    ]
+  },
+  "HR": {
+    "name": "Zagreb",
+    "latlng": [
+      45.8,
+      16
+    ]
+  },
+  "NO": {
+    "name": "Oslo",
+    "latlng": [
+      59.92,
+      10.75
+    ]
+  },
+  "LS": {
+    "name": "Maseru",
+    "latlng": [
+      -29.32,
+      27.48
+    ]
+  },
+  "AT": {
+    "name": "Viena",
+    "latlng": [
+      48.2,
+      16.37
+    ]
+  },
+  "CH": {
+    "name": "Berna",
+    "latlng": [
+      46.92,
+      7.47
+    ]
+  },
+  "BZ": {
+    "name": "Belmopán",
+    "latlng": [
+      17.25,
+      -88.77
+    ]
+  },
+  "BE": {
+    "name": "Bruselas",
+    "latlng": [
+      50.83,
+      4.33
+    ]
+  },
+  "NI": {
+    "name": "Managua",
+    "latlng": [
+      12.13,
+      -86.25
+    ]
+  },
+  "SG": {
+    "name": "Singapur",
+    "latlng": [
+      1.28,
+      103.85
+    ]
+  },
+  "DO": {
+    "name": "Santo Domingo",
+    "latlng": [
+      18.47,
+      -69.9
+    ]
+  },
+  "LA": {
+    "name": "Vientián",
+    "latlng": [
+      17.97,
+      102.6
+    ]
+  },
+  "CL": {
+    "name": "Santiago",
+    "latlng": [
+      -33.45,
+      -70.67
+    ]
+  },
+  "CR": {
+    "name": "San José",
+    "latlng": [
+      9.93,
+      -84.09
+    ]
+  },
+  "RW": {
+    "name": "Kigali",
+    "latlng": [
+      -1.95,
+      30.05
+    ]
+  },
+  "TT": {
+    "name": "Puerto España",
+    "latlng": [
+      10.65,
+      -61.52
+    ]
+  },
+  "MY": {
+    "name": "Kuala Lumpur",
+    "latlng": [
+      3.17,
+      101.7
+    ]
+  },
+  "ZA": {
+    "name": "Pretoria",
+    "latlng": [
+      -25.7,
+      28.22
+    ]
+  },
+  "SA": {
+    "name": "Riad",
+    "latlng": [
+      24.65,
+      46.7
+    ]
+  },
+  "HT": {
+    "name": "Puerto Príncipe",
+    "latlng": [
+      18.53,
+      -72.33
+    ]
+  },
+  "SO": {
+    "name": "Mogadiscio",
+    "latlng": [
+      2.07,
+      45.33
+    ]
+  },
+  "JP": {
+    "name": "Tokio",
+    "latlng": [
+      35.68,
+      139.75
+    ]
+  },
+  "SD": {
+    "name": "Jartum",
+    "latlng": [
+      15.6,
+      32.53
+    ]
+  },
+  "DZ": {
+    "name": "Argel",
+    "latlng": [
+      36.75,
+      3.05
+    ]
+  },
+  "SZ": {
+    "name": "Mbabane",
+    "latlng": [
+      -26.32,
+      31.13
+    ]
+  },
+  "FR": {
+    "name": "París",
+    "latlng": [
+      48.87,
+      2.33
+    ]
+  },
+  "BD": {
+    "name": "Daca",
+    "latlng": [
+      23.72,
+      90.4
+    ]
+  },
+  "CF": {
+    "name": "Bangui",
+    "latlng": [
+      4.37,
+      18.58
+    ]
+  },
+  "CA": {
+    "name": "Ottawa",
+    "latlng": [
+      45.42,
+      -75.7
+    ]
+  },
+  "VC": {
+    "name": "Kingstown",
+    "latlng": [
+      13.13,
+      -61.22
+    ]
+  },
+  "FM": {
+    "name": "Palikir",
+    "latlng": [
+      6.92,
+      158.15
+    ]
+  },
+  "CV": {
+    "name": "Praia",
+    "latlng": [
+      14.92,
+      -23.52
+    ]
+  },
+  "GD": {
+    "name": "Saint George",
+    "latlng": [
+      12.05,
+      -61.75
     ]
   },
   "PK": {
@@ -1126,235 +1322,39 @@
       85.32
     ]
   },
-  "IN": {
-    "name": "Nueva Delhi",
+  "BA": {
+    "name": "Sarajevo",
     "latlng": [
-      28.6,
-      77.2
+      43.87,
+      18.42
     ]
   },
-  "KG": {
-    "name": "Biskek",
+  "SS": {
+    "name": "Yuba",
     "latlng": [
-      42.87,
-      74.6
+      4.85,
+      31.62
     ]
   },
-  "HT": {
-    "name": "Puerto Príncipe",
+  "GW": {
+    "name": "Bisáu",
     "latlng": [
-      18.53,
-      -72.33
+      11.85,
+      -15.58
     ]
   },
-  "DE": {
-    "name": "Berlín",
+  "BJ": {
+    "name": "Porto Novo",
     "latlng": [
-      52.52,
-      13.4
+      6.48,
+      2.62
     ]
   },
-  "RW": {
-    "name": "Kigali",
+  "LB": {
+    "name": "Beirut",
     "latlng": [
-      -1.95,
-      30.05
-    ]
-  },
-  "US": {
-    "name": "Washington D. C.",
-    "latlng": [
-      38.89,
-      -77.05
-    ]
-  },
-  "KE": {
-    "name": "Nairobi",
-    "latlng": [
-      -1.28,
-      36.82
-    ]
-  },
-  "GM": {
-    "name": "Banjul",
-    "latlng": [
-      13.45,
-      -16.57
-    ]
-  },
-  "BD": {
-    "name": "Daca",
-    "latlng": [
-      23.72,
-      90.4
-    ]
-  },
-  "NO": {
-    "name": "Oslo",
-    "latlng": [
-      59.92,
-      10.75
-    ]
-  },
-  "BB": {
-    "name": "Bridgetown",
-    "latlng": [
-      13.1,
-      -59.62
-    ]
-  },
-  "KN": {
-    "name": "Basseterre",
-    "latlng": [
-      17.3,
-      -62.72
-    ]
-  },
-  "KI": {
-    "name": "Tarawa Sur",
-    "latlng": [
-      1.33,
-      172.98
-    ]
-  },
-  "TL": {
-    "name": "Dili",
-    "latlng": [
-      -8.58,
-      125.6
-    ]
-  },
-  "SA": {
-    "name": "Riad",
-    "latlng": [
-      24.65,
-      46.7
-    ]
-  },
-  "SM": {
-    "name": "San Marino",
-    "latlng": [
-      43.94,
-      12.45
-    ]
-  },
-  "UG": {
-    "name": "Kampala",
-    "latlng": [
-      0.32,
-      32.55
-    ]
-  },
-  "PT": {
-    "name": "Lisboa",
-    "latlng": [
-      38.72,
-      -9.13
-    ]
-  },
-  "MW": {
-    "name": "Lilongüe",
-    "latlng": [
-      -13.97,
-      33.78
-    ]
-  },
-  "HN": {
-    "name": "Tegucigalpa",
-    "latlng": [
-      14.1,
-      -87.22
-    ]
-  },
-  "UY": {
-    "name": "Montevideo",
-    "latlng": [
-      -34.85,
-      -56.17
-    ]
-  },
-  "CV": {
-    "name": "Praia",
-    "latlng": [
-      14.92,
-      -23.52
-    ]
-  },
-  "AU": {
-    "name": "Canberra",
-    "latlng": [
-      -35.27,
-      149.13
-    ]
-  },
-  "IR": {
-    "name": "Teherán",
-    "latlng": [
-      35.7,
-      51.42
-    ]
-  },
-  "SD": {
-    "name": "Jartum",
-    "latlng": [
-      15.6,
-      32.53
-    ]
-  },
-  "GT": {
-    "name": "Ciudad de Guatemala",
-    "latlng": [
-      14.62,
-      -90.52
-    ]
-  },
-  "LI": {
-    "name": "Vaduz",
-    "latlng": [
-      47.13,
-      9.52
-    ]
-  },
-  "TT": {
-    "name": "Puerto España",
-    "latlng": [
-      10.65,
-      -61.52
-    ]
-  },
-  "CU": {
-    "name": "La Habana",
-    "latlng": [
-      23.12,
-      -82.35
-    ]
-  },
-  "FR": {
-    "name": "París",
-    "latlng": [
-      48.87,
-      2.33
-    ]
-  },
-  "SR": {
-    "name": "Paramaribo",
-    "latlng": [
-      5.83,
-      -55.17
-    ]
-  },
-  "LR": {
-    "name": "Monrovia",
-    "latlng": [
-      6.3,
-      -10.8
-    ]
-  },
-  "KW": {
-    "name": "Ciudad de Kuwait",
-    "latlng": [
-      29.37,
-      47.97
+      33.87,
+      35.5
     ]
   },
   "PS": {
@@ -1371,20 +1371,6 @@
       -51.75
     ]
   },
-  "NU": {
-    "name": "Alofi",
-    "latlng": [
-      -19.02,
-      -169.92
-    ]
-  },
-  "FK": {
-    "name": "Stanley",
-    "latlng": [
-      -51.7,
-      -57.85
-    ]
-  },
   "SX": {
     "name": "Philipsburg",
     "latlng": [
@@ -1392,67 +1378,11 @@
       -63.03
     ]
   },
-  "NC": {
-    "name": "Numea",
-    "latlng": [
-      -22.27,
-      166.45
-    ]
-  },
   "CK": {
     "name": "Avarua",
     "latlng": [
       -21.2,
       -159.77
-    ]
-  },
-  "CW": {
-    "name": "Willemstad",
-    "latlng": [
-      12.1,
-      -68.92
-    ]
-  },
-  "PF": {
-    "name": "Papeete",
-    "latlng": [
-      -17.53,
-      -149.56
-    ]
-  },
-  "MP": {
-    "name": "Saipán",
-    "latlng": [
-      15.2,
-      145.75
-    ]
-  },
-  "GU": {
-    "name": "Hagåtña",
-    "latlng": [
-      13.48,
-      144.75
-    ]
-  },
-  "MO": {
-    "name": "",
-    "latlng": [
-      0,
-      0
-    ]
-  },
-  "FO": {
-    "name": "Tórshavn",
-    "latlng": [
-      62.01,
-      -6.77
-    ]
-  },
-  "AW": {
-    "name": "Oranjestad",
-    "latlng": [
-      12.52,
-      -70.03
     ]
   },
   "HK": {
@@ -1469,6 +1399,62 @@
       121.52
     ]
   },
+  "PN": {
+    "name": "Adamstown",
+    "latlng": [
+      -25.07,
+      -130.08
+    ]
+  },
+  "PF": {
+    "name": "Papeete",
+    "latlng": [
+      -17.53,
+      -149.56
+    ]
+  },
+  "NC": {
+    "name": "Numea",
+    "latlng": [
+      -22.27,
+      166.45
+    ]
+  },
+  "FK": {
+    "name": "Stanley",
+    "latlng": [
+      -51.7,
+      -57.85
+    ]
+  },
+  "GU": {
+    "name": "Hagåtña",
+    "latlng": [
+      13.48,
+      144.75
+    ]
+  },
+  "AW": {
+    "name": "Oranjestad",
+    "latlng": [
+      12.52,
+      -70.03
+    ]
+  },
+  "NU": {
+    "name": "Alofi",
+    "latlng": [
+      -19.02,
+      -169.92
+    ]
+  },
+  "FO": {
+    "name": "Tórshavn",
+    "latlng": [
+      62.01,
+      -6.77
+    ]
+  },
   "KY": {
     "name": "George Town",
     "latlng": [
@@ -1476,18 +1462,11 @@
       -81.38
     ]
   },
-  "AX": {
-    "name": "Mariehamn",
+  "MO": {
+    "name": "",
     "latlng": [
-      60.12,
-      19.9
-    ]
-  },
-  "PN": {
-    "name": "Adamstown",
-    "latlng": [
-      -25.07,
-      -130.08
+      0,
+      0
     ]
   },
   "NF": {
@@ -1504,46 +1483,25 @@
       -62.22
     ]
   },
-  "BM": {
-    "name": "Hamilton",
+  "CW": {
+    "name": "Willemstad",
     "latlng": [
-      32.28,
-      -64.78
+      12.1,
+      -68.92
     ]
   },
-  "IM": {
-    "name": "Douglas",
+  "MP": {
+    "name": "Saipán",
     "latlng": [
-      54.15,
-      -4.48
+      15.2,
+      145.75
     ]
   },
-  "EH": {
-    "name": "El Aaiún",
+  "AX": {
+    "name": "Mariehamn",
     "latlng": [
-      -13.28,
-      27.14
-    ]
-  },
-  "AI": {
-    "name": "The Valley",
-    "latlng": [
-      18.22,
-      -63.05
-    ]
-  },
-  "JE": {
-    "name": "Saint Helier",
-    "latlng": [
-      49.18,
-      -2.1
-    ]
-  },
-  "VG": {
-    "name": "Road Town",
-    "latlng": [
-      18.42,
-      -64.62
+      60.12,
+      19.9
     ]
   },
   "BL": {
@@ -1553,39 +1511,32 @@
       -62.85
     ]
   },
-  "PR": {
-    "name": "San Juan",
-    "latlng": [
-      18.47,
-      -66.12
-    ]
-  },
-  "PM": {
-    "name": "Saint-Pierre",
-    "latlng": [
-      46.77,
-      -56.18
-    ]
-  },
-  "WF": {
-    "name": "Mata-Utu",
-    "latlng": [
-      -13.95,
-      -171.93
-    ]
-  },
-  "GG": {
-    "name": "Saint Peter Port",
-    "latlng": [
-      49.45,
-      -2.54
-    ]
-  },
   "AS": {
     "name": "Pago Pago",
     "latlng": [
       -14.27,
       -170.7
+    ]
+  },
+  "VG": {
+    "name": "Road Town",
+    "latlng": [
+      18.42,
+      -64.62
+    ]
+  },
+  "AI": {
+    "name": "The Valley",
+    "latlng": [
+      18.22,
+      -63.05
+    ]
+  },
+  "IM": {
+    "name": "Douglas",
+    "latlng": [
+      54.15,
+      -4.48
     ]
   },
   "MF": {
@@ -1595,18 +1546,11 @@
       -63.08
     ]
   },
-  "SH": {
-    "name": "Jamestown",
+  "BM": {
+    "name": "Hamilton",
     "latlng": [
-      -15.93,
-      -5.72
-    ]
-  },
-  "TC": {
-    "name": "Cockburn Town",
-    "latlng": [
-      21.46,
-      -71.14
+      32.28,
+      -64.78
     ]
   },
   "VI": {
@@ -1616,11 +1560,67 @@
       -64.93
     ]
   },
+  "PR": {
+    "name": "San Juan",
+    "latlng": [
+      18.47,
+      -66.12
+    ]
+  },
+  "GG": {
+    "name": "Saint Peter Port",
+    "latlng": [
+      49.45,
+      -2.54
+    ]
+  },
+  "EH": {
+    "name": "El Aaiún",
+    "latlng": [
+      -13.28,
+      27.14
+    ]
+  },
+  "TC": {
+    "name": "Cockburn Town",
+    "latlng": [
+      21.46,
+      -71.14
+    ]
+  },
+  "JE": {
+    "name": "Saint Helier",
+    "latlng": [
+      49.18,
+      -2.1
+    ]
+  },
   "XK": {
     "name": "Pristina",
     "latlng": [
       42.67,
       21.17
+    ]
+  },
+  "WF": {
+    "name": "Mata-Utu",
+    "latlng": [
+      -13.95,
+      -171.93
+    ]
+  },
+  "SH": {
+    "name": "Jamestown",
+    "latlng": [
+      -15.93,
+      -5.72
+    ]
+  },
+  "PM": {
+    "name": "Saint-Pierre",
+    "latlng": [
+      46.77,
+      -56.18
     ]
   }
 }

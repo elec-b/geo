@@ -44,6 +44,7 @@ interface RestCountry {
 }
 
 interface SupplementaryEntry {
+  name?: string;
   capital: string;
   demonym: string;
   currencies?: { name: string; symbol: string }[];
@@ -90,13 +91,13 @@ function toCountryEntry(
   hdiData: Record<string, HdiEntry>,
   wikiData: Record<string, WikiEntry>,
 ): CountryEntry {
-  // Nombre del país en español (desde REST Countries translations.spa)
-  const name = c.translations?.spa?.common;
-  if (!name) throw new Error(`Sin traducción española para ${c.cca2} (${c.name.common})`);
-
   // Capital y gentilicio en español (desde archivo suplementario)
   const suppEntry = supp[c.cca2];
   if (!suppEntry) throw new Error(`Sin datos suplementarios para ${c.cca2} (${c.name.common})`);
+
+  // Nombre del país en español: suplementario tiene prioridad sobre REST Countries
+  const name = suppEntry.name ?? c.translations?.spa?.common;
+  if (!name) throw new Error(`Sin traducción española para ${c.cca2} (${c.name.common})`);
 
   // Monedas: preferir suplementario (español), fallback a REST Countries
   const currencies: { name: string; symbol: string }[] = suppEntry.currencies

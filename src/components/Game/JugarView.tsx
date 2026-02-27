@@ -363,6 +363,7 @@ export function JugarView({
         onAnimationEnd={isABQuestion ? handleFeedbackEndAB : handleFeedbackEnd}
         skipTimer={isABQuestion && session.feedbackState === 'incorrect'}
         geoFeedback={isABQuestion && session.feedbackState === 'incorrect'}
+        hideIcon={isABQuestion && feedbackStep === 'step2'}
       />
 
       <ScoreBar score={session.score} onExit={handleExit} />

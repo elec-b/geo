@@ -1128,6 +1128,7 @@
     "languages": ["Eslovaco"]
   },
   "SL": {
+    "name": "Sierra Leona",
     "capital": "Freetown",
     "demonym": "sierraleonés",
     "currencies": [{ "name": "Leone sierraleonés", "symbol": "Le" }],
