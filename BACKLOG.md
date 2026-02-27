@@ -162,9 +162,9 @@
 - [x] Selector provisional de tipo de pregunta para testing (pills Mixto/A-F en LevelSelector)
 - [x] **Feedback testeado en iPhone**: solapamiento ChoicePanel, pin B/F, posición banner, selector tipo, pines de capitales B/C, flyTo C/D, archipiélagos, feedback geográfico A/B en dos pasos (etiquetas sobre el globo), pin capital tipo D. **Nota**: queda pendiente iterar el feedback de error A/B (ocultar cruz en step2, color del texto correcto) — ver sub-tareas abajo
   - [x] Tipo A — feedback en error con etiquetas sobre el globo en dos pasos (step1: rojo equivocado → step2: flyTo + correcto)
-    - [ ] Feedback iteración 2: en step2 ocultar la cruz roja del overlay (mantener tinte rojizo) y texto del país correcto en blanco (no verde)
+    - [x] Feedback iteración 2: en step2 ocultar la cruz roja del overlay (mantener tinte rojizo) y texto del país correcto en blanco (no verde)
   - [x] Tipo B — pines de todas las capitales del continente + feedback en error en dos pasos (igual que tipo A)
-    - [ ] Feedback iteración 2: mismas mejoras que tipo A (ocultar cruz en step2, texto correcto en blanco)
+    - [x] Feedback iteración 2: mismas mejoras que tipo A (ocultar cruz en step2, texto correcto en blanco)
   - [x] Tipo C — flyTo en acierto + pines de todas las capitales del continente
   - [x] Tipo D — flyTo en acierto + pin de capital del país correcto tras responder
   - [x] Selección de archipiélagos (hit area ampliada entre islas del mismo país)
