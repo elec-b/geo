@@ -151,6 +151,13 @@ function pointInPolygon(point: [number, number], polygon: [number, number][]): b
 
 // --- Interfaces ---
 
+/** Etiqueta puntual de feedback sobre el globo (máx. 2: error + correcto) */
+export interface FeedbackLabel {
+  text: string;           // Nombre del país (o "Capital\nPaís" para tipo B)
+  coords: [number, number]; // [lon, lat]
+  kind: 'incorrect' | 'correct';
+}
+
 export interface GlobeD3Props {
   onCountryClick?: (country: CountryFeature) => void;
   onCountryDeselect?: () => void;
@@ -170,6 +177,8 @@ export interface GlobeD3Props {
   countryPopulations?: Map<string, number> | null;
   /** Nombres de países en español (Map<cca2, nombre>) para etiquetas del globo */
   countryNames?: Map<string, string> | null;
+  /** Etiquetas puntuales de feedback geográfico (error/correcto sobre el globo) */
+  feedbackLabels?: FeedbackLabel[] | null;
 }
 
 export interface GlobeD3Ref {
@@ -204,6 +213,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     capitalLabelsData,
     countryPopulations,
     countryNames,
+    feedbackLabels,
   },
   ref,
 ) {
@@ -281,6 +291,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   countryPopulationsRef.current = countryPopulations;
   const countryNamesRef = useRef(countryNames);
   countryNamesRef.current = countryNames;
+  const feedbackLabelsRef = useRef(feedbackLabels);
+  feedbackLabelsRef.current = feedbackLabels;
 
   // Animación flyTo
   const flyToAnimRef = useRef<{
@@ -464,6 +476,44 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         ctx.arc(pos[0], pos[1], CAPITAL_PIN_INNER, 0, Math.PI * 2);
         ctx.fillStyle = CAPITAL_PIN_COLOR;
         ctx.fill();
+      }
+    }
+
+    // Etiquetas de feedback geográfico (máx 2: error rojo + correcto verde)
+    const fbLabels = feedbackLabelsRef.current;
+    if (fbLabels && fbLabels.length > 0) {
+      const rotation = rotationRef.current;
+      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      for (const label of fbLabels) {
+        if (geoDistance(label.coords, viewCenter) > Math.PI / 2) continue;
+        const pos = projection(label.coords);
+        if (!pos) continue;
+
+        const color = label.kind === 'incorrect' ? '#ef4444' : '#22c55e';
+        const lines = label.text.split('\n');
+        const mainSize = Math.round(12 + Math.sqrt(zoom) * 2);
+        const subSize = Math.round(mainSize * 0.75);
+
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+        ctx.shadowBlur = 4;
+        ctx.fillStyle = color;
+
+        // Offset hacia arriba para no solapar con el highlight dorado
+        const baseY = pos[1] - 14;
+
+        if (lines.length === 1) {
+          ctx.font = `700 ${mainSize}px -apple-system, sans-serif`;
+          ctx.fillText(lines[0], pos[0], baseY);
+        } else {
+          // Dos líneas: primera más grande (capital), segunda más pequeña (país)
+          ctx.font = `700 ${mainSize}px -apple-system, sans-serif`;
+          ctx.fillText(lines[0], pos[0], baseY - subSize - 2);
+          ctx.font = `600 ${subSize}px -apple-system, sans-serif`;
+          ctx.fillText(lines[1], pos[0], baseY);
+        }
+        ctx.shadowBlur = 0;
       }
     }
 

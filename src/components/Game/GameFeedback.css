@@ -23,6 +23,11 @@
   background: rgba(239, 68, 68, 0.15);
 }
 
+/* Overlay reducido cuando las etiquetas van sobre el globo */
+.game-feedback--geo.game-feedback--incorrect {
+  background: rgba(239, 68, 68, 0.06);
+}
+
 .game-feedback__icon {
   font-size: 4rem;
   font-weight: 700;

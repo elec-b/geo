@@ -1,7 +1,7 @@
 // JugarView — contenedor principal de la experiencia Jugar
 // Gestiona el flujo selector → juego y el bridge con el globo.
-import { useState, useCallback, useMemo, useEffect, type RefObject, type MutableRefObject } from 'react';
-import type { GlobeD3Ref } from '../Globe';
+import { useState, useCallback, useMemo, useEffect, useRef, type RefObject, type MutableRefObject } from 'react';
+import type { GlobeD3Ref, FeedbackLabel } from '../Globe';
 import type { GlobeControlProps } from '../Explore/ExploreView';
 import type { CountryFeature } from '../../data/countries';
 import type { GameQuestionChoice, QuestionTypeFilter } from '../../data/gameQuestions';
@@ -17,6 +17,7 @@ import { ChoicePanel } from './ChoicePanel';
 import './JugarView.css';
 
 type JugarScreen = 'selector' | 'playing';
+type FeedbackStep = 'idle' | 'step1' | 'step2';
 
 interface JugarViewProps {
   globeRef: RefObject<GlobeD3Ref | null>;
@@ -41,6 +42,15 @@ export function JugarView({
 
   // Respuesta seleccionada para feedback visual en ChoicePanel
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
+
+  // Secuencia de dos pasos para feedback geográfico en tipos A/B (error)
+  const [feedbackStep, setFeedbackStep] = useState<FeedbackStep>('idle');
+  const feedbackCoordsRef = useRef<{
+    wrongCca2: string;
+    wrongCoords: [number, number];
+    correctCca2: string;
+    correctCoords: [number, number];
+  } | null>(null);
 
   // --- Países del continente actual (para highlight) ---
 
@@ -79,13 +89,58 @@ export function JugarView({
       return pins;
     }
 
+    // Tipo D: mostrar pin de capital del país correcto tras responder
+    if (q.type === 'D' && session.feedbackState !== 'idle') {
+      const cap = capitals.get(q.targetCca2);
+      return cap ? [[cap.latlng[1], cap.latlng[0]]] : [];
+    }
+
     if (q.type === 'F') {
       const cap = capitals.get(q.targetCca2);
       return cap ? [[cap.latlng[1], cap.latlng[0]]] : [];
     }
 
     return [];
-  }, [session.currentQuestion, session.continent, countries, capitals]);
+  }, [session.currentQuestion, session.continent, session.feedbackState, countries, capitals]);
+
+  // --- Etiquetas de feedback geográfico sobre el globo (solo tipos A/B, error) ---
+
+  const globeFeedbackLabels = useMemo((): FeedbackLabel[] | null => {
+    if (feedbackStep === 'idle' || !feedbackCoordsRef.current) return null;
+
+    const q = session.currentQuestion;
+    if (!q) return null;
+
+    const coords = feedbackCoordsRef.current;
+
+    if (feedbackStep === 'step1') {
+      // Paso 1: etiqueta roja sobre el país equivocado
+      let text: string;
+      if (q.type === 'B') {
+        const wrongCountry = countries.get(coords.wrongCca2);
+        const wrongCap = capitals.get(coords.wrongCca2);
+        text = wrongCountry && wrongCap
+          ? `${wrongCap.name}\n${wrongCountry.name}`
+          : (wrongCountry?.name ?? coords.wrongCca2);
+      } else {
+        text = countries.get(coords.wrongCca2)?.name ?? coords.wrongCca2;
+      }
+      return [{ text, coords: coords.wrongCoords, kind: 'incorrect' }];
+    }
+
+    // step2: etiqueta verde sobre el país correcto
+    let text: string;
+    if (q.type === 'B') {
+      const rightCountry = countries.get(coords.correctCca2);
+      const rightCap = capitals.get(coords.correctCca2);
+      text = rightCountry && rightCap
+        ? `${rightCap.name}\n${rightCountry.name}`
+        : (rightCountry?.name ?? coords.correctCca2);
+    } else {
+      text = countries.get(coords.correctCca2)?.name ?? coords.correctCca2;
+    }
+    return [{ text, coords: coords.correctCoords, kind: 'correct' }];
+  }, [feedbackStep, session.currentQuestion, countries, capitals]);
 
   // --- Sincronización de props del globo ---
 
@@ -97,8 +152,9 @@ export function JugarView({
       showCountryLabels: false,
       showCapitalLabels: false,
       capitalLabelsData: null,
+      feedbackLabels: globeFeedbackLabels,
     });
-  }, [session.correctCca2, capitalPins, highlightedCountries, onGlobePropsChange]);
+  }, [session.correctCca2, capitalPins, highlightedCountries, globeFeedbackLabels, onGlobePropsChange]);
 
   // Reset al desmontar (cambio de tab)
   useEffect(() => {
@@ -110,6 +166,7 @@ export function JugarView({
         showCountryLabels: false,
         showCapitalLabels: false,
         capitalLabelsData: null,
+        feedbackLabels: null,
       });
     };
   }, [onGlobePropsChange]);
@@ -140,11 +197,18 @@ export function JugarView({
 
       const result = session.submitAnswer(cca2);
 
-      // En error: flyTo al país correcto para que el usuario lo vea
+      // En error: iniciar secuencia de dos pasos (etiqueta roja → flyTo + etiqueta verde)
       if (result === 'incorrect' && q && globeRef.current) {
-        const centroid = globeRef.current.getCentroid(q.targetCca2);
-        if (centroid) {
-          globeRef.current.flyTo(centroid[0], centroid[1], undefined, 600);
+        const wrongCoords = globeRef.current.getCentroid(cca2);
+        const correctCoords = globeRef.current.getCentroid(q.targetCca2);
+        if (wrongCoords && correctCoords) {
+          feedbackCoordsRef.current = {
+            wrongCca2: cca2,
+            wrongCoords,
+            correctCca2: q.targetCca2,
+            correctCoords,
+          };
+          setFeedbackStep('step1');
         }
       }
     },
@@ -206,10 +270,18 @@ export function JugarView({
     [session, globeRef, capitals],
   );
 
-  // Fin de animación de feedback → siguiente pregunta
+  // Fin de animación de feedback → siguiente pregunta (solo C-F; A/B usa la secuencia de pasos)
   const handleFeedbackEnd = useCallback(() => {
     session.nextQuestion();
     setSelectedChoice(null);
+  }, [session]);
+
+  // Resetear feedbackStep cuando hay acierto en A/B (el timer de GameFeedback avanza normalmente)
+  const handleFeedbackEndAB = useCallback(() => {
+    session.nextQuestion();
+    setSelectedChoice(null);
+    setFeedbackStep('idle');
+    feedbackCoordsRef.current = null;
   }, [session]);
 
   // Salir de la partida
@@ -219,38 +291,34 @@ export function JugarView({
     setSelectedChoice(null);
   }, [session]);
 
-  // --- Labels de feedback (solo tipos A/B) ---
+  // --- Secuencia temporal para feedback de dos pasos (A/B error) ---
 
-  const feedbackLabels = useMemo(() => {
-    const q = session.currentQuestion;
-    const answer = session.lastAnswer;
-    if (!q || !answer) return { incorrectLabel: undefined, correctLabel: undefined };
+  useEffect(() => {
+    if (feedbackStep === 'idle') return;
 
-    if (q.type === 'A') {
-      // Tipo A: nombres de países
-      const wrongName = countries.get(answer)?.name ?? answer;
-      const rightName = countries.get(q.targetCca2)?.name ?? q.targetCca2;
-      return { incorrectLabel: wrongName, correctLabel: rightName };
+    let timer: ReturnType<typeof setTimeout>;
+
+    if (feedbackStep === 'step1') {
+      // Paso 1 → paso 2: tras 1200ms, flyTo al correcto + etiqueta verde
+      timer = setTimeout(() => {
+        setFeedbackStep('step2');
+        const coords = feedbackCoordsRef.current;
+        if (coords && globeRef.current) {
+          globeRef.current.flyTo(coords.correctCoords[0], coords.correctCoords[1], undefined, 600);
+        }
+      }, 1200);
+    } else {
+      // Paso 2 → idle: tras 1800ms, siguiente pregunta
+      timer = setTimeout(() => {
+        setFeedbackStep('idle');
+        feedbackCoordsRef.current = null;
+        session.nextQuestion();
+        setSelectedChoice(null);
+      }, 1800);
     }
 
-    if (q.type === 'B') {
-      // Tipo B: "País — Capital"
-      const wrongCountry = countries.get(answer);
-      const wrongCap = capitals.get(answer);
-      const rightCountry = countries.get(q.targetCca2);
-      const rightCap = capitals.get(q.targetCca2);
-      const wrongLabel = wrongCountry && wrongCap
-        ? `${wrongCountry.name} — ${wrongCap.name}`
-        : (wrongCountry?.name ?? answer);
-      const rightLabel = rightCountry && rightCap
-        ? `${rightCountry.name} — ${rightCap.name}`
-        : (rightCountry?.name ?? q.targetCca2);
-      return { incorrectLabel: wrongLabel, correctLabel: rightLabel };
-    }
-
-    // Tipos C-F: el ChoicePanel ya muestra feedback visual
-    return { incorrectLabel: undefined, correctLabel: undefined };
-  }, [session.currentQuestion, session.lastAnswer, countries, capitals]);
+    return () => clearTimeout(timer);
+  }, [feedbackStep, session, globeRef]);
 
   // --- Render ---
 
@@ -265,9 +333,10 @@ export function JugarView({
   }
 
   const question = session.currentQuestion;
+  const isABQuestion = question?.type === 'A' || question?.type === 'B';
   // Tipo C-F: pregunta con opciones de texto
   const choiceQuestion =
-    question && question.type !== 'A' && question.type !== 'B'
+    question && !isABQuestion
       ? question as GameQuestionChoice : null;
 
   return (
@@ -291,9 +360,9 @@ export function JugarView({
 
       <GameFeedback
         state={session.feedbackState}
-        onAnimationEnd={handleFeedbackEnd}
-        incorrectLabel={feedbackLabels.incorrectLabel}
-        correctLabel={feedbackLabels.correctLabel}
+        onAnimationEnd={isABQuestion ? handleFeedbackEndAB : handleFeedbackEnd}
+        skipTimer={isABQuestion && session.feedbackState === 'incorrect'}
+        geoFeedback={isABQuestion && session.feedbackState === 'incorrect'}
       />
 
       <ScoreBar score={session.score} onExit={handleExit} />

@@ -25,6 +25,7 @@ const DEFAULT_GLOBE_CONTROL: GlobeControlProps = {
   showCountryLabels: false,
   showCapitalLabels: false,
   capitalLabelsData: null,
+  feedbackLabels: null,
 };
 
 function App() {
@@ -126,6 +127,7 @@ function App() {
           capitalLabelsData={globeControl.capitalLabelsData}
           countryPopulations={countryPopulations}
           countryNames={countryNames}
+          feedbackLabels={globeControl.feedbackLabels}
         />
       </Suspense>
 

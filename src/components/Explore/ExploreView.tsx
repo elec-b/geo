@@ -4,6 +4,7 @@ import { useState, useCallback, useMemo, useEffect, type RefObject, type Mutable
 import type { GlobeD3Ref } from '../Globe';
 import type { CountryFeature } from '../../data/countries';
 import type { CountryData, CapitalCoords, Continent } from '../../data/types';
+import type { FeedbackLabel } from '../Globe';
 import type { CountryRankings } from '../../data/rankings';
 import { CountryCard } from './CountryCard';
 import { ContinentFilter } from './ContinentFilter';
@@ -22,6 +23,7 @@ export interface GlobeControlProps {
   showCountryLabels: boolean;
   showCapitalLabels: boolean;
   capitalLabelsData: Map<string, CapitalCoords> | null;
+  feedbackLabels?: FeedbackLabel[] | null;
 }
 
 interface ExploreViewProps {
@@ -91,6 +93,7 @@ export function ExploreView({
       showCountryLabels,
       showCapitalLabels,
       capitalLabelsData,
+      feedbackLabels: null,
     });
   }, [selectedCca2, capitalPins, highlightedCountries, showCountryLabels, showCapitalLabels, capitalLabelsData, onGlobePropsChange]);
 
@@ -104,6 +107,7 @@ export function ExploreView({
         showCountryLabels: false,
         showCapitalLabels: false,
         capitalLabelsData: null,
+        feedbackLabels: null,
       });
     };
   }, [onGlobePropsChange]);

@@ -10,13 +10,19 @@ interface GameFeedbackProps {
   incorrectLabel?: string;
   /** Nombre del país/capital correcto (error) */
   correctLabel?: string;
+  /** Si true, no programa timer — el componente padre controla la secuencia */
+  skipTimer?: boolean;
+  /** Si true, las etiquetas van sobre el globo → overlay reducido (solo icono) */
+  geoFeedback?: boolean;
 }
 
-export function GameFeedback({ state, onAnimationEnd, incorrectLabel, correctLabel }: GameFeedbackProps) {
+export function GameFeedback({
+  state, onAnimationEnd, incorrectLabel, correctLabel, skipTimer, geoFeedback,
+}: GameFeedbackProps) {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (state === 'idle') return;
+    if (state === 'idle' || skipTimer) return;
 
     // Acierto: avance rápido (1.2s), error: más lento para leer los labels (2.5s)
     const duration = state === 'correct' ? 1200 : 2500;
@@ -25,15 +31,16 @@ export function GameFeedback({ state, onAnimationEnd, incorrectLabel, correctLab
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
-  }, [state, onAnimationEnd]);
+  }, [state, onAnimationEnd, skipTimer]);
 
   if (state === 'idle') return null;
 
-  const showDetails = state === 'incorrect' && (incorrectLabel || correctLabel);
+  // Cuando hay feedback geográfico en error, no mostrar labels en el overlay (van sobre el globo)
+  const showDetails = state === 'incorrect' && !geoFeedback && (incorrectLabel || correctLabel);
 
   return (
     <div
-      className={`game-feedback game-feedback--${state}`}
+      className={`game-feedback game-feedback--${state}${geoFeedback ? ' game-feedback--geo' : ''}`}
       aria-live="assertive"
     >
       <span className="game-feedback__icon">
