@@ -25,6 +25,7 @@ export interface GlobeControlProps {
   showCapitalLabels: boolean;
   capitalLabelsData: Map<string, CapitalCoords> | null;
   feedbackLabels?: FeedbackLabel[] | null;
+  showMarkers?: boolean;  // override del setting global (undefined = usar global)
 }
 
 interface ExploreViewProps {

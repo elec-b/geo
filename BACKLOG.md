@@ -176,13 +176,19 @@
   - [x] Selección de archipiélagos (hit area ampliada entre islas del mismo país)
 - [x] Bug: "Sierra Leone" → "Sierra Leona" — REST Countries devuelve nombre sin traducir; corregido vía campo `name` en suplementario (`capitals-es.json`)
 - [ ] Feedback visual: colores de acierto/error en el globo y overlays — **implementado, pendiente de testing en dispositivo**
-  - [ ] Todos los tipos (A-F): eliminar los iconos de tick (verde) y cross (rojo) del overlay. Mantener de momento el tinte verde/rojizo de pantalla completa (candidato a eliminar en el futuro)
+  - [x] Todos los tipos (A-F): eliminar los iconos de tick (verde) y cross (rojo) del overlay. Mantener de momento el tinte verde/rojizo de pantalla completa (candidato a eliminar en el futuro)
   - [ ] A y B: acierto → país en verde (no amarillo); error paso 1 → país en rojo, error paso 2 (flyTo correcto) → país en amarillo (como ahora)
-  - [ ] C y D: selectores de opciones sin cambios; en el globo, acierto → país en verde, error → país en amarillo (como ahora)
-  - [ ] E y F: país iluminado para la pregunta → amarillo (como ahora); selectores sin cambios; acierto → país en verde, error → sin cambio (se mantiene amarillo)
+    - iteración 1: funciona bastante bien, pero cuando hay error y el país se marca en rojo no se lee el texto (nombre del país o capital + nombre del país), sugiero dejar estas letras en blanco?
+    - iteración 2: las letras se ven ahora perfectas. Solo sugiero ahora, solo en caso de error ajustar el zoom al hacer el flyto al país. No debe ser un zoom excesivo, pero sí que permita identificar bien el país que se debería de haber seleccionado.
+  - [x] C y D: selectores de opciones sin cambios; en el globo, acierto → país en verde, error → país en amarillo (como ahora)
+  - [x] E y F: país iluminado para la pregunta → amarillo (como ahora); selectores sin cambios; acierto → país en verde, error → sin cambio (se mantiene amarillo)
 - [ ] Zoom adaptativo al tamaño del país en tipos C-F (efecto "viaje") — **implementado, pendiente de testing en dispositivo**
-  - [ ] C y D: al hacer flyTo al país/capital por el que se pregunta, ajustar el zoom para que se vean bien los límites del país y sus vecinos. Dar sensación de viaje
-  - [ ] E y F: ajustar zoom al iluminar el país, proporcional a su tamaño. Países pequeños de Europa (Macedonia, Andorra, Mónaco) apenas se ven con el zoom actual. Mismo efecto de viaje
+  - [x] C y D: al hacer flyTo al país/capital por el que se pregunta, ajustar el zoom para que se vean bien los límites del país y sus vecinos. Dar sensación de viaje
+    - iteración 1: funciona excelente, pero cuando la capital queda al norte del país (por ejemplo Vietnam o Filipinas) no se ve bien el país y queda por debajo de los selectores. (Cuando está en el centro o en el sur, funciona perfecto)
+    - iteración 1: en los juegos C y D no necesitamos que aparezca el circulito para seleccionar mejor los micro-estados, no los mostraría
+  - [x] E y F: ajustar zoom al iluminar el país, proporcional a su tamaño. Países pequeños de Europa (Macedonia, Andorra, Mónaco) apenas se ven con el zoom actual. Mismo efecto de viaje
+    - iteración 1: los micro-estados (por ejemplo San Marino o Mónaco) apenas se ven seleccionados, ampliaría el zoom en estos casos
+    - iteración 1: en los juegos E y F no necesitamos que aparezca el circulito para seleccionar mejor los micro-estados, no los mostraría
 - [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
 - [ ] Barra de progreso (indica preparación para prueba de sello)
 - [ ] Selector de tipo de juego: decidir diseño final y comportamiento (ver DESIGN.md § «Selector de tipo de juego»). Actualmente es un prototipo con pills

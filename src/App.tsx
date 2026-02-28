@@ -118,7 +118,7 @@ function App() {
           onCountryClick={(activeTab === 'explore' || activeTab === 'play') ? handleCountryClick : undefined}
           onCountryDeselect={(activeTab === 'explore' || activeTab === 'play') ? handleCountryDeselect : undefined}
           onReady={handleGlobeReady}
-          showMarkers={showMarkers}
+          showMarkers={globeControl.showMarkers ?? showMarkers}
           selectedCountryCca2={globeControl.selectedCountryCca2}
           selectedCountryColor={globeControl.selectedCountryColor}
           capitalPins={globeControl.capitalPins}

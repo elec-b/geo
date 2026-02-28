@@ -29,7 +29,7 @@ const ZOOM_WHEEL_FACTOR = 0.001;
 // Zoom adaptativo por tamaño de país (tipos C-F)
 const ADAPTIVE_ZOOM_K = 0.6;
 const ADAPTIVE_ZOOM_MIN = 1.5;
-const ADAPTIVE_ZOOM_MAX = 15;
+const ADAPTIVE_ZOOM_MAX = 25;
 
 // Marcadores de microestados
 const MARKER_RADIUS = 8;
@@ -518,7 +518,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         const pos = projection(label.coords);
         if (!pos) continue;
 
-        const color = label.kind === 'incorrect' ? '#ef4444' : '#ffffff';
+        // Siempre blanco: el color del país (rojo/verde) ya indica acierto/error
+        const color = '#ffffff';
         const lines = label.text.split('\n');
         const mainSize = Math.round(12 + Math.sqrt(zoom) * 2);
         const subSize = Math.round(mainSize * 0.75);

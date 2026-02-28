@@ -165,6 +165,13 @@ export function JugarView({
 
   // --- Sincronización de props del globo ---
 
+  // Ocultar marcadores en tipos C-F (el usuario no hace click en el mapa)
+  const hideMarkers = useMemo(() => {
+    const q = session.currentQuestion;
+    if (!q) return false;
+    return q.type !== 'A' && q.type !== 'B';
+  }, [session.currentQuestion]);
+
   useEffect(() => {
     onGlobePropsChange({
       selectedCountryCca2: highlightCca2,
@@ -175,8 +182,9 @@ export function JugarView({
       showCapitalLabels: false,
       capitalLabelsData: null,
       feedbackLabels: globeFeedbackLabels,
+      showMarkers: hideMarkers ? false : undefined,
     });
-  }, [highlightCca2, highlightColor, capitalPins, highlightedCountries, globeFeedbackLabels, onGlobePropsChange]);
+  }, [highlightCca2, highlightColor, capitalPins, highlightedCountries, globeFeedbackLabels, hideMarkers, onGlobePropsChange]);
 
   // Reset al desmontar (cambio de tab)
   useEffect(() => {
@@ -190,6 +198,7 @@ export function JugarView({
         showCapitalLabels: false,
         capitalLabelsData: null,
         feedbackLabels: null,
+        showMarkers: undefined,
       });
     };
   }, [onGlobePropsChange]);
@@ -286,11 +295,11 @@ export function JugarView({
           globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
         }
       } else if (result === 'correct' && q && (q.type === 'C' || q.type === 'D') && globeRef.current) {
-        // Acierto en C/D: flyTo a la capital con zoom adaptativo
-        const cap = capitals.get(q.targetCca2);
-        if (cap) {
+        // Acierto en C/D: flyTo al centroide (no capital) para que el país no quede tapado por ChoicePanel
+        const centroid = globeRef.current.getCentroid(q.targetCca2);
+        if (centroid) {
           const zoom = globeRef.current.getCountryZoom(q.targetCca2) ?? undefined;
-          globeRef.current.flyTo(cap.latlng[1], cap.latlng[0], zoom, 600);
+          globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
         }
       }
     },
