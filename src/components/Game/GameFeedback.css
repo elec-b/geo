@@ -28,22 +28,6 @@
   background: rgba(239, 68, 68, 0.06);
 }
 
-.game-feedback__icon {
-  font-size: 4rem;
-  font-weight: 700;
-  animation: feedback-icon-enter 0.3s ease-out;
-}
-
-.game-feedback--correct .game-feedback__icon {
-  color: var(--color-success);
-  text-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
-}
-
-.game-feedback--incorrect .game-feedback__icon {
-  color: var(--color-error);
-  text-shadow: 0 0 30px rgba(239, 68, 68, 0.5);
-}
-
 .game-feedback__details {
   display: flex;
   flex-direction: column;

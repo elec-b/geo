@@ -18,6 +18,7 @@ type ExploreMode = 'countries' | 'capitals';
 /** Props que ExploreView controla en el globo */
 export interface GlobeControlProps {
   selectedCountryCca2: string | null;
+  selectedCountryColor?: string;
   capitalPins: [number, number][];
   highlightedCountries: Set<string> | null;
   showCountryLabels: boolean;

@@ -2,6 +2,7 @@
 // Gestiona el flujo selector → juego y el bridge con el globo.
 import { useState, useCallback, useMemo, useEffect, useRef, type RefObject, type MutableRefObject } from 'react';
 import type { GlobeD3Ref, FeedbackLabel } from '../Globe';
+import { COUNTRY_CORRECT_COLOR, COUNTRY_INCORRECT_COLOR } from '../Globe/colors';
 import type { GlobeControlProps } from '../Explore/ExploreView';
 import type { CountryFeature } from '../../data/countries';
 import type { GameQuestionChoice, QuestionTypeFilter } from '../../data/gameQuestions';
@@ -142,11 +143,32 @@ export function JugarView({
     return [{ text, coords: coords.correctCoords, kind: 'correct' }];
   }, [feedbackStep, session.currentQuestion, countries, capitals]);
 
+  // --- Color y cca2 del país seleccionado según el estado del juego ---
+
+  const { highlightCca2, highlightColor } = useMemo(() => {
+    const q = session.currentQuestion;
+    const isAB = q && (q.type === 'A' || q.type === 'B');
+
+    // Acierto (todos los tipos): verde
+    if (session.feedbackState === 'correct') {
+      return { highlightCca2: session.correctCca2, highlightColor: COUNTRY_CORRECT_COLOR };
+    }
+
+    // Error A/B step1: país equivocado en rojo
+    if (session.feedbackState === 'incorrect' && isAB && feedbackStep === 'step1' && feedbackCoordsRef.current) {
+      return { highlightCca2: feedbackCoordsRef.current.wrongCca2, highlightColor: COUNTRY_INCORRECT_COLOR };
+    }
+
+    // Error C-F, error A/B step2, pregunta E/F, idle: dorado (default)
+    return { highlightCca2: session.correctCca2, highlightColor: undefined };
+  }, [session.currentQuestion, session.feedbackState, session.correctCca2, feedbackStep]);
+
   // --- Sincronización de props del globo ---
 
   useEffect(() => {
     onGlobePropsChange({
-      selectedCountryCca2: session.correctCca2,
+      selectedCountryCca2: highlightCca2,
+      selectedCountryColor: highlightColor,
       capitalPins,
       highlightedCountries,
       showCountryLabels: false,
@@ -154,13 +176,14 @@ export function JugarView({
       capitalLabelsData: null,
       feedbackLabels: globeFeedbackLabels,
     });
-  }, [session.correctCca2, capitalPins, highlightedCountries, globeFeedbackLabels, onGlobePropsChange]);
+  }, [highlightCca2, highlightColor, capitalPins, highlightedCountries, globeFeedbackLabels, onGlobePropsChange]);
 
   // Reset al desmontar (cambio de tab)
   useEffect(() => {
     return () => {
       onGlobePropsChange({
         selectedCountryCca2: null,
+        selectedCountryColor: undefined,
         capitalPins: [],
         highlightedCountries: null,
         showCountryLabels: false,
@@ -179,7 +202,9 @@ export function JugarView({
 
     const centroid = globeRef.current.getCentroid(q.targetCca2);
     if (centroid) {
-      globeRef.current.flyTo(centroid[0], centroid[1], undefined, 600);
+      // Zoom adaptativo: países pequeños se ven más de cerca
+      const zoom = globeRef.current.getCountryZoom(q.targetCca2) ?? undefined;
+      globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
     }
   }, [session.currentQuestion, globeRef]);
 
@@ -254,16 +279,18 @@ export function JugarView({
       const result = session.submitAnswer(answer);
 
       if (result === 'incorrect' && q && globeRef.current) {
-        // En error: flyTo al país correcto
+        // En error: flyTo al país correcto con zoom adaptativo
         const centroid = globeRef.current.getCentroid(q.targetCca2);
         if (centroid) {
-          globeRef.current.flyTo(centroid[0], centroid[1], undefined, 600);
+          const zoom = globeRef.current.getCountryZoom(q.targetCca2) ?? undefined;
+          globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
         }
       } else if (result === 'correct' && q && (q.type === 'C' || q.type === 'D') && globeRef.current) {
-        // Acierto en C/D: flyTo a la capital para asociar visualmente
+        // Acierto en C/D: flyTo a la capital con zoom adaptativo
         const cap = capitals.get(q.targetCca2);
         if (cap) {
-          globeRef.current.flyTo(cap.latlng[1], cap.latlng[0], undefined, 600);
+          const zoom = globeRef.current.getCountryZoom(q.targetCca2) ?? undefined;
+          globeRef.current.flyTo(cap.latlng[1], cap.latlng[0], zoom, 600);
         }
       }
     },
@@ -363,7 +390,6 @@ export function JugarView({
         onAnimationEnd={isABQuestion ? handleFeedbackEndAB : handleFeedbackEnd}
         skipTimer={isABQuestion && session.feedbackState === 'incorrect'}
         geoFeedback={isABQuestion && session.feedbackState === 'incorrect'}
-        hideIcon={isABQuestion && feedbackStep === 'step2'}
       />
 
       <ScoreBar score={session.score} onExit={handleExit} />

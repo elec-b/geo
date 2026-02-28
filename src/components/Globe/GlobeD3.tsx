@@ -8,12 +8,12 @@ import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geoj
 import { loadCountriesGeoJson, loadBordersGeoJson } from '../../data/countries';
 import type { CountryFeature, CountryProperties } from '../../data/countries';
 import type { CapitalCoords } from '../../data/types';
+import { COUNTRY_SELECTED_COLOR } from './colors';
 
 // --- Constantes del tema espacial ---
 
 const OCEAN_COLOR = '#0a0a1a';
 const COUNTRY_FILL_COLOR = '#3a3a4a';
-const COUNTRY_SELECTED_COLOR = '#8a7d5a';
 const COUNTRY_HOVER_COLOR = '#2a2a3a';
 const BORDER_COLOR = 'rgba(255, 255, 255, 0.3)';
 const ATMOSPHERE_COLOR = 'rgba(100, 150, 255, 0.08)';
@@ -25,6 +25,11 @@ const ROTATION_SPEED = 6;
 const MIN_SCALE = 0.8;
 const MAX_SCALE = 200.0;
 const ZOOM_WHEEL_FACTOR = 0.001;
+
+// Zoom adaptativo por tamaño de país (tipos C-F)
+const ADAPTIVE_ZOOM_K = 0.6;
+const ADAPTIVE_ZOOM_MIN = 1.5;
+const ADAPTIVE_ZOOM_MAX = 15;
 
 // Marcadores de microestados
 const MARKER_RADIUS = 8;
@@ -165,6 +170,8 @@ export interface GlobeD3Props {
   showMarkers?: boolean;
   /** País seleccionado (controlado). undefined = modo interno. */
   selectedCountryCca2?: string | null;
+  /** Color override para el país seleccionado. Si no se pasa, usa dorado. */
+  selectedCountryColor?: string;
   /** Array de coordenadas [lon, lat] para mostrar pines de capitales */
   capitalPins?: [number, number][];
   /** Set de cca2 a resaltar (filtro continente). null = todos visibles. */
@@ -184,6 +191,7 @@ export interface GlobeD3Props {
 export interface GlobeD3Ref {
   flyTo(lon: number, lat: number, zoom?: number, duration?: number, latOffset?: number): void;
   getCentroid(cca2: string): [number, number] | null;
+  getCountryZoom(cca2: string): number | null;
 }
 
 // --- Utilidades ---
@@ -206,6 +214,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     onReady,
     showMarkers = true,
     selectedCountryCca2,
+    selectedCountryColor,
     capitalPins = [],
     highlightedCountries,
     showCountryLabels = false,
@@ -279,6 +288,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   selectedCca2PropRef.current = selectedCountryCca2;
   const isControlledRef = useRef(selectedCountryCca2 !== undefined);
   isControlledRef.current = selectedCountryCca2 !== undefined;
+  const selectedColorPropRef = useRef(selectedCountryColor);
+  if (selectedColorPropRef.current !== selectedCountryColor) needsRedrawRef.current = true;
+  selectedColorPropRef.current = selectedCountryColor;
   const capitalPinsRef = useRef(capitalPins);
   if (capitalPinsRef.current !== capitalPins) needsRedrawRef.current = true;
   capitalPinsRef.current = capitalPins;
@@ -349,6 +361,11 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     getCentroid(cca2: string): [number, number] | null {
       return countryCentroidsRef.current.get(cca2) ?? null;
     },
+    getCountryZoom(cca2: string): number | null {
+      const area = geoAreasRef.current.get(cca2);
+      if (area == null || area <= 0) return null;
+      return Math.max(ADAPTIVE_ZOOM_MIN, Math.min(ADAPTIVE_ZOOM_MAX, ADAPTIVE_ZOOM_K / Math.sqrt(area)));
+    },
   }));
 
   // --- Renderizado del globo ---
@@ -405,7 +422,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       let fillColor = COUNTRY_FILL_COLOR;
 
       if (cca2 && cca2 === effectiveSelected) {
-        fillColor = COUNTRY_SELECTED_COLOR;
+        fillColor = selectedColorPropRef.current ?? COUNTRY_SELECTED_COLOR;
       } else if (cca2 && cca2 === hoveredRef.current) {
         fillColor = COUNTRY_HOVER_COLOR;
       }

@@ -14,12 +14,10 @@ interface GameFeedbackProps {
   skipTimer?: boolean;
   /** Si true, las etiquetas van sobre el globo → overlay reducido (solo icono) */
   geoFeedback?: boolean;
-  /** Si true, oculta el icono (✗/✓) — útil para step2 del feedback geográfico */
-  hideIcon?: boolean;
 }
 
 export function GameFeedback({
-  state, onAnimationEnd, incorrectLabel, correctLabel, skipTimer, geoFeedback, hideIcon,
+  state, onAnimationEnd, incorrectLabel, correctLabel, skipTimer, geoFeedback,
 }: GameFeedbackProps) {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -45,11 +43,6 @@ export function GameFeedback({
       className={`game-feedback game-feedback--${state}${geoFeedback ? ' game-feedback--geo' : ''}`}
       aria-live="assertive"
     >
-      {!hideIcon && (
-        <span className="game-feedback__icon">
-          {state === 'correct' ? '✓' : '✗'}
-        </span>
-      )}
       {showDetails && (
         <div className="game-feedback__details">
           {incorrectLabel && (

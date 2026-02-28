@@ -120,6 +120,7 @@ function App() {
           onReady={handleGlobeReady}
           showMarkers={showMarkers}
           selectedCountryCca2={globeControl.selectedCountryCca2}
+          selectedCountryColor={globeControl.selectedCountryColor}
           capitalPins={globeControl.capitalPins}
           highlightedCountries={globeControl.highlightedCountries}
           showCountryLabels={globeControl.showCountryLabels}

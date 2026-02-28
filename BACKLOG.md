@@ -175,12 +175,12 @@
   - [x] Tipo D — flyTo en acierto + pin de capital del país correcto tras responder
   - [x] Selección de archipiélagos (hit area ampliada entre islas del mismo país)
 - [x] Bug: "Sierra Leone" → "Sierra Leona" — REST Countries devuelve nombre sin traducir; corregido vía campo `name` en suplementario (`capitals-es.json`)
-- [ ] Feedback visual: colores de acierto/error en el globo y overlays
+- [ ] Feedback visual: colores de acierto/error en el globo y overlays — **implementado, pendiente de testing en dispositivo**
   - [ ] Todos los tipos (A-F): eliminar los iconos de tick (verde) y cross (rojo) del overlay. Mantener de momento el tinte verde/rojizo de pantalla completa (candidato a eliminar en el futuro)
   - [ ] A y B: acierto → país en verde (no amarillo); error paso 1 → país en rojo, error paso 2 (flyTo correcto) → país en amarillo (como ahora)
   - [ ] C y D: selectores de opciones sin cambios; en el globo, acierto → país en verde, error → país en amarillo (como ahora)
   - [ ] E y F: país iluminado para la pregunta → amarillo (como ahora); selectores sin cambios; acierto → país en verde, error → sin cambio (se mantiene amarillo)
-- [ ] Zoom adaptativo al tamaño del país en tipos C-F (efecto "viaje")
+- [ ] Zoom adaptativo al tamaño del país en tipos C-F (efecto "viaje") — **implementado, pendiente de testing en dispositivo**
   - [ ] C y D: al hacer flyTo al país/capital por el que se pregunta, ajustar el zoom para que se vean bien los límites del país y sus vecinos. Dar sensación de viaje
   - [ ] E y F: ajustar zoom al iluminar el país, proporcional a su tamaño. Países pequeños de Europa (Macedonia, Andorra, Mónaco) apenas se ven con el zoom actual. Mismo efecto de viaje
 - [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
