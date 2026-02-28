@@ -340,7 +340,10 @@ export function JugarView({
         setFeedbackStep('step2');
         const coords = feedbackCoordsRef.current;
         if (coords && globeRef.current) {
-          globeRef.current.flyTo(coords.correctCoords[0], coords.correctCoords[1], undefined, 600);
+          const baseZoom = globeRef.current.getCountryZoom(coords.correctCca2);
+          // Zoom más suave en error: mostrar el país en contexto con sus vecinos
+          const zoom = baseZoom != null ? baseZoom * 0.6 : undefined;
+          globeRef.current.flyTo(coords.correctCoords[0], coords.correctCoords[1], zoom, 600);
         }
       }, 1200);
     } else {
