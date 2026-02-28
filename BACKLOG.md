@@ -123,6 +123,12 @@
 - [x] Botón Wikipedia en CountryCard (full-width, icono enlace externo, abre artículo en Safari)
 - [x] Datos sintéticos (SOL, CYN, AQ) con slug manual
 
+### Rendimiento y consumo de batería
+- [x] El dispositivo se calienta excesivamente y el consumo de batería es muy alto (testeado en iPhone 17). Causa raíz confirmada: `draw()` se ejecuta a ~60fps de forma incondicional (`GlobeD3.tsx:707`), incluso con el globo en reposo. Re-renders de React descartados como causa (arquitectura de refs sincronizados es correcta). Solución: implementar dirty flag — solo llamar `draw()` cuando hay cambios reales (drag, flyTo, inercia, cambio de props)
+  - Si P0 no fuera suficiente: detener el RAF completamente en reposo (`cancelAnimationFrame`) y reiniciarlo al detectar interacción
+  - Si persiste durante animaciones: reducir `backdrop-filter: blur()` en overlays sobre el canvas (hay ~13 instancias; costoso en iOS cuando el canvas cambia a 60fps)
+  - Optimizaciones menores: reutilizar instancia de `geoOrthographic()` entre frames (~0.05ms/frame), batching de features por color (reducir draw calls)
+
 ---
 
 ## Próximos pasos

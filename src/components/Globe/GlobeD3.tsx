@@ -262,7 +262,10 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const nonUnCodesRef = useRef<Set<string>>(new Set());
   const geoAreasRef = useRef<Map<string, number>>(new Map());
   const archipelagoHullsRef = useRef<Map<string, [number, number][]>>(new Map());
+  // Dirty flag: evita redibujar el canvas a 60fps cuando el globo está en reposo
+  const needsRedrawRef = useRef(true); // true para el draw inicial
   const showMarkersRef = useRef(showMarkers);
+  if (showMarkersRef.current !== showMarkers) needsRedrawRef.current = true;
   showMarkersRef.current = showMarkers;
 
   // Proyección y tamaño
@@ -272,26 +275,35 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
   // Refs sincronizados con props (acceso en callbacks sin re-creación)
   const selectedCca2PropRef = useRef(selectedCountryCca2);
+  if (selectedCca2PropRef.current !== selectedCountryCca2) needsRedrawRef.current = true;
   selectedCca2PropRef.current = selectedCountryCca2;
   const isControlledRef = useRef(selectedCountryCca2 !== undefined);
   isControlledRef.current = selectedCountryCca2 !== undefined;
   const capitalPinsRef = useRef(capitalPins);
+  if (capitalPinsRef.current !== capitalPins) needsRedrawRef.current = true;
   capitalPinsRef.current = capitalPins;
   const highlightedRef = useRef(highlightedCountries);
+  if (highlightedRef.current !== highlightedCountries) needsRedrawRef.current = true;
   highlightedRef.current = highlightedCountries;
   const showCountryLabelsRef = useRef(showCountryLabels);
+  if (showCountryLabelsRef.current !== showCountryLabels) needsRedrawRef.current = true;
   showCountryLabelsRef.current = showCountryLabels;
   const showCapitalLabelsRef = useRef(showCapitalLabels);
+  if (showCapitalLabelsRef.current !== showCapitalLabels) needsRedrawRef.current = true;
   showCapitalLabelsRef.current = showCapitalLabels;
   const capitalLabelsRef = useRef(capitalLabelsData);
+  if (capitalLabelsRef.current !== capitalLabelsData) needsRedrawRef.current = true;
   capitalLabelsRef.current = capitalLabelsData;
   const onDeselectRef = useRef(onCountryDeselect);
   onDeselectRef.current = onCountryDeselect;
   const countryPopulationsRef = useRef(countryPopulations);
+  if (countryPopulationsRef.current !== countryPopulations) needsRedrawRef.current = true;
   countryPopulationsRef.current = countryPopulations;
   const countryNamesRef = useRef(countryNames);
+  if (countryNamesRef.current !== countryNames) needsRedrawRef.current = true;
   countryNamesRef.current = countryNames;
   const feedbackLabelsRef = useRef(feedbackLabels);
+  if (feedbackLabelsRef.current !== feedbackLabels) needsRedrawRef.current = true;
   feedbackLabelsRef.current = feedbackLabels;
 
   // Animación flyTo
@@ -672,6 +684,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     const delta = (now - lastTimeRef.current) / 1000;
     lastTimeRef.current = now;
 
+    let shouldDraw = needsRedrawRef.current;
+
     // flyTo tiene prioridad sobre inercia y auto-rotación
     const flyTo = flyToAnimRef.current;
     if (flyTo) {
@@ -686,6 +700,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       scaleRef.current = flyTo.startScale + (flyTo.endScale - flyTo.startScale) * ease;
 
       if (t >= 1) flyToAnimRef.current = null;
+      shouldDraw = true;
     } else if (isInertiaRef.current) {
       const [vx, vy] = velocityRef.current;
       const [lambda, phi] = rotationRef.current;
@@ -698,12 +713,22 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         isInertiaRef.current = false;
         velocityRef.current = [0, 0];
       }
+      shouldDraw = true;
     } else if (isAutoRotatingRef.current && !isDraggingRef.current) {
       const [lambda, phi] = rotationRef.current;
       rotationRef.current = [wrapLon(lambda + ROTATION_SPEED * delta), phi];
+      shouldDraw = true;
     }
 
-    draw();
+    if (isDraggingRef.current || pinchRef.current) {
+      shouldDraw = true;
+    }
+
+    if (shouldDraw) {
+      draw();
+      needsRedrawRef.current = false;
+    }
+
     animFrameRef.current = requestAnimationFrame(animate);
   }, [draw]);
 
@@ -984,6 +1009,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       flyToAnimRef.current = null;
       const factor = 1 - e.deltaY * ZOOM_WHEEL_FACTOR;
       scaleRef.current = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scaleRef.current * factor));
+      needsRedrawRef.current = true;
     };
 
     const handleTouchStart = (e: TouchEvent) => {
@@ -1097,6 +1123,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       const cca2 = feature?.properties?.cca2 ?? null;
       if (cca2 !== hoveredRef.current) {
         hoveredRef.current = cca2;
+        needsRedrawRef.current = true;
         const canvas = canvasRef.current;
         if (canvas) canvas.style.cursor = cca2 ? 'pointer' : 'grab';
       }
@@ -1121,12 +1148,14 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       if (feature) {
         if (!isControlledRef.current) {
           selectedRef.current = feature.properties?.cca2 ?? null;
+          needsRedrawRef.current = true;
         }
         onCountryClick?.(feature as CountryFeature);
       } else {
         // Click en océano → deseleccionar
         if (!isControlledRef.current) {
           selectedRef.current = null;
+          needsRedrawRef.current = true;
         }
         onDeselectRef.current?.();
       }
