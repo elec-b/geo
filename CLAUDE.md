@@ -33,10 +33,9 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
    - **Raíz**: documentos core del proyecto (`CLAUDE.md`, `DESIGN.md`, `BACKLOG.md`)
    - **`docs/research/`**: investigaciones técnicas
    - **`docs/spikes/`**: resultados de spikes de validación
-5. **Backlog**: `BACKLOG.md` organiza el trabajo en 3 secciones:
-   - **Completado**: Tareas terminadas (historial reciente; para historial completo, usar git)
-   - **En progreso**: Tareas activas o con trabajo parcial
-   - **Próximos pasos**: Tareas planificadas pero no iniciadas
+5. **Backlog**: `BACKLOG.md` organiza el trabajo en 2 secciones:
+   - **Completado**: Tareas terminadas (historial reciente condensado; para historial completo, usar git)
+   - **Próximos pasos**: Tareas planificadas, ordenadas por prioridad
 
    Actualízalo al completar tareas importantes. No usamos categoría de "bugs" — todo son tareas.
 
@@ -52,6 +51,9 @@ src/
 ├── components/       # Componentes React
 │   ├── Globe/        # Globo 3D y controles
 │   ├── Game/         # Lógica de juego
+│   ├── Explore/      # Exploración libre
+│   ├── Navigation/   # Tab bar
+│   ├── Layout/       # Header, app shell
 │   └── UI/           # Botones, modales, etc.
 ├── stores/           # Zustand stores
 ├── data/             # Loaders y tipos de datos
