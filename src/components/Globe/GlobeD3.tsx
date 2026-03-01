@@ -363,7 +363,11 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     },
     getCountryZoom(cca2: string): number | null {
       const area = geoAreasRef.current.get(cca2);
-      if (area == null || area <= 0) return null;
+      if (area == null || area <= 0) {
+        // Fallback para microestados cuyo polígono en TopoJSON 50m es tan
+        // simplificado que d3.geoArea() devuelve 0 (ej. Vaticano).
+        return MICROSTATE_CODES.has(cca2) ? ADAPTIVE_ZOOM_MAX : null;
+      }
       return Math.max(ADAPTIVE_ZOOM_MIN, Math.min(ADAPTIVE_ZOOM_MAX, ADAPTIVE_ZOOM_K / Math.sqrt(area)));
     },
   }));
