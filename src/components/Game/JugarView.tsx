@@ -396,7 +396,7 @@ export function JugarView({
     const q = session.currentQuestion;
 
     // En modo mixto: si la siguiente pregunta es A/B, no hacer zoom in (revelaría la respuesta)
-    if (!q || q.type === 'A' || q.type === 'B') {
+    if (!q || q.type === 'A' || q.type === 'B' || q.type === 'C' || q.type === 'D') {
       setFlyOutStep('idle');
       return;
     }

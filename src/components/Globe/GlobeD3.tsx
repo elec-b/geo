@@ -29,7 +29,7 @@ const ZOOM_WHEEL_FACTOR = 0.001;
 // Zoom adaptativo por tamaño de país (tipos C-F)
 const ADAPTIVE_ZOOM_K = 0.6;
 const ADAPTIVE_ZOOM_MIN = 1.5;
-const ADAPTIVE_ZOOM_MAX = 25;
+const ADAPTIVE_ZOOM_MAX = 40;
 
 // Marcadores de microestados
 const MARKER_RADIUS = 8;
