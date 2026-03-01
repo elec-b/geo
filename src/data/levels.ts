@@ -28,7 +28,7 @@ export function buildLevelDefinitions(
   for (const continent of CONTINENTS) {
     // Filtrar países del continente y ordenar por población descendente
     const byContinent = [...countries.values()]
-      .filter((c) => c.continent === continent)
+      .filter((c) => c.continent === continent && c.unMember !== false)
       .sort((a, b) => b.population - a.population);
 
     const allCodes = byContinent.map((c) => c.cca2);

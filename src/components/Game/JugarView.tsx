@@ -46,6 +46,10 @@ export function JugarView({
 
   // Secuencia de dos pasos para feedback geográfico en tipos A/B (error)
   const [feedbackStep, setFeedbackStep] = useState<FeedbackStep>('idle');
+
+  // Secuencia de zoom out → zoom in entre preguntas (tipos C-F)
+  type FlyOutStep = 'idle' | 'zoomingOut' | 'zoomingIn';
+  const [flyOutStep, setFlyOutStep] = useState<FlyOutStep>('idle');
   const feedbackCoordsRef = useRef<{
     wrongCca2: string;
     wrongCoords: [number, number];
@@ -203,19 +207,20 @@ export function JugarView({
     };
   }, [onGlobePropsChange]);
 
-  // Para tipos E/F: flyTo al país al cargar la pregunta
+  // Para tipos E/F: flyTo al país al cargar la primera pregunta (inicio de partida).
+  // Las transiciones posteriores se gestionan con la secuencia flyOutStep.
   useEffect(() => {
+    if (flyOutStep !== 'idle') return;
     const q = session.currentQuestion;
     if (!q || (q.type !== 'E' && q.type !== 'F')) return;
     if (!globeRef.current) return;
 
     const centroid = globeRef.current.getCentroid(q.targetCca2);
     if (centroid) {
-      // Zoom adaptativo: países pequeños se ven más de cerca
       const zoom = globeRef.current.getCountryZoom(q.targetCca2) ?? undefined;
       globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
     }
-  }, [session.currentQuestion, globeRef]);
+  }, [session.currentQuestion, globeRef, flyOutStep]);
 
   // --- Handlers ---
 
@@ -282,7 +287,7 @@ export function JugarView({
   // Selección de opción en ChoicePanel (tipos C-F)
   const handleChoiceSelect = useCallback(
     (answer: string) => {
-      if (session.feedbackState !== 'idle') return;
+      if (session.feedbackState !== 'idle' || flyOutStep !== 'idle') return;
       setSelectedChoice(answer);
       const q = session.currentQuestion;
       const result = session.submitAnswer(answer);
@@ -306,11 +311,20 @@ export function JugarView({
     [session, globeRef, capitals],
   );
 
-  // Fin de animación de feedback → siguiente pregunta (solo C-F; A/B usa la secuencia de pasos)
+  // Fin de animación de feedback → iniciar zoom out intermedio (solo C-F; A/B usa la secuencia de pasos)
   const handleFeedbackEnd = useCallback(() => {
-    session.nextQuestion();
-    setSelectedChoice(null);
-  }, [session]);
+    if (globeRef.current && session.continent) {
+      // Zoom out al continente para dar perspectiva antes de la siguiente pregunta
+      const [lon, lat] = CONTINENT_CENTERS[session.continent];
+      globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[session.continent], 600);
+      setFlyOutStep('zoomingOut');
+      setSelectedChoice(null);
+    } else {
+      // Fallback: avanzar directamente
+      session.nextQuestion();
+      setSelectedChoice(null);
+    }
+  }, [session, globeRef]);
 
   // Resetear feedbackStep cuando hay acierto en A/B (el timer de GameFeedback avanza normalmente)
   const handleFeedbackEndAB = useCallback(() => {
@@ -325,6 +339,7 @@ export function JugarView({
     session.end();
     setScreen('selector');
     setSelectedChoice(null);
+    setFlyOutStep('idle');
   }, [session]);
 
   // --- Secuencia temporal para feedback de dos pasos (A/B error) ---
@@ -359,6 +374,45 @@ export function JugarView({
     return () => clearTimeout(timer);
   }, [feedbackStep, session, globeRef]);
 
+  // --- Secuencia temporal para zoom out intermedio (C-F) ---
+  // Tras el feedback, se hace zoom out al continente → pausa → nextQuestion → zoom in al nuevo país
+
+  useEffect(() => {
+    if (flyOutStep !== 'zoomingOut') return;
+
+    // Esperar a que termine la animación de flyTo (600ms) + pausa (400ms),
+    // luego avanzar pregunta e iniciar zoom in
+    const timer = setTimeout(() => {
+      session.nextQuestion();
+      setFlyOutStep('zoomingIn');
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [flyOutStep, session]);
+
+  // Zoom in al nuevo país tras el zoom out continental
+  useEffect(() => {
+    if (flyOutStep !== 'zoomingIn') return;
+    const q = session.currentQuestion;
+
+    // En modo mixto: si la siguiente pregunta es A/B, no hacer zoom in (revelaría la respuesta)
+    if (!q || q.type === 'A' || q.type === 'B') {
+      setFlyOutStep('idle');
+      return;
+    }
+    if (!globeRef.current) {
+      setFlyOutStep('idle');
+      return;
+    }
+
+    const centroid = globeRef.current.getCentroid(q.targetCca2);
+    if (centroid) {
+      const zoom = globeRef.current.getCountryZoom(q.targetCca2) ?? undefined;
+      globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
+    }
+    setFlyOutStep('idle');
+  }, [flyOutStep, session.currentQuestion, globeRef]);
+
   // --- Render ---
 
   if (screen === 'selector') {
@@ -389,7 +443,7 @@ export function JugarView({
         <ChoicePanel
           options={choiceQuestion.options}
           onSelect={handleChoiceSelect}
-          disabled={session.feedbackState !== 'idle'}
+          disabled={session.feedbackState !== 'idle' || flyOutStep !== 'idle'}
           correctAnswer={session.feedbackState !== 'idle'
             ? choiceQuestion.correctAnswer
             : undefined}

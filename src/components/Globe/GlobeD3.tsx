@@ -715,6 +715,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         flyTo.startRotation[0] + (flyTo.endRotation[0] - flyTo.startRotation[0]) * ease,
         flyTo.startRotation[1] + (flyTo.endRotation[1] - flyTo.startRotation[1]) * ease,
       ];
+
       scaleRef.current = flyTo.startScale + (flyTo.endScale - flyTo.startScale) * ease;
 
       if (t >= 1) flyToAnimRef.current = null;
