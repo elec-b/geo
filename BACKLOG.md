@@ -38,6 +38,8 @@
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
 ### Experiencia: Jugar — Pendiente
+- [ ] Bug: países no-ONU (por ejemplo Åland, Chipre del Norte) aparecen en preguntas de juego. Filtrar para que solo participen los 195 países ONU
+- [ ] FlyTo en tipos C-F: siempre hacer zoom out intermedio entre preguntas para dar perspectiva continental antes de hacer zoom in al siguiente país. Refuerza el aprendizaje espacial
 - [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
 - [ ] Barra de progreso (indica preparación para prueba de sello)
 - [ ] Selector de tipo de juego: decidir diseño final y comportamiento (ver DESIGN.md § «Selector de tipo de juego»). Actualmente es un prototipo con pills
