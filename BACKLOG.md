@@ -28,7 +28,7 @@
 - [x] Arquitectura: event bridge en App.tsx, generación de preguntas (Fisher-Yates), `useGameSession`, `LevelSelector`, `QuestionBanner`, `GameFeedback`, `ScoreBar`, `ChoicePanel`
 - [x] 6 tipos de juego (A-F): A/B (texto→mapa), C/D (texto→texto), E/F (mapa→texto). Distractores por nivel/continente, modo mixto
 - [x] Feedback visual: colores verde/rojo/dorado, etiquetas sobre el globo (A/B error en 2 pasos), overlays sin iconos
-- [x] Zoom adaptativo C-F (centroide, ×25 microestados, marcadores ocultos en C-F)
+- [x] Zoom adaptativo C-F (centroide, ×40 microestados, marcadores ocultos en C-F, fallback para microestados sin geoArea)
 - [x] Pines de capitales (B/C: todas del continente, D: tras responder, F: país objetivo)
 
 ---
@@ -42,7 +42,7 @@
 - [x] FlyTo con perspectiva continental entre preguntas. Refuerza el aprendizaje espacial. Comportamiento distinto según tipo:
   - **E/F**: ya funcionan bien, no hacer cambios
   - **C/D**: las preguntas se hacen con perspectiva continental (zoom out), tras la respuesta del usuario zoom in a la zona del globo - se mantiene el enfoque que hay ahora (países más grandes menos zoom in necesario, países más pequeños más zoom in necesario)
-- [ ] Vaticano: permitir mayor zoom-in en E/F — con el máximo actual (×25) no se distingue nada. Es el único caso (0.44 km²; Mónaco, el siguiente más pequeño con 2 km², ya se ve bien).
+- [x] Vaticano: permitir mayor zoom-in en E/F — con el máximo actual (×25) no se distingue nada. Es el único caso (0.44 km²; Mónaco, el siguiente más pequeño con 2 km², ya se ve bien).
 - [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
 - [ ] Barra de progreso (indica preparación para prueba de sello)
 - [ ] Selector de tipo de juego: decidir diseño final y comportamiento (ver DESIGN.md § «Selector de tipo de juego»). Actualmente es un prototipo con pills
