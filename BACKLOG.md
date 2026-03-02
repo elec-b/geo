@@ -49,7 +49,7 @@
   - [x] Flujo general (continente → nivel → tipo) documentado
 - [ ] Bug (no replicado): en juego E o F, la app iluminó Argelia pero la respuesta "correcta" para la app era Egipto (o El Cairo). Chequeo exhaustivo de que el país resaltado en E/F coincide siempre con la pregunta (revisar generación de preguntas, bindings país→geometría, y IDs). Investigación inicial: datos estáticos y flujo principal verificados sin errores. Si se replica, añadir logs en useGameSession.ts y GlobeD3.tsx para confirmar qué cca2 se envía vs. qué se pinta
 - [ ] Rediseño del algoritmo de aprendizaje (diseño completado en DESIGN.md § Algoritmo de aprendizaje)
-  - [ ] Reescribir `learningAlgorithm.ts`: etapas de aprendizaje por país, cola de prioridad, anti-repetición
+  - [ ] Reescribir `learningAlgorithm.ts`: racha negativa, etapas por país (con regresión en cascada), avance colectivo, inferencia ascendente, cola de prioridad, anti-repetición
   - [ ] Reescribir generación de preguntas en `gameQuestions.ts`: selección dinámica (no ciclos fijos)
   - [ ] Actualizar `ProgressBar.tsx`: métrica «X de Y» + fix renderizado `✓` (`&check;` → carácter Unicode)
   - [ ] Actualizar detección de preparación para sello (basada en dominio A y B)

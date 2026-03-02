@@ -107,9 +107,8 @@ Si el usuario pulsa Empezar sin elegir tipo, juega en modo **Aventura**: todos l
 
 *   Las preguntas siguen una **progresión adaptativa por país**, basada en la etapa de aprendizaje de cada uno (ver § Algoritmo de aprendizaje):
     1. **E** — reconocer países visualmente.
-    2. **C y D** — asociar país ↔ capital (dato puro).
-    3. **F** — capitales con ubicación en el mapa.
-    4. **A y B** — preparación directa para las pruebas de sello.
+    2. **C, D y F** — aprender y asociar capitales.
+    3. **A y B** — preparación directa para las pruebas de sello.
 *   La selección de tipo se basa en la etapa de aprendizaje de cada país. La progresión natural lleva de E (reconocimiento) hacia A/B (preparación sello), pero el ritmo se adapta individualmente a cada país.
 *   El algoritmo pondera más los tipos que el usuario necesita reforzar (ver § Algoritmo de aprendizaje).
 *   Dentro del modo Aventura, el usuario puede probar A y B como **simulacro** de las pruebas de sello.
@@ -133,77 +132,84 @@ Se registra cada intento del usuario con esta granularidad: **perfil × nivel ×
 Para cada combinación se almacena:
 *   **Aciertos**: total acumulado.
 *   **Fallos**: total acumulado.
-*   **Racha**: aciertos consecutivos (se resetea a 0 al fallar).
+*   **Racha**: aciertos consecutivos. En acierto: racha += 1. En fallo: si racha > 0 → racha = 0; si racha ≤ 0 → racha -= 1. La racha negativa mide la persistencia de fallos.
 
 El registro es **compartido**: tanto Jugar (en todos los modos) como las Pruebas de sello alimentan los mismos datos.
 
 #### Dominio
 
-El **dominio** de un país en un tipo de juego se determina por la racha de aciertos consecutivos:
+Un solo acierto (racha ≥ 1) basta para considerar un país **dominado** en un tipo. La certificación real la dan las pruebas de sello (0 errores en todos los países).
 
-| Racha | Estado | Descripción |
-|-------|--------|-------------|
-| Sin intentos | — | Nunca preguntado |
-| 0 | Necesita refuerzo | Falló recientemente |
-| 1 | En progreso | Un acierto, aún no consolidado |
-| ≥ 2 | Dominado | Responde de forma fiable |
+| Racha | Estado |
+|-------|--------|
+| Sin intentos | Nunca preguntado |
+| ≤ -2 | Fallo persistente (trigger de regresión) |
+| -1 a 0 | Necesita refuerzo |
+| ≥ 1 | Dominado |
+
+**Inferencia ascendente**: Un acierto en un tipo difícil implica dominio en los tipos más fáciles que miden la misma habilidad:
+*   Acierto en **A** (localizar país) → domina **E** (reconocer país).
+*   Acierto en **B** (localizar capital) → domina **C**, **D** y **F** (conocer capital).
 
 #### Etapa de aprendizaje por país (modo Aventura)
 
-En modo Aventura, cada país tiene una **etapa de aprendizaje** que determina qué tipo de pregunta priorizar. Las etapas siguen el orden pedagógico de los tipos de juego:
+En modo Aventura, cada país tiene una **etapa de aprendizaje** que determina qué tipo de pregunta priorizar:
 
 | Etapa | Tipo(s) | Se avanza cuando... |
 |-------|---------|---------------------|
-| 1. Reconocimiento | E | Domina E (racha ≥ 2) |
-| 2. Capitales | C, D | Domina C y D |
-| 3. Ubicación asistida | F | Domina F |
-| 4. Preparación sello | A, B | Domina A y B → país completado |
+| 1. Reconocimiento | E | Domina E (racha ≥ 1) |
+| 2. Capitales | C, D, F | Domina C o D (racha ≥ 1 en cualquiera) |
+| 3. Preparación sello | A, B | Domina A y B → país completado |
 
 *   La etapa se **deriva** de los datos del registro (no se almacena por separado).
-*   Es **progresiva**: una vez alcanzada una etapa, no se regresa aunque baje la racha de un tipo anterior. El mecanismo de refuerzo se encarga de recuperar los fallos (ver «Selección de preguntas»).
-*   **No es un bloqueo estricto**: todos los tipos pueden aparecer en cualquier momento, pero el algoritmo favorece fuertemente los tipos de la etapa actual del país.
+*   **Regresión individual**: aunque el avance colectivo empuja a todos los países hacia adelante, un país individual puede **regresar** si muestra fallos persistentes. Criterio: si algún tipo de su etapa actual alcanza racha ≤ -2 (3+ fallos consecutivos), el país regresa a la etapa anterior. La cascada es natural: si sigue fallando en la etapa anterior, vuelve a regresar. Esto permite detectar aciertos casuales en etapas tempranas y reconstruir desde la base.
+*   **No es un bloqueo estricto**: todos los tipos pueden aparecer, pero el algoritmo favorece los de la etapa actual del país.
+
+#### Avance colectivo
+
+Las etapas no requieren que cada país avance individualmente. Cuando hay evidencia suficiente de que el usuario domina la etapa actual, **todos los países del nivel-continente avanzan** a la siguiente:
+
+*   **Criterio**: Al menos el **40%** de los países (mínimo 3) tienen ≥ 1 acierto en la etapa actual, y la precisión global de la sesión es **≥ 80%**.
+*   Los países no testeados en etapas anteriores **saltan** directamente a la etapa actual.
+*   El objetivo es evitar que un usuario que ya sabe tenga que demostrar su conocimiento país por país en cada tipo.
 
 #### Selección de preguntas
 
-**En modo Aventura**, cada pregunta se genera con dos decisiones: **qué país** preguntar y **qué tipo** usar.
+**En modo Aventura**, cada pregunta se genera con dos decisiones: **qué país** y **qué tipo**.
 
 **1. Selección de país** (cola de prioridad):
-1.  **Refuerzo**: Países con racha = 0 en algún tipo ya intentado (acaban de fallar).
+1.  **Refuerzo**: Países con racha ≤ 0 en algún tipo ya intentado (prioridad: racha más negativa primero).
 2.  **Nuevos**: Países sin intentos en los tipos de su etapa actual.
-3.  **En progreso**: Países con racha = 1 (un acierto, no consolidado).
-4.  **Mantenimiento**: Países completados (baja frecuencia, para refrescar).
+3.  **En progreso**: Países parcialmente testeados en su etapa actual.
+4.  **Mantenimiento**: Países completados (baja frecuencia).
 
-**2. Selección de tipo**: Según la etapa de aprendizaje del país seleccionado. Si la etapa tiene varios tipos (ej. etapa 2: C y D), se alterna entre ellos.
+**2. Selección de tipo**: Según la etapa del país. Si la etapa tiene varios tipos (ej. etapa 2: C, D, F), se elige según lo que el país necesita.
 
 **3. Anti-repetición**: Un país no se repite hasta que se hayan preguntado al menos otros N países (N = mín(3, total_países ÷ 2)).
 
-**En modo tipo concreto**: La misma cola de prioridad para selección de país, pero el tipo es siempre el elegido.
+**En modo tipo concreto**: Misma cola de prioridad, tipo fijo.
 
 #### Barra de progreso
 
 **En modo Aventura**:
-*   Muestra la preparación para las pruebas de sello.
-*   Métrica: países del nivel-continente donde el usuario domina A **y** B (racha ≥ 2 en ambos).
+*   Métrica: países del nivel-continente donde el usuario domina A **y** B (racha ≥ 1 en ambos).
 *   Texto: «X de Y países listos para sello».
-*   Al completarse (X = Y) → mensaje «¡Ya estás listo para las pruebas de sello!»
+*   Cuando se alcanza el umbral de preparación → mensaje de invitación.
 
 **En modo tipo concreto**:
-*   Muestra el dominio de ese tipo en el nivel-continente.
-*   Métrica: países del nivel-continente donde el usuario domina ese tipo (racha ≥ 2).
+*   Métrica: países con dominio en ese tipo (racha ≥ 1).
 *   Texto: «X de Y países dominados».
 *   Al completarse → mensaje de felicitación.
 
-**Elementos comunes**:
-*   Barra visual (0-100%) proporcional a X / Y.
-*   Contador de aciertos y fallos de la sesión actual.
-*   Botón para salir de la partida.
+**Elementos comunes**: barra visual (0-100%), contador de sesión (aciertos/fallos), botón salir.
 
 #### Detección de preparación para sello
 
-*   Solo activa en modo Aventura.
-*   Criterio: **todos** los países del nivel-continente dominan A y B (racha ≥ 2 en ambos).
-*   Cuando se cumple → barra llena → mensaje de invitación a las pruebas de sello.
-*   El usuario puede intentar las pruebas antes del 100% (acceso siempre disponible desde Pasaporte).
+*   Solo en modo Aventura.
+*   Criterio: **≥ 80%** de los países dominan A y B (racha ≥ 1 en ambos).
+*   Cuando se cumple → mensaje de invitación a las pruebas de sello.
+*   El usuario puede intentar las pruebas antes (siempre disponible desde Pasaporte).
+*   La prueba de sello verifica el **100%** de los países con **0 errores** — es la certificación real.
 
 ### Prueba de sellos (dentro de Jugar)
 El usuario puede intentar las pruebas desde aquí (cuando el algoritmo lo invita) o desde Pasaporte. Ver § «El pasaporte de explorador > Los 2 sellos» para requisitos (0 errores, sin límite de intentos).
@@ -274,7 +280,7 @@ Desde el dashboard, el usuario puede intentar conseguir cualquier sello pendient
 Vista que muestra el registro de intentos del usuario de forma visual. Accesible desde un **icono en el header**, junto al icono de perfil (a su derecha). Disponible desde cualquier pantalla.
 
 ### Contenido
-*   Selector de nivel × continente.
+*   Selector de nivel × continente. (Nota: de momento se deja esto así, para facilitar el debugging; pero en el futuro seguramente nos sirva una lista sencilla de países y saber e.g. el % de acierto en ubicación de país y de capital (A y B) - a repensar más adelante)
 *   Tabla de países con indicadores de dominio por tipo de juego (E, C, D, F, A, B).
 *   Indicadores visuales por celda: dominado, en progreso, necesita refuerzo, sin datos.
 *   Totales agregados: aciertos y fallos globales del nivel-continente.
