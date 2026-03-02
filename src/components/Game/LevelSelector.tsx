@@ -18,14 +18,14 @@ const LEVELS: { id: GameLevel; label: string; emoji: string }[] = [
   { id: 'guía', label: 'Guía', emoji: '🗺️' },
 ];
 
-const QUESTION_TYPES: { id: QuestionTypeFilter; label: string }[] = [
-  { id: 'mixed', label: 'Mixto' },
-  { id: 'A', label: 'A' },
-  { id: 'B', label: 'B' },
-  { id: 'C', label: 'C' },
-  { id: 'D', label: 'D' },
-  { id: 'E', label: 'E' },
-  { id: 'F', label: 'F' },
+const QUESTION_TYPES: { id: QuestionTypeFilter; label: string; badge?: string }[] = [
+  { id: 'mixed', label: 'Aventura' },
+  { id: 'E', label: '¿Qué país es?' },
+  { id: 'C', label: 'País → Capital' },
+  { id: 'D', label: 'Capital → País' },
+  { id: 'F', label: '¿Cuál es su capital?' },
+  { id: 'A', label: 'Señala el país', badge: '🔖' },
+  { id: 'B', label: 'Señala la capital', badge: '🔖' },
 ];
 
 interface LevelSelectorProps {
@@ -99,16 +99,16 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
               })}
             </div>
 
-            {/* Pills de tipo de pregunta (provisional para testing) */}
-            <h2 className="level-selector__title level-selector__title--level">Tipo de pregunta</h2>
+            {/* Pills de tipo de juego (orden pedagógico) */}
+            <h2 className="level-selector__title level-selector__title--level">Tipo de juego</h2>
             <div className="level-selector__types">
-              {QUESTION_TYPES.map(({ id, label }) => (
+              {QUESTION_TYPES.map(({ id, label, badge }) => (
                 <button
                   key={id}
                   className={`level-selector__type-pill ${selectedType === id ? 'level-selector__type-pill--active' : ''}`}
                   onClick={() => setSelectedType(id)}
                 >
-                  {label}
+                  {label}{badge ? ` ${badge}` : ''}
                 </button>
               ))}
             </div>

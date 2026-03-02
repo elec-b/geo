@@ -36,6 +36,9 @@ export interface CapitalCoords {
   latlng: [number, number];
 }
 
+/** Los 6 tipos de juego reales (sin 'mixed') */
+export type QuestionType = 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
+
 /** Definición de un nivel de juego (nivel × continente) */
 export interface LevelDefinition {
   level: GameLevel;

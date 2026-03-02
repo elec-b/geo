@@ -1,5 +1,6 @@
 // Generación de preguntas para el juego — Tipos A-F
-import type { CountryData, CapitalCoords } from './types';
+import type { CountryData, CapitalCoords, QuestionType } from './types';
+import { selectWeightedType } from './learningAlgorithm';
 
 // --- Tipos de pregunta (union discriminada) ---
 
@@ -218,6 +219,7 @@ export function generateMixedQuestions(
   countries: Map<string, CountryData>,
   capitals: Map<string, CapitalCoords>,
   lastAskedCca2?: string,
+  typeWeights?: Record<QuestionType, number> | null,
 ): GameQuestion[] {
   const types: Array<'A' | 'B' | 'C' | 'D' | 'E' | 'F'> = ['A', 'B', 'C', 'D', 'E', 'F'];
   const questions: GameQuestion[] = [];
@@ -234,11 +236,20 @@ export function generateMixedQuestions(
     const country = countries.get(cca2);
     if (!country) continue;
 
-    // Elegir un tipo aleatorio, con fallback si falta info
-    const shuffledTypes = shuffle([...types]);
+    // Elegir tipo: ponderado si hay pesos, aleatorio si no
+    let orderedTypes: Array<'A' | 'B' | 'C' | 'D' | 'E' | 'F'>;
+    if (typeWeights) {
+      // Tipo preferido por el algoritmo primero, luego el resto como fallback
+      const preferred = selectWeightedType(typeWeights);
+      const rest = types.filter((t) => t !== preferred);
+      shuffle(rest);
+      orderedTypes = [preferred, ...rest];
+    } else {
+      orderedTypes = shuffle([...types]);
+    }
     let question: GameQuestion | null = null;
 
-    for (const t of shuffledTypes) {
+    for (const t of orderedTypes) {
       switch (t) {
         case 'A':
           question = { type: 'A', targetCca2: cca2, prompt: country.name };

@@ -1,7 +1,7 @@
 // Hook de sesión de juego — gestiona el game loop de una partida
 import { useState, useCallback, useRef } from 'react';
 import { generateMixedQuestions, generateQuestionsByType, type GameQuestion, type QuestionTypeFilter } from '../data/gameQuestions';
-import type { CountryData, CapitalCoords, Continent, GameLevel } from '../data/types';
+import type { CountryData, CapitalCoords, Continent, GameLevel, QuestionType } from '../data/types';
 import type { LevelDefinition } from '../data/types';
 
 export type FeedbackState = 'idle' | 'correct' | 'incorrect';
@@ -35,14 +35,20 @@ interface GameSessionActions {
 
 const INITIAL_SCORE: GameScore = { correct: 0, incorrect: 0, total: 0 };
 
+export interface GameSessionOptions {
+  onAttempt?: (cca2: string, type: QuestionType, correct: boolean) => void;
+  typeWeights?: Record<QuestionType, number> | null;
+}
+
 /**
  * Hook que gestiona el estado efímero de una sesión de juego.
- * Sin persistencia — el score se pierde al salir.
+ * El score de sesión se pierde al salir; los intentos se persisten via onAttempt.
  */
 export function useGameSession(
   levels: Map<string, LevelDefinition>,
   countries: Map<string, CountryData>,
   capitals: Map<string, CapitalCoords>,
+  options?: GameSessionOptions,
 ): GameSessionState & GameSessionActions {
   const [currentQuestion, setCurrentQuestion] = useState<GameQuestion | null>(null);
   const [score, setScore] = useState<GameScore>(INITIAL_SCORE);
@@ -60,6 +66,12 @@ export function useGameSession(
   // Tipo de pregunta seleccionado (para regenerar ciclos)
   const questionTypeRef = useRef<QuestionTypeFilter>('mixed');
 
+  // Refs para evitar invalidar memoización (patrón estándar en React)
+  const onAttemptRef = useRef(options?.onAttempt);
+  onAttemptRef.current = options?.onAttempt;
+  const typeWeightsRef = useRef(options?.typeWeights ?? null);
+  typeWeightsRef.current = options?.typeWeights ?? null;
+
   /** Configura correctCca2 según el tipo de pregunta */
   const applyHighlight = useCallback((question: GameQuestion) => {
     // E/F: resaltar el país ANTES de responder (el usuario debe identificarlo)
@@ -75,7 +87,7 @@ export function useGameSession(
     (levelCountries: string[], lastCca2?: string) => {
       const qt = questionTypeRef.current;
       if (qt === 'mixed') {
-        return generateMixedQuestions(levelCountries, countries, capitals, lastCca2);
+        return generateMixedQuestions(levelCountries, countries, capitals, lastCca2, typeWeightsRef.current);
       }
       return generateQuestionsByType(qt, levelCountries, countries, capitals, lastCca2);
     },
@@ -113,6 +125,9 @@ export function useGameSession(
         currentQuestion.type === 'A' || currentQuestion.type === 'B'
           ? answer === currentQuestion.targetCca2
           : answer === (currentQuestion as { correctAnswer: string }).correctAnswer;
+
+      // Registrar intento en el store (via callback)
+      onAttemptRef.current?.(currentQuestion.targetCca2, currentQuestion.type as QuestionType, isCorrect);
 
       // Tras responder, siempre mostrar el país correcto en dorado
       setCorrectCca2(currentQuestion.targetCca2);

@@ -47,11 +47,11 @@
   - [x] Nombres para los juegos A-F definidos
   - [x] Modo Aventura (antes «mixto») documentado
   - [x] Flujo general (continente → nivel → tipo) documentado
-- [ ] Algoritmo de aprendizaje — implementar:
-  - [ ] Registro de fallos (tracking por país/capital y tipo de juego, refuerzo, actualización al acertar)
-  - [ ] Barra de progreso (modo Aventura: preparación sello; modo tipo concreto: dominio; pesos por tipo)
-  - [ ] Pesos progresivos en modo Aventura (E → C/D → F → A/B)
-  - [ ] Detección de preparación + mensaje de invitación a pruebas de sello
+- [test] Algoritmo de aprendizaje — implementar:
+  - [test] Registro de fallos (tracking por país/capital y tipo de juego, refuerzo, actualización al acertar)
+  - [test] Barra de progreso (modo Aventura: preparación sello; modo tipo concreto: dominio; pesos por tipo)
+  - [test] Pesos progresivos en modo Aventura (E → C/D → F → A/B)
+  - [test] Detección de preparación + mensaje de invitación a pruebas de sello
 - [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
 
 ### Experiencia: Pasaporte

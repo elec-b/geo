@@ -6,14 +6,16 @@ import { COUNTRY_CORRECT_COLOR, COUNTRY_INCORRECT_COLOR } from '../Globe/colors'
 import type { GlobeControlProps } from '../Explore/ExploreView';
 import type { CountryFeature } from '../../data/countries';
 import type { GameQuestionChoice, QuestionTypeFilter } from '../../data/gameQuestions';
-import type { CountryData, CapitalCoords, Continent, GameLevel, LevelDefinition } from '../../data/types';
+import type { CountryData, CapitalCoords, Continent, GameLevel, LevelDefinition, QuestionType } from '../../data/types';
 import { CONTINENT_CENTERS, CONTINENT_ZOOM } from '../../data/continents';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
+import { useAppStore } from '../../stores/appStore';
+import { selectTypeWeights, calculateProgress, isReadyForStamp } from '../../data/learningAlgorithm';
 import { useGameSession } from '../../hooks/useGameSession';
 import { LevelSelector } from './LevelSelector';
 import { QuestionBanner } from './QuestionBanner';
 import { GameFeedback } from './GameFeedback';
-import { ScoreBar } from './ScoreBar';
+import { ProgressBar } from './ProgressBar';
 import { ChoicePanel } from './ChoicePanel';
 import './JugarView.css';
 
@@ -39,7 +41,39 @@ export function JugarView({
   onCountryClickRef,
 }: JugarViewProps) {
   const [screen, setScreen] = useState<JugarScreen>('selector');
-  const session = useGameSession(levels, countries, capitals);
+
+  // --- Store y algoritmo de aprendizaje ---
+  const recordAttempt = useAppStore((s) => s.recordAttempt);
+  const getAttempts = useAppStore((s) => s.getAttempts);
+
+  // Refs para nivel/continente/tipo activos (disponibles antes de que session se actualice)
+  const activeLevelRef = useRef<GameLevel | null>(null);
+  const activeContinentRef = useRef<Continent | null>(null);
+  const activeQuestionTypeRef = useRef<QuestionTypeFilter>('mixed');
+
+  // Callback de intento: registra en el store
+  const handleAttempt = useCallback(
+    (cca2: string, type: QuestionType, correct: boolean) => {
+      if (activeLevelRef.current && activeContinentRef.current) {
+        recordAttempt(activeLevelRef.current, activeContinentRef.current, cca2, type, correct);
+      }
+    },
+    [recordAttempt],
+  );
+
+  // Pesos para selección de tipo (solo modo Aventura)
+  const typeWeights = useMemo(() => {
+    if (!activeLevelRef.current || !activeContinentRef.current) return null;
+    if (activeQuestionTypeRef.current !== 'mixed') return null;
+    const attempts = getAttempts(activeLevelRef.current, activeContinentRef.current);
+    const def = levels.get(`${activeLevelRef.current}-${activeContinentRef.current}`);
+    return def ? selectTypeWeights(attempts, def.countries) : null;
+  }, [getAttempts, levels]);
+
+  const session = useGameSession(levels, countries, capitals, {
+    onAttempt: handleAttempt,
+    typeWeights,
+  });
 
   // Respuesta seleccionada para feedback visual en ChoicePanel
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
@@ -271,6 +305,11 @@ export function JugarView({
   // Inicio de partida — zoom al continente
   const handleStart = useCallback(
     (level: GameLevel, continent: Continent, questionType?: QuestionTypeFilter) => {
+      // Setear refs antes de iniciar sesión (para que typeWeights se calcule correctamente)
+      activeLevelRef.current = level;
+      activeContinentRef.current = continent;
+      activeQuestionTypeRef.current = questionType ?? 'mixed';
+
       session.start(level, continent, questionType);
       setScreen('playing');
       setSelectedChoice(null);
@@ -337,6 +376,9 @@ export function JugarView({
   // Salir de la partida
   const handleExit = useCallback(() => {
     session.end();
+    activeLevelRef.current = null;
+    activeContinentRef.current = null;
+    activeQuestionTypeRef.current = 'mixed';
     setScreen('selector');
     setSelectedChoice(null);
     setFlyOutStep('idle');
@@ -413,6 +455,27 @@ export function JugarView({
     setFlyOutStep('idle');
   }, [flyOutStep, session.currentQuestion, globeRef]);
 
+  // --- Progreso y readiness (para la barra) ---
+
+  const progress = useMemo(() => {
+    if (!session.level || !session.continent) return 0;
+    const att = getAttempts(session.level, session.continent);
+    const def = levels.get(`${session.level}-${session.continent}`);
+    if (!def) return 0;
+    const mode = activeQuestionTypeRef.current === 'mixed' ? 'adventure' : activeQuestionTypeRef.current;
+    return calculateProgress(att, def.countries, mode);
+    // session.score en deps para recalcular tras cada respuesta
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session.level, session.continent, session.score, getAttempts, levels]);
+
+  const readyForStamp = useMemo(() => {
+    if (activeQuestionTypeRef.current !== 'mixed' || !session.level || !session.continent) return false;
+    const att = getAttempts(session.level, session.continent);
+    const def = levels.get(`${session.level}-${session.continent}`);
+    return def ? isReadyForStamp(att, def.countries) : false;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session.level, session.continent, session.score, getAttempts, levels]);
+
   // --- Render ---
 
   if (screen === 'selector') {
@@ -458,7 +521,13 @@ export function JugarView({
         geoFeedback={isABQuestion && session.feedbackState === 'incorrect'}
       />
 
-      <ScoreBar score={session.score} onExit={handleExit} />
+      <ProgressBar
+        progress={progress}
+        score={session.score}
+        onExit={handleExit}
+        readyForStamp={readyForStamp}
+        isAdventure={activeQuestionTypeRef.current === 'mixed'}
+      />
     </>
   );
 }

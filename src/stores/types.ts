@@ -1,5 +1,5 @@
 // Tipos del estado global de GeoExpert
-import type { Continent, GameLevel } from '../data/types';
+import type { Continent, GameLevel, QuestionType } from '../data/types';
 
 /** Identificador de perfil (UUID) */
 export type ProfileId = string;
@@ -14,11 +14,22 @@ export interface StampStatus {
   lastAttemptDate: string; // ISO date (YYYY-MM-DD)
 }
 
+/** Registro de intentos para un país en un tipo de juego */
+export interface AttemptRecord {
+  correct: number;
+  incorrect: number;
+  /** Aciertos consecutivos recientes (se resetea al fallar) */
+  streak: number;
+}
+
+/** Intentos por tipo de juego para un país dado */
+export type CountryAttempts = Partial<Record<QuestionType, AttemptRecord>>;
+
 /** Progreso en un nivel × continente */
 export interface LevelContinentProgress {
   stampCountries: Record<string, StampStatus>;  // cca2 → estado del sello del país
   stampCapitals: Record<string, StampStatus>;   // cca2 → estado del sello de la capital
-  failures: number; // total de fallos acumulados
+  attempts: Record<string, CountryAttempts>;    // cca2 → intentos por tipo
 }
 
 /** Progreso completo de un perfil */
