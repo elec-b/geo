@@ -21,7 +21,7 @@ La aplicación se divide en **3 experiencias**:
 |-------------|-------------|----------|
 | **Jugar** | Camino guiado con retos | Subir de nivel de forma divertida |
 | **Explorar** | Exploración libre del globo | Familiarizarse sin presión |
-| **Mi Pasaporte** | Dashboard de progreso | Ver qué sabe el usuario |
+| **Pasaporte** | Dashboard de progreso | Ver qué sabe el usuario |
 
 ---
 
@@ -60,7 +60,7 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 *   **Ambos sellos son necesarios** para completar un nivel-continente. Conseguir ambos sellos desbloquea el siguiente nivel en ese continente.
 *   **0 errores requeridos**: el usuario debe completar la prueba sin fallos para conseguir el sello.
 *   **Sin límite de intentos**: el usuario puede repetir la prueba de sello tantas veces como quiera. El requisito de 0 errores ya es filtro suficiente, y cada reintento es práctica valiosa.
-*   **Acceso**: El usuario puede intentar las pruebas desde Mi Pasaporte (siempre disponible) o desde Jugar (cuando el algoritmo de aprendizaje lo invita).
+*   **Acceso**: El usuario puede intentar las pruebas desde Pasaporte (siempre disponible) o desde Jugar (cuando el algoritmo de aprendizaje lo invita).
 *   **Fallos compartidos**: Los fallos en las pruebas de sello alimentan el registro de fallos compartido (ver § Jugar > Algoritmo de aprendizaje).
 
 ### Registro de fallos
@@ -124,7 +124,7 @@ El usuario elige un tipo específico y juega exclusivamente ese tipo.
 
 ### Algoritmo de aprendizaje
 
-Sistema compartido entre Jugar y Pruebas de sello (Mi Pasaporte). Ambas experiencias alimentan el mismo registro.
+Sistema compartido entre Jugar y Pruebas de sello (Pasaporte). Ambas experiencias alimentan el mismo registro.
 
 #### Registro de fallos
 *   Se registra **por país/capital y por tipo de juego** cada acierto y fallo.
@@ -144,7 +144,7 @@ Sistema compartido entre Jugar y Pruebas de sello (Mi Pasaporte). Ambas experien
 *   Cuando tiene suficiente evidencia → barra llena → invitación a las pruebas de sello.
 
 ### Prueba de sellos (dentro de Jugar)
-El usuario puede intentar las pruebas desde aquí (cuando el algoritmo lo invita) o desde Mi Pasaporte. Ver § «El pasaporte de explorador > Los 2 sellos» para requisitos (0 errores, sin límite de intentos).
+El usuario puede intentar las pruebas desde aquí (cuando el algoritmo lo invita) o desde Pasaporte. Ver § «El pasaporte de explorador > Los 2 sellos» para requisitos (0 errores, sin límite de intentos).
 
 ---
 
@@ -193,7 +193,7 @@ Las etiquetas de países y capitales sobre el globo deben ser legibles a cualqui
 
 ---
 
-## Mi Pasaporte
+## Pasaporte
 
 El dashboard que muestra el progreso del usuario: su pasaporte con los sellos conseguidos.
 

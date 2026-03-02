@@ -52,9 +52,10 @@
   - [ ] Barra de progreso (modo Aventura: preparación sello; modo tipo concreto: dominio; pesos por tipo)
   - [ ] Pesos progresivos en modo Aventura (E → C/D → F → A/B)
   - [ ] Detección de preparación + mensaje de invitación a pruebas de sello
-- [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Mi Pasaporte, sin límite de intentos)
+- [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
 
-### Experiencia: Mi Pasaporte
+### Experiencia: Pasaporte
+- [ ] Renombrar «Mi Pasaporte» → «Pasaporte» en el código (tab bar, AppShell, types)
 - [ ] Vista de matriz niveles × continentes (3 filas × 5 columnas)
 - [ ] Sistema de sellos (Países y Capitales) con estado conseguido/pendiente
 - [ ] Acceso directo a pruebas de sello desde el dashboard
