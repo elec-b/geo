@@ -105,43 +105,105 @@ Cada tipo mantiene su comportamiento visual:
 
 Si el usuario pulsa Empezar sin elegir tipo, juega en modo **Aventura**: todos los tipos combinados con orden pedagógico.
 
-*   Las preguntas siguen un orden **pseudoaleatorio ponderado**:
+*   Las preguntas siguen una **progresión adaptativa por país**, basada en la etapa de aprendizaje de cada uno (ver § Algoritmo de aprendizaje):
     1. **E** — reconocer países visualmente.
     2. **C y D** — asociar país ↔ capital (dato puro).
     3. **F** — capitales con ubicación en el mapa.
     4. **A y B** — preparación directa para las pruebas de sello.
-*   Todos los tipos pueden aparecer desde el inicio, pero la probabilidad está ponderada hacia los tipos iniciales (E) al principio y se desplaza gradualmente hacia A/B conforme el usuario demuestra dominio.
+*   La selección de tipo se basa en la etapa de aprendizaje de cada país. La progresión natural lleva de E (reconocimiento) hacia A/B (preparación sello), pero el ritmo se adapta individualmente a cada país.
 *   El algoritmo pondera más los tipos que el usuario necesita reforzar (ver § Algoritmo de aprendizaje).
 *   Dentro del modo Aventura, el usuario puede probar A y B como **simulacro** de las pruebas de sello.
-*   **Barra de progreso**: indica la preparación para las pruebas de sello. Cuando se completa → mensaje invitando al usuario a intentar las pruebas.
+*   **Barra de progreso**: «X de Y países listos para sello». Cuando se completa → mensaje invitando al usuario a intentar las pruebas.
 
 ### Modo tipo concreto
 
 El usuario elige un tipo específico y juega exclusivamente ese tipo.
 
-*   **Barra de progreso**: indica el dominio de ese tipo en el nivel-continente actual.
+*   **Barra de progreso**: «X de Y países dominados» en ese tipo para el nivel-continente actual.
 *   Si el usuario domina todos los países del continente en ese nivel para ese tipo → mensaje de felicitación.
 
 ### Algoritmo de aprendizaje
 
-Sistema compartido entre Jugar y Pruebas de sello (Pasaporte). Ambas experiencias alimentan el mismo registro.
+Sistema compartido entre Jugar y Pruebas de sello (Pasaporte). Ambas experiencias alimentan el mismo registro de intentos.
 
-#### Registro de fallos
-*   Se registra **por país/capital y por tipo de juego** cada acierto y fallo.
-*   El algoritmo intercala preguntas de refuerzo sobre los países/capitales que el usuario más falla.
-*   Cuando el usuario acierta un país/capital que tenía registrado como fallo, se actualiza su estado (deja de considerarse fallo).
+#### Registro de intentos
+
+Se registra cada intento del usuario con esta granularidad: **perfil × nivel × continente × país × tipo de juego**.
+
+Para cada combinación se almacena:
+*   **Aciertos**: total acumulado.
+*   **Fallos**: total acumulado.
+*   **Racha**: aciertos consecutivos (se resetea a 0 al fallar).
+
+El registro es **compartido**: tanto Jugar (en todos los modos) como las Pruebas de sello alimentan los mismos datos.
+
+#### Dominio
+
+El **dominio** de un país en un tipo de juego se determina por la racha de aciertos consecutivos:
+
+| Racha | Estado | Descripción |
+|-------|--------|-------------|
+| Sin intentos | — | Nunca preguntado |
+| 0 | Necesita refuerzo | Falló recientemente |
+| 1 | En progreso | Un acierto, aún no consolidado |
+| ≥ 2 | Dominado | Responde de forma fiable |
+
+#### Etapa de aprendizaje por país (modo Aventura)
+
+En modo Aventura, cada país tiene una **etapa de aprendizaje** que determina qué tipo de pregunta priorizar. Las etapas siguen el orden pedagógico de los tipos de juego:
+
+| Etapa | Tipo(s) | Se avanza cuando... |
+|-------|---------|---------------------|
+| 1. Reconocimiento | E | Domina E (racha ≥ 2) |
+| 2. Capitales | C, D | Domina C y D |
+| 3. Ubicación asistida | F | Domina F |
+| 4. Preparación sello | A, B | Domina A y B → país completado |
+
+*   La etapa se **deriva** de los datos del registro (no se almacena por separado).
+*   Es **progresiva**: una vez alcanzada una etapa, no se regresa aunque baje la racha de un tipo anterior. El mecanismo de refuerzo se encarga de recuperar los fallos (ver «Selección de preguntas»).
+*   **No es un bloqueo estricto**: todos los tipos pueden aparecer en cualquier momento, pero el algoritmo favorece fuertemente los tipos de la etapa actual del país.
+
+#### Selección de preguntas
+
+**En modo Aventura**, cada pregunta se genera con dos decisiones: **qué país** preguntar y **qué tipo** usar.
+
+**1. Selección de país** (cola de prioridad):
+1.  **Refuerzo**: Países con racha = 0 en algún tipo ya intentado (acaban de fallar).
+2.  **Nuevos**: Países sin intentos en los tipos de su etapa actual.
+3.  **En progreso**: Países con racha = 1 (un acierto, no consolidado).
+4.  **Mantenimiento**: Países completados (baja frecuencia, para refrescar).
+
+**2. Selección de tipo**: Según la etapa de aprendizaje del país seleccionado. Si la etapa tiene varios tipos (ej. etapa 2: C y D), se alterna entre ellos.
+
+**3. Anti-repetición**: Un país no se repite hasta que se hayan preguntado al menos otros N países (N = mín(3, total_países ÷ 2)).
+
+**En modo tipo concreto**: La misma cola de prioridad para selección de país, pero el tipo es siempre el elegido.
 
 #### Barra de progreso
-*   **En modo Aventura**: indica la preparación del usuario para las pruebas de sello.
-*   **En modo tipo concreto**: indica el dominio de ese tipo en el nivel-continente.
-*   **Sube** al acertar (la magnitud varía según el tipo — A/B pesan más por ser los tipos de sello).
-*   **Baja** al fallar.
-*   Cuando la barra se completa en modo Aventura → mensaje «Ya estás listo para las pruebas de sello».
-*   Cuando la barra se completa en modo tipo concreto → mensaje de dominio.
+
+**En modo Aventura**:
+*   Muestra la preparación para las pruebas de sello.
+*   Métrica: países del nivel-continente donde el usuario domina A **y** B (racha ≥ 2 en ambos).
+*   Texto: «X de Y países listos para sello».
+*   Al completarse (X = Y) → mensaje «¡Ya estás listo para las pruebas de sello!»
+
+**En modo tipo concreto**:
+*   Muestra el dominio de ese tipo en el nivel-continente.
+*   Métrica: países del nivel-continente donde el usuario domina ese tipo (racha ≥ 2).
+*   Texto: «X de Y países dominados».
+*   Al completarse → mensaje de felicitación.
+
+**Elementos comunes**:
+*   Barra visual (0-100%) proporcional a X / Y.
+*   Contador de aciertos y fallos de la sesión actual.
+*   Botón para salir de la partida.
 
 #### Detección de preparación para sello
-*   El algoritmo evalúa los aciertos recientes, con mayor peso en los tipos A y B.
-*   Cuando tiene suficiente evidencia → barra llena → invitación a las pruebas de sello.
+
+*   Solo activa en modo Aventura.
+*   Criterio: **todos** los países del nivel-continente dominan A y B (racha ≥ 2 en ambos).
+*   Cuando se cumple → barra llena → mensaje de invitación a las pruebas de sello.
+*   El usuario puede intentar las pruebas antes del 100% (acceso siempre disponible desde Pasaporte).
 
 ### Prueba de sellos (dentro de Jugar)
 El usuario puede intentar las pruebas desde aquí (cuando el algoritmo lo invita) o desde Pasaporte. Ver § «El pasaporte de explorador > Los 2 sellos» para requisitos (0 errores, sin límite de intentos).
@@ -204,6 +266,21 @@ Matriz visual de **niveles × continentes** (3 filas × 5 columnas). Cada celda 
 
 ### Acceso a los sellos
 Desde el dashboard, el usuario puede intentar conseguir cualquier sello pendiente (sin límite de intentos).
+
+---
+
+## Estadísticas
+
+Vista que muestra el registro de intentos del usuario de forma visual. Accesible desde un **icono en el header**, junto al icono de perfil (a su derecha). Disponible desde cualquier pantalla.
+
+### Contenido
+*   Selector de nivel × continente.
+*   Tabla de países con indicadores de dominio por tipo de juego (E, C, D, F, A, B).
+*   Indicadores visuales por celda: dominado, en progreso, necesita refuerzo, sin datos.
+*   Totales agregados: aciertos y fallos globales del nivel-continente.
+
+### Acciones
+*   **Resetear estadísticas**: Por nivel-continente (con confirmación). Borra todos los intentos de ese nivel-continente para el perfil activo.
 
 ---
 

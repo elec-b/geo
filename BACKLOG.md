@@ -48,18 +48,16 @@
   - [x] Modo Aventura (antes «mixto») documentado
   - [x] Flujo general (continente → nivel → tipo) documentado
 - [ ] Bug (no replicado): en juego E o F, la app iluminó Argelia pero la respuesta "correcta" para la app era Egipto (o El Cairo). Chequeo exhaustivo de que el país resaltado en E/F coincide siempre con la pregunta (revisar generación de preguntas, bindings país→geometría, y IDs). Investigación inicial: datos estáticos y flujo principal verificados sin errores. Si se replica, añadir logs en useGameSession.ts y GlobeD3.tsx para confirmar qué cca2 se envía vs. qué se pinta
-- [test] Algoritmo de aprendizaje — implementar:
-  - [test] Registro de fallos (tracking por país/capital y tipo de juego, refuerzo, actualización al acertar)
-    - [ ] no puedo testear como usuario... Idea: quizás debamos plantear una tabla con las estadísticas del usuario y un sitio sencillo para acceder a ellas? Esto también le servirá al usuario para saber dónde acierta y dónde falla. Se poder resetear / borrar esta tabla de estadísticas si el usuario quiere. Seguramente haya que añadir esto a design.md
-  - [test] Barra de progreso (modo Aventura: preparación sello; modo tipo concreto: dominio; pesos por tipo)
-    - [ ] la barra de progreso no sube cuando acierto
-    - [ ] en la barra de progreso aparece (en verde) "&check;0"... En la barra de progreso podemos mostrar también si queremos número de aciertos y de fallos, pero que sea sencilla.
-  - [test] Pesos progresivos en modo Aventura (E → C/D → F → A/B)
-    - [ ] no está fino me gustaría repasar la lógica contigo. 
-      - Por ejemplo, me pregutna "dónde está Sudán" (juego A), acierto y dos preguntas después me pregunta lo mismo... No sé si tiene mucho sentido.
-      - Por ejemplo, he hecho 50 preguntas en nivel turista de África y cuando llevaba 48 de 50 aciertos, me seguía haciendo preguntas repetidas de juegos C-F, no tiene mucho sentido, ahí debería haber hecho muchas más preguntas de A y B y detectar que estaba preparado para hacer las pruebas de sello.
-  - [test] Detección de preparación + mensaje de invitación a pruebas de sello
-    - [ ] relacionémoslo con el punto de arriba... Pero tras 48 aciertos y 2 fallos (al inicio) en África-turista no me invitó a hacer las pruebas de sello.
+- [ ] Rediseño del algoritmo de aprendizaje (diseño completado en DESIGN.md § Algoritmo de aprendizaje)
+  - [ ] Reescribir `learningAlgorithm.ts`: etapas de aprendizaje por país, cola de prioridad, anti-repetición
+  - [ ] Reescribir generación de preguntas en `gameQuestions.ts`: selección dinámica (no ciclos fijos)
+  - [ ] Actualizar `ProgressBar.tsx`: métrica «X de Y» + fix renderizado `✓` (`&check;` → carácter Unicode)
+  - [ ] Actualizar detección de preparación para sello (basada en dominio A y B)
+  - [ ] Fix: `typeWeights` en `JugarView.tsx` — deps de `useMemo` congelados (`getAttempts` y `levels` son refs estables)
+- [ ] Vista de estadísticas del usuario (diseño en DESIGN.md § Estadísticas)
+  - [ ] Icono en header (junto al de perfil) + pantalla con tabla de dominio por tipo
+  - [ ] Selector nivel × continente
+  - [ ] Acción de resetear estadísticas (con confirmación)
 - [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
 
 ### Experiencia: Pasaporte
