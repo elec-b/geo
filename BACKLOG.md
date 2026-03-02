@@ -46,6 +46,7 @@
 - [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
 - [ ] Barra de progreso (indica preparación para prueba de sello)
 - [ ] Selector de tipo de juego: decidir diseño final y comportamiento (ver DESIGN.md § «Selector de tipo de juego»). Actualmente es un prototipo con pills
+  - [ ] Elegir buenos nombres también para los juegos A a F. A y B son las pruebas de sello y los otros son buenos para iniciarse / facilitar el aprendizaje.
 - [ ] Sistema de pruebas de sello (invitación automática, 0 errores, sin límite de intentos)
 
 ### Experiencia: Mi Pasaporte
