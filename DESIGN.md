@@ -36,6 +36,7 @@ La aplicación se divide en **3 experiencias**:
 
 ### Progresión por continente
 *   El usuario tiene un **nivel independiente por cada continente**. Puede ser "Guía de Europa" mientras es "Turista de África".
+*   Cada combinación de nivel × continente es una **vía de progresión independiente** (3 × 5 = 15 vías). Para desbloquear el siguiente nivel en un continente, el usuario debe conseguir ambos sellos (Países y Capitales) del nivel actual.
 *   **Nivel global** = el mínimo de los 5 continentes. Este es el nivel que el usuario puede "presumir" como resumen.
 *   El **color del pasaporte** cambiará según el nivel global del usuario.
 
@@ -56,13 +57,14 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 | **Sello de Países** | Ubicar cualquier país del nivel en el mapa | Tipo A (texto → mapa) |
 | **Sello de Capitales** | Ubicar cualquier capital del nivel en el mapa | Tipo B (texto → mapa) |
 
-*   **Ambos sellos son necesarios** para completar un nivel-continente.
+*   **Ambos sellos son necesarios** para completar un nivel-continente. Conseguir ambos sellos desbloquea el siguiente nivel en ese continente.
+*   **0 errores requeridos**: el usuario debe completar la prueba sin fallos para conseguir el sello.
 *   **Sin límite de intentos**: el usuario puede repetir la prueba de sello tantas veces como quiera. El requisito de 0 errores ya es filtro suficiente, y cada reintento es práctica valiosa.
+*   **Acceso**: El usuario puede intentar las pruebas desde Mi Pasaporte (siempre disponible) o desde Jugar (cuando el algoritmo de aprendizaje lo invita).
+*   **Fallos compartidos**: Los fallos en las pruebas de sello alimentan el registro de fallos compartido (ver § Jugar > Algoritmo de aprendizaje).
 
 ### Registro de fallos
-*   Cuando el usuario falla, se guarda el país/capital fallado.
-*   **Jugar** utilizará estos fallos para reforzar el aprendizaje.
-*   Y cuando el usuario vuelva a acertar el país/capital fallado, se actualiza la lista (no contemplándolo como fallo)
+Los fallos del usuario se registran en un sistema compartido (ver § Jugar > Algoritmo de aprendizaje). Tanto el entrenamiento en Jugar como las pruebas de sello alimentan este registro.
 
 ---
 
@@ -70,46 +72,79 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 
 **La piedra angular de la app.** El camino guiado para ir subiendo de nivel progresivamente. Es la experiencia más divertida y la que más tiempo ocupará.
 
-### Selector de tipo de juego
-> **Pendiente de aterrizar.** La idea original era que el entrenamiento libre fuese siempre en modo mixto (todos los tipos A-F). Sin embargo, durante el testing se valoró mantener un selector que permita al usuario elegir un tipo concreto (A, B, C, D, E o F) o jugar en modo mixto. Esto podría ayudar a practicar habilidades específicas (ej. solo ubicar capitales). Hay que definir el diseño final del selector (actualmente es un prototipo con pills) y decidir si se ofrece siempre o solo en ciertos contextos.
-
-### Flujo para cada nivel-continente
-1.  **Entrenamiento libre**: Preguntas variadas de los tipos A-F (solo países/capitales del nivel actual). No hay rondas fijas; el usuario juega libremente.
-2.  **Refuerzo de fallos**: El algoritmo intercala repasos específicos de lo que el usuario suele fallar.
-3.  **Prueba de sellos**: Cuando el algoritmo detecta que el usuario está preparado (acierta consistentemente), se le invita a conseguir el Sello de Países y el Sello de Capitales para certificar su nivel. Los sellos se consiguen teniendo 0 errores en las pruebas (tipo A y B respectivamente). El número de preguntas por prueba es fijo según el nivel-continente.
-
-### Barra de progreso
-El algoritmo muestra una **barra de progreso** que indica cómo de preparado está el usuario para afrontar las pruebas de sello con garantías. Esta barra se actualiza en función de los aciertos recientes en los tipos A y B durante el entrenamiento.
+### Flujo general
+1.  El usuario selecciona **continente**.
+2.  El usuario selecciona **nivel** (solo los desbloqueados):
+    - Turista: siempre disponible.
+    - Mochilero: se desbloquea al conseguir ambos sellos de Turista en ese continente.
+    - Guía: se desbloquea al conseguir ambos sellos de Mochilero en ese continente.
+3.  El usuario pulsa **Empezar** → juega en modo **Aventura** (todos los tipos combinados).
+    — O selecciona un tipo de juego concreto + Empezar → juega solo ese tipo.
 
 ### Tipos de juego
 
-#### A. Prueba de Países (texto → mapa) — Sello de Países
-*   **Pregunta**: «**Brasil**»
-*   **Acción**: Rotar globo y tocar la geometría correcta.
-*   **Uso**: Entrenamiento + prueba para el Sello de Países.
+Organizados por orden pedagógico (de iniciación a certificación):
 
-#### B. Prueba de Capitales (texto → mapa) — Sello de Capitales
-*   **Pregunta**: «**Madrid**»
-*   **Acción**: Tocar la capital (o el país que la contiene, para facilitar en móviles).
-*   **Uso**: Entrenamiento + prueba para el Sello de Capitales.
+| Tipo | Nombre | Mecánica | Propósito |
+|------|--------|----------|-----------|
+| E | ¿Qué país es? | País resaltado → elegir nombre (4 opciones) | Reconocimiento visual |
+| C | País → Capital | «¿Capital de Francia?» → elegir (4 opciones) | Aprender capitales (dato) |
+| D | Capital → País | «París es la capital de…?» → elegir (4 opciones) | Aprender capitales (inverso) |
+| F | ¿Cuál es su capital? | País resaltado + capital → elegir capital (4 opciones) | Capitales con ubicación |
+| A | Señala el país 🔖 | Nombre del país → tocar en el globo | Preparación sello de países |
+| B | Señala la capital 🔖 | Nombre de la capital → tocar en el globo | Preparación sello de capitales |
 
-#### C. Capital → País (texto → texto)
-*   **Pregunta**: «¿Cuál es la capital de **Francia**?»
-*   **Opciones**: París, Londres, Roma, Berlín.
-*   **Visual**: Cámara viaja al país.
+🔖 = Preparación para prueba de sello (badge visual en el selector).
 
-#### D. País → Capital (texto → texto)
-*   **Pregunta**: «**París** es la capital de...?»
-*   **Opciones**: Francia, España, Italia, Alemania.
-*   **Visual**: Pin en la ciudad.
+Cada tipo mantiene su comportamiento visual:
+*   **A/B**: Zoom + contexto continental. Feedback en 2 pasos al fallar.
+*   **C/D**: Perspectiva continental → zoom al país tras responder. Pines de capitales.
+*   **E/F**: País resaltado en dorado. Zoom adaptativo (×40 para microestados).
 
-#### E. Selecciona el país (mapa → texto)
-*   **Pregunta**: «¿Qué país está resaltado?» (brilla en dorado)
-*   **Opciones**: Brasil, Argentina, Perú, Chile.
+### Modo Aventura (por defecto)
 
-#### F. Selecciona la capital (mapa → texto)
-*   **Pregunta**: «¿Cuál es la capital de este país?» (país en dorado + círculo en capital)
-*   **Opciones**: Brasilia, Buenos Aires, Lima, Santiago.
+Si el usuario pulsa Empezar sin elegir tipo, juega en modo **Aventura**: todos los tipos combinados con orden pedagógico.
+
+*   Las preguntas siguen un orden **pseudoaleatorio ponderado**:
+    1. **E** — reconocer países visualmente.
+    2. **C y D** — asociar país ↔ capital (dato puro).
+    3. **F** — capitales con ubicación en el mapa.
+    4. **A y B** — preparación directa para las pruebas de sello.
+*   Todos los tipos pueden aparecer desde el inicio, pero la probabilidad está ponderada hacia los tipos iniciales (E) al principio y se desplaza gradualmente hacia A/B conforme el usuario demuestra dominio.
+*   El algoritmo pondera más los tipos que el usuario necesita reforzar (ver § Algoritmo de aprendizaje).
+*   Dentro del modo Aventura, el usuario puede probar A y B como **simulacro** de las pruebas de sello.
+*   **Barra de progreso**: indica la preparación para las pruebas de sello. Cuando se completa → mensaje invitando al usuario a intentar las pruebas.
+
+### Modo tipo concreto
+
+El usuario elige un tipo específico y juega exclusivamente ese tipo.
+
+*   **Barra de progreso**: indica el dominio de ese tipo en el nivel-continente actual.
+*   Si el usuario domina todos los países del continente en ese nivel para ese tipo → mensaje de felicitación.
+
+### Algoritmo de aprendizaje
+
+Sistema compartido entre Jugar y Pruebas de sello (Mi Pasaporte). Ambas experiencias alimentan el mismo registro.
+
+#### Registro de fallos
+*   Se registra **por país/capital y por tipo de juego** cada acierto y fallo.
+*   El algoritmo intercala preguntas de refuerzo sobre los países/capitales que el usuario más falla.
+*   Cuando el usuario acierta un país/capital que tenía registrado como fallo, se actualiza su estado (deja de considerarse fallo).
+
+#### Barra de progreso
+*   **En modo Aventura**: indica la preparación del usuario para las pruebas de sello.
+*   **En modo tipo concreto**: indica el dominio de ese tipo en el nivel-continente.
+*   **Sube** al acertar (la magnitud varía según el tipo — A/B pesan más por ser los tipos de sello).
+*   **Baja** al fallar.
+*   Cuando la barra se completa en modo Aventura → mensaje «Ya estás listo para las pruebas de sello».
+*   Cuando la barra se completa en modo tipo concreto → mensaje de dominio.
+
+#### Detección de preparación para sello
+*   El algoritmo evalúa los aciertos recientes, con mayor peso en los tipos A y B.
+*   Cuando tiene suficiente evidencia → barra llena → invitación a las pruebas de sello.
+
+### Prueba de sellos (dentro de Jugar)
+El usuario puede intentar las pruebas desde aquí (cuando el algoritmo lo invita) o desde Mi Pasaporte. Ver § «El pasaporte de explorador > Los 2 sellos» para requisitos (0 errores, sin límite de intentos).
 
 ---
 

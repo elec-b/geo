@@ -43,11 +43,16 @@
   - **E/F**: ya funcionan bien, no hacer cambios
   - **C/D**: las preguntas se hacen con perspectiva continental (zoom out), tras la respuesta del usuario zoom in a la zona del globo - se mantiene el enfoque que hay ahora (países más grandes menos zoom in necesario, países más pequeños más zoom in necesario)
 - [x] Vaticano: permitir mayor zoom-in en E/F — con el máximo actual (×25) no se distingue nada. Es el único caso (0.44 km²; Mónaco, el siguiente más pequeño con 2 km², ya se ve bien).
-- [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
-- [ ] Barra de progreso (indica preparación para prueba de sello)
-- [ ] Selector de tipo de juego: decidir diseño final y comportamiento (ver DESIGN.md § «Selector de tipo de juego»). Actualmente es un prototipo con pills
-  - [ ] Elegir buenos nombres también para los juegos A a F. A y B son las pruebas de sello y los otros son buenos para iniciarse / facilitar el aprendizaje.
-- [ ] Sistema de pruebas de sello (invitación automática, 0 errores, sin límite de intentos)
+- [x] Selector de tipo de juego: diseño final, nombres y flujo documentados en DESIGN.md
+  - [x] Nombres para los juegos A-F definidos
+  - [x] Modo Aventura (antes «mixto») documentado
+  - [x] Flujo general (continente → nivel → tipo) documentado
+- [ ] Algoritmo de aprendizaje — implementar:
+  - [ ] Registro de fallos (tracking por país/capital y tipo de juego, refuerzo, actualización al acertar)
+  - [ ] Barra de progreso (modo Aventura: preparación sello; modo tipo concreto: dominio; pesos por tipo)
+  - [ ] Pesos progresivos en modo Aventura (E → C/D → F → A/B)
+  - [ ] Detección de preparación + mensaje de invitación a pruebas de sello
+- [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Mi Pasaporte, sin límite de intentos)
 
 ### Experiencia: Mi Pasaporte
 - [ ] Vista de matriz niveles × continentes (3 filas × 5 columnas)
