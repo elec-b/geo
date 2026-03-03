@@ -49,6 +49,8 @@ interface AppStoreActions {
   recordAttempt: (level: GameLevel, continent: Continent, cca2: string, questionType: QuestionType, correct: boolean) => void;
   /** Devuelve los intentos del perfil activo para un nivel × continente */
   getAttempts: (level: GameLevel, continent: Continent) => Record<string, CountryAttempts>;
+  /** Resetea los intentos (attempts) del perfil activo para un nivel × continente */
+  resetAttempts: (level: GameLevel, continent: Continent) => void;
 }
 
 type AppStore = AppState & AppStoreActions;
@@ -112,7 +114,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
 
       const updated = correct
         ? { correct: prev.correct + 1, incorrect: prev.incorrect, streak: prev.streak + 1 }
-        : { correct: prev.correct, incorrect: prev.incorrect + 1, streak: 0 };
+        : { correct: prev.correct, incorrect: prev.incorrect + 1, streak: prev.streak > 0 ? 0 : prev.streak - 1 };
 
       // Clonado inmutable del path completo
       const newProfiles = [...state.profiles];
@@ -144,5 +146,33 @@ export const useAppStore = create<AppStore>((set, get) => ({
     const profile = get().getActiveProfile();
     if (!profile) return {};
     return profile.progress[level][continent].attempts;
+  },
+
+  resetAttempts: (level, continent) => {
+    set((state) => {
+      const { activeProfileId } = state;
+      if (!activeProfileId) return state;
+
+      const profileIdx = state.profiles.findIndex((p) => p.id === activeProfileId);
+      if (profileIdx === -1) return state;
+
+      const profile = state.profiles[profileIdx];
+      const newProfiles = [...state.profiles];
+      newProfiles[profileIdx] = {
+        ...profile,
+        progress: {
+          ...profile.progress,
+          [level]: {
+            ...profile.progress[level],
+            [continent]: {
+              ...profile.progress[level][continent],
+              attempts: {},
+            },
+          },
+        },
+      };
+
+      return { profiles: newProfiles };
+    });
   },
 }));

@@ -3,16 +3,21 @@ import type { GameScore } from '../../hooks/useGameSession';
 import './ProgressBar.css';
 
 interface ProgressBarProps {
-  progress: number;           // 0-1
+  progressCurrent: number;
+  progressTotal: number;
   score: GameScore;
   onExit: () => void;
   readyForStamp: boolean;
   isAdventure: boolean;
 }
 
-export function ProgressBar({ progress, score, onExit, readyForStamp, isAdventure }: ProgressBarProps) {
-  const pct = Math.min(progress * 100, 100);
-  const isFull = progress >= 1.0;
+export function ProgressBar({ progressCurrent, progressTotal, score, onExit, readyForStamp, isAdventure }: ProgressBarProps) {
+  const pct = progressTotal > 0 ? Math.min((progressCurrent / progressTotal) * 100, 100) : 0;
+  const isFull = progressTotal > 0 && progressCurrent >= progressTotal;
+
+  const label = isAdventure
+    ? `${progressCurrent} de ${progressTotal} listos para sello`
+    : `${progressCurrent} de ${progressTotal} dominados`;
 
   return (
     <div className="progress-bar">
@@ -28,6 +33,9 @@ export function ProgressBar({ progress, score, onExit, readyForStamp, isAdventur
         </div>
       )}
 
+      {/* Etiqueta de progreso */}
+      <div className="progress-bar__label">{label}</div>
+
       {/* Barra de progreso visual */}
       <div className="progress-bar__track">
         <div
@@ -38,8 +46,8 @@ export function ProgressBar({ progress, score, onExit, readyForStamp, isAdventur
 
       <div className="progress-bar__row">
         <div className="progress-bar__stats">
-          <span className="progress-bar__correct">&check; {score.correct}</span>
-          <span className="progress-bar__incorrect">&times; {score.incorrect}</span>
+          <span className="progress-bar__correct">{'\u2713'} {score.correct}</span>
+          <span className="progress-bar__incorrect">{'\u2717'} {score.incorrect}</span>
         </div>
         <button className="progress-bar__exit" onClick={onExit}>
           Salir

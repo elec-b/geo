@@ -10,7 +10,7 @@ import type { CountryData, CapitalCoords, Continent, GameLevel, LevelDefinition,
 import { CONTINENT_CENTERS, CONTINENT_ZOOM } from '../../data/continents';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
 import { useAppStore } from '../../stores/appStore';
-import { selectTypeWeights, calculateProgress, isReadyForStamp } from '../../data/learningAlgorithm';
+import { calculateProgress, isReadyForStamp } from '../../data/learningAlgorithm';
 import { useGameSession } from '../../hooks/useGameSession';
 import { LevelSelector } from './LevelSelector';
 import { QuestionBanner } from './QuestionBanner';
@@ -61,18 +61,15 @@ export function JugarView({
     [recordAttempt],
   );
 
-  // Pesos para selección de tipo (solo modo Aventura)
-  const typeWeights = useMemo(() => {
-    if (!activeLevelRef.current || !activeContinentRef.current) return null;
-    if (activeQuestionTypeRef.current !== 'mixed') return null;
-    const attempts = getAttempts(activeLevelRef.current, activeContinentRef.current);
-    const def = levels.get(`${activeLevelRef.current}-${activeContinentRef.current}`);
-    return def ? selectTypeWeights(attempts, def.countries) : null;
-  }, [getAttempts, levels]);
+  // Callback para obtener intentos actualizados (el hook lo usa para el algoritmo)
+  const getAttemptsForSession = useCallback(() => {
+    if (!activeLevelRef.current || !activeContinentRef.current) return {};
+    return getAttempts(activeLevelRef.current, activeContinentRef.current);
+  }, [getAttempts]);
 
   const session = useGameSession(levels, countries, capitals, {
     onAttempt: handleAttempt,
-    typeWeights,
+    getAttempts: getAttemptsForSession,
   });
 
   // Respuesta seleccionada para feedback visual en ChoicePanel
@@ -458,10 +455,10 @@ export function JugarView({
   // --- Progreso y readiness (para la barra) ---
 
   const progress = useMemo(() => {
-    if (!session.level || !session.continent) return 0;
+    if (!session.level || !session.continent) return { current: 0, total: 0 };
     const att = getAttempts(session.level, session.continent);
     const def = levels.get(`${session.level}-${session.continent}`);
-    if (!def) return 0;
+    if (!def) return { current: 0, total: 0 };
     const mode = activeQuestionTypeRef.current === 'mixed' ? 'adventure' : activeQuestionTypeRef.current;
     return calculateProgress(att, def.countries, mode);
     // session.score en deps para recalcular tras cada respuesta
@@ -522,7 +519,8 @@ export function JugarView({
       />
 
       <ProgressBar
-        progress={progress}
+        progressCurrent={progress.current}
+        progressTotal={progress.total}
         score={session.score}
         onExit={handleExit}
         readyForStamp={readyForStamp}

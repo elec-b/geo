@@ -3,6 +3,7 @@ import { lazy, Suspense, useState, useCallback, useEffect, useRef, useMemo } fro
 import { LoadingScreen } from './components/UI/LoadingScreen';
 import { TabBar } from './components/Navigation/TabBar';
 import { AppHeader } from './components/Layout/AppHeader';
+import { StatsView } from './components/Stats/StatsView';
 import { ExploreView, type GlobeControlProps } from './components/Explore/ExploreView';
 import { JugarView } from './components/Game/JugarView';
 import { loadCountryData, loadCapitals } from './data/countryData';
@@ -31,6 +32,7 @@ const DEFAULT_GLOBE_CONTROL: GlobeControlProps = {
 function App() {
   const [globeReady, setGlobeReady] = useState(false);
   const [activeTab, setActiveTab] = useState<TabId>('explore');
+  const [showStats, setShowStats] = useState(false);
   const showMarkers = useAppStore((s) => s.settings.showMarkers);
 
   // Datos cargados
@@ -109,7 +111,7 @@ function App() {
     <>
       <LoadingScreen visible={!globeReady} />
 
-      <AppHeader />
+      <AppHeader onStatsClick={() => setShowStats(true)} />
 
       {/* Globo: siempre montado, sin wrapper — iOS rompe touch tras re-render si se envuelve */}
       <Suspense fallback={null}>
@@ -169,6 +171,14 @@ function App() {
             <span className="tab-placeholder__subtitle">Próximamente</span>
           </div>
         </div>
+      )}
+
+      {showStats && dataReady && (
+        <StatsView
+          countries={countries}
+          levels={levels}
+          onClose={() => setShowStats(false)}
+        />
       )}
 
       <TabBar activeTab={activeTab} onTabChange={setActiveTab} />

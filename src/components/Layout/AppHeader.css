@@ -18,6 +18,13 @@
   pointer-events: none;
 }
 
+/* Grupo de botones de la derecha */
+.app-header__right {
+  display: flex;
+  gap: var(--spacing-sm);
+  pointer-events: auto;
+}
+
 /* Solo los botones reciben eventos táctiles */
 .app-header__button {
   pointer-events: auto;

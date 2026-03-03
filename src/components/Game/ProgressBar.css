@@ -19,6 +19,13 @@
   min-width: 14rem;
 }
 
+/* Etiqueta de progreso "X de Y" */
+.progress-bar__label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
 /* Barra de progreso visual */
 .progress-bar__track {
   height: 0.25rem;

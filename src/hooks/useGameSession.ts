@@ -1,8 +1,11 @@
 // Hook de sesión de juego — gestiona el game loop de una partida
+// Paradigma: selección pregunta-a-pregunta (no cola pre-generada)
 import { useState, useCallback, useRef } from 'react';
-import { generateMixedQuestions, generateQuestionsByType, type GameQuestion, type QuestionTypeFilter } from '../data/gameQuestions';
+import { generateSingleQuestion, generateQuestionsByType, type GameQuestion, type QuestionTypeFilter } from '../data/gameQuestions';
+import { selectNextQuestion } from '../data/learningAlgorithm';
 import type { CountryData, CapitalCoords, Continent, GameLevel, QuestionType } from '../data/types';
 import type { LevelDefinition } from '../data/types';
+import type { CountryAttempts } from '../stores/types';
 
 export type FeedbackState = 'idle' | 'correct' | 'incorrect';
 
@@ -37,7 +40,8 @@ const INITIAL_SCORE: GameScore = { correct: 0, incorrect: 0, total: 0 };
 
 export interface GameSessionOptions {
   onAttempt?: (cca2: string, type: QuestionType, correct: boolean) => void;
-  typeWeights?: Record<QuestionType, number> | null;
+  /** Función para obtener los intentos actualizados del store */
+  getAttempts?: () => Record<string, CountryAttempts>;
 }
 
 /**
@@ -59,18 +63,20 @@ export function useGameSession(
   const [level, setLevel] = useState<GameLevel | null>(null);
   const [continent, setContinent] = useState<Continent | null>(null);
 
-  // Cola de preguntas pendientes
-  const questionsRef = useRef<GameQuestion[]>([]);
+  // Historial de países recientes para anti-repetición
+  const recentCountriesRef = useRef<string[]>([]);
   // Referencia al nivel actual para regenerar preguntas
   const levelKeyRef = useRef<string>('');
-  // Tipo de pregunta seleccionado (para regenerar ciclos)
+  // Tipo de pregunta seleccionado
   const questionTypeRef = useRef<QuestionTypeFilter>('mixed');
+  // Cola de preguntas para modo tipo concreto (fallback)
+  const questionsRef = useRef<GameQuestion[]>([]);
 
-  // Refs para evitar invalidar memoización (patrón estándar en React)
+  // Refs para evitar invalidar memoización
   const onAttemptRef = useRef(options?.onAttempt);
   onAttemptRef.current = options?.onAttempt;
-  const typeWeightsRef = useRef(options?.typeWeights ?? null);
-  typeWeightsRef.current = options?.typeWeights ?? null;
+  const getAttemptsRef = useRef(options?.getAttempts);
+  getAttemptsRef.current = options?.getAttempts;
 
   /** Configura correctCca2 según el tipo de pregunta */
   const applyHighlight = useCallback((question: GameQuestion) => {
@@ -82,17 +88,47 @@ export function useGameSession(
     }
   }, []);
 
-  /** Genera preguntas según el tipo seleccionado */
-  const generateQuestions = useCallback(
-    (levelCountries: string[], lastCca2?: string) => {
-      const qt = questionTypeRef.current;
-      if (qt === 'mixed') {
-        return generateMixedQuestions(levelCountries, countries, capitals, lastCca2, typeWeightsRef.current);
+  /** Solicita la siguiente pregunta al algoritmo y la genera */
+  const requestNextQuestion = useCallback((): GameQuestion | null => {
+    const def = levels.get(levelKeyRef.current);
+    if (!def) return null;
+
+    const qt = questionTypeRef.current;
+
+    if (qt !== 'mixed') {
+      // Modo tipo concreto: usar cola pre-generada (regenerar si vacía)
+      if (questionsRef.current.length === 0) {
+        const lastCca2 = recentCountriesRef.current[recentCountriesRef.current.length - 1];
+        questionsRef.current = generateQuestionsByType(qt, def.countries, countries, capitals, lastCca2);
       }
-      return generateQuestionsByType(qt, levelCountries, countries, capitals, lastCca2);
-    },
-    [countries, capitals],
-  );
+      const question = questionsRef.current.shift() ?? null;
+      if (question) {
+        recentCountriesRef.current.push(question.targetCca2);
+      }
+      return question;
+    }
+
+    // Modo aventura: selección pregunta-a-pregunta
+    const attempts = getAttemptsRef.current?.() ?? {};
+    const selection = selectNextQuestion(attempts, def.countries, recentCountriesRef.current);
+    if (!selection) return null;
+
+    let question = generateSingleQuestion(selection, def.countries, countries, capitals);
+
+    // Fallback: si no se pudo generar (ej: tipo B sin capital), intentar tipo A
+    if (!question) {
+      question = generateSingleQuestion(
+        { cca2: selection.cca2, questionType: 'A' },
+        def.countries, countries, capitals,
+      );
+    }
+
+    if (question) {
+      recentCountriesRef.current.push(question.targetCca2);
+    }
+
+    return question;
+  }, [levels, countries, capitals]);
 
   const start = useCallback(
     (newLevel: GameLevel, newContinent: Continent, questionType: QuestionTypeFilter = 'mixed') => {
@@ -102,18 +138,28 @@ export function useGameSession(
 
       levelKeyRef.current = key;
       questionTypeRef.current = questionType;
-      const questions = generateQuestions(def.countries);
-      questionsRef.current = questions.slice(1);
+      recentCountriesRef.current = [];
+      questionsRef.current = [];
 
       setLevel(newLevel);
       setContinent(newContinent);
       setScore(INITIAL_SCORE);
       setFeedbackState('idle');
-      setCurrentQuestion(questions[0]);
       setIsActive(true);
-      applyHighlight(questions[0]);
+
+      // Generar primera pregunta
+      // Para tipo concreto, pre-generar la cola
+      if (questionType !== 'mixed') {
+        questionsRef.current = generateQuestionsByType(questionType, def.countries, countries, capitals);
+      }
+
+      const question = requestNextQuestion();
+      setCurrentQuestion(question);
+      if (question) {
+        applyHighlight(question);
+      }
     },
-    [levels, generateQuestions, applyHighlight],
+    [levels, countries, capitals, requestNextQuestion, applyHighlight],
   );
 
   const submitAnswer = useCallback(
@@ -156,16 +202,7 @@ export function useGameSession(
   );
 
   const nextQuestion = useCallback(() => {
-    // Si no quedan preguntas, regenerar el ciclo
-    if (questionsRef.current.length === 0) {
-      const def = levels.get(levelKeyRef.current);
-      if (def) {
-        const lastCca2 = currentQuestion?.targetCca2;
-        questionsRef.current = generateQuestions(def.countries, lastCca2);
-      }
-    }
-
-    const next = questionsRef.current.shift() ?? null;
+    const next = requestNextQuestion();
     setCurrentQuestion(next);
     setFeedbackState('idle');
     setLastAnswer(null);
@@ -174,7 +211,7 @@ export function useGameSession(
     } else {
       setCorrectCca2(null);
     }
-  }, [levels, generateQuestions, currentQuestion, applyHighlight]);
+  }, [requestNextQuestion, applyHighlight]);
 
   const end = useCallback(() => {
     setIsActive(false);
@@ -185,6 +222,7 @@ export function useGameSession(
     setScore(INITIAL_SCORE);
     setLevel(null);
     setContinent(null);
+    recentCountriesRef.current = [];
     questionsRef.current = [];
   }, []);
 
