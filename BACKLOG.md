@@ -56,9 +56,10 @@
   - [x] Eliminar `typeWeights` / `selectTypeWeights` — reemplazado por cola de prioridad
   - [x] Fix crítico: auto-crear perfil "Explorador" por defecto → desbloquea `recordAttempt`/`getAttempts`
   - [x] Fix: condición de avance etapa 2→3 cambiada de `every` a `some` (C, D **o** F)
-  - [ ] Bug lógica: en modo Aventura, el algoritmo solo pregunta tipo C en etapa 2 (nunca D ni F). Causa: `selectTypeForCountry` elige siempre el primer tipo no dominado de la lista, y al dominar C el país salta a etapa 3 sin pasar por D/F. Revisar la lógica de selección de tipo en etapa 2 y la condición de avance para que la experiencia incluya variedad de C/D/F
-  - [ ] Bug lógica: pregunta C a TODOS los países individualmente antes de avanzar a A/B. El avance colectivo debería evitar esto, pero parece no activarse (¿precisión global < 80% no se cumple, o el ratio 40% no se alcanza a tiempo?). Investigar y ajustar
-  - [ ] CSS: `ProgressBar` todavía se solapa ligeramente con la 4ª opción de `ChoicePanel`. Necesita más espacio hacia abajo
+  - [x] Fix: randomizar selección de tipo en `selectTypeForCountry` — desempate aleatorio entre candidatos con misma racha
+  - [x] Fix: avance colectivo eliminada restricción "sin datos" — ahora todos los países en la etapa avanzan
+  - [x] Fix CSS: `ChoicePanel` bottom de 4.5rem → 5.5rem para evitar solapamiento con `ProgressBar`
+  - [ ] Bug lógica: en testing (turista-América, 37 preguntas, 0 fallos) no aparece ninguna pregunta D. C y F sí aparecen. Investigar si el problema es en la generación de preguntas D (upstream de `selectTypeForCountry`) o en el algoritmo de selección
 - [x] Vista de estadísticas del usuario
   - [x] Icono en header (junto al de perfil) + pantalla con tabla de dominio por tipo
   - [x] Selector nivel × continente

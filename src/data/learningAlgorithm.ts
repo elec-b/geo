@@ -106,20 +106,16 @@ function selectTypeForCountry(ca: CountryAttempts, stage: 1 | 2 | 3): QuestionTy
 
   const candidates = notDominated.length > 0 ? notDominated : types;
 
-  // Elegir el de peor racha (más negativo)
-  let best = candidates[0];
-  let bestStreak = ca[best]?.streak ?? 0;
-
-  for (let i = 1; i < candidates.length; i++) {
-    const t = candidates[i];
+  // Encontrar la peor racha entre candidatos
+  let worstStreak = Infinity;
+  for (const t of candidates) {
     const streak = ca[t]?.streak ?? 0;
-    if (streak < bestStreak) {
-      best = t;
-      bestStreak = streak;
-    }
+    if (streak < worstStreak) worstStreak = streak;
   }
 
-  return best;
+  // Desempate aleatorio entre candidatos con la misma racha
+  const tied = candidates.filter((t) => (ca[t]?.streak ?? 0) === worstStreak);
+  return tied[Math.floor(Math.random() * tied.length)];
 }
 
 // --- Funciones exportadas ---
@@ -208,11 +204,7 @@ export function getEffectiveStages(
   if (dominateStage1 >= minCount) {
     for (const cca2 of countries) {
       if (stages.get(cca2) === 1) {
-        // Solo avanzar si no tiene datos (país nuevo) o si su etapa natural es 1
-        const ca = allAttempts[cca2];
-        if (!ca || Object.keys(ca).length === 0) {
-          stages.set(cca2, 2);
-        }
+        stages.set(cca2, 2);
       }
     }
   }
@@ -221,10 +213,7 @@ export function getEffectiveStages(
   if (dominateStage2 >= minCount) {
     for (const cca2 of countries) {
       if (stages.get(cca2) === 2) {
-        const ca = allAttempts[cca2];
-        if (!ca || Object.keys(ca).length === 0) {
-          stages.set(cca2, 3);
-        }
+        stages.set(cca2, 3);
       }
     }
   }
