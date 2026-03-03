@@ -34,6 +34,16 @@ const DEFAULT_SETTINGS: AppSettings = {
   locale: 'es',
 };
 
+// Perfil por defecto — sin él, recordAttempt y getAttempts no funcionan
+const defaultProfileId = uuid();
+const defaultProfile: UserProfile = {
+  id: defaultProfileId,
+  name: 'Explorador',
+  avatar: 'default',
+  createdAt: new Date().toISOString(),
+  progress: emptyProgress(),
+};
+
 interface AppStoreActions {
   /** Crea un nuevo perfil y lo devuelve como activo */
   createProfile: (name: string, avatar: AvatarId) => ProfileId;
@@ -56,9 +66,9 @@ interface AppStoreActions {
 type AppStore = AppState & AppStoreActions;
 
 export const useAppStore = create<AppStore>((set, get) => ({
-  // Estado inicial
-  profiles: [],
-  activeProfileId: null,
+  // Estado inicial — perfil por defecto para que recordAttempt/getAttempts funcionen
+  profiles: [defaultProfile],
+  activeProfileId: defaultProfileId,
   settings: { ...DEFAULT_SETTINGS },
 
   createProfile: (name: string, avatar: AvatarId): ProfileId => {

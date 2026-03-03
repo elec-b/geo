@@ -158,7 +158,7 @@ En modo Aventura, cada país tiene una **etapa de aprendizaje** que determina qu
 | Etapa | Tipo(s) | Se avanza cuando... |
 |-------|---------|---------------------|
 | 1. Reconocimiento | E | Domina E (racha ≥ 1) |
-| 2. Capitales | C, D, F | Domina C o D (racha ≥ 1 en cualquiera) |
+| 2. Capitales | C, D, F | Domina C, D o F (racha ≥ 1 en cualquiera) |
 | 3. Preparación sello | A, B | Domina A y B → país completado |
 
 *   La etapa se **deriva** de los datos del registro (no se almacena por separado).

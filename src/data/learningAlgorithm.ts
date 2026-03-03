@@ -167,7 +167,7 @@ export function getCountryStage(ca: CountryAttempts | undefined): 1 | 2 | 3 {
   if (isDominated(ca, 'E')) {
     baseStage = 2;
     const stage2Types: QuestionType[] = ['C', 'D', 'F'];
-    if (stage2Types.every((t) => isDominated(ca, t))) {
+    if (stage2Types.some((t) => isDominated(ca, t))) {
       baseStage = 3;
     }
   }
