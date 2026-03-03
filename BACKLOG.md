@@ -48,16 +48,20 @@
   - [x] Modo Aventura (antes «mixto») documentado
   - [x] Flujo general (continente → nivel → tipo) documentado
 - [ ] Bug (no replicado): en juego E o F, la app iluminó Argelia pero la respuesta "correcta" para la app era Egipto (o El Cairo). Chequeo exhaustivo de que el país resaltado en E/F coincide siempre con la pregunta (revisar generación de preguntas, bindings país→geometría, y IDs). Investigación inicial: datos estáticos y flujo principal verificados sin errores. Si se replica, añadir logs en useGameSession.ts y GlobeD3.tsx para confirmar qué cca2 se envía vs. qué se pinta
-- [ ] Rediseño del algoritmo de aprendizaje (diseño completado en DESIGN.md § Algoritmo de aprendizaje)
-  - [ ] Reescribir `learningAlgorithm.ts`: racha negativa, etapas por país (con regresión en cascada), avance colectivo, inferencia ascendente, cola de prioridad, anti-repetición
-  - [ ] Reescribir generación de preguntas en `gameQuestions.ts`: selección dinámica (no ciclos fijos)
-  - [ ] Actualizar `ProgressBar.tsx`: métrica «X de Y» + fix renderizado `✓` (`&check;` → carácter Unicode)
-  - [ ] Actualizar detección de preparación para sello (basada en dominio A y B)
-  - [ ] Fix: `typeWeights` en `JugarView.tsx` — deps de `useMemo` congelados (`getAttempts` y `levels` son refs estables)
-- [ ] Vista de estadísticas del usuario (diseño en DESIGN.md § Estadísticas)
-  - [ ] Icono en header (junto al de perfil) + pantalla con tabla de dominio por tipo
-  - [ ] Selector nivel × continente
-  - [ ] Acción de resetear estadísticas (con confirmación)
+- [~] Rediseño del algoritmo de aprendizaje (código escrito, bugs pendientes de resolver)
+  - [x] Reescribir `learningAlgorithm.ts`: racha negativa, etapas por país (con regresión en cascada), avance colectivo, inferencia ascendente, cola de prioridad, anti-repetición
+  - [x] Reescribir generación de preguntas en `gameQuestions.ts`: selección dinámica (no ciclos fijos)
+  - [x] Actualizar `ProgressBar.tsx`: métrica «X de Y» + fix renderizado `✓` (`&check;` → carácter Unicode)
+  - [x] Actualizar detección de preparación para sello (basada en dominio A y B)
+  - [x] Eliminar `typeWeights` / `selectTypeWeights` — reemplazado por cola de prioridad
+  - [ ] Bug crítico: `recordAttempt` y `getAttempts` dependen de `activeProfileId` que es `null` (nunca se crea un perfil). Ningún intento se registra → el algoritmo siempre ve estado vacío → solo genera preguntas tipo E → progreso siempre 0
+  - [ ] Bug: condición de avance etapa 2→3 exige dominar C **y** D **y** F (debería ser C **o** D según DESIGN.md)
+  - [ ] CSS: `ProgressBar` se solapa con la cuarta opción de `ChoicePanel` en juegos C-F. Mover hacia abajo
+- [~] Vista de estadísticas del usuario (código escrito, depende de fix de perfil)
+  - [x] Icono en header (junto al de perfil) + pantalla con tabla de dominio por tipo
+  - [x] Selector nivel × continente
+  - [x] Acción de resetear estadísticas (con confirmación)
+- [ ] Fix `npm run device`: flag `--terminate-existing` no existe en la versión actual de `xcrun devicectl`
 - [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
 
 ### Experiencia: Pasaporte
