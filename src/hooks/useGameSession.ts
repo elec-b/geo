@@ -65,6 +65,8 @@ export function useGameSession(
 
   // Historial de países recientes para anti-repetición
   const recentCountriesRef = useRef<string[]>([]);
+  // Historial de tipos recientes para distribución uniforme de C/D/F
+  const recentTypesRef = useRef<QuestionType[]>([]);
   // Referencia al nivel actual para regenerar preguntas
   const levelKeyRef = useRef<string>('');
   // Tipo de pregunta seleccionado
@@ -110,7 +112,10 @@ export function useGameSession(
 
     // Modo aventura: selección pregunta-a-pregunta
     const attempts = getAttemptsRef.current?.() ?? {};
-    const selection = selectNextQuestion(attempts, def.countries, recentCountriesRef.current);
+    const selection = selectNextQuestion(
+      attempts, def.countries, recentCountriesRef.current,
+      undefined, recentTypesRef.current,
+    );
     if (!selection) return null;
 
     let question = generateSingleQuestion(selection, def.countries, countries, capitals);
@@ -125,6 +130,11 @@ export function useGameSession(
 
     if (question) {
       recentCountriesRef.current.push(question.targetCca2);
+      // Anti-repetición de tipo: mantener los últimos 2 (buffer para 3 tipos C/D/F)
+      recentTypesRef.current.push(question.type as QuestionType);
+      if (recentTypesRef.current.length > 2) {
+        recentTypesRef.current = recentTypesRef.current.slice(-2);
+      }
     }
 
     return question;
@@ -139,6 +149,7 @@ export function useGameSession(
       levelKeyRef.current = key;
       questionTypeRef.current = questionType;
       recentCountriesRef.current = [];
+      recentTypesRef.current = [];
       questionsRef.current = [];
 
       setLevel(newLevel);
@@ -223,6 +234,7 @@ export function useGameSession(
     setLevel(null);
     setContinent(null);
     recentCountriesRef.current = [];
+    recentTypesRef.current = [];
     questionsRef.current = [];
   }, []);
 

@@ -94,8 +94,13 @@ function applyRegression(ca: CountryAttempts, baseStage: 1 | 2 | 3): 1 | 2 | 3 {
 /**
  * Selecciona el tipo de pregunta para un país en su etapa.
  * Prioriza tipos no dominados; dentro de esos, el de peor racha.
+ * Anti-repetición: evita tipos preguntados recientemente cuando hay empate.
  */
-function selectTypeForCountry(ca: CountryAttempts, stage: 1 | 2 | 3): QuestionType {
+function selectTypeForCountry(
+  ca: CountryAttempts,
+  stage: 1 | 2 | 3,
+  recentTypes?: QuestionType[],
+): QuestionType {
   const types = STAGE_TYPES[stage];
 
   // Filtrar tipos no dominados
@@ -113,8 +118,15 @@ function selectTypeForCountry(ca: CountryAttempts, stage: 1 | 2 | 3): QuestionTy
     if (streak < worstStreak) worstStreak = streak;
   }
 
-  // Desempate aleatorio entre candidatos con la misma racha
+  // Desempate: preferir tipos no recientes para garantizar cobertura
   const tied = candidates.filter((t) => (ca[t]?.streak ?? 0) === worstStreak);
+  if (recentTypes && recentTypes.length > 0 && tied.length > 1) {
+    const recentSet = new Set(recentTypes);
+    const fresh = tied.filter((t) => !recentSet.has(t));
+    if (fresh.length > 0) {
+      return fresh[Math.floor(Math.random() * fresh.length)];
+    }
+  }
   return tied[Math.floor(Math.random() * tied.length)];
 }
 
@@ -241,12 +253,14 @@ export interface QuestionSelection {
  * Anti-repetición: buffer de N países recientes (N = mín(3, total÷2)).
  *
  * @param fixedType - Si se especifica, fuerza ese tipo de pregunta (modo tipo concreto)
+ * @param recentTypes - Tipos preguntados recientemente (anti-repetición de tipo)
  */
 export function selectNextQuestion(
   allAttempts: Record<string, CountryAttempts>,
   countries: string[],
   recent: string[],
   fixedType?: QuestionType,
+  recentTypes?: QuestionType[],
 ): QuestionSelection | null {
   if (countries.length === 0) return null;
 
@@ -324,7 +338,7 @@ export function selectNextQuestion(
   } else {
     const ca = allAttempts[selectedCca2] ?? {};
     const stage = stages.get(selectedCca2) ?? 1;
-    questionType = selectTypeForCountry(ca, stage);
+    questionType = selectTypeForCountry(ca, stage, recentTypes);
   }
 
   return { cca2: selectedCca2, questionType };
