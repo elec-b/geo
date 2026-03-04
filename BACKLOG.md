@@ -51,7 +51,7 @@
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
 ### Experiencia: Jugar — Refinamientos pendientes
-- [ ] Zoom out A/B: debe activarse también tras acierto (actualmente solo se dispara correctamente tras error). Revisar condiciones del efecto
+- [ ] Zoom out A/B insuficiente: `isPointVisible` con margen 80% sigue siendo demasiado permisivo — en móvil vertical el globo se recorta arriba/abajo por header, banner y ProgressBar, así que puntos "técnicamente visibles" en el hemisferio quedan fuera de pantalla o en el borde extremo. Ej: Fiji en Oceanía queda completamente fuera del viewport visible (habría que hacer scroll lateral o zoom out para verlo). Solución probable: reducir el factor de margen (de 0.8 a ~0.55) para que el zoom out continental se dispare más agresivamente
 - [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
 
 ### Experiencia: Pasaporte
