@@ -37,7 +37,7 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
    - **Completado**: Tareas terminadas (historial reciente condensado; para historial completo, usar git)
    - **Próximos pasos**: Tareas planificadas, ordenadas por prioridad
 
-   Actualízalo al completar tareas importantes. No usamos categoría de "bugs" — todo son tareas.
+   Actualízalo **solo después de testear en dispositivo y con confirmación explícita del usuario**. No actualizar el backlog de forma anticipada. No usamos categoría de "bugs" — todo son tareas.
 
 ### 3.1 Preferencias de idioma (prioridad alta)
 Todas las explicaciones, comentarios de código y documentación deben estar en **español**.

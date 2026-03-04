@@ -253,6 +253,34 @@ export function JugarView({
     }
   }, [session.currentQuestion, globeRef, flyOutStep]);
 
+  // Para tipos A/B: zoom out automático al nivel continental si el objetivo no es visible.
+  // Evita que el usuario quede desorientado tras un flyTo al país correcto en la pregunta anterior.
+  useEffect(() => {
+    const q = session.currentQuestion;
+    if (!q || (q.type !== 'A' && q.type !== 'B')) return;
+    if (!globeRef.current || !session.continent) return;
+    // Solo actuar si no estamos en feedback (pregunta nueva)
+    if (session.feedbackState !== 'idle') return;
+    if (feedbackStep !== 'idle') return;
+
+    // Obtener coordenadas del objetivo
+    let targetCoords: [number, number] | null = null;
+    if (q.type === 'A') {
+      targetCoords = globeRef.current.getCentroid(q.targetCca2);
+    } else {
+      // Tipo B: coordenadas de la capital
+      const cap = capitals.get(q.targetCca2);
+      if (cap) targetCoords = [cap.latlng[1], cap.latlng[0]];
+    }
+
+    if (!targetCoords) return;
+    if (!globeRef.current.isPointVisible(targetCoords[0], targetCoords[1])) {
+      // Zoom out al nivel continental (sin centrar en el país)
+      const [lon, lat] = CONTINENT_CENTERS[session.continent];
+      globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[session.continent], 800);
+    }
+  }, [session.currentQuestion, session.continent, session.feedbackState, feedbackStep, globeRef, capitals]);
+
   // --- Handlers ---
 
   // Click en un país del globo durante el juego (solo tipos A/B)

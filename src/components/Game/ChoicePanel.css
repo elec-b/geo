@@ -2,12 +2,12 @@
 
 .choice-panel {
   position: fixed;
-  bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px) + 5.5rem);
+  bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px) + 3.5rem);
   left: 50%;
   transform: translateX(-50%);
   z-index: var(--z-controls);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: var(--spacing-sm);
   width: min(90%, 22rem);
   animation: choice-panel-enter 0.3s ease-out;

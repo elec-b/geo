@@ -114,6 +114,18 @@ const ARCHIPELAGO_CODES = new Set([
   'NO',
 ]);
 
+/**
+ * Normaliza coordenadas para países que cruzan el antimeridiano.
+ * Si el rango de longitudes > 180°, mapea lon negativas a [180, 360] sumando 360.
+ */
+function normalizeForAntimeridian(coords: [number, number][]): { coords: [number, number][]; shifted: boolean } {
+  const lons = coords.map(c => c[0]);
+  if (Math.max(...lons) - Math.min(...lons) <= 180) return { coords, shifted: false };
+
+  const shifted = coords.map<[number, number]>(([lon, lat]) => [lon < 0 ? lon + 360 : lon, lat]);
+  return { coords: shifted, shifted: true };
+}
+
 /** Convex hull — Andrew's monotone chain, O(n log n) */
 function computeConvexHull(points: [number, number][]): [number, number][] {
   if (points.length < 3) return points;
@@ -192,6 +204,8 @@ export interface GlobeD3Ref {
   flyTo(lon: number, lat: number, zoom?: number, duration?: number, latOffset?: number): void;
   getCentroid(cca2: string): [number, number] | null;
   getCountryZoom(cca2: string): number | null;
+  /** Retorna true si el punto está dentro del hemisferio visible (con margen) */
+  isPointVisible(lon: number, lat: number): boolean;
 }
 
 // --- Utilidades ---
@@ -270,7 +284,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const sortedFeaturesRef = useRef<CountryFeature[]>([]);
   const nonUnCodesRef = useRef<Set<string>>(new Set());
   const geoAreasRef = useRef<Map<string, number>>(new Map());
-  const archipelagoHullsRef = useRef<Map<string, [number, number][]>>(new Map());
+  const archipelagoHullsRef = useRef<Map<string, { hull: [number, number][]; shifted: boolean }>>(new Map());
   // Dirty flag: evita redibujar el canvas a 60fps cuando el globo está en reposo
   const needsRedrawRef = useRef(true); // true para el draw inicial
   const showMarkersRef = useRef(showMarkers);
@@ -369,6 +383,14 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         return MICROSTATE_CODES.has(cca2) ? ADAPTIVE_ZOOM_MAX : null;
       }
       return Math.max(ADAPTIVE_ZOOM_MIN, Math.min(ADAPTIVE_ZOOM_MAX, ADAPTIVE_ZOOM_K / Math.sqrt(area)));
+    },
+    isPointVisible(lon: number, lat: number): boolean {
+      // Centro visible = inverso de la rotación
+      const rot = rotationRef.current;
+      const viewCenter: [number, number] = [-rot[0], -rot[1]];
+      const dist = geoDistance([lon, lat], viewCenter);
+      // Margen: π/2.5 (~72°) en vez de π/2 (90°) para no considerar visible lo que está al borde
+      return dist < Math.PI / 2.5;
     },
   }));
 
@@ -809,8 +831,12 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     if (hulls.size > 0) {
       let bestFeature: Feature<Geometry, CountryProperties> | null = null;
       let bestDist = Infinity;
-      for (const [cca2, hull] of hulls) {
-        if (!pointInPolygon(coords as [number, number], hull)) continue;
+      for (const [cca2, { hull, shifted }] of hulls) {
+        // Normalizar el punto de consulta al mismo espacio que el hull
+        const testPoint: [number, number] = shifted && (coords as [number, number])[0] < 0
+          ? [(coords as [number, number])[0] + 360, (coords as [number, number])[1]]
+          : coords as [number, number];
+        if (!pointInPolygon(testPoint, hull)) continue;
         const feature = countries.features.find(f => f.properties?.cca2 === cca2);
         if (!feature) continue;
         // Si hay hulls solapados, elegir el más cercano al centroide
@@ -912,7 +938,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         });
 
         // Convex hulls para archipiélagos (hit testing del mar entre islas)
-        const hullsByCca2 = new Map<string, [number, number][]>();
+        const hullsByCca2 = new Map<string, { hull: [number, number][]; shifted: boolean }>();
         const coordsByCca2 = new Map<string, [number, number][]>();
 
         for (const feature of countries.features) {
@@ -937,10 +963,12 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
         for (const [cca2, coords] of coordsByCca2) {
           if (coords.length < 3) continue;
-          // Excluir países que cruzan el antimeridiano (hulls gigantes)
-          const lons = coords.map(c => c[0]);
-          if (Math.max(...lons) - Math.min(...lons) > 180) continue;
-          hullsByCca2.set(cca2, computeConvexHull(coords));
+          // Normalizar coordenadas para países que cruzan el antimeridiano (ej. Fiji)
+          const normalized = normalizeForAntimeridian(coords);
+          hullsByCca2.set(cca2, {
+            hull: computeConvexHull(normalized.coords),
+            shifted: normalized.shifted,
+          });
         }
         archipelagoHullsRef.current = hullsByCca2;
 

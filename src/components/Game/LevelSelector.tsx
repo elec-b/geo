@@ -77,48 +77,47 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
         </div>
 
         {/* Tarjetas de nivel */}
-        {selectedContinent && (
-          <>
-            <h2 className="level-selector__title level-selector__title--level">Elige nivel</h2>
-            <div className="level-selector__levels">
-              {LEVELS.map(({ id, label, emoji }) => {
-                const count = getCountryCount(id, selectedContinent);
-                return (
-                  <button
-                    key={id}
-                    className={`level-selector__level-card ${selectedLevel === id ? 'level-selector__level-card--active' : ''}`}
-                    onClick={() => setSelectedLevel(id)}
-                  >
-                    <span className="level-selector__level-emoji">{emoji}</span>
-                    <span className="level-selector__level-name">{label}</span>
-                    <span className="level-selector__level-count">
-                      {count} {count === 1 ? 'país' : 'países'}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
+        <h2 className="level-selector__title level-selector__title--level">Elige nivel</h2>
+        <div className="level-selector__levels">
+          {LEVELS.map(({ id, label, emoji }) => {
+            const count = selectedContinent ? getCountryCount(id, selectedContinent) : null;
+            return (
+              <button
+                key={id}
+                className={`level-selector__level-card ${selectedLevel === id ? 'level-selector__level-card--active' : ''}`}
+                onClick={() => setSelectedLevel(id)}
+              >
+                <span className="level-selector__level-emoji">{emoji}</span>
+                <span className="level-selector__level-name">{label}</span>
+                <span className="level-selector__level-count">
+                  {count != null ? `${count} ${count === 1 ? 'país' : 'países'}` : '—'}
+                </span>
+              </button>
+            );
+          })}
+        </div>
 
-            {/* Pills de tipo de juego (orden pedagógico) */}
-            <h2 className="level-selector__title level-selector__title--level">Tipo de juego</h2>
-            <div className="level-selector__types">
-              {QUESTION_TYPES.map(({ id, label, badge }) => (
-                <button
-                  key={id}
-                  className={`level-selector__type-pill ${selectedType === id ? 'level-selector__type-pill--active' : ''}`}
-                  onClick={() => setSelectedType(id)}
-                >
-                  {label}{badge ? ` ${badge}` : ''}
-                </button>
-              ))}
-            </div>
-
-            {/* Botón empezar */}
-            <button className="level-selector__start" onClick={handleStart}>
-              Empezar
+        {/* Pills de tipo de juego (orden pedagógico) */}
+        <h2 className="level-selector__title level-selector__title--level">Tipo de juego</h2>
+        <div className="level-selector__types">
+          {QUESTION_TYPES.map(({ id, label, badge }) => (
+            <button
+              key={id}
+              className={`level-selector__type-pill ${selectedType === id ? 'level-selector__type-pill--active' : ''}`}
+              onClick={() => setSelectedType(id)}
+            >
+              {label}{badge ? ` ${badge}` : ''}
             </button>
-          </>
-        )}
+          ))}
+        </div>
+
+        {/* Botón empezar */}
+        <button
+          className={`level-selector__start ${!selectedContinent ? 'level-selector__start--disabled' : ''}`}
+          onClick={handleStart}
+        >
+          Empezar
+        </button>
       </div>
     </div>
   );

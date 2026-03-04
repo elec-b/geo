@@ -165,3 +165,8 @@
 .level-selector__start:active {
   opacity: 0.8;
 }
+
+.level-selector__start--disabled {
+  opacity: 0.4;
+  cursor: default;
+}

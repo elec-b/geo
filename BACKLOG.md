@@ -35,6 +35,10 @@
 - [x] Filtrado de países no-ONU del juego; fix `npm run device`
 - [x] Algoritmo de aprendizaje v2: racha negativa, etapas (reconocimiento/capitales/sello), regresión en cascada, avance colectivo (40%/80%), inferencia ascendente, cola de prioridad, anti-repetición, perfil por defecto auto-creado
 - [x] Vista de estadísticas provisional: icono en header, tabla de dominio por tipo (A-F), selector nivel×continente, reset con confirmación
+- [x] LevelSelector sin paso intermedio: todo el formulario visible desde el inicio (continente + nivel + tipo + Empezar)
+- [x] ChoicePanel 2×2: grid de 2 columnas para tipos C-F, más espacio vertical para el globo
+- [x] Archipiélagos antimeridiano: normalización de coordenadas para hulls de países que cruzan la línea de fecha (Fiji, Tonga…)
+- [x] Zoom out automático en tipos A/B cuando el objetivo no es visible (flyTo continental)
 
 ---
 
@@ -42,11 +46,11 @@
 
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
-### Experiencia: Jugar — Pendiente
-- [ ] Eliminar la pantalla intermedia «Elige continente» (modal independiente, imagen #2): fusionar el selector de continente directamente en el `LevelSelector` (imagen #3), que ya agrupa continente + nivel + tipo + botón Empezar en una sola pantalla
-- [ ] Opciones en tipos C-F: cambiar de layout 1×4 (columna) a 2×2 (grid 2 columnas × 2 filas) para liberar espacio vertical del mapa. Además, desplazar ligeramente hacia abajo el bloque inferior (ProgressBar + contadores de sesión) para aprovechar mejor el espacio
-- [ ] Selección de archipiélagos: es difícil tocar países formados por islas pequeñas (ej. Fiyi en Oceanía). Revisar commits y codebase — posiblemente hay trabajo previo en esta dirección. El comportamiento deseado: si el dedo toca dentro del perímetro del conjunto de islas (incluyendo zona de mar entre ellas), se selecciona ese país. Aplica a **Jugar, Explorar y pruebas de sello** (en Explorar afecta al tap sobre el globo para abrir la ficha de país)
-- [ ] Zoom out automático en tipos A/B: si el objetivo no es visible en la vista actual, zoom out automático al nivel continental (continente completo visible) sin centrar en el país/capital — así el usuario tiene contexto pero debe buscar él mismo (hacer flyTo al centroide daría pistas). Aplica también a pruebas de sello
+### Experiencia: Jugar — Refinamientos pendientes
+- [ ] ChoicePanel 2×2: bajar el ProgressBar para evitar solapamiento con las opciones inferiores del grid
+- [ ] Archipiélagos: países muy dispersos (ej. Kiribati) siguen siendo difíciles de seleccionar — el convex hull no cubre bien islas tan separadas. Evaluar solución alternativa (bounding box ampliado o radios de tolerancia por isla)
+- [ ] Zoom out A/B: debe activarse también tras acierto (actualmente solo se dispara correctamente tras error). Revisar condiciones del efecto
+- [ ] Zoom tipos E/F: el zoom adaptativo es excesivo para archipiélagos (ej. Islas Salomón en Oceanía). Necesita más contexto — limitar zoom máximo o usar un factor de zoom más conservador que deje vecinos visibles
 - [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
 
 ### Experiencia: Pasaporte
