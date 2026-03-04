@@ -30,6 +30,11 @@
 - [x] Feedback visual: colores verde/rojo/dorado, etiquetas sobre el globo (A/B error en 2 pasos), overlays sin iconos
 - [x] Zoom adaptativo C-F (centroide, ×40 microestados, marcadores ocultos en C-F, fallback para microestados sin geoArea)
 - [x] Pines de capitales (B/C: todas del continente, D: tras responder, F: país objetivo)
+- [x] Flujo completo (continente → nivel → tipo), modo Aventura, selector de tipo con nombres definitivos (A-F)
+- [x] FlyTo entre preguntas con perspectiva continental (C/D: zoom-out → zoom-in al responder; Vaticano: zoom ×200)
+- [x] Filtrado de países no-ONU del juego; fix `npm run device`
+- [x] Algoritmo de aprendizaje v2: racha negativa, etapas (reconocimiento/capitales/sello), regresión en cascada, avance colectivo (40%/80%), inferencia ascendente, cola de prioridad, anti-repetición, perfil por defecto auto-creado
+- [x] Vista de estadísticas provisional: icono en header, tabla de dominio por tipo (A-F), selector nivel×continente, reset con confirmación
 
 ---
 
@@ -38,33 +43,10 @@
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
 ### Experiencia: Jugar — Pendiente
-- [x] Bug: países no-ONU (por ejemplo Åland, Chipre del Norte) aparecen en preguntas de juego. Filtrar para que solo participen los 195 países ONU
-- [x] FlyTo con perspectiva continental entre preguntas. Refuerza el aprendizaje espacial. Comportamiento distinto según tipo:
-  - **E/F**: ya funcionan bien, no hacer cambios
-  - **C/D**: las preguntas se hacen con perspectiva continental (zoom out), tras la respuesta del usuario zoom in a la zona del globo - se mantiene el enfoque que hay ahora (países más grandes menos zoom in necesario, países más pequeños más zoom in necesario)
-- [x] Vaticano: permitir mayor zoom-in en E/F — con el máximo actual (×25) no se distingue nada. Es el único caso (0.44 km²; Mónaco, el siguiente más pequeño con 2 km², ya se ve bien).
-- [x] Selector de tipo de juego: diseño final, nombres y flujo documentados en DESIGN.md
-  - [x] Nombres para los juegos A-F definidos
-  - [x] Modo Aventura (antes «mixto») documentado
-  - [x] Flujo general (continente → nivel → tipo) documentado
-- [ ] Bug (no replicado): en juego E o F, la app iluminó Argelia pero la respuesta "correcta" para la app era Egipto (o El Cairo). Chequeo exhaustivo de que el país resaltado en E/F coincide siempre con la pregunta (revisar generación de preguntas, bindings país→geometría, y IDs). Investigación inicial: datos estáticos y flujo principal verificados sin errores. Si se replica, añadir logs en useGameSession.ts y GlobeD3.tsx para confirmar qué cca2 se envía vs. qué se pinta
-- [~] Rediseño del algoritmo de aprendizaje (funcional con bugs pendientes)
-  - [x] Reescribir `learningAlgorithm.ts`: racha negativa, etapas por país (con regresión en cascada), avance colectivo, inferencia ascendente, cola de prioridad, anti-repetición
-  - [x] Reescribir generación de preguntas en `gameQuestions.ts`: selección dinámica (no ciclos fijos)
-  - [x] Actualizar `ProgressBar.tsx`: métrica «X de Y» + fix renderizado `✓` (`&check;` → carácter Unicode)
-  - [x] Actualizar detección de preparación para sello (basada en dominio A y B)
-  - [x] Eliminar `typeWeights` / `selectTypeWeights` — reemplazado por cola de prioridad
-  - [x] Fix crítico: auto-crear perfil "Explorador" por defecto → desbloquea `recordAttempt`/`getAttempts`
-  - [x] Fix: condición de avance etapa 2→3 cambiada de `every` a `some` (C, D **o** F)
-  - [x] Fix: randomizar selección de tipo en `selectTypeForCountry` — desempate aleatorio entre candidatos con misma racha
-  - [x] Fix: avance colectivo eliminada restricción "sin datos" — ahora todos los países en la etapa avanzan
-  - [x] Fix CSS: `ChoicePanel` bottom de 4.5rem → 5.5rem para evitar solapamiento con `ProgressBar`
-  - [ ] Bug lógica: en testing (turista-América, 37 preguntas, 0 fallos) no aparece ninguna pregunta D. C y F sí aparecen. Investigar si el problema es en la generación de preguntas D (upstream de `selectTypeForCountry`) o en el algoritmo de selección
-- [x] Vista de estadísticas del usuario
-  - [x] Icono en header (junto al de perfil) + pantalla con tabla de dominio por tipo
-  - [x] Selector nivel × continente
-  - [x] Acción de resetear estadísticas (con confirmación)
-- [x] Fix `npm run device`: `device launch` → `device process launch`
+- [ ] Eliminar la pantalla intermedia «Elige continente» (modal independiente, imagen #2): fusionar el selector de continente directamente en el `LevelSelector` (imagen #3), que ya agrupa continente + nivel + tipo + botón Empezar en una sola pantalla
+- [ ] Opciones en tipos C-F: cambiar de layout 1×4 (columna) a 2×2 (grid 2 columnas × 2 filas) para liberar espacio vertical del mapa. Además, desplazar ligeramente hacia abajo el bloque inferior (ProgressBar + contadores de sesión) para aprovechar mejor el espacio
+- [ ] Selección de archipiélagos: es difícil tocar países formados por islas pequeñas (ej. Fiyi en Oceanía). Revisar commits y codebase — posiblemente hay trabajo previo en esta dirección. El comportamiento deseado: si el dedo toca dentro del perímetro del conjunto de islas (incluyendo zona de mar entre ellas), se selecciona ese país. Aplica a **Jugar, Explorar y pruebas de sello** (en Explorar afecta al tap sobre el globo para abrir la ficha de país)
+- [ ] Zoom out automático en tipos A/B: si el objetivo no es visible en la vista actual, zoom out automático al nivel continental (continente completo visible) sin centrar en el país/capital — así el usuario tiene contexto pero debe buscar él mismo (hacer flyTo al centroide daría pistas). Aplica también a pruebas de sello
 - [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
 
 ### Experiencia: Pasaporte
