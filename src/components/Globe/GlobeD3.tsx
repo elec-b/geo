@@ -389,13 +389,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       const viewCenter: [number, number] = [-rot[0], -rot[1]];
       const dist = geoDistance([lon, lat], viewCenter);
       const zoom = scaleRef.current;
-      // Margen adaptativo: en móvil vertical los overlays (header, banner,
-      // progress bar, tab bar) ocultan ~14rem del globo, así que usamos un
-      // factor más restrictivo para que el zoom out se dispare antes.
-      const { width, height } = sizeRef.current;
-      const aspect = width / height;
-      const margin = aspect < 0.6 ? 0.65 : 0.8;
-      const visibleAngle = Math.asin(Math.min(1, 1 / zoom)) * margin;
+      // Ángulo visible real en ortográfica = arcsin(1/zoom), con margen 80%
+      const visibleAngle = Math.asin(Math.min(1, 1 / zoom)) * 0.8;
       return dist < visibleAngle;
     },
   }));
