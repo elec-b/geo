@@ -39,6 +39,10 @@
 - [x] ChoicePanel 2×2: grid de 2 columnas para tipos C-F, más espacio vertical para el globo
 - [x] Archipiélagos antimeridiano: normalización de coordenadas para hulls de países que cruzan la línea de fecha (Fiji, Tonga…)
 - [x] Zoom out automático en tipos A/B cuando el objetivo no es visible (flyTo continental)
+- [x] ChoicePanel 2×2: offset corregido (3.5rem → 5.5rem) para evitar solapamiento con ProgressBar
+- [x] Kiribati añadido a `ARCHIPELAGO_CODES` — convex hull con normalización antimeridiano
+- [x] `isPointVisible` corregido: ángulo visible dependiente del zoom (`arcsin(1/zoom) * 0.8`) en vez de umbral fijo
+- [x] Zoom E/F reducido (×0.6) para mostrar vecinos en archipiélagos extensos (Islas Salomón, etc.)
 
 ---
 
@@ -47,10 +51,7 @@
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
 ### Experiencia: Jugar — Refinamientos pendientes
-- [ ] ChoicePanel 2×2: bajar el ProgressBar para evitar solapamiento con las opciones inferiores del grid
-- [ ] Archipiélagos: países muy dispersos (ej. Kiribati) siguen siendo difíciles de seleccionar — el convex hull no cubre bien islas tan separadas. Evaluar solución alternativa (bounding box ampliado o radios de tolerancia por isla)
 - [ ] Zoom out A/B: debe activarse también tras acierto (actualmente solo se dispara correctamente tras error). Revisar condiciones del efecto
-- [ ] Zoom tipos E/F: el zoom adaptativo es excesivo para archipiélagos (ej. Islas Salomón en Oceanía). Necesita más contexto — limitar zoom máximo o usar un factor de zoom más conservador que deje vecinos visibles
 - [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
 
 ### Experiencia: Pasaporte

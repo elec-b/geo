@@ -248,7 +248,8 @@ export function JugarView({
 
     const centroid = globeRef.current.getCentroid(q.targetCca2);
     if (centroid) {
-      const zoom = globeRef.current.getCountryZoom(q.targetCca2) ?? undefined;
+      const baseZoom = globeRef.current.getCountryZoom(q.targetCca2);
+      const zoom = baseZoom != null ? baseZoom * 0.6 : undefined;
       globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
     }
   }, [session.currentQuestion, globeRef, flyOutStep]);
@@ -474,7 +475,8 @@ export function JugarView({
 
     const centroid = globeRef.current.getCentroid(q.targetCca2);
     if (centroid) {
-      const zoom = globeRef.current.getCountryZoom(q.targetCca2) ?? undefined;
+      const baseZoom = globeRef.current.getCountryZoom(q.targetCca2);
+      const zoom = baseZoom != null ? baseZoom * 0.6 : undefined;
       globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
     }
     setFlyOutStep('idle');

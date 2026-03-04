@@ -111,7 +111,7 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
 const ARCHIPELAGO_CODES = new Set([
   'PH', 'ID', 'JP', 'NZ', 'FJ', 'SB', 'VU', 'PG', 'GB', 'DK', 'GR', 'HR',
   'BS', 'CU', 'CV', 'KM', 'TO', 'WS', 'MY', 'TT', 'EE', 'SE', 'FI', 'CL',
-  'NO',
+  'NO', 'KI',
 ]);
 
 /**
@@ -385,12 +385,13 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       return Math.max(ADAPTIVE_ZOOM_MIN, Math.min(ADAPTIVE_ZOOM_MAX, ADAPTIVE_ZOOM_K / Math.sqrt(area)));
     },
     isPointVisible(lon: number, lat: number): boolean {
-      // Centro visible = inverso de la rotación
       const rot = rotationRef.current;
       const viewCenter: [number, number] = [-rot[0], -rot[1]];
       const dist = geoDistance([lon, lat], viewCenter);
-      // Margen: π/2.5 (~72°) en vez de π/2 (90°) para no considerar visible lo que está al borde
-      return dist < Math.PI / 2.5;
+      const zoom = scaleRef.current;
+      // Ángulo visible real en ortográfica = arcsin(1/zoom), con margen 80%
+      const visibleAngle = Math.asin(Math.min(1, 1 / zoom)) * 0.8;
+      return dist < visibleAngle;
     },
   }));
 
