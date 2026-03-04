@@ -51,7 +51,7 @@
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
 ### Experiencia: Jugar — Refinamientos pendientes
-- [ ] Zoom out A/B insuficiente: `isPointVisible` con margen 80% sigue siendo demasiado permisivo — en móvil vertical el globo se recorta arriba/abajo por header, banner y ProgressBar, así que puntos "técnicamente visibles" en el hemisferio quedan fuera de pantalla o en el borde extremo. Ej: Fiji en Oceanía queda completamente fuera del viewport visible (habría que hacer scroll lateral o zoom out para verlo). Solución probable: reducir el factor de margen (de 0.8 a ~0.55) para que el zoom out continental se dispare más agresivamente
+- [ ] Zoom out A/B insuficiente: `isPointVisible` con margen 80% sigue siendo demasiado permisivo — en móvil vertical el globo se recorta arriba/abajo por header, banner y ProgressBar, así que puntos "técnicamente visibles" en el hemisferio quedan fuera de pantalla o en el borde extremo. Ej: Fiji en Oceanía queda completamente fuera del viewport visible (habría que hacer scroll lateral o zoom out para verlo).
 - [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
 
 ### Experiencia: Pasaporte
@@ -90,3 +90,6 @@
 
 ### Tema visual
 - [ ] Diseñar e implementar tema claro (light mode) como alternativa al dark mode (baja prioridad, casi al final del desarrollo)
+
+### Ideas para el final
+- [ ] Cuando se juega en Europa, y una pregunta nos pregunta por la capital de Italia, es fácil que, si el usuario intenta pulsar sobre Roma, se seleccione Ciudad del Vaticano... Se me ocurre que para que no haya problemas con Italia/Roma y Vaticano/Ciudad del Vaticano, cuando se pregunte por uno de estos dos, solo se pueda seleccionar el correcto cuando el usuario pulsa sobre Roma (no cuando pulsa sobre otra área de Italia). Esto es solo una propuesta, puede que haya una solución mejor.

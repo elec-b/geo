@@ -7,7 +7,7 @@ export const CONTINENT_CENTERS: Record<Continent, [number, number]> = {
   'América': [-80, 10],
   'Asia': [90, 35],
   'Europa': [15, 50],
-  'Oceanía': [140, -25],
+  'Oceanía': [155, -22],
 };
 
 /** Escala de zoom por continente para que llene la pantalla al empezar */
