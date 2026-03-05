@@ -73,6 +73,15 @@
 - [ ] Pantalla de configuración global (perfil activo, marcadores de microestados, vibración, idioma, tema)
 - [ ] Configuración del globo en overlay (marcadores de microestados, tema)
 
+### Refinamientos tras la primera vuelta completa a la app
+- [ ] Cuando el usuario pulsa en jugar, debe 1) elegir continente, 2) elegir nivel, 3) elegir tipo de juego. Debemos pre-seleccionar 1) 2) y 3):
+  - para 1) continente en el que está el móvil (iphone/android) (sin saltarnos políticas de privacidad, no queremos leer nada de info confidencial)
+  - para 2) el máximo nivel al que pueda jugar el usuario para un continente dado
+  - para 3) aventura (aunque haremos mejoras en cómo se debe mostrar la selección de tipo de juego)
+- [ ] Cuando se juega en Europa, y una pregunta nos pregunta por la capital de Italia, es fácil que, si el usuario intenta pulsar sobre Roma, se seleccione Ciudad del Vaticano... Se me ocurre que para que no haya problemas con Italia/Roma y Vaticano/Ciudad del Vaticano, cuando se pregunte por uno de estos dos, solo se pueda seleccionar el correcto cuando el usuario pulsa sobre Roma (no cuando pulsa sobre otra área de Italia). Esto es solo una propuesta, puede que haya una solución mejor.
+- tabla de estadísticas: hay que merjorarla - el usuario no sabrá a qué nos referimos con las letras A, B, etc.
+
+
 ### Internacionalización (UI completa)
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
@@ -93,5 +102,3 @@
 ### Tema visual
 - [ ] Diseñar e implementar tema claro (light mode) como alternativa al dark mode (baja prioridad, casi al final del desarrollo)
 
-### Ideas para el final
-- [ ] Cuando se juega en Europa, y una pregunta nos pregunta por la capital de Italia, es fácil que, si el usuario intenta pulsar sobre Roma, se seleccione Ciudad del Vaticano... Se me ocurre que para que no haya problemas con Italia/Roma y Vaticano/Ciudad del Vaticano, cuando se pregunte por uno de estos dos, solo se pueda seleccionar el correcto cuando el usuario pulsa sobre Roma (no cuando pulsa sobre otra área de Italia). Esto es solo una propuesta, puede que haya una solución mejor.
