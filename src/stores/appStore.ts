@@ -13,8 +13,8 @@ function emptyProgress(): ProfileProgress {
     progress[level] = {} as Record<Continent, any>;
     for (const continent of CONTINENTS) {
       progress[level][continent] = {
-        stampCountries: {},
-        stampCapitals: {},
+        stampCountries: { earned: false, earnedDate: null },
+        stampCapitals: { earned: false, earnedDate: null },
         attempts: {},
       };
     }
@@ -44,6 +44,9 @@ const defaultProfile: UserProfile = {
   progress: emptyProgress(),
 };
 
+/** Tipo de sello: países (tipo A) o capitales (tipo B) */
+export type StampType = 'countries' | 'capitals';
+
 interface AppStoreActions {
   /** Crea un nuevo perfil y lo devuelve como activo */
   createProfile: (name: string, avatar: AvatarId) => ProfileId;
@@ -61,6 +64,10 @@ interface AppStoreActions {
   getAttempts: (level: GameLevel, continent: Continent) => Record<string, CountryAttempts>;
   /** Resetea los intentos (attempts) del perfil activo para un nivel × continente */
   resetAttempts: (level: GameLevel, continent: Continent) => void;
+  /** Registra un sello ganado */
+  earnStamp: (level: GameLevel, continent: Continent, stampType: StampType) => void;
+  /** Consulta si los sellos de un nivel×continente están ganados */
+  getStamps: (level: GameLevel, continent: Continent) => { countries: boolean; capitals: boolean };
 }
 
 type AppStore = AppState & AppStoreActions;
@@ -156,6 +163,48 @@ export const useAppStore = create<AppStore>((set, get) => ({
     const profile = get().getActiveProfile();
     if (!profile) return {};
     return profile.progress[level][continent].attempts;
+  },
+
+  earnStamp: (level, continent, stampType) => {
+    set((state) => {
+      const { activeProfileId } = state;
+      if (!activeProfileId) return state;
+
+      const profileIdx = state.profiles.findIndex((p) => p.id === activeProfileId);
+      if (profileIdx === -1) return state;
+
+      const profile = state.profiles[profileIdx];
+      const lcp = profile.progress[level][continent];
+      const field = stampType === 'countries' ? 'stampCountries' : 'stampCapitals';
+      const today = new Date().toISOString().slice(0, 10);
+
+      const newProfiles = [...state.profiles];
+      newProfiles[profileIdx] = {
+        ...profile,
+        progress: {
+          ...profile.progress,
+          [level]: {
+            ...profile.progress[level],
+            [continent]: {
+              ...lcp,
+              [field]: { earned: true, earnedDate: today },
+            },
+          },
+        },
+      };
+
+      return { profiles: newProfiles };
+    });
+  },
+
+  getStamps: (level, continent) => {
+    const profile = get().getActiveProfile();
+    if (!profile) return { countries: false, capitals: false };
+    const lcp = profile.progress[level][continent];
+    return {
+      countries: lcp.stampCountries.earned,
+      capitals: lcp.stampCapitals.earned,
+    };
   },
 
   resetAttempts: (level, continent) => {

@@ -1,7 +1,7 @@
 // Algoritmo de aprendizaje — funciones puras, sin estado ni side effects
 // Implementa: etapas individuales por país, cola de prioridad, avance colectivo,
 // inferencia ascendente y progreso discreto.
-import type { QuestionType } from './types';
+import type { Continent, GameLevel, QuestionType } from './types';
 import type { CountryAttempts } from '../stores/types';
 
 // --- Constantes ---
@@ -407,4 +407,64 @@ export function isReadyForStamp(
   }
 
   return dominated / levelCountries.length >= STAMP_READINESS_RATIO;
+}
+
+// --- Niveles y sellos ---
+
+const LEVELS_ORDER: GameLevel[] = ['turista', 'mochilero', 'guía'];
+const ALL_CONTINENTS: Continent[] = ['África', 'América', 'Asia', 'Europa', 'Oceanía'];
+
+/** Tipo de los sellos por nivel×continente */
+export type StampsData = Record<GameLevel, Record<Continent, { countries: boolean; capitals: boolean }>>;
+
+/**
+ * ¿Un nivel está desbloqueado para un continente?
+ * Turista siempre desbloqueado. Mochilero requiere ambos sellos de Turista. Guía requiere ambos de Mochilero.
+ */
+export function isLevelUnlocked(
+  level: GameLevel,
+  continent: Continent,
+  stamps: StampsData,
+): boolean {
+  if (level === 'turista') return true;
+  const prevLevel = level === 'mochilero' ? 'turista' : 'mochilero';
+  const prev = stamps[prevLevel][continent];
+  return prev.countries && prev.capitals;
+}
+
+/**
+ * Calcula el nivel alcanzado en un continente (el más alto con ambos sellos ganados).
+ * Devuelve null si no tiene ni siquiera Turista completado.
+ */
+export function getContinentLevel(
+  continent: Continent,
+  stamps: StampsData,
+): GameLevel | null {
+  let highest: GameLevel | null = null;
+  for (const level of LEVELS_ORDER) {
+    const s = stamps[level][continent];
+    if (s.countries && s.capitals) {
+      highest = level;
+    } else {
+      break; // sin sellos en este nivel → no puede tener los siguientes
+    }
+  }
+  return highest;
+}
+
+/**
+ * Nivel global = mínimo de los 5 continentes.
+ * Devuelve null si algún continente no tiene ni Turista completado.
+ */
+export function getGlobalLevel(stamps: StampsData): GameLevel | null {
+  let minIdx = LEVELS_ORDER.length; // empezar alto
+
+  for (const continent of ALL_CONTINENTS) {
+    const cl = getContinentLevel(continent, stamps);
+    if (cl === null) return null; // algún continente sin completar → sin nivel global
+    const idx = LEVELS_ORDER.indexOf(cl);
+    if (idx < minIdx) minIdx = idx;
+  }
+
+  return minIdx < LEVELS_ORDER.length ? LEVELS_ORDER[minIdx] : null;
 }

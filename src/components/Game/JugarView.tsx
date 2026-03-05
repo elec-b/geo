@@ -7,9 +7,10 @@ import type { GlobeControlProps } from '../Explore/ExploreView';
 import type { CountryFeature } from '../../data/countries';
 import type { GameQuestionChoice, QuestionTypeFilter } from '../../data/gameQuestions';
 import type { CountryData, CapitalCoords, Continent, GameLevel, LevelDefinition, QuestionType } from '../../data/types';
+import type { StampTestType } from '../../hooks/useGameSession';
 import { CONTINENT_CENTERS, CONTINENT_ZOOM } from '../../data/continents';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
-import { useAppStore } from '../../stores/appStore';
+import { useAppStore, type StampType } from '../../stores/appStore';
 import { calculateProgress, isReadyForStamp } from '../../data/learningAlgorithm';
 import { useGameSession } from '../../hooks/useGameSession';
 import { LevelSelector } from './LevelSelector';
@@ -22,6 +23,13 @@ import './JugarView.css';
 type JugarScreen = 'selector' | 'playing';
 type FeedbackStep = 'idle' | 'step1' | 'step2';
 
+/** Petición de prueba de sello desde Pasaporte */
+export interface StampTestRequest {
+  level: GameLevel;
+  continent: Continent;
+  stampType: StampTestType;
+}
+
 interface JugarViewProps {
   globeRef: RefObject<GlobeD3Ref | null>;
   countries: Map<string, CountryData>;
@@ -30,6 +38,10 @@ interface JugarViewProps {
   onGlobePropsChange: (props: GlobeControlProps) => void;
   /** Ref donde se registra el handler de click en país (bridge con App.tsx) */
   onCountryClickRef: MutableRefObject<((f: CountryFeature) => void) | undefined>;
+  /** Petición de prueba de sello desde Pasaporte (se consume una vez) */
+  stampTestRequest?: StampTestRequest | null;
+  /** Callback cuando la prueba de sello termina (para volver a Pasaporte si viene de ahí) */
+  onStampTestDone?: () => void;
 }
 
 export function JugarView({
@@ -39,12 +51,19 @@ export function JugarView({
   levels,
   onGlobePropsChange,
   onCountryClickRef,
+  stampTestRequest,
+  onStampTestDone,
 }: JugarViewProps) {
   const [screen, setScreen] = useState<JugarScreen>('selector');
 
   // --- Store y algoritmo de aprendizaje ---
   const recordAttempt = useAppStore((s) => s.recordAttempt);
   const getAttempts = useAppStore((s) => s.getAttempts);
+  const earnStamp = useAppStore((s) => s.earnStamp);
+
+  // Modales de prueba de sello
+  const [showStampChooser, setShowStampChooser] = useState(false);
+  const [showStampResult, setShowStampResult] = useState(false);
 
   // Refs para nivel/continente/tipo activos (disponibles antes de que session se actualice)
   const activeLevelRef = useRef<GameLevel | null>(null);
@@ -399,6 +418,88 @@ export function JugarView({
     feedbackCoordsRef.current = null;
   }, [session]);
 
+  // Lanzar prueba de sello (desde el chooser modal o desde Pasaporte)
+  const handleStartStampTest = useCallback(
+    (stampType: StampTestType) => {
+      const level = activeLevelRef.current;
+      const continent = activeContinentRef.current;
+      if (!level || !continent) return;
+
+      setShowStampChooser(false);
+      session.startStampTest(level, continent, stampType);
+      // No cambiar screen — ya estamos en 'playing' si viene del banner
+      // Si viene de Pasaporte, handleStampTestRequest ya pone screen='playing'
+
+      // Zoom al continente
+      if (globeRef.current) {
+        const [lon, lat] = CONTINENT_CENTERS[continent];
+        globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[continent], 1000);
+      }
+    },
+    [session, globeRef],
+  );
+
+  // Lanzar prueba de sello directamente (desde Pasaporte via props)
+  const handleStampTestRequest = useCallback(
+    (req: StampTestRequest) => {
+      activeLevelRef.current = req.level;
+      activeContinentRef.current = req.continent;
+      activeQuestionTypeRef.current = req.stampType === 'countries' ? 'A' : 'B';
+
+      session.startStampTest(req.level, req.continent, req.stampType);
+      setScreen('playing');
+      setSelectedChoice(null);
+
+      if (globeRef.current) {
+        const [lon, lat] = CONTINENT_CENTERS[req.continent];
+        globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[req.continent], 1000);
+      }
+    },
+    [session, globeRef],
+  );
+
+  // Efecto: lanzar prueba de sello desde Pasaporte cuando llega la petición
+  const stampTestRequestProcessed = useRef(false);
+  useEffect(() => {
+    if (stampTestRequest && !stampTestRequestProcessed.current) {
+      stampTestRequestProcessed.current = true;
+      handleStampTestRequest(stampTestRequest);
+    }
+    if (!stampTestRequest) {
+      stampTestRequestProcessed.current = false;
+    }
+  }, [stampTestRequest, handleStampTestRequest]);
+
+  // Detectar fin de prueba de sello → mostrar modal de resultado
+  useEffect(() => {
+    if (session.stampTestResult === 'passed' || session.stampTestResult === 'failed') {
+      // Si pasó, registrar sello
+      if (session.stampTestResult === 'passed' && session.stampTestType && session.level && session.continent) {
+        const storeType: StampType = session.stampTestType === 'countries' ? 'countries' : 'capitals';
+        earnStamp(session.level, session.continent, storeType);
+      }
+      setShowStampResult(true);
+    }
+  }, [session.stampTestResult, session.stampTestType, session.level, session.continent, earnStamp]);
+
+  // Cerrar modal de resultado de prueba de sello
+  const handleStampResultClose = useCallback(() => {
+    setShowStampResult(false);
+    session.end();
+    activeLevelRef.current = null;
+    activeContinentRef.current = null;
+    activeQuestionTypeRef.current = 'mixed';
+    setScreen('selector');
+    setSelectedChoice(null);
+    setFlyOutStep('idle');
+    onStampTestDone?.();
+  }, [session, onStampTestDone]);
+
+  // Banner de ProgressBar tappable: abrir modal de elección de sello
+  const handleStampBannerClick = useCallback(() => {
+    setShowStampChooser(true);
+  }, []);
+
   // Salir de la partida
   const handleExit = useCallback(() => {
     session.end();
@@ -549,13 +650,78 @@ export function JugarView({
       />
 
       <ProgressBar
-        progressCurrent={progress.current}
-        progressTotal={progress.total}
+        progressCurrent={session.stampTestProgress ? session.stampTestProgress.current : progress.current}
+        progressTotal={session.stampTestProgress ? session.stampTestProgress.total : progress.total}
         score={session.score}
         onExit={handleExit}
         readyForStamp={readyForStamp}
         isAdventure={activeQuestionTypeRef.current === 'mixed'}
+        isStampTest={session.stampTestResult === 'in_progress'}
+        stampTestType={session.stampTestType}
+        onStampBannerClick={handleStampBannerClick}
       />
+
+      {/* Modal: elegir tipo de sello */}
+      {showStampChooser && (
+        <div className="jugar-modal-overlay">
+          <div className="jugar-modal">
+            <h3 className="jugar-modal__title">Prueba de sello</h3>
+            <p className="jugar-modal__text">
+              Localiza todos los países sin errores para conseguir el sello.
+            </p>
+            <div className="jugar-modal__buttons">
+              <button
+                className="jugar-modal__btn jugar-modal__btn--countries"
+                onClick={() => handleStartStampTest('countries')}
+              >
+                Sello de Países
+              </button>
+              <button
+                className="jugar-modal__btn jugar-modal__btn--capitals"
+                onClick={() => handleStartStampTest('capitals')}
+              >
+                Sello de Capitales
+              </button>
+            </div>
+            <button
+              className="jugar-modal__cancel"
+              onClick={() => setShowStampChooser(false)}
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Modal: resultado de prueba de sello */}
+      {showStampResult && (
+        <div className="jugar-modal-overlay">
+          <div className="jugar-modal">
+            {session.stampTestResult === 'passed' ? (
+              <>
+                <div className="jugar-modal__stamp-icon jugar-modal__stamp-icon--earned">🏅</div>
+                <h3 className="jugar-modal__title">Sello conseguido</h3>
+                <p className="jugar-modal__text">
+                  {session.score.correct} de {session.score.correct + session.score.incorrect} correctos. Sin errores.
+                </p>
+              </>
+            ) : (
+              <>
+                <h3 className="jugar-modal__title">Prueba no superada</h3>
+                <p className="jugar-modal__text">
+                  {session.score.correct} de {session.score.correct + session.score.incorrect} correctos. Sigue practicando.
+                </p>
+              </>
+            )}
+            <button
+              className="jugar-modal__btn jugar-modal__btn--primary"
+              onClick={handleStampResultClose}
+            >
+              Continuar
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }

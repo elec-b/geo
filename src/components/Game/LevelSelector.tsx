@@ -1,7 +1,9 @@
 // Selector de continente + nivel para iniciar una partida
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import type { Continent, GameLevel, LevelDefinition } from '../../data/types';
 import type { QuestionTypeFilter } from '../../data/gameQuestions';
+import { useAppStore } from '../../stores/appStore';
+import { isLevelUnlocked, type StampsData } from '../../data/learningAlgorithm';
 import './LevelSelector.css';
 
 const CONTINENTS: { id: Continent; label: string; cssVar: string }[] = [
@@ -38,13 +40,33 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
   const [selectedContinent, setSelectedContinent] = useState<Continent | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<GameLevel>('turista');
   const [selectedType, setSelectedType] = useState<QuestionTypeFilter>('mixed');
+  const getStamps = useAppStore((s) => s.getStamps);
+  const activeProfile = useAppStore((s) => s.getActiveProfile());
+
+  // Construir StampsData para verificar desbloqueo de niveles
+  const stampsData = useMemo((): StampsData => {
+    const data = {} as StampsData;
+    for (const level of LEVELS) {
+      data[level.id] = {} as Record<Continent, { countries: boolean; capitals: boolean }>;
+      for (const continent of CONTINENTS) {
+        data[level.id][continent.id] = getStamps(level.id, continent.id);
+      }
+    }
+    return data;
+  }, [getStamps, activeProfile]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleContinentSelect = useCallback(
     (continent: Continent) => {
       setSelectedContinent(continent);
       onContinentSelect(continent);
+      // Si el nivel actual está bloqueado para este continente, bajar al máximo desbloqueado
+      if (!isLevelUnlocked(selectedLevel, continent, stampsData)) {
+        // Buscar el máximo nivel desbloqueado
+        const unlocked = [...LEVELS].reverse().find((l) => isLevelUnlocked(l.id, continent, stampsData));
+        if (unlocked) setSelectedLevel(unlocked.id);
+      }
     },
-    [onContinentSelect],
+    [onContinentSelect, selectedLevel, stampsData],
   );
 
   const handleStart = useCallback(() => {
@@ -81,16 +103,26 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
         <div className="level-selector__levels">
           {LEVELS.map(({ id, label, emoji }) => {
             const count = selectedContinent ? getCountryCount(id, selectedContinent) : null;
+            const unlocked = selectedContinent
+              ? isLevelUnlocked(id, selectedContinent, stampsData)
+              : true;
             return (
               <button
                 key={id}
-                className={`level-selector__level-card ${selectedLevel === id ? 'level-selector__level-card--active' : ''}`}
-                onClick={() => setSelectedLevel(id)}
+                className={[
+                  'level-selector__level-card',
+                  selectedLevel === id && 'level-selector__level-card--active',
+                  !unlocked && 'level-selector__level-card--locked',
+                ].filter(Boolean).join(' ')}
+                onClick={() => unlocked && setSelectedLevel(id)}
+                disabled={!unlocked}
               >
-                <span className="level-selector__level-emoji">{emoji}</span>
+                <span className="level-selector__level-emoji">{unlocked ? emoji : '🔒'}</span>
                 <span className="level-selector__level-name">{label}</span>
                 <span className="level-selector__level-count">
-                  {count != null ? `${count} ${count === 1 ? 'país' : 'países'}` : '—'}
+                  {!unlocked
+                    ? 'Bloqueado'
+                    : count != null ? `${count} ${count === 1 ? 'país' : 'países'}` : '—'}
                 </span>
               </button>
             );

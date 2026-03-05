@@ -99,6 +99,11 @@
   color: var(--color-text-primary);
 }
 
+.level-selector__level-card--locked {
+  opacity: 0.35;
+  cursor: default;
+}
+
 .level-selector__level-emoji {
   font-size: var(--font-size-2xl);
 }

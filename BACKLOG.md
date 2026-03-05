@@ -54,14 +54,16 @@
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
 ### Experiencia: Jugar — Refinamientos pendientes
-- [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
+- [x] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
+- [ ] Texto del modal de prueba de sello: adaptar según tipo (países/capitales), claro para niños y adultos
 
 ### Experiencia: Pasaporte
-- [ ] Renombrar «Mi Pasaporte» → «Pasaporte» en el código (tab bar, AppShell, types)
-- [ ] Vista de matriz niveles × continentes (3 filas × 5 columnas)
-- [ ] Sistema de sellos (Países y Capitales) con estado conseguido/pendiente
-- [ ] Acceso directo a pruebas de sello desde el dashboard
-- [ ] Color del pasaporte según nivel global (verde/azul/dorado)
+- [x] Renombrar «Mi Pasaporte» → «Pasaporte» en el código (tab bar, AppShell, types)
+- [x] Vista de matriz niveles × continentes (5 filas continentes × 3 columnas niveles)
+- [x] Sistema de sellos (Países y Capitales) con estado conseguido/pendiente
+- [x] Acceso directo a pruebas de sello desde el dashboard
+- [x] Color del pasaporte según nivel global (verde/azul/dorado)
+- [ ] Fondo opaco en PassportView: el globo detrás interfiere con la legibilidad del dashboard
 
 ### Perfiles de usuario
 - [ ] Pantalla de creación de perfil (nombre por defecto «Explorador» + numeración automática)
@@ -80,6 +82,7 @@
   - para 3) aventura (aunque haremos mejoras en cómo se debe mostrar la selección de tipo de juego)
 - [ ] Cuando se juega en Europa, y una pregunta nos pregunta por la capital de Italia, es fácil que, si el usuario intenta pulsar sobre Roma, se seleccione Ciudad del Vaticano... Se me ocurre que para que no haya problemas con Italia/Roma y Vaticano/Ciudad del Vaticano, cuando se pregunte por uno de estos dos, solo se pueda seleccionar el correcto cuando el usuario pulsa sobre Roma (no cuando pulsa sobre otra área de Italia). Esto es solo una propuesta, puede que haya una solución mejor.
 - tabla de estadísticas: hay que merjorarla - el usuario no sabrá a qué nos referimos con las letras A, B, etc.
+- en Jugar, hacer que la progress bar avance desde el inicio, para dar sensación de progreso al usuario - no solo debe avanzar inidicando que x de y países están listos para sello.
 
 
 ### Internacionalización (UI completa)

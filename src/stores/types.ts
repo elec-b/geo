@@ -7,11 +7,10 @@ export type ProfileId = string;
 /** Identificador de avatar (nombre del icono) */
 export type AvatarId = string;
 
-/** Estado de un sello de país */
+/** Estado de un sello (por nivel×continente) */
 export interface StampStatus {
   earned: boolean;
-  attemptsToday: number;
-  lastAttemptDate: string; // ISO date (YYYY-MM-DD)
+  earnedDate: string | null; // ISO date (YYYY-MM-DD) de cuándo se ganó
 }
 
 /** Registro de intentos para un país en un tipo de juego */
@@ -27,8 +26,8 @@ export type CountryAttempts = Partial<Record<QuestionType, AttemptRecord>>;
 
 /** Progreso en un nivel × continente */
 export interface LevelContinentProgress {
-  stampCountries: Record<string, StampStatus>;  // cca2 → estado del sello del país
-  stampCapitals: Record<string, StampStatus>;   // cca2 → estado del sello de la capital
+  stampCountries: StampStatus;  // sello de países (prueba tipo A)
+  stampCapitals: StampStatus;   // sello de capitales (prueba tipo B)
   attempts: Record<string, CountryAttempts>;    // cca2 → intentos por tipo
 }
 

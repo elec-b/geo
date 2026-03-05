@@ -5,7 +5,8 @@ import { TabBar } from './components/Navigation/TabBar';
 import { AppHeader } from './components/Layout/AppHeader';
 import { StatsView } from './components/Stats/StatsView';
 import { ExploreView, type GlobeControlProps } from './components/Explore/ExploreView';
-import { JugarView } from './components/Game/JugarView';
+import { JugarView, type StampTestRequest } from './components/Game/JugarView';
+import { PassportView } from './components/Passport/PassportView';
 import { loadCountryData, loadCapitals } from './data/countryData';
 import { buildRankings, type CountryRankings } from './data/rankings';
 import { buildLevelDefinitions } from './data/levels';
@@ -50,6 +51,24 @@ function App() {
   // Ref del tab activo (para evitar re-render del globo al cambiar de tab)
   const activeTabRef = useRef<TabId>(activeTab);
   activeTabRef.current = activeTab;
+
+  // Prueba de sello lanzada desde Pasaporte
+  const [stampTestRequest, setStampTestRequest] = useState<StampTestRequest | null>(null);
+
+  // Callback para lanzar prueba de sello desde Pasaporte → cambia a tab Jugar
+  const handleStartStampTest = useCallback(
+    (level: import('./data/types').GameLevel, continent: import('./data/types').Continent, stampType: import('./hooks/useGameSession').StampTestType) => {
+      setStampTestRequest({ level, continent, stampType });
+      setActiveTab('play');
+    },
+    [],
+  );
+
+  // Callback cuando la prueba de sello termina → limpiar request
+  const handleStampTestDone = useCallback(() => {
+    setStampTestRequest(null);
+    setActiveTab('passport');
+  }, []);
 
   // Bridge de handlers: cada tab registra sus callbacks aquí
   const exploreClickRef = useRef<((f: CountryFeature) => void) | undefined>(undefined);
@@ -156,21 +175,16 @@ function App() {
           levels={levels}
           onGlobePropsChange={setGlobeControl}
           onCountryClickRef={jugarClickRef}
+          stampTestRequest={stampTestRequest}
+          onStampTestDone={handleStampTestDone}
         />
       )}
 
-      {activeTab === 'passport' && (
-        <div className="tab-overlay tab-overlay--active tab-overlay--passport">
-          <div className="tab-placeholder">
-            <svg className="tab-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="4" y="2" width="16" height="20" rx="2" />
-              <circle cx="12" cy="10" r="3" />
-              <path d="M8 18h8" />
-            </svg>
-            <span className="tab-placeholder__title">Mi Pasaporte</span>
-            <span className="tab-placeholder__subtitle">Próximamente</span>
-          </div>
-        </div>
+      {activeTab === 'passport' && dataReady && (
+        <PassportView
+          levels={levels}
+          onStartStampTest={handleStartStampTest}
+        />
       )}
 
       {showStats && dataReady && (

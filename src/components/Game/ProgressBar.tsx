@@ -1,5 +1,5 @@
 // Barra de progreso + puntuación + botón salir (fija sobre el tab bar)
-import type { GameScore } from '../../hooks/useGameSession';
+import type { GameScore, StampTestType } from '../../hooks/useGameSession';
 import './ProgressBar.css';
 
 interface ProgressBarProps {
@@ -9,25 +9,46 @@ interface ProgressBarProps {
   onExit: () => void;
   readyForStamp: boolean;
   isAdventure: boolean;
+  /** true si estamos en una prueba de sello */
+  isStampTest?: boolean;
+  /** Tipo de sello en prueba */
+  stampTestType?: StampTestType | null;
+  /** Callback cuando el usuario toca el banner de readiness */
+  onStampBannerClick?: () => void;
 }
 
-export function ProgressBar({ progressCurrent, progressTotal, score, onExit, readyForStamp, isAdventure }: ProgressBarProps) {
+export function ProgressBar({
+  progressCurrent, progressTotal, score, onExit,
+  readyForStamp, isAdventure, isStampTest, stampTestType, onStampBannerClick,
+}: ProgressBarProps) {
   const pct = progressTotal > 0 ? Math.min((progressCurrent / progressTotal) * 100, 100) : 0;
   const isFull = progressTotal > 0 && progressCurrent >= progressTotal;
 
-  const label = isAdventure
-    ? `${progressCurrent} de ${progressTotal} listos para sello`
-    : `${progressCurrent} de ${progressTotal} dominados`;
+  const label = isStampTest
+    ? `Prueba de sello: ${progressCurrent} de ${progressTotal}`
+    : isAdventure
+      ? `${progressCurrent} de ${progressTotal} listos para sello`
+      : `${progressCurrent} de ${progressTotal} dominados`;
 
   return (
     <div className="progress-bar">
-      {/* Banner de estado (readiness o dominio) */}
-      {readyForStamp && isAdventure && (
-        <div className="progress-bar__banner progress-bar__banner--ready">
-          Ya est&aacute;s listo para las pruebas de sello
+      {/* Banner de prueba de sello activa */}
+      {isStampTest && (
+        <div className="progress-bar__banner progress-bar__banner--stamp-test">
+          Prueba de sello: {stampTestType === 'countries' ? 'Países' : 'Capitales'}
         </div>
       )}
-      {!isAdventure && isFull && (
+
+      {/* Banner de readiness (tappable) */}
+      {!isStampTest && readyForStamp && isAdventure && (
+        <button
+          className="progress-bar__banner progress-bar__banner--ready"
+          onClick={onStampBannerClick}
+        >
+          Intentar prueba de sello
+        </button>
+      )}
+      {!isStampTest && !isAdventure && isFull && (
         <div className="progress-bar__banner progress-bar__banner--mastery">
           Dominas este juego
         </div>

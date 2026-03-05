@@ -15,6 +15,12 @@ export interface GameScore {
   total: number;
 }
 
+/** Resultado de una prueba de sello */
+export type StampTestResult = 'in_progress' | 'passed' | 'failed' | null;
+
+/** Tipo de sello para la prueba */
+export type StampTestType = 'countries' | 'capitals';
+
 export interface GameSessionState {
   currentQuestion: GameQuestion | null;
   score: GameScore;
@@ -27,10 +33,18 @@ export interface GameSessionState {
   /** Nivel y continente actuales */
   level: GameLevel | null;
   continent: Continent | null;
+  /** Estado de la prueba de sello (null si no es prueba de sello) */
+  stampTestResult: StampTestResult;
+  /** Progreso de la prueba de sello: cuántos países van de cuántos */
+  stampTestProgress: { current: number; total: number } | null;
+  /** Tipo de sello en prueba (null si no es prueba) */
+  stampTestType: StampTestType | null;
 }
 
 interface GameSessionActions {
   start: (level: GameLevel, continent: Continent, questionType?: QuestionTypeFilter) => void;
+  /** Inicia una prueba de sello (tipo A para países, tipo B para capitales) */
+  startStampTest: (level: GameLevel, continent: Continent, stampType: StampTestType) => void;
   submitAnswer: (answer: string) => 'correct' | 'incorrect' | 'ignored';
   nextQuestion: () => void;
   end: () => void;
@@ -62,6 +76,14 @@ export function useGameSession(
   const [isActive, setIsActive] = useState(false);
   const [level, setLevel] = useState<GameLevel | null>(null);
   const [continent, setContinent] = useState<Continent | null>(null);
+  const [stampTestResult, setStampTestResult] = useState<StampTestResult>(null);
+  const [stampTestProgress, setStampTestProgress] = useState<{ current: number; total: number } | null>(null);
+  const [stampTestType, setStampTestType] = useState<StampTestType | null>(null);
+
+  // Control de prueba de sello
+  const isStampTestRef = useRef(false);
+  const stampTestTotalRef = useRef(0);
+  const stampTestErrorsRef = useRef(0);
 
   // Historial de países recientes para anti-repetición
   const recentCountriesRef = useRef<string[]>([]);
@@ -151,12 +173,18 @@ export function useGameSession(
       recentCountriesRef.current = [];
       recentTypesRef.current = [];
       questionsRef.current = [];
+      isStampTestRef.current = false;
+      stampTestTotalRef.current = 0;
+      stampTestErrorsRef.current = 0;
 
       setLevel(newLevel);
       setContinent(newContinent);
       setScore(INITIAL_SCORE);
       setFeedbackState('idle');
       setIsActive(true);
+      setStampTestResult(null);
+      setStampTestProgress(null);
+      setStampTestType(null);
 
       // Generar primera pregunta
       // Para tipo concreto, pre-generar la cola
@@ -171,6 +199,44 @@ export function useGameSession(
       }
     },
     [levels, countries, capitals, requestNextQuestion, applyHighlight],
+  );
+
+  const startStampTest = useCallback(
+    (newLevel: GameLevel, newContinent: Continent, stampType: StampTestType) => {
+      const key = `${newLevel}-${newContinent}`;
+      const def = levels.get(key);
+      if (!def) return;
+
+      const gameType: QuestionTypeFilter = stampType === 'countries' ? 'A' : 'B';
+
+      levelKeyRef.current = key;
+      questionTypeRef.current = gameType;
+      recentCountriesRef.current = [];
+      recentTypesRef.current = [];
+      isStampTestRef.current = true;
+      stampTestTotalRef.current = def.countries.length;
+      stampTestErrorsRef.current = 0;
+
+      setLevel(newLevel);
+      setContinent(newContinent);
+      setScore(INITIAL_SCORE);
+      setFeedbackState('idle');
+      setIsActive(true);
+      setStampTestResult('in_progress');
+      setStampTestType(stampType);
+      setStampTestProgress({ current: 0, total: def.countries.length });
+
+      // Pre-generar cola completa con todos los países (sin repeticiones)
+      questionsRef.current = generateQuestionsByType(gameType, def.countries, countries, capitals);
+
+      const question = questionsRef.current.shift() ?? null;
+      setCurrentQuestion(question);
+      if (question) {
+        recentCountriesRef.current.push(question.targetCca2);
+        applyHighlight(question);
+      }
+    },
+    [levels, countries, capitals, applyHighlight],
   );
 
   const submitAnswer = useCallback(
@@ -206,6 +272,10 @@ export function useGameSession(
           incorrect: prev.incorrect + 1,
           total: prev.total + 1,
         }));
+        // Contar errores en prueba de sello
+        if (isStampTestRef.current) {
+          stampTestErrorsRef.current++;
+        }
         return 'incorrect';
       }
     },
@@ -213,14 +283,36 @@ export function useGameSession(
   );
 
   const nextQuestion = useCallback(() => {
-    const next = requestNextQuestion();
-    setCurrentQuestion(next);
-    setFeedbackState('idle');
-    setLastAnswer(null);
-    if (next) {
-      applyHighlight(next);
+    if (isStampTestRef.current) {
+      // Prueba de sello: avanzar por la cola sin reciclar
+      const next = questionsRef.current.shift() ?? null;
+      setFeedbackState('idle');
+      setLastAnswer(null);
+
+      if (next) {
+        setCurrentQuestion(next);
+        recentCountriesRef.current.push(next.targetCca2);
+        applyHighlight(next);
+        // Actualizar progreso (current = preguntas ya respondidas)
+        setStampTestProgress((prev) =>
+          prev ? { current: prev.current + 1, total: prev.total } : null,
+        );
+      } else {
+        // Cola agotada → prueba terminada
+        setCurrentQuestion(null);
+        setCorrectCca2(null);
+        setStampTestResult(stampTestErrorsRef.current === 0 ? 'passed' : 'failed');
+      }
     } else {
-      setCorrectCca2(null);
+      const next = requestNextQuestion();
+      setCurrentQuestion(next);
+      setFeedbackState('idle');
+      setLastAnswer(null);
+      if (next) {
+        applyHighlight(next);
+      } else {
+        setCorrectCca2(null);
+      }
     }
   }, [requestNextQuestion, applyHighlight]);
 
@@ -233,6 +325,12 @@ export function useGameSession(
     setScore(INITIAL_SCORE);
     setLevel(null);
     setContinent(null);
+    setStampTestResult(null);
+    setStampTestProgress(null);
+    setStampTestType(null);
+    isStampTestRef.current = false;
+    stampTestTotalRef.current = 0;
+    stampTestErrorsRef.current = 0;
     recentCountriesRef.current = [];
     recentTypesRef.current = [];
     questionsRef.current = [];
@@ -247,7 +345,11 @@ export function useGameSession(
     isActive,
     level,
     continent,
+    stampTestResult,
+    stampTestProgress,
+    stampTestType,
     start,
+    startStampTest,
     submitAnswer,
     nextQuestion,
     end,

@@ -1,0 +1,159 @@
+/* PassportView — Dashboard de progreso */
+
+.passport-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(var(--header-height) + var(--spacing-lg)) var(--spacing-md) calc(var(--tabbar-height) + var(--spacing-xl));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Header con nivel global */
+.passport-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  margin-bottom: var(--spacing-xl);
+  width: 100%;
+  max-width: 22rem;
+}
+
+.passport-header__icon {
+  font-size: 2rem;
+}
+
+.passport-header__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.passport-header__name {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.passport-header__level {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Grid 5 filas × 3 columnas (+ labels) */
+.passport-grid {
+  display: grid;
+  grid-template-columns: auto repeat(3, 1fr);
+  gap: var(--spacing-xs);
+  width: 100%;
+  max-width: 22rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.passport-grid__corner {
+  /* Celda vacía esquina superior izquierda */
+}
+
+.passport-grid__level-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+  padding: var(--spacing-xs);
+}
+
+.passport-grid__level-emoji {
+  font-size: var(--font-size-lg);
+}
+
+.passport-grid__level-name {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.passport-grid__continent-label {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  padding-right: var(--spacing-sm);
+  white-space: nowrap;
+}
+
+/* Celda individual */
+.passport-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  min-height: 3.5rem;
+}
+
+.passport-cell--locked {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.passport-cell--available {
+  border-color: color-mix(in srgb, var(--cell-color) 40%, transparent);
+}
+
+.passport-cell--available:active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.passport-cell--complete {
+  border-color: var(--cell-color);
+  background: color-mix(in srgb, var(--cell-color) 10%, transparent);
+  cursor: default;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--cell-color) 20%, transparent);
+}
+
+.passport-cell__lock {
+  font-size: var(--font-size-sm);
+  opacity: 0.6;
+}
+
+.passport-cell__stamps {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.passport-cell__stamp {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.passport-cell__stamp--earned {
+  color: var(--color-accent-amber);
+}
+
+.passport-cell__count {
+  font-size: 0.625rem;
+  color: var(--color-text-muted);
+}
+
+/* Leyenda */
+.passport-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.passport-legend__item {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
