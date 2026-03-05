@@ -308,30 +308,20 @@ La app soporta **múltiples perfiles** en un mismo dispositivo.
 
 ## Configuración
 
-Configuración **ultra-sencilla**. Solo lo esencial, organizada en dos niveles:
+Configuración **ultra-sencilla**. Un solo punto de acceso: el **botón de engranaje en el header** (siempre visible). Se abre como **bottom sheet**.
 
-### a) Configuración global (pantalla de inicio)
+| Ajuste | Opciones | Por defecto | Visibilidad |
+|--------|----------|-------------|-------------|
+| Vibración | On/Off | On | Siempre |
+| Idioma de la app | Todos los soportados por iOS/Android | Idioma del teléfono (fallback: inglés) | Siempre |
+| Tema claro/oscuro | Claro / Oscuro | Oscuro | Siempre |
+| Marcadores de microestados | On/Off | On | Solo en Explorar |
 
-| Ajuste | Opciones | Por defecto |
-|--------|----------|-------------|
-| Perfil activo | Selector de perfiles | Último usado |
-| Marcadores de microestados | On/Off | On |
-| Vibración | On/Off | On |
-| Idioma de la app | Todos los soportados por iOS/Android | Idioma del teléfono (fallback: inglés) |
-| Tema claro/oscuro | Claro / Oscuro | Oscuro |
+**Perfil activo**: No forma parte de la configuración. Se gestiona mediante tap en el avatar (ver § Perfiles de usuario).
 
-### b) Configuración del globo (durante la interacción)
-
-Subconjunto de la configuración global, accesible mientras se interactúa con el globo:
-
-| Ajuste | Opciones | Por defecto |
-|--------|----------|-------------|
-| Marcadores de microestados | On/Off | On |
-| Tema claro/oscuro | Claro / Oscuro | Oscuro |
+**Etiquetas de países/capitales**: Son controles exclusivos de la experiencia Explorar (ver § Explorar), no forman parte de la configuración.
 
 **Nota sobre tema claro/oscuro**: Tarea de baja prioridad, a implementar cuando la app esté prácticamente terminada. La identidad visual principal sigue siendo el dark mode.
-
-**Nota sobre etiquetas de países/capitales**: Son controles exclusivos de la experiencia Explorar (ver § Explorar), no forman parte de la configuración general.
 
 **Filosofía**: Sin menús complicados. La app debe funcionar bien "out of the box".
 
