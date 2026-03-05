@@ -49,8 +49,7 @@
 - [ ] Progreso independiente por perfil (pasaporte, sellos, fallos)
 
 ### Configuración
-- [ ] Pantalla de configuración global (perfil activo, marcadores de microestados, vibración, idioma, tema)
-- [ ] Configuración del globo en overlay (marcadores de microestados, tema)
+- [ ] Bottom sheet desde el engranaje del header (vibración, idioma, tema, marcadores de microestados — este último solo visible en Explorar)
 
 ### Refinamientos tras la primera vuelta completa a la app
 - [ ] Cuando el usuario pulsa en jugar, debe 1) elegir continente, 2) elegir nivel, 3) elegir tipo de juego. Debemos pre-seleccionar 1) 2) y 3):
