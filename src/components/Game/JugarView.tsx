@@ -667,7 +667,7 @@ export function JugarView({
           <div className="jugar-modal">
             <h3 className="jugar-modal__title">Prueba de sello</h3>
             <p className="jugar-modal__text">
-              Localiza todos los países sin errores para conseguir el sello.
+              Elige una prueba. Deberás completarla sin errores para conseguir el sello.
             </p>
             <div className="jugar-modal__buttons">
               <button

@@ -77,7 +77,7 @@ export function PassportView({ levels, onStartStampTest }: PassportViewProps) {
   );
 
   return (
-    <div className="passport-view tab-overlay tab-overlay--active">
+    <div className="passport-view tab-overlay tab-overlay--active tab-overlay--passport">
       {/* Header con nivel global */}
       <div
         className="passport-header"
@@ -176,6 +176,9 @@ export function PassportView({ levels, onStartStampTest }: PassportViewProps) {
             <h3 className="jugar-modal__title">Prueba de sello</h3>
             <p className="jugar-modal__text">
               {LEVELS.find((l) => l.id === selectedCell.level)?.label} — {selectedCell.continent}
+            </p>
+            <p className="jugar-modal__text">
+              Completa la prueba sin errores para conseguir el sello.
             </p>
             <div className="jugar-modal__buttons">
               {!stampsData[selectedCell.level][selectedCell.continent].countries && (
