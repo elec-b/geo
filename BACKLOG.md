@@ -43,6 +43,9 @@
 - [x] Kiribati añadido a `ARCHIPELAGO_CODES` — convex hull con normalización antimeridiano
 - [x] `isPointVisible` corregido: ángulo visible dependiente del zoom (`arcsin(1/zoom) * 0.8`) en vez de umbral fijo
 - [x] Zoom E/F reducido (×0.6) para mostrar vecinos en archipiélagos extensos (Islas Salomón, etc.)
+- [x] Zoom E/F: floor 2.0 para que países grandes (Australia, Rusia, Brasil) no queden diminutos con el ×0.6
+- [x] Centroide Oceanía [155°E→148°E] + zoom continental [2.5→2.0] para que Australia no quede cortada en A/B
+- [x] `isPointVisible` margen 80% en móvil vertical: resuelto con centroide y zoom continental ajustados
 
 ---
 
@@ -51,7 +54,6 @@
 > Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
 
 ### Experiencia: Jugar — Refinamientos pendientes
-- [ ] Zoom out A/B insuficiente: `isPointVisible` con margen 80% sigue siendo demasiado permisivo — en móvil vertical el globo se recorta arriba/abajo por header, banner y ProgressBar, así que puntos "técnicamente visibles" en el hemisferio quedan fuera de pantalla o en el borde extremo. Ej: Fiji en Oceanía queda completamente fuera del viewport visible (habría que hacer scroll lateral o zoom out para verlo).
 - [ ] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
 
 ### Experiencia: Pasaporte

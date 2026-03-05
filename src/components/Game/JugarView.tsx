@@ -249,7 +249,7 @@ export function JugarView({
     const centroid = globeRef.current.getCentroid(q.targetCca2);
     if (centroid) {
       const baseZoom = globeRef.current.getCountryZoom(q.targetCca2);
-      const zoom = baseZoom != null ? baseZoom * 0.6 : undefined;
+      const zoom = baseZoom != null ? Math.max(baseZoom * 0.6, 2.0) : undefined;
       globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
     }
   }, [session.currentQuestion, globeRef, flyOutStep]);
@@ -425,7 +425,7 @@ export function JugarView({
         if (coords && globeRef.current) {
           const baseZoom = globeRef.current.getCountryZoom(coords.correctCca2);
           // Zoom más suave en error: mostrar el país en contexto con sus vecinos
-          const zoom = baseZoom != null ? baseZoom * 0.6 : undefined;
+          const zoom = baseZoom != null ? Math.max(baseZoom * 0.6, 2.0) : undefined;
           globeRef.current.flyTo(coords.correctCoords[0], coords.correctCoords[1], zoom, 600);
         }
       }, 1200);
@@ -476,7 +476,7 @@ export function JugarView({
     const centroid = globeRef.current.getCentroid(q.targetCca2);
     if (centroid) {
       const baseZoom = globeRef.current.getCountryZoom(q.targetCca2);
-      const zoom = baseZoom != null ? baseZoom * 0.6 : undefined;
+      const zoom = baseZoom != null ? Math.max(baseZoom * 0.6, 2.0) : undefined;
       globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
     }
     setFlyOutStep('idle');
