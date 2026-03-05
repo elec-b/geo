@@ -60,6 +60,7 @@
 - [ ] Cuando se juega en Europa, y una pregunta nos pregunta por la capital de Italia, es fácil que, si el usuario intenta pulsar sobre Roma, se seleccione Ciudad del Vaticano... Se me ocurre que para que no haya problemas con Italia/Roma y Vaticano/Ciudad del Vaticano, cuando se pregunte por uno de estos dos, solo se pueda seleccionar el correcto cuando el usuario pulsa sobre Roma (no cuando pulsa sobre otra área de Italia). Esto es solo una propuesta, puede que haya una solución mejor.
 - tabla de estadísticas: hay que merjorarla - el usuario no sabrá a qué nos referimos con las letras A, B, etc.
 - en Jugar, hacer que la progress bar avance desde el inicio, para dar sensación de progreso al usuario - no solo debe avanzar inidicando que x de y países están listos para sello.
+- mejorar la estética del pasaporte: el grid está bien hecho, pero debe dar la sensación de que es un "pasaporte en una página". Pensar bien qué aspecto tiene que tener antes de hacerlo.
 
 
 ### Internacionalización (UI completa)
