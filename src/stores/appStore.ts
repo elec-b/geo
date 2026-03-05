@@ -1,5 +1,7 @@
 // Store global de GeoExpert (Zustand)
 import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
+import { capacitorStorage } from './persistStorage';
 import type { AppSettings, AppState, UserProfile, ProfileId, AvatarId, ProfileProgress, CountryAttempts } from './types';
 import type { Continent, GameLevel, QuestionType } from '../data/types';
 
@@ -39,7 +41,7 @@ const defaultProfileId = uuid();
 const defaultProfile: UserProfile = {
   id: defaultProfileId,
   name: 'Explorador',
-  avatar: 'default',
+  avatar: 'lion',
   createdAt: new Date().toISOString(),
   progress: emptyProgress(),
 };
@@ -54,6 +56,8 @@ interface AppStoreActions {
   setActiveProfile: (id: ProfileId) => void;
   /** Elimina un perfil */
   deleteProfile: (id: ProfileId) => void;
+  /** Actualiza nombre y/o avatar de un perfil existente */
+  updateProfile: (id: ProfileId, updates: { name?: string; avatar?: AvatarId }) => void;
   /** Actualiza settings (merge parcial) */
   updateSettings: (partial: Partial<AppSettings>) => void;
   /** Devuelve el perfil activo (o null) */
@@ -72,7 +76,9 @@ interface AppStoreActions {
 
 type AppStore = AppState & AppStoreActions;
 
-export const useAppStore = create<AppStore>((set, get) => ({
+export const useAppStore = create<AppStore>()(
+  persist(
+    (set, get) => ({
   // Estado inicial — perfil por defecto para que recordAttempt/getAttempts funcionen
   profiles: [defaultProfile],
   activeProfileId: defaultProfileId,
@@ -102,6 +108,14 @@ export const useAppStore = create<AppStore>((set, get) => ({
     set((state) => ({
       profiles: state.profiles.filter((p) => p.id !== id),
       activeProfileId: state.activeProfileId === id ? null : state.activeProfileId,
+    }));
+  },
+
+  updateProfile: (id: ProfileId, updates: { name?: string; avatar?: AvatarId }) => {
+    set((state) => ({
+      profiles: state.profiles.map((p) =>
+        p.id === id ? { ...p, ...updates } : p
+      ),
     }));
   },
 
@@ -234,4 +248,15 @@ export const useAppStore = create<AppStore>((set, get) => ({
       return { profiles: newProfiles };
     });
   },
-}));
+    }),
+    {
+      name: 'geoexpert-store',
+      storage: createJSONStorage(() => capacitorStorage),
+      partialize: (state) => ({
+        profiles: state.profiles,
+        activeProfileId: state.activeProfileId,
+        settings: state.settings,
+      }),
+    },
+  ),
+);

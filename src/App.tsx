@@ -7,6 +7,8 @@ import { StatsView } from './components/Stats/StatsView';
 import { ExploreView, type GlobeControlProps } from './components/Explore/ExploreView';
 import { JugarView, type StampTestRequest } from './components/Game/JugarView';
 import { PassportView } from './components/Passport/PassportView';
+import { ProfileSelector, getNextDefaultName } from './components/Profile/ProfileSelector';
+import { ProfileEditor } from './components/Profile/ProfileEditor';
 import { loadCountryData, loadCapitals } from './data/countryData';
 import { buildRankings, type CountryRankings } from './data/rankings';
 import { buildLevelDefinitions } from './data/levels';
@@ -51,6 +53,11 @@ function App() {
   // Ref del tab activo (para evitar re-render del globo al cambiar de tab)
   const activeTabRef = useRef<TabId>(activeTab);
   activeTabRef.current = activeTab;
+
+  // Modales de gestión de perfiles
+  const [showProfileSelector, setShowProfileSelector] = useState(false);
+  const [showProfileEditor, setShowProfileEditor] = useState(false);
+  const [editingProfile, setEditingProfile] = useState<import('./stores/types').UserProfile | null>(null);
 
   // Prueba de sello lanzada desde Pasaporte
   const [stampTestRequest, setStampTestRequest] = useState<StampTestRequest | null>(null);
@@ -130,7 +137,10 @@ function App() {
     <>
       <LoadingScreen visible={!globeReady} />
 
-      <AppHeader onStatsClick={() => setShowStats(true)} />
+      <AppHeader
+        onStatsClick={() => setShowStats(true)}
+        onAvatarClick={() => setShowProfileSelector(true)}
+      />
 
       {/* Globo: siempre montado, sin wrapper — iOS rompe touch tras re-render si se envuelve */}
       <Suspense fallback={null}>
@@ -192,6 +202,36 @@ function App() {
           countries={countries}
           levels={levels}
           onClose={() => setShowStats(false)}
+        />
+      )}
+
+      {showProfileSelector && (
+        <ProfileSelector
+          onClose={() => setShowProfileSelector(false)}
+          onCreateNew={() => {
+            setEditingProfile(null);
+            setShowProfileEditor(true);
+          }}
+          onEdit={(profile) => {
+            setEditingProfile(profile);
+            setShowProfileEditor(true);
+          }}
+        />
+      )}
+
+      {showProfileEditor && (
+        <ProfileEditor
+          editProfile={editingProfile ?? undefined}
+          defaultName={editingProfile ? undefined : getNextDefaultName(useAppStore.getState().profiles)}
+          onClose={() => {
+            setShowProfileEditor(false);
+            setEditingProfile(null);
+          }}
+          onSave={() => {
+            setShowProfileEditor(false);
+            setShowProfileSelector(false);
+            setEditingProfile(null);
+          }}
         />
       )}
 

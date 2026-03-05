@@ -1,14 +1,19 @@
 // AppHeader - Barra superior con avatar, estadísticas y configuración
+import { useAppStore } from '../../stores/appStore';
+import { AvatarIcon } from '../Profile/AvatarIcon';
+import { DEFAULT_AVATAR } from '../../data/avatars';
 import './AppHeader.css';
 
 interface AppHeaderProps {
   onStatsClick?: () => void;
+  onAvatarClick?: () => void;
 }
 
-export function AppHeader({ onStatsClick }: AppHeaderProps) {
-  const handleAvatarClick = () => {
-    console.log('Avatar: perfil de usuario (próximamente)');
-  };
+export function AppHeader({ onStatsClick, onAvatarClick }: AppHeaderProps) {
+  const activeAvatar = useAppStore((s) => {
+    const profile = s.profiles.find((p) => p.id === s.activeProfileId);
+    return profile?.avatar ?? DEFAULT_AVATAR;
+  });
 
   const handleSettingsClick = () => {
     console.log('Configuración (próximamente)');
@@ -16,16 +21,13 @@ export function AppHeader({ onStatsClick }: AppHeaderProps) {
 
   return (
     <header className="app-header">
-      {/* Avatar (izquierda) */}
+      {/* Avatar del perfil activo (izquierda) */}
       <button
-        className="app-header__button"
-        onClick={handleAvatarClick}
+        className="app-header__button app-header__button--avatar"
+        onClick={onAvatarClick}
         aria-label="Perfil de usuario"
       >
-        <svg className="app-header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="8" r="4" />
-          <path d="M4 21v-1a6 6 0 0 1 12 0v1" />
-        </svg>
+        <AvatarIcon avatarId={activeAvatar} size="sm" />
       </button>
 
       {/* Botones derechos: estadísticas + configuración */}
