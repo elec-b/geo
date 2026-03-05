@@ -56,6 +56,7 @@
 ### Experiencia: Jugar — Refinamientos pendientes
 - [x] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte, sin límite de intentos)
 - [ ] Texto del modal de prueba de sello: adaptar según tipo (países/capitales), claro para niños y adultos
+  - el modal de prueba de sello dice "Localiza todos los países sin errores para conseguir el sello", habría que decir algo como "Localiza todos los países/capitales sin errores para conseguir el sello" -> hay que pensar bien el texto, para que sea claro tanto para niños como para adultos. 
 
 ### Experiencia: Pasaporte
 - [x] Renombrar «Mi Pasaporte» → «Pasaporte» en el código (tab bar, AppShell, types)
