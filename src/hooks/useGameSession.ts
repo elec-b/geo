@@ -6,6 +6,7 @@ import { selectNextQuestion } from '../data/learningAlgorithm';
 import type { CountryData, CapitalCoords, Continent, GameLevel, QuestionType } from '../data/types';
 import type { LevelDefinition } from '../data/types';
 import type { CountryAttempts } from '../stores/types';
+import { hapticSuccess, hapticError } from '../utils/haptics';
 
 export type FeedbackState = 'idle' | 'correct' | 'incorrect';
 
@@ -256,6 +257,7 @@ export function useGameSession(
       setCorrectCca2(currentQuestion.targetCca2);
 
       if (isCorrect) {
+        hapticSuccess();
         setFeedbackState('correct');
         setLastAnswer(null);
         setScore((prev) => ({
@@ -265,6 +267,7 @@ export function useGameSession(
         }));
         return 'correct';
       } else {
+        hapticError();
         setFeedbackState('incorrect');
         setLastAnswer(answer);
         setScore((prev) => ({

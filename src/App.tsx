@@ -9,6 +9,7 @@ import { JugarView, type StampTestRequest } from './components/Game/JugarView';
 import { PassportView } from './components/Passport/PassportView';
 import { ProfileSelector, getNextDefaultName } from './components/Profile/ProfileSelector';
 import { ProfileEditor } from './components/Profile/ProfileEditor';
+import { SettingsSheet } from './components/Settings/SettingsSheet';
 import { loadCountryData, loadCapitals } from './data/countryData';
 import { buildRankings, type CountryRankings } from './data/rankings';
 import { buildLevelDefinitions } from './data/levels';
@@ -53,6 +54,9 @@ function App() {
   // Ref del tab activo (para evitar re-render del globo al cambiar de tab)
   const activeTabRef = useRef<TabId>(activeTab);
   activeTabRef.current = activeTab;
+
+  // Modal de configuración
+  const [showSettings, setShowSettings] = useState(false);
 
   // Modales de gestión de perfiles
   const [showProfileSelector, setShowProfileSelector] = useState(false);
@@ -140,6 +144,7 @@ function App() {
       <AppHeader
         onStatsClick={() => setShowStats(true)}
         onAvatarClick={() => setShowProfileSelector(true)}
+        onSettingsClick={() => setShowSettings(true)}
       />
 
       {/* Globo: siempre montado, sin wrapper — iOS rompe touch tras re-render si se envuelve */}
@@ -232,6 +237,13 @@ function App() {
             setShowProfileSelector(false);
             setEditingProfile(null);
           }}
+        />
+      )}
+
+      {showSettings && (
+        <SettingsSheet
+          isExploreTab={activeTab === 'explore'}
+          onClose={() => setShowSettings(false)}
         />
       )}
 

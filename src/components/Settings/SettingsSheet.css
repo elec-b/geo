@@ -1,0 +1,167 @@
+/* SettingsSheet — bottom sheet de configuración */
+
+.settings-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: rgba(0, 0, 0, 0.5);
+  animation: settings-sheet-fade-in 200ms ease-out;
+}
+
+@keyframes settings-sheet-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.settings-sheet {
+  position: fixed;
+  bottom: var(--tabbar-height);
+  left: 0;
+  right: 0;
+  z-index: var(--z-modal);
+  padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-lg);
+  padding-bottom: calc(var(--spacing-lg) + env(safe-area-inset-bottom, 0px));
+  background: rgba(12, 12, 30, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  animation: settings-sheet-slide-up 300ms ease-out;
+}
+
+@keyframes settings-sheet-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Header */
+.settings-sheet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.settings-sheet__title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.settings-sheet__close {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: var(--glass-bg);
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.settings-sheet__close:active {
+  color: var(--color-text-primary);
+}
+
+/* Filas de ajustes */
+.settings-sheet__rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-sheet__row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--glass-border);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.settings-sheet__row:last-child {
+  border-bottom: none;
+}
+
+.settings-sheet__row--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Icono SVG */
+.settings-sheet__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+}
+
+/* Label */
+.settings-sheet__label {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+/* Valor estático (para filas disabled) */
+.settings-sheet__value {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-right: var(--spacing-xs);
+}
+
+/* Badge "Próximamente" */
+.settings-sheet__badge {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.125rem var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+/* Toggle switch (patrón de TableView) */
+.settings-sheet__toggle {
+  position: relative;
+  width: 2.75rem;
+  height: 1.5rem;
+  border: none;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--transition-fast);
+}
+
+.settings-sheet__toggle--active {
+  background: var(--color-accent-cyan);
+}
+
+.settings-sheet__toggle-thumb {
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: var(--radius-full);
+  background: #fff;
+  transition: transform var(--transition-fast);
+}
+
+.settings-sheet__toggle--active .settings-sheet__toggle-thumb {
+  transform: translateX(1.25rem);
+}

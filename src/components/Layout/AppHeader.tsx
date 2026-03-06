@@ -7,17 +7,14 @@ import './AppHeader.css';
 interface AppHeaderProps {
   onStatsClick?: () => void;
   onAvatarClick?: () => void;
+  onSettingsClick?: () => void;
 }
 
-export function AppHeader({ onStatsClick, onAvatarClick }: AppHeaderProps) {
+export function AppHeader({ onStatsClick, onAvatarClick, onSettingsClick }: AppHeaderProps) {
   const activeAvatar = useAppStore((s) => {
     const profile = s.profiles.find((p) => p.id === s.activeProfileId);
     return profile?.avatar ?? DEFAULT_AVATAR;
   });
-
-  const handleSettingsClick = () => {
-    console.log('Configuración (próximamente)');
-  };
 
   return (
     <header className="app-header">
@@ -47,7 +44,7 @@ export function AppHeader({ onStatsClick, onAvatarClick }: AppHeaderProps) {
         )}
         <button
           className="app-header__button"
-          onClick={handleSettingsClick}
+          onClick={onSettingsClick}
           aria-label="Configuración"
         >
           <svg className="app-header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
