@@ -50,49 +50,38 @@
 
 ## Próximos pasos
 
-> Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
+> Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
-### Refinamientos tras la primera vuelta completa a la app
-Esta sección contiene notas rápidas -> habrá que reordenar en el backlog cuando queramos llevar a cabo estos refinamientos.
+### Decisiones de diseño pendientes
+Requieren discusión y actualización de DESIGN.md antes de implementar.
 
-#### Jugar
-- Cuando el usuario pulsa en Jugar, debe 1) elegir continente, 2) elegir nivel, 3) elegir tipo de juego. Debemos pre-seleccionar 1) 2) y 3):
-  - para 1) continente en el que está el móvil (iphone/android) (sin saltarnos políticas de privacidad, no queremos leer nada de info confidencial)
-  - para 2) el máximo nivel al que pueda jugar el usuario para un continente dado
-    - si el usuario hace click en un nivel en el que todavía no puede jugar (e.g. es turista en África y hace click en mochilero), se le debe mostrar un mensaje indicando que debe superar las pruebas de sello que corresponda / del nivel anterior para poder jugar en ese nivel.
-  - para 3) aventura (aunque haremos mejoras en cómo se debe mostrar la selección de tipo de juego)
-- Re-pensar bien la lógica de juego cuando se progresa de nivel:
-  - Si el usuario tiene los sellos de turista, cuando juega en mochilero:
-    - su tabla de estadísticas debería empezar con todos los países en turista con tick an A y B (esto cambia, si en la prueba de sello comete un error en A o en B)
-    - los países de nivel turista no deben contar para (según design.md) "Al menos el **40%** de los países (mínimo 3) tienen ≥ 1 acierto en la etapa actual" pero creo que sí para "y la precisión global de la sesión es **≥ 80%**."
-  - (la misma lógica aplica cuando se pasa de mochilero a guía)
-  - pensemos bien esto y anotémoslo en design.md, después las tareas a acometer se deben reflejar bien en este backlog
-- Cuando se juega en Europa, y una pregunta nos pregunta por la capital de Italia, es fácil que, si el usuario intenta pulsar sobre Roma, se seleccione Ciudad del Vaticano... Se me ocurre que para que no haya problemas con Italia/Roma y Vaticano/Ciudad del Vaticano, cuando se pregunte por uno de estos dos, solo se pueda seleccionar el correcto cuando el usuario pulsa sobre Roma (no cuando pulsa sobre otra área de Italia). Esto es solo una propuesta, puede que haya una solución mejor.
-- Hacer que la barra de progreso avance desde el inicio, para dar sensación de progreso al usuario - no solo debe avanzar en el momento en que empezamos a marcar x de y países están listos para sello. Pensar juntos propuesta y anotar escribir en design.md
-- Oceanía
-  - verificar Micronesia, qué se le muestra al usuario en los juegos C a F? Tiene suficiente perspectiva
+- [ ] Jugar — Lógica de progresión entre niveles: cuando el usuario sube (turista → mochilero → guía), definir qué ocurre con las estadísticas heredadas. Los países del nivel anterior con sello ¿arrancan con tick en A y B? ¿Cuentan para el umbral del 40% o solo para la precisión del 80%?
+- [ ] Jugar — Barra de progreso desde el inicio: que el usuario sienta progreso desde la primera pregunta, no solo al alcanzar "X de Y listos para sello". Pensar propuesta y documentar en DESIGN.md
+
+### Jugar
+- [ ] Pre-seleccionar continente/nivel/tipo al entrar: 1) continente del dispositivo (sin leer info sensible), 2) máximo nivel desbloqueado, 3) aventura. Mostrar mensaje si el usuario pulsa un nivel no desbloqueado
+- [ ] Conflicto Italia/Vaticano: al preguntar por la capital de Italia, evitar que se seleccione accidentalmente Vaticano (y viceversa). Evaluar solución (ej. solo aceptar tap en el punto exacto de Roma)
+- [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F?
+
+### Estadísticas
+- [ ] Bug: al resetear estadísticas, los datos no se ven borrados hasta cambiar de continente-nivel y volver
+- [ ] Default inteligente: al abrir, mostrar el último continente-nivel jugado o en el que se hizo prueba de sello. Fallback: continente del dispositivo + nivel guía
+- [ ] Mejorar tabla: reemplazar las letras A-F por nombres o iconos comprensibles para el usuario
 
 ### Explorar
-- (También aplica para jugar) Groenlandia es territorio de Dinamarca (la ONU así lo reconoce). Investigar por qué no está esto reflejado así en nuestra app y tomar una decisión.
+- [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigar por qué y corregir
 
-#### Estadísticas
-- Cuando el usuario va a estadísticas, lo que debe ver por defecto nada más pulsar el botón es:
-  - último país y nivel en el que ha jugado o ha hecho prueba de sello (lo último que haya ocurrido)
-  - fallback: si nunca ha jugado o ha hecho prueba de sello -> continente al que pertenece el móvil según su configuración y nivel guía
-- Al resetear estadísticas, no se ven borradas instantáneamente. Tuve que ir a otro continente-nivel y volver al que estaba para verlas borradas
-- Tabla de estadísticas: hay que merjorarla - el usuario no sabrá a qué nos referimos con las letras A, B, etc.
+### Pasaporte
+- [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar
 
-#### Pasaporte
-- mejorar la estética del pasaporte: el grid está bien hecho, pero debe dar la sensación de que es un "pasaporte en una página". Pensar bien qué aspecto tiene que tener antes de hacerlo.
-
-#### Feedback háptico
-- funciona bien, pero quizás podemos hacer más cortas/sutiles las vibraciones.
-
+### UX general
+- [ ] Bottom sheets (configuración y ficha de país): añadir handle + implementar drag-to-dismiss
+- [ ] Feedback háptico: vibraciones más cortas/sutiles
 
 ### Internacionalización (UI completa)
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
-  - ⚠️ Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español. Integrar en el sistema de traducción
+  - Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español
 - [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
 - [ ] Traducción a idiomas disponibles en iOS y Android
 
@@ -101,13 +90,10 @@ Esta sección contiene notas rápidas -> habrá que reordenar en el backlog cuan
 
 ### Infraestructura y acabados
 - [ ] Añadir Capacitor para build Android
-- [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md § «Actualización automática»)
-- [ ] Sección "Acerca de" en la app: explicar los criterios utilizados (países ONU, idiomas oficiales nacionales, fuentes de datos UNDP, REST Countries, etc.). Implementar cuando la app esté en fase de acabados
-- [ ] Solicitud de valoración no intrusiva (in-app review): `SKStoreReviewController` (iOS) + Play In-App Review (Android). Mostrar tras experiencia positiva y uso mínimo (ver DESIGN.md § «Solicitud de valoración»)
+- [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
+- [ ] Sección "Acerca de": explicar criterios (países ONU, idiomas oficiales, fuentes UNDP, REST Countries, etc.)
+- [ ] Solicitud de valoración in-app (SKStoreReviewController iOS + Play In-App Review Android)
 
 ### Tema visual
-- [ ] Diseñar e implementar tema claro (light mode) como alternativa al dark mode (baja prioridad, casi al final del desarrollo)
-
-### Otros
-- [ ] Poner un handle los paneles inferiores de configuración y en el de explorar cuando se pulsa sobre un país. Implementar drag-to-dismiss, para que el usuario haga scroll-down y se cierre
+- [ ] Diseñar e implementar tema claro (baja prioridad, casi al final del desarrollo)
 
