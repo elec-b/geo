@@ -58,6 +58,7 @@
 - [ ] Avance colectivo: eliminar requisito de precisión global (solo 40% de dominio)
 - [ ] Barra de progreso ponderada (20/30/50) en modo Aventura, con crédito para países avanzados por avance colectivo
 - [ ] Invitaciones a sello: umbral 80%→100% en Aventura + invitación a sello desde modo tipo concreto A/B
+- [ ] Sugerencia de progresión al completar modo tipo concreto E/C/D/F: CTA al siguiente tipo + Aventura
 - [ ] Herencia conservadora entre niveles: derivación en lectura de A/B, verificación de baja frecuencia, sin contar para avance colectivo
 - [ ] Anti-repetición: buffer sobre pool activo N = mín(3, pool_activo / 2)
 

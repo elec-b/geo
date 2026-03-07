@@ -119,7 +119,7 @@ Si el usuario pulsa Empezar sin elegir tipo, juega en modo **Aventura**: todos l
 El usuario elige un tipo específico y juega exclusivamente ese tipo.
 
 *   **Barra de progreso**: «X de Y países dominados» en ese tipo para el nivel-continente actual.
-*   Si el usuario domina todos los países del continente en ese nivel para ese tipo → mensaje de felicitación.
+*   Si el usuario domina todos los países del continente en ese nivel para ese tipo → mensaje de felicitación con sugerencia de siguiente paso (ver § Detección de preparación para sello).
 
 ### Algoritmo de aprendizaje
 
@@ -231,6 +231,13 @@ Los países que dominan su etapa actual **no se preguntan** (ver § Etapa de apr
 *   Al dominar el 100% de los países en tipo A (y el sello de países no está ganado) → invitación a la prueba de sello de países.
 *   Al dominar el 100% de los países en tipo B (y el sello de capitales no está ganado) → invitación a la prueba de sello de capitales.
 *   Si el sello correspondiente ya está ganado → felicitación simple.
+
+**En modo tipo concreto E/C/D/F**:
+*   Al dominar el 100% de los países → felicitación con sugerencia de progresión y dos botones al mismo nivel (sin jerarquía visual):
+    - «Jugar [siguiente tipo]» — inicia directamente el siguiente tipo no dominado, según la progresión pedagógica: primero tipos no dominados de la misma etapa, luego de la siguiente (E → C/D/F → A/B). Dentro de una etapa con varios tipos, se sugiere el que menos progreso tenga.
+    - «Aventura» — cambia al modo guiado.
+    - El usuario puede cerrar sin elegir (dismiss).
+*   Si todos los tipos (E/C/D/F/A/B) están dominados → felicitación simple sin sugerencia (las invitaciones a sello se gestionan en las secciones anteriores).
 
 #### Herencia de progreso entre niveles
 
