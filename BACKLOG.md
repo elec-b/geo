@@ -52,24 +52,20 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
-### Decisiones de diseño pendientes
-Requieren discusión y actualización de DESIGN.md antes de implementar.
-
-- [ ] Jugar — Lógica de progresión entre niveles: cuando el usuario sube (turista → mochilero → guía), definir qué ocurre con las estadísticas heredadas. Los países del nivel anterior con sello ¿arrancan con tick en A y B? ¿Cuentan para el umbral del 40% o solo para la precisión del 80%?
-- [ ] Jugar — Barra de progreso desde el inicio: que el usuario sienta progreso desde la primera pregunta, no solo al alcanzar "X de Y listos para sello". Pensar propuesta y documentar en DESIGN.md
-- [ ] Jugar — Repensar la mecánica de racha y el estado racha=0: actualmente, desde racha -2 se necesitan 3 aciertos consecutivos para llegar a "dominado" (racha 1), lo cual es tedioso (especialmente para niños). Evaluar si racha=0 ("en progreso") tiene sentido como estado intermedio o si al acertar se debería saltar directamente a 1. Rediseñar cómo se recupera la racha desde valores negativos
-- [ ] Jugar — Invitaciones diferenciadas a prueba de sello según tipo de juego: cuando el usuario domina A, invitar a la prueba de sello de **países**; cuando domina B, invitar a la de **capitales** (actualmente la invitación es conjunta). Para C/D/E/F no hay prueba de sello asociada, pero al dominar un tipo se debe animar al usuario a progresar al siguiente tipo de juego. Pensar bien el flujo y los mensajes de cada caso
-- [ ] Jugar — Selección inteligente de preguntas (no preguntar lo que ya se sabe): eliminar o minimizar drásticamente la categoría "mantenimiento" del algoritmo. Aplica a ambos modos con matices:
-    - **Aventura**: no repreguntar países que ya dominan su etapa actual. Solo preguntar países/etapas no dominados o con errores previos
-    - **Tipo concreto**: no repreguntar países que ya dominan ese tipo. El pool de preguntas debe reducirse conforme el usuario avanza, no reciclar lo dominado
-    - **Excepción (ambos modos)**: si solo queda un país/capital pendiente, intercalar otro país (idealmente uno que también le haya costado en el pasado) para no reincidir constantemente sobre el mismo
-    - Actualmente el código tiene 4 categorías (reinforcement → fresh → inProgress → maintenance); la propuesta es que `maintenance` deje de generar preguntas salvo la excepción mencionada
+### Algoritmo de aprendizaje v3 (diseño documentado en DESIGN.md)
+- [ ] Racha `max(1, streak+1)`: un acierto siempre lleva a dominado (1 línea en appStore.ts)
+- [ ] Selección inteligente: eliminar categoría maintenance, implementar país compañero (≤2 pendientes), fin de sesión cuando pool vacío
+- [ ] Avance colectivo: eliminar requisito de precisión global (solo 40% de dominio)
+- [ ] Barra de progreso ponderada (20/30/50) en modo Aventura, con crédito para países avanzados por avance colectivo
+- [ ] Invitaciones a sello: umbral 80%→100% en Aventura + invitación a sello desde modo tipo concreto A/B
+- [ ] Herencia conservadora entre niveles: derivación en lectura de A/B, verificación de baja frecuencia, sin contar para avance colectivo
+- [ ] Anti-repetición: buffer sobre pool activo N = mín(3, pool_activo / 2)
 
 ### Jugar
-- [ ] Cambiar umbral de invitación a prueba de sello: de >=80% a **100%** de países dominando A y B antes de invitar (DESIGN.md § Detección de preparación para sello)
 - [ ] Pre-seleccionar continente/nivel/tipo al entrar: 1) continente del dispositivo (sin leer info sensible), 2) máximo nivel desbloqueado, 3) aventura. Mostrar mensaje si el usuario pulsa un nivel no desbloqueado
 - [ ] Conflicto Italia/Vaticano: al preguntar por la capital de Italia, evitar que se seleccione accidentalmente Vaticano (y viceversa). Evaluar solución (ej. solo aceptar tap en el punto exacto de Roma)
-- [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F?
+- [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital.
+- [ ] Testeando Oceanía (pero quizás aplicable para todos los continentes?): en los juegos E y F, el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado.
 
 ### Estadísticas
 - [ ] Bug: al resetear estadísticas, los datos no se ven borrados hasta cambiar de continente-nivel y volver
