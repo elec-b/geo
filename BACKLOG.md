@@ -57,8 +57,16 @@ Requieren discusión y actualización de DESIGN.md antes de implementar.
 
 - [ ] Jugar — Lógica de progresión entre niveles: cuando el usuario sube (turista → mochilero → guía), definir qué ocurre con las estadísticas heredadas. Los países del nivel anterior con sello ¿arrancan con tick en A y B? ¿Cuentan para el umbral del 40% o solo para la precisión del 80%?
 - [ ] Jugar — Barra de progreso desde el inicio: que el usuario sienta progreso desde la primera pregunta, no solo al alcanzar "X de Y listos para sello". Pensar propuesta y documentar en DESIGN.md
+- [ ] Jugar — Repensar la mecánica de racha y el estado racha=0: actualmente, desde racha -2 se necesitan 3 aciertos consecutivos para llegar a "dominado" (racha 1), lo cual es tedioso (especialmente para niños). Evaluar si racha=0 ("en progreso") tiene sentido como estado intermedio o si al acertar se debería saltar directamente a 1. Rediseñar cómo se recupera la racha desde valores negativos
+- [ ] Jugar — Invitaciones diferenciadas a prueba de sello según tipo de juego: cuando el usuario domina A, invitar a la prueba de sello de **países**; cuando domina B, invitar a la de **capitales** (actualmente la invitación es conjunta). Para C/D/E/F no hay prueba de sello asociada, pero al dominar un tipo se debe animar al usuario a progresar al siguiente tipo de juego. Pensar bien el flujo y los mensajes de cada caso
+- [ ] Jugar — Selección inteligente de preguntas (no preguntar lo que ya se sabe): eliminar o minimizar drásticamente la categoría "mantenimiento" del algoritmo. Aplica a ambos modos con matices:
+    - **Aventura**: no repreguntar países que ya dominan su etapa actual. Solo preguntar países/etapas no dominados o con errores previos
+    - **Tipo concreto**: no repreguntar países que ya dominan ese tipo. El pool de preguntas debe reducirse conforme el usuario avanza, no reciclar lo dominado
+    - **Excepción (ambos modos)**: si solo queda un país/capital pendiente, intercalar otro país (idealmente uno que también le haya costado en el pasado) para no reincidir constantemente sobre el mismo
+    - Actualmente el código tiene 4 categorías (reinforcement → fresh → inProgress → maintenance); la propuesta es que `maintenance` deje de generar preguntas salvo la excepción mencionada
 
 ### Jugar
+- [ ] Cambiar umbral de invitación a prueba de sello: de >=80% a **100%** de países dominando A y B antes de invitar (DESIGN.md § Detección de preparación para sello)
 - [ ] Pre-seleccionar continente/nivel/tipo al entrar: 1) continente del dispositivo (sin leer info sensible), 2) máximo nivel desbloqueado, 3) aventura. Mostrar mensaje si el usuario pulsa un nivel no desbloqueado
 - [ ] Conflicto Italia/Vaticano: al preguntar por la capital de Italia, evitar que se seleccione accidentalmente Vaticano (y viceversa). Evaluar solución (ej. solo aceptar tap en el punto exacto de Roma)
 - [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F?
