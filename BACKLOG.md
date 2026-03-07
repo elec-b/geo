@@ -64,7 +64,7 @@
 
 ### Jugar
 - [ ] Pre-seleccionar continente/nivel/tipo al entrar: 1) continente del dispositivo (sin leer info sensible), 2) máximo nivel desbloqueado, 3) aventura. Mostrar mensaje si el usuario pulsa un nivel no desbloqueado
-- [ ] Conflicto Italia/Vaticano: al preguntar por la capital de Italia, evitar que se seleccione accidentalmente Vaticano (y viceversa). Evaluar solución (ej. solo aceptar tap en el punto exacto de Roma)
+- [ ] Conflicto Italia/Vaticano: al preguntar por la capital de Italia, evitar que se seleccione accidentalmente Vaticano (y viceversa). Evaluar solución (ej. cuando se pregunte por Roma, no se puede seleccionar Vaticano, cuando se pregunte por Ciudad de Vaticano no se puede seleccionar Roma - así se evitan selecciones "accidentales")
 - [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital.
 - [ ] Testeando Oceanía (pero quizás aplicable para todos los continentes?): en los juegos E y F, el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado.
 
@@ -74,7 +74,7 @@
 - [ ] Mejorar tabla: reemplazar las letras A-F por nombres o iconos comprensibles para el usuario
 
 ### Explorar
-- [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigar por qué y corregir
+- [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigar por qué y corregir (también "impactará" en Jugar, obviamente)
 
 ### Pasaporte
 - [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar
