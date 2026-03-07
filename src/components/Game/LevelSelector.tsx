@@ -1,9 +1,10 @@
 // Selector de continente + nivel para iniciar una partida
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import type { Continent, GameLevel, LevelDefinition } from '../../data/types';
 import type { QuestionTypeFilter } from '../../data/gameQuestions';
 import { useAppStore } from '../../stores/appStore';
 import { isLevelUnlocked, type StampsData } from '../../data/learningAlgorithm';
+import { inferContinentFromTimezone } from '../../data/continents';
 import './LevelSelector.css';
 
 const CONTINENTS: { id: Continent; label: string; cssVar: string }[] = [
@@ -37,11 +38,12 @@ interface LevelSelectorProps {
 }
 
 export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelectorProps) {
-  const [selectedContinent, setSelectedContinent] = useState<Continent | null>(null);
-  const [selectedLevel, setSelectedLevel] = useState<GameLevel>('turista');
-  const [selectedType, setSelectedType] = useState<QuestionTypeFilter>('mixed');
+  const lastPlayed = useAppStore((s) => s.settings.lastPlayed);
   const getStamps = useAppStore((s) => s.getStamps);
   const activeProfile = useAppStore((s) => s.getActiveProfile());
+
+  const [selectedType, setSelectedType] = useState<QuestionTypeFilter>('mixed');
+  const [lockedToast, setLockedToast] = useState<string | null>(null);
 
   // Construir StampsData para verificar desbloqueo de niveles
   const stampsData = useMemo((): StampsData => {
@@ -54,6 +56,30 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
     }
     return data;
   }, [getStamps, activeProfile]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Defaults: lastPlayed > timezone
+  const defaultContinent = lastPlayed?.continent ?? inferContinentFromTimezone();
+  const defaultLevel = useMemo(() => {
+    if (!lastPlayed?.level) return 'turista' as GameLevel;
+    // Verificar que el nivel esté desbloqueado para el continente default
+    if (isLevelUnlocked(lastPlayed.level, defaultContinent, stampsData)) return lastPlayed.level;
+    // Bajar al máximo desbloqueado
+    const unlocked = [...LEVELS].reverse().find((l) => isLevelUnlocked(l.id, defaultContinent, stampsData));
+    return unlocked?.id ?? 'turista' as GameLevel;
+  }, [lastPlayed, defaultContinent, stampsData]);
+
+  const [selectedContinent, setSelectedContinent] = useState<Continent | null>(defaultContinent);
+  const [selectedLevel, setSelectedLevel] = useState<GameLevel>(defaultLevel);
+
+  // FlyTo al continente pre-seleccionado al montar
+  const hasMounted = useRef(false);
+  useEffect(() => {
+    if (hasMounted.current) return;
+    hasMounted.current = true;
+    if (selectedContinent) {
+      onContinentSelect(selectedContinent);
+    }
+  }, [selectedContinent, onContinentSelect]);
 
   const handleContinentSelect = useCallback(
     (continent: Continent) => {
@@ -114,8 +140,14 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
                   selectedLevel === id && 'level-selector__level-card--active',
                   !unlocked && 'level-selector__level-card--locked',
                 ].filter(Boolean).join(' ')}
-                onClick={() => unlocked && setSelectedLevel(id)}
-                disabled={!unlocked}
+                onClick={() => {
+                  if (unlocked) {
+                    setSelectedLevel(id);
+                  } else {
+                    setLockedToast('Consigue los sellos del nivel anterior');
+                    setTimeout(() => setLockedToast(null), 2500);
+                  }
+                }}
               >
                 <span className="level-selector__level-emoji">{unlocked ? emoji : '🔒'}</span>
                 <span className="level-selector__level-name">{label}</span>
@@ -142,6 +174,11 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
             </button>
           ))}
         </div>
+
+        {/* Toast de nivel bloqueado */}
+        {lockedToast && (
+          <div className="level-selector__toast">{lockedToast}</div>
+        )}
 
         {/* Botón empezar */}
         <button

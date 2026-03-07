@@ -2,7 +2,7 @@
 // Paradigma: selección pregunta-a-pregunta (no cola pre-generada)
 import { useState, useCallback, useRef } from 'react';
 import { generateSingleQuestion, generateQuestionsByType, type GameQuestion, type QuestionTypeFilter } from '../data/gameQuestions';
-import { selectNextQuestion } from '../data/learningAlgorithm';
+import { selectNextQuestion, isDominated } from '../data/learningAlgorithm';
 import type { CountryData, CapitalCoords, Continent, GameLevel, QuestionType } from '../data/types';
 import type { LevelDefinition } from '../data/types';
 import type { CountryAttempts } from '../stores/types';
@@ -40,6 +40,8 @@ export interface GameSessionState {
   stampTestProgress: { current: number; total: number } | null;
   /** Tipo de sello en prueba (null si no es prueba) */
   stampTestType: StampTestType | null;
+  /** true cuando el pool de preguntas activas se ha agotado */
+  poolExhausted: boolean;
 }
 
 interface GameSessionActions {
@@ -57,6 +59,8 @@ export interface GameSessionOptions {
   onAttempt?: (cca2: string, type: QuestionType, correct: boolean) => void;
   /** Función para obtener los intentos actualizados del store */
   getAttempts?: () => Record<string, CountryAttempts>;
+  /** Función para obtener los países heredados (datos de nivel anterior) */
+  getInheritedCountries?: () => Set<string>;
 }
 
 /**
@@ -80,6 +84,7 @@ export function useGameSession(
   const [stampTestResult, setStampTestResult] = useState<StampTestResult>(null);
   const [stampTestProgress, setStampTestProgress] = useState<{ current: number; total: number } | null>(null);
   const [stampTestType, setStampTestType] = useState<StampTestType | null>(null);
+  const [poolExhausted, setPoolExhausted] = useState(false);
 
   // Control de prueba de sello
   const isStampTestRef = useRef(false);
@@ -102,6 +107,8 @@ export function useGameSession(
   onAttemptRef.current = options?.onAttempt;
   const getAttemptsRef = useRef(options?.getAttempts);
   getAttemptsRef.current = options?.getAttempts;
+  const getInheritedCountriesRef = useRef(options?.getInheritedCountries);
+  getInheritedCountriesRef.current = options?.getInheritedCountries;
 
   /** Configura correctCca2 según el tipo de pregunta */
   const applyHighlight = useCallback((question: GameQuestion) => {
@@ -123,8 +130,11 @@ export function useGameSession(
     if (qt !== 'mixed') {
       // Modo tipo concreto: usar cola pre-generada (regenerar si vacía)
       if (questionsRef.current.length === 0) {
+        const attempts = getAttemptsRef.current?.() ?? {};
+        const pending = def.countries.filter((cca2) => !isDominated(attempts[cca2], qt as QuestionType));
+        if (pending.length === 0) return null; // pool agotado
         const lastCca2 = recentCountriesRef.current[recentCountriesRef.current.length - 1];
-        questionsRef.current = generateQuestionsByType(qt, def.countries, countries, capitals, lastCca2);
+        questionsRef.current = generateQuestionsByType(qt, pending, countries, capitals, lastCca2);
       }
       const question = questionsRef.current.shift() ?? null;
       if (question) {
@@ -135,9 +145,10 @@ export function useGameSession(
 
     // Modo aventura: selección pregunta-a-pregunta
     const attempts = getAttemptsRef.current?.() ?? {};
+    const inheritedSet = getInheritedCountriesRef.current?.();
     const selection = selectNextQuestion(
       attempts, def.countries, recentCountriesRef.current,
-      undefined, recentTypesRef.current,
+      undefined, recentTypesRef.current, inheritedSet,
     );
     if (!selection) return null;
 
@@ -186,6 +197,7 @@ export function useGameSession(
       setStampTestResult(null);
       setStampTestProgress(null);
       setStampTestType(null);
+      setPoolExhausted(false);
 
       // Generar primera pregunta
       // Para tipo concreto, pre-generar la cola
@@ -315,6 +327,7 @@ export function useGameSession(
         applyHighlight(next);
       } else {
         setCorrectCca2(null);
+        setPoolExhausted(true);
       }
     }
   }, [requestNextQuestion, applyHighlight]);
@@ -331,6 +344,7 @@ export function useGameSession(
     setStampTestResult(null);
     setStampTestProgress(null);
     setStampTestType(null);
+    setPoolExhausted(false);
     isStampTestRef.current = false;
     stampTestTotalRef.current = 0;
     stampTestErrorsRef.current = 0;
@@ -351,6 +365,7 @@ export function useGameSession(
     stampTestResult,
     stampTestProgress,
     stampTestType,
+    poolExhausted,
     start,
     startStampTest,
     submitAnswer,

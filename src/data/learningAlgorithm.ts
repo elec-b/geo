@@ -1,6 +1,6 @@
-// Algoritmo de aprendizaje — funciones puras, sin estado ni side effects
+// Algoritmo de aprendizaje v3 — funciones puras, sin estado ni side effects
 // Implementa: etapas individuales por país, cola de prioridad, avance colectivo,
-// inferencia ascendente y progreso discreto.
+// inferencia ascendente, progreso ponderado, herencia entre niveles y país compañero.
 import type { Continent, GameLevel, QuestionType } from './types';
 import type { CountryAttempts } from '../stores/types';
 
@@ -25,39 +25,9 @@ const COLLECTIVE_ADVANCE_RATIO = 0.40;
 /** Número mínimo absoluto de países dominados para avance colectivo */
 const COLLECTIVE_ADVANCE_MIN = 3;
 
-/** Precisión global mínima para avance colectivo */
-const COLLECTIVE_ADVANCE_ACCURACY = 0.80;
-
-/** Proporción de países que dominan A y B para estar listo para sello */
-const STAMP_READINESS_RATIO = 0.80;
-
 const ALL_TYPES: QuestionType[] = ['E', 'C', 'D', 'F', 'A', 'B'];
 
 // --- Funciones internas ---
-
-/**
- * Precisión global (ratio de aciertos) para todos los países con datos.
- */
-function getGlobalAccuracy(
-  allAttempts: Record<string, CountryAttempts>,
-  countries: string[],
-): number {
-  let totalCorrect = 0;
-  let totalAttempts = 0;
-
-  for (const cca2 of countries) {
-    const ca = allAttempts[cca2];
-    if (!ca) continue;
-    for (const t of ALL_TYPES) {
-      const rec = ca[t];
-      if (!rec) continue;
-      totalCorrect += rec.correct;
-      totalAttempts += rec.correct + rec.incorrect;
-    }
-  }
-
-  return totalAttempts > 0 ? totalCorrect / totalAttempts : 0;
-}
 
 /**
  * Aplica regresión en cascada: si un tipo tiene racha ≤ REGRESSION_STREAK,
@@ -130,6 +100,17 @@ function selectTypeForCountry(
   return tied[Math.floor(Math.random() * tied.length)];
 }
 
+/** Precisión histórica de un país (para elegir compañero) */
+function getCountryAccuracy(ca: CountryAttempts | undefined): number {
+  if (!ca) return 1;
+  let c = 0, t = 0;
+  for (const type of ALL_TYPES) {
+    const rec = ca[type];
+    if (rec) { c += rec.correct; t += rec.correct + rec.incorrect; }
+  }
+  return t > 0 ? c / t : 1;
+}
+
 // --- Funciones exportadas ---
 
 /**
@@ -186,12 +167,14 @@ export function getCountryStage(ca: CountryAttempts | undefined): 1 | 2 | 3 {
 
 /**
  * Calcula las etapas efectivas de todos los países, aplicando avance colectivo.
- * Avance colectivo: si ≥ 40% de países (mín 3) dominan una etapa y la precisión
- * global es ≥ 80%, los países sin datos avanzan a la siguiente etapa.
+ * Avance colectivo: si ≥ 40% de países (mín 3) dominan una etapa,
+ * los países sin datos avanzan a la siguiente etapa.
+ * Los países heredados no cuentan para el umbral.
  */
 export function getEffectiveStages(
   allAttempts: Record<string, CountryAttempts>,
   countries: string[],
+  inheritedCountries?: Set<string>,
 ): Map<string, 1 | 2 | 3> {
   const stages = new Map<string, 1 | 2 | 3>();
 
@@ -201,16 +184,16 @@ export function getEffectiveStages(
   }
 
   // Avance colectivo: evaluar si hay suficiente dominio grupal
-  const globalAccuracy = getGlobalAccuracy(allAttempts, countries);
-  if (globalAccuracy < COLLECTIVE_ADVANCE_ACCURACY) return stages;
-
-  const total = countries.length;
+  // Los heredados no cuentan para el umbral
+  const ownCountries = inheritedCountries
+    ? countries.filter((cca2) => !inheritedCountries.has(cca2))
+    : countries;
+  const total = ownCountries.length;
   const minCount = Math.max(COLLECTIVE_ADVANCE_MIN, Math.ceil(total * COLLECTIVE_ADVANCE_RATIO));
 
-  // Contar cuántos países dominan cada etapa
-  // Un país «domina la etapa N» si su etapa individual es > N
-  const dominateStage1 = countries.filter((cca2) => (stages.get(cca2) ?? 1) >= 2).length;
-  const dominateStage2 = countries.filter((cca2) => (stages.get(cca2) ?? 1) >= 3).length;
+  // Contar cuántos países (propios) dominan cada etapa
+  const dominateStage1 = ownCountries.filter((cca2) => (stages.get(cca2) ?? 1) >= 2).length;
+  const dominateStage2 = ownCountries.filter((cca2) => (stages.get(cca2) ?? 1) >= 3).length;
 
   // Avance colectivo de etapa 1 → 2
   if (dominateStage1 >= minCount) {
@@ -247,13 +230,17 @@ export interface QuestionSelection {
  * Categorías (de mayor a menor prioridad):
  * 1. Refuerzo: países con racha negativa en su etapa actual
  * 2. Nuevos: países sin intentos en ningún tipo de su etapa
- * 3. En progreso: países con intentos pero no todos los tipos de su etapa dominados
- * 4. Mantenimiento: países con todos los tipos de su etapa dominados
+ * 3. En progreso: países con intentos pero no todos los tipos dominados
+ * 4. Heredados: países con datos heredados de nivel anterior (~30%)
  *
- * Anti-repetición: buffer de N países recientes (N = mín(3, total÷2)).
+ * Países que dominan todos los tipos de su etapa salen del pool.
+ * País compañero: si quedan ≤ 2 activos, se intercala un dominado (~50%).
+ *
+ * Anti-repetición: buffer sobre el pool activo (no sobre todos los países).
  *
  * @param fixedType - Si se especifica, fuerza ese tipo de pregunta (modo tipo concreto)
  * @param recentTypes - Tipos preguntados recientemente (anti-repetición de tipo)
+ * @param inheritedCountries - Países con datos heredados (no propios)
  */
 export function selectNextQuestion(
   allAttempts: Record<string, CountryAttempts>,
@@ -261,21 +248,33 @@ export function selectNextQuestion(
   recent: string[],
   fixedType?: QuestionType,
   recentTypes?: QuestionType[],
+  inheritedCountries?: Set<string>,
 ): QuestionSelection | null {
   if (countries.length === 0) return null;
 
-  // Buffer de anti-repetición
-  const bufferSize = Math.min(3, Math.floor(countries.length / 2));
-  const recentSet = new Set(recent.slice(-bufferSize));
+  // Calcular etapas efectivas (antes del buffer para determinar pool activo)
+  const stages = getEffectiveStages(allAttempts, countries, inheritedCountries);
 
-  // Calcular etapas efectivas
-  const stages = getEffectiveStages(allAttempts, countries);
+  // Determinar pool activo (países no dominados en su etapa/tipo)
+  const isActive = (cca2: string): boolean => {
+    const ca = allAttempts[cca2];
+    if (fixedType) return !isDominated(ca, fixedType);
+    const stage = stages.get(cca2) ?? 1;
+    return !STAGE_TYPES[stage].every((t) => isDominated(ca, t));
+  };
+
+  const activeCount = countries.filter(isActive).length;
+
+  // Buffer de anti-repetición basado en pool activo
+  const bufferSize = Math.min(3, Math.floor(activeCount / 2));
+  const recentSet = new Set(recent.slice(-bufferSize));
 
   // Clasificar países en categorías
   const reinforcement: string[] = [];
   const fresh: string[] = [];
   const inProgress: string[] = [];
-  const maintenance: string[] = [];
+  const inherited: string[] = [];
+  const dominated: string[] = []; // para compañero
 
   for (const cca2 of countries) {
     // Filtrar países recientes
@@ -286,10 +285,10 @@ export function selectNextQuestion(
 
     if (fixedType) {
       // Modo tipo concreto: clasificar según el tipo fijo
-      if (!ca || !ca[fixedType]) {
+      if (isDominated(ca, fixedType)) {
+        dominated.push(cca2);
+      } else if (!ca || !ca[fixedType]) {
         fresh.push(cca2);
-      } else if (isDominated(ca, fixedType)) {
-        maintenance.push(cca2);
       } else if (ca[fixedType]!.streak < 0) {
         reinforcement.push(cca2);
       } else {
@@ -299,12 +298,20 @@ export function selectNextQuestion(
       // Modo aventura: clasificar según la etapa
       const stageTypes = STAGE_TYPES[stage];
 
-      if (!ca || stageTypes.every((t) => !ca[t])) {
+      if (stageTypes.every((t) => isDominated(ca, t))) {
+        dominated.push(cca2);
+      } else if (inheritedCountries?.has(cca2) && !reinforcement.length) {
+        // Heredados van a categoría intermedia (solo si no necesitan refuerzo)
+        const needsReinforcement = stageTypes.some((t) => { const r = ca?.[t]; return r && r.streak < 0; });
+        if (needsReinforcement) {
+          reinforcement.push(cca2);
+        } else {
+          inherited.push(cca2);
+        }
+      } else if (!ca || stageTypes.every((t) => !ca[t])) {
         fresh.push(cca2);
       } else if (stageTypes.some((t) => { const r = ca[t]; return r && r.streak < 0; })) {
         reinforcement.push(cca2);
-      } else if (stageTypes.every((t) => isDominated(ca, t))) {
-        maintenance.push(cca2);
       } else {
         inProgress.push(cca2);
       }
@@ -318,16 +325,31 @@ export function selectNextQuestion(
   if (reinforcement.length > 0) selectedCca2 = pick(reinforcement);
   else if (fresh.length > 0) selectedCca2 = pick(fresh);
   else if (inProgress.length > 0) selectedCca2 = pick(inProgress);
-  else if (maintenance.length > 0) selectedCca2 = pick(maintenance);
+  else if (inherited.length > 0 && Math.random() < 0.3) selectedCca2 = pick(inherited);
+  else if (inherited.length > 0) selectedCca2 = pick(inherited);
 
-  // Si todos fueron filtrados por anti-repetición, ignorar el buffer
+  // País compañero: si quedan pocos activos, intercalar un dominado
+  if (selectedCca2 && reinforcement.length + fresh.length + inProgress.length <= 2
+      && dominated.length > 0 && Math.random() < 0.5) {
+    // Elegir el de peor precisión entre dominados
+    let worst = dominated[0];
+    let worstAcc = getCountryAccuracy(allAttempts[worst]);
+    for (let i = 1; i < dominated.length; i++) {
+      const acc = getCountryAccuracy(allAttempts[dominated[i]]);
+      if (acc < worstAcc) { worst = dominated[i]; worstAcc = acc; }
+    }
+    selectedCca2 = worst;
+  }
+
+  // Fallback: si ninguna categoría tiene candidatos
   if (!selectedCca2) {
-    const allCategories = [...reinforcement, ...fresh, ...inProgress, ...maintenance];
-    if (allCategories.length === 0) {
-      // Todos están en el buffer — elegir cualquiera
-      selectedCca2 = countries[Math.floor(Math.random() * countries.length)];
+    // Intentar relajando el buffer solo sobre el pool activo
+    const activePool = countries.filter(isActive);
+    if (activePool.length > 0) {
+      selectedCca2 = activePool[Math.floor(Math.random() * activePool.length)];
     } else {
-      selectedCca2 = pick(allCategories);
+      // Pool agotado: todos dominados → null
+      return null;
     }
   }
 
@@ -353,9 +375,9 @@ export interface ProgressResult {
 }
 
 /**
- * Calcula el progreso discreto (X de Y).
- * - Aventura: países que dominan A Y B.
- * - Tipo concreto: países que dominan ese tipo.
+ * Calcula el progreso.
+ * - Aventura: progreso ponderado (0-100%) según avance por país.
+ * - Tipo concreto: países que dominan ese tipo (X de Y).
  */
 export function calculateProgress(
   attempts: Record<string, CountryAttempts>,
@@ -365,48 +387,163 @@ export function calculateProgress(
   const total = levelCountries.length;
   if (total === 0) return { current: 0, total: 0 };
 
-  let current = 0;
-
   if (mode === 'adventure') {
-    // Aventura: domina A Y B
+    // Progreso ponderado: cada país contribuye según su avance
+    const stages = getEffectiveStages(attempts, levelCountries);
+    let sum = 0;
     for (const cca2 of levelCountries) {
       const ca = attempts[cca2];
       if (isDominated(ca, 'A') && isDominated(ca, 'B')) {
-        current++;
+        sum += 100;
+      } else if (isDominated(ca, 'C') || isDominated(ca, 'D') || isDominated(ca, 'F')) {
+        sum += 50;
+      } else if (isDominated(ca, 'E')) {
+        sum += 20;
+      } else {
+        const stage = stages.get(cca2) ?? 1;
+        if (stage >= 3) sum += 50;       // crédito por avance colectivo
+        else if (stage >= 2) sum += 20;
       }
     }
-  } else {
-    // Tipo concreto: domina ese tipo
-    for (const cca2 of levelCountries) {
-      const ca = attempts[cca2];
-      if (isDominated(ca, mode)) {
-        current++;
-      }
-    }
+    return { current: Math.round(sum / total), total: 100 };
   }
 
+  // Tipo concreto: domina ese tipo
+  let current = 0;
+  for (const cca2 of levelCountries) {
+    const ca = attempts[cca2];
+    if (isDominated(ca, mode)) {
+      current++;
+    }
+  }
   return { current, total };
 }
 
 /**
  * ¿El usuario está listo para las pruebas de sello?
- * ≥ 80% de países dominan A y B.
+ * 100% de países dominan A y B.
  */
 export function isReadyForStamp(
   attempts: Record<string, CountryAttempts>,
   levelCountries: string[],
 ): boolean {
   if (levelCountries.length === 0) return false;
-
-  let dominated = 0;
-  for (const cca2 of levelCountries) {
+  return levelCountries.every((cca2) => {
     const ca = attempts[cca2];
+    return isDominated(ca, 'A') && isDominated(ca, 'B');
+  });
+}
+
+/**
+ * ¿Todos los países dominan un tipo concreto?
+ */
+export function isTypeFullyDominated(
+  attempts: Record<string, CountryAttempts>,
+  levelCountries: string[],
+  type: QuestionType,
+): boolean {
+  if (levelCountries.length === 0) return false;
+  return levelCountries.every((cca2) => isDominated(attempts[cca2], type));
+}
+
+/**
+ * Sugiere el siguiente tipo de juego tras dominar uno concreto.
+ * Busca el siguiente tipo no dominado al 100% en orden pedagógico (E → C/D/F → A/B).
+ * Dentro de la misma etapa, prioriza el de menos progreso.
+ */
+export function getNextSuggestedType(
+  attempts: Record<string, CountryAttempts>,
+  levelCountries: string[],
+  currentType: QuestionType,
+): QuestionType | null {
+  const stageOrder: QuestionType[][] = [['E'], ['C', 'D', 'F'], ['A', 'B']];
+
+  for (const stageTypes of stageOrder) {
+    const candidates = stageTypes.filter((t) =>
+      t !== currentType && !isTypeFullyDominated(attempts, levelCountries, t),
+    );
+    if (candidates.length === 0) continue;
+    if (candidates.length === 1) return candidates[0];
+    // Priorizar el de menos progreso (menos países dominados)
+    let best = candidates[0];
+    let bestCount = Infinity;
+    for (const t of candidates) {
+      let count = 0;
+      for (const cca2 of levelCountries) {
+        if (isDominated(attempts[cca2], t)) count++;
+      }
+      if (count < bestCount) { bestCount = count; best = t; }
+    }
+    return best;
+  }
+  return null;
+}
+
+// --- Herencia entre niveles ---
+
+/**
+ * Calcula los intentos efectivos aplicando herencia del nivel anterior.
+ * Si ambos sellos del nivel anterior están ganados, los países que dominan A y B
+ * se heredan como {A: streak:1, B: streak:1}. Datos propios sobrescriben.
+ * Herencia transitiva: guía ← mochilero ← turista.
+ */
+export function getAttemptsWithInheritance(
+  ownAttempts: Record<string, CountryAttempts>,
+  level: GameLevel,
+  continent: Continent,
+  getStampsForLevel: (level: GameLevel, continent: Continent) => { countries: boolean; capitals: boolean },
+  getAttemptsForLevel: (level: GameLevel, continent: Continent) => Record<string, CountryAttempts>,
+): Record<string, CountryAttempts> {
+  if (level === 'turista') return ownAttempts;
+
+  const prevLevel: GameLevel = level === 'guía' ? 'mochilero' : 'turista';
+  const prevStamps = getStampsForLevel(prevLevel, continent);
+  if (!prevStamps.countries || !prevStamps.capitals) return ownAttempts;
+
+  // Obtener datos del nivel anterior (con herencia transitiva)
+  const prevOwn = getAttemptsForLevel(prevLevel, continent);
+  const prevAttempts = getAttemptsWithInheritance(
+    prevOwn, prevLevel, continent, getStampsForLevel, getAttemptsForLevel,
+  );
+
+  const merged: Record<string, CountryAttempts> = {};
+
+  // Copiar herencia: solo países que dominan A y B en el nivel anterior
+  for (const [cca2, ca] of Object.entries(prevAttempts)) {
     if (isDominated(ca, 'A') && isDominated(ca, 'B')) {
-      dominated++;
+      merged[cca2] = {
+        A: { correct: 0, incorrect: 0, streak: 1 },
+        B: { correct: 0, incorrect: 0, streak: 1 },
+      };
     }
   }
 
-  return dominated / levelCountries.length >= STAMP_READINESS_RATIO;
+  // Datos propios sobrescriben (tipo por tipo)
+  for (const [cca2, ca] of Object.entries(ownAttempts)) {
+    if (!merged[cca2]) {
+      merged[cca2] = ca;
+    } else {
+      merged[cca2] = { ...merged[cca2] };
+      for (const t of ALL_TYPES) {
+        if (ca[t]) {
+          (merged[cca2] as Record<string, unknown>)[t] = ca[t];
+        }
+      }
+    }
+  }
+
+  return merged;
+}
+
+/**
+ * ¿Un país tiene datos heredados pero no propios?
+ */
+export function isInherited(
+  cca2: string,
+  ownAttempts: Record<string, CountryAttempts>,
+  mergedAttempts: Record<string, CountryAttempts>,
+): boolean {
+  return !ownAttempts[cca2] && !!mergedAttempts[cca2];
 }
 
 // --- Niveles y sellos ---

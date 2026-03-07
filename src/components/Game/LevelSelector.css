@@ -175,3 +175,22 @@
   opacity: 0.4;
   cursor: default;
 }
+
+/* Toast de nivel bloqueado */
+.level-selector__toast {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: rgba(255, 107, 107, 0.15);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  text-align: center;
+  animation: toast-fade 2.5s ease forwards;
+}
+
+@keyframes toast-fade {
+  0% { opacity: 0; transform: translateY(4px); }
+  10% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}

@@ -49,6 +49,7 @@ export interface AppSettings {
   vibration: boolean;
   theme: 'dark';        // por ahora solo dark
   locale: 'es';         // por ahora solo español
+  lastPlayed?: { continent: Continent; level: GameLevel } | null;
 }
 
 /** Estado completo de la aplicación */

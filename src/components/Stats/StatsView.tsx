@@ -38,19 +38,37 @@ function CellIndicator({ ca, type }: { ca: CountryAttempts | undefined; type: Qu
   return <span className="stats-cell stats-cell--progress">{'\u25CF'}</span>;
 }
 
-export function StatsView({ countries, levels, onClose }: StatsViewProps) {
-  const [selectedContinent, setSelectedContinent] = useState<Continent>('Europa');
-  const [selectedLevel, setSelectedLevel] = useState<GameLevel>('turista');
+/** Abreviaturas descriptivas para cada tipo de pregunta */
+const TYPE_LABELS: Record<QuestionType, { short: string; full: string }> = {
+  E: { short: 'Rec.', full: '¿Qué país es?' },
+  C: { short: 'P→C', full: 'País → Capital' },
+  D: { short: 'C→P', full: 'Capital → País' },
+  F: { short: 'Cap.', full: '¿Cuál es su capital?' },
+  A: { short: 'Señ.', full: 'Señala el país' },
+  B: { short: 'S.C.', full: 'Señala la capital' },
+};
 
-  const getAttempts = useAppStore((s) => s.getAttempts);
+export function StatsView({ countries, levels, onClose }: StatsViewProps) {
+  const lastPlayed = useAppStore((s) => s.settings.lastPlayed);
+  const [selectedContinent, setSelectedContinent] = useState<Continent>(
+    lastPlayed?.continent ?? 'Europa',
+  );
+  const [selectedLevel, setSelectedLevel] = useState<GameLevel>(
+    lastPlayed?.level ?? 'turista',
+  );
+
   const resetAttempts = useAppStore((s) => s.resetAttempts);
 
   // Países del nivel × continente actual
   const levelDef = levels.get(`${selectedLevel}-${selectedContinent}`);
   const levelCountries = levelDef?.countries ?? [];
 
-  // Intentos del perfil activo
-  const allAttempts = getAttempts(selectedLevel, selectedContinent);
+  // Intentos del perfil activo (selector reactivo — se actualiza tras reset)
+  const allAttempts = useAppStore((s) => {
+    const profile = s.profiles.find((p) => p.id === s.activeProfileId);
+    if (!profile) return {};
+    return profile.progress[selectedLevel]?.[selectedContinent]?.attempts ?? {};
+  });
 
   // Lista de países ordenados por nombre
   const sortedCountries = useMemo(() => {
@@ -126,7 +144,9 @@ export function StatsView({ countries, levels, onClose }: StatsViewProps) {
               <tr>
                 <th className="stats-table__th-name">País</th>
                 {ALL_TYPES.map((t) => (
-                  <th key={t} className="stats-table__th-type">{t}</th>
+                  <th key={t} className="stats-table__th-type" title={TYPE_LABELS[t].full}>
+                    {TYPE_LABELS[t].short}
+                  </th>
                 ))}
               </tr>
             </thead>

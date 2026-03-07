@@ -18,3 +18,15 @@ export const CONTINENT_ZOOM: Record<Continent, number> = {
   'Europa': 3.5,
   'Oceanía': 2.0,
 };
+
+/** Infiere el continente del usuario a partir de su zona horaria */
+export function inferContinentFromTimezone(): Continent {
+  try {
+    const region = Intl.DateTimeFormat().resolvedOptions().timeZone.split('/')[0];
+    const map: Record<string, Continent> = {
+      Africa: 'África', America: 'América', Asia: 'Asia',
+      Europe: 'Europa', Australia: 'Oceanía', Pacific: 'Oceanía',
+    };
+    return map[region] ?? 'Europa';
+  } catch { return 'Europa'; }
+}

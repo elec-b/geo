@@ -8,6 +8,8 @@ interface ProgressBarProps {
   score: GameScore;
   onExit: () => void;
   readyForStamp: boolean;
+  /** Invitación a sello desde tipo concreto A/B */
+  readyForStampType?: 'countries' | 'capitals' | null;
   isAdventure: boolean;
   /** true si estamos en una prueba de sello */
   isStampTest?: boolean;
@@ -19,7 +21,7 @@ interface ProgressBarProps {
 
 export function ProgressBar({
   progressCurrent, progressTotal, score, onExit,
-  readyForStamp, isAdventure, isStampTest, stampTestType, onStampBannerClick,
+  readyForStamp, readyForStampType, isAdventure, isStampTest, stampTestType, onStampBannerClick,
 }: ProgressBarProps) {
   const pct = progressTotal > 0 ? Math.min((progressCurrent / progressTotal) * 100, 100) : 0;
   const isFull = progressTotal > 0 && progressCurrent >= progressTotal;
@@ -27,7 +29,7 @@ export function ProgressBar({
   const label = isStampTest
     ? `Prueba de sello: ${progressCurrent} de ${progressTotal}`
     : isAdventure
-      ? `${progressCurrent} de ${progressTotal} listos para sello`
+      ? `${progressCurrent}% completado`
       : `${progressCurrent} de ${progressTotal} dominados`;
 
   return (
@@ -48,7 +50,15 @@ export function ProgressBar({
           Intentar prueba de sello
         </button>
       )}
-      {!isStampTest && !isAdventure && isFull && (
+      {!isStampTest && !isAdventure && readyForStampType && (
+        <button
+          className="progress-bar__banner progress-bar__banner--ready"
+          onClick={onStampBannerClick}
+        >
+          Intentar sello de {readyForStampType === 'countries' ? 'Países' : 'Capitales'}
+        </button>
+      )}
+      {!isStampTest && !isAdventure && isFull && !readyForStampType && (
         <div className="progress-bar__banner progress-bar__banner--mastery">
           Dominas este juego
         </div>

@@ -11,7 +11,7 @@ import type { StampTestType } from '../../hooks/useGameSession';
 import { CONTINENT_CENTERS, CONTINENT_ZOOM } from '../../data/continents';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
 import { useAppStore, type StampType } from '../../stores/appStore';
-import { calculateProgress, isReadyForStamp } from '../../data/learningAlgorithm';
+import { calculateProgress, isReadyForStamp, isTypeFullyDominated, getNextSuggestedType, getAttemptsWithInheritance, isInherited } from '../../data/learningAlgorithm';
 import { useGameSession } from '../../hooks/useGameSession';
 import { LevelSelector } from './LevelSelector';
 import { QuestionBanner } from './QuestionBanner';
@@ -22,6 +22,23 @@ import './JugarView.css';
 
 type JugarScreen = 'selector' | 'playing';
 type FeedbackStep = 'idle' | 'step1' | 'step2';
+
+/** Pares microestado-contenedor — toque en uno se acepta como toque en el otro */
+const MICROSTATE_PAIRS = new Set([
+  'IT-VA', 'IT-SM', 'FR-MC', 'AT-LI', 'CH-LI',
+  'ES-AD', 'FR-AD', 'BE-LU', 'DE-LU', 'FR-LU',
+  'MY-SG', 'QA-BH', 'SA-BH',
+]);
+
+/** Labels de tipos de pregunta (para modales de progresión) */
+const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
+  E: '¿Qué país es?',
+  C: 'País → Capital',
+  D: 'Capital → País',
+  F: '¿Cuál es su capital?',
+  A: 'Señala el país',
+  B: 'Señala la capital',
+};
 
 /** Petición de prueba de sello desde Pasaporte */
 export interface StampTestRequest {
@@ -59,11 +76,14 @@ export function JugarView({
   // --- Store y algoritmo de aprendizaje ---
   const recordAttempt = useAppStore((s) => s.recordAttempt);
   const getAttempts = useAppStore((s) => s.getAttempts);
+  const getStamps = useAppStore((s) => s.getStamps);
   const earnStamp = useAppStore((s) => s.earnStamp);
+  const setLastPlayed = useAppStore((s) => s.setLastPlayed);
 
-  // Modales de prueba de sello
+  // Modales de prueba de sello y fin de pool
   const [showStampChooser, setShowStampChooser] = useState(false);
   const [showStampResult, setShowStampResult] = useState(false);
+  const [showPoolExhausted, setShowPoolExhausted] = useState(false);
 
   // Refs para nivel/continente/tipo activos (disponibles antes de que session se actualice)
   const activeLevelRef = useRef<GameLevel | null>(null);
@@ -80,15 +100,38 @@ export function JugarView({
     [recordAttempt],
   );
 
-  // Callback para obtener intentos actualizados (el hook lo usa para el algoritmo)
+  // Callback para obtener intentos actualizados con herencia (el hook lo usa para el algoritmo)
   const getAttemptsForSession = useCallback(() => {
     if (!activeLevelRef.current || !activeContinentRef.current) return {};
-    return getAttempts(activeLevelRef.current, activeContinentRef.current);
-  }, [getAttempts]);
+    const ownAttempts = getAttempts(activeLevelRef.current, activeContinentRef.current);
+    if (activeLevelRef.current === 'turista') return ownAttempts;
+    return getAttemptsWithInheritance(
+      ownAttempts, activeLevelRef.current, activeContinentRef.current,
+      getStamps, getAttempts,
+    );
+  }, [getAttempts, getStamps]);
+
+  // Callback para obtener países heredados (datos del nivel anterior, no propios)
+  const getInheritedCountries = useCallback((): Set<string> => {
+    if (!activeLevelRef.current || !activeContinentRef.current || activeLevelRef.current === 'turista') {
+      return new Set();
+    }
+    const ownAttempts = getAttempts(activeLevelRef.current, activeContinentRef.current);
+    const merged = getAttemptsWithInheritance(
+      ownAttempts, activeLevelRef.current, activeContinentRef.current,
+      getStamps, getAttempts,
+    );
+    const set = new Set<string>();
+    for (const cca2 of Object.keys(merged)) {
+      if (isInherited(cca2, ownAttempts, merged)) set.add(cca2);
+    }
+    return set;
+  }, [getAttempts, getStamps]);
 
   const session = useGameSession(levels, countries, capitals, {
     onAttempt: handleAttempt,
     getAttempts: getAttemptsForSession,
+    getInheritedCountries,
   });
 
   // Respuesta seleccionada para feedback visual en ChoicePanel
@@ -306,12 +349,18 @@ export function JugarView({
   // Click en un país del globo durante el juego (solo tipos A/B)
   const handleCountryClick = useCallback(
     (feature: CountryFeature) => {
-      const cca2 = feature.properties?.cca2;
+      let cca2 = feature.properties?.cca2;
       if (!cca2 || !session.isActive) return;
 
       // Ignorar clicks en globo para tipos C-F
       const q = session.currentQuestion;
       if (!q || (q.type !== 'A' && q.type !== 'B')) return;
+
+      // Tolerancia microestado-contenedor: si tocas un vecino del objetivo, aceptar
+      if (cca2 !== q.targetCca2) {
+        const pair = [cca2, q.targetCca2].sort().join('-');
+        if (MICROSTATE_PAIRS.has(pair)) cca2 = q.targetCca2;
+      }
 
       const result = session.submitAnswer(cca2);
 
@@ -355,6 +404,7 @@ export function JugarView({
       activeContinentRef.current = continent;
       activeQuestionTypeRef.current = questionType ?? 'mixed';
 
+      setLastPlayed(continent, level);
       session.start(level, continent, questionType);
       setScreen('playing');
       setSelectedChoice(null);
@@ -470,6 +520,13 @@ export function JugarView({
     }
   }, [stampTestRequest, handleStampTestRequest]);
 
+  // Detectar pool agotado → mostrar modal de fin de sesión
+  useEffect(() => {
+    if (session.poolExhausted) {
+      setShowPoolExhausted(true);
+    }
+  }, [session.poolExhausted]);
+
   // Detectar fin de prueba de sello → mostrar modal de resultado
   useEffect(() => {
     if (session.stampTestResult === 'passed' || session.stampTestResult === 'failed') {
@@ -499,6 +556,48 @@ export function JugarView({
   const handleStampBannerClick = useCallback(() => {
     setShowStampChooser(true);
   }, []);
+
+  // Cerrar modal de fin de pool y volver al selector
+  const handlePoolExhaustedClose = useCallback(() => {
+    setShowPoolExhausted(false);
+    session.end();
+    activeLevelRef.current = null;
+    activeContinentRef.current = null;
+    activeQuestionTypeRef.current = 'mixed';
+    setScreen('selector');
+    setSelectedChoice(null);
+    setFlyOutStep('idle');
+  }, [session]);
+
+  // Reiniciar sesión con un tipo sugerido desde el modal de fin de pool
+  const handleStartSuggestedType = useCallback((type: QuestionType) => {
+    const level = activeLevelRef.current;
+    const continent = activeContinentRef.current;
+    if (!level || !continent) return;
+    setShowPoolExhausted(false);
+    activeQuestionTypeRef.current = type;
+    session.start(level, continent, type);
+    setSelectedChoice(null);
+    if (globeRef.current) {
+      const [lon, lat] = CONTINENT_CENTERS[continent];
+      globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[continent], 1000);
+    }
+  }, [session, globeRef]);
+
+  // Reiniciar en modo aventura desde el modal de fin de pool
+  const handleStartAdventure = useCallback(() => {
+    const level = activeLevelRef.current;
+    const continent = activeContinentRef.current;
+    if (!level || !continent) return;
+    setShowPoolExhausted(false);
+    activeQuestionTypeRef.current = 'mixed';
+    session.start(level, continent, 'mixed');
+    setSelectedChoice(null);
+    if (globeRef.current) {
+      const [lon, lat] = CONTINENT_CENTERS[continent];
+      globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[continent], 1000);
+    }
+  }, [session, globeRef]);
 
   // Salir de la partida
   const handleExit = useCallback(() => {
@@ -604,6 +703,34 @@ export function JugarView({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session.level, session.continent, session.score, getAttempts, levels]);
 
+  // Invitación a sello desde tipo concreto A/B (Step 6c)
+  const readyForStampType = useMemo((): 'countries' | 'capitals' | null => {
+    const qt = activeQuestionTypeRef.current;
+    if (qt !== 'A' && qt !== 'B') return null;
+    if (!session.level || !session.continent) return null;
+    const att = getAttempts(session.level, session.continent);
+    const def = levels.get(`${session.level}-${session.continent}`);
+    if (!def) return null;
+    const stamps = getStamps(session.level, session.continent);
+    if (qt === 'A' && !stamps.countries && isTypeFullyDominated(att, def.countries, 'A')) return 'countries';
+    if (qt === 'B' && !stamps.capitals && isTypeFullyDominated(att, def.countries, 'B')) return 'capitals';
+    return null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session.level, session.continent, session.score, getAttempts, getStamps, levels]);
+
+  // Siguiente tipo sugerido tras agotar pool de tipo concreto (Step 7)
+  const nextSuggestedType = useMemo((): QuestionType | null => {
+    if (!showPoolExhausted) return null;
+    const qt = activeQuestionTypeRef.current;
+    if (qt === 'mixed') return null;
+    if (!session.level || !session.continent) return null;
+    const att = getAttempts(session.level, session.continent);
+    const def = levels.get(`${session.level}-${session.continent}`);
+    if (!def) return null;
+    return getNextSuggestedType(att, def.countries, qt as QuestionType);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showPoolExhausted, session.level, session.continent, getAttempts, levels]);
+
   // --- Render ---
 
   if (screen === 'selector') {
@@ -655,6 +782,7 @@ export function JugarView({
         score={session.score}
         onExit={handleExit}
         readyForStamp={readyForStamp}
+        readyForStampType={readyForStampType}
         isAdventure={activeQuestionTypeRef.current === 'mixed'}
         isStampTest={session.stampTestResult === 'in_progress'}
         stampTestType={session.stampTestType}
@@ -719,6 +847,46 @@ export function JugarView({
             >
               Continuar
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Modal: pool de preguntas agotado */}
+      {showPoolExhausted && (
+        <div className="jugar-modal-overlay">
+          <div className="jugar-modal">
+            <h3 className="jugar-modal__title">
+              {activeQuestionTypeRef.current === 'mixed'
+                ? 'Etapa completada'
+                : `Has dominado ${QUESTION_TYPE_LABELS[activeQuestionTypeRef.current as QuestionType] ?? 'este tipo'}`}
+            </h3>
+            <p className="jugar-modal__text">
+              {session.score.correct} aciertos, {session.score.incorrect} fallos en esta sesión.
+            </p>
+            <div className="jugar-modal__buttons">
+              {nextSuggestedType && (
+                <button
+                  className="jugar-modal__btn jugar-modal__btn--primary"
+                  onClick={() => handleStartSuggestedType(nextSuggestedType)}
+                >
+                  Jugar {QUESTION_TYPE_LABELS[nextSuggestedType]}
+                </button>
+              )}
+              {activeQuestionTypeRef.current !== 'mixed' && (
+                <button
+                  className={`jugar-modal__btn${!nextSuggestedType ? ' jugar-modal__btn--primary' : ''}`}
+                  onClick={handleStartAdventure}
+                >
+                  Aventura
+                </button>
+              )}
+              <button
+                className="jugar-modal__cancel"
+                onClick={handlePoolExhaustedClose}
+              >
+                Volver al selector
+              </button>
+            </div>
           </div>
         </div>
       )}

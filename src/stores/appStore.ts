@@ -34,6 +34,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   vibration: true,
   theme: 'dark',
   locale: 'es',
+  lastPlayed: null,
 };
 
 // Perfil por defecto — sin él, recordAttempt y getAttempts no funcionan
@@ -72,6 +73,8 @@ interface AppStoreActions {
   earnStamp: (level: GameLevel, continent: Continent, stampType: StampType) => void;
   /** Consulta si los sellos de un nivel×continente están ganados */
   getStamps: (level: GameLevel, continent: Continent) => { countries: boolean; capitals: boolean };
+  /** Persiste el último continente y nivel jugado */
+  setLastPlayed: (continent: Continent, level: GameLevel) => void;
 }
 
 type AppStore = AppState & AppStoreActions;
@@ -144,7 +147,7 @@ export const useAppStore = create<AppStore>()(
       const prev = countryAttempts[questionType] ?? { correct: 0, incorrect: 0, streak: 0 };
 
       const updated = correct
-        ? { correct: prev.correct + 1, incorrect: prev.incorrect, streak: prev.streak + 1 }
+        ? { correct: prev.correct + 1, incorrect: prev.incorrect, streak: Math.max(1, prev.streak + 1) }
         : { correct: prev.correct, incorrect: prev.incorrect + 1, streak: prev.streak > 0 ? 0 : prev.streak - 1 };
 
       // Clonado inmutable del path completo
@@ -219,6 +222,12 @@ export const useAppStore = create<AppStore>()(
       countries: lcp.stampCountries.earned,
       capitals: lcp.stampCapitals.earned,
     };
+  },
+
+  setLastPlayed: (continent, level) => {
+    set((state) => ({
+      settings: { ...state.settings, lastPlayed: { continent, level } },
+    }));
   },
 
   resetAttempts: (level, continent) => {
