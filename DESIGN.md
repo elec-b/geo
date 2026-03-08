@@ -201,11 +201,24 @@ Los países que dominan su etapa actual **no se preguntan** (ver § Etapa de apr
 #### Barra de progreso
 
 **En modo Aventura**:
-*   Métrica: **progreso ponderado por etapas**. Cada país aporta entre 0% y 100% según su etapa completada:
-    - Domina E: 20%
-    - Domina C, D o F: 50%
-    - Domina A **y** B: 100%
-    - Sin dominio: 0%
+*   Métrica: **progreso ponderado por etapas con crédito gradual**. En vez de crédito binario (dominado/no dominado), cada tipo aporta un factor según la racha del país en ese tipo:
+
+    | Racha | Estado | Factor |
+    |-------|--------|--------|
+    | ≥ 1 | Dominado | 1.0 |
+    | 0 | Fallado | 0.5 |
+    | -1 | Necesita refuerzo | 0.25 |
+    | ≤ -2 / sin intentos | Fallo persistente / nuevo | 0.0 |
+
+    Contribución de cada país (sobre 100 puntos):
+
+    ```
+    factor(E) × 20 + factor(mejor_CDF) × 30 + factor(A) × 25 + factor(B) × 25
+    ───────────────────────────────────────────────────────────────────────────
+                                      100
+    ```
+
+    Así, cada transición de racha (acierto o fallo) mueve la barra de forma granular, sin esperar al dominio completo.
 *   El progreso global es la media de todos los países del nivel-continente.
 *   Texto: «XX% completado».
 *   La barra refleja el estado real en todo momento (sin high-water mark). Las bajadas por regresión se suavizan con animación.
