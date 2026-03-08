@@ -61,10 +61,6 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
-### Diseño previo (refinar DESIGN.md antes de implementar)
-- [ ] Sello automático: si el usuario supera tipo A o B con 0 errores de un solo intento / en una misma parte de la sesión, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
-- [ ] Iconos de tipos de juego: evaluar iconos por tipo (y aplicarlos en selector de Jugar, modales y tabla de estadísticas). Diseñar antes de implementar
-
 ### Jugar
 - [ ] Modal completar tipo E/C/D/F: texto motivador ("¡Fenomenal! X superado", nombre en cursiva), quitar resumen aciertos/fallos, botones sin jerarquía visual ("Jugar X" / "Jugar Aventura", cursiva), "Seleccionar otro" en vez de "Volver al selector"
 - [ ] Invitación a sello tipo A/B: corregir — si el usuario domina 100% en A o B, invitar al sello (no a tipos anteriores no dominados como D o F)
@@ -87,9 +83,15 @@
 ### Pasaporte
 - [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar
 
+### Multi-usuario
+- [ ] Comprobar si cuando se cambia de usuario, si hay otro usuario en Jugar o en Pasaporte, el juego / prueba de sello se para (si es que está en alguno de estos) - esta es la funcionalidad lógica. El nuevo usuario empieza en Explorar. 
+
 ### UX general
 - [ ] Bottom sheets (configuración y ficha de país): añadir handle + implementar drag-to-dismiss
 - [ ] Feedback háptico: vibraciones más cortas/sutiles
+- [ ] Iconos de tipos de juego: evaluar iconos por tipo (y aplicarlos en selector de Jugar, modales y tabla de estadísticas). Diseñar antes de implementar
+- [ ][PENSAR] Sello automático: si el usuario supera tipo A o B con 0 errores de un solo intento / en una misma parte de la sesión, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
+
 
 ### Internacionalización (UI completa)
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
