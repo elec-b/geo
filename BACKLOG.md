@@ -46,32 +46,38 @@
 - [x] Bottom sheet desde el engranaje del header (vibración, idioma, tema, marcadores de microestados — este último solo visible en Explorar)
 - [x] Feedback háptico (acierto/fallo en juego, toggles en configuración) con `@capacitor/haptics`
 
+### Algoritmo v3 y mejoras Jugar/Estadísticas
+- [x] Algoritmo v3: racha max(1), selección inteligente (país compañero, fin de pool), avance colectivo sin precisión global, anti-repetición por pool activo
+- [x] Barra de progreso ponderada (20/50/100%) en Aventura, con crédito por avance colectivo
+- [x] Invitación a sello (umbral 100% en Aventura), sugerencia de progresión al completar tipo E/C/D/F
+- [x] Herencia conservadora entre niveles (derivación en lectura, verificación baja frecuencia)
+- [x] Pre-selección continente/nivel al entrar + toast nivel bloqueado
+- [x] Conflicto Italia/Vaticano resuelto (tap en microestado acepta país grande)
+- [x] Estadísticas: reset inmediato, default inteligente (último continente-nivel jugado), labels abreviados con tooltip
+
 ---
 
 ## Próximos pasos
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
-### Algoritmo de aprendizaje v3 (diseño documentado en DESIGN.md)
-- [ ] Racha `max(1, streak+1)`: un acierto siempre lleva a dominado (1 línea en appStore.ts)
-- [ ] Selección inteligente: eliminar categoría maintenance, implementar país compañero (≤2 pendientes), fin de sesión cuando pool vacío
-- [ ] Avance colectivo: eliminar requisito de precisión global (solo 40% de dominio)
-- [ ] Barra de progreso ponderada (20/30/50) en modo Aventura, con crédito para países avanzados por avance colectivo
-- [ ] Invitaciones a sello: umbral 80%→100% en Aventura + invitación a sello desde modo tipo concreto A/B
-- [ ] Sugerencia de progresión al completar modo tipo concreto E/C/D/F: CTA al siguiente tipo + Aventura
-- [ ] Herencia conservadora entre niveles: derivación en lectura de A/B, verificación de baja frecuencia, sin contar para avance colectivo
-- [ ] Anti-repetición: buffer sobre pool activo N = mín(3, pool_activo / 2)
+### Diseño previo (refinar DESIGN.md antes de implementar)
+- [ ] Barra de progreso reactiva: que baje con fallos y suba con aciertos. Diseñar lógica sencilla y elegante en DESIGN.md
+- [ ] Sello automático: si el usuario supera tipo A o B con 0 errores en todos los países, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
+- [ ] Iconos de tipos de juego: evaluar iconos por tipo (y aplicarlos en selector de Jugar, modales y tabla de estadísticas). Diseñar antes de implementar
 
 ### Jugar
-- [ ] Pre-seleccionar continente/nivel/tipo al entrar: 1) continente del dispositivo (sin leer info sensible), 2) máximo nivel desbloqueado, 3) aventura. Mostrar mensaje si el usuario pulsa un nivel no desbloqueado
-- [ ] Conflicto Italia/Vaticano: al preguntar por la capital de Italia, evitar que se seleccione accidentalmente Vaticano (y viceversa). Evaluar solución (ej. cuando se pregunte por Roma, no se puede seleccionar Vaticano, cuando se pregunte por Ciudad de Vaticano no se puede seleccionar Roma - así se evitan selecciones "accidentales")
+- [ ] Modal completar tipo E/C/D/F: texto motivador ("¡Fenomenal! X superado", nombre en cursiva), quitar resumen aciertos/fallos, botones sin jerarquía visual ("Jugar X" / "Jugar Aventura", cursiva), "Seleccionar otro" en vez de "Volver al selector"
+- [ ] Invitación a sello tipo A/B: corregir — si el usuario domina 100% en A o B, invitar al sello (no a tipos anteriores no dominados como D o F)
+- [ ] Pre-selección nivel: verificar que se pre-selecciona el máximo nivel desbloqueado
+- [ ] Indicar niveles superados en el selector (estilo visual sencillo, similar al toast de nivel bloqueado)
+- [ ] Quitar botón "salir" de la barra de progreso; usar tab bar "Jugar" para volver al selector
 - [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital.
-- [ ] Testeando Oceanía (pero quizás aplicable para todos los continentes?): en los juegos E y F, el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado.
+- [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
 
 ### Estadísticas
-- [ ] Bug: al resetear estadísticas, los datos no se ven borrados hasta cambiar de continente-nivel y volver
-- [ ] Default inteligente: al abrir, mostrar el último continente-nivel jugado o en el que se hizo prueba de sello. Fallback: continente del dispositivo + nivel guía
-- [ ] Mejorar tabla: reemplazar las letras A-F por nombres o iconos comprensibles para el usuario
+- [ ] Quitar contadores de aciertos/fallos del bottom
+- [ ] Botón toggle para mostrar % de acierto por país (en vez de iconos de dominio)
 
 ### Explorar
 - [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigar por qué y corregir (también "impactará" en Jugar, obviamente)
