@@ -29,7 +29,7 @@ export function ProgressBar({
   const label = isStampTest
     ? `Prueba de sello: ${progressCurrent} de ${progressTotal}`
     : isAdventure
-      ? `${progressCurrent}% completado`
+      ? `${Number.isInteger(progressCurrent) ? progressCurrent : progressCurrent.toFixed(1)}% completado`
       : `${progressCurrent} de ${progressTotal} dominados`;
 
   return (

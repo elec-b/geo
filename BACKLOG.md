@@ -48,7 +48,7 @@
 
 ### Algoritmo v3 y mejoras Jugar/Estadísticas
 - [x] Algoritmo v3: racha max(1), selección inteligente (país compañero, fin de pool), avance colectivo sin precisión global, anti-repetición por pool activo
-- [x] Barra de progreso ponderada (20/50/100%) en Aventura, con crédito por avance colectivo
+- [x] Barra de progreso ponderada en Aventura: crédito gradual por racha (streakToFactor), 1 decimal visible, crédito por avance colectivo
 - [x] Invitación a sello (umbral 100% en Aventura), sugerencia de progresión al completar tipo E/C/D/F
 - [x] Herencia conservadora entre niveles (derivación en lectura, verificación baja frecuencia)
 - [x] Pre-selección continente/nivel al entrar + toast nivel bloqueado
@@ -62,8 +62,7 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Diseño previo (refinar DESIGN.md antes de implementar)
-- [ ] Barra de progreso reactiva: que baje con fallos y suba con aciertos. Diseñar lógica sencilla y elegante en DESIGN.md
-- [ ] Sello automático: si el usuario supera tipo A o B con 0 errores en todos los países, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
+- [ ] Sello automático: si el usuario supera tipo A o B con 0 errores de un solo intento / en una misma parte de la sesión, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
 - [ ] Iconos de tipos de juego: evaluar iconos por tipo (y aplicarlos en selector de Jugar, modales y tabla de estadísticas). Diseñar antes de implementar
 
 ### Jugar
@@ -74,6 +73,7 @@
 - [ ] Quitar botón "salir" de la barra de progreso; usar tab bar "Jugar" para volver al selector
 - [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital.
 - [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
+- [ ] Cuando un juego de un continente-nivel ya se ha jugado parcialmente, el botón inferior, en vez de mostrar "empezar" debe mostrar "reanudar" o "continuar" o algo así (piensa bien la palabra)
 
 ### Estadísticas
 - [ ] Quitar contadores de aciertos/fallos del bottom
@@ -81,6 +81,8 @@
 
 ### Explorar
 - [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigar por qué y corregir (también "impactará" en Jugar, obviamente)
+- [ ] Verificar Micronesia, Kiribati, Samoa... ¿Están bien ubicados los marcadores de micro estado? (Deberían estar en la capital) ¿Hay alguna manera mejor de reflejar estos dispersos conjuntos de islas?
+- [ ] El Aaiun aparece mal ubicado - repasar
 
 ### Pasaporte
 - [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar

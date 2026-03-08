@@ -2,7 +2,7 @@
 // Implementa: etapas individuales por país, cola de prioridad, avance colectivo,
 // inferencia ascendente, progreso ponderado, herencia entre niveles y país compañero.
 import type { Continent, GameLevel, QuestionType } from './types';
-import type { CountryAttempts } from '../stores/types';
+import type { AttemptRecord, CountryAttempts } from '../stores/types';
 
 // --- Constantes ---
 
@@ -375,8 +375,20 @@ export interface ProgressResult {
 }
 
 /**
+ * Convierte la racha de un tipo en un factor continuo [0, 1].
+ * Permite crédito gradual antes de alcanzar dominio (streak ≥ 1).
+ */
+function streakToFactor(rec: AttemptRecord | undefined): number {
+  if (!rec) return 0;
+  if (rec.streak >= 1) return 1.0;
+  if (rec.streak === 0) return 0.5;
+  if (rec.streak === -1) return 0.25;
+  return 0; // streak ≤ -2
+}
+
+/**
  * Calcula el progreso.
- * - Aventura: progreso ponderado (0-100%) según avance por país.
+ * - Aventura: progreso ponderado (0-100%) según avance por país con crédito gradual.
  * - Tipo concreto: países que dominan ese tipo (X de Y).
  */
 export function calculateProgress(
@@ -388,24 +400,27 @@ export function calculateProgress(
   if (total === 0) return { current: 0, total: 0 };
 
   if (mode === 'adventure') {
-    // Progreso ponderado: cada país contribuye según su avance
+    // Progreso gradual: cada acierto/fallo mueve la barra
     const stages = getEffectiveStages(attempts, levelCountries);
     let sum = 0;
     for (const cca2 of levelCountries) {
       const ca = attempts[cca2];
-      if (isDominated(ca, 'A') && isDominated(ca, 'B')) {
-        sum += 100;
-      } else if (isDominated(ca, 'C') || isDominated(ca, 'D') || isDominated(ca, 'F')) {
-        sum += 50;
-      } else if (isDominated(ca, 'E')) {
-        sum += 20;
-      } else {
-        const stage = stages.get(cca2) ?? 1;
-        if (stage >= 3) sum += 50;       // crédito por avance colectivo
-        else if (stage >= 2) sum += 20;
-      }
+
+      // Crédito gradual por racha de cada tipo
+      const fE = streakToFactor(ca?.E);
+      const fCDF = Math.max(streakToFactor(ca?.C), streakToFactor(ca?.D), streakToFactor(ca?.F));
+      const fA = streakToFactor(ca?.A);
+      const fB = streakToFactor(ca?.B);
+      let credit = fE * 20 + fCDF * 30 + fA * 25 + fB * 25;
+
+      // Floor por avance colectivo (países sin datos propios o con crédito inferior)
+      const stage = stages.get(cca2) ?? 1;
+      const collectiveFloor = stage >= 3 ? 50 : stage >= 2 ? 20 : 0;
+      credit = Math.max(credit, collectiveFloor);
+
+      sum += credit;
     }
-    return { current: Math.round(sum / total), total: 100 };
+    return { current: Math.round((sum / total) * 10) / 10, total: 100 };
   }
 
   // Tipo concreto: domina ese tipo
