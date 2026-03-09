@@ -161,6 +161,10 @@
   color: var(--color-success);
 }
 
+.stats-cell--inherited {
+  color: var(--color-text-secondary);
+}
+
 .stats-cell--progress {
   color: var(--color-accent-amber);
 }

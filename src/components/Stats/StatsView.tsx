@@ -1,8 +1,9 @@
 // StatsView — modal fullscreen con estadísticas de aprendizaje por país
+// Muestra datos con herencia aplicada (alineado con el algoritmo de juego).
 import { useState, useMemo } from 'react';
 import type { CountryData, Continent, GameLevel, QuestionType, LevelDefinition } from '../../data/types';
 import type { CountryAttempts } from '../../stores/types';
-import { isDominated } from '../../data/learningAlgorithm';
+import { isDominated, getAttemptsWithInheritance } from '../../data/learningAlgorithm';
 import { useAppStore } from '../../stores/appStore';
 import './StatsView.css';
 
@@ -17,18 +18,25 @@ interface StatsViewProps {
 }
 
 /** Indicador visual para una celda de la tabla */
-function CellIndicator({ ca, type }: { ca: CountryAttempts | undefined; type: QuestionType }) {
+function CellIndicator({ ca, type, isInheritedType }: {
+  ca: CountryAttempts | undefined;
+  type: QuestionType;
+  isInheritedType: boolean;
+}) {
   if (!ca) {
     return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
+  }
+
+  // Dominio: check primero (la inferencia ascendente puede dominar sin rec directo)
+  if (isDominated(ca, type)) {
+    return isInheritedType
+      ? <span className="stats-cell stats-cell--inherited">{'\u2713'}</span>
+      : <span className="stats-cell stats-cell--dominated">{'\u2713'}</span>;
   }
 
   const rec = ca[type];
   if (!rec || (rec.correct === 0 && rec.incorrect === 0)) {
     return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
-  }
-
-  if (isDominated(ca, type)) {
-    return <span className="stats-cell stats-cell--dominated">{'\u2713'}</span>;
   }
 
   if (rec.streak < 0) {
@@ -58,17 +66,28 @@ export function StatsView({ countries, levels, onClose }: StatsViewProps) {
   );
 
   const resetAttempts = useAppStore((s) => s.resetAttempts);
+  const getAttempts = useAppStore((s) => s.getAttempts);
+  const getStamps = useAppStore((s) => s.getStamps);
 
   // Países del nivel × continente actual
   const levelDef = levels.get(`${selectedLevel}-${selectedContinent}`);
   const levelCountries = levelDef?.countries ?? [];
 
-  // Intentos del perfil activo (selector reactivo — se actualiza tras reset)
-  const allAttempts = useAppStore((s) => {
+  // Intentos propios (sin herencia) — necesario para distinguir ✓ verde vs ✓ gris
+  const ownAttempts = useAppStore((s) => {
     const profile = s.profiles.find((p) => p.id === s.activeProfileId);
     if (!profile) return {};
     return profile.progress[selectedLevel]?.[selectedContinent]?.attempts ?? {};
   });
+
+  // Intentos con herencia aplicada (lo que usa el algoritmo de juego)
+  const allAttempts = useMemo(() => {
+    if (selectedLevel === 'turista') return ownAttempts;
+    return getAttemptsWithInheritance(
+      ownAttempts, selectedLevel, selectedContinent,
+      getStamps, getAttempts,
+    );
+  }, [ownAttempts, selectedLevel, selectedContinent, getStamps, getAttempts]);
 
   // Lista de países ordenados por nombre
   const sortedCountries = useMemo(() => {
@@ -153,14 +172,21 @@ export function StatsView({ countries, levels, onClose }: StatsViewProps) {
             <tbody>
               {sortedCountries.map(({ cca2, name }) => {
                 const ca = allAttempts[cca2];
+                const ownCa = ownAttempts[cca2];
                 return (
                   <tr key={cca2}>
                     <td className="stats-table__td-name">{name}</td>
-                    {ALL_TYPES.map((t) => (
-                      <td key={t} className="stats-table__td-type">
-                        <CellIndicator ca={ca} type={t} />
-                      </td>
-                    ))}
+                    {ALL_TYPES.map((t) => {
+                      // Heredado: dominado en merged pero no en propios (solo mochilero/guía)
+                      const isInheritedType = selectedLevel !== 'turista'
+                        && isDominated(ca, t)
+                        && !isDominated(ownCa, t);
+                      return (
+                        <td key={t} className="stats-table__td-type">
+                          <CellIndicator ca={ca} type={t} isInheritedType={isInheritedType} />
+                        </td>
+                      );
+                    })}
                   </tr>
                 );
               })}
@@ -177,6 +203,9 @@ export function StatsView({ countries, levels, onClose }: StatsViewProps) {
         {/* Leyenda */}
         <div className="stats-legend">
           <span><span className="stats-cell stats-cell--dominated">{'\u2713'}</span> Dominado</span>
+          {selectedLevel !== 'turista' && (
+            <span><span className="stats-cell stats-cell--inherited">{'\u2713'}</span> Heredado</span>
+          )}
           <span><span className="stats-cell stats-cell--progress">{'\u25CF'}</span> En progreso</span>
           <span><span className="stats-cell stats-cell--reinforcement">{'\u25BC'}</span> Refuerzo</span>
           <span><span className="stats-cell stats-cell--empty">{'\u2014'}</span> Sin datos</span>

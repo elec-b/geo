@@ -59,8 +59,8 @@ export interface GameSessionOptions {
   onAttempt?: (cca2: string, type: QuestionType, correct: boolean) => void;
   /** Función para obtener los intentos actualizados del store */
   getAttempts?: () => Record<string, CountryAttempts>;
-  /** Función para obtener los países heredados (datos de nivel anterior) */
-  getInheritedCountries?: () => Set<string>;
+  /** Función para obtener los países heredados: mapa de país → tipos sin datos propios */
+  getInheritedCountries?: () => Map<string, Set<QuestionType>>;
 }
 
 /**
@@ -200,9 +200,13 @@ export function useGameSession(
       setPoolExhausted(false);
 
       // Generar primera pregunta
-      // Para tipo concreto, pre-generar la cola
+      // Para tipo concreto, pre-generar la cola (solo países no dominados)
       if (questionType !== 'mixed') {
-        questionsRef.current = generateQuestionsByType(questionType, def.countries, countries, capitals);
+        const attempts = getAttemptsRef.current?.() ?? {};
+        const pending = def.countries.filter((cca2) => !isDominated(attempts[cca2], questionType as QuestionType));
+        if (pending.length > 0) {
+          questionsRef.current = generateQuestionsByType(questionType, pending, countries, capitals);
+        }
       }
 
       const question = requestNextQuestion();

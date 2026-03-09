@@ -11,7 +11,7 @@ import type { StampTestType } from '../../hooks/useGameSession';
 import { CONTINENT_CENTERS, CONTINENT_ZOOM } from '../../data/continents';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
 import { useAppStore, type StampType } from '../../stores/appStore';
-import { calculateProgress, isReadyForStamp, isTypeFullyDominated, getNextSuggestedType, getAttemptsWithInheritance, isInherited } from '../../data/learningAlgorithm';
+import { calculateProgress, isReadyForStamp, isTypeFullyDominated, getNextSuggestedType, getAttemptsWithInheritance, getInheritedTypes } from '../../data/learningAlgorithm';
 import { useGameSession } from '../../hooks/useGameSession';
 import { LevelSelector } from './LevelSelector';
 import { QuestionBanner } from './QuestionBanner';
@@ -111,21 +111,22 @@ export function JugarView({
     );
   }, [getAttempts, getStamps]);
 
-  // Callback para obtener países heredados (datos del nivel anterior, no propios)
-  const getInheritedCountries = useCallback((): Set<string> => {
+  // Callback para obtener países heredados: mapa de país → tipos sin datos propios
+  const getInheritedCountries = useCallback((): Map<string, Set<QuestionType>> => {
     if (!activeLevelRef.current || !activeContinentRef.current || activeLevelRef.current === 'turista') {
-      return new Set();
+      return new Map();
     }
     const ownAttempts = getAttempts(activeLevelRef.current, activeContinentRef.current);
     const merged = getAttemptsWithInheritance(
       ownAttempts, activeLevelRef.current, activeContinentRef.current,
       getStamps, getAttempts,
     );
-    const set = new Set<string>();
+    const map = new Map<string, Set<QuestionType>>();
     for (const cca2 of Object.keys(merged)) {
-      if (isInherited(cca2, ownAttempts, merged)) set.add(cca2);
+      const types = getInheritedTypes(cca2, ownAttempts, merged);
+      if (types.size > 0) map.set(cca2, types);
     }
-    return set;
+    return map;
   }, [getAttempts, getStamps]);
 
   const session = useGameSession(levels, countries, capitals, {
@@ -686,29 +687,29 @@ export function JugarView({
 
   const progress = useMemo(() => {
     if (!session.level || !session.continent) return { current: 0, total: 0 };
-    const att = getAttempts(session.level, session.continent);
+    const att = getAttemptsForSession();
     const def = levels.get(`${session.level}-${session.continent}`);
     if (!def) return { current: 0, total: 0 };
     const mode = activeQuestionTypeRef.current === 'mixed' ? 'adventure' : activeQuestionTypeRef.current;
     return calculateProgress(att, def.countries, mode);
     // session.score en deps para recalcular tras cada respuesta
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session.level, session.continent, session.score, getAttempts, levels]);
+  }, [session.level, session.continent, session.score, getAttemptsForSession, levels]);
 
   const readyForStamp = useMemo(() => {
     if (activeQuestionTypeRef.current !== 'mixed' || !session.level || !session.continent) return false;
-    const att = getAttempts(session.level, session.continent);
+    const att = getAttemptsForSession();
     const def = levels.get(`${session.level}-${session.continent}`);
     return def ? isReadyForStamp(att, def.countries) : false;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session.level, session.continent, session.score, getAttempts, levels]);
+  }, [session.level, session.continent, session.score, getAttemptsForSession, levels]);
 
   // Invitación a sello desde tipo concreto A/B (Step 6c)
   const readyForStampType = useMemo((): 'countries' | 'capitals' | null => {
     const qt = activeQuestionTypeRef.current;
     if (qt !== 'A' && qt !== 'B') return null;
     if (!session.level || !session.continent) return null;
-    const att = getAttempts(session.level, session.continent);
+    const att = getAttemptsForSession();
     const def = levels.get(`${session.level}-${session.continent}`);
     if (!def) return null;
     const stamps = getStamps(session.level, session.continent);
@@ -716,7 +717,7 @@ export function JugarView({
     if (qt === 'B' && !stamps.capitals && isTypeFullyDominated(att, def.countries, 'B')) return 'capitals';
     return null;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session.level, session.continent, session.score, getAttempts, getStamps, levels]);
+  }, [session.level, session.continent, session.score, getAttemptsForSession, getStamps, levels]);
 
   // Siguiente tipo sugerido tras agotar pool de tipo concreto (Step 7)
   const nextSuggestedType = useMemo((): QuestionType | null => {

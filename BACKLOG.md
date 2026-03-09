@@ -50,21 +50,17 @@
 - [x] Algoritmo v3: racha max(1), selección inteligente (país compañero, fin de pool), avance colectivo sin precisión global, anti-repetición por pool activo
 - [x] Barra de progreso ponderada en Aventura: crédito gradual por racha (streakToFactor), 1 decimal visible, crédito por avance colectivo
 - [x] Invitación a sello (umbral 100% en Aventura), sugerencia de progresión al completar tipo E/C/D/F
-- [x] Herencia conservadora entre niveles (derivación en lectura, verificación baja frecuencia)
+- [x] Herencia conservadora entre niveles (derivación en lectura, verificación baja frecuencia, ✓ gris en estadísticas)
 - [x] Pre-selección continente/nivel al entrar + toast nivel bloqueado
 - [x] Conflicto Italia/Vaticano resuelto (tap en microestado acepta país grande)
 - [x] Estadísticas: reset inmediato, default inteligente (último continente-nivel jugado), labels abreviados con tooltip
+- [x] Alinear estadísticas con algoritmo de juego: fix bug tipo concreto (cola sin filtrar dominados), stats con herencia aplicada, heredados solo A/B con prioridad baja
 
 ---
 
 ## Próximos pasos
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
-
-### Alinear estadísticas con algoritmo de juego
-- [ ] Bug: modo tipo concreto pregunta países ya dominados (la cola inicial no filtra por dominio)
-- [ ] Estadísticas no refleja herencia entre niveles (lee datos propios; el algoritmo lee datos con herencia). Decidir si mostrar herencia en Stats o no, y reflejar decisión en DESIGN.md
-- [ ] Revisar que lo que el usuario ve en estadísticas coincida fielmente con lo que el algoritmo usa para seleccionar preguntas. Documentar cualquier cambio de diseño en DESIGN.md
 
 ### Jugar
 - [ ] Modal completar tipo E/C/D/F: texto motivador ("¡Fenomenal! X superado", nombre en cursiva), quitar resumen aciertos/fallos, botones sin jerarquía visual ("Jugar X" / "Jugar Aventura", cursiva), "Seleccionar otro" en vez de "Volver al selector"

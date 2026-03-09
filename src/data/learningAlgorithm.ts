@@ -174,7 +174,7 @@ export function getCountryStage(ca: CountryAttempts | undefined): 1 | 2 | 3 {
 export function getEffectiveStages(
   allAttempts: Record<string, CountryAttempts>,
   countries: string[],
-  inheritedCountries?: Set<string>,
+  inheritedCountries?: Map<string, Set<QuestionType>>,
 ): Map<string, 1 | 2 | 3> {
   const stages = new Map<string, 1 | 2 | 3>();
 
@@ -231,7 +231,7 @@ export interface QuestionSelection {
  * 1. Refuerzo: países con racha negativa en su etapa actual
  * 2. Nuevos: países sin intentos en ningún tipo de su etapa
  * 3. En progreso: países con intentos pero no todos los tipos dominados
- * 4. Heredados: países con datos heredados de nivel anterior (~30%)
+ * 4. Heredados: países con A/B heredados pendientes de verificación (prioridad baja)
  *
  * Países que dominan todos los tipos de su etapa salen del pool.
  * País compañero: si quedan ≤ 2 activos, se intercala un dominado (~50%).
@@ -240,7 +240,7 @@ export interface QuestionSelection {
  *
  * @param fixedType - Si se especifica, fuerza ese tipo de pregunta (modo tipo concreto)
  * @param recentTypes - Tipos preguntados recientemente (anti-repetición de tipo)
- * @param inheritedCountries - Países con datos heredados (no propios)
+ * @param inheritedCountries - Mapa de país → tipos heredados (sin datos propios)
  */
 export function selectNextQuestion(
   allAttempts: Record<string, CountryAttempts>,
@@ -248,7 +248,7 @@ export function selectNextQuestion(
   recent: string[],
   fixedType?: QuestionType,
   recentTypes?: QuestionType[],
-  inheritedCountries?: Set<string>,
+  inheritedCountries?: Map<string, Set<QuestionType>>,
 ): QuestionSelection | null {
   if (countries.length === 0) return null;
 
@@ -256,7 +256,12 @@ export function selectNextQuestion(
   const stages = getEffectiveStages(allAttempts, countries, inheritedCountries);
 
   // Determinar pool activo (países no dominados en su etapa/tipo)
+  // Los heredados con A/B pendientes de verificación también son activos
   const isActive = (cca2: string): boolean => {
+    if (!fixedType && inheritedCountries?.has(cca2)) {
+      const inheritedTypes = inheritedCountries.get(cca2)!;
+      return inheritedTypes.has('A') || inheritedTypes.has('B');
+    }
     const ca = allAttempts[cca2];
     if (fixedType) return !isDominated(ca, fixedType);
     const stage = stages.get(cca2) ?? 1;
@@ -294,20 +299,41 @@ export function selectNextQuestion(
       } else {
         inProgress.push(cca2);
       }
+    } else if (inheritedCountries?.has(cca2)) {
+      // País heredado: clasificar según estado de verificación A/B
+      const inheritedTypes = inheritedCountries.get(cca2)!;
+      const stageTypes = STAGE_TYPES[stage];
+
+      // Verificar si tipos propios necesitan refuerzo
+      const ownTypes = stageTypes.filter((t) => !inheritedTypes.has(t));
+      const needsReinforcement = ownTypes.some((t) => {
+        const r = ca?.[t];
+        return r && r.streak < 0;
+      });
+
+      if (needsReinforcement) {
+        reinforcement.push(cca2);
+      } else if (inheritedTypes.has('A') || inheritedTypes.has('B')) {
+        // A/B pendientes de verificación → prioridad baja
+        inherited.push(cca2);
+      } else {
+        // A y B ya verificados → tratar como país normal
+        if (stageTypes.every((t) => isDominated(ca, t))) {
+          dominated.push(cca2);
+        } else if (!ca || stageTypes.every((t) => !ca[t])) {
+          fresh.push(cca2);
+        } else if (stageTypes.some((t) => { const r = ca[t]; return r && r.streak < 0; })) {
+          reinforcement.push(cca2);
+        } else {
+          inProgress.push(cca2);
+        }
+      }
     } else {
       // Modo aventura: clasificar según la etapa
       const stageTypes = STAGE_TYPES[stage];
 
       if (stageTypes.every((t) => isDominated(ca, t))) {
         dominated.push(cca2);
-      } else if (inheritedCountries?.has(cca2) && !reinforcement.length) {
-        // Heredados van a categoría intermedia (solo si no necesitan refuerzo)
-        const needsReinforcement = stageTypes.some((t) => { const r = ca?.[t]; return r && r.streak < 0; });
-        if (needsReinforcement) {
-          reinforcement.push(cca2);
-        } else {
-          inherited.push(cca2);
-        }
       } else if (!ca || stageTypes.every((t) => !ca[t])) {
         fresh.push(cca2);
       } else if (stageTypes.some((t) => { const r = ca[t]; return r && r.streak < 0; })) {
@@ -325,7 +351,6 @@ export function selectNextQuestion(
   if (reinforcement.length > 0) selectedCca2 = pick(reinforcement);
   else if (fresh.length > 0) selectedCca2 = pick(fresh);
   else if (inProgress.length > 0) selectedCca2 = pick(inProgress);
-  else if (inherited.length > 0 && Math.random() < 0.3) selectedCca2 = pick(inherited);
   else if (inherited.length > 0) selectedCca2 = pick(inherited);
 
   // País compañero: si quedan pocos activos, intercalar un dominado
@@ -357,6 +382,15 @@ export function selectNextQuestion(
   let questionType: QuestionType;
   if (fixedType) {
     questionType = fixedType;
+  } else if (inheritedCountries?.has(selectedCca2) && inherited.includes(selectedCca2)) {
+    // País heredado: solo preguntar A o B (los que aún no tienen datos propios)
+    const inheritedTypes = inheritedCountries.get(selectedCca2)!;
+    const candidates: QuestionType[] = [];
+    if (inheritedTypes.has('A')) candidates.push('A');
+    if (inheritedTypes.has('B')) candidates.push('B');
+    questionType = candidates.length > 0
+      ? candidates[Math.floor(Math.random() * candidates.length)]
+      : 'A';
   } else {
     const ca = allAttempts[selectedCca2] ?? {};
     const stage = stages.get(selectedCca2) ?? 1;
@@ -559,6 +593,27 @@ export function isInherited(
   mergedAttempts: Record<string, CountryAttempts>,
 ): boolean {
   return !ownAttempts[cca2] && !!mergedAttempts[cca2];
+}
+
+/**
+ * Para un país, devuelve los tipos que tienen datos heredados pero NO propios.
+ * Útil para saber qué tipos necesitan verificación en el nuevo nivel.
+ */
+export function getInheritedTypes(
+  cca2: string,
+  ownAttempts: Record<string, CountryAttempts>,
+  mergedAttempts: Record<string, CountryAttempts>,
+): Set<QuestionType> {
+  const result = new Set<QuestionType>();
+  const merged = mergedAttempts[cca2];
+  if (!merged) return result;
+  const own = ownAttempts[cca2];
+  for (const t of ALL_TYPES) {
+    if (merged[t] && (!own || !own[t])) {
+      result.add(t);
+    }
+  }
+  return result;
 }
 
 // --- Niveles y sellos ---
