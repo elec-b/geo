@@ -61,6 +61,11 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
+### Alinear estadísticas con algoritmo de juego
+- [ ] Bug: modo tipo concreto pregunta países ya dominados (la cola inicial no filtra por dominio)
+- [ ] Estadísticas no refleja herencia entre niveles (lee datos propios; el algoritmo lee datos con herencia). Decidir si mostrar herencia en Stats o no, y reflejar decisión en DESIGN.md
+- [ ] Revisar que lo que el usuario ve en estadísticas coincida fielmente con lo que el algoritmo usa para seleccionar preguntas. Documentar cualquier cambio de diseño en DESIGN.md
+
 ### Jugar
 - [ ] Modal completar tipo E/C/D/F: texto motivador ("¡Fenomenal! X superado", nombre en cursiva), quitar resumen aciertos/fallos, botones sin jerarquía visual ("Jugar X" / "Jugar Aventura", cursiva), "Seleccionar otro" en vez de "Volver al selector"
 - [ ] Invitación a sello tipo A/B: corregir — si el usuario domina 100% en A o B, invitar al sello (no a tipos anteriores no dominados como D o F)

@@ -254,7 +254,7 @@ Los países que dominan su etapa actual **no se preguntan** (ver § Etapa de apr
 
 #### Herencia de progreso entre niveles
 
-Cuando el usuario desbloquea un nuevo nivel (tras conseguir ambos sellos del nivel anterior), los países del nivel anterior reciben **crédito automático** en el nuevo nivel.
+Cuando el usuario desbloquea un nuevo nivel (tras conseguir ambos sellos del nivel anterior), los países del nivel anterior reciben **crédito heredado** en el nuevo nivel.
 
 **Qué se hereda**:
 *   Los países del nivel anterior se consideran dominados en **tipos A y B** (racha sintética = 1). Los tipos E, C, D y F se derivan automáticamente por inferencia ascendente.
@@ -262,13 +262,16 @@ Cuando el usuario desbloquea un nuevo nivel (tras conseguir ambos sellos del niv
 
 **Mecanismo**: La herencia se calcula en **tiempo de lectura** (derivación), no se materializa como datos persistidos. Al consultar los intentos de un nivel, se mezclan los datos propios con los heredados del nivel anterior. Los datos propios siempre tienen prioridad. El trigger es la **existencia de ambos sellos** del nivel anterior (no los datos de intentos).
 
-**Impacto en el juego**:
-*   **Selección de preguntas**: Los países heredados se preguntan con **baja frecuencia** como verificación (categoría intermedia, no excluidos del pool). Esto evita que el usuario llegue a la prueba de sello sin haber repasado países que pudo olvidar.
-*   **Barra de progreso**: Los países heredados cuentan según su etapa derivada.
-*   **Avance colectivo**: Los países heredados **no cuentan** para el umbral del 40% de los países nuevos. El avance colectivo se calcula solo sobre los países que son nuevos en ese nivel.
-*   **Pruebas de sello**: La herencia **no exime** de la prueba: el 100% de los países del nivel se evalúan con 0 errores.
+**Visibilidad**: Los países heredados se distinguen en la tabla de estadísticas con un **indicador diferenciado** (✓ gris), distinto del dominio verificado (✓ verde). Esto permite al usuario saber qué países ha verificado personalmente en el nuevo nivel y cuáles mantienen crédito del nivel anterior.
 
-**Degradación**: Si el usuario falla un país heredado en el nuevo nivel, el dato propio (con la racha actualizada) sobreescribe la herencia para ese país. Con fallos recurrentes, la regresión de etapa se activa normalmente.
+**Impacto en el juego**:
+*   **Tipos C, D, E y F**: Los países heredados **no se preguntan** en estos tipos. La herencia proviene de haber superado las pruebas de sello (A y B con 0 errores), lo que implica dominio suficiente de los tipos inferiores por inferencia ascendente.
+*   **Tipos A y B**: Los países heredados **sí se preguntan**, pero con **prioridad baja** (después de refuerzo, nuevos y en progreso). Esto garantiza un repaso de verificación antes de la prueba de sello del nuevo nivel.
+*   **Acierto en A/B**: El ✓ gris pasa a ✓ verde (se graba un intento propio con racha = 1). El país queda verificado.
+*   **Fallo en A/B**: Se graba el fallo como intento propio (sobreescribe la herencia para ese país). A partir de ahí, el país sigue la lógica habitual de regresión: puede bajar a etapa 2 (C/D/F) y de ahí a etapa 1 (E) si los fallos persisten. Los ✓ grises de los tipos inferiores desaparecen — el fallo invalida el crédito heredado para ese país.
+*   **Barra de progreso**: Los países heredados cuentan como dominados (crédito completo) mientras mantengan el ✓ gris.
+*   **Avance colectivo**: Los países heredados **no cuentan** para el umbral del 40%. El avance colectivo se calcula solo sobre los países nuevos en ese nivel.
+*   **Pruebas de sello**: La herencia **no exime** de la prueba: el 100% de los países del nivel se evalúan con 0 errores.
 
 ### Prueba de sellos (dentro de Jugar)
 El usuario puede intentar las pruebas desde aquí (cuando el algoritmo lo invita) o desde Pasaporte. Ver § «El pasaporte de explorador > Los 2 sellos» para requisitos (0 errores, sin límite de intentos).
@@ -341,7 +344,13 @@ Vista que muestra el registro de intentos del usuario de forma visual. Accesible
 ### Contenido
 *   Selector de nivel × continente. (Nota: de momento se deja esto así, para facilitar el debugging; pero en el futuro seguramente nos sirva una lista sencilla de países y saber e.g. el % de acierto en ubicación de país y de capital (A y B) - a repensar más adelante)
 *   Tabla de países con indicadores de dominio por tipo de juego (E, C, D, F, A, B).
-*   Indicadores visuales por celda: dominado, en progreso, necesita refuerzo, sin datos.
+*   Indicadores visuales por celda:
+    - **✓ verde** — Dominado (racha ≥ 1 por intento propio, o por inferencia ascendente: A→E, B→C/D/F).
+    - **✓ gris** — Heredado del nivel anterior (ver § Herencia de progreso entre niveles). Solo visible en mochilero y guía.
+    - **● gris** — En progreso (tiene intentos, racha = 0).
+    - **▼ rojo** — Necesita refuerzo (racha < 0).
+    - **—** — Sin datos.
+*   La tabla muestra los datos **con herencia aplicada** (lo mismo que usa el algoritmo de juego), no solo los datos propios. Esto garantiza que lo que el usuario ve coincida con lo que el algoritmo utiliza para seleccionar preguntas.
 *   Totales agregados: aciertos y fallos globales del nivel-continente.
 
 ### Acciones
