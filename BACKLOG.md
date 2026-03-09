@@ -62,6 +62,10 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
+### Estadísticas y algoritmo
+- [ ] ✓ gris para inferencia intra-nivel: A dominado → E gris; B dominado → C/D/F grises (ver DESIGN.md § Inferencia ascendente). Actualizar leyenda de "Heredado" a "Inferido"
+- [ ] Bug: modo tipo concreto (C/D/E/F) con pocos países pendientes genera opciones sin distractores suficientes. Repro: jugar tipo C en África-Mochilero hasta dominar 32/33 → al regenerar la cola para el último país, `generateQuestionsByType` pasa solo los países pendientes a los generadores batch, que los usan como pool de distractores → `pickOptions` devuelve 1 opción en vez de 4. Fix: pasar todos los países del nivel como pool de distractores, no solo los pendientes
+
 ### Jugar
 - [ ] Modal completar tipo E/C/D/F: texto motivador ("¡Fenomenal! X superado", nombre en cursiva), quitar resumen aciertos/fallos, botones sin jerarquía visual ("Jugar X" / "Jugar Aventura", cursiva), "Seleccionar otro" en vez de "Volver al selector"
 - [ ] Invitación a sello tipo A/B: corregir — si el usuario domina 100% en A o B, invitar al sello (no a tipos anteriores no dominados como D o F)

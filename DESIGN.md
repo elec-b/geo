@@ -154,6 +154,8 @@ Un solo acierto (racha ≥ 1) basta para considerar un país **dominado** en un 
 *   Acierto en **A** (localizar país) → domina **E** (reconocer país).
 *   Acierto en **B** (localizar capital) → domina **C**, **D** y **F** (conocer capital).
 
+En la tabla de estadísticas, los tipos dominados por inferencia se muestran con **✓ gris** (no verde), porque el usuario no los ha verificado directamente. Si el usuario luego acierta el tipo inferido de forma directa, el ✓ gris pasa a verde.
+
 #### Etapa de aprendizaje por país (modo Aventura)
 
 En modo Aventura, cada país tiene una **etapa de aprendizaje** que determina qué tipo de pregunta priorizar:
@@ -262,7 +264,7 @@ Cuando el usuario desbloquea un nuevo nivel (tras conseguir ambos sellos del niv
 
 **Mecanismo**: La herencia se calcula en **tiempo de lectura** (derivación), no se materializa como datos persistidos. Al consultar los intentos de un nivel, se mezclan los datos propios con los heredados del nivel anterior. Los datos propios siempre tienen prioridad. El trigger es la **existencia de ambos sellos** del nivel anterior (no los datos de intentos).
 
-**Visibilidad**: Los países heredados se distinguen en la tabla de estadísticas con un **indicador diferenciado** (✓ gris), distinto del dominio verificado (✓ verde). Esto permite al usuario saber qué países ha verificado personalmente en el nuevo nivel y cuáles mantienen crédito del nivel anterior.
+**Visibilidad**: Los países heredados se muestran con **✓ gris** en la tabla de estadísticas, al igual que cualquier tipo dominado por inferencia ascendente (ver § Estadísticas > Contenido). La semántica es la misma: dominio no verificado directamente. El usuario distingue lo que ha probado personalmente (✓ verde) de lo inferido (✓ gris).
 
 **Impacto en el juego**:
 *   **Tipos C, D, E y F**: Los países heredados **no se preguntan** en estos tipos. La herencia proviene de haber superado las pruebas de sello (A y B con 0 errores), lo que implica dominio suficiente de los tipos inferiores por inferencia ascendente.
@@ -345,8 +347,8 @@ Vista que muestra el registro de intentos del usuario de forma visual. Accesible
 *   Selector de nivel × continente. (Nota: de momento se deja esto así, para facilitar el debugging; pero en el futuro seguramente nos sirva una lista sencilla de países y saber e.g. el % de acierto en ubicación de país y de capital (A y B) - a repensar más adelante)
 *   Tabla de países con indicadores de dominio por tipo de juego (E, C, D, F, A, B).
 *   Indicadores visuales por celda:
-    - **✓ verde** — Dominado (racha ≥ 1 por intento propio, o por inferencia ascendente: A→E, B→C/D/F).
-    - **✓ gris** — Heredado del nivel anterior (ver § Herencia de progreso entre niveles). Solo visible en mochilero y guía.
+    - **✓ verde** — Dominado por intento propio (racha ≥ 1 en ese tipo específico, con datos propios del nivel actual).
+    - **✓ gris** — Dominado por inferencia, no verificado directamente. Incluye dos casos: (1) inferencia ascendente dentro del mismo nivel (A dominado → E inferido; B dominado → C/D/F inferidos), y (2) herencia entre niveles (ver § Herencia de progreso entre niveles).
     - **● gris** — En progreso (tiene intentos, racha = 0).
     - **▼ rojo** — Necesita refuerzo (racha < 0).
     - **—** — Sin datos.
