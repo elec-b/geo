@@ -112,14 +112,14 @@ Si el usuario pulsa Empezar sin elegir tipo, juega en modo **Aventura**: todos l
 *   La selección de tipo se basa en la etapa de aprendizaje de cada país. La progresión natural lleva de E (reconocimiento) hacia A/B (preparación sello), pero el ritmo se adapta individualmente a cada país.
 *   El algoritmo pondera más los tipos que el usuario necesita reforzar (ver § Algoritmo de aprendizaje).
 *   Dentro del modo Aventura, el usuario puede probar A y B como **simulacro** de las pruebas de sello.
-*   **Barra de progreso**: «X de Y países listos para sello». Cuando se completa → mensaje invitando al usuario a intentar las pruebas.
+*   **Barra de progreso**: «XX% completado» (ver § Barra de progreso para detalle del cálculo).
 
 ### Modo tipo concreto
 
 El usuario elige un tipo específico y juega exclusivamente ese tipo.
 
 *   **Barra de progreso**: «X de Y países dominados» en ese tipo para el nivel-continente actual.
-*   Si el usuario domina todos los países del continente en ese nivel para ese tipo → mensaje de felicitación con sugerencia de siguiente paso (ver § Detección de preparación para sello).
+*   Si el usuario domina todos los países del continente en ese nivel para ese tipo → modal de fin de sesión con felicitación y sugerencia de siguiente paso (ver § Modal de fin de sesión).
 
 ### Algoritmo de aprendizaje
 
@@ -192,13 +192,13 @@ Los países que dominan su etapa actual **no se preguntan** (ver § Etapa de apr
 
 **Excepción anti-monotonía**: Si quedan ≤ 2 países pendientes en el pool activo, se intercala con un **país compañero** elegido entre los ya dominados — el que peor precisión histórica tenga (el que más le costó en el pasado). Esto evita la repetición obsesiva de los mismos 1-2 países.
 
-**Fin de pool**: Cuando todos los países dominan su etapa actual, la sesión muestra un mensaje de felicitación contextual e invita al usuario a avanzar (prueba de sello si está en etapa 3, seguir jugando si no).
+**Fin de pool**: Cuando todos los países dominan su etapa actual, se muestra el **modal de fin de sesión** (ver § Modal de fin de sesión).
 
 **2. Selección de tipo**: Según la etapa del país. Si la etapa tiene varios tipos (ej. etapa 2: C, D, F), se prioriza el tipo no dominado con peor racha.
 
 **3. Anti-repetición**: Un país no se repite hasta que se hayan preguntado al menos otros N países, donde N = mín(3, pool_activo / 2). El buffer se calcula sobre el pool activo (no el total de países), garantizando alternancia incluso con pools reducidos.
 
-**En modo tipo concreto**: Misma cola de prioridad con tipo fijo. Los países dominados en ese tipo salen del pool. Al dominar todos → mensaje de felicitación.
+**En modo tipo concreto**: Misma cola de prioridad con tipo fijo. Los países dominados en ese tipo salen del pool. Al dominar todos → modal de fin de sesión.
 
 #### Barra de progreso
 
@@ -225,34 +225,35 @@ Los países que dominan su etapa actual **no se preguntan** (ver § Etapa de apr
 *   Texto: «XX% completado».
 *   La barra refleja el estado real en todo momento (sin high-water mark). Las bajadas por regresión se suavizan con animación.
 *   Países avanzados por avance colectivo sin haber sido testeados: reciben el crédito de la etapa que saltaron (para que la barra no contradiga el avance del algoritmo).
-*   Cuando quedan ≤ 2 países pendientes en el pool: mensaje contextual con el nombre del país que falta.
 
 **En modo tipo concreto**:
 *   Métrica: países con dominio en ese tipo (racha ≥ 1).
 *   Texto: «X de Y países dominados».
-*   Al completarse → mensaje de felicitación.
 
-**Elementos comunes**: barra visual (0-100%), contador de sesión (aciertos/fallos), botón salir.
+**Elementos comunes**: barra visual (0-100%), contador de sesión (aciertos/fallos). La barra de progreso **solo muestra datos** — no contiene banners ni mensajes contextuales. Toda comunicación de hitos (felicitaciones, invitaciones a sello, sugerencias de progresión) se gestiona mediante el modal de fin de sesión.
 
-#### Detección de preparación para sello
+#### Modal de fin de sesión
 
-**En modo Aventura**:
-*   Criterio: **100%** de los países dominan A y B (racha ≥ 1 en ambos).
-*   Cuando se cumple → mensaje de invitación a las pruebas de sello.
+Se muestra cuando el pool de preguntas se agota (todos los países dominan la etapa/tipo actual). Es el **único canal** para comunicar hitos al usuario. Tres variantes según el modo de juego:
+
+**Modo Aventura**:
+*   El pool se agota cuando el 100% de los países dominan A y B (barra al 100%). Esto equivale a estar listo para las pruebas de sello.
+*   Título motivador + invitación a prueba de sello (elegir Países o Capitales).
+*   Botón de cierre: «Seleccionar otro».
 *   El usuario puede intentar las pruebas antes (siempre disponible desde Pasaporte).
 *   La prueba de sello verifica el **100%** de los países con **0 errores** — es la certificación real.
 
-**En modo tipo concreto A/B**:
-*   Al dominar el 100% de los países en tipo A (y el sello de países no está ganado) → invitación a la prueba de sello de países.
-*   Al dominar el 100% de los países en tipo B (y el sello de capitales no está ganado) → invitación a la prueba de sello de capitales.
-*   Si el sello correspondiente ya está ganado → felicitación simple.
+**Modo tipo concreto A/B**:
+*   Si el sello correspondiente no está ganado: título motivador («¡Fenomenal! *[tipo]* superado») + invitación a la prueba de sello (Países o Capitales según el tipo).
+*   Si el sello ya está ganado: título motivador + solo botón «Seleccionar otro».
 
-**En modo tipo concreto E/C/D/F**:
-*   Al dominar el 100% de los países → felicitación con sugerencia de progresión y dos botones al mismo nivel (sin jerarquía visual):
-    - «Jugar [siguiente tipo]» — inicia directamente el siguiente tipo no dominado, según la progresión pedagógica: primero tipos no dominados de la misma etapa, luego de la siguiente (E → C/D/F → A/B). Dentro de una etapa con varios tipos, se sugiere el que menos progreso tenga.
-    - «Aventura» — cambia al modo guiado.
-    - El usuario puede cerrar sin elegir (dismiss).
-*   Si todos los tipos (E/C/D/F/A/B) están dominados → felicitación simple sin sugerencia (las invitaciones a sello se gestionan en las secciones anteriores).
+**Modo tipo concreto E/C/D/F**:
+*   Título motivador: «¡Fenomenal! *[tipo]* superado» (nombre del tipo en cursiva).
+*   Dos botones al mismo nivel (sin jerarquía visual):
+    - «Jugar *[siguiente tipo]*» — siguiente tipo no dominado según progresión pedagógica (primero tipos de la misma etapa, luego de la siguiente: E → C/D/F → A/B). Solo visible si existe un tipo no dominado.
+    - «Jugar *Aventura*» — cambia al modo guiado.
+*   Botón de cierre: «Seleccionar otro».
+*   Si todos los tipos (E/C/D/F/A/B) están dominados: título motivador + solo botón «Seleccionar otro» (las invitaciones a sello se gestionan en A/B).
 
 #### Herencia de progreso entre niveles
 
