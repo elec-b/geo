@@ -49,7 +49,7 @@
 .progress-bar__row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: var(--spacing-md);
 }
 
@@ -67,25 +67,6 @@
 
 .progress-bar__incorrect {
   color: var(--color-error);
-}
-
-.progress-bar__exit {
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--glass-border);
-  background: transparent;
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-xs);
-  font-family: var(--font-family);
-  font-weight: 500;
-  cursor: pointer;
-  transition: background var(--transition-fast), color var(--transition-fast);
-  -webkit-tap-highlight-color: transparent;
-}
-
-.progress-bar__exit:active {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--color-text-primary);
 }
 
 /* Banners de estado */

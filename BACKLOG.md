@@ -57,6 +57,9 @@
 - [x] Alinear estadísticas con algoritmo de juego: fix bug tipo concreto (cola sin filtrar dominados), stats con herencia aplicada, heredados solo A/B con prioridad baja
 - [x] ✓ gris para inferencia intra-nivel: A dominado → E gris; B dominado → C/D/F grises. Leyenda "Heredado" → "Inferido"
 - [x] Fix distractores insuficientes en modo tipo concreto (C/D/E/F): pool de distractores usa todos los países del nivel, no solo los pendientes
+- [x] Quitar botón "salir" de la barra de progreso; re-tocar tab "Jugar" vuelve al selector
+- [x] Pre-selección nivel: siempre se pre-selecciona el máximo nivel desbloqueado (al montar y al cambiar continente)
+- [x] Botón "Continuar" cuando el continente-nivel tiene intentos previos (en vez de siempre "Empezar")
 
 ---
 
@@ -65,15 +68,13 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Jugar
-- [ ] Quitar botón "salir" de la barra de progreso; usar tab bar "Jugar" para volver al selector
-- [ ] Pre-selección nivel: verificar que se pre-selecciona el máximo nivel desbloqueado
-- [ ] Cuando un juego de un continente-nivel ya se ha jugado parcialmente, el botón inferior, en vez de mostrar "empezar" debe mostrar "reanudar" o "continuar" o algo así (piensa bien la palabra)
 - [ ] Modal completar tipo E/C/D/F: texto motivador ("¡Fenomenal! X superado", X en cursiva), quitar resumen aciertos/fallos, botones sin jerarquía visual ("Jugar X" / "Jugar Aventura", cursiva), "Seleccionar otro" en vez de "Volver al selector"
 - [ ] Indicar niveles superados en el selector (estilo visual sencillo, similar al toast de nivel bloqueado)
 - [ ] Invitación a sello tipo A/B: corregir — si el usuario domina 100% en A o B, invitar a la prueba de sello (no a tipos anteriores no dominados como D o F)
 - [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital.
 - [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
 - [ ] Zoom en Oceanía en A (comprobar también en E): no se muestra el continente completo, hay que alejar un poco más para que se vea completo en pantalla. Verificar antes coherencia con la regla que tenemos de hacer zoom out solo si no se ve el país. Discutir antes de implementar.
+- [ ] Al jugar en A/B: si se selecciona un país que no aparece completo en pantalla (i.e. solo aparece parte de su territorio), mostrarlo por completo. Por ejemplo, en el juego E se hace algo así (y creo que también en C/D/F, pero no estoy tan seguro de esto - pregúntame si tienes dudas antes de implementar)
 
 ### Estadísticas
 - [ ] Quitar contadores de aciertos/fallos del bottom
@@ -89,6 +90,7 @@
 
 ### Pasaporte
 - [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar
+- [ ] Cuando el usuario no tiene un nivel global, no mostrar el texto "Sin nivel global"
 
 ### UX general
 - [ ] Bottom sheets (configuración y ficha de país): añadir handle + implementar drag-to-dismiss

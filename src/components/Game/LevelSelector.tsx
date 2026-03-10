@@ -41,6 +41,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
   const lastPlayed = useAppStore((s) => s.settings.lastPlayed);
   const getStamps = useAppStore((s) => s.getStamps);
   const activeProfile = useAppStore((s) => s.getActiveProfile());
+  const getAttempts = useAppStore((s) => s.getAttempts);
 
   const [selectedType, setSelectedType] = useState<QuestionTypeFilter>('mixed');
   const [lockedToast, setLockedToast] = useState<string | null>(null);
@@ -59,14 +60,11 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
 
   // Defaults: lastPlayed > timezone
   const defaultContinent = lastPlayed?.continent ?? inferContinentFromTimezone();
+  // Siempre pre-seleccionar el máximo nivel desbloqueado
   const defaultLevel = useMemo(() => {
-    if (!lastPlayed?.level) return 'turista' as GameLevel;
-    // Verificar que el nivel esté desbloqueado para el continente default
-    if (isLevelUnlocked(lastPlayed.level, defaultContinent, stampsData)) return lastPlayed.level;
-    // Bajar al máximo desbloqueado
     const unlocked = [...LEVELS].reverse().find((l) => isLevelUnlocked(l.id, defaultContinent, stampsData));
-    return unlocked?.id ?? 'turista' as GameLevel;
-  }, [lastPlayed, defaultContinent, stampsData]);
+    return unlocked?.id ?? ('turista' as GameLevel);
+  }, [defaultContinent, stampsData]);
 
   const [selectedContinent, setSelectedContinent] = useState<Continent | null>(defaultContinent);
   const [selectedLevel, setSelectedLevel] = useState<GameLevel>(defaultLevel);
@@ -85,12 +83,9 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
     (continent: Continent) => {
       setSelectedContinent(continent);
       onContinentSelect(continent);
-      // Si el nivel actual está bloqueado para este continente, bajar al máximo desbloqueado
-      if (!isLevelUnlocked(selectedLevel, continent, stampsData)) {
-        // Buscar el máximo nivel desbloqueado
-        const unlocked = [...LEVELS].reverse().find((l) => isLevelUnlocked(l.id, continent, stampsData));
-        if (unlocked) setSelectedLevel(unlocked.id);
-      }
+      // Siempre seleccionar el máximo nivel desbloqueado para el nuevo continente
+      const unlocked = [...LEVELS].reverse().find((l) => isLevelUnlocked(l.id, continent, stampsData));
+      if (unlocked) setSelectedLevel(unlocked.id);
     },
     [onContinentSelect, selectedLevel, stampsData],
   );
@@ -180,12 +175,14 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
           <div className="level-selector__toast">{lockedToast}</div>
         )}
 
-        {/* Botón empezar */}
+        {/* Botón empezar / continuar */}
         <button
           className={`level-selector__start ${!selectedContinent ? 'level-selector__start--disabled' : ''}`}
           onClick={handleStart}
         >
-          Empezar
+          {selectedContinent && Object.keys(getAttempts(selectedLevel, selectedContinent)).length > 0
+            ? 'Continuar'
+            : 'Empezar'}
         </button>
       </div>
     </div>

@@ -36,6 +36,7 @@ const DEFAULT_GLOBE_CONTROL: GlobeControlProps = {
 function App() {
   const [globeReady, setGlobeReady] = useState(false);
   const [activeTab, setActiveTab] = useState<TabId>('explore');
+  const [jugarResetSignal, setJugarResetSignal] = useState(0);
   const [showStats, setShowStats] = useState(false);
   const showMarkers = useAppStore((s) => s.settings.showMarkers);
 
@@ -65,6 +66,14 @@ function App() {
 
   // Prueba de sello lanzada desde Pasaporte
   const [stampTestRequest, setStampTestRequest] = useState<StampTestRequest | null>(null);
+
+  // Re-tocar tab Jugar → volver al selector
+  const handleTabChange = useCallback((tab: TabId) => {
+    if (tab === 'play' && activeTab === 'play') {
+      setJugarResetSignal((s) => s + 1);
+    }
+    setActiveTab(tab);
+  }, [activeTab]);
 
   // Callback para lanzar prueba de sello desde Pasaporte → cambia a tab Jugar
   const handleStartStampTest = useCallback(
@@ -192,6 +201,7 @@ function App() {
           onCountryClickRef={jugarClickRef}
           stampTestRequest={stampTestRequest}
           onStampTestDone={handleStampTestDone}
+          resetSignal={jugarResetSignal}
         />
       )}
 
@@ -247,7 +257,7 @@ function App() {
         />
       )}
 
-      <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
+      <TabBar activeTab={activeTab} onTabChange={handleTabChange} />
     </>
   );
 }

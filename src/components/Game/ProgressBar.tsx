@@ -6,7 +6,6 @@ interface ProgressBarProps {
   progressCurrent: number;
   progressTotal: number;
   score: GameScore;
-  onExit: () => void;
   readyForStamp: boolean;
   /** Invitación a sello desde tipo concreto A/B */
   readyForStampType?: 'countries' | 'capitals' | null;
@@ -20,7 +19,7 @@ interface ProgressBarProps {
 }
 
 export function ProgressBar({
-  progressCurrent, progressTotal, score, onExit,
+  progressCurrent, progressTotal, score,
   readyForStamp, readyForStampType, isAdventure, isStampTest, stampTestType, onStampBannerClick,
 }: ProgressBarProps) {
   const pct = progressTotal > 0 ? Math.min((progressCurrent / progressTotal) * 100, 100) : 0;
@@ -80,9 +79,6 @@ export function ProgressBar({
           <span className="progress-bar__correct">{'\u2713'} {score.correct}</span>
           <span className="progress-bar__incorrect">{'\u2717'} {score.incorrect}</span>
         </div>
-        <button className="progress-bar__exit" onClick={onExit}>
-          Salir
-        </button>
       </div>
     </div>
   );

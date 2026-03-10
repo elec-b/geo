@@ -59,6 +59,8 @@ interface JugarViewProps {
   stampTestRequest?: StampTestRequest | null;
   /** Callback cuando la prueba de sello termina (para volver a Pasaporte si viene de ahí) */
   onStampTestDone?: () => void;
+  /** Signal para resetear al selector (se incrementa al re-tocar tab Jugar) */
+  resetSignal?: number;
 }
 
 export function JugarView({
@@ -70,6 +72,7 @@ export function JugarView({
   onCountryClickRef,
   stampTestRequest,
   onStampTestDone,
+  resetSignal,
 }: JugarViewProps) {
   const [screen, setScreen] = useState<JugarScreen>('selector');
 
@@ -611,6 +614,13 @@ export function JugarView({
     setFlyOutStep('idle');
   }, [session]);
 
+  // Reset al selector cuando se re-toca el tab Jugar
+  useEffect(() => {
+    if (resetSignal && screen !== 'selector') {
+      handleExit();
+    }
+  }, [resetSignal]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // --- Secuencia temporal para feedback de dos pasos (A/B error) ---
 
   useEffect(() => {
@@ -781,7 +791,6 @@ export function JugarView({
         progressCurrent={session.stampTestProgress ? session.stampTestProgress.current : progress.current}
         progressTotal={session.stampTestProgress ? session.stampTestProgress.total : progress.total}
         score={session.score}
-        onExit={handleExit}
         readyForStamp={readyForStamp}
         readyForStampType={readyForStampType}
         isAdventure={activeQuestionTypeRef.current === 'mixed'}
