@@ -744,7 +744,7 @@ export function JugarView({
   const nextSuggestedType = useMemo((): QuestionType | null => {
     if (!showPoolExhausted) return null;
     const qt = activeQuestionTypeRef.current;
-    if (qt === 'mixed') return null;
+    if (qt === 'mixed' || qt === 'A' || qt === 'B') return null;
     if (!session.level || !session.continent) return null;
     const att = getAttempts(session.level, session.continent);
     const def = levels.get(`${session.level}-${session.continent}`);
@@ -907,44 +907,84 @@ export function JugarView({
       )}
 
       {/* Modal: pool de preguntas agotado */}
-      {showPoolExhausted && (
-        <div className="jugar-modal-overlay">
-          <div className="jugar-modal">
-            <h3 className="jugar-modal__title">
-              {activeQuestionTypeRef.current === 'mixed'
-                ? 'Etapa completada'
-                : `Has dominado ${QUESTION_TYPE_LABELS[activeQuestionTypeRef.current as QuestionType] ?? 'este tipo'}`}
-            </h3>
-            <p className="jugar-modal__text">
-              {session.score.correct} aciertos, {session.score.incorrect} fallos en esta sesión.
-            </p>
-            <div className="jugar-modal__buttons">
-              {nextSuggestedType && (
-                <button
-                  className="jugar-modal__btn jugar-modal__btn--primary"
-                  onClick={() => handleStartSuggestedType(nextSuggestedType)}
-                >
-                  Jugar {QUESTION_TYPE_LABELS[nextSuggestedType]}
+      {showPoolExhausted && (() => {
+        const qt = activeQuestionTypeRef.current;
+        const isAB = qt === 'A' || qt === 'B';
+        const typeLabel = QUESTION_TYPE_LABELS[qt as QuestionType] ?? 'este tipo';
+
+        // Rama Aventura (sin cambios)
+        if (qt === 'mixed') return (
+          <div className="jugar-modal-overlay">
+            <div className="jugar-modal">
+              <h3 className="jugar-modal__title">Etapa completada</h3>
+              <p className="jugar-modal__text">
+                {session.score.correct} aciertos, {session.score.incorrect} fallos en esta sesión.
+              </p>
+              <div className="jugar-modal__buttons">
+                <button className="jugar-modal__cancel" onClick={handlePoolExhaustedClose}>
+                  Seleccionar otro
                 </button>
-              )}
-              {activeQuestionTypeRef.current !== 'mixed' && (
-                <button
-                  className={`jugar-modal__btn${!nextSuggestedType ? ' jugar-modal__btn--primary' : ''}`}
-                  onClick={handleStartAdventure}
-                >
-                  Aventura
-                </button>
-              )}
-              <button
-                className="jugar-modal__cancel"
-                onClick={handlePoolExhaustedClose}
-              >
-                Volver al selector
-              </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        );
+
+        // Rama A/B — invitación a sello o felicitación
+        if (isAB) return (
+          <div className="jugar-modal-overlay">
+            <div className="jugar-modal">
+              <h3 className="jugar-modal__title">
+                ¡Fenomenal!<br /><em>{typeLabel}</em> superado
+              </h3>
+              {readyForStampType && (
+                <p className="jugar-modal__text">
+                  Estás listo para la prueba de sello. Complétala sin errores para conseguirlo.
+                </p>
+              )}
+              <div className="jugar-modal__buttons">
+                {readyForStampType && (
+                  <button
+                    className={`jugar-modal__btn jugar-modal__btn--${readyForStampType === 'countries' ? 'countries' : 'capitals'}`}
+                    onClick={() => handleStartStampTest(readyForStampType)}
+                  >
+                    Intentar sello de {readyForStampType === 'countries' ? 'Países' : 'Capitales'}
+                  </button>
+                )}
+                <button className="jugar-modal__cancel" onClick={handlePoolExhaustedClose}>
+                  Seleccionar otro
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+
+        // Rama E/C/D/F — felicitación con sugerencia de progresión
+        return (
+          <div className="jugar-modal-overlay">
+            <div className="jugar-modal">
+              <h3 className="jugar-modal__title">
+                ¡Fenomenal!<br /><em>{typeLabel}</em> superado
+              </h3>
+              <div className="jugar-modal__buttons">
+                {nextSuggestedType && (
+                  <button
+                    className="jugar-modal__btn"
+                    onClick={() => handleStartSuggestedType(nextSuggestedType)}
+                  >
+                    Jugar <em>{QUESTION_TYPE_LABELS[nextSuggestedType]}</em>
+                  </button>
+                )}
+                <button className="jugar-modal__btn" onClick={handleStartAdventure}>
+                  Jugar <em>Aventura</em>
+                </button>
+                <button className="jugar-modal__cancel" onClick={handlePoolExhaustedClose}>
+                  Seleccionar otro
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </>
   );
 }

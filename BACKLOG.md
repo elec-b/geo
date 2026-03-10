@@ -62,6 +62,8 @@
 - [x] Botón "Continuar" cuando el continente-nivel tiene intentos previos (en vez de siempre "Empezar")
 - [x] Indicar niveles superados en selector ("Superado 🏅"), banner invitación a sello clickable (abre modal de prueba)
 - [x] Fix barra de progreso Aventura: inferencia ascendente en crédito (A→E, B→C/D/F) + avance colectivo excluye heredados
+- [x] Modal completar tipo E/C/D/F: texto motivador, quitar resumen aciertos/fallos, botones sin jerarquía, "Seleccionar otro"
+- [x] Invitación a sello tipo A/B: invitar a prueba de sello (no a tipos anteriores)
 
 ---
 
@@ -70,8 +72,6 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Jugar
-- [ ] Modal completar tipo E/C/D/F: texto motivador ("¡Fenomenal! X superado", X en cursiva), quitar resumen aciertos/fallos, botones sin jerarquía visual ("Jugar X" / "Jugar Aventura", cursiva), "Seleccionar otro" en vez de "Volver al selector"
-- [ ] Invitación a sello tipo A/B: corregir — si el usuario domina 100% en A o B, invitar a la prueba de sello (no a tipos anteriores no dominados como D o F)
 - [ ] Repasar reglas de zoom en A y en B (y lo mismo para las pruebas de sello): si el país se ve completo en pantalla (o si la capital se ve), no hace falta hacer zoom out. Si no se ve, entonces sí que hacemos zoom-out al contiente completo. Racional: al jugar América-mochilero, en aventura, cuando me tocaban los juegos A o B, tenía que hacer constantemente zoom-in a centro américa o islas de las Antillas, incluso si había seleccionado antes un país/capital que estaba al lado; es un poco incómodo. En resumen: solo hacer zoom-out al contiente si es necesario.
 - [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital.
 - [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
@@ -94,6 +94,7 @@
 ### Pasaporte
 - [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar
 - [ ] Cuando el usuario no tiene un nivel global, no mostrar el texto "Sin nivel global"
+- [ ] Pensar si quiero dar la posibilidad al usario de borrar sus sellos/medallas del pasaporte. En caso afirmativo, documentar en design.md antes de implementar.
 
 ### UX general
 - [ ] Bottom sheets (configuración y ficha de país): añadir handle + implementar drag-to-dismiss
