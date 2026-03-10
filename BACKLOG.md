@@ -56,15 +56,13 @@
 - [x] Estadísticas: reset inmediato, default inteligente (último continente-nivel jugado), labels abreviados con tooltip
 - [x] Alinear estadísticas con algoritmo de juego: fix bug tipo concreto (cola sin filtrar dominados), stats con herencia aplicada, heredados solo A/B con prioridad baja
 - [x] ✓ gris para inferencia intra-nivel: A dominado → E gris; B dominado → C/D/F grises. Leyenda "Heredado" → "Inferido"
+- [x] Fix distractores insuficientes en modo tipo concreto (C/D/E/F): pool de distractores usa todos los países del nivel, no solo los pendientes
 
 ---
 
 ## Próximos pasos
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
-
-### Estadísticas y algoritmo
-- [ ] Bug: modo tipo concreto (C/D/E/F) con pocos países pendientes genera opciones sin distractores suficientes. Repro: jugar tipo C en África-Mochilero hasta dominar 32/33 → al regenerar la cola para el último país, `generateQuestionsByType` pasa solo los países pendientes a los generadores batch, que los usan como pool de distractores → `pickOptions` devuelve 1 opción en vez de 4. Fix: pasar todos los países del nivel como pool de distractores, no solo los pendientes
 
 ### Jugar
 - [ ] Modal completar tipo E/C/D/F: texto motivador ("¡Fenomenal! X superado", nombre en cursiva), quitar resumen aciertos/fallos, botones sin jerarquía visual ("Jugar X" / "Jugar Aventura", cursiva), "Seleccionar otro" en vez de "Volver al selector"
@@ -81,6 +79,8 @@
 - [ ] Quitar contadores de aciertos/fallos del bottom
 - [ ] Botón toggle para mostrar % de acierto por país (en vez de iconos de dominio).
 - [ ] Añadir otra tabla para mostrar resultados en pruebas de sello. Pensar bien el diseño antes y anotar en design.md (queremos mostrar tick o cross, de manera similar a las de los juegos? Queremos mostrar % de acierto? Ambas cosas?)
+  - Además, ahora mismo las estadísticas de las pruebas de sello y las de jugar a A o B, creo que están vinculadas/relacionadas. Esto implicaría desvincularlas. Si esto es así, es otra razón de alto peso, para diseñar y anotar bien en design.md antes de implementar absolutamente nada.
+  - Además, si el usuario está haciendo una prueba de sello, las estadísticas deben mostrar el nivel-continente correspondiente en la (nueva) tabla de pruebas de sello. Otra buena razón para diseñar bien en design.md
 
 ### Explorar
 - [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigar por qué y corregir (también "impactará" en Jugar, obviamente)

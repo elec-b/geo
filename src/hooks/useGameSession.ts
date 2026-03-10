@@ -134,7 +134,7 @@ export function useGameSession(
         const pending = def.countries.filter((cca2) => !isDominated(attempts[cca2], qt as QuestionType));
         if (pending.length === 0) return null; // pool agotado
         const lastCca2 = recentCountriesRef.current[recentCountriesRef.current.length - 1];
-        questionsRef.current = generateQuestionsByType(qt, pending, countries, capitals, lastCca2);
+        questionsRef.current = generateQuestionsByType(qt, pending, countries, capitals, lastCca2, def.countries);
       }
       const question = questionsRef.current.shift() ?? null;
       if (question) {
@@ -205,7 +205,7 @@ export function useGameSession(
         const attempts = getAttemptsRef.current?.() ?? {};
         const pending = def.countries.filter((cca2) => !isDominated(attempts[cca2], questionType as QuestionType));
         if (pending.length > 0) {
-          questionsRef.current = generateQuestionsByType(questionType, pending, countries, capitals);
+          questionsRef.current = generateQuestionsByType(questionType, pending, countries, capitals, undefined, def.countries);
         }
       }
 

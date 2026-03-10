@@ -76,9 +76,10 @@ export function generateQuestionsTypeB(
 export function generateQuestionsTypeC(
   levelCountries: string[],
   countries: Map<string, CountryData>,
+  distractorPool?: string[],
 ): GameQuestion[] {
-  // Recoger las capitales de todos los países del nivel
-  const allCapitals = levelCountries
+  // Recoger las capitales del pool de distractores (todos los países del nivel)
+  const allCapitals = (distractorPool ?? levelCountries)
     .map((cca2) => countries.get(cca2)?.capital)
     .filter((c): c is string => !!c);
 
@@ -100,8 +101,9 @@ export function generateQuestionsTypeC(
 export function generateQuestionsTypeD(
   levelCountries: string[],
   countries: Map<string, CountryData>,
+  distractorPool?: string[],
 ): GameQuestion[] {
-  const allNames = levelCountries
+  const allNames = (distractorPool ?? levelCountries)
     .map((cca2) => countries.get(cca2)?.name)
     .filter((n): n is string => !!n);
 
@@ -123,8 +125,9 @@ export function generateQuestionsTypeD(
 export function generateQuestionsTypeE(
   levelCountries: string[],
   countries: Map<string, CountryData>,
+  distractorPool?: string[],
 ): GameQuestion[] {
-  const allNames = levelCountries
+  const allNames = (distractorPool ?? levelCountries)
     .map((cca2) => countries.get(cca2)?.name)
     .filter((n): n is string => !!n);
 
@@ -144,8 +147,9 @@ export function generateQuestionsTypeE(
 export function generateQuestionsTypeF(
   levelCountries: string[],
   countries: Map<string, CountryData>,
+  distractorPool?: string[],
 ): GameQuestion[] {
-  const allCapitals = levelCountries
+  const allCapitals = (distractorPool ?? levelCountries)
     .map((cca2) => countries.get(cca2)?.capital)
     .filter((c): c is string => !!c);
 
@@ -176,8 +180,10 @@ export function generateQuestionsByType(
   countries: Map<string, CountryData>,
   capitals: Map<string, CapitalCoords>,
   lastAskedCca2?: string,
+  distractorPool?: string[],
 ): GameQuestion[] {
   let questions: GameQuestion[];
+  const pool = distractorPool ?? levelCountries;
 
   switch (type) {
     case 'A':
@@ -187,16 +193,16 @@ export function generateQuestionsByType(
       questions = generateQuestionsTypeB(levelCountries, capitals);
       break;
     case 'C':
-      questions = generateQuestionsTypeC(levelCountries, countries);
+      questions = generateQuestionsTypeC(levelCountries, countries, pool);
       break;
     case 'D':
-      questions = generateQuestionsTypeD(levelCountries, countries);
+      questions = generateQuestionsTypeD(levelCountries, countries, pool);
       break;
     case 'E':
-      questions = generateQuestionsTypeE(levelCountries, countries);
+      questions = generateQuestionsTypeE(levelCountries, countries, pool);
       break;
     case 'F':
-      questions = generateQuestionsTypeF(levelCountries, countries);
+      questions = generateQuestionsTypeF(levelCountries, countries, pool);
       break;
   }
 
