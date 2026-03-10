@@ -55,6 +55,7 @@
 - [x] Conflicto Italia/Vaticano resuelto (tap en microestado acepta país grande)
 - [x] Estadísticas: reset inmediato, default inteligente (último continente-nivel jugado), labels abreviados con tooltip
 - [x] Alinear estadísticas con algoritmo de juego: fix bug tipo concreto (cola sin filtrar dominados), stats con herencia aplicada, heredados solo A/B con prioridad baja
+- [x] ✓ gris para inferencia intra-nivel: A dominado → E gris; B dominado → C/D/F grises. Leyenda "Heredado" → "Inferido"
 
 ---
 
@@ -63,7 +64,6 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Estadísticas y algoritmo
-- [ ] ✓ gris para inferencia intra-nivel: A dominado → E gris; B dominado → C/D/F grises (ver DESIGN.md § Inferencia ascendente). Actualizar leyenda de "Heredado" a "Inferido"
 - [ ] Bug: modo tipo concreto (C/D/E/F) con pocos países pendientes genera opciones sin distractores suficientes. Repro: jugar tipo C en África-Mochilero hasta dominar 32/33 → al regenerar la cola para el último país, `generateQuestionsByType` pasa solo los países pendientes a los generadores batch, que los usan como pool de distractores → `pickOptions` devuelve 1 opción en vez de 4. Fix: pasar todos los países del nivel como pool de distractores, no solo los pendientes
 
 ### Jugar
@@ -74,11 +74,13 @@
 - [ ] Quitar botón "salir" de la barra de progreso; usar tab bar "Jugar" para volver al selector
 - [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital.
 - [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
+- [ ] Zoom en Oceanía en A (comprobar también en E): no se muestra el continente completo, hay que alejar un poco más para que se vea completo en pantalla. Verificar antes coherencia con la regla que tenemos de hacer zoom out solo si no se ve el país. Discutir antes de implementar.
 - [ ] Cuando un juego de un continente-nivel ya se ha jugado parcialmente, el botón inferior, en vez de mostrar "empezar" debe mostrar "reanudar" o "continuar" o algo así (piensa bien la palabra)
 
 ### Estadísticas
 - [ ] Quitar contadores de aciertos/fallos del bottom
-- [ ] Botón toggle para mostrar % de acierto por país (en vez de iconos de dominio)
+- [ ] Botón toggle para mostrar % de acierto por país (en vez de iconos de dominio).
+- [ ] Añadir otra tabla para mostrar resultados en pruebas de sello. Pensar bien el diseño antes y anotar en design.md (queremos mostrar tick o cross, de manera similar a las de los juegos? Queremos mostrar % de acierto? Ambas cosas?)
 
 ### Explorar
 - [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigar por qué y corregir (también "impactará" en Jugar, obviamente)

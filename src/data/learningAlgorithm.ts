@@ -141,6 +141,16 @@ export function isDominated(ca: CountryAttempts | undefined, type: QuestionType)
 }
 
 /**
+ * ¿Un país domina un tipo por intento directo (sin inferencia ascendente)?
+ * Útil para distinguir ✓ verde (directo) de ✓ gris (inferido) en estadísticas.
+ */
+export function isDirectlyDominated(ca: CountryAttempts | undefined, type: QuestionType): boolean {
+  if (!ca) return false;
+  const rec = ca[type];
+  return !!rec && rec.streak >= MASTERY_STREAK;
+}
+
+/**
  * Etapa individual de un país (1, 2 o 3) basada en su registro de intentos.
  * - Etapa 1: E no dominado
  * - Etapa 2: E dominado, pero C/D/F no todos dominados

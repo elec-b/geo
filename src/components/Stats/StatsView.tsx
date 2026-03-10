@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import type { CountryData, Continent, GameLevel, QuestionType, LevelDefinition } from '../../data/types';
 import type { CountryAttempts } from '../../stores/types';
-import { isDominated, getAttemptsWithInheritance } from '../../data/learningAlgorithm';
+import { isDominated, isDirectlyDominated, getAttemptsWithInheritance } from '../../data/learningAlgorithm';
 import { useAppStore } from '../../stores/appStore';
 import './StatsView.css';
 
@@ -18,10 +18,10 @@ interface StatsViewProps {
 }
 
 /** Indicador visual para una celda de la tabla */
-function CellIndicator({ ca, type, isInheritedType }: {
+function CellIndicator({ ca, type, isInferredType }: {
   ca: CountryAttempts | undefined;
   type: QuestionType;
-  isInheritedType: boolean;
+  isInferredType: boolean;
 }) {
   if (!ca) {
     return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
@@ -29,8 +29,8 @@ function CellIndicator({ ca, type, isInheritedType }: {
 
   // Dominio: check primero (la inferencia ascendente puede dominar sin rec directo)
   if (isDominated(ca, type)) {
-    return isInheritedType
-      ? <span className="stats-cell stats-cell--inherited">{'\u2713'}</span>
+    return isInferredType
+      ? <span className="stats-cell stats-cell--inferred">{'\u2713'}</span>
       : <span className="stats-cell stats-cell--dominated">{'\u2713'}</span>;
   }
 
@@ -177,13 +177,11 @@ export function StatsView({ countries, levels, onClose }: StatsViewProps) {
                   <tr key={cca2}>
                     <td className="stats-table__td-name">{name}</td>
                     {ALL_TYPES.map((t) => {
-                      // Heredado: dominado en merged pero no en propios (solo mochilero/guía)
-                      const isInheritedType = selectedLevel !== 'turista'
-                        && isDominated(ca, t)
-                        && !isDominated(ownCa, t);
+                      // Inferido: dominado (por inferencia ascendente o herencia) pero no directamente por el usuario
+                      const isInferredType = isDominated(ca, t) && !isDirectlyDominated(ownCa, t);
                       return (
                         <td key={t} className="stats-table__td-type">
-                          <CellIndicator ca={ca} type={t} isInheritedType={isInheritedType} />
+                          <CellIndicator ca={ca} type={t} isInferredType={isInferredType} />
                         </td>
                       );
                     })}
@@ -203,9 +201,7 @@ export function StatsView({ countries, levels, onClose }: StatsViewProps) {
         {/* Leyenda */}
         <div className="stats-legend">
           <span><span className="stats-cell stats-cell--dominated">{'\u2713'}</span> Dominado</span>
-          {selectedLevel !== 'turista' && (
-            <span><span className="stats-cell stats-cell--inherited">{'\u2713'}</span> Heredado</span>
-          )}
+          <span><span className="stats-cell stats-cell--inferred">{'\u2713'}</span> Inferido</span>
           <span><span className="stats-cell stats-cell--progress">{'\u25CF'}</span> En progreso</span>
           <span><span className="stats-cell stats-cell--reinforcement">{'\u25BC'}</span> Refuerzo</span>
           <span><span className="stats-cell stats-cell--empty">{'\u2014'}</span> Sin datos</span>
