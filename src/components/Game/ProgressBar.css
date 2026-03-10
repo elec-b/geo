@@ -79,27 +79,9 @@
   animation: banner-enter 0.3s ease-out;
 }
 
-.progress-bar__banner--ready {
-  color: var(--color-accent-cyan);
-  background: rgba(0, 240, 255, 0.1);
-  border: none;
-  cursor: pointer;
-  font-family: var(--font-family);
-  -webkit-tap-highlight-color: transparent;
-}
-
-.progress-bar__banner--ready:active {
-  background: rgba(0, 240, 255, 0.2);
-}
-
 .progress-bar__banner--stamp-test {
   color: var(--color-accent-amber);
   background: rgba(245, 158, 11, 0.1);
-}
-
-.progress-bar__banner--mastery {
-  color: var(--color-accent-purple);
-  background: rgba(168, 85, 247, 0.1);
 }
 
 @keyframes banner-enter {

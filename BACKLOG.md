@@ -64,6 +64,7 @@
 - [x] Fix barra de progreso Aventura: inferencia ascendente en crédito (A→E, B→C/D/F) + avance colectivo excluye heredados
 - [x] Modal completar tipo E/C/D/F: texto motivador, quitar resumen aciertos/fallos, botones sin jerarquía, "Seleccionar otro"
 - [x] Invitación a sello tipo A/B: invitar a prueba de sello (no a tipos anteriores)
+- [x] ProgressBar solo datos: eliminar banners de hitos (duplicaban modal). Modal Aventura con invitación a sello
 
 ---
 
@@ -73,10 +74,12 @@
 
 ### Jugar
 - [ ] Repasar reglas de zoom en A y en B (y lo mismo para las pruebas de sello): si el país se ve completo en pantalla (o si la capital se ve), no hace falta hacer zoom out. Si no se ve, entonces sí que hacemos zoom-out al contiente completo. Racional: al jugar América-mochilero, en aventura, cuando me tocaban los juegos A o B, tenía que hacer constantemente zoom-in a centro américa o islas de las Antillas, incluso si había seleccionado antes un país/capital que estaba al lado; es un poco incómodo. En resumen: solo hacer zoom-out al contiente si es necesario.
-- [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital.
+- [ ] Repasar zoom Asia en A y en B. Por ejemplo, no veo Turquía cuando me pregunta por ella (o por Ankara)
+- [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital. Revisar también si los centroides están bien ubicados, si no hay un buen criterio, quizás lo mejor sería poner el centroide donde está la capital? Investiguemos esto bien.
 - [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
 - [ ] Zoom en Oceanía en A (comprobar también en E): no se muestra el continente completo, hay que alejar un poco más para que se vea completo en pantalla. Verificar antes coherencia con la regla que tenemos de hacer zoom out solo si no se ve el país. Discutir antes de implementar.
 - [ ] Al jugar en A/B: si se selecciona un país (para responder la pregunta) que no aparece completo en pantalla (i.e. solo aparece parte de su territorio), mostrarlo por completo. Por ejemplo, en el juego E se hace algo así (y creo que también en C/D/F, pero no estoy tan seguro de esto - pregúntame si tienes dudas antes de implementar)
+- [ ] Tipo concreto ya dominado al 100%: al empezar, la sesión se vacía inmediatamente (0 preguntas). Pensar bien la UX y documentar en design.md antes de implementar
 
 ### Estadísticas
 - [ ] Repasar lógica, en qué situaciones se utiliza/indica "en progreso" en la tabla de estadísticas?

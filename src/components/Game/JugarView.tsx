@@ -11,7 +11,7 @@ import type { StampTestType } from '../../hooks/useGameSession';
 import { CONTINENT_CENTERS, CONTINENT_ZOOM } from '../../data/continents';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
 import { useAppStore, type StampType } from '../../stores/appStore';
-import { calculateProgress, isReadyForStamp, isTypeFullyDominated, getNextSuggestedType, getAttemptsWithInheritance, getInheritedTypes } from '../../data/learningAlgorithm';
+import { calculateProgress, isTypeFullyDominated, getNextSuggestedType, getAttemptsWithInheritance, getInheritedTypes } from '../../data/learningAlgorithm';
 import { useGameSession } from '../../hooks/useGameSession';
 import { LevelSelector } from './LevelSelector';
 import { QuestionBanner } from './QuestionBanner';
@@ -480,6 +480,7 @@ export function JugarView({
       if (!level || !continent) return;
 
       setShowStampChooser(false);
+      setShowPoolExhausted(false);
       session.startStampTest(level, continent, stampType);
       setScreen('playing');
 
@@ -554,11 +555,6 @@ export function JugarView({
     setFlyOutStep('idle');
     onStampTestDone?.();
   }, [session, onStampTestDone]);
-
-  // Banner de ProgressBar tappable: abrir modal de elección de sello
-  const handleStampBannerClick = useCallback(() => {
-    setShowStampChooser(true);
-  }, []);
 
   // Abrir modal de sello desde el selector (sin sesión activa aún)
   const handleSelectorStampClick = useCallback(
@@ -717,14 +713,6 @@ export function JugarView({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session.level, session.continent, session.score, getAttemptsForSession, levels]);
 
-  const readyForStamp = useMemo(() => {
-    if (activeQuestionTypeRef.current !== 'mixed' || !session.level || !session.continent) return false;
-    const att = getAttemptsForSession();
-    const def = levels.get(`${session.level}-${session.continent}`);
-    return def ? isReadyForStamp(att, def.countries) : false;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session.level, session.continent, session.score, getAttemptsForSession, levels]);
-
   // Invitación a sello desde tipo concreto A/B (Step 6c)
   const readyForStampType = useMemo((): 'countries' | 'capitals' | null => {
     const qt = activeQuestionTypeRef.current;
@@ -836,12 +824,9 @@ export function JugarView({
         progressCurrent={session.stampTestProgress ? session.stampTestProgress.current : progress.current}
         progressTotal={session.stampTestProgress ? session.stampTestProgress.total : progress.total}
         score={session.score}
-        readyForStamp={readyForStamp}
-        readyForStampType={readyForStampType}
         isAdventure={activeQuestionTypeRef.current === 'mixed'}
         isStampTest={session.stampTestResult === 'in_progress'}
         stampTestType={session.stampTestType}
-        onStampBannerClick={handleStampBannerClick}
       />
 
       {/* Modal: elegir tipo de sello */}
@@ -912,15 +897,29 @@ export function JugarView({
         const isAB = qt === 'A' || qt === 'B';
         const typeLabel = QUESTION_TYPE_LABELS[qt as QuestionType] ?? 'este tipo';
 
-        // Rama Aventura (sin cambios)
+        // Rama Aventura — invitación a prueba de sello
         if (qt === 'mixed') return (
           <div className="jugar-modal-overlay">
             <div className="jugar-modal">
-              <h3 className="jugar-modal__title">Etapa completada</h3>
+              <h3 className="jugar-modal__title">
+                ¡Fenomenal!<br />Listo para el sello
+              </h3>
               <p className="jugar-modal__text">
-                {session.score.correct} aciertos, {session.score.incorrect} fallos en esta sesión.
+                Elige una prueba. Deberás completarla sin errores para conseguir el sello.
               </p>
               <div className="jugar-modal__buttons">
+                <button
+                  className="jugar-modal__btn jugar-modal__btn--countries"
+                  onClick={() => handleStartStampTest('countries')}
+                >
+                  Sello de Países
+                </button>
+                <button
+                  className="jugar-modal__btn jugar-modal__btn--capitals"
+                  onClick={() => handleStartStampTest('capitals')}
+                >
+                  Sello de Capitales
+                </button>
                 <button className="jugar-modal__cancel" onClick={handlePoolExhaustedClose}>
                   Seleccionar otro
                 </button>
