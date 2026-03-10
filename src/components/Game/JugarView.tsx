@@ -481,8 +481,7 @@ export function JugarView({
 
       setShowStampChooser(false);
       session.startStampTest(level, continent, stampType);
-      // No cambiar screen — ya estamos en 'playing' si viene del banner
-      // Si viene de Pasaporte, handleStampTestRequest ya pone screen='playing'
+      setScreen('playing');
 
       // Zoom al continente
       if (globeRef.current) {
@@ -560,6 +559,18 @@ export function JugarView({
   const handleStampBannerClick = useCallback(() => {
     setShowStampChooser(true);
   }, []);
+
+  // Abrir modal de sello desde el selector (sin sesión activa aún)
+  const handleSelectorStampClick = useCallback(
+    (level: GameLevel, continent: Continent) => {
+      activeLevelRef.current = level;
+      activeContinentRef.current = continent;
+      activeQuestionTypeRef.current = 'mixed';
+      setLastPlayed(continent, level);
+      setShowStampChooser(true);
+    },
+    [setLastPlayed],
+  );
 
   // Cerrar modal de fin de pool y volver al selector
   const handlePoolExhaustedClose = useCallback(() => {
@@ -701,7 +712,7 @@ export function JugarView({
     const def = levels.get(`${session.level}-${session.continent}`);
     if (!def) return { current: 0, total: 0 };
     const mode = activeQuestionTypeRef.current === 'mixed' ? 'adventure' : activeQuestionTypeRef.current;
-    return calculateProgress(att, def.countries, mode);
+    return calculateProgress(att, def.countries, mode, getInheritedCountries());
     // session.score en deps para recalcular tras cada respuesta
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session.level, session.continent, session.score, getAttemptsForSession, levels]);
@@ -746,11 +757,45 @@ export function JugarView({
 
   if (screen === 'selector') {
     return (
-      <LevelSelector
-        levels={levels}
-        onStart={handleStart}
-        onContinentSelect={handleContinentSelect}
-      />
+      <>
+        <LevelSelector
+          levels={levels}
+          onStart={handleStart}
+          onContinentSelect={handleContinentSelect}
+          onStampBannerClick={handleSelectorStampClick}
+        />
+        {/* Modal: elegir tipo de sello (accesible desde el banner del selector) */}
+        {showStampChooser && (
+          <div className="jugar-modal-overlay">
+            <div className="jugar-modal">
+              <h3 className="jugar-modal__title">Prueba de sello</h3>
+              <p className="jugar-modal__text">
+                Elige una prueba. Deberás completarla sin errores para conseguir el sello.
+              </p>
+              <div className="jugar-modal__buttons">
+                <button
+                  className="jugar-modal__btn jugar-modal__btn--countries"
+                  onClick={() => handleStartStampTest('countries')}
+                >
+                  Sello de Países
+                </button>
+                <button
+                  className="jugar-modal__btn jugar-modal__btn--capitals"
+                  onClick={() => handleStartStampTest('capitals')}
+                >
+                  Sello de Capitales
+                </button>
+              </div>
+              <button
+                className="jugar-modal__cancel"
+                onClick={() => setShowStampChooser(false)}
+              >
+                Cancelar
+              </button>
+            </div>
+          </div>
+        )}
+      </>
     );
   }
 

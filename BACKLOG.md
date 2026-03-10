@@ -60,6 +60,8 @@
 - [x] Quitar botón "salir" de la barra de progreso; re-tocar tab "Jugar" vuelve al selector
 - [x] Pre-selección nivel: siempre se pre-selecciona el máximo nivel desbloqueado (al montar y al cambiar continente)
 - [x] Botón "Continuar" cuando el continente-nivel tiene intentos previos (en vez de siempre "Empezar")
+- [x] Indicar niveles superados en selector ("Superado 🏅"), banner invitación a sello clickable (abre modal de prueba)
+- [x] Fix barra de progreso Aventura: inferencia ascendente en crédito (A→E, B→C/D/F) + avance colectivo excluye heredados
 
 ---
 
@@ -69,14 +71,15 @@
 
 ### Jugar
 - [ ] Modal completar tipo E/C/D/F: texto motivador ("¡Fenomenal! X superado", X en cursiva), quitar resumen aciertos/fallos, botones sin jerarquía visual ("Jugar X" / "Jugar Aventura", cursiva), "Seleccionar otro" en vez de "Volver al selector"
-- [ ] Indicar niveles superados en el selector (estilo visual sencillo, similar al toast de nivel bloqueado)
 - [ ] Invitación a sello tipo A/B: corregir — si el usuario domina 100% en A o B, invitar a la prueba de sello (no a tipos anteriores no dominados como D o F)
+- [ ] Repasar reglas de zoom en A y en B (y lo mismo para las pruebas de sello): si el país se ve completo en pantalla (o si la capital se ve), no hace falta hacer zoom out. Si no se ve, entonces sí que hacemos zoom-out al contiente completo. Racional: al jugar América-mochilero, en aventura, cuando me tocaban los juegos A o B, tenía que hacer constantemente zoom-in a centro américa o islas de las Antillas, incluso si había seleccionado antes un país/capital que estaba al lado; es un poco incómodo. En resumen: solo hacer zoom-out al contiente si es necesario.
 - [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital.
 - [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
 - [ ] Zoom en Oceanía en A (comprobar también en E): no se muestra el continente completo, hay que alejar un poco más para que se vea completo en pantalla. Verificar antes coherencia con la regla que tenemos de hacer zoom out solo si no se ve el país. Discutir antes de implementar.
-- [ ] Al jugar en A/B: si se selecciona un país que no aparece completo en pantalla (i.e. solo aparece parte de su territorio), mostrarlo por completo. Por ejemplo, en el juego E se hace algo así (y creo que también en C/D/F, pero no estoy tan seguro de esto - pregúntame si tienes dudas antes de implementar)
+- [ ] Al jugar en A/B: si se selecciona un país (para responder la pregunta) que no aparece completo en pantalla (i.e. solo aparece parte de su territorio), mostrarlo por completo. Por ejemplo, en el juego E se hace algo así (y creo que también en C/D/F, pero no estoy tan seguro de esto - pregúntame si tienes dudas antes de implementar)
 
 ### Estadísticas
+- [ ] Repasar lógica, en qué situaciones se utiliza/indica "en progreso" en la tabla de estadísticas?
 - [ ] Quitar contadores de aciertos/fallos del bottom
 - [ ] Botón toggle para mostrar % de acierto por país (en vez de iconos de dominio).
 - [ ] Añadir otra tabla para mostrar resultados en pruebas de sello. Pensar bien el diseño antes y anotar en design.md (queremos mostrar tick o cross, de manera similar a las de los juegos? Queremos mostrar % de acierto? Ambas cosas?)
@@ -97,7 +100,6 @@
 - [ ] Feedback háptico: vibraciones más cortas/sutiles
 - [ ] Iconos de tipos de juego: evaluar iconos por tipo (y aplicarlos en selector de Jugar, modales y tabla de estadísticas). Diseñar antes de implementar
 - [ ][PENSAR] Sello automático: si el usuario supera tipo A o B con 0 errores de un solo intento / en una misma parte de la sesión, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
-- [ ] Si un usuario ha conseguido dominar todos los juegos para un continente-nivel, pero no tiene los sellos, mostrar de forma clara en el selector de juegos e invitar de manera sencilla a hacer las pruebas de sello. Pensar y documentar bien en design.md antes de implementar.
 
 ### Multi-usuario
 - [ ] Comprobar si cuando se cambia de usuario, si hay otro usuario en Jugar o en Pasaporte, el juego / prueba de sello se para (si es que está en alguno de estos) - esta es la funcionalidad lógica. El nuevo usuario empieza en Explorar. 

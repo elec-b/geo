@@ -176,6 +176,25 @@
   cursor: default;
 }
 
+/* Nivel superado */
+.level-selector__level-count--completed {
+  color: var(--color-success);
+}
+
+/* Banner de invitación a sello (clickable) */
+.level-selector__stamp-banner {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family);
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Toast de nivel bloqueado */
 .level-selector__toast {
   padding: var(--spacing-sm) var(--spacing-md);

@@ -3,7 +3,7 @@ import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import type { Continent, GameLevel, LevelDefinition } from '../../data/types';
 import type { QuestionTypeFilter } from '../../data/gameQuestions';
 import { useAppStore } from '../../stores/appStore';
-import { isLevelUnlocked, type StampsData } from '../../data/learningAlgorithm';
+import { isLevelUnlocked, isTypeFullyDominated, getAttemptsWithInheritance, type StampsData } from '../../data/learningAlgorithm';
 import { inferContinentFromTimezone } from '../../data/continents';
 import './LevelSelector.css';
 
@@ -35,9 +35,10 @@ interface LevelSelectorProps {
   levels: Map<string, LevelDefinition>;
   onStart: (level: GameLevel, continent: Continent, questionType?: QuestionTypeFilter) => void;
   onContinentSelect: (continent: Continent) => void;
+  onStampBannerClick?: (level: GameLevel, continent: Continent) => void;
 }
 
-export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelectorProps) {
+export function LevelSelector({ levels, onStart, onContinentSelect, onStampBannerClick }: LevelSelectorProps) {
   const lastPlayed = useAppStore((s) => s.settings.lastPlayed);
   const getStamps = useAppStore((s) => s.getStamps);
   const activeProfile = useAppStore((s) => s.getActiveProfile());
@@ -78,6 +79,34 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
       onContinentSelect(selectedContinent);
     }
   }, [selectedContinent, onContinentSelect]);
+
+  // Detectar si el nivel seleccionado está listo para pruebas de sello
+  const stampReadiness = useMemo(() => {
+    if (!selectedContinent) return null;
+    const stamps = stampsData[selectedLevel]?.[selectedContinent];
+    if (!stamps || (stamps.countries && stamps.capitals)) return null;
+
+    if (!isLevelUnlocked(selectedLevel, selectedContinent, stampsData)) return null;
+
+    const def = levels.get(`${selectedLevel}-${selectedContinent}`);
+    if (!def) return null;
+
+    const attempts = getAttemptsWithInheritance(
+      getAttempts(selectedLevel, selectedContinent),
+      selectedLevel,
+      selectedContinent,
+      getStamps,
+      getAttempts,
+    );
+
+    const readyA = !stamps.countries && isTypeFullyDominated(attempts, def.countries, 'A');
+    const readyB = !stamps.capitals && isTypeFullyDominated(attempts, def.countries, 'B');
+
+    if (!readyA && !readyB) return null;
+    if (readyA && readyB) return '¡Listo para las pruebas de sello!';
+    if (readyA) return '¡Listo para la prueba de países!';
+    return '¡Listo para la prueba de capitales!';
+  }, [selectedLevel, selectedContinent, stampsData, levels, getStamps, getAttempts]);
 
   const handleContinentSelect = useCallback(
     (continent: Continent) => {
@@ -127,6 +156,8 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
             const unlocked = selectedContinent
               ? isLevelUnlocked(id, selectedContinent, stampsData)
               : true;
+            const stamps = selectedContinent ? stampsData[id]?.[selectedContinent] : null;
+            const completed = stamps?.countries && stamps?.capitals;
             return (
               <button
                 key={id}
@@ -146,9 +177,11 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
               >
                 <span className="level-selector__level-emoji">{unlocked ? emoji : '🔒'}</span>
                 <span className="level-selector__level-name">{label}</span>
-                <span className="level-selector__level-count">
+                <span className={`level-selector__level-count${completed ? ' level-selector__level-count--completed' : ''}`}>
                   {!unlocked
                     ? 'Bloqueado'
+                    : completed
+                    ? 'Superado 🏅'
                     : count != null ? `${count} ${count === 1 ? 'país' : 'países'}` : '—'}
                 </span>
               </button>
@@ -173,6 +206,16 @@ export function LevelSelector({ levels, onStart, onContinentSelect }: LevelSelec
         {/* Toast de nivel bloqueado */}
         {lockedToast && (
           <div className="level-selector__toast">{lockedToast}</div>
+        )}
+
+        {/* Banner de invitación a pruebas de sello (clickable) */}
+        {stampReadiness && !lockedToast && (
+          <button
+            className="level-selector__stamp-banner"
+            onClick={() => selectedContinent && onStampBannerClick?.(selectedLevel, selectedContinent)}
+          >
+            {stampReadiness}
+          </button>
         )}
 
         {/* Botón empezar / continuar */}

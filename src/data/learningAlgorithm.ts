@@ -431,6 +431,22 @@ function streakToFactor(rec: AttemptRecord | undefined): number {
 }
 
 /**
+ * Factor de progreso para un tipo, considerando inferencia ascendente.
+ * Si hay registro directo, usa su racha. Si no, aplica inferencia (A→E, B→C/D/F).
+ * Esto garantiza que países heredados (solo A/B sintéticos) y países con tipos
+ * inferidos reciban crédito completo en la barra de progreso.
+ */
+function inferredStreakFactor(ca: CountryAttempts | undefined, type: QuestionType): number {
+  if (!ca) return 0;
+  const rec = ca[type];
+  if (rec) return streakToFactor(rec);
+  // Inferencia ascendente: A dominado → E inferido; B dominado → C/D/F inferidos
+  if (type === 'E' && ca.A && ca.A.streak >= MASTERY_STREAK) return 1.0;
+  if ((type === 'C' || type === 'D' || type === 'F') && ca.B && ca.B.streak >= MASTERY_STREAK) return 1.0;
+  return 0;
+}
+
+/**
  * Calcula el progreso.
  * - Aventura: progreso ponderado (0-100%) según avance por país con crédito gradual.
  * - Tipo concreto: países que dominan ese tipo (X de Y).
@@ -439,22 +455,23 @@ export function calculateProgress(
   attempts: Record<string, CountryAttempts>,
   levelCountries: string[],
   mode: QuestionType | 'adventure',
+  inheritedCountries?: Map<string, Set<QuestionType>>,
 ): ProgressResult {
   const total = levelCountries.length;
   if (total === 0) return { current: 0, total: 0 };
 
   if (mode === 'adventure') {
     // Progreso gradual: cada acierto/fallo mueve la barra
-    const stages = getEffectiveStages(attempts, levelCountries);
+    const stages = getEffectiveStages(attempts, levelCountries, inheritedCountries);
     let sum = 0;
     for (const cca2 of levelCountries) {
       const ca = attempts[cca2];
 
-      // Crédito gradual por racha de cada tipo
-      const fE = streakToFactor(ca?.E);
-      const fCDF = Math.max(streakToFactor(ca?.C), streakToFactor(ca?.D), streakToFactor(ca?.F));
-      const fA = streakToFactor(ca?.A);
-      const fB = streakToFactor(ca?.B);
+      // Crédito gradual por racha de cada tipo (con inferencia: A→E, B→C/D/F)
+      const fE = inferredStreakFactor(ca, 'E');
+      const fCDF = Math.max(inferredStreakFactor(ca, 'C'), inferredStreakFactor(ca, 'D'), inferredStreakFactor(ca, 'F'));
+      const fA = inferredStreakFactor(ca, 'A');
+      const fB = inferredStreakFactor(ca, 'B');
       let credit = fE * 20 + fCDF * 30 + fA * 25 + fB * 25;
 
       // Floor por avance colectivo (países sin datos propios o con crédito inferior)
