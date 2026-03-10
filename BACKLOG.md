@@ -65,15 +65,15 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Jugar
-- [ ] Modal completar tipo E/C/D/F: texto motivador ("¡Fenomenal! X superado", nombre en cursiva), quitar resumen aciertos/fallos, botones sin jerarquía visual ("Jugar X" / "Jugar Aventura", cursiva), "Seleccionar otro" en vez de "Volver al selector"
-- [ ] Invitación a sello tipo A/B: corregir — si el usuario domina 100% en A o B, invitar al sello (no a tipos anteriores no dominados como D o F)
-- [ ] Pre-selección nivel: verificar que se pre-selecciona el máximo nivel desbloqueado
-- [ ] Indicar niveles superados en el selector (estilo visual sencillo, similar al toast de nivel bloqueado)
 - [ ] Quitar botón "salir" de la barra de progreso; usar tab bar "Jugar" para volver al selector
+- [ ] Pre-selección nivel: verificar que se pre-selecciona el máximo nivel desbloqueado
+- [ ] Cuando un juego de un continente-nivel ya se ha jugado parcialmente, el botón inferior, en vez de mostrar "empezar" debe mostrar "reanudar" o "continuar" o algo así (piensa bien la palabra)
+- [ ] Modal completar tipo E/C/D/F: texto motivador ("¡Fenomenal! X superado", X en cursiva), quitar resumen aciertos/fallos, botones sin jerarquía visual ("Jugar X" / "Jugar Aventura", cursiva), "Seleccionar otro" en vez de "Volver al selector"
+- [ ] Indicar niveles superados en el selector (estilo visual sencillo, similar al toast de nivel bloqueado)
+- [ ] Invitación a sello tipo A/B: corregir — si el usuario domina 100% en A o B, invitar a la prueba de sello (no a tipos anteriores no dominados como D o F)
 - [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital.
 - [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
 - [ ] Zoom en Oceanía en A (comprobar también en E): no se muestra el continente completo, hay que alejar un poco más para que se vea completo en pantalla. Verificar antes coherencia con la regla que tenemos de hacer zoom out solo si no se ve el país. Discutir antes de implementar.
-- [ ] Cuando un juego de un continente-nivel ya se ha jugado parcialmente, el botón inferior, en vez de mostrar "empezar" debe mostrar "reanudar" o "continuar" o algo así (piensa bien la palabra)
 
 ### Estadísticas
 - [ ] Quitar contadores de aciertos/fallos del bottom
@@ -90,14 +90,17 @@
 ### Pasaporte
 - [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar
 
-### Multi-usuario
-- [ ] Comprobar si cuando se cambia de usuario, si hay otro usuario en Jugar o en Pasaporte, el juego / prueba de sello se para (si es que está en alguno de estos) - esta es la funcionalidad lógica. El nuevo usuario empieza en Explorar. 
-
 ### UX general
 - [ ] Bottom sheets (configuración y ficha de país): añadir handle + implementar drag-to-dismiss
 - [ ] Feedback háptico: vibraciones más cortas/sutiles
 - [ ] Iconos de tipos de juego: evaluar iconos por tipo (y aplicarlos en selector de Jugar, modales y tabla de estadísticas). Diseñar antes de implementar
 - [ ][PENSAR] Sello automático: si el usuario supera tipo A o B con 0 errores de un solo intento / en una misma parte de la sesión, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
+- [ ] Si un usuario ha conseguido dominar todos los juegos para un continente-nivel, pero no tiene los sellos, mostrar de forma clara en el selector de juegos e invitar de manera sencilla a hacer las pruebas de sello. Pensar y documentar bien en design.md antes de implementar.
+
+### Multi-usuario
+- [ ] Comprobar si cuando se cambia de usuario, si hay otro usuario en Jugar o en Pasaporte, el juego / prueba de sello se para (si es que está en alguno de estos) - esta es la funcionalidad lógica. El nuevo usuario empieza en Explorar. 
+
+
 
 
 ### Internacionalización (UI completa)
