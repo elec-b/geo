@@ -321,7 +321,7 @@ Las etiquetas de países y capitales sobre el globo deben ser legibles a cualqui
 *   **Zoom progresivo**: Añadir más etiquetas conforme aumenta el zoom.
 *   **Zoom cercano**: Mostrar todas las etiquetas de la región visible.
 *   **País y capital propios**: La etiqueta de un país no debe solaparse con la de su propia capital, especialmente cuando la capital está centrada en el país.
-*   **Centro visual**: Revisar la ubicación de etiquetas para países con formas irregulares (ej. Francia) — el centroide geométrico no siempre es el mejor punto visual.
+*   **Centro visual**: Las etiquetas se posicionan en el centroide visual del país, que puede diferir del centroide geométrico para países con forma irregular o archipiélagos dispersos (ver § Motor de renderizado > Centroides visuales y archipiélagos).
 *   **Prioridad por población**: Cuando etiquetas de distintos países o capitales compiten por el mismo espacio (ej. Roma vs. Ciudad del Vaticano), priorizar la de mayor población. Solo al hacer zoom suficiente se muestran todas. Esto aplica tanto a etiquetas de capitales entre sí como a la mezcla de etiquetas de países y capitales.
 
 ---
@@ -427,6 +427,35 @@ La app usa **D3.js (`d3-geo`)** con **proyección ortográfica** sobre **Canvas 
 **Por qué D3 y no MapLibre**: MapLibre GL JS v5 tiene globe projection, pero produce artefactos visibles (seams en tile boundaries) al reproyectar tiles Mercator sobre la esfera. Es un problema arquitectural sin solución a corto plazo (ver `docs/spikes/pmtiles-vs-d3.md`). D3 renderiza los polígonos directamente sobre la esfera sin tiles intermedios, eliminando los artefactos por completo.
 
 **Nota sobre la proyección**: `geoOrthographic()` no es una proyección de áreas iguales, pero la distorsión es mínima en el centro de la vista y equivalente a mirar un globo terráqueo físico desde cualquier ángulo. El usuario puede rotar para centrar cualquier país.
+
+### Centroides visuales y archipiélagos
+
+El globo centra la vista usando el **centroide geométrico** (`d3.geoCentroid()`) de cada país. Para la mayoría de países funciona correctamente, pero algunos requieren **overrides manuales** porque el centroide geométrico cae en una ubicación no representativa:
+
+*   **Países con territorios ultramarinos**: Territorios lejanos desplazan el centroide (ej. Francia → Guayana Francesa). Override: centro visual del territorio principal.
+*   **Archipiélagos dispersos**: Islas repartidas sobre cientos o miles de km producen un centroide en vacío oceánico. Override: **coordenadas de la isla de la capital**, que es el punto de referencia más significativo.
+
+**Criterio para aplicar override**: El centroide geométrico dista significativamente de la capital (>~200 km) **y** no cae sobre territorio del país (vacío oceánico).
+
+**Archipiélagos de Oceanía con override**:
+
+| País | Centroide geométrico | Override (isla capital) | Distancia | Motivo |
+|------|---------------------|------------------------|-----------|--------|
+| FM Micronesia | [153.3°E, 7.5°N] | ~[158°E, 7°N] (Pohnpei) | 540 km | 5 islas en ~2800 km; centroide en vacío |
+| KI Kiribati | [167.9°W, 0.9°N] | ~[173°E, 1.3°N] (Tarawa) | 2124 km | Cruza antimeridiano; centroide en hemisferio opuesto |
+| VU Vanuatu | [167.7°E, 16.2°S] | ~[168.3°E, 17.7°S] (Port Vila) | 182 km | Cadena N-S; centroide alejado de la isla principal |
+| MH Islas Marshall | [170.3°E, 7.0°N] | ~[171.4°E, 7.1°N] (Majuro) | 116 km | Centroide en vacío entre atolones |
+
+Otros archipiélagos de Oceanía (Fiyi, Tonga, Samoa, Palau, Islas Salomón) tienen centroides suficientemente cercanos a la capital (<100 km) y no requieren override.
+
+**Impacto en el juego**:
+*   **E/F** (país resaltado): La vista centra en el override, garantizando que la isla principal y el pin de capital sean visibles.
+*   **C/D** (quiz de capitales): Tras responder, el zoom al país centra en el override en vez de en vacío oceánico.
+*   **A/B** (localizar en el mapa): El zoom-out contextual parte del override, ofreciendo perspectiva desde la isla principal.
+
+**Relación con etiquetas**: Los mismos overrides se usan para posicionar las etiquetas de país sobre el globo (ver § Explorar > Anti-solapamiento de etiquetas > Centro visual).
+
+**Hit testing para archipiélagos**: Los países insulares cuyo mar entre islas debe contar como zona de toque usan un *convex hull* envolvente. Los archipiélagos dispersos de la tabla deben incluirse en este mecanismo.
 
 ---
 

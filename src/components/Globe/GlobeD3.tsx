@@ -103,6 +103,11 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
   'SA': [44, 24],         // Arabia Saudita (centro visual)
   'MX': [-102, 23],       // México (centro visual)
   'AR': [-64, -34],       // Argentina (centro visual)
+  // Archipiélagos dispersos de Oceanía (centroide en isla de la capital)
+  'FM': [158.2, 6.9],     // Micronesia → Pohnpei (540 km del centroide geométrico)
+  'KI': [173.0, 1.3],     // Kiribati → Tarawa (2124 km, cruza antimeridiano)
+  'VU': [168.3, -17.7],   // Vanuatu → Éfaté/Port Vila (182 km)
+  'MH': [171.4, 7.1],     // Islas Marshall → Majuro (116 km)
 };
 
 // --- Archipiélagos (hit testing mejorado) ---
@@ -111,7 +116,7 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
 const ARCHIPELAGO_CODES = new Set([
   'PH', 'ID', 'JP', 'NZ', 'FJ', 'SB', 'VU', 'PG', 'GB', 'DK', 'GR', 'HR',
   'BS', 'CU', 'CV', 'KM', 'TO', 'WS', 'MY', 'TT', 'EE', 'SE', 'FI', 'CL',
-  'NO', 'KI',
+  'NO', 'KI', 'FM', 'MH',
 ]);
 
 /**

@@ -77,11 +77,14 @@
 
 ### Jugar
 - [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital. Revisar también si los centroides están bien ubicados, si no hay un buen criterio, quizás lo mejor sería poner el centroide donde está la capital? Investiguemos esto bien.
-- [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
-- [ ] Zoom en Oceanía en A (comprobar también en E): no se muestra el continente completo, hay que alejar un poco más para que se vea completo en pantalla. Verificar antes coherencia con la regla que tenemos de hacer zoom out solo si no se ve el país. Discutir antes de implementar.
+  - 20260311: Añadidos overrides de centroide para FM, KI, VU y MH (isla de la capital). Mejora notable, pero FM en tipo E sigue sin identificarse bien — probablemente relacionado con el zoom excesivo de E/F en archipiélagos (ver punto siguiente). Hace falta más testing de los 4 países en todos los tipos.
+- [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado cercano (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
+- [ ] Zoom en Oceanía en A (comprobar también en E): no se muestra el continente completo, hay que alejar un poco más para que se vea completo en pantalla. Verificar antes coherencia con la regla que tenemos de hacer zoom out solo si no se ve el país. Discutir antes de implementar. NOTA IMPORTANTE: quizás esto esté solucionado con los cambios de 20260311: chequear antes de implementar nada.
 - [ ] En el selector de jugar, los continentes se muestran de una manera similar a los 5 aros de los juegos olímpicos. Sugiero que se muestren en el mismo orden y utilizando los mismos colores (o similares, si alguno no se ve bien).
 - [ ] Tipo concreto ya dominado al 100%: al empezar, la sesión se vacía inmediatamente (0 preguntas). Y el usuario no puede jugarlo. Pensar bien la UX y documentar en design.md antes de implementar
   - idea inicial: simplemente pedirle al usuario que resetee las estadísticas de ese continente-nivel para poder jugarlo.
+  - repasar lógica de modales cuando gana un juego - debería estar todo ok
+    nota: en vez de mostrar "seleccionar otro", mejor decir "seleccionar otro juego" - para permitirle al usuario cambiar de juego
 
 ### Estadísticas
 - [ ] Repasar lógica, en qué situaciones se utiliza/indica "en progreso" en la tabla de estadísticas?
