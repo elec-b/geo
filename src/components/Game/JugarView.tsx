@@ -1,6 +1,7 @@
 // JugarView — contenedor principal de la experiencia Jugar
 // Gestiona el flujo selector → juego y el bridge con el globo.
 import { useState, useCallback, useMemo, useEffect, useRef, type RefObject, type MutableRefObject } from 'react';
+import { geoDistance } from 'd3-geo';
 import type { GlobeD3Ref, FeedbackLabel } from '../Globe';
 import { COUNTRY_CORRECT_COLOR, COUNTRY_INCORRECT_COLOR } from '../Globe/colors';
 import type { GlobeControlProps } from '../Explore/ExploreView';
@@ -352,7 +353,7 @@ export function JugarView({
     // Derivado de: dist < arcsin(1/zoom) × MARGIN → zoom = 1/sin(dist/MARGIN)
     // Margen 0.55 (menor que el 0.8 de isPointVisible) para que el objetivo
     // quede cómodamente dentro de la vista, no en el borde.
-    const ZOOM_MARGIN = 0.55;
+    const ZOOM_MARGIN = 0.70;
     const sinVal = Math.sin(dist / ZOOM_MARGIN);
     const neededZoom = sinVal > 0.01 ? 1 / sinVal : continentZoom;
 
@@ -361,9 +362,13 @@ export function JugarView({
       const center = globeRef.current.getViewCenter();
       globeRef.current.flyTo(center[0], center[1], neededZoom, 800);
     } else {
-      // Objetivo lejano: zoom out al continente (comportamiento original)
-      const [lon, lat] = CONTINENT_CENTERS[session.continent];
-      globeRef.current.flyTo(lon, lat, continentZoom, 800);
+      // Objetivo lejano: ir al centro continental, ajustando zoom si no basta
+      const [cLon, cLat] = CONTINENT_CENTERS[session.continent];
+      const distFromContinent = geoDistance(targetCoords, [cLon, cLat]);
+      const sinFromContinent = Math.sin(distFromContinent / ZOOM_MARGIN);
+      const zoomForTarget = sinFromContinent > 0.01 ? 1 / sinFromContinent : continentZoom;
+      const finalZoom = Math.min(continentZoom, zoomForTarget);
+      globeRef.current.flyTo(cLon, cLat, finalZoom, 800);
     }
   }, [session.currentQuestion, session.continent, session.feedbackState, feedbackStep, globeRef, capitals]);
 
@@ -386,6 +391,22 @@ export function JugarView({
       }
 
       const result = session.submitAnswer(cca2);
+
+      // En acierto: mostrar el país completo si no está bien centrado
+      if (result === 'correct' && globeRef.current) {
+        const centroid = globeRef.current.getCentroid(q.targetCca2);
+        if (centroid) {
+          const dist = globeRef.current.distanceFromCenter(centroid[0], centroid[1]);
+          const currentZoom = globeRef.current.getCurrentZoom();
+          const visibleAngle = Math.asin(Math.min(1, 1 / currentZoom));
+          // Solo flyTo si el centroide está en el 50% exterior del hemisferio visible
+          if (dist > visibleAngle * 0.5) {
+            const baseZoom = globeRef.current.getCountryZoom(q.targetCca2);
+            const targetZoom = baseZoom != null ? Math.max(baseZoom * 0.6, 2.0) : undefined;
+            globeRef.current.flyTo(centroid[0], centroid[1], targetZoom, 600);
+          }
+        }
+      }
 
       // En error: iniciar secuencia de dos pasos (etiqueta roja → flyTo + etiqueta verde)
       if (result === 'incorrect' && q && globeRef.current) {

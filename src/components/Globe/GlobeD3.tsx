@@ -210,6 +210,8 @@ export interface GlobeD3Ref {
   getViewCenter(): [number, number];
   /** Retorna la distancia angular (radianes) desde el centro de la vista al punto dado */
   distanceFromCenter(lon: number, lat: number): number;
+  /** Retorna el nivel de zoom actual */
+  getCurrentZoom(): number;
 }
 
 // --- Utilidades ---
@@ -405,6 +407,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       const rot = rotationRef.current;
       const viewCenter: [number, number] = [-rot[0], -rot[1]];
       return geoDistance([lon, lat], viewCenter);
+    },
+    getCurrentZoom(): number {
+      return scaleRef.current;
     },
   }));
 
