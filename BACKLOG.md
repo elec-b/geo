@@ -65,6 +65,7 @@
 - [x] Modal completar tipo E/C/D/F: texto motivador, quitar resumen aciertos/fallos, botones sin jerarquía, "Seleccionar otro"
 - [x] Invitación a sello tipo A/B: invitar a prueba de sello (no a tipos anteriores)
 - [x] ProgressBar solo datos: eliminar banners de hitos (duplicaban modal). Modal Aventura con invitación a sello
+- [x] Zoom inteligente A/B: zoom-out proporcional si el objetivo está cerca, zoom al continente solo si está lejos
 
 ---
 
@@ -102,7 +103,8 @@
 ### UX general
 - [ ] Bottom sheets (configuración y ficha de país): añadir handle + implementar drag-to-dismiss
 - [ ] Feedback háptico: vibraciones más cortas/sutiles
-- [ ] Iconos de tipos de juego: evaluar iconos por tipo (y aplicarlos en selector de Jugar, modales y tabla de estadísticas). Diseñar antes de implementar
+- [ ] Renombrar los tipos de juego, quizás reasignar las letras, para que se vean de una manera lógica en la tabla de estadísticas y en el selector. El orden pedagógico que hay ahora tiene sentido, pero la secuencia de letras (E, C, D, F, A, B) no tanto... Es una mala "herencia" de cuando pensamos los distintos tipos de juegos. También debemos repensar los nombres que se muestran en el selector y mostrar letra + nombre del juego.  Hacer los cambios primero en design.md, después cambiar también en el codebase por coherencia, y finalmente aplicar el el selector y en la tabla de estadísticas. 
+  - En la tabla de estadísticas, podemos mostrar simplemente la letra y si el usuario pulsa sobre ella, mostrar una descripción del juego (no sé si entra / si es recomendable poner el típico icono de interrogación, pequeño, al lado de la letra. Pensemos esto bien.)
 - [ ][PENSAR] Sello automático: si el usuario supera tipo A o B con 0 errores de un solo intento / en una misma parte de la sesión, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
 
 ### Multi-usuario

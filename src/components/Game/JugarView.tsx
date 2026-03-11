@@ -341,10 +341,29 @@ export function JugarView({
     }
 
     if (!targetCoords) return;
-    if (!globeRef.current.isPointVisible(targetCoords[0], targetCoords[1])) {
-      // Zoom out al nivel continental (sin centrar en el país)
+    // Si ya es visible → no hacer nada
+    if (globeRef.current.isPointVisible(targetCoords[0], targetCoords[1])) return;
+
+    // Calcular distancia angular desde el centro de vista al objetivo
+    const dist = globeRef.current.distanceFromCenter(targetCoords[0], targetCoords[1]);
+    const continentZoom = CONTINENT_ZOOM[session.continent];
+
+    // Zoom necesario para que el objetivo sea visible desde la posición actual.
+    // Derivado de: dist < arcsin(1/zoom) × MARGIN → zoom = 1/sin(dist/MARGIN)
+    // Margen 0.55 (menor que el 0.8 de isPointVisible) para que el objetivo
+    // quede cómodamente dentro de la vista, no en el borde.
+    const ZOOM_MARGIN = 0.55;
+    const sinVal = Math.sin(dist / ZOOM_MARGIN);
+    const neededZoom = sinVal > 0.01 ? 1 / sinVal : continentZoom;
+
+    if (neededZoom > continentZoom) {
+      // Objetivo cercano: zoom out proporcional desde la posición actual
+      const center = globeRef.current.getViewCenter();
+      globeRef.current.flyTo(center[0], center[1], neededZoom, 800);
+    } else {
+      // Objetivo lejano: zoom out al continente (comportamiento original)
       const [lon, lat] = CONTINENT_CENTERS[session.continent];
-      globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[session.continent], 800);
+      globeRef.current.flyTo(lon, lat, continentZoom, 800);
     }
   }, [session.currentQuestion, session.continent, session.feedbackState, feedbackStep, globeRef, capitals]);
 

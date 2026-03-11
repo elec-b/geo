@@ -206,6 +206,10 @@ export interface GlobeD3Ref {
   getCountryZoom(cca2: string): number | null;
   /** Retorna true si el punto está dentro del hemisferio visible (con margen) */
   isPointVisible(lon: number, lat: number): boolean;
+  /** Retorna el centro de la vista actual [lon, lat] */
+  getViewCenter(): [number, number];
+  /** Retorna la distancia angular (radianes) desde el centro de la vista al punto dado */
+  distanceFromCenter(lon: number, lat: number): number;
 }
 
 // --- Utilidades ---
@@ -392,6 +396,15 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       // Ángulo visible real en ortográfica = arcsin(1/zoom), con margen 80%
       const visibleAngle = Math.asin(Math.min(1, 1 / zoom)) * 0.8;
       return dist < visibleAngle;
+    },
+    getViewCenter(): [number, number] {
+      const rot = rotationRef.current;
+      return [-rot[0], -rot[1]];
+    },
+    distanceFromCenter(lon: number, lat: number): number {
+      const rot = rotationRef.current;
+      const viewCenter: [number, number] = [-rot[0], -rot[1]];
+      return geoDistance([lon, lat], viewCenter);
     },
   }));
 
