@@ -362,13 +362,16 @@ export function JugarView({
       const center = globeRef.current.getViewCenter();
       globeRef.current.flyTo(center[0], center[1], neededZoom, 800);
     } else {
-      // Objetivo lejano: ir al centro continental, ajustando zoom si no basta
+      // Objetivo lejano: volar a punto intermedio entre centro continental y objetivo
+      // para evitar zoom-out excesivo en países extremos (ej. Japón, Filipinas)
       const [cLon, cLat] = CONTINENT_CENTERS[session.continent];
-      const distFromContinent = geoDistance(targetCoords, [cLon, cLat]);
-      const sinFromContinent = Math.sin(distFromContinent / ZOOM_MARGIN);
-      const zoomForTarget = sinFromContinent > 0.01 ? 1 / sinFromContinent : continentZoom;
-      const finalZoom = Math.min(continentZoom, zoomForTarget);
-      globeRef.current.flyTo(cLon, cLat, finalZoom, 800);
+      const midLon = (cLon + targetCoords[0]) / 2;
+      const midLat = (cLat + targetCoords[1]) / 2;
+      const distFromMid = geoDistance(targetCoords, [midLon, midLat]);
+      const sinFromMid = Math.sin(distFromMid / ZOOM_MARGIN);
+      const zoomFromMid = sinFromMid > 0.01 ? 1 / sinFromMid : continentZoom;
+      const finalZoom = Math.min(continentZoom, zoomFromMid);
+      globeRef.current.flyTo(midLon, midLat, finalZoom, 800);
     }
   }, [session.currentQuestion, session.continent, session.feedbackState, feedbackStep, globeRef, capitals]);
 

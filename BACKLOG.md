@@ -66,6 +66,8 @@
 - [x] Invitación a sello tipo A/B: invitar a prueba de sello (no a tipos anteriores)
 - [x] ProgressBar solo datos: eliminar banners de hitos (duplicaban modal). Modal Aventura con invitación a sello
 - [x] Zoom inteligente A/B: zoom-out proporcional si el objetivo está cerca, zoom al continente solo si está lejos
+- [x] Centros Asia [80,30] y Oceanía [160,-15] reajustados, zoom continental 1.5 para mejor cobertura
+- [x] Zoom-out A/B menos agresivo (punto intermedio + margen 0.70) + flyTo al país completo tras acierto
 
 ---
 
@@ -74,13 +76,12 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Jugar
-- [ ] Repasar zoom Asia en A y en B. Por ejemplo, no veo Turquía cuando me pregunta por ella (o por Ankara)
 - [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital. Revisar también si los centroides están bien ubicados, si no hay un buen criterio, quizás lo mejor sería poner el centroide donde está la capital? Investiguemos esto bien.
 - [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado grande (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
 - [ ] Zoom en Oceanía en A (comprobar también en E): no se muestra el continente completo, hay que alejar un poco más para que se vea completo en pantalla. Verificar antes coherencia con la regla que tenemos de hacer zoom out solo si no se ve el país. Discutir antes de implementar.
 - [ ] En el selector de jugar, los continentes se muestran de una manera similar a los 5 aros de los juegos olímpicos. Sugiero que se muestren en el mismo orden y utilizando los mismos colores (o similares, si alguno no se ve bien).
-- [ ] Al jugar en A/B: si se selecciona un país (para responder la pregunta) que no aparece completo en pantalla (i.e. solo aparece parte de su territorio), mostrarlo por completo. Por ejemplo, en el juego E se hace algo así (y creo que también en C/D/F, pero no estoy tan seguro de esto - pregúntame si tienes dudas antes de implementar). Un buen ejemplo es se se pregunta por Rusia/Moscú (en Europa) y solo se ve, cuando se selecciona, parte de Rusia - tras el acierto del usuario, es bueno mostrar el territorio completo que el país ocupa en el globo, para que el usuario (un niño aprendiendo), tenga verdadera percepción de la superficie del país. Si el territorio del país ya se ve completo al seleccionar, no hay que hacer nada.
 - [ ] Tipo concreto ya dominado al 100%: al empezar, la sesión se vacía inmediatamente (0 preguntas). Y el usuario no puede jugarlo. Pensar bien la UX y documentar en design.md antes de implementar
+  - idea inicial: simplemente pedirle al usuario que resetee las estadísticas de ese continente-nivel para poder jugarlo.
 
 ### Estadísticas
 - [ ] Repasar lógica, en qué situaciones se utiliza/indica "en progreso" en la tabla de estadísticas?
