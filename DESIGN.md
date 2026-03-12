@@ -441,7 +441,7 @@ El globo centra la vista usando el **centroide geométrico** (`d3.geoCentroid()`
 
 | País | Centroide geométrico | Override (isla capital) | Distancia | Motivo |
 |------|---------------------|------------------------|-----------|--------|
-| FM Micronesia | [153.3°E, 7.5°N] | ~[158°E, 7°N] (Pohnpei) | 540 km | 5 islas en ~2800 km; centroide en vacío |
+| FM Micronesia | [153.3°E, 7.5°N] | ~[158°E, 7°N] (Pohnpei) | 540 km | 20 islas en ~2800 km; centroide en vacío |
 | KI Kiribati | [167.9°W, 0.9°N] | ~[173°E, 1.3°N] (Tarawa) | 2124 km | Cruza antimeridiano; centroide en hemisferio opuesto |
 | VU Vanuatu | [167.7°E, 16.2°S] | ~[168.3°E, 17.7°S] (Port Vila) | 182 km | Cadena N-S; centroide alejado de la isla principal |
 | MH Islas Marshall | [170.3°E, 7.0°N] | ~[171.4°E, 7.1°N] (Majuro) | 116 km | Centroide en vacío entre atolones |
@@ -463,9 +463,24 @@ Otros archipiélagos de Oceanía (Fiyi, Tonga, Samoa, Palau, Islas Salomón) tie
 
 ### Datos geométricos (mapas)
 - **Fuente**: Natural Earth Data vía `world-atlas` (NPM)
-- **Resolución**: 1:50m (incluye Baleares, Canarias, Caribe, Oceanía; equilibrio detalle/rendimiento)
-  - ⚠️ Tuvalu (11 000 hab.) no está incluido en 50m
-- **Formato**: TopoJSON
+- **Resolución base**: 1:50m (incluye Baleares, Canarias, Caribe, Oceanía; equilibrio detalle/rendimiento)
+- **Resolución mejorada para islas del Pacífico**: La resolución 1:50m es insuficiente para 8 países insulares de Oceanía (pocas islas representadas o país completamente ausente). Se usa un archivo override con geometrías 1:10m extraídas de `world-atlas`, que reemplaza las geometrías 50m de estos países al cargar:
+
+  | País | 50m (polígonos) | 10m (polígonos) | Motivo |
+  |------|----------------|----------------|--------|
+  | FM Micronesia | 5 | 20 | Solo islas principales de 4 estados; faltan atolones exteriores |
+  | MH Islas Marshall | 5 | 22 | Solo atolones principales |
+  | TV Tuvalu | **0** | 9 | **Ausente en 50m** |
+  | PW Palau | 2 | 9 | Solo islas mayores |
+  | TO Tonga | 3 | 10 | Solo islas principales |
+  | KI Kiribati | 19 | 35 | Faltan atolones menores |
+  | VU Vanuatu | 14 | 27 | Faltan islas menores |
+  | FJ Fiyi | 20 | 44 | Faltan islas menores |
+
+  - **Tamaño adicional**: ~31 KB gzip (~104 KB raw). Impacto mínimo: +2% de puntos sobre el dataset base.
+  - **Generación**: Script de extracción que lee `countries-10m.json` de `world-atlas` y genera el archivo override. Compatible con el pipeline de actualización automática vía CDN.
+  - **No se usa 1:10m completo**: El dataset 10m tiene 5.5× más puntos (~544K) y +720 KB gzip — demasiado para Canvas 2D en móvil. El override selectivo consigue el detalle necesario sin impacto en rendimiento.
+- **Formato**: TopoJSON (base) + GeoJSON (override islas del Pacífico)
 - **Almacenamiento**: Empaquetado en el bundle de la app
 
 ### Datos de países
@@ -500,12 +515,15 @@ Otros archipiélagos de Oceanía (Fiyi, Tonga, Samoa, Palau, Islas Salomón) tie
 ### Estructura de archivos de datos
 ```
 public/data/
-├── countries-50m.json # TopoJSON de países (1:50m)
-├── countries.json     # Datos de países (generado por fetch-countries.ts)
-└── capitals.json      # Coordenadas y nombres de capitales
+├── countries-50m.json        # TopoJSON de países (1:50m, base)
+├── pacific-islands-10m.json  # GeoJSON override para 8 países insulares (1:10m)
+├── countries.json            # Datos de países (generado por fetch-countries.ts)
+└── capitals.json             # Coordenadas y nombres de capitales
 
-scripts/data/
-└── capitals-{lang}.json  # Traducciones de capitales (suplementario, ver § Internacionalización de datos)
+scripts/
+├── generate-pacific-overrides.ts  # Extrae geometrías 10m de países insulares de world-atlas
+└── data/
+    └── capitals-{lang}.json       # Traducciones de capitales (suplementario, ver § Internacionalización de datos)
 ```
 
 ### Internacionalización de datos
