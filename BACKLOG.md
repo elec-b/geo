@@ -68,6 +68,9 @@
 - [x] Zoom inteligente A/B: zoom-out proporcional si el objetivo está cerca, zoom al continente solo si está lejos
 - [x] Centros Asia [80,30] y Oceanía [160,-15] reajustados, zoom continental 1.5 para mejor cobertura
 - [x] Zoom-out A/B menos agresivo (punto intermedio + margen 0.70) + flyTo al país completo tras acierto
+- [x] Zoom inteligente E/F: extensión angular (centroide→vértice) limita zoom en archipiélagos dispersos. Outline punteado de convex hull con buffer y `lineJoin: round`. Centro visual (hull centroid) para flyTo en archipiélagos
+- [x] Verificar Micronesia y archipiélagos Oceanía: centroides ajustados (FM, KI, VU, MH), zoom inteligente, outline de hull, centro visual para flyTo. Verificado en dispositivo
+- [x] Zoom Oceanía E/F: resuelto con extensión angular + outline de convex hull + centro visual para flyTo
 
 ---
 
@@ -76,16 +79,15 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Jugar
-- [ ] Verificar Micronesia en Oceanía: ¿tiene suficiente perspectiva en los juegos C-F? En los juegos en los que hay que identificar la capital, parece también haber problemas con la ubicación de la capital. Revisar también si los centroides están bien ubicados, si no hay un buen criterio, quizás lo mejor sería poner el centroide donde está la capital? Investiguemos esto bien.
-  - 20260311: Añadidos overrides de centroide para FM, KI, VU y MH (isla de la capital). Mejora notable, pero FM en tipo E sigue sin identificarse bien — probablemente relacionado con el zoom excesivo de E/F en archipiélagos (ver punto siguiente). Hace falta más testing de los 4 países en todos los tipos.
-- [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado cercano (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
-- [ ] Zoom en Oceanía en A (comprobar también en E): no se muestra el continente completo, hay que alejar un poco más para que se vea completo en pantalla. Verificar antes coherencia con la regla que tenemos de hacer zoom out solo si no se ve el país. Discutir antes de implementar. NOTA IMPORTANTE: quizás esto esté solucionado con los cambios de 20260311: chequear antes de implementar nada.
-- [ ] En Oceanía-mochilero, jugando en aventura, cuando me pidió en tipo A que localizase Samoa, posicionó el mapa entre África y América (y era capaz de ver África casi completa y casi todo Brasil y Argentina en Sudamérica - para que tengas idea del zoom-out que hizo)
+- [ ] Micronesia: investigar las islas que aparecen en el outline, parece que son menos que las que aparecen en el mapa
+- [PROBABLEMENTE RESUELTO YA] Zoom en Oceanía en A (comprobar también en E): no se muestra el continente completo, hay que alejar un poco más para que se vea completo en pantalla. Verificar antes coherencia con la regla que tenemos de hacer zoom out solo si no se ve el país. Discutir antes de implementar. NOTA IMPORTANTE: quizás esto esté solucionado con los cambios de 20260311: chequear antes de implementar nada.
+- [PROBABLEMENTE RESUELTO YA] En Oceanía-mochilero, jugando en aventura, cuando me pidió en tipo A que localizase Samoa, posicionó el mapa entre África y América (y era capaz de ver África casi completa y casi todo Brasil y Argentina en Sudamérica - para que tengas idea del zoom-out que hizo)
 - [ ] En el selector de jugar, los continentes se muestran de una manera similar a los 5 aros de los juegos olímpicos. Sugiero que se muestren en el mismo orden y utilizando los mismos colores (o similares, si alguno no se ve bien).
 - [ ] Tipo concreto ya dominado al 100%: al empezar, la sesión se vacía inmediatamente (0 preguntas) y el usuario no puede jugarlo. Pensar bien la UX y documentar en design.md antes de implementar
   - idea inicial: simplemente pedirle al usuario que resetee las estadísticas de ese continente-nivel para poder jugarlo.
   - repasar lógica de modales cuando gana un juego - debería estar todo prácticamente perfecto, solo hay que repasar
     - nota: en vez de mostrar "seleccionar otro", mejor decir "seleccionar otro juego" - para permitirle al usuario cambiar de juego
+- [ ] No mostrar los circulitos de capitales de territorios no reconocidos por la ONU en ningún juego de Jugar ni en las pruebas de sello
 
 ### Estadísticas
 - [ ] Repasar lógica, en qué situaciones se utiliza/indica "en progreso" en la tabla de estadísticas?
@@ -102,6 +104,7 @@
 - [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigar por qué y corregir (también "impactará" en Jugar, obviamente)
 - [ ] Verificar Micronesia, Kiribati, Samoa... ¿Están bien ubicados los marcadores de micro estado? (Deberían estar en la capital) ¿Hay alguna manera mejor de reflejar estos dispersos conjuntos de islas?
 - [ ] El Aaiun aparece mal ubicado - repasar
+- [ ] Los circulitos de capitales de territorios no reconocidos por la ONU deben tener otro color distinto - apuntar también en design.md
 
 ### Pasaporte
 - [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar

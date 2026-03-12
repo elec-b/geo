@@ -41,6 +41,31 @@ const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
   B: 'Señala la capital',
 };
 
+/** Zoom de contexto para tipos E/F (identificación visual).
+ * Combina el zoom por área con la extensión angular del país para evitar
+ * zoom excesivo en archipiélagos dispersos. */
+function getEFZoom(globe: GlobeD3Ref, cca2: string): number | undefined {
+  const base = globe.getCountryZoom(cca2);
+  if (base == null) return undefined;
+  const ext = globe.getCountryExtentZoom(cca2, 1.5);
+  return Math.max(Math.min(base * 0.6, ext ?? Infinity), 2.0);
+}
+
+/** Zoom de contexto para tipos C/D (mostrar capital tras respuesta).
+ * Margen más ajustado que E/F porque interesa ver la capital de cerca. */
+function getCDZoom(globe: GlobeD3Ref, cca2: string): number | undefined {
+  const base = globe.getCountryZoom(cca2);
+  if (base == null) return undefined;
+  const ext = globe.getCountryExtentZoom(cca2, 1.2);
+  return Math.max(Math.min(base, ext ?? Infinity), 2.0);
+}
+
+/** Centro visual de un país: usa el centro del outline (hull) si existe,
+ * para que archipiélagos extensos queden centrados en pantalla. */
+function getVisualCenter(globe: GlobeD3Ref, cca2: string): [number, number] | null {
+  return globe.getOutlineCenter(cca2) ?? globe.getCentroid(cca2);
+}
+
 /** Petición de prueba de sello desde Pasaporte */
 export interface StampTestRequest {
   level: GameLevel;
@@ -313,11 +338,10 @@ export function JugarView({
     if (!q || (q.type !== 'E' && q.type !== 'F')) return;
     if (!globeRef.current) return;
 
-    const centroid = globeRef.current.getCentroid(q.targetCca2);
-    if (centroid) {
-      const baseZoom = globeRef.current.getCountryZoom(q.targetCca2);
-      const zoom = baseZoom != null ? Math.max(baseZoom * 0.6, 2.0) : undefined;
-      globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
+    const center = getVisualCenter(globeRef.current, q.targetCca2);
+    if (center) {
+      const zoom = getEFZoom(globeRef.current, q.targetCca2);
+      globeRef.current.flyTo(center[0], center[1], zoom, 600);
     }
   }, [session.currentQuestion, globeRef, flyOutStep]);
 
@@ -404,8 +428,7 @@ export function JugarView({
           const visibleAngle = Math.asin(Math.min(1, 1 / currentZoom));
           // Solo flyTo si el centroide está en el 50% exterior del hemisferio visible
           if (dist > visibleAngle * 0.5) {
-            const baseZoom = globeRef.current.getCountryZoom(q.targetCca2);
-            const targetZoom = baseZoom != null ? Math.max(baseZoom * 0.6, 2.0) : undefined;
+            const targetZoom = getEFZoom(globeRef.current, q.targetCca2);
             globeRef.current.flyTo(centroid[0], centroid[1], targetZoom, 600);
           }
         }
@@ -474,17 +497,22 @@ export function JugarView({
       const result = session.submitAnswer(answer);
 
       if (result === 'incorrect' && q && globeRef.current) {
-        // En error: flyTo al país correcto con zoom adaptativo
-        const centroid = globeRef.current.getCentroid(q.targetCca2);
-        if (centroid) {
-          const zoom = globeRef.current.getCountryZoom(q.targetCca2) ?? undefined;
-          globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
+        // En error: flyTo al país correcto con zoom de contexto
+        const isEF = q.type === 'E' || q.type === 'F';
+        const center = isEF
+          ? getVisualCenter(globeRef.current, q.targetCca2)
+          : globeRef.current.getCentroid(q.targetCca2);
+        if (center) {
+          const zoom = isEF
+            ? getEFZoom(globeRef.current, q.targetCca2)
+            : getCDZoom(globeRef.current, q.targetCca2);
+          globeRef.current.flyTo(center[0], center[1], zoom, 600);
         }
       } else if (result === 'correct' && q && (q.type === 'C' || q.type === 'D') && globeRef.current) {
         // Acierto en C/D: flyTo al centroide (no capital) para que el país no quede tapado por ChoicePanel
         const centroid = globeRef.current.getCentroid(q.targetCca2);
         if (centroid) {
-          const zoom = globeRef.current.getCountryZoom(q.targetCca2) ?? undefined;
+          const zoom = getCDZoom(globeRef.current, q.targetCca2);
           globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
         }
       }
@@ -684,9 +712,8 @@ export function JugarView({
         setFeedbackStep('step2');
         const coords = feedbackCoordsRef.current;
         if (coords && globeRef.current) {
-          const baseZoom = globeRef.current.getCountryZoom(coords.correctCca2);
-          // Zoom más suave en error: mostrar el país en contexto con sus vecinos
-          const zoom = baseZoom != null ? Math.max(baseZoom * 0.6, 2.0) : undefined;
+          // Zoom de contexto: muestra el país correcto con sus vecinos
+          const zoom = getEFZoom(globeRef.current, coords.correctCca2);
           globeRef.current.flyTo(coords.correctCoords[0], coords.correctCoords[1], zoom, 600);
         }
       }, 1200);
@@ -734,11 +761,10 @@ export function JugarView({
       return;
     }
 
-    const centroid = globeRef.current.getCentroid(q.targetCca2);
-    if (centroid) {
-      const baseZoom = globeRef.current.getCountryZoom(q.targetCca2);
-      const zoom = baseZoom != null ? Math.max(baseZoom * 0.6, 2.0) : undefined;
-      globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
+    const center = getVisualCenter(globeRef.current, q.targetCca2);
+    if (center) {
+      const zoom = getEFZoom(globeRef.current, q.targetCca2);
+      globeRef.current.flyTo(center[0], center[1], zoom, 600);
     }
     setFlyOutStep('idle');
   }, [flyOutStep, session.currentQuestion, globeRef]);

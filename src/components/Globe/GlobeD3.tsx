@@ -3,7 +3,7 @@
 // Elimina por completo los artefactos de tile boundaries.
 import { useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from 'react';
 import { geoOrthographic, geoPath, geoContains, geoCentroid, geoDistance, geoArea } from 'd3-geo';
-import type { GeoProjection, GeoPath } from 'd3-geo';
+import type { GeoProjection, GeoPath, GeoPermissibleObjects } from 'd3-geo';
 import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geojson';
 import { loadCountriesGeoJson, loadBordersGeoJson } from '../../data/countries';
 import type { CountryFeature, CountryProperties } from '../../data/countries';
@@ -217,6 +217,10 @@ export interface GlobeD3Ref {
   distanceFromCenter(lon: number, lat: number): number;
   /** Retorna el nivel de zoom actual */
   getCurrentZoom(): number;
+  /** Retorna zoom que muestra toda la extensión territorial del país con margen */
+  getCountryExtentZoom(cca2: string, margin?: number): number | null;
+  /** Retorna el centro del outline (hull) para archipiélagos, o null si no aplica */
+  getOutlineCenter(cca2: string): [number, number] | null;
 }
 
 // --- Utilidades ---
@@ -295,7 +299,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const sortedFeaturesRef = useRef<CountryFeature[]>([]);
   const nonUnCodesRef = useRef<Set<string>>(new Set());
   const geoAreasRef = useRef<Map<string, number>>(new Map());
+  const geoExtentsRef = useRef<Map<string, number>>(new Map());
   const archipelagoHullsRef = useRef<Map<string, { hull: [number, number][]; shifted: boolean }>>(new Map());
+  const hullCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   // Dirty flag: evita redibujar el canvas a 60fps cuando el globo está en reposo
   const needsRedrawRef = useRef(true); // true para el draw inicial
   const showMarkersRef = useRef(showMarkers);
@@ -394,6 +400,15 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         return MICROSTATE_CODES.has(cca2) ? ADAPTIVE_ZOOM_MAX : null;
       }
       return Math.max(ADAPTIVE_ZOOM_MIN, Math.min(ADAPTIVE_ZOOM_MAX, ADAPTIVE_ZOOM_K / Math.sqrt(area)));
+    },
+    getCountryExtentZoom(cca2: string, margin: number = 1.5): number | null {
+      const extent = geoExtentsRef.current.get(cca2);
+      if (extent == null || extent <= 0) return null;
+      const angle = Math.min(extent * margin, Math.PI / 2);
+      return 1 / Math.sin(angle);
+    },
+    getOutlineCenter(cca2: string): [number, number] | null {
+      return hullCentroidsRef.current.get(cca2) ?? null;
     },
     isPointVisible(lon: number, lat: number): boolean {
       const rot = rotationRef.current;
@@ -496,6 +511,38 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       ctx.strokeStyle = BORDER_COLOR;
       ctx.lineWidth = Math.max(0.5, 1.0 / Math.sqrt(zoom));
       ctx.stroke();
+    }
+
+    // Outline de convex hull para archipiélagos seleccionados
+    // Muestra una línea punteada perimetral que delimita la extensión territorial
+    if (effectiveSelected && archipelagoHullsRef.current.has(effectiveSelected)) {
+      const hullData = archipelagoHullsRef.current.get(effectiveSelected)!;
+      // Deshacer normalización de antimeridiano para coordenadas GeoJSON
+      const ring = hullData.hull.map(([x, y]) =>
+        [hullData.shifted && x > 180 ? x - 360 : x, y] as [number, number],
+      );
+      ring.push(ring[0]); // cerrar anillo
+
+      const hullGeoJSON = {
+        type: 'Feature' as const,
+        properties: {},
+        geometry: { type: 'Polygon' as const, coordinates: [ring] },
+      };
+
+      ctx.beginPath();
+      path(hullGeoJSON as GeoPermissibleObjects);
+      const outlineColor = selectedColorPropRef.current ?? COUNTRY_SELECTED_COLOR;
+      ctx.strokeStyle = outlineColor;
+      ctx.globalAlpha = 0.45;
+      ctx.lineWidth = 1.5;
+      ctx.lineJoin = 'round';
+      ctx.lineCap = 'round';
+      ctx.setLineDash([6, 4]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.globalAlpha = 1;
+      ctx.lineJoin = 'miter';
+      ctx.lineCap = 'butt';
     }
 
     // Marcadores de microestados (anillos con fade-in según zoom)
@@ -939,6 +986,39 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           }
         }
 
+        // Extensión angular por país (distancia máxima centroide → vértice).
+        // Para países con override de centroide, filtramos vértices lejanos (>15°)
+        // para excluir territorios ultramarinos que distorsionan la extensión.
+        const EXTENT_DIST_THRESHOLD = 0.26; // ~15° en radianes
+        const extents = new Map<string, number>();
+        for (const feature of countries.features) {
+          const cca2 = feature.properties?.cca2;
+          if (!cca2) continue;
+          const centroid = allCentroids.get(cca2);
+          if (!centroid) continue;
+
+          const hasOverride = cca2 in CENTROID_OVERRIDES;
+          const threshold = hasOverride ? EXTENT_DIST_THRESHOLD : Infinity;
+          let maxDist = extents.get(cca2) ?? 0;
+
+          const checkDist = (ring: number[][]) => {
+            for (const pt of ring) {
+              const d = geoDistance([pt[0], pt[1]] as [number, number], centroid);
+              if (d <= threshold && d > maxDist) maxDist = d;
+            }
+          };
+
+          const geom = feature.geometry;
+          if (geom.type === 'Polygon') {
+            for (const ring of geom.coordinates) checkDist(ring as number[][]);
+          } else if (geom.type === 'MultiPolygon') {
+            for (const poly of geom.coordinates)
+              for (const ring of poly) checkDist(ring as number[][]);
+          }
+
+          extents.set(cca2, maxDist);
+        }
+
         // Asignar zoom mínimo para anti-solapamiento de etiquetas
         const sortedByArea = [...areas.entries()].sort((a, b) => b[1] - a[1]);
         const total = sortedByArea.length;
@@ -985,16 +1065,58 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           coordsByCca2.set(cca2, coords);
         }
 
+        // Padding angular (grados) para que el outline no quede pegado a las islas
+        const HULL_BUFFER_DEG = 0.8;
         for (const [cca2, coords] of coordsByCca2) {
           if (coords.length < 3) continue;
           // Normalizar coordenadas para países que cruzan el antimeridiano (ej. Fiji)
           const normalized = normalizeForAntimeridian(coords);
+          const rawHull = computeConvexHull(normalized.coords);
+          // Expandir hull: mover cada vértice hacia fuera desde el centroide del hull
+          let cx = 0, cy = 0;
+          for (const [x, y] of rawHull) { cx += x; cy += y; }
+          cx /= rawHull.length; cy /= rawHull.length;
+          const buffered = rawHull.map(([x, y]) => {
+            const dx = x - cx, dy = y - cy;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 0.001) return [x, y] as [number, number];
+            const scale = HULL_BUFFER_DEG / dist;
+            return [x + dx * scale, y + dy * scale] as [number, number];
+          });
           hullsByCca2.set(cca2, {
-            hull: computeConvexHull(normalized.coords),
+            hull: buffered,
             shifted: normalized.shifted,
           });
         }
         archipelagoHullsRef.current = hullsByCca2;
+
+        // Centros de hull para centrar flyTo en archipiélagos
+        const hullCentroids = new Map<string, [number, number]>();
+        for (const [cca2, hullData] of hullsByCca2) {
+          let hcx = 0, hcy = 0;
+          for (const [x, y] of hullData.hull) { hcx += x; hcy += y; }
+          hcx /= hullData.hull.length; hcy /= hullData.hull.length;
+          // Deshacer shift de antimeridiano
+          if (hullData.shifted && hcx > 180) hcx -= 360;
+          hullCentroids.set(cca2, [hcx, hcy]);
+        }
+        hullCentroidsRef.current = hullCentroids;
+
+        // Para archipiélagos: actualizar extensión angular con el hull buffered
+        // para que el zoom muestre el outline completo, no solo las islas
+        for (const [cca2, hullData] of hullsByCca2) {
+          const centroid = allCentroids.get(cca2);
+          if (!centroid) continue;
+          let maxDist = extents.get(cca2) ?? 0;
+          for (const [x, y] of hullData.hull) {
+            // Deshacer shift de antimeridiano para distancia correcta
+            const lon = hullData.shifted && x > 180 ? x - 360 : x;
+            const d = geoDistance([lon, y] as [number, number], centroid);
+            if (d > maxDist) maxDist = d;
+          }
+          extents.set(cca2, maxDist);
+        }
+        geoExtentsRef.current = extents;
 
         // Guardar áreas para re-ordenamiento posterior cuando lleguen datos de población
         geoAreasRef.current = areas;
