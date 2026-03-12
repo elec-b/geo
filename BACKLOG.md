@@ -80,11 +80,12 @@
   - 20260311: Añadidos overrides de centroide para FM, KI, VU y MH (isla de la capital). Mejora notable, pero FM en tipo E sigue sin identificarse bien — probablemente relacionado con el zoom excesivo de E/F en archipiélagos (ver punto siguiente). Hace falta más testing de los 4 países en todos los tipos.
 - [ ] Zoom Oceanía E/F: el zoom in sobre los grupos de islas es demasiado cercano (e.g. Islas Salomón o Islas Fiji), no hay perspectiva de lo que hay al lado. Quizás aplicable para todos los continentes
 - [ ] Zoom en Oceanía en A (comprobar también en E): no se muestra el continente completo, hay que alejar un poco más para que se vea completo en pantalla. Verificar antes coherencia con la regla que tenemos de hacer zoom out solo si no se ve el país. Discutir antes de implementar. NOTA IMPORTANTE: quizás esto esté solucionado con los cambios de 20260311: chequear antes de implementar nada.
+- [ ] En Oceanía-mochilero, jugando en aventura, cuando me pidió en tipo A que localizase Samoa, posicionó el mapa entre África y América (y era capaz de ver África casi completa y casi todo Brasil y Argentina en Sudamérica - para que tengas idea del zoom-out que hizo)
 - [ ] En el selector de jugar, los continentes se muestran de una manera similar a los 5 aros de los juegos olímpicos. Sugiero que se muestren en el mismo orden y utilizando los mismos colores (o similares, si alguno no se ve bien).
-- [ ] Tipo concreto ya dominado al 100%: al empezar, la sesión se vacía inmediatamente (0 preguntas). Y el usuario no puede jugarlo. Pensar bien la UX y documentar en design.md antes de implementar
+- [ ] Tipo concreto ya dominado al 100%: al empezar, la sesión se vacía inmediatamente (0 preguntas) y el usuario no puede jugarlo. Pensar bien la UX y documentar en design.md antes de implementar
   - idea inicial: simplemente pedirle al usuario que resetee las estadísticas de ese continente-nivel para poder jugarlo.
-  - repasar lógica de modales cuando gana un juego - debería estar todo ok
-    nota: en vez de mostrar "seleccionar otro", mejor decir "seleccionar otro juego" - para permitirle al usuario cambiar de juego
+  - repasar lógica de modales cuando gana un juego - debería estar todo prácticamente perfecto, solo hay que repasar
+    - nota: en vez de mostrar "seleccionar otro", mejor decir "seleccionar otro juego" - para permitirle al usuario cambiar de juego
 
 ### Estadísticas
 - [ ] Repasar lógica, en qué situaciones se utiliza/indica "en progreso" en la tabla de estadísticas?
@@ -93,6 +94,9 @@
 - [ ] Añadir otra tabla para mostrar resultados en pruebas de sello. Pensar bien el diseño antes y anotar en design.md (queremos mostrar tick o cross, de manera similar a las de los juegos? Queremos mostrar % de acierto? Ambas cosas?)
   - Además, ahora mismo las estadísticas de las pruebas de sello y las de jugar a A o B, creo que están vinculadas/relacionadas. Esto implicaría desvincularlas. Si esto es así, es otra razón de alto peso, para diseñar y anotar bien en design.md antes de implementar absolutamente nada.
   - Además, si el usuario está haciendo una prueba de sello, las estadísticas deben mostrar el nivel-continente correspondiente en la (nueva) tabla de pruebas de sello. Otra buena razón para diseñar bien en design.md
+
+### Multi-usuario
+- [ ] Comprobar si cuando se cambia de usuario, si hay otro usuario en Jugar o en Pasaporte, el juego / prueba de sello en curso se para (si es que está en alguno de estos) - esta es la funcionalidad lógica. El nuevo usuario empieza en Explorar y elige juego. Pensar bien el diseño y reflejar en design.md antes de implementar.
 
 ### Explorar
 - [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigar por qué y corregir (también "impactará" en Jugar, obviamente)
@@ -111,8 +115,6 @@
   - En la tabla de estadísticas, podemos mostrar simplemente la letra y si el usuario pulsa sobre ella, mostrar una descripción del juego (no sé si entra / si es recomendable poner el típico icono de interrogación, pequeño, al lado de la letra. Pensemos esto bien.)
 - [ ][PENSAR] Sello automático: si el usuario supera tipo A o B con 0 errores de un solo intento / en una misma parte de la sesión, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
 
-### Multi-usuario
-- [ ] Comprobar si cuando se cambia de usuario, si hay otro usuario en Jugar o en Pasaporte, el juego / prueba de sello se para (si es que está en alguno de estos) - esta es la funcionalidad lógica. El nuevo usuario empieza en Explorar. 
 
 
 
