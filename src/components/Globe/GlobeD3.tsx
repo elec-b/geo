@@ -46,7 +46,7 @@ const MICROSTATE_CODES = new Set([
   'VA', 'MC', 'SM', 'LI', 'AD', 'MT', 'SG', 'BH', 'LU', 'KM',
   'MU', 'ST', 'CV', 'SC', 'MV', 'BN', 'TT', 'AG', 'BB', 'LC',
   'GD', 'VC', 'DM', 'KN', 'PW', 'MH', 'FM', 'NR', 'KI', 'TO',
-  'WS',
+  'WS', 'TV',
 ]);
 
 // Territorios no-ONU pequeños que necesitan hit area ampliado (sin marcador visual)
@@ -108,6 +108,7 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
   'KI': [173.0, 1.3],     // Kiribati → Tarawa (2124 km, cruza antimeridiano)
   'VU': [168.3, -17.7],   // Vanuatu → Éfaté/Port Vila (182 km)
   'MH': [171.4, 7.1],     // Islas Marshall → Majuro (116 km)
+  'TV': [179.2, -8.5],    // Tuvalu → Funafuti (atolones en ~600 km)
 };
 
 // --- Archipiélagos (hit testing mejorado) ---
@@ -116,7 +117,7 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
 const ARCHIPELAGO_CODES = new Set([
   'PH', 'ID', 'JP', 'NZ', 'FJ', 'SB', 'VU', 'PG', 'GB', 'DK', 'GR', 'HR',
   'BS', 'CU', 'CV', 'KM', 'TO', 'WS', 'MY', 'TT', 'EE', 'SE', 'FI', 'CL',
-  'NO', 'KI', 'FM', 'MH',
+  'NO', 'KI', 'FM', 'MH', 'TV', 'PW',
 ]);
 
 /**
