@@ -216,6 +216,7 @@ export function JugarView({
       const pins: [number, number][] = [];
       for (const [cca2, data] of countries) {
         if (data.continent !== session.continent) continue;
+        if (data.unMember === false) continue;
         const cap = capitals.get(cca2);
         if (cap) pins.push([cap.latlng[1], cap.latlng[0]]);
       }
