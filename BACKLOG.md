@@ -13,7 +13,7 @@
 - [x] **Pasaporte**: Matriz niveles × continentes con sellos, color según nivel global
 - [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores). Feedback háptico
-- [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente
+- [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin)
 
 ---
 
@@ -22,10 +22,6 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Jugar
-- [ ] Tipo concreto ya dominado al 100%: al empezar, la sesión se vacía inmediatamente (0 preguntas) y el usuario no puede jugarlo. Pensar bien la UX y documentar en design.md antes de implementar
-  - idea inicial: simplemente pedirle al usuario que resetee las estadísticas de ese continente-nivel para poder jugarlo.
-  - repasar lógica de modales cuando gana un juego - debería estar todo prácticamente perfecto, solo hay que repasar
-    - nota: en vez de mostrar "seleccionar otro", mejor decir "seleccionar otro juego" - para permitirle al usuario cambiar de juego
 - [ ] No mostrar los circulitos de capitales de territorios no reconocidos por la ONU en ningún juego de Jugar ni en las pruebas de sello
 - [ ] Testeando en oceanía-mochilero, jugando aventura: me preguntó localiza Micronesia, en juego tipo A. Me parece muy complicado seleccionar estos grupos de islas. Sugiero que para todos los países que son archipiélagos hagamos algo similar a lo que hacemos para E (en Oceanía), facilitando al usuario la identificación con una línea discontinua. Revisar código que tenemos ya implementado antes de acometer la tarea.
   - ideas preliminare: 
@@ -65,6 +61,10 @@
 - [ ] Renombrar los tipos de juego, quizás reasignar las letras, para que se vean de una manera lógica en la tabla de estadísticas y en el selector. El orden pedagógico que hay ahora tiene sentido, pero la secuencia de letras (E, C, D, F, A, B) no tanto... Es una mala "herencia" de cuando pensamos los distintos tipos de juegos. También debemos repensar los nombres que se muestran en el selector y mostrar letra + nombre del juego.  Hacer los cambios primero en design.md, después cambiar también en el codebase por coherencia, y finalmente aplicar el el selector y en la tabla de estadísticas. 
   - En la tabla de estadísticas, podemos mostrar simplemente la letra y si el usuario pulsa sobre ella, mostrar una descripción del juego (no sé si entra / si es recomendable poner el típico icono de interrogación, pequeño, al lado de la letra. Pensemos esto bien.)
 - [ ][PENSAR] Sello automático: si el usuario supera tipo A o B con 0 errores de un solo intento / en una misma parte de la sesión, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
+- [ ][PENSAR] Borrados de sello y Resets
+  - Queremos darle al usuario la posibilidad de borrar sus sellos? En la dimensión continente-nivel? En otra dimensión?
+  - Queremos darle al usuario de resetear el juego completo y la posibilidad de empezar de cero?
+  - (Aterrizar ambas cosas en design.md antes de implementar nada, esto es muy importante tenerlo claro)
 
 ### Internacionalización (UI completa)
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)

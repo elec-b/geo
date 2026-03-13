@@ -201,6 +201,7 @@ function App() {
           onCountryClickRef={jugarClickRef}
           stampTestRequest={stampTestRequest}
           onStampTestDone={handleStampTestDone}
+          onNavigateStats={() => setShowStats(true)}
           resetSignal={jugarResetSignal}
         />
       )}

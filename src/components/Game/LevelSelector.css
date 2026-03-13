@@ -151,6 +151,10 @@
   font-weight: 600;
 }
 
+.level-selector__type-pill--dominated {
+  opacity: 0.55;
+}
+
 /* Botón empezar */
 .level-selector__start {
   width: 100%;

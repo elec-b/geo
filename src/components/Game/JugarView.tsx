@@ -87,6 +87,8 @@ interface JugarViewProps {
   onStampTestDone?: () => void;
   /** Signal para resetear al selector (se incrementa al re-tocar tab Jugar) */
   resetSignal?: number;
+  /** Callback para navegar a la vista de estadísticas */
+  onNavigateStats?: () => void;
 }
 
 export function JugarView({
@@ -99,6 +101,7 @@ export function JugarView({
   stampTestRequest,
   onStampTestDone,
   resetSignal,
+  onNavigateStats,
 }: JugarViewProps) {
   const [screen, setScreen] = useState<JugarScreen>('selector');
 
@@ -113,6 +116,8 @@ export function JugarView({
   const [showStampChooser, setShowStampChooser] = useState(false);
   const [showStampResult, setShowStampResult] = useState(false);
   const [showPoolExhausted, setShowPoolExhausted] = useState(false);
+  const [showAlreadyDominated, setShowAlreadyDominated] = useState(false);
+  const [alreadyDominatedType, setAlreadyDominatedType] = useState<QuestionTypeFilter>('mixed');
 
   // Refs para nivel/continente/tipo activos (disponibles antes de que session se actualice)
   const activeLevelRef = useRef<GameLevel | null>(null);
@@ -473,8 +478,26 @@ export function JugarView({
       activeLevelRef.current = level;
       activeContinentRef.current = continent;
       activeQuestionTypeRef.current = questionType ?? 'mixed';
-
       setLastPlayed(continent, level);
+
+      // Verificar si el tipo/modo ya está completado
+      const def = levels.get(`${level}-${continent}`);
+      if (def) {
+        const att = getAttemptsWithInheritance(
+          getAttempts(level, continent),
+          level, continent, getStamps, getAttempts,
+        );
+        const qt = questionType ?? 'mixed';
+        const dominated = qt === 'mixed'
+          ? isTypeFullyDominated(att, def.countries, 'A') && isTypeFullyDominated(att, def.countries, 'B')
+          : isTypeFullyDominated(att, def.countries, qt as QuestionType);
+        if (dominated) {
+          setAlreadyDominatedType(qt);
+          setShowAlreadyDominated(true);
+          return;
+        }
+      }
+
       session.start(level, continent, questionType);
       setScreen('playing');
       setSelectedChoice(null);
@@ -485,7 +508,7 @@ export function JugarView({
         globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[continent], 1000);
       }
     },
-    [session, globeRef],
+    [session, globeRef, levels, getAttempts, getStamps, setLastPlayed],
   );
 
   // Selección de opción en ChoicePanel (tipos C-F)
@@ -852,6 +875,119 @@ export function JugarView({
             </div>
           </div>
         )}
+        {/* Modal: tipo/modo ya completado */}
+        {showAlreadyDominated && (() => {
+          const level = activeLevelRef.current;
+          const continent = activeContinentRef.current;
+          const qt = alreadyDominatedType;
+          const stamps = level && continent ? getStamps(level, continent) : { countries: true, capitals: true };
+          const isAB = qt === 'A' || qt === 'B';
+          const typeLabel = QUESTION_TYPE_LABELS[qt as QuestionType] ?? 'este tipo';
+
+          // Rama Aventura
+          if (qt === 'mixed') {
+            const bothEarned = stamps.countries && stamps.capitals;
+            const levelLabel = (level ?? '').charAt(0).toUpperCase() + (level ?? '').slice(1);
+            return (
+              <div className="jugar-modal-overlay">
+                <div className="jugar-modal">
+                  <h3 className="jugar-modal__title">Entrenamiento completado</h3>
+                  <p className="jugar-modal__text">
+                    {bothEarned
+                      ? <>Has completado <em>{continent}</em> en nivel <em>{levelLabel}</em>. Puedes resetear las estadísticas para volver a practicar.</>
+                      : <>Has completado el entrenamiento de <em>{continent}</em> en nivel <em>{levelLabel}</em>.</>
+                    }
+                  </p>
+                  <div className="jugar-modal__buttons">
+                    {!stamps.countries && (
+                      <button
+                        className="jugar-modal__btn jugar-modal__btn--countries"
+                        onClick={() => { setShowAlreadyDominated(false); handleStartStampTest('countries'); }}
+                      >
+                        Sello de Países
+                      </button>
+                    )}
+                    {!stamps.capitals && (
+                      <button
+                        className="jugar-modal__btn jugar-modal__btn--capitals"
+                        onClick={() => { setShowAlreadyDominated(false); handleStartStampTest('capitals'); }}
+                      >
+                        Sello de Capitales
+                      </button>
+                    )}
+                    <button
+                      className="jugar-modal__btn jugar-modal__btn--primary"
+                      onClick={() => { setShowAlreadyDominated(false); onNavigateStats?.(); }}
+                    >
+                      Ir a Estadísticas
+                    </button>
+                    <button className="jugar-modal__cancel" onClick={() => setShowAlreadyDominated(false)}>
+                      Seleccionar otro juego
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          // Rama A/B
+          if (isAB) {
+            const stampType = qt === 'A' ? 'countries' : 'capitals';
+            const hasStamp = qt === 'A' ? stamps.countries : stamps.capitals;
+            return (
+              <div className="jugar-modal-overlay">
+                <div className="jugar-modal">
+                  <h3 className="jugar-modal__title">Ya dominas<br /><em>{typeLabel}</em></h3>
+                  <p className="jugar-modal__text">
+                    Has acertado todos los países. Puedes resetear las estadísticas para volver a practicar.
+                  </p>
+                  <div className="jugar-modal__buttons">
+                    {!hasStamp && (
+                      <button
+                        className={`jugar-modal__btn jugar-modal__btn--${stampType}`}
+                        onClick={() => { setShowAlreadyDominated(false); handleStartStampTest(stampType); }}
+                      >
+                        Intentar prueba de sello
+                      </button>
+                    )}
+                    <button
+                      className="jugar-modal__btn jugar-modal__btn--primary"
+                      onClick={() => { setShowAlreadyDominated(false); onNavigateStats?.(); }}
+                    >
+                      Ir a Estadísticas
+                    </button>
+                    <button className="jugar-modal__cancel" onClick={() => setShowAlreadyDominated(false)}>
+                      Seleccionar otro juego
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
+          // Rama E/C/D/F
+          return (
+            <div className="jugar-modal-overlay">
+              <div className="jugar-modal">
+                <h3 className="jugar-modal__title">Ya dominas<br /><em>{typeLabel}</em></h3>
+                <p className="jugar-modal__text">
+                  Has acertado todos los países. Puedes resetear las estadísticas para volver a practicar.
+                </p>
+                <div className="jugar-modal__buttons">
+                  <button
+                    className="jugar-modal__btn jugar-modal__btn--primary"
+                    onClick={() => { setShowAlreadyDominated(false); onNavigateStats?.(); }}
+                  >
+                    Ir a Estadísticas
+                  </button>
+                  <button className="jugar-modal__cancel" onClick={() => setShowAlreadyDominated(false)}>
+                    Seleccionar otro juego
+                  </button>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
       </>
     );
   }
@@ -967,35 +1103,44 @@ export function JugarView({
         const typeLabel = QUESTION_TYPE_LABELS[qt as QuestionType] ?? 'este tipo';
 
         // Rama Aventura — invitación a prueba de sello
-        if (qt === 'mixed') return (
-          <div className="jugar-modal-overlay">
-            <div className="jugar-modal">
-              <h3 className="jugar-modal__title">
-                ¡Fenomenal!<br />Listo para el sello
-              </h3>
-              <p className="jugar-modal__text">
-                Elige una prueba. Deberás completarla sin errores para conseguir el sello.
-              </p>
-              <div className="jugar-modal__buttons">
-                <button
-                  className="jugar-modal__btn jugar-modal__btn--countries"
-                  onClick={() => handleStartStampTest('countries')}
-                >
-                  Sello de Países
-                </button>
-                <button
-                  className="jugar-modal__btn jugar-modal__btn--capitals"
-                  onClick={() => handleStartStampTest('capitals')}
-                >
-                  Sello de Capitales
-                </button>
-                <button className="jugar-modal__cancel" onClick={handlePoolExhaustedClose}>
-                  Seleccionar otro
-                </button>
+        if (qt === 'mixed') {
+          const stamps = activeLevelRef.current && activeContinentRef.current
+            ? getStamps(activeLevelRef.current, activeContinentRef.current)
+            : { countries: true, capitals: true };
+          return (
+            <div className="jugar-modal-overlay">
+              <div className="jugar-modal">
+                <h3 className="jugar-modal__title">
+                  ¡Fenomenal!<br />Listo para el sello
+                </h3>
+                <p className="jugar-modal__text">
+                  Elige una prueba. Deberás completarla sin errores para conseguir el sello.
+                </p>
+                <div className="jugar-modal__buttons">
+                  {!stamps.countries && (
+                    <button
+                      className="jugar-modal__btn jugar-modal__btn--countries"
+                      onClick={() => handleStartStampTest('countries')}
+                    >
+                      Sello de Países
+                    </button>
+                  )}
+                  {!stamps.capitals && (
+                    <button
+                      className="jugar-modal__btn jugar-modal__btn--capitals"
+                      onClick={() => handleStartStampTest('capitals')}
+                    >
+                      Sello de Capitales
+                    </button>
+                  )}
+                  <button className="jugar-modal__cancel" onClick={handlePoolExhaustedClose}>
+                    Seleccionar otro juego
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        );
+          );
+        }
 
         // Rama A/B — invitación a sello o felicitación
         if (isAB) return (
@@ -1019,7 +1164,7 @@ export function JugarView({
                   </button>
                 )}
                 <button className="jugar-modal__cancel" onClick={handlePoolExhaustedClose}>
-                  Seleccionar otro
+                  Seleccionar otro juego
                 </button>
               </div>
             </div>
@@ -1042,11 +1187,13 @@ export function JugarView({
                     Jugar <em>{QUESTION_TYPE_LABELS[nextSuggestedType]}</em>
                   </button>
                 )}
-                <button className="jugar-modal__btn" onClick={handleStartAdventure}>
-                  Jugar <em>Aventura</em>
-                </button>
+                {nextSuggestedType !== null && (
+                  <button className="jugar-modal__btn" onClick={handleStartAdventure}>
+                    Jugar <em>Aventura</em>
+                  </button>
+                )}
                 <button className="jugar-modal__cancel" onClick={handlePoolExhaustedClose}>
-                  Seleccionar otro
+                  Seleccionar otro juego
                 </button>
               </div>
             </div>

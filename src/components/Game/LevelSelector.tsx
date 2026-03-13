@@ -109,6 +109,33 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
     return '¡Listo para la prueba de capitales!';
   }, [selectedLevel, selectedContinent, stampsData, levels, getStamps, getAttempts]);
 
+  // Tipos de juego ya dominados para la combinación nivel-continente seleccionada
+  const dominatedTypes = useMemo((): Set<QuestionTypeFilter> => {
+    if (!selectedContinent) return new Set();
+    const def = levels.get(`${selectedLevel}-${selectedContinent}`);
+    if (!def) return new Set();
+
+    const attempts = getAttemptsWithInheritance(
+      getAttempts(selectedLevel, selectedContinent),
+      selectedLevel,
+      selectedContinent,
+      getStamps,
+      getAttempts,
+    );
+
+    const dominated = new Set<QuestionTypeFilter>();
+    for (const type of ['E', 'C', 'D', 'F', 'A', 'B'] as const) {
+      if (isTypeFullyDominated(attempts, def.countries, type)) {
+        dominated.add(type);
+      }
+    }
+    // Aventura: dominado si tanto A como B están dominados
+    if (dominated.has('A') && dominated.has('B')) {
+      dominated.add('mixed');
+    }
+    return dominated;
+  }, [selectedLevel, selectedContinent, levels, getAttempts, getStamps]);
+
   const handleContinentSelect = useCallback(
     (continent: Continent) => {
       setSelectedContinent(continent);
@@ -193,15 +220,22 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
         {/* Pills de tipo de juego (orden pedagógico) */}
         <h2 className="level-selector__title level-selector__title--level">Tipo de juego</h2>
         <div className="level-selector__types">
-          {QUESTION_TYPES.map(({ id, label, badge }) => (
-            <button
-              key={id}
-              className={`level-selector__type-pill ${selectedType === id ? 'level-selector__type-pill--active' : ''}`}
-              onClick={() => setSelectedType(id)}
-            >
-              {label}{badge ? ` ${badge}` : ''}
-            </button>
-          ))}
+          {QUESTION_TYPES.map(({ id, label, badge }) => {
+            const isDominated = dominatedTypes.has(id);
+            return (
+              <button
+                key={id}
+                className={[
+                  'level-selector__type-pill',
+                  selectedType === id && 'level-selector__type-pill--active',
+                  isDominated && 'level-selector__type-pill--dominated',
+                ].filter(Boolean).join(' ')}
+                onClick={() => setSelectedType(id)}
+              >
+                {label}{badge ? ` ${badge}` : ''}{isDominated ? ' ✓' : ''}
+              </button>
+            );
+          })}
         </div>
 
         {/* Toast de nivel bloqueado */}
