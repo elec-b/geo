@@ -121,6 +121,35 @@ El usuario elige un tipo específico y juega exclusivamente ese tipo.
 *   **Barra de progreso**: «X de Y países dominados» en ese tipo para el nivel-continente actual.
 *   Si el usuario domina todos los países del continente en ese nivel para ese tipo → modal de fin de sesión con felicitación y sugerencia de siguiente paso (ver § Modal de fin de sesión).
 
+### Tipo/modo ya completado
+
+Cuando el usuario selecciona un tipo concreto (o modo Aventura) donde todos los países/capitales ya están dominados, la sesión no tiene preguntas pendientes. En lugar de iniciar una sesión vacía, se intercepta **antes** de empezar y se muestra un modal informativo.
+
+**Indicador visual en el selector**: Las pills de tipo de juego muestran un **✓** sutil junto al nombre si el tipo está 100% dominado para el nivel-continente seleccionado. La pill sigue siendo seleccionable (no deshabilitada).
+
+**Modal pre-sesión** (se muestra al pulsar Empezar/Continuar con tipo/modo ya completado):
+
+**Tipo concreto E/C/D/F**:
+*   Título: «Ya dominas *[tipo]*».
+*   Texto: «Has acertado todos los países. Puedes resetear las estadísticas para volver a practicar.»
+*   Botones: «Ir a Estadísticas» (acción principal), «Seleccionar otro juego» (cierre).
+
+**Tipo concreto A/B**:
+*   Título: «Ya dominas *[tipo]*».
+*   Texto: «Has acertado todos los países. Puedes resetear las estadísticas para volver a practicar.»
+*   Si el sello correspondiente no está ganado: botón adicional «Intentar prueba de sello» (acción principal).
+*   Botones: [«Intentar prueba de sello»], «Ir a Estadísticas», «Seleccionar otro juego» (cierre).
+
+**Modo Aventura**:
+*   Título: «Entrenamiento completado».
+*   Si faltan sellos por ganar:
+    - Texto: «Has completado el entrenamiento de *[continente]* en nivel *[nivel]*.»
+    - Botones de prueba de sello: solo los sellos **no ganados**.
+    - Botones: [«Sello de Países»], [«Sello de Capitales»], «Ir a Estadísticas», «Seleccionar otro juego» (cierre).
+*   Si ambos sellos están ganados:
+    - Texto: «Has completado *[continente]* en nivel *[nivel]*. Puedes resetear las estadísticas para volver a practicar.»
+    - Botones: «Ir a Estadísticas», «Seleccionar otro juego» (cierre).
+
 ### Algoritmo de aprendizaje
 
 Sistema compartido entre Jugar y Pruebas de sello (Pasaporte). Ambas experiencias alimentan el mismo registro de intentos.
@@ -238,22 +267,22 @@ Se muestra cuando el pool de preguntas se agota (todos los países dominan la et
 
 **Modo Aventura**:
 *   El pool se agota cuando el 100% de los países dominan A y B (barra al 100%). Esto equivale a estar listo para las pruebas de sello.
-*   Título motivador + invitación a prueba de sello (elegir Países o Capitales).
-*   Botón de cierre: «Seleccionar otro».
+*   Título motivador + invitación a prueba de sello: solo los sellos **no ganados** (si ambos ganados, no se muestran botones de sello).
+*   Botón de cierre: «Seleccionar otro juego».
 *   El usuario puede intentar las pruebas antes (siempre disponible desde Pasaporte).
 *   La prueba de sello verifica el **100%** de los países con **0 errores** — es la certificación real.
 
 **Modo tipo concreto A/B**:
 *   Si el sello correspondiente no está ganado: título motivador («¡Fenomenal! *[tipo]* superado») + invitación a la prueba de sello (Países o Capitales según el tipo).
-*   Si el sello ya está ganado: título motivador + solo botón «Seleccionar otro».
+*   Si el sello ya está ganado: título motivador + solo botón «Seleccionar otro juego».
 
 **Modo tipo concreto E/C/D/F**:
 *   Título motivador: «¡Fenomenal! *[tipo]* superado» (nombre del tipo en cursiva).
 *   Dos botones al mismo nivel (sin jerarquía visual):
     - «Jugar *[siguiente tipo]*» — siguiente tipo no dominado según progresión pedagógica (primero tipos de la misma etapa, luego de la siguiente: E → C/D/F → A/B). Solo visible si existe un tipo no dominado.
     - «Jugar *Aventura*» — cambia al modo guiado.
-*   Botón de cierre: «Seleccionar otro».
-*   Si todos los tipos (E/C/D/F/A/B) están dominados: título motivador + solo botón «Seleccionar otro» (las invitaciones a sello se gestionan en A/B).
+*   Botón de cierre: «Seleccionar otro juego».
+*   Si todos los tipos (E/C/D/F/A/B) están dominados: título motivador + solo botón «Seleccionar otro juego» (las invitaciones a sello se gestionan en A/B).
 
 #### Herencia de progreso entre niveles
 

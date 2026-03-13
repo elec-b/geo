@@ -27,6 +27,11 @@
   - repasar lógica de modales cuando gana un juego - debería estar todo prácticamente perfecto, solo hay que repasar
     - nota: en vez de mostrar "seleccionar otro", mejor decir "seleccionar otro juego" - para permitirle al usuario cambiar de juego
 - [ ] No mostrar los circulitos de capitales de territorios no reconocidos por la ONU en ningún juego de Jugar ni en las pruebas de sello
+- [ ] Testeando en oceanía-mochilero, jugando aventura: me preguntó localiza Micronesia, en juego tipo A. Me parece muy complicado seleccionar estos grupos de islas. Sugiero que para todos los países que son archipiélagos hagamos algo similar a lo que hacemos para E (en Oceanía), facilitando al usuario la identificación con una línea discontinua. Revisar código que tenemos ya implementado antes de acometer la tarea.
+  - ideas preliminare: 
+    - sí mostraría esta línea discontinua para A, para la prueba de sello de países y seguramente para Explorar
+      - Pensar muy bien cómo hacemos esto en Explorar y testear también en Explorar, quizás deba ser lo primero que se hace? Considerar anotar en design.md
+    - no mostraría esta línea discontinua para B, ni para la prueba de sello de capitales.
 
 ### Estadísticas
 - [ ] Repasar lógica, en qué situaciones se utiliza/indica "en progreso" en la tabla de estadísticas?
