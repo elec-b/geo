@@ -39,6 +39,8 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 
    Actualízalo **solo después de testear en dispositivo y con confirmación explícita del usuario**. No actualizar el backlog de forma anticipada. No usamos categoría de "bugs" — todo son tareas.
 
+   **Flujo de mantenimiento**: Al completar una tarea, moverla de «Próximos pasos» a «Completado» (tal cual o clarificando brevemente lo que se hizo). Cuando «Completado» crece demasiado, comprimir agrupando por área en pocas líneas (1 línea por área con las capacidades clave).
+
 ### 3.1 Preferencias de idioma (prioridad alta)
 Todas las explicaciones, comentarios de código y documentación deben estar en **español**.
 * Sigue las reglas ortográficas de la **RAE**.

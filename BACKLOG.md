@@ -6,72 +6,14 @@
 
 ## Completado
 
-### Globo y motor de renderizado
-- [x] Proyecto React + Vite + Capacitor iOS. D3.js `geoOrthographic()` sobre Canvas 2D
-- [x] Zoom ×200, inercia, pinch+drag, marcadores de microestados, fronteras escalables, dirty flag
-
-### Datos, i18n y estado
-- [x] REST Countries + `world-atlas` 50m + capitales JSON (195 países). Zustand store multi-perfil
-- [x] Datos en español completos (capitales, gentilicios, monedas, idiomas, IDH/IDH-D, Wikipedia slugs)
-- [x] Antártida (ficha especial) y territorios no-ONU (ficha + disclaimer, etiquetas ámbar)
-
-### Navegación y Explorar
-- [x] Tab bar, header, z-index centralizado. Ficha de país completa con todos los campos y rankings
-- [x] Globo: etiquetas anti-solapamiento, filtros por continente, flyTo con offset dinámico
-- [x] Tabla: headers sticky/ordenables, toggle no-ONU, segmented control Globo|Tabla
-- [x] Auditoría diseño responsivo (px → rem)
-
-### Experiencia: Jugar
-- [x] 6 tipos de juego (A-F) con feedback visual, zoom adaptativo, pines de capitales, flyTo entre preguntas
-- [x] Flujo completo (continente → nivel → tipo), modo Aventura, LevelSelector sin paso intermedio
-- [x] Algoritmo de aprendizaje v2: rachas, etapas, regresión, avance colectivo, inferencia, anti-repetición
-- [x] Vista de estadísticas provisional (tabla de dominio por tipo, selector nivel×continente, reset)
-- [x] Archipiélagos antimeridiano (Fiji, Tonga, Kiribati), zoom out A/B automático
-- [x] Zoom E/F: ×0.6 + floor 2.0, centroide Oceanía ajustado, `isPointVisible` dependiente del zoom
-- [x] Sistema de pruebas de sello (0 errores, invitación desde Jugar + acceso desde Pasaporte)
-- [x] Texto del modal de sello adaptado según tipo (países/capitales)
-
-### Experiencia: Pasaporte
-- [x] Matriz niveles × continentes con sellos (Países/Capitales), acceso directo a pruebas
-- [x] Color del pasaporte según nivel global (verde/azul/dorado)
-- [x] Fondo opaco para legibilidad del dashboard
-
-### Perfiles de usuario
-- [x] Pantalla de creación de perfil (nombre por defecto «Explorador» + numeración automática)
-- [x] Selector de avatares (iconos de animales representativos de los 5 continentes)
-- [x] Selector de perfil (cambio rápido desde cualquier pantalla, tap en avatar)
-- [x] Progreso independiente por perfil (pasaporte, sellos, fallos)
-
-### Configuración y háptica
-- [x] Bottom sheet desde el engranaje del header (vibración, idioma, tema, marcadores de microestados — este último solo visible en Explorar)
-- [x] Feedback háptico (acierto/fallo en juego, toggles en configuración) con `@capacitor/haptics`
-
-### Algoritmo v3 y mejoras Jugar/Estadísticas
-- [x] Algoritmo v3: racha max(1), selección inteligente (país compañero, fin de pool), avance colectivo sin precisión global, anti-repetición por pool activo
-- [x] Barra de progreso ponderada en Aventura: crédito gradual por racha (streakToFactor), 1 decimal visible, crédito por avance colectivo
-- [x] Invitación a sello (umbral 100% en Aventura), sugerencia de progresión al completar tipo E/C/D/F
-- [x] Herencia conservadora entre niveles (derivación en lectura, verificación baja frecuencia, ✓ gris en estadísticas)
-- [x] Pre-selección continente/nivel al entrar + toast nivel bloqueado
-- [x] Conflicto Italia/Vaticano resuelto (tap en microestado acepta país grande)
-- [x] Estadísticas: reset inmediato, default inteligente (último continente-nivel jugado), labels abreviados con tooltip
-- [x] Alinear estadísticas con algoritmo de juego: fix bug tipo concreto (cola sin filtrar dominados), stats con herencia aplicada, heredados solo A/B con prioridad baja
-- [x] ✓ gris para inferencia intra-nivel: A dominado → E gris; B dominado → C/D/F grises. Leyenda "Heredado" → "Inferido"
-- [x] Fix distractores insuficientes en modo tipo concreto (C/D/E/F): pool de distractores usa todos los países del nivel, no solo los pendientes
-- [x] Quitar botón "salir" de la barra de progreso; re-tocar tab "Jugar" vuelve al selector
-- [x] Pre-selección nivel: siempre se pre-selecciona el máximo nivel desbloqueado (al montar y al cambiar continente)
-- [x] Botón "Continuar" cuando el continente-nivel tiene intentos previos (en vez de siempre "Empezar")
-- [x] Indicar niveles superados en selector ("Superado 🏅"), banner invitación a sello clickable (abre modal de prueba)
-- [x] Fix barra de progreso Aventura: inferencia ascendente en crédito (A→E, B→C/D/F) + avance colectivo excluye heredados
-- [x] Modal completar tipo E/C/D/F: texto motivador, quitar resumen aciertos/fallos, botones sin jerarquía, "Seleccionar otro"
-- [x] Invitación a sello tipo A/B: invitar a prueba de sello (no a tipos anteriores)
-- [x] ProgressBar solo datos: eliminar banners de hitos (duplicaban modal). Modal Aventura con invitación a sello
-- [x] Zoom inteligente A/B: zoom-out proporcional si el objetivo está cerca, zoom al continente solo si está lejos
-- [x] Centros Asia [80,30] y Oceanía [160,-15] reajustados, zoom continental 1.5 para mejor cobertura
-- [x] Zoom-out A/B menos agresivo (punto intermedio + margen 0.70) + flyTo al país completo tras acierto
-- [x] Zoom inteligente E/F: extensión angular (centroide→vértice) limita zoom en archipiélagos dispersos. Outline punteado de convex hull con buffer y `lineJoin: round`. Centro visual (hull centroid) para flyTo en archipiélagos
-- [x] Verificar Micronesia y archipiélagos Oceanía: centroides ajustados (FM, KI, VU, MH), zoom inteligente, outline de hull, centro visual para flyTo. Verificado en dispositivo
-- [x] Zoom Oceanía E/F: resuelto con extensión angular + outline de convex hull + centro visual para flyTo
-- [x] Override 1:10m para 8 islas del Pacífico (FM, MH, TV, PW, TO, KI, VU, FJ): geometrías con detalle completo, Tuvalu añadido (no existía en 50m), Micronesia de 5→20 polígonos
+- [x] **Motor de renderizado**: D3.js ortográfico + Canvas 2D. Zoom ×200, inercia, pinch+drag, marcadores de microestados, dirty flag
+- [x] **Datos**: 195 países ONU + territorios no-ONU + Antártida. Datos en español completos (capitales, gentilicios, monedas, idiomas, IDH/IDH-D, Wikipedia). Override 1:10m para 8 islas del Pacífico
+- [x] **Explorar**: Globo interactivo (etiquetas anti-solapamiento, filtros continente, flyTo) + Tabla (sticky headers, ordenable, toggle no-ONU). Ficha de país completa. Diseño responsivo (rem)
+- [x] **Jugar**: 6 tipos (E/C/D/F/A/B), modo Aventura + tipo concreto. Algoritmo v3 (rachas, etapas, regresión, avance colectivo, inferencia, herencia entre niveles, anti-repetición). Barra de progreso ponderada. Pruebas de sello (0 errores). Zoom inteligente E/F y A/B (extensión angular, convex hull, centroides Oceanía ajustados)
+- [x] **Pasaporte**: Matriz niveles × continentes con sellos, color según nivel global
+- [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente
+- [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores). Feedback háptico
+- [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio
 
 ---
 
