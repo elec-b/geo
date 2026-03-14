@@ -2,7 +2,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { capacitorStorage } from './persistStorage';
-import type { AppSettings, AppState, UserProfile, ProfileId, AvatarId, ProfileProgress, CountryAttempts } from './types';
+import type { AppSettings, AppState, UserProfile, ProfileId, AvatarId, ProfileProgress, CountryAttempts, StampCountryAttempts } from './types';
 import type { Continent, GameLevel, QuestionType } from '../data/types';
 
 const LEVELS: GameLevel[] = ['turista', 'mochilero', 'guía'];
@@ -18,6 +18,7 @@ function emptyProgress(): ProfileProgress {
         stampCountries: { earned: false, earnedDate: null },
         stampCapitals: { earned: false, earnedDate: null },
         attempts: {},
+        stampAttempts: {},
       };
     }
   }
@@ -73,6 +74,10 @@ interface AppStoreActions {
   earnStamp: (level: GameLevel, continent: Continent, stampType: StampType) => void;
   /** Consulta si los sellos de un nivel×continente están ganados */
   getStamps: (level: GameLevel, continent: Continent) => { countries: boolean; capitals: boolean };
+  /** Registra un intento en una prueba de sello (registro independiente de Jugar) */
+  recordStampAttempt: (level: GameLevel, continent: Continent, cca2: string, stampType: 'A' | 'B', correct: boolean) => void;
+  /** Devuelve los intentos de pruebas de sello del perfil activo para un nivel × continente */
+  getStampAttempts: (level: GameLevel, continent: Continent) => Record<string, StampCountryAttempts>;
   /** Persiste el último continente y nivel jugado */
   setLastPlayed: (continent: Continent, level: GameLevel) => void;
 }
@@ -222,6 +227,57 @@ export const useAppStore = create<AppStore>()(
       countries: lcp.stampCountries.earned,
       capitals: lcp.stampCapitals.earned,
     };
+  },
+
+  recordStampAttempt: (level, continent, cca2, stampType, correct) => {
+    set((state) => {
+      const { activeProfileId } = state;
+      if (!activeProfileId) return state;
+
+      const profileIdx = state.profiles.findIndex((p) => p.id === activeProfileId);
+      if (profileIdx === -1) return state;
+
+      const profile = state.profiles[profileIdx];
+      const lcp = profile.progress[level][continent];
+      const sa = lcp.stampAttempts ?? {};
+      const countryStamp = sa[cca2] ?? {};
+      const prev = countryStamp[stampType] ?? { correct: 0, incorrect: 0, lastCorrect: false };
+
+      const updated = {
+        correct: prev.correct + (correct ? 1 : 0),
+        incorrect: prev.incorrect + (correct ? 0 : 1),
+        lastCorrect: correct,
+      };
+
+      const newProfiles = [...state.profiles];
+      newProfiles[profileIdx] = {
+        ...profile,
+        progress: {
+          ...profile.progress,
+          [level]: {
+            ...profile.progress[level],
+            [continent]: {
+              ...lcp,
+              stampAttempts: {
+                ...sa,
+                [cca2]: {
+                  ...countryStamp,
+                  [stampType]: updated,
+                },
+              },
+            },
+          },
+        },
+      };
+
+      return { profiles: newProfiles };
+    });
+  },
+
+  getStampAttempts: (level, continent) => {
+    const profile = get().getActiveProfile();
+    if (!profile) return {};
+    return profile.progress[level][continent].stampAttempts ?? {};
   },
 
   setLastPlayed: (continent, level) => {

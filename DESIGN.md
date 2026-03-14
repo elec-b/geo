@@ -61,10 +61,7 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 *   **0 errores requeridos**: el usuario debe completar la prueba sin fallos para conseguir el sello.
 *   **Sin límite de intentos**: el usuario puede repetir la prueba de sello tantas veces como quiera. El requisito de 0 errores ya es filtro suficiente, y cada reintento es práctica valiosa.
 *   **Acceso**: El usuario puede intentar las pruebas desde Pasaporte (siempre disponible) o desde Jugar (cuando el algoritmo de aprendizaje lo invita).
-*   **Fallos compartidos**: Los fallos en las pruebas de sello alimentan el registro de fallos compartido (ver § Jugar > Algoritmo de aprendizaje).
-
-### Registro de fallos
-Los fallos del usuario se registran en un sistema compartido (ver § Jugar > Algoritmo de aprendizaje). Tanto el entrenamiento en Jugar como las pruebas de sello alimentan este registro.
+*   **Registro separado**: Las pruebas de sello tienen su propio registro de intentos, independiente de Jugar. Los fallos en pruebas de sello no afectan el algoritmo de aprendizaje de Jugar.
 
 ---
 
@@ -152,7 +149,7 @@ Cuando el usuario selecciona un tipo concreto (o modo Aventura) donde todos los 
 
 ### Algoritmo de aprendizaje
 
-Sistema compartido entre Jugar y Pruebas de sello (Pasaporte). Ambas experiencias alimentan el mismo registro de intentos.
+Sistema de aprendizaje exclusivo de Jugar. Las pruebas de sello tienen su propio registro independiente (ver § Estadísticas > Pruebas de sello).
 
 #### Registro de intentos
 
@@ -163,7 +160,7 @@ Para cada combinación se almacena:
 *   **Fallos**: total acumulado.
 *   **Racha**: En acierto: `racha = max(1, racha + 1)`. En fallo: si racha > 0 → racha = 0; si racha ≤ 0 → racha -= 1. La regla `max(1, ...)` garantiza que **un solo acierto siempre lleva a dominio**, sin importar la racha previa. La racha negativa mide la persistencia de fallos.
 
-El registro es **compartido**: tanto Jugar (en todos los modos) como las Pruebas de sello alimentan los mismos datos.
+El registro es **exclusivo de Jugar**: las pruebas de sello tienen su propio almacenamiento independiente (`stampAttempts`).
 
 #### Dominio
 
@@ -373,20 +370,35 @@ Desde el dashboard, el usuario puede intentar conseguir cualquier sello pendient
 
 Vista que muestra el registro de intentos del usuario de forma visual. Accesible desde un **icono en el header**, junto al icono de perfil (a su derecha). Disponible desde cualquier pantalla.
 
-### Contenido
-*   Selector de nivel × continente. (Nota: de momento se deja esto así, para facilitar el debugging; pero en el futuro seguramente nos sirva una lista sencilla de países y saber e.g. el % de acierto en ubicación de país y de capital (A y B) - a repensar más adelante)
+La vista de estadísticas tiene dos pestañas: **Jugar** (datos de Jugar) y **Pruebas de sello** (datos de las pruebas de sello, reflejados en Pasaporte). Ambas comparten selector de nivel × continente.
+
+### Toggle de visualización
+
+Disponible en ambas pestañas. Permite alternar entre dos modos:
+*   **Indicadores de dominio** (por defecto): iconos ✓/▼/— por celda (ver indicadores de cada pestaña).
+*   **Porcentaje de acierto**: `aciertos / (aciertos + fallos) × 100` por celda. Celdas sin intentos muestran «—».
+
+### Pestaña Jugar
+*   Selector de nivel × continente.
 *   Tabla de países con indicadores de dominio por tipo de juego (E, C, D, F, A, B).
 *   Indicadores visuales por celda:
     - **✓ verde** — Dominado por intento propio (racha ≥ 1 en ese tipo específico, con datos propios del nivel actual).
     - **✓ gris** — Dominado por inferencia, no verificado directamente. Incluye dos casos: (1) inferencia ascendente dentro del mismo nivel (A dominado → E inferido; B dominado → C/D/F inferidos), y (2) herencia entre niveles (ver § Herencia de progreso entre niveles).
-    - **● gris** — En progreso (tiene intentos, racha = 0).
-    - **▼ rojo** — Necesita refuerzo (racha < 0).
+    - **▼ rojo** — Necesita refuerzo (racha ≤ 0, tiene intentos).
     - **—** — Sin datos.
 *   La tabla muestra los datos **con herencia aplicada** (lo mismo que usa el algoritmo de juego), no solo los datos propios. Esto garantiza que lo que el usuario ve coincida con lo que el algoritmo utiliza para seleccionar preguntas.
-*   Totales agregados: aciertos y fallos globales del nivel-continente.
+
+### Pestaña Pruebas de sello
+*   Tabla de países con **dos columnas**: Países (tipo A) y Capitales (tipo B).
+*   Registro independiente del de Jugar (`stampAttempts`). Sin herencia entre niveles — cada nivel evalúa el 100% de los países.
+*   Se registran todos los intentos individuales, incluso si la prueba se abandona.
+*   Indicadores visuales por celda:
+    - **✓ verde** — Acertado en el último intento de prueba.
+    - **✗ rojo** — Fallado en el último intento de prueba.
+    - **—** — Sin intentos.
 
 ### Acciones
-*   **Resetear estadísticas**: Por nivel-continente (con confirmación). Borra todos los intentos de ese nivel-continente para el perfil activo.
+*   **Resetear estadísticas**: Por nivel-continente (con confirmación). Borra solo los datos de **Jugar** de ese nivel-continente. Los datos de pruebas de sello y los sellos ganados no se borran.
 
 ---
 

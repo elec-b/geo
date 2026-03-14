@@ -107,6 +107,7 @@ export function JugarView({
 
   // --- Store y algoritmo de aprendizaje ---
   const recordAttempt = useAppStore((s) => s.recordAttempt);
+  const recordStampAttempt = useAppStore((s) => s.recordStampAttempt);
   const getAttempts = useAppStore((s) => s.getAttempts);
   const getStamps = useAppStore((s) => s.getStamps);
   const earnStamp = useAppStore((s) => s.earnStamp);
@@ -124,7 +125,7 @@ export function JugarView({
   const activeContinentRef = useRef<Continent | null>(null);
   const activeQuestionTypeRef = useRef<QuestionTypeFilter>('mixed');
 
-  // Callback de intento: registra en el store
+  // Callback de intento (Jugar): registra en el store
   const handleAttempt = useCallback(
     (cca2: string, type: QuestionType, correct: boolean) => {
       if (activeLevelRef.current && activeContinentRef.current) {
@@ -132,6 +133,16 @@ export function JugarView({
       }
     },
     [recordAttempt],
+  );
+
+  // Callback de intento (prueba de sello): registro independiente
+  const handleStampAttempt = useCallback(
+    (cca2: string, type: QuestionType, correct: boolean) => {
+      if (activeLevelRef.current && activeContinentRef.current) {
+        recordStampAttempt(activeLevelRef.current, activeContinentRef.current, cca2, type as 'A' | 'B', correct);
+      }
+    },
+    [recordStampAttempt],
   );
 
   // Callback para obtener intentos actualizados con herencia (el hook lo usa para el algoritmo)
@@ -165,6 +176,7 @@ export function JugarView({
 
   const session = useGameSession(levels, countries, capitals, {
     onAttempt: handleAttempt,
+    onStampAttempt: handleStampAttempt,
     getAttempts: getAttemptsForSession,
     getInheritedCountries,
   });

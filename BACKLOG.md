@@ -14,21 +14,13 @@
 - [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores). Feedback háptico
 - [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello, hulls de archipiélagos siempre visibles (selectivos por continente, buffer proporcional, zoom adaptativo), fix flyTo antimeridiano (Samoa/Tonga), fix hit testing no-ONU (prioridad geometría sobre territorios no-ONU)
+- [x] **Estadísticas**: Eliminado estado "en progreso" (▼ para racha ≤ 0), quitados contadores aciertos/fallos, toggle ✓/%, desacoplamiento datos sello/jugar (`stampAttempts` independiente), nueva pestaña "Pruebas de sello" con indicadores ✓/✗
 
 ---
 
 ## Próximos pasos
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
-
-### Estadísticas
-- [ ] Repasar lógica, en qué situaciones se utiliza/indica "en progreso" en la tabla de estadísticas?
-- [ ] Quitar contadores de aciertos/fallos del bottom
-- [ ] Botón toggle para mostrar % de acierto por país (poder alternar entre iconos de dominio y % de acierto).
-- [ ] Tabla de estadísticas de pruebas de sello (spike completado: `docs/spikes/estadisticas-sello.md`). Decisiones clave: desacoplamiento total sello/jugar, registro independiente, toggle ✓/%. Pasos:
-  - [ ] Actualizar DESIGN.md con los cambios propuestos en el spike (§ Pasaporte, § Algoritmo, § Estadísticas)
-  - [ ] Implementar modelo de datos desacoplado (`stampAttempts` separado de `attempts`, nueva `recordStampAttempt()`)
-  - [ ] Nueva pestaña "Pruebas de sello" en la vista de Estadísticas
 
 ### Multi-usuario
 - [ ] Comprobar si cuando se cambia de usuario, si hay otro usuario en Jugar o en Pasaporte, el juego / prueba de sello en curso se para (si es que está en alguno de estos) - esta es la funcionalidad lógica. El nuevo usuario empieza en Explorar y elige juego. Pensar bien el diseño y reflejar en design.md antes de implementar.

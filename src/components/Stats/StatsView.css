@@ -59,6 +59,68 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* Pestañas (segmented control) */
+.stats-tabs {
+  display: flex;
+  margin: 0 var(--spacing-md) var(--spacing-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.stats-tab {
+  flex: 1;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family);
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.stats-tab--active {
+  background: var(--color-accent-cyan);
+  color: var(--color-bg-primary);
+  font-weight: 600;
+}
+
+.stats-tab:not(:last-child) {
+  border-right: 1px solid var(--glass-border);
+}
+
+/* Toggle ✓/% */
+.stats-toggle-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 var(--spacing-md) var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+.stats-toggle {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family);
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.stats-toggle:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 /* Pills de selección */
 .stats-pills {
   display: flex;
@@ -165,10 +227,6 @@
   color: var(--color-text-secondary);
 }
 
-.stats-cell--progress {
-  color: var(--color-accent-amber);
-}
-
 .stats-cell--reinforcement {
   color: var(--color-error);
 }
@@ -177,23 +235,10 @@
   color: var(--color-text-muted);
 }
 
-/* Totales */
-.stats-totals {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-sm) var(--spacing-md);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  flex-shrink: 0;
-}
-
-.stats-totals__correct {
-  color: var(--color-success);
-}
-
-.stats-totals__incorrect {
-  color: var(--color-error);
+.stats-cell--percent {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: var(--font-size-xs);
 }
 
 /* Leyenda */

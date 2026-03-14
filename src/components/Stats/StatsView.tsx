@@ -1,8 +1,9 @@
 // StatsView — modal fullscreen con estadísticas de aprendizaje por país
-// Muestra datos con herencia aplicada (alineado con el algoritmo de juego).
+// Dos pestañas: Jugar (entrenamiento) y Pruebas de sello (certificación).
+// Toggle para alternar entre indicadores de dominio y % de acierto.
 import { useState, useMemo } from 'react';
 import type { CountryData, Continent, GameLevel, QuestionType, LevelDefinition } from '../../data/types';
-import type { CountryAttempts } from '../../stores/types';
+import type { CountryAttempts, StampCountryAttempts } from '../../stores/types';
 import { isDominated, isDirectlyDominated, getAttemptsWithInheritance } from '../../data/learningAlgorithm';
 import { useAppStore } from '../../stores/appStore';
 import './StatsView.css';
@@ -10,6 +11,9 @@ import './StatsView.css';
 const CONTINENTS: Continent[] = ['África', 'América', 'Asia', 'Europa', 'Oceanía'];
 const LEVELS: GameLevel[] = ['turista', 'mochilero', 'guía'];
 const ALL_TYPES: QuestionType[] = ['E', 'C', 'D', 'F', 'A', 'B'];
+const STAMP_TYPES: ('A' | 'B')[] = ['A', 'B'];
+
+type StatsTab = 'jugar' | 'sellos';
 
 interface StatsViewProps {
   countries: Map<string, CountryData>;
@@ -17,8 +21,10 @@ interface StatsViewProps {
   onClose: () => void;
 }
 
-/** Indicador visual para una celda de la tabla */
-function CellIndicator({ ca, type, isInferredType }: {
+// --- Indicadores de celda (pestaña Jugar) ---
+
+/** Indicador de dominio para la tabla de Jugar */
+function JugarCellIndicator({ ca, type, isInferredType }: {
   ca: CountryAttempts | undefined;
   type: QuestionType;
   isInferredType: boolean;
@@ -27,7 +33,6 @@ function CellIndicator({ ca, type, isInferredType }: {
     return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
   }
 
-  // Dominio: check primero (la inferencia ascendente puede dominar sin rec directo)
   if (isDominated(ca, type)) {
     return isInferredType
       ? <span className="stats-cell stats-cell--inferred">{'\u2713'}</span>
@@ -39,11 +44,58 @@ function CellIndicator({ ca, type, isInferredType }: {
     return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
   }
 
-  if (rec.streak < 0) {
-    return <span className="stats-cell stats-cell--reinforcement">{'\u25BC'}</span>;
-  }
+  return <span className="stats-cell stats-cell--reinforcement">{'\u25BC'}</span>;
+}
 
-  return <span className="stats-cell stats-cell--progress">{'\u25CF'}</span>;
+/** Porcentaje de acierto para una celda de Jugar */
+function JugarPercentCell({ ca, type }: {
+  ca: CountryAttempts | undefined;
+  type: QuestionType;
+}) {
+  if (!ca) {
+    return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
+  }
+  const rec = ca[type];
+  if (!rec || (rec.correct === 0 && rec.incorrect === 0)) {
+    return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
+  }
+  const pct = Math.round((rec.correct / (rec.correct + rec.incorrect)) * 100);
+  return <span className="stats-cell stats-cell--percent">{pct}%</span>;
+}
+
+// --- Indicadores de celda (pestaña Pruebas de sello) ---
+
+/** Indicador de dominio para la tabla de Pruebas de sello */
+function StampCellIndicator({ sca, type }: {
+  sca: StampCountryAttempts | undefined;
+  type: 'A' | 'B';
+}) {
+  if (!sca) {
+    return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
+  }
+  const rec = sca[type];
+  if (!rec) {
+    return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
+  }
+  return rec.lastCorrect
+    ? <span className="stats-cell stats-cell--dominated">{'\u2713'}</span>
+    : <span className="stats-cell stats-cell--reinforcement">{'\u2717'}</span>;
+}
+
+/** Porcentaje de acierto para una celda de Pruebas de sello */
+function StampPercentCell({ sca, type }: {
+  sca: StampCountryAttempts | undefined;
+  type: 'A' | 'B';
+}) {
+  if (!sca) {
+    return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
+  }
+  const rec = sca[type];
+  if (!rec || (rec.correct === 0 && rec.incorrect === 0)) {
+    return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
+  }
+  const pct = Math.round((rec.correct / (rec.correct + rec.incorrect)) * 100);
+  return <span className="stats-cell stats-cell--percent">{pct}%</span>;
 }
 
 /** Abreviaturas descriptivas para cada tipo de pregunta */
@@ -56,6 +108,11 @@ const TYPE_LABELS: Record<QuestionType, { short: string; full: string }> = {
   B: { short: 'S.C.', full: 'Señala la capital' },
 };
 
+const STAMP_LABELS: Record<'A' | 'B', { short: string; full: string }> = {
+  A: { short: 'Países', full: 'Prueba de sello de Países' },
+  B: { short: 'Capitales', full: 'Prueba de sello de Capitales' },
+};
+
 export function StatsView({ countries, levels, onClose }: StatsViewProps) {
   const lastPlayed = useAppStore((s) => s.settings.lastPlayed);
   const [selectedContinent, setSelectedContinent] = useState<Continent>(
@@ -64,23 +121,25 @@ export function StatsView({ countries, levels, onClose }: StatsViewProps) {
   const [selectedLevel, setSelectedLevel] = useState<GameLevel>(
     lastPlayed?.level ?? 'turista',
   );
+  const [activeTab, setActiveTab] = useState<StatsTab>('jugar');
+  const [showPercentage, setShowPercentage] = useState(false);
 
   const resetAttempts = useAppStore((s) => s.resetAttempts);
   const getAttempts = useAppStore((s) => s.getAttempts);
   const getStamps = useAppStore((s) => s.getStamps);
+  const getStampAttempts = useAppStore((s) => s.getStampAttempts);
 
   // Países del nivel × continente actual
   const levelDef = levels.get(`${selectedLevel}-${selectedContinent}`);
   const levelCountries = levelDef?.countries ?? [];
 
-  // Intentos propios (sin herencia) — necesario para distinguir ✓ verde vs ✓ gris
+  // --- Datos de Jugar ---
   const ownAttempts = useAppStore((s) => {
     const profile = s.profiles.find((p) => p.id === s.activeProfileId);
     if (!profile) return {};
     return profile.progress[selectedLevel]?.[selectedContinent]?.attempts ?? {};
   });
 
-  // Intentos con herencia aplicada (lo que usa el algoritmo de juego)
   const allAttempts = useMemo(() => {
     if (selectedLevel === 'turista') return ownAttempts;
     return getAttemptsWithInheritance(
@@ -89,6 +148,11 @@ export function StatsView({ countries, levels, onClose }: StatsViewProps) {
     );
   }, [ownAttempts, selectedLevel, selectedContinent, getStamps, getAttempts]);
 
+  // --- Datos de Pruebas de sello ---
+  const stampAttempts = useMemo(() => {
+    return getStampAttempts(selectedLevel, selectedContinent);
+  }, [getStampAttempts, selectedLevel, selectedContinent]);
+
   // Lista de países ordenados por nombre
   const sortedCountries = useMemo(() => {
     return levelCountries
@@ -96,25 +160,8 @@ export function StatsView({ countries, levels, onClose }: StatsViewProps) {
       .sort((a, b) => a.name.localeCompare(b.name, 'es'));
   }, [levelCountries, countries]);
 
-  // Totales agregados
-  const totals = useMemo(() => {
-    let correct = 0;
-    let incorrect = 0;
-    for (const cca2 of levelCountries) {
-      const ca = allAttempts[cca2];
-      if (!ca) continue;
-      for (const t of ALL_TYPES) {
-        const rec = ca[t];
-        if (!rec) continue;
-        correct += rec.correct;
-        incorrect += rec.incorrect;
-      }
-    }
-    return { correct, incorrect };
-  }, [allAttempts, levelCountries]);
-
   const handleReset = () => {
-    if (window.confirm(`¿Resetear estadísticas de ${selectedLevel} - ${selectedContinent}?`)) {
+    if (window.confirm(`¿Resetear estadísticas de Jugar para ${selectedLevel} - ${selectedContinent}?`)) {
       resetAttempts(selectedLevel, selectedContinent);
     }
   };
@@ -127,6 +174,22 @@ export function StatsView({ countries, levels, onClose }: StatsViewProps) {
           <h2 className="stats-header__title">Estadísticas</h2>
           <button className="stats-header__close" onClick={onClose} aria-label="Cerrar">
             {'\u2715'}
+          </button>
+        </div>
+
+        {/* Pestañas: Jugar | Pruebas de sello */}
+        <div className="stats-tabs">
+          <button
+            className={`stats-tab${activeTab === 'jugar' ? ' stats-tab--active' : ''}`}
+            onClick={() => setActiveTab('jugar')}
+          >
+            Jugar
+          </button>
+          <button
+            className={`stats-tab${activeTab === 'sellos' ? ' stats-tab--active' : ''}`}
+            onClick={() => setActiveTab('sellos')}
+          >
+            Pruebas de sello
           </button>
         </div>
 
@@ -156,61 +219,118 @@ export function StatsView({ countries, levels, onClose }: StatsViewProps) {
           ))}
         </div>
 
-        {/* Tabla */}
-        <div className="stats-table-wrapper">
-          <table className="stats-table">
-            <thead>
-              <tr>
-                <th className="stats-table__th-name">País</th>
-                {ALL_TYPES.map((t) => (
-                  <th key={t} className="stats-table__th-type" title={TYPE_LABELS[t].full}>
-                    {TYPE_LABELS[t].short}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {sortedCountries.map(({ cca2, name }) => {
-                const ca = allAttempts[cca2];
-                const ownCa = ownAttempts[cca2];
-                return (
-                  <tr key={cca2}>
-                    <td className="stats-table__td-name">{name}</td>
-                    {ALL_TYPES.map((t) => {
-                      // Inferido: dominado (por inferencia ascendente o herencia) pero no directamente por el usuario
-                      const isInferredType = isDominated(ca, t) && !isDirectlyDominated(ownCa, t);
-                      return (
-                        <td key={t} className="stats-table__td-type">
-                          <CellIndicator ca={ca} type={t} isInferredType={isInferredType} />
-                        </td>
-                      );
-                    })}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+        {/* Toggle ✓ / % */}
+        <div className="stats-toggle-row">
+          <button
+            className="stats-toggle"
+            onClick={() => setShowPercentage((v) => !v)}
+            aria-label={showPercentage ? 'Mostrar indicadores' : 'Mostrar porcentajes'}
+          >
+            {showPercentage ? '\u2713 / \u25BC' : '%'}
+          </button>
         </div>
 
-        {/* Totales */}
-        <div className="stats-totals">
-          <span className="stats-totals__correct">{'\u2713'} {totals.correct} aciertos</span>
-          <span className="stats-totals__incorrect">{'\u2717'} {totals.incorrect} fallos</span>
-        </div>
+        {/* Tabla — Jugar */}
+        {activeTab === 'jugar' && (
+          <div className="stats-table-wrapper">
+            <table className="stats-table">
+              <thead>
+                <tr>
+                  <th className="stats-table__th-name">País</th>
+                  {ALL_TYPES.map((t) => (
+                    <th key={t} className="stats-table__th-type" title={TYPE_LABELS[t].full}>
+                      {TYPE_LABELS[t].short}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {sortedCountries.map(({ cca2, name }) => {
+                  const ca = allAttempts[cca2];
+                  const ownCa = ownAttempts[cca2];
+                  return (
+                    <tr key={cca2}>
+                      <td className="stats-table__td-name">{name}</td>
+                      {ALL_TYPES.map((t) => {
+                        const isInferredType = isDominated(ca, t) && !isDirectlyDominated(ownCa, t);
+                        return (
+                          <td key={t} className="stats-table__td-type">
+                            {showPercentage
+                              ? <JugarPercentCell ca={ca} type={t} />
+                              : <JugarCellIndicator ca={ca} type={t} isInferredType={isInferredType} />
+                            }
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {/* Tabla — Pruebas de sello */}
+        {activeTab === 'sellos' && (
+          <div className="stats-table-wrapper">
+            <table className="stats-table">
+              <thead>
+                <tr>
+                  <th className="stats-table__th-name">País</th>
+                  {STAMP_TYPES.map((t) => (
+                    <th key={t} className="stats-table__th-type" title={STAMP_LABELS[t].full}>
+                      {STAMP_LABELS[t].short}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {sortedCountries.map(({ cca2, name }) => {
+                  const sca = stampAttempts[cca2];
+                  return (
+                    <tr key={cca2}>
+                      <td className="stats-table__td-name">{name}</td>
+                      {STAMP_TYPES.map((t) => (
+                        <td key={t} className="stats-table__td-type">
+                          {showPercentage
+                            ? <StampPercentCell sca={sca} type={t} />
+                            : <StampCellIndicator sca={sca} type={t} />
+                          }
+                        </td>
+                      ))}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
 
         {/* Leyenda */}
         <div className="stats-legend">
-          <span><span className="stats-cell stats-cell--dominated">{'\u2713'}</span> Dominado</span>
-          <span><span className="stats-cell stats-cell--inferred">{'\u2713'}</span> Inferido</span>
-          <span><span className="stats-cell stats-cell--progress">{'\u25CF'}</span> En progreso</span>
-          <span><span className="stats-cell stats-cell--reinforcement">{'\u25BC'}</span> Refuerzo</span>
-          <span><span className="stats-cell stats-cell--empty">{'\u2014'}</span> Sin datos</span>
+          {activeTab === 'jugar' && !showPercentage && (
+            <>
+              <span><span className="stats-cell stats-cell--dominated">{'\u2713'}</span> Dominado</span>
+              <span><span className="stats-cell stats-cell--inferred">{'\u2713'}</span> Inferido</span>
+              <span><span className="stats-cell stats-cell--reinforcement">{'\u25BC'}</span> Refuerzo</span>
+              <span><span className="stats-cell stats-cell--empty">{'\u2014'}</span> Sin datos</span>
+            </>
+          )}
+          {activeTab === 'sellos' && !showPercentage && (
+            <>
+              <span><span className="stats-cell stats-cell--dominated">{'\u2713'}</span> Acertado</span>
+              <span><span className="stats-cell stats-cell--reinforcement">{'\u2717'}</span> Fallado</span>
+              <span><span className="stats-cell stats-cell--empty">{'\u2014'}</span> Sin datos</span>
+            </>
+          )}
         </div>
 
-        {/* Botón resetear */}
-        <button className="stats-reset" onClick={handleReset}>
-          Resetear estadísticas
-        </button>
+        {/* Botón resetear (solo en pestaña Jugar) */}
+        {activeTab === 'jugar' && (
+          <button className="stats-reset" onClick={handleReset}>
+            Resetear estadísticas
+          </button>
+        )}
       </div>
     </div>
   );

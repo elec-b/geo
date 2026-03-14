@@ -57,6 +57,8 @@ const INITIAL_SCORE: GameScore = { correct: 0, incorrect: 0, total: 0 };
 
 export interface GameSessionOptions {
   onAttempt?: (cca2: string, type: QuestionType, correct: boolean) => void;
+  /** Callback para intentos en pruebas de sello (registro independiente de Jugar) */
+  onStampAttempt?: (cca2: string, type: QuestionType, correct: boolean) => void;
   /** Función para obtener los intentos actualizados del store */
   getAttempts?: () => Record<string, CountryAttempts>;
   /** Función para obtener los países heredados: mapa de país → tipos sin datos propios */
@@ -105,6 +107,8 @@ export function useGameSession(
   // Refs para evitar invalidar memoización
   const onAttemptRef = useRef(options?.onAttempt);
   onAttemptRef.current = options?.onAttempt;
+  const onStampAttemptRef = useRef(options?.onStampAttempt);
+  onStampAttemptRef.current = options?.onStampAttempt;
   const getAttemptsRef = useRef(options?.getAttempts);
   getAttemptsRef.current = options?.getAttempts;
   const getInheritedCountriesRef = useRef(options?.getInheritedCountries);
@@ -266,8 +270,12 @@ export function useGameSession(
           ? answer === currentQuestion.targetCca2
           : answer === (currentQuestion as { correctAnswer: string }).correctAnswer;
 
-      // Registrar intento en el store (via callback)
-      onAttemptRef.current?.(currentQuestion.targetCca2, currentQuestion.type as QuestionType, isCorrect);
+      // Registrar intento en el store (callback distinto según contexto)
+      if (isStampTestRef.current) {
+        onStampAttemptRef.current?.(currentQuestion.targetCca2, currentQuestion.type as QuestionType, isCorrect);
+      } else {
+        onAttemptRef.current?.(currentQuestion.targetCca2, currentQuestion.type as QuestionType, isCorrect);
+      }
 
       // Tras responder, siempre mostrar el país correcto en dorado
       setCorrectCca2(currentQuestion.targetCca2);
