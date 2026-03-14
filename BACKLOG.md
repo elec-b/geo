@@ -25,9 +25,10 @@
 - [ ] Repasar lógica, en qué situaciones se utiliza/indica "en progreso" en la tabla de estadísticas?
 - [ ] Quitar contadores de aciertos/fallos del bottom
 - [ ] Botón toggle para mostrar % de acierto por país (poder alternar entre iconos de dominio y % de acierto).
-- [ ] Añadir otra tabla para mostrar resultados en pruebas de sello. Pensar bien el diseño antes y anotar en design.md (queremos mostrar tick o cross, de manera similar a las de los juegos? Queremos mostrar % de acierto? Ambas cosas?)
-  - Además, ahora mismo las estadísticas de las pruebas de sello y las de jugar a A o B, creo que están vinculadas/relacionadas. Esto implicaría desvincularlas. Si esto es así, es otra razón de alto peso, para diseñar y anotar bien en design.md antes de implementar absolutamente nada.
-  - Además, si el usuario está haciendo una prueba de sello, las estadísticas deben mostrar el nivel-continente correspondiente en la (nueva) tabla de pruebas de sello. Otra buena razón para diseñar bien en design.md
+- [ ] Tabla de estadísticas de pruebas de sello (spike completado: `docs/spikes/estadisticas-sello.md`). Decisiones clave: desacoplamiento total sello/jugar, registro independiente, toggle ✓/%. Pasos:
+  - [ ] Actualizar DESIGN.md con los cambios propuestos en el spike (§ Pasaporte, § Algoritmo, § Estadísticas)
+  - [ ] Implementar modelo de datos desacoplado (`stampAttempts` separado de `attempts`, nueva `recordStampAttempt()`)
+  - [ ] Nueva pestaña "Pruebas de sello" en la vista de Estadísticas
 
 ### Multi-usuario
 - [ ] Comprobar si cuando se cambia de usuario, si hay otro usuario en Jugar o en Pasaporte, el juego / prueba de sello en curso se para (si es que está en alguno de estos) - esta es la funcionalidad lógica. El nuevo usuario empieza en Explorar y elige juego. Pensar bien el diseño y reflejar en design.md antes de implementar.
