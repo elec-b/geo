@@ -488,13 +488,14 @@ Otros archipiélagos de Oceanía (Fiyi, Tonga, Samoa, Palau, Islas Salomón) tie
 
 ### Outlines de archipiélagos (convex hull siempre visible)
 
-Los archipiélagos muestran una **línea discontinua perimetral** (convex hull) que delimita su extensión territorial. Esta línea es siempre visible (no solo al seleccionar), facilitando la comprensión de qué islas forman parte de cada país.
+Un subconjunto de archipiélagos —los difíciles de seleccionar o identificar visualmente— muestra una **línea discontinua perimetral** (convex hull) siempre visible, facilitando la comprensión de qué islas forman parte de cada país. Los archipiélagos grandes (Indonesia, Japón, Filipinas) o fácilmente identificables (Nueva Zelanda, Cuba) no la muestran.
 
-*   **Visibilidad**: Zoom adaptativo por tamaño del hull. Hulls grandes (Indonesia, Japón) aparecen a zoom bajo (~1.5). Hulls pequeños (Comoros, Cabo Verde) aparecen a zoom alto (~5). Fórmula: `clamp(K / extensiónAngularGrados, 1.5, 5)` con K=10 (tunable).
-*   **Estilo**: Misma línea discontinua y color (blanco) que los marcadores de microestados. Fade-in progresivo de 1 unidad de zoom.
-*   **Relación con marcadores de microestados**: Si un país es a la vez microestado y archipiélago (ej. Kiribati, Comoros, Palau), se muestra **solo el hull**, no el marcador circular. El hull es más informativo para países insulares.
-*   **País seleccionado**: Al seleccionar un archipiélago, el hull cambia a estilo destacado (dorado, mayor opacidad) para indicar la selección.
-*   **Control**: Sigue el mismo toggle que los marcadores de microestados (setting «Marcadores de microestados»). En Jugar, visible en tipos A/B (interacción con el mapa), oculto en C-F (quiz de opciones múltiples).
+*   **Países con hull visible**: Oceanía (FJ, SB, VU, PG, KI, FM, MH, TV, TO, WS, PW) y América (TT, AG, KN, VC). El resto de archipiélagos (`ARCHIPELAGO_CODES`) conserva el hull para hit testing y selección, pero no se muestra por defecto.
+*   **Visibilidad**: Zoom adaptativo por tamaño del hull. Fórmula: `clamp(K / extensiónAngularGrados, 1.5, 5)` con K=10. Fade-in progresivo de 1 unidad de zoom.
+*   **Estilo**: Misma línea discontinua y color (blanco) que los marcadores de microestados.
+*   **Relación con marcadores de microestados**: Si un país es a la vez microestado y archipiélago con hull visible (ej. Kiribati, Palau, Trinidad y Tobago), se muestra **solo el hull**, no el marcador circular. Los microestados-archipiélago sin hull visible (ej. Comoras, Cabo Verde) conservan su marcador circular.
+*   **País seleccionado**: Al seleccionar cualquier archipiélago (con o sin hull visible), el hull cambia a estilo destacado (dorado, mayor opacidad).
+*   **Control**: Sigue el toggle «Marcadores de microestados y archipiélagos». En Jugar, visible en tipos A/B, oculto en C-F.
 
 ---
 

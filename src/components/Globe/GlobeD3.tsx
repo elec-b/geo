@@ -117,7 +117,16 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
 const ARCHIPELAGO_CODES = new Set([
   'PH', 'ID', 'JP', 'NZ', 'FJ', 'SB', 'VU', 'PG', 'GB', 'DK', 'GR', 'HR',
   'BS', 'CU', 'CV', 'KM', 'TO', 'WS', 'MY', 'TT', 'EE', 'SE', 'FI', 'CL',
-  'NO', 'KI', 'FM', 'MH', 'TV', 'PW',
+  'NO', 'KI', 'FM', 'MH', 'TV', 'PW', 'AG', 'KN', 'VC',
+]);
+
+// Subconjunto de archipiélagos cuyo hull se renderiza siempre visible.
+// Criterio: archipiélagos difíciles de seleccionar o de identificar visualmente.
+const HULL_VISIBLE_CODES = new Set([
+  // Oceanía
+  'FJ', 'SB', 'VU', 'PG', 'KI', 'FM', 'MH', 'TV', 'TO', 'WS', 'PW',
+  // América
+  'TT', 'AG', 'KN', 'VC',
 ]);
 
 /**
@@ -552,6 +561,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       const rotation = rotationRef.current;
       const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
       for (const [cca2, hullData] of archipelagoHullsRef.current) {
+        // Solo renderizar hulls de archipiélagos seleccionados como siempre visibles
+        if (!HULL_VISIBLE_CODES.has(cca2)) continue;
         // Skip si está seleccionado (se renderiza aparte con estilo dorado)
         if (cca2 === effectiveSelected) continue;
         // Fade-in adaptativo: cada hull tiene su propio minZoom
@@ -1019,7 +1030,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
             const centroid = CENTROID_OVERRIDES[cca2] ?? (geoCentroid(feature) as [number, number]);
             allCentroids.set(cca2, centroid);
-            if (MICROSTATE_CODES.has(cca2) && !ARCHIPELAGO_CODES.has(cca2)) {
+            if (MICROSTATE_CODES.has(cca2) && !HULL_VISIBLE_CODES.has(cca2)) {
               microCentroids.set(cca2, centroid);
             }
             if (NON_UN_MICROSTATE_CODES.has(cca2)) {
