@@ -301,7 +301,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const nonUnCodesRef = useRef<Set<string>>(new Set());
   const geoAreasRef = useRef<Map<string, number>>(new Map());
   const geoExtentsRef = useRef<Map<string, number>>(new Map());
-  const archipelagoHullsRef = useRef<Map<string, { hull: [number, number][]; shifted: boolean }>>(new Map());
+  const archipelagoHullsRef = useRef<Map<string, { hull: [number, number][]; shifted: boolean; minZoom: number }>>(new Map());
   const hullCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   // Dirty flag: evita redibujar el canvas a 60fps cuando el globo está en reposo
   const needsRedrawRef = useRef(true); // true para el draw inicial
@@ -542,6 +542,48 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       ctx.stroke();
       ctx.setLineDash([]);
       ctx.globalAlpha = 1;
+      ctx.lineJoin = 'miter';
+      ctx.lineCap = 'butt';
+    }
+
+    // Hulls de archipiélagos siempre visibles (zoom adaptativo por tamaño)
+    // Mismo estilo que marcadores de microestados (línea discontinua blanca con fade-in)
+    if (showMarkersRef.current && archipelagoHullsRef.current.size > 0) {
+      const rotation = rotationRef.current;
+      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      for (const [cca2, hullData] of archipelagoHullsRef.current) {
+        // Skip si está seleccionado (se renderiza aparte con estilo dorado)
+        if (cca2 === effectiveSelected) continue;
+        // Fade-in adaptativo: cada hull tiene su propio minZoom
+        if (zoom < hullData.minZoom) continue;
+        const t = Math.min(1, (zoom - hullData.minZoom) / 1.0);
+        const opacity = t * MARKER_MAX_OPACITY;
+        if (opacity <= 0) continue;
+
+        // Comprobar visibilidad (centroide del hull dentro del hemisferio visible)
+        const hullCenter = hullCentroidsRef.current.get(cca2);
+        if (hullCenter && geoDistance(hullCenter, viewCenter) > Math.PI / 2) continue;
+
+        // Dibujar hull
+        const ring = hullData.hull.map(([x, y]) =>
+          [hullData.shifted && x > 180 ? x - 360 : x, y] as [number, number],
+        );
+        ring.push(ring[0]);
+        const hullGeoJSON = {
+          type: 'Feature' as const,
+          properties: {},
+          geometry: { type: 'Polygon' as const, coordinates: [ring] },
+        };
+        ctx.beginPath();
+        path(hullGeoJSON as GeoPermissibleObjects);
+        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx.lineWidth = MARKER_LINE_WIDTH;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.setLineDash(MARKER_DASH);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
       ctx.lineJoin = 'miter';
       ctx.lineCap = 'butt';
     }
@@ -977,7 +1019,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
             const centroid = CENTROID_OVERRIDES[cca2] ?? (geoCentroid(feature) as [number, number]);
             allCentroids.set(cca2, centroid);
-            if (MICROSTATE_CODES.has(cca2)) {
+            if (MICROSTATE_CODES.has(cca2) && !ARCHIPELAGO_CODES.has(cca2)) {
               microCentroids.set(cca2, centroid);
             }
             if (NON_UN_MICROSTATE_CODES.has(cca2)) {
@@ -1043,7 +1085,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         });
 
         // Convex hulls para archipiélagos (hit testing del mar entre islas)
-        const hullsByCca2 = new Map<string, { hull: [number, number][]; shifted: boolean }>();
+        const hullsByCca2 = new Map<string, { hull: [number, number][]; shifted: boolean; minZoom: number }>();
         const coordsByCca2 = new Map<string, [number, number][]>();
 
         for (const feature of countries.features) {
@@ -1084,9 +1126,21 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
             const scale = HULL_BUFFER_DEG / dist;
             return [x + dx * scale, y + dy * scale] as [number, number];
           });
+          // Extensión angular del hull: distancia máxima centroide → vértice (en grados)
+          let maxDistDeg = 0;
+          for (const [bx, by] of buffered) {
+            const dx = bx - cx, dy = by - cy;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d > maxDistDeg) maxDistDeg = d;
+          }
+          // Zoom adaptativo: hulls grandes visibles antes, pequeños después
+          // K / extensión, clamped a [1.5, MARKER_ZOOM_FULL]
+          const HULL_ZOOM_K = 10;
+          const hullMinZoom = Math.max(1.5, Math.min(MARKER_ZOOM_FULL, HULL_ZOOM_K / Math.max(maxDistDeg, 0.1)));
           hullsByCca2.set(cca2, {
             hull: buffered,
             shifted: normalized.shifted,
+            minZoom: hullMinZoom,
           });
         }
         archipelagoHullsRef.current = hullsByCca2;

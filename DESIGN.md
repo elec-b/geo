@@ -486,6 +486,16 @@ Otros archipiélagos de Oceanía (Fiyi, Tonga, Samoa, Palau, Islas Salomón) tie
 
 **Hit testing para archipiélagos**: Los países insulares cuyo mar entre islas debe contar como zona de toque usan un *convex hull* envolvente. Los archipiélagos dispersos de la tabla deben incluirse en este mecanismo.
 
+### Outlines de archipiélagos (convex hull siempre visible)
+
+Los archipiélagos muestran una **línea discontinua perimetral** (convex hull) que delimita su extensión territorial. Esta línea es siempre visible (no solo al seleccionar), facilitando la comprensión de qué islas forman parte de cada país.
+
+*   **Visibilidad**: Zoom adaptativo por tamaño del hull. Hulls grandes (Indonesia, Japón) aparecen a zoom bajo (~1.5). Hulls pequeños (Comoros, Cabo Verde) aparecen a zoom alto (~5). Fórmula: `clamp(K / extensiónAngularGrados, 1.5, 5)` con K=10 (tunable).
+*   **Estilo**: Misma línea discontinua y color (blanco) que los marcadores de microestados. Fade-in progresivo de 1 unidad de zoom.
+*   **Relación con marcadores de microestados**: Si un país es a la vez microestado y archipiélago (ej. Kiribati, Comoros, Palau), se muestra **solo el hull**, no el marcador circular. El hull es más informativo para países insulares.
+*   **País seleccionado**: Al seleccionar un archipiélago, el hull cambia a estilo destacado (dorado, mayor opacidad) para indicar la selección.
+*   **Control**: Sigue el mismo toggle que los marcadores de microestados (setting «Marcadores de microestados»). En Jugar, visible en tipos A/B (interacción con el mapa), oculto en C-F (quiz de opciones múltiples).
+
 ---
 
 ## Fuentes de datos
