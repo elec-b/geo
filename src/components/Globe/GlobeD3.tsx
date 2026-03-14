@@ -927,20 +927,6 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
     }
 
-    // Hit area ampliado para microestados no-ONU (sin marcador visual, mismo radio)
-    if (zoom >= MARKER_ZOOM_START && nonUnMicroCentroidsRef.current.size > 0) {
-      const zoomT = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_HIT_ZOOM_MAX - MARKER_ZOOM_START));
-      const hitRadius = MARKER_HIT_RADIUS_MIN + zoomT * (MARKER_HIT_RADIUS_MAX - MARKER_HIT_RADIUS_MIN);
-      for (const [cca2, centroid] of nonUnMicroCentroidsRef.current) {
-        const pos = projection(centroid);
-        if (!pos) continue;
-        if (Math.hypot(x - pos[0], y - pos[1]) < hitRadius) {
-          const feature = countries.features.find(f => f.properties?.cca2 === cca2);
-          if (feature) return feature as Feature<Geometry, CountryProperties>;
-        }
-      }
-    }
-
     // Búsqueda normal por geometría
     const coords = projection.invert?.([x, y]);
     if (!coords) return null;
@@ -977,6 +963,22 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         }
       }
       if (bestFeature) return bestFeature;
+    }
+
+    // Hit area ampliado para microestados no-ONU (sin marcador visual).
+    // Último: no deben interceptar taps sobre geometría real ni hulls de países ONU
+    // (ej. Samoa Americana no debe capturar taps sobre Samoa)
+    if (zoom >= MARKER_ZOOM_START && nonUnMicroCentroidsRef.current.size > 0) {
+      const zoomT = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_HIT_ZOOM_MAX - MARKER_ZOOM_START));
+      const hitRadius = MARKER_HIT_RADIUS_MIN + zoomT * (MARKER_HIT_RADIUS_MAX - MARKER_HIT_RADIUS_MIN);
+      for (const [cca2, centroid] of nonUnMicroCentroidsRef.current) {
+        const pos = projection(centroid);
+        if (!pos) continue;
+        if (Math.hypot(x - pos[0], y - pos[1]) < hitRadius) {
+          const feature = countries.features.find(f => f.properties?.cca2 === cca2);
+          if (feature) return feature as Feature<Geometry, CountryProperties>;
+        }
+      }
     }
 
     return null;

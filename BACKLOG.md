@@ -13,7 +13,7 @@
 - [x] **Pasaporte**: Matriz niveles × continentes con sellos, color según nivel global
 - [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores). Feedback háptico
-- [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello, hulls de archipiélagos siempre visibles (selectivos por continente, buffer proporcional, zoom adaptativo)
+- [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello, hulls de archipiélagos siempre visibles (selectivos por continente, buffer proporcional, zoom adaptativo), fix flyTo antimeridiano (Samoa/Tonga), fix hit testing no-ONU (prioridad geometría sobre territorios no-ONU)
 
 ---
 
@@ -21,13 +21,10 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
-### Jugar
-- [ ] Bug: al preguntar por Samoa (tipo A, Oceanía-mochilero, aventura), el flyTo apunta al Atlántico en vez de al Pacífico sur. Posible problema con el centroide de Samoa o con la normalización de antimeridiano.
-
 ### Estadísticas
 - [ ] Repasar lógica, en qué situaciones se utiliza/indica "en progreso" en la tabla de estadísticas?
 - [ ] Quitar contadores de aciertos/fallos del bottom
-- [ ] Botón toggle para mostrar % de acierto por país (en vez de iconos de dominio).
+- [ ] Botón toggle para mostrar % de acierto por país (poder alternar entre iconos de dominio y % de acierto).
 - [ ] Añadir otra tabla para mostrar resultados en pruebas de sello. Pensar bien el diseño antes y anotar en design.md (queremos mostrar tick o cross, de manera similar a las de los juegos? Queremos mostrar % de acierto? Ambas cosas?)
   - Además, ahora mismo las estadísticas de las pruebas de sello y las de jugar a A o B, creo que están vinculadas/relacionadas. Esto implicaría desvincularlas. Si esto es así, es otra razón de alto peso, para diseñar y anotar bien en design.md antes de implementar absolutamente nada.
   - Además, si el usuario está haciendo una prueba de sello, las estadísticas deben mostrar el nivel-continente correspondiente en la (nueva) tabla de pruebas de sello. Otra buena razón para diseñar bien en design.md
