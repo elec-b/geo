@@ -525,7 +525,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
     // Outline de convex hull para archipiélagos seleccionados
     // Muestra una línea punteada perimetral que delimita la extensión territorial
-    if (effectiveSelected && archipelagoHullsRef.current.has(effectiveSelected)) {
+    if (effectiveSelected && HULL_VISIBLE_CODES.has(effectiveSelected) && archipelagoHullsRef.current.has(effectiveSelected)) {
       const hullData = archipelagoHullsRef.current.get(effectiveSelected)!;
       // Deshacer normalización de antimeridiano para coordenadas GeoJSON
       const ring = hullData.hull.map(([x, y]) =>
@@ -1119,25 +1119,38 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           coordsByCca2.set(cca2, coords);
         }
 
-        // Padding angular (grados) para que el outline no quede pegado a las islas
-        const HULL_BUFFER_DEG = 0.8;
+        // Padding angular proporcional al tamaño del hull para que el outline
+        // no quede pegado a las islas. Archipiélagos pequeños (Caribe) usan menos
+        // margen para evitar solapamiento visual con países vecinos.
+        const HULL_BUFFER_MIN = 0.15;  // ~17 km mínimo
+        const HULL_BUFFER_MAX = 0.8;   // ~89 km máximo
+        const HULL_BUFFER_FRAC = 0.15; // 15% de la extensión del hull
         for (const [cca2, coords] of coordsByCca2) {
           if (coords.length < 3) continue;
           // Normalizar coordenadas para países que cruzan el antimeridiano (ej. Fiji)
           const normalized = normalizeForAntimeridian(coords);
           const rawHull = computeConvexHull(normalized.coords);
-          // Expandir hull: mover cada vértice hacia fuera desde el centroide del hull
+          // Centroide del hull crudo
           let cx = 0, cy = 0;
           for (const [x, y] of rawHull) { cx += x; cy += y; }
           cx /= rawHull.length; cy /= rawHull.length;
+          // Extensión angular cruda: distancia máxima centroide → vértice (sin buffer)
+          let rawExtent = 0;
+          for (const [x, y] of rawHull) {
+            const dx = x - cx, dy = y - cy;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d > rawExtent) rawExtent = d;
+          }
+          // Buffer proporcional al tamaño, acotado
+          const bufferDeg = Math.max(HULL_BUFFER_MIN, Math.min(HULL_BUFFER_MAX, rawExtent * HULL_BUFFER_FRAC));
           const buffered = rawHull.map(([x, y]) => {
             const dx = x - cx, dy = y - cy;
             const dist = Math.sqrt(dx * dx + dy * dy);
             if (dist < 0.001) return [x, y] as [number, number];
-            const scale = HULL_BUFFER_DEG / dist;
+            const scale = bufferDeg / dist;
             return [x + dx * scale, y + dy * scale] as [number, number];
           });
-          // Extensión angular del hull: distancia máxima centroide → vértice (en grados)
+          // Extensión angular del hull buffered para zoom adaptativo
           let maxDistDeg = 0;
           for (const [bx, by] of buffered) {
             const dx = bx - cx, dy = by - cy;

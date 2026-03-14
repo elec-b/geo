@@ -13,7 +13,7 @@
 - [x] **Pasaporte**: Matriz niveles × continentes con sellos, color según nivel global
 - [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores). Feedback háptico
-- [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello
+- [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello, hulls de archipiélagos siempre visibles (selectivos por continente, buffer proporcional, zoom adaptativo)
 
 ---
 
@@ -22,11 +22,7 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Jugar
-- [ ] Testeando en oceanía-mochilero, jugando aventura: me preguntó localiza Micronesia, en juego tipo A. Me parece muy complicado seleccionar estos grupos de islas. Sugiero que para todos los países que son archipiélagos hagamos algo similar a lo que hacemos para E (en Oceanía), facilitando al usuario la identificación con la línea discontinua que engloba grupos de islas. Revisar código que tenemos ya implementado antes de acometer la tarea.
-  - ideas preliminares: 
-    - sí mostraría esta línea discontinua para A, para la prueba de sello de países y seguramente para Explorar
-      - Pensar muy bien cómo hacemos esto en Explorar y testear también en Explorar, quizás deba ser lo primero que se hace? Considerar anotar en design.md
-    - no mostraría esta línea discontinua para B, ni para la prueba de sello de capitales.
+- [ ] Bug: al preguntar por Samoa (tipo A, Oceanía-mochilero, aventura), el flyTo apunta al Atlántico en vez de al Pacífico sur. Posible problema con el centroide de Samoa o con la normalización de antimeridiano.
 
 ### Estadísticas
 - [ ] Repasar lógica, en qué situaciones se utiliza/indica "en progreso" en la tabla de estadísticas?
