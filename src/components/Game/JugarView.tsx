@@ -395,7 +395,12 @@ export function JugarView({
       // Objetivo lejano: volar a punto intermedio entre centro continental y objetivo
       // para evitar zoom-out excesivo en países extremos (ej. Japón, Filipinas)
       const [cLon, cLat] = CONTINENT_CENTERS[session.continent];
-      const midLon = (cLon + targetCoords[0]) / 2;
+      // Normalizar delta para cruzar antimeridiano por camino más corto
+      // (ej. Oceanía 160°E → Samoa -172°W: delta naïve -332° → normalizado 28°)
+      let deltaLon = targetCoords[0] - cLon;
+      if (deltaLon > 180) deltaLon -= 360;
+      if (deltaLon < -180) deltaLon += 360;
+      const midLon = cLon + deltaLon / 2;
       const midLat = (cLat + targetCoords[1]) / 2;
       const distFromMid = geoDistance(targetCoords, [midLon, midLat]);
       const sinFromMid = Math.sin(distFromMid / ZOOM_MARGIN);
