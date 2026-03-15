@@ -15,16 +15,13 @@
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores). Feedback háptico
 - [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello, hulls de archipiélagos siempre visibles (selectivos por continente, buffer proporcional, zoom adaptativo), fix flyTo antimeridiano (Samoa/Tonga), fix hit testing no-ONU (prioridad geometría sobre territorios no-ONU), colores olímpicos unificados en selectores de Explorar/Pasaporte, circulitos de capitales no-ONU en ámbar
 - [x] **Estadísticas**: Eliminado estado "en progreso" (▼ para racha ≤ 0), quitados contadores aciertos/fallos, toggle ✓/%, desacoplamiento datos sello/jugar (`stampAttempts` independiente), nueva pestaña "Pruebas de sello" con indicadores ✓/✗
+- [x] **Datos**: Corregidas coordenadas de capitales incorrectas de REST Countries API: El Aaiún (lat/lng invertidos), Dakar (imprecisión costera). Añadidos CAPITAL_OVERRIDES en fetch-countries.ts
 
 ---
 
 ## Próximos pasos
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
-
-### Explorar
-- [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigar por qué y corregir (también "impactará" en Jugar, obviamente)
-- [ ] El Aaiun aparece mal ubicado - repasar
 
 ### Estadísticas
 - [ ] Repasar: cuando se va a las estadísticas de sello o de país, tanto para la pestaña de Jugar como para la de Pruebas de Sello, ¿a qué continente nivel se va por defecto / se le muestra al usuario? Qué lógica hay? Pensar primero, anotar en design.md después y por último implementar.
@@ -37,11 +34,18 @@
 - [ ] Cuando el usuario no tiene un nivel global, no mostrar el texto "Sin nivel global"
 - [ ] Pensar si quiero dar la posibilidad al usario de borrar sus sellos/medallas del pasaporte. En caso afirmativo, documentar en design.md antes de implementar.
 
-
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes
 - [ ] Juega al menos en aventura para todos los continete-nivel
 - [ ] Anota feedback en backlog.md
+
+### Explorar
+- [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigación hecha: los datos y filtros son correctos (unMember: false, no participa en Jugar, etiquetas en ámbar). El "problema" es solo visual (mismo color de relleno que países ONU) y de nomenclatura (ver tarea siguiente sobre territorios).
+- [ ] El Aaiún aparece mal ubicado — coordenadas invertidas (lat ↔ lng) en REST Countries API. Pendiente de corregir en capitals.json + CAPITAL_OVERRIDES en fetch-countries.ts. También se detectaron coords incorrectas para SN (Dakar, 22 km off). Ver tarea de validación automática más abajo.
+- [ ][PENSAR] Clasificación de territorios no-ONU: actualmente todos los territorios que no son países ONU se etiquetan como "Territorio no reconocido por la ONU", pero esto es incorrecto para muchos de ellos. Hay dos categorías muy distintas:
+  - **Territorios de países ONU**: Groenlandia (Dinamarca), Puerto Rico (EEUU), Wallis y Futuna (Francia), Guayana Francesa (Francia), etc. Son territorios plenamente reconocidos — simplemente no son estados independientes. La etiqueta debería ser "Territorio de [País soberano]".
+  - **Estados disputados / no reconocidos**: Kosovo, Taiwán, Sáhara Occidental, etc. Para estos sí tiene sentido "Territorio no reconocido por la ONU" o similar.
+  - Propuesta: añadir un campo `sovereignCountry` (o similar) en los datos para distinguir ambos casos y mostrar la etiqueta correcta en la ficha de país. Pensar bien las categorías y redactar en DESIGN.md antes de implementar.
 
 ### UX general
 - [ ] Bottom sheets (configuración y ficha de país): añadir handle + implementar drag-to-dismiss
@@ -61,15 +65,13 @@
 - [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
 - [ ] Traducción a idiomas disponibles en iOS y Android
 
-### Testing
-- [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)
+### Tema visual
+- [ ] Diseñar e implementar tema claro (baja prioridad, casi al final del desarrollo)
 
 ### Infraestructura y acabados
+- [ ][PENSAR/INVESTIGAR: hay alguna fuente mejor?] Validación automática de coordenadas de capitales en `fetch-countries.ts`: comprobar que cada capital cae dentro (o cerca) del polígono de su país usando `d3.geoContains()`. Si falla, buscar coords alternativas en Wikidata SPARQL como fallback. El script nunca debe fallar — si no se encuentran coords válidas, conservar las de la API + warning. Investigación completa hecha (auditoría de 229 capitales, diseño de pipeline con tolerancias 50/200/500 km, query SPARQL lista). De momento se usa CAPITAL_OVERRIDES manual (EH, GD, KI, SN).
 - [ ] Añadir Capacitor para build Android
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
 - [ ] Sección "Acerca de": explicar criterios (países ONU, idiomas oficiales, fuentes UNDP, REST Countries, etc.)
 - [ ] Solicitud de valoración in-app (SKStoreReviewController iOS + Play In-App Review Android)
-
-### Tema visual
-- [ ] Diseñar e implementar tema claro (baja prioridad, casi al final del desarrollo)
 

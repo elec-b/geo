@@ -230,7 +230,9 @@ async function main() {
 
   // Overrides de coordenadas de capital (la API devuelve datos incorrectos para algunos países)
   const CAPITAL_OVERRIDES: Record<string, [number, number]> = {
+    'EH': [27.15, -13.20], // El Aaiún, Sáhara Occidental (API devuelve lat/lng invertidos)
     'GD': [12.05, -61.75], // St. George's, Grenada (API devuelve coords de Bermuda)
+    'SN': [14.69, -17.44], // Dakar, Senegal (API imprecisa, cae fuera de la península)
   };
 
   for (const c of allApiCountries) {
