@@ -182,7 +182,7 @@
 
 /* Nivel superado */
 .level-selector__level-count--completed {
-  color: var(--color-success);
+  color: var(--color-text-secondary);
 }
 
 /* Banner de invitación a sello (clickable) */

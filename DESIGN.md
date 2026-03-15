@@ -28,17 +28,16 @@ La aplicación se divide en **3 experiencias**:
 ## Sistema de niveles
 
 ### Los 3 niveles
-| Nivel | Conocimiento requerido | Color del pasaporte |
-|-------|------------------------|---------------------|
-| **Turista** | Top 10 países más poblados de cada continente (top 5 en Oceanía) | Verde |
-| **Mochilero** | 60% de los países de cada continente | Azul |
-| **Guía** | 100% de los países de cada continente | Dorado |
+| Nivel | Conocimiento requerido |
+|-------|------------------------|
+| **Turista** | Top 10 países más poblados de cada continente (top 5 en Oceanía) |
+| **Mochilero** | 60% de los países de cada continente |
+| **Guía** | 100% de los países de cada continente |
 
 ### Progresión por continente
 *   El usuario tiene un **nivel independiente por cada continente**. Puede ser "Guía de Europa" mientras es "Turista de África".
 *   Cada combinación de nivel × continente es una **vía de progresión independiente** (3 × 5 = 15 vías). Para desbloquear el siguiente nivel en un continente, el usuario debe conseguir ambos sellos (Países y Capitales) del nivel actual.
 *   **Nivel global** = el mínimo de los 5 continentes. Este es el nivel que el usuario puede "presumir" como resumen.
-*   El **color del pasaporte** cambiará según el nivel global del usuario.
 
 ### Público objetivo
 Personas de 8 a 15 años, pero diseñado para ser entretenido también para adultos.
@@ -365,6 +364,13 @@ Matriz visual de **niveles × continentes** (3 filas × 5 columnas). Cada celda 
 ### Acceso a los sellos
 Desde el dashboard, el usuario puede intentar conseguir cualquier sello pendiente (sin límite de intentos).
 
+### Estilo visual
+Estética de **documento oficial premium**: contenedor con textura guilloché (`repeating-linear-gradient`). Los sellos son **círculos CSS** coloreados por continente (colores olímpicos).
+*   **Sello de Países**: borde simple. **Sello de Capitales**: borde doble (`border-style: double`).
+*   **Ganado**: fondo tintado, glow sutil, estrella (★), rotación aleatoria leve (-8° a +8°).
+*   **Pendiente en nivel activo**: pulso de opacidad (`stampPulse`).
+*   **Animación stampDrop**: al conseguir un sello nuevo, efecto de caída (scale 0→1.15→1 con rotación, 400ms).
+
 ---
 
 ## Estadísticas
@@ -386,7 +392,7 @@ La vista se abre con pestaña, continente y nivel preseleccionados según el con
 ### Toggle de visualización
 
 Disponible en ambas pestañas. Permite alternar entre dos modos:
-*   **Indicadores de dominio** (por defecto): iconos ✓/▼/— por celda (ver indicadores de cada pestaña).
+*   **Indicadores de dominio** (por defecto): iconos ✓/✗/— por celda (ver indicadores de cada pestaña).
 *   **Porcentaje de acierto**: `aciertos / (aciertos + fallos) × 100` por celda. Celdas sin intentos muestran «—».
 
 ### Pestaña Jugar

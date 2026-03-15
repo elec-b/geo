@@ -84,8 +84,27 @@
 }
 
 .jugar-modal__stamp-icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--stamp-color, var(--color-text-secondary));
+  background: color-mix(in srgb, var(--stamp-color, var(--color-text-secondary)) 15%, transparent);
+  box-shadow: 0 0 0.75rem color-mix(in srgb, var(--stamp-color, var(--color-text-secondary)) 25%, transparent);
+  margin: 0 auto var(--spacing-md);
+}
+
+.jugar-modal__stamp-icon::after {
+  content: '\2605';
+  font-size: var(--font-size-xl);
+  color: var(--stamp-color, var(--color-text-secondary));
+}
+
+.jugar-modal__stamp-icon--capitals {
+  border-style: double;
+  border-width: 3px;
 }
 
 .jugar-modal__stamp-icon--earned {

@@ -24,6 +24,15 @@ import './JugarView.css';
 type JugarScreen = 'selector' | 'playing';
 type FeedbackStep = 'idle' | 'step1' | 'step2';
 
+/** Mapeo continente → variable CSS de color olímpico */
+const CONTINENT_CSS_VAR: Record<Continent, string> = {
+  'África': '--color-africa',
+  'América': '--color-america',
+  'Asia': '--color-asia',
+  'Europa': '--color-europe',
+  'Oceanía': '--color-oceania',
+};
+
 /** Pares microestado-contenedor — toque en uno se acepta como toque en el otro */
 const MICROSTATE_PAIRS = new Set([
   'IT-VA', 'IT-SM', 'FR-MC', 'AT-LI', 'CH-LI',
@@ -83,8 +92,9 @@ interface JugarViewProps {
   onCountryClickRef: MutableRefObject<((f: CountryFeature) => void) | undefined>;
   /** Petición de prueba de sello desde Pasaporte (se consume una vez) */
   stampTestRequest?: StampTestRequest | null;
-  /** Callback cuando la prueba de sello termina (para volver a Pasaporte si viene de ahí) */
-  onStampTestDone?: () => void;
+  /** Callback cuando la prueba de sello termina (para volver a Pasaporte si viene de ahí).
+   *  Recibe info del sello si se ganó (para animación en Pasaporte). */
+  onStampTestDone?: (earned?: { level: GameLevel; continent: Continent; stampType: StampTestType }) => void;
   /** Callback cuando se inicia una prueba de sello internamente (para que App.tsx actualice el tab) */
   onStampTestStarted?: () => void;
   /** Signal para resetear al selector (se incrementa al re-tocar tab Jugar) */
@@ -664,6 +674,11 @@ export function JugarView({
 
   // Cerrar modal de resultado de prueba de sello
   const handleStampResultClose = useCallback(() => {
+    // Capturar info del sello ganado antes de limpiar la sesión
+    const earned = session.stampTestResult === 'passed' && session.level && session.continent && session.stampTestType
+      ? { level: session.level, continent: session.continent, stampType: session.stampTestType }
+      : undefined;
+
     setShowStampResult(false);
     session.end();
     activeLevelRef.current = null;
@@ -672,7 +687,7 @@ export function JugarView({
     setScreen('selector');
     setSelectedChoice(null);
     setFlyOutStep('idle');
-    onStampTestDone?.();
+    onStampTestDone?.(earned);
   }, [session, onStampTestDone]);
 
   // Abrir modal de sello desde el selector (sin sesión activa aún)
@@ -1116,7 +1131,14 @@ export function JugarView({
           <div className="jugar-modal">
             {session.stampTestResult === 'passed' ? (
               <>
-                <div className="jugar-modal__stamp-icon jugar-modal__stamp-icon--earned">🏅</div>
+                <div
+                  className={[
+                    'jugar-modal__stamp-icon',
+                    'jugar-modal__stamp-icon--earned',
+                    session.stampTestType === 'capitals' && 'jugar-modal__stamp-icon--capitals',
+                  ].filter(Boolean).join(' ')}
+                  style={{ '--stamp-color': session.continent ? `var(${CONTINENT_CSS_VAR[session.continent]})` : 'var(--color-text-secondary)' } as React.CSSProperties}
+                />
                 <h3 className="jugar-modal__title">Sello conseguido</h3>
                 <p className="jugar-modal__text">
                   {session.score.correct} de {session.score.correct + session.score.incorrect} correctos. Sin errores.

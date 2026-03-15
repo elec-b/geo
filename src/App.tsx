@@ -68,6 +68,8 @@ function App() {
   const [stampTestRequest, setStampTestRequest] = useState<StampTestRequest | null>(null);
   // Indica que hay una prueba de sello activa (desde cualquier origen)
   const [stampTestActive, setStampTestActive] = useState(false);
+  // Sello recién ganado (para animación stampDrop en Pasaporte)
+  const [recentlyEarnedStamp, setRecentlyEarnedStamp] = useState<StampTestRequest | null>(null);
 
   // Cambio de tab — con limpieza de prueba de sello si está activa
   const handleTabChange = useCallback((tab: TabId) => {
@@ -103,11 +105,15 @@ function App() {
   }, []);
 
   // Callback cuando la prueba de sello termina → limpiar request
-  const handleStampTestDone = useCallback(() => {
-    setStampTestRequest(null);
-    setStampTestActive(false);
-    setActiveTab('passport');
-  }, []);
+  const handleStampTestDone = useCallback(
+    (earned?: { level: import('./data/types').GameLevel; continent: import('./data/types').Continent; stampType: import('./hooks/useGameSession').StampTestType }) => {
+      if (earned) setRecentlyEarnedStamp(earned);
+      setStampTestRequest(null);
+      setStampTestActive(false);
+      setActiveTab('passport');
+    },
+    [],
+  );
 
   // Cambio de perfil: limpiar sesión activa, reiniciar globo y navegar a Explorar
   const handleProfileChange = useCallback((id: string) => {
@@ -243,6 +249,8 @@ function App() {
         <PassportView
           levels={levels}
           onStartStampTest={handleStartStampTest}
+          recentlyEarnedStamp={recentlyEarnedStamp}
+          onStampAnimationDone={() => setRecentlyEarnedStamp(null)}
         />
       )}
 

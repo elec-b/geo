@@ -209,7 +209,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
                   {!unlocked
                     ? 'Bloqueado'
                     : completed
-                    ? 'Superado 🏅'
+                    ? 'Superado ★'
                     : count != null ? `${count} ${count === 1 ? 'país' : 'países'}` : '—'}
                 </span>
               </button>

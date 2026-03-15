@@ -1,6 +1,6 @@
 // PassportView — Dashboard de progreso del usuario
-// Muestra la matriz 5 continentes × 3 niveles con los sellos conseguidos/pendientes.
-import { useState, useCallback, useMemo } from 'react';
+// Muestra la matriz 5 continentes × 3 niveles con sellos circulares (estética de pasaporte oficial).
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useAppStore } from '../../stores/appStore';
 import { isLevelUnlocked, getGlobalLevel, type StampsData } from '../../data/learningAlgorithm';
 import type { Continent, GameLevel, LevelDefinition } from '../../data/types';
@@ -21,19 +21,39 @@ const LEVELS: { id: GameLevel; label: string; emoji: string }[] = [
   { id: 'guía', label: 'Guía', emoji: '🗺️' },
 ];
 
-/** Colores de nivel global */
-const LEVEL_COLORS: Record<GameLevel, string> = {
-  turista: 'var(--color-success)',
-  mochilero: 'var(--color-europe)',
-  guía: 'var(--color-accent-amber)',
-};
+
+/** Rotación determinista por posición (hash simple → rango [-8, 8]) */
+function computeStampRotations(): Map<string, number> {
+  const rotations = new Map<string, number>();
+  for (const level of LEVELS) {
+    for (const continent of CONTINENTS) {
+      for (const type of ['countries', 'capitals'] as const) {
+        const key = `${level.id}-${continent.id}-${type}`;
+        let hash = 0;
+        for (let i = 0; i < key.length; i++) hash = (hash * 31 + key.charCodeAt(i)) | 0;
+        rotations.set(key, (Math.abs(hash) % 17) - 8);
+      }
+    }
+  }
+  return rotations;
+}
+
+const STAMP_ROTATIONS = computeStampRotations();
+
+interface EarnedStampInfo {
+  level: GameLevel;
+  continent: Continent;
+  stampType: StampTestType;
+}
 
 interface PassportViewProps {
   levels: Map<string, LevelDefinition>;
   onStartStampTest: (level: GameLevel, continent: Continent, stampType: StampTestType) => void;
+  recentlyEarnedStamp?: EarnedStampInfo | null;
+  onStampAnimationDone?: () => void;
 }
 
-export function PassportView({ levels, onStartStampTest }: PassportViewProps) {
+export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, onStampAnimationDone }: PassportViewProps) {
   const getStamps = useAppStore((s) => s.getStamps);
   const activeProfile = useAppStore((s) => s.getActiveProfile());
 
@@ -53,6 +73,26 @@ export function PassportView({ levels, onStartStampTest }: PassportViewProps) {
   }, [getStamps, activeProfile]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const globalLevel = useMemo(() => getGlobalLevel(stampsData), [stampsData]);
+
+  // Limpiar animación de sello tras completarse
+  useEffect(() => {
+    if (!recentlyEarnedStamp) return;
+    const timer = setTimeout(() => {
+      onStampAnimationDone?.();
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [recentlyEarnedStamp, onStampAnimationDone]);
+
+  // ¿Es este sello el recién ganado? (para animación stampDrop)
+  const isRecentlyEarned = useCallback(
+    (level: GameLevel, continent: Continent, type: StampTestType) => {
+      if (!recentlyEarnedStamp) return false;
+      return recentlyEarnedStamp.level === level &&
+        recentlyEarnedStamp.continent === continent &&
+        recentlyEarnedStamp.stampType === type;
+    },
+    [recentlyEarnedStamp],
+  );
 
   // Handler: tocar celda con sello pendiente → abrir modal
   const handleCellClick = useCallback(
@@ -79,19 +119,13 @@ export function PassportView({ levels, onStartStampTest }: PassportViewProps) {
   return (
     <div className="passport-view tab-overlay tab-overlay--active tab-overlay--passport">
       {/* Header con nivel global */}
-      <div
-        className="passport-header"
-        style={{ '--passport-color': globalLevel ? LEVEL_COLORS[globalLevel] : 'var(--color-text-muted)' } as React.CSSProperties}
-      >
-        <div className="passport-header__icon">📘</div>
-        <div className="passport-header__info">
-          <span className="passport-header__name">{activeProfile?.name ?? 'Explorador'}</span>
-          {globalLevel && (
-            <span className="passport-header__level" style={{ color: LEVEL_COLORS[globalLevel] }}>
-              Nivel global: {LEVELS.find((l) => l.id === globalLevel)?.label}
-            </span>
-          )}
-        </div>
+      <div className="passport-header">
+        <span className="passport-header__name">Pasaporte de {activeProfile?.name ?? 'Explorador'}</span>
+        {globalLevel && (
+          <span className="passport-header__level">
+            Nivel global: {LEVELS.find((l) => l.id === globalLevel)?.label}
+          </span>
+        )}
       </div>
 
       {/* Matriz 5×3 */}
@@ -139,17 +173,27 @@ export function PassportView({ levels, onStartStampTest }: PassportViewProps) {
                   ) : (
                     <div className="passport-cell__stamps">
                       <span
-                        className={`passport-cell__stamp ${stamps.countries ? 'passport-cell__stamp--earned' : ''}`}
+                        className={[
+                          'passport-cell__stamp',
+                          'passport-cell__stamp--countries',
+                          stamps.countries && 'passport-cell__stamp--earned',
+                          !stamps.countries && unlocked && !bothEarned && 'passport-cell__stamp--available',
+                          isRecentlyEarned(level.id, continent.id, 'countries') && 'passport-cell__stamp--animating',
+                        ].filter(Boolean).join(' ')}
+                        style={stamps.countries ? { '--stamp-rotation': `${STAMP_ROTATIONS.get(`${level.id}-${continent.id}-countries`) ?? 0}deg` } as React.CSSProperties : undefined}
                         title="Sello de Países"
-                      >
-                        {stamps.countries ? '🏅' : '○'}
-                      </span>
+                      />
                       <span
-                        className={`passport-cell__stamp ${stamps.capitals ? 'passport-cell__stamp--earned' : ''}`}
+                        className={[
+                          'passport-cell__stamp',
+                          'passport-cell__stamp--capitals',
+                          stamps.capitals && 'passport-cell__stamp--earned',
+                          !stamps.capitals && unlocked && !bothEarned && 'passport-cell__stamp--available',
+                          isRecentlyEarned(level.id, continent.id, 'capitals') && 'passport-cell__stamp--animating',
+                        ].filter(Boolean).join(' ')}
+                        style={stamps.capitals ? { '--stamp-rotation': `${STAMP_ROTATIONS.get(`${level.id}-${continent.id}-capitals`) ?? 0}deg` } as React.CSSProperties : undefined}
                         title="Sello de Capitales"
-                      >
-                        {stamps.capitals ? '🏅' : '○'}
-                      </span>
+                      />
                     </div>
                   )}
                   {unlocked && (
@@ -164,9 +208,10 @@ export function PassportView({ levels, onStartStampTest }: PassportViewProps) {
 
       {/* Leyenda */}
       <div className="passport-legend">
-        <span className="passport-legend__item">🏅 Sello conseguido</span>
-        <span className="passport-legend__item">○ Sello pendiente</span>
-        <span className="passport-legend__item">🔒 Nivel bloqueado</span>
+        <span className="passport-legend__item">○ País</span>
+        <span className="passport-legend__item">◎ Capital</span>
+        <span className="passport-legend__item">★ Conseguido</span>
+        <span className="passport-legend__item passport-legend__item--muted">🔒 Bloqueado</span>
       </div>
 
       {/* Modal: elegir qué sello intentar */}
