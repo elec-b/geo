@@ -13,7 +13,7 @@
 - [x] **Pasaporte**: Matriz niveles × continentes con sellos, color según nivel global
 - [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente, limpieza de sesión al cambiar perfil (termina juego/sello en curso, reinicia globo, navega a Explorar)
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores). Feedback háptico
-- [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello, hulls de archipiélagos siempre visibles (selectivos por continente, buffer proporcional, zoom adaptativo), fix flyTo antimeridiano (Samoa/Tonga), fix hit testing no-ONU (prioridad geometría sobre territorios no-ONU)
+- [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello, hulls de archipiélagos siempre visibles (selectivos por continente, buffer proporcional, zoom adaptativo), fix flyTo antimeridiano (Samoa/Tonga), fix hit testing no-ONU (prioridad geometría sobre territorios no-ONU), colores olímpicos unificados en selectores de Explorar/Pasaporte, circulitos de capitales no-ONU en ámbar
 - [x] **Estadísticas**: Eliminado estado "en progreso" (▼ para racha ≤ 0), quitados contadores aciertos/fallos, toggle ✓/%, desacoplamiento datos sello/jugar (`stampAttempts` independiente), nueva pestaña "Pruebas de sello" con indicadores ✓/✗
 
 ---
@@ -23,10 +23,8 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Explorar
-- [ ] Usar el mismo código de colores para los selectores de Explorar que los que tenemos en el juego.
 - [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigar por qué y corregir (también "impactará" en Jugar, obviamente)
 - [ ] El Aaiun aparece mal ubicado - repasar
-- [ ] Los circulitos de capitales de territorios no reconocidos por la ONU deben tener otro color distinto - apuntar también en design.md
 
 ### Estadísticas
 - [ ] Repasar: cuando se va a las estadísticas de sello o de país, tanto para la pestaña de Jugar como para la de Pruebas de Sello, ¿a qué continente nivel se va por defecto / se le muestra al usuario? Qué lógica hay? Pensar primero, anotar en design.md después y por último implementar.

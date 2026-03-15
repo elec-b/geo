@@ -65,6 +65,7 @@ const VELOCITY_SAMPLES = 5;
 const CAPITAL_PIN_INNER = 4;
 const CAPITAL_PIN_OUTER = 7;
 const CAPITAL_PIN_COLOR = '#00f0ff';
+const CAPITAL_PIN_NON_UN_COLOR = '#ffb432'; // ámbar para no-ONU (coherente con etiquetas)
 
 // Etiquetas
 const LABEL_COLOR = 'rgba(255, 255, 255, 0.8)';
@@ -646,7 +647,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         if (!pos) continue;
         ctx.beginPath();
         ctx.arc(pos[0], pos[1], 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = CAPITAL_PIN_COLOR;
+        ctx.fillStyle = nonUnCodesRef.current.has(cca2) ? CAPITAL_PIN_NON_UN_COLOR : CAPITAL_PIN_COLOR;
         ctx.globalAlpha = 0.6;
         ctx.fill();
       }

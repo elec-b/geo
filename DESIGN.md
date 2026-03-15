@@ -618,7 +618,7 @@ Algunos territorios aparecen en los datos geográficos (Natural Earth 1:50m) per
 *   **Son seleccionables** en la experiencia Explorar: al tocar, se muestra la ficha de país con un indicador claro de que NO es reconocido por la ONU.
 *   Se muestran todos los datos disponibles (bandera, capital, población, superficie, moneda, gentilicio).
 *   **No participan en el sistema de juego** (niveles, sellos, pruebas) — solo son visibles en Explorar.
-*   **Color de etiquetas diferenciado**: En el globo, las etiquetas (nombre de país y capital) de estos territorios se muestran en un color distinto al de los países ONU, para distinguirlos visualmente.
+*   **Color diferenciado (ámbar)**: En el globo, tanto las etiquetas (nombre de país y capital) como los circulitos de capitales de estos territorios se muestran en color ámbar, distinto al cian de los países ONU, para distinguirlos visualmente.
 *   **Visibilidad en la tabla**: ver § «Explorar > Tabla > Toggle territorios no-ONU».
 *   **Continente asignado**: Cada territorio debe tener un continente asignado para que los filtros de continente funcionen correctamente (ej. Sáhara Occidental → África). Al filtrar por otro continente, se oscurecen como cualquier otro país.
 *   **Datos**: El script `fetch-countries.ts` debe incluir estos territorios marcados con `unMember: false`.

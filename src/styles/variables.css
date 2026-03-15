@@ -19,12 +19,12 @@
   --color-text-secondary: #a1a1aa;
   --color-text-muted: #52525b;
 
-  /* Colores de continentes */
-  --color-africa: #f59e0b;
-  --color-america: #22c55e;
-  --color-asia: #ef4444;
+  /* Colores de continentes (olímpicos) */
+  --color-africa: #e2e8f0;
+  --color-america: #ef4444;
+  --color-asia: #fbbf24;
   --color-europe: #3b82f6;
-  --color-oceania: #a855f7;
+  --color-oceania: #22c55e;
 
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.05);

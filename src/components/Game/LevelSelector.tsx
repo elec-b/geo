@@ -7,13 +7,13 @@ import { isLevelUnlocked, isTypeFullyDominated, getAttemptsWithInheritance, type
 import { inferContinentFromTimezone } from '../../data/continents';
 import './LevelSelector.css';
 
-// Orden y colores olímpicos (locales al selector, no afectan variables globales)
-const CONTINENTS: { id: Continent; label: string; color: string }[] = [
-  { id: 'Europa', label: 'Europa', color: '#3b82f6' },    // Azul
-  { id: 'África', label: 'África', color: '#e2e8f0' },    // Blanco plateado (negro adaptado a dark mode)
-  { id: 'América', label: 'América', color: '#ef4444' },  // Rojo
-  { id: 'Asia', label: 'Asia', color: '#fbbf24' },        // Amarillo
-  { id: 'Oceanía', label: 'Oceanía', color: '#22c55e' },  // Verde
+// Orden olímpico — colores vía CSS variables (compartidos con Explorar y Pasaporte)
+const CONTINENTS: { id: Continent; label: string; cssVar: string }[] = [
+  { id: 'Europa', label: 'Europa', cssVar: '--color-europe' },
+  { id: 'África', label: 'África', cssVar: '--color-africa' },
+  { id: 'América', label: 'América', cssVar: '--color-america' },
+  { id: 'Asia', label: 'Asia', cssVar: '--color-asia' },
+  { id: 'Oceanía', label: 'Oceanía', cssVar: '--color-oceania' },
 ];
 
 const LEVELS: { id: GameLevel; label: string; emoji: string }[] = [
@@ -164,12 +164,12 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
 
         {/* Pills de continente */}
         <div className="level-selector__continents">
-          {CONTINENTS.map(({ id, label, color }) => (
+          {CONTINENTS.map(({ id, label, cssVar }) => (
             <button
               key={id}
               className={`level-selector__continent-pill ${selectedContinent === id ? 'level-selector__continent-pill--active' : ''}`}
               onClick={() => handleContinentSelect(id)}
-              style={{ '--pill-color': color } as React.CSSProperties}
+              style={{ '--pill-color': `var(${cssVar})` } as React.CSSProperties}
             >
               {label}
             </button>
