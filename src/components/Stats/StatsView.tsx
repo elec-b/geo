@@ -51,7 +51,7 @@ function JugarCellIndicator({ ca, type, isInferredType }: {
     return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
   }
 
-  return <span className="stats-cell stats-cell--reinforcement">{'\u25BC'}</span>;
+  return <span className="stats-cell stats-cell--reinforcement">{'\u2717'}</span>;
 }
 
 /** Porcentaje de acierto para una celda de Jugar */
@@ -324,7 +324,7 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
             <>
               <span><span className="stats-cell stats-cell--dominated">{'\u2713'}</span> Dominado</span>
               <span><span className="stats-cell stats-cell--inferred">{'\u2713'}</span> Inferido</span>
-              <span><span className="stats-cell stats-cell--reinforcement">{'\u25BC'}</span> Refuerzo</span>
+              <span><span className="stats-cell stats-cell--reinforcement">{'\u2717'}</span> Refuerzo</span>
               <span><span className="stats-cell stats-cell--empty">{'\u2014'}</span> Sin datos</span>
             </>
           )}

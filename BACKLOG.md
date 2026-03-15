@@ -14,7 +14,7 @@
 - [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente, limpieza de sesión al cambiar perfil (termina juego/sello en curso, reinicia globo, navega a Explorar)
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores). Feedback háptico
 - [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello, hulls de archipiélagos siempre visibles (selectivos por continente, buffer proporcional, zoom adaptativo), fix flyTo antimeridiano (Samoa/Tonga), fix hit testing no-ONU (prioridad geometría sobre territorios no-ONU), colores olímpicos unificados en selectores de Explorar/Pasaporte, circulitos de capitales no-ONU en ámbar
-- [x] **Estadísticas**: Eliminado estado "en progreso" (▼ para racha ≤ 0), quitados contadores aciertos/fallos, toggle ✓/%, desacoplamiento datos sello/jugar (`stampAttempts` independiente), nueva pestaña "Pruebas de sello" con indicadores ✓/✗, defaults inteligentes según origen (Jugar→lastPlayed, Pasaporte/sello→lastStampPlayed)
+- [x] **Estadísticas**: Eliminado estado "en progreso" (✗ para racha ≤ 0), quitados contadores aciertos/fallos, toggle ✓/%, desacoplamiento datos sello/jugar (`stampAttempts` independiente), nueva pestaña "Pruebas de sello" con indicadores ✓/✗, defaults inteligentes según origen (Jugar→lastPlayed, Pasaporte/sello→lastStampPlayed), icono de refuerzo ▼→✗ (convención tick/cross)
 - [x] **Datos**: Corregidas coordenadas de capitales incorrectas de REST Countries API: El Aaiún (lat/lng invertidos), Dakar (imprecisión costera). Añadidos CAPITAL_OVERRIDES en fetch-countries.ts
 
 ---
@@ -22,9 +22,6 @@
 ## Próximos pasos
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
-
-### Estadísticas
-- [ ] Cambiar el icono del triangulito para abajo rojo de "refuerzo" por una cruz (me resulta más intuitivo utilizar la convención tick/cross). Creo que esto simplemente es cambiar un iconito, no hay mucho más (a parte de revisar que haya coherencia / esté bien reflejado en design.md)
 
 ### Pasaporte
 - [ ] Cuando juego una prueba de sello, en el menú inferior, aparece iluminado/seleccionado "Jugar", debería estar iluminado/seleccionado "Pasaporte"
@@ -42,6 +39,8 @@
   - En la tabla de estadísticas, podemos mostrar simplemente la letra y si el usuario pulsa sobre ella, mostrar una descripción del juego (no sé si entra / si es recomendable poner el típico icono de interrogación, pequeño, al lado de la letra. Pensemos esto bien.)
 - [ ][PENSAR] Sello automático: si el usuario supera tipo A o B con 0 errores de un solo intento / en una misma parte de la sesión, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
 - [ ][PENSAR] Borrados de sello y Resets
+  - (Idea que tengo: las estadísticas de sello y los sellos con se pueden borrar
+    - en estadísticas en el lugar equivalente donde aparece "resetear estadísticas" en la pestaña jugar, mostrar en la pestaña de pruebas de sello un mensaje diciendo algo como "intencionadamente no se pueden borrar las estadísticas de las pruebas de sello ni borrar los sellos que ya tienes - crea un nuevo perfil si quieres empezar de cero". Pensar bien este mensaje. Validar coherencia con / anotar en design.md)
   - Queremos darle al usuario la posibilidad de borrar sus sellos? En la dimensión continente-nivel? En otra dimensión?
   - Queremos darle al usuario de resetear el juego completo y la posibilidad de empezar de cero?
   - (Aterrizar ambas cosas en design.md antes de implementar nada, esto es muy importante tenerlo claro)

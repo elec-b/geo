@@ -394,7 +394,7 @@ Disponible en ambas pestañas. Permite alternar entre dos modos:
 *   Indicadores visuales por celda:
     - **✓ verde** — Dominado por intento propio (racha ≥ 1 en ese tipo específico, con datos propios del nivel actual).
     - **✓ gris** — Dominado por inferencia, no verificado directamente. Incluye dos casos: (1) inferencia ascendente dentro del mismo nivel (A dominado → E inferido; B dominado → C/D/F inferidos), y (2) herencia entre niveles (ver § Herencia de progreso entre niveles).
-    - **▼ rojo** — Necesita refuerzo (racha ≤ 0, tiene intentos).
+    - **✗ rojo** — Necesita refuerzo (racha ≤ 0, tiene intentos).
     - **—** — Sin datos.
 *   La tabla muestra los datos **con herencia aplicada** (lo mismo que usa el algoritmo de juego), no solo los datos propios. Esto garantiza que lo que el usuario ve coincida con lo que el algoritmo utiliza para seleccionar preguntas.
 
