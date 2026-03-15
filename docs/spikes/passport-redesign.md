@@ -135,7 +135,18 @@ Reemplazar emojis (`🏅`/`○`) por círculos CSS con doble borde coloreado por
 }
 ```
 
-**Contenido interior**: texto "P" (Países) o "C" (Capitales) con pseudo-elementos, o un `✓` en sellos ganados.
+**Diferenciación país vs capital por estilo de borde**:
+- Sello de **países**: `border-style: solid` (línea continua)
+- Sello de **capitales**: `border-style: double` (línea doble)
+
+Esto permite distinguir visualmente ambos tipos de sello con una sola propiedad CSS, sin iconos ni formas extra.
+
+```css
+.passport-cell__stamp--countries { border-style: solid; }
+.passport-cell__stamp--capitals { border-style: double; border-width: 3px; }
+```
+
+**Contenido interior**: `✓` en sellos ganados, vacío en pendientes.
 
 ```css
 .passport-cell__stamp--earned::after {
@@ -145,7 +156,7 @@ Reemplazar emojis (`🏅`/`○`) por círculos CSS con doble borde coloreado por
 }
 ```
 
-**Cambio en JSX**: reemplazar emojis por `<span>` vacíos con clases condicionales (`--earned`). Cambio mínimo (~5 líneas).
+**Cambio en JSX**: reemplazar emojis por `<span>` vacíos con clases condicionales (`--earned`, `--countries`/`--capitals`). Cambio mínimo (~5 líneas).
 
 ### 4. Rotación aleatoria de sellos
 
