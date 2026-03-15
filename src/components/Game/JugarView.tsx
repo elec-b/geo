@@ -85,6 +85,8 @@ interface JugarViewProps {
   stampTestRequest?: StampTestRequest | null;
   /** Callback cuando la prueba de sello termina (para volver a Pasaporte si viene de ahí) */
   onStampTestDone?: () => void;
+  /** Callback cuando se inicia una prueba de sello internamente (para que App.tsx actualice el tab) */
+  onStampTestStarted?: () => void;
   /** Signal para resetear al selector (se incrementa al re-tocar tab Jugar) */
   resetSignal?: number;
   /** Callback para navegar a la vista de estadísticas */
@@ -100,6 +102,7 @@ export function JugarView({
   onCountryClickRef,
   stampTestRequest,
   onStampTestDone,
+  onStampTestStarted,
   resetSignal,
   onNavigateStats,
 }: JugarViewProps) {
@@ -597,6 +600,7 @@ export function JugarView({
       session.startStampTest(level, continent, stampType);
       setLastStampPlayed(continent, level);
       setScreen('playing');
+      onStampTestStarted?.();
 
       // Zoom al continente
       if (globeRef.current) {
@@ -604,7 +608,7 @@ export function JugarView({
         globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[continent], 1000);
       }
     },
-    [session, globeRef, setLastStampPlayed],
+    [session, globeRef, setLastStampPlayed, onStampTestStarted],
   );
 
   // Lanzar prueba de sello directamente (desde Pasaporte via props)
@@ -734,6 +738,8 @@ export function JugarView({
     setScreen('selector');
     setSelectedChoice(null);
     setFlyOutStep('idle');
+    setShowStampResult(false);
+    setShowPoolExhausted(false);
   }, [session]);
 
   // Reset al selector cuando se re-toca el tab Jugar

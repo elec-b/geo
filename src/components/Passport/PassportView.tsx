@@ -86,11 +86,11 @@ export function PassportView({ levels, onStartStampTest }: PassportViewProps) {
         <div className="passport-header__icon">📘</div>
         <div className="passport-header__info">
           <span className="passport-header__name">{activeProfile?.name ?? 'Explorador'}</span>
-          <span className="passport-header__level" style={{ color: globalLevel ? LEVEL_COLORS[globalLevel] : undefined }}>
-            {globalLevel
-              ? `Nivel global: ${LEVELS.find((l) => l.id === globalLevel)?.label}`
-              : 'Sin nivel global'}
-          </span>
+          {globalLevel && (
+            <span className="passport-header__level" style={{ color: LEVEL_COLORS[globalLevel] }}>
+              Nivel global: {LEVELS.find((l) => l.id === globalLevel)?.label}
+            </span>
+          )}
         </div>
       </div>
 

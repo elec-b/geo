@@ -16,6 +16,7 @@
 - [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello, hulls de archipiélagos siempre visibles (selectivos por continente, buffer proporcional, zoom adaptativo), fix flyTo antimeridiano (Samoa/Tonga), fix hit testing no-ONU (prioridad geometría sobre territorios no-ONU), colores olímpicos unificados en selectores de Explorar/Pasaporte, circulitos de capitales no-ONU en ámbar
 - [x] **Estadísticas**: Eliminado estado "en progreso" (✗ para racha ≤ 0), quitados contadores aciertos/fallos, toggle ✓/%, desacoplamiento datos sello/jugar (`stampAttempts` independiente), nueva pestaña "Pruebas de sello" con indicadores ✓/✗, defaults inteligentes según origen (Jugar→lastPlayed, Pasaporte/sello→lastStampPlayed), icono de refuerzo ▼→✗ (convención tick/cross)
 - [x] **Datos**: Corregidas coordenadas de capitales incorrectas de REST Countries API: El Aaiún (lat/lng invertidos), Dakar (imprecisión costera). Añadidos CAPITAL_OVERRIDES en fetch-countries.ts
+- [x] **Pasaporte**: Tab bar ilumina "Pasaporte" durante pruebas de sello (desde cualquier origen), navegación limpia al cambiar de tab durante sello, ocultado texto "Sin nivel global"
 
 ---
 
@@ -24,10 +25,12 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Pasaporte
-- [ ] Cuando juego una prueba de sello, en el menú inferior, aparece iluminado/seleccionado "Jugar", debería estar iluminado/seleccionado "Pasaporte"
-  - [ ] Relacionado: si estoy en una prueba de sello y la dejo a medias, si pulso Jugar, no puede salir la prueba de sello que estaba haciendo. (Cuando se pulsa Jugar o Pasaporte se va "al inidio de Jugar" (selección de Juego) o al "inicio de Pasaporte" (visión de sellos obtenidos))
-- [ ] Cuando el usuario no tiene un nivel global, no mostrar el texto "Sin nivel global"
 - [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar
+
+### Jugar y Pasaporte
+- [ ] Repasar lógica
+  - Cuando un usuario ha superado e.g. aventura para un continente-nivel y ya tiene un sello para ese continente nivel, en el modal en el que se le invita a hacer la prueba de sello solo mostrar el que no tiene.
+    - En el menú del selector de jugar, abajo, ya se muestra bien el sello(s) que aún no ha conseguido el usuario
 
 ### UX general
 - [ ] En los juegos, cuando hay acierto, solo mostrar el país coloreado en verde; quitar el filtro verde que se pone en toda la pantalla, es molesto

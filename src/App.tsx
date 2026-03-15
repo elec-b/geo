@@ -66,27 +66,46 @@ function App() {
 
   // Prueba de sello lanzada desde Pasaporte
   const [stampTestRequest, setStampTestRequest] = useState<StampTestRequest | null>(null);
+  // Indica que hay una prueba de sello activa (desde cualquier origen)
+  const [stampTestActive, setStampTestActive] = useState(false);
 
-  // Re-tocar tab Jugar → volver al selector
+  // Cambio de tab — con limpieza de prueba de sello si está activa
   const handleTabChange = useCallback((tab: TabId) => {
+    if (stampTestActive) {
+      setStampTestActive(false);
+      if (stampTestRequest) setStampTestRequest(null);
+      if (tab === 'play') {
+        setJugarResetSignal((s) => s + 1);
+        return;
+      }
+      setActiveTab(tab);
+      return;
+    }
     if (tab === 'play' && activeTab === 'play') {
       setJugarResetSignal((s) => s + 1);
     }
     setActiveTab(tab);
-  }, [activeTab]);
+  }, [activeTab, stampTestActive, stampTestRequest]);
 
   // Callback para lanzar prueba de sello desde Pasaporte → cambia a tab Jugar
   const handleStartStampTest = useCallback(
     (level: import('./data/types').GameLevel, continent: import('./data/types').Continent, stampType: import('./hooks/useGameSession').StampTestType) => {
       setStampTestRequest({ level, continent, stampType });
+      setStampTestActive(true);
       setActiveTab('play');
     },
     [],
   );
 
+  // Callback cuando JugarView inicia una prueba de sello internamente
+  const handleStampTestStarted = useCallback(() => {
+    setStampTestActive(true);
+  }, []);
+
   // Callback cuando la prueba de sello termina → limpiar request
   const handleStampTestDone = useCallback(() => {
     setStampTestRequest(null);
+    setStampTestActive(false);
     setActiveTab('passport');
   }, []);
 
@@ -96,6 +115,7 @@ function App() {
     if (id !== currentId) {
       useAppStore.getState().setActiveProfile(id);
       setStampTestRequest(null);
+      setStampTestActive(false);
       setActiveTab('explore');
       globeRef.current?.resetToIdle();
     }
@@ -213,6 +233,7 @@ function App() {
           onCountryClickRef={jugarClickRef}
           stampTestRequest={stampTestRequest}
           onStampTestDone={handleStampTestDone}
+          onStampTestStarted={handleStampTestStarted}
           onNavigateStats={() => setShowStats(true)}
           resetSignal={jugarResetSignal}
         />
@@ -231,8 +252,8 @@ function App() {
           levels={levels}
           onClose={() => setShowStats(false)}
           context={
-            stampTestRequest
-              ? { tab: 'sellos', continent: stampTestRequest.continent, level: stampTestRequest.level }
+            (stampTestRequest || stampTestActive)
+              ? { tab: 'sellos', ...(stampTestRequest && { continent: stampTestRequest.continent, level: stampTestRequest.level }) }
               : activeTab === 'passport'
                 ? { tab: 'sellos' }
                 : undefined
@@ -278,7 +299,7 @@ function App() {
         />
       )}
 
-      <TabBar activeTab={activeTab} onTabChange={handleTabChange} />
+      <TabBar activeTab={stampTestActive ? 'passport' : activeTab} onTabChange={handleTabChange} />
     </>
   );
 }

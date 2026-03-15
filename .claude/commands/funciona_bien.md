@@ -1,0 +1,1 @@
+funciona bien, testeado; actualiza backlog y commit.
