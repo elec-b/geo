@@ -412,6 +412,15 @@ La app soporta **múltiples perfiles** en un mismo dispositivo.
 - **Cambio rápido**: Desde cualquier pantalla, tap en el avatar → selector de perfil
 - **Sin contraseñas**: Los perfiles son locales y de confianza (contexto familiar)
 
+### Cambio de perfil
+- Al seleccionar un perfil **distinto** al activo, la app:
+  1. Termina cualquier sesión activa de Jugar (si existe).
+  2. Cancela cualquier prueba de sello en curso (si existe).
+  3. Reinicia el globo al estado inicial (posición aleatoria, zoom 1, rotación automática) y navega a **Explorar**.
+- Si el usuario toca su **propio perfil** (ya activo), el selector se cierra sin cambios.
+- **Sin confirmación**: Los intentos ya registrados durante la sesión se conservan en el perfil anterior (se persisten pregunta a pregunta). Solo se pierde el score efímero de la sesión en curso.
+- **Eliminación del perfil activo**: Se aplica la misma limpieza antes de reasignar al primer perfil disponible.
+
 ### Creación de perfil
 - **Nombre**: Por defecto "Explorador" para el primer perfil. Los siguientes usan nombres únicos automáticos ("Explorador 2", "Explorador 3"...). El usuario puede cambiar el nombre.
 - **Avatar**: Selección de 12-15 iconos de animales, representativos y característicos de los 5 continentes. Debe haber animales de tierra, mar y aire.

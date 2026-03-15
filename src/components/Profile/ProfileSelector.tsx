@@ -8,6 +8,7 @@ import './ProfileSelector.css';
 
 interface ProfileSelectorProps {
   onClose: () => void;
+  onProfileChange: (id: string) => void;
   onCreateNew: () => void;
   onEdit: (profile: UserProfile) => void;
 }
@@ -29,18 +30,16 @@ function getNextDefaultName(profiles: UserProfile[]): string {
 
 export { getNextDefaultName };
 
-export function ProfileSelector({ onClose, onCreateNew, onEdit }: ProfileSelectorProps) {
+export function ProfileSelector({ onClose, onProfileChange, onCreateNew, onEdit }: ProfileSelectorProps) {
   const profiles = useAppStore((s) => s.profiles);
   const activeProfileId = useAppStore((s) => s.activeProfileId);
-  const setActiveProfile = useAppStore((s) => s.setActiveProfile);
   const deleteProfile = useAppStore((s) => s.deleteProfile);
   const createProfile = useAppStore((s) => s.createProfile);
 
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
 
   const handleSelect = (id: string) => {
-    setActiveProfile(id);
-    onClose();
+    onProfileChange(id);
   };
 
   const handleDelete = (id: string) => {
@@ -53,9 +52,11 @@ export function ProfileSelector({ onClose, onCreateNew, onEdit }: ProfileSelecto
     if (remaining.length === 0) {
       // Si no quedan perfiles, crear uno por defecto
       createProfile('Explorador', DEFAULT_AVATAR);
+      const newId = useAppStore.getState().activeProfileId!;
+      onProfileChange(newId);
     } else if (wasActive) {
-      // Si se eliminó el activo, activar el primero
-      setActiveProfile(remaining[0].id);
+      // Si se eliminó el activo, activar el primero (con limpieza de sesión)
+      onProfileChange(remaining[0].id);
     }
 
     setConfirmDeleteId(null);

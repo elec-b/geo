@@ -90,6 +90,18 @@ function App() {
     setActiveTab('passport');
   }, []);
 
+  // Cambio de perfil: limpiar sesión activa, reiniciar globo y navegar a Explorar
+  const handleProfileChange = useCallback((id: string) => {
+    const currentId = useAppStore.getState().activeProfileId;
+    if (id !== currentId) {
+      useAppStore.getState().setActiveProfile(id);
+      setStampTestRequest(null);
+      setActiveTab('explore');
+      globeRef.current?.resetToIdle();
+    }
+    setShowProfileSelector(false);
+  }, []);
+
   // Bridge de handlers: cada tab registra sus callbacks aquí
   const exploreClickRef = useRef<((f: CountryFeature) => void) | undefined>(undefined);
   const exploreDeselectRef = useRef<(() => void) | undefined>(undefined);
@@ -224,6 +236,7 @@ function App() {
       {showProfileSelector && (
         <ProfileSelector
           onClose={() => setShowProfileSelector(false)}
+          onProfileChange={handleProfileChange}
           onCreateNew={() => {
             setEditingProfile(null);
             setShowProfileEditor(true);

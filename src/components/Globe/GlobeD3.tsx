@@ -231,6 +231,8 @@ export interface GlobeD3Ref {
   getCountryExtentZoom(cca2: string, margin?: number): number | null;
   /** Retorna el centro del outline (hull) para archipiélagos, o null si no aplica */
   getOutlineCenter(cca2: string): [number, number] | null;
+  /** Reinicia el globo al estado idle: posición aleatoria, zoom 1, rotación automática */
+  resetToIdle(): void;
 }
 
 // --- Utilidades ---
@@ -440,6 +442,19 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     },
     getCurrentZoom(): number {
       return scaleRef.current;
+    },
+    resetToIdle() {
+      // Cancelar animaciones y estado de interacción
+      flyToAnimRef.current = null;
+      isInertiaRef.current = false;
+      velocityRef.current = [0, 0];
+      isDraggingRef.current = false;
+      dragStartRef.current = null;
+      // Reiniciar posición, zoom y rotación automática
+      rotationRef.current = [Math.random() * 360 - 180, 0];
+      scaleRef.current = 1.0;
+      isAutoRotatingRef.current = true;
+      needsRedrawRef.current = true;
     },
   }));
 
