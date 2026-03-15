@@ -54,6 +54,13 @@ function JugarCellIndicator({ ca, type, isInferredType }: {
   return <span className="stats-cell stats-cell--reinforcement">{'\u2717'}</span>;
 }
 
+/** Clase CSS según el valor del porcentaje */
+function percentClass(pct: number): string {
+  if (pct < 50) return 'stats-cell--percent-low';
+  if (pct < 80) return 'stats-cell--percent-mid';
+  return 'stats-cell--percent-high';
+}
+
 /** Porcentaje de acierto para una celda de Jugar */
 function JugarPercentCell({ ca, type }: {
   ca: CountryAttempts | undefined;
@@ -67,7 +74,7 @@ function JugarPercentCell({ ca, type }: {
     return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
   }
   const pct = Math.round((rec.correct / (rec.correct + rec.incorrect)) * 100);
-  return <span className="stats-cell stats-cell--percent">{pct}%</span>;
+  return <span className={`stats-cell stats-cell--percent ${percentClass(pct)}`}>{pct}%</span>;
 }
 
 // --- Indicadores de celda (pestaña Pruebas de sello) ---
@@ -102,7 +109,7 @@ function StampPercentCell({ sca, type }: {
     return <span className="stats-cell stats-cell--empty">{'\u2014'}</span>;
   }
   const pct = Math.round((rec.correct / (rec.correct + rec.incorrect)) * 100);
-  return <span className="stats-cell stats-cell--percent">{pct}%</span>;
+  return <span className={`stats-cell stats-cell--percent ${percentClass(pct)}`}>{pct}%</span>;
 }
 
 /** Abreviaturas descriptivas para cada tipo de pregunta */
@@ -238,7 +245,7 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
             onClick={() => setShowPercentage((v) => !v)}
             aria-label={showPercentage ? 'Mostrar indicadores' : 'Mostrar porcentajes'}
           >
-            {showPercentage ? '\u2713 / \u25BC' : '%'}
+            {showPercentage ? '\u2713 / \u2717' : '%'}
           </button>
         </div>
 

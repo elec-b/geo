@@ -236,9 +236,20 @@
 }
 
 .stats-cell--percent {
-  color: var(--color-text-secondary);
   font-weight: 500;
   font-size: var(--font-size-xs);
+}
+
+.stats-cell--percent-low {
+  color: var(--color-error);
+}
+
+.stats-cell--percent-mid {
+  color: var(--color-accent-amber);
+}
+
+.stats-cell--percent-high {
+  color: var(--color-success);
 }
 
 /* Leyenda */
