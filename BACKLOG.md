@@ -26,7 +26,8 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Pasaporte
-- [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar
+- [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Spike de diseño completado → ver `docs/spikes/passport-redesign.md`
+  - Asegurar que hay coherencia con design.md
 
 ### Jugar y Pasaporte
 - [ ] Repasar lógica
