@@ -18,6 +18,7 @@
 - [x] **Datos**: Corregidas coordenadas de capitales incorrectas de REST Countries API: El Aaiún (lat/lng invertidos), Dakar (imprecisión costera). Añadidos CAPITAL_OVERRIDES en fetch-countries.ts
 - [x] **Pasaporte**: Tab bar ilumina "Pasaporte" durante pruebas de sello (desde cualquier origen), navegación limpia al cambiar de tab durante sello, ocultado texto "Sin nivel global"
 - [x] **Estadísticas**: Código de colores para porcentajes (rojo <50%, ámbar 50-79%, verde ≥80%) en ambas pestañas. Fix toggle ✓/▼→✓/✗
+- [x] **Jugar**: Fix modales de sello — filtrar sellos ya ganados + acceso directo (sin modal) cuando solo falta 1 sello. Adaptar título/texto del modal pool exhausted Aventura cuando ambos sellos están ganados
 
 ---
 
@@ -28,11 +29,6 @@
 ### Pasaporte
 - [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Spike de diseño completado → ver `docs/spikes/passport-redesign.md`
   - Asegurar que hay coherencia con design.md
-
-### Jugar y Pasaporte
-- [ ] Repasar lógica
-  - Cuando un usuario ha superado e.g. aventura para un continente-nivel y ya tiene un sello para ese continente nivel, en el modal en el que se le invita a hacer la prueba de sello solo mostrar el que no tiene.
-    - En el menú del selector de jugar, abajo, ya se muestra bien el sello(s) que aún no ha conseguido el usuario
 
 ### UX general
 - [ ] En los juegos, cuando hay acierto, solo mostrar el país coloreado en verde; quitar el filtro verde que se pone en toda la pantalla, es molesto

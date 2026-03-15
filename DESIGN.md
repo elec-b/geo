@@ -61,6 +61,7 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 *   **0 errores requeridos**: el usuario debe completar la prueba sin fallos para conseguir el sello.
 *   **Sin límite de intentos**: el usuario puede repetir la prueba de sello tantas veces como quiera. El requisito de 0 errores ya es filtro suficiente, y cada reintento es práctica valiosa.
 *   **Acceso**: El usuario puede intentar las pruebas desde Pasaporte (siempre disponible) o desde Jugar (cuando el algoritmo de aprendizaje lo invita).
+*   **Acceso directo (Jugar)**: Cuando solo queda **un sello pendiente** en el nivel-continente, la app lanza directamente la prueba correspondiente sin mostrar modal de elección. El modal de elección solo aparece cuando faltan ambos sellos. Aplica desde el banner del selector y los modales de fin de sesión de Jugar. En Pasaporte se mantiene el modal con los sellos pendientes.
 *   **Registro separado**: Las pruebas de sello tienen su propio registro de intentos, independiente de Jugar. Los fallos en pruebas de sello no afectan el algoritmo de aprendizaje de Jugar.
 
 ---

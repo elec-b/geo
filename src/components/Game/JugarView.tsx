@@ -682,9 +682,17 @@ export function JugarView({
       activeContinentRef.current = continent;
       activeQuestionTypeRef.current = 'mixed';
       setLastPlayed(continent, level);
-      setShowStampChooser(true);
+      // Acceso directo: si solo falta 1 sello, lanzar prueba sin modal
+      const stamps = getStamps(level, continent);
+      if (stamps.countries && !stamps.capitals) {
+        handleStartStampTest('capitals');
+      } else if (!stamps.countries && stamps.capitals) {
+        handleStartStampTest('countries');
+      } else {
+        setShowStampChooser(true);
+      }
     },
-    [setLastPlayed],
+    [setLastPlayed, getStamps, handleStartStampTest],
   );
 
   // Cerrar modal de fin de pool y volver al selector
@@ -1062,7 +1070,11 @@ export function JugarView({
       />
 
       {/* Modal: elegir tipo de sello */}
-      {showStampChooser && (
+      {showStampChooser && (() => {
+        const stamps = activeLevelRef.current && activeContinentRef.current
+          ? getStamps(activeLevelRef.current, activeContinentRef.current)
+          : { countries: true, capitals: true };
+        return (
         <div className="jugar-modal-overlay">
           <div className="jugar-modal">
             <h3 className="jugar-modal__title">Prueba de sello</h3>
@@ -1070,18 +1082,22 @@ export function JugarView({
               Elige una prueba. Deberás completarla sin errores para conseguir el sello.
             </p>
             <div className="jugar-modal__buttons">
-              <button
-                className="jugar-modal__btn jugar-modal__btn--countries"
-                onClick={() => handleStartStampTest('countries')}
-              >
-                Sello de Países
-              </button>
-              <button
-                className="jugar-modal__btn jugar-modal__btn--capitals"
-                onClick={() => handleStartStampTest('capitals')}
-              >
-                Sello de Capitales
-              </button>
+              {!stamps.countries && (
+                <button
+                  className="jugar-modal__btn jugar-modal__btn--countries"
+                  onClick={() => handleStartStampTest('countries')}
+                >
+                  Sello de Países
+                </button>
+              )}
+              {!stamps.capitals && (
+                <button
+                  className="jugar-modal__btn jugar-modal__btn--capitals"
+                  onClick={() => handleStartStampTest('capitals')}
+                >
+                  Sello de Capitales
+                </button>
+              )}
             </div>
             <button
               className="jugar-modal__cancel"
@@ -1091,7 +1107,8 @@ export function JugarView({
             </button>
           </div>
         </div>
-      )}
+        );
+      })()}
 
       {/* Modal: resultado de prueba de sello */}
       {showStampResult && (
@@ -1134,14 +1151,22 @@ export function JugarView({
           const stamps = activeLevelRef.current && activeContinentRef.current
             ? getStamps(activeLevelRef.current, activeContinentRef.current)
             : { countries: true, capitals: true };
+          const bothEarned = stamps.countries && stamps.capitals;
+          const levelLabel = (activeLevelRef.current ?? '').charAt(0).toUpperCase() + (activeLevelRef.current ?? '').slice(1);
           return (
             <div className="jugar-modal-overlay">
               <div className="jugar-modal">
                 <h3 className="jugar-modal__title">
-                  ¡Fenomenal!<br />Listo para el sello
+                  {bothEarned
+                    ? 'Entrenamiento completado'
+                    : <>¡Fenomenal!<br />Listo para el sello</>
+                  }
                 </h3>
                 <p className="jugar-modal__text">
-                  Elige una prueba. Deberás completarla sin errores para conseguir el sello.
+                  {bothEarned
+                    ? <>Has completado <em>{activeContinentRef.current}</em> en nivel <em>{levelLabel}</em>. Puedes resetear las estadísticas para volver a practicar.</>
+                    : 'Elige una prueba. Deberás completarla sin errores para conseguir el sello.'
+                  }
                 </p>
                 <div className="jugar-modal__buttons">
                   {!stamps.countries && (
