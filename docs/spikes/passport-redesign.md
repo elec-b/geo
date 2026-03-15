@@ -268,9 +268,9 @@ Todo CSS + markup mínimo. Sin cambio de layout, sin refactor React, sin librer�
 - Guilloché visible pero no distractor
 - Rendimiento fluido al hacer scroll y al interactuar
 
-### Fase 2 — Refinamiento (opcional, 1-2h adicionales)
+### Fase 2 — Refinamiento ligero (solo si necesario tras testeo)
 
-Solo si la Fase 1 se valida positivamente en dispositivo:
+> **Nota**: No complicarse. Solo ajustes menores si el testeo en dispositivo lo justifica.
 
 | Paso | Cambio |
 |------|--------|
@@ -278,13 +278,9 @@ Solo si la Fase 1 se valida positivamente en dispositivo:
 | 2 | Mejorar labels de continente (tipografía oficial, iconos decorativos) |
 | 3 | Transiciones suaves entre estados de celda (locked → available → complete) |
 
-### Fase 3 — Máximo realismo (post-lanzamiento, opcional)
+### ~~Fase 3~~ — Descartada
 
-| Paso | Cambio |
-|------|--------|
-| 1 | SVG con texto curvo en sellos ("PAÍSES" / "CAPITALES" en arco) |
-| 2 | Efecto de tinta más elaborado (solo en sello expandido/detalle) |
-| 3 | Layout en páginas por continente si hay demanda (refactor moderado) |
+> No implementar. El realismo extra (SVG curvo, efecto de tinta elaborado, páginas por continente) no justifica la complejidad añadida.
 
 ---
 
