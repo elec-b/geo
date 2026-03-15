@@ -372,6 +372,16 @@ Vista que muestra el registro de intentos del usuario de forma visual. Accesible
 
 La vista de estadísticas tiene dos pestañas: **Jugar** (datos de Jugar) y **Pruebas de sello** (datos de las pruebas de sello, reflejados en Pasaporte). Ambas comparten selector de nivel × continente.
 
+### Defaults según origen
+
+La vista se abre con pestaña, continente y nivel preseleccionados según el contexto de origen:
+
+*   **Desde Explorar o Jugar** (header o modales): continente/nivel de `lastPlayed` (último juego). Pestaña «Jugar».
+*   **Desde Pasaporte**: continente/nivel de `lastStampPlayed` (última prueba de sello intentada). Pestaña «Pruebas de sello».
+*   **Fallback** (sin datos): Europa / Turista. Pestaña «Jugar».
+
+`lastStampPlayed` se setea cada vez que el usuario inicia una prueba de sello (desde Pasaporte o desde los modales de Jugar).
+
 ### Toggle de visualización
 
 Disponible en ambas pestañas. Permite alternar entre dos modos:

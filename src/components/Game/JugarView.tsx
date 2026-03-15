@@ -112,6 +112,7 @@ export function JugarView({
   const getStamps = useAppStore((s) => s.getStamps);
   const earnStamp = useAppStore((s) => s.earnStamp);
   const setLastPlayed = useAppStore((s) => s.setLastPlayed);
+  const setLastStampPlayed = useAppStore((s) => s.setLastStampPlayed);
 
   // Modales de prueba de sello y fin de pool
   const [showStampChooser, setShowStampChooser] = useState(false);
@@ -594,6 +595,7 @@ export function JugarView({
       setShowStampChooser(false);
       setShowPoolExhausted(false);
       session.startStampTest(level, continent, stampType);
+      setLastStampPlayed(continent, level);
       setScreen('playing');
 
       // Zoom al continente
@@ -602,7 +604,7 @@ export function JugarView({
         globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[continent], 1000);
       }
     },
-    [session, globeRef],
+    [session, globeRef, setLastStampPlayed],
   );
 
   // Lanzar prueba de sello directamente (desde Pasaporte via props)
@@ -613,6 +615,7 @@ export function JugarView({
       activeQuestionTypeRef.current = req.stampType === 'countries' ? 'A' : 'B';
 
       session.startStampTest(req.level, req.continent, req.stampType);
+      setLastStampPlayed(req.continent, req.level);
       setScreen('playing');
       setSelectedChoice(null);
 
@@ -621,7 +624,7 @@ export function JugarView({
         globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[req.continent], 1000);
       }
     },
-    [session, globeRef],
+    [session, globeRef, setLastStampPlayed],
   );
 
   // Efecto: lanzar prueba de sello desde Pasaporte cuando llega la petición

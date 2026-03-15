@@ -13,12 +13,19 @@ const LEVELS: GameLevel[] = ['turista', 'mochilero', 'guía'];
 const ALL_TYPES: QuestionType[] = ['E', 'C', 'D', 'F', 'A', 'B'];
 const STAMP_TYPES: ('A' | 'B')[] = ['A', 'B'];
 
-type StatsTab = 'jugar' | 'sellos';
+export type StatsTab = 'jugar' | 'sellos';
+
+export interface StatsContext {
+  tab?: StatsTab;
+  continent?: Continent;
+  level?: GameLevel;
+}
 
 interface StatsViewProps {
   countries: Map<string, CountryData>;
   levels: Map<string, LevelDefinition>;
   onClose: () => void;
+  context?: StatsContext;
 }
 
 // --- Indicadores de celda (pestaña Jugar) ---
@@ -113,15 +120,20 @@ const STAMP_LABELS: Record<'A' | 'B', { short: string; full: string }> = {
   B: { short: 'Capitales', full: 'Prueba de sello de Capitales' },
 };
 
-export function StatsView({ countries, levels, onClose }: StatsViewProps) {
+export function StatsView({ countries, levels, onClose, context }: StatsViewProps) {
   const lastPlayed = useAppStore((s) => s.settings.lastPlayed);
+  const lastStampPlayed = useAppStore((s) => s.settings.lastStampPlayed);
+
+  const defaultTab = context?.tab ?? 'jugar';
+  const source = defaultTab === 'sellos' ? lastStampPlayed : lastPlayed;
+
   const [selectedContinent, setSelectedContinent] = useState<Continent>(
-    lastPlayed?.continent ?? 'Europa',
+    context?.continent ?? source?.continent ?? 'Europa',
   );
   const [selectedLevel, setSelectedLevel] = useState<GameLevel>(
-    lastPlayed?.level ?? 'turista',
+    context?.level ?? source?.level ?? 'turista',
   );
-  const [activeTab, setActiveTab] = useState<StatsTab>('jugar');
+  const [activeTab, setActiveTab] = useState<StatsTab>(defaultTab);
   const [showPercentage, setShowPercentage] = useState(false);
 
   const resetAttempts = useAppStore((s) => s.resetAttempts);

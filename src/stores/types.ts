@@ -62,6 +62,7 @@ export interface AppSettings {
   theme: 'dark';        // por ahora solo dark
   locale: 'es';         // por ahora solo español
   lastPlayed?: { continent: Continent; level: GameLevel } | null;
+  lastStampPlayed?: { continent: Continent; level: GameLevel } | null;
 }
 
 /** Estado completo de la aplicación */

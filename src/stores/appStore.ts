@@ -36,6 +36,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   theme: 'dark',
   locale: 'es',
   lastPlayed: null,
+  lastStampPlayed: null,
 };
 
 // Perfil por defecto — sin él, recordAttempt y getAttempts no funcionan
@@ -80,6 +81,8 @@ interface AppStoreActions {
   getStampAttempts: (level: GameLevel, continent: Continent) => Record<string, StampCountryAttempts>;
   /** Persiste el último continente y nivel jugado */
   setLastPlayed: (continent: Continent, level: GameLevel) => void;
+  /** Persiste el último continente y nivel de prueba de sello */
+  setLastStampPlayed: (continent: Continent, level: GameLevel) => void;
 }
 
 type AppStore = AppState & AppStoreActions;
@@ -283,6 +286,12 @@ export const useAppStore = create<AppStore>()(
   setLastPlayed: (continent, level) => {
     set((state) => ({
       settings: { ...state.settings, lastPlayed: { continent, level } },
+    }));
+  },
+
+  setLastStampPlayed: (continent, level) => {
+    set((state) => ({
+      settings: { ...state.settings, lastStampPlayed: { continent, level } },
     }));
   },
 

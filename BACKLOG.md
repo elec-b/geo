@@ -14,7 +14,7 @@
 - [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente, limpieza de sesión al cambiar perfil (termina juego/sello en curso, reinicia globo, navega a Explorar)
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores). Feedback háptico
 - [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con 🏅, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello, hulls de archipiélagos siempre visibles (selectivos por continente, buffer proporcional, zoom adaptativo), fix flyTo antimeridiano (Samoa/Tonga), fix hit testing no-ONU (prioridad geometría sobre territorios no-ONU), colores olímpicos unificados en selectores de Explorar/Pasaporte, circulitos de capitales no-ONU en ámbar
-- [x] **Estadísticas**: Eliminado estado "en progreso" (▼ para racha ≤ 0), quitados contadores aciertos/fallos, toggle ✓/%, desacoplamiento datos sello/jugar (`stampAttempts` independiente), nueva pestaña "Pruebas de sello" con indicadores ✓/✗
+- [x] **Estadísticas**: Eliminado estado "en progreso" (▼ para racha ≤ 0), quitados contadores aciertos/fallos, toggle ✓/%, desacoplamiento datos sello/jugar (`stampAttempts` independiente), nueva pestaña "Pruebas de sello" con indicadores ✓/✗, defaults inteligentes según origen (Jugar→lastPlayed, Pasaporte/sello→lastStampPlayed)
 - [x] **Datos**: Corregidas coordenadas de capitales incorrectas de REST Countries API: El Aaiún (lat/lng invertidos), Dakar (imprecisión costera). Añadidos CAPITAL_OVERRIDES en fetch-countries.ts
 
 ---
@@ -24,30 +24,18 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Estadísticas
-- [ ] Repasar: cuando se va a las estadísticas de sello o de país, tanto para la pestaña de Jugar como para la de Pruebas de Sello, ¿a qué continente nivel se va por defecto / se le muestra al usuario? Qué lógica hay? Pensar primero, anotar en design.md después y por último implementar.
-
+- [ ] Cambiar el icono del triangulito para abajo rojo de "refuerzo" por una cruz (me resulta más intuitivo utilizar la convención tick/cross). Creo que esto simplemente es cambiar un iconito, no hay mucho más (a parte de revisar que haya coherencia / esté bien reflejado en design.md)
 
 ### Pasaporte
 - [ ] Cuando juego una prueba de sello, en el menú inferior, aparece iluminado/seleccionado "Jugar", debería estar iluminado/seleccionado "Pasaporte"
   - [ ] Relacionado: si estoy en una prueba de sello y la dejo a medias, si pulso Jugar, no puede salir la prueba de sello que estaba haciendo. (Cuando se pulsa Jugar o Pasaporte se va "al inidio de Jugar" (selección de Juego) o al "inicio de Pasaporte" (visión de sellos obtenidos))
-- [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar
 - [ ] Cuando el usuario no tiene un nivel global, no mostrar el texto "Sin nivel global"
-- [ ] Pensar si quiero dar la posibilidad al usario de borrar sus sellos/medallas del pasaporte. En caso afirmativo, documentar en design.md antes de implementar.
-
-### Testear exhaustivamente
-- [ ] Consigue todos los sellos para todos los continentes
-- [ ] Juega al menos en aventura para todos los continete-nivel
-- [ ] Anota feedback en backlog.md
-
-### Explorar
-- [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigación hecha: los datos y filtros son correctos (unMember: false, no participa en Jugar, etiquetas en ámbar). El "problema" es solo visual (mismo color de relleno que países ONU) y de nomenclatura (ver tarea siguiente sobre territorios).
-- [ ] El Aaiún aparece mal ubicado — coordenadas invertidas (lat ↔ lng) en REST Countries API. Pendiente de corregir en capitals.json + CAPITAL_OVERRIDES en fetch-countries.ts. También se detectaron coords incorrectas para SN (Dakar, 22 km off). Ver tarea de validación automática más abajo.
-- [ ][PENSAR] Clasificación de territorios no-ONU: actualmente todos los territorios que no son países ONU se etiquetan como "Territorio no reconocido por la ONU", pero esto es incorrecto para muchos de ellos. Hay dos categorías muy distintas:
-  - **Territorios de países ONU**: Groenlandia (Dinamarca), Puerto Rico (EEUU), Wallis y Futuna (Francia), Guayana Francesa (Francia), etc. Son territorios plenamente reconocidos — simplemente no son estados independientes. La etiqueta debería ser "Territorio de [País soberano]".
-  - **Estados disputados / no reconocidos**: Kosovo, Taiwán, Sáhara Occidental, etc. Para estos sí tiene sentido "Territorio no reconocido por la ONU" o similar.
-  - Propuesta: añadir un campo `sovereignCountry` (o similar) en los datos para distinguir ambos casos y mostrar la etiqueta correcta en la ficha de país. Pensar bien las categorías y redactar en DESIGN.md antes de implementar.
+- [ ] Mejorar estética: el grid está bien, pero debe transmitir la sensación de "pasaporte en una página". Pensar bien el aspecto visual antes de implementar
 
 ### UX general
+- [ ] En los juegos, cuando hay acierto, solo mostrar el país coloreado en verde; quitar el filtro verde que se pone en toda la pantalla, es molesto
+  - hacer lo equivalente para los fallos
+  - esto también aplica para las pruebas de sello
 - [ ] Bottom sheets (configuración y ficha de país): añadir handle + implementar drag-to-dismiss
 - [ ] Feedback háptico: vibraciones más cortas/sutiles
 - [ ] Renombrar los tipos de juego, quizás reasignar las letras, para que se vean de una manera lógica en la tabla de estadísticas y en el selector. El orden pedagógico que hay ahora tiene sentido, pero la secuencia de letras (E, C, D, F, A, B) no tanto... Es una mala "herencia" de cuando pensamos los distintos tipos de juegos. También debemos repensar los nombres que se muestran en el selector y mostrar letra + nombre del juego.  Hacer los cambios primero en design.md, después cambiar también en el codebase por coherencia, y finalmente aplicar el el selector y en la tabla de estadísticas. 
@@ -57,6 +45,20 @@
   - Queremos darle al usuario la posibilidad de borrar sus sellos? En la dimensión continente-nivel? En otra dimensión?
   - Queremos darle al usuario de resetear el juego completo y la posibilidad de empezar de cero?
   - (Aterrizar ambas cosas en design.md antes de implementar nada, esto es muy importante tenerlo claro)
+
+### Testear exhaustivamente
+- [ ] Consigue todos los sellos para todos los continentes
+- [ ] Juega al menos en aventura para todos los continete-nivel
+- [ ] Anota feedback en backlog.md
+
+
+### Explorar
+- [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigación hecha: los datos y filtros son correctos (unMember: false, no participa en Jugar, etiquetas en ámbar). El "problema" es solo visual (mismo color de relleno que países ONU) y de nomenclatura (ver tarea siguiente sobre territorios).
+- [ ] El Aaiún aparece mal ubicado — coordenadas invertidas (lat ↔ lng) en REST Countries API. Pendiente de corregir en capitals.json + CAPITAL_OVERRIDES en fetch-countries.ts. También se detectaron coords incorrectas para SN (Dakar, 22 km off). Ver tarea de validación automática más abajo.
+- [ ][PENSAR] Clasificación de territorios no-ONU: actualmente todos los territorios que no son países ONU se etiquetan como "Territorio no reconocido por la ONU", pero esto es incorrecto para muchos de ellos. Hay dos categorías muy distintas:
+  - **Territorios de países ONU**: Groenlandia (Dinamarca), Puerto Rico (EEUU), Wallis y Futuna (Francia), Guayana Francesa (Francia), etc. Son territorios plenamente reconocidos — simplemente no son estados independientes. La etiqueta debería ser "Territorio de [País soberano]".
+  - **Estados disputados / no reconocidos**: Kosovo, Taiwán, Sáhara Occidental, etc. Para estos sí tiene sentido "Territorio no reconocido por la ONU" o similar.
+  - Propuesta: añadir un campo `sovereignCountry` (o similar) en los datos para distinguir ambos casos y mostrar la etiqueta correcta en la ficha de país. Pensar bien las categorías y redactar en DESIGN.md antes de implementar.
 
 ### Internacionalización (UI completa)
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)

@@ -230,6 +230,13 @@ function App() {
           countries={countries}
           levels={levels}
           onClose={() => setShowStats(false)}
+          context={
+            stampTestRequest
+              ? { tab: 'sellos', continent: stampTestRequest.continent, level: stampTestRequest.level }
+              : activeTab === 'passport'
+                ? { tab: 'sellos' }
+                : undefined
+          }
         />
       )}
 
