@@ -659,18 +659,22 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     if (pins.length > 0) {
       const rotation = rotationRef.current;
       const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      const selCca2 = selectedCca2PropRef.current;
+      const pinColor = (selCca2 && nonUnCodesRef.current.has(selCca2))
+        ? CAPITAL_PIN_NON_UN_COLOR
+        : CAPITAL_PIN_COLOR;
       for (const pinCoords of pins) {
         if (geoDistance(pinCoords, viewCenter) >= Math.PI / 2) continue;
         const pos = projection(pinCoords);
         if (!pos) continue;
         ctx.beginPath();
         ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER, 0, Math.PI * 2);
-        ctx.strokeStyle = CAPITAL_PIN_COLOR;
+        ctx.strokeStyle = pinColor;
         ctx.lineWidth = 1.5;
         ctx.stroke();
         ctx.beginPath();
         ctx.arc(pos[0], pos[1], CAPITAL_PIN_INNER, 0, Math.PI * 2);
-        ctx.fillStyle = CAPITAL_PIN_COLOR;
+        ctx.fillStyle = pinColor;
         ctx.fill();
       }
     }
