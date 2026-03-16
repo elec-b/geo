@@ -1144,14 +1144,26 @@ export function JugarView({
                   {session.score.correct} de {session.score.correct + session.score.incorrect} correctos. Sin errores.
                 </p>
               </>
-            ) : (
-              <>
-                <h3 className="jugar-modal__title">Prueba no superada</h3>
-                <p className="jugar-modal__text">
-                  {session.score.correct} de {session.score.correct + session.score.incorrect} correctos. Sigue practicando.
-                </p>
-              </>
-            )}
+            ) : (() => {
+              const total = session.score.correct + session.score.incorrect;
+              const pct = total > 0 ? (session.score.correct / total) * 100 : 0;
+              const { title, encouragement } = pct >= 90
+                ? { title: '¡Muy cerca!', encouragement: 'A nada del sello.' }
+                : pct >= 70
+                ? { title: '¡Buen intento!', encouragement: 'Cada intento te acerca más.' }
+                : pct >= 50
+                ? { title: 'Vas por buen camino', encouragement: 'Sigue jugando, se nota el progreso.' }
+                : { title: 'No te rindas', encouragement: 'La práctica hace al maestro.' };
+              return (
+                <>
+                  <h3 className="jugar-modal__title">{title}</h3>
+                  <p className="jugar-modal__text">
+                    {session.score.correct} de {total} correctos.<br />
+                    {encouragement}
+                  </p>
+                </>
+              );
+            })()}
             <button
               className="jugar-modal__btn jugar-modal__btn--primary"
               onClick={handleStampResultClose}
