@@ -16,16 +16,16 @@
 }
 
 .game-feedback--correct {
-  background: rgba(34, 197, 94, 0.15);
+  background: rgba(34, 197, 94, 0.05);
 }
 
 .game-feedback--incorrect {
-  background: rgba(239, 68, 68, 0.15);
+  background: rgba(239, 68, 68, 0.05);
 }
 
 /* Overlay reducido cuando las etiquetas van sobre el globo */
 .game-feedback--geo.game-feedback--incorrect {
-  background: rgba(239, 68, 68, 0.06);
+  background: rgba(239, 68, 68, 0.03);
 }
 
 .game-feedback__details {
