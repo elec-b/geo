@@ -24,6 +24,7 @@
 - [x] **UX Jugar**: Feedback háptico más sutil — acierto: tap ligero único; error: doble tap ligero; toggles: sin cambios
 - [x] **Pasaporte**: Animación de estrella giratoria al conseguir sello — efecto "trompo" (10 vueltas en 3s con ease-out)
 - [x] **UX general**: Bottom sheets (configuración y ficha de país) — handle visual + drag-to-dismiss + animación de cierre suave. Eliminados botones X
+- [x] **Jugar**: Fix bug herencia entre niveles — barra de progreso llegaba a 100% sin mostrar modal de sello. Causa: herencia A/B sintética desalineaba progreso con pool. Solución: heredar E/CDF en vez de A/B (A y B se juegan siempre). Simplificación del algoritmo (~35 líneas eliminadas). Fix defensivo en session.start() para pool vacío al iniciar.
 
 ---
 
@@ -32,7 +33,6 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### UX general
-- [ ] Posible bug, investigar: estaba jugando áfrica-mochilero, aventura. Salí y entré algunas veces del juego. No tengo ningún sello de áfrica-mochilero. La última vez que entré al juego, continuando en aventura, llegé al 100% en la barra de progreso, peo no me mostró el modal de hacer el sello. Solo me lo muestra al volver a ir al selector, ir a áfrica-mochilero, juego de aventura, y pulsar continuar. ¿Por qué pudo/puede ser?
 - [ ] En Jugar y en las Pruebas de Sello (de país y de capital), la barra de progreso, sube/baja después de que el contador de acierto/fallo (debajo de la barra de progreso), haya cambiado. Investiga la razón. Creo que queda mejor si ambas cosas se mueven a la vez.
 - [ ] Jugando aventura, para Oceanía-mochilero, hubo un bug cuando me pidió que localizase Papúa Nueva Guinea en tipo A (o quizás en tipo E? No recuerdo bien). El mapa se posicionó fuera de Oceanía. Investigar, no solo este caso, sino todos los casos donde esto pueda ocurrir.
   - Algo parecido ocurre cuando cambio entre continentes para las pruebas de sello, la primera pregunta no está orientada a veces en el continente correcto. No sé si esto está relacionado con el punto principal o si es un tema distinto. Investigar en cualquier caso.

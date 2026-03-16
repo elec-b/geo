@@ -286,19 +286,20 @@ Se muestra cuando el pool de preguntas se agota (todos los países dominan la et
 Cuando el usuario desbloquea un nuevo nivel (tras conseguir ambos sellos del nivel anterior), los países del nivel anterior reciben **crédito heredado** en el nuevo nivel.
 
 **Qué se hereda**:
-*   Los países del nivel anterior se consideran dominados en **tipos A y B** (racha sintética = 1). Los tipos E, C, D y F se derivan automáticamente por inferencia ascendente.
+*   Los países del nivel anterior reciben datos sintéticos en **tipos E, C, D y F** (racha sintética = 1). Semántica:
+    - **Sello de países** (prueba tipo A aprobada) → hereda **E** (si sabes localizar un país, sabes nombrarlo).
+    - **Sello de capitales** (prueba tipo B aprobada) → hereda **C, D y F** (si sabes localizar la capital, sabes las preguntas de texto).
+*   **A y B nunca se heredan** — deben jugarse en cada nivel. Esto garantiza que el usuario demuestre localización en el mapa con el nuevo conjunto de países.
 *   La herencia es **transitiva**: Guía hereda de Mochilero, que hereda de Turista.
 
 **Mecanismo**: La herencia se calcula en **tiempo de lectura** (derivación), no se materializa como datos persistidos. Al consultar los intentos de un nivel, se mezclan los datos propios con los heredados del nivel anterior. Los datos propios siempre tienen prioridad. El trigger es la **existencia de ambos sellos** del nivel anterior (no los datos de intentos).
 
-**Visibilidad**: Los países heredados se muestran con **✓ gris** en la tabla de estadísticas, al igual que cualquier tipo dominado por inferencia ascendente (ver § Estadísticas > Contenido). La semántica es la misma: dominio no verificado directamente. El usuario distingue lo que ha probado personalmente (✓ verde) de lo inferido (✓ gris).
+**Visibilidad**: Los países heredados muestran **✓ gris** en los tipos E, C, D y F en la tabla de estadísticas, al igual que cualquier tipo dominado por inferencia ascendente (ver § Estadísticas > Contenido). Los tipos A y B aparecen como **—** (sin datos). El usuario distingue lo que ha probado personalmente (✓ verde) de lo heredado/inferido (✓ gris).
 
 **Impacto en el juego**:
-*   **Tipos C, D, E y F**: Los países heredados **no se preguntan** en estos tipos. La herencia proviene de haber superado las pruebas de sello (A y B con 0 errores), lo que implica dominio suficiente de los tipos inferiores por inferencia ascendente.
-*   **Tipos A y B**: Los países heredados **sí se preguntan**, pero con **prioridad baja** (después de refuerzo, nuevos y en progreso). Esto garantiza un repaso de verificación antes de la prueba de sello del nuevo nivel.
-*   **Acierto en A/B**: El ✓ gris pasa a ✓ verde (se graba un intento propio con racha = 1). El país queda verificado.
-*   **Fallo en A/B**: Se graba el fallo como intento propio (sobreescribe la herencia para ese país). A partir de ahí, el país sigue la lógica habitual de regresión: puede bajar a etapa 2 (C/D/F) y de ahí a etapa 1 (E) si los fallos persisten. Los ✓ grises de los tipos inferiores desaparecen — el fallo invalida el crédito heredado para ese país.
-*   **Barra de progreso**: Los países heredados cuentan como dominados (crédito completo) mientras mantengan el ✓ gris.
+*   **Tipos E, C, D y F**: Los países heredados **no se preguntan** en estos tipos (dominados por herencia). Se asume dominio suficiente porque el usuario aprobó las pruebas de sello del nivel anterior.
+*   **Tipos A y B**: Los países heredados **sí se preguntan**, como países normales en etapa 3 (sin prioridad especial). Al no tener datos de A/B, se clasifican como «nuevos» en la cola de prioridad del algoritmo.
+*   **Barra de progreso**: Los países heredados arrancan con crédito **50/100** (E=20 + CDF=30). La barra sube gradualmente a medida que se dominan A y B. Esto garantiza que la barra no pueda llegar a 100% hasta que el pool de preguntas se agote.
 *   **Avance colectivo**: Los países heredados **no cuentan** para el umbral del 40%. El avance colectivo se calcula solo sobre los países nuevos en ese nivel.
 *   **Pruebas de sello**: La herencia **no exime** de la prueba: el 100% de los países del nivel se evalúan con 0 errores.
 
@@ -400,7 +401,7 @@ Disponible en ambas pestañas. Permite alternar entre dos modos:
 *   Tabla de países con indicadores de dominio por tipo de juego (E, C, D, F, A, B).
 *   Indicadores visuales por celda:
     - **✓ verde** — Dominado por intento propio (racha ≥ 1 en ese tipo específico, con datos propios del nivel actual).
-    - **✓ gris** — Dominado por inferencia, no verificado directamente. Incluye dos casos: (1) inferencia ascendente dentro del mismo nivel (A dominado → E inferido; B dominado → C/D/F inferidos), y (2) herencia entre niveles (ver § Herencia de progreso entre niveles).
+    - **✓ gris** — Dominado por inferencia, no verificado directamente. Incluye dos casos: (1) inferencia ascendente dentro del mismo nivel (A dominado → E inferido; B dominado → C/D/F inferidos), y (2) herencia entre niveles — tipos E/C/D/F heredados del nivel anterior (ver § Herencia de progreso entre niveles).
     - **✗ rojo** — Necesita refuerzo (racha ≤ 0, tiene intentos).
     - **—** — Sin datos.
 *   La tabla muestra los datos **con herencia aplicada** (lo mismo que usa el algoritmo de juego), no solo los datos propios. Esto garantiza que lo que el usuario ve coincida con lo que el algoritmo utiliza para seleccionar preguntas.

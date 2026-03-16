@@ -217,6 +217,8 @@ export function useGameSession(
       setCurrentQuestion(question);
       if (question) {
         applyHighlight(question);
+      } else {
+        setPoolExhausted(true);
       }
     },
     [levels, countries, capitals, requestNextQuestion, applyHighlight],

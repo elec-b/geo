@@ -241,7 +241,6 @@ export interface QuestionSelection {
  * 1. Refuerzo: países con racha negativa en su etapa actual
  * 2. Nuevos: países sin intentos en ningún tipo de su etapa
  * 3. En progreso: países con intentos pero no todos los tipos dominados
- * 4. Heredados: países con A/B heredados pendientes de verificación (prioridad baja)
  *
  * Países que dominan todos los tipos de su etapa salen del pool.
  * País compañero: si quedan ≤ 2 activos, se intercala un dominado (~50%).
@@ -266,12 +265,7 @@ export function selectNextQuestion(
   const stages = getEffectiveStages(allAttempts, countries, inheritedCountries);
 
   // Determinar pool activo (países no dominados en su etapa/tipo)
-  // Los heredados con A/B pendientes de verificación también son activos
   const isActive = (cca2: string): boolean => {
-    if (!fixedType && inheritedCountries?.has(cca2)) {
-      const inheritedTypes = inheritedCountries.get(cca2)!;
-      return inheritedTypes.has('A') || inheritedTypes.has('B');
-    }
     const ca = allAttempts[cca2];
     if (fixedType) return !isDominated(ca, fixedType);
     const stage = stages.get(cca2) ?? 1;
@@ -288,7 +282,6 @@ export function selectNextQuestion(
   const reinforcement: string[] = [];
   const fresh: string[] = [];
   const inProgress: string[] = [];
-  const inherited: string[] = [];
   const dominated: string[] = []; // para compañero
 
   for (const cca2 of countries) {
@@ -308,35 +301,6 @@ export function selectNextQuestion(
         reinforcement.push(cca2);
       } else {
         inProgress.push(cca2);
-      }
-    } else if (inheritedCountries?.has(cca2)) {
-      // País heredado: clasificar según estado de verificación A/B
-      const inheritedTypes = inheritedCountries.get(cca2)!;
-      const stageTypes = STAGE_TYPES[stage];
-
-      // Verificar si tipos propios necesitan refuerzo
-      const ownTypes = stageTypes.filter((t) => !inheritedTypes.has(t));
-      const needsReinforcement = ownTypes.some((t) => {
-        const r = ca?.[t];
-        return r && r.streak < 0;
-      });
-
-      if (needsReinforcement) {
-        reinforcement.push(cca2);
-      } else if (inheritedTypes.has('A') || inheritedTypes.has('B')) {
-        // A/B pendientes de verificación → prioridad baja
-        inherited.push(cca2);
-      } else {
-        // A y B ya verificados → tratar como país normal
-        if (stageTypes.every((t) => isDominated(ca, t))) {
-          dominated.push(cca2);
-        } else if (!ca || stageTypes.every((t) => !ca[t])) {
-          fresh.push(cca2);
-        } else if (stageTypes.some((t) => { const r = ca[t]; return r && r.streak < 0; })) {
-          reinforcement.push(cca2);
-        } else {
-          inProgress.push(cca2);
-        }
       }
     } else {
       // Modo aventura: clasificar según la etapa
@@ -361,7 +325,6 @@ export function selectNextQuestion(
   if (reinforcement.length > 0) selectedCca2 = pick(reinforcement);
   else if (fresh.length > 0) selectedCca2 = pick(fresh);
   else if (inProgress.length > 0) selectedCca2 = pick(inProgress);
-  else if (inherited.length > 0) selectedCca2 = pick(inherited);
 
   // País compañero: si quedan pocos activos, intercalar un dominado
   if (selectedCca2 && reinforcement.length + fresh.length + inProgress.length <= 2
@@ -392,15 +355,6 @@ export function selectNextQuestion(
   let questionType: QuestionType;
   if (fixedType) {
     questionType = fixedType;
-  } else if (inheritedCountries?.has(selectedCca2) && inherited.includes(selectedCca2)) {
-    // País heredado: solo preguntar A o B (los que aún no tienen datos propios)
-    const inheritedTypes = inheritedCountries.get(selectedCca2)!;
-    const candidates: QuestionType[] = [];
-    if (inheritedTypes.has('A')) candidates.push('A');
-    if (inheritedTypes.has('B')) candidates.push('B');
-    questionType = candidates.length > 0
-      ? candidates[Math.floor(Math.random() * candidates.length)]
-      : 'A';
   } else {
     const ca = allAttempts[selectedCca2] ?? {};
     const stage = stages.get(selectedCca2) ?? 1;
@@ -584,12 +538,15 @@ export function getAttemptsWithInheritance(
 
   const merged: Record<string, CountryAttempts> = {};
 
-  // Copiar herencia: solo países que dominan A y B en el nivel anterior
+  // Copiar herencia: E del sello de países, C/D/F del sello de capitales
+  // A y B nunca se heredan — deben jugarse en cada nivel
   for (const [cca2, ca] of Object.entries(prevAttempts)) {
     if (isDominated(ca, 'A') && isDominated(ca, 'B')) {
       merged[cca2] = {
-        A: { correct: 0, incorrect: 0, streak: 1 },
-        B: { correct: 0, incorrect: 0, streak: 1 },
+        E: { correct: 0, incorrect: 0, streak: 1 },
+        C: { correct: 0, incorrect: 0, streak: 1 },
+        D: { correct: 0, incorrect: 0, streak: 1 },
+        F: { correct: 0, incorrect: 0, streak: 1 },
       };
     }
   }
