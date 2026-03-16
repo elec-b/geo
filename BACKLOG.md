@@ -30,7 +30,7 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### UX general
-- [ ] En Pasaporte, cuando se consigue una prueba de sello, podemos hacer una animación más guay, se me ocurre que la estrellita gire rápido dentro del círculo, poco a poco se ralentice y quede finalmente quieta en el círculo. Investiguemos esto bien y aseguremos que no es demasiada complicación innecesaria.
+- [ ] En Pasaporte, cuando se consigue una prueba de sello, animación de estrella giratoria (efecto "trompo"). Spike completado: ver `docs/spikes/animacion-sello-estrella.md` (~10 líneas de cambio, solo CSS + 1 timeout en JS).
 - [ ] Bottom sheets (configuración y ficha de país): añadir handle + implementar drag-to-dismiss
 - [ ] Jugando aventura, para Oceanía-mochilero, hubo un bug cuando me pidió que localizase Papúa Nueva Guinea en tipo A (o quizás en tipo E? No recuerdo bien). El mapa se posicionó fuera de Oceanía. Investigar, no solo este caso, sino todos los casos donde esto pueda ocurrir.
 - [ ] Renombrar los tipos de juego, quizás reasignar las letras, para que se vean de una manera lógica en la tabla de estadísticas y en el selector. El orden pedagógico que hay ahora tiene sentido, pero la secuencia de letras (E, C, D, F, A, B) no tanto... Es una mala "herencia" de cuando pensamos los distintos tipos de juegos. También debemos repensar los nombres que se muestran en el selector y mostrar letra + nombre del juego.  Hacer los cambios primero en design.md, después cambiar también en el codebase por coherencia, y finalmente aplicar el el selector y en la tabla de estadísticas. 
