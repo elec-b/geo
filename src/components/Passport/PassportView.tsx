@@ -79,7 +79,7 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
     if (!recentlyEarnedStamp) return;
     const timer = setTimeout(() => {
       onStampAnimationDone?.();
-    }, 500);
+    }, 3150);
     return () => clearTimeout(timer);
   }, [recentlyEarnedStamp, onStampAnimationDone]);
 

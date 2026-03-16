@@ -194,6 +194,11 @@
   animation: stampDrop 400ms ease-out forwards;
 }
 
+/* Giro de estrella ★ — efecto "trompo" (rápido → desacelera) */
+.passport-cell__stamp--animating::after {
+  animation: starSpin 3000ms ease-out forwards;
+}
+
 .passport-cell__count {
   font-size: 0.625rem;
   color: var(--color-text-muted);
@@ -224,6 +229,11 @@
 @keyframes stampPulse {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.5; }
+}
+
+@keyframes starSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(3600deg); }
 }
 
 @keyframes stampDrop {
