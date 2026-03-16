@@ -1,20 +1,24 @@
 // Helpers de háptica — encapsulan Capacitor Haptics respetando el setting de vibración
 import { Capacitor } from '@capacitor/core';
-import { Haptics, ImpactStyle, NotificationType } from '@capacitor/haptics';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 import { useAppStore } from '../stores/appStore';
 
 const isNative = Capacitor.isNativePlatform();
 
-/** Háptica de acierto (patrón nativo de éxito) */
+/** Háptica de acierto (tap ligero) */
 export function hapticSuccess(): void {
   if (!isNative || !useAppStore.getState().settings.vibration) return;
-  Haptics.notification({ type: NotificationType.Success });
+  Haptics.impact({ style: ImpactStyle.Light });
 }
 
-/** Háptica de error (patrón nativo de error) */
+/** Háptica de error (doble tap ligero) */
 export function hapticError(): void {
   if (!isNative || !useAppStore.getState().settings.vibration) return;
-  Haptics.notification({ type: NotificationType.Error });
+  Haptics.impact({ style: ImpactStyle.Light });
+  setTimeout(() => {
+    if (!useAppStore.getState().settings.vibration) return;
+    Haptics.impact({ style: ImpactStyle.Light });
+  }, 80);
 }
 
 /** Háptica de selección (impact ligero, para toggles) */

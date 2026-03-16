@@ -21,6 +21,7 @@
 - [x] **Jugar**: Fix modales de sello — filtrar sellos ya ganados + acceso directo (sin modal) cuando solo falta 1 sello. Adaptar título/texto del modal pool exhausted Aventura cuando ambos sellos están ganados
 - [x] **UX Jugar**: Filtros de feedback verde/rojo suavizados (opacidad 15% → 5%) en todos los tipos de juego y pruebas de sello
 - [x] **Explorar**: Pin de capital de territorios no-ONU en ámbar (antes aparecía en cian como los ONU)
+- [x] **UX Jugar**: Feedback háptico más sutil — acierto: tap ligero único; error: doble tap ligero; toggles: sin cambios
 
 ---
 
@@ -31,7 +32,7 @@
 ### UX general
 - [ ] En Pasaporte, cuando se consigue una prueba de sello, podemos hacer una animación más guay, se me ocurre que la estrellita gire rápido dentro del círculo, poco a poco se ralentice y quede finalmente quieta en el círculo. Investiguemos esto bien y aseguremos que no es demasiada complicación innecesaria.
 - [ ] Bottom sheets (configuración y ficha de país): añadir handle + implementar drag-to-dismiss
-- [ ] Feedback háptico: vibraciones más cortas/sutiles
+- [ ] Jugando aventura, para Oceanía-mochilero, hubo un bug cuando me pidió que localizase Papúa Nueva Guinea en tipo A (o quizás en tipo E? No recuerdo bien). El mapa se posicionó fuera de Oceanía. Investigar, no solo este caso, sino todos los casos donde esto pueda ocurrir.
 - [ ] Renombrar los tipos de juego, quizás reasignar las letras, para que se vean de una manera lógica en la tabla de estadísticas y en el selector. El orden pedagógico que hay ahora tiene sentido, pero la secuencia de letras (E, C, D, F, A, B) no tanto... Es una mala "herencia" de cuando pensamos los distintos tipos de juegos. También debemos repensar los nombres que se muestran en el selector y mostrar letra + nombre del juego.  Hacer los cambios primero en design.md, después cambiar también en el codebase por coherencia, y finalmente aplicar el el selector y en la tabla de estadísticas. 
   - En la tabla de estadísticas, podemos mostrar simplemente la letra y si el usuario pulsa sobre ella, mostrar una descripción del juego (no sé si entra / si es recomendable poner el típico icono de interrogación, pequeño, al lado de la letra. Pensemos esto bien.)
 - [ ][PENSAR] En explorar, utilizar un color distinto al amarillo cuando se selecciona un país. Asegurar coherencia de código de colores. Documentar en design.md
