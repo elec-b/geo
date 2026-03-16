@@ -27,6 +27,22 @@
   border-top: 1px solid var(--glass-border);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   animation: settings-sheet-slide-up 300ms ease-out;
+  touch-action: none;
+}
+
+/* Handle de arrastre */
+.settings-sheet .bottom-sheet-handle {
+  width: 2.25rem;
+  height: 0.25rem;
+  margin: 0 auto var(--spacing-xs);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Cierre animado del overlay */
+.settings-sheet-overlay--closing {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
 }
 
 @keyframes settings-sheet-slide-up {
@@ -52,24 +68,6 @@
   margin: 0;
   font-size: var(--font-size-lg);
   font-weight: 600;
-  color: var(--color-text-primary);
-}
-
-.settings-sheet__close {
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: var(--glass-bg);
-  border-radius: var(--radius-full);
-  color: var(--color-text-secondary);
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.settings-sheet__close:active {
   color: var(--color-text-primary);
 }
 

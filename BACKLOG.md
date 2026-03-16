@@ -23,6 +23,7 @@
 - [x] **Explorar**: Pin de capital de territorios no-ONU en ámbar (antes aparecía en cian como los ONU)
 - [x] **UX Jugar**: Feedback háptico más sutil — acierto: tap ligero único; error: doble tap ligero; toggles: sin cambios
 - [x] **Pasaporte**: Animación de estrella giratoria al conseguir sello — efecto "trompo" (10 vueltas en 3s con ease-out)
+- [x] **UX general**: Bottom sheets (configuración y ficha de país) — handle visual + drag-to-dismiss + animación de cierre suave. Eliminados botones X
 
 ---
 
@@ -35,7 +36,6 @@
 - [ ] En Jugar y en las Pruebas de Sello (de país y de capital), la barra de progreso, sube/baja después de que el contador de acierto/fallo (debajo de la barra de progreso), haya cambiado. Investiga la razón. Creo que queda mejor si ambas cosas se mueven a la vez.
 - [ ] Jugando aventura, para Oceanía-mochilero, hubo un bug cuando me pidió que localizase Papúa Nueva Guinea en tipo A (o quizás en tipo E? No recuerdo bien). El mapa se posicionó fuera de Oceanía. Investigar, no solo este caso, sino todos los casos donde esto pueda ocurrir.
   - Algo parecido ocurre cuando cambio entre continentes para las pruebas de sello, la primera pregunta no está orientada a veces en el continente correcto. No sé si esto está relacionado con el punto principal o si es un tema distinto. Investigar en cualquier caso.
-- [ ] Bottom sheets (configuración y ficha de país): añadir handle + implementar drag-to-dismiss
 - [ ] Renombrar los tipos de juego, quizás reasignar las letras, para que se vean de una manera lógica en la tabla de estadísticas y en el selector. El orden pedagógico que hay ahora tiene sentido, pero la secuencia de letras (E, C, D, F, A, B) no tanto... Es una mala "herencia" de cuando pensamos los distintos tipos de juegos. También debemos repensar los nombres que se muestran en el selector y mostrar letra + nombre del juego.  Hacer los cambios primero en design.md, después cambiar también en el codebase por coherencia, y finalmente aplicar el el selector y en la tabla de estadísticas. 
   - En la tabla de estadísticas, podemos mostrar simplemente la letra y si el usuario pulsa sobre ella, mostrar una descripción del juego (no sé si entra / si es recomendable poner el típico icono de interrogación, pequeño, al lado de la letra. Pensemos esto bien.)
 - [ ][PENSAR] En explorar, utilizar un color distinto al amarillo cuando se selecciona un país. Asegurar coherencia de código de colores. Documentar en design.md

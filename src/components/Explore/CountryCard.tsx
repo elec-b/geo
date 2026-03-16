@@ -1,7 +1,8 @@
 // Ficha de país — bottom sheet que muestra info detallada del país seleccionado
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import type { CountryData } from '../../data/types';
 import type { CountryRankings } from '../../data/rankings';
+import { useBottomSheetDrag } from '../../hooks/useBottomSheetDrag';
 import './CountryCard.css';
 
 /** Color CSS del continente */
@@ -57,6 +58,13 @@ function InfoIcon() {
 }
 
 export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
+  const sheetRef = useRef<HTMLDivElement>(null);
+  const { dragHandlers } = useBottomSheetDrag({
+    sheetRef,
+    onClose,
+    scrollRef: sheetRef,
+  });
+
   const continentColor = CONTINENT_COLORS[country.continent] ?? 'var(--color-text-secondary)';
   const isAntarctica = country.cca2 === 'AQ';
   const [activeTooltip, setActiveTooltip] = useState<TooltipId>(null);
@@ -77,7 +85,14 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
   };
 
   return (
-    <div className="country-card" role="dialog" aria-label={`Ficha de ${country.name}`}>
+    <div
+      ref={sheetRef}
+      className="country-card"
+      role="dialog"
+      aria-label={`Ficha de ${country.name}`}
+      {...dragHandlers}
+    >
+      <div className="bottom-sheet-handle" />
       {/* Disclaimer contextual */}
       {isAntarctica ? (
         <div className="country-card__disclaimer">
@@ -108,16 +123,6 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
             {country.continent}
           </span>
         </div>
-        <button
-          className="country-card__close"
-          onClick={onClose}
-          aria-label="Cerrar ficha"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
       </div>
 
       {/* Datos: layout especial para Antártida */}

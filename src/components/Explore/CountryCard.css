@@ -17,6 +17,17 @@
 
   /* Animación slide-up */
   animation: country-card-slide-up 300ms ease-out;
+  touch-action: pan-y;
+}
+
+/* Handle de arrastre */
+.country-card .bottom-sheet-handle {
+  width: 2.25rem;
+  height: 0.25rem;
+  margin: 0 auto var(--spacing-xs);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
 }
 
 @keyframes country-card-slide-up {
@@ -63,25 +74,6 @@
 .country-card__continent {
   font-size: var(--font-size-xs);
   font-weight: 500;
-}
-
-.country-card__close {
-  flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: var(--glass-bg);
-  border-radius: var(--radius-full);
-  color: var(--color-text-secondary);
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.country-card__close:active {
-  color: var(--color-text-primary);
 }
 
 /* Grid de datos */

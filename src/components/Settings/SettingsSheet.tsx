@@ -1,6 +1,8 @@
 // SettingsSheet — bottom sheet de configuración
+import { useRef } from 'react';
 import { useAppStore } from '../../stores/appStore';
 import { hapticSelection } from '../../utils/haptics';
+import { useBottomSheetDrag } from '../../hooks/useBottomSheetDrag';
 import './SettingsSheet.css';
 
 interface SettingsSheetProps {
@@ -9,6 +11,9 @@ interface SettingsSheetProps {
 }
 
 export function SettingsSheet({ isExploreTab, onClose }: SettingsSheetProps) {
+  const sheetRef = useRef<HTMLDivElement>(null);
+  const { dragHandlers, isClosing, closeAnimated } = useBottomSheetDrag({ sheetRef, onClose });
+
   const vibration = useAppStore((s) => s.settings.vibration);
   const showMarkers = useAppStore((s) => s.settings.showMarkers);
   const updateSettings = useAppStore((s) => s.updateSettings);
@@ -24,21 +29,20 @@ export function SettingsSheet({ isExploreTab, onClose }: SettingsSheetProps) {
   };
 
   return (
-    <div className="settings-sheet-overlay" onClick={onClose}>
-      <div className="settings-sheet" onClick={(e) => e.stopPropagation()}>
+    <div
+      className={`settings-sheet-overlay${isClosing ? ' settings-sheet-overlay--closing' : ''}`}
+      onClick={closeAnimated}
+    >
+      <div
+        ref={sheetRef}
+        className="settings-sheet"
+        onClick={(e) => e.stopPropagation()}
+        {...dragHandlers}
+      >
+        <div className="bottom-sheet-handle" />
         {/* Header */}
         <div className="settings-sheet__header">
           <h2 className="settings-sheet__title">Configuraci&oacute;n</h2>
-          <button
-            className="settings-sheet__close"
-            onClick={onClose}
-            aria-label="Cerrar configuración"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
         </div>
 
         {/* Filas de ajustes */}
