@@ -513,16 +513,16 @@ export function getNextSuggestedType(
 
 /**
  * Calcula los intentos efectivos aplicando herencia del nivel anterior.
- * Si ambos sellos del nivel anterior están ganados, los países que dominan A y B
- * se heredan como {A: streak:1, B: streak:1}. Datos propios sobrescriben.
- * Herencia transitiva: guía ← mochilero ← turista.
+ * Si ambos sellos del nivel anterior están ganados, se heredan E/CDF (streak:1)
+ * para TODOS los países de ese nivel. A y B nunca se heredan.
+ * Datos propios sobrescriben. La transitividad es implícita (mochilero ⊇ turista).
  */
 export function getAttemptsWithInheritance(
   ownAttempts: Record<string, CountryAttempts>,
   level: GameLevel,
   continent: Continent,
   getStampsForLevel: (level: GameLevel, continent: Continent) => { countries: boolean; capitals: boolean },
-  getAttemptsForLevel: (level: GameLevel, continent: Continent) => Record<string, CountryAttempts>,
+  getCountriesForLevel: (level: GameLevel, continent: Continent) => string[],
 ): Record<string, CountryAttempts> {
   if (level === 'turista') return ownAttempts;
 
@@ -530,25 +530,18 @@ export function getAttemptsWithInheritance(
   const prevStamps = getStampsForLevel(prevLevel, continent);
   if (!prevStamps.countries || !prevStamps.capitals) return ownAttempts;
 
-  // Obtener datos del nivel anterior (con herencia transitiva)
-  const prevOwn = getAttemptsForLevel(prevLevel, continent);
-  const prevAttempts = getAttemptsWithInheritance(
-    prevOwn, prevLevel, continent, getStampsForLevel, getAttemptsForLevel,
-  );
-
+  // Sellos = prueba de dominio A/B para TODOS los países del nivel anterior
+  // (prueba de sello = 0 errores en todos los países)
+  // → heredar E/CDF para todos ellos. A y B nunca se heredan.
+  const prevCountries = getCountriesForLevel(prevLevel, continent);
   const merged: Record<string, CountryAttempts> = {};
-
-  // Copiar herencia: E del sello de países, C/D/F del sello de capitales
-  // A y B nunca se heredan — deben jugarse en cada nivel
-  for (const [cca2, ca] of Object.entries(prevAttempts)) {
-    if (isDominated(ca, 'A') && isDominated(ca, 'B')) {
-      merged[cca2] = {
-        E: { correct: 0, incorrect: 0, streak: 1 },
-        C: { correct: 0, incorrect: 0, streak: 1 },
-        D: { correct: 0, incorrect: 0, streak: 1 },
-        F: { correct: 0, incorrect: 0, streak: 1 },
-      };
-    }
+  for (const cca2 of prevCountries) {
+    merged[cca2] = {
+      E: { correct: 0, incorrect: 0, streak: 1 },
+      C: { correct: 0, incorrect: 0, streak: 1 },
+      D: { correct: 0, incorrect: 0, streak: 1 },
+      F: { correct: 0, incorrect: 0, streak: 1 },
+    };
   }
 
   // Datos propios sobrescriben (tipo por tipo)

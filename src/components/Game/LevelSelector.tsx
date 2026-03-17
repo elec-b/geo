@@ -45,6 +45,10 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
   const activeProfile = useAppStore((s) => s.getActiveProfile());
   const getAttempts = useAppStore((s) => s.getAttempts);
 
+  const getCountriesForLevel = useCallback((l: GameLevel, c: Continent) =>
+    levels.get(`${l}-${c}`)?.countries ?? [],
+  [levels]);
+
   const [selectedType, setSelectedType] = useState<QuestionTypeFilter>('mixed');
   const [lockedToast, setLockedToast] = useState<string | null>(null);
 
@@ -97,7 +101,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
       selectedLevel,
       selectedContinent,
       getStamps,
-      getAttempts,
+      getCountriesForLevel,
     );
 
     const readyA = !stamps.countries && isTypeFullyDominated(attempts, def.countries, 'A');
@@ -107,7 +111,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
     if (readyA && readyB) return '¡Listo para las pruebas de sello!';
     if (readyA) return '¡Listo para la prueba de países!';
     return '¡Listo para la prueba de capitales!';
-  }, [selectedLevel, selectedContinent, stampsData, levels, getStamps, getAttempts]);
+  }, [selectedLevel, selectedContinent, stampsData, levels, getStamps, getCountriesForLevel]);
 
   // Tipos de juego ya dominados para la combinación nivel-continente seleccionada
   const dominatedTypes = useMemo((): Set<QuestionTypeFilter> => {
@@ -120,7 +124,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
       selectedLevel,
       selectedContinent,
       getStamps,
-      getAttempts,
+      getCountriesForLevel,
     );
 
     const dominated = new Set<QuestionTypeFilter>();
@@ -134,7 +138,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
       dominated.add('mixed');
     }
     return dominated;
-  }, [selectedLevel, selectedContinent, levels, getAttempts, getStamps]);
+  }, [selectedLevel, selectedContinent, levels, getAttempts, getStamps, getCountriesForLevel]);
 
   const handleContinentSelect = useCallback(
     (continent: Continent) => {

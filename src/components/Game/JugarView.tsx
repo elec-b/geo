@@ -159,6 +159,11 @@ export function JugarView({
     [recordStampAttempt],
   );
 
+  // Helper para obtener la lista de países de un nivel×continente
+  const getCountriesForLevel = useCallback((l: GameLevel, c: Continent) =>
+    levels.get(`${l}-${c}`)?.countries ?? [],
+  [levels]);
+
   // Callback para obtener intentos actualizados con herencia (el hook lo usa para el algoritmo)
   const getAttemptsForSession = useCallback(() => {
     if (!activeLevelRef.current || !activeContinentRef.current) return {};
@@ -166,9 +171,9 @@ export function JugarView({
     if (activeLevelRef.current === 'turista') return ownAttempts;
     return getAttemptsWithInheritance(
       ownAttempts, activeLevelRef.current, activeContinentRef.current,
-      getStamps, getAttempts,
+      getStamps, getCountriesForLevel,
     );
-  }, [getAttempts, getStamps]);
+  }, [getAttempts, getStamps, getCountriesForLevel]);
 
   // Callback para obtener países heredados: mapa de país → tipos sin datos propios
   const getInheritedCountries = useCallback((): Map<string, Set<QuestionType>> => {
@@ -178,7 +183,7 @@ export function JugarView({
     const ownAttempts = getAttempts(activeLevelRef.current, activeContinentRef.current);
     const merged = getAttemptsWithInheritance(
       ownAttempts, activeLevelRef.current, activeContinentRef.current,
-      getStamps, getAttempts,
+      getStamps, getCountriesForLevel,
     );
     const map = new Map<string, Set<QuestionType>>();
     for (const cca2 of Object.keys(merged)) {
@@ -186,7 +191,7 @@ export function JugarView({
       if (types.size > 0) map.set(cca2, types);
     }
     return map;
-  }, [getAttempts, getStamps]);
+  }, [getAttempts, getStamps, getCountriesForLevel]);
 
   const session = useGameSession(levels, countries, capitals, {
     onAttempt: handleAttempt,
@@ -532,7 +537,7 @@ export function JugarView({
       if (def) {
         const att = getAttemptsWithInheritance(
           getAttempts(level, continent),
-          level, continent, getStamps, getAttempts,
+          level, continent, getStamps, getCountriesForLevel,
         );
         const qt = questionType ?? 'mixed';
         const dominated = qt === 'mixed'

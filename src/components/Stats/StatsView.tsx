@@ -1,7 +1,7 @@
 // StatsView — modal fullscreen con estadísticas de aprendizaje por país
 // Dos pestañas: Jugar (entrenamiento) y Pruebas de sello (certificación).
 // Toggle para alternar entre indicadores de dominio y % de acierto.
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import type { CountryData, Continent, GameLevel, QuestionType, LevelDefinition } from '../../data/types';
 import type { CountryAttempts, StampCountryAttempts } from '../../stores/types';
 import { isDominated, isDirectlyDominated, getAttemptsWithInheritance } from '../../data/learningAlgorithm';
@@ -144,7 +144,6 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
   const [showPercentage, setShowPercentage] = useState(false);
 
   const resetAttempts = useAppStore((s) => s.resetAttempts);
-  const getAttempts = useAppStore((s) => s.getAttempts);
   const getStamps = useAppStore((s) => s.getStamps);
   const getStampAttempts = useAppStore((s) => s.getStampAttempts);
 
@@ -159,13 +158,17 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
     return profile.progress[selectedLevel]?.[selectedContinent]?.attempts ?? {};
   });
 
+  const getCountriesForLevel = useCallback((l: GameLevel, c: Continent) =>
+    levels.get(`${l}-${c}`)?.countries ?? [],
+  [levels]);
+
   const allAttempts = useMemo(() => {
     if (selectedLevel === 'turista') return ownAttempts;
     return getAttemptsWithInheritance(
       ownAttempts, selectedLevel, selectedContinent,
-      getStamps, getAttempts,
+      getStamps, getCountriesForLevel,
     );
-  }, [ownAttempts, selectedLevel, selectedContinent, getStamps, getAttempts]);
+  }, [ownAttempts, selectedLevel, selectedContinent, getStamps, getCountriesForLevel]);
 
   // --- Datos de Pruebas de sello ---
   const stampAttempts = useMemo(() => {
