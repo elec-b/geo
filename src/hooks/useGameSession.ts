@@ -282,6 +282,14 @@ export function useGameSession(
       // Tras responder, siempre mostrar el país correcto en dorado
       setCorrectCca2(currentQuestion.targetCca2);
 
+      // Actualizar progreso de prueba de sello (sincronizado con score
+      // para que barra y contadores se muevan a la vez)
+      if (isStampTestRef.current) {
+        setStampTestProgress((prev) =>
+          prev ? { current: prev.current + 1, total: prev.total } : null,
+        );
+      }
+
       if (isCorrect) {
         hapticSuccess();
         setFeedbackState('correct');
@@ -322,10 +330,6 @@ export function useGameSession(
         setCurrentQuestion(next);
         recentCountriesRef.current.push(next.targetCca2);
         applyHighlight(next);
-        // Actualizar progreso (current = preguntas ya respondidas)
-        setStampTestProgress((prev) =>
-          prev ? { current: prev.current + 1, total: prev.total } : null,
-        );
       } else {
         // Cola agotada → prueba terminada
         setCurrentQuestion(null);
