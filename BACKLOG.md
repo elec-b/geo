@@ -38,8 +38,20 @@
 
 ### UX general
 - [ ] En Oceanía, cuando e.g. en Prueba de Sello de Países, se pide seleccionar Samoa, pulso en el archipiélago, pero a veces lo considera error. ¿Por qué puede ser? ¿Puede estar ocurriendo en otros casos? Investiguemos en profundidad antes de implementar.
-- [ ] Renombrar los tipos de juego, quizás reasignar las letras, para que se vean de una manera lógica en la tabla de estadísticas y en el selector. El orden pedagógico que hay ahora tiene sentido, pero la secuencia de letras (E, C, D, F, A, B) no tanto... Es una mala "herencia" de cuando pensamos los distintos tipos de juegos. También debemos repensar los nombres que se muestran en el selector y mostrar letra + nombre del juego.  Hacer los cambios primero en design.md, después cambiar también en el codebase por coherencia, y finalmente aplicar el el selector y en la tabla de estadísticas. 
-  - En la tabla de estadísticas, podemos mostrar simplemente la letra y si el usuario pulsa sobre ella, mostrar una descripción del juego (no sé si entra / si es recomendable poner el típico icono de interrogación, pequeño, al lado de la letra. Pensemos esto bien.)
+- [ ] Usar una mejor nomenclatura para los distintos tipos de juego, quizás utilizar mejores letras o símbolos (nomenclatura abreviada), para que se vean de una manera lógica en la tabla de estadísticas y en el selector de juego. El orden pedagógico que hay ahora tiene sentido, pero la secuencia de letras (E, C, D, F, A, B) no tanto... Sugiero mantener las letras (E, C, D, F, A, B) internamente, pero para el usuario debemos mostrar algo mucho más intuitivo respecto a lo que ya hay. También debemos repensar los nombres que se muestran en el selector y mostrar nomenclatura abreviada + nombre del juego.  Hacer los cambios primero en design.md, después cambiar también en el codebase por coherencia, y finalmente aplicar el el selector y en la tabla de estadísticas. 
+  - Se me ocurre esto para la nomenclatura abreviada, considéralo una posible idea / punto de partida:
+    - E: círculo grande (representa país) y símbolo de ingerrogación (representa pregunta)
+    - C: círculo grande (representa país) y flecha y círculo pequeño (representa capital)
+    - D:círculo pequeño (representa capital) y flecha y círculo grande (representa país)
+    - F: círculo pequeño (representa capital) y símbolo de ingerrogación (representa pregunta)
+    - A: emoji de examen y círculo grande (representa país) 
+    - B: emoji de exmen y círculo pequeño (representa capital)
+  - En la tabla de estadísticas, podemos mostrar simplemente esta nomenclatura abreviada. 
+    - de manera adicional, podemos mostrar una descripción del juego, poniendo el típico icono de interrogación, pequeño, al lado del header de la tabla (nomenclaturas). Pensemos esto bien.
+- [ ] Relacionado con el punto anterior, sugiero re-diseñar el selector de juego (en Jugar)
+  - Por defecto se debe jugar aventura (esto debe resaltar, también debe simplificar el selector, al haber menos opciones visibles)
+  - Por otro lado, el usuario, si quiere, debe poder elegir un juego concreto (aquí debe mostrarse la nomenclatura abreviada y una descripción breve del juego). Quizás pueda hacerse con un selector?
+  - Necesitamos un agent team para repasar codebase, diseñar bien esto, otro que refute las propuestas "locas" o demasiado complicadas (y TBD si se necesitan otros roles). Este spike es necesario antes de implementar nada
 - [ ][PENSAR] En explorar, utilizar un color distinto al amarillo cuando se selecciona un país. Asegurar coherencia de código de colores. Documentar en design.md
 - [ ][PENSAR] Sello automático: si el usuario supera tipo A o B con 0 errores de un solo intento / en una misma parte de la sesión, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
 - [ ][PENSAR] Borrados de sello y Resets
