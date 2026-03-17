@@ -194,6 +194,10 @@
   width: 40%;
 }
 
+.stats-table__th-type {
+  width: 10%;
+}
+
 .stats-table__td-name {
   padding: var(--spacing-xs);
   color: var(--color-text-primary);
