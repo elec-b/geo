@@ -27,6 +27,7 @@
 - [x] **Jugar**: Fix bug herencia entre niveles — barra de progreso llegaba a 100% sin mostrar modal de sello. Causa: herencia A/B sintética desalineaba progreso con pool. Solución: heredar E/CDF en vez de A/B (A y B se juegan siempre). Simplificación del algoritmo (~35 líneas eliminadas). Fix defensivo en session.start() para pool vacío al iniciar.
 - [x] **UX Jugar**: Mensajes motivadores en prueba de sello no superada — título y texto dinámicos según rendimiento (4 franjas: ≥90% "¡Muy cerca!", 70-89% "¡Buen intento!", 50-69% "Vas por buen camino", <50% "No te rindas")
 - [x] **UX Jugar**: Fix sincronización barra de progreso y contadores en Pruebas de Sello — ahora se mueven a la vez. Bonus: la barra llega a 100% en la última pregunta (antes nunca lo hacía)
+- [x] **Jugar**: Fix posicionamiento del globo fuera de continente — race condition entre flyTo continental y efecto A/B que evaluaba isPointVisible() durante la animación. Solución: diferir evaluación A/B hasta que flyTo termine (isAnimating + delay). También: usar getVisualCenter() (hull center) en vez de getCentroid() para archipiélagos en tipo A, y añadir CENTROID_OVERRIDE para Papúa Nueva Guinea
 
 ---
 
@@ -35,8 +36,7 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### UX general
-- [ ] Jugando aventura, para Oceanía-mochilero, hubo un bug cuando me pidió que localizase Papúa Nueva Guinea en tipo A (o quizás en tipo E? No recuerdo bien). El mapa se posicionó fuera de Oceanía. Investigar, no solo este caso, sino todos los casos donde esto pueda ocurrir.
-  - Algo parecido ocurre cuando cambio entre continentes para las pruebas de sello, la primera pregunta no está orientada a veces en el continente correcto. No sé si esto está relacionado con el punto principal o si es un tema distinto. Investigar en cualquier caso.
+- [ ] Jugando aventura, para Oceanía-guía. No veo en las estadísticas que haya nada inverido. Tengo los sellos de Oceanía-mochilero, pero no jugué ningún juego. Repasa/Investiga por qué E, C, D y F no aparecen como inferidos (y en consecuencia se me pregunta por ellos)
 - [ ] En Oceanía, cuando e.g. en Prueba de Sello de Países, se pide seleccionar Samoa, pulso en el archipiélago, pero a veces lo considera error. ¿Por qué puede ser? ¿Puede estar ocurriendo en otros casos? Investiguemos en profundidad antes de implementar.
 - [ ] Renombrar los tipos de juego, quizás reasignar las letras, para que se vean de una manera lógica en la tabla de estadísticas y en el selector. El orden pedagógico que hay ahora tiene sentido, pero la secuencia de letras (E, C, D, F, A, B) no tanto... Es una mala "herencia" de cuando pensamos los distintos tipos de juegos. También debemos repensar los nombres que se muestran en el selector y mostrar letra + nombre del juego.  Hacer los cambios primero en design.md, después cambiar también en el codebase por coherencia, y finalmente aplicar el el selector y en la tabla de estadísticas. 
   - En la tabla de estadísticas, podemos mostrar simplemente la letra y si el usuario pulsa sobre ella, mostrar una descripción del juego (no sé si entra / si es recomendable poner el típico icono de interrogación, pequeño, al lado de la letra. Pensemos esto bien.)

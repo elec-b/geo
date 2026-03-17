@@ -104,6 +104,7 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
   'SA': [44, 24],         // Arabia Saudita (centro visual)
   'MX': [-102, 23],       // México (centro visual)
   'AR': [-64, -34],       // Argentina (centro visual)
+  'PG': [147.2, -6.5],    // Papúa Nueva Guinea → isla principal (centroide geométrico disperso)
   // Archipiélagos dispersos de Oceanía (centroide en isla de la capital)
   'FM': [158.2, 6.9],     // Micronesia → Pohnpei (540 km del centroide geométrico)
   'KI': [173.0, 1.3],     // Kiribati → Tarawa (2124 km, cruza antimeridiano)
@@ -230,6 +231,8 @@ export interface GlobeD3Ref {
   getCurrentZoom(): number;
   /** Retorna zoom que muestra toda la extensión territorial del país con margen */
   getCountryExtentZoom(cca2: string, margin?: number): number | null;
+  /** Retorna true si hay una animación flyTo en progreso */
+  isAnimating(): boolean;
   /** Retorna el centro del outline (hull) para archipiélagos, o null si no aplica */
   getOutlineCenter(cca2: string): [number, number] | null;
   /** Reinicia el globo al estado idle: posición aleatoria, zoom 1, rotación automática */
@@ -419,6 +422,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       if (extent == null || extent <= 0) return null;
       const angle = Math.min(extent * margin, Math.PI / 2);
       return 1 / Math.sin(angle);
+    },
+    isAnimating(): boolean {
+      return flyToAnimRef.current !== null;
     },
     getOutlineCenter(cca2: string): [number, number] | null {
       return hullCentroidsRef.current.get(cca2) ?? null;

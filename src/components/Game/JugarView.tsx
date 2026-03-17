@@ -379,6 +379,8 @@ export function JugarView({
 
   // Para tipos A/B: zoom out automático al nivel continental si el objetivo no es visible.
   // Evita que el usuario quede desorientado tras un flyTo al país correcto en la pregunta anterior.
+  // Si el globo está animando (flyTo continental en progreso), diferir la evaluación para evitar
+  // race conditions con isPointVisible() evaluado desde una posición intermedia.
   useEffect(() => {
     const q = session.currentQuestion;
     if (!q || (q.type !== 'A' && q.type !== 'B')) return;
@@ -387,53 +389,66 @@ export function JugarView({
     if (session.feedbackState !== 'idle') return;
     if (feedbackStep !== 'idle') return;
 
-    // Obtener coordenadas del objetivo
-    let targetCoords: [number, number] | null = null;
-    if (q.type === 'A') {
-      targetCoords = globeRef.current.getCentroid(q.targetCca2);
-    } else {
-      // Tipo B: coordenadas de la capital
-      const cap = capitals.get(q.targetCca2);
-      if (cap) targetCoords = [cap.latlng[1], cap.latlng[0]];
+    const evaluate = () => {
+      if (!globeRef.current || !session.continent) return;
+
+      // Obtener coordenadas del objetivo (hull center para archipiélagos)
+      let targetCoords: [number, number] | null = null;
+      if (q.type === 'A') {
+        targetCoords = getVisualCenter(globeRef.current, q.targetCca2);
+      } else {
+        // Tipo B: coordenadas de la capital
+        const cap = capitals.get(q.targetCca2);
+        if (cap) targetCoords = [cap.latlng[1], cap.latlng[0]];
+      }
+
+      if (!targetCoords) return;
+      // Si ya es visible → no hacer nada
+      if (globeRef.current.isPointVisible(targetCoords[0], targetCoords[1])) return;
+
+      // Calcular distancia angular desde el centro de vista al objetivo
+      const dist = globeRef.current.distanceFromCenter(targetCoords[0], targetCoords[1]);
+      const continentZoom = CONTINENT_ZOOM[session.continent];
+
+      // Zoom necesario para que el objetivo sea visible desde la posición actual.
+      // Derivado de: dist < arcsin(1/zoom) × MARGIN → zoom = 1/sin(dist/MARGIN)
+      // Margen 0.55 (menor que el 0.8 de isPointVisible) para que el objetivo
+      // quede cómodamente dentro de la vista, no en el borde.
+      const ZOOM_MARGIN = 0.70;
+      const sinVal = Math.sin(dist / ZOOM_MARGIN);
+      const neededZoom = sinVal > 0.01 ? 1 / sinVal : continentZoom;
+
+      if (neededZoom > continentZoom) {
+        // Objetivo cercano: zoom out proporcional desde la posición actual
+        const center = globeRef.current.getViewCenter();
+        globeRef.current.flyTo(center[0], center[1], neededZoom, 800);
+      } else {
+        // Objetivo lejano: volar a punto intermedio entre centro continental y objetivo
+        // para evitar zoom-out excesivo en países extremos (ej. Japón, Filipinas)
+        const [cLon, cLat] = CONTINENT_CENTERS[session.continent];
+        // Normalizar delta para cruzar antimeridiano por camino más corto
+        // (ej. Oceanía 160°E → Samoa -172°W: delta naïve -332° → normalizado 28°)
+        let deltaLon = targetCoords[0] - cLon;
+        if (deltaLon > 180) deltaLon -= 360;
+        if (deltaLon < -180) deltaLon += 360;
+        const midLon = cLon + deltaLon / 2;
+        const midLat = (cLat + targetCoords[1]) / 2;
+        const distFromMid = geoDistance(targetCoords, [midLon, midLat]);
+        const sinFromMid = Math.sin(distFromMid / ZOOM_MARGIN);
+        const zoomFromMid = sinFromMid > 0.01 ? 1 / sinFromMid : continentZoom;
+        const finalZoom = Math.min(continentZoom, zoomFromMid);
+        globeRef.current.flyTo(midLon, midLat, finalZoom, 800);
+      }
+    };
+
+    // Si el globo está animando (ej. flyTo continental al inicio de sesión),
+    // diferir la evaluación para que isPointVisible() use la posición final.
+    if (globeRef.current.isAnimating()) {
+      const timer = setTimeout(evaluate, 1100);
+      return () => clearTimeout(timer);
     }
 
-    if (!targetCoords) return;
-    // Si ya es visible → no hacer nada
-    if (globeRef.current.isPointVisible(targetCoords[0], targetCoords[1])) return;
-
-    // Calcular distancia angular desde el centro de vista al objetivo
-    const dist = globeRef.current.distanceFromCenter(targetCoords[0], targetCoords[1]);
-    const continentZoom = CONTINENT_ZOOM[session.continent];
-
-    // Zoom necesario para que el objetivo sea visible desde la posición actual.
-    // Derivado de: dist < arcsin(1/zoom) × MARGIN → zoom = 1/sin(dist/MARGIN)
-    // Margen 0.55 (menor que el 0.8 de isPointVisible) para que el objetivo
-    // quede cómodamente dentro de la vista, no en el borde.
-    const ZOOM_MARGIN = 0.70;
-    const sinVal = Math.sin(dist / ZOOM_MARGIN);
-    const neededZoom = sinVal > 0.01 ? 1 / sinVal : continentZoom;
-
-    if (neededZoom > continentZoom) {
-      // Objetivo cercano: zoom out proporcional desde la posición actual
-      const center = globeRef.current.getViewCenter();
-      globeRef.current.flyTo(center[0], center[1], neededZoom, 800);
-    } else {
-      // Objetivo lejano: volar a punto intermedio entre centro continental y objetivo
-      // para evitar zoom-out excesivo en países extremos (ej. Japón, Filipinas)
-      const [cLon, cLat] = CONTINENT_CENTERS[session.continent];
-      // Normalizar delta para cruzar antimeridiano por camino más corto
-      // (ej. Oceanía 160°E → Samoa -172°W: delta naïve -332° → normalizado 28°)
-      let deltaLon = targetCoords[0] - cLon;
-      if (deltaLon > 180) deltaLon -= 360;
-      if (deltaLon < -180) deltaLon += 360;
-      const midLon = cLon + deltaLon / 2;
-      const midLat = (cLat + targetCoords[1]) / 2;
-      const distFromMid = geoDistance(targetCoords, [midLon, midLat]);
-      const sinFromMid = Math.sin(distFromMid / ZOOM_MARGIN);
-      const zoomFromMid = sinFromMid > 0.01 ? 1 / sinFromMid : continentZoom;
-      const finalZoom = Math.min(continentZoom, zoomFromMid);
-      globeRef.current.flyTo(midLon, midLat, finalZoom, 800);
-    }
+    evaluate();
   }, [session.currentQuestion, session.continent, session.feedbackState, feedbackStep, globeRef, capitals]);
 
   // --- Handlers ---
