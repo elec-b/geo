@@ -38,7 +38,18 @@ const MICROSTATE_PAIRS = new Set([
   'IT-VA', 'IT-SM', 'FR-MC', 'AT-LI', 'CH-LI',
   'ES-AD', 'FR-AD', 'BE-LU', 'DE-LU', 'FR-LU',
   'MY-SG', 'QA-BH', 'SA-BH',
+  'AS-WS', // Samoa Americana ↔ Samoa
 ]);
+
+/** Margen de tolerancia para hit testing en tipos A/B y Pruebas de Sello.
+ * Si el tap cae cerca del país objetivo (dentro del margen angular),
+ * se acepta como acierto. El margen se reduce con el zoom. */
+const BASE_TOLERANCE_RAD = 0.05;  // ~2.9° a zoom 1
+const MIN_TOLERANCE_RAD = 0.005;  // ~0.29° (floor a zoom alto)
+
+function getHitTolerance(zoom: number): number {
+  return Math.max(MIN_TOLERANCE_RAD, BASE_TOLERANCE_RAD / zoom);
+}
 
 /** Labels de tipos de pregunta (para modales de progresión) */
 const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
@@ -75,6 +86,19 @@ function getVisualCenter(globe: GlobeD3Ref, cca2: string): [number, number] | nu
   return globe.getOutlineCenter(cca2) ?? globe.getCentroid(cca2);
 }
 
+/** Centra el globo sobre el target si está descentrado (feedback visual de acierto) */
+function centerOnCorrectAnswer(globe: GlobeD3Ref, targetCca2: string) {
+  const centroid = globe.getCentroid(targetCca2);
+  if (!centroid) return;
+  const dist = globe.distanceFromCenter(centroid[0], centroid[1]);
+  const currentZoom = globe.getCurrentZoom();
+  const visibleAngle = Math.asin(Math.min(1, 1 / currentZoom));
+  if (dist > visibleAngle * 0.5) {
+    const targetZoom = getEFZoom(globe, targetCca2);
+    globe.flyTo(centroid[0], centroid[1], targetZoom, 600);
+  }
+}
+
 /** Petición de prueba de sello desde Pasaporte */
 export interface StampTestRequest {
   level: GameLevel;
@@ -90,6 +114,8 @@ interface JugarViewProps {
   onGlobePropsChange: (props: GlobeControlProps) => void;
   /** Ref donde se registra el handler de click en país (bridge con App.tsx) */
   onCountryClickRef: MutableRefObject<((f: CountryFeature) => void) | undefined>;
+  /** Ref donde se registra el handler de tap en océano (bridge con App.tsx) */
+  onCountryDeselectRef: MutableRefObject<(() => void) | undefined>;
   /** Petición de prueba de sello desde Pasaporte (se consume una vez) */
   stampTestRequest?: StampTestRequest | null;
   /** Callback cuando la prueba de sello termina (para volver a Pasaporte si viene de ahí).
@@ -110,6 +136,7 @@ export function JugarView({
   levels,
   onGlobePropsChange,
   onCountryClickRef,
+  onCountryDeselectRef,
   stampTestRequest,
   onStampTestDone,
   onStampTestStarted,
@@ -474,21 +501,27 @@ export function JugarView({
         if (MICROSTATE_PAIRS.has(pair)) cca2 = q.targetCca2;
       }
 
+      // Tolerancia geográfica: si tocamos un vecino pero estamos más cerca del target
+      if (cca2 !== q.targetCca2 && globeRef.current) {
+        const tapCoords = globeRef.current.getLastTapCoords();
+        const targetCentroid = globeRef.current.getCentroid(q.targetCca2);
+        const detectedCentroid = globeRef.current.getCentroid(cca2);
+        if (tapCoords && targetCentroid && detectedCentroid) {
+          const zoom = globeRef.current.getCurrentZoom();
+          const tolerance = getHitTolerance(zoom);
+          const distToTarget = geoDistance(tapCoords, targetCentroid);
+          const distToDetected = geoDistance(tapCoords, detectedCentroid);
+          if (distToTarget < tolerance && distToTarget < distToDetected) {
+            cca2 = q.targetCca2;
+          }
+        }
+      }
+
       const result = session.submitAnswer(cca2);
 
       // En acierto: mostrar el país completo si no está bien centrado
       if (result === 'correct' && globeRef.current) {
-        const centroid = globeRef.current.getCentroid(q.targetCca2);
-        if (centroid) {
-          const dist = globeRef.current.distanceFromCenter(centroid[0], centroid[1]);
-          const currentZoom = globeRef.current.getCurrentZoom();
-          const visibleAngle = Math.asin(Math.min(1, 1 / currentZoom));
-          // Solo flyTo si el centroide está en el 50% exterior del hemisferio visible
-          if (dist > visibleAngle * 0.5) {
-            const targetZoom = getEFZoom(globeRef.current, q.targetCca2);
-            globeRef.current.flyTo(centroid[0], centroid[1], targetZoom, 600);
-          }
-        }
+        centerOnCorrectAnswer(globeRef.current, q.targetCca2);
       }
 
       // En error: iniciar secuencia de dos pasos (etiqueta roja → flyTo + etiqueta verde)
@@ -509,8 +542,44 @@ export function JugarView({
     [session, globeRef],
   );
 
-  // Registrar handler en ref para bridge con App.tsx
+  // Tap en océano durante el juego: tolerancia para taps cerca del objetivo
+  const handleOceanClick = useCallback(() => {
+    const q = session.currentQuestion;
+    if (!q || !session.isActive) return;
+    if (q.type !== 'A' && q.type !== 'B') return;
+    if (!globeRef.current) return;
+
+    const tapCoords = globeRef.current.getLastTapCoords();
+    const targetCentroid = globeRef.current.getCentroid(q.targetCca2);
+    if (!tapCoords || !targetCentroid) return;
+
+    const zoom = globeRef.current.getCurrentZoom();
+    const tolerance = getHitTolerance(zoom);
+    const dist = geoDistance(tapCoords, targetCentroid);
+
+    if (dist < tolerance) {
+      const result = session.submitAnswer(q.targetCca2);
+      if (result === 'correct') {
+        centerOnCorrectAnswer(globeRef.current, q.targetCca2);
+      }
+      if (result === 'incorrect' && globeRef.current) {
+        const correctCoords = globeRef.current.getCentroid(q.targetCca2);
+        if (correctCoords) {
+          feedbackCoordsRef.current = {
+            wrongCca2: q.targetCca2,
+            wrongCoords: tapCoords,
+            correctCca2: q.targetCca2,
+            correctCoords,
+          };
+          setFeedbackStep('step1');
+        }
+      }
+    }
+  }, [session, globeRef]);
+
+  // Registrar handlers en refs para bridge con App.tsx
   onCountryClickRef.current = handleCountryClick;
+  onCountryDeselectRef.current = handleOceanClick;
 
   // Selección de continente en LevelSelector → flyTo
   const handleContinentSelect = useCallback(

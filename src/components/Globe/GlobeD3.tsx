@@ -237,6 +237,8 @@ export interface GlobeD3Ref {
   getOutlineCenter(cca2: string): [number, number] | null;
   /** Reinicia el globo al estado idle: posición aleatoria, zoom 1, rotación automática */
   resetToIdle(): void;
+  /** Retorna las coordenadas geográficas [lon, lat] del último tap (para tolerancia en juego) */
+  getLastTapCoords(): [number, number] | null;
 }
 
 // --- Utilidades ---
@@ -305,6 +307,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const velocityRef = useRef<[number, number]>([0, 0]);
   const isInertiaRef = useRef(false);
   const dragSamplesRef = useRef<Array<{ x: number; y: number; time: number }>>([]);
+
+  // Coordenadas geo del último tap (para tolerancia en juego)
+  const lastTapCoordsRef = useRef<[number, number] | null>(null);
 
   // Marcadores, centroides, zoom mínimo y features ordenados para etiquetas
   const microstateCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
@@ -462,6 +467,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       scaleRef.current = 1.0;
       isAutoRotatingRef.current = true;
       needsRedrawRef.current = true;
+    },
+    getLastTapCoords(): [number, number] | null {
+      return lastTapCoordsRef.current;
     },
   }));
 
@@ -935,6 +943,10 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     const countries = countriesRef.current;
     if (!projection || !countries) return null;
 
+    // Almacenar coordenadas geo del tap para tolerancia en juego
+    const tapCoords = projection.invert?.([x, y]);
+    lastTapCoordsRef.current = tapCoords ? [tapCoords[0], tapCoords[1]] : null;
+
     const zoom = scaleRef.current;
     const markersVisible = showMarkersRef.current && zoom >= MARKER_ZOOM_START
       && microstateCentroidsRef.current.size > 0;
@@ -953,8 +965,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
     }
 
-    // Búsqueda normal por geometría
-    const coords = projection.invert?.([x, y]);
+    // Búsqueda normal por geometría (reutilizar invert del inicio)
+    const coords = tapCoords;
     if (!coords) return null;
 
     for (const feature of countries.features) {

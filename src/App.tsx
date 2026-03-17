@@ -132,6 +132,7 @@ function App() {
   const exploreClickRef = useRef<((f: CountryFeature) => void) | undefined>(undefined);
   const exploreDeselectRef = useRef<(() => void) | undefined>(undefined);
   const jugarClickRef = useRef<((f: CountryFeature) => void) | undefined>(undefined);
+  const jugarDeselectRef = useRef<(() => void) | undefined>(undefined);
 
   // Callback estable para el globo (delega al tab activo via refs)
   const handleCountryClick = useCallback((feature: CountryFeature) => {
@@ -145,6 +146,8 @@ function App() {
   const handleCountryDeselect = useCallback(() => {
     if (activeTabRef.current === 'explore') {
       exploreDeselectRef.current?.();
+    } else if (activeTabRef.current === 'play') {
+      jugarDeselectRef.current?.();
     }
   }, []);
 
@@ -237,6 +240,7 @@ function App() {
           levels={levels}
           onGlobePropsChange={setGlobeControl}
           onCountryClickRef={jugarClickRef}
+          onCountryDeselectRef={jugarDeselectRef}
           stampTestRequest={stampTestRequest}
           onStampTestDone={handleStampTestDone}
           onStampTestStarted={handleStampTestStarted}

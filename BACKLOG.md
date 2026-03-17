@@ -29,6 +29,7 @@
 - [x] **UX Jugar**: Fix sincronización barra de progreso y contadores en Pruebas de Sello — ahora se mueven a la vez. Bonus: la barra llega a 100% en la última pregunta (antes nunca lo hacía)
 - [x] **Jugar**: Fix posicionamiento del globo fuera de continente — race condition entre flyTo continental y efecto A/B que evaluaba isPointVisible() durante la animación. Solución: diferir evaluación A/B hasta que flyTo termine (isAnimating + delay). También: usar getVisualCenter() (hull center) en vez de getCentroid() para archipiélagos en tipo A, y añadir CENTROID_OVERRIDE para Papúa Nueva Guinea
 - [x] **Jugar**: Fix herencia E/CDF no se aplicaba cuando solo había datos de sello (sin partidas regulares). Causa: `getAttemptsWithInheritance` verificaba A/B per-country en `attempts`, pero las pruebas de sello escriben en `stampAttempts`. Solución: si ambos sellos del nivel anterior están ganados, heredar E/CDF para todos los países del nivel (los sellos ya son prueba de dominio A/B). Eliminada recursión innecesaria.
+- [x] **UX Jugar**: Margen de tolerancia adaptativo en hit testing para tipos A/B y Pruebas de Sello. Spike: `docs/spikes/hit-testing-archipielagos.md`. Taps "casi sobre el país" ahora se aceptan si están cerca del target (geoDistance < 0.05/zoom rad). Dos casos: tap en océano cerca del target, y tap en vecino cuando estás más cerca del target. AS-WS añadido a MICROSTATE_PAIRS. No afecta a Explorar.
 
 ---
 
@@ -37,7 +38,6 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### UX general
-- [ ] En Oceanía, cuando e.g. en Prueba de Sello de Países, se pide seleccionar Samoa, pulso en el archipiélago, pero a veces lo considera error. ¿Por qué puede ser? ¿Puede estar ocurriendo en otros casos? Investiguemos en profundidad antes de implementar.
 - [ ] Usar una mejor nomenclatura para los distintos tipos de juego, quizás utilizar mejores letras o símbolos (nomenclatura abreviada), para que se vean de una manera lógica en la tabla de estadísticas y en el selector de juego. El orden pedagógico que hay ahora tiene sentido, pero la secuencia de letras (E, C, D, F, A, B) no tanto... Sugiero mantener las letras (E, C, D, F, A, B) internamente, pero para el usuario debemos mostrar algo mucho más intuitivo respecto a lo que ya hay. También debemos repensar los nombres que se muestran en el selector y mostrar nomenclatura abreviada + nombre del juego.  Hacer los cambios primero en design.md, después cambiar también en el codebase por coherencia, y finalmente aplicar el el selector y en la tabla de estadísticas. 
   - Se me ocurre esto para la nomenclatura abreviada, considéralo una posible idea / punto de partida:
     - E: círculo grande (representa país) y símbolo de ingerrogación (representa pregunta)
@@ -52,14 +52,9 @@
   - Por defecto se debe jugar aventura (esto debe resaltar, también debe simplificar el selector, al haber menos opciones visibles)
   - Por otro lado, el usuario, si quiere, debe poder elegir un juego concreto (aquí debe mostrarse la nomenclatura abreviada y una descripción breve del juego). Quizás pueda hacerse con un selector?
   - Necesitamos un agent team para repasar codebase, diseñar bien esto, otro que refute las propuestas "locas" o demasiado complicadas (y TBD si se necesitan otros roles). Este spike es necesario antes de implementar nada
-- [ ][PENSAR] En explorar, utilizar un color distinto al amarillo cuando se selecciona un país. Asegurar coherencia de código de colores. Documentar en design.md
-- [ ][PENSAR] Sello automático: si el usuario supera tipo A o B con 0 errores de un solo intento / en una misma parte de la sesión, otorgar el sello directamente (equivalente a la prueba de sello). Documentar en DESIGN.md
-- [ ][PENSAR] Borrados de sello y Resets
-  - (Idea que tengo: las estadísticas de sello y los sellos con se pueden borrar
+- [ ]Justificación / Explicación para el usuario de por qué no se pueden borrar sellos ni resetear las estadísticas de sello
+  - (Idea que tengo: las estadísticas de sello y los sellos no se pueden borrar
     - en estadísticas en el lugar equivalente donde aparece "resetear estadísticas" en la pestaña jugar, mostrar en la pestaña de pruebas de sello un mensaje diciendo algo como "intencionadamente no se pueden borrar las estadísticas de las pruebas de sello ni borrar los sellos que ya tienes - crea un nuevo perfil si quieres empezar de cero". Pensar bien este mensaje. Validar coherencia con / anotar en design.md)
-  - Queremos darle al usuario la posibilidad de borrar sus sellos? En la dimensión continente-nivel? En otra dimensión?
-  - Queremos darle al usuario de resetear el juego completo y la posibilidad de empezar de cero?
-  - (Aterrizar ambas cosas en design.md antes de implementar nada, esto es muy importante tenerlo claro)
 
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes
