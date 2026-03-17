@@ -22,14 +22,13 @@ const LEVELS: { id: GameLevel; label: string; emoji: string }[] = [
   { id: 'guía', label: 'Guía', emoji: '🗺️' },
 ];
 
-const QUESTION_TYPES: { id: QuestionTypeFilter; label: string; badge?: string }[] = [
-  { id: 'mixed', label: 'Aventura' },
-  { id: 'E', label: 'Identifica país' },
-  { id: 'C', label: 'País a capital' },
-  { id: 'D', label: 'Capital a país' },
-  { id: 'F', label: 'Identifica capital' },
-  { id: 'A', label: 'Señala el país', badge: '🔖' },
-  { id: 'B', label: 'Señala la capital', badge: '🔖' },
+const SPECIFIC_TYPES: { id: QuestionTypeFilter; label: string; icon: string; badge?: string }[] = [
+  { id: 'E', label: 'Identifica país', icon: '◯?' },
+  { id: 'C', label: 'País a capital', icon: '◯→◎' },
+  { id: 'D', label: 'Capital a país', icon: '◎→◯' },
+  { id: 'F', label: 'Identifica capital', icon: '◎?' },
+  { id: 'A', label: 'Señala el país', icon: '◯', badge: '🔖' },
+  { id: 'B', label: 'Señala la capital', icon: '◎', badge: '🔖' },
 ];
 
 interface LevelSelectorProps {
@@ -50,6 +49,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
   [levels]);
 
   const [selectedType, setSelectedType] = useState<QuestionTypeFilter>('mixed');
+  const [typesExpanded, setTypesExpanded] = useState(false);
   const [lockedToast, setLockedToast] = useState<string | null>(null);
 
   // Construir StampsData para verificar desbloqueo de niveles
@@ -221,26 +221,55 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
           })}
         </div>
 
-        {/* Pills de tipo de juego (orden pedagógico) */}
+        {/* Tipo de juego */}
         <h2 className="level-selector__title level-selector__title--level">Tipo de juego</h2>
-        <div className="level-selector__types">
-          {QUESTION_TYPES.map(({ id, label, badge }) => {
-            const isDominated = dominatedTypes.has(id);
-            return (
-              <button
-                key={id}
-                className={[
-                  'level-selector__type-pill',
-                  selectedType === id && 'level-selector__type-pill--active',
-                  isDominated && 'level-selector__type-pill--dominated',
-                ].filter(Boolean).join(' ')}
-                onClick={() => setSelectedType(id)}
-              >
-                {label}{badge ? ` ${badge}` : ''}{isDominated ? ' ✓' : ''}
-              </button>
-            );
-          })}
-        </div>
+
+        {/* Botón Aventura (ancho completo, destacado) */}
+        <button
+          className={[
+            'level-selector__aventura',
+            selectedType === 'mixed' && 'level-selector__aventura--active',
+            dominatedTypes.has('mixed') && 'level-selector__aventura--dominated',
+          ].filter(Boolean).join(' ')}
+          onClick={() => { setSelectedType('mixed'); setTypesExpanded(false); }}
+        >
+          <span className="level-selector__aventura-icon">🧭</span>
+          <span className="level-selector__aventura-text">
+            <span className="level-selector__aventura-name">Aventura{dominatedTypes.has('mixed') ? ' ✓' : ''}</span>
+            <span className="level-selector__aventura-desc">Todos los tipos combinados</span>
+          </span>
+        </button>
+
+        {/* Toggle para tipos concretos */}
+        <button
+          className="level-selector__types-toggle"
+          onClick={() => setTypesExpanded((v) => !v)}
+        >
+          {typesExpanded ? '▾' : '▸'} Elegir tipo concreto
+        </button>
+
+        {/* Grid de tipos concretos (colapsable) */}
+        {typesExpanded && (
+          <div className="level-selector__types-grid">
+            {SPECIFIC_TYPES.map(({ id, label, icon, badge }) => {
+              const isDominated = dominatedTypes.has(id);
+              return (
+                <button
+                  key={id}
+                  className={[
+                    'level-selector__type-card',
+                    selectedType === id && 'level-selector__type-card--active',
+                    isDominated && 'level-selector__type-card--dominated',
+                  ].filter(Boolean).join(' ')}
+                  onClick={() => setSelectedType(id)}
+                >
+                  <span className="level-selector__type-icon">{icon}</span>
+                  <span className="level-selector__type-label">{label}{badge ? ` ${badge}` : ''}{isDominated ? ' ✓' : ''}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {/* Toast de nivel bloqueado */}
         {lockedToast && (
