@@ -64,7 +64,7 @@
 
 ### Explorar
 - [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigación hecha: los datos y filtros son correctos (unMember: false, no participa en Jugar, etiquetas en ámbar). El "problema" es solo visual (mismo color de relleno que países ONU) y de nomenclatura (ver tarea siguiente sobre territorios).
-- [ ] El Aaiún aparece mal ubicado — coordenadas invertidas (lat ↔ lng) en REST Countries API. Pendiente de corregir en capitals.json + CAPITAL_OVERRIDES en fetch-countries.ts. También se detectaron coords incorrectas para SN (Dakar, 22 km off). Ver tarea de validación automática más abajo.
+- [ ][Revisar antes de actual, esto creo que ya está hecho?] El Aaiún aparece mal ubicado — coordenadas invertidas (lat ↔ lng) en REST Countries API. Pendiente de corregir en capitals.json + CAPITAL_OVERRIDES en fetch-countries.ts. También se detectaron coords incorrectas para SN (Dakar, 22 km off). Ver tarea de validación automática más abajo.
 - [ ][PENSAR] Clasificación de territorios no-ONU: actualmente todos los territorios que no son países ONU se etiquetan como "Territorio no reconocido por la ONU", pero esto es incorrecto para muchos de ellos. Hay dos categorías muy distintas:
   - **Territorios de países ONU**: Groenlandia (Dinamarca), Puerto Rico (EEUU), Wallis y Futuna (Francia), Guayana Francesa (Francia), etc. Son territorios plenamente reconocidos — simplemente no son estados independientes. La etiqueta debería ser "Territorio de [País soberano]".
   - **Estados disputados / no reconocidos**: Kosovo, Taiwán, Sáhara Occidental, etc. Para estos sí tiene sentido "Territorio no reconocido por la ONU" o similar.

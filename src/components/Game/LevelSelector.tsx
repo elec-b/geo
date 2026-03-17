@@ -24,10 +24,10 @@ const LEVELS: { id: GameLevel; label: string; emoji: string }[] = [
 
 const QUESTION_TYPES: { id: QuestionTypeFilter; label: string; badge?: string }[] = [
   { id: 'mixed', label: 'Aventura' },
-  { id: 'E', label: '¿Qué país es?' },
-  { id: 'C', label: 'País → Capital' },
-  { id: 'D', label: 'Capital → País' },
-  { id: 'F', label: '¿Cuál es su capital?' },
+  { id: 'E', label: 'Identifica país' },
+  { id: 'C', label: 'País a capital' },
+  { id: 'D', label: 'Capital a país' },
+  { id: 'F', label: 'Identifica capital' },
   { id: 'A', label: 'Señala el país', badge: '🔖' },
   { id: 'B', label: 'Señala la capital', badge: '🔖' },
 ];

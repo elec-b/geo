@@ -53,10 +53,10 @@ function getHitTolerance(zoom: number): number {
 
 /** Labels de tipos de pregunta (para modales de progresión) */
 const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
-  E: '¿Qué país es?',
-  C: 'País → Capital',
-  D: 'Capital → País',
-  F: '¿Cuál es su capital?',
+  E: 'Identifica el país',
+  C: 'País a capital',
+  D: 'Capital a país',
+  F: 'Identifica la capital',
   A: 'Señala el país',
   B: 'Señala la capital',
 };

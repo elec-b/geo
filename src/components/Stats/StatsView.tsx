@@ -114,12 +114,12 @@ function StampPercentCell({ sca, type }: {
 
 /** Abreviaturas descriptivas para cada tipo de pregunta */
 const TYPE_LABELS: Record<QuestionType, { short: string; full: string }> = {
-  E: { short: 'Rec.', full: '¿Qué país es?' },
-  C: { short: 'P→C', full: 'País → Capital' },
-  D: { short: 'C→P', full: 'Capital → País' },
-  F: { short: 'Cap.', full: '¿Cuál es su capital?' },
-  A: { short: 'Señ.', full: 'Señala el país' },
-  B: { short: 'S.C.', full: 'Señala la capital' },
+  E: { short: '◯?', full: 'Identifica el país' },
+  C: { short: '◯→◎', full: 'País a capital' },
+  D: { short: '◎→◯', full: 'Capital a país' },
+  F: { short: '◎?', full: 'Identifica la capital' },
+  A: { short: '◯', full: 'Señala el país' },
+  B: { short: '◎', full: 'Señala la capital' },
 };
 
 const STAMP_LABELS: Record<'A' | 'B', { short: string; full: string }> = {

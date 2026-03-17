@@ -75,8 +75,19 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
     - Turista: siempre disponible.
     - Mochilero: se desbloquea al conseguir ambos sellos de Turista en ese continente.
     - Guía: se desbloquea al conseguir ambos sellos de Mochilero en ese continente.
-3.  El usuario pulsa **Empezar** → juega en modo **Aventura** (todos los tipos combinados).
-    — O selecciona un tipo de juego concreto + Empezar → juega solo ese tipo.
+3.  El usuario pulsa **Empezar** → juega en modo **Aventura** (todos los tipos combinados, opción por defecto y destacada).
+    — O expande «Elegir tipo concreto» y selecciona un tipo específico + Empezar → juega solo ese tipo.
+
+### Selector de tipo de juego
+
+El selector separa **Aventura** (opción principal) de los tipos concretos (opción avanzada):
+
+- **Aventura** se presenta como botón de ancho completo con icono 🧭 y subtítulo «Todos los tipos combinados». Seleccionado por defecto. Estilo diferenciado con accent cian.
+- **«Elegir tipo concreto»**: toggle colapsable (cerrado por defecto). Al expandir, muestra una grid 2×3 con los 6 tipos usando sus iconos y nombres cortos (ver § Nomenclatura visual).
+  - Separador visual sutil entre los 4 tipos de opciones (E/C/D/F) y los 2 de señalar/examen (A/B).
+  - A y B muestran badge 🔖.
+  - Al seleccionar un tipo concreto, Aventura se deselecciona (y viceversa).
+  - El estado colapsado/expandido no se persiste — siempre arranca colapsado.
 
 ### Tipos de juego
 
@@ -92,6 +103,27 @@ Organizados por orden pedagógico (de iniciación a certificación):
 | B | Señala la capital 🔖 | Nombre de la capital → tocar en el globo | Preparación sello de capitales |
 
 🔖 = Preparación para prueba de sello (badge visual en el selector).
+
+### Nomenclatura visual de tipos de juego
+
+Cada tipo tiene un **ID interno** (E/C/D/F/A/B) usado en el código, y una **nomenclatura visual** para el usuario basada en dos símbolos:
+
+- **◯** = país (círculo grande, U+25EF — renderizado con `font-size: 1.2em` para diferenciarlo visualmente)
+- **◎** = capital (bullseye, U+25CE — círculo pequeño con punto central)
+
+Y un modificador de mecánica:
+- **?** = quiz con opciones (los tipos sin **?** son de señalar en el globo)
+
+| Interno | Icono | Nombre visible | Descripción |
+|---------|-------|----------------|-------------|
+| E | ◯? | Identifica país | País resaltado en el globo → elegir nombre (opciones) |
+| C | ◯→◎ | País a capital | Nombre del país → elegir capital (opciones) |
+| D | ◎→◯ | Capital a país | Nombre de la capital → elegir país (opciones) |
+| F | ◎? | Identifica capital | Capital resaltada en el globo → elegir nombre (opciones) |
+| A | ◯ | Señala país | Nombre del país → tocar en el globo |
+| B | ◎ | Señala capital | Nombre de la capital → tocar ubicación en el globo |
+
+Los iconos se usan en el selector de tipo de juego y en los headers de la tabla de estadísticas. Los modales y textos largos usan los **nombres visibles** en prosa (e.g. «¡Fenomenal! **País a capital** superado»).
 
 Cada tipo mantiene su comportamiento visual:
 *   **A/B**: Zoom + contexto continental. Feedback en 2 pasos al fallar.
@@ -398,7 +430,7 @@ Disponible en ambas pestañas. Permite alternar entre dos modos:
 
 ### Pestaña Jugar
 *   Selector de nivel × continente.
-*   Tabla de países con indicadores de dominio por tipo de juego (E, C, D, F, A, B).
+*   Tabla de países con indicadores de dominio por tipo de juego. Los headers de columna usan los **iconos compactos** de la nomenclatura visual (◯?, ◯→◎, ◎→◯, ◎?, ◯, ◎).
 *   Indicadores visuales por celda:
     - **✓ verde** — Dominado por intento propio (racha ≥ 1 en ese tipo específico, con datos propios del nivel actual).
     - **✓ gris** — Dominado por inferencia, no verificado directamente. Incluye dos casos: (1) inferencia ascendente dentro del mismo nivel (A dominado → E inferido; B dominado → C/D/F inferidos), y (2) herencia entre niveles — tipos E/C/D/F heredados del nivel anterior (ver § Herencia de progreso entre niveles).
