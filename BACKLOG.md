@@ -33,6 +33,7 @@
 - [x] **Nomenclatura y selector**: Nueva nomenclatura visual para tipos de juego basada en ◯ (país) y ◎ (capital). Iconos en headers de stats (◯?, ◯→◎, ◎→◯, ◎?, ◯, ◎), nombres descriptivos en selector y modales. Selector rediseñado: Aventura destacada (botón 🧭 ancho completo) + toggle colapsable «Elegir tipo concreto» con grid 2×3. Columnas de stats con ancho uniforme. Spike: `docs/spikes/nomenclatura-tipos-juego.md`
 - [x] **Explorar**: Link de Wikipedia movido del pie del bottom sheet al header — icono redondo con el puzzle globe oficial de Wikipedia (apple-touch-icon externo, auto-actualizable, cacheado por WKWebView)
 - [x] **Explorar**: Clasificación de territorios no-ONU — disclaimer contextual en ficha de país: "Territorio de [País]" (33 dependientes) o "Soberanía en disputa" (TW, XK, EH, FK). Mapa constante `SOVEREIGN_LABELS` con preposiciones en español. Spike: `docs/spikes/clasificacion-territorios.md`
+- [x] **UX Jugar**: Mejoras en selector de juego — nivel bloqueado muestra n.º de países (en vez de "Bloqueado"), título "Elige juego" (coherencia), subtítulo Aventura "Se adapta a lo que sabes", separador "o elige juego concreto" con líneas. Scroll automático al expandir tipos + panel scrollable en pantallas pequeñas
 
 ---
 
@@ -45,12 +46,6 @@
 
 ### UX general
 - [ ] Si dejo pulsado el teléfono sobre un punto de la pantalla, el teléfono selecciona algunas cosas (no parece texto, pero quizás lo interprete como texto?) y me da las opciones de "copy, look-up, etc." típicas. Queda mal, creo que deberíamos evitar que se pueda seleccionar
-- [ ] Mejoras en el selector de juego
-  - En la sección de elige nivel: cuando un nivel está bloqueado (aparece un candado), en vez de mostrar abajo el texto "Bloqueado" mostremos el número de países (ya se sabe que está bloqueado por el candado)
-  - En la sección de tipo de juego:
-    - En vez de "Tipo de juego", pondría "Elige juego" (por coherencia con los dos "elige" de arriba)
-    - Elegir un texto mejor para Aventura. "Todos los tipos combinados" nos vale internamente, pero para el usuario algo como "Recomendado: aprende de manera guiada según lo que sepas" es mejor. Pensemos bien esto, dame distintas opciones
-    - El (no botón) de "* Elegir tipo concreto", no queda bien, hay que diseñar algo mejor. Me parece bien que sea sutíl, pero ahora mismo es algo un poco cutre.
 - [ ] Justificación / Explicación para el usuario de por qué no se pueden borrar sellos ni resetear las estadísticas de sello
   - (Idea que tengo: las estadísticas de sello y los sellos no se pueden borrar
     - en estadísticas en el lugar equivalente donde aparece "resetear estadísticas" en la pestaña jugar, mostrar en la pestaña de pruebas de sello un mensaje diciendo algo como "intencionadamente no se pueden borrar las estadísticas de las pruebas de sello ni borrar los sellos que ya tienes - crea un nuevo perfil si quieres empezar de cero". Pensar bien este mensaje. Validar coherencia con / anotar en design.md)

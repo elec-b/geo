@@ -51,6 +51,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
   const [selectedType, setSelectedType] = useState<QuestionTypeFilter>('mixed');
   const [typesExpanded, setTypesExpanded] = useState(false);
   const [lockedToast, setLockedToast] = useState<string | null>(null);
+  const startRef = useRef<HTMLButtonElement>(null);
 
   // Construir StampsData para verificar desbloqueo de niveles
   const stampsData = useMemo((): StampsData => {
@@ -241,7 +242,16 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
         {/* Toggle para tipos concretos */}
         <button
           className="level-selector__types-divider"
-          onClick={() => setTypesExpanded((v) => !v)}
+          onClick={() => {
+            setTypesExpanded((v) => {
+              if (!v) {
+                requestAnimationFrame(() => {
+                  startRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+              }
+              return !v;
+            });
+          }}
         >
           <span className="level-selector__types-divider-line" />
           <span className="level-selector__types-divider-text">
@@ -290,6 +300,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
 
         {/* Botón empezar / continuar */}
         <button
+          ref={startRef}
           className={`level-selector__start ${!selectedContinent ? 'level-selector__start--disabled' : ''}`}
           onClick={handleStart}
         >
