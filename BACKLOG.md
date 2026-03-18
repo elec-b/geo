@@ -38,21 +38,13 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
-
 ### Explorar
 - [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigación hecha: los datos y filtros son correctos (unMember: false, no participa en Jugar, etiquetas en ámbar). El "problema" es solo visual (mismo color de relleno que países ONU) y de nomenclatura (ver tarea siguiente sobre territorios).
-- [ ][Revisar antes de actual, esto creo que ya está hecho?] El Aaiún aparece mal ubicado — coordenadas invertidas (lat ↔ lng) en REST Countries API. Pendiente de corregir en capitals.json + CAPITAL_OVERRIDES en fetch-countries.ts. También se detectaron coords incorrectas para SN (Dakar, 22 km off). Ver tarea de validación automática más abajo.
-- [ ][PENSAR] Clasificación de territorios no-ONU: actualmente todos los territorios que no son países ONU se etiquetan como "Territorio no reconocido por la ONU", pero esto es incorrecto para muchos de ellos. Hay dos categorías muy distintas:
+- [ ][PENSAR / DISEÑAR BIEN ANTES DE IMPLEMENTAR] Clasificación de territorios no-ONU: actualmente todos los territorios que no son países ONU se etiquetan como "Territorio no reconocido por la ONU", pero esto es incorrecto para muchos de ellos. Hay dos categorías muy distintas:
   - **Territorios de países ONU**: Groenlandia (Dinamarca), Puerto Rico (EEUU), Wallis y Futuna (Francia), Guayana Francesa (Francia), etc. Son territorios plenamente reconocidos — simplemente no son estados independientes. La etiqueta debería ser "Territorio de [País soberano]".
   - **Estados disputados / no reconocidos**: Kosovo, Taiwán, Sáhara Occidental, etc. Para estos sí tiene sentido "Territorio no reconocido por la ONU" o similar.
   - Propuesta: añadir un campo `sovereignCountry` (o similar) en los datos para distinguir ambos casos y mostrar la etiqueta correcta en la ficha de país. Pensar bien las categorías y redactar en DESIGN.md antes de implementar.
-
-### Internacionalización (UI completa)
-- [ ] Elegir librería de i18n (i18next, react-intl u otra)
-- [ ] Externalizar textos de la app a archivos de traducción
-  - Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español
-- [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
-- [ ] Traducción a idiomas disponibles en iOS y Android
+- [ ][Revisar antes de actuar, esto creo que ya está hecho?] El Aaiún aparece mal ubicado — coordenadas invertidas (lat ↔ lng) en REST Countries API. Pendiente de corregir en capitals.json + CAPITAL_OVERRIDES en fetch-countries.ts. También se detectaron coords incorrectas para SN (Dakar, 22 km off). Ver tarea de validación automática más abajo.
 
 ### UX general
 - [ ] Justificación / Explicación para el usuario de por qué no se pueden borrar sellos ni resetear las estadísticas de sello
@@ -63,6 +55,14 @@
 - [ ] Consigue todos los sellos para todos los continentes
 - [ ] Juega al menos en aventura para todos los continete-nivel
 - [ ] Anota feedback en backlog.md
+
+### Internacionalización (UI completa)
+- [ ] Elegir librería de i18n (i18next, react-intl u otra)
+- [ ] Externalizar textos de la app a archivos de traducción
+  - Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español
+- [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
+- [ ] Traducción a idiomas disponibles en iOS y Android
+
 
 ### Tema visual
 - [ ] Diseñar e implementar tema claro (baja prioridad, casi al final del desarrollo)
