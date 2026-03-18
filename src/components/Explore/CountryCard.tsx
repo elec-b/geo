@@ -104,7 +104,7 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
         </div>
       ) : null}
 
-      {/* Cabecera: bandera + nombre + cerrar */}
+      {/* Cabecera: bandera + nombre + wikipedia */}
       <div className="country-card__header">
         {country.flagSvg && (
           <img
@@ -123,6 +123,19 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
             {country.continent}
           </span>
         </div>
+        {wikipediaUrl && (
+          <button
+            className="country-card__wikipedia"
+            onClick={() => window.open(wikipediaUrl, '_blank')}
+            aria-label={`Abrir ${country.name} en Wikipedia`}
+          >
+            <img
+              className="country-card__wikipedia-icon"
+              src="https://www.wikipedia.org/static/apple-touch/wikipedia.png"
+              alt="Wikipedia"
+            />
+          </button>
+        )}
       </div>
 
       {/* Datos: layout especial para Antártida */}
@@ -242,21 +255,6 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
         </div>
       )}
 
-      {/* Botón Wikipedia */}
-      {wikipediaUrl && (
-        <button
-          className="country-card__wikipedia"
-          onClick={() => window.open(wikipediaUrl, '_blank')}
-          aria-label={`Abrir ${country.name} en Wikipedia`}
-        >
-          <svg className="country-card__wikipedia-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-            <polyline points="15 3 21 3 21 9" />
-            <line x1="10" y1="14" x2="21" y2="3" />
-          </svg>
-          Wikipedia
-        </button>
-      )}
     </div>
   );
 }

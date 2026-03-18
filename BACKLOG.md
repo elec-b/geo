@@ -31,6 +31,7 @@
 - [x] **Jugar**: Fix herencia E/CDF no se aplicaba cuando solo había datos de sello (sin partidas regulares). Causa: `getAttemptsWithInheritance` verificaba A/B per-country en `attempts`, pero las pruebas de sello escriben en `stampAttempts`. Solución: si ambos sellos del nivel anterior están ganados, heredar E/CDF para todos los países del nivel (los sellos ya son prueba de dominio A/B). Eliminada recursión innecesaria.
 - [x] **UX Jugar**: Margen de tolerancia adaptativo en hit testing para tipos A/B y Pruebas de Sello. Spike: `docs/spikes/hit-testing-archipielagos.md`. Taps "casi sobre el país" ahora se aceptan si están cerca del target (geoDistance < 0.05/zoom rad). Dos casos: tap en océano cerca del target, y tap en vecino cuando estás más cerca del target. AS-WS añadido a MICROSTATE_PAIRS. No afecta a Explorar.
 - [x] **Nomenclatura y selector**: Nueva nomenclatura visual para tipos de juego basada en ◯ (país) y ◎ (capital). Iconos en headers de stats (◯?, ◯→◎, ◎→◯, ◎?, ◯, ◎), nombres descriptivos en selector y modales. Selector rediseñado: Aventura destacada (botón 🧭 ancho completo) + toggle colapsable «Elegir tipo concreto» con grid 2×3. Columnas de stats con ancho uniforme. Spike: `docs/spikes/nomenclatura-tipos-juego.md`
+- [x] **Explorar**: Link de Wikipedia movido del pie del bottom sheet al header — icono redondo con el puzzle globe oficial de Wikipedia (apple-touch-icon externo, auto-actualizable, cacheado por WKWebView)
 
 ---
 
@@ -40,7 +41,6 @@
 
 ### Explorar
 - [ ] Clasificación de territorios no-ONU: disclaimer contextual ("Territorio de [País]" / "Soberanía en disputa") en vez del genérico actual. Spike completado: `docs/spikes/clasificacion-territorios.md`. Implementar con los ajustes del refutador (Malvinas → disputa, mapa constante `SOVEREIGN_LABELS`). Incluye Groenlandia y los 37 territorios.
-- [ ] El link de wikipedia de la ficha de país, ocupa demasiado espacio abajo en el bottom sheet. ¿Y si simplemente ponemos un icono de wikipedia arriba a la derecha, a la altura de la bandera y de tamaño más o menos similar para el enlace? Así aprovecharemos el espacio mejor.
 - [ ] BUG: no puedo hacer scroll-down para cerrar la ficha de país de Singapur. Para otros países funciona bien. Investigar por qué es y si afecta a otros países. Solucionar después
 
 ### UX general
