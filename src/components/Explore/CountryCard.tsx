@@ -18,6 +18,19 @@ const CONTINENT_COLORS: Record<string, string> = {
 /** Máximo de idiomas visibles antes de truncar */
 const MAX_LANGUAGES = 3;
 
+/** Preposiciones en español para cada país soberano de territorios dependientes */
+const SOVEREIGN_LABELS: Record<string, string> = {
+  'GB': 'del Reino Unido',
+  'FR': 'de Francia',
+  'US': 'de Estados Unidos',
+  'NL': 'de Países Bajos',
+  'DK': 'de Dinamarca',
+  'CN': 'de China',
+  'NZ': 'de Nueva Zelanda',
+  'FI': 'de Finlandia',
+  'AU': 'de Australia',
+};
+
 type TooltipId = 'hdi' | 'ihdi' | null;
 
 interface CountryCardProps {
@@ -100,7 +113,9 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
         </div>
       ) : !country.unMember ? (
         <div className="country-card__disclaimer">
-          Territorio no reconocido por la ONU
+          {country.sovereignCountry && SOVEREIGN_LABELS[country.sovereignCountry]
+            ? `Territorio ${SOVEREIGN_LABELS[country.sovereignCountry]}`
+            : 'Soberanía en disputa'}
         </div>
       ) : null}
 

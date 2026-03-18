@@ -28,6 +28,8 @@ export interface CountryData {
   wikipediaSlug: string | null;
   /** true = miembro o estado observador ONU (195). false = territorio no reconocido */
   unMember: boolean;
+  /** cca2 del país soberano, para territorios dependientes no-ONU */
+  sovereignCountry?: string;
 }
 
 /** Coordenadas de una capital (provenientes de capitals.json) */

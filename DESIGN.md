@@ -662,16 +662,22 @@ El script `fetch-countries.ts` genera `countries.json` y `capitals.json` en el i
 - **Fuera del juego**: Territorios no reconocidos (Kosovo, Taiwán, etc.) no participan en el sistema de niveles/sellos (ver subsección siguiente)
 - **Ventaja**: Evita controversias políticas y simplifica mantenimiento
 
-### Territorios no reconocidos por la ONU
-Algunos territorios aparecen en los datos geográficos (Natural Earth 1:50m) pero no son miembros ni observadores de la ONU (ej. Sáhara Occidental, Kosovo, Taiwán):
+### Territorios no miembros de la ONU
+Además de los 195 países ONU, los datos geográficos (Natural Earth 1:50m) incluyen ~37 territorios que no son miembros ni observadores de la ONU. Se clasifican en dos categorías:
 
-*   **Son seleccionables** en la experiencia Explorar: al tocar, se muestra la ficha de país con un indicador claro de que NO es reconocido por la ONU.
+| Categoría | Etiqueta en ficha | Ejemplo | Cant. |
+|-----------|-------------------|---------|-------|
+| **Territorio dependiente** | "Territorio de [País]" | Groenlandia → "Territorio de Dinamarca" | 33 |
+| **Soberanía en disputa** | "Soberanía en disputa" | Taiwán, Kosovo, Sáhara Occidental, Islas Malvinas | 4 |
+
+Comportamiento:
+*   **Son seleccionables** en la experiencia Explorar: al tocar, se muestra la ficha con un disclaimer contextual según su categoría.
 *   Se muestran todos los datos disponibles (bandera, capital, población, superficie, moneda, gentilicio).
 *   **No participan en el sistema de juego** (niveles, sellos, pruebas) — solo son visibles en Explorar.
-*   **Color diferenciado (ámbar)**: En el globo, tanto las etiquetas (nombre de país y capital) como los circulitos de capitales de estos territorios se muestran en color ámbar, distinto al cian de los países ONU, para distinguirlos visualmente.
+*   **Color diferenciado (ámbar)**: En el globo, tanto las etiquetas (nombre de país y capital) como los pines de capitales de estos territorios se muestran en color ámbar, distinto al cian de los países ONU, para distinguirlos visualmente.
 *   **Visibilidad en la tabla**: ver § «Explorar > Tabla > Toggle territorios no-ONU».
-*   **Continente asignado**: Cada territorio debe tener un continente asignado para que los filtros de continente funcionen correctamente (ej. Sáhara Occidental → África). Al filtrar por otro continente, se oscurecen como cualquier otro país.
-*   **Datos**: El script `fetch-countries.ts` debe incluir estos territorios marcados con `unMember: false`.
+*   **Continente asignado**: Cada territorio tiene un continente asignado para que los filtros funcionen correctamente.
+*   **Datos**: El script `fetch-countries.ts` incluye estos territorios con `unMember: false` y, para los dependientes, `sovereignCountry` con el `cca2` del país soberano.
 
 ### Antártida
 A diferencia de los territorios no-ONU (que son estados de facto con población y gobierno), la Antártida es un caso especial único: no es un país ni un territorio soberano. Está gobernada por el Tratado Antártico (1959, 53 países firmantes). No tiene población permanente, capital, moneda ni gentilicio.

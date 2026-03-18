@@ -12,7 +12,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 // Importar mapeos desde el proyecto
-import { UN_COUNTRY_CODES, NON_UN_CODES } from '../src/data/isoMapping.js';
+import { UN_COUNTRY_CODES, NON_UN_CODES, NON_UN_TERRITORIES_BY_ID, NON_UN_TERRITORIES_BY_NAME } from '../src/data/isoMapping.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = resolve(__dirname, '..', 'public', 'data');
@@ -67,6 +67,7 @@ interface CountryEntry {
   ihdi: number | null;
   wikipediaSlug: string | null;
   unMember: boolean;
+  sovereignCountry?: string;
 }
 
 interface WikiEntry {
@@ -82,6 +83,15 @@ interface CapitalEntry {
 interface HdiEntry {
   hdi: number;
   ihdi: number | null;
+}
+
+// Lookup de soberano para territorios no-ONU dependientes
+const sovereignByCca2 = new Map<string, string>();
+for (const t of Object.values(NON_UN_TERRITORIES_BY_ID)) {
+  if (t.sovereignCca2) sovereignByCca2.set(t.cca2, t.sovereignCca2);
+}
+for (const t of Object.values(NON_UN_TERRITORIES_BY_NAME)) {
+  if (t.sovereignCca2) sovereignByCca2.set(t.cca2, t.sovereignCca2);
 }
 
 function toCountryEntry(
@@ -118,6 +128,8 @@ function toCountryEntry(
     ? (wiki.lang === 'es' ? wiki.slug : `${wiki.lang}:${wiki.slug}`)
     : null;
 
+  const sovereignCountry = sovereignByCca2.get(c.cca2);
+
   return {
     cca2: c.cca2,
     ccn3: c.ccn3 ?? '',
@@ -134,6 +146,7 @@ function toCountryEntry(
     ihdi: hdi?.ihdi ?? null,
     wikipediaSlug,
     unMember: isUN,
+    ...(sovereignCountry ? { sovereignCountry } : {}),
   };
 }
 
