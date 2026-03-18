@@ -3,7 +3,7 @@
 ## Filosofía de diseño
 - **Estética**: «Premium dark mode» (con tema claro como opción futura). Diseño limpio, oscuro y minimalista. Azules profundos, negros, acentos neón (cian/púrpura/ámbar).
 - **Interacción**: Animaciones fluidas. Sin recargas de página bruscas. El globo siempre es el protagonista.
-- **Feedback**: Corrección visual inmediata (destellos verde/rojo), háptica en móvil. Sin efectos de sonido (por ahora).
+- **Feedback**: Corrección visual inmediata (filtro verde/rojo al 5% de opacidad), háptica en móvil (acierto: tap ligero único; error: doble tap ligero; toggles: tap ligero). Sin efectos de sonido (por ahora).
 
 ---
 
@@ -59,6 +59,8 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 *   **Ambos sellos son necesarios** para completar un nivel-continente. Conseguir ambos sellos desbloquea el siguiente nivel en ese continente.
 *   **0 errores requeridos**: el usuario debe completar la prueba sin fallos para conseguir el sello.
 *   **Sin límite de intentos**: el usuario puede repetir la prueba de sello tantas veces como quiera. El requisito de 0 errores ya es filtro suficiente, y cada reintento es práctica valiosa.
+*   **Mensajes motivadores al no superar**: El modal muestra título y texto dinámicos según rendimiento: ≥90% «¡Muy cerca!», 70-89% «¡Buen intento!», 50-69% «Vas por buen camino», <50% «No te rindas».
+*   **Tab bar durante prueba de sello**: Independientemente del origen (Pasaporte o Jugar), la tab bar muestra Pasaporte como pestaña activa mientras dura la prueba.
 *   **Acceso**: El usuario puede intentar las pruebas desde Pasaporte (siempre disponible) o desde Jugar (cuando el algoritmo de aprendizaje lo invita).
 *   **Acceso directo (Jugar)**: Cuando solo queda **un sello pendiente** en el nivel-continente, la app lanza directamente la prueba correspondiente sin mostrar modal de elección. El modal de elección solo aparece cuando faltan ambos sellos. Aplica desde el banner del selector y los modales de fin de sesión de Jugar. En Pasaporte se mantiene el modal con los sellos pendientes.
 *   **Registro separado**: Las pruebas de sello tienen su propio registro de intentos, independiente de Jugar. Los fallos en pruebas de sello no afectan el algoritmo de aprendizaje de Jugar.
@@ -82,8 +84,8 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 
 El selector separa **Aventura** (opción principal) de los tipos concretos (opción avanzada):
 
-- **Aventura** se presenta como botón de ancho completo con icono 🧭 y subtítulo «Todos los tipos combinados». Seleccionado por defecto. Estilo diferenciado con accent cian.
-- **«Elegir tipo concreto»**: toggle colapsable (cerrado por defecto). Al expandir, muestra una grid 2×3 con los 6 tipos usando sus iconos y nombres cortos (ver § Nomenclatura visual).
+- **Aventura** se presenta como botón de ancho completo con icono 🧭 y subtítulo «Se adapta a lo que sabes». Seleccionado por defecto. Estilo diferenciado con accent cian.
+- **«o elige juego concreto ▾»**: separador con líneas horizontales y toggle colapsable (cerrado por defecto). Al expandir, muestra una grid 2×3 con los 6 tipos usando sus iconos y nombres cortos (ver § Nomenclatura visual).
   - Separador visual sutil entre los 4 tipos de opciones (E/C/D/F) y los 2 de señalar/examen (A/B).
   - A y B muestran badge 🔖.
   - Al seleccionar un tipo concreto, Aventura se deselecciona (y viceversa).
@@ -120,8 +122,8 @@ Y un modificador de mecánica:
 | C | ◯→◎ | País a capital | Nombre del país → elegir capital (opciones) |
 | D | ◎→◯ | Capital a país | Nombre de la capital → elegir país (opciones) |
 | F | ◎? | Identifica capital | Capital resaltada en el globo → elegir nombre (opciones) |
-| A | ◯ | Señala país | Nombre del país → tocar en el globo |
-| B | ◎ | Señala capital | Nombre de la capital → tocar ubicación en el globo |
+| A | ◯ | Señala el país | Nombre del país → tocar en el globo |
+| B | ◎ | Señala la capital | Nombre de la capital → tocar ubicación en el globo |
 
 Los iconos se usan en el selector de tipo de juego y en los headers de la tabla de estadísticas. Los modales y textos largos usan los **nombres visibles** en prosa (e.g. «¡Fenomenal! **País a capital** superado»).
 
@@ -349,12 +351,12 @@ La experiencia ofrece dos modos de exploración, accesibles mediante un control 
 ### Globo
 Vista interactiva del globo terráqueo. El usuario puede tocar un país → se ilumina → aparece su ficha de país.
 *   **Posición inicial**: Cada vez que se abre la app, el globo comienza en una longitud aleatoria (latitud fija en el ecuador), para que el usuario no siempre vea la misma región.
-*   **Ficha de país**: Bandera, nombre completo del país (sin truncar), capital, continente, población (y ranking), superficie (y ranking), densidad de población (y ranking), moneda, gentilicio, idioma(s), IDH (y ranking), IDH-D (y ranking) y enlace a Wikipedia. La ficha se muestra pegada al borde inferior de la pantalla (encima del tab bar). Todos los campos textuales se muestran en el idioma de la app.
+*   **Ficha de país**: Bottom sheet con handle visual y drag-to-dismiss (sin botón X). Bandera, nombre completo del país (sin truncar), capital, continente, población (y ranking), superficie (y ranking), densidad de población (y ranking), moneda, gentilicio, idioma(s), IDH (y ranking), IDH-D (y ranking) y enlace a Wikipedia. La ficha se muestra pegada al borde inferior de la pantalla (encima del tab bar). Todos los campos textuales se muestran en el idioma de la app.
     - **Moneda**: Nombre traducido al idioma de la app + símbolo universal entre paréntesis. Ej: "Euro (€)", "Dólar estadounidense ($)".
     - **Idioma(s)**: Idiomas oficiales a nivel nacional, ordenados de más a menos hablantes, separados por coma. Máximo 3 visibles; si hay más, se trunca con "…". Los nombres se muestran en el idioma de la app (ej. "Francés", no "French").
     - **Criterio de idiomas**: Se listan únicamente los idiomas reconocidos oficialmente a nivel nacional/constitucional. Los idiomas cooficiales regionales (ej. catalán en España, sardo en Italia) no se incluyen. Este criterio es objetivo, reproducible y consistente entre países.
     - **IDH / IDH-D**: Índice de Desarrollo Humano (IDH) e IDH ajustado por Desigualdad (IDH-D). Fuente: UNDP. IDH-D muestra "N/D" si no está disponible. Cada métrica lleva icono (i) con tooltip descriptivo.
-    - **Enlace a Wikipedia**: Botón que abre el artículo del país en Wikipedia en el idioma de la app. Si el artículo no existe en ese idioma, enlaza a la versión en inglés.
+    - **Enlace a Wikipedia**: Icono redondo en la **cabecera** del bottom sheet (puzzle globe oficial de Wikipedia). Abre el artículo del país en Wikipedia en el idioma de la app. Si el artículo no existe en ese idioma, enlaza a la versión en inglés.
 *   **Capital**: Círculo cian sobre la ubicación de la capital. Se muestra al seleccionar un país y también permanentemente cuando el toggle de etiquetas de capitales está activo.
 
 ### Tabla
@@ -402,7 +404,7 @@ Estética de **documento oficial premium**: contenedor con textura guilloché (`
 *   **Sello de Países**: borde simple. **Sello de Capitales**: borde doble (`border-style: double`).
 *   **Ganado**: fondo tintado, glow sutil, estrella (★), rotación aleatoria leve (-8° a +8°).
 *   **Pendiente en nivel activo**: pulso de opacidad (`stampPulse`).
-*   **Animación stampDrop**: al conseguir un sello nuevo, efecto de caída (scale 0→1.15→1 con rotación, 400ms).
+*   **Animación stampDrop**: al conseguir un sello nuevo, efecto de caída (scale 0→1.15→1 con rotación, 400ms). La estrella (★) gira simultáneamente con efecto «trompo» (10 vueltas en 3s, ease-out).
 
 ---
 
@@ -426,7 +428,7 @@ La vista se abre con pestaña, continente y nivel preseleccionados según el con
 
 Disponible en ambas pestañas. Permite alternar entre dos modos:
 *   **Indicadores de dominio** (por defecto): iconos ✓/✗/— por celda (ver indicadores de cada pestaña).
-*   **Porcentaje de acierto**: `aciertos / (aciertos + fallos) × 100` por celda. Celdas sin intentos muestran «—».
+*   **Porcentaje de acierto**: `aciertos / (aciertos + fallos) × 100` por celda. Celdas sin intentos muestran «—». Código de colores: rojo (<50%), ámbar (50-79%), verde (≥80%).
 
 ### Pestaña Jugar
 *   Selector de nivel × continente.
@@ -439,7 +441,7 @@ Disponible en ambas pestañas. Permite alternar entre dos modos:
 *   La tabla muestra los datos **con herencia aplicada** (lo mismo que usa el algoritmo de juego), no solo los datos propios. Esto garantiza que lo que el usuario ve coincida con lo que el algoritmo utiliza para seleccionar preguntas.
 
 ### Pestaña Pruebas de sello
-*   Tabla de países con **dos columnas**: Países (tipo A) y Capitales (tipo B).
+*   Tabla de países con **dos columnas**: ◯ Países (tipo A) y ◎ Capitales (tipo B).
 *   Registro independiente del de Jugar (`stampAttempts`). Sin herencia entre niveles — cada nivel evalúa el 100% de los países.
 *   Se registran todos los intentos individuales, incluso si la prueba se abandona.
 *   Indicadores visuales por celda:
@@ -480,7 +482,7 @@ La app soporta **múltiples perfiles** en un mismo dispositivo.
 
 ## Configuración
 
-Configuración **ultra-sencilla**. Un solo punto de acceso: el **botón de engranaje en el header** (siempre visible). Se abre como **bottom sheet**.
+Configuración **ultra-sencilla**. Un solo punto de acceso: el **botón de engranaje en el header** (siempre visible). Se abre como **bottom sheet** con handle visual y drag-to-dismiss (sin botón X).
 
 | Ajuste | Opciones | Por defecto | Visibilidad |
 |--------|----------|-------------|-------------|

@@ -45,6 +45,9 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
+### UX y otras mejoras
+- [ ] Sería muy complicado añadir etiquetas sobre los mares y océanos? Creo que no sería molesto para el usuario. Hagamos un spike para investigarlo antes de implementar
+
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes
 - [ ] Juega al menos en aventura para todos los continete-nivel
