@@ -7,8 +7,8 @@
   right: 0;
   z-index: var(--z-overlay);
   max-height: 45vh;
-  overflow-y: auto;
-  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
   background: rgba(12, 12, 30, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -17,7 +17,23 @@
 
   /* Animación slide-up */
   animation: country-card-slide-up 300ms ease-out;
+}
+
+/* Zona de drag (handle + header): touch-action: none para que el browser
+   no intercepte el gesto y setPointerCapture funcione en iOS */
+.country-card__drag-zone {
+  touch-action: none;
+  flex-shrink: 0;
+  padding: var(--spacing-md) var(--spacing-lg) 0;
+}
+
+/* Contenido scrollable (grid de datos) */
+.country-card__body {
+  overflow-y: auto;
   touch-action: pan-y;
+  flex: 1;
+  min-height: 0;
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
 }
 
 /* Handle de arrastre */

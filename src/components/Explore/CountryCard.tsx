@@ -75,7 +75,6 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
   const { dragHandlers } = useBottomSheetDrag({
     sheetRef,
     onClose,
-    scrollRef: sheetRef,
   });
 
   const continentColor = CONTINENT_COLORS[country.continent] ?? 'var(--color-text-secondary)';
@@ -103,57 +102,60 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
       className="country-card"
       role="dialog"
       aria-label={`Ficha de ${country.name}`}
-      {...dragHandlers}
     >
-      <div className="bottom-sheet-handle" />
-      {/* Disclaimer contextual */}
-      {isAntarctica ? (
-        <div className="country-card__disclaimer">
-          Territorio internacional — Tratado Antártico (1959)
-        </div>
-      ) : !country.unMember ? (
-        <div className="country-card__disclaimer">
-          {country.sovereignCountry && SOVEREIGN_LABELS[country.sovereignCountry]
-            ? `Territorio ${SOVEREIGN_LABELS[country.sovereignCountry]}`
-            : 'Soberanía en disputa'}
-        </div>
-      ) : null}
+      {/* Drag zone: handle + disclaimer + header — touch-action: none para drag fiable */}
+      <div className="country-card__drag-zone" {...dragHandlers}>
+        <div className="bottom-sheet-handle" />
+        {/* Disclaimer contextual */}
+        {isAntarctica ? (
+          <div className="country-card__disclaimer">
+            Territorio internacional — Tratado Antártico (1959)
+          </div>
+        ) : !country.unMember ? (
+          <div className="country-card__disclaimer">
+            {country.sovereignCountry && SOVEREIGN_LABELS[country.sovereignCountry]
+              ? `Territorio ${SOVEREIGN_LABELS[country.sovereignCountry]}`
+              : 'Soberanía en disputa'}
+          </div>
+        ) : null}
 
-      {/* Cabecera: bandera + nombre + wikipedia */}
-      <div className="country-card__header">
-        {country.flagSvg && (
-          <img
-            className="country-card__flag"
-            src={country.flagSvg}
-            alt={`Bandera de ${country.name}`}
-            loading="eager"
-          />
-        )}
-        <div className="country-card__title-group">
-          <h2 className="country-card__name">{country.name}</h2>
-          <span
-            className="country-card__continent"
-            style={{ color: continentColor }}
-          >
-            {country.continent}
-          </span>
-        </div>
-        {wikipediaUrl && (
-          <button
-            className="country-card__wikipedia"
-            onClick={() => window.open(wikipediaUrl, '_blank')}
-            aria-label={`Abrir ${country.name} en Wikipedia`}
-          >
+        {/* Cabecera: bandera + nombre + wikipedia */}
+        <div className="country-card__header">
+          {country.flagSvg && (
             <img
-              className="country-card__wikipedia-icon"
-              src="https://www.wikipedia.org/static/apple-touch/wikipedia.png"
-              alt="Wikipedia"
+              className="country-card__flag"
+              src={country.flagSvg}
+              alt={`Bandera de ${country.name}`}
+              loading="eager"
             />
-          </button>
-        )}
+          )}
+          <div className="country-card__title-group">
+            <h2 className="country-card__name">{country.name}</h2>
+            <span
+              className="country-card__continent"
+              style={{ color: continentColor }}
+            >
+              {country.continent}
+            </span>
+          </div>
+          {wikipediaUrl && (
+            <button
+              className="country-card__wikipedia"
+              onClick={() => window.open(wikipediaUrl, '_blank')}
+              aria-label={`Abrir ${country.name} en Wikipedia`}
+            >
+              <img
+                className="country-card__wikipedia-icon"
+                src="https://www.wikipedia.org/static/apple-touch/wikipedia.png"
+                alt="Wikipedia"
+              />
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* Datos: layout especial para Antártida */}
+      {/* Body: contenido scrollable — touch-action: pan-y para scroll nativo */}
+      <div className="country-card__body">
       {isAntarctica ? (
         <div className="country-card__grid">
           <div className="country-card__field">
@@ -269,6 +271,7 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
           )}
         </div>
       )}
+      </div>
 
     </div>
   );
