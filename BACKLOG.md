@@ -65,6 +65,7 @@
 - [ ] Externalizar textos de la app a archivos de traducción
   - Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español
 - [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
+- [ ] Símbolos y nombres de moneda via `Intl.NumberFormat` (CLDR): usar `narrowSymbol` como base + mapa de ~15 overrides curados para símbolos donde tenemos mejor dato (NT$, KSh, MOP$, etc.). Elimina mantenimiento manual de 232 símbolos. Revisar/actualizar DESIGN.md (§ Fuentes de datos, § Internacionalización de datos) para reflejar CLDR como fuente de símbolos. Asegurar coherencia con el principio de actualización automática de datos (§ Actualización automática). Spike: `docs/spikes/validacion-simbolos-moneda.md`
 - [ ] Traducción a idiomas disponibles en iOS y Android
 
 
