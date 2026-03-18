@@ -353,6 +353,13 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
             Resetear estadísticas
           </button>
         )}
+
+        {/* Aviso de permanencia (solo en pestaña Sellos) */}
+        {activeTab === 'sellos' && (
+          <p className="stats-stamp-notice">
+            Los sellos y el historial de pruebas son permanentes, como en un pasaporte real. Si quieres empezar de cero, crea un nuevo perfil.
+          </p>
+        )}
       </div>
     </div>
   );

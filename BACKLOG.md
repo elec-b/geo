@@ -37,18 +37,13 @@
 - [x] **Explorar**: Fix drag-to-dismiss de ficha de país (Singapur y potencialmente otros). Causa: conflicto `touch-action: pan-y` + `overflow-y: auto` + `setPointerCapture` en iOS. Solución: separar drag zone (handle+header, `touch-action: none`) de scroll zone (body, `touch-action: pan-y`)
 - [x] **Estadísticas**: Símbolos ◯/◎ en headers de columna de la pestaña "Pruebas de sello" (coherencia visual con pestaña "Jugar")
 - [x] **UX general**: Deshabilitada selección de texto y menú contextual de long-press en iOS (`user-select: none` + `-webkit-touch-callout: none` en reset global)
+- [x] **Estadísticas**: Aviso de permanencia en pestaña "Pruebas de sello" — mensaje explicativo de que sellos e historial son permanentes (metáfora pasaporte real), con alternativa de crear nuevo perfil. Documentado en DESIGN.md
 
 ---
 
 ## Próximos pasos
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
-
-### UX general
-- [ ] En las pruebas de sello: ¿Hay alguna manera de forzar que si el usuario sale de la prueba, a otra app, haya que empezar la prueba de sello desde el inicio? Cuando voy a cualquiera de las otras pestañas (Jugar o Explorar o incluso volver a pulsar Pasaporte), ya funciona bien - se sale de la prueba de sello
-- [ ] Justificación / Explicación para el usuario de por qué no se pueden borrar sellos ni resetear las estadísticas de sello
-  - (Idea que tengo: las estadísticas de sello y los sellos no se pueden borrar
-    - en estadísticas en el lugar equivalente donde aparece "resetear estadísticas" en la pestaña jugar, mostrar en la pestaña de pruebas de sello un mensaje diciendo algo como "intencionadamente no se pueden borrar las estadísticas de las pruebas de sello ni borrar los sellos que ya tienes - crea un nuevo perfil si quieres empezar de cero". Pensar bien este mensaje. Validar coherencia con / anotar en design.md)
 
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes
@@ -74,3 +69,5 @@
 - [ ] Sección "Acerca de": explicar criterios (países ONU, idiomas oficiales, fuentes UNDP, REST Countries, etc.)
 - [ ] Solicitud de valoración in-app (SKStoreReviewController iOS + Play In-App Review Android)
 
+### Muy muy opcional
+- [ ] En las pruebas de sello: ¿Hay alguna manera de forzar que si el usuario sale de la prueba, a otra app, haya que empezar la prueba de sello desde el inicio? Cuando voy a cualquiera de las otras pestañas (Jugar o Explorar o incluso volver a pulsar Pasaporte), ya funciona bien - se sale de la prueba de sello

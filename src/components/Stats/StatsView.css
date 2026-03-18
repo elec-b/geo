@@ -293,3 +293,12 @@
 .stats-reset:active {
   background: rgba(239, 68, 68, 0.15);
 }
+
+/* Aviso de permanencia en pestaña Sellos */
+.stats-stamp-notice {
+  margin: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  line-height: 1.4;
+  flex-shrink: 0;
+}

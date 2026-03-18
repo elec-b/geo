@@ -449,6 +449,7 @@ Disponible en ambas pestañas. Permite alternar entre dos modos:
 
 ### Acciones
 *   **Resetear estadísticas**: Por nivel-continente (con confirmación). Borra solo los datos de **Jugar** de ese nivel-continente. Los datos de pruebas de sello y los sellos ganados no se borran.
+*   **Permanencia de sellos**: Los sellos ganados y el historial de pruebas de sello no se pueden borrar (decisión intencional — metáfora del pasaporte real). La pestaña «Pruebas de sello» muestra un aviso explicativo en la zona equivalente al botón de reseteo, con la alternativa de crear un nuevo perfil para empezar de cero.
 
 ---
 
