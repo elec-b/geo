@@ -38,16 +38,6 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
-### UX general
-- [ ] Justificación / Explicación para el usuario de por qué no se pueden borrar sellos ni resetear las estadísticas de sello
-  - (Idea que tengo: las estadísticas de sello y los sellos no se pueden borrar
-    - en estadísticas en el lugar equivalente donde aparece "resetear estadísticas" en la pestaña jugar, mostrar en la pestaña de pruebas de sello un mensaje diciendo algo como "intencionadamente no se pueden borrar las estadísticas de las pruebas de sello ni borrar los sellos que ya tienes - crea un nuevo perfil si quieres empezar de cero". Pensar bien este mensaje. Validar coherencia con / anotar en design.md)
-
-### Testear exhaustivamente
-- [ ] Consigue todos los sellos para todos los continentes
-- [ ] Juega al menos en aventura para todos los continete-nivel
-- [ ] Anota feedback en backlog.md
-
 
 ### Explorar
 - [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigación hecha: los datos y filtros son correctos (unMember: false, no participa en Jugar, etiquetas en ámbar). El "problema" es solo visual (mismo color de relleno que países ONU) y de nomenclatura (ver tarea siguiente sobre territorios).
@@ -63,6 +53,16 @@
   - Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español
 - [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
 - [ ] Traducción a idiomas disponibles en iOS y Android
+
+### UX general
+- [ ] Justificación / Explicación para el usuario de por qué no se pueden borrar sellos ni resetear las estadísticas de sello
+  - (Idea que tengo: las estadísticas de sello y los sellos no se pueden borrar
+    - en estadísticas en el lugar equivalente donde aparece "resetear estadísticas" en la pestaña jugar, mostrar en la pestaña de pruebas de sello un mensaje diciendo algo como "intencionadamente no se pueden borrar las estadísticas de las pruebas de sello ni borrar los sellos que ya tienes - crea un nuevo perfil si quieres empezar de cero". Pensar bien este mensaje. Validar coherencia con / anotar en design.md)
+
+### Testear exhaustivamente
+- [ ] Consigue todos los sellos para todos los continentes
+- [ ] Juega al menos en aventura para todos los continete-nivel
+- [ ] Anota feedback en backlog.md
 
 ### Tema visual
 - [ ] Diseñar e implementar tema claro (baja prioridad, casi al final del desarrollo)
