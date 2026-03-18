@@ -169,17 +169,30 @@
   color: var(--color-text-muted);
 }
 
-/* Toggle "Elegir tipo concreto" */
-.level-selector__types-toggle {
+/* Separador "o elige juego concreto" */
+.level-selector__types-divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
   background: none;
   border: none;
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  font-family: var(--font-family);
-  font-weight: 500;
   cursor: pointer;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+}
+
+.level-selector__types-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--glass-border);
+}
+
+.level-selector__types-divider-text {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family);
+  color: var(--color-text-muted);
+  white-space: nowrap;
 }
 
 /* Grid de tipos concretos (2 columnas) */

@@ -210,9 +210,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
                 <span className="level-selector__level-emoji">{unlocked ? emoji : '🔒'}</span>
                 <span className="level-selector__level-name">{label}</span>
                 <span className={`level-selector__level-count${completed ? ' level-selector__level-count--completed' : ''}`}>
-                  {!unlocked
-                    ? 'Bloqueado'
-                    : completed
+                  {completed
                     ? 'Superado ★'
                     : count != null ? `${count} ${count === 1 ? 'país' : 'países'}` : '—'}
                 </span>
@@ -222,7 +220,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
         </div>
 
         {/* Tipo de juego */}
-        <h2 className="level-selector__title level-selector__title--level">Tipo de juego</h2>
+        <h2 className="level-selector__title level-selector__title--level">Elige juego</h2>
 
         {/* Botón Aventura (ancho completo, destacado) */}
         <button
@@ -236,16 +234,20 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
           <span className="level-selector__aventura-icon">🧭</span>
           <span className="level-selector__aventura-text">
             <span className="level-selector__aventura-name">Aventura{dominatedTypes.has('mixed') ? ' ✓' : ''}</span>
-            <span className="level-selector__aventura-desc">Todos los tipos combinados</span>
+            <span className="level-selector__aventura-desc">Se adapta a lo que sabes</span>
           </span>
         </button>
 
         {/* Toggle para tipos concretos */}
         <button
-          className="level-selector__types-toggle"
+          className="level-selector__types-divider"
           onClick={() => setTypesExpanded((v) => !v)}
         >
-          {typesExpanded ? '▾' : '▸'} Elegir tipo concreto
+          <span className="level-selector__types-divider-line" />
+          <span className="level-selector__types-divider-text">
+            o elige juego concreto {typesExpanded ? '▴' : '▾'}
+          </span>
+          <span className="level-selector__types-divider-line" />
         </button>
 
         {/* Grid de tipos concretos (colapsable) */}
