@@ -39,14 +39,12 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Explorar
-- [ ] Groenlandia aparece como país independiente pero es territorio de Dinamarca (reconocido por la ONU). Investigación hecha: los datos y filtros son correctos (unMember: false, no participa en Jugar, etiquetas en ámbar). El "problema" es solo visual (mismo color de relleno que países ONU) y de nomenclatura (ver tarea siguiente sobre territorios).
-- [ ][PENSAR / DISEÑAR BIEN ANTES DE IMPLEMENTAR] Clasificación de territorios no-ONU: actualmente todos los territorios que no son países ONU se etiquetan como "Territorio no reconocido por la ONU", pero esto es incorrecto para muchos de ellos. Hay dos categorías muy distintas:
-  - **Territorios de países ONU**: Groenlandia (Dinamarca), Puerto Rico (EEUU), Wallis y Futuna (Francia), Guayana Francesa (Francia), etc. Son territorios plenamente reconocidos — simplemente no son estados independientes. La etiqueta debería ser "Territorio de [País soberano]".
-  - **Estados disputados / no reconocidos**: Kosovo, Taiwán, Sáhara Occidental, etc. Para estos sí tiene sentido "Territorio no reconocido por la ONU" o similar.
-  - Propuesta: añadir un campo `sovereignCountry` (o similar) en los datos para distinguir ambos casos y mostrar la etiqueta correcta en la ficha de país. Pensar bien las categorías y redactar en DESIGN.md antes de implementar.
-- [ ][Revisar antes de actuar, esto creo que ya está hecho?] El Aaiún aparece mal ubicado — coordenadas invertidas (lat ↔ lng) en REST Countries API. Pendiente de corregir en capitals.json + CAPITAL_OVERRIDES en fetch-countries.ts. También se detectaron coords incorrectas para SN (Dakar, 22 km off). Ver tarea de validación automática más abajo.
+- [ ] Clasificación de territorios no-ONU: disclaimer contextual ("Territorio de [País]" / "Soberanía en disputa") en vez del genérico actual. Spike completado: `docs/spikes/clasificacion-territorios.md`. Implementar con los ajustes del refutador (Malvinas → disputa, mapa constante `SOVEREIGN_LABELS`). Incluye Groenlandia y los 37 territorios.
+- [ ] El link de wikipedia de la ficha de país, ocupa demasiado espacio abajo en el bottom sheet. ¿Y si simplemente ponemos un icono de wikipedia arriba a la derecha, a la altura de la bandera y de tamaño más o menos similar para el enlace? Así aprovecharemos el espacio mejor.
+- [ ] BUG: no puedo hacer scroll-down para cerrar la ficha de país de Singapur. Para otros países funciona bien. Investigar por qué es y si afecta a otros países. Solucionar después
 
 ### UX general
+- [ ] Si dejo pulsado el teléfono sobre un punto de la pantalla, el teléfono selecciona algunas cosas (no parece texto, pero quizás lo interprete como texto?) y me da las opciones de "copy, look-up, etc." típicas. Queda mal, creo que deberíamos evitar que se pueda seleccionar
 - [ ] Justificación / Explicación para el usuario de por qué no se pueden borrar sellos ni resetear las estadísticas de sello
   - (Idea que tengo: las estadísticas de sello y los sellos no se pueden borrar
     - en estadísticas en el lugar equivalente donde aparece "resetear estadísticas" en la pestaña jugar, mostrar en la pestaña de pruebas de sello un mensaje diciendo algo como "intencionadamente no se pueden borrar las estadísticas de las pruebas de sello ni borrar los sellos que ya tienes - crea un nuevo perfil si quieres empezar de cero". Pensar bien este mensaje. Validar coherencia con / anotar en design.md)
