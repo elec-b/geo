@@ -123,8 +123,8 @@ const TYPE_LABELS: Record<QuestionType, { short: string; full: string }> = {
 };
 
 const STAMP_LABELS: Record<'A' | 'B', { short: string; full: string }> = {
-  A: { short: 'Países', full: 'Prueba de sello de Países' },
-  B: { short: 'Capitales', full: 'Prueba de sello de Capitales' },
+  A: { short: '◯ Países', full: 'Prueba de sello de Países' },
+  B: { short: '◎ Capitales', full: 'Prueba de sello de Capitales' },
 };
 
 export function StatsView({ countries, levels, onClose, context }: StatsViewProps) {
