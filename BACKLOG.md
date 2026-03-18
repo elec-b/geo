@@ -45,8 +45,15 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
+### Jugar
+- [ ] Testeando Europa-mochilero, y jugando aventura, he notado que me hace, para un determinado pais preguntas varias preguntas de los juegos de la etapa 2 (C, D, F) y si acierto, me pregunta en etapa 3. Creo que si el usuario acierta una pregunta de la etapa 2, debe pasar a la etapa 3. Repasemos la lógica en detalle. Está bien reflejado en design.md? 
+  - El objetivo es no hacer preguntas innecesarias en aventura para valorar que el usuario está listo para superar con garantías las pruebas de sello.
+  - (la mayoría de la lógica de juego creo que está ok)
+
 ### UX y otras mejoras
-- [ ] Sería muy complicado añadir etiquetas sobre los mares y océanos? Creo que no sería molesto para el usuario. Hagamos un spike para investigarlo antes de implementar
+- [ ] Añadir etiquetas de mares y océanos al globo. Spike completado: `docs/spikes/etiquetas-mares-oceanos.md` — viable, complejidad baja-media. JSON manual ~25-30 entries, underlay (bajo tierra), serif itálica, zoom variable por scalerank
+- [ ] En jugar, para los juegos que tienen 4 opciones, es incómodo que la pregunta esté arriba y las opciones abajo. ¿Quizás debamos poner todas las preguntas abajo? ¿para todos los juegos? Pensemos y diseñemos bien antes de implementar. Hacer spike de diseño.
+  - una idea es que la pregunta esté a la izquierda de la barra de progreso, abajo. Y si tienen que salir las 4 opciones para los juegos C a F, que salgan donde salen ahora - no habría que modificar nada.
 
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes
