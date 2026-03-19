@@ -16,6 +16,7 @@ export function SettingsSheet({ isExploreTab, onClose }: SettingsSheetProps) {
 
   const vibration = useAppStore((s) => s.settings.vibration);
   const showMarkers = useAppStore((s) => s.settings.showMarkers);
+  const showSeaLabels = useAppStore((s) => s.settings.showSeaLabels);
   const updateSettings = useAppStore((s) => s.updateSettings);
 
   const toggleVibration = () => {
@@ -25,6 +26,11 @@ export function SettingsSheet({ isExploreTab, onClose }: SettingsSheetProps) {
 
   const toggleMarkers = () => {
     updateSettings({ showMarkers: !showMarkers });
+    hapticSelection();
+  };
+
+  const toggleSeaLabels = () => {
+    updateSettings({ showSeaLabels: !showSeaLabels });
     hapticSelection();
   };
 
@@ -105,6 +111,24 @@ export function SettingsSheet({ isExploreTab, onClose }: SettingsSheetProps) {
               </button>
             </div>
           )}
+
+          {/* Mares y océanos */}
+          <div className="settings-sheet__row" onClick={toggleSeaLabels}>
+            <svg className="settings-sheet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 12c2-2 4-3 6-3s4 2 6 3 4 1 6-1" />
+              <path d="M2 17c2-2 4-3 6-3s4 2 6 3 4 1 6-1" />
+              <path d="M2 7c2-2 4-3 6-3s4 2 6 3 4 1 6-1" />
+            </svg>
+            <span className="settings-sheet__label">Mares y oc&eacute;anos</span>
+            <button
+              className={`settings-sheet__toggle${showSeaLabels ? ' settings-sheet__toggle--active' : ''}`}
+              role="switch"
+              aria-checked={showSeaLabels}
+              aria-label="Mares y océanos"
+            >
+              <span className="settings-sheet__toggle-thumb" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

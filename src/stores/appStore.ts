@@ -32,6 +32,7 @@ function uuid(): string {
 
 const DEFAULT_SETTINGS: AppSettings = {
   showMarkers: true,
+  showSeaLabels: true,
   vibration: true,
   theme: 'dark',
   locale: 'es',

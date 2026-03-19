@@ -78,6 +78,20 @@ const LABEL_FONT_BASE = 9;
 // Opacidad de países fuera del filtro de continente
 const DIMMED_ALPHA = 0.15;
 
+// Etiquetas de mares y océanos (underlay — convención cartográfica: serif itálica)
+// Estilo discreto: texto pequeño, sin glow, preposicionado en centro del agua
+const SEA_FONT_BASE: Record<number, number> = { 0: 11, 1: 9, 2: 8, 3: 7 };
+const SEA_LETTER_SPACING: Record<number, number> = { 0: 3, 1: 2, 2: 1, 3: 0 };
+
+interface SeaLabel {
+  id: string;
+  name_es: string;
+  lat: number;
+  lon: number;
+  scalerank: number;
+  minZoom: number;
+}
+
 // Overrides de centroides visuales para países con forma irregular.
 // [lon, lat] del centro visual del territorio principal (no el centroide geométrico).
 const CENTROID_OVERRIDES: Record<string, [number, number]> = {
@@ -215,6 +229,8 @@ export interface GlobeD3Props {
   countryNames?: Map<string, string> | null;
   /** Etiquetas puntuales de feedback geográfico (error/correcto sobre el globo) */
   feedbackLabels?: FeedbackLabel[] | null;
+  /** Mostrar etiquetas de mares y océanos (underlay) */
+  showSeaLabels?: boolean;
 }
 
 export interface GlobeD3Ref {
@@ -270,6 +286,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     countryPopulations,
     countryNames,
     feedbackLabels,
+    showSeaLabels = true,
   },
   ref,
 ) {
@@ -328,6 +345,14 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const showMarkersRef = useRef(showMarkers);
   if (showMarkersRef.current !== showMarkers) needsRedrawRef.current = true;
   showMarkersRef.current = showMarkers;
+
+  const showSeaLabelsRef = useRef(showSeaLabels);
+  if (showSeaLabelsRef.current !== showSeaLabels) needsRedrawRef.current = true;
+  showSeaLabelsRef.current = showSeaLabels;
+
+  // Datos de etiquetas de mares/océanos
+  const seaLabelsRef = useRef<SeaLabel[]>([]);
+  const seaLabelsLoadedRef = useRef(false);
 
   // Proyección y tamaño
   const projectionRef = useRef<GeoProjection | null>(null);
@@ -514,6 +539,72 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     path({ type: 'Sphere' });
     ctx.fillStyle = OCEAN_COLOR;
     ctx.fill();
+
+    // Etiquetas de mares y océanos (underlay: después de océano, antes de países)
+    if (showSeaLabelsRef.current && seaLabelsRef.current.length > 0) {
+      const rotation = rotationRef.current;
+      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      const hasContinentFilter = highlightedRef.current !== null;
+
+      ctx.save();
+      ctx.textBaseline = 'middle';
+
+      for (const label of seaLabelsRef.current) {
+        // Visibilidad por minZoom individual (sin límite máximo)
+        if (zoom < label.minZoom) continue;
+
+        const pos = projection([label.lon, label.lat]);
+        if (!pos) continue;
+
+        // Fade hemisférico gradual (desde 70% del borde)
+        const dist = geoDistance([label.lon, label.lat], viewCenter);
+        const fadeHemiStart = (Math.PI / 2) * 0.7;
+        let hemiOpacity = 1.0;
+        if (dist > fadeHemiStart) {
+          hemiOpacity = Math.max(0, 1 - (dist - fadeHemiStart) / (Math.PI / 2 - fadeHemiStart));
+        }
+        if (hemiOpacity <= 0) continue;
+
+        // Fade-in suave al entrar en el rango de zoom (1 unidad de zoom de transición)
+        const fadeInEnd = label.minZoom + 1.0;
+        const zoomOpacity = zoom < fadeInEnd ? (zoom - label.minZoom) / 1.0 : 1.0;
+
+        let alpha = 0.35 * zoomOpacity * hemiOpacity;
+        if (hasContinentFilter) alpha *= 0.5;
+        if (alpha < 0.02) continue;
+
+        // Font y texto
+        const fontBase = SEA_FONT_BASE[label.scalerank] ?? 7;
+        const fontSize = Math.round(fontBase + Math.sqrt(zoom) * 1.2);
+        ctx.font = `italic 300 ${fontSize}px Georgia, "New York", serif`;
+        ctx.fillStyle = `rgba(100, 180, 255, ${alpha})`;
+
+        const spacing = SEA_LETTER_SPACING[label.scalerank] ?? 0;
+        const text = label.name_es;
+
+        if (spacing > 0) {
+          // Char-by-char con letter-spacing
+          const charWidths: number[] = [];
+          let totalWidth = 0;
+          for (let i = 0; i < text.length; i++) {
+            const cw = ctx.measureText(text[i]).width;
+            charWidths.push(cw);
+            totalWidth += cw + (i < text.length - 1 ? spacing : 0);
+          }
+          let xCursor = pos[0] - totalWidth / 2;
+          for (let i = 0; i < text.length; i++) {
+            ctx.fillText(text[i], xCursor + charWidths[i] / 2, pos[1]);
+            xCursor += charWidths[i] + spacing;
+          }
+        } else {
+          // Sin letter-spacing: un solo fillText centrado
+          ctx.textAlign = 'center';
+          ctx.fillText(text, pos[0], pos[1]);
+        }
+      }
+
+      ctx.restore();
+    }
 
     // País seleccionado efectivo (controlado vs interno)
     const effectiveSelected = isControlledRef.current
@@ -1288,6 +1379,19 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
     };
   }, [animate, resize, onReady]);
+
+  // Carga de etiquetas de mares y océanos
+  useEffect(() => {
+    if (seaLabelsLoadedRef.current) return;
+    fetch(`${import.meta.env.BASE_URL}data/sea-labels.json`)
+      .then(r => r.json())
+      .then((data: SeaLabel[]) => {
+        seaLabelsRef.current = data;
+        seaLabelsLoadedRef.current = true;
+        needsRedrawRef.current = true;
+      })
+      .catch(() => { /* silencioso: sin etiquetas de mar si falla */ });
+  }, []);
 
   // Re-ordenar features por población cuando los datos llegan (carga async)
   useEffect(() => {

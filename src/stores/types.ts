@@ -58,6 +58,7 @@ export interface UserProfile {
 /** Configuración global de la app */
 export interface AppSettings {
   showMarkers: boolean;
+  showSeaLabels: boolean;
   vibration: boolean;
   theme: 'dark';        // por ahora solo dark
   locale: 'es';         // por ahora solo español

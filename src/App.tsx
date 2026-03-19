@@ -39,6 +39,7 @@ function App() {
   const [jugarResetSignal, setJugarResetSignal] = useState(0);
   const [showStats, setShowStats] = useState(false);
   const showMarkers = useAppStore((s) => s.settings.showMarkers);
+  const showSeaLabels = useAppStore((s) => s.settings.showSeaLabels);
 
   // Datos cargados
   const [countries, setCountries] = useState<Map<string, CountryData> | null>(null);
@@ -205,6 +206,7 @@ function App() {
           onCountryDeselect={(activeTab === 'explore' || activeTab === 'play') ? handleCountryDeselect : undefined}
           onReady={handleGlobeReady}
           showMarkers={globeControl.showMarkers ?? showMarkers}
+          showSeaLabels={globeControl.showSeaLabels ?? showSeaLabels}
           selectedCountryCca2={globeControl.selectedCountryCca2}
           selectedCountryColor={globeControl.selectedCountryColor}
           capitalPins={globeControl.capitalPins}

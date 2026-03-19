@@ -489,6 +489,7 @@ Configuración **ultra-sencilla**. Un solo punto de acceso: el **botón de engra
 | Vibración | On/Off | On | Siempre |
 | Idioma de la app | Todos los soportados por iOS/Android | Idioma del teléfono (fallback: inglés) | Siempre |
 | Tema claro/oscuro | Claro / Oscuro | Oscuro | Siempre |
+| Mares y océanos | On/Off | On | Siempre |
 | Marcadores de microestados y archipiélagos | On/Off | On | Solo en Explorar |
 
 **Perfil activo**: No forma parte de la configuración. Se gestiona mediante tap en el avatar (ver § Perfiles de usuario).
@@ -571,6 +572,23 @@ Un subconjunto de archipiélagos —los difíciles de seleccionar o identificar 
 *   **País seleccionado**: Al seleccionar cualquier archipiélago (con o sin hull visible), el hull cambia a estilo destacado (dorado, mayor opacidad).
 *   **Control**: Sigue el toggle «Marcadores de microestados y archipiélagos». En Jugar, visible en tipos A/B, oculto en C-F.
 
+### Etiquetas de mares y océanos
+
+Nombres de mares, océanos y golfos principales sobre el globo, siguiendo la convención cartográfica de **serif itálica para masas de agua**.
+
+*   **Datos**: JSON manual estático (`public/data/sea-labels.json`, ~25-30 entries). Campos: `id`, `name_es`, `lat`, `lon`, `scalerank`. Posicionadas visualmente sobre el globo. Preparado para i18n (futuro `name_en`, `name_fr`, etc.).
+*   **Scope**: ~5 océanos, ~6 mares grandes, ~9 mares medianos, ~3 golfos selectos. Sin saturar la vista (~8-12 visibles a la vez en hemisferio).
+*   **Renderizado**: Underlay (después de océano, antes de países) — cartográficamente correcto. Los mares cerrados (Mediterráneo, Negro) pueden quedar parcialmente cubiertos por tierra.
+*   **Tipografía**: `italic 300 Georgia, "New York", serif`. Tamaño base variable por `scalerank` (14px océanos → 8px mares pequeños), escalado suavemente con `√zoom`.
+*   **Letter-spacing**: Amplio (6px océanos → 2px mares pequeños), renderizado char-by-char para compatibilidad universal.
+*   **Color**: `rgba(100, 180, 255, alpha)` con glow azul tenue. Alpha base 0.45, modulado por zoom y posición hemisférica.
+*   **Visibilidad por zoom**: Variable por `scalerank`. Océanos visibles solo a zoom bajo (1-3), mares medianos persisten a zoom regional (2-8). Fade-out gradual.
+*   **Fade hemisférico**: Opacidad gradual desde el 70% del borde del hemisferio visible. Evita pop-in/pop-out brusco.
+*   **Filtro de continente**: Opacidad reducida al 50% cuando hay filtro activo (dan contexto sin protagonizar).
+*   **Anti-solapamiento**: Array `usedRects` propio (independiente del de países/capitales, al ser capas distintas).
+*   **Control**: Toggle «Mares y océanos» en Configuración, siempre visible (desde cualquier pestaña). Por defecto: On.
+*   **Sin hit testing**: Puramente visual, no afecta la interacción con países.
+
 ---
 
 ## Fuentes de datos
@@ -632,7 +650,8 @@ public/data/
 ├── countries-50m.json        # TopoJSON de países (1:50m, base)
 ├── pacific-islands-10m.json  # GeoJSON override para 8 países insulares (1:10m)
 ├── countries.json            # Datos de países (generado por fetch-countries.ts)
-└── capitals.json             # Coordenadas y nombres de capitales
+├── capitals.json             # Coordenadas y nombres de capitales
+└── sea-labels.json           # Etiquetas de mares y océanos (manual, ~25-30 entries)
 
 scripts/
 ├── generate-pacific-overrides.ts  # Extrae geometrías 10m de países insulares de world-atlas
