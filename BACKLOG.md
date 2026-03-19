@@ -38,6 +38,7 @@
 - [x] **Estadísticas**: Símbolos ◯/◎ en headers de columna de la pestaña "Pruebas de sello" (coherencia visual con pestaña "Jugar")
 - [x] **UX general**: Deshabilitada selección de texto y menú contextual de long-press en iOS (`user-select: none` + `-webkit-touch-callout: none` en reset global)
 - [x] **Estadísticas**: Aviso de permanencia en pestaña "Pruebas de sello" — mensaje explicativo de que sellos e historial son permanentes (metáfora pasaporte real), con alternativa de crear nuevo perfil. Documentado en DESIGN.md
+- [x] **Explorar**: Etiquetas de mares y océanos en el globo — 28 entries (5 océanos, 6 mares grandes, 11 medianos incl. Caspio y Amarillo, 3 pequeños, 3 golfos). Underlay serif itálica (Georgia), estilo discreto. minZoom individual por etiqueta, sin límite máximo. Toggle «Mares y océanos» en Configuración (visible desde todas las pestañas). Auditoría de posiciones contra islas (Gotland, Ryukyu). Fix letter-spacing uniforme (char-by-char left-aligned)
 
 ---
 
@@ -46,12 +47,7 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### UX y otras mejoras
-- [ ] Añadir etiquetas de mares y océanos al globo. Spike completado: `docs/spikes/etiquetas-mares-oceanos.md` — viable, complejidad baja-media. JSON manual ~25-30 entries, underlay (bajo tierra), serif itálica, zoom variable por scalerank
-  - Comentarios tras revisar el spike:
-    - En el documento no se indica nada de configuración: sugiero tener un toggle para mostrar o no estas etiquetas, que se vea desde el icono de configuración y que aparezca tanto en Jugar, como en Explorar como en Pasaporte/Pruebas de Sello
-    - Español está ok como punto de partida, pero eventualmente esta app será multi-idioma
-    - Mostrar los golfos es opcional
-- Configuración: por qué el toggle de marcadores de microestados y archipiélagos solo aparece en explorar? Creo que debería aparecer también en Jugar y en Pasaporte/Pruebas de Sello. Recordemos lo que pensamos (debería estar anotado en design.md o quizás haya algún comentario en el código). Si no encontramos ninguna razón convincente para que solo aparezca en Explorar, lo ponemos también en Jugar y en Pasaporte/Pruebas de Sello - y ajustamos design.md
+- [ ] Configuración: ¿por qué el toggle de marcadores de microestados y archipiélagos solo aparece en Explorar? Evaluar si debería aparecer también en Jugar y Pasaporte/Pruebas de Sello
 - [ ] Reposicionar pregunta y opciones en Jugar. Spike completado: `docs/spikes/layout-pregunta-opciones.md` — Plan: (1) Propuesta A': mover pregunta abajo solo para C-F, mantener arriba en A/B; (2) fallback Propuesta B: fusionar pregunta con ProgressBar compactada + prompts cortos
 
 ### Testear exhaustivamente

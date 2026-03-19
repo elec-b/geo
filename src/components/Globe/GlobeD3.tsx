@@ -593,7 +593,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           }
           let xCursor = pos[0] - totalWidth / 2;
           for (let i = 0; i < text.length; i++) {
-            ctx.fillText(text[i], xCursor + charWidths[i] / 2, pos[1]);
+            ctx.fillText(text[i], xCursor, pos[1]);
             xCursor += charWidths[i] + spacing;
           }
         } else {
