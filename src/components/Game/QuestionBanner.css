@@ -1,11 +1,6 @@
-/* QuestionBanner — pregunta del juego */
+/* QuestionBanner — pregunta del juego (dentro de .game-bottom-group) */
 
 .question-banner {
-  position: fixed;
-  top: calc(env(safe-area-inset-top, 0px) + var(--spacing-sm));
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: var(--z-controls);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,29 +23,16 @@
   font-weight: 500;
 }
 
-.question-banner__country {
+/* Estilo unificado A-F: prominente, coherente */
+.question-banner__text {
   font-size: var(--font-size-xl);
   font-weight: 700;
   color: var(--color-text-primary);
-  white-space: nowrap;
-}
-
-/* Tipos C-F: texto de pregunta más compacto */
-.question-banner__country--choice {
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  white-space: normal;
   text-align: center;
   max-width: 20rem;
 }
 
 @keyframes question-banner-enter {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-0.5rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
+  from { opacity: 0; transform: translateY(0.25rem); }
+  to { opacity: 1; transform: translateY(0); }
 }

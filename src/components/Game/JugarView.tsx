@@ -1171,37 +1171,36 @@ export function JugarView({
 
   return (
     <>
-      {question && (
-        <QuestionBanner prompt={question.prompt} type={question.type} />
-      )}
-
-      {/* Panel de opciones para tipos C-F */}
-      {choiceQuestion && (
-        <ChoicePanel
-          options={choiceQuestion.options}
-          onSelect={handleChoiceSelect}
-          disabled={session.feedbackState !== 'idle' || flyOutStep !== 'idle'}
-          correctAnswer={session.feedbackState !== 'idle'
-            ? choiceQuestion.correctAnswer
-            : undefined}
-          selectedAnswer={selectedChoice ?? undefined}
+      <div className="game-bottom-group">
+        {question && (
+          <QuestionBanner prompt={question.prompt} type={question.type} />
+        )}
+        {choiceQuestion && (
+          <ChoicePanel
+            options={choiceQuestion.options}
+            onSelect={handleChoiceSelect}
+            disabled={session.feedbackState !== 'idle' || flyOutStep !== 'idle'}
+            correctAnswer={session.feedbackState !== 'idle'
+              ? choiceQuestion.correctAnswer
+              : undefined}
+            selectedAnswer={selectedChoice ?? undefined}
+          />
+        )}
+        <ProgressBar
+          progressCurrent={session.stampTestProgress ? session.stampTestProgress.current : progress.current}
+          progressTotal={session.stampTestProgress ? session.stampTestProgress.total : progress.total}
+          score={session.score}
+          isAdventure={activeQuestionTypeRef.current === 'mixed'}
+          isStampTest={session.stampTestResult === 'in_progress'}
+          stampTestType={session.stampTestType}
         />
-      )}
+      </div>
 
       <GameFeedback
         state={session.feedbackState}
         onAnimationEnd={isABQuestion ? handleFeedbackEndAB : handleFeedbackEnd}
         skipTimer={isABQuestion && session.feedbackState === 'incorrect'}
         geoFeedback={isABQuestion && session.feedbackState === 'incorrect'}
-      />
-
-      <ProgressBar
-        progressCurrent={session.stampTestProgress ? session.stampTestProgress.current : progress.current}
-        progressTotal={session.stampTestProgress ? session.stampTestProgress.total : progress.total}
-        score={session.score}
-        isAdventure={activeQuestionTypeRef.current === 'mixed'}
-        isStampTest={session.stampTestResult === 'in_progress'}
-        stampTestType={session.stampTestType}
       />
 
       {/* Modal: elegir tipo de sello */}
