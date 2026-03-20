@@ -50,6 +50,7 @@
 
 ### UX y otras mejoras
 - [ ] Reposicionar pregunta y opciones en Jugar. Spike completado: `docs/spikes/layout-pregunta-opciones.md` — Plan: (1) Propuesta A': mover pregunta abajo solo para C-F, mantener arriba en A/B; (2) fallback Propuesta B: fusionar pregunta con ProgressBar compactada + prompts cortos
+- [ ] En jugar, cuando fallo una pregunta de un país/capital concreto, me vuelve a preguntar por ese país/capital demasiado pronto. Repasemos la lógica. Convendría esperar un poco más si es posible, al menos 5-10 países/capitales distintos si el pool de países/capitales y juegos por los que no se ha pasado da para ello.
 
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes
