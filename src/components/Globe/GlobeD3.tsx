@@ -992,7 +992,11 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         flyTo.startRotation[1] + (flyTo.endRotation[1] - flyTo.startRotation[1]) * ease,
       ];
 
-      scaleRef.current = flyTo.startScale + (flyTo.endScale - flyTo.startScale) * ease;
+      // Interpolación logarítmica: el ojo percibe cambios de zoom como
+      // multiplicaciones, no sumas. Log distribuye el cambio visual uniformemente.
+      const logStart = Math.log(flyTo.startScale);
+      const logEnd = Math.log(flyTo.endScale);
+      scaleRef.current = Math.exp(logStart + (logEnd - logStart) * ease);
 
       if (t >= 1) flyToAnimRef.current = null;
       shouldDraw = true;

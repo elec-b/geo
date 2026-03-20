@@ -80,6 +80,12 @@ function getCDZoom(globe: GlobeD3Ref, cca2: string): number | undefined {
   return Math.max(Math.min(base, ext ?? Infinity), 2.0);
 }
 
+/** Duración adaptativa para flyTo: más tiempo para saltos de zoom grandes. */
+function getAdaptiveDuration(currentZoom: number, targetZoom: number): number {
+  const ratio = Math.max(targetZoom, currentZoom) / Math.min(targetZoom, currentZoom);
+  return Math.round(600 * (1 + Math.log2(Math.max(ratio, 1)) / 4));
+}
+
 /** Centro visual de un país: usa el centro del outline (hull) si existe,
  * para que archipiélagos extensos queden centrados en pantalla. */
 function getVisualCenter(globe: GlobeD3Ref, cca2: string): [number, number] | null {
@@ -236,6 +242,8 @@ export function JugarView({
   // Secuencia de zoom out → zoom in entre preguntas (tipos C-F)
   type FlyOutStep = 'idle' | 'zoomingOut' | 'zoomingIn';
   const [flyOutStep, setFlyOutStep] = useState<FlyOutStep>('idle');
+  const flyOutDurationRef = useRef(600);
+  const lastChoiceFlyToDurationRef = useRef(0);
   const feedbackCoordsRef = useRef<{
     wrongCca2: string;
     wrongCoords: [number, number];
@@ -405,7 +413,8 @@ export function JugarView({
     const center = getVisualCenter(globeRef.current, q.targetCca2);
     if (center) {
       const zoom = getEFZoom(globeRef.current, q.targetCca2);
-      globeRef.current.flyTo(center[0], center[1], zoom, 600);
+      const duration = getAdaptiveDuration(globeRef.current.getCurrentZoom(), zoom ?? 1);
+      globeRef.current.flyTo(center[0], center[1], zoom, duration);
     }
   }, [session.currentQuestion, globeRef, flyOutStep]);
 
@@ -640,6 +649,8 @@ export function JugarView({
       const q = session.currentQuestion;
       const result = session.submitAnswer(answer);
 
+      lastChoiceFlyToDurationRef.current = 0;
+
       if (result === 'incorrect' && q && globeRef.current) {
         // En error: flyTo al país correcto con zoom de contexto
         const isEF = q.type === 'E' || q.type === 'F';
@@ -650,14 +661,17 @@ export function JugarView({
           const zoom = isEF
             ? getEFZoom(globeRef.current, q.targetCca2)
             : getCDZoom(globeRef.current, q.targetCca2);
-          globeRef.current.flyTo(center[0], center[1], zoom, 600);
+          const duration = getAdaptiveDuration(globeRef.current.getCurrentZoom(), zoom ?? 1);
+          globeRef.current.flyTo(center[0], center[1], zoom, duration);
         }
       } else if (result === 'correct' && q && (q.type === 'C' || q.type === 'D') && globeRef.current) {
         // Acierto en C/D: flyTo al centroide (no capital) para que el país no quede tapado por ChoicePanel
         const centroid = globeRef.current.getCentroid(q.targetCca2);
         if (centroid) {
           const zoom = getCDZoom(globeRef.current, q.targetCca2);
-          globeRef.current.flyTo(centroid[0], centroid[1], zoom, 600);
+          const duration = getAdaptiveDuration(globeRef.current.getCurrentZoom(), zoom ?? 1);
+          lastChoiceFlyToDurationRef.current = duration;
+          globeRef.current.flyTo(centroid[0], centroid[1], zoom, duration);
         }
       }
     },
@@ -666,16 +680,32 @@ export function JugarView({
 
   // Fin de animación de feedback → iniciar zoom out intermedio (solo C-F; A/B usa la secuencia de pasos)
   const handleFeedbackEnd = useCallback(() => {
-    if (globeRef.current && session.continent) {
-      // Zoom out al continente para dar perspectiva antes de la siguiente pregunta
-      const [lon, lat] = CONTINENT_CENTERS[session.continent];
-      globeRef.current.flyTo(lon, lat, CONTINENT_ZOOM[session.continent], 600);
-      setFlyOutStep('zoomingOut');
-      setSelectedChoice(null);
+    const doZoomOut = () => {
+      if (globeRef.current && session.continent) {
+        // Zoom out al continente para dar perspectiva antes de la siguiente pregunta
+        const [lon, lat] = CONTINENT_CENTERS[session.continent];
+        const targetZoom = CONTINENT_ZOOM[session.continent];
+        const duration = getAdaptiveDuration(globeRef.current.getCurrentZoom(), targetZoom);
+        flyOutDurationRef.current = duration;
+        globeRef.current.flyTo(lon, lat, targetZoom, duration);
+        setFlyOutStep('zoomingOut');
+        setSelectedChoice(null);
+      } else {
+        // Fallback: avanzar directamente
+        session.nextQuestion();
+        setSelectedChoice(null);
+      }
+    };
+
+    // En C/D acierto, garantizar al menos 800ms de descanso sobre el país
+    const flyToDur = lastChoiceFlyToDurationRef.current;
+    const extraDelay = Math.max(0, flyToDur + 800 - 1200);
+    lastChoiceFlyToDurationRef.current = 0;
+
+    if (extraDelay > 0) {
+      setTimeout(doZoomOut, extraDelay);
     } else {
-      // Fallback: avanzar directamente
-      session.nextQuestion();
-      setSelectedChoice(null);
+      doZoomOut();
     }
   }, [session, globeRef]);
 
@@ -898,12 +928,12 @@ export function JugarView({
   useEffect(() => {
     if (flyOutStep !== 'zoomingOut') return;
 
-    // Esperar a que termine la animación de flyTo (600ms) + pausa (400ms),
+    // Esperar a que termine la animación de flyTo + pausa (400ms),
     // luego avanzar pregunta e iniciar zoom in
     const timer = setTimeout(() => {
       session.nextQuestion();
       setFlyOutStep('zoomingIn');
-    }, 1000);
+    }, flyOutDurationRef.current + 400);
 
     return () => clearTimeout(timer);
   }, [flyOutStep, session]);
@@ -926,7 +956,8 @@ export function JugarView({
     const center = getVisualCenter(globeRef.current, q.targetCca2);
     if (center) {
       const zoom = getEFZoom(globeRef.current, q.targetCca2);
-      globeRef.current.flyTo(center[0], center[1], zoom, 600);
+      const duration = getAdaptiveDuration(globeRef.current.getCurrentZoom(), zoom ?? 1);
+      globeRef.current.flyTo(center[0], center[1], zoom, duration);
     }
     setFlyOutStep('idle');
   }, [flyOutStep, session.currentQuestion, globeRef]);
