@@ -490,7 +490,7 @@ Configuración **ultra-sencilla**. Un solo punto de acceso: el **botón de engra
 | Idioma de la app | Todos los soportados por iOS/Android | Idioma del teléfono (fallback: inglés) | Siempre |
 | Tema claro/oscuro | Claro / Oscuro | Oscuro | Siempre |
 | Mares y océanos | On/Off | On | Siempre |
-| Marcadores de microestados y archipiélagos | On/Off | On | Solo en Explorar |
+| Marcadores de microestados y archipiélagos | On/Off | On | Siempre |
 
 **Perfil activo**: No forma parte de la configuración. Se gestiona mediante tap en el avatar (ver § Perfiles de usuario).
 

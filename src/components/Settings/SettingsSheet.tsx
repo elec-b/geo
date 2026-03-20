@@ -6,11 +6,10 @@ import { useBottomSheetDrag } from '../../hooks/useBottomSheetDrag';
 import './SettingsSheet.css';
 
 interface SettingsSheetProps {
-  isExploreTab: boolean;
   onClose: () => void;
 }
 
-export function SettingsSheet({ isExploreTab, onClose }: SettingsSheetProps) {
+export function SettingsSheet({ onClose }: SettingsSheetProps) {
   const sheetRef = useRef<HTMLDivElement>(null);
   const { dragHandlers, isClosing, closeAnimated } = useBottomSheetDrag({ sheetRef, onClose });
 
@@ -93,24 +92,22 @@ export function SettingsSheet({ isExploreTab, onClose }: SettingsSheetProps) {
             <span className="settings-sheet__badge">Pr&oacute;ximamente</span>
           </div>
 
-          {/* Marcadores de microestados y archipiélagos (solo en Explorar) */}
-          {isExploreTab && (
-            <div className="settings-sheet__row" onClick={toggleMarkers}>
-              <svg className="settings-sheet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span className="settings-sheet__label">Marcadores de microestados y archipiélagos</span>
-              <button
-                className={`settings-sheet__toggle${showMarkers ? ' settings-sheet__toggle--active' : ''}`}
-                role="switch"
-                aria-checked={showMarkers}
-                aria-label="Marcadores de microestados y archipiélagos"
-              >
-                <span className="settings-sheet__toggle-thumb" />
-              </button>
-            </div>
-          )}
+          {/* Marcadores de microestados y archipiélagos */}
+          <div className="settings-sheet__row" onClick={toggleMarkers}>
+            <svg className="settings-sheet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span className="settings-sheet__label">Marcadores de microestados y archipiélagos</span>
+            <button
+              className={`settings-sheet__toggle${showMarkers ? ' settings-sheet__toggle--active' : ''}`}
+              role="switch"
+              aria-checked={showMarkers}
+              aria-label="Marcadores de microestados y archipiélagos"
+            >
+              <span className="settings-sheet__toggle-thumb" />
+            </button>
+          </div>
 
           {/* Mares y océanos */}
           <div className="settings-sheet__row" onClick={toggleSeaLabels}>

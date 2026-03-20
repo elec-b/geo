@@ -308,7 +308,6 @@ function App() {
 
       {showSettings && (
         <SettingsSheet
-          isExploreTab={activeTab === 'explore'}
           onClose={() => setShowSettings(false)}
         />
       )}
