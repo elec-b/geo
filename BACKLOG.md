@@ -41,6 +41,7 @@
 - [x] **Explorar**: Etiquetas de mares y océanos en el globo — 28 entries (5 océanos, 6 mares grandes, 11 medianos incl. Caspio y Amarillo, 3 pequeños, 3 golfos). Underlay serif itálica (Georgia), estilo discreto. minZoom individual por etiqueta, sin límite máximo. Toggle «Mares y océanos» en Configuración (visible desde todas las pestañas). Auditoría de posiciones contra islas (Gotland, Ryukyu). Fix letter-spacing uniforme (char-by-char left-aligned)
 - [x] **Configuración**: Toggle de marcadores de microestados y archipiélagos visible desde todas las pestañas (antes solo en Explorar). Eliminado prop `isExploreTab`
 - [x] **Jugar**: FlyTo más suave en todos los tipos — interpolación logarítmica del zoom (distribución visual uniforme), duración adaptativa proporcional al ratio de zoom, y pausa extra sobre el país correcto en C/D acierto
+- [x] **UX Jugar**: Reposicionar pregunta y opciones — grupo unificado abajo (`.game-bottom-group` flex column: QuestionBanner + ChoicePanel + ProgressBar). Todos los tipos A-F y pruebas de sello muestran pregunta en zona inferior. Estilo unificado (font-size-xl, bold). Posición responsiva con `max()` para compatibilidad con distintos dispositivos
 
 ---
 
@@ -49,7 +50,6 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### UX y otras mejoras
-- [ ] Reposicionar pregunta y opciones en Jugar. Spike completado: `docs/spikes/layout-pregunta-opciones.md` — Plan: (1) Propuesta A': mover pregunta abajo solo para C-F, mantener arriba en A/B; (2) fallback Propuesta B: fusionar pregunta con ProgressBar compactada + prompts cortos
 - [ ] En jugar, cuando fallo una pregunta de un país/capital concreto, me vuelve a preguntar por ese país/capital demasiado pronto. Repasemos la lógica. Convendría esperar un poco más si es posible, al menos 5-10 países/capitales distintos si el pool de países/capitales y juegos por los que no se ha pasado da para ello.
 
 ### Testear exhaustivamente
