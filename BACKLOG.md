@@ -55,6 +55,7 @@
   - hacer que sea una doble circunferencia, similar al icono que usamos en las tablas de estadísticas o en el selector de jugar (para indicar capital)
   - cambiar el color, el azul ese me parece demasiado chillón 
     - en este sentido, no sé si deberíamos quitar el color cyan en design.md... Si el color que hay ahora es cyan, sugiero eliminar el nombre de ese color de design.md (y chequear también en claude.md o en otros sitios donde se pueda mencionar el color). No quiero cambiar bruscamente todos los colores de la app ahora, pero simplemente no quiero que se potencie mucho más este color / colores muy chillones en adelante
+- [ ] Override 1:10m para Seychelles y Maldivas — geometría 50m insuficiente (SC: 1→26 polys, MV: 2→176 polys). Añadir a ARCHIPELAGO_CODES, HULL_VISIBLE_CODES y CENTROID_OVERRIDES. Renombrar script/archivo de overrides. Spike: `docs/spikes/archipielagos-resolucion-10m.md`
 
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes
