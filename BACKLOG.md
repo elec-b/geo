@@ -53,7 +53,17 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Cartografía
-- [ ] Triángulo entre China, Pakistán e India -> creo que es Cachemira? Lo marcamos como territorio en disputa? (No se identifica en explorar). Hacer pequeño spike de investigación y documentar propuesta en docs/spikes.
+- [ ] **Spike Cachemira completado** → `docs/spikes/cachemira-territorio-disputa.md`. Decisión: statu quo documentado para Siachen (visualmente irrelevante, ~27 km²). **Nota importante**: nuestro criterio para territorios disputados es lo que diga la **ONU**, no Natural Earth. Revisar el spike y la política propuesta bajo este criterio antes de implementar nada.
+- [ ] Parchear 5 features huérfanas en `isoMapping.ts` (GS, IO, TF, HM, CX) — territorios con ISO oficial que faltan en el mapeo. Hallazgo del spike de Cachemira.
+- [ ] Explicitar política de territorios disputados en DESIGN.md (criterio ONU)
+
+### Mejoras UX
+- [ ] en las pruebas de sello de capital y en juegos donde se pregunte por capitales, creo que no es necesario mostrar los marcadores de microestados. Se solapan con la doble circunferencia de capital. ¿Qué piensas?
+- [ ] repasar / repensar si, tras pones las preguntas que se le hacen al usuario en jugar y en las pruebas de sello, di debemos orientar más los FlyTo (de los juegos y de las pruebas de sello), un poco más arriba, por muchas razones:
+  - para que después de los aciertos o fallo, se vean mejor
+  - para que cuando se hace la pregunta para juegos E y F se vean mejor
+  - etc.
+  -(repasa el trabajo que se hizo en el pasado para orientar mejor lo que se ve en los juegos y pruebas de sello + lo que se ha hecho estos últimos días moviendo preguntas abajo - pero sin volverte loco / gestionando bien la info que hay en contexto)
 
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes
