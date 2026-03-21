@@ -64,10 +64,9 @@ const VELOCITY_SAMPLES = 5;
 // Pin de capital (doble círculo ◎)
 const CAPITAL_PIN_OUTER_R = 7;
 const CAPITAL_PIN_INNER_R = 4.5;
-const CAPITAL_PIN_LINE_W = 0.75;
-const CAPITAL_PIN_FILL_ALPHA = 0.10; // relleno sutil interior
-const CAPITAL_PIN_COLOR = '#e0e0e0'; // gris claro (neutro, contrasta con dorado)
-const CAPITAL_PIN_NON_UN_COLOR = '#ffb432'; // ámbar para no-ONU (coherente con etiquetas)
+const CAPITAL_PIN_FILL_ALPHA = 0.20; // × alpha del color (0.5) ≈ 0.10 efectivo
+const CAPITAL_PIN_COLOR = 'rgba(224, 224, 224, 0.5)'; // ligeramente más visible que fronteras
+const CAPITAL_PIN_NON_UN_COLOR = 'rgba(255, 180, 50, 0.5)'; // ámbar, misma opacidad
 
 // Etiquetas
 const LABEL_COLOR = 'rgba(255, 255, 255, 0.8)';
@@ -771,7 +770,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         ? CAPITAL_PIN_NON_UN_COLOR
         : CAPITAL_PIN_COLOR;
       ctx.strokeStyle = pinColor;
-      ctx.lineWidth = CAPITAL_PIN_LINE_W;
+      ctx.lineWidth = Math.max(0.5, 1.0 / Math.sqrt(zoom));
       for (const pinCoords of pins) {
         if (geoDistance(pinCoords, viewCenter) >= Math.PI / 2) continue;
         const pos = projection(pinCoords);
