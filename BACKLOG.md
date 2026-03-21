@@ -51,6 +51,9 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
+### DX (experiencia de desarrollo)
+- [ ] Optimizar `npm run device` (~60s → ~25s) — `-configuration Debug` en xcodebuild, eliminar `tsc -b`, `cap copy` en vez de `cap sync`. Opcionalmente: live reload para iteración rápida en UI. Spike: `docs/spikes/optimizar-build-device.md`
+
 ### UX y otras mejoras
 - [ ] Override 1:10m para Seychelles y Maldivas — geometría 50m insuficiente (SC: 1→26 polys, MV: 2→176 polys). Añadir a ARCHIPELAGO_CODES, HULL_VISIBLE_CODES y CENTROID_OVERRIDES. Renombrar script/archivo de overrides. Spike: `docs/spikes/archipielagos-resolucion-10m.md`
 
