@@ -5,7 +5,7 @@ import { useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from 
 import { geoOrthographic, geoPath, geoContains, geoCentroid, geoDistance, geoArea } from 'd3-geo';
 import type { GeoProjection, GeoPath, GeoPermissibleObjects } from 'd3-geo';
 import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geojson';
-import { loadCountriesGeoJson, loadBordersGeoJson } from '../../data/countries';
+import { loadCountriesGeoJson, loadBordersGeoJson, getOverrideCca2s } from '../../data/countries';
 import type { CountryFeature, CountryProperties } from '../../data/countries';
 import type { CapitalCoords } from '../../data/types';
 import { COUNTRY_SELECTED_COLOR } from './colors';
@@ -302,6 +302,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   // Datos cargados
   const countriesRef = useRef<FeatureCollection<Geometry, CountryProperties> | null>(null);
   const bordersRef = useRef<Feature<MultiLineString> | null>(null);
+  const overrideCca2sRef = useRef<Set<string>>(new Set());
 
   // Interacción (estado interno para modo no controlado)
   const selectedRef = useRef<string | null>(null);
@@ -641,13 +642,28 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       if (isDimmed) ctx.globalAlpha = 1;
     }
 
-    // Bordes
+    // Bordes (mesh 50m, excluye países con override 10m)
+    const borderLineWidth = Math.max(0.5, 1.0 / Math.sqrt(zoom));
     if (borders) {
       ctx.beginPath();
       path(borders);
       ctx.strokeStyle = BORDER_COLOR;
-      ctx.lineWidth = Math.max(0.5, 1.0 / Math.sqrt(zoom));
+      ctx.lineWidth = borderLineWidth;
       ctx.stroke();
+    }
+
+    // Bordes de países con override 10m (excluidos del mesh para evitar contornos fantasma)
+    if (overrideCca2sRef.current.size > 0) {
+      ctx.strokeStyle = BORDER_COLOR;
+      ctx.lineWidth = borderLineWidth;
+      for (const feature of countries.features) {
+        const cca2 = feature.properties?.cca2;
+        if (cca2 && overrideCca2sRef.current.has(cca2)) {
+          ctx.beginPath();
+          path(feature);
+          ctx.stroke();
+        }
+      }
     }
 
     // Outline de convex hull para archipiélagos seleccionados
@@ -1163,6 +1179,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         if (cancelled) return;
         countriesRef.current = countries;
         bordersRef.current = borders;
+        overrideCca2sRef.current = getOverrideCca2s();
 
         // Pre-calcular centroides (con overrides visuales) y zoom mínimo por importancia
         const allCentroids = new Map<string, [number, number]>();

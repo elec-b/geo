@@ -23,6 +23,7 @@ type WorldTopology = Topology<{
 let cachedTopology: WorldTopology | null = null;
 let cachedGeoJson: FeatureCollection<Geometry, CountryProperties> | null = null;
 let cachedBorders: Feature<MultiLineString> | null = null;
+let cachedOverrideIds: Set<string> | null = null;
 
 /**
  * Carga la topología base (compartida entre países y bordes)
@@ -55,6 +56,7 @@ export async function loadCountriesGeoJson(): Promise<FeatureCollection<Geometry
   const overrideResp = await fetch('/data/islands-10m.json');
   const overrides = await overrideResp.json() as FeatureCollection;
   const overrideIds = new Set(overrides.features.map(f => String((f as any).id)));
+  cachedOverrideIds = overrideIds;
   geojson.features = [
     ...geojson.features.filter(f => !overrideIds.has(String((f as any).id))),
     ...(overrides.features as any[]),
@@ -94,16 +96,38 @@ export async function loadCountriesGeoJson(): Promise<FeatureCollection<Geometry
 }
 
 /**
+ * Devuelve los cca2 de países con override 10m.
+ * Útil para dibujar sus bordes por separado (el mesh 50m los excluye).
+ */
+export function getOverrideCca2s(): Set<string> {
+  if (!cachedOverrideIds) return new Set();
+  const cca2s = new Set<string>();
+  for (const numId of cachedOverrideIds) {
+    const cca2 = ISO_NUMERIC_TO_ALPHA2[numId];
+    if (cca2) cca2s.add(cca2);
+  }
+  return cca2s;
+}
+
+/**
  * Extrae los bordes compartidos de la topología como líneas.
  * Usa topojson.mesh() que produce LineStrings limpias sin artefactos
  * de clipping de tiles (a diferencia de dibujar outlines de polígonos).
+ * Excluye países con override 10m (sus bordes se dibujan por separado).
  */
 export async function loadBordersGeoJson(): Promise<Feature<MultiLineString>> {
   if (cachedBorders) return cachedBorders;
 
   const topology = await loadTopology();
 
-  const mesh = topojson.mesh(topology, topology.objects.countries);
+  // Excluir países con override 10m del mesh — sus costas 50m no coinciden
+  // con la geometría 10m y crean contornos fantasma. Son todos islas sin
+  // fronteras terrestres compartidas, así que es seguro excluirlos.
+  const ids = cachedOverrideIds;
+  const mesh = ids && ids.size > 0
+    ? topojson.mesh(topology, topology.objects.countries,
+        (a: any, b: any) => !ids.has(String(a.id)) && !ids.has(String(b.id)))
+    : topojson.mesh(topology, topology.objects.countries);
 
   cachedBorders = {
     type: 'Feature',

@@ -51,11 +51,8 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
-### DX (experiencia de desarrollo)
-- [ ] Optimizar `npm run device` (~60s → ~25s) — `-configuration Debug` en xcodebuild, eliminar `tsc -b`, `cap copy` en vez de `cap sync`. Opcionalmente: live reload para iteración rápida en UI. Spike: `docs/spikes/optimizar-build-device.md`
-
 ### UX y otras mejoras
-- [ ] Override 1:10m para Seychelles y Maldivas — geometría 50m insuficiente (SC: 1→26 polys, MV: 2→176 polys). Añadir a ARCHIPELAGO_CODES, HULL_VISIBLE_CODES y CENTROID_OVERRIDES. Renombrar script/archivo de overrides. Spike: `docs/spikes/archipielagos-resolucion-10m.md`
+- [ ] Override 1:10m para SC y MV — **WIP**: override implementado (SC: 1→18, MV: 2→22 polys), filtro de polígonos diminutos, mesh de bordes filtrado para excluir override countries. **Pendiente**: los contornos fantasma 50m persisten en MV (ver screenshot 10:15). Investigar si el filtro del mesh no se está aplicando correctamente o si hay otra fuente de los bordes duplicados. Spike: `docs/spikes/archipielagos-resolucion-10m.md`
 
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes
@@ -80,6 +77,7 @@
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
 - [ ] Sección "Acerca de": explicar criterios (países ONU, idiomas oficiales, fuentes UNDP, REST Countries, etc.)
 - [ ] Solicitud de valoración in-app (SKStoreReviewController iOS + Play In-App Review Android)
+- [ ] Triple-verificar que la app se actualizará sola para los usuarios en el futuro, sin que yo tenga que hacer nada
 
 ### Muy muy opcional
 - [ ] En las pruebas de sello: ¿Hay alguna manera de forzar que si el usuario sale de la prueba, a otra app, haya que empezar la prueba de sello desde el inicio? Cuando voy a cualquiera de las otras pestañas (Jugar o Explorar o incluso volver a pulsar Pasaporte), ya funciona bien - se sale de la prueba de sello

@@ -615,6 +615,7 @@ Nombres de mares, océanos y golfos principales sobre el globo, siguiendo la con
 
   - **Tamaño adicional**: ~52 KB gzip (~175 KB raw). Impacto mínimo.
   - **Filtro de polígonos diminutos**: Se descartan polígonos con extensión < 0.015° (~1.7 km). D3 puede malinterpretar atolones extremadamente pequeños como su complemento esférico, corrompiendo el renderizado del globo. Los polígonos filtrados son invisibles a cualquier nivel de zoom.
+  - **Bordes**: Los países con override se excluyen del mesh de bordes 50m (que dibujaría contornos fantasma de la geometría antigua). Sus bordes se dibujan por separado desde la geometría 10m. Es seguro porque todos son islas sin fronteras terrestres compartidas.
   - **Generación**: Script de extracción que lee `countries-10m.json` de `world-atlas` y genera el archivo override. Compatible con el pipeline de actualización automática vía CDN.
   - **No se usa 1:10m completo**: El dataset 10m tiene 5.5× más puntos (~544K) y +720 KB gzip — demasiado para Canvas 2D en móvil. El override selectivo consigue el detalle necesario sin impacto en rendimiento.
 - **Formato**: TopoJSON (base) + GeoJSON (override islas)
