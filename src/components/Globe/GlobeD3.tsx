@@ -126,6 +126,9 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
   'VU': [168.3, -17.7],   // Vanuatu → Éfaté/Port Vila (182 km)
   'MH': [171.4, 7.1],     // Islas Marshall → Majuro (116 km)
   'TV': [179.2, -8.5],    // Tuvalu → Funafuti (atolones en ~600 km)
+  // Archipiélagos del Índico (centroide en isla de la capital)
+  'SC': [55.5, -4.7],     // Seychelles → Mahé
+  'MV': [73.5, 4.2],      // Maldivas → Malé
 };
 
 // --- Archipiélagos (hit testing mejorado) ---
@@ -134,7 +137,7 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
 const ARCHIPELAGO_CODES = new Set([
   'PH', 'ID', 'JP', 'NZ', 'FJ', 'SB', 'VU', 'PG', 'GB', 'DK', 'GR', 'HR',
   'BS', 'CU', 'CV', 'KM', 'TO', 'WS', 'MY', 'TT', 'EE', 'SE', 'FI', 'CL',
-  'NO', 'KI', 'FM', 'MH', 'TV', 'PW', 'AG', 'KN', 'VC',
+  'NO', 'KI', 'FM', 'MH', 'TV', 'PW', 'AG', 'KN', 'VC', 'SC', 'MV',
 ]);
 
 // Subconjunto de archipiélagos cuyo hull se renderiza siempre visible.
@@ -144,6 +147,8 @@ const HULL_VISIBLE_CODES = new Set([
   'FJ', 'SB', 'VU', 'PG', 'KI', 'FM', 'MH', 'TV', 'TO', 'WS', 'PW',
   // América
   'TT', 'AG', 'KN', 'VC',
+  // Índico
+  'SC', 'MV',
 ]);
 
 /**

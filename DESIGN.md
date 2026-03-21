@@ -541,7 +541,7 @@ El globo centra la vista usando el **centroide geométrico** (`d3.geoCentroid()`
 
 **Criterio para aplicar override**: El centroide geométrico dista significativamente de la capital (>~200 km) **y** no cae sobre territorio del país (vacío oceánico).
 
-**Archipiélagos de Oceanía con override**:
+**Archipiélagos con override**:
 
 | País | Centroide geométrico | Override (isla capital) | Distancia | Motivo |
 |------|---------------------|------------------------|-----------|--------|
@@ -549,6 +549,8 @@ El globo centra la vista usando el **centroide geométrico** (`d3.geoCentroid()`
 | KI Kiribati | [167.9°W, 0.9°N] | ~[173°E, 1.3°N] (Tarawa) | 2124 km | Cruza antimeridiano; centroide en hemisferio opuesto |
 | VU Vanuatu | [167.7°E, 16.2°S] | ~[168.3°E, 17.7°S] (Port Vila) | 182 km | Cadena N-S; centroide alejado de la isla principal |
 | MH Islas Marshall | [170.3°E, 7.0°N] | ~[171.4°E, 7.1°N] (Majuro) | 116 km | Centroide en vacío entre atolones |
+| SC Seychelles | ~[55.5°E, 5°S] | ~[55.5°E, 4.7°S] (Mahé) | — | 26 islas dispersas; centroide en vacío oceánico |
+| MV Maldivas | ~[73°E, 2°N] | ~[73.5°E, 4.2°N] (Malé) | — | Cadena N-S de 800 km; centroide alejado de la capital |
 
 Otros archipiélagos de Oceanía (Fiyi, Tonga, Samoa, Palau, Islas Salomón) tienen centroides suficientemente cercanos a la capital (<100 km) y no requieren override.
 
@@ -565,7 +567,7 @@ Otros archipiélagos de Oceanía (Fiyi, Tonga, Samoa, Palau, Islas Salomón) tie
 
 Un subconjunto de archipiélagos —los difíciles de seleccionar o identificar visualmente— muestra una **línea discontinua perimetral** (convex hull) siempre visible, facilitando la comprensión de qué islas forman parte de cada país. Los archipiélagos grandes (Indonesia, Japón, Filipinas) o fácilmente identificables (Nueva Zelanda, Cuba) no la muestran.
 
-*   **Países con hull visible**: Oceanía (FJ, SB, VU, PG, KI, FM, MH, TV, TO, WS, PW) y América (TT, AG, KN, VC). El resto de archipiélagos (`ARCHIPELAGO_CODES`) conserva el hull para hit testing y selección, pero no se muestra por defecto.
+*   **Países con hull visible**: Oceanía (FJ, SB, VU, PG, KI, FM, MH, TV, TO, WS, PW), América (TT, AG, KN, VC) e Índico (SC, MV). El resto de archipiélagos (`ARCHIPELAGO_CODES`) conserva el hull para hit testing y selección, pero no se muestra por defecto.
 *   **Visibilidad**: Zoom adaptativo por tamaño del hull. Fórmula: `clamp(K / extensiónAngularGrados, 1.5, 5)` con K=10. Fade-in progresivo de 1 unidad de zoom.
 *   **Estilo**: Misma línea discontinua y color (blanco) que los marcadores de microestados.
 *   **Relación con marcadores de microestados**: Si un país es a la vez microestado y archipiélago con hull visible (ej. Kiribati, Palau, Trinidad y Tobago), se muestra **solo el hull**, no el marcador circular. Los microestados-archipiélago sin hull visible (ej. Comoras, Cabo Verde) conservan su marcador circular.
@@ -596,7 +598,7 @@ Nombres de mares, océanos y golfos principales sobre el globo, siguiendo la con
 ### Datos geométricos (mapas)
 - **Fuente**: Natural Earth Data vía `world-atlas` (NPM)
 - **Resolución base**: 1:50m (incluye Baleares, Canarias, Caribe, Oceanía; equilibrio detalle/rendimiento)
-- **Resolución mejorada para islas del Pacífico**: La resolución 1:50m es insuficiente para 8 países insulares de Oceanía (pocas islas representadas o país completamente ausente). Se usa un archivo override con geometrías 1:10m extraídas de `world-atlas`, que reemplaza las geometrías 50m de estos países al cargar:
+- **Resolución mejorada para islas**: La resolución 1:50m es insuficiente para 10 países insulares (pocas islas representadas o país completamente ausente). Se usa un archivo override con geometrías 1:10m extraídas de `world-atlas`, que reemplaza las geometrías 50m de estos países al cargar:
 
   | País | 50m (polígonos) | 10m (polígonos) | Motivo |
   |------|----------------|----------------|--------|
@@ -608,11 +610,14 @@ Nombres de mares, océanos y golfos principales sobre el globo, siguiendo la con
   | KI Kiribati | 19 | 35 | Faltan atolones menores |
   | VU Vanuatu | 14 | 27 | Faltan islas menores |
   | FJ Fiyi | 20 | 44 | Faltan islas menores |
+  | SC Seychelles | 1 | 18 | Solo Mahé; faltan Praslin, La Digue y resto |
+  | MV Maldivas | 2 | 22 | Solo 2 atolones; cadena N-S de 800 km invisible |
 
-  - **Tamaño adicional**: ~31 KB gzip (~104 KB raw). Impacto mínimo: +2% de puntos sobre el dataset base.
+  - **Tamaño adicional**: ~52 KB gzip (~175 KB raw). Impacto mínimo.
+  - **Filtro de polígonos diminutos**: Se descartan polígonos con extensión < 0.015° (~1.7 km). D3 puede malinterpretar atolones extremadamente pequeños como su complemento esférico, corrompiendo el renderizado del globo. Los polígonos filtrados son invisibles a cualquier nivel de zoom.
   - **Generación**: Script de extracción que lee `countries-10m.json` de `world-atlas` y genera el archivo override. Compatible con el pipeline de actualización automática vía CDN.
   - **No se usa 1:10m completo**: El dataset 10m tiene 5.5× más puntos (~544K) y +720 KB gzip — demasiado para Canvas 2D en móvil. El override selectivo consigue el detalle necesario sin impacto en rendimiento.
-- **Formato**: TopoJSON (base) + GeoJSON (override islas del Pacífico)
+- **Formato**: TopoJSON (base) + GeoJSON (override islas)
 - **Almacenamiento**: Empaquetado en el bundle de la app
 
 ### Datos de países
@@ -648,13 +653,13 @@ Nombres de mares, océanos y golfos principales sobre el globo, siguiendo la con
 ```
 public/data/
 ├── countries-50m.json        # TopoJSON de países (1:50m, base)
-├── pacific-islands-10m.json  # GeoJSON override para 8 países insulares (1:10m)
+├── islands-10m.json           # GeoJSON override para 10 países insulares (1:10m)
 ├── countries.json            # Datos de países (generado por fetch-countries.ts)
 ├── capitals.json             # Coordenadas y nombres de capitales
 └── sea-labels.json           # Etiquetas de mares y océanos (manual, ~25-30 entries)
 
 scripts/
-├── generate-pacific-overrides.ts  # Extrae geometrías 10m de países insulares de world-atlas
+├── generate-island-overrides.ts   # Extrae geometrías 10m de países insulares de world-atlas
 └── data/
     └── capitals-{lang}.json       # Traducciones de capitales (suplementario, ver § Internacionalización de datos)
 ```

@@ -51,8 +51,8 @@ export async function loadCountriesGeoJson(): Promise<FeatureCollection<Geometry
     topology.objects.countries
   ) as FeatureCollection<Geometry, CountryProperties>;
 
-  // Inyectar geometrías 10m para islas del Pacífico (más detalle que 50m)
-  const overrideResp = await fetch('/data/pacific-islands-10m.json');
+  // Inyectar geometrías 10m para islas con resolución 50m insuficiente
+  const overrideResp = await fetch('/data/islands-10m.json');
   const overrides = await overrideResp.json() as FeatureCollection;
   const overrideIds = new Set(overrides.features.map(f => String((f as any).id)));
   geojson.features = [
