@@ -256,7 +256,7 @@ Los países que dominan su etapa actual **no se preguntan** (ver § Etapa de apr
 
 **2. Selección de tipo**: Según la etapa del país. Si la etapa tiene varios tipos (ej. etapa 2: C, D, F), se prioriza el tipo no dominado con peor racha.
 
-**3. Anti-repetición**: Un país no se repite hasta que se hayan preguntado al menos otros N países, donde N = mín(3, pool_activo / 2). El buffer se calcula sobre el pool activo (no el total de países), garantizando alternancia incluso con pools reducidos.
+**3. Anti-repetición**: Un país no se repite hasta que se hayan preguntado al menos otros N países, donde N = mín(8, pool_activo / 2). El buffer se calcula sobre el pool activo (no el total de países), garantizando alternancia incluso con pools reducidos.
 
 **En modo tipo concreto**: Misma cola de prioridad con tipo fijo. Los países dominados en ese tipo salen del pool. Al dominar todos → modal de fin de sesión.
 

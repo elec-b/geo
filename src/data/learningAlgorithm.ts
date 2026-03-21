@@ -275,7 +275,7 @@ export function selectNextQuestion(
   const activeCount = countries.filter(isActive).length;
 
   // Buffer de anti-repetición basado en pool activo
-  const bufferSize = Math.min(3, Math.floor(activeCount / 2));
+  const bufferSize = Math.min(8, Math.floor(activeCount / 2));
   const recentSet = new Set(recent.slice(-bufferSize));
 
   // Clasificar países en categorías
