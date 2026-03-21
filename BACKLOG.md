@@ -44,6 +44,7 @@
 - [x] **UX Jugar**: Reposicionar pregunta y opciones — grupo unificado abajo (`.game-bottom-group` flex column: QuestionBanner + ChoicePanel + ProgressBar). Todos los tipos A-F y pruebas de sello muestran pregunta en zona inferior. Estilo unificado (font-size-xl, bold). Posición responsiva con `max()` para compatibilidad con distintos dispositivos
 - [x] **Jugar**: Buffer de anti-repetición aumentado de min(3, pool/2) a min(8, pool/2) — países fallados no reaparecen hasta 5-8 preguntas después (con pools de 10+). Pools pequeños sin cambio
 - [x] **Explorar**: Rediseño del símbolo de capitales — doble circunferencia (◎) en gris claro (#e0e0e0), labels de capital en gris tenue (jerarquía visual país > capital). Eliminadas referencias a "cian" en DESIGN.md. Grosor y opacidad igualados a las fronteras (lineWidth dinámico + rgba 0.5)
+- [x] **Datos**: Override 1:10m para SC y MV (SC: 1→18, MV: 2→22 polys), filtro de polígonos diminutos, mesh de bordes filtrado para excluir override countries, bordes 10m dibujados por separado. Fix race condition en carga paralela que causaba contornos fantasma 50m. Spike: `docs/spikes/archipielagos-resolucion-10m.md`
 
 ---
 
@@ -51,8 +52,8 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
-### UX y otras mejoras
-- [ ] Override 1:10m para SC y MV — **WIP**: override implementado (SC: 1→18, MV: 2→22 polys), filtro de polígonos diminutos, mesh de bordes filtrado para excluir override countries. **Pendiente**: los contornos fantasma 50m persisten en MV (ver screenshot 10:15). Investigar si el filtro del mesh no se está aplicando correctamente o si hay otra fuente de los bordes duplicados. Spike: `docs/spikes/archipielagos-resolucion-10m.md`
+### Cartografía
+- [ ] Triángulo entre China, Pakistán e India -> creo que es Cachemira? Lo marcamos como territorio en disputa? (No se identifica en explorar). Hacer pequeño spike de investigación y documentar propuesta en docs/spikes.
 
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes

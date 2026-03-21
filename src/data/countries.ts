@@ -118,6 +118,9 @@ export function getOverrideCca2s(): Set<string> {
 export async function loadBordersGeoJson(): Promise<Feature<MultiLineString>> {
   if (cachedBorders) return cachedBorders;
 
+  // Asegurar que los override IDs estén cargados antes de filtrar el mesh
+  await loadCountriesGeoJson();
+
   const topology = await loadTopology();
 
   // Excluir países con override 10m del mesh — sus costas 50m no coinciden
