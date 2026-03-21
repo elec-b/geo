@@ -43,6 +43,7 @@
 - [x] **Jugar**: FlyTo más suave en todos los tipos — interpolación logarítmica del zoom (distribución visual uniforme), duración adaptativa proporcional al ratio de zoom, y pausa extra sobre el país correcto en C/D acierto
 - [x] **UX Jugar**: Reposicionar pregunta y opciones — grupo unificado abajo (`.game-bottom-group` flex column: QuestionBanner + ChoicePanel + ProgressBar). Todos los tipos A-F y pruebas de sello muestran pregunta en zona inferior. Estilo unificado (font-size-xl, bold). Posición responsiva con `max()` para compatibilidad con distintos dispositivos
 - [x] **Jugar**: Buffer de anti-repetición aumentado de min(3, pool/2) a min(8, pool/2) — países fallados no reaparecen hasta 5-8 preguntas después (con pools de 10+). Pools pequeños sin cambio
+- [x] **Explorar**: Rediseño del símbolo de capitales — doble circunferencia (◎) en gris claro (#e0e0e0), labels de capital en gris tenue (jerarquía visual país > capital). Eliminadas referencias a "cian" en DESIGN.md
 
 ---
 
@@ -51,10 +52,6 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### UX y otras mejoras
-- [ ] símbolo de capitales: no me gusta demasiado el símbolo que utilizamos para las capitales. Tengo dos ideas para mejorarlo:
-  - hacer que sea una doble circunferencia, similar al icono que usamos en las tablas de estadísticas o en el selector de jugar (para indicar capital)
-  - cambiar el color, el azul ese me parece demasiado chillón 
-    - en este sentido, no sé si deberíamos quitar el color cyan en design.md... Si el color que hay ahora es cyan, sugiero eliminar el nombre de ese color de design.md (y chequear también en claude.md o en otros sitios donde se pueda mencionar el color). No quiero cambiar bruscamente todos los colores de la app ahora, pero simplemente no quiero que se potencie mucho más este color / colores muy chillones en adelante
 - [ ] Override 1:10m para Seychelles y Maldivas — geometría 50m insuficiente (SC: 1→26 polys, MV: 2→176 polys). Añadir a ARCHIPELAGO_CODES, HULL_VISIBLE_CODES y CENTROID_OVERRIDES. Renombrar script/archivo de overrides. Spike: `docs/spikes/archipielagos-resolucion-10m.md`
 
 ### Testear exhaustivamente

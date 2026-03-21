@@ -1,7 +1,7 @@
 # GeoExpert
 
 ## Filosofía de diseño
-- **Estética**: «Premium dark mode» (con tema claro como opción futura). Diseño limpio, oscuro y minimalista. Azules profundos, negros, acentos neón (cian/púrpura/ámbar).
+- **Estética**: «Premium dark mode» (con tema claro como opción futura). Diseño limpio, oscuro y minimalista. Azules profundos, negros, acentos (púrpura/ámbar) y azules fríos.
 - **Interacción**: Animaciones fluidas. Sin recargas de página bruscas. El globo siempre es el protagonista.
 - **Feedback**: Corrección visual inmediata (filtro verde/rojo al 5% de opacidad), háptica en móvil (acierto: tap ligero único; error: doble tap ligero; toggles: tap ligero). Sin efectos de sonido (por ahora).
 
@@ -84,7 +84,7 @@ Para certificar que el usuario domina un nivel-continente, debe conseguir ambos 
 
 El selector separa **Aventura** (opción principal) de los tipos concretos (opción avanzada):
 
-- **Aventura** se presenta como botón de ancho completo con icono 🧭 y subtítulo «Se adapta a lo que sabes». Seleccionado por defecto. Estilo diferenciado con accent cian.
+- **Aventura** se presenta como botón de ancho completo con icono 🧭 y subtítulo «Se adapta a lo que sabes». Seleccionado por defecto. Estilo diferenciado con accent azul.
 - **«o elige juego concreto ▾»**: separador con líneas horizontales y toggle colapsable (cerrado por defecto). Al expandir, muestra una grid 2×3 con los 6 tipos usando sus iconos y nombres cortos (ver § Nomenclatura visual).
   - Separador visual sutil entre los 4 tipos de opciones (E/C/D/F) y los 2 de señalar/examen (A/B).
   - A y B muestran badge 🔖.
@@ -357,7 +357,7 @@ Vista interactiva del globo terráqueo. El usuario puede tocar un país → se i
     - **Criterio de idiomas**: Se listan únicamente los idiomas reconocidos oficialmente a nivel nacional/constitucional. Los idiomas cooficiales regionales (ej. catalán en España, sardo en Italia) no se incluyen. Este criterio es objetivo, reproducible y consistente entre países.
     - **IDH / IDH-D**: Índice de Desarrollo Humano (IDH) e IDH ajustado por Desigualdad (IDH-D). Fuente: UNDP. IDH-D muestra "N/D" si no está disponible. Cada métrica lleva icono (i) con tooltip descriptivo.
     - **Enlace a Wikipedia**: Icono redondo en la **cabecera** del bottom sheet (puzzle globe oficial de Wikipedia). Abre el artículo del país en Wikipedia en el idioma de la app. Si el artículo no existe en ese idioma, enlaza a la versión en inglés.
-*   **Capital**: Círculo cian sobre la ubicación de la capital. Se muestra al seleccionar un país y también permanentemente cuando el toggle de etiquetas de capitales está activo.
+*   **Capital**: Doble círculo gris claro (◎) sobre la ubicación de la capital. Se muestra al seleccionar un país y también permanentemente cuando el toggle de etiquetas de capitales está activo.
 
 ### Tabla
 Tabla de países con sus capitales y población, diseñada para facilitar el repaso.
@@ -696,7 +696,7 @@ Comportamiento:
 *   **Son seleccionables** en la experiencia Explorar: al tocar, se muestra la ficha con un disclaimer contextual según su categoría.
 *   Se muestran todos los datos disponibles (bandera, capital, población, superficie, moneda, gentilicio).
 *   **No participan en el sistema de juego** (niveles, sellos, pruebas) — solo son visibles en Explorar.
-*   **Color diferenciado (ámbar)**: En el globo, tanto las etiquetas (nombre de país y capital) como los pines de capitales de estos territorios se muestran en color ámbar, distinto al cian de los países ONU, para distinguirlos visualmente.
+*   **Color diferenciado (ámbar)**: En el globo, tanto las etiquetas (nombre de país y capital) como los pines de capitales de estos territorios se muestran en color ámbar, distinto al gris claro de los países ONU, para distinguirlos visualmente.
 *   **Visibilidad en la tabla**: ver § «Explorar > Tabla > Toggle territorios no-ONU».
 *   **Continente asignado**: Cada territorio tiene un continente asignado para que los filtros funcionen correctamente.
 *   **Datos**: El script `fetch-countries.ts` incluye estos territorios con `unMember: false` y, para los dependientes, `sovereignCountry` con el `cca2` del país soberano.

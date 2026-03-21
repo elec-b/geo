@@ -61,16 +61,18 @@ const INERTIA_FRICTION = 0.85;
 const INERTIA_MIN_VELOCITY = 0.5;
 const VELOCITY_SAMPLES = 5;
 
-// Pin de capital
-const CAPITAL_PIN_INNER = 4;
-const CAPITAL_PIN_OUTER = 7;
-const CAPITAL_PIN_COLOR = '#00f0ff';
+// Pin de capital (doble círculo ◎)
+const CAPITAL_PIN_OUTER_R = 7;
+const CAPITAL_PIN_INNER_R = 4.5;
+const CAPITAL_PIN_LINE_W = 0.75;
+const CAPITAL_PIN_FILL_ALPHA = 0.10; // relleno sutil interior
+const CAPITAL_PIN_COLOR = '#e0e0e0'; // gris claro (neutro, contrasta con dorado)
 const CAPITAL_PIN_NON_UN_COLOR = '#ffb432'; // ámbar para no-ONU (coherente con etiquetas)
 
 // Etiquetas
 const LABEL_COLOR = 'rgba(255, 255, 255, 0.8)';
 const LABEL_NON_UN_COLOR = 'rgba(255, 180, 50, 0.6)';
-const LABEL_CAPITAL_COLOR = 'rgba(0, 240, 255, 0.7)';
+const LABEL_CAPITAL_COLOR = 'rgba(170, 170, 180, 0.75)';
 const LABEL_CAPITAL_NON_UN_COLOR = 'rgba(255, 180, 50, 0.5)';
 const LABEL_SHADOW = 'rgba(0, 0, 0, 0.7)';
 const LABEL_FONT_BASE = 9;
@@ -759,7 +761,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       ctx.globalAlpha = 1;
     }
 
-    // Pines de capitales (circulito relleno + anillo exterior)
+    // Pines de capitales (doble círculo ◎ — bullseye)
     const pins = capitalPinsRef.current;
     if (pins.length > 0) {
       const rotation = rotationRef.current;
@@ -768,19 +770,27 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       const pinColor = (selCca2 && nonUnCodesRef.current.has(selCca2))
         ? CAPITAL_PIN_NON_UN_COLOR
         : CAPITAL_PIN_COLOR;
+      ctx.strokeStyle = pinColor;
+      ctx.lineWidth = CAPITAL_PIN_LINE_W;
       for (const pinCoords of pins) {
         if (geoDistance(pinCoords, viewCenter) >= Math.PI / 2) continue;
         const pos = projection(pinCoords);
         if (!pos) continue;
+        // Relleno sutil interior
+        ctx.globalAlpha = CAPITAL_PIN_FILL_ALPHA;
         ctx.beginPath();
-        ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER, 0, Math.PI * 2);
-        ctx.strokeStyle = pinColor;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(pos[0], pos[1], CAPITAL_PIN_INNER, 0, Math.PI * 2);
+        ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER_R, 0, Math.PI * 2);
         ctx.fillStyle = pinColor;
         ctx.fill();
+        ctx.globalAlpha = 1;
+        // Anillo exterior
+        ctx.beginPath();
+        ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER_R, 0, Math.PI * 2);
+        ctx.stroke();
+        // Anillo interior
+        ctx.beginPath();
+        ctx.arc(pos[0], pos[1], CAPITAL_PIN_INNER_R, 0, Math.PI * 2);
+        ctx.stroke();
       }
     }
 
