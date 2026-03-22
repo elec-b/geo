@@ -1381,6 +1381,15 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
             const scale = bufferDeg / dist;
             return [x + dx * scale, y + dy * scale] as [number, number];
           });
+          // Asegurar winding order correcto para proyección esférica (left-hand rule de D3).
+          // Si geoArea > 2π, el polígono cubre más de media esfera → invertir vértices.
+          const testRing = buffered.map(([x, y]) =>
+            [normalized.shifted && x > 180 ? x - 360 : x, y] as [number, number],
+          );
+          testRing.push(testRing[0]);
+          if (geoArea({ type: 'Polygon', coordinates: [testRing] }) > 2 * Math.PI) {
+            buffered.reverse();
+          }
           // Extensión angular del hull buffered para zoom adaptativo
           let maxDistDeg = 0;
           for (const [bx, by] of buffered) {

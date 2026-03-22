@@ -52,15 +52,13 @@
 - [x] **UX Jugar**: Offset vertical de flyTo durante juegos — el país se centra en la zona visible (entre header y bottom group) en vez de en el centro geométrico del canvas. Offset adaptativo por tipo (E/C/D/F: 12°, A/B/sello: 7°), con fade-in progresivo (solo a zoom ≥ 2.5). Spike: `docs/spikes/flyto-offset-juegos.md`
 - [x] **Explorar**: Fix espaciado desigual en etiquetas de mares — `textAlign: 'center'` se filtraba entre iteraciones del loop de renderizado, causando gaps dependientes del ancho de cada carácter en las etiquetas char-by-char
 - [x] **Estadísticas**: Sorting por cualquier columna en ambas pestañas (Jugar y Pruebas de sello) — headers tappables con indicador ▲/▼, ordenamiento por estado de dominio o porcentaje según modo activo, desempate por nombre, reset al cambiar pestaña
+- [x] **Jugar**: Fix hull gigante envolviendo el planeta (Indonesia, Asia-Guía) — el convex hull 2D (Andrew's) tenía winding order invertido en proyección esférica, causando que D3 dibujara el complemento del hull. Fix: verificar `geoArea()` y hacer `reverse()` si cubre más de media esfera. Spike: `docs/spikes/hull-gigante-indonesia.md`
 
 ---
 
 ## Próximos pasos
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
-
-### Bugs
-- [ ] Investigar hull gigante que envuelve el planeta entero en Jugar (Asia-Guía). Observado al preguntar Indonesia — la línea discontinua del convex hull aparece rodeando todo el globo en vez de solo las islas. Probablemente el hull de Indonesia (o similar archipiélago extenso) se calcula/dibuja mal y abarca la esfera completa. Hacer spike para diagnosticar y corregir.
 
 ### Mejoras UX
 - [ ] Jugando asia-guía: en juegos conde hay que seleccionar timor oriental, es fácil que haya problema de fat finger y se seleccione Indonesia. Pensar cómo solucionar e investigar si hay otros casos parecidos. ¿Puede haber problema porque Indesia tiene un hull (que creo que no se ve, pero está ahí)?
