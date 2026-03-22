@@ -27,6 +27,8 @@ export interface GlobeControlProps {
   feedbackLabels?: FeedbackLabel[] | null;
   showMarkers?: boolean;  // override del setting global (undefined = usar global)
   showSeaLabels?: boolean; // override del setting global (undefined = usar global)
+  /** Pin de capital destacado con color contrastante (para juegos con territorio coloreado) */
+  capitalPinHighlight?: { coords: [number, number]; color: string } | null;
 }
 
 interface ExploreViewProps {

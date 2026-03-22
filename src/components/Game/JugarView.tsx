@@ -364,6 +364,19 @@ export function JugarView({
 
   // --- Sincronización de props del globo ---
 
+  // Color contrastante para el pin de capital del país target (solo tras responder, para no delatar)
+  const capitalPinHighlight = useMemo((): { coords: [number, number]; color: string } | null => {
+    const q = session.currentQuestion;
+    if (!q || capitalPins.length === 0) return null;
+    if (session.feedbackState === 'idle') return null;
+    const cap = capitals.get(q.targetCca2);
+    if (!cap) return null;
+    return {
+      coords: [cap.latlng[1], cap.latlng[0]],
+      color: 'rgba(255, 255, 255, 0.85)',
+    };
+  }, [session.currentQuestion, capitalPins, capitals, session.feedbackState]);
+
   // Ocultar marcadores en tipos C-F (el usuario no hace click en el mapa)
   const hideMarkers = useMemo(() => {
     const q = session.currentQuestion;
@@ -376,6 +389,7 @@ export function JugarView({
       selectedCountryCca2: highlightCca2,
       selectedCountryColor: highlightColor,
       capitalPins,
+      capitalPinHighlight,
       highlightedCountries,
       showCountryLabels: false,
       showCapitalLabels: false,
@@ -383,7 +397,7 @@ export function JugarView({
       feedbackLabels: globeFeedbackLabels,
       showMarkers: hideMarkers ? false : undefined,
     });
-  }, [highlightCca2, highlightColor, capitalPins, highlightedCountries, globeFeedbackLabels, hideMarkers, onGlobePropsChange]);
+  }, [highlightCca2, highlightColor, capitalPins, capitalPinHighlight, highlightedCountries, globeFeedbackLabels, hideMarkers, onGlobePropsChange]);
 
   // Reset al desmontar (cambio de tab)
   useEffect(() => {

@@ -210,6 +210,7 @@ function App() {
           selectedCountryCca2={globeControl.selectedCountryCca2}
           selectedCountryColor={globeControl.selectedCountryColor}
           capitalPins={globeControl.capitalPins}
+          capitalPinHighlight={globeControl.capitalPinHighlight}
           highlightedCountries={globeControl.highlightedCountries}
           showCountryLabels={globeControl.showCountryLabels}
           showCapitalLabels={globeControl.showCapitalLabels}

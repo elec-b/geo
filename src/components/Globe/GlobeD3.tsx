@@ -237,6 +237,8 @@ export interface GlobeD3Props {
   feedbackLabels?: FeedbackLabel[] | null;
   /** Mostrar etiquetas de mares y océanos (underlay) */
   showSeaLabels?: boolean;
+  /** Pin de capital destacado con color contrastante (para juegos con territorio coloreado) */
+  capitalPinHighlight?: { coords: [number, number]; color: string } | null;
 }
 
 export interface GlobeD3Ref {
@@ -293,6 +295,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     countryNames,
     feedbackLabels,
     showSeaLabels = true,
+    capitalPinHighlight,
   },
   ref,
 ) {
@@ -378,6 +381,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const capitalPinsRef = useRef(capitalPins);
   if (capitalPinsRef.current !== capitalPins) needsRedrawRef.current = true;
   capitalPinsRef.current = capitalPins;
+  const capitalPinHighlightRef = useRef(capitalPinHighlight);
+  if (capitalPinHighlightRef.current !== capitalPinHighlight) needsRedrawRef.current = true;
+  capitalPinHighlightRef.current = capitalPinHighlight;
   const highlightedRef = useRef(highlightedCountries);
   if (highlightedRef.current !== highlightedCountries) needsRedrawRef.current = true;
   highlightedRef.current = highlightedCountries;
@@ -790,20 +796,25 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       const pinColor = (selCca2 && nonUnCodesRef.current.has(selCca2))
         ? CAPITAL_PIN_NON_UN_COLOR
         : CAPITAL_PIN_COLOR;
-      ctx.strokeStyle = pinColor;
       ctx.lineWidth = Math.max(0.5, 1.0 / Math.sqrt(zoom));
+      const hl = capitalPinHighlightRef.current;
       for (const pinCoords of pins) {
         if (geoDistance(pinCoords, viewCenter) >= Math.PI / 2) continue;
         const pos = projection(pinCoords);
         if (!pos) continue;
+        // Color: destacado si coincide con el pin del país target
+        const currentColor = (hl && pinCoords[0] === hl.coords[0] && pinCoords[1] === hl.coords[1])
+          ? hl.color
+          : pinColor;
         // Relleno sutil interior
         ctx.globalAlpha = CAPITAL_PIN_FILL_ALPHA;
         ctx.beginPath();
         ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER_R, 0, Math.PI * 2);
-        ctx.fillStyle = pinColor;
+        ctx.fillStyle = currentColor;
         ctx.fill();
         ctx.globalAlpha = 1;
         // Anillo exterior
+        ctx.strokeStyle = currentColor;
         ctx.beginPath();
         ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER_R, 0, Math.PI * 2);
         ctx.stroke();
