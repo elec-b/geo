@@ -41,6 +41,9 @@ const MARKER_ZOOM_FULL = 5;
 const MARKER_HIT_RADIUS_MIN = 20;
 const MARKER_HIT_RADIUS_MAX = 30;
 const MARKER_HIT_ZOOM_MAX = 20;
+// Fade-out de marcadores: cuando el país proyectado es suficientemente grande
+const MARKER_FADE_OUT_START_PX = 20; // Radio proyectado del país donde empieza fade-out
+const MARKER_FADE_OUT_END_PX = 40;   // Radio proyectado donde el marcador es invisible
 
 const MICROSTATE_CODES = new Set([
   'VA', 'MC', 'SM', 'LI', 'AD', 'MT', 'SG', 'BH', 'LU', 'KM',
@@ -352,6 +355,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const sortedFeaturesRef = useRef<CountryFeature[]>([]);
   const nonUnCodesRef = useRef<Set<string>>(new Set());
   const geoAreasRef = useRef<Map<string, number>>(new Map());
+  const microstateAngularRadiiRef = useRef<Map<string, number>>(new Map());
   const geoExtentsRef = useRef<Map<string, number>>(new Map());
   const archipelagoHullsRef = useRef<Map<string, { hull: [number, number][]; shifted: boolean; minZoom: number }>>(new Map());
   const hullCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
@@ -762,19 +766,36 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       ctx.lineCap = 'butt';
     }
 
-    // Marcadores de microestados (anillos con fade-in según zoom)
+    // Marcadores de microestados (fade-in global + fade-out per-microestado)
     if (showMarkersRef.current && zoom >= MARKER_ZOOM_START && microstateCentroidsRef.current.size > 0) {
-      const t = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_ZOOM_FULL - MARKER_ZOOM_START));
-      const opacity = t * MARKER_MAX_OPACITY;
+      const fadeInT = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_ZOOM_FULL - MARKER_ZOOM_START));
+      const fadeInOpacity = fadeInT * MARKER_MAX_OPACITY;
       const rotation = rotationRef.current;
       const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
-      ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+      const angularRadii = microstateAngularRadiiRef.current;
+
       ctx.lineWidth = MARKER_LINE_WIDTH;
       ctx.setLineDash(MARKER_DASH);
-      for (const [, centroid] of microstateCentroidsRef.current) {
+
+      for (const [cca2, centroid] of microstateCentroidsRef.current) {
         if (geoDistance(centroid, viewCenter) > Math.PI / 2) continue;
         const pos = projection(centroid);
         if (!pos) continue;
+
+        // Fade-out cuando el país proyectado es suficientemente grande
+        let markerOpacity = fadeInOpacity;
+        const angularRadius = angularRadii.get(cca2);
+        if (angularRadius) {
+          const projectedRadius = angularRadius * scaledRadius;
+          if (projectedRadius >= MARKER_FADE_OUT_END_PX) continue;
+          if (projectedRadius > MARKER_FADE_OUT_START_PX) {
+            const fadeOutT = (projectedRadius - MARKER_FADE_OUT_START_PX)
+                           / (MARKER_FADE_OUT_END_PX - MARKER_FADE_OUT_START_PX);
+            markerOpacity = fadeInOpacity * (1 - fadeOutT);
+          }
+        }
+
+        ctx.strokeStyle = `rgba(255, 255, 255, ${markerOpacity})`;
         ctx.beginPath();
         ctx.arc(pos[0], pos[1], MARKER_RADIUS, 0, Math.PI * 2);
         ctx.stroke();
@@ -1105,7 +1126,15 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     if (markersVisible) {
       const zoomT = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_HIT_ZOOM_MAX - MARKER_ZOOM_START));
       const hitRadius = MARKER_HIT_RADIUS_MIN + zoomT * (MARKER_HIT_RADIUS_MAX - MARKER_HIT_RADIUS_MIN);
+      const angularRadii = microstateAngularRadiiRef.current;
+      const { width, height } = sizeRef.current;
+      const currentScaledRadius = (Math.min(width, height) / 2 - 20) * zoom;
+
       for (const [cca2, centroid] of microstateCentroidsRef.current) {
+        // Saltar hit test si el marcador está completamente invisible por fade-out
+        const angularRadius = angularRadii.get(cca2);
+        if (angularRadius && angularRadius * currentScaledRadius >= MARKER_FADE_OUT_END_PX) continue;
+
         const pos = projection(centroid);
         if (!pos) continue;
         if (Math.hypot(x - pos[0], y - pos[1]) < hitRadius) {
@@ -1228,6 +1257,15 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
               nonUnMicroCentroids.set(cca2, centroid);
             }
             areas.set(cca2, area);
+          }
+        }
+
+        // Radio angular de microestados para fade-out de marcadores
+        const microstateAngularRadii = new Map<string, number>();
+        for (const [cca2] of microCentroids) {
+          const area = areas.get(cca2);
+          if (area && area > 0) {
+            microstateAngularRadii.set(cca2, Math.sqrt(area / Math.PI));
           }
         }
 
@@ -1421,6 +1459,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
         countryCentroidsRef.current = allCentroids;
         microstateCentroidsRef.current = microCentroids;
+        microstateAngularRadiiRef.current = microstateAngularRadii;
         nonUnMicroCentroidsRef.current = nonUnMicroCentroids;
         labelMinZoomRef.current = minZoomMap;
         capitalMinZoomRef.current = capitalMinZoomMap;

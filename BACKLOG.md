@@ -48,6 +48,7 @@
 - [x] **UX Jugar**: Ocultar marcadores de microestados en tipo B y pruebas de sello de capitales — los anillos se solapaban con los pines de capital (◎). Solo tipo A mantiene marcadores visibles
 - [x] **UX Jugar**: Pin de capital (◎) contrastante en juegos — el pin del país target se muestra en blanco tras responder (visible sobre verde/dorado/rojo). Solo post-respuesta para no delatar en tipo B/sello. Colores de territorio acierto/error más mate (#459960 verde bosque, #c45250 rojo teja) — menos agresivos, mejor contraste con pin blanco
 - [x] **Cartografía**: Política de territorios disputados en DESIGN.md (criterio ONU, representación de facto de Natural Earth). Fix Siachen — features sin código ISO heredan dimming de países vecinos (mapa `ORPHAN_NEIGHBORS`), eliminando triángulos visibles con filtro de continente
+- [x] **UX Explorar**: Fade-out gradual de marcadores de microestados al hacer zoom-in — cada marcador se desvanece individualmente cuando el país proyectado es suficientemente grande (radio angular pre-computado × projection.scale()). Hit testing deshabilitado para marcadores invisibles. Microestados con área 0 (VA, MC) conservan marcador permanente
 
 ---
 
@@ -56,14 +57,16 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Mejoras UX
-- [ ] mejora en marcadores de microestados: sugiero que los marcadores de microestados, gradualemnte se difuminen según se hace zoom-in, pero solo cuando están completamente dentro de las fronteras del microestado que marcan. (No hay que modificar nada la manera gradual en la que se muestran, esto ya está perfecto, solo hay que hacer que desaparezcan cuando ya no son útiles, porque el zoom es alto y se reconoce / se puede hacer hit fácilmente sobre el microestado)
-- [ ] repasar / repensar si, tras pones las preguntas que se le hacen al usuario en jugar y en las pruebas de sello, di debemos orientar más los FlyTo (de los juegos y de las pruebas de sello), un poco más arriba, por muchas razones:
+- [ ] repasar / repensar si, tras poner las preguntas que se le hacen al usuario en jugar y en las pruebas de sello, di debemos orientar más los FlyTo (de los juegos y de las pruebas de sello), un poco más arriba, por muchas razones:
   - para que después de los aciertos o fallo, se vean mejor
   - para que cuando se hace la pregunta para juegos E y F se vean mejor
   - etc.
-  -(repasa el trabajo que se hizo en el pasado para orientar mejor lo que se ve en los juegos y pruebas de sello + lo que se ha hecho estos últimos días moviendo preguntas abajo - pero sin volverte loco / gestionando bien la info que hay en contexto)
-- [ ]
+  -(repasa el trabajo que se hizo en el pasado para orientar mejor lo que se ve en los juegos y pruebas de sello + lo que se ha hecho estos últimos días moviendo preguntas abajo - pero sin volverte loco / gestionando bien la info que hay en contexto) (quizás lo mejor sea hacer un spike antes de implementar)
+- [ ] Repasar cómo se está renderizando el texto de las etiquetas de los mares, hay veces en que parece que hay espacio desigual entre letras. (Te puedo pasar imágenes si ayuda a identificar el problema)
+- [ ] Para todas las tablas de estadísticas: poder hacer sorting por cualquier columna, simplemente haciendo click en el header
 
+### Rendimiento
+- [ ] A veces se calienta el móvil un poco cuando juego, y consume batería. Hacer spike para investigar por qué es y proponer solución. 
 
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes
