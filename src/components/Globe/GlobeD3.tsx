@@ -79,6 +79,11 @@ const LABEL_FONT_BASE = 9;
 // Opacidad de países fuera del filtro de continente
 const DIMMED_ALPHA = 0.15;
 
+/** Features sin código ISO: heredan dimming de sus países vecinos */
+const ORPHAN_NEIGHBORS: Record<string, string[]> = {
+  'Siachen Glacier': ['IN', 'PK', 'CN'],
+};
+
 // Etiquetas de mares y océanos (underlay — convención cartográfica: serif itálica)
 // Estilo discreto: texto pequeño, sin glow, preposicionado en centro del agua
 const SEA_FONT_BASE: Record<number, number> = { 0: 11, 1: 9, 2: 8, 3: 7 };
@@ -637,7 +642,16 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
 
       // Dimming por filtro de continente
-      const isDimmed = filter != null && (cca2 == null || !filter.has(cca2));
+      let isDimmed = false;
+      if (filter != null) {
+        if (cca2 != null) {
+          isDimmed = !filter.has(cca2);
+        } else {
+          // Features sin código ISO: heredan dimming de países vecinos
+          const neighbors = ORPHAN_NEIGHBORS[feature.properties?.name as string];
+          isDimmed = neighbors ? !neighbors.some(n => filter.has(n)) : false;
+        }
+      }
       if (isDimmed) ctx.globalAlpha = DIMMED_ALPHA;
 
       ctx.beginPath();

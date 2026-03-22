@@ -716,3 +716,12 @@ A diferencia de los territorios no-ONU (que son estados de facto con población 
 *   **No participa en el juego**: No es un país.
 *   **Color de etiqueta**: Ámbar (como territorios no-ONU).
 *   **Continente**: Valor especial — no pertenece a ninguno de los 5 continentes de la app. Los filtros de continente la ignoran.
+
+### Política de representación cartográfica
+
+GeoExpert usa la representación **de facto** de Natural Earth sin modificaciones cartográficas. Las fronteras reflejan el control territorial efectivo, no las reclamaciones legales.
+
+*   **Criterio de países**: Estándar de la ONU (195 miembros y observadores). Este es el criterio para el juego, no el de Natural Earth.
+*   **Territorios disputados**: Se muestran tal como los representa Natural Earth (de facto). La ficha muestra «Soberanía en disputa» sin tomar partido. Los 4 casos actuales (TW, XK, EH, FK) ya siguen este criterio.
+*   **Features sin mapeo ISO**: Algunas features del TopoJSON no corresponden a ningún país ni territorio mapeado (ej. Glaciar de Siachen, ~27 km²). Se renderizan como masa terrestre genérica, sin ficha ni interacción. No se crean datos sintéticos para ellas.
+*   **Sin localización cartográfica**: No se implementan vistas específicas por país (ej. mapa diferente para usuarios de India vs. Pakistán). El mapa es universal.

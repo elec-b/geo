@@ -47,6 +47,7 @@
 - [x] **Datos**: Override 1:10m para SC y MV (SC: 1→18, MV: 2→22 polys), filtro de polígonos diminutos, mesh de bordes filtrado para excluir override countries, bordes 10m dibujados por separado. Fix race condition en carga paralela que causaba contornos fantasma 50m. Spike: `docs/spikes/archipielagos-resolucion-10m.md`
 - [x] **UX Jugar**: Ocultar marcadores de microestados en tipo B y pruebas de sello de capitales — los anillos se solapaban con los pines de capital (◎). Solo tipo A mantiene marcadores visibles
 - [x] **UX Jugar**: Pin de capital (◎) contrastante en juegos — el pin del país target se muestra en blanco tras responder (visible sobre verde/dorado/rojo). Solo post-respuesta para no delatar en tipo B/sello. Colores de territorio acierto/error más mate (#459960 verde bosque, #c45250 rojo teja) — menos agresivos, mejor contraste con pin blanco
+- [x] **Cartografía**: Política de territorios disputados en DESIGN.md (criterio ONU, representación de facto de Natural Earth). Fix Siachen — features sin código ISO heredan dimming de países vecinos (mapa `ORPHAN_NEIGHBORS`), eliminando triángulos visibles con filtro de continente
 
 ---
 
@@ -55,9 +56,7 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Cartografía
-- [ ] **Spike Cachemira completado** → `docs/spikes/cachemira-territorio-disputa.md`. Decisión: statu quo documentado para Siachen (visualmente irrelevante, ~27 km²). **Nota importante**: nuestro criterio para territorios disputados es lo que diga la **ONU**, no Natural Earth. Revisar el spike y la política propuesta bajo este criterio antes de implementar nada.
 - [ ] Parchear 5 features huérfanas en `isoMapping.ts` (GS, IO, TF, HM, CX) — territorios con ISO oficial que faltan en el mapeo. Hallazgo del spike de Cachemira.
-- [ ] Explicitar política de territorios disputados en DESIGN.md (criterio ONU)
 
 ### Mejoras UX
 - [ ] mejora en marcadores de microestados: sugiero que los marcadores de microestados, gradualemnte se difuminen según se hace zoom-in, pero solo cuando están completamente dentro de las fronteras del microestado que marcan. (No hay que modificar nada la manera gradual en la que se muestran, esto ya está perfecto, solo hay que hacer que desaparezcan cuando ya no son útiles, porque el zoom es alto y se reconoce / se puede hacer hit fácilmente sobre el microestado)
