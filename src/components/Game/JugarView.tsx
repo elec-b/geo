@@ -368,7 +368,7 @@ export function JugarView({
   const hideMarkers = useMemo(() => {
     const q = session.currentQuestion;
     if (!q) return false;
-    return q.type !== 'A' && q.type !== 'B';
+    return q.type !== 'A';
   }, [session.currentQuestion]);
 
   useEffect(() => {

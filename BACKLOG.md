@@ -45,6 +45,7 @@
 - [x] **Jugar**: Buffer de anti-repetición aumentado de min(3, pool/2) a min(8, pool/2) — países fallados no reaparecen hasta 5-8 preguntas después (con pools de 10+). Pools pequeños sin cambio
 - [x] **Explorar**: Rediseño del símbolo de capitales — doble circunferencia (◎) en gris claro (#e0e0e0), labels de capital en gris tenue (jerarquía visual país > capital). Eliminadas referencias a "cian" en DESIGN.md. Grosor y opacidad igualados a las fronteras (lineWidth dinámico + rgba 0.5)
 - [x] **Datos**: Override 1:10m para SC y MV (SC: 1→18, MV: 2→22 polys), filtro de polígonos diminutos, mesh de bordes filtrado para excluir override countries, bordes 10m dibujados por separado. Fix race condition en carga paralela que causaba contornos fantasma 50m. Spike: `docs/spikes/archipielagos-resolucion-10m.md`
+- [x] **UX Jugar**: Ocultar marcadores de microestados en tipo B y pruebas de sello de capitales — los anillos se solapaban con los pines de capital (◎). Solo tipo A mantiene marcadores visibles
 
 ---
 
@@ -58,7 +59,9 @@
 - [ ] Explicitar política de territorios disputados en DESIGN.md (criterio ONU)
 
 ### Mejoras UX
-- [ ] en las pruebas de sello de capital y en juegos donde se pregunte por capitales, creo que no es necesario mostrar los marcadores de microestados. Se solapan con la doble circunferencia de capital. ¿Qué piensas?
+- [ ] en los juegos en los que se pregunta por una capital, no se ve bien el marcador de capital cuando el territorio del país está coloreado en amarillo / verde / rojo. Creo que hay que hacer simplemente que el color de la doble circunferencia cambie dependiendo del color del territorio del país (e.g. doble circunferencia dorada cuando el país es verdae). He visto problemas en estos casos:
+  - juegos: C, D, F, B
+  - prueba de sello de capitales
 - [ ] repasar / repensar si, tras pones las preguntas que se le hacen al usuario en jugar y en las pruebas de sello, di debemos orientar más los FlyTo (de los juegos y de las pruebas de sello), un poco más arriba, por muchas razones:
   - para que después de los aciertos o fallo, se vean mejor
   - para que cuando se hace la pregunta para juegos E y F se vean mejor
