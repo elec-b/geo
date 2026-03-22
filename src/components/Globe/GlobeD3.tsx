@@ -605,6 +605,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         const text = label.name_es;
 
         if (spacing > 0) {
+          // Resetear textAlign para evitar herencia de 'center' de iteración anterior
+          ctx.textAlign = 'left';
           // Char-by-char con letter-spacing
           const charWidths: number[] = [];
           let totalWidth = 0;

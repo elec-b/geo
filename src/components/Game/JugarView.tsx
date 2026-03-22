@@ -47,6 +47,13 @@ const MICROSTATE_PAIRS = new Set([
 const BASE_TOLERANCE_RAD = 0.05;  // ~2.9° a zoom 1
 const MIN_TOLERANCE_RAD = 0.005;  // ~0.29° (floor a zoom alto)
 
+/** Offset vertical de flyTo: desplaza el país hacia arriba para compensar
+ * el espacio de UI inferior (QuestionBanner + ChoicePanel + ProgressBar). */
+const GAME_LAT_OFFSET_ECDF = 12;   // ~37px para tipos con ChoicePanel (E/C/D/F)
+const GAME_LAT_OFFSET_AB = 7;      // ~22px para tipos sin ChoicePanel (A/B)
+const OFFSET_ZOOM_THRESHOLD = 2.5; // Sin offset a zoom bajo (globo entero visible)
+const OFFSET_FADE_RANGE = 1.0;     // Rango de transición suave
+
 function getHitTolerance(zoom: number): number {
   return Math.max(MIN_TOLERANCE_RAD, BASE_TOLERANCE_RAD / zoom);
 }
@@ -92,8 +99,26 @@ function getVisualCenter(globe: GlobeD3Ref, cca2: string): [number, number] | nu
   return globe.getOutlineCenter(cca2) ?? globe.getCentroid(cca2);
 }
 
+/** Calcula el offset vertical (en grados) según tipo de juego y zoom.
+ * A mayor zoom, offset completo; a zoom bajo (globo entero visible), sin offset. */
+function getGameLatOffset(questionType: QuestionType, targetZoom: number): number {
+  if (targetZoom < OFFSET_ZOOM_THRESHOLD) return 0;
+  const fadeFactor = Math.min(1, (targetZoom - OFFSET_ZOOM_THRESHOLD) / OFFSET_FADE_RANGE);
+  const hasChoicePanel = questionType === 'C' || questionType === 'D'
+    || questionType === 'E' || questionType === 'F';
+  return (hasChoicePanel ? GAME_LAT_OFFSET_ECDF : GAME_LAT_OFFSET_AB) * fadeFactor;
+}
+
+/** Wrapper de flyTo que aplica offset vertical según tipo de juego. */
+function gameFlyTo(
+  globe: GlobeD3Ref, lon: number, lat: number,
+  zoom: number | undefined, duration: number, questionType: QuestionType,
+): void {
+  globe.flyTo(lon, lat, zoom, duration, getGameLatOffset(questionType, zoom ?? 1));
+}
+
 /** Centra el globo sobre el target si está descentrado (feedback visual de acierto) */
-function centerOnCorrectAnswer(globe: GlobeD3Ref, targetCca2: string) {
+function centerOnCorrectAnswer(globe: GlobeD3Ref, targetCca2: string, questionType: QuestionType) {
   const centroid = globe.getCentroid(targetCca2);
   if (!centroid) return;
   const dist = globe.distanceFromCenter(centroid[0], centroid[1]);
@@ -101,7 +126,7 @@ function centerOnCorrectAnswer(globe: GlobeD3Ref, targetCca2: string) {
   const visibleAngle = Math.asin(Math.min(1, 1 / currentZoom));
   if (dist > visibleAngle * 0.5) {
     const targetZoom = getEFZoom(globe, targetCca2);
-    globe.flyTo(centroid[0], centroid[1], targetZoom, 600);
+    gameFlyTo(globe, centroid[0], centroid[1], targetZoom, 600, questionType);
   }
 }
 
@@ -249,6 +274,7 @@ export function JugarView({
     wrongCoords: [number, number];
     correctCca2: string;
     correctCoords: [number, number];
+    questionType: QuestionType;
   } | null>(null);
 
   // --- Países del continente actual (para highlight) ---
@@ -428,7 +454,7 @@ export function JugarView({
     if (center) {
       const zoom = getEFZoom(globeRef.current, q.targetCca2);
       const duration = getAdaptiveDuration(globeRef.current.getCurrentZoom(), zoom ?? 1);
-      globeRef.current.flyTo(center[0], center[1], zoom, duration);
+      gameFlyTo(globeRef.current, center[0], center[1], zoom, duration, q.type);
     }
   }, [session.currentQuestion, globeRef, flyOutStep]);
 
@@ -544,7 +570,7 @@ export function JugarView({
 
       // En acierto: mostrar el país completo si no está bien centrado
       if (result === 'correct' && globeRef.current) {
-        centerOnCorrectAnswer(globeRef.current, q.targetCca2);
+        centerOnCorrectAnswer(globeRef.current, q.targetCca2, q.type);
       }
 
       // En error: iniciar secuencia de dos pasos (etiqueta roja → flyTo + etiqueta verde)
@@ -557,6 +583,7 @@ export function JugarView({
             wrongCoords,
             correctCca2: q.targetCca2,
             correctCoords,
+            questionType: q.type,
           };
           setFeedbackStep('step1');
         }
@@ -583,7 +610,7 @@ export function JugarView({
     if (dist < tolerance) {
       const result = session.submitAnswer(q.targetCca2);
       if (result === 'correct') {
-        centerOnCorrectAnswer(globeRef.current, q.targetCca2);
+        centerOnCorrectAnswer(globeRef.current, q.targetCca2, q.type);
       }
       if (result === 'incorrect' && globeRef.current) {
         const correctCoords = globeRef.current.getCentroid(q.targetCca2);
@@ -593,6 +620,7 @@ export function JugarView({
             wrongCoords: tapCoords,
             correctCca2: q.targetCca2,
             correctCoords,
+            questionType: q.type,
           };
           setFeedbackStep('step1');
         }
@@ -676,7 +704,7 @@ export function JugarView({
             ? getEFZoom(globeRef.current, q.targetCca2)
             : getCDZoom(globeRef.current, q.targetCca2);
           const duration = getAdaptiveDuration(globeRef.current.getCurrentZoom(), zoom ?? 1);
-          globeRef.current.flyTo(center[0], center[1], zoom, duration);
+          gameFlyTo(globeRef.current, center[0], center[1], zoom, duration, q.type);
         }
       } else if (result === 'correct' && q && (q.type === 'C' || q.type === 'D') && globeRef.current) {
         // Acierto en C/D: flyTo al centroide (no capital) para que el país no quede tapado por ChoicePanel
@@ -685,7 +713,7 @@ export function JugarView({
           const zoom = getCDZoom(globeRef.current, q.targetCca2);
           const duration = getAdaptiveDuration(globeRef.current.getCurrentZoom(), zoom ?? 1);
           lastChoiceFlyToDurationRef.current = duration;
-          globeRef.current.flyTo(centroid[0], centroid[1], zoom, duration);
+          gameFlyTo(globeRef.current, centroid[0], centroid[1], zoom, duration, q.type);
         }
       }
     },
@@ -920,7 +948,7 @@ export function JugarView({
         if (coords && globeRef.current) {
           // Zoom de contexto: muestra el país correcto con sus vecinos
           const zoom = getEFZoom(globeRef.current, coords.correctCca2);
-          globeRef.current.flyTo(coords.correctCoords[0], coords.correctCoords[1], zoom, 600);
+          gameFlyTo(globeRef.current, coords.correctCoords[0], coords.correctCoords[1], zoom, 600, coords.questionType);
         }
       }, 1200);
     } else {
@@ -971,7 +999,7 @@ export function JugarView({
     if (center) {
       const zoom = getEFZoom(globeRef.current, q.targetCca2);
       const duration = getAdaptiveDuration(globeRef.current.getCurrentZoom(), zoom ?? 1);
-      globeRef.current.flyTo(center[0], center[1], zoom, duration);
+      gameFlyTo(globeRef.current, center[0], center[1], zoom, duration, q.type);
     }
     setFlyOutStep('idle');
   }, [flyOutStep, session.currentQuestion, globeRef]);

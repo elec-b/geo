@@ -49,6 +49,7 @@
 - [x] **UX Jugar**: Pin de capital (◎) contrastante en juegos — el pin del país target se muestra en blanco tras responder (visible sobre verde/dorado/rojo). Solo post-respuesta para no delatar en tipo B/sello. Colores de territorio acierto/error más mate (#459960 verde bosque, #c45250 rojo teja) — menos agresivos, mejor contraste con pin blanco
 - [x] **Cartografía**: Política de territorios disputados en DESIGN.md (criterio ONU, representación de facto de Natural Earth). Fix Siachen — features sin código ISO heredan dimming de países vecinos (mapa `ORPHAN_NEIGHBORS`), eliminando triángulos visibles con filtro de continente
 - [x] **UX Explorar**: Fade-out gradual de marcadores de microestados al hacer zoom-in — cada marcador se desvanece individualmente cuando el país proyectado es suficientemente grande (radio angular pre-computado × projection.scale()). Hit testing deshabilitado para marcadores invisibles. Microestados con área 0 (VA, MC) conservan marcador permanente
+- [x] **UX Jugar**: Offset vertical de flyTo durante juegos — el país se centra en la zona visible (entre header y bottom group) en vez de en el centro geométrico del canvas. Offset adaptativo por tipo (E/C/D/F: 12°, A/B/sello: 7°), con fade-in progresivo (solo a zoom ≥ 2.5). Spike: `docs/spikes/flyto-offset-juegos.md`
 
 ---
 
@@ -60,13 +61,9 @@
 - [ ] Investigar hull gigante que envuelve el planeta entero en Jugar (Asia-Guía). Observado al preguntar Indonesia — la línea discontinua del convex hull aparece rodeando todo el globo en vez de solo las islas. Probablemente el hull de Indonesia (o similar archipiélago extenso) se calcula/dibuja mal y abarca la esfera completa. Hacer spike para diagnosticar y corregir.
 
 ### Mejoras UX
-- [ ] repasar / repensar si, tras poner las preguntas que se le hacen al usuario en jugar y en las pruebas de sello, di debemos orientar más los FlyTo (de los juegos y de las pruebas de sello), un poco más arriba, por muchas razones:
-  - para que después de los aciertos o fallo, se vean mejor
-  - para que cuando se hace la pregunta para juegos E y F se vean mejor
-  - etc.
-  -(repasa el trabajo que se hizo en el pasado para orientar mejor lo que se ve en los juegos y pruebas de sello + lo que se ha hecho estos últimos días moviendo preguntas abajo - pero sin volverte loco / gestionando bien la info que hay en contexto) (quizás lo mejor sea hacer un spike antes de implementar)
 - [ ] Repasar cómo se está renderizando el texto de las etiquetas de los mares, hay veces en que parece que hay espacio desigual entre letras. (Te puedo pasar imágenes si ayuda a identificar el problema)
 - [ ] Para todas las tablas de estadísticas: poder hacer sorting por cualquier columna, simplemente haciendo click en el header
+- [ ] Jugando asia-guía: en juegos conde hay que seleccionar timor oriental, es fácil que haya problema de fat finger y se seleccione Indonesia. Pensar cómo solucionar e investigar si hay otros casos parecidos. ¿Puede haber problema porque Indesia tiene un hull (que creo que no se ve, pero está ahí)?
 
 ### Rendimiento
 - [ ] A veces se calienta el móvil un poco cuando juego, y consume batería. Hacer spike para investigar por qué es y proponer solución. 
