@@ -46,6 +46,7 @@
 - [x] **Explorar**: Rediseño del símbolo de capitales — doble circunferencia (◎) en gris claro (#e0e0e0), labels de capital en gris tenue (jerarquía visual país > capital). Eliminadas referencias a "cian" en DESIGN.md. Grosor y opacidad igualados a las fronteras (lineWidth dinámico + rgba 0.5)
 - [x] **Datos**: Override 1:10m para SC y MV (SC: 1→18, MV: 2→22 polys), filtro de polígonos diminutos, mesh de bordes filtrado para excluir override countries, bordes 10m dibujados por separado. Fix race condition en carga paralela que causaba contornos fantasma 50m. Spike: `docs/spikes/archipielagos-resolucion-10m.md`
 - [x] **UX Jugar**: Ocultar marcadores de microestados en tipo B y pruebas de sello de capitales — los anillos se solapaban con los pines de capital (◎). Solo tipo A mantiene marcadores visibles
+- [x] **UX Jugar**: Pin de capital (◎) contrastante en juegos — el pin del país target se muestra en blanco tras responder (visible sobre verde/dorado/rojo). Solo post-respuesta para no delatar en tipo B/sello. Colores de territorio acierto/error más mate (#459960 verde bosque, #c45250 rojo teja) — menos agresivos, mejor contraste con pin blanco
 
 ---
 
@@ -59,9 +60,7 @@
 - [ ] Explicitar política de territorios disputados en DESIGN.md (criterio ONU)
 
 ### Mejoras UX
-- [ ] en los juegos en los que se pregunta por una capital, no se ve bien el marcador de capital cuando el territorio del país está coloreado en amarillo / verde / rojo. Creo que hay que hacer simplemente que el color de la doble circunferencia cambie dependiendo del color del territorio del país (e.g. doble circunferencia dorada cuando el país es verdae). He visto problemas en estos casos:
-  - juegos: C, D, F, B
-  - prueba de sello de capitales
+- [ ] mejora en marcadores de microestados: sugiero que los marcadores de microestados, gradualemnte se difuminen según se hace zoom-in, pero solo cuando están completamente dentro de las fronteras del microestado que marcan. (No hay que modificar nada la manera gradual en la que se muestran, esto ya está perfecto, solo hay que hacer que desaparezcan cuando ya no son útiles, porque el zoom es alto y se reconoce / se puede hacer hit fácilmente sobre el microestado)
 - [ ] repasar / repensar si, tras pones las preguntas que se le hacen al usuario en jugar y en las pruebas de sello, di debemos orientar más los FlyTo (de los juegos y de las pruebas de sello), un poco más arriba, por muchas razones:
   - para que después de los aciertos o fallo, se vean mejor
   - para que cuando se hace la pregunta para juegos E y F se vean mejor
