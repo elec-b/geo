@@ -50,6 +50,7 @@
 - [x] **Cartografía**: Política de territorios disputados en DESIGN.md (criterio ONU, representación de facto de Natural Earth). Fix Siachen — features sin código ISO heredan dimming de países vecinos (mapa `ORPHAN_NEIGHBORS`), eliminando triángulos visibles con filtro de continente
 - [x] **UX Explorar**: Fade-out gradual de marcadores de microestados al hacer zoom-in — cada marcador se desvanece individualmente cuando el país proyectado es suficientemente grande (radio angular pre-computado × projection.scale()). Hit testing deshabilitado para marcadores invisibles. Microestados con área 0 (VA, MC) conservan marcador permanente
 - [x] **UX Jugar**: Offset vertical de flyTo durante juegos — el país se centra en la zona visible (entre header y bottom group) en vez de en el centro geométrico del canvas. Offset adaptativo por tipo (E/C/D/F: 12°, A/B/sello: 7°), con fade-in progresivo (solo a zoom ≥ 2.5). Spike: `docs/spikes/flyto-offset-juegos.md`
+- [x] **Explorar**: Fix espaciado desigual en etiquetas de mares — `textAlign: 'center'` se filtraba entre iteraciones del loop de renderizado, causando gaps dependientes del ancho de cada carácter en las etiquetas char-by-char
 
 ---
 
@@ -61,7 +62,6 @@
 - [ ] Investigar hull gigante que envuelve el planeta entero en Jugar (Asia-Guía). Observado al preguntar Indonesia — la línea discontinua del convex hull aparece rodeando todo el globo en vez de solo las islas. Probablemente el hull de Indonesia (o similar archipiélago extenso) se calcula/dibuja mal y abarca la esfera completa. Hacer spike para diagnosticar y corregir.
 
 ### Mejoras UX
-- [ ] Repasar cómo se está renderizando el texto de las etiquetas de los mares, hay veces en que parece que hay espacio desigual entre letras. (Te puedo pasar imágenes si ayuda a identificar el problema)
 - [ ] Para todas las tablas de estadísticas: poder hacer sorting por cualquier columna, simplemente haciendo click en el header
 - [ ] Jugando asia-guía: en juegos conde hay que seleccionar timor oriental, es fácil que haya problema de fat finger y se seleccione Indonesia. Pensar cómo solucionar e investigar si hay otros casos parecidos. ¿Puede haber problema porque Indesia tiene un hull (que creo que no se ve, pero está ahí)?
 
