@@ -55,9 +55,6 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
-### Cartografía
-- [ ] Parchear 5 features huérfanas en `isoMapping.ts` (GS, IO, TF, HM, CX) — territorios con ISO oficial que faltan en el mapeo. Hallazgo del spike de Cachemira.
-
 ### Mejoras UX
 - [ ] mejora en marcadores de microestados: sugiero que los marcadores de microestados, gradualemnte se difuminen según se hace zoom-in, pero solo cuando están completamente dentro de las fronteras del microestado que marcan. (No hay que modificar nada la manera gradual en la que se muestran, esto ya está perfecto, solo hay que hacer que desaparezcan cuando ya no son útiles, porque el zoom es alto y se reconoce / se puede hacer hit fácilmente sobre el microestado)
 - [ ] repasar / repensar si, tras pones las preguntas que se le hacen al usuario en jugar y en las pruebas de sello, di debemos orientar más los FlyTo (de los juegos y de las pruebas de sello), un poco más arriba, por muchas razones:
@@ -65,6 +62,8 @@
   - para que cuando se hace la pregunta para juegos E y F se vean mejor
   - etc.
   -(repasa el trabajo que se hizo en el pasado para orientar mejor lo que se ve en los juegos y pruebas de sello + lo que se ha hecho estos últimos días moviendo preguntas abajo - pero sin volverte loco / gestionando bien la info que hay en contexto)
+- [ ]
+
 
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes
@@ -72,6 +71,7 @@
 - [ ] Anota feedback en backlog.md
 
 ### Internacionalización (UI completa)
+- [ ] (Intencionadamente antes del core de tareas de internacionalización). Lanzar spike de investigación para identificar por qué hay typos en Español. Por ejemplo, la app muestra "Iran" (sin tilde) en vez de "Irán". ¿Hay más errores? ¿Cómo evitamos esto para otros idiomas que no son mi idioma natal?
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
   - Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español
