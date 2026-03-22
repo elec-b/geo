@@ -54,15 +54,13 @@
 - [x] **Estadísticas**: Sorting por cualquier columna en ambas pestañas (Jugar y Pruebas de sello) — headers tappables con indicador ▲/▼, ordenamiento por estado de dominio o porcentaje según modo activo, desempate por nombre, reset al cambiar pestaña
 - [x] **Jugar**: Fix hull gigante envolviendo el planeta (Indonesia, Asia-Guía) — el convex hull 2D (Andrew's) tenía winding order invertido en proyección esférica, causando que D3 dibujara el complemento del hull. Fix: verificar `geoArea()` y hacer `reverse()` si cubre más de media esfera. Spike: `docs/spikes/hull-gigante-indonesia.md`
 - [x] **Hit testing**: Fix fat finger Timor Oriental ↔ Indonesia — el hull invisible de Indonesia interceptaba taps cercanos a Timor. Fix: en fase 3 del hit testing (hulls), antes de retornar el match por hull, comparar contra centroides de todos los países y preferir el más cercano al tap. Genérico para cualquier hull que tape a un vecino. Spike: `docs/spikes/fat-finger-timor-indonesia.md`
+- [x] **Rendimiento**: Optimización de batería/calentamiento — DPR limitado a 2 (~56% menos píxeles), RAF sleep/wake (loop se detiene cuando no hay animaciones), pausa de RAF en background (`@capacitor/app`). Spike: `docs/spikes/rendimiento-bateria.md`
 
 ---
 
 ## Próximos pasos
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
-
-### Rendimiento
-- [ ] A veces se calienta el móvil un poco cuando juego, y consume batería. Hacer spike para investigar por qué es y proponer solución. 
 
 ### Testear exhaustivamente
 - [ ] Consigue todos los sellos para todos los continentes

@@ -8,6 +8,8 @@ import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geoj
 import { loadCountriesGeoJson, loadBordersGeoJson, getOverrideCca2s } from '../../data/countries';
 import type { CountryFeature, CountryProperties } from '../../data/countries';
 import type { CapitalCoords } from '../../data/types';
+import { App as CapacitorApp } from '@capacitor/app';
+import { Capacitor } from '@capacitor/core';
 import { COUNTRY_SELECTED_COLOR } from './colors';
 
 // --- Constantes del tema espacial ---
@@ -361,6 +363,19 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const hullCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   // Dirty flag: evita redibujar el canvas a 60fps cuando el globo está en reposo
   const needsRedrawRef = useRef(true); // true para el draw inicial
+  // Sleep/wake: detiene el loop RAF cuando no hay nada que animar
+  const isLoopSleepingRef = useRef(false);
+  const animateRef = useRef<(() => void) | null>(null);
+
+  // Despertar el loop RAF si está dormido (usa solo refs, seguro desde cualquier contexto)
+  const wakeLoop = () => {
+    if (isLoopSleepingRef.current && animateRef.current) {
+      isLoopSleepingRef.current = false;
+      lastTimeRef.current = performance.now();
+      animFrameRef.current = requestAnimationFrame(animateRef.current);
+    }
+  };
+
   const showMarkersRef = useRef(showMarkers);
   if (showMarkersRef.current !== showMarkers) needsRedrawRef.current = true;
   showMarkersRef.current = showMarkers;
@@ -417,6 +432,12 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   if (feedbackLabelsRef.current !== feedbackLabels) needsRedrawRef.current = true;
   feedbackLabelsRef.current = feedbackLabels;
 
+  // Si algún sync check marcó dirty y el loop está dormido, despertarlo
+  // (useEffect sin deps: corre después de cada render, coste negligible — solo lee 2 refs)
+  useEffect(() => {
+    if (needsRedrawRef.current) wakeLoop();
+  });
+
   // Animación flyTo
   const flyToAnimRef = useRef<{
     startRotation: [number, number];
@@ -456,6 +477,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         startTime: performance.now(),
         duration,
       };
+      wakeLoop();
     },
     getCentroid(cca2: string): [number, number] | null {
       return countryCentroidsRef.current.get(cca2) ?? null;
@@ -514,6 +536,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       scaleRef.current = 1.0;
       isAutoRotatingRef.current = true;
       needsRedrawRef.current = true;
+      wakeLoop();
     },
     getLastTapCoords(): [number, number] | null {
       return lastTapCoordsRef.current;
@@ -1106,8 +1129,22 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       needsRedrawRef.current = false;
     }
 
-    animFrameRef.current = requestAnimationFrame(animate);
+    // Sleep/wake: solo programar siguiente frame si hay motivo para seguir
+    const shouldContinue = flyToAnimRef.current !== null
+      || isInertiaRef.current
+      || (isAutoRotatingRef.current && !isDraggingRef.current)
+      || isDraggingRef.current
+      || pinchRef.current !== null;
+
+    if (shouldContinue || needsRedrawRef.current) {
+      animFrameRef.current = requestAnimationFrame(animate);
+    } else {
+      isLoopSleepingRef.current = true;
+    }
   }, [draw]);
+
+  // Actualizar ref de animate para acceso desde wakeLoop
+  animateRef.current = animate;
 
   // --- Hit test ---
 
@@ -1228,7 +1265,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     if (!canvas || !container) return;
 
     const rect = container.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     canvas.width = rect.width * dpr;
     canvas.height = rect.height * dpr;
@@ -1516,6 +1553,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         seaLabelsRef.current = data;
         seaLabelsLoadedRef.current = true;
         needsRedrawRef.current = true;
+        wakeLoop();
       })
       .catch(() => { /* silencioso: sin etiquetas de mar si falla */ });
   }, []);
@@ -1541,6 +1579,25 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     return () => observer.disconnect();
   }, [resize]);
 
+  // Pausar RAF al ir a background, reanudar al volver (solo en nativo)
+  useEffect(() => {
+    if (!Capacitor.isNativePlatform()) return;
+
+    const listener = CapacitorApp.addListener('appStateChange', ({ isActive }) => {
+      if (isActive) {
+        wakeLoop();
+      } else {
+        if (animFrameRef.current !== null) {
+          cancelAnimationFrame(animFrameRef.current);
+          animFrameRef.current = null;
+        }
+        isLoopSleepingRef.current = true;
+      }
+    });
+
+    return () => { listener.then(l => l.remove()); };
+  }, []);
+
   // --- Zoom: wheel + pinch (listeners nativos) ---
 
   useEffect(() => {
@@ -1557,6 +1614,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       const factor = 1 - e.deltaY * ZOOM_WHEEL_FACTOR;
       scaleRef.current = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scaleRef.current * factor));
       needsRedrawRef.current = true;
+      wakeLoop();
     };
 
     const handleTouchStart = (e: TouchEvent) => {
@@ -1648,6 +1706,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       rotation: [...rotationRef.current] as [number, number],
     };
     (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    wakeLoop();
   }, [getCanvasPos]);
 
   const handlePointerMove = useCallback((e: React.PointerEvent) => {
@@ -1671,6 +1730,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       if (cca2 !== hoveredRef.current) {
         hoveredRef.current = cca2;
         needsRedrawRef.current = true;
+        wakeLoop();
         const canvas = canvasRef.current;
         if (canvas) canvas.style.cursor = cca2 ? 'pointer' : 'grab';
       }
@@ -1696,6 +1756,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         if (!isControlledRef.current) {
           selectedRef.current = feature.properties?.cca2 ?? null;
           needsRedrawRef.current = true;
+          wakeLoop();
         }
         onCountryClick?.(feature as CountryFeature);
       } else {
@@ -1703,6 +1764,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         if (!isControlledRef.current) {
           selectedRef.current = null;
           needsRedrawRef.current = true;
+          wakeLoop();
         }
         onDeselectRef.current?.();
       }
