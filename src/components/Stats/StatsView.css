@@ -198,6 +198,32 @@
   width: 10%;
 }
 
+/* Botón de sort dentro de th */
+.stats-table__sort-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.stats-table__sort-btn--left {
+  justify-content: flex-start;
+}
+
+.stats-table__sort-indicator {
+  font-size: 0.625rem;
+  opacity: 0.7;
+  margin-left: 0.125rem;
+}
+
 .stats-table__td-name {
   padding: var(--spacing-xs);
   color: var(--color-text-primary);

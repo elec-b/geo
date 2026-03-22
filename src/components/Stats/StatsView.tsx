@@ -127,6 +127,55 @@ const STAMP_LABELS: Record<'A' | 'B', { short: string; full: string }> = {
   B: { short: '◎ Capitales', full: 'Prueba de sello de Capitales' },
 };
 
+// --- Sorting ---
+
+type StatsSortKey = 'name' | QuestionType;
+type SortDir = 'asc' | 'desc';
+
+function SortIndicator({ active, dir }: { active: boolean; dir: SortDir }) {
+  if (!active) return null;
+  return <span className="stats-table__sort-indicator">{dir === 'asc' ? ' ▲' : ' ▼'}</span>;
+}
+
+/** Valor numérico para ordenar columnas de Jugar en modo indicador */
+function getJugarIndicatorValue(
+  ca: CountryAttempts | undefined,
+  ownCa: CountryAttempts | undefined,
+  type: QuestionType,
+): number {
+  if (!ca) return 0;
+  if (isDominated(ca, type)) {
+    return isDirectlyDominated(ownCa, type) ? 2 : 1;
+  }
+  const rec = ca[type];
+  if (!rec || (rec.correct === 0 && rec.incorrect === 0)) return 0;
+  return -1;
+}
+
+/** Valor numérico para ordenar columnas de Jugar en modo porcentaje */
+function getJugarPercentValue(ca: CountryAttempts | undefined, type: QuestionType): number {
+  if (!ca) return -1;
+  const rec = ca[type];
+  if (!rec || (rec.correct === 0 && rec.incorrect === 0)) return -1;
+  return Math.round((rec.correct / (rec.correct + rec.incorrect)) * 100);
+}
+
+/** Valor numérico para ordenar columnas de Sellos en modo indicador */
+function getStampIndicatorValue(sca: StampCountryAttempts | undefined, type: 'A' | 'B'): number {
+  if (!sca) return 0;
+  const rec = sca[type];
+  if (!rec) return 0;
+  return rec.lastCorrect ? 1 : -1;
+}
+
+/** Valor numérico para ordenar columnas de Sellos en modo porcentaje */
+function getStampPercentValue(sca: StampCountryAttempts | undefined, type: 'A' | 'B'): number {
+  if (!sca) return -1;
+  const rec = sca[type];
+  if (!rec || (rec.correct === 0 && rec.incorrect === 0)) return -1;
+  return Math.round((rec.correct / (rec.correct + rec.incorrect)) * 100);
+}
+
 export function StatsView({ countries, levels, onClose, context }: StatsViewProps) {
   const lastPlayed = useAppStore((s) => s.settings.lastPlayed);
   const lastStampPlayed = useAppStore((s) => s.settings.lastStampPlayed);
@@ -142,6 +191,23 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
   );
   const [activeTab, setActiveTab] = useState<StatsTab>(defaultTab);
   const [showPercentage, setShowPercentage] = useState(false);
+  const [sortKey, setSortKey] = useState<StatsSortKey>('name');
+  const [sortDir, setSortDir] = useState<SortDir>('asc');
+
+  const toggleSort = useCallback((key: StatsSortKey) => {
+    if (sortKey === key) {
+      setSortDir(d => d === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortKey(key);
+      setSortDir(key === 'name' ? 'asc' : 'desc');
+    }
+  }, [sortKey]);
+
+  const handleTabChange = useCallback((tab: StatsTab) => {
+    setActiveTab(tab);
+    setSortKey('name');
+    setSortDir('asc');
+  }, []);
 
   const resetAttempts = useAppStore((s) => s.resetAttempts);
   const getStamps = useAppStore((s) => s.getStamps);
@@ -175,12 +241,41 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
     return getStampAttempts(selectedLevel, selectedContinent);
   }, [getStampAttempts, selectedLevel, selectedContinent]);
 
-  // Lista de países ordenados por nombre
+  // Lista de países ordenados según columna activa
   const sortedCountries = useMemo(() => {
-    return levelCountries
-      .map((cca2) => ({ cca2, name: countries.get(cca2)?.name ?? cca2 }))
-      .sort((a, b) => a.name.localeCompare(b.name, 'es'));
-  }, [levelCountries, countries]);
+    const list = levelCountries
+      .map((cca2) => ({ cca2, name: countries.get(cca2)?.name ?? cca2 }));
+
+    list.sort((a, b) => {
+      let cmp: number;
+      if (sortKey === 'name') {
+        cmp = a.name.localeCompare(b.name, 'es');
+      } else if (activeTab === 'jugar') {
+        const caA = allAttempts[a.cca2];
+        const caB = allAttempts[b.cca2];
+        const valA = showPercentage
+          ? getJugarPercentValue(caA, sortKey)
+          : getJugarIndicatorValue(caA, ownAttempts[a.cca2], sortKey);
+        const valB = showPercentage
+          ? getJugarPercentValue(caB, sortKey)
+          : getJugarIndicatorValue(caB, ownAttempts[b.cca2], sortKey);
+        cmp = valA - valB;
+      } else {
+        const st = sortKey as 'A' | 'B';
+        const valA = showPercentage
+          ? getStampPercentValue(stampAttempts[a.cca2], st)
+          : getStampIndicatorValue(stampAttempts[a.cca2], st);
+        const valB = showPercentage
+          ? getStampPercentValue(stampAttempts[b.cca2], st)
+          : getStampIndicatorValue(stampAttempts[b.cca2], st);
+        cmp = valA - valB;
+      }
+      if (cmp === 0) cmp = a.name.localeCompare(b.name, 'es');
+      return sortDir === 'asc' ? cmp : -cmp;
+    });
+
+    return list;
+  }, [levelCountries, countries, sortKey, sortDir, activeTab, showPercentage, allAttempts, ownAttempts, stampAttempts]);
 
   const handleReset = () => {
     if (window.confirm(`¿Resetear estadísticas de Jugar para ${selectedLevel} - ${selectedContinent}?`)) {
@@ -203,13 +298,13 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
         <div className="stats-tabs">
           <button
             className={`stats-tab${activeTab === 'jugar' ? ' stats-tab--active' : ''}`}
-            onClick={() => setActiveTab('jugar')}
+            onClick={() => handleTabChange('jugar')}
           >
             Jugar
           </button>
           <button
             className={`stats-tab${activeTab === 'sellos' ? ' stats-tab--active' : ''}`}
-            onClick={() => setActiveTab('sellos')}
+            onClick={() => handleTabChange('sellos')}
           >
             Pruebas de sello
           </button>
@@ -258,10 +353,16 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
             <table className="stats-table">
               <thead>
                 <tr>
-                  <th className="stats-table__th-name">País</th>
+                  <th className="stats-table__th-name">
+                    <button className="stats-table__sort-btn stats-table__sort-btn--left" onClick={() => toggleSort('name')}>
+                      País<SortIndicator active={sortKey === 'name'} dir={sortDir} />
+                    </button>
+                  </th>
                   {ALL_TYPES.map((t) => (
                     <th key={t} className="stats-table__th-type" title={TYPE_LABELS[t].full}>
-                      {TYPE_LABELS[t].short}
+                      <button className="stats-table__sort-btn" onClick={() => toggleSort(t)}>
+                        {TYPE_LABELS[t].short}<SortIndicator active={sortKey === t} dir={sortDir} />
+                      </button>
                     </th>
                   ))}
                 </tr>
@@ -298,10 +399,16 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
             <table className="stats-table">
               <thead>
                 <tr>
-                  <th className="stats-table__th-name">País</th>
+                  <th className="stats-table__th-name">
+                    <button className="stats-table__sort-btn stats-table__sort-btn--left" onClick={() => toggleSort('name')}>
+                      País<SortIndicator active={sortKey === 'name'} dir={sortDir} />
+                    </button>
+                  </th>
                   {STAMP_TYPES.map((t) => (
                     <th key={t} className="stats-table__th-type" title={STAMP_LABELS[t].full}>
-                      {STAMP_LABELS[t].short}
+                      <button className="stats-table__sort-btn" onClick={() => toggleSort(t)}>
+                        {STAMP_LABELS[t].short}<SortIndicator active={sortKey === t} dir={sortDir} />
+                      </button>
                     </th>
                   ))}
                 </tr>
