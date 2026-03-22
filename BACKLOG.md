@@ -56,6 +56,9 @@
 
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
+### Bugs
+- [ ] Investigar hull gigante que envuelve el planeta entero en Jugar (Asia-Guía). Observado al preguntar Indonesia — la línea discontinua del convex hull aparece rodeando todo el globo en vez de solo las islas. Probablemente el hull de Indonesia (o similar archipiélago extenso) se calcula/dibuja mal y abarca la esfera completa. Hacer spike para diagnosticar y corregir.
+
 ### Mejoras UX
 - [ ] repasar / repensar si, tras poner las preguntas que se le hacen al usuario en jugar y en las pruebas de sello, di debemos orientar más los FlyTo (de los juegos y de las pruebas de sello), un poco más arriba, por muchas razones:
   - para que después de los aciertos o fallo, se vean mejor
