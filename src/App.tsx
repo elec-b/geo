@@ -3,14 +3,20 @@ import { lazy, Suspense, useState, useCallback, useEffect, useRef, useMemo } fro
 import { LoadingScreen } from './components/UI/LoadingScreen';
 import { TabBar } from './components/Navigation/TabBar';
 import { AppHeader } from './components/Layout/AppHeader';
+import { StatsView } from './components/Stats/StatsView';
 import { ExploreView, type GlobeControlProps } from './components/Explore/ExploreView';
+import { JugarView, type StampTestRequest } from './components/Game/JugarView';
+import { PassportView } from './components/Passport/PassportView';
+import { ProfileSelector, getNextDefaultName } from './components/Profile/ProfileSelector';
+import { ProfileEditor } from './components/Profile/ProfileEditor';
+import { SettingsSheet } from './components/Settings/SettingsSheet';
 import { loadCountryData, loadCapitals } from './data/countryData';
 import { buildRankings, type CountryRankings } from './data/rankings';
 import { buildLevelDefinitions } from './data/levels';
 import { useAppStore } from './stores/appStore';
 import type { GlobeD3Ref } from './components/Globe';
 import type { CountryFeature } from './data/countries';
-import type { CountryData, CapitalCoords } from './data/types';
+import type { CountryData, CapitalCoords, LevelDefinition } from './data/types';
 import type { TabId } from './components/Navigation/types';
 import './components/Layout/AppShell.css';
 
@@ -19,40 +25,131 @@ const GlobeD3 = lazy(() => import('./components/Globe/GlobeD3'));
 /** Estado inicial de las props controladas del globo */
 const DEFAULT_GLOBE_CONTROL: GlobeControlProps = {
   selectedCountryCca2: null,
-  capitalPin: null,
+  capitalPins: [],
   highlightedCountries: null,
   showCountryLabels: false,
   showCapitalLabels: false,
   capitalLabelsData: null,
+  feedbackLabels: null,
 };
 
 function App() {
   const [globeReady, setGlobeReady] = useState(false);
   const [activeTab, setActiveTab] = useState<TabId>('explore');
+  const [jugarResetSignal, setJugarResetSignal] = useState(0);
+  const [showStats, setShowStats] = useState(false);
   const showMarkers = useAppStore((s) => s.settings.showMarkers);
+  const showSeaLabels = useAppStore((s) => s.settings.showSeaLabels);
 
   // Datos cargados
   const [countries, setCountries] = useState<Map<string, CountryData> | null>(null);
   const [capitals, setCapitals] = useState<Map<string, CapitalCoords> | null>(null);
   const [rankings, setRankings] = useState<Map<string, CountryRankings> | null>(null);
+  const [levels, setLevels] = useState<Map<string, LevelDefinition> | null>(null);
 
   // Ref del globo (para flyTo)
   const globeRef = useRef<GlobeD3Ref>(null);
 
-  // Props controladas del globo (gestionadas por ExploreView)
+  // Props controladas del globo (gestionadas por el tab activo)
   const [globeControl, setGlobeControl] = useState<GlobeControlProps>(DEFAULT_GLOBE_CONTROL);
 
-  // Bridge de handlers: ExploreView registra sus callbacks aquí
+  // Ref del tab activo (para evitar re-render del globo al cambiar de tab)
+  const activeTabRef = useRef<TabId>(activeTab);
+  activeTabRef.current = activeTab;
+
+  // Modal de configuración
+  const [showSettings, setShowSettings] = useState(false);
+
+  // Modales de gestión de perfiles
+  const [showProfileSelector, setShowProfileSelector] = useState(false);
+  const [showProfileEditor, setShowProfileEditor] = useState(false);
+  const [editingProfile, setEditingProfile] = useState<import('./stores/types').UserProfile | null>(null);
+
+  // Prueba de sello lanzada desde Pasaporte
+  const [stampTestRequest, setStampTestRequest] = useState<StampTestRequest | null>(null);
+  // Indica que hay una prueba de sello activa (desde cualquier origen)
+  const [stampTestActive, setStampTestActive] = useState(false);
+  // Sello recién ganado (para animación stampDrop en Pasaporte)
+  const [recentlyEarnedStamp, setRecentlyEarnedStamp] = useState<StampTestRequest | null>(null);
+
+  // Cambio de tab — con limpieza de prueba de sello si está activa
+  const handleTabChange = useCallback((tab: TabId) => {
+    if (stampTestActive) {
+      setStampTestActive(false);
+      if (stampTestRequest) setStampTestRequest(null);
+      if (tab === 'play') {
+        setJugarResetSignal((s) => s + 1);
+        return;
+      }
+      setActiveTab(tab);
+      return;
+    }
+    if (tab === 'play' && activeTab === 'play') {
+      setJugarResetSignal((s) => s + 1);
+    }
+    setActiveTab(tab);
+  }, [activeTab, stampTestActive, stampTestRequest]);
+
+  // Callback para lanzar prueba de sello desde Pasaporte → cambia a tab Jugar
+  const handleStartStampTest = useCallback(
+    (level: import('./data/types').GameLevel, continent: import('./data/types').Continent, stampType: import('./hooks/useGameSession').StampTestType) => {
+      setStampTestRequest({ level, continent, stampType });
+      setStampTestActive(true);
+      setActiveTab('play');
+    },
+    [],
+  );
+
+  // Callback cuando JugarView inicia una prueba de sello internamente
+  const handleStampTestStarted = useCallback(() => {
+    setStampTestActive(true);
+  }, []);
+
+  // Callback cuando la prueba de sello termina → limpiar request
+  const handleStampTestDone = useCallback(
+    (earned?: { level: import('./data/types').GameLevel; continent: import('./data/types').Continent; stampType: import('./hooks/useGameSession').StampTestType }) => {
+      if (earned) setRecentlyEarnedStamp(earned);
+      setStampTestRequest(null);
+      setStampTestActive(false);
+      setActiveTab('passport');
+    },
+    [],
+  );
+
+  // Cambio de perfil: limpiar sesión activa, reiniciar globo y navegar a Explorar
+  const handleProfileChange = useCallback((id: string) => {
+    const currentId = useAppStore.getState().activeProfileId;
+    if (id !== currentId) {
+      useAppStore.getState().setActiveProfile(id);
+      setStampTestRequest(null);
+      setStampTestActive(false);
+      setActiveTab('explore');
+      globeRef.current?.resetToIdle();
+    }
+    setShowProfileSelector(false);
+  }, []);
+
+  // Bridge de handlers: cada tab registra sus callbacks aquí
   const exploreClickRef = useRef<((f: CountryFeature) => void) | undefined>(undefined);
   const exploreDeselectRef = useRef<(() => void) | undefined>(undefined);
+  const jugarClickRef = useRef<((f: CountryFeature) => void) | undefined>(undefined);
+  const jugarDeselectRef = useRef<(() => void) | undefined>(undefined);
 
-  // Callbacks estables para el globo (delegan a ExploreView via refs)
+  // Callback estable para el globo (delega al tab activo via refs)
   const handleCountryClick = useCallback((feature: CountryFeature) => {
-    exploreClickRef.current?.(feature);
+    if (activeTabRef.current === 'explore') {
+      exploreClickRef.current?.(feature);
+    } else if (activeTabRef.current === 'play') {
+      jugarClickRef.current?.(feature);
+    }
   }, []);
 
   const handleCountryDeselect = useCallback(() => {
-    exploreDeselectRef.current?.();
+    if (activeTabRef.current === 'explore') {
+      exploreDeselectRef.current?.();
+    } else if (activeTabRef.current === 'play') {
+      jugarDeselectRef.current?.();
+    }
   }, []);
 
   const handleGlobeReady = useCallback(() => setGlobeReady(true), []);
@@ -61,19 +158,11 @@ function App() {
   useEffect(() => {
     Promise.all([loadCountryData(), loadCapitals()]).then(([countriesData, capitalsData]) => {
       const ranksData = buildRankings(countriesData);
+      const levelsData = buildLevelDefinitions(countriesData);
       setCountries(countriesData);
       setCapitals(capitalsData);
       setRankings(ranksData);
-
-      // Verificación temporal de niveles
-      const levels = buildLevelDefinitions(countriesData);
-      const continents = ['África', 'América', 'Asia', 'Europa', 'Oceanía'] as const;
-      for (const continent of continents) {
-        const t = levels.get(`turista-${continent}`)!.countries.length;
-        const m = levels.get(`mochilero-${continent}`)!.countries.length;
-        const g = levels.get(`guía-${continent}`)!.countries.length;
-        console.log(`${continent}: T=${t}, M=${m}, G=${g}`);
-      }
+      setLevels(levelsData);
     });
   }, []);
 
@@ -97,30 +186,38 @@ function App() {
     return map;
   }, [countries]);
 
-  const dataReady = countries && capitals && rankings;
+  const dataReady = countries && capitals && rankings && levels;
 
   return (
     <>
       <LoadingScreen visible={!globeReady} />
 
-      <AppHeader />
+      <AppHeader
+        onStatsClick={() => setShowStats(true)}
+        onAvatarClick={() => setShowProfileSelector(true)}
+        onSettingsClick={() => setShowSettings(true)}
+      />
 
       {/* Globo: siempre montado, sin wrapper — iOS rompe touch tras re-render si se envuelve */}
       <Suspense fallback={null}>
         <GlobeD3
           ref={globeRef}
-          onCountryClick={activeTab === 'explore' ? handleCountryClick : undefined}
-          onCountryDeselect={activeTab === 'explore' ? handleCountryDeselect : undefined}
+          onCountryClick={(activeTab === 'explore' || activeTab === 'play') ? handleCountryClick : undefined}
+          onCountryDeselect={(activeTab === 'explore' || activeTab === 'play') ? handleCountryDeselect : undefined}
           onReady={handleGlobeReady}
-          showMarkers={showMarkers}
+          showMarkers={globeControl.showMarkers ?? showMarkers}
+          showSeaLabels={globeControl.showSeaLabels ?? showSeaLabels}
           selectedCountryCca2={globeControl.selectedCountryCca2}
-          capitalPin={globeControl.capitalPin}
+          selectedCountryColor={globeControl.selectedCountryColor}
+          capitalPins={globeControl.capitalPins}
+          capitalPinHighlight={globeControl.capitalPinHighlight}
           highlightedCountries={globeControl.highlightedCountries}
           showCountryLabels={globeControl.showCountryLabels}
           showCapitalLabels={globeControl.showCapitalLabels}
           capitalLabelsData={globeControl.capitalLabelsData}
           countryPopulations={countryPopulations}
           countryNames={countryNames}
+          feedbackLabels={globeControl.feedbackLabels}
         />
       </Suspense>
 
@@ -137,35 +234,86 @@ function App() {
         />
       )}
 
-      {/* Placeholders de tabs no implementados */}
-      {activeTab === 'play' && (
-        <div className="tab-overlay tab-overlay--active">
-          <div className="tab-placeholder">
-            <svg className="tab-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none" />
-            </svg>
-            <span className="tab-placeholder__title">Jugar</span>
-            <span className="tab-placeholder__subtitle">Próximamente</span>
-          </div>
-        </div>
+      {/* Experiencia Jugar */}
+      {activeTab === 'play' && dataReady && (
+        <JugarView
+          globeRef={globeRef}
+          countries={countries}
+          capitals={capitals}
+          levels={levels}
+          onGlobePropsChange={setGlobeControl}
+          onCountryClickRef={jugarClickRef}
+          onCountryDeselectRef={jugarDeselectRef}
+          stampTestRequest={stampTestRequest}
+          onStampTestDone={handleStampTestDone}
+          onStampTestStarted={handleStampTestStarted}
+          onNavigateStats={() => setShowStats(true)}
+          resetSignal={jugarResetSignal}
+        />
       )}
 
-      {activeTab === 'passport' && (
-        <div className="tab-overlay tab-overlay--active tab-overlay--passport">
-          <div className="tab-placeholder">
-            <svg className="tab-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="4" y="2" width="16" height="20" rx="2" />
-              <circle cx="12" cy="10" r="3" />
-              <path d="M8 18h8" />
-            </svg>
-            <span className="tab-placeholder__title">Mi Pasaporte</span>
-            <span className="tab-placeholder__subtitle">Próximamente</span>
-          </div>
-        </div>
+      {activeTab === 'passport' && dataReady && (
+        <PassportView
+          levels={levels}
+          onStartStampTest={handleStartStampTest}
+          recentlyEarnedStamp={recentlyEarnedStamp}
+          onStampAnimationDone={() => setRecentlyEarnedStamp(null)}
+        />
       )}
 
-      <TabBar activeTab={activeTab} onTabChange={setActiveTab} />
+      {showStats && dataReady && (
+        <StatsView
+          countries={countries}
+          levels={levels}
+          onClose={() => setShowStats(false)}
+          context={
+            (stampTestRequest || stampTestActive)
+              ? { tab: 'sellos', ...(stampTestRequest && { continent: stampTestRequest.continent, level: stampTestRequest.level }) }
+              : activeTab === 'passport'
+                ? { tab: 'sellos' }
+                : undefined
+          }
+        />
+      )}
+
+      {showProfileSelector && (
+        <ProfileSelector
+          onClose={() => setShowProfileSelector(false)}
+          onProfileChange={handleProfileChange}
+          onCreateNew={() => {
+            setEditingProfile(null);
+            setShowProfileEditor(true);
+          }}
+          onEdit={(profile) => {
+            setEditingProfile(profile);
+            setShowProfileEditor(true);
+          }}
+        />
+      )}
+
+      {showProfileEditor && (
+        <ProfileEditor
+          editProfile={editingProfile ?? undefined}
+          defaultName={editingProfile ? undefined : getNextDefaultName(useAppStore.getState().profiles)}
+          onClose={() => {
+            setShowProfileEditor(false);
+            setEditingProfile(null);
+          }}
+          onSave={() => {
+            setShowProfileEditor(false);
+            setShowProfileSelector(false);
+            setEditingProfile(null);
+          }}
+        />
+      )}
+
+      {showSettings && (
+        <SettingsSheet
+          onClose={() => setShowSettings(false)}
+        />
+      )}
+
+      <TabBar activeTab={stampTestActive ? 'passport' : activeTab} onTabChange={handleTabChange} />
     </>
   );
 }

@@ -1,7 +1,8 @@
 // Ficha de país — bottom sheet que muestra info detallada del país seleccionado
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import type { CountryData } from '../../data/types';
 import type { CountryRankings } from '../../data/rankings';
+import { useBottomSheetDrag } from '../../hooks/useBottomSheetDrag';
 import './CountryCard.css';
 
 /** Color CSS del continente */
@@ -16,6 +17,19 @@ const CONTINENT_COLORS: Record<string, string> = {
 
 /** Máximo de idiomas visibles antes de truncar */
 const MAX_LANGUAGES = 3;
+
+/** Preposiciones en español para cada país soberano de territorios dependientes */
+const SOVEREIGN_LABELS: Record<string, string> = {
+  'GB': 'del Reino Unido',
+  'FR': 'de Francia',
+  'US': 'de Estados Unidos',
+  'NL': 'de Países Bajos',
+  'DK': 'de Dinamarca',
+  'CN': 'de China',
+  'NZ': 'de Nueva Zelanda',
+  'FI': 'de Finlandia',
+  'AU': 'de Australia',
+};
 
 type TooltipId = 'hdi' | 'ihdi' | null;
 
@@ -57,6 +71,12 @@ function InfoIcon() {
 }
 
 export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
+  const sheetRef = useRef<HTMLDivElement>(null);
+  const { dragHandlers } = useBottomSheetDrag({
+    sheetRef,
+    onClose,
+  });
+
   const continentColor = CONTINENT_COLORS[country.continent] ?? 'var(--color-text-secondary)';
   const isAntarctica = country.cca2 === 'AQ';
   const [activeTooltip, setActiveTooltip] = useState<TooltipId>(null);
@@ -77,50 +97,65 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
   };
 
   return (
-    <div className="country-card" role="dialog" aria-label={`Ficha de ${country.name}`}>
-      {/* Disclaimer contextual */}
-      {isAntarctica ? (
-        <div className="country-card__disclaimer">
-          Territorio internacional — Tratado Antártico (1959)
-        </div>
-      ) : !country.unMember ? (
-        <div className="country-card__disclaimer">
-          Territorio no reconocido por la ONU
-        </div>
-      ) : null}
+    <div
+      ref={sheetRef}
+      className="country-card"
+      role="dialog"
+      aria-label={`Ficha de ${country.name}`}
+    >
+      {/* Drag zone: handle + disclaimer + header — touch-action: none para drag fiable */}
+      <div className="country-card__drag-zone" {...dragHandlers}>
+        <div className="bottom-sheet-handle" />
+        {/* Disclaimer contextual */}
+        {isAntarctica ? (
+          <div className="country-card__disclaimer">
+            Territorio internacional — Tratado Antártico (1959)
+          </div>
+        ) : !country.unMember ? (
+          <div className="country-card__disclaimer">
+            {country.sovereignCountry && SOVEREIGN_LABELS[country.sovereignCountry]
+              ? `Territorio ${SOVEREIGN_LABELS[country.sovereignCountry]}`
+              : 'Soberanía en disputa'}
+          </div>
+        ) : null}
 
-      {/* Cabecera: bandera + nombre + cerrar */}
-      <div className="country-card__header">
-        {country.flagSvg && (
-          <img
-            className="country-card__flag"
-            src={country.flagSvg}
-            alt={`Bandera de ${country.name}`}
-            loading="eager"
-          />
-        )}
-        <div className="country-card__title-group">
-          <h2 className="country-card__name">{country.name}</h2>
-          <span
-            className="country-card__continent"
-            style={{ color: continentColor }}
-          >
-            {country.continent}
-          </span>
+        {/* Cabecera: bandera + nombre + wikipedia */}
+        <div className="country-card__header">
+          {country.flagSvg && (
+            <img
+              className="country-card__flag"
+              src={country.flagSvg}
+              alt={`Bandera de ${country.name}`}
+              loading="eager"
+            />
+          )}
+          <div className="country-card__title-group">
+            <h2 className="country-card__name">{country.name}</h2>
+            <span
+              className="country-card__continent"
+              style={{ color: continentColor }}
+            >
+              {country.continent}
+            </span>
+          </div>
+          {wikipediaUrl && (
+            <button
+              className="country-card__wikipedia"
+              onClick={() => window.open(wikipediaUrl, '_blank')}
+              aria-label={`Abrir ${country.name} en Wikipedia`}
+            >
+              <img
+                className="country-card__wikipedia-icon"
+                src="https://www.wikipedia.org/static/apple-touch/wikipedia.png"
+                alt="Wikipedia"
+              />
+            </button>
+          )}
         </div>
-        <button
-          className="country-card__close"
-          onClick={onClose}
-          aria-label="Cerrar ficha"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
       </div>
 
-      {/* Datos: layout especial para Antártida */}
+      {/* Body: contenido scrollable — touch-action: pan-y para scroll nativo */}
+      <div className="country-card__body">
       {isAntarctica ? (
         <div className="country-card__grid">
           <div className="country-card__field">
@@ -236,22 +271,8 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
           )}
         </div>
       )}
+      </div>
 
-      {/* Botón Wikipedia */}
-      {wikipediaUrl && (
-        <button
-          className="country-card__wikipedia"
-          onClick={() => window.open(wikipediaUrl, '_blank')}
-          aria-label={`Abrir ${country.name} en Wikipedia`}
-        >
-          <svg className="country-card__wikipedia-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-            <polyline points="15 3 21 3 21 9" />
-            <line x1="10" y1="14" x2="21" y2="3" />
-          </svg>
-          Wikipedia
-        </button>
-      )}
     </div>
   );
 }

@@ -1,0 +1,188 @@
+/* ProfileEditor — Modal para crear/editar perfil */
+
+.profile-editor-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: var(--spacing-lg);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-editor {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  max-width: 22rem;
+  width: 100%;
+  text-align: center;
+}
+
+.profile-editor__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+}
+
+.profile-editor__title {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.profile-editor__close {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--transition-fast);
+}
+
+.profile-editor__close:active {
+  color: var(--color-text-primary);
+}
+
+/* Avatar seleccionado (preview grande) */
+.profile-editor__preview {
+  margin-bottom: var(--spacing-lg);
+}
+
+.profile-editor__preview-avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-accent-cyan);
+  background: var(--glass-bg);
+  padding: var(--spacing-xs);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+/* Grid de avatares */
+.profile-editor__avatar-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-sm);
+  text-align: left;
+}
+
+.profile-editor__avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  justify-items: center;
+}
+
+.profile-editor__avatar-option {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  background: var(--glass-bg);
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-editor__avatar-option:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-editor__avatar-option--selected {
+  border-color: var(--color-accent-cyan);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.profile-editor__avatar-option img {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Input de nombre */
+.profile-editor__name-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-sm);
+  text-align: left;
+  display: block;
+}
+
+.profile-editor__name-input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  outline: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  margin-bottom: var(--spacing-lg);
+  transition: border-color var(--transition-fast);
+}
+
+.profile-editor__name-input:focus {
+  border-color: var(--color-accent-cyan);
+}
+
+.profile-editor__name-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Botones */
+.profile-editor__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.profile-editor__save-btn {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-accent-cyan);
+  background: var(--color-accent-cyan);
+  color: var(--color-bg-primary);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-editor__save-btn:active {
+  opacity: 0.8;
+}
+
+.profile-editor__save-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.profile-editor__cancel-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  -webkit-tap-highlight-color: transparent;
+}

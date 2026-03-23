@@ -6,174 +6,93 @@
 
 ## Completado
 
-### Setup inicial
-- [x] Proyecto React + Vite configurado
-- [x] Globo 3D con MapLibre GL JS v5 (globe projection)
-- [x] Carga de países desde `world-atlas` (TopoJSON → GeoJSON)
-- [x] Interacción táctil básica (click en países)
-- [x] Tema espacial con fondo negro y estrellas
-- [x] Colores simplificados: gris uniforme para todos los países
-- [x] Resolución 50m (equilibrio detalle/rendimiento, incluye Baleares, Canarias, Caribe, Oceanía)
-  - ⚠️ Falta Tuvalu (11,000 hab.) — no incluido en 50m (limitación del dataset, no del motor)
-- [x] Capacitor iOS configurado y probado en Simulator (iPhone 16e, iOS 26.1)
-
-### Spike: motor de renderizado del globo
-- [x] Spike PMTiles vs D3.js ortográfico (ver `docs/spikes/pmtiles-vs-d3.md`)
-  - PMTiles (tippecanoe) → **FALLA**: los seams son inherentes a la reproyección Mercator→esfera de MapLibre, no a `geojson-vt`
-  - D3.js ortográfico + Canvas 2D → **PASA**: sin artefactos, sin tiles, rendimiento fluido
-  - **Decisión**: migrar a D3.js `geoOrthographic()` sobre Canvas 2D como motor del globo
-
-### Migración a D3.js
-- [x] Adoptar `GlobeD3.tsx` como componente principal del globo (reemplazar MapLibre)
-- [x] Giro de la Tierra de Oeste a Este
-- [x] Implementar zoom (pinch/wheel → `projection.scale()`)
-  - Zoom máximo ×200 para poder ver microestados (Vaticano, Mónaco, San Marino)
-  - Bordes y sensibilidad del drag se ajustan proporcionalmente al nivel de zoom
-- [x] Añadir inercia al drag (momentum al soltar)
-  - Solo se activa si el usuario suelta "en movimiento" (pausa >80 ms la cancela)
-  - Auto-rotación se detiene permanentemente tras la primera interacción del usuario
-- [x] Limpiar código de MapLibre y PMTiles
-  - Eliminados `Globe.tsx`, `GlobePMTiles.tsx`, `pmtiles-protocol.ts`, `world.pmtiles`
-  - Eliminadas dependencias `maplibre-gl`, `react-map-gl`, `pmtiles` (~1.2 MB menos)
-  - Rehabilitado `StrictMode` en `main.tsx` (ya no hay WebGL)
-- [x] Probar en iOS Simulator vía Capacitor
-
-### Prueba en dispositivo real (iPhone)
-- [x] Probar interacción táctil del globo en dispositivo real
-  - Drag, pinch zoom y selección de países funcionan correctamente en general
-  - Se pueden seleccionar la mayoría de microestados (Andorra, Mónaco, San Marino) con zoom alto
-  - ⚠️ Vaticano no se puede seleccionar (demasiado pequeño incluso con zoom máximo) → se necesitan marcadores
-
-### Mejoras de interacción y visuales del globo
-- [x] Corregir selección accidental de países durante pinch zoom
-  - Flag `gestureWasPinchRef` suprime hover y selección mientras haya pinch activo
-- [x] Permitir mover el globo mientras se hace pinch zoom
-  - Rotación simultánea basada en el desplazamiento incremental del punto medio entre dedos
-- [x] Eliminar la franja de luz vertical del fondo
-  - Gradientes radiales `at top`/`at bottom` reemplazados por uno centrado
-- [x] Añadir marcadores de microestados sobre el globo (31 países)
-  - Anillos discontinuos (dashed) con fade-in gradual (zoom ×3→×5)
-  - Hit testing con prioridad invertida: marcadores antes que geometría cuando son visibles
-  - Radio táctil dinámico (20→30px según zoom)
-  - Prop `showMarkers` para activar/desactivar (default: `true`)
-- [x] Mejorar visibilidad de fronteras al hacer zoom
-  - `lineWidth` mínimo subido de 0.3 a 0.5px, opacidad de 0.2 a 0.3
-
-### Datos y estado
-- [x] Tabla de mapeo ISO numeric → alpha-2 (`src/data/isoMapping.ts`, 195 entradas)
-- [x] Enriquecer GeoJSON con `cca2` e `isUNMember`; migrar selección/hover/marcadores de `name` a `cca2`
-- [x] Integrar REST Countries v3.1 → `public/data/countries.json` (195 países) y `public/data/capitals.json` (195 capitales con coordenadas)
-  - Script de generación: `npm run fetch-data` (`scripts/fetch-countries.ts`)
-  - Mapeo `region` → 5 continentes en español
-- [x] Tipos centrales y loader con caché (`src/data/types.ts`, `src/data/countryData.ts`)
-- [x] Zustand store para estado global multi-perfil (`src/stores/appStore.ts`)
-  - Acciones: `createProfile`, `setActiveProfile`, `deleteProfile`, `updateSettings`
-  - `showMarkers` del store conectado al globo en tiempo real
-- [x] Definición de niveles por continente (`src/data/levels.ts`)
-  - Turista: top 10 por población (top 5 en Oceanía), Mochilero: 60%, Guía: 100%
-
-### Navegación
-- [x] Implementar tab bar inferior con 3 tabs (Jugar, Explorar, Mi Pasaporte)
-  - Glassmorphism + `safe-area-inset-bottom` para home indicator iOS
-  - Iconos SVG inline, micro-animación `scale(1.1)` en tab activo, glow cian en "Jugar"
-  - Roles ARIA (`tablist`, `tab`, `aria-selected`)
-- [x] Header superior con placeholders de avatar y configuración
-  - Transparente con `pointer-events: none`, solo botones interactivos
-- [x] Sistema de z-index centralizado en variables CSS (`--z-stars` hasta `--z-modal`)
-- [x] Overlays placeholder para tabs "Jugar" y "Mi Pasaporte" (próximamente)
-  - Renderizado condicional (no opacity toggle) para evitar bug de touch en iOS WebKit
-  - Efecto blur en "Pasaporte" via `backdrop-filter` en overlay (sin wrapper sobre el globo)
-- [x] Tab por defecto: Explorar (globo interactivo, sin overlay)
-
-### Experiencia: Explorar
-- [x] Ficha de país al tocar (bandera, nombre completo, capital, continente, población, superficie, densidad — todos con ranking — moneda, gentilicio)
-- [x] Marcador de capital (pin cian al tocar un país; circulitos permanentes con toggle "Capitales")
-- [x] Filtros por continente (pills horizontales, `flyTo` al centro del continente)
-- [x] Etiquetas de países/capitales (toggles independientes, anti-solapamiento por `geoArea` + colisión de bounding boxes, centroides con override para 23 países irregulares, etiqueta de país no solapa con su propia capital)
-- [x] Tabla de países (headers sticky y ordenables, población formateada, affordance visual en celdas tappables, vista plana con filtro "Todos", toggle no-ONU con color ámbar)
-- [x] Segmented control "Globo | Tabla" (preserva scroll al volver a tabla, toggles de etiquetas visibles al venir de tabla)
-- [x] API imperativa `flyTo(lon, lat, zoom?, duration?)` con animación suave, camino más corto (`wrapLon`)
-- [x] Territorios no-ONU: seleccionables con ficha + disclaimer, continente asignado, etiquetas en color ámbar
-- [x] Ficha de Somalilandia y Chipre del Norte (datos sintéticos en `countryData.ts`)
-- [x] Posición inicial aleatoria del globo (longitud aleatoria, latitud fija en 0)
-- [x] Bugs resueltos: z-index tabla, pills responsive, Guyana/Brunei, Antártida, Sáhara Occidental, Grenada, Australia duplicada en TopoJSON
-- [x] Auditoría diseño responsivo: px → rem en toda la app
-- [x] `flyTo` offset dinámico: `latOffset` se divide por el zoom objetivo (`targetScale`) dentro de `flyTo()`. A zoom 5× el offset pasa de 15° a ~3°; a zoom 20× baja a ~0.75°. Resuelve desplazamiento excesivo en microestados y territorios no-ONU
-- [x] Etiquetas: `ctx.measureText()` reemplaza estimación `fontSize * length * 0.55` para bounding boxes precisas; capitales que colisionan entre sí se apilan verticalmente (+2px gap) en vez de descartarse (Roma + Ciudad del Vaticano coexisten)
-
-### i18n de datos y Antártida
-- [x] Archivo suplementario `scripts/data/capitals-es.json` con 232 capitales y gentilicios en español
-- [x] `fetch-countries.ts`: usa `translations.spa` para nombres, archivo suplementario para capitales y gentilicios
-- [x] Regenerados `countries.json` y `capitals.json` con datos en español
-- [x] Etiquetas del globo en español (nueva prop `countryNames` en GlobeD3)
-- [x] Ordenamiento de tabla con locale español (`localeCompare('es')`)
-- [x] Antártida: mapeo ID 010 → AQ, datos sintéticos, ficha especial (Tratado Antártico), etiqueta ámbar, excluida de tabla
-
-### Ficha de país: monedas, idiomas, IDH
-- [x] Monedas traducidas al español con símbolo: "Euro (€)", "Dólar estadounidense ($)". Ampliado `capitals-es.json` con campo `currencies` (232 entradas). Pipeline con fallback a REST Countries
-- [x] Idiomas oficiales nacionales en español. Ampliado `capitals-es.json` con campo `languages` (232 entradas). Criterio: solo idiomas oficiales a nivel nacional/constitucional (ver DESIGN.md). Max 3 visibles + "…"
-- [x] IDH e IDH-D (UNDP 2023/2024): nuevo `scripts/data/hdi.json` (194 entradas). Rankings en ficha. Tooltips (i) con descripción. IDH-D muestra "N/D" cuando no disponible
-- [x] Tabla ordenada por población descendente por defecto
-- [x] Header: iconos con más aire respecto al safe area (`--spacing-sm`)
-- [x] Gentilicio con mayúscula inicial en la ficha
-
-### Ficha de país: enlace a Wikipedia
-- [x] Script `fetch-wikipedia.ts`: consulta Wikidata SPARQL (P297 → sitelinks es/en), validación HEAD, genera `scripts/data/wikipedia-es.json` (257 entradas, cobertura 100%)
-- [x] Pipeline `fetch-countries.ts` integra `wikipediaSlug` en `countries.json`
-- [x] Botón Wikipedia en CountryCard (full-width, icono enlace externo, abre artículo en Safari)
-- [x] Datos sintéticos (SOL, CYN, AQ) con slug manual
+- [x] **Motor de renderizado**: D3.js ortográfico + Canvas 2D. Zoom ×200, inercia, pinch+drag, marcadores de microestados, dirty flag
+- [x] **Datos**: 195 países ONU + territorios no-ONU + Antártida. Datos en español completos (capitales, gentilicios, monedas, idiomas, IDH/IDH-D, Wikipedia). Override 1:10m para 8 islas del Pacífico
+- [x] **Explorar**: Globo interactivo (etiquetas anti-solapamiento, filtros continente, flyTo) + Tabla (sticky headers, ordenable, toggle no-ONU). Ficha de país completa. Diseño responsivo (rem)
+- [x] **Jugar**: 6 tipos (E/C/D/F/A/B), modo Aventura + tipo concreto. Algoritmo v3 (rachas, etapas, regresión, avance colectivo, inferencia, herencia entre niveles, anti-repetición). Barra de progreso ponderada. Pruebas de sello (0 errores). Zoom inteligente E/F y A/B (extensión angular, convex hull, centroides Oceanía ajustados)
+- [x] **Pasaporte**: Rediseño visual premium — sellos circulares CSS (★ ganado, borde simple país / doble capital, coloreados por continente con rotación aleatoria), contenedor guilloché, animación stampDrop, cabecera "Pasaporte de <nombre>", leyenda simplificada. Eliminados colores por nivel. Modal de sello conseguido unificado con nuevo estilo. Selector "Superado ★" sin color
+- [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente, limpieza de sesión al cambiar perfil (termina juego/sello en curso, reinicia globo, navega a Explorar)
+- [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores). Feedback háptico
+- [x] **UX Jugar**: Pre-selección continente/nivel, botón Continuar, niveles superados con ★, modales de fin de sesión con invitación a sello, selector sin paso intermedio, orden y colores olímpicos en pills de continente, tipo/modo ya completado (modal pre-sesión + ✓ en pills + correcciones en modales de fin), ocultar pines de capitales no-ONU en Jugar y pruebas de sello, hulls de archipiélagos siempre visibles (selectivos por continente, buffer proporcional, zoom adaptativo), fix flyTo antimeridiano (Samoa/Tonga), fix hit testing no-ONU (prioridad geometría sobre territorios no-ONU), colores olímpicos unificados en selectores de Explorar/Pasaporte, circulitos de capitales no-ONU en ámbar
+- [x] **Estadísticas**: Eliminado estado "en progreso" (✗ para racha ≤ 0), quitados contadores aciertos/fallos, toggle ✓/%, desacoplamiento datos sello/jugar (`stampAttempts` independiente), nueva pestaña "Pruebas de sello" con indicadores ✓/✗, defaults inteligentes según origen (Jugar→lastPlayed, Pasaporte/sello→lastStampPlayed), icono de refuerzo ▼→✗ (convención tick/cross)
+- [x] **Datos**: Corregidas coordenadas de capitales incorrectas de REST Countries API: El Aaiún (lat/lng invertidos), Dakar (imprecisión costera). Añadidos CAPITAL_OVERRIDES en fetch-countries.ts
+- [x] **Pasaporte**: Tab bar ilumina "Pasaporte" durante pruebas de sello (desde cualquier origen), navegación limpia al cambiar de tab durante sello, ocultado texto "Sin nivel global"
+- [x] **Estadísticas**: Código de colores para porcentajes (rojo <50%, ámbar 50-79%, verde ≥80%) en ambas pestañas. Fix toggle ✓/▼→✓/✗
+- [x] **Jugar**: Fix modales de sello — filtrar sellos ya ganados + acceso directo (sin modal) cuando solo falta 1 sello. Adaptar título/texto del modal pool exhausted Aventura cuando ambos sellos están ganados
+- [x] **UX Jugar**: Filtros de feedback verde/rojo suavizados (opacidad 15% → 5%) en todos los tipos de juego y pruebas de sello
+- [x] **Explorar**: Pin de capital de territorios no-ONU en ámbar (antes aparecía en cian como los ONU)
+- [x] **UX Jugar**: Feedback háptico más sutil — acierto: tap ligero único; error: doble tap ligero; toggles: sin cambios
+- [x] **Pasaporte**: Animación de estrella giratoria al conseguir sello — efecto "trompo" (10 vueltas en 3s con ease-out)
+- [x] **UX general**: Bottom sheets (configuración y ficha de país) — handle visual + drag-to-dismiss + animación de cierre suave. Eliminados botones X
+- [x] **Jugar**: Fix bug herencia entre niveles — barra de progreso llegaba a 100% sin mostrar modal de sello. Causa: herencia A/B sintética desalineaba progreso con pool. Solución: heredar E/CDF en vez de A/B (A y B se juegan siempre). Simplificación del algoritmo (~35 líneas eliminadas). Fix defensivo en session.start() para pool vacío al iniciar.
+- [x] **UX Jugar**: Mensajes motivadores en prueba de sello no superada — título y texto dinámicos según rendimiento (4 franjas: ≥90% "¡Muy cerca!", 70-89% "¡Buen intento!", 50-69% "Vas por buen camino", <50% "No te rindas")
+- [x] **UX Jugar**: Fix sincronización barra de progreso y contadores en Pruebas de Sello — ahora se mueven a la vez. Bonus: la barra llega a 100% en la última pregunta (antes nunca lo hacía)
+- [x] **Jugar**: Fix posicionamiento del globo fuera de continente — race condition entre flyTo continental y efecto A/B que evaluaba isPointVisible() durante la animación. Solución: diferir evaluación A/B hasta que flyTo termine (isAnimating + delay). También: usar getVisualCenter() (hull center) en vez de getCentroid() para archipiélagos en tipo A, y añadir CENTROID_OVERRIDE para Papúa Nueva Guinea
+- [x] **Jugar**: Fix herencia E/CDF no se aplicaba cuando solo había datos de sello (sin partidas regulares). Causa: `getAttemptsWithInheritance` verificaba A/B per-country en `attempts`, pero las pruebas de sello escriben en `stampAttempts`. Solución: si ambos sellos del nivel anterior están ganados, heredar E/CDF para todos los países del nivel (los sellos ya son prueba de dominio A/B). Eliminada recursión innecesaria.
+- [x] **UX Jugar**: Margen de tolerancia adaptativo en hit testing para tipos A/B y Pruebas de Sello. Spike: `docs/spikes/hit-testing-archipielagos.md`. Taps "casi sobre el país" ahora se aceptan si están cerca del target (geoDistance < 0.05/zoom rad). Dos casos: tap en océano cerca del target, y tap en vecino cuando estás más cerca del target. AS-WS añadido a MICROSTATE_PAIRS. No afecta a Explorar.
+- [x] **Nomenclatura y selector**: Nueva nomenclatura visual para tipos de juego basada en ◯ (país) y ◎ (capital). Iconos en headers de stats (◯?, ◯→◎, ◎→◯, ◎?, ◯, ◎), nombres descriptivos en selector y modales. Selector rediseñado: Aventura destacada (botón 🧭 ancho completo) + toggle colapsable «Elegir tipo concreto» con grid 2×3. Columnas de stats con ancho uniforme. Spike: `docs/spikes/nomenclatura-tipos-juego.md`
+- [x] **Explorar**: Link de Wikipedia movido del pie del bottom sheet al header — icono redondo con el puzzle globe oficial de Wikipedia (apple-touch-icon externo, auto-actualizable, cacheado por WKWebView)
+- [x] **Explorar**: Clasificación de territorios no-ONU — disclaimer contextual en ficha de país: "Territorio de [País]" (33 dependientes) o "Soberanía en disputa" (TW, XK, EH, FK). Mapa constante `SOVEREIGN_LABELS` con preposiciones en español. Spike: `docs/spikes/clasificacion-territorios.md`
+- [x] **UX Jugar**: Mejoras en selector de juego — nivel bloqueado muestra n.º de países (en vez de "Bloqueado"), título "Elige juego" (coherencia), subtítulo Aventura "Se adapta a lo que sabes", separador "o elige juego concreto" con líneas. Scroll automático al expandir tipos + panel scrollable en pantallas pequeñas
+- [x] **Explorar**: Fix drag-to-dismiss de ficha de país (Singapur y potencialmente otros). Causa: conflicto `touch-action: pan-y` + `overflow-y: auto` + `setPointerCapture` en iOS. Solución: separar drag zone (handle+header, `touch-action: none`) de scroll zone (body, `touch-action: pan-y`)
+- [x] **Estadísticas**: Símbolos ◯/◎ en headers de columna de la pestaña "Pruebas de sello" (coherencia visual con pestaña "Jugar")
+- [x] **UX general**: Deshabilitada selección de texto y menú contextual de long-press en iOS (`user-select: none` + `-webkit-touch-callout: none` en reset global)
+- [x] **Estadísticas**: Aviso de permanencia en pestaña "Pruebas de sello" — mensaje explicativo de que sellos e historial son permanentes (metáfora pasaporte real), con alternativa de crear nuevo perfil. Documentado en DESIGN.md
+- [x] **Explorar**: Etiquetas de mares y océanos en el globo — 28 entries (5 océanos, 6 mares grandes, 11 medianos incl. Caspio y Amarillo, 3 pequeños, 3 golfos). Underlay serif itálica (Georgia), estilo discreto. minZoom individual por etiqueta, sin límite máximo. Toggle «Mares y océanos» en Configuración (visible desde todas las pestañas). Auditoría de posiciones contra islas (Gotland, Ryukyu). Fix letter-spacing uniforme (char-by-char left-aligned)
+- [x] **Configuración**: Toggle de marcadores de microestados y archipiélagos visible desde todas las pestañas (antes solo en Explorar). Eliminado prop `isExploreTab`
+- [x] **Jugar**: FlyTo más suave en todos los tipos — interpolación logarítmica del zoom (distribución visual uniforme), duración adaptativa proporcional al ratio de zoom, y pausa extra sobre el país correcto en C/D acierto
+- [x] **UX Jugar**: Reposicionar pregunta y opciones — grupo unificado abajo (`.game-bottom-group` flex column: QuestionBanner + ChoicePanel + ProgressBar). Todos los tipos A-F y pruebas de sello muestran pregunta en zona inferior. Estilo unificado (font-size-xl, bold). Posición responsiva con `max()` para compatibilidad con distintos dispositivos
+- [x] **Jugar**: Buffer de anti-repetición aumentado de min(3, pool/2) a min(8, pool/2) — países fallados no reaparecen hasta 5-8 preguntas después (con pools de 10+). Pools pequeños sin cambio
+- [x] **Explorar**: Rediseño del símbolo de capitales — doble circunferencia (◎) en gris claro (#e0e0e0), labels de capital en gris tenue (jerarquía visual país > capital). Eliminadas referencias a "cian" en DESIGN.md. Grosor y opacidad igualados a las fronteras (lineWidth dinámico + rgba 0.5)
+- [x] **Datos**: Override 1:10m para SC y MV (SC: 1→18, MV: 2→22 polys), filtro de polígonos diminutos, mesh de bordes filtrado para excluir override countries, bordes 10m dibujados por separado. Fix race condition en carga paralela que causaba contornos fantasma 50m. Spike: `docs/spikes/archipielagos-resolucion-10m.md`
+- [x] **UX Jugar**: Ocultar marcadores de microestados en tipo B y pruebas de sello de capitales — los anillos se solapaban con los pines de capital (◎). Solo tipo A mantiene marcadores visibles
+- [x] **UX Jugar**: Pin de capital (◎) contrastante en juegos — el pin del país target se muestra en blanco tras responder (visible sobre verde/dorado/rojo). Solo post-respuesta para no delatar en tipo B/sello. Colores de territorio acierto/error más mate (#459960 verde bosque, #c45250 rojo teja) — menos agresivos, mejor contraste con pin blanco
+- [x] **Cartografía**: Política de territorios disputados en DESIGN.md (criterio ONU, representación de facto de Natural Earth). Fix Siachen — features sin código ISO heredan dimming de países vecinos (mapa `ORPHAN_NEIGHBORS`), eliminando triángulos visibles con filtro de continente
+- [x] **UX Explorar**: Fade-out gradual de marcadores de microestados al hacer zoom-in — cada marcador se desvanece individualmente cuando el país proyectado es suficientemente grande (radio angular pre-computado × projection.scale()). Hit testing deshabilitado para marcadores invisibles. Microestados con área 0 (VA, MC) conservan marcador permanente
+- [x] **UX Jugar**: Offset vertical de flyTo durante juegos — el país se centra en la zona visible (entre header y bottom group) en vez de en el centro geométrico del canvas. Offset adaptativo por tipo (E/C/D/F: 12°, A/B/sello: 7°), con fade-in progresivo (solo a zoom ≥ 2.5). Spike: `docs/spikes/flyto-offset-juegos.md`
+- [x] **Explorar**: Fix espaciado desigual en etiquetas de mares — `textAlign: 'center'` se filtraba entre iteraciones del loop de renderizado, causando gaps dependientes del ancho de cada carácter en las etiquetas char-by-char
+- [x] **Estadísticas**: Sorting por cualquier columna en ambas pestañas (Jugar y Pruebas de sello) — headers tappables con indicador ▲/▼, ordenamiento por estado de dominio o porcentaje según modo activo, desempate por nombre, reset al cambiar pestaña
+- [x] **Jugar**: Fix hull gigante envolviendo el planeta (Indonesia, Asia-Guía) — el convex hull 2D (Andrew's) tenía winding order invertido en proyección esférica, causando que D3 dibujara el complemento del hull. Fix: verificar `geoArea()` y hacer `reverse()` si cubre más de media esfera. Spike: `docs/spikes/hull-gigante-indonesia.md`
+- [x] **Hit testing**: Fix fat finger Timor Oriental ↔ Indonesia — el hull invisible de Indonesia interceptaba taps cercanos a Timor. Fix: en fase 3 del hit testing (hulls), antes de retornar el match por hull, comparar contra centroides de todos los países y preferir el más cercano al tap. Genérico para cualquier hull que tape a un vecino. Spike: `docs/spikes/fat-finger-timor-indonesia.md`
+- [x] **Rendimiento**: Optimización de batería/calentamiento — DPR limitado a 2 (~56% menos píxeles), RAF sleep/wake (loop se detiene cuando no hay animaciones), pausa de RAF en background (`@capacitor/app`). Spike: `docs/spikes/rendimiento-bateria.md`
+- [x] **Cartografía**: Hull visible para archipiélagos africanos (KM, ST, CV) — línea discontinua perimetral para Comoras, Santo Tomé y Príncipe y Cabo Verde. Hit testing mejorado (mar entre islas). Reemplaza marcadores circulares de microestado. MU descartado (isla principal suficiente). Spike: `docs/spikes/hull-comoras-santotome.md`
+- [x] **UX Explorar**: Subir selectores de Explorar (segmented, pills de continente, toggles etiquetas, toggle no-ONU en tabla) — controles más cerca del header para ganar espacio vertical
+- [x] **UX Explorar**: Color de capitales en tabla coherente con el globo (gris claro en vez de cian). Pills de Países/Capitales con fondo semitransparente y texto más claro para mejor legibilidad sobre el globo
+- [x] **Datos**: Corregir ~27 errores ortográficos en español (tildes, grafías no hispanizadas, nombres sin traducir). 21 nombres de país, 3 capitales, 1 gentilicio. Overrides en `capitals-es.json`, verificados contra RAE/DPD
+- [x] **Hit testing**: Tolerancia fat finger mejorada para países alargados/enclavados (Gambia-Senegal, Lesoto, Chile, etc.) — distancia efectiva = min(centroide, frontera más cercana) en vez de solo centroide. Aplica a tipos A/B y pruebas de sello
 
 ---
 
 ## Próximos pasos
 
-> Ordenados de arriba a abajo por prioridad implícita. Cada sección depende de las anteriores.
+> Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
-### Experiencia: Jugar
-- [ ] Definir estrategia de testing para lógica de juego (Vitest o similar)
-- [ ] Tipo A: Localizar país en el mapa (texto → mapa) — Sello de Países
-- [ ] Tipo B: Localizar capital en el mapa (texto → mapa) — Sello de Capitales
-- [ ] Feedback visual: verde/rojo según acierto
-- [ ] Tipo C: Capital → País (texto → texto, opciones múltiples)
-- [ ] Tipo D: País → Capital (texto → texto, opciones múltiples)
-- [ ] Tipo E: Seleccionar país resaltado (mapa → texto, opciones múltiples)
-- [ ] Tipo F: Seleccionar capital de país resaltado (mapa → texto, opciones múltiples)
-- [ ] Algoritmo de generación de distractores (opciones plausibles: mismo continente, nombre similar, etc.)
-- [ ] Algoritmo de entrenamiento libre (mezcla tipos A-F, refuerzo de fallos)
-- [ ] Registro de fallos (guardar país/capital fallado, reforzar, actualizar al acertar)
-- [ ] Barra de progreso (indica preparación para prueba de sello)
-- [ ] Sistema de pruebas de sello (invitación automática, 0 errores, límite 3 intentos diarios)
-
-### Experiencia: Mi Pasaporte
-- [ ] Vista de matriz niveles × continentes (3 filas × 5 columnas)
-- [ ] Sistema de sellos (Países y Capitales) con estado conseguido/pendiente
-- [ ] Acceso directo a pruebas de sello desde el dashboard
-- [ ] Indicador de intentos restantes (3 diarios por sello y continente)
-- [ ] Color del pasaporte según nivel global (verde/azul/dorado)
-
-### Perfiles de usuario
-- [ ] Pantalla de creación de perfil (nombre por defecto «Explorador» + numeración automática)
-- [ ] Selector de avatares (12-15 iconos de animales representativos de los 5 continentes: tierra, mar y aire)
-- [ ] Selector de perfil (cambio rápido desde cualquier pantalla, tap en avatar)
-- [ ] Progreso independiente por perfil (pasaporte, sellos, fallos)
-
-### Configuración
-- [ ] Pantalla de configuración global (perfil activo, marcadores de microestados, vibración, idioma, tema)
-- [ ] Configuración del globo en overlay (marcadores de microestados, tema)
+### Testear exhaustivamente
+- [EN PROGRESO] Consigue todos los sellos para todos los continentes
+- [EN PROGRESO] Juega al menos en aventura para todos los continete-nivel
+- [EN PROGRESO] Anota feedback en backlog.md
 
 ### Internacionalización (UI completa)
+- [ ] [i18n] Cambiar fuente de nombres de países a CLDR + ~6 overrides/idioma. Pipeline con diff entre runs que flaggee cambios para revisión humana. Absorbe los overrides manuales de español del paso anterior. Spike: `docs/spikes/typos-español-i18n.md` § 4
+- [ ] [i18n] LLM (Claude) solo como auditoría puntual al añadir un idioma nuevo — no en el pipeline automatizado (no determinista, no escala a idiomas de pocos recursos). Una pasada manual antes de publicar cada idioma
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
-  - ⚠️ Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español. Integrar en el sistema de traducción
+  - Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español
 - [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
+- [ ] Símbolos y nombres de moneda via `Intl.NumberFormat` (CLDR): usar `narrowSymbol` como base + mapa de ~15 overrides curados para símbolos donde tenemos mejor dato (NT$, KSh, MOP$, etc.). Elimina mantenimiento manual de 232 símbolos. Revisar/actualizar DESIGN.md (§ Fuentes de datos, § Internacionalización de datos) para reflejar CLDR como fuente de símbolos. Asegurar coherencia con el principio de actualización automática de datos (§ Actualización automática). Spike: `docs/spikes/validacion-simbolos-moneda.md`
 - [ ] Traducción a idiomas disponibles en iOS y Android
 
-### Infraestructura y acabados
-- [ ] Implementar feedback háptico (vibración en aciertos/errores)
-- [ ] Añadir Capacitor para build Android
-- [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md § «Actualización automática»)
-- [ ] Sección "Acerca de" en la app: explicar los criterios utilizados (países ONU, idiomas oficiales nacionales, fuentes de datos UNDP, REST Countries, etc.). Implementar cuando la app esté en fase de acabados
-- [ ] Solicitud de valoración no intrusiva (in-app review): `SKStoreReviewController` (iOS) + Play In-App Review (Android). Mostrar tras experiencia positiva y uso mínimo (ver DESIGN.md § «Solicitud de valoración»)
 
 ### Tema visual
-- [ ] Diseñar e implementar tema claro (light mode) como alternativa al dark mode (baja prioridad, casi al final del desarrollo)
+- [ ] Diseñar e implementar tema claro (baja prioridad, casi al final del desarrollo)
+
+### Infraestructura y acabados
+- [ ][PENSAR/INVESTIGAR: hay alguna fuente mejor?] Validación automática de coordenadas de capitales en `fetch-countries.ts`: comprobar que cada capital cae dentro (o cerca) del polígono de su país usando `d3.geoContains()`. Si falla, buscar coords alternativas en Wikidata SPARQL como fallback. El script nunca debe fallar — si no se encuentran coords válidas, conservar las de la API + warning. Investigación completa hecha (auditoría de 229 capitales, diseño de pipeline con tolerancias 50/200/500 km, query SPARQL lista). De momento se usa CAPITAL_OVERRIDES manual (EH, GD, KI, SN).
+- [ ] Añadir Capacitor para build Android
+- [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
+- [ ] Sección "Acerca de": explicar criterios (países ONU, idiomas oficiales, fuentes UNDP, REST Countries, etc.)
+- [ ] Solicitud de valoración in-app (SKStoreReviewController iOS + Play In-App Review Android)
+- [ ] Triple-verificar que la app se actualizará sola para los usuarios en el futuro, sin que yo tenga que hacer nada
+
+### Muy muy opcional
+- [ ] En las pruebas de sello: ¿Hay alguna manera de forzar que si el usuario sale de la prueba, a otra app, haya que empezar la prueba de sello desde el inicio? Cuando voy a cualquiera de las otras pestañas (Jugar o Explorar o incluso volver a pulsar Pasaporte), ya funciona bien - se sale de la prueba de sello

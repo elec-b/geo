@@ -99,7 +99,7 @@
   {
     "cca2": "AI",
     "ccn3": "660",
-    "name": "Anguilla",
+    "name": "Anguila",
     "capital": "The Valley",
     "continent": "América",
     "population": 16010,
@@ -118,7 +118,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Anguila_(territorio_británico_de_ultramar)",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "GB"
   },
   {
     "cca2": "AL",
@@ -239,7 +240,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Samoa_Americana",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "US"
   },
   {
     "cca2": "AT",
@@ -312,7 +314,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Aruba",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "NL"
   },
   {
     "cca2": "AX",
@@ -336,7 +339,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Åland",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "FI"
   },
   {
     "cca2": "AZ",
@@ -415,7 +419,7 @@
   {
     "cca2": "BD",
     "ccn3": "050",
-    "name": "Bangladesh",
+    "name": "Bangladés",
     "capital": "Daca",
     "continent": "Asia",
     "population": 169828911,
@@ -513,7 +517,7 @@
   {
     "cca2": "BH",
     "ccn3": "048",
-    "name": "Bahrein",
+    "name": "Baréin",
     "capital": "Manama",
     "continent": "Asia",
     "population": 1594654,
@@ -563,7 +567,7 @@
     "cca2": "BJ",
     "ccn3": "204",
     "name": "Benín",
-    "capital": "Porto Novo",
+    "capital": "Porto-Novo",
     "continent": "África",
     "population": 13224860,
     "area": 112622,
@@ -605,7 +609,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "San_Bartolomé_(Francia)",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "FR"
   },
   {
     "cca2": "BM",
@@ -629,12 +634,13 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Bermudas",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "GB"
   },
   {
     "cca2": "BN",
     "ccn3": "096",
-    "name": "Brunei",
+    "name": "Brunéi",
     "capital": "Bandar Seri Begawan",
     "continent": "Asia",
     "population": 455500,
@@ -756,7 +762,7 @@
   {
     "cca2": "BW",
     "ccn3": "072",
-    "name": "Botswana",
+    "name": "Botsuana",
     "capital": "Gaborone",
     "continent": "África",
     "population": 2359609,
@@ -999,7 +1005,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Islas_Cook",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "NZ"
   },
   {
     "cca2": "CL",
@@ -1193,7 +1200,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Curazao",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "NL"
   },
   {
     "cca2": "CY",
@@ -1271,7 +1279,7 @@
   {
     "cca2": "DJ",
     "ccn3": "262",
-    "name": "Djibouti",
+    "name": "Yibuti",
     "capital": "Yibuti",
     "continent": "África",
     "population": 1066809,
@@ -1418,7 +1426,7 @@
     "cca2": "EE",
     "ccn3": "233",
     "name": "Estonia",
-    "capital": "Tallin",
+    "capital": "Tallín",
     "continent": "Europa",
     "population": 1369995,
     "area": 45227,
@@ -1465,7 +1473,7 @@
   {
     "cca2": "EH",
     "ccn3": "732",
-    "name": "Sahara Occidental",
+    "name": "Sáhara Occidental",
     "capital": "El Aaiún",
     "continent": "África",
     "population": 600904,
@@ -1662,7 +1670,7 @@
   {
     "cca2": "FO",
     "ccn3": "234",
-    "name": "Islas Faroe",
+    "name": "Islas Feroe",
     "capital": "Tórshavn",
     "continent": "Europa",
     "population": 54885,
@@ -1682,7 +1690,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Islas_Feroe",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "DK"
   },
   {
     "cca2": "FR",
@@ -1759,8 +1768,8 @@
   {
     "cca2": "GD",
     "ccn3": "308",
-    "name": "Grenada",
-    "capital": "Saint George",
+    "name": "Granada",
+    "capital": "Saint George's",
     "continent": "América",
     "population": 109021,
     "area": 344,
@@ -1827,7 +1836,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Bailía_de_Guernsey",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "GB"
   },
   {
     "cca2": "GH",
@@ -1875,7 +1885,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Groenlandia",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "DK"
   },
   {
     "cca2": "GM",
@@ -2022,7 +2033,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Guam",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "US"
   },
   {
     "cca2": "GW",
@@ -2095,7 +2107,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Hong_Kong",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "CN"
   },
   {
     "cca2": "HN",
@@ -2291,7 +2304,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Isla_de_Man",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "GB"
   },
   {
     "cca2": "IN",
@@ -2346,7 +2360,7 @@
   {
     "cca2": "IR",
     "ccn3": "364",
-    "name": "Iran",
+    "name": "Irán",
     "capital": "Teherán",
     "continent": "Asia",
     "population": 85961000,
@@ -2438,7 +2452,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Jersey",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "GB"
   },
   {
     "cca2": "JM",
@@ -2540,7 +2555,7 @@
   {
     "cca2": "KG",
     "ccn3": "417",
-    "name": "Kirguizistán",
+    "name": "Kirguistán",
     "capital": "Biskek",
     "continent": "Asia",
     "population": 7281800,
@@ -2755,7 +2770,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Islas_Caimán",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "GB"
   },
   {
     "cca2": "KZ",
@@ -2897,7 +2913,7 @@
       "Cingalés",
       "Tamil"
     ],
-    "demonym": "ceilanés",
+    "demonym": "esrilanqués",
     "hdi": 0.78,
     "ihdi": 0.661,
     "wikipediaSlug": "Sri_Lanka",
@@ -2930,7 +2946,7 @@
   {
     "cca2": "LS",
     "ccn3": "426",
-    "name": "Lesotho",
+    "name": "Lesoto",
     "capital": "Maseru",
     "continent": "África",
     "population": 2116427,
@@ -3150,7 +3166,7 @@
   {
     "cca2": "MF",
     "ccn3": "663",
-    "name": "Saint Martin",
+    "name": "San Martín",
     "capital": "Marigot",
     "continent": "América",
     "population": 31496,
@@ -3169,7 +3185,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "San_Martín_(Francia)",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "FR"
   },
   {
     "cca2": "MG",
@@ -3248,7 +3265,7 @@
   {
     "cca2": "ML",
     "ccn3": "466",
-    "name": "Mali",
+    "name": "Malí",
     "capital": "Bamako",
     "continent": "África",
     "population": 22395489,
@@ -3272,7 +3289,7 @@
   {
     "cca2": "MM",
     "ccn3": "104",
-    "name": "Myanmar",
+    "name": "Birmania",
     "capital": "Naipyidó",
     "continent": "Asia",
     "population": 51316756,
@@ -3340,7 +3357,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Macao",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "CN"
   },
   {
     "cca2": "MP",
@@ -3366,7 +3384,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Islas_Marianas_del_Norte",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "US"
   },
   {
     "cca2": "MR",
@@ -3414,7 +3433,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Montserrat",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "GB"
   },
   {
     "cca2": "MT",
@@ -3493,7 +3513,7 @@
   {
     "cca2": "MW",
     "ccn3": "454",
-    "name": "Malawi",
+    "name": "Malaui",
     "capital": "Lilongüe",
     "continent": "África",
     "population": 20734262,
@@ -3633,7 +3653,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Nueva_Caledonia",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "FR"
   },
   {
     "cca2": "NE",
@@ -3681,7 +3702,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Isla_Norfolk",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "AU"
   },
   {
     "cca2": "NG",
@@ -3851,7 +3873,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Niue",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "NZ"
   },
   {
     "cca2": "NZ",
@@ -3978,7 +4001,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Polinesia_Francesa",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "FR"
   },
   {
     "cca2": "PG",
@@ -4102,7 +4126,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "San_Pedro_y_Miquelón",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "FR"
   },
   {
     "cca2": "PN",
@@ -4126,7 +4151,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Islas_Pitcairn",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "GB"
   },
   {
     "cca2": "PR",
@@ -4151,7 +4177,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Puerto_Rico",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "US"
   },
   {
     "cca2": "PS",
@@ -4204,7 +4231,7 @@
   {
     "cca2": "PW",
     "ccn3": "585",
-    "name": "Palau",
+    "name": "Palaos",
     "capital": "Ngerulmud",
     "continent": "Oceanía",
     "population": 16733,
@@ -4545,7 +4572,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Santa_Elena,_Ascensión_y_Tristán_de_Acuña",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "GB"
   },
   {
     "cca2": "SI",
@@ -4574,7 +4602,7 @@
   {
     "cca2": "SK",
     "ccn3": "703",
-    "name": "República Eslovaca",
+    "name": "Eslovaquia",
     "capital": "Bratislava",
     "continent": "Europa",
     "population": 5413813,
@@ -4598,7 +4626,7 @@
   {
     "cca2": "SL",
     "ccn3": "694",
-    "name": "Sierra Leone",
+    "name": "Sierra Leona",
     "capital": "Freetown",
     "continent": "África",
     "population": 9077691,
@@ -4791,7 +4819,7 @@
   {
     "cca2": "SX",
     "ccn3": "534",
-    "name": "Sint Maarten",
+    "name": "San Martín",
     "capital": "Philipsburg",
     "continent": "América",
     "population": 41349,
@@ -4811,7 +4839,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "San_Martín_(Países_Bajos)",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "NL"
   },
   {
     "cca2": "SY",
@@ -4865,7 +4894,7 @@
   {
     "cca2": "TC",
     "ccn3": "796",
-    "name": "Islas Turks y Caicos",
+    "name": "Islas Turcas y Caicos",
     "capital": "Cockburn Town",
     "continent": "América",
     "population": 50828,
@@ -4884,7 +4913,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Islas_Turcas_y_Caicos",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "GB"
   },
   {
     "cca2": "TD",
@@ -5352,7 +5382,7 @@
   {
     "cca2": "VC",
     "ccn3": "670",
-    "name": "San Vicente y Granadinas",
+    "name": "San Vicente y las Granadinas",
     "capital": "Kingstown",
     "continent": "América",
     "population": 110872,
@@ -5419,7 +5449,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Islas_Vírgenes_Británicas",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "GB"
   },
   {
     "cca2": "VI",
@@ -5443,7 +5474,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Islas_Vírgenes_de_los_Estados_Unidos",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "US"
   },
   {
     "cca2": "VN",
@@ -5517,7 +5549,8 @@
     "hdi": null,
     "ihdi": null,
     "wikipediaSlug": "Wallis_y_Futuna",
-    "unMember": false
+    "unMember": false,
+    "sovereignCountry": "FR"
   },
   {
     "cca2": "WS",

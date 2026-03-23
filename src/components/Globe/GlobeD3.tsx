@@ -3,17 +3,19 @@
 // Elimina por completo los artefactos de tile boundaries.
 import { useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from 'react';
 import { geoOrthographic, geoPath, geoContains, geoCentroid, geoDistance, geoArea } from 'd3-geo';
-import type { GeoProjection, GeoPath } from 'd3-geo';
+import type { GeoProjection, GeoPath, GeoPermissibleObjects } from 'd3-geo';
 import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geojson';
-import { loadCountriesGeoJson, loadBordersGeoJson } from '../../data/countries';
+import { loadCountriesGeoJson, loadBordersGeoJson, getOverrideCca2s } from '../../data/countries';
 import type { CountryFeature, CountryProperties } from '../../data/countries';
 import type { CapitalCoords } from '../../data/types';
+import { App as CapacitorApp } from '@capacitor/app';
+import { Capacitor } from '@capacitor/core';
+import { COUNTRY_SELECTED_COLOR } from './colors';
 
 // --- Constantes del tema espacial ---
 
 const OCEAN_COLOR = '#0a0a1a';
 const COUNTRY_FILL_COLOR = '#3a3a4a';
-const COUNTRY_SELECTED_COLOR = '#8a7d5a';
 const COUNTRY_HOVER_COLOR = '#2a2a3a';
 const BORDER_COLOR = 'rgba(255, 255, 255, 0.3)';
 const ATMOSPHERE_COLOR = 'rgba(100, 150, 255, 0.08)';
@@ -26,6 +28,11 @@ const MIN_SCALE = 0.8;
 const MAX_SCALE = 200.0;
 const ZOOM_WHEEL_FACTOR = 0.001;
 
+// Zoom adaptativo por tamaño de país (tipos C-F)
+const ADAPTIVE_ZOOM_K = 0.6;
+const ADAPTIVE_ZOOM_MIN = 1.5;
+const ADAPTIVE_ZOOM_MAX = 40;
+
 // Marcadores de microestados
 const MARKER_RADIUS = 8;
 const MARKER_LINE_WIDTH = 1.0;
@@ -36,12 +43,15 @@ const MARKER_ZOOM_FULL = 5;
 const MARKER_HIT_RADIUS_MIN = 20;
 const MARKER_HIT_RADIUS_MAX = 30;
 const MARKER_HIT_ZOOM_MAX = 20;
+// Fade-out de marcadores: cuando el país proyectado es suficientemente grande
+const MARKER_FADE_OUT_START_PX = 20; // Radio proyectado del país donde empieza fade-out
+const MARKER_FADE_OUT_END_PX = 40;   // Radio proyectado donde el marcador es invisible
 
 const MICROSTATE_CODES = new Set([
   'VA', 'MC', 'SM', 'LI', 'AD', 'MT', 'SG', 'BH', 'LU', 'KM',
   'MU', 'ST', 'CV', 'SC', 'MV', 'BN', 'TT', 'AG', 'BB', 'LC',
   'GD', 'VC', 'DM', 'KN', 'PW', 'MH', 'FM', 'NR', 'KI', 'TO',
-  'WS',
+  'WS', 'TV',
 ]);
 
 // Territorios no-ONU pequeños que necesitan hit area ampliado (sin marcador visual)
@@ -56,21 +66,42 @@ const INERTIA_FRICTION = 0.85;
 const INERTIA_MIN_VELOCITY = 0.5;
 const VELOCITY_SAMPLES = 5;
 
-// Pin de capital
-const CAPITAL_PIN_INNER = 4;
-const CAPITAL_PIN_OUTER = 7;
-const CAPITAL_PIN_COLOR = '#00f0ff';
+// Pin de capital (doble círculo ◎)
+const CAPITAL_PIN_OUTER_R = 7;
+const CAPITAL_PIN_INNER_R = 4.5;
+const CAPITAL_PIN_FILL_ALPHA = 0.20; // × alpha del color (0.5) ≈ 0.10 efectivo
+const CAPITAL_PIN_COLOR = 'rgba(224, 224, 224, 0.5)'; // ligeramente más visible que fronteras
+const CAPITAL_PIN_NON_UN_COLOR = 'rgba(255, 180, 50, 0.5)'; // ámbar, misma opacidad
 
 // Etiquetas
 const LABEL_COLOR = 'rgba(255, 255, 255, 0.8)';
 const LABEL_NON_UN_COLOR = 'rgba(255, 180, 50, 0.6)';
-const LABEL_CAPITAL_COLOR = 'rgba(0, 240, 255, 0.7)';
+const LABEL_CAPITAL_COLOR = 'rgba(170, 170, 180, 0.75)';
 const LABEL_CAPITAL_NON_UN_COLOR = 'rgba(255, 180, 50, 0.5)';
 const LABEL_SHADOW = 'rgba(0, 0, 0, 0.7)';
 const LABEL_FONT_BASE = 9;
 
 // Opacidad de países fuera del filtro de continente
 const DIMMED_ALPHA = 0.15;
+
+/** Features sin código ISO: heredan dimming de sus países vecinos */
+const ORPHAN_NEIGHBORS: Record<string, string[]> = {
+  'Siachen Glacier': ['IN', 'PK', 'CN'],
+};
+
+// Etiquetas de mares y océanos (underlay — convención cartográfica: serif itálica)
+// Estilo discreto: texto pequeño, sin glow, preposicionado en centro del agua
+const SEA_FONT_BASE: Record<number, number> = { 0: 11, 1: 9, 2: 8, 3: 7 };
+const SEA_LETTER_SPACING: Record<number, number> = { 0: 3, 1: 2, 2: 1, 3: 0 };
+
+interface SeaLabel {
+  id: string;
+  name_es: string;
+  lat: number;
+  lon: number;
+  scalerank: number;
+  minZoom: number;
+}
 
 // Overrides de centroides visuales para países con forma irregular.
 // [lon, lat] del centro visual del territorio principal (no el centroide geométrico).
@@ -98,9 +129,98 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
   'SA': [44, 24],         // Arabia Saudita (centro visual)
   'MX': [-102, 23],       // México (centro visual)
   'AR': [-64, -34],       // Argentina (centro visual)
+  'PG': [147.2, -6.5],    // Papúa Nueva Guinea → isla principal (centroide geométrico disperso)
+  // Archipiélagos dispersos de Oceanía (centroide en isla de la capital)
+  'FM': [158.2, 6.9],     // Micronesia → Pohnpei (540 km del centroide geométrico)
+  'KI': [173.0, 1.3],     // Kiribati → Tarawa (2124 km, cruza antimeridiano)
+  'VU': [168.3, -17.7],   // Vanuatu → Éfaté/Port Vila (182 km)
+  'MH': [171.4, 7.1],     // Islas Marshall → Majuro (116 km)
+  'TV': [179.2, -8.5],    // Tuvalu → Funafuti (atolones en ~600 km)
+  // Archipiélagos del Índico (centroide en isla de la capital)
+  'SC': [55.5, -4.7],     // Seychelles → Mahé
+  'MV': [73.5, 4.2],      // Maldivas → Malé
 };
 
+// --- Archipiélagos (hit testing mejorado) ---
+
+// Países insulares cuyo mar entre islas debe contar como hit area
+const ARCHIPELAGO_CODES = new Set([
+  'PH', 'ID', 'JP', 'NZ', 'FJ', 'SB', 'VU', 'PG', 'GB', 'DK', 'GR', 'HR',
+  'BS', 'CU', 'CV', 'KM', 'ST', 'TO', 'WS', 'MY', 'TT', 'EE', 'SE', 'FI', 'CL',
+  'NO', 'KI', 'FM', 'MH', 'TV', 'PW', 'AG', 'KN', 'VC', 'SC', 'MV',
+]);
+
+// Subconjunto de archipiélagos cuyo hull se renderiza siempre visible.
+// Criterio: archipiélagos difíciles de seleccionar o de identificar visualmente.
+const HULL_VISIBLE_CODES = new Set([
+  // Oceanía
+  'FJ', 'SB', 'VU', 'PG', 'KI', 'FM', 'MH', 'TV', 'TO', 'WS', 'PW',
+  // América
+  'TT', 'AG', 'KN', 'VC',
+  // Índico / África
+  'SC', 'MV', 'KM', 'ST', 'CV',
+]);
+
+/**
+ * Normaliza coordenadas para países que cruzan el antimeridiano.
+ * Si el rango de longitudes > 180°, mapea lon negativas a [180, 360] sumando 360.
+ */
+function normalizeForAntimeridian(coords: [number, number][]): { coords: [number, number][]; shifted: boolean } {
+  const lons = coords.map(c => c[0]);
+  if (Math.max(...lons) - Math.min(...lons) <= 180) return { coords, shifted: false };
+
+  const shifted = coords.map<[number, number]>(([lon, lat]) => [lon < 0 ? lon + 360 : lon, lat]);
+  return { coords: shifted, shifted: true };
+}
+
+/** Convex hull — Andrew's monotone chain, O(n log n) */
+function computeConvexHull(points: [number, number][]): [number, number][] {
+  if (points.length < 3) return points;
+
+  const sorted = [...points].sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  const cross = (o: [number, number], a: [number, number], b: [number, number]) =>
+    (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+
+  const lower: [number, number][] = [];
+  for (const p of sorted) {
+    while (lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], p) <= 0) lower.pop();
+    lower.push(p);
+  }
+
+  const upper: [number, number][] = [];
+  for (let i = sorted.length - 1; i >= 0; i--) {
+    const p = sorted[i];
+    while (upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], p) <= 0) upper.pop();
+    upper.push(p);
+  }
+
+  lower.pop();
+  upper.pop();
+  return lower.concat(upper);
+}
+
+/** Point-in-polygon — ray casting, O(n) */
+function pointInPolygon(point: [number, number], polygon: [number, number][]): boolean {
+  let inside = false;
+  const [px, py] = point;
+  for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+    const [xi, yi] = polygon[i];
+    const [xj, yj] = polygon[j];
+    if ((yi > py) !== (yj > py) && px < ((xj - xi) * (py - yi)) / (yj - yi) + xi) {
+      inside = !inside;
+    }
+  }
+  return inside;
+}
+
 // --- Interfaces ---
+
+/** Etiqueta puntual de feedback sobre el globo (máx. 2: error + correcto) */
+export interface FeedbackLabel {
+  text: string;           // Nombre del país (o "Capital\nPaís" para tipo B)
+  coords: [number, number]; // [lon, lat]
+  kind: 'incorrect' | 'correct';
+}
 
 export interface GlobeD3Props {
   onCountryClick?: (country: CountryFeature) => void;
@@ -109,8 +229,10 @@ export interface GlobeD3Props {
   showMarkers?: boolean;
   /** País seleccionado (controlado). undefined = modo interno. */
   selectedCountryCca2?: string | null;
-  /** Coordenadas [lon, lat] para mostrar pin de capital */
-  capitalPin?: [number, number] | null;
+  /** Color override para el país seleccionado. Si no se pasa, usa dorado. */
+  selectedCountryColor?: string;
+  /** Array de coordenadas [lon, lat] para mostrar pines de capitales */
+  capitalPins?: [number, number][];
   /** Set de cca2 a resaltar (filtro continente). null = todos visibles. */
   highlightedCountries?: Set<string> | null;
   showCountryLabels?: boolean;
@@ -121,11 +243,38 @@ export interface GlobeD3Props {
   countryPopulations?: Map<string, number> | null;
   /** Nombres de países en español (Map<cca2, nombre>) para etiquetas del globo */
   countryNames?: Map<string, string> | null;
+  /** Etiquetas puntuales de feedback geográfico (error/correcto sobre el globo) */
+  feedbackLabels?: FeedbackLabel[] | null;
+  /** Mostrar etiquetas de mares y océanos (underlay) */
+  showSeaLabels?: boolean;
+  /** Pin de capital destacado con color contrastante (para juegos con territorio coloreado) */
+  capitalPinHighlight?: { coords: [number, number]; color: string } | null;
 }
 
 export interface GlobeD3Ref {
   flyTo(lon: number, lat: number, zoom?: number, duration?: number, latOffset?: number): void;
   getCentroid(cca2: string): [number, number] | null;
+  getCountryZoom(cca2: string): number | null;
+  /** Retorna true si el punto está dentro del hemisferio visible (con margen) */
+  isPointVisible(lon: number, lat: number): boolean;
+  /** Retorna el centro de la vista actual [lon, lat] */
+  getViewCenter(): [number, number];
+  /** Retorna la distancia angular (radianes) desde el centro de la vista al punto dado */
+  distanceFromCenter(lon: number, lat: number): number;
+  /** Retorna el nivel de zoom actual */
+  getCurrentZoom(): number;
+  /** Retorna zoom que muestra toda la extensión territorial del país con margen */
+  getCountryExtentZoom(cca2: string, margin?: number): number | null;
+  /** Retorna true si hay una animación flyTo en progreso */
+  isAnimating(): boolean;
+  /** Retorna el centro del outline (hull) para archipiélagos, o null si no aplica */
+  getOutlineCenter(cca2: string): [number, number] | null;
+  /** Reinicia el globo al estado idle: posición aleatoria, zoom 1, rotación automática */
+  resetToIdle(): void;
+  /** Retorna las coordenadas geográficas [lon, lat] del último tap (para tolerancia en juego) */
+  getLastTapCoords(): [number, number] | null;
+  /** Retorna la distancia angular mínima (radianes) desde un punto a la frontera del país */
+  getMinDistanceToBoundary(cca2: string, point: [number, number]): number | null;
 }
 
 // --- Utilidades ---
@@ -148,13 +297,17 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     onReady,
     showMarkers = true,
     selectedCountryCca2,
-    capitalPin,
+    selectedCountryColor,
+    capitalPins = [],
     highlightedCountries,
     showCountryLabels = false,
     showCapitalLabels = false,
     capitalLabelsData,
     countryPopulations,
     countryNames,
+    feedbackLabels,
+    showSeaLabels = true,
+    capitalPinHighlight,
   },
   ref,
 ) {
@@ -164,6 +317,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   // Datos cargados
   const countriesRef = useRef<FeatureCollection<Geometry, CountryProperties> | null>(null);
   const bordersRef = useRef<Feature<MultiLineString> | null>(null);
+  const overrideCca2sRef = useRef<Set<string>>(new Set());
 
   // Interacción (estado interno para modo no controlado)
   const selectedRef = useRef<string | null>(null);
@@ -193,6 +347,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const isInertiaRef = useRef(false);
   const dragSamplesRef = useRef<Array<{ x: number; y: number; time: number }>>([]);
 
+  // Coordenadas geo del último tap (para tolerancia en juego)
+  const lastTapCoordsRef = useRef<[number, number] | null>(null);
+
   // Marcadores, centroides, zoom mínimo y features ordenados para etiquetas
   const microstateCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
   const nonUnMicroCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
@@ -202,8 +359,36 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const sortedFeaturesRef = useRef<CountryFeature[]>([]);
   const nonUnCodesRef = useRef<Set<string>>(new Set());
   const geoAreasRef = useRef<Map<string, number>>(new Map());
+  const microstateAngularRadiiRef = useRef<Map<string, number>>(new Map());
+  const geoExtentsRef = useRef<Map<string, number>>(new Map());
+  const archipelagoHullsRef = useRef<Map<string, { hull: [number, number][]; shifted: boolean; minZoom: number }>>(new Map());
+  const hullCentroidsRef = useRef<Map<string, [number, number]>>(new Map());
+  // Dirty flag: evita redibujar el canvas a 60fps cuando el globo está en reposo
+  const needsRedrawRef = useRef(true); // true para el draw inicial
+  // Sleep/wake: detiene el loop RAF cuando no hay nada que animar
+  const isLoopSleepingRef = useRef(false);
+  const animateRef = useRef<(() => void) | null>(null);
+
+  // Despertar el loop RAF si está dormido (usa solo refs, seguro desde cualquier contexto)
+  const wakeLoop = () => {
+    if (isLoopSleepingRef.current && animateRef.current) {
+      isLoopSleepingRef.current = false;
+      lastTimeRef.current = performance.now();
+      animFrameRef.current = requestAnimationFrame(animateRef.current);
+    }
+  };
+
   const showMarkersRef = useRef(showMarkers);
+  if (showMarkersRef.current !== showMarkers) needsRedrawRef.current = true;
   showMarkersRef.current = showMarkers;
+
+  const showSeaLabelsRef = useRef(showSeaLabels);
+  if (showSeaLabelsRef.current !== showSeaLabels) needsRedrawRef.current = true;
+  showSeaLabelsRef.current = showSeaLabels;
+
+  // Datos de etiquetas de mares/océanos
+  const seaLabelsRef = useRef<SeaLabel[]>([]);
+  const seaLabelsLoadedRef = useRef(false);
 
   // Proyección y tamaño
   const projectionRef = useRef<GeoProjection | null>(null);
@@ -212,25 +397,48 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
   // Refs sincronizados con props (acceso en callbacks sin re-creación)
   const selectedCca2PropRef = useRef(selectedCountryCca2);
+  if (selectedCca2PropRef.current !== selectedCountryCca2) needsRedrawRef.current = true;
   selectedCca2PropRef.current = selectedCountryCca2;
   const isControlledRef = useRef(selectedCountryCca2 !== undefined);
   isControlledRef.current = selectedCountryCca2 !== undefined;
-  const capitalPinRef = useRef(capitalPin);
-  capitalPinRef.current = capitalPin;
+  const selectedColorPropRef = useRef(selectedCountryColor);
+  if (selectedColorPropRef.current !== selectedCountryColor) needsRedrawRef.current = true;
+  selectedColorPropRef.current = selectedCountryColor;
+  const capitalPinsRef = useRef(capitalPins);
+  if (capitalPinsRef.current !== capitalPins) needsRedrawRef.current = true;
+  capitalPinsRef.current = capitalPins;
+  const capitalPinHighlightRef = useRef(capitalPinHighlight);
+  if (capitalPinHighlightRef.current !== capitalPinHighlight) needsRedrawRef.current = true;
+  capitalPinHighlightRef.current = capitalPinHighlight;
   const highlightedRef = useRef(highlightedCountries);
+  if (highlightedRef.current !== highlightedCountries) needsRedrawRef.current = true;
   highlightedRef.current = highlightedCountries;
   const showCountryLabelsRef = useRef(showCountryLabels);
+  if (showCountryLabelsRef.current !== showCountryLabels) needsRedrawRef.current = true;
   showCountryLabelsRef.current = showCountryLabels;
   const showCapitalLabelsRef = useRef(showCapitalLabels);
+  if (showCapitalLabelsRef.current !== showCapitalLabels) needsRedrawRef.current = true;
   showCapitalLabelsRef.current = showCapitalLabels;
   const capitalLabelsRef = useRef(capitalLabelsData);
+  if (capitalLabelsRef.current !== capitalLabelsData) needsRedrawRef.current = true;
   capitalLabelsRef.current = capitalLabelsData;
   const onDeselectRef = useRef(onCountryDeselect);
   onDeselectRef.current = onCountryDeselect;
   const countryPopulationsRef = useRef(countryPopulations);
+  if (countryPopulationsRef.current !== countryPopulations) needsRedrawRef.current = true;
   countryPopulationsRef.current = countryPopulations;
   const countryNamesRef = useRef(countryNames);
+  if (countryNamesRef.current !== countryNames) needsRedrawRef.current = true;
   countryNamesRef.current = countryNames;
+  const feedbackLabelsRef = useRef(feedbackLabels);
+  if (feedbackLabelsRef.current !== feedbackLabels) needsRedrawRef.current = true;
+  feedbackLabelsRef.current = feedbackLabels;
+
+  // Si algún sync check marcó dirty y el loop está dormido, despertarlo
+  // (useEffect sin deps: corre después de cada render, coste negligible — solo lee 2 refs)
+  useEffect(() => {
+    if (needsRedrawRef.current) wakeLoop();
+  });
 
   // Animación flyTo
   const flyToAnimRef = useRef<{
@@ -271,9 +479,98 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         startTime: performance.now(),
         duration,
       };
+      wakeLoop();
     },
     getCentroid(cca2: string): [number, number] | null {
       return countryCentroidsRef.current.get(cca2) ?? null;
+    },
+    getCountryZoom(cca2: string): number | null {
+      const area = geoAreasRef.current.get(cca2);
+      if (area == null || area <= 0) {
+        // Fallback para microestados cuyo polígono en TopoJSON 50m es tan
+        // simplificado que d3.geoArea() devuelve 0 (ej. Vaticano).
+        return MICROSTATE_CODES.has(cca2) ? ADAPTIVE_ZOOM_MAX : null;
+      }
+      return Math.max(ADAPTIVE_ZOOM_MIN, Math.min(ADAPTIVE_ZOOM_MAX, ADAPTIVE_ZOOM_K / Math.sqrt(area)));
+    },
+    getCountryExtentZoom(cca2: string, margin: number = 1.5): number | null {
+      const extent = geoExtentsRef.current.get(cca2);
+      if (extent == null || extent <= 0) return null;
+      const angle = Math.min(extent * margin, Math.PI / 2);
+      return 1 / Math.sin(angle);
+    },
+    isAnimating(): boolean {
+      return flyToAnimRef.current !== null;
+    },
+    getOutlineCenter(cca2: string): [number, number] | null {
+      return hullCentroidsRef.current.get(cca2) ?? null;
+    },
+    isPointVisible(lon: number, lat: number): boolean {
+      const rot = rotationRef.current;
+      const viewCenter: [number, number] = [-rot[0], -rot[1]];
+      const dist = geoDistance([lon, lat], viewCenter);
+      const zoom = scaleRef.current;
+      // Ángulo visible real en ortográfica = arcsin(1/zoom), con margen 80%
+      const visibleAngle = Math.asin(Math.min(1, 1 / zoom)) * 0.8;
+      return dist < visibleAngle;
+    },
+    getViewCenter(): [number, number] {
+      const rot = rotationRef.current;
+      return [-rot[0], -rot[1]];
+    },
+    distanceFromCenter(lon: number, lat: number): number {
+      const rot = rotationRef.current;
+      const viewCenter: [number, number] = [-rot[0], -rot[1]];
+      return geoDistance([lon, lat], viewCenter);
+    },
+    getCurrentZoom(): number {
+      return scaleRef.current;
+    },
+    resetToIdle() {
+      // Cancelar animaciones y estado de interacción
+      flyToAnimRef.current = null;
+      isInertiaRef.current = false;
+      velocityRef.current = [0, 0];
+      isDraggingRef.current = false;
+      dragStartRef.current = null;
+      // Reiniciar posición, zoom y rotación automática
+      rotationRef.current = [Math.random() * 360 - 180, 0];
+      scaleRef.current = 1.0;
+      isAutoRotatingRef.current = true;
+      needsRedrawRef.current = true;
+      wakeLoop();
+    },
+    getLastTapCoords(): [number, number] | null {
+      return lastTapCoordsRef.current;
+    },
+    getMinDistanceToBoundary(cca2: string, point: [number, number]): number | null {
+      const countries = countriesRef.current;
+      if (!countries) return null;
+
+      let minDist = Infinity;
+      let found = false;
+
+      for (const feature of countries.features) {
+        if (feature.properties?.cca2 !== cca2) continue;
+        found = true;
+
+        const checkRing = (ring: number[][]) => {
+          for (const pt of ring) {
+            const d = geoDistance(point, [pt[0], pt[1]] as [number, number]);
+            if (d < minDist) minDist = d;
+          }
+        };
+
+        const geom = feature.geometry;
+        if (geom.type === 'Polygon') {
+          for (const ring of (geom as any).coordinates) checkRing(ring);
+        } else if (geom.type === 'MultiPolygon') {
+          for (const poly of (geom as any).coordinates)
+            for (const ring of poly) checkRing(ring);
+        }
+      }
+
+      return found ? minDist : null;
     },
   }));
 
@@ -319,6 +616,74 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     ctx.fillStyle = OCEAN_COLOR;
     ctx.fill();
 
+    // Etiquetas de mares y océanos (underlay: después de océano, antes de países)
+    if (showSeaLabelsRef.current && seaLabelsRef.current.length > 0) {
+      const rotation = rotationRef.current;
+      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      const hasContinentFilter = highlightedRef.current !== null;
+
+      ctx.save();
+      ctx.textBaseline = 'middle';
+
+      for (const label of seaLabelsRef.current) {
+        // Visibilidad por minZoom individual (sin límite máximo)
+        if (zoom < label.minZoom) continue;
+
+        const pos = projection([label.lon, label.lat]);
+        if (!pos) continue;
+
+        // Fade hemisférico gradual (desde 70% del borde)
+        const dist = geoDistance([label.lon, label.lat], viewCenter);
+        const fadeHemiStart = (Math.PI / 2) * 0.7;
+        let hemiOpacity = 1.0;
+        if (dist > fadeHemiStart) {
+          hemiOpacity = Math.max(0, 1 - (dist - fadeHemiStart) / (Math.PI / 2 - fadeHemiStart));
+        }
+        if (hemiOpacity <= 0) continue;
+
+        // Fade-in suave al entrar en el rango de zoom (1 unidad de zoom de transición)
+        const fadeInEnd = label.minZoom + 1.0;
+        const zoomOpacity = zoom < fadeInEnd ? (zoom - label.minZoom) / 1.0 : 1.0;
+
+        let alpha = 0.35 * zoomOpacity * hemiOpacity;
+        if (hasContinentFilter) alpha *= 0.5;
+        if (alpha < 0.02) continue;
+
+        // Font y texto
+        const fontBase = SEA_FONT_BASE[label.scalerank] ?? 7;
+        const fontSize = Math.round(fontBase + Math.sqrt(zoom) * 1.2);
+        ctx.font = `italic 300 ${fontSize}px Georgia, "New York", serif`;
+        ctx.fillStyle = `rgba(100, 180, 255, ${alpha})`;
+
+        const spacing = SEA_LETTER_SPACING[label.scalerank] ?? 0;
+        const text = label.name_es;
+
+        if (spacing > 0) {
+          // Resetear textAlign para evitar herencia de 'center' de iteración anterior
+          ctx.textAlign = 'left';
+          // Char-by-char con letter-spacing
+          const charWidths: number[] = [];
+          let totalWidth = 0;
+          for (let i = 0; i < text.length; i++) {
+            const cw = ctx.measureText(text[i]).width;
+            charWidths.push(cw);
+            totalWidth += cw + (i < text.length - 1 ? spacing : 0);
+          }
+          let xCursor = pos[0] - totalWidth / 2;
+          for (let i = 0; i < text.length; i++) {
+            ctx.fillText(text[i], xCursor, pos[1]);
+            xCursor += charWidths[i] + spacing;
+          }
+        } else {
+          // Sin letter-spacing: un solo fillText centrado
+          ctx.textAlign = 'center';
+          ctx.fillText(text, pos[0], pos[1]);
+        }
+      }
+
+      ctx.restore();
+    }
+
     // País seleccionado efectivo (controlado vs interno)
     const effectiveSelected = isControlledRef.current
       ? selectedCca2PropRef.current
@@ -331,13 +696,22 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       let fillColor = COUNTRY_FILL_COLOR;
 
       if (cca2 && cca2 === effectiveSelected) {
-        fillColor = COUNTRY_SELECTED_COLOR;
+        fillColor = selectedColorPropRef.current ?? COUNTRY_SELECTED_COLOR;
       } else if (cca2 && cca2 === hoveredRef.current) {
         fillColor = COUNTRY_HOVER_COLOR;
       }
 
       // Dimming por filtro de continente
-      const isDimmed = filter != null && (cca2 == null || !filter.has(cca2));
+      let isDimmed = false;
+      if (filter != null) {
+        if (cca2 != null) {
+          isDimmed = !filter.has(cca2);
+        } else {
+          // Features sin código ISO: heredan dimming de países vecinos
+          const neighbors = ORPHAN_NEIGHBORS[feature.properties?.name as string];
+          isDimmed = neighbors ? !neighbors.some(n => filter.has(n)) : false;
+        }
+      }
       if (isDimmed) ctx.globalAlpha = DIMMED_ALPHA;
 
       ctx.beginPath();
@@ -348,28 +722,136 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       if (isDimmed) ctx.globalAlpha = 1;
     }
 
-    // Bordes
+    // Bordes (mesh 50m, excluye países con override 10m)
+    const borderLineWidth = Math.max(0.5, 1.0 / Math.sqrt(zoom));
     if (borders) {
       ctx.beginPath();
       path(borders);
       ctx.strokeStyle = BORDER_COLOR;
-      ctx.lineWidth = Math.max(0.5, 1.0 / Math.sqrt(zoom));
+      ctx.lineWidth = borderLineWidth;
       ctx.stroke();
     }
 
-    // Marcadores de microestados (anillos con fade-in según zoom)
-    if (showMarkersRef.current && zoom >= MARKER_ZOOM_START && microstateCentroidsRef.current.size > 0) {
-      const t = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_ZOOM_FULL - MARKER_ZOOM_START));
-      const opacity = t * MARKER_MAX_OPACITY;
+    // Bordes de países con override 10m (excluidos del mesh para evitar contornos fantasma)
+    if (overrideCca2sRef.current.size > 0) {
+      ctx.strokeStyle = BORDER_COLOR;
+      ctx.lineWidth = borderLineWidth;
+      for (const feature of countries.features) {
+        const cca2 = feature.properties?.cca2;
+        if (cca2 && overrideCca2sRef.current.has(cca2)) {
+          ctx.beginPath();
+          path(feature);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Outline de convex hull para archipiélagos seleccionados
+    // Muestra una línea punteada perimetral que delimita la extensión territorial
+    if (effectiveSelected && HULL_VISIBLE_CODES.has(effectiveSelected) && archipelagoHullsRef.current.has(effectiveSelected)) {
+      const hullData = archipelagoHullsRef.current.get(effectiveSelected)!;
+      // Deshacer normalización de antimeridiano para coordenadas GeoJSON
+      const ring = hullData.hull.map(([x, y]) =>
+        [hullData.shifted && x > 180 ? x - 360 : x, y] as [number, number],
+      );
+      ring.push(ring[0]); // cerrar anillo
+
+      const hullGeoJSON = {
+        type: 'Feature' as const,
+        properties: {},
+        geometry: { type: 'Polygon' as const, coordinates: [ring] },
+      };
+
+      ctx.beginPath();
+      path(hullGeoJSON as GeoPermissibleObjects);
+      const outlineColor = selectedColorPropRef.current ?? COUNTRY_SELECTED_COLOR;
+      ctx.strokeStyle = outlineColor;
+      ctx.globalAlpha = 0.45;
+      ctx.lineWidth = 1.5;
+      ctx.lineJoin = 'round';
+      ctx.lineCap = 'round';
+      ctx.setLineDash([6, 4]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.globalAlpha = 1;
+      ctx.lineJoin = 'miter';
+      ctx.lineCap = 'butt';
+    }
+
+    // Hulls de archipiélagos siempre visibles (zoom adaptativo por tamaño)
+    // Mismo estilo que marcadores de microestados (línea discontinua blanca con fade-in)
+    if (showMarkersRef.current && archipelagoHullsRef.current.size > 0) {
       const rotation = rotationRef.current;
       const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
-      ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+      for (const [cca2, hullData] of archipelagoHullsRef.current) {
+        // Solo renderizar hulls de archipiélagos seleccionados como siempre visibles
+        if (!HULL_VISIBLE_CODES.has(cca2)) continue;
+        // Skip si está seleccionado (se renderiza aparte con estilo dorado)
+        if (cca2 === effectiveSelected) continue;
+        // Fade-in adaptativo: cada hull tiene su propio minZoom
+        if (zoom < hullData.minZoom) continue;
+        const t = Math.min(1, (zoom - hullData.minZoom) / 1.0);
+        const opacity = t * MARKER_MAX_OPACITY;
+        if (opacity <= 0) continue;
+
+        // Comprobar visibilidad (centroide del hull dentro del hemisferio visible)
+        const hullCenter = hullCentroidsRef.current.get(cca2);
+        if (hullCenter && geoDistance(hullCenter, viewCenter) > Math.PI / 2) continue;
+
+        // Dibujar hull
+        const ring = hullData.hull.map(([x, y]) =>
+          [hullData.shifted && x > 180 ? x - 360 : x, y] as [number, number],
+        );
+        ring.push(ring[0]);
+        const hullGeoJSON = {
+          type: 'Feature' as const,
+          properties: {},
+          geometry: { type: 'Polygon' as const, coordinates: [ring] },
+        };
+        ctx.beginPath();
+        path(hullGeoJSON as GeoPermissibleObjects);
+        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx.lineWidth = MARKER_LINE_WIDTH;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.setLineDash(MARKER_DASH);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+      ctx.lineJoin = 'miter';
+      ctx.lineCap = 'butt';
+    }
+
+    // Marcadores de microestados (fade-in global + fade-out per-microestado)
+    if (showMarkersRef.current && zoom >= MARKER_ZOOM_START && microstateCentroidsRef.current.size > 0) {
+      const fadeInT = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_ZOOM_FULL - MARKER_ZOOM_START));
+      const fadeInOpacity = fadeInT * MARKER_MAX_OPACITY;
+      const rotation = rotationRef.current;
+      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      const angularRadii = microstateAngularRadiiRef.current;
+
       ctx.lineWidth = MARKER_LINE_WIDTH;
       ctx.setLineDash(MARKER_DASH);
-      for (const [, centroid] of microstateCentroidsRef.current) {
+
+      for (const [cca2, centroid] of microstateCentroidsRef.current) {
         if (geoDistance(centroid, viewCenter) > Math.PI / 2) continue;
         const pos = projection(centroid);
         if (!pos) continue;
+
+        // Fade-out cuando el país proyectado es suficientemente grande
+        let markerOpacity = fadeInOpacity;
+        const angularRadius = angularRadii.get(cca2);
+        if (angularRadius) {
+          const projectedRadius = angularRadius * scaledRadius;
+          if (projectedRadius >= MARKER_FADE_OUT_END_PX) continue;
+          if (projectedRadius > MARKER_FADE_OUT_START_PX) {
+            const fadeOutT = (projectedRadius - MARKER_FADE_OUT_START_PX)
+                           / (MARKER_FADE_OUT_END_PX - MARKER_FADE_OUT_START_PX);
+            markerOpacity = fadeInOpacity * (1 - fadeOutT);
+          }
+        }
+
+        ctx.strokeStyle = `rgba(255, 255, 255, ${markerOpacity})`;
         ctx.beginPath();
         ctx.arc(pos[0], pos[1], MARKER_RADIUS, 0, Math.PI * 2);
         ctx.stroke();
@@ -389,31 +871,87 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         if (!pos) continue;
         ctx.beginPath();
         ctx.arc(pos[0], pos[1], 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = CAPITAL_PIN_COLOR;
+        ctx.fillStyle = nonUnCodesRef.current.has(cca2) ? CAPITAL_PIN_NON_UN_COLOR : CAPITAL_PIN_COLOR;
         ctx.globalAlpha = 0.6;
         ctx.fill();
       }
       ctx.globalAlpha = 1;
     }
 
-    // Pin de capital seleccionada (circulito relleno + anillo exterior)
-    const pinCoords = capitalPinRef.current;
-    if (pinCoords) {
+    // Pines de capitales (doble círculo ◎ — bullseye)
+    const pins = capitalPinsRef.current;
+    if (pins.length > 0) {
       const rotation = rotationRef.current;
       const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
-      if (geoDistance(pinCoords, viewCenter) < Math.PI / 2) {
+      const selCca2 = selectedCca2PropRef.current;
+      const pinColor = (selCca2 && nonUnCodesRef.current.has(selCca2))
+        ? CAPITAL_PIN_NON_UN_COLOR
+        : CAPITAL_PIN_COLOR;
+      ctx.lineWidth = Math.max(0.5, 1.0 / Math.sqrt(zoom));
+      const hl = capitalPinHighlightRef.current;
+      for (const pinCoords of pins) {
+        if (geoDistance(pinCoords, viewCenter) >= Math.PI / 2) continue;
         const pos = projection(pinCoords);
-        if (pos) {
-          ctx.beginPath();
-          ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER, 0, Math.PI * 2);
-          ctx.strokeStyle = CAPITAL_PIN_COLOR;
-          ctx.lineWidth = 1.5;
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.arc(pos[0], pos[1], CAPITAL_PIN_INNER, 0, Math.PI * 2);
-          ctx.fillStyle = CAPITAL_PIN_COLOR;
-          ctx.fill();
+        if (!pos) continue;
+        // Color: destacado si coincide con el pin del país target
+        const currentColor = (hl && pinCoords[0] === hl.coords[0] && pinCoords[1] === hl.coords[1])
+          ? hl.color
+          : pinColor;
+        // Relleno sutil interior
+        ctx.globalAlpha = CAPITAL_PIN_FILL_ALPHA;
+        ctx.beginPath();
+        ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER_R, 0, Math.PI * 2);
+        ctx.fillStyle = currentColor;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        // Anillo exterior
+        ctx.strokeStyle = currentColor;
+        ctx.beginPath();
+        ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER_R, 0, Math.PI * 2);
+        ctx.stroke();
+        // Anillo interior
+        ctx.beginPath();
+        ctx.arc(pos[0], pos[1], CAPITAL_PIN_INNER_R, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+    }
+
+    // Etiquetas de feedback geográfico (máx 2: error rojo + correcto verde)
+    const fbLabels = feedbackLabelsRef.current;
+    if (fbLabels && fbLabels.length > 0) {
+      const rotation = rotationRef.current;
+      const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
+      for (const label of fbLabels) {
+        if (geoDistance(label.coords, viewCenter) > Math.PI / 2) continue;
+        const pos = projection(label.coords);
+        if (!pos) continue;
+
+        // Siempre blanco: el color del país (rojo/verde) ya indica acierto/error
+        const color = '#ffffff';
+        const lines = label.text.split('\n');
+        const mainSize = Math.round(12 + Math.sqrt(zoom) * 2);
+        const subSize = Math.round(mainSize * 0.75);
+
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+        ctx.shadowBlur = 4;
+        ctx.fillStyle = color;
+
+        // Offset hacia arriba para no solapar con el highlight dorado
+        const baseY = pos[1] - 14;
+
+        if (lines.length === 1) {
+          ctx.font = `700 ${mainSize}px -apple-system, sans-serif`;
+          ctx.fillText(lines[0], pos[0], baseY);
+        } else {
+          // Dos líneas: primera más grande (capital), segunda más pequeña (país)
+          ctx.font = `700 ${mainSize}px -apple-system, sans-serif`;
+          ctx.fillText(lines[0], pos[0], baseY - subSize - 2);
+          ctx.font = `600 ${subSize}px -apple-system, sans-serif`;
+          ctx.fillText(lines[1], pos[0], baseY);
         }
+        ctx.shadowBlur = 0;
       }
     }
 
@@ -572,6 +1110,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     const delta = (now - lastTimeRef.current) / 1000;
     lastTimeRef.current = now;
 
+    let shouldDraw = needsRedrawRef.current;
+
     // flyTo tiene prioridad sobre inercia y auto-rotación
     const flyTo = flyToAnimRef.current;
     if (flyTo) {
@@ -583,9 +1123,15 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         flyTo.startRotation[0] + (flyTo.endRotation[0] - flyTo.startRotation[0]) * ease,
         flyTo.startRotation[1] + (flyTo.endRotation[1] - flyTo.startRotation[1]) * ease,
       ];
-      scaleRef.current = flyTo.startScale + (flyTo.endScale - flyTo.startScale) * ease;
+
+      // Interpolación logarítmica: el ojo percibe cambios de zoom como
+      // multiplicaciones, no sumas. Log distribuye el cambio visual uniformemente.
+      const logStart = Math.log(flyTo.startScale);
+      const logEnd = Math.log(flyTo.endScale);
+      scaleRef.current = Math.exp(logStart + (logEnd - logStart) * ease);
 
       if (t >= 1) flyToAnimRef.current = null;
+      shouldDraw = true;
     } else if (isInertiaRef.current) {
       const [vx, vy] = velocityRef.current;
       const [lambda, phi] = rotationRef.current;
@@ -598,14 +1144,38 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         isInertiaRef.current = false;
         velocityRef.current = [0, 0];
       }
+      shouldDraw = true;
     } else if (isAutoRotatingRef.current && !isDraggingRef.current) {
       const [lambda, phi] = rotationRef.current;
       rotationRef.current = [wrapLon(lambda + ROTATION_SPEED * delta), phi];
+      shouldDraw = true;
     }
 
-    draw();
-    animFrameRef.current = requestAnimationFrame(animate);
+    if (isDraggingRef.current || pinchRef.current) {
+      shouldDraw = true;
+    }
+
+    if (shouldDraw) {
+      draw();
+      needsRedrawRef.current = false;
+    }
+
+    // Sleep/wake: solo programar siguiente frame si hay motivo para seguir
+    const shouldContinue = flyToAnimRef.current !== null
+      || isInertiaRef.current
+      || (isAutoRotatingRef.current && !isDraggingRef.current)
+      || isDraggingRef.current
+      || pinchRef.current !== null;
+
+    if (shouldContinue || needsRedrawRef.current) {
+      animFrameRef.current = requestAnimationFrame(animate);
+    } else {
+      isLoopSleepingRef.current = true;
+    }
   }, [draw]);
+
+  // Actualizar ref de animate para acceso desde wakeLoop
+  animateRef.current = animate;
 
   // --- Hit test ---
 
@@ -613,6 +1183,10 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     const projection = projectionRef.current;
     const countries = countriesRef.current;
     if (!projection || !countries) return null;
+
+    // Almacenar coordenadas geo del tap para tolerancia en juego
+    const tapCoords = projection.invert?.([x, y]);
+    lastTapCoordsRef.current = tapCoords ? [tapCoords[0], tapCoords[1]] : null;
 
     const zoom = scaleRef.current;
     const markersVisible = showMarkersRef.current && zoom >= MARKER_ZOOM_START
@@ -622,7 +1196,15 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     if (markersVisible) {
       const zoomT = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_HIT_ZOOM_MAX - MARKER_ZOOM_START));
       const hitRadius = MARKER_HIT_RADIUS_MIN + zoomT * (MARKER_HIT_RADIUS_MAX - MARKER_HIT_RADIUS_MIN);
+      const angularRadii = microstateAngularRadiiRef.current;
+      const { width, height } = sizeRef.current;
+      const currentScaledRadius = (Math.min(width, height) / 2 - 20) * zoom;
+
       for (const [cca2, centroid] of microstateCentroidsRef.current) {
+        // Saltar hit test si el marcador está completamente invisible por fade-out
+        const angularRadius = angularRadii.get(cca2);
+        if (angularRadius && angularRadius * currentScaledRadius >= MARKER_FADE_OUT_END_PX) continue;
+
         const pos = projection(centroid);
         if (!pos) continue;
         if (Math.hypot(x - pos[0], y - pos[1]) < hitRadius) {
@@ -632,7 +1214,64 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
     }
 
-    // Hit area ampliado para microestados no-ONU (sin marcador visual, mismo radio)
+    // Búsqueda normal por geometría (reutilizar invert del inicio)
+    const coords = tapCoords;
+    if (!coords) return null;
+
+    for (const feature of countries.features) {
+      if (geoContains(feature, coords)) {
+        return feature as Feature<Geometry, CountryProperties>;
+      }
+    }
+
+    // Fallback: convex hulls de archipiélagos (tocar mar entre islas)
+    const hulls = archipelagoHullsRef.current;
+    if (hulls.size > 0) {
+      let bestFeature: Feature<Geometry, CountryProperties> | null = null;
+      let bestDist = Infinity;
+      for (const [cca2, { hull, shifted }] of hulls) {
+        // Normalizar el punto de consulta al mismo espacio que el hull
+        const testPoint: [number, number] = shifted && (coords as [number, number])[0] < 0
+          ? [(coords as [number, number])[0] + 360, (coords as [number, number])[1]]
+          : coords as [number, number];
+        if (!pointInPolygon(testPoint, hull)) continue;
+        const feature = countries.features.find(f => f.properties?.cca2 === cca2);
+        if (!feature) continue;
+        // Si hay hulls solapados, elegir el más cercano al centroide
+        const centroid = countryCentroidsRef.current.get(cca2);
+        if (centroid) {
+          const dist = geoDistance(coords as [number, number], centroid);
+          if (dist < bestDist) {
+            bestDist = dist;
+            bestFeature = feature as Feature<Geometry, CountryProperties>;
+          }
+        } else {
+          bestFeature = feature as Feature<Geometry, CountryProperties>;
+        }
+      }
+      // Antes de retornar el hull match, verificar si hay un país (sin hull)
+      // cuyo centroide esté más cerca del tap. Esto evita que hulls invisibles
+      // de archipiélagos grandes (ej. Indonesia) intercepten taps destinados
+      // a vecinos pequeños (ej. Timor-Leste).
+      if (bestFeature) {
+        for (const [cca2, centroid] of countryCentroidsRef.current) {
+          if (hulls.has(cca2)) continue;
+          const dist = geoDistance(coords as [number, number], centroid);
+          if (dist < bestDist) {
+            const feat = countries.features.find(f => f.properties?.cca2 === cca2);
+            if (feat) {
+              bestDist = dist;
+              bestFeature = feat as Feature<Geometry, CountryProperties>;
+            }
+          }
+        }
+        return bestFeature;
+      }
+    }
+
+    // Hit area ampliado para microestados no-ONU (sin marcador visual).
+    // Último: no deben interceptar taps sobre geometría real ni hulls de países ONU
+    // (ej. Samoa Americana no debe capturar taps sobre Samoa)
     if (zoom >= MARKER_ZOOM_START && nonUnMicroCentroidsRef.current.size > 0) {
       const zoomT = Math.min(1, (zoom - MARKER_ZOOM_START) / (MARKER_HIT_ZOOM_MAX - MARKER_ZOOM_START));
       const hitRadius = MARKER_HIT_RADIUS_MIN + zoomT * (MARKER_HIT_RADIUS_MAX - MARKER_HIT_RADIUS_MIN);
@@ -643,16 +1282,6 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           const feature = countries.features.find(f => f.properties?.cca2 === cca2);
           if (feature) return feature as Feature<Geometry, CountryProperties>;
         }
-      }
-    }
-
-    // Búsqueda normal por geometría
-    const coords = projection.invert?.([x, y]);
-    if (!coords) return null;
-
-    for (const feature of countries.features) {
-      if (geoContains(feature, coords)) {
-        return feature as Feature<Geometry, CountryProperties>;
       }
     }
 
@@ -667,7 +1296,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     if (!canvas || !container) return;
 
     const rect = container.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     canvas.width = rect.width * dpr;
     canvas.height = rect.height * dpr;
@@ -691,6 +1320,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         if (cancelled) return;
         countriesRef.current = countries;
         bordersRef.current = borders;
+        overrideCca2sRef.current = getOverrideCca2s();
 
         // Pre-calcular centroides (con overrides visuales) y zoom mínimo por importancia
         const allCentroids = new Map<string, [number, number]>();
@@ -707,7 +1337,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
             const centroid = CENTROID_OVERRIDES[cca2] ?? (geoCentroid(feature) as [number, number]);
             allCentroids.set(cca2, centroid);
-            if (MICROSTATE_CODES.has(cca2)) {
+            if (MICROSTATE_CODES.has(cca2) && !HULL_VISIBLE_CODES.has(cca2)) {
               microCentroids.set(cca2, centroid);
             }
             if (NON_UN_MICROSTATE_CODES.has(cca2)) {
@@ -715,6 +1345,48 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
             }
             areas.set(cca2, area);
           }
+        }
+
+        // Radio angular de microestados para fade-out de marcadores
+        const microstateAngularRadii = new Map<string, number>();
+        for (const [cca2] of microCentroids) {
+          const area = areas.get(cca2);
+          if (area && area > 0) {
+            microstateAngularRadii.set(cca2, Math.sqrt(area / Math.PI));
+          }
+        }
+
+        // Extensión angular por país (distancia máxima centroide → vértice).
+        // Para países con override de centroide, filtramos vértices lejanos (>15°)
+        // para excluir territorios ultramarinos que distorsionan la extensión.
+        const EXTENT_DIST_THRESHOLD = 0.26; // ~15° en radianes
+        const extents = new Map<string, number>();
+        for (const feature of countries.features) {
+          const cca2 = feature.properties?.cca2;
+          if (!cca2) continue;
+          const centroid = allCentroids.get(cca2);
+          if (!centroid) continue;
+
+          const hasOverride = cca2 in CENTROID_OVERRIDES;
+          const threshold = hasOverride ? EXTENT_DIST_THRESHOLD : Infinity;
+          let maxDist = extents.get(cca2) ?? 0;
+
+          const checkDist = (ring: number[][]) => {
+            for (const pt of ring) {
+              const d = geoDistance([pt[0], pt[1]] as [number, number], centroid);
+              if (d <= threshold && d > maxDist) maxDist = d;
+            }
+          };
+
+          const geom = feature.geometry;
+          if (geom.type === 'Polygon') {
+            for (const ring of geom.coordinates) checkDist(ring as number[][]);
+          } else if (geom.type === 'MultiPolygon') {
+            for (const poly of geom.coordinates)
+              for (const ring of poly) checkDist(ring as number[][]);
+          }
+
+          extents.set(cca2, maxDist);
         }
 
         // Asignar zoom mínimo para anti-solapamiento de etiquetas
@@ -738,6 +1410,117 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           else if (pct < 0.7) capitalMinZoomMap.set(cca2, 2.5);
           else capitalMinZoomMap.set(cca2, 4.0);
         });
+
+        // Convex hulls para archipiélagos (hit testing del mar entre islas)
+        const hullsByCca2 = new Map<string, { hull: [number, number][]; shifted: boolean; minZoom: number }>();
+        const coordsByCca2 = new Map<string, [number, number][]>();
+
+        for (const feature of countries.features) {
+          const cca2 = feature.properties?.cca2;
+          if (!cca2 || !ARCHIPELAGO_CODES.has(cca2)) continue;
+
+          // Extraer coordenadas de la geometría
+          const geom = feature.geometry;
+          const coords = coordsByCca2.get(cca2) ?? [];
+          const extract = (ring: number[][]) => {
+            for (const pt of ring) coords.push([pt[0], pt[1]]);
+          };
+
+          if (geom.type === 'Polygon') {
+            for (const ring of geom.coordinates) extract(ring as number[][]);
+          } else if (geom.type === 'MultiPolygon') {
+            for (const poly of geom.coordinates)
+              for (const ring of poly) extract(ring as number[][]);
+          }
+          coordsByCca2.set(cca2, coords);
+        }
+
+        // Padding angular proporcional al tamaño del hull para que el outline
+        // no quede pegado a las islas. Archipiélagos pequeños (Caribe) usan menos
+        // margen para evitar solapamiento visual con países vecinos.
+        const HULL_BUFFER_MIN = 0.15;  // ~17 km mínimo
+        const HULL_BUFFER_MAX = 0.8;   // ~89 km máximo
+        const HULL_BUFFER_FRAC = 0.15; // 15% de la extensión del hull
+        for (const [cca2, coords] of coordsByCca2) {
+          if (coords.length < 3) continue;
+          // Normalizar coordenadas para países que cruzan el antimeridiano (ej. Fiji)
+          const normalized = normalizeForAntimeridian(coords);
+          const rawHull = computeConvexHull(normalized.coords);
+          // Centroide del hull crudo
+          let cx = 0, cy = 0;
+          for (const [x, y] of rawHull) { cx += x; cy += y; }
+          cx /= rawHull.length; cy /= rawHull.length;
+          // Extensión angular cruda: distancia máxima centroide → vértice (sin buffer)
+          let rawExtent = 0;
+          for (const [x, y] of rawHull) {
+            const dx = x - cx, dy = y - cy;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d > rawExtent) rawExtent = d;
+          }
+          // Buffer proporcional al tamaño, acotado
+          const bufferDeg = Math.max(HULL_BUFFER_MIN, Math.min(HULL_BUFFER_MAX, rawExtent * HULL_BUFFER_FRAC));
+          const buffered = rawHull.map(([x, y]) => {
+            const dx = x - cx, dy = y - cy;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 0.001) return [x, y] as [number, number];
+            const scale = bufferDeg / dist;
+            return [x + dx * scale, y + dy * scale] as [number, number];
+          });
+          // Asegurar winding order correcto para proyección esférica (left-hand rule de D3).
+          // Si geoArea > 2π, el polígono cubre más de media esfera → invertir vértices.
+          const testRing = buffered.map(([x, y]) =>
+            [normalized.shifted && x > 180 ? x - 360 : x, y] as [number, number],
+          );
+          testRing.push(testRing[0]);
+          if (geoArea({ type: 'Polygon', coordinates: [testRing] }) > 2 * Math.PI) {
+            buffered.reverse();
+          }
+          // Extensión angular del hull buffered para zoom adaptativo
+          let maxDistDeg = 0;
+          for (const [bx, by] of buffered) {
+            const dx = bx - cx, dy = by - cy;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d > maxDistDeg) maxDistDeg = d;
+          }
+          // Zoom adaptativo: hulls grandes visibles antes, pequeños después
+          // K / extensión, clamped a [1.5, MARKER_ZOOM_FULL]
+          const HULL_ZOOM_K = 10;
+          const hullMinZoom = Math.max(1.5, Math.min(MARKER_ZOOM_FULL, HULL_ZOOM_K / Math.max(maxDistDeg, 0.1)));
+          hullsByCca2.set(cca2, {
+            hull: buffered,
+            shifted: normalized.shifted,
+            minZoom: hullMinZoom,
+          });
+        }
+        archipelagoHullsRef.current = hullsByCca2;
+
+        // Centros de hull para centrar flyTo en archipiélagos
+        const hullCentroids = new Map<string, [number, number]>();
+        for (const [cca2, hullData] of hullsByCca2) {
+          let hcx = 0, hcy = 0;
+          for (const [x, y] of hullData.hull) { hcx += x; hcy += y; }
+          hcx /= hullData.hull.length; hcy /= hullData.hull.length;
+          // Deshacer shift de antimeridiano
+          if (hullData.shifted && hcx > 180) hcx -= 360;
+          hullCentroids.set(cca2, [hcx, hcy]);
+        }
+        hullCentroidsRef.current = hullCentroids;
+
+        // Para archipiélagos: actualizar extensión angular con el hull buffered
+        // para que el zoom muestre el outline completo, no solo las islas
+        for (const [cca2, hullData] of hullsByCca2) {
+          const centroid = allCentroids.get(cca2);
+          if (!centroid) continue;
+          let maxDist = extents.get(cca2) ?? 0;
+          for (const [x, y] of hullData.hull) {
+            // Deshacer shift de antimeridiano para distancia correcta
+            const lon = hullData.shifted && x > 180 ? x - 360 : x;
+            const d = geoDistance([lon, y] as [number, number], centroid);
+            if (d > maxDist) maxDist = d;
+          }
+          extents.set(cca2, maxDist);
+        }
+        geoExtentsRef.current = extents;
 
         // Guardar áreas para re-ordenamiento posterior cuando lleguen datos de población
         geoAreasRef.current = areas;
@@ -772,6 +1555,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
         countryCentroidsRef.current = allCentroids;
         microstateCentroidsRef.current = microCentroids;
+        microstateAngularRadiiRef.current = microstateAngularRadii;
         nonUnMicroCentroidsRef.current = nonUnMicroCentroids;
         labelMinZoomRef.current = minZoomMap;
         capitalMinZoomRef.current = capitalMinZoomMap;
@@ -790,6 +1574,20 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       }
     };
   }, [animate, resize, onReady]);
+
+  // Carga de etiquetas de mares y océanos
+  useEffect(() => {
+    if (seaLabelsLoadedRef.current) return;
+    fetch(`${import.meta.env.BASE_URL}data/sea-labels.json`)
+      .then(r => r.json())
+      .then((data: SeaLabel[]) => {
+        seaLabelsRef.current = data;
+        seaLabelsLoadedRef.current = true;
+        needsRedrawRef.current = true;
+        wakeLoop();
+      })
+      .catch(() => { /* silencioso: sin etiquetas de mar si falla */ });
+  }, []);
 
   // Re-ordenar features por población cuando los datos llegan (carga async)
   useEffect(() => {
@@ -812,6 +1610,25 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     return () => observer.disconnect();
   }, [resize]);
 
+  // Pausar RAF al ir a background, reanudar al volver (solo en nativo)
+  useEffect(() => {
+    if (!Capacitor.isNativePlatform()) return;
+
+    const listener = CapacitorApp.addListener('appStateChange', ({ isActive }) => {
+      if (isActive) {
+        wakeLoop();
+      } else {
+        if (animFrameRef.current !== null) {
+          cancelAnimationFrame(animFrameRef.current);
+          animFrameRef.current = null;
+        }
+        isLoopSleepingRef.current = true;
+      }
+    });
+
+    return () => { listener.then(l => l.remove()); };
+  }, []);
+
   // --- Zoom: wheel + pinch (listeners nativos) ---
 
   useEffect(() => {
@@ -827,6 +1644,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       flyToAnimRef.current = null;
       const factor = 1 - e.deltaY * ZOOM_WHEEL_FACTOR;
       scaleRef.current = Math.max(MIN_SCALE, Math.min(MAX_SCALE, scaleRef.current * factor));
+      needsRedrawRef.current = true;
+      wakeLoop();
     };
 
     const handleTouchStart = (e: TouchEvent) => {
@@ -918,6 +1737,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       rotation: [...rotationRef.current] as [number, number],
     };
     (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    wakeLoop();
   }, [getCanvasPos]);
 
   const handlePointerMove = useCallback((e: React.PointerEvent) => {
@@ -940,6 +1760,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       const cca2 = feature?.properties?.cca2 ?? null;
       if (cca2 !== hoveredRef.current) {
         hoveredRef.current = cca2;
+        needsRedrawRef.current = true;
+        wakeLoop();
         const canvas = canvasRef.current;
         if (canvas) canvas.style.cursor = cca2 ? 'pointer' : 'grab';
       }
@@ -964,12 +1786,16 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       if (feature) {
         if (!isControlledRef.current) {
           selectedRef.current = feature.properties?.cca2 ?? null;
+          needsRedrawRef.current = true;
+          wakeLoop();
         }
         onCountryClick?.(feature as CountryFeature);
       } else {
         // Click en océano → deseleccionar
         if (!isControlledRef.current) {
           selectedRef.current = null;
+          needsRedrawRef.current = true;
+          wakeLoop();
         }
         onDeselectRef.current?.();
       }

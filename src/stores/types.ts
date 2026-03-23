@@ -1,5 +1,5 @@
 // Tipos del estado global de GeoExpert
-import type { Continent, GameLevel } from '../data/types';
+import type { Continent, GameLevel, QuestionType } from '../data/types';
 
 /** Identificador de perfil (UUID) */
 export type ProfileId = string;
@@ -7,18 +7,40 @@ export type ProfileId = string;
 /** Identificador de avatar (nombre del icono) */
 export type AvatarId = string;
 
-/** Estado de un sello de país */
+/** Estado de un sello (por nivel×continente) */
 export interface StampStatus {
   earned: boolean;
-  attemptsToday: number;
-  lastAttemptDate: string; // ISO date (YYYY-MM-DD)
+  earnedDate: string | null; // ISO date (YYYY-MM-DD) de cuándo se ganó
 }
+
+/** Registro de intentos para un país en un tipo de juego */
+export interface AttemptRecord {
+  correct: number;
+  incorrect: number;
+  /** Aciertos consecutivos recientes (se resetea al fallar) */
+  streak: number;
+}
+
+/** Intentos por tipo de juego para un país dado */
+export type CountryAttempts = Partial<Record<QuestionType, AttemptRecord>>;
+
+/** Registro de intentos de un país en pruebas de sello */
+export interface StampAttemptRecord {
+  correct: number;
+  incorrect: number;
+  /** Resultado del último intento (para indicador ✓/✗ en estadísticas) */
+  lastCorrect: boolean;
+}
+
+/** Intentos de prueba de sello por tipo (A = países, B = capitales) */
+export type StampCountryAttempts = Partial<Record<'A' | 'B', StampAttemptRecord>>;
 
 /** Progreso en un nivel × continente */
 export interface LevelContinentProgress {
-  stampCountries: Record<string, StampStatus>;  // cca2 → estado del sello del país
-  stampCapitals: Record<string, StampStatus>;   // cca2 → estado del sello de la capital
-  failures: number; // total de fallos acumulados
+  stampCountries: StampStatus;  // sello de países (prueba tipo A)
+  stampCapitals: StampStatus;   // sello de capitales (prueba tipo B)
+  attempts: Record<string, CountryAttempts>;          // cca2 → intentos de Jugar
+  stampAttempts: Record<string, StampCountryAttempts>; // cca2 → intentos de pruebas de sello
 }
 
 /** Progreso completo de un perfil */
@@ -36,9 +58,12 @@ export interface UserProfile {
 /** Configuración global de la app */
 export interface AppSettings {
   showMarkers: boolean;
+  showSeaLabels: boolean;
   vibration: boolean;
   theme: 'dark';        // por ahora solo dark
   locale: 'es';         // por ahora solo español
+  lastPlayed?: { continent: Continent; level: GameLevel } | null;
+  lastStampPlayed?: { continent: Continent; level: GameLevel } | null;
 }
 
 /** Estado completo de la aplicación */

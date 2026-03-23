@@ -1,0 +1,199 @@
+/* ProfileSelector — Modal de seleccion de perfil */
+
+.profile-selector-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: var(--spacing-lg);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-selector {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  max-width: 22rem;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-selector__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+}
+
+.profile-selector__title {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.profile-selector__close {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--transition-fast);
+}
+
+.profile-selector__close:active {
+  color: var(--color-text-primary);
+}
+
+/* Lista de perfiles */
+.profile-selector__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--spacing-lg);
+  max-height: 40vh;
+}
+
+.profile-selector__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-selector__item:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-selector__item--active {
+  border-color: var(--color-accent-cyan);
+}
+
+.profile-selector__item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-selector__item-name {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-selector__item-check {
+  color: var(--color-accent-cyan);
+  font-size: var(--font-size-lg);
+  flex-shrink: 0;
+}
+
+/* Botones de accion por perfil */
+.profile-selector__item-actions {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+.profile-selector__action-btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--transition-fast);
+}
+
+.profile-selector__action-btn:active {
+  color: var(--color-text-primary);
+}
+
+.profile-selector__action-btn--delete:active {
+  color: var(--color-error);
+}
+
+/* Boton crear perfil */
+.profile-selector__create-btn {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-accent-cyan);
+  background: var(--color-accent-cyan);
+  color: var(--color-bg-primary);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-selector__create-btn:active {
+  opacity: 0.8;
+}
+
+/* Dialogo de confirmacion de eliminacion */
+.profile-selector__confirm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-error);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.profile-selector__confirm-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-align: center;
+}
+
+.profile-selector__confirm-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+}
+
+.profile-selector__confirm-btn {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.profile-selector__confirm-btn--delete {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}

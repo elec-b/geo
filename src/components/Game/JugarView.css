@@ -1,0 +1,118 @@
+/* JugarView — estilos base (los componentes hijos tienen sus propios CSS) */
+
+/* Modal overlay para pruebas de sello */
+.jugar-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: var(--spacing-lg);
+}
+
+.jugar-modal {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  max-width: 22rem;
+  width: 100%;
+  text-align: center;
+}
+
+.jugar-modal__title {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.jugar-modal__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--spacing-lg);
+  line-height: 1.4;
+}
+
+.jugar-modal__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.jugar-modal__btn {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.jugar-modal__btn:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.jugar-modal__btn--countries {
+  border-color: var(--color-accent-cyan);
+  color: var(--color-accent-cyan);
+}
+
+.jugar-modal__btn--capitals {
+  border-color: var(--color-accent-purple);
+  color: var(--color-accent-purple);
+}
+
+.jugar-modal__btn--primary {
+  background: var(--color-accent-cyan);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent-cyan);
+  font-weight: 600;
+}
+
+.jugar-modal__cancel {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  padding: var(--spacing-sm);
+}
+
+.jugar-modal__stamp-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--stamp-color, var(--color-text-secondary));
+  background: color-mix(in srgb, var(--stamp-color, var(--color-text-secondary)) 15%, transparent);
+  box-shadow: 0 0 0.75rem color-mix(in srgb, var(--stamp-color, var(--color-text-secondary)) 25%, transparent);
+  margin: 0 auto var(--spacing-md);
+}
+
+.jugar-modal__stamp-icon::after {
+  content: '\2605';
+  font-size: var(--font-size-xl);
+  color: var(--stamp-color, var(--color-text-secondary));
+}
+
+.jugar-modal__stamp-icon--capitals {
+  border-style: double;
+  border-width: 3px;
+}
+
+.jugar-modal__stamp-icon--earned {
+  animation: stamp-bounce 0.5s ease;
+}
+
+@keyframes stamp-bounce {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}

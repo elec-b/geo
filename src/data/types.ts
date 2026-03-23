@@ -28,6 +28,8 @@ export interface CountryData {
   wikipediaSlug: string | null;
   /** true = miembro o estado observador ONU (195). false = territorio no reconocido */
   unMember: boolean;
+  /** cca2 del país soberano, para territorios dependientes no-ONU */
+  sovereignCountry?: string;
 }
 
 /** Coordenadas de una capital (provenientes de capitals.json) */
@@ -35,6 +37,9 @@ export interface CapitalCoords {
   name: string;
   latlng: [number, number];
 }
+
+/** Los 6 tipos de juego reales (sin 'mixed') */
+export type QuestionType = 'A' | 'B' | 'C' | 'D' | 'E' | 'F';
 
 /** Definición de un nivel de juego (nivel × continente) */
 export interface LevelDefinition {

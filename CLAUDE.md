@@ -33,12 +33,13 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
    - **Raíz**: documentos core del proyecto (`CLAUDE.md`, `DESIGN.md`, `BACKLOG.md`)
    - **`docs/research/`**: investigaciones técnicas
    - **`docs/spikes/`**: resultados de spikes de validación
-5. **Backlog**: `BACKLOG.md` organiza el trabajo en 3 secciones:
-   - **Completado**: Tareas terminadas (historial reciente; para historial completo, usar git)
-   - **En progreso**: Tareas activas o con trabajo parcial
-   - **Próximos pasos**: Tareas planificadas pero no iniciadas
+5. **Backlog**: `BACKLOG.md` organiza el trabajo en 2 secciones:
+   - **Completado**: Tareas terminadas (historial reciente condensado; para historial completo, usar git)
+   - **Próximos pasos**: Tareas planificadas, ordenadas por prioridad
 
-   Actualízalo al completar tareas importantes. No usamos categoría de "bugs" — todo son tareas.
+   Actualízalo **solo después de testear en dispositivo y con confirmación explícita del usuario**. No actualizar el backlog de forma anticipada. No usamos categoría de "bugs" — todo son tareas.
+
+   **Flujo de mantenimiento**: Al completar una tarea, moverla de «Próximos pasos» a «Completado» (tal cual o clarificando brevemente lo que se hizo). Cuando «Completado» crece demasiado, comprimir agrupando por área en pocas líneas (1 línea por área con las capacidades clave).
 
 ### 3.1 Preferencias de idioma (prioridad alta)
 Todas las explicaciones, comentarios de código y documentación deben estar en **español**.
@@ -52,6 +53,9 @@ src/
 ├── components/       # Componentes React
 │   ├── Globe/        # Globo 3D y controles
 │   ├── Game/         # Lógica de juego
+│   ├── Explore/      # Exploración libre
+│   ├── Navigation/   # Tab bar
+│   ├── Layout/       # Header, app shell
 │   └── UI/           # Botones, modales, etc.
 ├── stores/           # Zustand stores
 ├── data/             # Loaders y tipos de datos
@@ -80,9 +84,12 @@ npx cap open ios      # Abrir en Xcode
 npx cap run ios       # Build y ejecutar en simulador/dispositivo
 
 # Despliegue directo a iPhone (inalámbrico)
-npm run device        # Build + sync + compilar + instalar + lanzar en iPhone
+npm run device        # Build + compilar (Debug) + instalar + lanzar en iPhone
+npm run device:live   # Igual, pero apunta al dev server local (requiere npm run dev en otro terminal)
 ```
 
-> **Nota**: `npm run device` requiere un archivo `.env.local` en la raíz con los IDs del dispositivo (`IOS_DEVICE_UDID`, `IOS_DEVICE_ID`, `IOS_BUNDLE_ID`). Este archivo no se sube a git. Para obtener los IDs, ejecutar `xcrun devicectl list devices`.
+> **Nota**: Ambos comandos requieren un archivo `.env.local` en la raíz con los IDs del dispositivo (`IOS_DEVICE_UDID`, `IOS_DEVICE_ID`, `IOS_BUNDLE_ID`). Este archivo no se sube a git. Para obtener los IDs, ejecutar `xcrun devicectl list devices`.
+>
+> **Live Reload**: `npm run device:live` + `npm run dev` permite ver cambios web al instante en el iPhone (HMR vía Wi-Fi). Ideal para iterar en UI. Para testing final, usar siempre `npm run device`.
 
 > **Verificación preferida**: Para testear cambios, usar `npm run device` (despliegue directo al iPhone) en vez de `npm run dev`. El testing real se hace siempre en dispositivo. Preguntar siempre al usuario antes de usar `npm run device`.

@@ -11,5 +11,5 @@ export interface TabDefinition {
 export const TABS: TabDefinition[] = [
   { id: 'play', label: 'Jugar', iconId: 'play' },
   { id: 'explore', label: 'Explorar', iconId: 'explore' },
-  { id: 'passport', label: 'Mi Pasaporte', iconId: 'passport' },
+  { id: 'passport', label: 'Pasaporte', iconId: 'passport' },
 ];

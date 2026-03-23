@@ -1,0 +1,251 @@
+/* PassportView — Dashboard de progreso (estética de documento oficial) */
+
+.passport-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(var(--header-height) + var(--spacing-lg)) var(--spacing-md) calc(var(--tabbar-height) + var(--spacing-xl));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Header con nivel global */
+.passport-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  margin-bottom: var(--spacing-xl);
+  width: 100%;
+  max-width: 22rem;
+}
+
+.passport-header__name {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.passport-header__level {
+  font-size: var(--font-size-base);
+  letter-spacing: 0.05em;
+}
+
+/* Grid 5 filas × 3 columnas (+ labels) — contenedor guilloché */
+.passport-grid {
+  display: grid;
+  grid-template-columns: auto repeat(3, 1fr);
+  gap: var(--spacing-xs);
+  width: 100%;
+  max-width: 22rem;
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  border: 2px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--glass-bg);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.01) 2px,
+      rgba(255, 255, 255, 0.01) 4px
+    );
+}
+
+.passport-grid__corner {
+  /* Celda vacía esquina superior izquierda */
+}
+
+.passport-grid__level-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+  padding: var(--spacing-xs);
+}
+
+.passport-grid__level-emoji {
+  font-size: var(--font-size-lg);
+}
+
+.passport-grid__level-name {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.passport-grid__continent-label {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  padding-right: var(--spacing-sm);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+/* Celda individual */
+.passport-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  min-height: 4rem;
+}
+
+.passport-cell--locked {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.passport-cell--available {
+  border-color: color-mix(in srgb, var(--cell-color) 25%, transparent);
+}
+
+.passport-cell--available:active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.passport-cell--complete {
+  border-color: color-mix(in srgb, var(--cell-color) 50%, transparent);
+  background: color-mix(in srgb, var(--cell-color) 8%, transparent);
+  cursor: default;
+}
+
+.passport-cell__lock {
+  font-size: var(--font-size-sm);
+  opacity: 0.6;
+}
+
+.passport-cell__stamps {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+/* --- Sellos circulares --- */
+
+.passport-cell__stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 2px solid var(--cell-color);
+  opacity: 0.3;
+  transition: all var(--transition-normal);
+}
+
+/* Diferenciación país vs capital por estilo de borde */
+.passport-cell__stamp--capitals {
+  border-style: double;
+  border-width: 3px;
+}
+
+/* Sello pendiente en nivel desbloqueado — pulse */
+.passport-cell__stamp--available {
+  animation: stampPulse 2s ease-in-out infinite;
+}
+
+/* Sello ganado */
+.passport-cell__stamp--earned {
+  border: 2px solid var(--cell-color);
+  opacity: 1;
+  background: color-mix(in srgb, var(--cell-color) 15%, transparent);
+  box-shadow: 0 0 0.5rem color-mix(in srgb, var(--cell-color) 20%, transparent);
+  transform: rotate(var(--stamp-rotation, 0deg));
+}
+
+.passport-cell__stamp--capitals.passport-cell__stamp--earned {
+  border-style: double;
+  border-width: 3px;
+}
+
+.passport-cell__stamp--earned::after {
+  content: '\2605';
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--cell-color);
+}
+
+/* Animación stampDrop — al conseguir un sello nuevo */
+.passport-cell__stamp--animating {
+  animation: stampDrop 400ms ease-out forwards;
+}
+
+/* Giro de estrella ★ — efecto "trompo" (rápido → desacelera) */
+.passport-cell__stamp--animating::after {
+  animation: starSpin 3000ms ease-out forwards;
+}
+
+.passport-cell__count {
+  font-size: 0.625rem;
+  color: var(--color-text-muted);
+}
+
+/* --- Leyenda --- */
+
+.passport-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+  align-items: center;
+}
+
+.passport-legend__item {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.passport-legend__item--muted {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+/* --- Keyframes --- */
+
+@keyframes stampPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes starSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(3600deg); }
+}
+
+@keyframes stampDrop {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-20deg);
+  }
+  70% {
+    transform: scale(1.15) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(var(--stamp-rotation, 0deg));
+  }
+}

@@ -4,11 +4,13 @@ import { useState, useCallback, useMemo, useEffect, type RefObject, type Mutable
 import type { GlobeD3Ref } from '../Globe';
 import type { CountryFeature } from '../../data/countries';
 import type { CountryData, CapitalCoords, Continent } from '../../data/types';
+import type { FeedbackLabel } from '../Globe';
 import type { CountryRankings } from '../../data/rankings';
 import { CountryCard } from './CountryCard';
 import { ContinentFilter } from './ContinentFilter';
 import { TableView } from './TableView';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
+import { CONTINENT_CENTERS } from '../../data/continents';
 import './ExploreView.css';
 
 type ExploreMode = 'countries' | 'capitals';
@@ -16,11 +18,17 @@ type ExploreMode = 'countries' | 'capitals';
 /** Props que ExploreView controla en el globo */
 export interface GlobeControlProps {
   selectedCountryCca2: string | null;
-  capitalPin: [number, number] | null;
+  selectedCountryColor?: string;
+  capitalPins: [number, number][];
   highlightedCountries: Set<string> | null;
   showCountryLabels: boolean;
   showCapitalLabels: boolean;
   capitalLabelsData: Map<string, CapitalCoords> | null;
+  feedbackLabels?: FeedbackLabel[] | null;
+  showMarkers?: boolean;  // override del setting global (undefined = usar global)
+  showSeaLabels?: boolean; // override del setting global (undefined = usar global)
+  /** Pin de capital destacado con color contrastante (para juegos con territorio coloreado) */
+  capitalPinHighlight?: { coords: [number, number]; color: string } | null;
 }
 
 interface ExploreViewProps {
@@ -74,10 +82,10 @@ export function ExploreView({
     [showCapitalLabels, capitals],
   );
 
-  const capitalPin = useMemo((): [number, number] | null => {
-    if (!selectedCca2) return null;
+  const capitalPins = useMemo((): [number, number][] => {
+    if (!selectedCca2) return [];
     const cap = capitals.get(selectedCca2);
-    return cap ? [cap.latlng[1], cap.latlng[0]] : null;
+    return cap ? [[cap.latlng[1], cap.latlng[0]]] : [];
   }, [selectedCca2, capitals]);
 
   // --- Sincronización de props del globo ---
@@ -85,24 +93,26 @@ export function ExploreView({
   useEffect(() => {
     onGlobePropsChange({
       selectedCountryCca2: selectedCca2,
-      capitalPin,
+      capitalPins,
       highlightedCountries,
       showCountryLabels,
       showCapitalLabels,
       capitalLabelsData,
+      feedbackLabels: null,
     });
-  }, [selectedCca2, capitalPin, highlightedCountries, showCountryLabels, showCapitalLabels, capitalLabelsData, onGlobePropsChange]);
+  }, [selectedCca2, capitalPins, highlightedCountries, showCountryLabels, showCapitalLabels, capitalLabelsData, onGlobePropsChange]);
 
   // Reset al desmontar (cambio de tab)
   useEffect(() => {
     return () => {
       onGlobePropsChange({
         selectedCountryCca2: null,
-        capitalPin: null,
+        capitalPins: [],
         highlightedCountries: null,
         showCountryLabels: false,
         showCapitalLabels: false,
         capitalLabelsData: null,
+        feedbackLabels: null,
       });
     };
   }, [onGlobePropsChange]);
@@ -169,14 +179,6 @@ export function ExploreView({
 
 
   // Cambio de filtro de continente con flyTo
-  const CONTINENT_CENTERS: Record<Continent, [number, number]> = {
-    'África': [20, 0],
-    'América': [-80, 10],
-    'Asia': [90, 35],
-    'Europa': [15, 50],
-    'Oceanía': [140, -25],
-  };
-
   const handleContinentChange = useCallback(
     (continent: Continent | null) => {
       setContinentFilter(continent);

@@ -12,7 +12,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 // Importar mapeos desde el proyecto
-import { UN_COUNTRY_CODES, NON_UN_CODES } from '../src/data/isoMapping.js';
+import { UN_COUNTRY_CODES, NON_UN_CODES, NON_UN_TERRITORIES_BY_ID, NON_UN_TERRITORIES_BY_NAME } from '../src/data/isoMapping.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = resolve(__dirname, '..', 'public', 'data');
@@ -44,6 +44,7 @@ interface RestCountry {
 }
 
 interface SupplementaryEntry {
+  name?: string;
   capital: string;
   demonym: string;
   currencies?: { name: string; symbol: string }[];
@@ -66,6 +67,7 @@ interface CountryEntry {
   ihdi: number | null;
   wikipediaSlug: string | null;
   unMember: boolean;
+  sovereignCountry?: string;
 }
 
 interface WikiEntry {
@@ -83,6 +85,15 @@ interface HdiEntry {
   ihdi: number | null;
 }
 
+// Lookup de soberano para territorios no-ONU dependientes
+const sovereignByCca2 = new Map<string, string>();
+for (const t of Object.values(NON_UN_TERRITORIES_BY_ID)) {
+  if (t.sovereignCca2) sovereignByCca2.set(t.cca2, t.sovereignCca2);
+}
+for (const t of Object.values(NON_UN_TERRITORIES_BY_NAME)) {
+  if (t.sovereignCca2) sovereignByCca2.set(t.cca2, t.sovereignCca2);
+}
+
 function toCountryEntry(
   c: RestCountry,
   isUN: boolean,
@@ -90,13 +101,13 @@ function toCountryEntry(
   hdiData: Record<string, HdiEntry>,
   wikiData: Record<string, WikiEntry>,
 ): CountryEntry {
-  // Nombre del país en español (desde REST Countries translations.spa)
-  const name = c.translations?.spa?.common;
-  if (!name) throw new Error(`Sin traducción española para ${c.cca2} (${c.name.common})`);
-
   // Capital y gentilicio en español (desde archivo suplementario)
   const suppEntry = supp[c.cca2];
   if (!suppEntry) throw new Error(`Sin datos suplementarios para ${c.cca2} (${c.name.common})`);
+
+  // Nombre del país en español: suplementario tiene prioridad sobre REST Countries
+  const name = suppEntry.name ?? c.translations?.spa?.common;
+  if (!name) throw new Error(`Sin traducción española para ${c.cca2} (${c.name.common})`);
 
   // Monedas: preferir suplementario (español), fallback a REST Countries
   const currencies: { name: string; symbol: string }[] = suppEntry.currencies
@@ -117,6 +128,8 @@ function toCountryEntry(
     ? (wiki.lang === 'es' ? wiki.slug : `${wiki.lang}:${wiki.slug}`)
     : null;
 
+  const sovereignCountry = sovereignByCca2.get(c.cca2);
+
   return {
     cca2: c.cca2,
     ccn3: c.ccn3 ?? '',
@@ -133,6 +146,7 @@ function toCountryEntry(
     ihdi: hdi?.ihdi ?? null,
     wikipediaSlug,
     unMember: isUN,
+    ...(sovereignCountry ? { sovereignCountry } : {}),
   };
 }
 
@@ -229,7 +243,9 @@ async function main() {
 
   // Overrides de coordenadas de capital (la API devuelve datos incorrectos para algunos países)
   const CAPITAL_OVERRIDES: Record<string, [number, number]> = {
+    'EH': [27.15, -13.20], // El Aaiún, Sáhara Occidental (API devuelve lat/lng invertidos)
     'GD': [12.05, -61.75], // St. George's, Grenada (API devuelve coords de Bermuda)
+    'SN': [14.69, -17.44], // Dakar, Senegal (API imprecisa, cae fuera de la península)
   };
 
   for (const c of allApiCountries) {

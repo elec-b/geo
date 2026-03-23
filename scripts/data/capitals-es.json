@@ -24,6 +24,7 @@
     "languages": ["Inglés"]
   },
   "AI": {
+    "name": "Anguila",
     "capital": "The Valley",
     "demonym": "anguilense",
     "currencies": [{ "name": "Dólar del Caribe Oriental", "symbol": "$" }],
@@ -102,6 +103,7 @@
     "languages": ["Inglés"]
   },
   "BD": {
+    "name": "Bangladés",
     "capital": "Daca",
     "demonym": "bangladesí",
     "currencies": [{ "name": "Taka bangladesí", "symbol": "৳" }],
@@ -126,6 +128,7 @@
     "languages": ["Búlgaro"]
   },
   "BH": {
+    "name": "Baréin",
     "capital": "Manama",
     "demonym": "bareiní",
     "currencies": [{ "name": "Dinar bareiní", "symbol": ".د.ب" }],
@@ -138,7 +141,7 @@
     "languages": ["Kirundi", "Francés"]
   },
   "BJ": {
-    "capital": "Porto Novo",
+    "capital": "Porto-Novo",
     "demonym": "beninés",
     "currencies": [{ "name": "Franco CFA de África Occidental", "symbol": "Fr" }],
     "languages": ["Francés"]
@@ -156,6 +159,7 @@
     "languages": ["Inglés"]
   },
   "BN": {
+    "name": "Brunéi",
     "capital": "Bandar Seri Begawan",
     "demonym": "bruneano",
     "currencies": [{ "name": "Dólar de Brunéi", "symbol": "$" }],
@@ -186,6 +190,7 @@
     "languages": ["Dzongkha"]
   },
   "BW": {
+    "name": "Botsuana",
     "capital": "Gaborone",
     "demonym": "botsuano",
     "currencies": [{ "name": "Pula botsuano", "symbol": "P" }],
@@ -312,6 +317,7 @@
     "languages": ["Alemán"]
   },
   "DJ": {
+    "name": "Yibuti",
     "capital": "Yibuti",
     "demonym": "yibutiano",
     "currencies": [{ "name": "Franco yibutiano", "symbol": "Fr" }],
@@ -348,7 +354,7 @@
     "languages": ["Español"]
   },
   "EE": {
-    "capital": "Tallin",
+    "capital": "Tallín",
     "demonym": "estonio",
     "currencies": [{ "name": "Euro", "symbol": "€" }],
     "languages": ["Estonio"]
@@ -360,6 +366,7 @@
     "languages": ["Árabe"]
   },
   "EH": {
+    "name": "Sáhara Occidental",
     "capital": "El Aaiún",
     "demonym": "saharaui",
     "currencies": [{ "name": "Dírham marroquí", "symbol": "د.م." }],
@@ -408,6 +415,7 @@
     "languages": ["Inglés"]
   },
   "FO": {
+    "name": "Islas Feroe",
     "capital": "Tórshavn",
     "demonym": "feroés",
     "currencies": [{ "name": "Corona danesa", "symbol": "kr" }],
@@ -432,7 +440,8 @@
     "languages": ["Inglés"]
   },
   "GD": {
-    "capital": "Saint George",
+    "name": "Granada",
+    "capital": "Saint George's",
     "demonym": "granadino",
     "currencies": [{ "name": "Dólar del Caribe Oriental", "symbol": "$" }],
     "languages": ["Inglés"]
@@ -576,6 +585,7 @@
     "languages": ["Árabe", "Kurdo"]
   },
   "IR": {
+    "name": "Irán",
     "capital": "Teherán",
     "demonym": "iraní",
     "currencies": [{ "name": "Rial iraní", "symbol": "﷼" }],
@@ -624,6 +634,7 @@
     "languages": ["Suajili", "Inglés"]
   },
   "KG": {
+    "name": "Kirguistán",
     "capital": "Biskek",
     "demonym": "kirguís",
     "currencies": [{ "name": "Som kirguís", "symbol": "С" }],
@@ -709,7 +720,7 @@
   },
   "LK": {
     "capital": "Sri Jayawardenepura Kotte",
-    "demonym": "ceilanés",
+    "demonym": "esrilanqués",
     "currencies": [{ "name": "Rupia ceilanesa", "symbol": "Rs" }],
     "languages": ["Cingalés", "Tamil"]
   },
@@ -720,6 +731,7 @@
     "languages": ["Inglés"]
   },
   "LS": {
+    "name": "Lesoto",
     "capital": "Maseru",
     "demonym": "lesotense",
     "currencies": [{ "name": "Loti lesotense", "symbol": "L" }],
@@ -774,6 +786,7 @@
     "languages": ["Montenegrino"]
   },
   "MF": {
+    "name": "San Martín",
     "capital": "Marigot",
     "demonym": "sanmartinense",
     "currencies": [{ "name": "Euro", "symbol": "€" }],
@@ -798,12 +811,14 @@
     "languages": ["Macedonio"]
   },
   "ML": {
+    "name": "Malí",
     "capital": "Bamako",
     "demonym": "maliense",
     "currencies": [{ "name": "Franco CFA de África Occidental", "symbol": "Fr" }],
     "languages": ["Francés"]
   },
   "MM": {
+    "name": "Birmania",
     "capital": "Naipyidó",
     "demonym": "birmano",
     "currencies": [{ "name": "Kiat birmano", "symbol": "K" }],
@@ -858,6 +873,7 @@
     "languages": ["Divehi"]
   },
   "MW": {
+    "name": "Malaui",
     "capital": "Lilongüe",
     "demonym": "malauí",
     "currencies": [{ "name": "Kwacha malauí", "symbol": "MK" }],
@@ -1032,6 +1048,7 @@
     "languages": ["Portugués"]
   },
   "PW": {
+    "name": "Palaos",
     "capital": "Ngerulmud",
     "demonym": "palauano",
     "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
@@ -1122,12 +1139,14 @@
     "languages": ["Esloveno"]
   },
   "SK": {
+    "name": "Eslovaquia",
     "capital": "Bratislava",
     "demonym": "eslovaco",
     "currencies": [{ "name": "Euro", "symbol": "€" }],
     "languages": ["Eslovaco"]
   },
   "SL": {
+    "name": "Sierra Leona",
     "capital": "Freetown",
     "demonym": "sierraleonés",
     "currencies": [{ "name": "Leone sierraleonés", "symbol": "Le" }],
@@ -1176,6 +1195,7 @@
     "languages": ["Español"]
   },
   "SX": {
+    "name": "San Martín",
     "capital": "Philipsburg",
     "demonym": "sanmartinense",
     "currencies": [{ "name": "Florín antillano neerlandés", "symbol": "ƒ" }],
@@ -1194,6 +1214,7 @@
     "languages": ["Suazi", "Inglés"]
   },
   "TC": {
+    "name": "Islas Turcas y Caicos",
     "capital": "Cockburn Town",
     "demonym": "turcocaiqueño",
     "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
@@ -1314,6 +1335,7 @@
     "languages": ["Italiano", "Latín"]
   },
   "VC": {
+    "name": "San Vicente y las Granadinas",
     "capital": "Kingstown",
     "demonym": "sanvicentino",
     "currencies": [{ "name": "Dólar del Caribe Oriental", "symbol": "$" }],
