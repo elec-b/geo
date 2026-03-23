@@ -20,7 +20,7 @@
 
 .table-view__scroll {
   position: absolute;
-  top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 5rem);
+  top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 4rem);
   left: 0;
   right: 0;
   bottom: 0;
@@ -157,8 +157,8 @@
   align-items: center;
   justify-content: flex-end;
   gap: var(--spacing-sm);
-  padding: var(--spacing-sm) var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
 }
 
 .table-view__toggle-label {
