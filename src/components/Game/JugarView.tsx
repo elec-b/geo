@@ -558,7 +558,11 @@ export function JugarView({
         if (tapCoords && targetCentroid && detectedCentroid) {
           const zoom = globeRef.current.getCurrentZoom();
           const tolerance = getHitTolerance(zoom);
-          const distToTarget = geoDistance(tapCoords, targetCentroid);
+          const distCentroidTarget = geoDistance(tapCoords, targetCentroid);
+          const distBoundaryTarget = globeRef.current.getMinDistanceToBoundary(q.targetCca2, tapCoords);
+          const distToTarget = distBoundaryTarget !== null
+            ? Math.min(distCentroidTarget, distBoundaryTarget)
+            : distCentroidTarget;
           const distToDetected = geoDistance(tapCoords, detectedCentroid);
           if (distToTarget < tolerance && distToTarget < distToDetected) {
             cca2 = q.targetCca2;
@@ -605,7 +609,11 @@ export function JugarView({
 
     const zoom = globeRef.current.getCurrentZoom();
     const tolerance = getHitTolerance(zoom);
-    const dist = geoDistance(tapCoords, targetCentroid);
+    const distCentroid = geoDistance(tapCoords, targetCentroid);
+    const distBoundary = globeRef.current.getMinDistanceToBoundary(q.targetCca2, tapCoords);
+    const dist = distBoundary !== null
+      ? Math.min(distCentroid, distBoundary)
+      : distCentroid;
 
     if (dist < tolerance) {
       const result = session.submitAnswer(q.targetCca2);

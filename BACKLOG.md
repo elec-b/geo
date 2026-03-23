@@ -59,6 +59,7 @@
 - [x] **UX Explorar**: Subir selectores de Explorar (segmented, pills de continente, toggles etiquetas, toggle no-ONU en tabla) — controles más cerca del header para ganar espacio vertical
 - [x] **UX Explorar**: Color de capitales en tabla coherente con el globo (gris claro en vez de cian). Pills de Países/Capitales con fondo semitransparente y texto más claro para mejor legibilidad sobre el globo
 - [x] **Datos**: Corregir ~27 errores ortográficos en español (tildes, grafías no hispanizadas, nombres sin traducir). 21 nombres de país, 3 capitales, 1 gentilicio. Overrides en `capitals-es.json`, verificados contra RAE/DPD
+- [x] **Hit testing**: Tolerancia fat finger mejorada para países alargados/enclavados (Gambia-Senegal, Lesoto, Chile, etc.) — distancia efectiva = min(centroide, frontera más cercana) en vez de solo centroide. Aplica a tipos A/B y pruebas de sello
 
 ---
 
@@ -70,9 +71,6 @@
 - [EN PROGRESO] Consigue todos los sellos para todos los continentes
 - [EN PROGRESO] Juega al menos en aventura para todos los continete-nivel
 - [EN PROGRESO] Anota feedback en backlog.md
-
-### Feedback testing
-- [ ]Jugando África-guía: problema de fat finger al seleccionar a Gambia, se selecciona Senegal. Revisar para todos los juegos. Inspirarse en lo que ya hemos hecho para otros casos similares
 
 ### Internacionalización (UI completa)
 - [ ] [i18n] Cambiar fuente de nombres de países a CLDR + ~6 overrides/idioma. Pipeline con diff entre runs que flaggee cambios para revisión humana. Absorbe los overrides manuales de español del paso anterior. Spike: `docs/spikes/typos-español-i18n.md` § 4

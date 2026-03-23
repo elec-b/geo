@@ -273,6 +273,8 @@ export interface GlobeD3Ref {
   resetToIdle(): void;
   /** Retorna las coordenadas geográficas [lon, lat] del último tap (para tolerancia en juego) */
   getLastTapCoords(): [number, number] | null;
+  /** Retorna la distancia angular mínima (radianes) desde un punto a la frontera del país */
+  getMinDistanceToBoundary(cca2: string, point: [number, number]): number | null;
 }
 
 // --- Utilidades ---
@@ -540,6 +542,35 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     },
     getLastTapCoords(): [number, number] | null {
       return lastTapCoordsRef.current;
+    },
+    getMinDistanceToBoundary(cca2: string, point: [number, number]): number | null {
+      const countries = countriesRef.current;
+      if (!countries) return null;
+
+      let minDist = Infinity;
+      let found = false;
+
+      for (const feature of countries.features) {
+        if (feature.properties?.cca2 !== cca2) continue;
+        found = true;
+
+        const checkRing = (ring: number[][]) => {
+          for (const pt of ring) {
+            const d = geoDistance(point, [pt[0], pt[1]] as [number, number]);
+            if (d < minDist) minDist = d;
+          }
+        };
+
+        const geom = feature.geometry;
+        if (geom.type === 'Polygon') {
+          for (const ring of (geom as any).coordinates) checkRing(ring);
+        } else if (geom.type === 'MultiPolygon') {
+          for (const poly of (geom as any).coordinates)
+            for (const ring of poly) checkRing(ring);
+        }
+      }
+
+      return found ? minDist : null;
     },
   }));
 
