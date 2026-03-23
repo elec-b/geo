@@ -146,7 +146,7 @@ const CENTROID_OVERRIDES: Record<string, [number, number]> = {
 // Países insulares cuyo mar entre islas debe contar como hit area
 const ARCHIPELAGO_CODES = new Set([
   'PH', 'ID', 'JP', 'NZ', 'FJ', 'SB', 'VU', 'PG', 'GB', 'DK', 'GR', 'HR',
-  'BS', 'CU', 'CV', 'KM', 'TO', 'WS', 'MY', 'TT', 'EE', 'SE', 'FI', 'CL',
+  'BS', 'CU', 'CV', 'KM', 'ST', 'TO', 'WS', 'MY', 'TT', 'EE', 'SE', 'FI', 'CL',
   'NO', 'KI', 'FM', 'MH', 'TV', 'PW', 'AG', 'KN', 'VC', 'SC', 'MV',
 ]);
 
@@ -157,8 +157,8 @@ const HULL_VISIBLE_CODES = new Set([
   'FJ', 'SB', 'VU', 'PG', 'KI', 'FM', 'MH', 'TV', 'TO', 'WS', 'PW',
   // América
   'TT', 'AG', 'KN', 'VC',
-  // Índico
-  'SC', 'MV',
+  // Índico / África
+  'SC', 'MV', 'KM', 'ST',
 ]);
 
 /**
