@@ -158,7 +158,7 @@ const HULL_VISIBLE_CODES = new Set([
   // América
   'TT', 'AG', 'KN', 'VC',
   // Índico / África
-  'SC', 'MV', 'KM', 'ST',
+  'SC', 'MV', 'KM', 'ST', 'CV',
 ]);
 
 /**

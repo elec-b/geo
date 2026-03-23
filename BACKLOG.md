@@ -55,6 +55,7 @@
 - [x] **Jugar**: Fix hull gigante envolviendo el planeta (Indonesia, Asia-Guía) — el convex hull 2D (Andrew's) tenía winding order invertido en proyección esférica, causando que D3 dibujara el complemento del hull. Fix: verificar `geoArea()` y hacer `reverse()` si cubre más de media esfera. Spike: `docs/spikes/hull-gigante-indonesia.md`
 - [x] **Hit testing**: Fix fat finger Timor Oriental ↔ Indonesia — el hull invisible de Indonesia interceptaba taps cercanos a Timor. Fix: en fase 3 del hit testing (hulls), antes de retornar el match por hull, comparar contra centroides de todos los países y preferir el más cercano al tap. Genérico para cualquier hull que tape a un vecino. Spike: `docs/spikes/fat-finger-timor-indonesia.md`
 - [x] **Rendimiento**: Optimización de batería/calentamiento — DPR limitado a 2 (~56% menos píxeles), RAF sleep/wake (loop se detiene cuando no hay animaciones), pausa de RAF en background (`@capacitor/app`). Spike: `docs/spikes/rendimiento-bateria.md`
+- [x] **Cartografía**: Hull visible para archipiélagos africanos (KM, ST, CV) — línea discontinua perimetral para Comoras, Santo Tomé y Príncipe y Cabo Verde. Hit testing mejorado (mar entre islas). Reemplaza marcadores circulares de microestado. MU descartado (isla principal suficiente). Spike: `docs/spikes/hull-comoras-santotome.md`
 
 ---
 
@@ -63,12 +64,19 @@
 > Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
 
 ### Testear exhaustivamente
-- [ ] Consigue todos los sellos para todos los continentes
-- [ ] Juega al menos en aventura para todos los continete-nivel
-- [ ] Anota feedback en backlog.md
+- [EN PROGRESO] Consigue todos los sellos para todos los continentes
+- [EN PROGRESO] Juega al menos en aventura para todos los continete-nivel
+- [EN PROGRESO] Anota feedback en backlog.md
+
+### Feedback testing exhaustivo
+- [ ] Los selectores de Explorar creo que se pueden mover un poco más arriba para ganar espacio, incluyendo el toggle de "territorio no-ONU" de la tabla.
 
 ### Internacionalización (UI completa)
 - [ ] [PENSAR UN POCO MÁS] Corregir ~24 errores ortográficos en datos de países en español (tildes, grafías no hispanizadas, nombres en inglés/francés). Causa raíz: REST Countries API. Solución inmediata: overrides en `capitals-es.json`. Solución i18n: CLDR como fuente primaria (~97% coincide con RAE, 5 overrides manuales). Spike: `docs/spikes/typos-español-i18n.md`
+  - Temas para pensar:
+    - ¿cómo asegurar que esto se mantiene bien en el futuro solo para todos los países?
+    - ¿utilizar LLM, e.g. Claude en caso de propuesta extraña de CLDR en idioma local? (aunque esto me supone un problema de mantenimiento...)
+    - cuando se comparó contra la RAE, ¿se utilizó esta fuente https://www.rae.es/dpd/ayuda/paises-y-capitales-con-sus-gentilicios? ¿hay discrepancias?
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
   - Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español
