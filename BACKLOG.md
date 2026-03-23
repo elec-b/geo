@@ -72,6 +72,9 @@
 - [EN PROGRESO] Juega al menos en aventura para todos los continete-nivel
 - [EN PROGRESO] Anota feedback en backlog.md
 
+### Cartografía
+- [ ] Separar Guayana Francesa (y opcionalmente Reunión, Mayotte) del MultiPolygon de Francia en el TopoJSON — actualmente GF se atenúa con Europa porque es parte de la geometría de FR. Spike: `docs/spikes/territorios-ultramar-continente.md`
+
 ### Internacionalización (UI completa)
 - [ ] [i18n] Cambiar fuente de nombres de países a CLDR + ~6 overrides/idioma. Pipeline con diff entre runs que flaggee cambios para revisión humana. Absorbe los overrides manuales de español del paso anterior. Spike: `docs/spikes/typos-español-i18n.md` § 4
 - [ ] [i18n] LLM (Claude) solo como auditoría puntual al añadir un idioma nuevo — no en el pipeline automatizado (no determinista, no escala a idiomas de pocos recursos). Una pasada manual antes de publicar cada idioma
