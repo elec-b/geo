@@ -129,7 +129,7 @@
 }
 
 .table-view__cell--capital {
-  color: var(--color-accent-cyan);
+  color: rgba(170, 170, 180, 0.9);
 }
 
 /* Celda de población (no tappable) */

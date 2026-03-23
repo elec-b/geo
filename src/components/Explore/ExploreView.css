@@ -65,8 +65,8 @@
   padding: 0.1875rem 0.625rem;
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-full);
-  background: transparent;
-  color: var(--color-text-muted);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--color-text-secondary);
   font-size: var(--font-size-xs);
   font-family: var(--font-family);
   cursor: pointer;

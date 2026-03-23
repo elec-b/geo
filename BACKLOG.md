@@ -57,6 +57,7 @@
 - [x] **Rendimiento**: Optimización de batería/calentamiento — DPR limitado a 2 (~56% menos píxeles), RAF sleep/wake (loop se detiene cuando no hay animaciones), pausa de RAF en background (`@capacitor/app`). Spike: `docs/spikes/rendimiento-bateria.md`
 - [x] **Cartografía**: Hull visible para archipiélagos africanos (KM, ST, CV) — línea discontinua perimetral para Comoras, Santo Tomé y Príncipe y Cabo Verde. Hit testing mejorado (mar entre islas). Reemplaza marcadores circulares de microestado. MU descartado (isla principal suficiente). Spike: `docs/spikes/hull-comoras-santotome.md`
 - [x] **UX Explorar**: Subir selectores de Explorar (segmented, pills de continente, toggles etiquetas, toggle no-ONU en tabla) — controles más cerca del header para ganar espacio vertical
+- [x] **UX Explorar**: Color de capitales en tabla coherente con el globo (gris claro en vez de cian). Pills de Países/Capitales con fondo semitransparente y texto más claro para mejor legibilidad sobre el globo
 
 ---
 
@@ -68,9 +69,6 @@
 - [EN PROGRESO] Consigue todos los sellos para todos los continentes
 - [EN PROGRESO] Juega al menos en aventura para todos los continete-nivel
 - [EN PROGRESO] Anota feedback en backlog.md
-
-### Feedback testing exhaustivo
-- [ ] En Explorar, en la tabla, utilizaría para los nombres de las capitales el mismo color que se utiliza en el globo.
 
 ### Internacionalización (UI completa)
 - [ ] [PENSAR UN POCO MÁS] Corregir ~24 errores ortográficos en datos de países en español (tildes, grafías no hispanizadas, nombres en inglés/francés). Causa raíz: REST Countries API. Solución inmediata: overrides en `capitals-es.json`. Solución i18n: CLDR como fuente primaria (~97% coincide con RAE, 5 overrides manuales). Spike: `docs/spikes/typos-español-i18n.md`
