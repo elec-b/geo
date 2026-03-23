@@ -58,6 +58,7 @@
 - [x] **Cartografía**: Hull visible para archipiélagos africanos (KM, ST, CV) — línea discontinua perimetral para Comoras, Santo Tomé y Príncipe y Cabo Verde. Hit testing mejorado (mar entre islas). Reemplaza marcadores circulares de microestado. MU descartado (isla principal suficiente). Spike: `docs/spikes/hull-comoras-santotome.md`
 - [x] **UX Explorar**: Subir selectores de Explorar (segmented, pills de continente, toggles etiquetas, toggle no-ONU en tabla) — controles más cerca del header para ganar espacio vertical
 - [x] **UX Explorar**: Color de capitales en tabla coherente con el globo (gris claro en vez de cian). Pills de Países/Capitales con fondo semitransparente y texto más claro para mejor legibilidad sobre el globo
+- [x] **Datos**: Corregir ~27 errores ortográficos en español (tildes, grafías no hispanizadas, nombres sin traducir). 21 nombres de país, 3 capitales, 1 gentilicio. Overrides en `capitals-es.json`, verificados contra RAE/DPD
 
 ---
 
@@ -70,12 +71,12 @@
 - [EN PROGRESO] Juega al menos en aventura para todos los continete-nivel
 - [EN PROGRESO] Anota feedback en backlog.md
 
+### Feedback testing
+- [ ]Jugando África-guía: problema de fat finger al seleccionar a Gambia, se selecciona Senegal. Revisar para todos los juegos. Inspirarse en lo que ya hemos hecho para otros casos similares
+
 ### Internacionalización (UI completa)
-- [ ] [PENSAR UN POCO MÁS] Corregir ~24 errores ortográficos en datos de países en español (tildes, grafías no hispanizadas, nombres en inglés/francés). Causa raíz: REST Countries API. Solución inmediata: overrides en `capitals-es.json`. Solución i18n: CLDR como fuente primaria (~97% coincide con RAE, 5 overrides manuales). Spike: `docs/spikes/typos-español-i18n.md`
-  - Temas para pensar:
-    - ¿cómo asegurar que esto se mantiene bien en el futuro solo para todos los países?
-    - ¿utilizar LLM, e.g. Claude en caso de propuesta extraña de CLDR en idioma local? (aunque esto me supone un problema de mantenimiento...)
-    - cuando se comparó contra la RAE, ¿se utilizó esta fuente https://www.rae.es/dpd/ayuda/paises-y-capitales-con-sus-gentilicios? ¿hay discrepancias?
+- [ ] [i18n] Cambiar fuente de nombres de países a CLDR + ~6 overrides/idioma. Pipeline con diff entre runs que flaggee cambios para revisión humana. Absorbe los overrides manuales de español del paso anterior. Spike: `docs/spikes/typos-español-i18n.md` § 4
+- [ ] [i18n] LLM (Claude) solo como auditoría puntual al añadir un idioma nuevo — no en el pipeline automatizado (no determinista, no escala a idiomas de pocos recursos). Una pasada manual antes de publicar cada idioma
 - [ ] Elegir librería de i18n (i18next, react-intl u otra)
 - [ ] Externalizar textos de la app a archivos de traducción
   - Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español

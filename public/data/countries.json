@@ -99,7 +99,7 @@
   {
     "cca2": "AI",
     "ccn3": "660",
-    "name": "Anguilla",
+    "name": "Anguila",
     "capital": "The Valley",
     "continent": "América",
     "population": 16010,
@@ -419,7 +419,7 @@
   {
     "cca2": "BD",
     "ccn3": "050",
-    "name": "Bangladesh",
+    "name": "Bangladés",
     "capital": "Daca",
     "continent": "Asia",
     "population": 169828911,
@@ -517,7 +517,7 @@
   {
     "cca2": "BH",
     "ccn3": "048",
-    "name": "Bahrein",
+    "name": "Baréin",
     "capital": "Manama",
     "continent": "Asia",
     "population": 1594654,
@@ -567,7 +567,7 @@
     "cca2": "BJ",
     "ccn3": "204",
     "name": "Benín",
-    "capital": "Porto Novo",
+    "capital": "Porto-Novo",
     "continent": "África",
     "population": 13224860,
     "area": 112622,
@@ -640,7 +640,7 @@
   {
     "cca2": "BN",
     "ccn3": "096",
-    "name": "Brunei",
+    "name": "Brunéi",
     "capital": "Bandar Seri Begawan",
     "continent": "Asia",
     "population": 455500,
@@ -762,7 +762,7 @@
   {
     "cca2": "BW",
     "ccn3": "072",
-    "name": "Botswana",
+    "name": "Botsuana",
     "capital": "Gaborone",
     "continent": "África",
     "population": 2359609,
@@ -1279,7 +1279,7 @@
   {
     "cca2": "DJ",
     "ccn3": "262",
-    "name": "Djibouti",
+    "name": "Yibuti",
     "capital": "Yibuti",
     "continent": "África",
     "population": 1066809,
@@ -1426,7 +1426,7 @@
     "cca2": "EE",
     "ccn3": "233",
     "name": "Estonia",
-    "capital": "Tallin",
+    "capital": "Tallín",
     "continent": "Europa",
     "population": 1369995,
     "area": 45227,
@@ -1473,7 +1473,7 @@
   {
     "cca2": "EH",
     "ccn3": "732",
-    "name": "Sahara Occidental",
+    "name": "Sáhara Occidental",
     "capital": "El Aaiún",
     "continent": "África",
     "population": 600904,
@@ -1670,7 +1670,7 @@
   {
     "cca2": "FO",
     "ccn3": "234",
-    "name": "Islas Faroe",
+    "name": "Islas Feroe",
     "capital": "Tórshavn",
     "continent": "Europa",
     "population": 54885,
@@ -1768,8 +1768,8 @@
   {
     "cca2": "GD",
     "ccn3": "308",
-    "name": "Grenada",
-    "capital": "Saint George",
+    "name": "Granada",
+    "capital": "Saint George's",
     "continent": "América",
     "population": 109021,
     "area": 344,
@@ -2360,7 +2360,7 @@
   {
     "cca2": "IR",
     "ccn3": "364",
-    "name": "Iran",
+    "name": "Irán",
     "capital": "Teherán",
     "continent": "Asia",
     "population": 85961000,
@@ -2555,7 +2555,7 @@
   {
     "cca2": "KG",
     "ccn3": "417",
-    "name": "Kirguizistán",
+    "name": "Kirguistán",
     "capital": "Biskek",
     "continent": "Asia",
     "population": 7281800,
@@ -2913,7 +2913,7 @@
       "Cingalés",
       "Tamil"
     ],
-    "demonym": "ceilanés",
+    "demonym": "esrilanqués",
     "hdi": 0.78,
     "ihdi": 0.661,
     "wikipediaSlug": "Sri_Lanka",
@@ -2946,7 +2946,7 @@
   {
     "cca2": "LS",
     "ccn3": "426",
-    "name": "Lesotho",
+    "name": "Lesoto",
     "capital": "Maseru",
     "continent": "África",
     "population": 2116427,
@@ -3166,7 +3166,7 @@
   {
     "cca2": "MF",
     "ccn3": "663",
-    "name": "Saint Martin",
+    "name": "San Martín",
     "capital": "Marigot",
     "continent": "América",
     "population": 31496,
@@ -3265,7 +3265,7 @@
   {
     "cca2": "ML",
     "ccn3": "466",
-    "name": "Mali",
+    "name": "Malí",
     "capital": "Bamako",
     "continent": "África",
     "population": 22395489,
@@ -3289,7 +3289,7 @@
   {
     "cca2": "MM",
     "ccn3": "104",
-    "name": "Myanmar",
+    "name": "Birmania",
     "capital": "Naipyidó",
     "continent": "Asia",
     "population": 51316756,
@@ -3513,7 +3513,7 @@
   {
     "cca2": "MW",
     "ccn3": "454",
-    "name": "Malawi",
+    "name": "Malaui",
     "capital": "Lilongüe",
     "continent": "África",
     "population": 20734262,
@@ -4231,7 +4231,7 @@
   {
     "cca2": "PW",
     "ccn3": "585",
-    "name": "Palau",
+    "name": "Palaos",
     "capital": "Ngerulmud",
     "continent": "Oceanía",
     "population": 16733,
@@ -4602,7 +4602,7 @@
   {
     "cca2": "SK",
     "ccn3": "703",
-    "name": "República Eslovaca",
+    "name": "Eslovaquia",
     "capital": "Bratislava",
     "continent": "Europa",
     "population": 5413813,
@@ -4819,7 +4819,7 @@
   {
     "cca2": "SX",
     "ccn3": "534",
-    "name": "Sint Maarten",
+    "name": "San Martín",
     "capital": "Philipsburg",
     "continent": "América",
     "population": 41349,
@@ -4894,7 +4894,7 @@
   {
     "cca2": "TC",
     "ccn3": "796",
-    "name": "Islas Turks y Caicos",
+    "name": "Islas Turcas y Caicos",
     "capital": "Cockburn Town",
     "continent": "América",
     "population": 50828,
@@ -5382,7 +5382,7 @@
   {
     "cca2": "VC",
     "ccn3": "670",
-    "name": "San Vicente y Granadinas",
+    "name": "San Vicente y las Granadinas",
     "capital": "Kingstown",
     "continent": "América",
     "population": 110872,
