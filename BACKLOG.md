@@ -56,6 +56,7 @@
 - [x] **Hit testing**: Fix fat finger Timor Oriental ↔ Indonesia — el hull invisible de Indonesia interceptaba taps cercanos a Timor. Fix: en fase 3 del hit testing (hulls), antes de retornar el match por hull, comparar contra centroides de todos los países y preferir el más cercano al tap. Genérico para cualquier hull que tape a un vecino. Spike: `docs/spikes/fat-finger-timor-indonesia.md`
 - [x] **Rendimiento**: Optimización de batería/calentamiento — DPR limitado a 2 (~56% menos píxeles), RAF sleep/wake (loop se detiene cuando no hay animaciones), pausa de RAF en background (`@capacitor/app`). Spike: `docs/spikes/rendimiento-bateria.md`
 - [x] **Cartografía**: Hull visible para archipiélagos africanos (KM, ST, CV) — línea discontinua perimetral para Comoras, Santo Tomé y Príncipe y Cabo Verde. Hit testing mejorado (mar entre islas). Reemplaza marcadores circulares de microestado. MU descartado (isla principal suficiente). Spike: `docs/spikes/hull-comoras-santotome.md`
+- [x] **UX Explorar**: Subir selectores de Explorar (segmented, pills de continente, toggles etiquetas, toggle no-ONU en tabla) — controles más cerca del header para ganar espacio vertical
 
 ---
 
@@ -69,7 +70,7 @@
 - [EN PROGRESO] Anota feedback en backlog.md
 
 ### Feedback testing exhaustivo
-- [ ] Los selectores de Explorar creo que se pueden mover un poco más arriba para ganar espacio, incluyendo el toggle de "territorio no-ONU" de la tabla.
+- [ ] En Explorar, en la tabla, utilizaría para los nombres de las capitales el mismo color que se utiliza en el globo.
 
 ### Internacionalización (UI completa)
 - [ ] [PENSAR UN POCO MÁS] Corregir ~24 errores ortográficos en datos de países en español (tildes, grafías no hispanizadas, nombres en inglés/francés). Causa raíz: REST Countries API. Solución inmediata: overrides en `capitals-es.json`. Solución i18n: CLDR como fuente primaria (~97% coincide con RAE, 5 overrides manuales). Spike: `docs/spikes/typos-español-i18n.md`

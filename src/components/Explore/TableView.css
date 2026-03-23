@@ -20,7 +20,7 @@
 
 .table-view__scroll {
   position: absolute;
-  top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 3.5rem);
+  top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + var(--spacing-xl) + var(--spacing-md));
   left: 0;
   right: 0;
   bottom: 0;

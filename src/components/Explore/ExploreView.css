@@ -3,14 +3,14 @@
 /* Barra de controles flotante (sobre el globo) */
 .explore-controls {
   position: fixed;
-  top: calc(var(--header-height) + env(safe-area-inset-top, 0px) - var(--spacing-md));
+  top: calc(var(--header-height) + env(safe-area-inset-top, 0px) - var(--spacing-lg));
   left: 0;
   right: 0;
   z-index: var(--z-controls);
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 0.125rem;
+  gap: calc(var(--spacing-xs) / 2);
   pointer-events: none;
 }
 
