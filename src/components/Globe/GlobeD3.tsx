@@ -275,6 +275,8 @@ export interface GlobeD3Ref {
   getLastTapCoords(): [number, number] | null;
   /** Retorna la distancia angular mínima (radianes) desde un punto a la frontera del país */
   getMinDistanceToBoundary(cca2: string, point: [number, number]): number | null;
+  /** Retorna todos los centroides (ONU + no-ONU) para validación de vecindad */
+  getAllCentroids(): Map<string, [number, number]>;
 }
 
 // --- Utilidades ---
@@ -483,6 +485,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     },
     getCentroid(cca2: string): [number, number] | null {
       return countryCentroidsRef.current.get(cca2) ?? null;
+    },
+    getAllCentroids() {
+      return countryCentroidsRef.current;
     },
     getCountryZoom(cca2: string): number | null {
       const area = geoAreasRef.current.get(cca2);

@@ -58,6 +58,21 @@ function getHitTolerance(zoom: number): number {
   return Math.max(MIN_TOLERANCE_RAD, BASE_TOLERANCE_RAD / zoom);
 }
 
+/** Verifica que no haya otro país con centroide más cercano al tap que distToTarget.
+ * Evita regalar aciertos por tolerancia cuando hay microestados cercanos (ej. Caribe). */
+function isTargetNearest(
+  tapCoords: [number, number],
+  targetCca2: string,
+  distToTarget: number,
+  centroids: Map<string, [number, number]>,
+): boolean {
+  for (const [cca2, centroid] of centroids) {
+    if (cca2 === targetCca2) continue;
+    if (geoDistance(tapCoords, centroid) < distToTarget) return false;
+  }
+  return true;
+}
+
 /** Labels de tipos de pregunta (para modales de progresión) */
 const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
   E: 'Identifica el país',
@@ -554,8 +569,7 @@ export function JugarView({
       if (cca2 !== q.targetCca2 && globeRef.current) {
         const tapCoords = globeRef.current.getLastTapCoords();
         const targetCentroid = globeRef.current.getCentroid(q.targetCca2);
-        const detectedCentroid = globeRef.current.getCentroid(cca2);
-        if (tapCoords && targetCentroid && detectedCentroid) {
+        if (tapCoords && targetCentroid) {
           const zoom = globeRef.current.getCurrentZoom();
           const tolerance = getHitTolerance(zoom);
           const distCentroidTarget = geoDistance(tapCoords, targetCentroid);
@@ -563,8 +577,8 @@ export function JugarView({
           const distToTarget = distBoundaryTarget !== null
             ? Math.min(distCentroidTarget, distBoundaryTarget)
             : distCentroidTarget;
-          const distToDetected = geoDistance(tapCoords, detectedCentroid);
-          if (distToTarget < tolerance && distToTarget < distToDetected) {
+          const allCentroids = globeRef.current.getAllCentroids();
+          if (distToTarget < tolerance && isTargetNearest(tapCoords, q.targetCca2, distToTarget, allCentroids)) {
             cca2 = q.targetCca2;
           }
         }
@@ -615,7 +629,8 @@ export function JugarView({
       ? Math.min(distCentroid, distBoundary)
       : distCentroid;
 
-    if (dist < tolerance) {
+    const allCentroids = globeRef.current.getAllCentroids();
+    if (dist < tolerance && isTargetNearest(tapCoords, q.targetCca2, dist, allCentroids)) {
       const result = session.submitAnswer(q.targetCca2);
       if (result === 'correct') {
         centerOnCorrectAnswer(globeRef.current, q.targetCca2, q.type);
