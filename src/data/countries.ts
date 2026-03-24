@@ -62,6 +62,16 @@ export async function loadCountriesGeoJson(): Promise<FeatureCollection<Geometry
     ...(overrides.features as any[]),
   ];
 
+  // Inyectar overseas overrides (territorios franceses separados de FR)
+  const overseasResp = await fetch('/data/overseas-overrides.json');
+  const overseas = await overseasResp.json() as FeatureCollection;
+  const overseasIds = new Set(overseas.features.map(f => String((f as any).id)));
+  for (const id of overseasIds) cachedOverrideIds.add(id);
+  geojson.features = [
+    ...geojson.features.filter(f => !overseasIds.has(String((f as any).id))),
+    ...(overseas.features as any[]),
+  ];
+
   // Enriquecer cada feature con cca2 e isUNMember
   for (const feature of geojson.features) {
     const numericId = (feature as any).id as string | undefined;
@@ -103,7 +113,7 @@ export function getOverrideCca2s(): Set<string> {
   if (!cachedOverrideIds) return new Set();
   const cca2s = new Set<string>();
   for (const numId of cachedOverrideIds) {
-    const cca2 = ISO_NUMERIC_TO_ALPHA2[numId];
+    const cca2 = ISO_NUMERIC_TO_ALPHA2[numId] ?? NON_UN_TERRITORIES_BY_ID[numId]?.cca2;
     if (cca2) cca2s.add(cca2);
   }
   return cca2s;
@@ -123,9 +133,10 @@ export async function loadBordersGeoJson(): Promise<Feature<MultiLineString>> {
 
   const topology = await loadTopology();
 
-  // Excluir países con override 10m del mesh — sus costas 50m no coinciden
-  // con la geometría 10m y crean contornos fantasma. Son todos islas sin
-  // fronteras terrestres compartidas, así que es seguro excluirlos.
+  // Excluir países con override del mesh — sus geometrías 50m originales no
+  // coinciden con las geometrías override y crean contornos fantasma. Incluye
+  // islas 10m (sin fronteras terrestres) y Francia + territorios de ultramar
+  // (fronteras terrestres redibujadas via per-feature en GlobeD3).
   const ids = cachedOverrideIds;
   const mesh = ids && ids.size > 0
     ? topojson.mesh(topology, topology.objects.countries,

@@ -61,6 +61,7 @@
 - [x] **Datos**: Corregir ~27 errores ortográficos en español (tildes, grafías no hispanizadas, nombres sin traducir). 21 nombres de país, 3 capitales, 1 gentilicio. Overrides en `capitals-es.json`, verificados contra RAE/DPD
 - [x] **Hit testing**: Tolerancia fat finger mejorada para países alargados/enclavados (Gambia-Senegal, Lesoto, Chile, etc.) — distancia efectiva = min(centroide, frontera más cercana) en vez de solo centroide. Aplica a tipos A/B y pruebas de sello
 - [x] **Hit testing**: Tolerancia fat finger v2 — verificar país más cercano antes de aceptar por tolerancia (evita regalar aciertos entre microestados cercanos del Caribe, Golfo Pérsico, etc.). Taps en océano cerca de un país incorrecto ahora registran error en vez de ser silenciosos
+- [x] **Cartografía**: Separar 5 territorios franceses de ultramar (GF, GP, MQ, RE, YT) del MultiPolygon de Francia — script nuevo `generate-overseas-overrides.ts` que descompone por proximidad geográfica. Cada territorio es ahora feature independiente con continente correcto (América/África), seleccionable con ficha propia
 
 ---
 
@@ -72,9 +73,6 @@
 - [EN PROGRESO] Consigue todos los sellos para todos los continentes
 - [EN PROGRESO] Juega al menos en aventura para todos los continete-nivel
 - [EN PROGRESO] Anota feedback en backlog.md
-
-### Cartografía
-- [ ] Separar Guayana Francesa (y opcionalmente Reunión, Mayotte) del MultiPolygon de Francia en el TopoJSON — actualmente GF se atenúa con Europa porque es parte de la geometría de FR. Spike: `docs/spikes/territorios-ultramar-continente.md`
 
 ### UX
 - [ ] Mejorar UX cuando se ha superado un juego (incluida aventura) y se quieren resetear las estadísticas. Hay que pasar por demasiadas pantallas. Repasar flow actual y diseñar uno nuevo.

@@ -1371,13 +1371,6 @@
       -159.77
     ]
   },
-  "PN": {
-    "name": "Adamstown",
-    "latlng": [
-      -25.07,
-      -130.08
-    ]
-  },
   "PF": {
     "name": "Papeete",
     "latlng": [
@@ -1399,11 +1392,11 @@
       -68.92
     ]
   },
-  "NU": {
-    "name": "Alofi",
+  "YT": {
+    "name": "Mamoudzou",
     "latlng": [
-      -19.02,
-      -169.92
+      -12.78,
+      45.22
     ]
   },
   "AW": {
@@ -1425,6 +1418,13 @@
     "latlng": [
       64.18,
       -51.75
+    ]
+  },
+  "MQ": {
+    "name": "Fort-de-France",
+    "latlng": [
+      14.6,
+      -61.08
     ]
   },
   "GU": {
@@ -1455,11 +1455,11 @@
       19.9
     ]
   },
-  "NF": {
-    "name": "Kingston",
+  "GP": {
+    "name": "Basse-Terre",
     "latlng": [
-      -29.05,
-      167.97
+      16.03,
+      -61.73
     ]
   },
   "FO": {
@@ -1474,13 +1474,6 @@
     "latlng": [
       19.3,
       -81.38
-    ]
-  },
-  "MP": {
-    "name": "Saipán",
-    "latlng": [
-      15.2,
-      145.75
     ]
   },
   "MO": {
@@ -1504,6 +1497,20 @@
       -57.85
     ]
   },
+  "GF": {
+    "name": "Cayena",
+    "latlng": [
+      4.94,
+      -52.33
+    ]
+  },
+  "PN": {
+    "name": "Adamstown",
+    "latlng": [
+      -25.07,
+      -130.08
+    ]
+  },
   "IM": {
     "name": "Douglas",
     "latlng": [
@@ -1525,6 +1532,13 @@
       -63.08
     ]
   },
+  "NU": {
+    "name": "Alofi",
+    "latlng": [
+      -19.02,
+      -169.92
+    ]
+  },
   "PR": {
     "name": "San Juan",
     "latlng": [
@@ -1539,6 +1553,13 @@
       -64.78
     ]
   },
+  "RE": {
+    "name": "Saint-Denis",
+    "latlng": [
+      -20.88,
+      55.45
+    ]
+  },
   "TC": {
     "name": "Cockburn Town",
     "latlng": [
@@ -1546,25 +1567,11 @@
       -71.14
     ]
   },
-  "VG": {
-    "name": "Road Town",
-    "latlng": [
-      18.42,
-      -64.62
-    ]
-  },
   "EH": {
     "name": "El Aaiún",
     "latlng": [
       27.15,
       -13.2
-    ]
-  },
-  "XK": {
-    "name": "Pristina",
-    "latlng": [
-      42.67,
-      21.17
     ]
   },
   "AS": {
@@ -1588,6 +1595,13 @@
       -64.93
     ]
   },
+  "NF": {
+    "name": "Kingston",
+    "latlng": [
+      -29.05,
+      167.97
+    ]
+  },
   "PM": {
     "name": "Saint-Pierre",
     "latlng": [
@@ -1609,6 +1623,13 @@
       -63.05
     ]
   },
+  "MP": {
+    "name": "Saipán",
+    "latlng": [
+      15.2,
+      145.75
+    ]
+  },
   "SH": {
     "name": "Jamestown",
     "latlng": [
@@ -1621,6 +1642,20 @@
     "latlng": [
       17.88,
       -62.85
+    ]
+  },
+  "VG": {
+    "name": "Road Town",
+    "latlng": [
+      18.42,
+      -64.62
+    ]
+  },
+  "XK": {
+    "name": "Pristina",
+    "latlng": [
+      42.67,
+      21.17
     ]
   }
 }

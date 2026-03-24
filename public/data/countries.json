@@ -1814,6 +1814,31 @@
     "unMember": true
   },
   {
+    "cca2": "GF",
+    "ccn3": "254",
+    "name": "Guayana Francesa",
+    "capital": "Cayena",
+    "continent": "América",
+    "population": 292354,
+    "area": 83534,
+    "flagSvg": "https://flagcdn.com/gf.svg",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "languages": [
+      "Francés"
+    ],
+    "demonym": "guayanés",
+    "hdi": null,
+    "ihdi": null,
+    "wikipediaSlug": "Guayana_Francesa",
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
     "cca2": "GG",
     "ccn3": "831",
     "name": "Guernsey",
@@ -1935,6 +1960,31 @@
     "ihdi": 0.296,
     "wikipediaSlug": "Guinea",
     "unMember": true
+  },
+  {
+    "cca2": "GP",
+    "ccn3": "312",
+    "name": "Guadalupe",
+    "capital": "Basse-Terre",
+    "continent": "América",
+    "population": 378561,
+    "area": 1628,
+    "flagSvg": "https://flagcdn.com/gp.svg",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "languages": [
+      "Francés"
+    ],
+    "demonym": "guadalupeño",
+    "hdi": null,
+    "ihdi": null,
+    "wikipediaSlug": "Guadalupe_(Francia)",
+    "unMember": false,
+    "sovereignCountry": "FR"
   },
   {
     "cca2": "GQ",
@@ -3388,6 +3438,31 @@
     "sovereignCountry": "US"
   },
   {
+    "cca2": "MQ",
+    "ccn3": "474",
+    "name": "Martinica",
+    "capital": "Fort-de-France",
+    "continent": "América",
+    "population": 349925,
+    "area": 1128,
+    "flagSvg": "https://flagcdn.com/mq.svg",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "languages": [
+      "Francés"
+    ],
+    "demonym": "martiniqués",
+    "hdi": null,
+    "ihdi": null,
+    "wikipediaSlug": "Martinica",
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
     "cca2": "MR",
     "ccn3": "478",
     "name": "Mauritania",
@@ -4301,6 +4376,31 @@
     "ihdi": null,
     "wikipediaSlug": "Catar",
     "unMember": true
+  },
+  {
+    "cca2": "RE",
+    "ccn3": "638",
+    "name": "Reunión",
+    "capital": "Saint-Denis",
+    "continent": "África",
+    "population": 896175,
+    "area": 2511,
+    "flagSvg": "https://flagcdn.com/re.svg",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "languages": [
+      "Francés"
+    ],
+    "demonym": "reunionés",
+    "hdi": null,
+    "ihdi": null,
+    "wikipediaSlug": "Reunión_(Francia)",
+    "unMember": false,
+    "sovereignCountry": "FR"
   },
   {
     "cca2": "RO",
@@ -5625,6 +5725,31 @@
     "ihdi": 0.274,
     "wikipediaSlug": "Yemen",
     "unMember": true
+  },
+  {
+    "cca2": "YT",
+    "ccn3": "175",
+    "name": "Mayotte",
+    "capital": "Mamoudzou",
+    "continent": "África",
+    "population": 320901,
+    "area": 374,
+    "flagSvg": "https://flagcdn.com/yt.svg",
+    "currencies": [
+      {
+        "name": "Euro",
+        "symbol": "€"
+      }
+    ],
+    "languages": [
+      "Francés"
+    ],
+    "demonym": "mahorés",
+    "hdi": null,
+    "ihdi": null,
+    "wikipediaSlug": "Mayotte",
+    "unMember": false,
+    "sovereignCountry": "FR"
   },
   {
     "cca2": "ZA",

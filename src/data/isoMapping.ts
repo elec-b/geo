@@ -277,6 +277,12 @@ export const NON_UN_TERRITORIES_BY_ID: Record<string, NonUnTerritory> = {
   '663': { cca2: 'MF', continent: 'América', sovereignCca2: 'FR' },   // San Martín
   '652': { cca2: 'BL', continent: 'América', sovereignCca2: 'FR' },   // San Bartolomé
   '876': { cca2: 'WF', continent: 'Oceanía', sovereignCca2: 'FR' },   // Wallis y Futuna
+  // Territorios de Francia (ultramar, separados del MultiPolygon metropolitano)
+  '254': { cca2: 'GF', continent: 'América', sovereignCca2: 'FR' },   // Guayana Francesa
+  '312': { cca2: 'GP', continent: 'América', sovereignCca2: 'FR' },   // Guadalupe
+  '474': { cca2: 'MQ', continent: 'América', sovereignCca2: 'FR' },   // Martinica
+  '638': { cca2: 'RE', continent: 'África', sovereignCca2: 'FR' },    // Reunión
+  '175': { cca2: 'YT', continent: 'África', sovereignCca2: 'FR' },    // Mayotte
   // Territorios de Países Bajos
   '533': { cca2: 'AW', continent: 'América', sovereignCca2: 'NL' },   // Aruba
   '531': { cca2: 'CW', continent: 'América', sovereignCca2: 'NL' },   // Curazao

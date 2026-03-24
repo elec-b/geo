@@ -452,6 +452,13 @@
     "currencies": [{ "name": "Lari georgiano", "symbol": "₾" }],
     "languages": ["Georgiano"]
   },
+  "GF": {
+    "name": "Guayana Francesa",
+    "capital": "Cayena",
+    "demonym": "guayanés",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Francés"]
+  },
   "GG": {
     "capital": "Saint Peter Port",
     "demonym": "guerneseyés",
@@ -480,6 +487,13 @@
     "capital": "Conakri",
     "demonym": "guineano",
     "currencies": [{ "name": "Franco guineano", "symbol": "Fr" }],
+    "languages": ["Francés"]
+  },
+  "GP": {
+    "name": "Guadalupe",
+    "capital": "Basse-Terre",
+    "demonym": "guadalupeño",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
     "languages": ["Francés"]
   },
   "GQ": {
@@ -842,6 +856,13 @@
     "currencies": [{ "name": "Dólar estadounidense", "symbol": "$" }],
     "languages": ["Inglés", "Chamorro", "Carolinio"]
   },
+  "MQ": {
+    "name": "Martinica",
+    "capital": "Fort-de-France",
+    "demonym": "martiniqués",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Francés"]
+  },
   "MR": {
     "capital": "Nuakchot",
     "demonym": "mauritano",
@@ -1065,6 +1086,13 @@
     "demonym": "catarí",
     "currencies": [{ "name": "Rial catarí", "symbol": "ر.ق" }],
     "languages": ["Árabe"]
+  },
+  "RE": {
+    "name": "Reunión",
+    "capital": "Saint-Denis",
+    "demonym": "reunionés",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Francés"]
   },
   "RO": {
     "capital": "Bucarest",
@@ -1394,6 +1422,13 @@
     "demonym": "yemení",
     "currencies": [{ "name": "Rial yemení", "symbol": "﷼" }],
     "languages": ["Árabe"]
+  },
+  "YT": {
+    "name": "Mayotte",
+    "capital": "Mamoudzou",
+    "demonym": "mahorés",
+    "currencies": [{ "name": "Euro", "symbol": "€" }],
+    "languages": ["Francés"]
   },
   "ZA": {
     "capital": "Pretoria",
