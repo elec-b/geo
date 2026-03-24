@@ -62,6 +62,7 @@
 - [x] **Hit testing**: Tolerancia fat finger mejorada para países alargados/enclavados (Gambia-Senegal, Lesoto, Chile, etc.) — distancia efectiva = min(centroide, frontera más cercana) en vez de solo centroide. Aplica a tipos A/B y pruebas de sello
 - [x] **Hit testing**: Tolerancia fat finger v2 — verificar país más cercano antes de aceptar por tolerancia (evita regalar aciertos entre microestados cercanos del Caribe, Golfo Pérsico, etc.). Taps en océano cerca de un país incorrecto ahora registran error en vez de ser silenciosos
 - [x] **Cartografía**: Separar 5 territorios franceses de ultramar (GF, GP, MQ, RE, YT) del MultiPolygon de Francia — script nuevo `generate-overseas-overrides.ts` que descompone por proximidad geográfica. Cada territorio es ahora feature independiente con continente correcto (América/África), seleccionable con ficha propia
+- [x] **Pasaporte**: Animación de estrella ★ más suave — de 10 a 5 vueltas (1800deg en 3s), arranque más lento
 
 ---
 
@@ -73,9 +74,6 @@
 - [EN PROGRESO] Consigue todos los sellos para todos los continentes
 - [EN PROGRESO] Juega al menos en aventura para todos los continete-nivel
 - [EN PROGRESO] Anota feedback en backlog.md
-
-### UX
-- [ ] Hacer que los sellos, cuando se consiguen, giren un poquito más lento al inicio.
 
 ### Internacionalización (UI completa)
 - [ ] [i18n] Cambiar fuente de nombres de países a CLDR + ~6 overrides/idioma. Pipeline con diff entre runs que flaggee cambios para revisión humana. Absorbe los overrides manuales de español del paso anterior. Spike: `docs/spikes/typos-español-i18n.md` § 4

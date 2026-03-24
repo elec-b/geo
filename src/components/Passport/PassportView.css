@@ -233,7 +233,7 @@
 
 @keyframes starSpin {
   0%   { transform: rotate(0deg); }
-  100% { transform: rotate(3600deg); }
+  100% { transform: rotate(1800deg); }
 }
 
 @keyframes stampDrop {
