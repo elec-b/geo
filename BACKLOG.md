@@ -60,6 +60,7 @@
 - [x] **UX Explorar**: Color de capitales en tabla coherente con el globo (gris claro en vez de cian). Pills de Países/Capitales con fondo semitransparente y texto más claro para mejor legibilidad sobre el globo
 - [x] **Datos**: Corregir ~27 errores ortográficos en español (tildes, grafías no hispanizadas, nombres sin traducir). 21 nombres de país, 3 capitales, 1 gentilicio. Overrides en `capitals-es.json`, verificados contra RAE/DPD
 - [x] **Hit testing**: Tolerancia fat finger mejorada para países alargados/enclavados (Gambia-Senegal, Lesoto, Chile, etc.) — distancia efectiva = min(centroide, frontera más cercana) en vez de solo centroide. Aplica a tipos A/B y pruebas de sello
+- [x] **Hit testing**: Tolerancia fat finger v2 — verificar país más cercano antes de aceptar por tolerancia (evita regalar aciertos entre microestados cercanos del Caribe, Golfo Pérsico, etc.). Taps en océano cerca de un país incorrecto ahora registran error en vez de ser silenciosos
 
 ---
 
@@ -72,11 +73,11 @@
 - [EN PROGRESO] Juega al menos en aventura para todos los continete-nivel
 - [EN PROGRESO] Anota feedback en backlog.md
 
-### Hit testing
-- [ ] Tolerancia fat finger demasiado generosa para microestados cercanos (Caribe) — regala aciertos al pulsar "por la zona" en pruebas de sello y tipos A/B. Causa: `BASE_TOLERANCE_RAD = 0.05` en `JugarView.tsx` da ~100-200 km de margen a zoom 3-5, pero las islas del Caribe están a 20-100 km entre sí. Necesita spike para rediseñar la tolerancia: evitar fat finger sin regalar aciertos. Afecta especialmente a KN, AG, DM, LC, VC, GD, BB, TT en la zona de Venezuela/Antillas Menores
-
 ### Cartografía
 - [ ] Separar Guayana Francesa (y opcionalmente Reunión, Mayotte) del MultiPolygon de Francia en el TopoJSON — actualmente GF se atenúa con Europa porque es parte de la geometría de FR. Spike: `docs/spikes/territorios-ultramar-continente.md`
+
+### UX
+- [ ] Mejorar UX cuando se ha superado un juego (incluida aventura) y se quieren resetear las estadísticas. Hay que pasar por demasiadas pantallas. Repasar flow actual y diseñar uno nuevo.
 
 ### Internacionalización (UI completa)
 - [ ] [i18n] Cambiar fuente de nombres de países a CLDR + ~6 overrides/idioma. Pipeline con diff entre runs que flaggee cambios para revisión humana. Absorbe los overrides manuales de español del paso anterior. Spike: `docs/spikes/typos-español-i18n.md` § 4

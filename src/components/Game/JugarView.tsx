@@ -618,35 +618,59 @@ export function JugarView({
     if (!globeRef.current) return;
 
     const tapCoords = globeRef.current.getLastTapCoords();
-    const targetCentroid = globeRef.current.getCentroid(q.targetCca2);
-    if (!tapCoords || !targetCentroid) return;
+    if (!tapCoords) return;
 
     const zoom = globeRef.current.getCurrentZoom();
     const tolerance = getHitTolerance(zoom);
-    const distCentroid = geoDistance(tapCoords, targetCentroid);
-    const distBoundary = globeRef.current.getMinDistanceToBoundary(q.targetCca2, tapCoords);
-    const dist = distBoundary !== null
-      ? Math.min(distCentroid, distBoundary)
-      : distCentroid;
-
     const allCentroids = globeRef.current.getAllCentroids();
-    if (dist < tolerance && isTargetNearest(tapCoords, q.targetCca2, dist, allCentroids)) {
-      const result = session.submitAnswer(q.targetCca2);
-      if (result === 'correct') {
-        centerOnCorrectAnswer(globeRef.current, q.targetCca2, q.type);
+
+    // Buscar el país más cercano al tap (centroide)
+    let nearestCca2: string | null = null;
+    let nearestDist = Infinity;
+    for (const [cca2, centroid] of allCentroids) {
+      const d = geoDistance(tapCoords, centroid);
+      if (d < nearestDist) {
+        nearestDist = d;
+        nearestCca2 = cca2;
       }
-      if (result === 'incorrect' && globeRef.current) {
-        const correctCoords = globeRef.current.getCentroid(q.targetCca2);
-        if (correctCoords) {
-          feedbackCoordsRef.current = {
-            wrongCca2: q.targetCca2,
-            wrongCoords: tapCoords,
-            correctCca2: q.targetCca2,
-            correctCoords,
-            questionType: q.type,
-          };
-          setFeedbackStep('step1');
-        }
+    }
+
+    // Refinar con distancia a frontera del país más cercano
+    if (nearestCca2) {
+      const boundaryDist = globeRef.current.getMinDistanceToBoundary(nearestCca2, tapCoords);
+      if (boundaryDist !== null && boundaryDist < nearestDist) {
+        nearestDist = boundaryDist;
+      }
+    }
+
+    // Si no hay país cercano dentro de la tolerancia → océano vacío, ignorar
+    if (!nearestCca2 || nearestDist >= tolerance) return;
+
+    // Tolerancia microestado-contenedor
+    const pair = [nearestCca2, q.targetCca2].sort().join('-');
+    if (MICROSTATE_PAIRS.has(pair)) nearestCca2 = q.targetCca2;
+
+    // Enviar como respuesta (correcta o incorrecta)
+    const answeredCca2 = nearestCca2 === q.targetCca2 ? q.targetCca2 : nearestCca2;
+    const result = session.submitAnswer(answeredCca2);
+
+    if (result === 'correct' && globeRef.current) {
+      centerOnCorrectAnswer(globeRef.current, q.targetCca2, q.type);
+    }
+    if (result === 'incorrect' && globeRef.current) {
+      const correctCoords = globeRef.current.getCentroid(q.targetCca2);
+      const wrongCoords = nearestCca2 !== q.targetCca2
+        ? globeRef.current.getCentroid(nearestCca2) ?? tapCoords
+        : tapCoords;
+      if (correctCoords) {
+        feedbackCoordsRef.current = {
+          wrongCca2: answeredCca2,
+          wrongCoords,
+          correctCca2: q.targetCca2,
+          correctCoords,
+          questionType: q.type,
+        };
+        setFeedbackStep('step1');
       }
     }
   }, [session, globeRef]);
