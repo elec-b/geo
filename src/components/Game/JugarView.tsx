@@ -1109,7 +1109,7 @@ export function JugarView({
             <div className="jugar-modal">
               <h3 className="jugar-modal__title">Prueba de sello</h3>
               <p className="jugar-modal__text">
-                Elige una prueba. Deberás completarla sin errores para conseguir el sello.
+                Elige una prueba. Deberás completar {levels.get(`${activeLevelRef.current}-${activeContinentRef.current}`)?.countries.length ?? '?'} preguntas sin ningún error.
               </p>
               <div className="jugar-modal__buttons">
                 <button

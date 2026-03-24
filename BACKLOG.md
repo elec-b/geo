@@ -18,7 +18,7 @@
 - [x] **Estadísticas**: Dos pestañas (Jugar + Pruebas de sello). Toggle ✓/%, código de colores, sorting por columna, defaults inteligentes según origen, aviso de permanencia de sellos
 - [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente, limpieza de sesión al cambiar
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores, mares/océanos). Feedback háptico
-- [x] **UX general**: Bottom sheets con drag-to-dismiss, selección de texto deshabilitada, feedback verde/rojo al 5%, colores olímpicos unificados
+- [x] **UX general**: Bottom sheets con drag-to-dismiss, selección de texto deshabilitada, feedback verde/rojo al 5%, colores olímpicos unificados, anti-viudas tipográficas (`text-wrap: pretty/balance`)
 
 ---
 
@@ -27,18 +27,16 @@
 > Ordenados por prioridad. Cada bloque debe completarse antes de avanzar al siguiente (salvo tareas marcadas como opcionales).
 
 ### Terminar testing manual
-- [EN PROGRESO] Consigue todos los sellos para todos los continentes
-- [EN PROGRESO] Juega al menos en aventura para todos los continente-nivel
-- [EN PROGRESO] Anota feedback en backlog.md
+- [X] Consigue todos los sellos para todos los continentes
+- [X] Juega al menos en aventura para todos los continente-nivel
+- [X] Anota feedback en backlog.md
 
 ### UX pre-lanzamiento
-- [ ] Mostrar n.º de países en modal de prueba de sello («Debes ubicar X países sin errores»)
-- [ ] Simplificar label «Marcadores de microestados y archipiélagos» en Configuración (ej. «Marcadores de islas y países pequeños»)
-- [ ] Mejorar texto de modales de dominio — no sugerir «resetea estadísticas» como flujo normal; proponer «Prueba otro continente» o «Sube de nivel»
-- [ ] Considerar cambiar orden de tabs: Explorar, Jugar, Pasaporte (lectura izquierda→derecha más natural)
+- [x] Mostrar n.º de países en modal de prueba de sello («Deberás completar X preguntas sin ningún error»)
+- [x] Simplificar label «Marcadores de microestados y archipiélagos» → «Marcadores de islas y países pequeños»
+- [x] Cambiar orden de tabs: Explorar, Jugar, Pasaporte
 - [ ] En Explorar > Tabla, mostrar última acción relacionada (último continente-nivel de prueba de sello, último continente-nivel jugado, último continente-nivel de la tabla). Confirmar que entiendes lo que digo antes de implementar nada
 - [ ] (Opcional) Onboarding mínimo para primera ejecución (2-3 tooltips o modal de bienvenida)
-- [ ] (Opcional) Modal de celebración al desbloquear un nuevo nivel (tras conseguir ambos sellos)
 
 ### Internacionalización
 > Pre-lanzamiento. La app se lanza en todos los idiomas soportados por iOS/Android. Las tareas siguen la cadena de dependencias: a → b → c → d → e → f → g.
@@ -79,7 +77,7 @@
 ### Preparación y publicación Android
 - [ ] Cuenta Google Play Console + verificación de identidad ($25, pago único)
 - [ ] `npx cap add android` + configuración del proyecto
-- [ ] Testing en emulador y dispositivos Android reales (mínimo 2-3 resoluciones/versiones)
+- [ ] Testing en emulador y dispositivos Android reales (mínimo 2-3 resoluciones/versiones). Verificar `text-wrap: pretty/balance` (requiere Chrome 117+, agosto 2023)
 - [ ] Icono adaptativo (foreground + background layers, diferente del iOS)
 - [ ] Build de producción (AAB) + signing key (guardar keystore en lugar seguro)
 - [ ] Metadata Google Play: título, descripciones, categoría, Data Safety form, contacto

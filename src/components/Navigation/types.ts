@@ -9,7 +9,7 @@ export interface TabDefinition {
 }
 
 export const TABS: TabDefinition[] = [
-  { id: 'play', label: 'Jugar', iconId: 'play' },
   { id: 'explore', label: 'Explorar', iconId: 'explore' },
+  { id: 'play', label: 'Jugar', iconId: 'play' },
   { id: 'passport', label: 'Pasaporte', iconId: 'passport' },
 ];

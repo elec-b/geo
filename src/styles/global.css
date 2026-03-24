@@ -34,6 +34,10 @@ body {
     radial-gradient(ellipse at center, var(--color-bg-secondary) 0%, var(--color-bg-primary) 70%);
 }
 
+/* Tipografía: evitar viudas (palabra suelta en última línea) */
+p, span, label { text-wrap: pretty; }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+
 /* Estrellas de fondo (pseudo-elementos simulados con puntos) */
 body::before {
   content: '';

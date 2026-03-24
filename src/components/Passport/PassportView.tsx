@@ -223,7 +223,7 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
               {LEVELS.find((l) => l.id === selectedCell.level)?.label} — {selectedCell.continent}
             </p>
             <p className="jugar-modal__text">
-              Completa la prueba sin errores para conseguir el sello.
+              Deberás completar {levels.get(`${selectedCell.level}-${selectedCell.continent}`)?.countries.length ?? '?'} preguntas sin ningún error.
             </p>
             <div className="jugar-modal__buttons">
               {!stampsData[selectedCell.level][selectedCell.continent].countries && (
