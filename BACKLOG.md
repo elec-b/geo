@@ -75,7 +75,7 @@
 - [EN PROGRESO] Anota feedback en backlog.md
 
 ### UX
-- [ ] Mejorar UX cuando se ha superado un juego (incluida aventura) y se quieren resetear las estadísticas. Hay que pasar por demasiadas pantallas. Repasar flow actual y diseñar uno nuevo.
+- [ ] Hacer que los sellos, cuando se consiguen, giren un poquito más lento al inicio.
 
 ### Internacionalización (UI completa)
 - [ ] [i18n] Cambiar fuente de nombres de países a CLDR + ~6 overrides/idioma. Pipeline con diff entre runs que flaggee cambios para revisión humana. Absorbe los overrides manuales de español del paso anterior. Spike: `docs/spikes/typos-español-i18n.md` § 4
