@@ -68,34 +68,70 @@
 
 ## Próximos pasos
 
-> Ordenados por prioridad. Las áreas se listan de mayor a menor urgencia.
+> Ordenados por prioridad. Cada bloque debe completarse antes de avanzar al siguiente (salvo tareas marcadas como opcionales).
 
-### Testear exhaustivamente
+### Terminar testing manual
 - [EN PROGRESO] Consigue todos los sellos para todos los continentes
-- [EN PROGRESO] Juega al menos en aventura para todos los continete-nivel
+- [EN PROGRESO] Juega al menos en aventura para todos los continente-nivel
 - [EN PROGRESO] Anota feedback en backlog.md
 
-### Internacionalización (UI completa)
-- [ ] [i18n] Cambiar fuente de nombres de países a CLDR + ~6 overrides/idioma. Pipeline con diff entre runs que flaggee cambios para revisión humana. Absorbe los overrides manuales de español del paso anterior. Spike: `docs/spikes/typos-español-i18n.md` § 4
-- [ ] [i18n] LLM (Claude) solo como auditoría puntual al añadir un idioma nuevo — no en el pipeline automatizado (no determinista, no escala a idiomas de pocos recursos). Una pasada manual antes de publicar cada idioma
-- [ ] Elegir librería de i18n (i18next, react-intl u otra)
-- [ ] Externalizar textos de la app a archivos de traducción
+### UX pre-lanzamiento
+- [ ] Mostrar n.º de países en modal de prueba de sello («Debes ubicar X países sin errores»)
+- [ ] Simplificar label «Marcadores de microestados y archipiélagos» en Configuración (ej. «Marcadores de islas y países pequeños»)
+- [ ] Mejorar texto de modales de dominio — no sugerir «resetea estadísticas» como flujo normal; proponer «Prueba otro continente» o «Sube de nivel»
+- [ ] Considerar cambiar orden de tabs: Explorar, Jugar, Pasaporte (lectura izquierda→derecha más natural)
+- [ ] En Explorar > Tabla, mostrar última acción relacionada (último continente-nivel de prueba de sello, último continente-nivel jugado, último continente-nivel de la tabla). Confirmar que entiendes lo que digo antes de implementar nada
+- [ ] (Opcional) Onboarding mínimo para primera ejecución (2-3 tooltips o modal de bienvenida)
+- [ ] (Opcional) Modal de celebración al desbloquear un nuevo nivel (tras conseguir ambos sellos)
+
+### Internacionalización
+> Pre-lanzamiento. La app se lanza en todos los idiomas soportados por iOS/Android. Las tareas siguen la cadena de dependencias: a → b → c → d → e → f → g.
+
+- [ ] **(a)** Elegir librería de i18n (i18next, react-intl u otra)
+- [ ] **(b)** Externalizar textos de la app a archivos de traducción
+  - Migrar tipos `Continent` y `GameLevel` de literales en español a claves neutras (`africa`, `tourist`, etc.)
+  - Añadir `version` + `migrate` a Zustand persist para migrar datos de usuarios existentes
   - Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español
-- [ ] Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
-- [ ] Símbolos y nombres de moneda via `Intl.NumberFormat` (CLDR): usar `narrowSymbol` como base + mapa de ~15 overrides curados para símbolos donde tenemos mejor dato (NT$, KSh, MOP$, etc.). Elimina mantenimiento manual de 232 símbolos. Revisar/actualizar DESIGN.md (§ Fuentes de datos, § Internacionalización de datos) para reflejar CLDR como fuente de símbolos. Asegurar coherencia con el principio de actualización automática de datos (§ Actualización automática). Spike: `docs/spikes/validacion-simbolos-moneda.md`
-- [ ] Traducción a idiomas disponibles en iOS y Android
+- [ ] **(c)** Cambiar fuente de nombres de países a CLDR + ~6 overrides/idioma. Pipeline con diff entre runs que flaggee cambios para revisión. Absorbe los overrides manuales de español. Spike: `docs/spikes/typos-español-i18n.md` § 4
+- [ ] **(d)** Símbolos y nombres de moneda via `Intl.NumberFormat` (CLDR): usar `narrowSymbol` como base + mapa de ~15 overrides curados. Spike: `docs/spikes/validacion-simbolos-moneda.md`
+- [ ] **(e)** Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
+- [ ] **(f)** Validación con Claude: validador primario para todos los idiomas. El desarrollador valida español e inglés personalmente; para el resto, Claude genera informe de anomalías por idioma (ortografía, traducciones incorrectas, incoherencias). No genera traducciones — solo valida
+- [ ] **(g)** Traducir textos de UI a todos los idiomas soportados
 
-
-### Tema visual
-- [ ] Diseñar e implementar tema claro (baja prioridad, casi al final del desarrollo)
-
-### Infraestructura y acabados
-- [ ][PENSAR/INVESTIGAR: hay alguna fuente mejor?] Validación automática de coordenadas de capitales en `fetch-countries.ts`: comprobar que cada capital cae dentro (o cerca) del polígono de su país usando `d3.geoContains()`. Si falla, buscar coords alternativas en Wikidata SPARQL como fallback. El script nunca debe fallar — si no se encuentran coords válidas, conservar las de la API + warning. Investigación completa hecha (auditoría de 229 capitales, diseño de pipeline con tolerancias 50/200/500 km, query SPARQL lista). De momento se usa CAPITAL_OVERRIDES manual (EH, GD, KI, SN).
-- [ ] Añadir Capacitor para build Android
+### Acabados pre-lanzamiento
+- [ ] Diseñar e implementar tema claro
+- [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
+- [ ] Revisar que los datos de la ficha de país están actualizados + asegurar que se actualicen bien en el futuro
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
-- [ ] Sección "Acerca de": explicar criterios (países ONU, idiomas oficiales, fuentes UNDP, REST Countries, etc.)
-- [ ] Solicitud de valoración in-app (SKStoreReviewController iOS + Play In-App Review Android)
-- [ ] Triple-verificar que la app se actualizará sola para los usuarios en el futuro, sin que yo tenga que hacer nada
+- [ ] Sección «Acerca de»: explicar criterios (países ONU, fuentes UNDP, REST Countries, etc.)
 
-### Muy muy opcional
-- [ ] En las pruebas de sello: ¿Hay alguna manera de forzar que si el usuario sale de la prueba, a otra app, haya que empezar la prueba de sello desde el inicio? Cuando voy a cualquiera de las otras pestañas (Jugar o Explorar o incluso volver a pulsar Pasaporte), ya funciona bien - se sale de la prueba de sello
+### Preparación y publicación iOS
+- [ ] Fix orientación: eliminar landscape de Info.plist (la UI es portrait-only). Decidir si se soporta iPad
+- [ ] Privacy policy en URL pública (la app no recopila datos — declararlo explícitamente). Landing page mínima (GitHub Pages): privacy policy + URL de soporte
+- [ ] Certificados y provisioning profiles de distribución (actualmente solo Debug)
+- [ ] Build de producción (Archive / Release)
+- [ ] Versionado: 0.1.0 → 1.0.0 (package.json + MARKETING_VERSION + CURRENT_PROJECT_VERSION en Xcode)
+- [ ] Testing en simuladores: iPhone SE, iPhone estándar, iPhone Pro Max, iPad (si se soporta)
+- [ ] Verificar safe areas, status bar, interrupciones (llamadas, notificaciones, background/foreground)
+- [ ] Verificar icono (sin alpha) y splash screen en todos los tamaños
+- [ ] Metadata App Store Connect: nombre, subtítulo, descripción, palabras clave, categoría (Educación), copyright, URLs
+- [ ] Screenshots (3-5, resolución 6.9" reutilizable para todos los tamaños)
+- [ ] Clasificación por edad: general audience 4+ (NO categorizar como «directed to children» — evita restricciones de Kids Category y parental gates para el enlace a Wikipedia)
+- [ ] Enviar a App Store Review
+- [ ] (Recomendado) Solicitud de valoración in-app (SKStoreReviewController) — alto ROI, bajo esfuerzo
+
+### Preparación y publicación Android
+- [ ] Cuenta Google Play Console + verificación de identidad ($25, pago único)
+- [ ] `npx cap add android` + configuración del proyecto
+- [ ] Testing en emulador y dispositivos Android reales (mínimo 2-3 resoluciones/versiones)
+- [ ] Icono adaptativo (foreground + background layers, diferente del iOS)
+- [ ] Build de producción (AAB) + signing key (guardar keystore en lugar seguro)
+- [ ] Metadata Google Play: título, descripciones, categoría, Data Safety form, contacto
+- [ ] Screenshots + Feature Graphic (1024×500, obligatoria)
+- [ ] Testing cerrado (≥20 testers, ≥14 días) — requisito para cuentas personales nuevas
+- [ ] Clasificación de contenido (cuestionario IARC)
+- [ ] Enviar a revisión
+
+### Post-lanzamiento
+- [ ] (Opcional) Confirmación al salir de prueba de sello en curso (diálogo si se toca otro tab)
+- [ ] (Opcional) Forzar reinicio de prueba de sello al salir a otra app

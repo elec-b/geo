@@ -404,7 +404,7 @@ Estética de **documento oficial premium**: contenedor con textura guilloché (`
 *   **Sello de Países**: borde simple. **Sello de Capitales**: borde doble (`border-style: double`).
 *   **Ganado**: fondo tintado, glow sutil, estrella (★), rotación aleatoria leve (-8° a +8°).
 *   **Pendiente en nivel activo**: pulso de opacidad (`stampPulse`).
-*   **Animación stampDrop**: al conseguir un sello nuevo, efecto de caída (scale 0→1.15→1 con rotación, 400ms). La estrella (★) gira simultáneamente con efecto «trompo» (10 vueltas en 3s, ease-out).
+*   **Animación stampDrop**: al conseguir un sello nuevo, efecto de caída (scale 0→1.15→1 con rotación, 400ms). La estrella (★) gira simultáneamente con efecto «trompo» (5 vueltas en 3s, ease-out).
 
 ---
 
@@ -676,8 +676,9 @@ El script `fetch-countries.ts` genera `countries.json` y `capitals.json` en el i
 *   **Nombres de idiomas**: REST Countries devuelve `languages` en inglés. Se traducen en el archivo suplementario. **Criterio de selección**: solo idiomas oficiales a nivel nacional/constitucional (no regionales ni cooficiales autonómicos).
 *   **Slugs de Wikipedia**: Slug del artículo Wikipedia para cada país y cada idioma soportado. Se construyen y validan en el pipeline de datos. Se almacenan en los datos estáticos para evitar links rotos en runtime.
 *   **Fuente suplementaria (multi-idioma)**: Wikidata (SPARQL) para capitales, monedas, idiomas, slugs de Wikipedia y otros datos que REST Countries no cubra. Para español solo, basta un archivo manual por idioma (actualmente `scripts/data/capitals-es.json`; se ampliará con los campos adicionales).
-*   **Validación con LLM**: Como capa final de QA, un LLM revisa el dataset generado y reporta anomalías (nombres en idioma incorrecto, ortografía, incoherencias). No genera traducciones — solo valida.
-*   **Pipeline completo**: REST Countries → Wikidata (gaps) → Validación LLM → Revisión humana (si hay flags) → CDN.
+*   **Validación con LLM**: Claude como validador primario para todos los idiomas. Para cada idioma genera un informe de anomalías (nombres en idioma incorrecto, ortografía, incoherencias, traducciones sospechosas). No genera traducciones — solo valida. El desarrollador valida personalmente español e inglés; para el resto de idiomas, Claude es la fuente de QA principal.
+*   **Pipeline completo**: REST Countries → Wikidata (gaps) → Validación LLM (Claude) → Revisión humana de español e inglés → CDN.
+*   **Cobertura de idiomas**: Todos los idiomas soportados por iOS y Android. El pipeline genera datos para cada idioma de forma automatizada.
 *   **Idioma actual de generación**: Español (`spa`). Cuando se implemente i18n completa, se generarán archivos por idioma o un JSON multi-idioma.
 
 ### Identificadores
