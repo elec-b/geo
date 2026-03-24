@@ -22,7 +22,7 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 - **Plataformas**: iOS y Android (App Store y Google Play). Web no es prioridad.
 - **Justificación técnica del stack**: ver `DESIGN.md` § «Motor de renderizado»
 - **Fuentes de datos (detalle)**: ver `DESIGN.md` § «Fuentes de datos»
-- **Nota histórica**: Se evaluó MapLibre GL JS v5 y se descartó. Ver `docs/spikes/pmtiles-vs-d3.md`
+- **Nota histórica**: Se evaluó MapLibre GL JS v5 y se descartó por artefactos de tile seams.
 
 ## 3. Reglas operativas
 
@@ -31,7 +31,6 @@ Un objetivo fundamental es que el usuario tenga **verdadera consciencia de la su
 3. **Diseño responsivo**: Todos los tamaños de UI (fuentes, botones, espaciado, dimensiones de layout) deben usar unidades relativas (`rem`). Reservar `px` exclusivamente para bordes decorativos (`1px solid`), sombras y blur. Las variables CSS en `variables.css` son la base — usar siempre variables, nunca valores hardcoded.
 4. **Documentación MECE**: El contenido debe ser **MECE** (Mutually Exclusive, Collectively Exhaustive): sin solapamientos entre documentos y cubriendo todos los aspectos necesarios. Estructura:
    - **Raíz**: documentos core del proyecto (`CLAUDE.md`, `DESIGN.md`, `BACKLOG.md`)
-   - **`docs/research/`**: investigaciones técnicas
    - **`docs/spikes/`**: resultados de spikes de validación
 5. **Backlog**: `BACKLOG.md` organiza el trabajo en 2 secciones:
    - **Completado**: Tareas terminadas (historial reciente condensado; para historial completo, usar git)
