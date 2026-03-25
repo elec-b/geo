@@ -74,6 +74,17 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
 
   const globalLevel = useMemo(() => getGlobalLevel(stampsData), [stampsData]);
 
+  // ¿El perfil tiene al menos un sello ganado?
+  const hasAnyStamp = useMemo(() => {
+    for (const level of LEVELS) {
+      for (const continent of CONTINENTS) {
+        const s = stampsData[level.id]?.[continent.id];
+        if (s?.countries || s?.capitals) return true;
+      }
+    }
+    return false;
+  }, [stampsData]);
+
   // Limpiar animación de sello tras completarse
   useEffect(() => {
     if (!recentlyEarnedStamp) return;
@@ -127,6 +138,11 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
           </span>
         )}
       </div>
+
+      {/* Empty state — solo cuando no hay ningún sello */}
+      {!hasAnyStamp && (
+        <p className="passport-empty-state">Cada sello demuestra lo que sabes. ¿Llenarás el pasaporte?</p>
+      )}
 
       {/* Matriz 5×3 */}
       <div className="passport-grid">

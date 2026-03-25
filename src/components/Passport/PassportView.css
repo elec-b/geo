@@ -35,6 +35,16 @@
   letter-spacing: 0.05em;
 }
 
+/* Empty state — sin sellos */
+.passport-empty-state {
+  text-align: center;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  margin: calc(-1 * var(--spacing-md)) 0 var(--spacing-md);
+  max-width: 22rem;
+  text-wrap: balance;
+}
+
 /* Grid 5 filas × 3 columnas (+ labels) — contenedor guilloché */
 .passport-grid {
   display: grid;

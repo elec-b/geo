@@ -36,7 +36,7 @@
 - [x] Simplificar label «Marcadores de microestados y archipiélagos» → «Marcadores de islas y países pequeños»
 - [x] Cambiar orden de tabs: Explorar, Jugar, Pasaporte
 - [x] En Explorar > Tabla, recordar último continente activo (de Jugar, prueba de sello o la propia tabla) y sorting
-- [ ] (Opcional) Onboarding mínimo para primera ejecución (2-3 tooltips o modal de bienvenida)
+- [x] Onboarding mínimo: empty state en Pasaporte («Cada sello demuestra lo que sabes. ¿Llenarás el pasaporte?»)
 
 ### Internacionalización
 > Pre-lanzamiento. La app se lanza en todos los idiomas soportados por iOS/Android. Las tareas siguen la cadena de dependencias: a → b → c → d → e → f → g.
@@ -53,6 +53,7 @@
 - [ ] **(g)** Traducir textos de UI a todos los idiomas soportados
 
 ### Acabados pre-lanzamiento
+- [ ] Logo/branding en LoadingScreen (antes de publicar en stores)
 - [ ] Diseñar e implementar tema claro
 - [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
 - [ ] Revisar que los datos de la ficha de país están actualizados + asegurar que se actualicen bien en el futuro
