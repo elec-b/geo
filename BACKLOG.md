@@ -35,7 +35,7 @@
 - [x] Mostrar n.º de países en modal de prueba de sello («Deberás completar X preguntas sin ningún error»)
 - [x] Simplificar label «Marcadores de microestados y archipiélagos» → «Marcadores de islas y países pequeños»
 - [x] Cambiar orden de tabs: Explorar, Jugar, Pasaporte
-- [ ] En Explorar > Tabla, mostrar última acción relacionada (último continente-nivel de prueba de sello, último continente-nivel jugado, último continente-nivel de la tabla). Confirmar que entiendes lo que digo antes de implementar nada
+- [x] En Explorar > Tabla, recordar último continente activo (de Jugar, prueba de sello o la propia tabla) y sorting
 - [ ] (Opcional) Onboarding mínimo para primera ejecución (2-3 tooltips o modal de bienvenida)
 
 ### Internacionalización

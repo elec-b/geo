@@ -12,6 +12,8 @@ interface TableViewProps {
   continentFilter: Continent | null;
   onCountryTap: (cca2: string) => void;
   onCapitalTap: (cca2: string) => void;
+  initialSort?: { key: SortKey; dir: SortDir } | null;
+  onSortChange?: (key: SortKey, dir: SortDir) => void;
   style?: React.CSSProperties;
 }
 
@@ -47,19 +49,24 @@ export function TableView({
   continentFilter,
   onCountryTap,
   onCapitalTap,
+  initialSort,
+  onSortChange,
   style,
 }: TableViewProps) {
-  const [sortKey, setSortKey] = useState<SortKey>('population');
-  const [sortDir, setSortDir] = useState<SortDir>('desc');
+  const [sortKey, setSortKey] = useState<SortKey>(initialSort?.key ?? 'population');
+  const [sortDir, setSortDir] = useState<SortDir>(initialSort?.dir ?? 'desc');
   const [showNonUN, setShowNonUN] = useState(false);
 
   const toggleSort = (key: SortKey) => {
+    let newDir: SortDir;
     if (sortKey === key) {
-      setSortDir(d => d === 'asc' ? 'desc' : 'asc');
+      newDir = sortDir === 'asc' ? 'desc' : 'asc';
     } else {
-      setSortKey(key);
-      setSortDir(key === 'population' ? 'desc' : 'asc');
+      newDir = key === 'population' ? 'desc' : 'asc';
     }
+    setSortKey(key);
+    setSortDir(newDir);
+    onSortChange?.(key, newDir);
   };
 
   // Lista plana filtrada y ordenada (para modo "Todos")

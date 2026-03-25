@@ -38,6 +38,8 @@ const DEFAULT_SETTINGS: AppSettings = {
   locale: 'es',
   lastPlayed: null,
   lastStampPlayed: null,
+  lastActiveContinent: null,
+  lastTableSort: null,
 };
 
 // Perfil por defecto — sin él, recordAttempt y getAttempts no funcionan
@@ -84,6 +86,10 @@ interface AppStoreActions {
   setLastPlayed: (continent: Continent, level: GameLevel) => void;
   /** Persiste el último continente y nivel de prueba de sello */
   setLastStampPlayed: (continent: Continent, level: GameLevel) => void;
+  /** Persiste el último continente activo (de cualquier fuente: Jugar, sello, tabla) */
+  setLastActiveContinent: (continent: Continent | null) => void;
+  /** Persiste el último sorting de la tabla de Explorar */
+  setLastTableSort: (key: 'name' | 'capital' | 'population', dir: 'asc' | 'desc') => void;
 }
 
 type AppStore = AppState & AppStoreActions;
@@ -286,13 +292,25 @@ export const useAppStore = create<AppStore>()(
 
   setLastPlayed: (continent, level) => {
     set((state) => ({
-      settings: { ...state.settings, lastPlayed: { continent, level } },
+      settings: { ...state.settings, lastPlayed: { continent, level }, lastActiveContinent: continent },
     }));
   },
 
   setLastStampPlayed: (continent, level) => {
     set((state) => ({
-      settings: { ...state.settings, lastStampPlayed: { continent, level } },
+      settings: { ...state.settings, lastStampPlayed: { continent, level }, lastActiveContinent: continent },
+    }));
+  },
+
+  setLastActiveContinent: (continent) => {
+    set((state) => ({
+      settings: { ...state.settings, lastActiveContinent: continent },
+    }));
+  },
+
+  setLastTableSort: (key, dir) => {
+    set((state) => ({
+      settings: { ...state.settings, lastTableSort: { key, dir } },
     }));
   },
 

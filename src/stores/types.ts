@@ -64,6 +64,8 @@ export interface AppSettings {
   locale: 'es';         // por ahora solo español
   lastPlayed?: { continent: Continent; level: GameLevel } | null;
   lastStampPlayed?: { continent: Continent; level: GameLevel } | null;
+  lastActiveContinent?: Continent | null;
+  lastTableSort?: { key: 'name' | 'capital' | 'population'; dir: 'asc' | 'desc' } | null;
 }
 
 /** Estado completo de la aplicación */

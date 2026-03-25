@@ -11,6 +11,7 @@ import { ContinentFilter } from './ContinentFilter';
 import { TableView } from './TableView';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
 import { CONTINENT_CENTERS } from '../../data/continents';
+import { useAppStore } from '../../stores/appStore';
 import './ExploreView.css';
 
 type ExploreMode = 'countries' | 'capitals';
@@ -52,13 +53,25 @@ export function ExploreView({
   onCountryClickRef,
   onCountryDeselectRef,
 }: ExploreViewProps) {
+  const lastActiveContinent = useAppStore((s) => s.settings.lastActiveContinent) ?? null;
+  const lastTableSort = useAppStore((s) => s.settings.lastTableSort) ?? null;
+  const setLastActiveContinent = useAppStore((s) => s.setLastActiveContinent);
+  const setLastTableSort = useAppStore((s) => s.setLastTableSort);
+
   const [mode, setMode] = useState<ExploreMode>('countries');
   const [selectedCca2, setSelectedCca2] = useState<string | null>(null);
-  const [continentFilter, setContinentFilter] = useState<Continent | null>(null);
+  const [continentFilter, setContinentFilter] = useState<Continent | null>(lastActiveContinent);
   const [showCountryLabels, setShowCountryLabels] = useState(false);
   const [showCapitalLabels, setShowCapitalLabels] = useState(false);
   const [capitalsGlobeView, setCapitalsGlobeView] = useState(false);
   const [showCard, setShowCard] = useState(false);
+
+  // Sorting inicial: solo restaurar si el continente no cambió externamente
+  const initialSort = useMemo(() => {
+    if (lastActiveContinent === continentFilter && lastTableSort) return lastTableSort;
+    return null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // --- Estado derivado ---
 
@@ -178,16 +191,17 @@ export function ExploreView({
   );
 
 
-  // Cambio de filtro de continente con flyTo
+  // Cambio de filtro de continente con flyTo + persistencia
   const handleContinentChange = useCallback(
     (continent: Continent | null) => {
       setContinentFilter(continent);
+      setLastActiveContinent(continent);
       if (continent && globeRef.current) {
         const [lon, lat] = CONTINENT_CENTERS[continent];
         globeRef.current.flyTo(lon, lat, undefined, 800);
       }
     },
-    [globeRef],
+    [globeRef, setLastActiveContinent],
   );
 
   // Cambio de modo
@@ -279,6 +293,8 @@ export function ExploreView({
           continentFilter={continentFilter}
           onCountryTap={handleCapitalsCountryTap}
           onCapitalTap={handleCapitalsCapitalTap}
+          initialSort={initialSort}
+          onSortChange={setLastTableSort}
           style={{ display: capitalsGlobeView ? 'none' : undefined }}
         />
       )}
