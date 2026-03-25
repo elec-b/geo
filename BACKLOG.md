@@ -19,24 +19,14 @@
 - [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente, limpieza de sesión al cambiar
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores, mares/océanos). Feedback háptico
 - [x] **UX general**: Bottom sheets con drag-to-dismiss, selección de texto deshabilitada, feedback verde/rojo al 5%, colores olímpicos unificados, anti-viudas tipográficas (`text-wrap: pretty/balance`)
+- [x] **Testing manual**: Todos los sellos en todos los continentes, aventura en todos los continente-nivel, feedback anotado
+- [x] **UX pre-lanzamiento**: N.º de países en modal de sello, label simplificado de marcadores, orden de tabs (Explorar/Jugar/Pasaporte), persistencia de continente y sorting en Tabla, onboarding en Pasaporte
 
 ---
 
 ## Próximos pasos
 
 > Ordenados por prioridad. Cada bloque debe completarse antes de avanzar al siguiente (salvo tareas marcadas como opcionales).
-
-### Terminar testing manual
-- [X] Consigue todos los sellos para todos los continentes
-- [X] Juega al menos en aventura para todos los continente-nivel
-- [X] Anota feedback en backlog.md
-
-### UX pre-lanzamiento
-- [x] Mostrar n.º de países en modal de prueba de sello («Deberás completar X preguntas sin ningún error»)
-- [x] Simplificar label «Marcadores de microestados y archipiélagos» → «Marcadores de islas y países pequeños»
-- [x] Cambiar orden de tabs: Explorar, Jugar, Pasaporte
-- [x] En Explorar > Tabla, recordar último continente activo (de Jugar, prueba de sello o la propia tabla) y sorting
-- [x] Onboarding mínimo: empty state en Pasaporte («Cada sello demuestra lo que sabes. ¿Llenarás el pasaporte?»)
 
 ### Internacionalización
 > Pre-lanzamiento. La app se lanza en todos los idiomas soportados por iOS/Android. Las tareas siguen la cadena de dependencias: a → b → c → d → e → f → g.
