@@ -39,7 +39,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
   const [selectedType, setSelectedType] = useState<QuestionTypeFilter>('mixed');
   const [typesExpanded, setTypesExpanded] = useState(false);
   const [lockedToast, setLockedToast] = useState<string | null>(null);
-  const startRef = useRef<HTMLButtonElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   // Construir StampsData para verificar desbloqueo de niveles
   const stampsData = useMemo((): StampsData => {
@@ -153,6 +153,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
   return (
     <div className="level-selector">
       <div className="level-selector__content">
+        <div className="level-selector__scroll" ref={scrollRef}>
         <h2 className="level-selector__title">{t('selector.chooseContinent')}</h2>
 
         {/* Pills de continente */}
@@ -234,7 +235,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
             setTypesExpanded((v) => {
               if (!v) {
                 requestAnimationFrame(() => {
-                  startRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                  scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' });
                 });
               }
               return !v;
@@ -271,31 +272,34 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
           </div>
         )}
 
-        {/* Toast de nivel bloqueado */}
-        {lockedToast && (
-          <div className="level-selector__toast">{lockedToast}</div>
-        )}
+        </div>
 
-        {/* Banner de invitación a pruebas de sello (clickable) */}
-        {stampReadiness && !lockedToast && (
+        <div className="level-selector__footer">
+          {/* Toast de nivel bloqueado */}
+          {lockedToast && (
+            <div className="level-selector__toast">{lockedToast}</div>
+          )}
+
+          {/* Banner de invitación a pruebas de sello (clickable) */}
+          {stampReadiness && !lockedToast && (
+            <button
+              className="level-selector__stamp-banner"
+              onClick={() => selectedContinent && onStampBannerClick?.(selectedLevel, selectedContinent)}
+            >
+              {stampReadiness}
+            </button>
+          )}
+
+          {/* Botón empezar / continuar */}
           <button
-            className="level-selector__stamp-banner"
-            onClick={() => selectedContinent && onStampBannerClick?.(selectedLevel, selectedContinent)}
+            className={`level-selector__start ${!selectedContinent ? 'level-selector__start--disabled' : ''}`}
+            onClick={handleStart}
           >
-            {stampReadiness}
+            {selectedContinent && Object.keys(getAttempts(selectedLevel, selectedContinent)).length > 0
+              ? t('selector.continue')
+              : t('selector.start')}
           </button>
-        )}
-
-        {/* Botón empezar / continuar */}
-        <button
-          ref={startRef}
-          className={`level-selector__start ${!selectedContinent ? 'level-selector__start--disabled' : ''}`}
-          onClick={handleStart}
-        >
-          {selectedContinent && Object.keys(getAttempts(selectedLevel, selectedContinent)).length > 0
-            ? t('selector.continue')
-            : t('selector.start')}
-        </button>
+        </div>
       </div>
     </div>
   );
