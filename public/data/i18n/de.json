@@ -9,7 +9,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Andorra"
   },
   "AE": {
     "name": "Vereinigte Arabische Emirate",
@@ -21,7 +21,7 @@
     "currencyNames": [
       "VAE-Dirham"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Vereinigte_Arabische_Emirate"
   },
   "AF": {
     "name": "Afghanistan",
@@ -34,7 +34,7 @@
     "currencyNames": [
       "Afghanischer Afghani"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Afghanistan"
   },
   "AG": {
     "name": "Antigua und Barbuda",
@@ -46,7 +46,7 @@
     "currencyNames": [
       "Ostkaribischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Antigua_und_Barbuda"
   },
   "AI": {
     "name": "Anguilla",
@@ -58,7 +58,7 @@
     "currencyNames": [
       "Ostkaribischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Anguilla"
   },
   "AL": {
     "name": "Albanien",
@@ -70,7 +70,7 @@
     "currencyNames": [
       "Albanischer Lek"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Albanien"
   },
   "AM": {
     "name": "Armenien",
@@ -82,7 +82,7 @@
     "currencyNames": [
       "Armenischer Dram"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Armenien"
   },
   "AO": {
     "name": "Angola",
@@ -94,7 +94,7 @@
     "currencyNames": [
       "Angolanischer Kwanza"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Angola"
   },
   "AR": {
     "name": "Argentinien",
@@ -106,7 +106,7 @@
     "currencyNames": [
       "Argentinischer Peso"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Argentinien"
   },
   "AS": {
     "name": "Amerikanisch-Samoa",
@@ -119,7 +119,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Amerikanisch-Samoa"
   },
   "AT": {
     "name": "Österreich",
@@ -131,7 +131,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Österreich"
   },
   "AU": {
     "name": "Australien",
@@ -143,7 +143,7 @@
     "currencyNames": [
       "Australischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Australien"
   },
   "AW": {
     "name": "Aruba",
@@ -156,7 +156,7 @@
     "currencyNames": [
       "Aruba-Florin"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Aruba"
   },
   "AX": {
     "name": "Ålandinseln",
@@ -168,7 +168,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Åland"
   },
   "AZ": {
     "name": "Aserbaidschan",
@@ -180,7 +180,7 @@
     "currencyNames": [
       "Aserbaidschan-Manat"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Aserbaidschan"
   },
   "BA": {
     "name": "Bosnien und Herzegowina",
@@ -194,7 +194,7 @@
     "currencyNames": [
       "Konvertible Mark Bosnien und Herzegowina"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Bosnien_und_Herzegowina"
   },
   "BB": {
     "name": "Barbados",
@@ -206,7 +206,7 @@
     "currencyNames": [
       "Barbados-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Barbados"
   },
   "BD": {
     "name": "Bangladesch",
@@ -218,7 +218,7 @@
     "currencyNames": [
       "Bangladesch-Taka"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Bangladesch"
   },
   "BE": {
     "name": "Belgien",
@@ -232,7 +232,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Belgien"
   },
   "BF": {
     "name": "Burkina Faso",
@@ -244,7 +244,7 @@
     "currencyNames": [
       "CFA-Franc (BCEAO)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Burkina_Faso"
   },
   "BG": {
     "name": "Bulgarien",
@@ -256,7 +256,7 @@
     "currencyNames": [
       "Bulgarischer Lew"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Bulgarien"
   },
   "BH": {
     "name": "Bahrain",
@@ -268,7 +268,7 @@
     "currencyNames": [
       "Bahrain-Dinar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Bahrain"
   },
   "BI": {
     "name": "Burundi",
@@ -281,7 +281,7 @@
     "currencyNames": [
       "Burundi-Franc"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Burundi"
   },
   "BJ": {
     "name": "Benin",
@@ -293,7 +293,7 @@
     "currencyNames": [
       "CFA-Franc (BCEAO)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Benin"
   },
   "BL": {
     "name": "St. Barthélemy",
@@ -305,7 +305,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Saint-Barthélemy_(Insel)"
   },
   "BM": {
     "name": "Bermuda",
@@ -317,7 +317,7 @@
     "currencyNames": [
       "Bermuda-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Bermuda"
   },
   "BN": {
     "name": "Brunei Darussalam",
@@ -330,7 +330,7 @@
       "Brunei-Dollar",
       "Singapur-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Brunei"
   },
   "BO": {
     "name": "Bolivien",
@@ -344,7 +344,7 @@
     "currencyNames": [
       "Bolivianischer Boliviano"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Bolivien"
   },
   "BR": {
     "name": "Brasilien",
@@ -356,7 +356,7 @@
     "currencyNames": [
       "Brasilianischer Real"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Brasilien"
   },
   "BS": {
     "name": "Bahamas",
@@ -369,7 +369,7 @@
       "Bahamas-Dollar",
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Bahamas"
   },
   "BT": {
     "name": "Bhutan",
@@ -382,7 +382,7 @@
       "Bhutan-Ngultrum",
       "Indische Rupie"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Bhutan"
   },
   "BW": {
     "name": "Botsuana",
@@ -395,7 +395,7 @@
     "currencyNames": [
       "Botswanischer Pula"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Botswana"
   },
   "BY": {
     "name": "Belarus",
@@ -408,7 +408,7 @@
     "currencyNames": [
       "Weißrussischer Rubel"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Belarus"
   },
   "BZ": {
     "name": "Belize",
@@ -420,7 +420,7 @@
     "currencyNames": [
       "Belize-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Belize"
   },
   "CA": {
     "name": "Kanada",
@@ -433,7 +433,7 @@
     "currencyNames": [
       "Kanadischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kanada"
   },
   "CD": {
     "name": "Kongo-Kinshasa",
@@ -445,7 +445,7 @@
     "currencyNames": [
       "Kongo-Franc"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Demokratische_Republik_Kongo"
   },
   "CF": {
     "name": "Zentralafrikanische Republik",
@@ -458,7 +458,7 @@
     "currencyNames": [
       "CFA-Franc (BEAC)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Zentralafrikanische_Republik"
   },
   "CG": {
     "name": "Kongo-Brazzaville",
@@ -470,7 +470,7 @@
     "currencyNames": [
       "CFA-Franc (BEAC)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Republik_Kongo"
   },
   "CH": {
     "name": "Schweiz",
@@ -485,7 +485,7 @@
     "currencyNames": [
       "Schweizer Franken"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Schweiz"
   },
   "CI": {
     "name": "Elfenbeinküste",
@@ -497,7 +497,7 @@
     "currencyNames": [
       "CFA-Franc (BCEAO)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Elfenbeinküste"
   },
   "CK": {
     "name": "Cookinseln",
@@ -510,7 +510,7 @@
     "currencyNames": [
       "Neuseeland-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Cookinseln"
   },
   "CL": {
     "name": "Chile",
@@ -522,7 +522,7 @@
     "currencyNames": [
       "Chilenischer Peso"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Chile"
   },
   "CM": {
     "name": "Kamerun",
@@ -535,7 +535,7 @@
     "currencyNames": [
       "CFA-Franc (BEAC)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kamerun"
   },
   "CN": {
     "name": "China",
@@ -547,7 +547,7 @@
     "currencyNames": [
       "Renminbi Yuan"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Volksrepublik_China"
   },
   "CO": {
     "name": "Kolumbien",
@@ -559,7 +559,7 @@
     "currencyNames": [
       "Kolumbianischer Peso"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kolumbien"
   },
   "CR": {
     "name": "Costa Rica",
@@ -571,7 +571,7 @@
     "currencyNames": [
       "Costa-Rica-Colón"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Costa_Rica"
   },
   "CU": {
     "name": "Kuba",
@@ -584,7 +584,7 @@
       "Kubanischer Peso (konvertibel)",
       "Kubanischer Peso"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kuba"
   },
   "CV": {
     "name": "Cabo Verde",
@@ -596,7 +596,7 @@
     "currencyNames": [
       "Cabo-Verde-Escudo"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kap_Verde"
   },
   "CW": {
     "name": "Curaçao",
@@ -609,7 +609,7 @@
     "currencyNames": [
       "Niederländische-Antillen-Gulden"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Curaçao"
   },
   "CY": {
     "name": "Zypern",
@@ -622,7 +622,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Republik_Zypern"
   },
   "CZ": {
     "name": "Tschechien",
@@ -634,7 +634,7 @@
     "currencyNames": [
       "Tschechische Krone"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Tschechien"
   },
   "DE": {
     "name": "Deutschland",
@@ -646,7 +646,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Deutschland"
   },
   "DJ": {
     "name": "Dschibuti",
@@ -659,7 +659,7 @@
     "currencyNames": [
       "Dschibuti-Franc"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Dschibuti"
   },
   "DK": {
     "name": "Dänemark",
@@ -671,7 +671,7 @@
     "currencyNames": [
       "Dänische Krone"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Dänemark"
   },
   "DM": {
     "name": "Dominica",
@@ -683,7 +683,7 @@
     "currencyNames": [
       "Ostkaribischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Dominica"
   },
   "DO": {
     "name": "Dominikanische Republik",
@@ -695,7 +695,7 @@
     "currencyNames": [
       "Dominikanischer Peso"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Dominikanische_Republik"
   },
   "DZ": {
     "name": "Algerien",
@@ -708,7 +708,7 @@
     "currencyNames": [
       "Algerischer Dinar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Algerien"
   },
   "EC": {
     "name": "Ecuador",
@@ -720,7 +720,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Ecuador"
   },
   "EE": {
     "name": "Estland",
@@ -732,7 +732,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Estland"
   },
   "EG": {
     "name": "Ägypten",
@@ -744,7 +744,7 @@
     "currencyNames": [
       "Ägyptisches Pfund"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Ägypten"
   },
   "EH": {
     "name": "Westsahara",
@@ -758,7 +758,7 @@
       "Marokkanischer Dirham",
       "Mauretanischer Ouguiya"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Westsahara"
   },
   "ER": {
     "name": "Eritrea",
@@ -772,7 +772,7 @@
     "currencyNames": [
       "Eritreischer Nakfa"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Eritrea"
   },
   "ES": {
     "name": "Spanien",
@@ -784,7 +784,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Spanien"
   },
   "ET": {
     "name": "Äthiopien",
@@ -796,7 +796,7 @@
     "currencyNames": [
       "Äthiopischer Birr"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Äthiopien"
   },
   "FI": {
     "name": "Finnland",
@@ -809,7 +809,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Finnland"
   },
   "FJ": {
     "name": "Fidschi",
@@ -823,7 +823,7 @@
     "currencyNames": [
       "Fidschi-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Fidschi"
   },
   "FK": {
     "name": "Falklandinseln",
@@ -835,7 +835,7 @@
     "currencyNames": [
       "Falkland-Pfund"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Falklandinseln"
   },
   "FM": {
     "name": "Mikronesien",
@@ -847,7 +847,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Föderierte_Staaten_von_Mikronesien"
   },
   "FO": {
     "name": "Färöer",
@@ -860,7 +860,7 @@
     "currencyNames": [
       "Dänische Krone"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Färöer"
   },
   "FR": {
     "name": "Frankreich",
@@ -872,7 +872,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Frankreich"
   },
   "GA": {
     "name": "Gabun",
@@ -884,7 +884,7 @@
     "currencyNames": [
       "CFA-Franc (BEAC)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Gabun"
   },
   "GB": {
     "name": "Vereinigtes Königreich",
@@ -896,7 +896,7 @@
     "currencyNames": [
       "Britisches Pfund"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Vereinigtes_Königreich"
   },
   "GD": {
     "name": "Grenada",
@@ -908,7 +908,7 @@
     "currencyNames": [
       "Ostkaribischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Grenada"
   },
   "GE": {
     "name": "Georgien",
@@ -920,7 +920,7 @@
     "currencyNames": [
       "Georgischer Lari"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Georgien"
   },
   "GF": {
     "name": "Französisch-Guayana",
@@ -932,7 +932,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Französisch-Guayana"
   },
   "GG": {
     "name": "Guernsey",
@@ -945,7 +945,7 @@
     "currencyNames": [
       "Britisches Pfund"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Bailiwick_of_Guernsey"
   },
   "GH": {
     "name": "Ghana",
@@ -957,7 +957,7 @@
     "currencyNames": [
       "Ghanaischer Cedi"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Ghana"
   },
   "GL": {
     "name": "Grönland",
@@ -969,7 +969,7 @@
     "currencyNames": [
       "Dänische Krone"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Grönland"
   },
   "GM": {
     "name": "Gambia",
@@ -981,7 +981,7 @@
     "currencyNames": [
       "Gambia-Dalasi"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Gambia"
   },
   "GN": {
     "name": "Guinea",
@@ -993,7 +993,7 @@
     "currencyNames": [
       "Guinea-Franc"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Guinea"
   },
   "GP": {
     "name": "Guadeloupe",
@@ -1005,7 +1005,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Guadeloupe"
   },
   "GQ": {
     "name": "Äquatorialguinea",
@@ -1019,7 +1019,7 @@
     "currencyNames": [
       "CFA-Franc (BEAC)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Äquatorialguinea"
   },
   "GR": {
     "name": "Griechenland",
@@ -1031,7 +1031,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Griechenland"
   },
   "GT": {
     "name": "Guatemala",
@@ -1043,7 +1043,7 @@
     "currencyNames": [
       "Guatemaltekischer Quetzal"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Guatemala"
   },
   "GU": {
     "name": "Guam",
@@ -1056,7 +1056,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Guam"
   },
   "GW": {
     "name": "Guinea-Bissau",
@@ -1068,7 +1068,7 @@
     "currencyNames": [
       "CFA-Franc (BCEAO)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Guinea-Bissau"
   },
   "GY": {
     "name": "Guyana",
@@ -1080,7 +1080,7 @@
     "currencyNames": [
       "Guyana-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Guyana"
   },
   "HK": {
     "name": "Hongkong",
@@ -1093,7 +1093,7 @@
     "currencyNames": [
       "Hongkong-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Hongkong"
   },
   "HN": {
     "name": "Honduras",
@@ -1105,7 +1105,7 @@
     "currencyNames": [
       "Honduras-Lempira"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Honduras"
   },
   "HR": {
     "name": "Kroatien",
@@ -1117,7 +1117,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kroatien"
   },
   "HT": {
     "name": "Haiti",
@@ -1130,7 +1130,7 @@
     "currencyNames": [
       "Haitianische Gourde"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Haiti"
   },
   "HU": {
     "name": "Ungarn",
@@ -1142,7 +1142,7 @@
     "currencyNames": [
       "Ungarischer Forint"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Ungarn"
   },
   "ID": {
     "name": "Indonesien",
@@ -1154,7 +1154,7 @@
     "currencyNames": [
       "Indonesische Rupiah"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Indonesien"
   },
   "IE": {
     "name": "Irland",
@@ -1167,7 +1167,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Irland"
   },
   "IL": {
     "name": "Israel",
@@ -1180,7 +1180,7 @@
     "currencyNames": [
       "Israelischer Neuer Schekel"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Israel"
   },
   "IM": {
     "name": "Isle of Man",
@@ -1193,7 +1193,7 @@
     "currencyNames": [
       "Britisches Pfund"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Isle_of_Man"
   },
   "IN": {
     "name": "Indien",
@@ -1206,7 +1206,7 @@
     "currencyNames": [
       "Indische Rupie"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Indien"
   },
   "IQ": {
     "name": "Irak",
@@ -1219,7 +1219,7 @@
     "currencyNames": [
       "Irakischer Dinar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Irak"
   },
   "IR": {
     "name": "Iran",
@@ -1231,7 +1231,7 @@
     "currencyNames": [
       "Iranischer Rial"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Iran"
   },
   "IS": {
     "name": "Island",
@@ -1243,7 +1243,7 @@
     "currencyNames": [
       "Isländische Krone"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Island"
   },
   "IT": {
     "name": "Italien",
@@ -1255,7 +1255,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Italien"
   },
   "JE": {
     "name": "Jersey",
@@ -1268,7 +1268,7 @@
     "currencyNames": [
       "Britisches Pfund"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Jersey"
   },
   "JM": {
     "name": "Jamaika",
@@ -1280,7 +1280,7 @@
     "currencyNames": [
       "Jamaika-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Jamaika"
   },
   "JO": {
     "name": "Jordanien",
@@ -1292,7 +1292,7 @@
     "currencyNames": [
       "Jordanischer Dinar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Jordanien"
   },
   "JP": {
     "name": "Japan",
@@ -1304,7 +1304,7 @@
     "currencyNames": [
       "Japanischer Yen"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Japan"
   },
   "KE": {
     "name": "Kenia",
@@ -1317,7 +1317,7 @@
     "currencyNames": [
       "Kenia-Schilling"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kenia"
   },
   "KG": {
     "name": "Kirgisistan",
@@ -1330,7 +1330,7 @@
     "currencyNames": [
       "Kirgisischer Som"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kirgisistan"
   },
   "KH": {
     "name": "Kambodscha",
@@ -1343,7 +1343,7 @@
       "Kambodschanischer Riel",
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kambodscha"
   },
   "KI": {
     "name": "Kiribati",
@@ -1356,7 +1356,7 @@
     "currencyNames": [
       "Australischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kiribati"
   },
   "KM": {
     "name": "Komoren",
@@ -1370,7 +1370,7 @@
     "currencyNames": [
       "Komoren-Franc"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Komoren"
   },
   "KN": {
     "name": "St. Kitts und Nevis",
@@ -1382,7 +1382,7 @@
     "currencyNames": [
       "Ostkaribischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "St._Kitts_und_Nevis"
   },
   "KP": {
     "name": "Nordkorea",
@@ -1394,7 +1394,7 @@
     "currencyNames": [
       "Nordkoreanischer Won"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Nordkorea"
   },
   "KR": {
     "name": "Südkorea",
@@ -1406,7 +1406,7 @@
     "currencyNames": [
       "Südkoreanischer Won"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Südkorea"
   },
   "KW": {
     "name": "Kuwait",
@@ -1418,7 +1418,7 @@
     "currencyNames": [
       "Kuwait-Dinar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kuwait"
   },
   "KY": {
     "name": "Kaimaninseln",
@@ -1430,7 +1430,7 @@
     "currencyNames": [
       "Kaiman-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Cayman_Islands"
   },
   "KZ": {
     "name": "Kasachstan",
@@ -1443,7 +1443,7 @@
     "currencyNames": [
       "Kasachischer Tenge"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kasachstan"
   },
   "LA": {
     "name": "Laos",
@@ -1455,7 +1455,7 @@
     "currencyNames": [
       "Laotischer Kip"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Laos"
   },
   "LB": {
     "name": "Libanon",
@@ -1467,7 +1467,7 @@
     "currencyNames": [
       "Libanesisches Pfund"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Libanon"
   },
   "LC": {
     "name": "St. Lucia",
@@ -1479,7 +1479,7 @@
     "currencyNames": [
       "Ostkaribischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "St._Lucia"
   },
   "LI": {
     "name": "Liechtenstein",
@@ -1491,7 +1491,7 @@
     "currencyNames": [
       "Schweizer Franken"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Liechtenstein"
   },
   "LK": {
     "name": "Sri Lanka",
@@ -1504,7 +1504,7 @@
     "currencyNames": [
       "Sri-Lanka-Rupie"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Sri_Lanka"
   },
   "LR": {
     "name": "Liberia",
@@ -1516,7 +1516,7 @@
     "currencyNames": [
       "Liberianischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Liberia"
   },
   "LS": {
     "name": "Lesotho",
@@ -1530,7 +1530,7 @@
       "Loti",
       "Südafrikanischer Rand"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Lesotho"
   },
   "LT": {
     "name": "Litauen",
@@ -1542,7 +1542,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Litauen"
   },
   "LU": {
     "name": "Luxemburg",
@@ -1556,7 +1556,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Luxemburg"
   },
   "LV": {
     "name": "Lettland",
@@ -1568,7 +1568,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Lettland"
   },
   "LY": {
     "name": "Libyen",
@@ -1580,7 +1580,7 @@
     "currencyNames": [
       "Libyscher Dinar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Libyen"
   },
   "MA": {
     "name": "Marokko",
@@ -1593,7 +1593,7 @@
     "currencyNames": [
       "Marokkanischer Dirham"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Marokko"
   },
   "MC": {
     "name": "Monaco",
@@ -1605,7 +1605,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Monaco"
   },
   "MD": {
     "name": "Republik Moldau",
@@ -1617,7 +1617,7 @@
     "currencyNames": [
       "Moldau-Leu"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Republik_Moldau"
   },
   "ME": {
     "name": "Montenegro",
@@ -1629,7 +1629,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Montenegro"
   },
   "MF": {
     "name": "St. Martin",
@@ -1641,7 +1641,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Saint-Martin_(Gebietskörperschaft)"
   },
   "MG": {
     "name": "Madagaskar",
@@ -1654,7 +1654,7 @@
     "currencyNames": [
       "Madagaskar-Ariary"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Madagaskar"
   },
   "MH": {
     "name": "Marshallinseln",
@@ -1667,7 +1667,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Marshallinseln"
   },
   "MK": {
     "name": "Nordmazedonien",
@@ -1679,7 +1679,7 @@
     "currencyNames": [
       "Mazedonischer Denar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Nordmazedonien"
   },
   "ML": {
     "name": "Mali",
@@ -1691,7 +1691,7 @@
     "currencyNames": [
       "CFA-Franc (BCEAO)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Mali"
   },
   "MM": {
     "name": "Myanmar",
@@ -1703,7 +1703,7 @@
     "currencyNames": [
       "Myanmarischer Kyat"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Myanmar"
   },
   "MN": {
     "name": "Mongolei",
@@ -1715,7 +1715,7 @@
     "currencyNames": [
       "Mongolischer Tögrög"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Mongolei"
   },
   "MO": {
     "name": "Macau",
@@ -1728,7 +1728,7 @@
     "currencyNames": [
       "Macao-Pataca"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Macau"
   },
   "MP": {
     "name": "Nördliche Marianen",
@@ -1742,7 +1742,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Nördliche_Marianen"
   },
   "MQ": {
     "name": "Martinique",
@@ -1754,7 +1754,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Martinique"
   },
   "MR": {
     "name": "Mauretanien",
@@ -1766,7 +1766,7 @@
     "currencyNames": [
       "Mauretanischer Ouguiya"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Mauretanien"
   },
   "MS": {
     "name": "Montserrat",
@@ -1778,7 +1778,7 @@
     "currencyNames": [
       "Ostkaribischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Montserrat"
   },
   "MT": {
     "name": "Malta",
@@ -1791,7 +1791,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Malta"
   },
   "MU": {
     "name": "Mauritius",
@@ -1804,7 +1804,7 @@
     "currencyNames": [
       "Mauritius-Rupie"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Mauritius"
   },
   "MV": {
     "name": "Malediven",
@@ -1816,7 +1816,7 @@
     "currencyNames": [
       "Malediven-Rufiyaa"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Malediven"
   },
   "MW": {
     "name": "Malawi",
@@ -1829,7 +1829,7 @@
     "currencyNames": [
       "Malawi-Kwacha"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Malawi"
   },
   "MX": {
     "name": "Mexiko",
@@ -1841,7 +1841,7 @@
     "currencyNames": [
       "Mexikanischer Peso"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Mexiko"
   },
   "MY": {
     "name": "Malaysia",
@@ -1853,7 +1853,7 @@
     "currencyNames": [
       "Malaysischer Ringgit"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Malaysia"
   },
   "MZ": {
     "name": "Mosambik",
@@ -1865,7 +1865,7 @@
     "currencyNames": [
       "Mosambikanischer Metical"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Mosambik"
   },
   "NA": {
     "name": "Namibia",
@@ -1878,7 +1878,7 @@
       "Namibia-Dollar",
       "Südafrikanischer Rand"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Namibia"
   },
   "NC": {
     "name": "Neukaledonien",
@@ -1890,7 +1890,7 @@
     "currencyNames": [
       "CFP-Franc"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Neukaledonien"
   },
   "NE": {
     "name": "Niger",
@@ -1902,7 +1902,7 @@
     "currencyNames": [
       "CFA-Franc (BCEAO)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Niger"
   },
   "NF": {
     "name": "Norfolkinsel",
@@ -1914,7 +1914,7 @@
     "currencyNames": [
       "Australischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Norfolkinsel"
   },
   "NG": {
     "name": "Nigeria",
@@ -1926,7 +1926,7 @@
     "currencyNames": [
       "Nigerianischer Naira"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Nigeria"
   },
   "NI": {
     "name": "Nicaragua",
@@ -1938,7 +1938,7 @@
     "currencyNames": [
       "Nicaragua-Córdoba"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Nicaragua"
   },
   "NL": {
     "name": "Niederlande",
@@ -1950,7 +1950,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Königreich_der_Niederlande"
   },
   "NO": {
     "name": "Norwegen",
@@ -1962,7 +1962,7 @@
     "currencyNames": [
       "Norwegische Krone"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Norwegen"
   },
   "NP": {
     "name": "Nepal",
@@ -1974,7 +1974,7 @@
     "currencyNames": [
       "Nepalesische Rupie"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Nepal"
   },
   "NR": {
     "name": "Nauru",
@@ -1987,7 +1987,7 @@
     "currencyNames": [
       "Australischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Nauru"
   },
   "NU": {
     "name": "Niue",
@@ -2000,7 +2000,7 @@
     "currencyNames": [
       "Neuseeland-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Niue"
   },
   "NZ": {
     "name": "Neuseeland",
@@ -2013,7 +2013,7 @@
     "currencyNames": [
       "Neuseeland-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Neuseeland"
   },
   "OM": {
     "name": "Oman",
@@ -2025,7 +2025,7 @@
     "currencyNames": [
       "Omanischer Rial"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Oman"
   },
   "PA": {
     "name": "Panama",
@@ -2038,7 +2038,7 @@
       "Panamaischer Balboa",
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Panama"
   },
   "PE": {
     "name": "Peru",
@@ -2052,7 +2052,7 @@
     "currencyNames": [
       "Peruanischer Sol"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Peru"
   },
   "PF": {
     "name": "Französisch-Polynesien",
@@ -2064,7 +2064,7 @@
     "currencyNames": [
       "CFP-Franc"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Französisch-Polynesien"
   },
   "PG": {
     "name": "Papua-Neuguinea",
@@ -2078,7 +2078,7 @@
     "currencyNames": [
       "Papua-neuguineischer Kina"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Papua-Neuguinea"
   },
   "PH": {
     "name": "Philippinen",
@@ -2091,7 +2091,7 @@
     "currencyNames": [
       "Philippinischer Peso"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Philippinen"
   },
   "PK": {
     "name": "Pakistan",
@@ -2104,7 +2104,7 @@
     "currencyNames": [
       "Pakistanische Rupie"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Pakistan"
   },
   "PL": {
     "name": "Polen",
@@ -2116,7 +2116,7 @@
     "currencyNames": [
       "Polnischer Złoty"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Polen"
   },
   "PM": {
     "name": "St. Pierre und Miquelon",
@@ -2128,7 +2128,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Saint-Pierre_und_Miquelon"
   },
   "PN": {
     "name": "Pitcairninseln",
@@ -2140,7 +2140,7 @@
     "currencyNames": [
       "Neuseeland-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Pitcairninseln"
   },
   "PR": {
     "name": "Puerto Rico",
@@ -2153,7 +2153,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Puerto_Rico"
   },
   "PS": {
     "name": "Palästina",
@@ -2167,7 +2167,7 @@
       "Israelischer Neuer Schekel",
       "Jordanischer Dinar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Palästina_(Staat)"
   },
   "PT": {
     "name": "Portugal",
@@ -2179,7 +2179,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Portugal"
   },
   "PW": {
     "name": "Palau",
@@ -2192,7 +2192,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Palau"
   },
   "PY": {
     "name": "Paraguay",
@@ -2205,7 +2205,7 @@
     "currencyNames": [
       "Paraguayischer Guaraní"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Paraguay"
   },
   "QA": {
     "name": "Katar",
@@ -2217,7 +2217,7 @@
     "currencyNames": [
       "Katar-Riyal"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Katar"
   },
   "RE": {
     "name": "Réunion",
@@ -2229,7 +2229,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Réunion"
   },
   "RO": {
     "name": "Rumänien",
@@ -2241,7 +2241,7 @@
     "currencyNames": [
       "Rumänischer Leu"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Rumänien"
   },
   "RS": {
     "name": "Serbien",
@@ -2253,7 +2253,7 @@
     "currencyNames": [
       "Serbischer Dinar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Serbien"
   },
   "RU": {
     "name": "Russland",
@@ -2265,7 +2265,7 @@
     "currencyNames": [
       "Russischer Rubel"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Russland"
   },
   "RW": {
     "name": "Ruanda",
@@ -2279,7 +2279,7 @@
     "currencyNames": [
       "Ruanda-Franc"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Ruanda"
   },
   "SA": {
     "name": "Saudi-Arabien",
@@ -2291,7 +2291,7 @@
     "currencyNames": [
       "Saudi-Rial"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Saudi-Arabien"
   },
   "SB": {
     "name": "Salomonen",
@@ -2303,7 +2303,7 @@
     "currencyNames": [
       "Salomonen-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Salomonen"
   },
   "SC": {
     "name": "Seychellen",
@@ -2317,7 +2317,7 @@
     "currencyNames": [
       "Seychellen-Rupie"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Seychellen"
   },
   "SD": {
     "name": "Sudan",
@@ -2330,7 +2330,7 @@
     "currencyNames": [
       "Sudanesisches Pfund"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Sudan"
   },
   "SE": {
     "name": "Schweden",
@@ -2342,7 +2342,7 @@
     "currencyNames": [
       "Schwedische Krone"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Schweden"
   },
   "SG": {
     "name": "Singapur",
@@ -2357,7 +2357,7 @@
     "currencyNames": [
       "Singapur-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Singapur"
   },
   "SH": {
     "name": "St. Helena",
@@ -2370,7 +2370,7 @@
       "Britisches Pfund",
       "St.-Helena-Pfund"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "St._Helena,_Ascension_und_Tristan_da_Cunha"
   },
   "SI": {
     "name": "Slowenien",
@@ -2382,7 +2382,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Slowenien"
   },
   "SK": {
     "name": "Slowakei",
@@ -2394,7 +2394,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Slowakei"
   },
   "SL": {
     "name": "Sierra Leone",
@@ -2406,7 +2406,7 @@
     "currencyNames": [
       "Sierra-leonischer Leone"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Sierra_Leone"
   },
   "SM": {
     "name": "San Marino",
@@ -2418,7 +2418,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "San_Marino"
   },
   "SN": {
     "name": "Senegal",
@@ -2430,7 +2430,7 @@
     "currencyNames": [
       "CFA-Franc (BCEAO)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Senegal"
   },
   "SO": {
     "name": "Somalia",
@@ -2443,7 +2443,7 @@
     "currencyNames": [
       "Somalia-Schilling"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Somalia"
   },
   "SR": {
     "name": "Suriname",
@@ -2455,7 +2455,7 @@
     "currencyNames": [
       "Suriname-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Suriname"
   },
   "SS": {
     "name": "Südsudan",
@@ -2467,7 +2467,7 @@
     "currencyNames": [
       "Südsudanesisches Pfund"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Südsudan"
   },
   "ST": {
     "name": "São Tomé und Príncipe",
@@ -2479,7 +2479,7 @@
     "currencyNames": [
       "São-toméischer Dobra"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "São_Tomé_und_Príncipe"
   },
   "SV": {
     "name": "El Salvador",
@@ -2491,7 +2491,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "El_Salvador"
   },
   "SX": {
     "name": "Sint Maarten",
@@ -2504,7 +2504,7 @@
     "currencyNames": [
       "Niederländische-Antillen-Gulden"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Sint_Maarten"
   },
   "SY": {
     "name": "Syrien",
@@ -2516,7 +2516,7 @@
     "currencyNames": [
       "Syrisches Pfund"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Syrien"
   },
   "SZ": {
     "name": "Eswatini",
@@ -2530,7 +2530,7 @@
       "Swasiländischer Lilangeni",
       "Südafrikanischer Rand"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Eswatini"
   },
   "TC": {
     "name": "Turks- und Caicosinseln",
@@ -2542,7 +2542,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Turks-_und_Caicosinseln"
   },
   "TD": {
     "name": "Tschad",
@@ -2555,7 +2555,7 @@
     "currencyNames": [
       "CFA-Franc (BEAC)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Tschad"
   },
   "TG": {
     "name": "Togo",
@@ -2567,7 +2567,7 @@
     "currencyNames": [
       "CFA-Franc (BCEAO)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Togo"
   },
   "TH": {
     "name": "Thailand",
@@ -2579,7 +2579,7 @@
     "currencyNames": [
       "Thailändischer Baht"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Thailand"
   },
   "TJ": {
     "name": "Tadschikistan",
@@ -2591,7 +2591,7 @@
     "currencyNames": [
       "Tadschikistan-Somoni"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Tadschikistan"
   },
   "TL": {
     "name": "Osttimor",
@@ -2604,7 +2604,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Osttimor"
   },
   "TM": {
     "name": "Turkmenistan",
@@ -2616,7 +2616,7 @@
     "currencyNames": [
       "Turkmenistan-Manat"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Turkmenistan"
   },
   "TN": {
     "name": "Tunesien",
@@ -2628,7 +2628,7 @@
     "currencyNames": [
       "Tunesischer Dinar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Tunesien"
   },
   "TO": {
     "name": "Tonga",
@@ -2641,7 +2641,7 @@
     "currencyNames": [
       "Tongaischer Paʻanga"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Tonga"
   },
   "TR": {
     "name": "Türkei",
@@ -2653,7 +2653,7 @@
     "currencyNames": [
       "Türkische Lira"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Türkei"
   },
   "TT": {
     "name": "Trinidad und Tobago",
@@ -2665,7 +2665,7 @@
     "currencyNames": [
       "Trinidad-und-Tobago-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Trinidad_und_Tobago"
   },
   "TV": {
     "name": "Tuvalu",
@@ -2678,7 +2678,7 @@
     "currencyNames": [
       "Australischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Tuvalu"
   },
   "TW": {
     "name": "Taiwan",
@@ -2690,7 +2690,7 @@
     "currencyNames": [
       "Neuer Taiwan-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Republik_China_(Taiwan)"
   },
   "TZ": {
     "name": "Tansania",
@@ -2703,7 +2703,7 @@
     "currencyNames": [
       "Tansania-Schilling"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Tansania"
   },
   "UA": {
     "name": "Ukraine",
@@ -2715,7 +2715,7 @@
     "currencyNames": [
       "Ukrainische Hrywnja"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Ukraine"
   },
   "UG": {
     "name": "Uganda",
@@ -2728,7 +2728,7 @@
     "currencyNames": [
       "Uganda-Schilling"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Uganda"
   },
   "US": {
     "name": "Vereinigte Staaten",
@@ -2740,7 +2740,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Vereinigte_Staaten"
   },
   "UY": {
     "name": "Uruguay",
@@ -2752,7 +2752,7 @@
     "currencyNames": [
       "Uruguayischer Peso"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Uruguay"
   },
   "UZ": {
     "name": "Usbekistan",
@@ -2764,7 +2764,7 @@
     "currencyNames": [
       "Usbekistan-Sum"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Usbekistan"
   },
   "VA": {
     "name": "Vatikanstadt",
@@ -2777,7 +2777,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Vatikanstadt"
   },
   "VC": {
     "name": "St. Vincent und die Grenadinen",
@@ -2789,7 +2789,7 @@
     "currencyNames": [
       "Ostkaribischer Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "St._Vincent_und_die_Grenadinen"
   },
   "VE": {
     "name": "Venezuela",
@@ -2801,7 +2801,7 @@
     "currencyNames": [
       "Venezolanischer Bolívar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Venezuela"
   },
   "VG": {
     "name": "Britische Jungferninseln",
@@ -2813,7 +2813,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Britische_Jungferninseln"
   },
   "VI": {
     "name": "Amerikanische Jungferninseln",
@@ -2825,7 +2825,7 @@
     "currencyNames": [
       "US-Dollar"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Amerikanische_Jungferninseln"
   },
   "VN": {
     "name": "Vietnam",
@@ -2837,7 +2837,7 @@
     "currencyNames": [
       "Vietnamesischer Dong"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Vietnam"
   },
   "VU": {
     "name": "Vanuatu",
@@ -2851,7 +2851,7 @@
     "currencyNames": [
       "Vanuatu-Vatu"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Vanuatu"
   },
   "WF": {
     "name": "Wallis und Futuna",
@@ -2863,7 +2863,7 @@
     "currencyNames": [
       "CFP-Franc"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Wallis_und_Futuna"
   },
   "WS": {
     "name": "Samoa",
@@ -2876,7 +2876,7 @@
     "currencyNames": [
       "Samoanischer Tala"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Samoa"
   },
   "XK": {
     "name": "Kosovo",
@@ -2889,7 +2889,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Kosovo"
   },
   "YE": {
     "name": "Jemen",
@@ -2901,7 +2901,7 @@
     "currencyNames": [
       "Jemen-Rial"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Jemen"
   },
   "YT": {
     "name": "Mayotte",
@@ -2913,7 +2913,7 @@
     "currencyNames": [
       "Euro"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Mayotte"
   },
   "ZA": {
     "name": "Südafrika",
@@ -2928,7 +2928,7 @@
     "currencyNames": [
       "Südafrikanischer Rand"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Südafrika"
   },
   "ZM": {
     "name": "Sambia",
@@ -2940,7 +2940,7 @@
     "currencyNames": [
       "Kwacha"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Sambia"
   },
   "ZW": {
     "name": "Simbabwe",
@@ -2954,6 +2954,6 @@
     "currencyNames": [
       "Simbabwe-Dollar (2009)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "Simbabwe"
   }
 }

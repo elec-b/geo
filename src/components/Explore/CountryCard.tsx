@@ -66,7 +66,7 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
 
   // URL de Wikipedia derivada del slug
   // El slug puede tener prefijo de idioma (ej: "en:Spain") si el artículo no existe en el idioma activo
-  const wikiLangBase = locale.startsWith('zh') ? (locale === 'zh-Hans' ? 'zh' : 'zh') : locale.split('-')[0];
+  const wikiLangBase = locale.startsWith('zh') ? 'zh' : locale === 'nb' ? 'no' : locale.split('-')[0];
   const wikipediaUrl = country.wikipediaSlug
     ? (() => {
         const hasLangPrefix = country.wikipediaSlug.includes(':') && !country.wikipediaSlug.startsWith('http');

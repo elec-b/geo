@@ -9,7 +9,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "안도라"
   },
   "AE": {
     "name": "아랍에미리트",
@@ -21,7 +21,7 @@
     "currencyNames": [
       "아랍에미리트 디르함"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "아랍에미리트"
   },
   "AF": {
     "name": "아프가니스탄",
@@ -34,7 +34,7 @@
     "currencyNames": [
       "아프가니스탄 아프가니"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "아프가니스탄"
   },
   "AG": {
     "name": "앤티가 바부다",
@@ -46,7 +46,7 @@
     "currencyNames": [
       "동카리브 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "앤티가_바부다"
   },
   "AI": {
     "name": "앵귈라",
@@ -58,7 +58,7 @@
     "currencyNames": [
       "동카리브 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "앵귈라"
   },
   "AL": {
     "name": "알바니아",
@@ -70,7 +70,7 @@
     "currencyNames": [
       "알바니아 레크"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "알바니아"
   },
   "AM": {
     "name": "아르메니아",
@@ -82,7 +82,7 @@
     "currencyNames": [
       "아르메니아 드람"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "아르메니아"
   },
   "AO": {
     "name": "앙골라",
@@ -94,7 +94,7 @@
     "currencyNames": [
       "앙골라 콴자"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "앙골라"
   },
   "AR": {
     "name": "아르헨티나",
@@ -106,7 +106,7 @@
     "currencyNames": [
       "아르헨티나 페소"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "아르헨티나"
   },
   "AS": {
     "name": "아메리칸 사모아",
@@ -119,7 +119,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "아메리칸사모아"
   },
   "AT": {
     "name": "오스트리아",
@@ -131,7 +131,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "오스트리아"
   },
   "AU": {
     "name": "오스트레일리아",
@@ -143,7 +143,7 @@
     "currencyNames": [
       "호주 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "오스트레일리아"
   },
   "AW": {
     "name": "아루바",
@@ -156,7 +156,7 @@
     "currencyNames": [
       "아루바 플로린"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "아루바"
   },
   "AX": {
     "name": "올란드 제도",
@@ -168,7 +168,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "올란드_제도"
   },
   "AZ": {
     "name": "아제르바이잔",
@@ -180,7 +180,7 @@
     "currencyNames": [
       "아제르바이잔 마나트"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "아제르바이잔"
   },
   "BA": {
     "name": "보스니아 헤르체고비나",
@@ -194,7 +194,7 @@
     "currencyNames": [
       "보스니아-헤르체고비나 태환 마르크"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "보스니아_헤르체고비나"
   },
   "BB": {
     "name": "바베이도스",
@@ -206,7 +206,7 @@
     "currencyNames": [
       "바베이도스 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "바베이도스"
   },
   "BD": {
     "name": "방글라데시",
@@ -218,7 +218,7 @@
     "currencyNames": [
       "방글라데시 타카"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "방글라데시"
   },
   "BE": {
     "name": "벨기에",
@@ -232,7 +232,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "벨기에"
   },
   "BF": {
     "name": "부르키나파소",
@@ -244,7 +244,7 @@
     "currencyNames": [
       "서아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "부르키나파소"
   },
   "BG": {
     "name": "불가리아",
@@ -256,7 +256,7 @@
     "currencyNames": [
       "불가리아 레프"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "불가리아"
   },
   "BH": {
     "name": "바레인",
@@ -268,7 +268,7 @@
     "currencyNames": [
       "바레인 디나르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "바레인"
   },
   "BI": {
     "name": "부룬디",
@@ -281,7 +281,7 @@
     "currencyNames": [
       "부룬디 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "부룬디"
   },
   "BJ": {
     "name": "베냉",
@@ -293,7 +293,7 @@
     "currencyNames": [
       "서아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "베냉"
   },
   "BL": {
     "name": "생바르텔레미",
@@ -305,7 +305,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "생바르텔레미"
   },
   "BM": {
     "name": "버뮤다",
@@ -317,7 +317,7 @@
     "currencyNames": [
       "버뮤다 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "버뮤다"
   },
   "BN": {
     "name": "브루나이",
@@ -330,7 +330,7 @@
       "부루나이 달러",
       "싱가포르 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "브루나이"
   },
   "BO": {
     "name": "볼리비아",
@@ -344,7 +344,7 @@
     "currencyNames": [
       "볼리비아 볼리비아노"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "볼리비아"
   },
   "BR": {
     "name": "브라질",
@@ -356,7 +356,7 @@
     "currencyNames": [
       "브라질 레알"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "브라질"
   },
   "BS": {
     "name": "바하마",
@@ -369,7 +369,7 @@
       "바하마 달러",
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "바하마"
   },
   "BT": {
     "name": "부탄",
@@ -382,7 +382,7 @@
       "부탄 눌투눔",
       "인도 루피"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "부탄"
   },
   "BW": {
     "name": "보츠와나",
@@ -395,7 +395,7 @@
     "currencyNames": [
       "보츠와나 풀라"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "보츠와나"
   },
   "BY": {
     "name": "벨라루스",
@@ -408,7 +408,7 @@
     "currencyNames": [
       "벨라루스 루블"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "벨라루스"
   },
   "BZ": {
     "name": "벨리즈",
@@ -420,7 +420,7 @@
     "currencyNames": [
       "벨리즈 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "벨리즈"
   },
   "CA": {
     "name": "캐나다",
@@ -433,7 +433,7 @@
     "currencyNames": [
       "캐나다 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "캐나다"
   },
   "CD": {
     "name": "콩고-킨샤사",
@@ -445,7 +445,7 @@
     "currencyNames": [
       "콩고 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "콩고_민주_공화국"
   },
   "CF": {
     "name": "중앙 아프리카 공화국",
@@ -458,7 +458,7 @@
     "currencyNames": [
       "중앙아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "중앙아프리카_공화국"
   },
   "CG": {
     "name": "콩고-브라자빌",
@@ -470,7 +470,7 @@
     "currencyNames": [
       "중앙아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "콩고_공화국"
   },
   "CH": {
     "name": "스위스",
@@ -485,7 +485,7 @@
     "currencyNames": [
       "스위스 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "스위스"
   },
   "CI": {
     "name": "코트디부아르",
@@ -497,7 +497,7 @@
     "currencyNames": [
       "서아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "코트디부아르"
   },
   "CK": {
     "name": "쿡 제도",
@@ -510,7 +510,7 @@
     "currencyNames": [
       "뉴질랜드 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "쿡_제도"
   },
   "CL": {
     "name": "칠레",
@@ -522,7 +522,7 @@
     "currencyNames": [
       "칠레 페소"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "칠레"
   },
   "CM": {
     "name": "카메룬",
@@ -535,7 +535,7 @@
     "currencyNames": [
       "중앙아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "카메룬"
   },
   "CN": {
     "name": "중국",
@@ -547,7 +547,7 @@
     "currencyNames": [
       "중국 위안화"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "중화인민공화국"
   },
   "CO": {
     "name": "콜롬비아",
@@ -559,7 +559,7 @@
     "currencyNames": [
       "콜롬비아 페소"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "콜롬비아"
   },
   "CR": {
     "name": "코스타리카",
@@ -571,7 +571,7 @@
     "currencyNames": [
       "코스타리카 콜론"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "코스타리카"
   },
   "CU": {
     "name": "쿠바",
@@ -584,7 +584,7 @@
       "쿠바 태환 페소",
       "쿠바 페소"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "쿠바"
   },
   "CV": {
     "name": "카보베르데",
@@ -596,7 +596,7 @@
     "currencyNames": [
       "카보베르데 에스쿠도"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "카보베르데"
   },
   "CW": {
     "name": "퀴라소",
@@ -609,7 +609,7 @@
     "currencyNames": [
       "네덜란드령 안틸레스 길더"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "퀴라소"
   },
   "CY": {
     "name": "키프로스",
@@ -622,7 +622,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "키프로스"
   },
   "CZ": {
     "name": "체코",
@@ -634,7 +634,7 @@
     "currencyNames": [
       "체코 코루나"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "체코"
   },
   "DE": {
     "name": "독일",
@@ -646,7 +646,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "독일"
   },
   "DJ": {
     "name": "지부티",
@@ -659,7 +659,7 @@
     "currencyNames": [
       "지부티 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "지부티"
   },
   "DK": {
     "name": "덴마크",
@@ -671,7 +671,7 @@
     "currencyNames": [
       "덴마크 크로네"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "덴마크"
   },
   "DM": {
     "name": "도미니카",
@@ -683,7 +683,7 @@
     "currencyNames": [
       "동카리브 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "도미니카_연방"
   },
   "DO": {
     "name": "도미니카 공화국",
@@ -695,7 +695,7 @@
     "currencyNames": [
       "도미니카 페소"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "도미니카_공화국"
   },
   "DZ": {
     "name": "알제리",
@@ -708,7 +708,7 @@
     "currencyNames": [
       "알제리 디나르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "알제리"
   },
   "EC": {
     "name": "에콰도르",
@@ -720,7 +720,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "에콰도르"
   },
   "EE": {
     "name": "에스토니아",
@@ -732,7 +732,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "에스토니아"
   },
   "EG": {
     "name": "이집트",
@@ -744,7 +744,7 @@
     "currencyNames": [
       "이집트 파운드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "이집트"
   },
   "EH": {
     "name": "서사하라",
@@ -758,7 +758,7 @@
       "모로코 디르함",
       "모리타니 우기야"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "서사하라"
   },
   "ER": {
     "name": "에리트리아",
@@ -772,7 +772,7 @@
     "currencyNames": [
       "에리트리아 나크파"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "에리트레아"
   },
   "ES": {
     "name": "스페인",
@@ -784,7 +784,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "스페인"
   },
   "ET": {
     "name": "에티오피아",
@@ -796,7 +796,7 @@
     "currencyNames": [
       "에티오피아 비르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "에티오피아"
   },
   "FI": {
     "name": "핀란드",
@@ -809,7 +809,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "핀란드"
   },
   "FJ": {
     "name": "피지",
@@ -823,7 +823,7 @@
     "currencyNames": [
       "피지 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "피지"
   },
   "FK": {
     "name": "포클랜드 제도",
@@ -835,7 +835,7 @@
     "currencyNames": [
       "포클랜드제도 파운드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "포클랜드_제도"
   },
   "FM": {
     "name": "미크로네시아",
@@ -847,7 +847,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "미크로네시아_연방"
   },
   "FO": {
     "name": "페로 제도",
@@ -860,7 +860,7 @@
     "currencyNames": [
       "덴마크 크로네"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "페로_제도"
   },
   "FR": {
     "name": "프랑스",
@@ -872,7 +872,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "프랑스"
   },
   "GA": {
     "name": "가봉",
@@ -884,7 +884,7 @@
     "currencyNames": [
       "중앙아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "가봉"
   },
   "GB": {
     "name": "영국",
@@ -896,7 +896,7 @@
     "currencyNames": [
       "영국 파운드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "영국"
   },
   "GD": {
     "name": "그레나다",
@@ -908,7 +908,7 @@
     "currencyNames": [
       "동카리브 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "그레나다"
   },
   "GE": {
     "name": "조지아",
@@ -920,7 +920,7 @@
     "currencyNames": [
       "조지아 라리"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "조지아"
   },
   "GF": {
     "name": "프랑스령 기아나",
@@ -932,7 +932,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "프랑스령_기아나"
   },
   "GG": {
     "name": "건지",
@@ -945,7 +945,7 @@
     "currencyNames": [
       "영국 파운드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "건지_관할구"
   },
   "GH": {
     "name": "가나",
@@ -957,7 +957,7 @@
     "currencyNames": [
       "가나 세디"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "가나"
   },
   "GL": {
     "name": "그린란드",
@@ -969,7 +969,7 @@
     "currencyNames": [
       "덴마크 크로네"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "그린란드"
   },
   "GM": {
     "name": "감비아",
@@ -981,7 +981,7 @@
     "currencyNames": [
       "감비아 달라시"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "감비아"
   },
   "GN": {
     "name": "기니",
@@ -993,7 +993,7 @@
     "currencyNames": [
       "기니 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "기니"
   },
   "GP": {
     "name": "과들루프",
@@ -1005,7 +1005,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "과들루프"
   },
   "GQ": {
     "name": "적도 기니",
@@ -1019,7 +1019,7 @@
     "currencyNames": [
       "중앙아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "적도_기니"
   },
   "GR": {
     "name": "그리스",
@@ -1031,7 +1031,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "그리스"
   },
   "GT": {
     "name": "과테말라",
@@ -1043,7 +1043,7 @@
     "currencyNames": [
       "과테말라 케트살"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "과테말라"
   },
   "GU": {
     "name": "괌",
@@ -1056,7 +1056,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "괌"
   },
   "GW": {
     "name": "기니비사우",
@@ -1068,7 +1068,7 @@
     "currencyNames": [
       "서아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "기니비사우"
   },
   "GY": {
     "name": "가이아나",
@@ -1080,7 +1080,7 @@
     "currencyNames": [
       "가이아나 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "가이아나"
   },
   "HK": {
     "name": "홍콩",
@@ -1093,7 +1093,7 @@
     "currencyNames": [
       "홍콩 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "홍콩"
   },
   "HN": {
     "name": "온두라스",
@@ -1105,7 +1105,7 @@
     "currencyNames": [
       "온두라스 렘피라"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "온두라스"
   },
   "HR": {
     "name": "크로아티아",
@@ -1117,7 +1117,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "크로아티아"
   },
   "HT": {
     "name": "아이티",
@@ -1130,7 +1130,7 @@
     "currencyNames": [
       "아이티 구르드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "아이티"
   },
   "HU": {
     "name": "헝가리",
@@ -1142,7 +1142,7 @@
     "currencyNames": [
       "헝가리 포린트"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "헝가리"
   },
   "ID": {
     "name": "인도네시아",
@@ -1154,7 +1154,7 @@
     "currencyNames": [
       "인도네시아 루피아"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "인도네시아"
   },
   "IE": {
     "name": "아일랜드",
@@ -1167,7 +1167,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "아일랜드"
   },
   "IL": {
     "name": "이스라엘",
@@ -1180,7 +1180,7 @@
     "currencyNames": [
       "이스라엘 신권 세켈"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "이스라엘"
   },
   "IM": {
     "name": "맨섬",
@@ -1193,7 +1193,7 @@
     "currencyNames": [
       "영국 파운드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "맨섬"
   },
   "IN": {
     "name": "인도",
@@ -1206,7 +1206,7 @@
     "currencyNames": [
       "인도 루피"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "인도"
   },
   "IQ": {
     "name": "이라크",
@@ -1219,7 +1219,7 @@
     "currencyNames": [
       "이라크 디나르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "이라크"
   },
   "IR": {
     "name": "이란",
@@ -1231,7 +1231,7 @@
     "currencyNames": [
       "이란 리얄"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "이란"
   },
   "IS": {
     "name": "아이슬란드",
@@ -1243,7 +1243,7 @@
     "currencyNames": [
       "아이슬란드 크로나"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "아이슬란드"
   },
   "IT": {
     "name": "이탈리아",
@@ -1255,7 +1255,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "이탈리아"
   },
   "JE": {
     "name": "저지",
@@ -1268,7 +1268,7 @@
     "currencyNames": [
       "영국 파운드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "저지섬"
   },
   "JM": {
     "name": "자메이카",
@@ -1280,7 +1280,7 @@
     "currencyNames": [
       "자메이카 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "자메이카"
   },
   "JO": {
     "name": "요르단",
@@ -1292,7 +1292,7 @@
     "currencyNames": [
       "요르단 디나르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "요르단"
   },
   "JP": {
     "name": "일본",
@@ -1304,7 +1304,7 @@
     "currencyNames": [
       "일본 엔화"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "일본"
   },
   "KE": {
     "name": "케냐",
@@ -1317,7 +1317,7 @@
     "currencyNames": [
       "케냐 실링"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "케냐"
   },
   "KG": {
     "name": "키르기스스탄",
@@ -1330,7 +1330,7 @@
     "currencyNames": [
       "키르기스스탄 솜"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "키르기스스탄"
   },
   "KH": {
     "name": "캄보디아",
@@ -1343,7 +1343,7 @@
       "캄보디아 리엘",
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "캄보디아"
   },
   "KI": {
     "name": "키리바시",
@@ -1356,7 +1356,7 @@
     "currencyNames": [
       "호주 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "키리바시"
   },
   "KM": {
     "name": "코모로",
@@ -1370,7 +1370,7 @@
     "currencyNames": [
       "코모르 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "코모로"
   },
   "KN": {
     "name": "세인트키츠 네비스",
@@ -1382,7 +1382,7 @@
     "currencyNames": [
       "동카리브 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "세인트키츠_네비스"
   },
   "KP": {
     "name": "북한",
@@ -1394,7 +1394,7 @@
     "currencyNames": [
       "조선 민주주의 인민 공화국 원"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "조선민주주의인민공화국"
   },
   "KR": {
     "name": "대한민국",
@@ -1406,7 +1406,7 @@
     "currencyNames": [
       "대한민국 원"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "대한민국"
   },
   "KW": {
     "name": "쿠웨이트",
@@ -1418,7 +1418,7 @@
     "currencyNames": [
       "쿠웨이트 디나르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "쿠웨이트"
   },
   "KY": {
     "name": "케이맨 제도",
@@ -1430,7 +1430,7 @@
     "currencyNames": [
       "케이맨 제도 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "케이맨_제도"
   },
   "KZ": {
     "name": "카자흐스탄",
@@ -1443,7 +1443,7 @@
     "currencyNames": [
       "카자흐스탄 텡게"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "카자흐스탄"
   },
   "LA": {
     "name": "라오스",
@@ -1455,7 +1455,7 @@
     "currencyNames": [
       "라오스 키프"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "라오스"
   },
   "LB": {
     "name": "레바논",
@@ -1467,7 +1467,7 @@
     "currencyNames": [
       "레바논 파운드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "레바논"
   },
   "LC": {
     "name": "세인트루시아",
@@ -1479,7 +1479,7 @@
     "currencyNames": [
       "동카리브 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "세인트루시아"
   },
   "LI": {
     "name": "리히텐슈타인",
@@ -1491,7 +1491,7 @@
     "currencyNames": [
       "스위스 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "리히텐슈타인"
   },
   "LK": {
     "name": "스리랑카",
@@ -1504,7 +1504,7 @@
     "currencyNames": [
       "스리랑카 루피"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "스리랑카"
   },
   "LR": {
     "name": "라이베리아",
@@ -1516,7 +1516,7 @@
     "currencyNames": [
       "라이베리아 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "라이베리아"
   },
   "LS": {
     "name": "레소토",
@@ -1530,7 +1530,7 @@
       "레소토 로티",
       "남아프리카 랜드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "레소토"
   },
   "LT": {
     "name": "리투아니아",
@@ -1542,7 +1542,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "리투아니아"
   },
   "LU": {
     "name": "룩셈부르크",
@@ -1556,7 +1556,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "룩셈부르크"
   },
   "LV": {
     "name": "라트비아",
@@ -1568,7 +1568,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "라트비아"
   },
   "LY": {
     "name": "리비아",
@@ -1580,7 +1580,7 @@
     "currencyNames": [
       "리비아 디나르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "리비아"
   },
   "MA": {
     "name": "모로코",
@@ -1593,7 +1593,7 @@
     "currencyNames": [
       "모로코 디르함"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "모로코"
   },
   "MC": {
     "name": "모나코",
@@ -1605,7 +1605,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "모나코"
   },
   "MD": {
     "name": "몰도바",
@@ -1617,7 +1617,7 @@
     "currencyNames": [
       "몰도바 레이"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "몰도바"
   },
   "ME": {
     "name": "몬테네그로",
@@ -1629,7 +1629,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "몬테네그로"
   },
   "MF": {
     "name": "생마르탱",
@@ -1641,7 +1641,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "생마르탱"
   },
   "MG": {
     "name": "마다가스카르",
@@ -1654,7 +1654,7 @@
     "currencyNames": [
       "마다가스카르 아리아리"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "마다가스카르"
   },
   "MH": {
     "name": "마셜 제도",
@@ -1667,7 +1667,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "마셜_제도"
   },
   "MK": {
     "name": "북마케도니아",
@@ -1679,7 +1679,7 @@
     "currencyNames": [
       "마케도니아 디나르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "북마케도니아"
   },
   "ML": {
     "name": "말리",
@@ -1691,7 +1691,7 @@
     "currencyNames": [
       "서아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "말리"
   },
   "MM": {
     "name": "미얀마",
@@ -1703,7 +1703,7 @@
     "currencyNames": [
       "미얀마 키얏"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "미얀마"
   },
   "MN": {
     "name": "몽골",
@@ -1715,7 +1715,7 @@
     "currencyNames": [
       "몽골 투그릭"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "몽골"
   },
   "MO": {
     "name": "마카오",
@@ -1728,7 +1728,7 @@
     "currencyNames": [
       "마카오 파타카"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "마카오"
   },
   "MP": {
     "name": "북마리아나제도",
@@ -1742,7 +1742,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "북마리아나_제도"
   },
   "MQ": {
     "name": "마르티니크",
@@ -1754,7 +1754,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "마르티니크"
   },
   "MR": {
     "name": "모리타니",
@@ -1766,7 +1766,7 @@
     "currencyNames": [
       "모리타니 우기야"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "모리타니"
   },
   "MS": {
     "name": "몬트세라트",
@@ -1778,7 +1778,7 @@
     "currencyNames": [
       "동카리브 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "몬트세랫"
   },
   "MT": {
     "name": "몰타",
@@ -1791,7 +1791,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "몰타"
   },
   "MU": {
     "name": "모리셔스",
@@ -1804,7 +1804,7 @@
     "currencyNames": [
       "모리셔스 루피"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "모리셔스"
   },
   "MV": {
     "name": "몰디브",
@@ -1816,7 +1816,7 @@
     "currencyNames": [
       "몰디브 제도 루피아"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "몰디브"
   },
   "MW": {
     "name": "말라위",
@@ -1829,7 +1829,7 @@
     "currencyNames": [
       "말라위 콰차"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "말라위"
   },
   "MX": {
     "name": "멕시코",
@@ -1841,7 +1841,7 @@
     "currencyNames": [
       "멕시코 페소"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "멕시코"
   },
   "MY": {
     "name": "말레이시아",
@@ -1853,7 +1853,7 @@
     "currencyNames": [
       "말레이시아 링깃"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "말레이시아"
   },
   "MZ": {
     "name": "모잠비크",
@@ -1865,7 +1865,7 @@
     "currencyNames": [
       "모잠비크 메티칼"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "모잠비크"
   },
   "NA": {
     "name": "나미비아",
@@ -1878,7 +1878,7 @@
       "나미비아 달러",
       "남아프리카 랜드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "나미비아"
   },
   "NC": {
     "name": "뉴칼레도니아",
@@ -1890,7 +1890,7 @@
     "currencyNames": [
       "CFP 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "누벨칼레도니"
   },
   "NE": {
     "name": "니제르",
@@ -1902,7 +1902,7 @@
     "currencyNames": [
       "서아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "니제르"
   },
   "NF": {
     "name": "노퍽섬",
@@ -1914,7 +1914,7 @@
     "currencyNames": [
       "호주 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "노퍽섬"
   },
   "NG": {
     "name": "나이지리아",
@@ -1926,7 +1926,7 @@
     "currencyNames": [
       "나이지리아 나이라"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "나이지리아"
   },
   "NI": {
     "name": "니카라과",
@@ -1938,7 +1938,7 @@
     "currencyNames": [
       "니카라과 코르도바"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "니카라과"
   },
   "NL": {
     "name": "네덜란드",
@@ -1950,7 +1950,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "네덜란드_왕국"
   },
   "NO": {
     "name": "노르웨이",
@@ -1962,7 +1962,7 @@
     "currencyNames": [
       "노르웨이 크로네"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "노르웨이"
   },
   "NP": {
     "name": "네팔",
@@ -1974,7 +1974,7 @@
     "currencyNames": [
       "네팔 루피"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "네팔"
   },
   "NR": {
     "name": "나우루",
@@ -1987,7 +1987,7 @@
     "currencyNames": [
       "호주 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "나우루"
   },
   "NU": {
     "name": "니우에",
@@ -2000,7 +2000,7 @@
     "currencyNames": [
       "뉴질랜드 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "니우에"
   },
   "NZ": {
     "name": "뉴질랜드",
@@ -2013,7 +2013,7 @@
     "currencyNames": [
       "뉴질랜드 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "뉴질랜드"
   },
   "OM": {
     "name": "오만",
@@ -2025,7 +2025,7 @@
     "currencyNames": [
       "오만 리알"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "오만"
   },
   "PA": {
     "name": "파나마",
@@ -2038,7 +2038,7 @@
       "파나마 발보아",
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "파나마"
   },
   "PE": {
     "name": "페루",
@@ -2052,7 +2052,7 @@
     "currencyNames": [
       "페루 솔"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "페루"
   },
   "PF": {
     "name": "프랑스령 폴리네시아",
@@ -2064,7 +2064,7 @@
     "currencyNames": [
       "CFP 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "프랑스령_폴리네시아"
   },
   "PG": {
     "name": "파푸아뉴기니",
@@ -2078,7 +2078,7 @@
     "currencyNames": [
       "파푸아뉴기니 키나"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "파푸아뉴기니"
   },
   "PH": {
     "name": "필리핀",
@@ -2091,7 +2091,7 @@
     "currencyNames": [
       "필리핀 페소"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "필리핀"
   },
   "PK": {
     "name": "파키스탄",
@@ -2104,7 +2104,7 @@
     "currencyNames": [
       "파키스탄 루피"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "파키스탄"
   },
   "PL": {
     "name": "폴란드",
@@ -2116,7 +2116,7 @@
     "currencyNames": [
       "폴란드 즈워티"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "폴란드"
   },
   "PM": {
     "name": "생피에르 미클롱",
@@ -2128,7 +2128,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "생피에르_미클롱"
   },
   "PN": {
     "name": "핏케언 제도",
@@ -2140,7 +2140,7 @@
     "currencyNames": [
       "뉴질랜드 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "핏케언_제도"
   },
   "PR": {
     "name": "푸에르토리코",
@@ -2153,7 +2153,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "푸에르토리코"
   },
   "PS": {
     "name": "팔레스타인",
@@ -2167,7 +2167,7 @@
       "이스라엘 신권 세켈",
       "요르단 디나르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "팔레스타인"
   },
   "PT": {
     "name": "포르투갈",
@@ -2179,7 +2179,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "포르투갈"
   },
   "PW": {
     "name": "팔라우",
@@ -2192,7 +2192,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "팔라우"
   },
   "PY": {
     "name": "파라과이",
@@ -2205,7 +2205,7 @@
     "currencyNames": [
       "파라과이 과라니"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "파라과이"
   },
   "QA": {
     "name": "카타르",
@@ -2217,7 +2217,7 @@
     "currencyNames": [
       "카타르 리얄"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "카타르"
   },
   "RE": {
     "name": "레위니옹",
@@ -2229,7 +2229,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "레위니옹"
   },
   "RO": {
     "name": "루마니아",
@@ -2241,7 +2241,7 @@
     "currencyNames": [
       "루마니아 레우"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "루마니아"
   },
   "RS": {
     "name": "세르비아",
@@ -2253,7 +2253,7 @@
     "currencyNames": [
       "세르비아 디나르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "세르비아"
   },
   "RU": {
     "name": "러시아",
@@ -2265,7 +2265,7 @@
     "currencyNames": [
       "러시아 루블"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "러시아"
   },
   "RW": {
     "name": "르완다",
@@ -2279,7 +2279,7 @@
     "currencyNames": [
       "르완다 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "르완다"
   },
   "SA": {
     "name": "사우디아라비아",
@@ -2291,7 +2291,7 @@
     "currencyNames": [
       "사우디아라비아 리얄"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "사우디아라비아"
   },
   "SB": {
     "name": "솔로몬 제도",
@@ -2303,7 +2303,7 @@
     "currencyNames": [
       "솔로몬 제도 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "솔로몬_제도"
   },
   "SC": {
     "name": "세이셸",
@@ -2317,7 +2317,7 @@
     "currencyNames": [
       "세이셸 루피"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "세이셸"
   },
   "SD": {
     "name": "수단",
@@ -2330,7 +2330,7 @@
     "currencyNames": [
       "수단 파운드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "수단"
   },
   "SE": {
     "name": "스웨덴",
@@ -2342,7 +2342,7 @@
     "currencyNames": [
       "스웨덴 크로나"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "스웨덴"
   },
   "SG": {
     "name": "싱가포르",
@@ -2357,7 +2357,7 @@
     "currencyNames": [
       "싱가포르 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "싱가포르"
   },
   "SH": {
     "name": "세인트헬레나",
@@ -2370,7 +2370,7 @@
       "영국 파운드",
       "세인트헬레나 파운드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "세인트헬레나_어센션_트리스탄다쿠냐"
   },
   "SI": {
     "name": "슬로베니아",
@@ -2382,7 +2382,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "슬로베니아"
   },
   "SK": {
     "name": "슬로바키아",
@@ -2394,7 +2394,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "슬로바키아"
   },
   "SL": {
     "name": "시에라리온",
@@ -2406,7 +2406,7 @@
     "currencyNames": [
       "시에라리온 리온"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "시에라리온"
   },
   "SM": {
     "name": "산마리노",
@@ -2418,7 +2418,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "산마리노"
   },
   "SN": {
     "name": "세네갈",
@@ -2430,7 +2430,7 @@
     "currencyNames": [
       "서아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "세네갈"
   },
   "SO": {
     "name": "소말리아",
@@ -2443,7 +2443,7 @@
     "currencyNames": [
       "소말리아 실링"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "소말리아"
   },
   "SR": {
     "name": "수리남",
@@ -2455,7 +2455,7 @@
     "currencyNames": [
       "수리남 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "수리남"
   },
   "SS": {
     "name": "남수단",
@@ -2467,7 +2467,7 @@
     "currencyNames": [
       "남수단 파운드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "남수단"
   },
   "ST": {
     "name": "상투메 프린시페",
@@ -2479,7 +2479,7 @@
     "currencyNames": [
       "상투메 프린시페 도브라"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "상투메_프린시페"
   },
   "SV": {
     "name": "엘살바도르",
@@ -2491,7 +2491,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "엘살바도르"
   },
   "SX": {
     "name": "신트마르턴",
@@ -2504,7 +2504,7 @@
     "currencyNames": [
       "네덜란드령 안틸레스 길더"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "신트마르턴"
   },
   "SY": {
     "name": "시리아",
@@ -2516,7 +2516,7 @@
     "currencyNames": [
       "시리아 파운드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "시리아"
   },
   "SZ": {
     "name": "에스와티니",
@@ -2530,7 +2530,7 @@
       "스와질란드 릴랑게니",
       "남아프리카 랜드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "에스와티니"
   },
   "TC": {
     "name": "터크스 케이커스 제도",
@@ -2542,7 +2542,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "터크스_케이커스_제도"
   },
   "TD": {
     "name": "차드",
@@ -2555,7 +2555,7 @@
     "currencyNames": [
       "중앙아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "차드"
   },
   "TG": {
     "name": "토고",
@@ -2567,7 +2567,7 @@
     "currencyNames": [
       "서아프리카 CFA 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "토고"
   },
   "TH": {
     "name": "태국",
@@ -2579,7 +2579,7 @@
     "currencyNames": [
       "태국 바트"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "태국"
   },
   "TJ": {
     "name": "타지키스탄",
@@ -2591,7 +2591,7 @@
     "currencyNames": [
       "타지키스탄 소모니"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "타지키스탄"
   },
   "TL": {
     "name": "동티모르",
@@ -2604,7 +2604,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "동티모르"
   },
   "TM": {
     "name": "투르크메니스탄",
@@ -2616,7 +2616,7 @@
     "currencyNames": [
       "투르크메니스탄 마나트"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "투르크메니스탄"
   },
   "TN": {
     "name": "튀니지",
@@ -2628,7 +2628,7 @@
     "currencyNames": [
       "튀니지 디나르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "튀니지"
   },
   "TO": {
     "name": "통가",
@@ -2641,7 +2641,7 @@
     "currencyNames": [
       "통가 파앙가"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "통가"
   },
   "TR": {
     "name": "튀르키예",
@@ -2653,7 +2653,7 @@
     "currencyNames": [
       "튀르키예 리라"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "튀르키예"
   },
   "TT": {
     "name": "트리니다드 토바고",
@@ -2665,7 +2665,7 @@
     "currencyNames": [
       "트리니다드 토바고 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "트리니다드_토바고"
   },
   "TV": {
     "name": "투발루",
@@ -2678,7 +2678,7 @@
     "currencyNames": [
       "호주 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "투발루"
   },
   "TW": {
     "name": "대만",
@@ -2690,7 +2690,7 @@
     "currencyNames": [
       "신 타이완 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "중화민국"
   },
   "TZ": {
     "name": "탄자니아",
@@ -2703,7 +2703,7 @@
     "currencyNames": [
       "탄자니아 실링"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "탄자니아"
   },
   "UA": {
     "name": "우크라이나",
@@ -2715,7 +2715,7 @@
     "currencyNames": [
       "우크라이나 그리브나"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "우크라이나"
   },
   "UG": {
     "name": "우간다",
@@ -2728,7 +2728,7 @@
     "currencyNames": [
       "우간다 실링"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "우간다"
   },
   "US": {
     "name": "미국",
@@ -2740,7 +2740,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "미국"
   },
   "UY": {
     "name": "우루과이",
@@ -2752,7 +2752,7 @@
     "currencyNames": [
       "우루과이 페소"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "우루과이"
   },
   "UZ": {
     "name": "우즈베키스탄",
@@ -2764,7 +2764,7 @@
     "currencyNames": [
       "우즈베키스탄 숨"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "우즈베키스탄"
   },
   "VA": {
     "name": "바티칸 시국",
@@ -2777,7 +2777,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "바티칸_시국"
   },
   "VC": {
     "name": "세인트빈센트그레나딘",
@@ -2789,7 +2789,7 @@
     "currencyNames": [
       "동카리브 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "세인트빈센트_그레나딘"
   },
   "VE": {
     "name": "베네수엘라",
@@ -2801,7 +2801,7 @@
     "currencyNames": [
       "베네수엘라 볼리바르"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "베네수엘라"
   },
   "VG": {
     "name": "영국령 버진아일랜드",
@@ -2813,7 +2813,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "영국령_버진아일랜드"
   },
   "VI": {
     "name": "미국령 버진아일랜드",
@@ -2825,7 +2825,7 @@
     "currencyNames": [
       "미국 달러"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "미국령_버진아일랜드"
   },
   "VN": {
     "name": "베트남",
@@ -2837,7 +2837,7 @@
     "currencyNames": [
       "베트남 동"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "베트남"
   },
   "VU": {
     "name": "바누아투",
@@ -2851,7 +2851,7 @@
     "currencyNames": [
       "바누아투 바투"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "바누아투"
   },
   "WF": {
     "name": "왈리스-푸투나 제도",
@@ -2863,7 +2863,7 @@
     "currencyNames": [
       "CFP 프랑"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "왈리스_푸투나"
   },
   "WS": {
     "name": "사모아",
@@ -2876,7 +2876,7 @@
     "currencyNames": [
       "서 사모아 탈라"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "사모아"
   },
   "XK": {
     "name": "코소보",
@@ -2889,7 +2889,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "코소보"
   },
   "YE": {
     "name": "예멘",
@@ -2901,7 +2901,7 @@
     "currencyNames": [
       "예멘 리알"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "예멘"
   },
   "YT": {
     "name": "마요트",
@@ -2913,7 +2913,7 @@
     "currencyNames": [
       "유로"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "마요트"
   },
   "ZA": {
     "name": "남아프리카",
@@ -2928,7 +2928,7 @@
     "currencyNames": [
       "남아프리카 랜드"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "남아프리카_공화국"
   },
   "ZM": {
     "name": "잠비아",
@@ -2940,7 +2940,7 @@
     "currencyNames": [
       "잠비아 콰차"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "잠비아"
   },
   "ZW": {
     "name": "짐바브웨",
@@ -2954,6 +2954,6 @@
     "currencyNames": [
       "짐바브웨 달러 (2009)"
     ],
-    "wikipediaSlug": null
+    "wikipediaSlug": "짐바브웨"
   }
 }
