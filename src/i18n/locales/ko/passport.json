@@ -1,0 +1,16 @@
+{
+  "header.title": "{{name}}의 여권",
+  "header.globalLevel": "글로벌 레벨: {{level}}",
+  "emptyState": "스탬프는 당신의 지식의 증거입니다. 여권을 채울 수 있을까요?",
+
+  "legend.country": "○ 나라",
+  "legend.capital": "◎ 수도",
+  "legend.earned": "★ 획득",
+  "legend.locked": "🔒 잠김",
+
+  "stampTitle.countries": "나라 스탬프",
+  "stampTitle.capitals": "수도 스탬프",
+
+  "modal.title": "스탬프 시험",
+  "modal.questionCount": "{{count}}개의 문제를 오답 없이 완료해야 합니다."
+}

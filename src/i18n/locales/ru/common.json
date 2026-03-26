@@ -1,0 +1,41 @@
+{
+  "continent.africa": "Африка",
+  "continent.america": "Америка",
+  "continent.asia": "Азия",
+  "continent.europe": "Европа",
+  "continent.oceania": "Океания",
+  "continent.antarctica": "Антарктида",
+  "continentFilter.all": "Все",
+
+  "level.tourist": "Турист",
+  "level.backpacker": "Путешественник",
+  "level.guide": "Гид",
+
+  "questionType.E": "Определи страну",
+  "questionType.C": "Страна по столице",
+  "questionType.D": "Столица по стране",
+  "questionType.F": "Определи столицу",
+  "questionType.A": "Покажи страну",
+  "questionType.B": "Покажи столицу",
+
+  "questionTypeShort.E": "Определи страну",
+  "questionTypeShort.C": "Страна по столице",
+  "questionTypeShort.D": "Столица по стране",
+  "questionTypeShort.F": "Определи столицу",
+  "questionTypeShort.A": "Покажи страну",
+  "questionTypeShort.B": "Покажи столицу",
+
+  "tabs.explore": "Изучать",
+  "tabs.play": "Играть",
+  "tabs.passport": "Паспорт",
+
+  "loading": "Загрузка глобуса…",
+  "cancel": "Отмена",
+  "close": "Закрыть",
+  "continue": "Продолжить",
+
+  "aria.userProfile": "Профиль пользователя",
+  "aria.stats": "Статистика",
+  "aria.settings": "Настройки",
+  "aria.navigation": "Главная навигация"
+}

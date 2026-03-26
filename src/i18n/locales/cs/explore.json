@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Globus",
+  "segmented.table": "Tabulka",
+  "labels.countries": "Země",
+  "labels.capitals": "Hlavní města",
+
+  "table.country": "Země",
+  "table.capital": "Hlavní město",
+  "table.population": "Obyv.",
+  "table.nonUNToggle": "Území mimo OSN",
+
+  "card.disclaimer.antarctica": "Mezinárodní území — Smlouva o Antarktidě (1959)",
+  "card.disclaimer.territory": "Území {{sovereign}}",
+  "card.disclaimer.disputed": "Sporná suverenita",
+  "card.flagAlt": "Vlajka {{country}}",
+  "card.aria.openWikipedia": "Otevřít {{country}} na Wikipedii",
+  "card.aria.dialog": "Karta {{country}}",
+
+  "card.field.capital": "Hlavní město",
+  "card.field.population": "Počet obyvatel",
+  "card.field.area": "Rozloha",
+  "card.field.density": "Hustota",
+  "card.field.currency": "Měna",
+  "card.field.demonym": "Obyvatelské jméno",
+  "card.field.languages": "Jazyky",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "obyv.",
+  "card.unit.densityUnit": "obyv./km²",
+  "card.na": "N/D",
+
+  "card.tooltip.hdi": "Index lidského rozvoje: měří zdraví, vzdělání a příjmy. Rozsah 0–1.",
+  "card.tooltip.ihdi": "HDI upravený o nerovnost: penalizuje nerovnost ve zdraví, vzdělání a příjmech.",
+  "card.aria.hdiInfo": "Informace o HDI",
+  "card.aria.ihdiInfo": "Informace o IHDI",
+
+  "card.antarctica.info": "Antarktida nepatří žádné zemi. Smlouva o Antarktidě, podepsaná v roce 1959, ji vyhrazuje pro vědecký výzkum a zakazuje vojenskou činnost i těžbu nerostných surovin.",
+
+  "card.sovereign.GB": "Spojeného království",
+  "card.sovereign.FR": "Francie",
+  "card.sovereign.US": "Spojených států",
+  "card.sovereign.NL": "Nizozemska",
+  "card.sovereign.DK": "Dánska",
+  "card.sovereign.CN": "Číny",
+  "card.sovereign.NZ": "Nového Zélandu",
+  "card.sovereign.FI": "Finska",
+  "card.sovereign.AU": "Austrálie"
+}

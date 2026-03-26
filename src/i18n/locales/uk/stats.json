@@ -1,0 +1,33 @@
+{
+  "title": "Статистика",
+  "aria.close": "Закрити",
+  "tabs.play": "Грай",
+  "tabs.stamps": "Випробування на печатку",
+
+  "table.country": "Країна",
+  "aria.showIndicators": "Показати індикатори",
+  "aria.showPercent": "Показати відсотки",
+
+  "typeLabel.E": "Визнач країну",
+  "typeLabel.C": "Країна за столицею",
+  "typeLabel.D": "Столиця за країною",
+  "typeLabel.F": "Визнач столицю",
+  "typeLabel.A": "Вкажи країну",
+  "typeLabel.B": "Вкажи столицю",
+
+  "stampLabel.A.short": "◯ Країни",
+  "stampLabel.A.full": "Випробування на печатку з Країн",
+  "stampLabel.B.short": "◎ Столиці",
+  "stampLabel.B.full": "Випробування на печатку зі Столиць",
+
+  "legend.dominated": "Опановано",
+  "legend.inferred": "Виведено",
+  "legend.reinforcement": "Закріплення",
+  "legend.noData": "Немає даних",
+  "legend.correct": "Правильно",
+  "legend.incorrect": "Неправильно",
+
+  "reset.button": "Скинути статистику",
+  "reset.confirm": "Скинути статистику гри для {{level}} - {{continent}}?",
+  "stampNotice": "Печатки та історія випробувань є постійними, як у справжньому паспорті. Якщо хочеш почати з нуля, створи новий профіль."
+}

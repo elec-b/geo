@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "地球儀",
+  "segmented.table": "一覧",
+  "labels.countries": "国",
+  "labels.capitals": "首都",
+
+  "table.country": "国",
+  "table.capital": "首都",
+  "table.population": "人口",
+  "table.nonUNToggle": "国連非加盟地域",
+
+  "card.disclaimer.antarctica": "国際領土 — 南極条約（1959年）",
+  "card.disclaimer.territory": "{{sovereign}}領",
+  "card.disclaimer.disputed": "主権が争われている地域",
+  "card.flagAlt": "{{country}}の国旗",
+  "card.aria.openWikipedia": "{{country}}をWikipediaで開く",
+  "card.aria.dialog": "{{country}}の情報カード",
+
+  "card.field.capital": "首都",
+  "card.field.population": "人口",
+  "card.field.area": "面積",
+  "card.field.density": "人口密度",
+  "card.field.currency": "通貨",
+  "card.field.demonym": "住民の呼称",
+  "card.field.languages": "言語",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "人",
+  "card.unit.densityUnit": "人/km²",
+  "card.na": "N/A",
+
+  "card.tooltip.hdi": "人間開発指数：健康、教育、所得を測定。範囲は0〜1。",
+  "card.tooltip.ihdi": "不平等調整済み人間開発指数：健康、教育、所得の不平等を反映。",
+  "card.aria.hdiInfo": "HDIについての情報",
+  "card.aria.ihdiInfo": "IHDIについての情報",
+
+  "card.antarctica.info": "南極はどの国にも属していません。1959年に締結された南極条約により、科学研究のために保全され、軍事活動と資源開発は禁止されています。",
+
+  "card.sovereign.GB": "イギリス",
+  "card.sovereign.FR": "フランス",
+  "card.sovereign.US": "アメリカ合衆国",
+  "card.sovereign.NL": "オランダ",
+  "card.sovereign.DK": "デンマーク",
+  "card.sovereign.CN": "中国",
+  "card.sovereign.NZ": "ニュージーランド",
+  "card.sovereign.FI": "フィンランド",
+  "card.sovereign.AU": "オーストラリア"
+}

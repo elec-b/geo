@@ -1,0 +1,19 @@
+{
+  "defaultName": "Průzkumník",
+
+  "editor.titleEdit": "Upravit profil",
+  "editor.titleCreate": "Vytvořit profil",
+  "editor.chooseAvatar": "Vyber si avatar",
+  "editor.nameLabel": "Jméno",
+  "editor.namePlaceholder": "Název profilu",
+  "editor.save": "Uložit",
+  "editor.create": "Vytvořit",
+
+  "selector.title": "Profily",
+  "selector.confirmDelete": "Smazat «{{name}}»?",
+  "selector.delete": "Smazat",
+  "selector.createNew": "Vytvořit profil",
+  "selector.aria.edit": "Upravit {{name}}",
+  "selector.aria.delete": "Smazat {{name}}",
+  "selector.aria.dialog": "Výběr profilu"
+}

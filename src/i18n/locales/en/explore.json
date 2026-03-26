@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Globe",
+  "segmented.table": "Table",
+  "labels.countries": "Countries",
+  "labels.capitals": "Capitals",
+
+  "table.country": "Country",
+  "table.capital": "Capital",
+  "table.population": "Pop.",
+  "table.nonUNToggle": "Non-UN territories",
+
+  "card.disclaimer.antarctica": "International territory \u2014 Antarctic Treaty (1959)",
+  "card.disclaimer.territory": "Territory of {{sovereign}}",
+  "card.disclaimer.disputed": "Disputed sovereignty",
+  "card.flagAlt": "Flag of {{country}}",
+  "card.aria.openWikipedia": "Open {{country}} on Wikipedia",
+  "card.aria.dialog": "{{country}} fact sheet",
+
+  "card.field.capital": "Capital",
+  "card.field.population": "Population",
+  "card.field.area": "Area",
+  "card.field.density": "Density",
+  "card.field.currency": "Currency",
+  "card.field.demonym": "Demonym",
+  "card.field.languages": "Languages",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "inh.",
+  "card.unit.densityUnit": "inh/km\u00b2",
+  "card.na": "N/A",
+
+  "card.tooltip.hdi": "Human Development Index: measures health, education and income. Range 0\u20131.",
+  "card.tooltip.ihdi": "Inequality-adjusted HDI: penalises inequality in health, education and income.",
+  "card.aria.hdiInfo": "HDI information",
+  "card.aria.ihdiInfo": "IHDI information",
+
+  "card.antarctica.info": "Antarctica does not belong to any country. The Antarctic Treaty, signed in 1959, reserves it for scientific research and prohibits military activity and resource exploitation.",
+
+  "card.sovereign.GB": "of the United Kingdom",
+  "card.sovereign.FR": "of France",
+  "card.sovereign.US": "of the United States",
+  "card.sovereign.NL": "of the Netherlands",
+  "card.sovereign.DK": "of Denmark",
+  "card.sovereign.CN": "of China",
+  "card.sovereign.NZ": "of New Zealand",
+  "card.sovereign.FI": "of Finland",
+  "card.sovereign.AU": "of Australia"
+}

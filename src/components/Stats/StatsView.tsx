@@ -240,7 +240,7 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
     list.sort((a, b) => {
       let cmp: number;
       if (sortKey === 'name') {
-        cmp = a.name.localeCompare(b.name, 'es');
+        cmp = a.name.localeCompare(b.name);
       } else if (activeTab === 'jugar') {
         const caA = allAttempts[a.cca2];
         const caB = allAttempts[b.cca2];
@@ -261,7 +261,7 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
           : getStampIndicatorValue(stampAttempts[b.cca2], st);
         cmp = valA - valB;
       }
-      if (cmp === 0) cmp = a.name.localeCompare(b.name, 'es');
+      if (cmp === 0) cmp = a.name.localeCompare(b.name);
       return sortDir === 'asc' ? cmp : -cmp;
     });
 

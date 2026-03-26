@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Globe",
+  "segmented.table": "Tableau",
+  "labels.countries": "Pays",
+  "labels.capitals": "Capitales",
+
+  "table.country": "Pays",
+  "table.capital": "Capitale",
+  "table.population": "Pop.",
+  "table.nonUNToggle": "Territoires non-ONU",
+
+  "card.disclaimer.antarctica": "Territoire international \u2014 Trait\u00e9 sur l'Antarctique (1959)",
+  "card.disclaimer.territory": "Territoire {{sovereign}}",
+  "card.disclaimer.disputed": "Souverainet\u00e9 contest\u00e9e",
+  "card.flagAlt": "Drapeau {{country}}",
+  "card.aria.openWikipedia": "Ouvrir {{country}} sur Wikip\u00e9dia",
+  "card.aria.dialog": "Fiche de {{country}}",
+
+  "card.field.capital": "Capitale",
+  "card.field.population": "Population",
+  "card.field.area": "Superficie",
+  "card.field.density": "Densit\u00e9",
+  "card.field.currency": "Monnaie",
+  "card.field.demonym": "Gentil\u00e9",
+  "card.field.languages": "Langues",
+  "card.field.hdi": "IDH",
+  "card.field.ihdi": "IDHI",
+  "card.unit.inhabitants": "hab.",
+  "card.unit.densityUnit": "hab/km\u00b2",
+  "card.na": "N/D",
+
+  "card.tooltip.hdi": "Indice de d\u00e9veloppement humain\u00a0: mesure la sant\u00e9, l'\u00e9ducation et les revenus. \u00c9chelle 0\u20131.",
+  "card.tooltip.ihdi": "IDH ajust\u00e9 aux in\u00e9galit\u00e9s\u00a0: p\u00e9nalise les in\u00e9galit\u00e9s en sant\u00e9, \u00e9ducation et revenus.",
+  "card.aria.hdiInfo": "Informations sur l'IDH",
+  "card.aria.ihdiInfo": "Informations sur l'IDHI",
+
+  "card.antarctica.info": "L'Antarctique n'appartient \u00e0 aucun pays. Le Trait\u00e9 sur l'Antarctique, sign\u00e9 en 1959, le r\u00e9serve \u00e0 la recherche scientifique et interdit toute activit\u00e9 militaire et l'exploitation de ses ressources.",
+
+  "card.sovereign.GB": "du Royaume-Uni",
+  "card.sovereign.FR": "de la France",
+  "card.sovereign.US": "des \u00c9tats-Unis",
+  "card.sovereign.NL": "des Pays-Bas",
+  "card.sovereign.DK": "du Danemark",
+  "card.sovereign.CN": "de la Chine",
+  "card.sovereign.NZ": "de la Nouvelle-Z\u00e9lande",
+  "card.sovereign.FI": "de la Finlande",
+  "card.sovereign.AU": "de l'Australie"
+}

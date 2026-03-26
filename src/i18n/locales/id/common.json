@@ -1,0 +1,41 @@
+{
+  "continent.africa": "Afrika",
+  "continent.america": "Amerika",
+  "continent.asia": "Asia",
+  "continent.europe": "Eropa",
+  "continent.oceania": "Oseania",
+  "continent.antarctica": "Antarktika",
+  "continentFilter.all": "Semua",
+
+  "level.tourist": "Turis",
+  "level.backpacker": "Backpacker",
+  "level.guide": "Pemandu",
+
+  "questionType.E": "Kenali negaranya",
+  "questionType.C": "Negara ke ibu kota",
+  "questionType.D": "Ibu kota ke negara",
+  "questionType.F": "Kenali ibu kotanya",
+  "questionType.A": "Tunjukkan negaranya",
+  "questionType.B": "Tunjukkan ibu kotanya",
+
+  "questionTypeShort.E": "Kenali negara",
+  "questionTypeShort.C": "Negara ke ibu kota",
+  "questionTypeShort.D": "Ibu kota ke negara",
+  "questionTypeShort.F": "Kenali ibu kota",
+  "questionTypeShort.A": "Tunjukkan negaranya",
+  "questionTypeShort.B": "Tunjukkan ibu kotanya",
+
+  "tabs.explore": "Jelajahi",
+  "tabs.play": "Main",
+  "tabs.passport": "Paspor",
+
+  "loading": "Memuat globe\u2026",
+  "cancel": "Batal",
+  "close": "Tutup",
+  "continue": "Lanjutkan",
+
+  "aria.userProfile": "Profil pengguna",
+  "aria.stats": "Statistik",
+  "aria.settings": "Pengaturan",
+  "aria.navigation": "Navigasi utama"
+}

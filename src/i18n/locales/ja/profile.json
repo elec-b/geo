@@ -1,0 +1,19 @@
+{
+  "defaultName": "探検家",
+
+  "editor.titleEdit": "プロフィール編集",
+  "editor.titleCreate": "プロフィール作成",
+  "editor.chooseAvatar": "アバターを選択",
+  "editor.nameLabel": "名前",
+  "editor.namePlaceholder": "プロフィール名",
+  "editor.save": "保存",
+  "editor.create": "作成",
+
+  "selector.title": "プロフィール",
+  "selector.confirmDelete": "\u00ab{{name}}\u00bbを削除しますか？",
+  "selector.delete": "削除",
+  "selector.createNew": "プロフィール作成",
+  "selector.aria.edit": "{{name}}を編集",
+  "selector.aria.delete": "{{name}}を削除",
+  "selector.aria.dialog": "プロフィール選択"
+}

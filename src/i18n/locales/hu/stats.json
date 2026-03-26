@@ -1,0 +1,33 @@
+{
+  "title": "Statisztikák",
+  "aria.close": "Bezárás",
+  "tabs.play": "Játék",
+  "tabs.stamps": "Pecsétpróbák",
+
+  "table.country": "Ország",
+  "aria.showIndicators": "Mutatók megjelenítése",
+  "aria.showPercent": "Százalékok megjelenítése",
+
+  "typeLabel.E": "Ismerd fel az országot",
+  "typeLabel.C": "Ország a fővároshoz",
+  "typeLabel.D": "Főváros az országhoz",
+  "typeLabel.F": "Ismerd fel a fővárost",
+  "typeLabel.A": "Mutasd meg az országot",
+  "typeLabel.B": "Mutasd meg a fővárost",
+
+  "stampLabel.A.short": "◯ Országok",
+  "stampLabel.A.full": "Országok pecsétpróba",
+  "stampLabel.B.short": "◎ Fővárosok",
+  "stampLabel.B.full": "Fővárosok pecsétpróba",
+
+  "legend.dominated": "Elsajátítva",
+  "legend.inferred": "Kikövetkeztetett",
+  "legend.reinforcement": "Megerősítés",
+  "legend.noData": "Nincs adat",
+  "legend.correct": "Helyes",
+  "legend.incorrect": "Helytelen",
+
+  "reset.button": "Statisztikák visszaállítása",
+  "reset.confirm": "Visszaállítod a játék statisztikáit ehhez: {{level}} - {{continent}}?",
+  "stampNotice": "A pecsétek és a próbák előzményei véglegesek, mint egy valódi útlevélben. Ha újra szeretnéd kezdeni, hozz létre új profilt."
+}

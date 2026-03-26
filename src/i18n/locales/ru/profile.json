@@ -1,0 +1,19 @@
+{
+  "defaultName": "Исследователь",
+
+  "editor.titleEdit": "Редактировать профиль",
+  "editor.titleCreate": "Создать профиль",
+  "editor.chooseAvatar": "Выбери аватар",
+  "editor.nameLabel": "Имя",
+  "editor.namePlaceholder": "Название профиля",
+  "editor.save": "Сохранить",
+  "editor.create": "Создать",
+
+  "selector.title": "Профили",
+  "selector.confirmDelete": "Удалить «{{name}}»?",
+  "selector.delete": "Удалить",
+  "selector.createNew": "Создать профиль",
+  "selector.aria.edit": "Редактировать {{name}}",
+  "selector.aria.delete": "Удалить {{name}}",
+  "selector.aria.dialog": "Выбор профиля"
+}

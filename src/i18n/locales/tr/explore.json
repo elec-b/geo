@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Küre",
+  "segmented.table": "Tablo",
+  "labels.countries": "Ülkeler",
+  "labels.capitals": "Başkentler",
+
+  "table.country": "Ülke",
+  "table.capital": "Başkent",
+  "table.population": "Nüf.",
+  "table.nonUNToggle": "BM dışı topraklar",
+
+  "card.disclaimer.antarctica": "Uluslararası bölge — Antarktika Antlaşması (1959)",
+  "card.disclaimer.territory": "{{sovereign}} toprağı",
+  "card.disclaimer.disputed": "Egemenliği tartışmalı",
+  "card.flagAlt": "{{country}} bayrağı",
+  "card.aria.openWikipedia": "{{country}} Wikipedia'da aç",
+  "card.aria.dialog": "{{country}} kartı",
+
+  "card.field.capital": "Başkent",
+  "card.field.population": "Nüfus",
+  "card.field.area": "Yüzölçümü",
+  "card.field.density": "Nüfus yoğunluğu",
+  "card.field.currency": "Para birimi",
+  "card.field.demonym": "Ulus adı",
+  "card.field.languages": "Diller",
+  "card.field.hdi": "İGE",
+  "card.field.ihdi": "İGE-E",
+  "card.unit.inhabitants": "kişi",
+  "card.unit.densityUnit": "kişi/km²",
+  "card.na": "B/Y",
+
+  "card.tooltip.hdi": "İnsani Gelişme Endeksi: sağlık, eğitim ve geliri ölçer. Aralık 0–1.",
+  "card.tooltip.ihdi": "Eşitsizliğe göre düzeltilmiş İGE: sağlık, eğitim ve gelirdeki eşitsizliği hesaba katar.",
+  "card.aria.hdiInfo": "İGE hakkında bilgi",
+  "card.aria.ihdiInfo": "İGE-E hakkında bilgi",
+
+  "card.antarctica.info": "Antarktika hiçbir ülkeye ait değildir. 1959'da imzalanan Antarktika Antlaşması, bölgeyi bilimsel araştırmalara ayırmış, askeri faaliyet ve kaynak kullanımını yasaklamıştır.",
+
+  "card.sovereign.GB": "Birleşik Krallık",
+  "card.sovereign.FR": "Fransa",
+  "card.sovereign.US": "ABD",
+  "card.sovereign.NL": "Hollanda",
+  "card.sovereign.DK": "Danimarka",
+  "card.sovereign.CN": "Çin",
+  "card.sovereign.NZ": "Yeni Zelanda",
+  "card.sovereign.FI": "Finlandiya",
+  "card.sovereign.AU": "Avustralya"
+}

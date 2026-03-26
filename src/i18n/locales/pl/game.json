@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Wybierz kontynent",
+  "selector.chooseLevel": "Wybierz poziom",
+  "selector.chooseGame": "Wybierz grę",
+  "selector.adventure": "Przygoda",
+  "selector.adventureDesc": "Dopasowuje się do Twojej wiedzy",
+  "selector.specificTypes": "lub wybierz konkretną grę",
+  "selector.start": "Start",
+  "selector.continue": "Kontynuuj",
+  "selector.completed": "Ukończone ★",
+  "selector.countryCount_one": "{{count}} kraj",
+  "selector.countryCount_other": "{{count}} krajów",
+  "selector.lockedToast": "Zdobądź pieczątki z poprzedniego poziomu",
+
+  "selector.stampReady.both": "Gotowy na próby pieczątki!",
+  "selector.stampReady.countries": "Gotowy na próbę z krajów!",
+  "selector.stampReady.capitals": "Gotowy na próbę ze stolic!",
+
+  "question.locate": "Znajdź",
+  "question.locateCapital": "Znajdź stolicę",
+  "question.capitalOf": "Jaka jest stolica {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} jest stolicą...",
+  "question.whichCountry": "Który kraj jest podświetlony?",
+  "question.whichCapital": "Jaka jest stolica tego kraju?",
+
+  "progress.stampTest": "Próba pieczątki: {{current}} z {{total}}",
+  "progress.adventurePercent": "{{percent}}% ukończono",
+  "progress.typeDominated": "{{current}} z {{total}} opanowanych",
+  "progress.stampBanner.countries": "Próba pieczątki: Kraje",
+  "progress.stampBanner.capitals": "Próba pieczątki: Stolice",
+
+  "modal.stampEarned.title": "Pieczątka zdobyta",
+  "modal.stampEarned.text": "{{correct}} z {{total}} poprawnych. Bez błędów.",
+
+  "modal.stampFailed.veryClose": "Prawie się udało!",
+  "modal.stampFailed.veryCloseText": "O krok od pieczątki.",
+  "modal.stampFailed.goodTry": "Dobra próba!",
+  "modal.stampFailed.goodTryText": "Każda próba przybliża Cię do celu.",
+  "modal.stampFailed.onTrack": "Jesteś na dobrej drodze",
+  "modal.stampFailed.onTrackText": "Graj dalej, widać postępy.",
+  "modal.stampFailed.dontGiveUp": "Nie poddawaj się",
+  "modal.stampFailed.dontGiveUpText": "Praktyka czyni mistrza.",
+  "modal.stampFailed.score": "{{correct}} z {{total}} poprawnych.",
+
+  "modal.poolExhausted.trainingComplete": "Trening ukończony",
+  "modal.poolExhausted.readyForStamp": "Wspaniale!<br />Gotowy na pieczątkę",
+  "modal.poolExhausted.completedText": "Ukończyłeś <em>{{continent}}</em> na poziomie <em>{{level}}</em>. Możesz zresetować statystyki, aby poćwiczyć ponownie.",
+  "modal.poolExhausted.chooseStamp": "Wybierz próbę. Musisz ją ukończyć bezbłędnie, aby zdobyć pieczątkę.",
+  "modal.poolExhausted.typePassed": "Wspaniale!<br /><em>{{type}}</em> zaliczone",
+  "modal.poolExhausted.stampReady": "Jesteś gotowy na próbę pieczątki. Ukończ ją bezbłędnie, aby ją zdobyć.",
+  "modal.poolExhausted.tryStamp.countries": "Spróbuj pieczątki z Krajów",
+  "modal.poolExhausted.tryStamp.capitals": "Spróbuj pieczątki ze Stolic",
+  "modal.poolExhausted.selectOther": "Wybierz inną grę",
+  "modal.poolExhausted.playType": "Graj w <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Graj w <em>Przygodę</em>",
+
+  "stamp.countries": "Pieczątka z Krajów",
+  "stamp.capitals": "Pieczątka ze Stolic",
+
+  "modal.stampChooser.title": "Próba pieczątki",
+  "modal.stampChooser.text": "Wybierz próbę. Musisz poprawnie odpowiedzieć na {{count}} pytań bez żadnego błędu.",
+
+  "modal.alreadyDominated.title": "Już opanowałeś<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Odpowiedziałeś poprawnie na wszystkie kraje. Możesz zresetować statystyki, aby poćwiczyć ponownie.",
+  "modal.alreadyDominated.completedTraining": "Ukończyłeś trening <em>{{continent}}</em> na poziomie <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Spróbuj próby pieczątki",
+  "modal.alreadyDominated.goToStats": "Przejdź do Statystyk"
+}

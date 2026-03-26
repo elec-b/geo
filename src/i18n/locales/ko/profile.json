@@ -1,0 +1,19 @@
+{
+  "defaultName": "탐험가",
+
+  "editor.titleEdit": "프로필 수정",
+  "editor.titleCreate": "프로필 만들기",
+  "editor.chooseAvatar": "아바타를 선택하세요",
+  "editor.nameLabel": "이름",
+  "editor.namePlaceholder": "프로필 이름",
+  "editor.save": "저장",
+  "editor.create": "만들기",
+
+  "selector.title": "프로필",
+  "selector.confirmDelete": "\u00ab{{name}}\u00bb을(를) 삭제할까요?",
+  "selector.delete": "삭제",
+  "selector.createNew": "프로필 만들기",
+  "selector.aria.edit": "{{name}} 수정",
+  "selector.aria.delete": "{{name}} 삭제",
+  "selector.aria.dialog": "프로필 선택"
+}

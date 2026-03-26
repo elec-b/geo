@@ -1,0 +1,16 @@
+{
+  "header.title": "{{name}}s pass",
+  "header.globalLevel": "Global niv\u00e5: {{level}}",
+  "emptyState": "Varje st\u00e4mpel bevisar vad du kan. Fyller du passet?",
+
+  "legend.country": "\u25cb Land",
+  "legend.capital": "\u25ce Huvudstad",
+  "legend.earned": "\u2605 Erh\u00e5llen",
+  "legend.locked": "\ud83d\udd12 L\u00e5st",
+
+  "stampTitle.countries": "L\u00e4nderst\u00e4mpel",
+  "stampTitle.capitals": "Huvudstadsst\u00e4mpel",
+
+  "modal.title": "St\u00e4mpelprov",
+  "modal.questionCount": "Du m\u00e5ste svara p\u00e5 {{count}} fr\u00e5gor utan n\u00e5got fel."
+}

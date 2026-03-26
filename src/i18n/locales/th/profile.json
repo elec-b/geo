@@ -1,0 +1,19 @@
+{
+  "defaultName": "นักสำรวจ",
+
+  "editor.titleEdit": "แก้ไขโปรไฟล์",
+  "editor.titleCreate": "สร้างโปรไฟล์",
+  "editor.chooseAvatar": "เลือกอวาตาร์ของคุณ",
+  "editor.nameLabel": "ชื่อ",
+  "editor.namePlaceholder": "ชื่อโปรไฟล์",
+  "editor.save": "บันทึก",
+  "editor.create": "สร้าง",
+
+  "selector.title": "โปรไฟล์",
+  "selector.confirmDelete": "ลบ \u00ab{{name}}\u00bb?",
+  "selector.delete": "ลบ",
+  "selector.createNew": "สร้างโปรไฟล์",
+  "selector.aria.edit": "แก้ไข {{name}}",
+  "selector.aria.delete": "ลบ {{name}}",
+  "selector.aria.dialog": "เลือกโปรไฟล์"
+}

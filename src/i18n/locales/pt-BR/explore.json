@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Globo",
+  "segmented.table": "Tabela",
+  "labels.countries": "Pa\u00edses",
+  "labels.capitals": "Capitais",
+
+  "table.country": "Pa\u00eds",
+  "table.capital": "Capital",
+  "table.population": "Pop.",
+  "table.nonUNToggle": "Territ\u00f3rios n\u00e3o-ONU",
+
+  "card.disclaimer.antarctica": "Territ\u00f3rio internacional \u2014 Tratado Ant\u00e1rtico (1959)",
+  "card.disclaimer.territory": "Territ\u00f3rio {{sovereign}}",
+  "card.disclaimer.disputed": "Soberania em disputa",
+  "card.flagAlt": "Bandeira de {{country}}",
+  "card.aria.openWikipedia": "Abrir {{country}} na Wikip\u00e9dia",
+  "card.aria.dialog": "Ficha de {{country}}",
+
+  "card.field.capital": "Capital",
+  "card.field.population": "Popula\u00e7\u00e3o",
+  "card.field.area": "Superf\u00edcie",
+  "card.field.density": "Densidade",
+  "card.field.currency": "Moeda",
+  "card.field.demonym": "Gent\u00edlico",
+  "card.field.languages": "Idiomas",
+  "card.field.hdi": "IDH",
+  "card.field.ihdi": "IDH-D",
+  "card.unit.inhabitants": "hab.",
+  "card.unit.densityUnit": "hab/km\u00b2",
+  "card.na": "N/D",
+
+  "card.tooltip.hdi": "\u00cdndice de Desenvolvimento Humano: mede sa\u00fade, educa\u00e7\u00e3o e renda. Escala 0\u20131.",
+  "card.tooltip.ihdi": "IDH ajustado pela Desigualdade: penaliza a desigualdade em sa\u00fade, educa\u00e7\u00e3o e renda.",
+  "card.aria.hdiInfo": "Informa\u00e7\u00f5es sobre o IDH",
+  "card.aria.ihdiInfo": "Informa\u00e7\u00f5es sobre o IDH-D",
+
+  "card.antarctica.info": "A Ant\u00e1rtica n\u00e3o pertence a nenhum pa\u00eds. O Tratado Ant\u00e1rtico, assinado em 1959, a reserva para pesquisa cient\u00edfica e pro\u00edbe atividades militares e a explora\u00e7\u00e3o de seus recursos.",
+
+  "card.sovereign.GB": "do Reino Unido",
+  "card.sovereign.FR": "da Fran\u00e7a",
+  "card.sovereign.US": "dos Estados Unidos",
+  "card.sovereign.NL": "dos Pa\u00edses Baixos",
+  "card.sovereign.DK": "da Dinamarca",
+  "card.sovereign.CN": "da China",
+  "card.sovereign.NZ": "da Nova Zel\u00e2ndia",
+  "card.sovereign.FI": "da Finl\u00e2ndia",
+  "card.sovereign.AU": "da Austr\u00e1lia"
+}

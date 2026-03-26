@@ -31,8 +31,8 @@ function sortCountries(list: CountryData[], key: SortKey, dir: SortDir): Country
   const sorted = [...list];
   sorted.sort((a, b) => {
     let cmp: number;
-    if (key === 'name') cmp = a.name.localeCompare(b.name, 'es');
-    else if (key === 'capital') cmp = a.capital.localeCompare(b.capital, 'es');
+    if (key === 'name') cmp = a.name.localeCompare(b.name);
+    else if (key === 'capital') cmp = a.capital.localeCompare(b.capital);
     else cmp = a.population - b.population;
     return dir === 'asc' ? cmp : -cmp;
   });

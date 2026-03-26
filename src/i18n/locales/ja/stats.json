@@ -1,0 +1,33 @@
+{
+  "title": "統計",
+  "aria.close": "閉じる",
+  "tabs.play": "プレイ",
+  "tabs.stamps": "スタンプ試験",
+
+  "table.country": "国",
+  "aria.showIndicators": "インジケーターを表示",
+  "aria.showPercent": "パーセンテージを表示",
+
+  "typeLabel.E": "国を当てよう",
+  "typeLabel.C": "国から首都へ",
+  "typeLabel.D": "首都から国へ",
+  "typeLabel.F": "首都を当てよう",
+  "typeLabel.A": "国を指そう",
+  "typeLabel.B": "首都を指そう",
+
+  "stampLabel.A.short": "◯ 国",
+  "stampLabel.A.full": "国スタンプ試験",
+  "stampLabel.B.short": "◎ 首都",
+  "stampLabel.B.full": "首都スタンプ試験",
+
+  "legend.dominated": "マスター済み",
+  "legend.inferred": "推定",
+  "legend.reinforcement": "復習中",
+  "legend.noData": "データなし",
+  "legend.correct": "正解",
+  "legend.incorrect": "不正解",
+
+  "reset.button": "統計をリセット",
+  "reset.confirm": "{{level}} - {{continent}} のプレイ統計をリセットしますか？",
+  "stampNotice": "スタンプと試験履歴は本物のパスポートと同じく永久的です。最初からやり直したい場合は、新しいプロフィールを作成してください。"
+}

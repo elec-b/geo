@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Pilih benua",
+  "selector.chooseLevel": "Pilih level",
+  "selector.chooseGame": "Pilih permainan",
+  "selector.adventure": "Petualangan",
+  "selector.adventureDesc": "Menyesuaikan dengan yang kamu tahu",
+  "selector.specificTypes": "atau pilih permainan tertentu",
+  "selector.start": "Mulai",
+  "selector.continue": "Lanjutkan",
+  "selector.completed": "Selesai ★",
+  "selector.countryCount_one": "{{count}} negara",
+  "selector.countryCount_other": "{{count}} negara",
+  "selector.lockedToast": "Raih stempel dari level sebelumnya",
+
+  "selector.stampReady.both": "Siap untuk ujian stempel!",
+  "selector.stampReady.countries": "Siap untuk ujian negara!",
+  "selector.stampReady.capitals": "Siap untuk ujian ibu kota!",
+
+  "question.locate": "Temukan",
+  "question.locateCapital": "Temukan ibu kotanya",
+  "question.capitalOf": "Apa ibu kota {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} adalah ibu kota dari...",
+  "question.whichCountry": "Negara mana yang disorot?",
+  "question.whichCapital": "Apa ibu kota negara ini?",
+
+  "progress.stampTest": "Ujian stempel: {{current}} dari {{total}}",
+  "progress.adventurePercent": "{{percent}}% selesai",
+  "progress.typeDominated": "{{current}} dari {{total}} dikuasai",
+  "progress.stampBanner.countries": "Ujian stempel: Negara",
+  "progress.stampBanner.capitals": "Ujian stempel: Ibu Kota",
+
+  "modal.stampEarned.title": "Stempel diraih",
+  "modal.stampEarned.text": "{{correct}} dari {{total}} benar. Tanpa kesalahan.",
+
+  "modal.stampFailed.veryClose": "Hampir berhasil!",
+  "modal.stampFailed.veryCloseText": "Tinggal sedikit lagi.",
+  "modal.stampFailed.goodTry": "Usaha bagus!",
+  "modal.stampFailed.goodTryText": "Setiap usaha mendekatkanmu.",
+  "modal.stampFailed.onTrack": "Di jalur yang benar",
+  "modal.stampFailed.onTrackText": "Terus bermain, kemajuanmu terlihat.",
+  "modal.stampFailed.dontGiveUp": "Jangan menyerah",
+  "modal.stampFailed.dontGiveUpText": "Latihan membuat sempurna.",
+  "modal.stampFailed.score": "{{correct}} dari {{total}} benar.",
+
+  "modal.poolExhausted.trainingComplete": "Latihan selesai",
+  "modal.poolExhausted.readyForStamp": "Luar biasa!<br />Siap untuk stempel",
+  "modal.poolExhausted.completedText": "Kamu telah menyelesaikan <em>{{continent}}</em> di level <em>{{level}}</em>. Kamu bisa mereset statistik untuk berlatih lagi.",
+  "modal.poolExhausted.chooseStamp": "Pilih sebuah ujian. Kamu harus menyelesaikannya tanpa kesalahan untuk meraih stempel.",
+  "modal.poolExhausted.typePassed": "Luar biasa!<br /><em>{{type}}</em> selesai",
+  "modal.poolExhausted.stampReady": "Kamu siap untuk ujian stempel. Selesaikan tanpa kesalahan untuk meraihnya.",
+  "modal.poolExhausted.tryStamp.countries": "Coba stempel Negara",
+  "modal.poolExhausted.tryStamp.capitals": "Coba stempel Ibu Kota",
+  "modal.poolExhausted.selectOther": "Pilih permainan lain",
+  "modal.poolExhausted.playType": "Main <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Main <em>Petualangan</em>",
+
+  "stamp.countries": "Stempel Negara",
+  "stamp.capitals": "Stempel Ibu Kota",
+
+  "modal.stampChooser.title": "Ujian stempel",
+  "modal.stampChooser.text": "Pilih sebuah ujian. Kamu harus menyelesaikan {{count}} pertanyaan tanpa kesalahan.",
+
+  "modal.alreadyDominated.title": "Sudah menguasai<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Kamu telah menjawab benar semua negara. Kamu bisa mereset statistik untuk berlatih lagi.",
+  "modal.alreadyDominated.completedTraining": "Kamu telah menyelesaikan latihan <em>{{continent}}</em> di level <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Coba ujian stempel",
+  "modal.alreadyDominated.goToStats": "Ke Statistik"
+}

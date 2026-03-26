@@ -1,0 +1,19 @@
+{
+  "defaultName": "Felfedező",
+
+  "editor.titleEdit": "Profil szerkesztése",
+  "editor.titleCreate": "Profil létrehozása",
+  "editor.chooseAvatar": "Válassz avatárt",
+  "editor.nameLabel": "Név",
+  "editor.namePlaceholder": "Profil neve",
+  "editor.save": "Mentés",
+  "editor.create": "Létrehozás",
+
+  "selector.title": "Profilok",
+  "selector.confirmDelete": "Törlöd «{{name}}»-t?",
+  "selector.delete": "Törlés",
+  "selector.createNew": "Profil létrehozása",
+  "selector.aria.edit": "{{name}} szerkesztése",
+  "selector.aria.delete": "{{name}} törlése",
+  "selector.aria.dialog": "Profil kiválasztása"
+}

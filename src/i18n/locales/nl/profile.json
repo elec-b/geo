@@ -1,0 +1,19 @@
+{
+  "defaultName": "Ontdekker",
+
+  "editor.titleEdit": "Profiel bewerken",
+  "editor.titleCreate": "Profiel aanmaken",
+  "editor.chooseAvatar": "Kies je avatar",
+  "editor.nameLabel": "Naam",
+  "editor.namePlaceholder": "Profielnaam",
+  "editor.save": "Opslaan",
+  "editor.create": "Aanmaken",
+
+  "selector.title": "Profielen",
+  "selector.confirmDelete": "\u00ab{{name}}\u00bb verwijderen?",
+  "selector.delete": "Verwijderen",
+  "selector.createNew": "Profiel aanmaken",
+  "selector.aria.edit": "{{name}} bewerken",
+  "selector.aria.delete": "{{name}} verwijderen",
+  "selector.aria.dialog": "Profiel selecteren"
+}

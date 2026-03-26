@@ -1,0 +1,19 @@
+{
+  "defaultName": "Odkrywca",
+
+  "editor.titleEdit": "Edytuj profil",
+  "editor.titleCreate": "Utwórz profil",
+  "editor.chooseAvatar": "Wybierz swój awatar",
+  "editor.nameLabel": "Imię",
+  "editor.namePlaceholder": "Nazwa profilu",
+  "editor.save": "Zapisz",
+  "editor.create": "Utwórz",
+
+  "selector.title": "Profile",
+  "selector.confirmDelete": "Usunąć «{{name}}»?",
+  "selector.delete": "Usuń",
+  "selector.createNew": "Utwórz profil",
+  "selector.aria.edit": "Edytuj {{name}}",
+  "selector.aria.delete": "Usuń {{name}}",
+  "selector.aria.dialog": "Wybierz profil"
+}

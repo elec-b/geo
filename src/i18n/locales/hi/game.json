@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "महाद्वीप चुनें",
+  "selector.chooseLevel": "स्तर चुनें",
+  "selector.chooseGame": "खेल चुनें",
+  "selector.adventure": "एडवेंचर",
+  "selector.adventureDesc": "आपके ज्ञान के अनुसार प्रश्न",
+  "selector.specificTypes": "या कोई खेल चुनें",
+  "selector.start": "शुरू करें",
+  "selector.continue": "जारी रखें",
+  "selector.completed": "पूर्ण ★",
+  "selector.countryCount_one": "{{count}} देश",
+  "selector.countryCount_other": "{{count}} देश",
+  "selector.lockedToast": "पहले पिछले स्तर की मुहरें हासिल करें",
+
+  "selector.stampReady.both": "मुहर परीक्षा के लिए तैयार!",
+  "selector.stampReady.countries": "देश मुहर परीक्षा के लिए तैयार!",
+  "selector.stampReady.capitals": "राजधानी मुहर परीक्षा के लिए तैयार!",
+
+  "question.locate": "ढूँढें",
+  "question.locateCapital": "राजधानी ढूँढें",
+  "question.capitalOf": "{{country}} की राजधानी क्या है?",
+  "question.capitalBelongsTo": "{{capital}} किस देश की राजधानी है?",
+  "question.whichCountry": "हाइलाइट किया गया देश कौन सा है?",
+  "question.whichCapital": "इस देश की राजधानी क्या है?",
+
+  "progress.stampTest": "मुहर परीक्षा: {{current}} / {{total}}",
+  "progress.adventurePercent": "{{percent}}% पूर्ण",
+  "progress.typeDominated": "{{total}} में से {{current}} में महारत",
+  "progress.stampBanner.countries": "मुहर परीक्षा: देश",
+  "progress.stampBanner.capitals": "मुहर परीक्षा: राजधानी",
+
+  "modal.stampEarned.title": "मुहर प्राप्त",
+  "modal.stampEarned.text": "{{total}} में से {{correct}} सही। बिना गलती।",
+
+  "modal.stampFailed.veryClose": "बस थोड़ा और!",
+  "modal.stampFailed.veryCloseText": "मुहर बस एक कदम दूर।",
+  "modal.stampFailed.goodTry": "अच्छा प्रयास!",
+  "modal.stampFailed.goodTryText": "हर प्रयास से आप करीब आ रहे हैं।",
+  "modal.stampFailed.onTrack": "सही राह पर हैं",
+  "modal.stampFailed.onTrackText": "खेलते रहें, प्रगति दिख रही है।",
+  "modal.stampFailed.dontGiveUp": "हार मत मानो",
+  "modal.stampFailed.dontGiveUpText": "अभ्यास से ही निपुणता आती है।",
+  "modal.stampFailed.score": "{{total}} में से {{correct}} सही।",
+
+  "modal.poolExhausted.trainingComplete": "प्रशिक्षण पूर्ण",
+  "modal.poolExhausted.readyForStamp": "शानदार!<br />मुहर के लिए तैयार",
+  "modal.poolExhausted.completedText": "आपने <em>{{level}}</em> स्तर पर <em>{{continent}}</em> पूरा कर लिया। फिर से अभ्यास करने के लिए आँकड़े रीसेट कर सकते हैं।",
+  "modal.poolExhausted.chooseStamp": "एक परीक्षा चुनें। मुहर पाने के लिए बिना गलती पूरा करना होगा।",
+  "modal.poolExhausted.typePassed": "शानदार!<br /><em>{{type}}</em> पूर्ण",
+  "modal.poolExhausted.stampReady": "आप मुहर परीक्षा के लिए तैयार हैं। बिना गलती पूरा करें और मुहर पाएँ।",
+  "modal.poolExhausted.tryStamp.countries": "देश मुहर का प्रयास करें",
+  "modal.poolExhausted.tryStamp.capitals": "राजधानी मुहर का प्रयास करें",
+  "modal.poolExhausted.selectOther": "दूसरा खेल चुनें",
+  "modal.poolExhausted.playType": "<em>{{type}}</em> खेलें",
+  "modal.poolExhausted.playAdventure": "<em>एडवेंचर</em> खेलें",
+
+  "stamp.countries": "देश मुहर",
+  "stamp.capitals": "राजधानी मुहर",
+
+  "modal.stampChooser.title": "मुहर परीक्षा",
+  "modal.stampChooser.text": "एक परीक्षा चुनें। {{count}} प्रश्न बिना किसी गलती के पूरे करने होंगे।",
+
+  "modal.alreadyDominated.title": "पहले से महारत<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "आपने सभी देश सही जवाब दिए हैं। फिर से अभ्यास करने के लिए आँकड़े रीसेट कर सकते हैं।",
+  "modal.alreadyDominated.completedTraining": "आपने <em>{{level}}</em> स्तर पर <em>{{continent}}</em> का प्रशिक्षण पूरा किया।",
+  "modal.alreadyDominated.tryStamp": "मुहर परीक्षा का प्रयास करें",
+  "modal.alreadyDominated.goToStats": "आँकड़े देखें"
+}

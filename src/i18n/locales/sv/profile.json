@@ -1,0 +1,19 @@
+{
+  "defaultName": "Utforskare",
+
+  "editor.titleEdit": "Redigera profil",
+  "editor.titleCreate": "Skapa profil",
+  "editor.chooseAvatar": "V\u00e4lj din avatar",
+  "editor.nameLabel": "Namn",
+  "editor.namePlaceholder": "Profilnamn",
+  "editor.save": "Spara",
+  "editor.create": "Skapa",
+
+  "selector.title": "Profiler",
+  "selector.confirmDelete": "Ta bort \u00ab{{name}}\u00bb?",
+  "selector.delete": "Ta bort",
+  "selector.createNew": "Skapa profil",
+  "selector.aria.edit": "Redigera {{name}}",
+  "selector.aria.delete": "Ta bort {{name}}",
+  "selector.aria.dialog": "V\u00e4lj profil"
+}

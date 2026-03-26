@@ -1,0 +1,41 @@
+{
+  "continent.africa": "Afrika",
+  "continent.america": "Amerika",
+  "continent.asia": "Azi\u00eb",
+  "continent.europe": "Europa",
+  "continent.oceania": "Oceani\u00eb",
+  "continent.antarctica": "Antarctica",
+  "continentFilter.all": "Alle",
+
+  "level.tourist": "Toerist",
+  "level.backpacker": "Backpacker",
+  "level.guide": "Gids",
+
+  "questionType.E": "Herken het land",
+  "questionType.C": "Land naar hoofdstad",
+  "questionType.D": "Hoofdstad naar land",
+  "questionType.F": "Herken de hoofdstad",
+  "questionType.A": "Wijs het land aan",
+  "questionType.B": "Wijs de hoofdstad aan",
+
+  "questionTypeShort.E": "Herken land",
+  "questionTypeShort.C": "Land naar hoofdstad",
+  "questionTypeShort.D": "Hoofdstad naar land",
+  "questionTypeShort.F": "Herken hoofdstad",
+  "questionTypeShort.A": "Wijs het land aan",
+  "questionTypeShort.B": "Wijs de hoofdstad aan",
+
+  "tabs.explore": "Ontdekken",
+  "tabs.play": "Spelen",
+  "tabs.passport": "Paspoort",
+
+  "loading": "Globe laden\u2026",
+  "cancel": "Annuleren",
+  "close": "Sluiten",
+  "continue": "Doorgaan",
+
+  "aria.userProfile": "Gebruikersprofiel",
+  "aria.stats": "Statistieken",
+  "aria.settings": "Instellingen",
+  "aria.navigation": "Hoofdnavigatie"
+}

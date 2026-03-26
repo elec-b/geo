@@ -1,0 +1,16 @@
+{
+  "header.title": "Passaporte de {{name}}",
+  "header.globalLevel": "N\u00edvel global: {{level}}",
+  "emptyState": "Cada carimbo prova o que sabes. Vais preencher o passaporte?",
+
+  "legend.country": "\u25cb Pa\u00eds",
+  "legend.capital": "\u25ce Capital",
+  "legend.earned": "\u2605 Obtido",
+  "legend.locked": "\ud83d\udd12 Bloqueado",
+
+  "stampTitle.countries": "Carimbo de Pa\u00edses",
+  "stampTitle.capitals": "Carimbo de Capitais",
+
+  "modal.title": "Prova de carimbo",
+  "modal.questionCount": "Ter\u00e1s de responder a {{count}} perguntas sem nenhum erro."
+}

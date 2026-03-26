@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Выбери континент",
+  "selector.chooseLevel": "Выбери уровень",
+  "selector.chooseGame": "Выбери игру",
+  "selector.adventure": "Приключение",
+  "selector.adventureDesc": "Подстраивается под твои знания",
+  "selector.specificTypes": "или выбери конкретную игру",
+  "selector.start": "Начать",
+  "selector.continue": "Продолжить",
+  "selector.completed": "Пройдено ★",
+  "selector.countryCount_one": "{{count}} страна",
+  "selector.countryCount_other": "{{count}} стран",
+  "selector.lockedToast": "Получи печати предыдущего уровня",
+
+  "selector.stampReady.both": "Готов к испытаниям на печать!",
+  "selector.stampReady.countries": "Готов к испытанию по странам!",
+  "selector.stampReady.capitals": "Готов к испытанию по столицам!",
+
+  "question.locate": "Найди",
+  "question.locateCapital": "Найди столицу",
+  "question.capitalOf": "Какая столица у {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} — столица...",
+  "question.whichCountry": "Какая страна выделена?",
+  "question.whichCapital": "Какая столица у этой страны?",
+
+  "progress.stampTest": "Испытание на печать: {{current}} из {{total}}",
+  "progress.adventurePercent": "{{percent}}% пройдено",
+  "progress.typeDominated": "{{current}} из {{total}} освоено",
+  "progress.stampBanner.countries": "Испытание на печать: Страны",
+  "progress.stampBanner.capitals": "Испытание на печать: Столицы",
+
+  "modal.stampEarned.title": "Печать получена",
+  "modal.stampEarned.text": "{{correct}} из {{total}} верно. Без ошибок.",
+
+  "modal.stampFailed.veryClose": "Почти получилось!",
+  "modal.stampFailed.veryCloseText": "Совсем чуть-чуть до печати.",
+  "modal.stampFailed.goodTry": "Хорошая попытка!",
+  "modal.stampFailed.goodTryText": "Каждая попытка приближает к цели.",
+  "modal.stampFailed.onTrack": "Ты на верном пути",
+  "modal.stampFailed.onTrackText": "Продолжай играть, прогресс виден.",
+  "modal.stampFailed.dontGiveUp": "Не сдавайся",
+  "modal.stampFailed.dontGiveUpText": "Повторение — мать учения.",
+  "modal.stampFailed.score": "{{correct}} из {{total}} верно.",
+
+  "modal.poolExhausted.trainingComplete": "Тренировка завершена",
+  "modal.poolExhausted.readyForStamp": "Отлично!<br />Готов к печати",
+  "modal.poolExhausted.completedText": "Ты прошёл <em>{{continent}}</em> на уровне <em>{{level}}</em>. Можешь сбросить статистику для повторной практики.",
+  "modal.poolExhausted.chooseStamp": "Выбери испытание. Нужно пройти его без ошибок, чтобы получить печать.",
+  "modal.poolExhausted.typePassed": "Отлично!<br /><em>{{type}}</em> пройдено",
+  "modal.poolExhausted.stampReady": "Ты готов к испытанию на печать. Пройди его без ошибок, чтобы получить её.",
+  "modal.poolExhausted.tryStamp.countries": "Попробовать печать по Странам",
+  "modal.poolExhausted.tryStamp.capitals": "Попробовать печать по Столицам",
+  "modal.poolExhausted.selectOther": "Выбрать другую игру",
+  "modal.poolExhausted.playType": "Играть в <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Играть в <em>Приключение</em>",
+
+  "stamp.countries": "Печать по Странам",
+  "stamp.capitals": "Печать по Столицам",
+
+  "modal.stampChooser.title": "Испытание на печать",
+  "modal.stampChooser.text": "Выбери испытание. Нужно ответить на {{count}} вопросов без единой ошибки.",
+
+  "modal.alreadyDominated.title": "Ты уже освоил<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Ты верно ответил на все страны. Можешь сбросить статистику для повторной практики.",
+  "modal.alreadyDominated.completedTraining": "Ты завершил тренировку <em>{{continent}}</em> на уровне <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Попробовать испытание на печать",
+  "modal.alreadyDominated.goToStats": "Перейти в Статистику"
+}

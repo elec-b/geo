@@ -1,0 +1,16 @@
+{
+  "header.title": "{{name}}的護照",
+  "header.globalLevel": "全球等級：{{level}}",
+  "emptyState": "每個印章都是你知識的證明。能集滿整本護照嗎？",
+
+  "legend.country": "○ 國家",
+  "legend.capital": "◎ 首都",
+  "legend.earned": "★ 已獲得",
+  "legend.locked": "🔒 未解鎖",
+
+  "stampTitle.countries": "國家印章",
+  "stampTitle.capitals": "首都印章",
+
+  "modal.title": "印章測驗",
+  "modal.questionCount": "你需要零失誤完成 {{count}} 道題。"
+}

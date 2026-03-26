@@ -8,6 +8,7 @@ import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geoj
 import { loadCountriesGeoJson, loadBordersGeoJson, getOverrideCca2s } from '../../data/countries';
 import type { CountryFeature, CountryProperties } from '../../data/countries';
 import type { CapitalCoords } from '../../data/types';
+import { useAppStore } from '../../stores/appStore';
 import { App as CapacitorApp } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
 import { COUNTRY_SELECTED_COLOR } from './colors';
@@ -96,11 +97,11 @@ const SEA_LETTER_SPACING: Record<number, number> = { 0: 3, 1: 2, 2: 1, 3: 0 };
 
 interface SeaLabel {
   id: string;
-  name_es: string;
   lat: number;
   lon: number;
   scalerank: number;
   minZoom: number;
+  [key: string]: string | number; // name_{locale} campos dinámicos
 }
 
 // Overrides de centroides visuales para países con forma irregular.
@@ -241,7 +242,7 @@ export interface GlobeD3Props {
   capitalLabelsData?: Map<string, CapitalCoords> | null;
   /** Población por país (Map<cca2, population>) para prioridad de etiquetas */
   countryPopulations?: Map<string, number> | null;
-  /** Nombres de países en español (Map<cca2, nombre>) para etiquetas del globo */
+  /** Nombres de países traducidos (Map<cca2, nombre>) para etiquetas del globo */
   countryNames?: Map<string, string> | null;
   /** Etiquetas puntuales de feedback geográfico (error/correcto sobre el globo) */
   feedbackLabels?: FeedbackLabel[] | null;
@@ -387,6 +388,12 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   const showSeaLabelsRef = useRef(showSeaLabels);
   if (showSeaLabelsRef.current !== showSeaLabels) needsRedrawRef.current = true;
   showSeaLabelsRef.current = showSeaLabels;
+
+  // Locale activo (para sea labels multi-idioma)
+  const locale = useAppStore((s) => s.settings.locale);
+  const localeRef = useRef(locale);
+  if (localeRef.current !== locale) needsRedrawRef.current = true;
+  localeRef.current = locale;
 
   // Datos de etiquetas de mares/océanos
   const seaLabelsRef = useRef<SeaLabel[]>([]);
@@ -661,7 +668,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         ctx.fillStyle = `rgba(100, 180, 255, ${alpha})`;
 
         const spacing = SEA_LETTER_SPACING[label.scalerank] ?? 0;
-        const text = label.name_es;
+        const seaNameKey = `name_${localeRef.current.replace('-', '_')}`;
+        const text = (label[seaNameKey] as string) ?? (label.name_es as string) ?? '';
 
         if (spacing > 0) {
           // Resetear textAlign para evitar herencia de 'center' de iteración anterior

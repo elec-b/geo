@@ -1,0 +1,177 @@
+{
+  "cs": {
+    "HK": "Hongkong",
+    "MO": "Macao",
+    "PS": "Palestina",
+    "SX": "Svatý Martin"
+  },
+  "de": {
+    "CI": "Elfenbeinküste",
+    "HK": "Hongkong",
+    "MO": "Macau",
+    "PS": "Palästina",
+    "SX": "Sint Maarten",
+    "TL": "Osttimor"
+  },
+  "en": {
+    "CI": "Ivory Coast",
+    "HK": "Hong Kong",
+    "MO": "Macao",
+    "PS": "Palestine",
+    "SX": "Sint Maarten",
+    "TL": "East Timor"
+  },
+  "es": {
+    "CI": "Costa de Marfil",
+    "HK": "Hong Kong",
+    "ML": "Malí",
+    "MM": "Birmania",
+    "MO": "Macao",
+    "PS": "Palestina",
+    "SX": "San Martín",
+    "TL": "Timor Oriental"
+  },
+  "fr": {
+    "HK": "Hong Kong",
+    "MO": "Macao",
+    "PS": "Palestine",
+    "SX": "Saint-Martin"
+  },
+  "hi": {
+    "HK": "हाँग काँग",
+    "MO": "मकाऊ",
+    "PS": "फ़िलिस्तीन",
+    "TL": "पूर्वी तिमोर"
+  },
+  "hu": {
+    "HK": "Hongkong",
+    "MO": "Makaó",
+    "PS": "Palesztina"
+  },
+  "id": {
+    "CI": "Pantai Gading",
+    "HK": "Hong Kong",
+    "MO": "Makau",
+    "PS": "Palestina",
+    "SX": "Sint Maarten",
+    "TL": "Timor Leste"
+  },
+  "it": {
+    "HK": "Hong Kong",
+    "MO": "Macao",
+    "PS": "Palestina",
+    "SX": "Sint Maarten",
+    "TL": "Timor Est"
+  },
+  "ja": {
+    "HK": "香港",
+    "MO": "マカオ",
+    "PS": "パレスチナ",
+    "TL": "東ティモール"
+  },
+  "ko": {
+    "HK": "홍콩",
+    "MO": "마카오",
+    "PS": "팔레스타인"
+  },
+  "ms": {
+    "CI": "Pantai Gading",
+    "HK": "Hong Kong",
+    "MO": "Macau",
+    "PS": "Palestin",
+    "TL": "Timor Timur"
+  },
+  "nb": {
+    "HK": "Hongkong",
+    "MO": "Macao",
+    "PS": "Palestina",
+    "SX": "Sint Maarten",
+    "TL": "Øst-Timor"
+  },
+  "nl": {
+    "HK": "Hongkong",
+    "MO": "Macau",
+    "PS": "Palestina",
+    "TL": "Oost-Timor"
+  },
+  "pl": {
+    "CI": "Wybrzeże Kości Słoniowej",
+    "HK": "Hongkong",
+    "MO": "Makau",
+    "PS": "Palestyna",
+    "SX": "Sint Maarten",
+    "TL": "Timor Wschodni"
+  },
+  "pt-BR": {
+    "CI": "Costa do Marfim",
+    "HK": "Hong Kong",
+    "MO": "Macau",
+    "PS": "Palestina",
+    "SX": "São Martinho",
+    "TL": "Timor-Leste"
+  },
+  "pt-PT": {
+    "CI": "Costa do Marfim",
+    "HK": "Hong Kong",
+    "MO": "Macau",
+    "PS": "Palestina",
+    "SX": "São Martinho",
+    "TL": "Timor-Leste"
+  },
+  "ro": {
+    "CI": "Coasta de Fildeș",
+    "HK": "Hong Kong",
+    "MO": "Macao",
+    "PS": "Palestina",
+    "TL": "Timorul de Est"
+  },
+  "ru": {
+    "HK": "Гонконг",
+    "MO": "Макао",
+    "PS": "Палестина",
+    "TL": "Восточный Тимор"
+  },
+  "sv": {
+    "HK": "Hongkong",
+    "MO": "Macao",
+    "PS": "Palestina",
+    "SX": "Sint Maarten"
+  },
+  "th": {
+    "HK": "ฮ่องกง",
+    "MO": "มาเก๊า",
+    "PS": "ปาเลสไตน์",
+    "TL": "ติมอร์ตะวันออก"
+  },
+  "tr": {
+    "CI": "Fildişi Sahili",
+    "HK": "Hong Kong",
+    "MO": "Makao",
+    "PS": "Filistin",
+    "SX": "Sint Maarten",
+    "TL": "Doğu Timor"
+  },
+  "uk": {
+    "HK": "Гонконг",
+    "MO": "Макао",
+    "PS": "Палестина",
+    "TL": "Східний Тимор"
+  },
+  "vi": {
+    "CI": "Bờ Biển Ngà",
+    "HK": "Hồng Kông",
+    "MO": "Ma Cao",
+    "PS": "Palestine",
+    "TL": "Đông Timor"
+  },
+  "zh-Hans": {
+    "HK": "香港",
+    "MO": "澳门",
+    "PS": "巴勒斯坦"
+  },
+  "zh-Hant": {
+    "HK": "香港",
+    "MO": "澳門",
+    "PS": "巴勒斯坦"
+  }
+}

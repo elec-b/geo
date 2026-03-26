@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Scegli un continente",
+  "selector.chooseLevel": "Scegli un livello",
+  "selector.chooseGame": "Scegli un gioco",
+  "selector.adventure": "Avventura",
+  "selector.adventureDesc": "Si adatta a ci\u00f2 che sai",
+  "selector.specificTypes": "oppure scegli un gioco specifico",
+  "selector.start": "Inizia",
+  "selector.continue": "Continua",
+  "selector.completed": "Superato \u2605",
+  "selector.countryCount_one": "{{count}} paese",
+  "selector.countryCount_other": "{{count}} paesi",
+  "selector.lockedToast": "Ottieni i timbri del livello precedente",
+
+  "selector.stampReady.both": "Pronto per le prove timbro!",
+  "selector.stampReady.countries": "Pronto per la prova dei paesi!",
+  "selector.stampReady.capitals": "Pronto per la prova delle capitali!",
+
+  "question.locate": "Localizza",
+  "question.locateCapital": "Localizza la capitale",
+  "question.capitalOf": "Qual \u00e8 la capitale di {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} \u00e8 la capitale di\u2026",
+  "question.whichCountry": "Quale paese \u00e8 evidenziato?",
+  "question.whichCapital": "Qual \u00e8 la capitale di questo paese?",
+
+  "progress.stampTest": "Prova timbro: {{current}} di {{total}}",
+  "progress.adventurePercent": "{{percent}}% completato",
+  "progress.typeDominated": "{{current}} di {{total}} padroneggiati",
+  "progress.stampBanner.countries": "Prova timbro: Paesi",
+  "progress.stampBanner.capitals": "Prova timbro: Capitali",
+
+  "modal.stampEarned.title": "Timbro ottenuto",
+  "modal.stampEarned.text": "{{correct}} di {{total}} corretti. Nessun errore.",
+
+  "modal.stampFailed.veryClose": "Quasi!",
+  "modal.stampFailed.veryCloseText": "A un passo dal timbro.",
+  "modal.stampFailed.goodTry": "Ben fatto!",
+  "modal.stampFailed.goodTryText": "Ogni tentativo ti avvicina.",
+  "modal.stampFailed.onTrack": "Sei sulla strada giusta",
+  "modal.stampFailed.onTrackText": "Continua a giocare, i progressi si vedono.",
+  "modal.stampFailed.dontGiveUp": "Non mollare",
+  "modal.stampFailed.dontGiveUpText": "La pratica rende perfetti.",
+  "modal.stampFailed.score": "{{correct}} di {{total}} corretti.",
+
+  "modal.poolExhausted.trainingComplete": "Allenamento completato",
+  "modal.poolExhausted.readyForStamp": "Fantastico!<br />Pronto per il timbro",
+  "modal.poolExhausted.completedText": "Hai completato <em>{{continent}}</em> al livello <em>{{level}}</em>. Puoi resettare le statistiche per esercitarti di nuovo.",
+  "modal.poolExhausted.chooseStamp": "Scegli una prova. Dovrai completarla senza errori per ottenere il timbro.",
+  "modal.poolExhausted.typePassed": "Fantastico!<br /><em>{{type}}</em> completato",
+  "modal.poolExhausted.stampReady": "Sei pronto per la prova timbro. Completala senza errori per ottenerlo.",
+  "modal.poolExhausted.tryStamp.countries": "Prova timbro Paesi",
+  "modal.poolExhausted.tryStamp.capitals": "Prova timbro Capitali",
+  "modal.poolExhausted.selectOther": "Scegli un altro gioco",
+  "modal.poolExhausted.playType": "Gioca a <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Gioca ad <em>Avventura</em>",
+
+  "stamp.countries": "Timbro Paesi",
+  "stamp.capitals": "Timbro Capitali",
+
+  "modal.stampChooser.title": "Prova timbro",
+  "modal.stampChooser.text": "Scegli una prova. Dovrai rispondere a {{count}} domande senza errori.",
+
+  "modal.alreadyDominated.title": "Hai padroneggiato<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Hai indovinato tutti i paesi. Puoi resettare le statistiche per esercitarti di nuovo.",
+  "modal.alreadyDominated.completedTraining": "Hai completato l'allenamento di <em>{{continent}}</em> al livello <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Prova la prova timbro",
+  "modal.alreadyDominated.goToStats": "Vai alle Statistiche"
+}

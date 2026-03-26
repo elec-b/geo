@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Chọn châu lục",
+  "selector.chooseLevel": "Chọn cấp độ",
+  "selector.chooseGame": "Chọn trò chơi",
+  "selector.adventure": "Phiêu lưu",
+  "selector.adventureDesc": "Tự điều chỉnh theo kiến thức của bạn",
+  "selector.specificTypes": "hoặc chọn trò chơi cụ thể",
+  "selector.start": "Bắt đầu",
+  "selector.continue": "Tiếp tục",
+  "selector.completed": "Hoàn thành ★",
+  "selector.countryCount_one": "{{count}} quốc gia",
+  "selector.countryCount_other": "{{count}} quốc gia",
+  "selector.lockedToast": "Hãy đạt tem ở cấp độ trước",
+
+  "selector.stampReady.both": "Sẵn sàng cho bài kiểm tra tem!",
+  "selector.stampReady.countries": "Sẵn sàng cho bài kiểm tra quốc gia!",
+  "selector.stampReady.capitals": "Sẵn sàng cho bài kiểm tra thủ đô!",
+
+  "question.locate": "Tìm",
+  "question.locateCapital": "Tìm thủ đô",
+  "question.capitalOf": "Thủ đô của {{country}} là gì?",
+  "question.capitalBelongsTo": "{{capital}} là thủ đô của...",
+  "question.whichCountry": "Quốc gia nào đang được đánh dấu?",
+  "question.whichCapital": "Thủ đô của quốc gia này là gì?",
+
+  "progress.stampTest": "Bài kiểm tra tem: {{current}} / {{total}}",
+  "progress.adventurePercent": "{{percent}}% hoàn thành",
+  "progress.typeDominated": "{{current}} / {{total}} đã thành thạo",
+  "progress.stampBanner.countries": "Bài kiểm tra tem: Quốc gia",
+  "progress.stampBanner.capitals": "Bài kiểm tra tem: Thủ đô",
+
+  "modal.stampEarned.title": "Đã đạt tem",
+  "modal.stampEarned.text": "{{correct}} / {{total}} đúng. Không sai lần nào.",
+
+  "modal.stampFailed.veryClose": "Suýt nữa rồi!",
+  "modal.stampFailed.veryCloseText": "Chỉ còn một chút nữa thôi.",
+  "modal.stampFailed.goodTry": "Cố gắng tốt!",
+  "modal.stampFailed.goodTryText": "Mỗi lần thử đưa bạn gần hơn mục tiêu.",
+  "modal.stampFailed.onTrack": "Bạn đang đi đúng hướng",
+  "modal.stampFailed.onTrackText": "Tiếp tục chơi, tiến bộ rõ ràng.",
+  "modal.stampFailed.dontGiveUp": "Đừng bỏ cuộc",
+  "modal.stampFailed.dontGiveUpText": "Luyện tập tạo nên bậc thầy.",
+  "modal.stampFailed.score": "{{correct}} / {{total}} đúng.",
+
+  "modal.poolExhausted.trainingComplete": "Hoàn thành luyện tập",
+  "modal.poolExhausted.readyForStamp": "Tuyệt vời!<br />Sẵn sàng nhận tem",
+  "modal.poolExhausted.completedText": "Bạn đã hoàn thành <em>{{continent}}</em> ở cấp độ <em>{{level}}</em>. Bạn có thể đặt lại thống kê để luyện tập lại.",
+  "modal.poolExhausted.chooseStamp": "Chọn bài kiểm tra. Bạn cần hoàn thành không sai lần nào để nhận tem.",
+  "modal.poolExhausted.typePassed": "Tuyệt vời!<br /><em>{{type}}</em> đã vượt qua",
+  "modal.poolExhausted.stampReady": "Bạn đã sẵn sàng cho bài kiểm tra tem. Hoàn thành không sai lần nào để nhận tem.",
+  "modal.poolExhausted.tryStamp.countries": "Thử tem Quốc gia",
+  "modal.poolExhausted.tryStamp.capitals": "Thử tem Thủ đô",
+  "modal.poolExhausted.selectOther": "Chọn trò chơi khác",
+  "modal.poolExhausted.playType": "Chơi <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Chơi <em>Phiêu lưu</em>",
+
+  "stamp.countries": "Tem Quốc gia",
+  "stamp.capitals": "Tem Thủ đô",
+
+  "modal.stampChooser.title": "Bài kiểm tra tem",
+  "modal.stampChooser.text": "Chọn bài kiểm tra. Bạn cần trả lời đúng {{count}} câu hỏi không sai lần nào.",
+
+  "modal.alreadyDominated.title": "Bạn đã thành thạo<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Bạn đã trả lời đúng tất cả quốc gia. Bạn có thể đặt lại thống kê để luyện tập lại.",
+  "modal.alreadyDominated.completedTraining": "Bạn đã hoàn thành luyện tập <em>{{continent}}</em> ở cấp độ <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Thử bài kiểm tra tem",
+  "modal.alreadyDominated.goToStats": "Đi đến Thống kê"
+}

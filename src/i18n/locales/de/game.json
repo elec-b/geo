@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "W\u00e4hle einen Kontinent",
+  "selector.chooseLevel": "W\u00e4hle ein Level",
+  "selector.chooseGame": "W\u00e4hle ein Spiel",
+  "selector.adventure": "Abenteuer",
+  "selector.adventureDesc": "Passt sich deinem Wissen an",
+  "selector.specificTypes": "oder w\u00e4hle ein bestimmtes Spiel",
+  "selector.start": "Starten",
+  "selector.continue": "Weiter",
+  "selector.completed": "Geschafft \u2605",
+  "selector.countryCount_one": "{{count}} Land",
+  "selector.countryCount_other": "{{count}} L\u00e4nder",
+  "selector.lockedToast": "Hole die Stempel der vorherigen Stufe",
+
+  "selector.stampReady.both": "Bereit f\u00fcr die Stempelpr\u00fcfungen!",
+  "selector.stampReady.countries": "Bereit f\u00fcr die L\u00e4nderpr\u00fcfung!",
+  "selector.stampReady.capitals": "Bereit f\u00fcr die Hauptstadtpr\u00fcfung!",
+
+  "question.locate": "Finde",
+  "question.locateCapital": "Finde die Hauptstadt",
+  "question.capitalOf": "Was ist die Hauptstadt von {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} ist die Hauptstadt von\u2026",
+  "question.whichCountry": "Welches Land ist hervorgehoben?",
+  "question.whichCapital": "Was ist die Hauptstadt dieses Landes?",
+
+  "progress.stampTest": "Stempelpr\u00fcfung: {{current}} von {{total}}",
+  "progress.adventurePercent": "{{percent}} % abgeschlossen",
+  "progress.typeDominated": "{{current}} von {{total}} gemeistert",
+  "progress.stampBanner.countries": "Stempelpr\u00fcfung: L\u00e4nder",
+  "progress.stampBanner.capitals": "Stempelpr\u00fcfung: Hauptst\u00e4dte",
+
+  "modal.stampEarned.title": "Stempel erhalten",
+  "modal.stampEarned.text": "{{correct}} von {{total}} richtig. Keine Fehler.",
+
+  "modal.stampFailed.veryClose": "Fast geschafft!",
+  "modal.stampFailed.veryCloseText": "Nur ein kleiner Schritt zum Stempel.",
+  "modal.stampFailed.goodTry": "Guter Versuch!",
+  "modal.stampFailed.goodTryText": "Jeder Versuch bringt dich n\u00e4her.",
+  "modal.stampFailed.onTrack": "Du bist auf dem richtigen Weg",
+  "modal.stampFailed.onTrackText": "Spiel weiter \u2014 dein Fortschritt ist sichtbar.",
+  "modal.stampFailed.dontGiveUp": "Gib nicht auf",
+  "modal.stampFailed.dontGiveUpText": "\u00dcbung macht den Meister.",
+  "modal.stampFailed.score": "{{correct}} von {{total}} richtig.",
+
+  "modal.poolExhausted.trainingComplete": "Training abgeschlossen",
+  "modal.poolExhausted.readyForStamp": "Klasse!<br />Bereit f\u00fcr den Stempel",
+  "modal.poolExhausted.completedText": "Du hast <em>{{continent}}</em> auf dem Level <em>{{level}}</em> abgeschlossen. Du kannst die Statistiken zur\u00fccksetzen, um erneut zu \u00fcben.",
+  "modal.poolExhausted.chooseStamp": "W\u00e4hle eine Pr\u00fcfung. Du musst sie fehlerfrei bestehen, um den Stempel zu erhalten.",
+  "modal.poolExhausted.typePassed": "Klasse!<br /><em>{{type}}</em> abgeschlossen",
+  "modal.poolExhausted.stampReady": "Du bist bereit f\u00fcr die Stempelpr\u00fcfung. Bestehe sie fehlerfrei, um den Stempel zu erhalten.",
+  "modal.poolExhausted.tryStamp.countries": "L\u00e4nder-Stempel versuchen",
+  "modal.poolExhausted.tryStamp.capitals": "Hauptstadt-Stempel versuchen",
+  "modal.poolExhausted.selectOther": "Anderes Spiel w\u00e4hlen",
+  "modal.poolExhausted.playType": "<em>{{type}}</em> spielen",
+  "modal.poolExhausted.playAdventure": "<em>Abenteuer</em> spielen",
+
+  "stamp.countries": "L\u00e4nder-Stempel",
+  "stamp.capitals": "Hauptstadt-Stempel",
+
+  "modal.stampChooser.title": "Stempelpr\u00fcfung",
+  "modal.stampChooser.text": "W\u00e4hle eine Pr\u00fcfung. Du musst {{count}} Fragen fehlerfrei beantworten.",
+
+  "modal.alreadyDominated.title": "Du beherrschst<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Du hast alle L\u00e4nder richtig. Du kannst die Statistiken zur\u00fccksetzen, um erneut zu \u00fcben.",
+  "modal.alreadyDominated.completedTraining": "Du hast das Training von <em>{{continent}}</em> auf dem Level <em>{{level}}</em> abgeschlossen.",
+  "modal.alreadyDominated.tryStamp": "Stempelpr\u00fcfung versuchen",
+  "modal.alreadyDominated.goToStats": "Zu den Statistiken"
+}

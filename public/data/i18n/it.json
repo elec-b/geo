@@ -1,0 +1,2959 @@
+{
+  "AD": {
+    "name": "Andorra",
+    "capital": "Andorra la Vella",
+    "demonym": "andorrano",
+    "languages": [
+      "Catalano"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "AE": {
+    "name": "Emirati Arabi Uniti",
+    "capital": "Abu Dhabi",
+    "demonym": "emiratino",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Dirham degli Emirati Arabi Uniti"
+    ],
+    "wikipediaSlug": null
+  },
+  "AF": {
+    "name": "Afghanistan",
+    "capital": "Kabul",
+    "demonym": "afghano",
+    "languages": [
+      "Dari",
+      "Pashto"
+    ],
+    "currencyNames": [
+      "Afghani"
+    ],
+    "wikipediaSlug": null
+  },
+  "AG": {
+    "name": "Antigua e Barbuda",
+    "capital": "Saint John's",
+    "demonym": "antiguano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro dei Caraibi orientali"
+    ],
+    "wikipediaSlug": null
+  },
+  "AI": {
+    "name": "Anguilla",
+    "capital": "The Valley",
+    "demonym": "anguillano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro dei Caraibi orientali"
+    ],
+    "wikipediaSlug": null
+  },
+  "AL": {
+    "name": "Albania",
+    "capital": "Tirana",
+    "demonym": "albanese",
+    "languages": [
+      "Albanese"
+    ],
+    "currencyNames": [
+      "Lek albanese"
+    ],
+    "wikipediaSlug": null
+  },
+  "AM": {
+    "name": "Armenia",
+    "capital": "Erevan",
+    "demonym": "armeno",
+    "languages": [
+      "Armeno"
+    ],
+    "currencyNames": [
+      "Dram armeno"
+    ],
+    "wikipediaSlug": null
+  },
+  "AO": {
+    "name": "Angola",
+    "capital": "Luanda",
+    "demonym": "angolano",
+    "languages": [
+      "Portoghese"
+    ],
+    "currencyNames": [
+      "Kwanza angolano"
+    ],
+    "wikipediaSlug": null
+  },
+  "AR": {
+    "name": "Argentina",
+    "capital": "Buenos Aires",
+    "demonym": "argentino",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Peso argentino"
+    ],
+    "wikipediaSlug": null
+  },
+  "AS": {
+    "name": "Samoa Americane",
+    "capital": "Pago Pago",
+    "demonym": "samoano americano",
+    "languages": [
+      "Inglese",
+      "Samoano"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "AT": {
+    "name": "Austria",
+    "capital": "Vienna",
+    "demonym": "austriaco",
+    "languages": [
+      "Tedesco"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "AU": {
+    "name": "Australia",
+    "capital": "Canberra",
+    "demonym": "australiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro australiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "AW": {
+    "name": "Aruba",
+    "capital": "Oranjestad",
+    "demonym": "arubano",
+    "languages": [
+      "Olandese",
+      "Papiamento"
+    ],
+    "currencyNames": [
+      "Fiorino di Aruba"
+    ],
+    "wikipediaSlug": null
+  },
+  "AX": {
+    "name": "Isole Åland",
+    "capital": "Mariehamn",
+    "demonym": "ålandese",
+    "languages": [
+      "Svedese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "AZ": {
+    "name": "Azerbaigian",
+    "capital": "Baku",
+    "demonym": "azerbaigiano",
+    "languages": [
+      "Azerbaigiano"
+    ],
+    "currencyNames": [
+      "Manat azero"
+    ],
+    "wikipediaSlug": null
+  },
+  "BA": {
+    "name": "Bosnia ed Erzegovina",
+    "capital": "Sarajevo",
+    "demonym": "bosniaco",
+    "languages": [
+      "Bosniaco",
+      "Croato",
+      "Serbo"
+    ],
+    "currencyNames": [
+      "Marco convertibile della Bosnia-Herzegovina"
+    ],
+    "wikipediaSlug": null
+  },
+  "BB": {
+    "name": "Barbados",
+    "capital": "Bridgetown",
+    "demonym": "barbadiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro di Barbados"
+    ],
+    "wikipediaSlug": null
+  },
+  "BD": {
+    "name": "Bangladesh",
+    "capital": "Dacca",
+    "demonym": "bengalese",
+    "languages": [
+      "Bengalese"
+    ],
+    "currencyNames": [
+      "Taka bangladese"
+    ],
+    "wikipediaSlug": null
+  },
+  "BE": {
+    "name": "Belgio",
+    "capital": "Bruxelles",
+    "demonym": "belga",
+    "languages": [
+      "Olandese",
+      "Francese",
+      "Tedesco"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "BF": {
+    "name": "Burkina Faso",
+    "capital": "Ouagadougou",
+    "demonym": "burkinabé",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFA BCEAO"
+    ],
+    "wikipediaSlug": null
+  },
+  "BG": {
+    "name": "Bulgaria",
+    "capital": "Sofia",
+    "demonym": "bulgaro",
+    "languages": [
+      "Bulgaro"
+    ],
+    "currencyNames": [
+      "Lev bulgaro"
+    ],
+    "wikipediaSlug": null
+  },
+  "BH": {
+    "name": "Bahrein",
+    "capital": "Manama",
+    "demonym": "bahreinita",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Dinaro del Bahrein"
+    ],
+    "wikipediaSlug": null
+  },
+  "BI": {
+    "name": "Burundi",
+    "capital": "Gitega",
+    "demonym": "burundese",
+    "languages": [
+      "Rundi",
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco del Burundi"
+    ],
+    "wikipediaSlug": null
+  },
+  "BJ": {
+    "name": "Benin",
+    "capital": "Porto-Novo",
+    "demonym": "beninese",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFA BCEAO"
+    ],
+    "wikipediaSlug": null
+  },
+  "BL": {
+    "name": "Saint-Barthélemy",
+    "capital": "Gustavia",
+    "demonym": "sanbartolomeano",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "BM": {
+    "name": "Bermuda",
+    "capital": "Hamilton",
+    "demonym": "bermudiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro delle Bermuda"
+    ],
+    "wikipediaSlug": null
+  },
+  "BN": {
+    "name": "Brunei",
+    "capital": "Bandar Seri Begawan",
+    "demonym": "bruneiano",
+    "languages": [
+      "Malese"
+    ],
+    "currencyNames": [
+      "Dollaro del Brunei",
+      "Dollaro di Singapore"
+    ],
+    "wikipediaSlug": null
+  },
+  "BO": {
+    "name": "Bolivia",
+    "capital": "La Paz",
+    "demonym": "boliviano",
+    "languages": [
+      "Spagnolo",
+      "Quechua",
+      "Aymara"
+    ],
+    "currencyNames": [
+      "Boliviano"
+    ],
+    "wikipediaSlug": null
+  },
+  "BR": {
+    "name": "Brasile",
+    "capital": "Brasilia",
+    "demonym": "brasiliano",
+    "languages": [
+      "Portoghese"
+    ],
+    "currencyNames": [
+      "Real brasiliano"
+    ],
+    "wikipediaSlug": null
+  },
+  "BS": {
+    "name": "Bahamas",
+    "capital": "Nassau",
+    "demonym": "bahamense",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro delle Bahamas",
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "BT": {
+    "name": "Bhutan",
+    "capital": "Thimphu",
+    "demonym": "bhutanese",
+    "languages": [
+      "Dzongkha"
+    ],
+    "currencyNames": [
+      "Ngultrum bhutanese",
+      "Rupia indiana"
+    ],
+    "wikipediaSlug": null
+  },
+  "BW": {
+    "name": "Botswana",
+    "capital": "Gaborone",
+    "demonym": "botswaniano",
+    "languages": [
+      "Inglese",
+      "Tswana"
+    ],
+    "currencyNames": [
+      "Pula del Botswana"
+    ],
+    "wikipediaSlug": null
+  },
+  "BY": {
+    "name": "Bielorussia",
+    "capital": "Minsk",
+    "demonym": "bielorusso",
+    "languages": [
+      "Bielorusso",
+      "Russo"
+    ],
+    "currencyNames": [
+      "Rublo bielorusso"
+    ],
+    "wikipediaSlug": null
+  },
+  "BZ": {
+    "name": "Belize",
+    "capital": "Belmopan",
+    "demonym": "beliziano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro del Belize"
+    ],
+    "wikipediaSlug": null
+  },
+  "CA": {
+    "name": "Canada",
+    "capital": "Ottawa",
+    "demonym": "canadese",
+    "languages": [
+      "Inglese",
+      "Francese"
+    ],
+    "currencyNames": [
+      "Dollaro canadese"
+    ],
+    "wikipediaSlug": null
+  },
+  "CD": {
+    "name": "Congo - Kinshasa",
+    "capital": "Kinshasa",
+    "demonym": "congolese",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco congolese"
+    ],
+    "wikipediaSlug": null
+  },
+  "CF": {
+    "name": "Repubblica Centrafricana",
+    "capital": "Bangui",
+    "demonym": "centrafricano",
+    "languages": [
+      "Francese",
+      "Sango"
+    ],
+    "currencyNames": [
+      "Franco CFA BEAC"
+    ],
+    "wikipediaSlug": null
+  },
+  "CG": {
+    "name": "Congo-Brazzaville",
+    "capital": "Brazzaville",
+    "demonym": "congolese",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFA BEAC"
+    ],
+    "wikipediaSlug": null
+  },
+  "CH": {
+    "name": "Svizzera",
+    "capital": "Berna",
+    "demonym": "svizzero",
+    "languages": [
+      "Tedesco",
+      "Francese",
+      "Italiano",
+      "Romancio"
+    ],
+    "currencyNames": [
+      "Franco svizzero"
+    ],
+    "wikipediaSlug": null
+  },
+  "CI": {
+    "name": "Costa d’Avorio",
+    "capital": "Yamoussoukro",
+    "demonym": "ivoriano",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFA BCEAO"
+    ],
+    "wikipediaSlug": null
+  },
+  "CK": {
+    "name": "Isole Cook",
+    "capital": "Avarua",
+    "demonym": "cookiano",
+    "languages": [
+      "Inglese",
+      "Rarotonga"
+    ],
+    "currencyNames": [
+      "Dollaro neozelandese"
+    ],
+    "wikipediaSlug": null
+  },
+  "CL": {
+    "name": "Cile",
+    "capital": "Santiago del Cile",
+    "demonym": "cileno",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Peso cileno"
+    ],
+    "wikipediaSlug": null
+  },
+  "CM": {
+    "name": "Camerun",
+    "capital": "Yaoundé",
+    "demonym": "camerunese",
+    "languages": [
+      "Francese",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Franco CFA BEAC"
+    ],
+    "wikipediaSlug": null
+  },
+  "CN": {
+    "name": "Cina",
+    "capital": "Pechino",
+    "demonym": "cinese",
+    "languages": [
+      "Cinese"
+    ],
+    "currencyNames": [
+      "Yuan cinese"
+    ],
+    "wikipediaSlug": null
+  },
+  "CO": {
+    "name": "Colombia",
+    "capital": "Bogotà",
+    "demonym": "colombiano",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Peso colombiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "CR": {
+    "name": "Costa Rica",
+    "capital": "San José",
+    "demonym": "costaricano",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Colón costaricano"
+    ],
+    "wikipediaSlug": null
+  },
+  "CU": {
+    "name": "Cuba",
+    "capital": "L'Avana",
+    "demonym": "cubano",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Peso cubano convertibile",
+      "Peso cubano"
+    ],
+    "wikipediaSlug": null
+  },
+  "CV": {
+    "name": "Capo Verde",
+    "capital": "Praia",
+    "demonym": "capoverdiano",
+    "languages": [
+      "Portoghese"
+    ],
+    "currencyNames": [
+      "Escudo capoverdiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "CW": {
+    "name": "Curaçao",
+    "capital": "Willemstad",
+    "demonym": "curaçaoano",
+    "languages": [
+      "Olandese",
+      "Papiamento"
+    ],
+    "currencyNames": [
+      "Fiorino delle Antille olandesi"
+    ],
+    "wikipediaSlug": null
+  },
+  "CY": {
+    "name": "Cipro",
+    "capital": "Nicosia",
+    "demonym": "cipriota",
+    "languages": [
+      "Greco",
+      "Turco"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "CZ": {
+    "name": "Cechia",
+    "capital": "Praga",
+    "demonym": "ceco",
+    "languages": [
+      "Ceco"
+    ],
+    "currencyNames": [
+      "Corona ceca"
+    ],
+    "wikipediaSlug": null
+  },
+  "DE": {
+    "name": "Germania",
+    "capital": "Berlino",
+    "demonym": "tedesco",
+    "languages": [
+      "Tedesco"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "DJ": {
+    "name": "Gibuti",
+    "capital": "Gibuti",
+    "demonym": "gibutiano",
+    "languages": [
+      "Francese",
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Franco di Gibuti"
+    ],
+    "wikipediaSlug": null
+  },
+  "DK": {
+    "name": "Danimarca",
+    "capital": "Copenaghen",
+    "demonym": "danese",
+    "languages": [
+      "Danese"
+    ],
+    "currencyNames": [
+      "Corona danese"
+    ],
+    "wikipediaSlug": null
+  },
+  "DM": {
+    "name": "Dominica",
+    "capital": "Roseau",
+    "demonym": "dominicano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro dei Caraibi orientali"
+    ],
+    "wikipediaSlug": null
+  },
+  "DO": {
+    "name": "Repubblica Dominicana",
+    "capital": "Santo Domingo",
+    "demonym": "dominicano",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Peso dominicano"
+    ],
+    "wikipediaSlug": null
+  },
+  "DZ": {
+    "name": "Algeria",
+    "capital": "Algeri",
+    "demonym": "algerino",
+    "languages": [
+      "Arabo",
+      "Tamazight"
+    ],
+    "currencyNames": [
+      "Dinaro algerino"
+    ],
+    "wikipediaSlug": null
+  },
+  "EC": {
+    "name": "Ecuador",
+    "capital": "Quito",
+    "demonym": "ecuadoriano",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "EE": {
+    "name": "Estonia",
+    "capital": "Tallinn",
+    "demonym": "estone",
+    "languages": [
+      "Estone"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "EG": {
+    "name": "Egitto",
+    "capital": "Il Cairo",
+    "demonym": "egiziano",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Sterlina egiziana"
+    ],
+    "wikipediaSlug": null
+  },
+  "EH": {
+    "name": "Sahara Occidentale",
+    "capital": "El Aaiún",
+    "demonym": "sahrawi",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Dinaro algerino",
+      "Dirham marocchino",
+      "Ouguiya della Mauritania"
+    ],
+    "wikipediaSlug": null
+  },
+  "ER": {
+    "name": "Eritrea",
+    "capital": "Asmara",
+    "demonym": "eritreo",
+    "languages": [
+      "Tigrino",
+      "Arabo",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Nakfa eritreo"
+    ],
+    "wikipediaSlug": null
+  },
+  "ES": {
+    "name": "Spagna",
+    "capital": "Madrid",
+    "demonym": "spagnolo",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "ET": {
+    "name": "Etiopia",
+    "capital": "Addis Abeba",
+    "demonym": "etiope",
+    "languages": [
+      "Amarico"
+    ],
+    "currencyNames": [
+      "Birr etiope"
+    ],
+    "wikipediaSlug": null
+  },
+  "FI": {
+    "name": "Finlandia",
+    "capital": "Helsinki",
+    "demonym": "finlandese",
+    "languages": [
+      "Finlandese",
+      "Svedese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "FJ": {
+    "name": "Figi",
+    "capital": "Suva",
+    "demonym": "figiano",
+    "languages": [
+      "Inglese",
+      "Figiano",
+      "Hindi figiano"
+    ],
+    "currencyNames": [
+      "Dollaro delle Figi"
+    ],
+    "wikipediaSlug": null
+  },
+  "FK": {
+    "name": "Isole Falkland",
+    "capital": "Stanley",
+    "demonym": "falklandese",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Sterlina delle Falkland"
+    ],
+    "wikipediaSlug": null
+  },
+  "FM": {
+    "name": "Micronesia",
+    "capital": "Palikir",
+    "demonym": "micronesiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "FO": {
+    "name": "Isole Fær Øer",
+    "capital": "Tórshavn",
+    "demonym": "faroese",
+    "languages": [
+      "Faroese",
+      "Danese"
+    ],
+    "currencyNames": [
+      "Corona danese"
+    ],
+    "wikipediaSlug": null
+  },
+  "FR": {
+    "name": "Francia",
+    "capital": "Parigi",
+    "demonym": "francese",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "GA": {
+    "name": "Gabon",
+    "capital": "Libreville",
+    "demonym": "gabonese",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFA BEAC"
+    ],
+    "wikipediaSlug": null
+  },
+  "GB": {
+    "name": "Regno Unito",
+    "capital": "Londra",
+    "demonym": "britannico",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Sterlina britannica"
+    ],
+    "wikipediaSlug": null
+  },
+  "GD": {
+    "name": "Grenada",
+    "capital": "Saint George's",
+    "demonym": "grenadino",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro dei Caraibi orientali"
+    ],
+    "wikipediaSlug": null
+  },
+  "GE": {
+    "name": "Georgia",
+    "capital": "Tbilisi",
+    "demonym": "georgiano",
+    "languages": [
+      "Georgiano"
+    ],
+    "currencyNames": [
+      "Lari georgiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "GF": {
+    "name": "Guyana Francese",
+    "capital": "Caienna",
+    "demonym": "guianese",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "GG": {
+    "name": "Guernsey",
+    "capital": "Saint Peter Port",
+    "demonym": "guernseyano",
+    "languages": [
+      "Inglese",
+      "Francese"
+    ],
+    "currencyNames": [
+      "Sterlina britannica"
+    ],
+    "wikipediaSlug": null
+  },
+  "GH": {
+    "name": "Ghana",
+    "capital": "Accra",
+    "demonym": "ghanese",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Cedi ghanese"
+    ],
+    "wikipediaSlug": null
+  },
+  "GL": {
+    "name": "Groenlandia",
+    "capital": "Nuuk",
+    "demonym": "groenlandese",
+    "languages": [
+      "Groenlandese"
+    ],
+    "currencyNames": [
+      "Corona danese"
+    ],
+    "wikipediaSlug": null
+  },
+  "GM": {
+    "name": "Gambia",
+    "capital": "Banjul",
+    "demonym": "gambiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dalasi gambiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "GN": {
+    "name": "Guinea",
+    "capital": "Conakry",
+    "demonym": "guineano",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco della Guinea"
+    ],
+    "wikipediaSlug": null
+  },
+  "GP": {
+    "name": "Guadalupa",
+    "capital": "Basse-Terre",
+    "demonym": "guadalupense",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "GQ": {
+    "name": "Guinea Equatoriale",
+    "capital": "Ciudad de la Paz",
+    "demonym": "equatoguineano",
+    "languages": [
+      "Spagnolo",
+      "Francese",
+      "Portoghese"
+    ],
+    "currencyNames": [
+      "Franco CFA BEAC"
+    ],
+    "wikipediaSlug": null
+  },
+  "GR": {
+    "name": "Grecia",
+    "capital": "Atene",
+    "demonym": "greco",
+    "languages": [
+      "Greco"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "GT": {
+    "name": "Guatemala",
+    "capital": "Città del Guatemala",
+    "demonym": "guatemalteco",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Quetzal guatemalteco"
+    ],
+    "wikipediaSlug": null
+  },
+  "GU": {
+    "name": "Guam",
+    "capital": "Hagåtña",
+    "demonym": "guamano",
+    "languages": [
+      "Inglese",
+      "Chamorro"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "GW": {
+    "name": "Guinea-Bissau",
+    "capital": "Bissau",
+    "demonym": "guineense",
+    "languages": [
+      "Portoghese"
+    ],
+    "currencyNames": [
+      "Franco CFA BCEAO"
+    ],
+    "wikipediaSlug": null
+  },
+  "GY": {
+    "name": "Guyana",
+    "capital": "Georgetown",
+    "demonym": "guyanese",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro della Guyana"
+    ],
+    "wikipediaSlug": null
+  },
+  "HK": {
+    "name": "Hong Kong",
+    "capital": "Victoria",
+    "demonym": "hongkonghese",
+    "languages": [
+      "Cinese",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro di Hong Kong"
+    ],
+    "wikipediaSlug": null
+  },
+  "HN": {
+    "name": "Honduras",
+    "capital": "Tegucigalpa",
+    "demonym": "honduregno",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Lempira honduregna"
+    ],
+    "wikipediaSlug": null
+  },
+  "HR": {
+    "name": "Croazia",
+    "capital": "Zagabria",
+    "demonym": "croato",
+    "languages": [
+      "Croato"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "HT": {
+    "name": "Haiti",
+    "capital": "Port-au-Prince",
+    "demonym": "haitiano",
+    "languages": [
+      "Francese",
+      "Creolo haitiano"
+    ],
+    "currencyNames": [
+      "Gourde haitiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "HU": {
+    "name": "Ungheria",
+    "capital": "Budapest",
+    "demonym": "ungherese",
+    "languages": [
+      "Ungherese"
+    ],
+    "currencyNames": [
+      "Fiorino ungherese"
+    ],
+    "wikipediaSlug": null
+  },
+  "ID": {
+    "name": "Indonesia",
+    "capital": "Giacarta",
+    "demonym": "indonesiano",
+    "languages": [
+      "Indonesiano"
+    ],
+    "currencyNames": [
+      "Rupia indonesiana"
+    ],
+    "wikipediaSlug": null
+  },
+  "IE": {
+    "name": "Irlanda",
+    "capital": "Dublino",
+    "demonym": "irlandese",
+    "languages": [
+      "Irlandese",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "IL": {
+    "name": "Israele",
+    "capital": "Gerusalemme",
+    "demonym": "israeliano",
+    "languages": [
+      "Ebraico",
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Nuovo siclo israeliano"
+    ],
+    "wikipediaSlug": null
+  },
+  "IM": {
+    "name": "Isola di Man",
+    "capital": "Douglas",
+    "demonym": "mannese",
+    "languages": [
+      "Inglese",
+      "Mannese"
+    ],
+    "currencyNames": [
+      "Sterlina britannica"
+    ],
+    "wikipediaSlug": null
+  },
+  "IN": {
+    "name": "India",
+    "capital": "Nuova Delhi",
+    "demonym": "indiano",
+    "languages": [
+      "Hindi",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Rupia indiana"
+    ],
+    "wikipediaSlug": null
+  },
+  "IQ": {
+    "name": "Iraq",
+    "capital": "Baghdad",
+    "demonym": "iracheno",
+    "languages": [
+      "Arabo",
+      "Curdo"
+    ],
+    "currencyNames": [
+      "Dinaro iracheno"
+    ],
+    "wikipediaSlug": null
+  },
+  "IR": {
+    "name": "Iran",
+    "capital": "Teheran",
+    "demonym": "iraniano",
+    "languages": [
+      "Persiano"
+    ],
+    "currencyNames": [
+      "Rial iraniano"
+    ],
+    "wikipediaSlug": null
+  },
+  "IS": {
+    "name": "Islanda",
+    "capital": "Reykjavík",
+    "demonym": "islandese",
+    "languages": [
+      "Islandese"
+    ],
+    "currencyNames": [
+      "Corona islandese"
+    ],
+    "wikipediaSlug": null
+  },
+  "IT": {
+    "name": "Italia",
+    "capital": "Roma",
+    "demonym": "italiano",
+    "languages": [
+      "Italiano"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "JE": {
+    "name": "Jersey",
+    "capital": "Saint Helier",
+    "demonym": "jerseyano",
+    "languages": [
+      "Inglese",
+      "Francese"
+    ],
+    "currencyNames": [
+      "Sterlina britannica"
+    ],
+    "wikipediaSlug": null
+  },
+  "JM": {
+    "name": "Giamaica",
+    "capital": "Kingston",
+    "demonym": "giamaicano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro giamaicano"
+    ],
+    "wikipediaSlug": null
+  },
+  "JO": {
+    "name": "Giordania",
+    "capital": "Amman",
+    "demonym": "giordano",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Dinaro giordano"
+    ],
+    "wikipediaSlug": null
+  },
+  "JP": {
+    "name": "Giappone",
+    "capital": "Tokyo",
+    "demonym": "giapponese",
+    "languages": [
+      "Giapponese"
+    ],
+    "currencyNames": [
+      "Yen giapponese"
+    ],
+    "wikipediaSlug": null
+  },
+  "KE": {
+    "name": "Kenya",
+    "capital": "Nairobi",
+    "demonym": "keniota",
+    "languages": [
+      "Swahili",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Scellino keniota"
+    ],
+    "wikipediaSlug": null
+  },
+  "KG": {
+    "name": "Kirghizistan",
+    "capital": "Biškek",
+    "demonym": "kirghiso",
+    "languages": [
+      "Kirghiso",
+      "Russo"
+    ],
+    "currencyNames": [
+      "Som kirghiso"
+    ],
+    "wikipediaSlug": null
+  },
+  "KH": {
+    "name": "Cambogia",
+    "capital": "Phnom Penh",
+    "demonym": "cambogiano",
+    "languages": [
+      "Khmer"
+    ],
+    "currencyNames": [
+      "Riel cambogiano",
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "KI": {
+    "name": "Kiribati",
+    "capital": "Tarawa",
+    "demonym": "kiribatiano",
+    "languages": [
+      "Inglese",
+      "Gilbertese"
+    ],
+    "currencyNames": [
+      "Dollaro australiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "KM": {
+    "name": "Comore",
+    "capital": "Moroni",
+    "demonym": "comoriano",
+    "languages": [
+      "zdj",
+      "Arabo",
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco comoriano"
+    ],
+    "wikipediaSlug": null
+  },
+  "KN": {
+    "name": "Saint Kitts e Nevis",
+    "capital": "Basseterre",
+    "demonym": "kittitiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro dei Caraibi orientali"
+    ],
+    "wikipediaSlug": null
+  },
+  "KP": {
+    "name": "Corea del Nord",
+    "capital": "Pyongyang",
+    "demonym": "nordcoreano",
+    "languages": [
+      "Coreano"
+    ],
+    "currencyNames": [
+      "Won nordcoreano"
+    ],
+    "wikipediaSlug": null
+  },
+  "KR": {
+    "name": "Corea del Sud",
+    "capital": "Seul",
+    "demonym": "sudcoreano",
+    "languages": [
+      "Coreano"
+    ],
+    "currencyNames": [
+      "Won sudcoreano"
+    ],
+    "wikipediaSlug": null
+  },
+  "KW": {
+    "name": "Kuwait",
+    "capital": "Al Kuwait",
+    "demonym": "kuwaitiano",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Dinaro kuwaitiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "KY": {
+    "name": "Isole Cayman",
+    "capital": "George Town",
+    "demonym": "caimaniano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro delle Isole Cayman"
+    ],
+    "wikipediaSlug": null
+  },
+  "KZ": {
+    "name": "Kazakistan",
+    "capital": "Astana",
+    "demonym": "kazako",
+    "languages": [
+      "Kazako",
+      "Russo"
+    ],
+    "currencyNames": [
+      "Tenge kazako"
+    ],
+    "wikipediaSlug": null
+  },
+  "LA": {
+    "name": "Laos",
+    "capital": "Vientiane",
+    "demonym": "laotiano",
+    "languages": [
+      "Lao"
+    ],
+    "currencyNames": [
+      "Kip laotiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "LB": {
+    "name": "Libano",
+    "capital": "Beirut",
+    "demonym": "libanese",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Lira libanese"
+    ],
+    "wikipediaSlug": null
+  },
+  "LC": {
+    "name": "Saint Lucia",
+    "capital": "Castries",
+    "demonym": "santaluciano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro dei Caraibi orientali"
+    ],
+    "wikipediaSlug": null
+  },
+  "LI": {
+    "name": "Liechtenstein",
+    "capital": "Vaduz",
+    "demonym": "liechtensteinese",
+    "languages": [
+      "Tedesco"
+    ],
+    "currencyNames": [
+      "Franco svizzero"
+    ],
+    "wikipediaSlug": null
+  },
+  "LK": {
+    "name": "Sri Lanka",
+    "capital": "Colombo",
+    "demonym": "singalese",
+    "languages": [
+      "Singalese",
+      "Tamil"
+    ],
+    "currencyNames": [
+      "Rupia di Sri Lanka"
+    ],
+    "wikipediaSlug": null
+  },
+  "LR": {
+    "name": "Liberia",
+    "capital": "Monrovia",
+    "demonym": "liberiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro liberiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "LS": {
+    "name": "Lesotho",
+    "capital": "Maseru",
+    "demonym": "lesothiano",
+    "languages": [
+      "Sotho del sud",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Loti del Lesotho",
+      "Rand sudafricano"
+    ],
+    "wikipediaSlug": null
+  },
+  "LT": {
+    "name": "Lituania",
+    "capital": "Vilnius",
+    "demonym": "lituano",
+    "languages": [
+      "Lituano"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "LU": {
+    "name": "Lussemburgo",
+    "capital": "Lussemburgo",
+    "demonym": "lussemburghese",
+    "languages": [
+      "Lussemburghese",
+      "Francese",
+      "Tedesco"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "LV": {
+    "name": "Lettonia",
+    "capital": "Riga",
+    "demonym": "lettone",
+    "languages": [
+      "Lettone"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "LY": {
+    "name": "Libia",
+    "capital": "Tripoli",
+    "demonym": "libico",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Dinaro libico"
+    ],
+    "wikipediaSlug": null
+  },
+  "MA": {
+    "name": "Marocco",
+    "capital": "Rabat",
+    "demonym": "marocchino",
+    "languages": [
+      "Arabo",
+      "Tamazight"
+    ],
+    "currencyNames": [
+      "Dirham marocchino"
+    ],
+    "wikipediaSlug": null
+  },
+  "MC": {
+    "name": "Monaco",
+    "capital": "Monaco Vecchia",
+    "demonym": "monegasco",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "MD": {
+    "name": "Moldavia",
+    "capital": "Chișinău",
+    "demonym": "moldavo",
+    "languages": [
+      "Rumeno"
+    ],
+    "currencyNames": [
+      "Leu moldavo"
+    ],
+    "wikipediaSlug": null
+  },
+  "ME": {
+    "name": "Montenegro",
+    "capital": "Podgorica",
+    "demonym": "montenegrino",
+    "languages": [
+      "Serbo (Montenegro)"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "MF": {
+    "name": "Saint Martin",
+    "capital": "Marigot",
+    "demonym": "sanmartinense",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "MG": {
+    "name": "Madagascar",
+    "capital": "Antananarivo",
+    "demonym": "malgascio",
+    "languages": [
+      "Malgascio",
+      "Francese"
+    ],
+    "currencyNames": [
+      "Ariary malgascio"
+    ],
+    "wikipediaSlug": null
+  },
+  "MH": {
+    "name": "Isole Marshall",
+    "capital": "Majuro",
+    "demonym": "marshallese",
+    "languages": [
+      "Marshallese",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "MK": {
+    "name": "Macedonia del Nord",
+    "capital": "Skopje",
+    "demonym": "macedone",
+    "languages": [
+      "Macedone"
+    ],
+    "currencyNames": [
+      "Dinaro macedone"
+    ],
+    "wikipediaSlug": null
+  },
+  "ML": {
+    "name": "Mali",
+    "capital": "Bamako",
+    "demonym": "maliano",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFA BCEAO"
+    ],
+    "wikipediaSlug": null
+  },
+  "MM": {
+    "name": "Myanmar (Birmania)",
+    "capital": "Naypyidaw",
+    "demonym": "birmano",
+    "languages": [
+      "Birmano"
+    ],
+    "currencyNames": [
+      "Kyat di Myanmar"
+    ],
+    "wikipediaSlug": null
+  },
+  "MN": {
+    "name": "Mongolia",
+    "capital": "Ulan Bator",
+    "demonym": "mongolo",
+    "languages": [
+      "Mongolo"
+    ],
+    "currencyNames": [
+      "Tugrik mongolo"
+    ],
+    "wikipediaSlug": null
+  },
+  "MO": {
+    "name": "Macao",
+    "capital": "",
+    "demonym": "macaense",
+    "languages": [
+      "Cinese",
+      "Portoghese"
+    ],
+    "currencyNames": [
+      "Pataca di Macao"
+    ],
+    "wikipediaSlug": null
+  },
+  "MP": {
+    "name": "Isole Marianne Settentrionali",
+    "capital": "Saipan",
+    "demonym": "marianense",
+    "languages": [
+      "Inglese",
+      "Chamorro",
+      "cal"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "MQ": {
+    "name": "Martinica",
+    "capital": "Fort-de-France",
+    "demonym": "martinicano",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "MR": {
+    "name": "Mauritania",
+    "capital": "Nouakchott",
+    "demonym": "mauritano",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Ouguiya della Mauritania"
+    ],
+    "wikipediaSlug": null
+  },
+  "MS": {
+    "name": "Montserrat",
+    "capital": "Plymouth",
+    "demonym": "montserratiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro dei Caraibi orientali"
+    ],
+    "wikipediaSlug": null
+  },
+  "MT": {
+    "name": "Malta",
+    "capital": "La Valletta",
+    "demonym": "maltese",
+    "languages": [
+      "Maltese",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "MU": {
+    "name": "Mauritius",
+    "capital": "Port Louis",
+    "demonym": "mauriziano",
+    "languages": [
+      "Inglese",
+      "Francese"
+    ],
+    "currencyNames": [
+      "Rupia mauriziana"
+    ],
+    "wikipediaSlug": null
+  },
+  "MV": {
+    "name": "Maldive",
+    "capital": "Male",
+    "demonym": "maldiviano",
+    "languages": [
+      "Divehi"
+    ],
+    "currencyNames": [
+      "Rufiyaa delle Maldive"
+    ],
+    "wikipediaSlug": null
+  },
+  "MW": {
+    "name": "Malawi",
+    "capital": "Lilongwe",
+    "demonym": "malawiano",
+    "languages": [
+      "Inglese",
+      "Nyanja"
+    ],
+    "currencyNames": [
+      "Kwacha malawiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "MX": {
+    "name": "Messico",
+    "capital": "Città del Messico",
+    "demonym": "messicano",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Peso messicano"
+    ],
+    "wikipediaSlug": null
+  },
+  "MY": {
+    "name": "Malaysia",
+    "capital": "Kuala Lumpur",
+    "demonym": "malese",
+    "languages": [
+      "Malese"
+    ],
+    "currencyNames": [
+      "Ringgit malese"
+    ],
+    "wikipediaSlug": null
+  },
+  "MZ": {
+    "name": "Mozambico",
+    "capital": "Maputo",
+    "demonym": "mozambicano",
+    "languages": [
+      "Portoghese"
+    ],
+    "currencyNames": [
+      "Metical mozambicano"
+    ],
+    "wikipediaSlug": null
+  },
+  "NA": {
+    "name": "Namibia",
+    "capital": "Windhoek",
+    "demonym": "namibiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro namibiano",
+      "Rand sudafricano"
+    ],
+    "wikipediaSlug": null
+  },
+  "NC": {
+    "name": "Nuova Caledonia",
+    "capital": "Numea",
+    "demonym": "neocaledoniano",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFP"
+    ],
+    "wikipediaSlug": null
+  },
+  "NE": {
+    "name": "Niger",
+    "capital": "Niamey",
+    "demonym": "nigerino",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFA BCEAO"
+    ],
+    "wikipediaSlug": null
+  },
+  "NF": {
+    "name": "Isola Norfolk",
+    "capital": "Kingston",
+    "demonym": "norfolkese",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro australiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "NG": {
+    "name": "Nigeria",
+    "capital": "Abuja",
+    "demonym": "nigeriano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Naira nigeriana"
+    ],
+    "wikipediaSlug": null
+  },
+  "NI": {
+    "name": "Nicaragua",
+    "capital": "Managua",
+    "demonym": "nicaraguense",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Córdoba nicaraguense"
+    ],
+    "wikipediaSlug": null
+  },
+  "NL": {
+    "name": "Paesi Bassi",
+    "capital": "Amsterdam",
+    "demonym": "olandese",
+    "languages": [
+      "Olandese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "NO": {
+    "name": "Norvegia",
+    "capital": "Oslo",
+    "demonym": "norvegese",
+    "languages": [
+      "Norvegese"
+    ],
+    "currencyNames": [
+      "Corona norvegese"
+    ],
+    "wikipediaSlug": null
+  },
+  "NP": {
+    "name": "Nepal",
+    "capital": "Katmandu",
+    "demonym": "nepalese",
+    "languages": [
+      "Nepalese"
+    ],
+    "currencyNames": [
+      "Rupia nepalese"
+    ],
+    "wikipediaSlug": null
+  },
+  "NR": {
+    "name": "Nauru",
+    "capital": "Yaren",
+    "demonym": "nauruano",
+    "languages": [
+      "Inglese",
+      "Nauru"
+    ],
+    "currencyNames": [
+      "Dollaro australiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "NU": {
+    "name": "Niue",
+    "capital": "Alofi",
+    "demonym": "niueano",
+    "languages": [
+      "Inglese",
+      "Niue"
+    ],
+    "currencyNames": [
+      "Dollaro neozelandese"
+    ],
+    "wikipediaSlug": null
+  },
+  "NZ": {
+    "name": "Nuova Zelanda",
+    "capital": "Wellington",
+    "demonym": "neozelandese",
+    "languages": [
+      "Inglese",
+      "Maori"
+    ],
+    "currencyNames": [
+      "Dollaro neozelandese"
+    ],
+    "wikipediaSlug": null
+  },
+  "OM": {
+    "name": "Oman",
+    "capital": "Mascate",
+    "demonym": "omanita",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Rial omanita"
+    ],
+    "wikipediaSlug": null
+  },
+  "PA": {
+    "name": "Panama",
+    "capital": "Panama",
+    "demonym": "panamense",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Balboa panamense",
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "PE": {
+    "name": "Perù",
+    "capital": "Lima",
+    "demonym": "peruviano",
+    "languages": [
+      "Spagnolo",
+      "Quechua",
+      "Aymara"
+    ],
+    "currencyNames": [
+      "Sol peruviano"
+    ],
+    "wikipediaSlug": null
+  },
+  "PF": {
+    "name": "Polinesia Francese",
+    "capital": "Papeete",
+    "demonym": "polinesiano",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFP"
+    ],
+    "wikipediaSlug": null
+  },
+  "PG": {
+    "name": "Papua Nuova Guinea",
+    "capital": "Port Moresby",
+    "demonym": "papuano",
+    "languages": [
+      "Inglese",
+      "Tok pisin",
+      "Hiri motu"
+    ],
+    "currencyNames": [
+      "Kina papuana"
+    ],
+    "wikipediaSlug": null
+  },
+  "PH": {
+    "name": "Filippine",
+    "capital": "Manila",
+    "demonym": "filippino",
+    "languages": [
+      "Filippino",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Peso filippino"
+    ],
+    "wikipediaSlug": null
+  },
+  "PK": {
+    "name": "Pakistan",
+    "capital": "Islamabad",
+    "demonym": "pakistano",
+    "languages": [
+      "Urdu",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Rupia pakistana"
+    ],
+    "wikipediaSlug": null
+  },
+  "PL": {
+    "name": "Polonia",
+    "capital": "Varsavia",
+    "demonym": "polacco",
+    "languages": [
+      "Polacco"
+    ],
+    "currencyNames": [
+      "Zloty polacco"
+    ],
+    "wikipediaSlug": null
+  },
+  "PM": {
+    "name": "Saint-Pierre e Miquelon",
+    "capital": "Saint-Pierre",
+    "demonym": "sanpierrino",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "PN": {
+    "name": "Isole Pitcairn",
+    "capital": "Adamstown",
+    "demonym": "pitcairnese",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro neozelandese"
+    ],
+    "wikipediaSlug": null
+  },
+  "PR": {
+    "name": "Portorico",
+    "capital": "San Juan",
+    "demonym": "portoricano",
+    "languages": [
+      "Spagnolo",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "PS": {
+    "name": "Palestina",
+    "capital": "Gerusalemme Est",
+    "demonym": "palestinese",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Sterlina egiziana",
+      "Nuovo siclo israeliano",
+      "Dinaro giordano"
+    ],
+    "wikipediaSlug": null
+  },
+  "PT": {
+    "name": "Portogallo",
+    "capital": "Lisbona",
+    "demonym": "portoghese",
+    "languages": [
+      "Portoghese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "PW": {
+    "name": "Palau",
+    "capital": "Ngerulmud",
+    "demonym": "palauano",
+    "languages": [
+      "Palau",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "PY": {
+    "name": "Paraguay",
+    "capital": "Asunción",
+    "demonym": "paraguaiano",
+    "languages": [
+      "Spagnolo",
+      "Guaraní"
+    ],
+    "currencyNames": [
+      "Guaraní paraguayano"
+    ],
+    "wikipediaSlug": null
+  },
+  "QA": {
+    "name": "Qatar",
+    "capital": "Doha",
+    "demonym": "qatariota",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Rial qatariano"
+    ],
+    "wikipediaSlug": null
+  },
+  "RE": {
+    "name": "Riunione",
+    "capital": "Saint-Denis",
+    "demonym": "riunionese",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "RO": {
+    "name": "Romania",
+    "capital": "Bucarest",
+    "demonym": "rumeno",
+    "languages": [
+      "Rumeno"
+    ],
+    "currencyNames": [
+      "Leu rumeno"
+    ],
+    "wikipediaSlug": null
+  },
+  "RS": {
+    "name": "Serbia",
+    "capital": "Belgrado",
+    "demonym": "serbo",
+    "languages": [
+      "Serbo"
+    ],
+    "currencyNames": [
+      "Dinaro serbo"
+    ],
+    "wikipediaSlug": null
+  },
+  "RU": {
+    "name": "Russia",
+    "capital": "Mosca",
+    "demonym": "russo",
+    "languages": [
+      "Russo"
+    ],
+    "currencyNames": [
+      "Rublo russo"
+    ],
+    "wikipediaSlug": null
+  },
+  "RW": {
+    "name": "Ruanda",
+    "capital": "Kigali",
+    "demonym": "ruandese",
+    "languages": [
+      "Kinyarwanda",
+      "Francese",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Franco ruandese"
+    ],
+    "wikipediaSlug": null
+  },
+  "SA": {
+    "name": "Arabia Saudita",
+    "capital": "Riad",
+    "demonym": "saudita",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Riyal saudita"
+    ],
+    "wikipediaSlug": null
+  },
+  "SB": {
+    "name": "Isole Salomone",
+    "capital": "Honiara",
+    "demonym": "salomonese",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro delle Isole Salomone"
+    ],
+    "wikipediaSlug": null
+  },
+  "SC": {
+    "name": "Seychelles",
+    "capital": "Victoria",
+    "demonym": "seychellese",
+    "languages": [
+      "Creolo delle Seychelles",
+      "Francese",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Rupia delle Seychelles"
+    ],
+    "wikipediaSlug": null
+  },
+  "SD": {
+    "name": "Sudan",
+    "capital": "Khartum",
+    "demonym": "sudanese",
+    "languages": [
+      "Arabo",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Sterlina sudanese"
+    ],
+    "wikipediaSlug": null
+  },
+  "SE": {
+    "name": "Svezia",
+    "capital": "Stoccolma",
+    "demonym": "svedese",
+    "languages": [
+      "Svedese"
+    ],
+    "currencyNames": [
+      "Corona svedese"
+    ],
+    "wikipediaSlug": null
+  },
+  "SG": {
+    "name": "Singapore",
+    "capital": "Singapore",
+    "demonym": "singaporiano",
+    "languages": [
+      "Inglese",
+      "Malese",
+      "Cinese",
+      "Tamil"
+    ],
+    "currencyNames": [
+      "Dollaro di Singapore"
+    ],
+    "wikipediaSlug": null
+  },
+  "SH": {
+    "name": "Sant’Elena",
+    "capital": "Jamestown",
+    "demonym": "santaelenano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Sterlina britannica",
+      "Sterlina di Sant’Elena"
+    ],
+    "wikipediaSlug": null
+  },
+  "SI": {
+    "name": "Slovenia",
+    "capital": "Lubiana",
+    "demonym": "sloveno",
+    "languages": [
+      "Sloveno"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "SK": {
+    "name": "Slovacchia",
+    "capital": "Bratislava",
+    "demonym": "slovacco",
+    "languages": [
+      "Slovacco"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "SL": {
+    "name": "Sierra Leone",
+    "capital": "Freetown",
+    "demonym": "sierraleonese",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Leone della Sierra Leone"
+    ],
+    "wikipediaSlug": null
+  },
+  "SM": {
+    "name": "San Marino",
+    "capital": "Città di San Marino",
+    "demonym": "sammarinese",
+    "languages": [
+      "Italiano"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "SN": {
+    "name": "Senegal",
+    "capital": "Dakar",
+    "demonym": "senegalese",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFA BCEAO"
+    ],
+    "wikipediaSlug": null
+  },
+  "SO": {
+    "name": "Somalia",
+    "capital": "Mogadiscio",
+    "demonym": "somalo",
+    "languages": [
+      "Somalo",
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Scellino somalo"
+    ],
+    "wikipediaSlug": null
+  },
+  "SR": {
+    "name": "Suriname",
+    "capital": "Paramaribo",
+    "demonym": "surinamese",
+    "languages": [
+      "Olandese"
+    ],
+    "currencyNames": [
+      "Dollaro del Suriname"
+    ],
+    "wikipediaSlug": null
+  },
+  "SS": {
+    "name": "Sud Sudan",
+    "capital": "Giuba",
+    "demonym": "sudsudanese",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Sterlina sud-sudanese"
+    ],
+    "wikipediaSlug": null
+  },
+  "ST": {
+    "name": "São Tomé e Príncipe",
+    "capital": "São Tomé",
+    "demonym": "santomense",
+    "languages": [
+      "Portoghese"
+    ],
+    "currencyNames": [
+      "Dobra di Sao Tomé e Príncipe"
+    ],
+    "wikipediaSlug": null
+  },
+  "SV": {
+    "name": "El Salvador",
+    "capital": "San Salvador",
+    "demonym": "salvadoregno",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "SX": {
+    "name": "Sint Maarten",
+    "capital": "Philipsburg",
+    "demonym": "sanmartinese",
+    "languages": [
+      "Olandese",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Fiorino delle Antille olandesi"
+    ],
+    "wikipediaSlug": null
+  },
+  "SY": {
+    "name": "Siria",
+    "capital": "Damasco",
+    "demonym": "siriano",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Lira siriana"
+    ],
+    "wikipediaSlug": null
+  },
+  "SZ": {
+    "name": "Eswatini",
+    "capital": "Mbabane",
+    "demonym": "swazi",
+    "languages": [
+      "Swati",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Lilangeni",
+      "Rand sudafricano"
+    ],
+    "wikipediaSlug": null
+  },
+  "TC": {
+    "name": "Isole Turks e Caicos",
+    "capital": "Cockburn Town",
+    "demonym": "turcocaicano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "TD": {
+    "name": "Ciad",
+    "capital": "N’Djamena",
+    "demonym": "ciadiano",
+    "languages": [
+      "Francese",
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Franco CFA BEAC"
+    ],
+    "wikipediaSlug": null
+  },
+  "TG": {
+    "name": "Togo",
+    "capital": "Lomé",
+    "demonym": "togolese",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFA BCEAO"
+    ],
+    "wikipediaSlug": null
+  },
+  "TH": {
+    "name": "Thailandia",
+    "capital": "Bangkok",
+    "demonym": "tailandese",
+    "languages": [
+      "Thailandese"
+    ],
+    "currencyNames": [
+      "Baht thailandese"
+    ],
+    "wikipediaSlug": null
+  },
+  "TJ": {
+    "name": "Tagikistan",
+    "capital": "Dušanbe",
+    "demonym": "tagico",
+    "languages": [
+      "Tagico"
+    ],
+    "currencyNames": [
+      "Somoni tagiko"
+    ],
+    "wikipediaSlug": null
+  },
+  "TL": {
+    "name": "Timor Est",
+    "capital": "Dili",
+    "demonym": "timorese",
+    "languages": [
+      "Portoghese",
+      "Tetum"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "TM": {
+    "name": "Turkmenistan",
+    "capital": "Aşgabat",
+    "demonym": "turkmeno",
+    "languages": [
+      "Turcomanno"
+    ],
+    "currencyNames": [
+      "Manat turkmeno"
+    ],
+    "wikipediaSlug": null
+  },
+  "TN": {
+    "name": "Tunisia",
+    "capital": "Tunisi",
+    "demonym": "tunisino",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Dinaro tunisino"
+    ],
+    "wikipediaSlug": null
+  },
+  "TO": {
+    "name": "Tonga",
+    "capital": "Nukuʻalofa",
+    "demonym": "tongano",
+    "languages": [
+      "Tongano",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Paʻanga tongano"
+    ],
+    "wikipediaSlug": null
+  },
+  "TR": {
+    "name": "Turchia",
+    "capital": "Ankara",
+    "demonym": "turco",
+    "languages": [
+      "Turco"
+    ],
+    "currencyNames": [
+      "Lira turca"
+    ],
+    "wikipediaSlug": null
+  },
+  "TT": {
+    "name": "Trinidad e Tobago",
+    "capital": "Port of Spain",
+    "demonym": "trinidadiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro di Trinidad e Tobago"
+    ],
+    "wikipediaSlug": null
+  },
+  "TV": {
+    "name": "Tuvalu",
+    "capital": "Funafuti",
+    "demonym": "tuvaluano",
+    "languages": [
+      "Tuvalu",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro australiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "TW": {
+    "name": "Taiwan",
+    "capital": "Taipei",
+    "demonym": "taiwanese",
+    "languages": [
+      "Cinese"
+    ],
+    "currencyNames": [
+      "Nuovo dollaro taiwanese"
+    ],
+    "wikipediaSlug": null
+  },
+  "TZ": {
+    "name": "Tanzania",
+    "capital": "Dodoma",
+    "demonym": "tanzaniano",
+    "languages": [
+      "Swahili",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Scellino della Tanzania"
+    ],
+    "wikipediaSlug": null
+  },
+  "UA": {
+    "name": "Ucraina",
+    "capital": "Kiev",
+    "demonym": "ucraino",
+    "languages": [
+      "Ucraino"
+    ],
+    "currencyNames": [
+      "Grivnia ucraina"
+    ],
+    "wikipediaSlug": null
+  },
+  "UG": {
+    "name": "Uganda",
+    "capital": "Kampala",
+    "demonym": "ugandese",
+    "languages": [
+      "Inglese",
+      "Swahili"
+    ],
+    "currencyNames": [
+      "Scellino ugandese"
+    ],
+    "wikipediaSlug": null
+  },
+  "US": {
+    "name": "Stati Uniti",
+    "capital": "Washington",
+    "demonym": "americano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "UY": {
+    "name": "Uruguay",
+    "capital": "Montevideo",
+    "demonym": "uruguaiano",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Peso uruguayano"
+    ],
+    "wikipediaSlug": null
+  },
+  "UZ": {
+    "name": "Uzbekistan",
+    "capital": "Tashkent",
+    "demonym": "uzbeko",
+    "languages": [
+      "Uzbeco"
+    ],
+    "currencyNames": [
+      "Sum uzbeco"
+    ],
+    "wikipediaSlug": null
+  },
+  "VA": {
+    "name": "Città del Vaticano",
+    "capital": "Città del Vaticano",
+    "demonym": "vaticano",
+    "languages": [
+      "Italiano",
+      "Latino"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "VC": {
+    "name": "Saint Vincent e Grenadine",
+    "capital": "Kingstown",
+    "demonym": "vincentino",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro dei Caraibi orientali"
+    ],
+    "wikipediaSlug": null
+  },
+  "VE": {
+    "name": "Venezuela",
+    "capital": "Caracas",
+    "demonym": "venezuelano",
+    "languages": [
+      "Spagnolo"
+    ],
+    "currencyNames": [
+      "Bolívar venezuelano"
+    ],
+    "wikipediaSlug": null
+  },
+  "VG": {
+    "name": "Isole Vergini Britanniche",
+    "capital": "Road Town",
+    "demonym": "verginiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "VI": {
+    "name": "Isole Vergini Americane",
+    "capital": "Charlotte Amalie",
+    "demonym": "verginiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Dollaro statunitense"
+    ],
+    "wikipediaSlug": null
+  },
+  "VN": {
+    "name": "Vietnam",
+    "capital": "Hanoi",
+    "demonym": "vietnamita",
+    "languages": [
+      "Vietnamita"
+    ],
+    "currencyNames": [
+      "Dong vietnamita"
+    ],
+    "wikipediaSlug": null
+  },
+  "VU": {
+    "name": "Vanuatu",
+    "capital": "Port Vila",
+    "demonym": "vanuatuano",
+    "languages": [
+      "Bislama",
+      "Inglese",
+      "Francese"
+    ],
+    "currencyNames": [
+      "Vatu di Vanuatu"
+    ],
+    "wikipediaSlug": null
+  },
+  "WF": {
+    "name": "Wallis e Futuna",
+    "capital": "Mata Utu",
+    "demonym": "wallisiano",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Franco CFP"
+    ],
+    "wikipediaSlug": null
+  },
+  "WS": {
+    "name": "Samoa",
+    "capital": "Apia",
+    "demonym": "samoano",
+    "languages": [
+      "Samoano",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Tala samoano"
+    ],
+    "wikipediaSlug": null
+  },
+  "XK": {
+    "name": "Kosovo",
+    "capital": "Pristina",
+    "demonym": "kosovaro",
+    "languages": [
+      "Albanese",
+      "Serbo"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "YE": {
+    "name": "Yemen",
+    "capital": "Sana'a",
+    "demonym": "yemenita",
+    "languages": [
+      "Arabo"
+    ],
+    "currencyNames": [
+      "Riyal yemenita"
+    ],
+    "wikipediaSlug": null
+  },
+  "YT": {
+    "name": "Mayotte",
+    "capital": "Mamoudzou",
+    "demonym": "mahorano",
+    "languages": [
+      "Francese"
+    ],
+    "currencyNames": [
+      "Euro"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZA": {
+    "name": "Sudafrica",
+    "capital": "Pretoria",
+    "demonym": "sudafricano",
+    "languages": [
+      "Zulu",
+      "Xhosa",
+      "Afrikaans",
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Rand sudafricano"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZM": {
+    "name": "Zambia",
+    "capital": "Lusaka",
+    "demonym": "zambiano",
+    "languages": [
+      "Inglese"
+    ],
+    "currencyNames": [
+      "Kwacha zambiano"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZW": {
+    "name": "Zimbabwe",
+    "capital": "Harare",
+    "demonym": "zimbabwese",
+    "languages": [
+      "Inglese",
+      "Shona",
+      "Ndebele del sud"
+    ],
+    "currencyNames": [
+      "Dollaro zimbabwiano (2009)"
+    ],
+    "wikipediaSlug": null
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Statistik",
+  "aria.close": "Tutup",
+  "tabs.play": "Main",
+  "tabs.stamps": "Ujian stempel",
+
+  "table.country": "Negara",
+  "aria.showIndicators": "Tampilkan indikator",
+  "aria.showPercent": "Tampilkan persentase",
+
+  "typeLabel.E": "Kenali negaranya",
+  "typeLabel.C": "Negara ke ibu kota",
+  "typeLabel.D": "Ibu kota ke negara",
+  "typeLabel.F": "Kenali ibu kotanya",
+  "typeLabel.A": "Tunjukkan negaranya",
+  "typeLabel.B": "Tunjukkan ibu kotanya",
+
+  "stampLabel.A.short": "◯ Negara",
+  "stampLabel.A.full": "Ujian stempel Negara",
+  "stampLabel.B.short": "◎ Ibu Kota",
+  "stampLabel.B.full": "Ujian stempel Ibu Kota",
+
+  "legend.dominated": "Dikuasai",
+  "legend.inferred": "Disimpulkan",
+  "legend.reinforcement": "Penguatan",
+  "legend.noData": "Belum ada data",
+  "legend.correct": "Benar",
+  "legend.incorrect": "Salah",
+
+  "reset.button": "Reset statistik",
+  "reset.confirm": "Reset statistik Bermain untuk {{level}} - {{continent}}?",
+  "stampNotice": "Stempel dan riwayat ujian bersifat permanen, seperti paspor asli. Jika ingin memulai dari awal, buat profil baru."
+}

@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Глобус",
+  "segmented.table": "Таблиця",
+  "labels.countries": "Країни",
+  "labels.capitals": "Столиці",
+
+  "table.country": "Країна",
+  "table.capital": "Столиця",
+  "table.population": "Нас.",
+  "table.nonUNToggle": "Території поза ООН",
+
+  "card.disclaimer.antarctica": "Міжнародна територія — Договір про Антарктику (1959)",
+  "card.disclaimer.territory": "Територія {{sovereign}}",
+  "card.disclaimer.disputed": "Спірний суверенітет",
+  "card.flagAlt": "Прапор {{country}}",
+  "card.aria.openWikipedia": "Відкрити {{country}} у Вікіпедії",
+  "card.aria.dialog": "Картка {{country}}",
+
+  "card.field.capital": "Столиця",
+  "card.field.population": "Населення",
+  "card.field.area": "Площа",
+  "card.field.density": "Густота",
+  "card.field.currency": "Валюта",
+  "card.field.demonym": "Самоназва",
+  "card.field.languages": "Мови",
+  "card.field.hdi": "ІЛР",
+  "card.field.ihdi": "ІЛРН",
+  "card.unit.inhabitants": "мешк.",
+  "card.unit.densityUnit": "мешк./км²",
+  "card.na": "Н/Д",
+
+  "card.tooltip.hdi": "Індекс людського розвитку: вимірює здоров'я, освіту та доходи. Діапазон 0–1.",
+  "card.tooltip.ihdi": "ІЛР з урахуванням нерівності: враховує нерівність у здоров'ї, освіті та доходах.",
+  "card.aria.hdiInfo": "Інформація про ІЛР",
+  "card.aria.ihdiInfo": "Інформація про ІЛРН",
+
+  "card.antarctica.info": "Антарктида не належить жодній країні. Договір про Антарктику, підписаний у 1959 році, відводить її для наукових досліджень і забороняє військову діяльність та видобуток ресурсів.",
+
+  "card.sovereign.GB": "Великої Британії",
+  "card.sovereign.FR": "Франції",
+  "card.sovereign.US": "США",
+  "card.sovereign.NL": "Нідерландів",
+  "card.sovereign.DK": "Данії",
+  "card.sovereign.CN": "Китаю",
+  "card.sovereign.NZ": "Нової Зеландії",
+  "card.sovereign.FI": "Фінляндії",
+  "card.sovereign.AU": "Австралії"
+}

@@ -1,0 +1,41 @@
+{
+  "continent.africa": "Afryka",
+  "continent.america": "Ameryka",
+  "continent.asia": "Azja",
+  "continent.europe": "Europa",
+  "continent.oceania": "Oceania",
+  "continent.antarctica": "Antarktyda",
+  "continentFilter.all": "Wszystkie",
+
+  "level.tourist": "Turysta",
+  "level.backpacker": "Backpacker",
+  "level.guide": "Przewodnik",
+
+  "questionType.E": "Rozpoznaj kraj",
+  "questionType.C": "Kraj na stolicę",
+  "questionType.D": "Stolica na kraj",
+  "questionType.F": "Rozpoznaj stolicę",
+  "questionType.A": "Wskaż kraj",
+  "questionType.B": "Wskaż stolicę",
+
+  "questionTypeShort.E": "Rozpoznaj kraj",
+  "questionTypeShort.C": "Kraj na stolicę",
+  "questionTypeShort.D": "Stolica na kraj",
+  "questionTypeShort.F": "Rozpoznaj stolicę",
+  "questionTypeShort.A": "Wskaż kraj",
+  "questionTypeShort.B": "Wskaż stolicę",
+
+  "tabs.explore": "Eksploruj",
+  "tabs.play": "Graj",
+  "tabs.passport": "Paszport",
+
+  "loading": "Ładowanie globu…",
+  "cancel": "Anuluj",
+  "close": "Zamknij",
+  "continue": "Kontynuuj",
+
+  "aria.userProfile": "Profil użytkownika",
+  "aria.stats": "Statystyki",
+  "aria.settings": "Ustawienia",
+  "aria.navigation": "Nawigacja główna"
+}

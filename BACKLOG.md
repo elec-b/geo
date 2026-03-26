@@ -29,15 +29,22 @@
 > Ordenados por prioridad. Cada bloque debe completarse antes de avanzar al siguiente (salvo tareas marcadas como opcionales).
 
 ### Internacionalización
-> Pre-lanzamiento. La app se lanza en todos los idiomas soportados por iOS/Android. Las tareas siguen la cadena de dependencias: a → b → c → d → e → f → g.
+> Pre-lanzamiento. La app se lanza en todos los idiomas soportados por iOS/Android. Las tareas siguen la cadena de dependencias: a → b → c → d → e → f → g -> h.
 
 - [x] **(a)** Librería de i18n: `i18next` + `react-i18next`
 - [x] **(b)** Externalizar textos de la app a archivos de traducción. Tipos `Continent`/`GameLevel` migrados a claves neutras, Zustand persist v1 con migración automática, ~200 strings externalizados en 7 namespaces i18next
 - [x] **(c)** Nombres de países desde CLDR (`Intl.DisplayNames`) + 8 overrides/es. Diff entre runs. Absorbe 24 overrides manuales
 - [x] **(d)** Nombres y símbolos de moneda desde CLDR (`Intl.DisplayNames` + `Intl.NumberFormat` narrowSymbol) + 59 overrides de símbolo. Filtro de códigos no reconocidos. 5 correcciones de símbolos (CD, PE, VE, CV, SZ). Eliminadas 237 entradas manuales de monedas
-- [ ] **(e)** Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
-- [ ] **(f)** Validación con Claude: validador primario para todos los idiomas. El desarrollador valida español e inglés personalmente; para el resto, Claude genera informe de anomalías por idioma (ortografía, traducciones incorrectas, incoherencias). No genera traducciones — solo valida
-- [ ] **(g)** Traducir textos de UI a todos los idiomas soportados
+- [x] **(e)** Generar datos multi-idioma: 26 idiomas (tier 1 + tier 2). Arquitectura base+i18n: `countries-base.json` (agnóstico) + `i18n/{lang}.json` (×26). CLDR para países/monedas/idiomas, Wikidata SPARQL para capitales, Claude para gentilicios/sea labels. Script refactorizado, runtime multi-idioma con caché por locale
+- [x] **(f)** Validación inline: CLDR automático, Wikidata 6.162 capitales, spot-check es/en/ja/fr. Pendiente: validación profunda del dev para es e en
+- [x] **(g)** UI traducida a 26 idiomas (175 archivos). i18next con lazy loading dinámico. Selector de idioma funcional en Configuración. Detección automática de idioma del dispositivo
+- [ ] **(h)** Wikipedia slugs multi-idioma (solo es tiene slugs; otros idiomas no muestran enlace Wikipedia). Ampliar `fetch-wikipedia.ts` para consultar sitelinks en los 26 idiomas
+- [ ] **(fix)** en algunos idiomas, e.g. japonés o ruso, en Jugar, hay que hacer scroll down para ver el botón de empezar / continuar. Pensar qué es lo mejor desde un punto de vista de UX, e.g. si hacer auto-scroll down para ver el botón, ampliar altura y anchura del modal del selector, dejarlo como está u otra cosa distinta. Hacer pequeño spike, útil para todos los idiomas.
+- [ ] **(fix)** en algunos idiomas, e.g. chino, en Jugar, el selector de continente no se posiciona como los 5 anillos olímpicos, e.g. aparecen 4 continentes arriba y 1 abajo; siempre que se pueda, queremos mantener 3 arriba y 2 abajo, como los anillos de los juegos olímpicos
+- [ ] **(fix)** en el selector de jugar, aparece el número de países de cada nivel en inglés, e.g. para europa-turista "10 countries", para europa-mochilero "27 contries", debería aparecer en ruso. Chequear para todos los países.
+- [ ] **(check)** no tenemos griego como idioma? algún otro idioma relevante que nos hayamos dejado?
+- [ ] **(check)** en configuración, qué criterio se elige para ordenar los idiomas disponibles? (solo es una pregunta, quizás no haya que cambiar nada)
+- [ ] **(final-check)** Lanzar agent team, para verificar datos de internacionalización creados vs. fuentes reputadas. Similar al check que se hizo en Español frente a la RAE (apéndice del diccionario panhispánico de dudas) y otras fuentes. Crear spike sugiriendo cambios. Importante pensar también en cómo mantener esto bien automáticamente en el futuro (ya caputrado en design.md, pero es un punto muy importante y que debe estar presente a lo largo del proyecto)
 
 ### Acabados pre-lanzamiento
 - [ ] Logo/branding en LoadingScreen (antes de publicar en stores)
@@ -46,6 +53,9 @@
 - [ ] Revisar que los datos de la ficha de país están actualizados + asegurar que se actualicen bien en el futuro
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
 - [ ] Sección «Acerca de»: explicar criterios (países ONU, fuentes UNDP, REST Countries, etc.)
+- [ ] Permitir al usuario elegir un color de logo, además de los iconos de animales que ya tenemos
+- [ ] En el selector de Jugar y en Pasaporte (y en cualquier otro sitio que aplique y me haya olvidado), en vez de mostrar un emoji de maleta para el nivel turista, mostrar un emoji de gafas de sol. 
+- [ ] Bug: al conseguir un sello de capital, la estrella toca el doble círculo interior y se ve mal, luego se ve bien cuando se entra y se sale de pasaporte
 
 ### Preparación y publicación iOS
 - [ ] Fix orientación: eliminar landscape de Info.plist (la UI es portrait-only). Decidir si se soporta iPad

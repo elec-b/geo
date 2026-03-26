@@ -1,0 +1,16 @@
+{
+  "header.title": "พาสปอร์ตของ{{name}}",
+  "header.globalLevel": "ระดับรวม: {{level}}",
+  "emptyState": "ตราประทับแต่ละอันพิสูจน์ความรู้ของคุณ สะสมจนเต็มเล่มได้ไหม?",
+
+  "legend.country": "○ ประเทศ",
+  "legend.capital": "◎ เมืองหลวง",
+  "legend.earned": "★ ได้รับแล้ว",
+  "legend.locked": "🔒 ล็อกอยู่",
+
+  "stampTitle.countries": "ตราประเทศ",
+  "stampTitle.capitals": "ตราเมืองหลวง",
+
+  "modal.title": "สอบตราประทับ",
+  "modal.questionCount": "ต้องตอบถูก {{count}} ข้อโดยไม่ผิดเลย"
+}

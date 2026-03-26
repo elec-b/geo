@@ -1,0 +1,2959 @@
+{
+  "AD": {
+    "name": "アンドラ",
+    "capital": "アンドラ・ラ・ベリャ",
+    "demonym": "アンドラの",
+    "languages": [
+      "カタロニア語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "AE": {
+    "name": "アラブ首長国連邦",
+    "capital": "アブダビ",
+    "demonym": "アラブ首長国連邦の",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "アラブ首長国連邦ディルハム"
+    ],
+    "wikipediaSlug": null
+  },
+  "AF": {
+    "name": "アフガニスタン",
+    "capital": "カーブル",
+    "demonym": "アフガニスタンの",
+    "languages": [
+      "ダリー語",
+      "パシュトゥー語"
+    ],
+    "currencyNames": [
+      "アフガニスタン アフガニー"
+    ],
+    "wikipediaSlug": null
+  },
+  "AG": {
+    "name": "アンティグア・バーブーダ",
+    "capital": "セントジョンズ",
+    "demonym": "アンティグアの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "東カリブ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "AI": {
+    "name": "アンギラ",
+    "capital": "バレー",
+    "demonym": "アンギラの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "東カリブ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "AL": {
+    "name": "アルバニア",
+    "capital": "ティラナ",
+    "demonym": "アルバニアの",
+    "languages": [
+      "アルバニア語"
+    ],
+    "currencyNames": [
+      "アルバニア レク"
+    ],
+    "wikipediaSlug": null
+  },
+  "AM": {
+    "name": "アルメニア",
+    "capital": "イェレヴァン",
+    "demonym": "アルメニアの",
+    "languages": [
+      "アルメニア語"
+    ],
+    "currencyNames": [
+      "アルメニア ドラム"
+    ],
+    "wikipediaSlug": null
+  },
+  "AO": {
+    "name": "アンゴラ",
+    "capital": "ルアンダ",
+    "demonym": "アンゴラの",
+    "languages": [
+      "ポルトガル語"
+    ],
+    "currencyNames": [
+      "アンゴラ クワンザ"
+    ],
+    "wikipediaSlug": null
+  },
+  "AR": {
+    "name": "アルゼンチン",
+    "capital": "ブエノスアイレス",
+    "demonym": "アルゼンチンの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "アルゼンチン ペソ"
+    ],
+    "wikipediaSlug": null
+  },
+  "AS": {
+    "name": "米領サモア",
+    "capital": "パゴパゴ",
+    "demonym": "米領サモアの",
+    "languages": [
+      "英語",
+      "サモア語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "AT": {
+    "name": "オーストリア",
+    "capital": "ウィーン",
+    "demonym": "オーストリアの",
+    "languages": [
+      "ドイツ語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "AU": {
+    "name": "オーストラリア",
+    "capital": "キャンベラ",
+    "demonym": "オーストラリアの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "オーストラリア ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "AW": {
+    "name": "アルバ",
+    "capital": "オラニエスタッド",
+    "demonym": "アルバの",
+    "languages": [
+      "オランダ語",
+      "パピアメント語"
+    ],
+    "currencyNames": [
+      "アルバ フロリン"
+    ],
+    "wikipediaSlug": null
+  },
+  "AX": {
+    "name": "オーランド諸島",
+    "capital": "マリエハムン",
+    "demonym": "オーランド諸島の",
+    "languages": [
+      "スウェーデン語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "AZ": {
+    "name": "アゼルバイジャン",
+    "capital": "バクー",
+    "demonym": "アゼルバイジャンの",
+    "languages": [
+      "アゼルバイジャン語"
+    ],
+    "currencyNames": [
+      "アゼルバイジャン マナト"
+    ],
+    "wikipediaSlug": null
+  },
+  "BA": {
+    "name": "ボスニア・ヘルツェゴビナ",
+    "capital": "サラエヴォ",
+    "demonym": "ボスニアの",
+    "languages": [
+      "ボスニア語",
+      "クロアチア語",
+      "セルビア語"
+    ],
+    "currencyNames": [
+      "ボスニア・ヘルツェゴビナ 兌換マルク (BAM)"
+    ],
+    "wikipediaSlug": null
+  },
+  "BB": {
+    "name": "バルバドス",
+    "capital": "ブリッジタウン",
+    "demonym": "バルバドスの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "バルバドス ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "BD": {
+    "name": "バングラデシュ",
+    "capital": "ダッカ",
+    "demonym": "バングラデシュの",
+    "languages": [
+      "ベンガル語"
+    ],
+    "currencyNames": [
+      "バングラデシュ タカ"
+    ],
+    "wikipediaSlug": null
+  },
+  "BE": {
+    "name": "ベルギー",
+    "capital": "ブリュッセル市",
+    "demonym": "ベルギーの",
+    "languages": [
+      "オランダ語",
+      "フランス語",
+      "ドイツ語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "BF": {
+    "name": "ブルキナファソ",
+    "capital": "ワガドゥグー",
+    "demonym": "ブルキナファソの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "西アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "BG": {
+    "name": "ブルガリア",
+    "capital": "ソフィア",
+    "demonym": "ブルガリアの",
+    "languages": [
+      "ブルガリア語"
+    ],
+    "currencyNames": [
+      "ブルガリア 新レフ"
+    ],
+    "wikipediaSlug": null
+  },
+  "BH": {
+    "name": "バーレーン",
+    "capital": "マナーマ",
+    "demonym": "バーレーンの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "バーレーン ディナール"
+    ],
+    "wikipediaSlug": null
+  },
+  "BI": {
+    "name": "ブルンジ",
+    "capital": "ギテガ",
+    "demonym": "ブルンジの",
+    "languages": [
+      "ルンディ語",
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ブルンジ フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "BJ": {
+    "name": "ベナン",
+    "capital": "ポルトノボ",
+    "demonym": "ベナンの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "西アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "BL": {
+    "name": "サン・バルテルミー",
+    "capital": "グスタビア",
+    "demonym": "サン・バルテルミーの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "BM": {
+    "name": "バミューダ",
+    "capital": "ハミルトン",
+    "demonym": "バミューダの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "バミューダ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "BN": {
+    "name": "ブルネイ",
+    "capital": "バンダルスリブガワン",
+    "demonym": "ブルネイの",
+    "languages": [
+      "マレー語"
+    ],
+    "currencyNames": [
+      "ブルネイ ドル",
+      "シンガポール ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "BO": {
+    "name": "ボリビア",
+    "capital": "ラパス",
+    "demonym": "ボリビアの",
+    "languages": [
+      "スペイン語",
+      "ケチュア語",
+      "アイマラ語"
+    ],
+    "currencyNames": [
+      "ボリビア ボリビアーノ"
+    ],
+    "wikipediaSlug": null
+  },
+  "BR": {
+    "name": "ブラジル",
+    "capital": "ブラジリア",
+    "demonym": "ブラジルの",
+    "languages": [
+      "ポルトガル語"
+    ],
+    "currencyNames": [
+      "ブラジル レアル"
+    ],
+    "wikipediaSlug": null
+  },
+  "BS": {
+    "name": "バハマ",
+    "capital": "ナッソー",
+    "demonym": "バハマの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "バハマ ドル",
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "BT": {
+    "name": "ブータン",
+    "capital": "ティンプー",
+    "demonym": "ブータンの",
+    "languages": [
+      "ゾンカ語"
+    ],
+    "currencyNames": [
+      "ブータン ニュルタム",
+      "インド ルピー"
+    ],
+    "wikipediaSlug": null
+  },
+  "BW": {
+    "name": "ボツワナ",
+    "capital": "ハボローネ",
+    "demonym": "ボツワナの",
+    "languages": [
+      "英語",
+      "ツワナ語"
+    ],
+    "currencyNames": [
+      "ボツワナ プラ"
+    ],
+    "wikipediaSlug": null
+  },
+  "BY": {
+    "name": "ベラルーシ",
+    "capital": "ミンスク",
+    "demonym": "ベラルーシの",
+    "languages": [
+      "ベラルーシ語",
+      "ロシア語"
+    ],
+    "currencyNames": [
+      "ベラルーシ ルーブル"
+    ],
+    "wikipediaSlug": null
+  },
+  "BZ": {
+    "name": "ベリーズ",
+    "capital": "ベルモパン",
+    "demonym": "ベリーズの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "ベリーズ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "CA": {
+    "name": "カナダ",
+    "capital": "オタワ",
+    "demonym": "カナダの",
+    "languages": [
+      "英語",
+      "フランス語"
+    ],
+    "currencyNames": [
+      "カナダ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "CD": {
+    "name": "コンゴ民主共和国(キンシャサ)",
+    "capital": "キンシャサ",
+    "demonym": "コンゴ民主共和国の",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "コンゴ フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "CF": {
+    "name": "中央アフリカ共和国",
+    "capital": "バンギ",
+    "demonym": "中央アフリカの",
+    "languages": [
+      "フランス語",
+      "サンゴ語"
+    ],
+    "currencyNames": [
+      "中央アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "CG": {
+    "name": "コンゴ共和国(ブラザビル)",
+    "capital": "ブラザヴィル",
+    "demonym": "コンゴ共和国の",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "中央アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "CH": {
+    "name": "スイス",
+    "capital": "ベルン",
+    "demonym": "スイスの",
+    "languages": [
+      "ドイツ語",
+      "フランス語",
+      "イタリア語",
+      "ロマンシュ語"
+    ],
+    "currencyNames": [
+      "スイス フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "CI": {
+    "name": "コートジボワール",
+    "capital": "ヤムスクロ",
+    "demonym": "コートジボワールの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "西アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "CK": {
+    "name": "クック諸島",
+    "capital": "アバルア",
+    "demonym": "クック諸島の",
+    "languages": [
+      "英語",
+      "ラロトンガ語"
+    ],
+    "currencyNames": [
+      "ニュージーランド ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "CL": {
+    "name": "チリ",
+    "capital": "サンティアゴ",
+    "demonym": "チリの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "チリ ペソ"
+    ],
+    "wikipediaSlug": null
+  },
+  "CM": {
+    "name": "カメルーン",
+    "capital": "ヤウンデ",
+    "demonym": "カメルーンの",
+    "languages": [
+      "フランス語",
+      "英語"
+    ],
+    "currencyNames": [
+      "中央アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "CN": {
+    "name": "中国",
+    "capital": "北京市",
+    "demonym": "中国の",
+    "languages": [
+      "中国語"
+    ],
+    "currencyNames": [
+      "中国人民元"
+    ],
+    "wikipediaSlug": null
+  },
+  "CO": {
+    "name": "コロンビア",
+    "capital": "ボゴタ",
+    "demonym": "コロンビアの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "コロンビア ペソ"
+    ],
+    "wikipediaSlug": null
+  },
+  "CR": {
+    "name": "コスタリカ",
+    "capital": "サンホセ",
+    "demonym": "コスタリカの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "コスタリカ コロン"
+    ],
+    "wikipediaSlug": null
+  },
+  "CU": {
+    "name": "キューバ",
+    "capital": "ハバナ",
+    "demonym": "キューバの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "キューバ 兌換ペソ",
+      "キューバ ペソ"
+    ],
+    "wikipediaSlug": null
+  },
+  "CV": {
+    "name": "カーボベルデ",
+    "capital": "プライア",
+    "demonym": "カーボベルデの",
+    "languages": [
+      "ポルトガル語"
+    ],
+    "currencyNames": [
+      "カーボベルデ エスクード"
+    ],
+    "wikipediaSlug": null
+  },
+  "CW": {
+    "name": "キュラソー",
+    "capital": "ウィレムスタッド",
+    "demonym": "キュラソーの",
+    "languages": [
+      "オランダ語",
+      "パピアメント語"
+    ],
+    "currencyNames": [
+      "オランダ領アンティル ギルダー"
+    ],
+    "wikipediaSlug": null
+  },
+  "CY": {
+    "name": "キプロス",
+    "capital": "ニコシア",
+    "demonym": "キプロスの",
+    "languages": [
+      "ギリシャ語",
+      "トルコ語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "CZ": {
+    "name": "チェコ",
+    "capital": "プラハ",
+    "demonym": "チェコの",
+    "languages": [
+      "チェコ語"
+    ],
+    "currencyNames": [
+      "チェコ コルナ"
+    ],
+    "wikipediaSlug": null
+  },
+  "DE": {
+    "name": "ドイツ",
+    "capital": "ベルリン",
+    "demonym": "ドイツの",
+    "languages": [
+      "ドイツ語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "DJ": {
+    "name": "ジブチ",
+    "capital": "ジブチ市",
+    "demonym": "ジブチの",
+    "languages": [
+      "フランス語",
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "ジブチ フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "DK": {
+    "name": "デンマーク",
+    "capital": "コペンハーゲン",
+    "demonym": "デンマークの",
+    "languages": [
+      "デンマーク語"
+    ],
+    "currencyNames": [
+      "デンマーク クローネ"
+    ],
+    "wikipediaSlug": null
+  },
+  "DM": {
+    "name": "ドミニカ国",
+    "capital": "ロゾー",
+    "demonym": "ドミニカ国の",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "東カリブ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "DO": {
+    "name": "ドミニカ共和国",
+    "capital": "サント・ドミンゴ",
+    "demonym": "ドミニカ共和国の",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "ドミニカ ペソ"
+    ],
+    "wikipediaSlug": null
+  },
+  "DZ": {
+    "name": "アルジェリア",
+    "capital": "アルジェ",
+    "demonym": "アルジェリアの",
+    "languages": [
+      "アラビア語",
+      "中央アトラス・タマジクト語"
+    ],
+    "currencyNames": [
+      "アルジェリア ディナール"
+    ],
+    "wikipediaSlug": null
+  },
+  "EC": {
+    "name": "エクアドル",
+    "capital": "キト",
+    "demonym": "エクアドルの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "EE": {
+    "name": "エストニア",
+    "capital": "タリン",
+    "demonym": "エストニアの",
+    "languages": [
+      "エストニア語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "EG": {
+    "name": "エジプト",
+    "capital": "カイロ",
+    "demonym": "エジプトの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "エジプト ポンド"
+    ],
+    "wikipediaSlug": null
+  },
+  "EH": {
+    "name": "西サハラ",
+    "capital": "ラユーン",
+    "demonym": "西サハラの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "アルジェリア ディナール",
+      "モロッコ ディルハム",
+      "モーリタニア ウギア"
+    ],
+    "wikipediaSlug": null
+  },
+  "ER": {
+    "name": "エリトリア",
+    "capital": "アスマラ",
+    "demonym": "エリトリアの",
+    "languages": [
+      "ティグリニア語",
+      "アラビア語",
+      "英語"
+    ],
+    "currencyNames": [
+      "エリトリア ナクファ"
+    ],
+    "wikipediaSlug": null
+  },
+  "ES": {
+    "name": "スペイン",
+    "capital": "マドリード",
+    "demonym": "スペインの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "ET": {
+    "name": "エチオピア",
+    "capital": "アディスアベバ",
+    "demonym": "エチオピアの",
+    "languages": [
+      "アムハラ語"
+    ],
+    "currencyNames": [
+      "エチオピア ブル"
+    ],
+    "wikipediaSlug": null
+  },
+  "FI": {
+    "name": "フィンランド",
+    "capital": "ヘルシンキ",
+    "demonym": "フィンランドの",
+    "languages": [
+      "フィンランド語",
+      "スウェーデン語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "FJ": {
+    "name": "フィジー",
+    "capital": "スバ",
+    "demonym": "フィジーの",
+    "languages": [
+      "英語",
+      "フィジー語",
+      "フィジー・ヒンディー語"
+    ],
+    "currencyNames": [
+      "フィジー ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "FK": {
+    "name": "フォークランド諸島",
+    "capital": "スタンリー",
+    "demonym": "フォークランド諸島の",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "フォークランド（マルビナス）諸島 ポンド"
+    ],
+    "wikipediaSlug": null
+  },
+  "FM": {
+    "name": "ミクロネシア連邦",
+    "capital": "パリキール",
+    "demonym": "ミクロネシアの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "FO": {
+    "name": "フェロー諸島",
+    "capital": "トースハウン",
+    "demonym": "フェロー諸島の",
+    "languages": [
+      "フェロー語",
+      "デンマーク語"
+    ],
+    "currencyNames": [
+      "デンマーク クローネ"
+    ],
+    "wikipediaSlug": null
+  },
+  "FR": {
+    "name": "フランス",
+    "capital": "パリ",
+    "demonym": "フランスの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "GA": {
+    "name": "ガボン",
+    "capital": "リーブルヴィル",
+    "demonym": "ガボンの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "中央アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "GB": {
+    "name": "イギリス",
+    "capital": "ロンドン",
+    "demonym": "イギリスの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "英国ポンド"
+    ],
+    "wikipediaSlug": null
+  },
+  "GD": {
+    "name": "グレナダ",
+    "capital": "セントジョージズ",
+    "demonym": "グレナダの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "東カリブ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "GE": {
+    "name": "ジョージア",
+    "capital": "トビリシ",
+    "demonym": "ジョージアの",
+    "languages": [
+      "ジョージア語"
+    ],
+    "currencyNames": [
+      "ジョージア ラリ"
+    ],
+    "wikipediaSlug": null
+  },
+  "GF": {
+    "name": "仏領ギアナ",
+    "capital": "カイエンヌ",
+    "demonym": "フランス領ギアナの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "GG": {
+    "name": "ガーンジー",
+    "capital": "セント・ピーター・ポート",
+    "demonym": "ガーンジーの",
+    "languages": [
+      "英語",
+      "フランス語"
+    ],
+    "currencyNames": [
+      "英国ポンド"
+    ],
+    "wikipediaSlug": null
+  },
+  "GH": {
+    "name": "ガーナ",
+    "capital": "アクラ",
+    "demonym": "ガーナの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "ガーナ セディ"
+    ],
+    "wikipediaSlug": null
+  },
+  "GL": {
+    "name": "グリーンランド",
+    "capital": "ヌーク",
+    "demonym": "グリーンランドの",
+    "languages": [
+      "グリーンランド語"
+    ],
+    "currencyNames": [
+      "デンマーク クローネ"
+    ],
+    "wikipediaSlug": null
+  },
+  "GM": {
+    "name": "ガンビア",
+    "capital": "バンジュール",
+    "demonym": "ガンビアの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "ガンビア ダラシ"
+    ],
+    "wikipediaSlug": null
+  },
+  "GN": {
+    "name": "ギニア",
+    "capital": "コナクリ",
+    "demonym": "ギニアの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ギニア フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "GP": {
+    "name": "グアドループ",
+    "capital": "バステール",
+    "demonym": "グアドループの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "GQ": {
+    "name": "赤道ギニア",
+    "capital": "ラパス",
+    "demonym": "赤道ギニアの",
+    "languages": [
+      "スペイン語",
+      "フランス語",
+      "ポルトガル語"
+    ],
+    "currencyNames": [
+      "中央アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "GR": {
+    "name": "ギリシャ",
+    "capital": "アテネ",
+    "demonym": "ギリシャの",
+    "languages": [
+      "ギリシャ語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "GT": {
+    "name": "グアテマラ",
+    "capital": "グアテマラシティ",
+    "demonym": "グアテマラの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "グアテマラ ケツァル"
+    ],
+    "wikipediaSlug": null
+  },
+  "GU": {
+    "name": "グアム",
+    "capital": "ハガニア",
+    "demonym": "グアムの",
+    "languages": [
+      "英語",
+      "チャモロ語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "GW": {
+    "name": "ギニアビサウ",
+    "capital": "ビサウ",
+    "demonym": "ギニアビサウの",
+    "languages": [
+      "ポルトガル語"
+    ],
+    "currencyNames": [
+      "西アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "GY": {
+    "name": "ガイアナ",
+    "capital": "ジョージタウン",
+    "demonym": "ガイアナの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "ガイアナ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "HK": {
+    "name": "香港",
+    "capital": "ヴィクトリア",
+    "demonym": "香港の",
+    "languages": [
+      "中国語",
+      "英語"
+    ],
+    "currencyNames": [
+      "香港ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "HN": {
+    "name": "ホンジュラス",
+    "capital": "テグシガルパ",
+    "demonym": "ホンジュラスの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "ホンジュラス レンピラ"
+    ],
+    "wikipediaSlug": null
+  },
+  "HR": {
+    "name": "クロアチア",
+    "capital": "ザグレブ",
+    "demonym": "クロアチアの",
+    "languages": [
+      "クロアチア語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "HT": {
+    "name": "ハイチ",
+    "capital": "ポルトープランス",
+    "demonym": "ハイチの",
+    "languages": [
+      "フランス語",
+      "ハイチ・クレオール語"
+    ],
+    "currencyNames": [
+      "ハイチ グールド"
+    ],
+    "wikipediaSlug": null
+  },
+  "HU": {
+    "name": "ハンガリー",
+    "capital": "ブダペスト",
+    "demonym": "ハンガリーの",
+    "languages": [
+      "ハンガリー語"
+    ],
+    "currencyNames": [
+      "ハンガリー フォリント"
+    ],
+    "wikipediaSlug": null
+  },
+  "ID": {
+    "name": "インドネシア",
+    "capital": "ジャカルタ",
+    "demonym": "インドネシアの",
+    "languages": [
+      "インドネシア語"
+    ],
+    "currencyNames": [
+      "インドネシア ルピア"
+    ],
+    "wikipediaSlug": null
+  },
+  "IE": {
+    "name": "アイルランド",
+    "capital": "ダブリン",
+    "demonym": "アイルランドの",
+    "languages": [
+      "アイルランド語",
+      "英語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "IL": {
+    "name": "イスラエル",
+    "capital": "エルサレム",
+    "demonym": "イスラエルの",
+    "languages": [
+      "ヘブライ語",
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "イスラエル新シェケル"
+    ],
+    "wikipediaSlug": null
+  },
+  "IM": {
+    "name": "マン島",
+    "capital": "ダグラス",
+    "demonym": "マン島の",
+    "languages": [
+      "英語",
+      "マン島語"
+    ],
+    "currencyNames": [
+      "英国ポンド"
+    ],
+    "wikipediaSlug": null
+  },
+  "IN": {
+    "name": "インド",
+    "capital": "ニューデリー",
+    "demonym": "インドの",
+    "languages": [
+      "ヒンディー語",
+      "英語"
+    ],
+    "currencyNames": [
+      "インド ルピー"
+    ],
+    "wikipediaSlug": null
+  },
+  "IQ": {
+    "name": "イラク",
+    "capital": "バグダード",
+    "demonym": "イラクの",
+    "languages": [
+      "アラビア語",
+      "クルド語"
+    ],
+    "currencyNames": [
+      "イラク ディナール"
+    ],
+    "wikipediaSlug": null
+  },
+  "IR": {
+    "name": "イラン",
+    "capital": "テヘラン",
+    "demonym": "イランの",
+    "languages": [
+      "ペルシア語"
+    ],
+    "currencyNames": [
+      "イラン リアル"
+    ],
+    "wikipediaSlug": null
+  },
+  "IS": {
+    "name": "アイスランド",
+    "capital": "レイキャヴィーク",
+    "demonym": "アイスランドの",
+    "languages": [
+      "アイスランド語"
+    ],
+    "currencyNames": [
+      "アイスランド クローナ"
+    ],
+    "wikipediaSlug": null
+  },
+  "IT": {
+    "name": "イタリア",
+    "capital": "ローマ",
+    "demonym": "イタリアの",
+    "languages": [
+      "イタリア語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "JE": {
+    "name": "ジャージー",
+    "capital": "セント・ヘリア",
+    "demonym": "ジャージーの",
+    "languages": [
+      "英語",
+      "フランス語"
+    ],
+    "currencyNames": [
+      "英国ポンド"
+    ],
+    "wikipediaSlug": null
+  },
+  "JM": {
+    "name": "ジャマイカ",
+    "capital": "キングストン",
+    "demonym": "ジャマイカの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "ジャマイカ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "JO": {
+    "name": "ヨルダン",
+    "capital": "アンマン",
+    "demonym": "ヨルダンの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "ヨルダン ディナール"
+    ],
+    "wikipediaSlug": null
+  },
+  "JP": {
+    "name": "日本",
+    "capital": "東京都",
+    "demonym": "日本の",
+    "languages": [
+      "日本語"
+    ],
+    "currencyNames": [
+      "日本円"
+    ],
+    "wikipediaSlug": null
+  },
+  "KE": {
+    "name": "ケニア",
+    "capital": "ナイロビ",
+    "demonym": "ケニアの",
+    "languages": [
+      "スワヒリ語",
+      "英語"
+    ],
+    "currencyNames": [
+      "ケニア シリング"
+    ],
+    "wikipediaSlug": null
+  },
+  "KG": {
+    "name": "キルギス",
+    "capital": "ビシュケク",
+    "demonym": "キルギスの",
+    "languages": [
+      "キルギス語",
+      "ロシア語"
+    ],
+    "currencyNames": [
+      "キルギス ソム"
+    ],
+    "wikipediaSlug": null
+  },
+  "KH": {
+    "name": "カンボジア",
+    "capital": "プノンペン",
+    "demonym": "カンボジアの",
+    "languages": [
+      "クメール語"
+    ],
+    "currencyNames": [
+      "カンボジア リエル",
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "KI": {
+    "name": "キリバス",
+    "capital": "タラワ",
+    "demonym": "キリバスの",
+    "languages": [
+      "英語",
+      "キリバス語"
+    ],
+    "currencyNames": [
+      "オーストラリア ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "KM": {
+    "name": "コモロ",
+    "capital": "モロニ",
+    "demonym": "コモロの",
+    "languages": [
+      "zdj",
+      "アラビア語",
+      "フランス語"
+    ],
+    "currencyNames": [
+      "コモロ フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "KN": {
+    "name": "セントクリストファー・ネーヴィス",
+    "capital": "バセテール",
+    "demonym": "セントクリストファー・ネイビスの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "東カリブ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "KP": {
+    "name": "北朝鮮",
+    "capital": "平壌市",
+    "demonym": "北朝鮮の",
+    "languages": [
+      "韓国語"
+    ],
+    "currencyNames": [
+      "北朝鮮ウォン"
+    ],
+    "wikipediaSlug": null
+  },
+  "KR": {
+    "name": "韓国",
+    "capital": "ソウル特別市",
+    "demonym": "韓国の",
+    "languages": [
+      "韓国語"
+    ],
+    "currencyNames": [
+      "韓国ウォン"
+    ],
+    "wikipediaSlug": null
+  },
+  "KW": {
+    "name": "クウェート",
+    "capital": "クウェート市",
+    "demonym": "クウェートの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "クウェート ディナール"
+    ],
+    "wikipediaSlug": null
+  },
+  "KY": {
+    "name": "ケイマン諸島",
+    "capital": "ジョージタウン",
+    "demonym": "ケイマン諸島の",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "ケイマン諸島 ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "KZ": {
+    "name": "カザフスタン",
+    "capital": "アスタナ",
+    "demonym": "カザフスタンの",
+    "languages": [
+      "カザフ語",
+      "ロシア語"
+    ],
+    "currencyNames": [
+      "カザフスタン テンゲ"
+    ],
+    "wikipediaSlug": null
+  },
+  "LA": {
+    "name": "ラオス",
+    "capital": "ヴィエンチャン",
+    "demonym": "ラオスの",
+    "languages": [
+      "ラオ語"
+    ],
+    "currencyNames": [
+      "ラオス キープ"
+    ],
+    "wikipediaSlug": null
+  },
+  "LB": {
+    "name": "レバノン",
+    "capital": "ベイルート",
+    "demonym": "レバノンの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "レバノン ポンド"
+    ],
+    "wikipediaSlug": null
+  },
+  "LC": {
+    "name": "セントルシア",
+    "capital": "カストリーズ",
+    "demonym": "セントルシアの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "東カリブ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "LI": {
+    "name": "リヒテンシュタイン",
+    "capital": "ファドゥーツ",
+    "demonym": "リヒテンシュタインの",
+    "languages": [
+      "ドイツ語"
+    ],
+    "currencyNames": [
+      "スイス フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "LK": {
+    "name": "スリランカ",
+    "capital": "コロンボ",
+    "demonym": "スリランカの",
+    "languages": [
+      "シンハラ語",
+      "タミル語"
+    ],
+    "currencyNames": [
+      "スリランカ ルピー"
+    ],
+    "wikipediaSlug": null
+  },
+  "LR": {
+    "name": "リベリア",
+    "capital": "モンロビア",
+    "demonym": "リベリアの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "リベリア ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "LS": {
+    "name": "レソト",
+    "capital": "マセル",
+    "demonym": "レソトの",
+    "languages": [
+      "南部ソト語",
+      "英語"
+    ],
+    "currencyNames": [
+      "レソト ロティ",
+      "南アフリカ ランド"
+    ],
+    "wikipediaSlug": null
+  },
+  "LT": {
+    "name": "リトアニア",
+    "capital": "ヴィルニュス",
+    "demonym": "リトアニアの",
+    "languages": [
+      "リトアニア語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "LU": {
+    "name": "ルクセンブルク",
+    "capital": "ルクセンブルク市",
+    "demonym": "ルクセンブルクの",
+    "languages": [
+      "ルクセンブルク語",
+      "フランス語",
+      "ドイツ語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "LV": {
+    "name": "ラトビア",
+    "capital": "リガ",
+    "demonym": "ラトビアの",
+    "languages": [
+      "ラトビア語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "LY": {
+    "name": "リビア",
+    "capital": "トリポリ",
+    "demonym": "リビアの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "リビア ディナール"
+    ],
+    "wikipediaSlug": null
+  },
+  "MA": {
+    "name": "モロッコ",
+    "capital": "ラバト",
+    "demonym": "モロッコの",
+    "languages": [
+      "アラビア語",
+      "中央アトラス・タマジクト語"
+    ],
+    "currencyNames": [
+      "モロッコ ディルハム"
+    ],
+    "wikipediaSlug": null
+  },
+  "MC": {
+    "name": "モナコ",
+    "capital": "モナコ市",
+    "demonym": "モナコの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "MD": {
+    "name": "モルドバ",
+    "capital": "キシナウ",
+    "demonym": "モルドバの",
+    "languages": [
+      "ルーマニア語"
+    ],
+    "currencyNames": [
+      "モルドバ レイ"
+    ],
+    "wikipediaSlug": null
+  },
+  "ME": {
+    "name": "モンテネグロ",
+    "capital": "ポドゴリツァ",
+    "demonym": "モンテネグロの",
+    "languages": [
+      "セルビア語 (モンテネグロ)"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "MF": {
+    "name": "サン・マルタン",
+    "capital": "マリゴ",
+    "demonym": "サン・マルタンの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "MG": {
+    "name": "マダガスカル",
+    "capital": "アンタナナリボ",
+    "demonym": "マダガスカルの",
+    "languages": [
+      "マダガスカル語",
+      "フランス語"
+    ],
+    "currencyNames": [
+      "マダガスカル アリアリ"
+    ],
+    "wikipediaSlug": null
+  },
+  "MH": {
+    "name": "マーシャル諸島",
+    "capital": "マジュロ",
+    "demonym": "マーシャル諸島の",
+    "languages": [
+      "マーシャル語",
+      "英語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "MK": {
+    "name": "北マケドニア",
+    "capital": "スコピエ",
+    "demonym": "北マケドニアの",
+    "languages": [
+      "マケドニア語"
+    ],
+    "currencyNames": [
+      "マケドニア デナル"
+    ],
+    "wikipediaSlug": null
+  },
+  "ML": {
+    "name": "マリ",
+    "capital": "バマコ",
+    "demonym": "マリの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "西アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "MM": {
+    "name": "ミャンマー (ビルマ)",
+    "capital": "ネピドー",
+    "demonym": "ミャンマーの",
+    "languages": [
+      "ミャンマー語"
+    ],
+    "currencyNames": [
+      "ミャンマー チャット"
+    ],
+    "wikipediaSlug": null
+  },
+  "MN": {
+    "name": "モンゴル",
+    "capital": "ウランバートル",
+    "demonym": "モンゴルの",
+    "languages": [
+      "モンゴル語"
+    ],
+    "currencyNames": [
+      "モンゴル トグログ"
+    ],
+    "wikipediaSlug": null
+  },
+  "MO": {
+    "name": "マカオ",
+    "capital": "",
+    "demonym": "マカオの",
+    "languages": [
+      "中国語",
+      "ポルトガル語"
+    ],
+    "currencyNames": [
+      "マカオ パタカ"
+    ],
+    "wikipediaSlug": null
+  },
+  "MP": {
+    "name": "北マリアナ諸島",
+    "capital": "サイパン",
+    "demonym": "北マリアナ諸島の",
+    "languages": [
+      "英語",
+      "チャモロ語",
+      "cal"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "MQ": {
+    "name": "マルティニーク",
+    "capital": "フォール＝ド＝フランス",
+    "demonym": "マルティニークの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "MR": {
+    "name": "モーリタニア",
+    "capital": "ヌアクショット",
+    "demonym": "モーリタニアの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "モーリタニア ウギア"
+    ],
+    "wikipediaSlug": null
+  },
+  "MS": {
+    "name": "モントセラト",
+    "capital": "プリマス",
+    "demonym": "モントセラトの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "東カリブ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "MT": {
+    "name": "マルタ",
+    "capital": "バレッタ",
+    "demonym": "マルタの",
+    "languages": [
+      "マルタ語",
+      "英語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "MU": {
+    "name": "モーリシャス",
+    "capital": "ポートルイス",
+    "demonym": "モーリシャスの",
+    "languages": [
+      "英語",
+      "フランス語"
+    ],
+    "currencyNames": [
+      "モーリシャス ルピー"
+    ],
+    "wikipediaSlug": null
+  },
+  "MV": {
+    "name": "モルディブ",
+    "capital": "マレ",
+    "demonym": "モルディブの",
+    "languages": [
+      "ディベヒ語"
+    ],
+    "currencyNames": [
+      "モルディブ ルフィア"
+    ],
+    "wikipediaSlug": null
+  },
+  "MW": {
+    "name": "マラウイ",
+    "capital": "リロングウェ",
+    "demonym": "マラウイの",
+    "languages": [
+      "英語",
+      "ニャンジャ語"
+    ],
+    "currencyNames": [
+      "マラウィ クワチャ"
+    ],
+    "wikipediaSlug": null
+  },
+  "MX": {
+    "name": "メキシコ",
+    "capital": "メキシコシティ",
+    "demonym": "メキシコの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "メキシコ ペソ"
+    ],
+    "wikipediaSlug": null
+  },
+  "MY": {
+    "name": "マレーシア",
+    "capital": "クアラルンプール",
+    "demonym": "マレーシアの",
+    "languages": [
+      "マレー語"
+    ],
+    "currencyNames": [
+      "マレーシア リンギット"
+    ],
+    "wikipediaSlug": null
+  },
+  "MZ": {
+    "name": "モザンビーク",
+    "capital": "マプト",
+    "demonym": "モザンビークの",
+    "languages": [
+      "ポルトガル語"
+    ],
+    "currencyNames": [
+      "モザンビーク メティカル"
+    ],
+    "wikipediaSlug": null
+  },
+  "NA": {
+    "name": "ナミビア",
+    "capital": "ウィントフック",
+    "demonym": "ナミビアの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "ナミビア ドル",
+      "南アフリカ ランド"
+    ],
+    "wikipediaSlug": null
+  },
+  "NC": {
+    "name": "ニューカレドニア",
+    "capital": "ヌメア",
+    "demonym": "ニューカレドニアの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "CFP フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "NE": {
+    "name": "ニジェール",
+    "capital": "ニアメ",
+    "demonym": "ニジェールの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "西アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "NF": {
+    "name": "ノーフォーク島",
+    "capital": "キングストン",
+    "demonym": "ノーフォーク島の",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "オーストラリア ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "NG": {
+    "name": "ナイジェリア",
+    "capital": "アブジャ",
+    "demonym": "ナイジェリアの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "ナイジェリア ナイラ"
+    ],
+    "wikipediaSlug": null
+  },
+  "NI": {
+    "name": "ニカラグア",
+    "capital": "マナグア",
+    "demonym": "ニカラグアの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "ニカラグア コルドバ オロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "NL": {
+    "name": "オランダ",
+    "capital": "アムステルダム",
+    "demonym": "オランダの",
+    "languages": [
+      "オランダ語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "NO": {
+    "name": "ノルウェー",
+    "capital": "オスロ",
+    "demonym": "ノルウェーの",
+    "languages": [
+      "ノルウェー語"
+    ],
+    "currencyNames": [
+      "ノルウェー クローネ"
+    ],
+    "wikipediaSlug": null
+  },
+  "NP": {
+    "name": "ネパール",
+    "capital": "カトマンズ",
+    "demonym": "ネパールの",
+    "languages": [
+      "ネパール語"
+    ],
+    "currencyNames": [
+      "ネパール ルピー"
+    ],
+    "wikipediaSlug": null
+  },
+  "NR": {
+    "name": "ナウル",
+    "capital": "ヤレン地区",
+    "demonym": "ナウルの",
+    "languages": [
+      "英語",
+      "ナウル語"
+    ],
+    "currencyNames": [
+      "オーストラリア ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "NU": {
+    "name": "ニウエ",
+    "capital": "アロフィ",
+    "demonym": "ニウエの",
+    "languages": [
+      "英語",
+      "ニウーエイ語"
+    ],
+    "currencyNames": [
+      "ニュージーランド ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "NZ": {
+    "name": "ニュージーランド",
+    "capital": "ウェリントン",
+    "demonym": "ニュージーランドの",
+    "languages": [
+      "英語",
+      "マオリ語"
+    ],
+    "currencyNames": [
+      "ニュージーランド ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "OM": {
+    "name": "オマーン",
+    "capital": "マスカット",
+    "demonym": "オマーンの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "オマーン リアル"
+    ],
+    "wikipediaSlug": null
+  },
+  "PA": {
+    "name": "パナマ",
+    "capital": "パナマ市",
+    "demonym": "パナマの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "パナマ バルボア",
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "PE": {
+    "name": "ペルー",
+    "capital": "リマ",
+    "demonym": "ペルーの",
+    "languages": [
+      "スペイン語",
+      "ケチュア語",
+      "アイマラ語"
+    ],
+    "currencyNames": [
+      "ペルー ソル"
+    ],
+    "wikipediaSlug": null
+  },
+  "PF": {
+    "name": "仏領ポリネシア",
+    "capital": "パペーテ",
+    "demonym": "フランス領ポリネシアの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "CFP フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "PG": {
+    "name": "パプアニューギニア",
+    "capital": "ポートモレスビー",
+    "demonym": "パプアニューギニアの",
+    "languages": [
+      "英語",
+      "トク・ピシン語",
+      "ヒリモツ語"
+    ],
+    "currencyNames": [
+      "パプアニューギニア キナ"
+    ],
+    "wikipediaSlug": null
+  },
+  "PH": {
+    "name": "フィリピン",
+    "capital": "マニラ",
+    "demonym": "フィリピンの",
+    "languages": [
+      "フィリピノ語",
+      "英語"
+    ],
+    "currencyNames": [
+      "フィリピン ペソ"
+    ],
+    "wikipediaSlug": null
+  },
+  "PK": {
+    "name": "パキスタン",
+    "capital": "イスラマバード",
+    "demonym": "パキスタンの",
+    "languages": [
+      "ウルドゥー語",
+      "英語"
+    ],
+    "currencyNames": [
+      "パキスタン ルピー"
+    ],
+    "wikipediaSlug": null
+  },
+  "PL": {
+    "name": "ポーランド",
+    "capital": "ワルシャワ",
+    "demonym": "ポーランドの",
+    "languages": [
+      "ポーランド語"
+    ],
+    "currencyNames": [
+      "ポーランド ズウォティ"
+    ],
+    "wikipediaSlug": null
+  },
+  "PM": {
+    "name": "サンピエール島・ミクロン島",
+    "capital": "サン＝ピエール",
+    "demonym": "サンピエール・ミクロンの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "PN": {
+    "name": "ピトケアン諸島",
+    "capital": "アダムスタウン",
+    "demonym": "ピトケアン諸島の",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "ニュージーランド ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "PR": {
+    "name": "プエルトリコ",
+    "capital": "サン・フアン",
+    "demonym": "プエルトリコの",
+    "languages": [
+      "スペイン語",
+      "英語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "PS": {
+    "name": "パレスチナ",
+    "capital": "エルサレム",
+    "demonym": "パレスチナの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "エジプト ポンド",
+      "イスラエル新シェケル",
+      "ヨルダン ディナール"
+    ],
+    "wikipediaSlug": null
+  },
+  "PT": {
+    "name": "ポルトガル",
+    "capital": "リスボン",
+    "demonym": "ポルトガルの",
+    "languages": [
+      "ポルトガル語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "PW": {
+    "name": "パラオ",
+    "capital": "ンゲルルムッド",
+    "demonym": "パラオの",
+    "languages": [
+      "パラオ語",
+      "英語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "PY": {
+    "name": "パラグアイ",
+    "capital": "アスンシオン",
+    "demonym": "パラグアイの",
+    "languages": [
+      "スペイン語",
+      "グアラニー語"
+    ],
+    "currencyNames": [
+      "パラグアイ グアラニ"
+    ],
+    "wikipediaSlug": null
+  },
+  "QA": {
+    "name": "カタール",
+    "capital": "ドーハ",
+    "demonym": "カタールの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "カタール リアル"
+    ],
+    "wikipediaSlug": null
+  },
+  "RE": {
+    "name": "レユニオン",
+    "capital": "サン＝ドニ",
+    "demonym": "レユニオンの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "RO": {
+    "name": "ルーマニア",
+    "capital": "ブカレスト",
+    "demonym": "ルーマニアの",
+    "languages": [
+      "ルーマニア語"
+    ],
+    "currencyNames": [
+      "ルーマニア レイ"
+    ],
+    "wikipediaSlug": null
+  },
+  "RS": {
+    "name": "セルビア",
+    "capital": "ベオグラード",
+    "demonym": "セルビアの",
+    "languages": [
+      "セルビア語"
+    ],
+    "currencyNames": [
+      "セルビア ディナール"
+    ],
+    "wikipediaSlug": null
+  },
+  "RU": {
+    "name": "ロシア",
+    "capital": "モスクワ",
+    "demonym": "ロシアの",
+    "languages": [
+      "ロシア語"
+    ],
+    "currencyNames": [
+      "ロシア ルーブル"
+    ],
+    "wikipediaSlug": null
+  },
+  "RW": {
+    "name": "ルワンダ",
+    "capital": "キガリ",
+    "demonym": "ルワンダの",
+    "languages": [
+      "キニアルワンダ語",
+      "フランス語",
+      "英語"
+    ],
+    "currencyNames": [
+      "ルワンダ フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "SA": {
+    "name": "サウジアラビア",
+    "capital": "リヤド",
+    "demonym": "サウジアラビアの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "サウジ リヤル"
+    ],
+    "wikipediaSlug": null
+  },
+  "SB": {
+    "name": "ソロモン諸島",
+    "capital": "ホニアラ",
+    "demonym": "ソロモン諸島の",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "ソロモン諸島 ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "SC": {
+    "name": "セーシェル",
+    "capital": "ヴィクトリア",
+    "demonym": "セーシェルの",
+    "languages": [
+      "セーシェル・クレオール語",
+      "フランス語",
+      "英語"
+    ],
+    "currencyNames": [
+      "セーシェル ルピー"
+    ],
+    "wikipediaSlug": null
+  },
+  "SD": {
+    "name": "スーダン",
+    "capital": "ハルツーム",
+    "demonym": "スーダンの",
+    "languages": [
+      "アラビア語",
+      "英語"
+    ],
+    "currencyNames": [
+      "スーダン ポンド"
+    ],
+    "wikipediaSlug": null
+  },
+  "SE": {
+    "name": "スウェーデン",
+    "capital": "ストックホルム",
+    "demonym": "スウェーデンの",
+    "languages": [
+      "スウェーデン語"
+    ],
+    "currencyNames": [
+      "スウェーデン クローナ"
+    ],
+    "wikipediaSlug": null
+  },
+  "SG": {
+    "name": "シンガポール",
+    "capital": "シンガポール",
+    "demonym": "シンガポールの",
+    "languages": [
+      "英語",
+      "マレー語",
+      "中国語",
+      "タミル語"
+    ],
+    "currencyNames": [
+      "シンガポール ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "SH": {
+    "name": "セントヘレナ",
+    "capital": "ジェームズタウン",
+    "demonym": "セントヘレナの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "英国ポンド",
+      "セントヘレナ ポンド"
+    ],
+    "wikipediaSlug": null
+  },
+  "SI": {
+    "name": "スロベニア",
+    "capital": "リュブリャナ",
+    "demonym": "スロベニアの",
+    "languages": [
+      "スロベニア語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "SK": {
+    "name": "スロバキア",
+    "capital": "ブラチスラヴァ",
+    "demonym": "スロバキアの",
+    "languages": [
+      "スロバキア語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "SL": {
+    "name": "シエラレオネ",
+    "capital": "フリータウン",
+    "demonym": "シエラレオネの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "シエラレオネ レオン"
+    ],
+    "wikipediaSlug": null
+  },
+  "SM": {
+    "name": "サンマリノ",
+    "capital": "サンマリノ市",
+    "demonym": "サンマリノの",
+    "languages": [
+      "イタリア語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "SN": {
+    "name": "セネガル",
+    "capital": "ダカール",
+    "demonym": "セネガルの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "西アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "SO": {
+    "name": "ソマリア",
+    "capital": "モガディシュ",
+    "demonym": "ソマリアの",
+    "languages": [
+      "ソマリ語",
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "ソマリア シリング"
+    ],
+    "wikipediaSlug": null
+  },
+  "SR": {
+    "name": "スリナム",
+    "capital": "パラマリボ",
+    "demonym": "スリナムの",
+    "languages": [
+      "オランダ語"
+    ],
+    "currencyNames": [
+      "スリナム ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "SS": {
+    "name": "南スーダン",
+    "capital": "ジュバ",
+    "demonym": "南スーダンの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "南スーダン ポンド"
+    ],
+    "wikipediaSlug": null
+  },
+  "ST": {
+    "name": "サントメ・プリンシペ",
+    "capital": "サントメ",
+    "demonym": "サントメ・プリンシペの",
+    "languages": [
+      "ポルトガル語"
+    ],
+    "currencyNames": [
+      "サントメ・プリンシペ ドブラ"
+    ],
+    "wikipediaSlug": null
+  },
+  "SV": {
+    "name": "エルサルバドル",
+    "capital": "サンサルバドル",
+    "demonym": "エルサルバドルの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "SX": {
+    "name": "シント・マールテン",
+    "capital": "フィリップスブルフ",
+    "demonym": "シント・マールテンの",
+    "languages": [
+      "オランダ語",
+      "英語"
+    ],
+    "currencyNames": [
+      "オランダ領アンティル ギルダー"
+    ],
+    "wikipediaSlug": null
+  },
+  "SY": {
+    "name": "シリア",
+    "capital": "ダマスカス",
+    "demonym": "シリアの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "シリア ポンド"
+    ],
+    "wikipediaSlug": null
+  },
+  "SZ": {
+    "name": "エスワティニ",
+    "capital": "ムババーネ",
+    "demonym": "エスワティニの",
+    "languages": [
+      "スワジ語",
+      "英語"
+    ],
+    "currencyNames": [
+      "スワジランド リランゲニ",
+      "南アフリカ ランド"
+    ],
+    "wikipediaSlug": null
+  },
+  "TC": {
+    "name": "タークス・カイコス諸島",
+    "capital": "コックバーンタウン",
+    "demonym": "タークス・カイコス諸島の",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "TD": {
+    "name": "チャド",
+    "capital": "ンジャメナ",
+    "demonym": "チャドの",
+    "languages": [
+      "フランス語",
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "中央アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "TG": {
+    "name": "トーゴ",
+    "capital": "ロメ",
+    "demonym": "トーゴの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "西アフリカ CFA フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "TH": {
+    "name": "タイ",
+    "capital": "バンコク",
+    "demonym": "タイの",
+    "languages": [
+      "タイ語"
+    ],
+    "currencyNames": [
+      "タイ バーツ"
+    ],
+    "wikipediaSlug": null
+  },
+  "TJ": {
+    "name": "タジキスタン",
+    "capital": "ドゥシャンベ",
+    "demonym": "タジキスタンの",
+    "languages": [
+      "タジク語"
+    ],
+    "currencyNames": [
+      "タジキスタン ソモニ"
+    ],
+    "wikipediaSlug": null
+  },
+  "TL": {
+    "name": "東ティモール",
+    "capital": "ディリ",
+    "demonym": "東ティモールの",
+    "languages": [
+      "ポルトガル語",
+      "テトゥン語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "TM": {
+    "name": "トルクメニスタン",
+    "capital": "アシガバート",
+    "demonym": "トルクメニスタンの",
+    "languages": [
+      "トルクメン語"
+    ],
+    "currencyNames": [
+      "トルクメニスタン マナト"
+    ],
+    "wikipediaSlug": null
+  },
+  "TN": {
+    "name": "チュニジア",
+    "capital": "チュニス",
+    "demonym": "チュニジアの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "チュニジア ディナール"
+    ],
+    "wikipediaSlug": null
+  },
+  "TO": {
+    "name": "トンガ",
+    "capital": "ヌクアロファ",
+    "demonym": "トンガの",
+    "languages": [
+      "トンガ語",
+      "英語"
+    ],
+    "currencyNames": [
+      "トンガ パ・アンガ"
+    ],
+    "wikipediaSlug": null
+  },
+  "TR": {
+    "name": "トルコ",
+    "capital": "アンカラ",
+    "demonym": "トルコの",
+    "languages": [
+      "トルコ語"
+    ],
+    "currencyNames": [
+      "トルコ リラ"
+    ],
+    "wikipediaSlug": null
+  },
+  "TT": {
+    "name": "トリニダード・トバゴ",
+    "capital": "ポートオブスペイン",
+    "demonym": "トリニダード・トバゴの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "トリニダード・トバゴ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "TV": {
+    "name": "ツバル",
+    "capital": "フナフティ島",
+    "demonym": "ツバルの",
+    "languages": [
+      "ツバル語",
+      "英語"
+    ],
+    "currencyNames": [
+      "オーストラリア ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "TW": {
+    "name": "台湾",
+    "capital": "台北市",
+    "demonym": "台湾の",
+    "languages": [
+      "中国語"
+    ],
+    "currencyNames": [
+      "新台湾ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "TZ": {
+    "name": "タンザニア",
+    "capital": "ドドマ",
+    "demonym": "タンザニアの",
+    "languages": [
+      "スワヒリ語",
+      "英語"
+    ],
+    "currencyNames": [
+      "タンザニア シリング"
+    ],
+    "wikipediaSlug": null
+  },
+  "UA": {
+    "name": "ウクライナ",
+    "capital": "キーウ",
+    "demonym": "ウクライナの",
+    "languages": [
+      "ウクライナ語"
+    ],
+    "currencyNames": [
+      "ウクライナ フリヴニャ"
+    ],
+    "wikipediaSlug": null
+  },
+  "UG": {
+    "name": "ウガンダ",
+    "capital": "カンパラ",
+    "demonym": "ウガンダの",
+    "languages": [
+      "英語",
+      "スワヒリ語"
+    ],
+    "currencyNames": [
+      "ウガンダ シリング"
+    ],
+    "wikipediaSlug": null
+  },
+  "US": {
+    "name": "アメリカ合衆国",
+    "capital": "ワシントンD.C.",
+    "demonym": "アメリカの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "UY": {
+    "name": "ウルグアイ",
+    "capital": "モンテビデオ",
+    "demonym": "ウルグアイの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "ウルグアイ ペソ"
+    ],
+    "wikipediaSlug": null
+  },
+  "UZ": {
+    "name": "ウズベキスタン",
+    "capital": "タシュケント",
+    "demonym": "ウズベキスタンの",
+    "languages": [
+      "ウズベク語"
+    ],
+    "currencyNames": [
+      "ウズベキスタン スム"
+    ],
+    "wikipediaSlug": null
+  },
+  "VA": {
+    "name": "バチカン市国",
+    "capital": "バチカン",
+    "demonym": "バチカンの",
+    "languages": [
+      "イタリア語",
+      "ラテン語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "VC": {
+    "name": "セントビンセント及びグレナディーン諸島",
+    "capital": "キングスタウン",
+    "demonym": "セントビンセント・グレナディーンの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "東カリブ ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "VE": {
+    "name": "ベネズエラ",
+    "capital": "カラカス",
+    "demonym": "ベネズエラの",
+    "languages": [
+      "スペイン語"
+    ],
+    "currencyNames": [
+      "ベネズエラ ボリバル"
+    ],
+    "wikipediaSlug": null
+  },
+  "VG": {
+    "name": "英領ヴァージン諸島",
+    "capital": "ロードタウン",
+    "demonym": "英領ヴァージン諸島の",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "VI": {
+    "name": "米領ヴァージン諸島",
+    "capital": "シャーロット・アマリー",
+    "demonym": "米領ヴァージン諸島の",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "米ドル"
+    ],
+    "wikipediaSlug": null
+  },
+  "VN": {
+    "name": "ベトナム",
+    "capital": "ハノイ",
+    "demonym": "ベトナムの",
+    "languages": [
+      "ベトナム語"
+    ],
+    "currencyNames": [
+      "ベトナム ドン"
+    ],
+    "wikipediaSlug": null
+  },
+  "VU": {
+    "name": "バヌアツ",
+    "capital": "ポートビラ",
+    "demonym": "バヌアツの",
+    "languages": [
+      "ビスラマ語",
+      "英語",
+      "フランス語"
+    ],
+    "currencyNames": [
+      "バヌアツ バツ"
+    ],
+    "wikipediaSlug": null
+  },
+  "WF": {
+    "name": "ウォリス・フツナ",
+    "capital": "マタウトゥ",
+    "demonym": "ウォリス・フツナの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "CFP フラン"
+    ],
+    "wikipediaSlug": null
+  },
+  "WS": {
+    "name": "サモア",
+    "capital": "アピア",
+    "demonym": "サモアの",
+    "languages": [
+      "サモア語",
+      "英語"
+    ],
+    "currencyNames": [
+      "サモア タラ"
+    ],
+    "wikipediaSlug": null
+  },
+  "XK": {
+    "name": "コソボ",
+    "capital": "プリシュティナ",
+    "demonym": "コソボの",
+    "languages": [
+      "アルバニア語",
+      "セルビア語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "YE": {
+    "name": "イエメン",
+    "capital": "サヌア",
+    "demonym": "イエメンの",
+    "languages": [
+      "アラビア語"
+    ],
+    "currencyNames": [
+      "イエメン リアル"
+    ],
+    "wikipediaSlug": null
+  },
+  "YT": {
+    "name": "マヨット",
+    "capital": "マムズ",
+    "demonym": "マヨットの",
+    "languages": [
+      "フランス語"
+    ],
+    "currencyNames": [
+      "ユーロ"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZA": {
+    "name": "南アフリカ",
+    "capital": "プレトリア",
+    "demonym": "南アフリカの",
+    "languages": [
+      "ズールー語",
+      "コサ語",
+      "アフリカーンス語",
+      "英語"
+    ],
+    "currencyNames": [
+      "南アフリカ ランド"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZM": {
+    "name": "ザンビア",
+    "capital": "ルサカ",
+    "demonym": "ザンビアの",
+    "languages": [
+      "英語"
+    ],
+    "currencyNames": [
+      "ザンビア クワチャ"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZW": {
+    "name": "ジンバブエ",
+    "capital": "ハラレ",
+    "demonym": "ジンバブエの",
+    "languages": [
+      "英語",
+      "ショナ語",
+      "南ンデベレ語"
+    ],
+    "currencyNames": [
+      "ジンバブエ ドル (2009)"
+    ],
+    "wikipediaSlug": null
+  }
+}

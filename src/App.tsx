@@ -11,7 +11,8 @@ import { PassportView } from './components/Passport/PassportView';
 import { ProfileSelector, getNextDefaultName } from './components/Profile/ProfileSelector';
 import { ProfileEditor } from './components/Profile/ProfileEditor';
 import { SettingsSheet } from './components/Settings/SettingsSheet';
-import { loadCountryData, loadCapitals } from './data/countryData';
+import { loadCountryData, loadCapitals, invalidateCache } from './data/countryData';
+import { changeAppLanguage } from './i18n';
 import { buildRankings, type CountryRankings } from './data/rankings';
 import { buildLevelDefinitions } from './data/levels';
 import { useAppStore } from './stores/appStore';
@@ -157,16 +158,30 @@ function App() {
   const handleGlobeReady = useCallback(() => setGlobeReady(true), []);
 
   // Precargar datos estáticos en paralelo con el globo
+  const locale = useAppStore((s) => s.settings.locale);
+  const { i18n } = useTranslation();
+
+  // Sincronizar idioma de i18n con el store (ej: store hidratado con locale persistido)
   useEffect(() => {
-    Promise.all([loadCountryData(), loadCapitals()]).then(([countriesData, capitalsData]) => {
-      const ranksData = buildRankings(countriesData);
-      const levelsData = buildLevelDefinitions(countriesData);
-      setCountries(countriesData);
-      setCapitals(capitalsData);
-      setRankings(ranksData);
-      setLevels(levelsData);
+    if (i18n.language !== locale) {
+      changeAppLanguage(locale);
+    }
+  }, [locale, i18n]);
+
+  // Cargar datos de países en el idioma activo
+  useEffect(() => {
+    invalidateCache();
+    loadCountryData(locale).then((countriesData) => {
+      loadCapitals().then((capitalsData) => {
+        const ranksData = buildRankings(countriesData);
+        const levelsData = buildLevelDefinitions(countriesData);
+        setCountries(countriesData);
+        setCapitals(capitalsData);
+        setRankings(ranksData);
+        setLevels(levelsData);
+      });
     });
-  }, []);
+  }, [locale]);
 
   // Mapa de poblaciones para prioridad de etiquetas en el globo
   const countryPopulations = useMemo(() => {
@@ -178,7 +193,7 @@ function App() {
     return map;
   }, [countries]);
 
-  // Mapa de nombres en español para etiquetas del globo
+  // Mapa de nombres (en el idioma activo) para etiquetas del globo
   const countryNames = useMemo(() => {
     if (!countries) return null;
     const map = new Map<string, string>();

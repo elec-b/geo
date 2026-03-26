@@ -1,0 +1,19 @@
+{
+  "defaultName": "Дослідник",
+
+  "editor.titleEdit": "Редагувати профіль",
+  "editor.titleCreate": "Створити профіль",
+  "editor.chooseAvatar": "Обери свій аватар",
+  "editor.nameLabel": "Ім'я",
+  "editor.namePlaceholder": "Назва профілю",
+  "editor.save": "Зберегти",
+  "editor.create": "Створити",
+
+  "selector.title": "Профілі",
+  "selector.confirmDelete": "Видалити «{{name}}»?",
+  "selector.delete": "Видалити",
+  "selector.createNew": "Створити профіль",
+  "selector.aria.edit": "Редагувати {{name}}",
+  "selector.aria.delete": "Видалити {{name}}",
+  "selector.aria.dialog": "Обрати профіль"
+}

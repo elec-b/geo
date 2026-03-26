@@ -1,0 +1,19 @@
+{
+  "defaultName": "Oppdager",
+
+  "editor.titleEdit": "Rediger profil",
+  "editor.titleCreate": "Opprett profil",
+  "editor.chooseAvatar": "Velg din avatar",
+  "editor.nameLabel": "Navn",
+  "editor.namePlaceholder": "Profilnavn",
+  "editor.save": "Lagre",
+  "editor.create": "Opprett",
+
+  "selector.title": "Profiler",
+  "selector.confirmDelete": "Slette \u00ab{{name}}\u00bb?",
+  "selector.delete": "Slett",
+  "selector.createNew": "Opprett profil",
+  "selector.aria.edit": "Rediger {{name}}",
+  "selector.aria.delete": "Slett {{name}}",
+  "selector.aria.dialog": "Velg profil"
+}

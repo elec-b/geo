@@ -1,0 +1,2959 @@
+{
+  "AD": {
+    "name": "Андорра",
+    "capital": "Андорра-ла-Велья",
+    "demonym": "андоррський",
+    "languages": [
+      "Каталонська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "AE": {
+    "name": "Обʼєднані Арабські Емірати",
+    "capital": "Абу-Дабі",
+    "demonym": "еміратський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Дирхам ОАЕ"
+    ],
+    "wikipediaSlug": null
+  },
+  "AF": {
+    "name": "Афганістан",
+    "capital": "Кабул",
+    "demonym": "афганський",
+    "languages": [
+      "Дарі",
+      "Пушту"
+    ],
+    "currencyNames": [
+      "Афганський афгані"
+    ],
+    "wikipediaSlug": null
+  },
+  "AG": {
+    "name": "Антигуа і Барбуда",
+    "capital": "Сент-Джонс",
+    "demonym": "антигуанський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Східнокарибський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "AI": {
+    "name": "Ангілья",
+    "capital": "Валлі",
+    "demonym": "ангільський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Східнокарибський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "AL": {
+    "name": "Албанія",
+    "capital": "Тирана",
+    "demonym": "албанський",
+    "languages": [
+      "Албанська"
+    ],
+    "currencyNames": [
+      "Албанський лек"
+    ],
+    "wikipediaSlug": null
+  },
+  "AM": {
+    "name": "Вірменія",
+    "capital": "Єреван",
+    "demonym": "вірменський",
+    "languages": [
+      "Вірменська"
+    ],
+    "currencyNames": [
+      "Вірменський драм"
+    ],
+    "wikipediaSlug": null
+  },
+  "AO": {
+    "name": "Ангола",
+    "capital": "Луанда",
+    "demonym": "ангольський",
+    "languages": [
+      "Португальська"
+    ],
+    "currencyNames": [
+      "Ангольська кванза"
+    ],
+    "wikipediaSlug": null
+  },
+  "AR": {
+    "name": "Аргентина",
+    "capital": "Буенос-Айрес",
+    "demonym": "аргентинський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Аргентинський песо"
+    ],
+    "wikipediaSlug": null
+  },
+  "AS": {
+    "name": "Американське Самоа",
+    "capital": "Паго-Паго",
+    "demonym": "американсько-самоанський",
+    "languages": [
+      "Англійська",
+      "Самоанська"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "AT": {
+    "name": "Австрія",
+    "capital": "Відень",
+    "demonym": "австрійський",
+    "languages": [
+      "Німецька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "AU": {
+    "name": "Австралія",
+    "capital": "Канберра",
+    "demonym": "австралійський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Австралійський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "AW": {
+    "name": "Аруба",
+    "capital": "Ораньєстад",
+    "demonym": "арубанський",
+    "languages": [
+      "Нідерландська",
+      "Папʼяменто"
+    ],
+    "currencyNames": [
+      "Арубський флорин"
+    ],
+    "wikipediaSlug": null
+  },
+  "AX": {
+    "name": "Аландські Острови",
+    "capital": "Марієгамн",
+    "demonym": "аландський",
+    "languages": [
+      "Шведська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "AZ": {
+    "name": "Азербайджан",
+    "capital": "Баку",
+    "demonym": "азербайджанський",
+    "languages": [
+      "Азербайджанська"
+    ],
+    "currencyNames": [
+      "Азербайджанський манат"
+    ],
+    "wikipediaSlug": null
+  },
+  "BA": {
+    "name": "Боснія і Герцеговина",
+    "capital": "Сараєво",
+    "demonym": "боснійський",
+    "languages": [
+      "Боснійська",
+      "Хорватська",
+      "Сербська"
+    ],
+    "currencyNames": [
+      "Конвертована марка Боснії і Герцеговини"
+    ],
+    "wikipediaSlug": null
+  },
+  "BB": {
+    "name": "Барбадос",
+    "capital": "Бриджтаун",
+    "demonym": "барбадоський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Барбадоський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "BD": {
+    "name": "Бангладеш",
+    "capital": "Дакка",
+    "demonym": "бангладешський",
+    "languages": [
+      "Бенгальська"
+    ],
+    "currencyNames": [
+      "Бангладеська така"
+    ],
+    "wikipediaSlug": null
+  },
+  "BE": {
+    "name": "Бельгія",
+    "capital": "Брюссель",
+    "demonym": "бельгійський",
+    "languages": [
+      "Нідерландська",
+      "Французька",
+      "Німецька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "BF": {
+    "name": "Буркіна-Фасо",
+    "capital": "Уагадугу",
+    "demonym": "буркінійський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Західноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "BG": {
+    "name": "Болгарія",
+    "capital": "Софія",
+    "demonym": "болгарський",
+    "languages": [
+      "Болгарська"
+    ],
+    "currencyNames": [
+      "Болгарський лев"
+    ],
+    "wikipediaSlug": null
+  },
+  "BH": {
+    "name": "Бахрейн",
+    "capital": "Манама",
+    "demonym": "бахрейнський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Бахрейнський динар"
+    ],
+    "wikipediaSlug": null
+  },
+  "BI": {
+    "name": "Бурунді",
+    "capital": "Гітега",
+    "demonym": "бурундійський",
+    "languages": [
+      "Рунді",
+      "Французька"
+    ],
+    "currencyNames": [
+      "Бурундійський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "BJ": {
+    "name": "Бенін",
+    "capital": "Порто-Ново",
+    "demonym": "бенінський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Західноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "BL": {
+    "name": "Сен-Бартелемі",
+    "capital": "Густавія",
+    "demonym": "сен-бартелемійський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "BM": {
+    "name": "Бермудські Острови",
+    "capital": "Гамільтон",
+    "demonym": "бермудський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Бермудський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "BN": {
+    "name": "Бруней",
+    "capital": "Бандар Сері Беґаван",
+    "demonym": "брунейський",
+    "languages": [
+      "Малайська"
+    ],
+    "currencyNames": [
+      "Брунейський долар",
+      "Сінгапурський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "BO": {
+    "name": "Болівія",
+    "capital": "Ла-Пас",
+    "demonym": "болівійський",
+    "languages": [
+      "Іспанська",
+      "Кечуа",
+      "Аймара"
+    ],
+    "currencyNames": [
+      "Болівійський болівіано"
+    ],
+    "wikipediaSlug": null
+  },
+  "BR": {
+    "name": "Бразилія",
+    "capital": "Бразиліа",
+    "demonym": "бразильський",
+    "languages": [
+      "Португальська"
+    ],
+    "currencyNames": [
+      "Бразильський реал"
+    ],
+    "wikipediaSlug": null
+  },
+  "BS": {
+    "name": "Багамські Острови",
+    "capital": "Нассау",
+    "demonym": "багамський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Багамський долар",
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "BT": {
+    "name": "Бутан",
+    "capital": "Тхімпху",
+    "demonym": "бутанський",
+    "languages": [
+      "Дзонг-ке"
+    ],
+    "currencyNames": [
+      "Бутанський нгултрум",
+      "Індійська рупія"
+    ],
+    "wikipediaSlug": null
+  },
+  "BW": {
+    "name": "Ботсвана",
+    "capital": "Габороне",
+    "demonym": "ботсванський",
+    "languages": [
+      "Англійська",
+      "Тсвана"
+    ],
+    "currencyNames": [
+      "Ботсванська пула"
+    ],
+    "wikipediaSlug": null
+  },
+  "BY": {
+    "name": "Білорусь",
+    "capital": "Мінськ",
+    "demonym": "білоруський",
+    "languages": [
+      "Білоруська",
+      "Російська"
+    ],
+    "currencyNames": [
+      "Білоруський рубль"
+    ],
+    "wikipediaSlug": null
+  },
+  "BZ": {
+    "name": "Беліз",
+    "capital": "Бельмопан",
+    "demonym": "белізький",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Белізький долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "CA": {
+    "name": "Канада",
+    "capital": "Оттава",
+    "demonym": "канадський",
+    "languages": [
+      "Англійська",
+      "Французька"
+    ],
+    "currencyNames": [
+      "Канадський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "CD": {
+    "name": "Конго – Кіншаса",
+    "capital": "Кіншаса",
+    "demonym": "конголезький",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Конголезький франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "CF": {
+    "name": "Центральноафриканська Республіка",
+    "capital": "Бангі",
+    "demonym": "центральноафриканський",
+    "languages": [
+      "Французька",
+      "Санго"
+    ],
+    "currencyNames": [
+      "Центральноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "CG": {
+    "name": "Конго – Браззавіль",
+    "capital": "Браззавіль",
+    "demonym": "конголезький",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Центральноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "CH": {
+    "name": "Швейцарія",
+    "capital": "Берн",
+    "demonym": "швейцарський",
+    "languages": [
+      "Німецька",
+      "Французька",
+      "Італійська",
+      "Ретороманська"
+    ],
+    "currencyNames": [
+      "Швейцарський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "CI": {
+    "name": "Кот-дʼІвуар",
+    "capital": "Ямусукро",
+    "demonym": "івуарійський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Західноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "CK": {
+    "name": "Острови Кука",
+    "capital": "Аваруа",
+    "demonym": "кукський",
+    "languages": [
+      "Англійська",
+      "Раротонга"
+    ],
+    "currencyNames": [
+      "Новозеландський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "CL": {
+    "name": "Чилі",
+    "capital": "Сантьяго",
+    "demonym": "чилійський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Чилійський песо"
+    ],
+    "wikipediaSlug": null
+  },
+  "CM": {
+    "name": "Камерун",
+    "capital": "Яунде",
+    "demonym": "камерунський",
+    "languages": [
+      "Французька",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Центральноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "CN": {
+    "name": "Китай",
+    "capital": "Пекін",
+    "demonym": "китайський",
+    "languages": [
+      "Китайська"
+    ],
+    "currencyNames": [
+      "Китайський юань"
+    ],
+    "wikipediaSlug": null
+  },
+  "CO": {
+    "name": "Колумбія",
+    "capital": "Богота",
+    "demonym": "колумбійський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Колумбійський песо"
+    ],
+    "wikipediaSlug": null
+  },
+  "CR": {
+    "name": "Коста-Рика",
+    "capital": "Сан-Хосе",
+    "demonym": "костариканський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Костариканський колон"
+    ],
+    "wikipediaSlug": null
+  },
+  "CU": {
+    "name": "Куба",
+    "capital": "Гавана",
+    "demonym": "кубинський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Кубинський конвертований песо",
+      "Кубинський песо"
+    ],
+    "wikipediaSlug": null
+  },
+  "CV": {
+    "name": "Кабо-Верде",
+    "capital": "Прая",
+    "demonym": "кабо-вердеанський",
+    "languages": [
+      "Португальська"
+    ],
+    "currencyNames": [
+      "Ескудо Кабо-Верде"
+    ],
+    "wikipediaSlug": null
+  },
+  "CW": {
+    "name": "Кюрасао",
+    "capital": "Віллемстад",
+    "demonym": "кюрасаоський",
+    "languages": [
+      "Нідерландська",
+      "Папʼяменто"
+    ],
+    "currencyNames": [
+      "Нідерландський антильський гульден"
+    ],
+    "wikipediaSlug": null
+  },
+  "CY": {
+    "name": "Кіпр",
+    "capital": "Нікосія",
+    "demonym": "кіпрський",
+    "languages": [
+      "Грецька",
+      "Турецька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "CZ": {
+    "name": "Чехія",
+    "capital": "Прага",
+    "demonym": "чеський",
+    "languages": [
+      "Чеська"
+    ],
+    "currencyNames": [
+      "Чеська крона"
+    ],
+    "wikipediaSlug": null
+  },
+  "DE": {
+    "name": "Німеччина",
+    "capital": "Берлін",
+    "demonym": "німецький",
+    "languages": [
+      "Німецька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "DJ": {
+    "name": "Джибуті",
+    "capital": "Джибуті",
+    "demonym": "джибутійський",
+    "languages": [
+      "Французька",
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Джибутійський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "DK": {
+    "name": "Данія",
+    "capital": "Копенгаген",
+    "demonym": "данський",
+    "languages": [
+      "Данська"
+    ],
+    "currencyNames": [
+      "Данська крона"
+    ],
+    "wikipediaSlug": null
+  },
+  "DM": {
+    "name": "Домініка",
+    "capital": "Розо",
+    "demonym": "домінікський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Східнокарибський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "DO": {
+    "name": "Домініканська Республіка",
+    "capital": "Санто-Домінго",
+    "demonym": "домініканський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Домініканський песо"
+    ],
+    "wikipediaSlug": null
+  },
+  "DZ": {
+    "name": "Алжир",
+    "capital": "Алжир",
+    "demonym": "алжирський",
+    "languages": [
+      "Арабська",
+      "Центральноатласька тамазігт"
+    ],
+    "currencyNames": [
+      "Алжирський динар"
+    ],
+    "wikipediaSlug": null
+  },
+  "EC": {
+    "name": "Еквадор",
+    "capital": "Кіто",
+    "demonym": "еквадорський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "EE": {
+    "name": "Естонія",
+    "capital": "Таллінн",
+    "demonym": "естонський",
+    "languages": [
+      "Естонська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "EG": {
+    "name": "Єгипет",
+    "capital": "Каїр",
+    "demonym": "єгипетський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Єгипетський фунт"
+    ],
+    "wikipediaSlug": null
+  },
+  "EH": {
+    "name": "Західна Сахара",
+    "capital": "Ель-Аюн",
+    "demonym": "сахарський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Алжирський динар",
+      "Марокканський дирхам",
+      "Мавританська угія"
+    ],
+    "wikipediaSlug": null
+  },
+  "ER": {
+    "name": "Еритрея",
+    "capital": "Асмера",
+    "demonym": "еритрейський",
+    "languages": [
+      "Тигринья",
+      "Арабська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Еритрейська накфа"
+    ],
+    "wikipediaSlug": null
+  },
+  "ES": {
+    "name": "Іспанія",
+    "capital": "Мадрид",
+    "demonym": "іспанський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "ET": {
+    "name": "Ефіопія",
+    "capital": "Аддис-Абеба",
+    "demonym": "ефіопський",
+    "languages": [
+      "Амхарська"
+    ],
+    "currencyNames": [
+      "Ефіопський бир"
+    ],
+    "wikipediaSlug": null
+  },
+  "FI": {
+    "name": "Фінляндія",
+    "capital": "Гельсінкі",
+    "demonym": "фінський",
+    "languages": [
+      "Фінська",
+      "Шведська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "FJ": {
+    "name": "Фіджі",
+    "capital": "Сува",
+    "demonym": "фіджійський",
+    "languages": [
+      "Англійська",
+      "Фіджі",
+      "hif"
+    ],
+    "currencyNames": [
+      "Фіджійський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "FK": {
+    "name": "Фолклендські Острови",
+    "capital": "Порт-Стенлі",
+    "demonym": "фолклендський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Фунт Фолклендських островів"
+    ],
+    "wikipediaSlug": null
+  },
+  "FM": {
+    "name": "Мікронезія",
+    "capital": "Палікір",
+    "demonym": "мікронезійський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "FO": {
+    "name": "Фарерські Острови",
+    "capital": "Торсгавн",
+    "demonym": "фарерський",
+    "languages": [
+      "Фарерська",
+      "Данська"
+    ],
+    "currencyNames": [
+      "Данська крона"
+    ],
+    "wikipediaSlug": null
+  },
+  "FR": {
+    "name": "Франція",
+    "capital": "Париж",
+    "demonym": "французький",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "GA": {
+    "name": "Габон",
+    "capital": "Лібревіль",
+    "demonym": "габонський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Центральноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "GB": {
+    "name": "Велика Британія",
+    "capital": "Лондон",
+    "demonym": "британський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Англійський фунт"
+    ],
+    "wikipediaSlug": null
+  },
+  "GD": {
+    "name": "Гренада",
+    "capital": "Сент-Джорджес",
+    "demonym": "гренадський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Східнокарибський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "GE": {
+    "name": "Грузія",
+    "capital": "Тбілісі",
+    "demonym": "грузинський",
+    "languages": [
+      "Грузинська"
+    ],
+    "currencyNames": [
+      "Грузинський ларі"
+    ],
+    "wikipediaSlug": null
+  },
+  "GF": {
+    "name": "Французька Гвіана",
+    "capital": "Каєнна",
+    "demonym": "гвіанський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "GG": {
+    "name": "Гернсі",
+    "capital": "Сент-Пітер-Порт",
+    "demonym": "гернсійський",
+    "languages": [
+      "Англійська",
+      "Французька"
+    ],
+    "currencyNames": [
+      "Англійський фунт"
+    ],
+    "wikipediaSlug": null
+  },
+  "GH": {
+    "name": "Гана",
+    "capital": "Аккра",
+    "demonym": "ганський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Ганський седі"
+    ],
+    "wikipediaSlug": null
+  },
+  "GL": {
+    "name": "Гренландія",
+    "capital": "Нуук",
+    "demonym": "гренландський",
+    "languages": [
+      "Калааллісут"
+    ],
+    "currencyNames": [
+      "Данська крона"
+    ],
+    "wikipediaSlug": null
+  },
+  "GM": {
+    "name": "Гамбія",
+    "capital": "Банжул",
+    "demonym": "гамбійський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Гамбійський даласі"
+    ],
+    "wikipediaSlug": null
+  },
+  "GN": {
+    "name": "Гвінея",
+    "capital": "Конакрі",
+    "demonym": "гвінейський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Гвінейський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "GP": {
+    "name": "Гваделупа",
+    "capital": "Бас-Тер",
+    "demonym": "гваделупський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "GQ": {
+    "name": "Екваторіальна Гвінея",
+    "capital": "Сьюдад-де-ла-Пас",
+    "demonym": "екваторіально-гвінейський",
+    "languages": [
+      "Іспанська",
+      "Французька",
+      "Португальська"
+    ],
+    "currencyNames": [
+      "Центральноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "GR": {
+    "name": "Греція",
+    "capital": "Афіни",
+    "demonym": "грецький",
+    "languages": [
+      "Грецька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "GT": {
+    "name": "Гватемала",
+    "capital": "Гватемала",
+    "demonym": "гватемальський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Гватемальський кетсаль"
+    ],
+    "wikipediaSlug": null
+  },
+  "GU": {
+    "name": "Гуам",
+    "capital": "Гаґатна",
+    "demonym": "гуамський",
+    "languages": [
+      "Англійська",
+      "Чаморро"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "GW": {
+    "name": "Гвінея-Бісау",
+    "capital": "Бісау",
+    "demonym": "гвінейсько-бісауський",
+    "languages": [
+      "Португальська"
+    ],
+    "currencyNames": [
+      "Західноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "GY": {
+    "name": "Гаяна",
+    "capital": "Джорджтаун",
+    "demonym": "гаянський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Гаянський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "HK": {
+    "name": "Гонконг",
+    "capital": "Вікторія",
+    "demonym": "гонконгський",
+    "languages": [
+      "Китайська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Гонконгський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "HN": {
+    "name": "Гондурас",
+    "capital": "Тегусігальпа",
+    "demonym": "гондураський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Гондураська лемпіра"
+    ],
+    "wikipediaSlug": null
+  },
+  "HR": {
+    "name": "Хорватія",
+    "capital": "Загреб",
+    "demonym": "хорватський",
+    "languages": [
+      "Хорватська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "HT": {
+    "name": "Гаїті",
+    "capital": "Порт-о-Пренс",
+    "demonym": "гаїтянський",
+    "languages": [
+      "Французька",
+      "Гаїтянська креольська"
+    ],
+    "currencyNames": [
+      "Гаїтянський гурд"
+    ],
+    "wikipediaSlug": null
+  },
+  "HU": {
+    "name": "Угорщина",
+    "capital": "Будапешт",
+    "demonym": "угорський",
+    "languages": [
+      "Угорська"
+    ],
+    "currencyNames": [
+      "Угорський форинт"
+    ],
+    "wikipediaSlug": null
+  },
+  "ID": {
+    "name": "Індонезія",
+    "capital": "Джакарта",
+    "demonym": "індонезійський",
+    "languages": [
+      "Індонезійська"
+    ],
+    "currencyNames": [
+      "Індонезійська рупія"
+    ],
+    "wikipediaSlug": null
+  },
+  "IE": {
+    "name": "Ірландія",
+    "capital": "Дублін",
+    "demonym": "ірландський",
+    "languages": [
+      "Ірландська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "IL": {
+    "name": "Ізраїль",
+    "capital": "Єрусалим",
+    "demonym": "ізраїльський",
+    "languages": [
+      "Іврит",
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Ізраїльський новий шекель"
+    ],
+    "wikipediaSlug": null
+  },
+  "IM": {
+    "name": "Острів Мен",
+    "capital": "Дуглас",
+    "demonym": "менський",
+    "languages": [
+      "Англійська",
+      "Менкська"
+    ],
+    "currencyNames": [
+      "Англійський фунт"
+    ],
+    "wikipediaSlug": null
+  },
+  "IN": {
+    "name": "Індія",
+    "capital": "Нью-Делі",
+    "demonym": "індійський",
+    "languages": [
+      "Гінді",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Індійська рупія"
+    ],
+    "wikipediaSlug": null
+  },
+  "IQ": {
+    "name": "Ірак",
+    "capital": "Багдад",
+    "demonym": "іракський",
+    "languages": [
+      "Арабська",
+      "Курдська"
+    ],
+    "currencyNames": [
+      "Іракський динар"
+    ],
+    "wikipediaSlug": null
+  },
+  "IR": {
+    "name": "Іран",
+    "capital": "Тегеран",
+    "demonym": "іранський",
+    "languages": [
+      "Перська"
+    ],
+    "currencyNames": [
+      "Іранський ріал"
+    ],
+    "wikipediaSlug": null
+  },
+  "IS": {
+    "name": "Ісландія",
+    "capital": "Рейк'явік",
+    "demonym": "ісландський",
+    "languages": [
+      "Ісландська"
+    ],
+    "currencyNames": [
+      "Ісландська крона"
+    ],
+    "wikipediaSlug": null
+  },
+  "IT": {
+    "name": "Італія",
+    "capital": "Рим",
+    "demonym": "італійський",
+    "languages": [
+      "Італійська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "JE": {
+    "name": "Джерсі",
+    "capital": "Сент-Гелієр",
+    "demonym": "джерсійський",
+    "languages": [
+      "Англійська",
+      "Французька"
+    ],
+    "currencyNames": [
+      "Англійський фунт"
+    ],
+    "wikipediaSlug": null
+  },
+  "JM": {
+    "name": "Ямайка",
+    "capital": "Кінгстон",
+    "demonym": "ямайський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Ямайський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "JO": {
+    "name": "Йорданія",
+    "capital": "Амман",
+    "demonym": "йорданський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Йорданський динар"
+    ],
+    "wikipediaSlug": null
+  },
+  "JP": {
+    "name": "Японія",
+    "capital": "Токіо",
+    "demonym": "японський",
+    "languages": [
+      "Японська"
+    ],
+    "currencyNames": [
+      "Японська єна"
+    ],
+    "wikipediaSlug": null
+  },
+  "KE": {
+    "name": "Кенія",
+    "capital": "Найробі",
+    "demonym": "кенійський",
+    "languages": [
+      "Суахілі",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Кенійський шилінг"
+    ],
+    "wikipediaSlug": null
+  },
+  "KG": {
+    "name": "Киргизстан",
+    "capital": "Бішкек",
+    "demonym": "киргизький",
+    "languages": [
+      "Киргизька",
+      "Російська"
+    ],
+    "currencyNames": [
+      "Киргизький сом"
+    ],
+    "wikipediaSlug": null
+  },
+  "KH": {
+    "name": "Камбоджа",
+    "capital": "Пномпень",
+    "demonym": "камбоджійський",
+    "languages": [
+      "Кхмерська"
+    ],
+    "currencyNames": [
+      "Камбоджійський рієль",
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "KI": {
+    "name": "Кірибаті",
+    "capital": "Тарава",
+    "demonym": "кірибатійський",
+    "languages": [
+      "Англійська",
+      "Гільбертська"
+    ],
+    "currencyNames": [
+      "Австралійський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "KM": {
+    "name": "Комори",
+    "capital": "Мороні",
+    "demonym": "коморський",
+    "languages": [
+      "zdj",
+      "Арабська",
+      "Французька"
+    ],
+    "currencyNames": [
+      "Коморський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "KN": {
+    "name": "Сент-Кітс і Невіс",
+    "capital": "Бастер",
+    "demonym": "сенткітський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Східнокарибський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "KP": {
+    "name": "Північна Корея",
+    "capital": "Пхеньян",
+    "demonym": "північнокорейський",
+    "languages": [
+      "Корейська"
+    ],
+    "currencyNames": [
+      "Північнокорейський вон"
+    ],
+    "wikipediaSlug": null
+  },
+  "KR": {
+    "name": "Південна Корея",
+    "capital": "Сеул",
+    "demonym": "південнокорейський",
+    "languages": [
+      "Корейська"
+    ],
+    "currencyNames": [
+      "Південнокорейський вон"
+    ],
+    "wikipediaSlug": null
+  },
+  "KW": {
+    "name": "Кувейт",
+    "capital": "Ель-Кувейт",
+    "demonym": "кувейтський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Кувейтський динар"
+    ],
+    "wikipediaSlug": null
+  },
+  "KY": {
+    "name": "Кайманові Острови",
+    "capital": "Джорджтаун",
+    "demonym": "кайманський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Долар Кайманових островів"
+    ],
+    "wikipediaSlug": null
+  },
+  "KZ": {
+    "name": "Казахстан",
+    "capital": "Астана",
+    "demonym": "казахський",
+    "languages": [
+      "Казахська",
+      "Російська"
+    ],
+    "currencyNames": [
+      "Казахстанський тенге"
+    ],
+    "wikipediaSlug": null
+  },
+  "LA": {
+    "name": "Лаос",
+    "capital": "В'єнтьян",
+    "demonym": "лаоський",
+    "languages": [
+      "Лаоська"
+    ],
+    "currencyNames": [
+      "Лаоський кіп"
+    ],
+    "wikipediaSlug": null
+  },
+  "LB": {
+    "name": "Ліван",
+    "capital": "Бейрут",
+    "demonym": "ліванський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Ліванський фунт"
+    ],
+    "wikipediaSlug": null
+  },
+  "LC": {
+    "name": "Сент-Люсія",
+    "capital": "Кастрі",
+    "demonym": "сент-люсійський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Східнокарибський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "LI": {
+    "name": "Ліхтенштейн",
+    "capital": "Вадуц",
+    "demonym": "ліхтенштейнський",
+    "languages": [
+      "Німецька"
+    ],
+    "currencyNames": [
+      "Швейцарський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "LK": {
+    "name": "Шрі-Ланка",
+    "capital": "Коломбо",
+    "demonym": "шрі-ланкійський",
+    "languages": [
+      "Сингальська",
+      "Тамільська"
+    ],
+    "currencyNames": [
+      "Шрі-ланкійська рупія"
+    ],
+    "wikipediaSlug": null
+  },
+  "LR": {
+    "name": "Ліберія",
+    "capital": "Монровія",
+    "demonym": "ліберійський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Ліберійський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "LS": {
+    "name": "Лесото",
+    "capital": "Масеру",
+    "demonym": "лесотський",
+    "languages": [
+      "Південна сото",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Лесотський лоті",
+      "Південноафриканський ранд"
+    ],
+    "wikipediaSlug": null
+  },
+  "LT": {
+    "name": "Литва",
+    "capital": "Вільнюс",
+    "demonym": "литовський",
+    "languages": [
+      "Литовська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "LU": {
+    "name": "Люксембург",
+    "capital": "Люксембург",
+    "demonym": "люксембурзький",
+    "languages": [
+      "Люксембурзька",
+      "Французька",
+      "Німецька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "LV": {
+    "name": "Латвія",
+    "capital": "Рига",
+    "demonym": "латвійський",
+    "languages": [
+      "Латиська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "LY": {
+    "name": "Лівія",
+    "capital": "Триполі",
+    "demonym": "лівійський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Лівійський динар"
+    ],
+    "wikipediaSlug": null
+  },
+  "MA": {
+    "name": "Марокко",
+    "capital": "Рабат",
+    "demonym": "марокканський",
+    "languages": [
+      "Арабська",
+      "Центральноатласька тамазігт"
+    ],
+    "currencyNames": [
+      "Марокканський дирхам"
+    ],
+    "wikipediaSlug": null
+  },
+  "MC": {
+    "name": "Монако",
+    "capital": "Монако",
+    "demonym": "монегаський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "MD": {
+    "name": "Молдова",
+    "capital": "Кишинів",
+    "demonym": "молдовський",
+    "languages": [
+      "Румунська"
+    ],
+    "currencyNames": [
+      "Молдовський лей"
+    ],
+    "wikipediaSlug": null
+  },
+  "ME": {
+    "name": "Чорногорія",
+    "capital": "Подгориця",
+    "demonym": "чорногорський",
+    "languages": [
+      "Сербська (Чорногорія)"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "MF": {
+    "name": "Сен-Мартен",
+    "capital": "Маріго",
+    "demonym": "сен-мартенський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "MG": {
+    "name": "Мадагаскар",
+    "capital": "Антананаріву",
+    "demonym": "малагасійський",
+    "languages": [
+      "Малагасійська",
+      "Французька"
+    ],
+    "currencyNames": [
+      "Малагасійський аріарі"
+    ],
+    "wikipediaSlug": null
+  },
+  "MH": {
+    "name": "Маршаллові Острови",
+    "capital": "Маджуро",
+    "demonym": "маршалловський",
+    "languages": [
+      "Маршалльська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "MK": {
+    "name": "Північна Македонія",
+    "capital": "Скоп'є",
+    "demonym": "північномакедонський",
+    "languages": [
+      "Македонська"
+    ],
+    "currencyNames": [
+      "Македонський денар"
+    ],
+    "wikipediaSlug": null
+  },
+  "ML": {
+    "name": "Малі",
+    "capital": "Бамако",
+    "demonym": "малійський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Західноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "MM": {
+    "name": "Мʼянма (Бірма)",
+    "capital": "Найп'їдо",
+    "demonym": "м'янманський",
+    "languages": [
+      "Бірманська"
+    ],
+    "currencyNames": [
+      "Кʼят Мʼянми"
+    ],
+    "wikipediaSlug": null
+  },
+  "MN": {
+    "name": "Монголія",
+    "capital": "Улан-Батор",
+    "demonym": "монгольський",
+    "languages": [
+      "Монгольська"
+    ],
+    "currencyNames": [
+      "Монгольський тугрик"
+    ],
+    "wikipediaSlug": null
+  },
+  "MO": {
+    "name": "Макао",
+    "capital": "",
+    "demonym": "макаоський",
+    "languages": [
+      "Китайська",
+      "Португальська"
+    ],
+    "currencyNames": [
+      "Патака Макао"
+    ],
+    "wikipediaSlug": null
+  },
+  "MP": {
+    "name": "Північні Маріанські Острови",
+    "capital": "Сайпан",
+    "demonym": "північномаріанський",
+    "languages": [
+      "Англійська",
+      "Чаморро",
+      "cal"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "MQ": {
+    "name": "Мартиніка",
+    "capital": "Фор-де-Франс",
+    "demonym": "мартінікський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "MR": {
+    "name": "Мавританія",
+    "capital": "Нуакшот",
+    "demonym": "мавританський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Мавританська угія"
+    ],
+    "wikipediaSlug": null
+  },
+  "MS": {
+    "name": "Монтсеррат",
+    "capital": "Брейдс",
+    "demonym": "монтсерратський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Східнокарибський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "MT": {
+    "name": "Мальта",
+    "capital": "Валлетта",
+    "demonym": "мальтійський",
+    "languages": [
+      "Мальтійська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "MU": {
+    "name": "Маврикій",
+    "capital": "Порт-Луї",
+    "demonym": "маврикійський",
+    "languages": [
+      "Англійська",
+      "Французька"
+    ],
+    "currencyNames": [
+      "Маврикійська рупія"
+    ],
+    "wikipediaSlug": null
+  },
+  "MV": {
+    "name": "Мальдіви",
+    "capital": "Мале",
+    "demonym": "мальдівський",
+    "languages": [
+      "Дивехі"
+    ],
+    "currencyNames": [
+      "Мальдівська руфія"
+    ],
+    "wikipediaSlug": null
+  },
+  "MW": {
+    "name": "Малаві",
+    "capital": "Лілонгве",
+    "demonym": "малавійський",
+    "languages": [
+      "Англійська",
+      "Ньянджа"
+    ],
+    "currencyNames": [
+      "Малавійська квача"
+    ],
+    "wikipediaSlug": null
+  },
+  "MX": {
+    "name": "Мексика",
+    "capital": "Мехіко",
+    "demonym": "мексиканський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Мексиканський песо"
+    ],
+    "wikipediaSlug": null
+  },
+  "MY": {
+    "name": "Малайзія",
+    "capital": "Куала-Лумпур",
+    "demonym": "малайзійський",
+    "languages": [
+      "Малайська"
+    ],
+    "currencyNames": [
+      "Малайзійський рингіт"
+    ],
+    "wikipediaSlug": null
+  },
+  "MZ": {
+    "name": "Мозамбік",
+    "capital": "Мапуту",
+    "demonym": "мозамбікський",
+    "languages": [
+      "Португальська"
+    ],
+    "currencyNames": [
+      "Мозамбіцький метикал"
+    ],
+    "wikipediaSlug": null
+  },
+  "NA": {
+    "name": "Намібія",
+    "capital": "Віндгук",
+    "demonym": "намібійський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Намібійський долар",
+      "Південноафриканський ранд"
+    ],
+    "wikipediaSlug": null
+  },
+  "NC": {
+    "name": "Нова Каледонія",
+    "capital": "Нумеа",
+    "demonym": "новокаледонський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Французький тихоокеанський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "NE": {
+    "name": "Нігер",
+    "capital": "Ніамей",
+    "demonym": "нігерський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Західноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "NF": {
+    "name": "Острів Норфолк",
+    "capital": "Кінгстон",
+    "demonym": "норфолкський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Австралійський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "NG": {
+    "name": "Нігерія",
+    "capital": "Абуджа",
+    "demonym": "нігерійський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Нігерійська найра"
+    ],
+    "wikipediaSlug": null
+  },
+  "NI": {
+    "name": "Нікарагуа",
+    "capital": "Манагуа",
+    "demonym": "нікарагуанський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Нікарагуанська кордоба"
+    ],
+    "wikipediaSlug": null
+  },
+  "NL": {
+    "name": "Нідерланди",
+    "capital": "Амстердам",
+    "demonym": "нідерландський",
+    "languages": [
+      "Нідерландська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "NO": {
+    "name": "Норвегія",
+    "capital": "Осло",
+    "demonym": "норвезький",
+    "languages": [
+      "Норвезька"
+    ],
+    "currencyNames": [
+      "Норвезька крона"
+    ],
+    "wikipediaSlug": null
+  },
+  "NP": {
+    "name": "Непал",
+    "capital": "Катманду",
+    "demonym": "непальський",
+    "languages": [
+      "Непальська"
+    ],
+    "currencyNames": [
+      "Непальська рупія"
+    ],
+    "wikipediaSlug": null
+  },
+  "NR": {
+    "name": "Науру",
+    "capital": "Ярен",
+    "demonym": "науруанський",
+    "languages": [
+      "Англійська",
+      "Науру"
+    ],
+    "currencyNames": [
+      "Австралійський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "NU": {
+    "name": "Ніуе",
+    "capital": "Алофі",
+    "demonym": "ніуейський",
+    "languages": [
+      "Англійська",
+      "Ніуе"
+    ],
+    "currencyNames": [
+      "Новозеландський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "NZ": {
+    "name": "Нова Зеландія",
+    "capital": "Веллінгтон",
+    "demonym": "новозеландський",
+    "languages": [
+      "Англійська",
+      "Маорі"
+    ],
+    "currencyNames": [
+      "Новозеландський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "OM": {
+    "name": "Оман",
+    "capital": "Маскат",
+    "demonym": "оманський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Оманський ріал"
+    ],
+    "wikipediaSlug": null
+  },
+  "PA": {
+    "name": "Панама",
+    "capital": "Панама",
+    "demonym": "панамський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Панамське бальбоа",
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "PE": {
+    "name": "Перу",
+    "capital": "Ліма",
+    "demonym": "перуанський",
+    "languages": [
+      "Іспанська",
+      "Кечуа",
+      "Аймара"
+    ],
+    "currencyNames": [
+      "Перуанський новий сол"
+    ],
+    "wikipediaSlug": null
+  },
+  "PF": {
+    "name": "Французька Полінезія",
+    "capital": "Папеете",
+    "demonym": "полінезійський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Французький тихоокеанський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "PG": {
+    "name": "Папуа-Нова Гвінея",
+    "capital": "Порт-Морсбі",
+    "demonym": "папуа-новогвінейський",
+    "languages": [
+      "Англійська",
+      "Ток-пісін",
+      "Хірі-моту"
+    ],
+    "currencyNames": [
+      "Кіна Папуа-Нової Ґвінеї"
+    ],
+    "wikipediaSlug": null
+  },
+  "PH": {
+    "name": "Філіппіни",
+    "capital": "Маніла",
+    "demonym": "філіппінський",
+    "languages": [
+      "Філіппінська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Філіппінський песо"
+    ],
+    "wikipediaSlug": null
+  },
+  "PK": {
+    "name": "Пакистан",
+    "capital": "Ісламабад",
+    "demonym": "пакистанський",
+    "languages": [
+      "Урду",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Пакистанська рупія"
+    ],
+    "wikipediaSlug": null
+  },
+  "PL": {
+    "name": "Польща",
+    "capital": "Варшава",
+    "demonym": "польський",
+    "languages": [
+      "Польська"
+    ],
+    "currencyNames": [
+      "Польський злотий"
+    ],
+    "wikipediaSlug": null
+  },
+  "PM": {
+    "name": "Сен-Пʼєр і Мікелон",
+    "capital": "Сен-П'єр",
+    "demonym": "сен-п'єрський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "PN": {
+    "name": "Острови Піткерн",
+    "capital": "Адамстаун",
+    "demonym": "піткернський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Новозеландський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "PR": {
+    "name": "Пуерто-Рико",
+    "capital": "Сан-Хуан",
+    "demonym": "пуерто-риканський",
+    "languages": [
+      "Іспанська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "PS": {
+    "name": "Палестина",
+    "capital": "Рамалла",
+    "demonym": "палестинський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Єгипетський фунт",
+      "Ізраїльський новий шекель",
+      "Йорданський динар"
+    ],
+    "wikipediaSlug": null
+  },
+  "PT": {
+    "name": "Португалія",
+    "capital": "Лісабон",
+    "demonym": "португальський",
+    "languages": [
+      "Португальська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "PW": {
+    "name": "Палау",
+    "capital": "Нгерулмуд",
+    "demonym": "палауський",
+    "languages": [
+      "Палауанська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "PY": {
+    "name": "Парагвай",
+    "capital": "Асунсьйон",
+    "demonym": "парагвайський",
+    "languages": [
+      "Іспанська",
+      "Гуарані"
+    ],
+    "currencyNames": [
+      "Парагвайський гуарані"
+    ],
+    "wikipediaSlug": null
+  },
+  "QA": {
+    "name": "Катар",
+    "capital": "Доха",
+    "demonym": "катарський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Катарський ріал"
+    ],
+    "wikipediaSlug": null
+  },
+  "RE": {
+    "name": "Реюньйон",
+    "capital": "Сен-Дені",
+    "demonym": "реюньйонський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "RO": {
+    "name": "Румунія",
+    "capital": "Бухарест",
+    "demonym": "румунський",
+    "languages": [
+      "Румунська"
+    ],
+    "currencyNames": [
+      "Румунський лей"
+    ],
+    "wikipediaSlug": null
+  },
+  "RS": {
+    "name": "Сербія",
+    "capital": "Белград",
+    "demonym": "сербський",
+    "languages": [
+      "Сербська"
+    ],
+    "currencyNames": [
+      "Сербський динар"
+    ],
+    "wikipediaSlug": null
+  },
+  "RU": {
+    "name": "Росія",
+    "capital": "Москва",
+    "demonym": "російський",
+    "languages": [
+      "Російська"
+    ],
+    "currencyNames": [
+      "Російський рубль"
+    ],
+    "wikipediaSlug": null
+  },
+  "RW": {
+    "name": "Руанда",
+    "capital": "Кігалі",
+    "demonym": "руандійський",
+    "languages": [
+      "Кіньяруанда",
+      "Французька",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Руандійський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "SA": {
+    "name": "Саудівська Аравія",
+    "capital": "Ер-Ріяд",
+    "demonym": "саудівський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Саудівський ріал"
+    ],
+    "wikipediaSlug": null
+  },
+  "SB": {
+    "name": "Соломонові Острови",
+    "capital": "Хоніара",
+    "demonym": "соломоновський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Долар Соломонових Островів"
+    ],
+    "wikipediaSlug": null
+  },
+  "SC": {
+    "name": "Сейшельські Острови",
+    "capital": "Вікторія",
+    "demonym": "сейшельський",
+    "languages": [
+      "Сейшельська креольська",
+      "Французька",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Сейшельська рупія"
+    ],
+    "wikipediaSlug": null
+  },
+  "SD": {
+    "name": "Судан",
+    "capital": "Хартум",
+    "demonym": "суданський",
+    "languages": [
+      "Арабська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Суданський фунт"
+    ],
+    "wikipediaSlug": null
+  },
+  "SE": {
+    "name": "Швеція",
+    "capital": "Стокгольм",
+    "demonym": "шведський",
+    "languages": [
+      "Шведська"
+    ],
+    "currencyNames": [
+      "Шведська крона"
+    ],
+    "wikipediaSlug": null
+  },
+  "SG": {
+    "name": "Сінгапур",
+    "capital": "Сінгапур",
+    "demonym": "сінгапурський",
+    "languages": [
+      "Англійська",
+      "Малайська",
+      "Китайська",
+      "Тамільська"
+    ],
+    "currencyNames": [
+      "Сінгапурський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "SH": {
+    "name": "Острів Святої Єлени",
+    "capital": "Джеймстаун",
+    "demonym": "святоєленський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Англійський фунт",
+      "Фунт острова Святої Єлени"
+    ],
+    "wikipediaSlug": null
+  },
+  "SI": {
+    "name": "Словенія",
+    "capital": "Любляна",
+    "demonym": "словенський",
+    "languages": [
+      "Словенська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "SK": {
+    "name": "Словаччина",
+    "capital": "Братислава",
+    "demonym": "словацький",
+    "languages": [
+      "Словацька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "SL": {
+    "name": "Сьєрра-Леоне",
+    "capital": "Фрітаун",
+    "demonym": "сьєрра-леонський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Леоне Сьєрра-Леоне"
+    ],
+    "wikipediaSlug": null
+  },
+  "SM": {
+    "name": "Сан-Марино",
+    "capital": "Сан-Марино",
+    "demonym": "санмаринський",
+    "languages": [
+      "Італійська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "SN": {
+    "name": "Сенегал",
+    "capital": "Дакар",
+    "demonym": "сенегальський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Західноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "SO": {
+    "name": "Сомалі",
+    "capital": "Могадішо",
+    "demonym": "сомалійський",
+    "languages": [
+      "Сомалі",
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Сомалійський шилінг"
+    ],
+    "wikipediaSlug": null
+  },
+  "SR": {
+    "name": "Суринам",
+    "capital": "Парамарибо",
+    "demonym": "суринамський",
+    "languages": [
+      "Нідерландська"
+    ],
+    "currencyNames": [
+      "Суринамський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "SS": {
+    "name": "Південний Судан",
+    "capital": "Джуба",
+    "demonym": "південносуданський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Південносуданський фунт"
+    ],
+    "wikipediaSlug": null
+  },
+  "ST": {
+    "name": "Сан-Томе і Принсіпі",
+    "capital": "Сан-Томе",
+    "demonym": "сан-томейський",
+    "languages": [
+      "Португальська"
+    ],
+    "currencyNames": [
+      "Добра Сан-Томе і Прінсіпі"
+    ],
+    "wikipediaSlug": null
+  },
+  "SV": {
+    "name": "Сальвадор",
+    "capital": "Сан-Сальвадор",
+    "demonym": "сальвадорський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "SX": {
+    "name": "Сінт-Мартен",
+    "capital": "Філіпсбург",
+    "demonym": "сінт-мартенський",
+    "languages": [
+      "Нідерландська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Нідерландський антильський гульден"
+    ],
+    "wikipediaSlug": null
+  },
+  "SY": {
+    "name": "Сирія",
+    "capital": "Дамаск",
+    "demonym": "сирійський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Сирійський фунт"
+    ],
+    "wikipediaSlug": null
+  },
+  "SZ": {
+    "name": "Есватіні",
+    "capital": "Мбабане",
+    "demonym": "есватінійський",
+    "languages": [
+      "Сисваті",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Свазілендський лілангені",
+      "Південноафриканський ранд"
+    ],
+    "wikipediaSlug": null
+  },
+  "TC": {
+    "name": "Острови Теркс і Кайкос",
+    "capital": "Коберн-Таун",
+    "demonym": "теркський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "TD": {
+    "name": "Чад",
+    "capital": "Нджамена",
+    "demonym": "чадський",
+    "languages": [
+      "Французька",
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Центральноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "TG": {
+    "name": "Того",
+    "capital": "Ломе",
+    "demonym": "тоголезький",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Західноафриканський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "TH": {
+    "name": "Таїланд",
+    "capital": "Бангкок",
+    "demonym": "тайський",
+    "languages": [
+      "Тайська"
+    ],
+    "currencyNames": [
+      "Таїландський бат"
+    ],
+    "wikipediaSlug": null
+  },
+  "TJ": {
+    "name": "Таджикистан",
+    "capital": "Душанбе",
+    "demonym": "таджицький",
+    "languages": [
+      "Таджицька"
+    ],
+    "currencyNames": [
+      "Таджицький сомоні"
+    ],
+    "wikipediaSlug": null
+  },
+  "TL": {
+    "name": "Східний Тимор",
+    "capital": "Ділі",
+    "demonym": "тиморський",
+    "languages": [
+      "Португальська",
+      "Тетум"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "TM": {
+    "name": "Туркменістан",
+    "capital": "Ашгабат",
+    "demonym": "туркменський",
+    "languages": [
+      "Туркменська"
+    ],
+    "currencyNames": [
+      "Туркменський манат"
+    ],
+    "wikipediaSlug": null
+  },
+  "TN": {
+    "name": "Туніс",
+    "capital": "Туніс",
+    "demonym": "туніський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Туніський динар"
+    ],
+    "wikipediaSlug": null
+  },
+  "TO": {
+    "name": "Тонга",
+    "capital": "Нукуалофа",
+    "demonym": "тонганський",
+    "languages": [
+      "Тонганська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Тонганська паанга"
+    ],
+    "wikipediaSlug": null
+  },
+  "TR": {
+    "name": "Туреччина",
+    "capital": "Анкара",
+    "demonym": "турецький",
+    "languages": [
+      "Турецька"
+    ],
+    "currencyNames": [
+      "Турецька ліра"
+    ],
+    "wikipediaSlug": null
+  },
+  "TT": {
+    "name": "Тринідад і Тобаго",
+    "capital": "Порт-оф-Спейн",
+    "demonym": "тринідадський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Долар Тринідаду і Тобаго"
+    ],
+    "wikipediaSlug": null
+  },
+  "TV": {
+    "name": "Тувалу",
+    "capital": "Фунафуті",
+    "demonym": "тувалуанський",
+    "languages": [
+      "Тувалу",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Австралійський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "TW": {
+    "name": "Тайвань",
+    "capital": "Тайбей",
+    "demonym": "тайванський",
+    "languages": [
+      "Китайська"
+    ],
+    "currencyNames": [
+      "Новий тайванський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "TZ": {
+    "name": "Танзанія",
+    "capital": "Додома",
+    "demonym": "танзанійський",
+    "languages": [
+      "Суахілі",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Танзанійський шилінг"
+    ],
+    "wikipediaSlug": null
+  },
+  "UA": {
+    "name": "Україна",
+    "capital": "Київ",
+    "demonym": "український",
+    "languages": [
+      "Українська"
+    ],
+    "currencyNames": [
+      "Українська гривня"
+    ],
+    "wikipediaSlug": null
+  },
+  "UG": {
+    "name": "Уганда",
+    "capital": "Кампала",
+    "demonym": "угандійський",
+    "languages": [
+      "Англійська",
+      "Суахілі"
+    ],
+    "currencyNames": [
+      "Угандійський шилінг"
+    ],
+    "wikipediaSlug": null
+  },
+  "US": {
+    "name": "Сполучені Штати",
+    "capital": "Вашингтон",
+    "demonym": "американський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "UY": {
+    "name": "Уругвай",
+    "capital": "Монтевідео",
+    "demonym": "уругвайський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Уругвайський песо"
+    ],
+    "wikipediaSlug": null
+  },
+  "UZ": {
+    "name": "Узбекистан",
+    "capital": "Ташкент",
+    "demonym": "узбецький",
+    "languages": [
+      "Узбецька"
+    ],
+    "currencyNames": [
+      "Узбецький сум"
+    ],
+    "wikipediaSlug": null
+  },
+  "VA": {
+    "name": "Ватикан",
+    "capital": "Ватикан",
+    "demonym": "ватиканський",
+    "languages": [
+      "Італійська",
+      "Латинська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "VC": {
+    "name": "Сент-Вінсент і Гренадіни",
+    "capital": "Кінґстаун",
+    "demonym": "сентвінсентський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Східнокарибський долар"
+    ],
+    "wikipediaSlug": null
+  },
+  "VE": {
+    "name": "Венесуела",
+    "capital": "Каракас",
+    "demonym": "венесуельський",
+    "languages": [
+      "Іспанська"
+    ],
+    "currencyNames": [
+      "Венесуельський болівар"
+    ],
+    "wikipediaSlug": null
+  },
+  "VG": {
+    "name": "Британські Віргінські острови",
+    "capital": "Род-Таун",
+    "demonym": "віргінський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "VI": {
+    "name": "Віргінські Острови (США)",
+    "capital": "Шарлотта-Амалія",
+    "demonym": "віргінський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Долар США"
+    ],
+    "wikipediaSlug": null
+  },
+  "VN": {
+    "name": "Вʼєтнам",
+    "capital": "Ханой",
+    "demonym": "в'єтнамський",
+    "languages": [
+      "Вʼєтнамська"
+    ],
+    "currencyNames": [
+      "Вʼєтнамський донг"
+    ],
+    "wikipediaSlug": null
+  },
+  "VU": {
+    "name": "Вануату",
+    "capital": "Порт-Віла",
+    "demonym": "вануатський",
+    "languages": [
+      "Біслама",
+      "Англійська",
+      "Французька"
+    ],
+    "currencyNames": [
+      "Вануатський вату"
+    ],
+    "wikipediaSlug": null
+  },
+  "WF": {
+    "name": "Уолліс і Футуна",
+    "capital": "Мата-Уту",
+    "demonym": "уоліський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Французький тихоокеанський франк"
+    ],
+    "wikipediaSlug": null
+  },
+  "WS": {
+    "name": "Самоа",
+    "capital": "Апіа",
+    "demonym": "самоанський",
+    "languages": [
+      "Самоанська",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Самоанська тала"
+    ],
+    "wikipediaSlug": null
+  },
+  "XK": {
+    "name": "Косово",
+    "capital": "Приштина",
+    "demonym": "косовський",
+    "languages": [
+      "Албанська",
+      "Сербська"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "YE": {
+    "name": "Ємен",
+    "capital": "Сана",
+    "demonym": "єменський",
+    "languages": [
+      "Арабська"
+    ],
+    "currencyNames": [
+      "Єменський ріал"
+    ],
+    "wikipediaSlug": null
+  },
+  "YT": {
+    "name": "Майотта",
+    "capital": "Мамудзу",
+    "demonym": "майоттський",
+    "languages": [
+      "Французька"
+    ],
+    "currencyNames": [
+      "Євро"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZA": {
+    "name": "Південно-Африканська Республіка",
+    "capital": "Преторія",
+    "demonym": "південноафриканський",
+    "languages": [
+      "Зулуська",
+      "Кхоса",
+      "Африкаанс",
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Південноафриканський ранд"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZM": {
+    "name": "Замбія",
+    "capital": "Лусака",
+    "demonym": "замбійський",
+    "languages": [
+      "Англійська"
+    ],
+    "currencyNames": [
+      "Замбійська квача"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZW": {
+    "name": "Зімбабве",
+    "capital": "Хараре",
+    "demonym": "зімбабвійський",
+    "languages": [
+      "Англійська",
+      "Шона",
+      "Ндебелє південна"
+    ],
+    "currencyNames": [
+      "Зімбабвійський долар (2009)"
+    ],
+    "wikipediaSlug": null
+  }
+}

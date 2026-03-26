@@ -1,6 +1,7 @@
 // Ficha de país — bottom sheet que muestra info detallada del país seleccionado
 import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useAppStore } from '../../stores/appStore';
 import type { CountryData, ContinentOrSpecial } from '../../data/types';
 import type { CountryRankings } from '../../data/rankings';
 import { CONTINENT_CSS_VAR_SPECIAL } from '../../data/continents';
@@ -60,14 +61,17 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
   const cssVar = CONTINENT_CSS_VAR_SPECIAL[country.continent as ContinentOrSpecial];
   const continentColor = cssVar ? `var(${cssVar})` : 'var(--color-text-secondary)';
   const isAntarctica = country.cca2 === 'AQ';
+  const locale = useAppStore((s) => s.settings.locale);
   const [activeTooltip, setActiveTooltip] = useState<TooltipId>(null);
 
   // URL de Wikipedia derivada del slug
+  // El slug puede tener prefijo de idioma (ej: "en:Spain") si el artículo no existe en el idioma activo
+  const wikiLangBase = locale.startsWith('zh') ? (locale === 'zh-Hans' ? 'zh' : 'zh') : locale.split('-')[0];
   const wikipediaUrl = country.wikipediaSlug
     ? (() => {
         const hasLangPrefix = country.wikipediaSlug.includes(':') && !country.wikipediaSlug.startsWith('http');
         const colonIdx = country.wikipediaSlug.indexOf(':');
-        const lang = hasLangPrefix ? country.wikipediaSlug.slice(0, colonIdx) : 'es';
+        const lang = hasLangPrefix ? country.wikipediaSlug.slice(0, colonIdx) : wikiLangBase;
         const slug = hasLangPrefix ? country.wikipediaSlug.slice(colonIdx + 1) : country.wikipediaSlug;
         return `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(slug)}`;
       })()

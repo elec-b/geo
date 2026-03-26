@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Globus",
+  "segmented.table": "Tabelle",
+  "labels.countries": "L\u00e4nder",
+  "labels.capitals": "Hauptst\u00e4dte",
+
+  "table.country": "Land",
+  "table.capital": "Hauptstadt",
+  "table.population": "Einw.",
+  "table.nonUNToggle": "Nicht-UN-Gebiete",
+
+  "card.disclaimer.antarctica": "Internationales Gebiet \u2014 Antarktisvertrag (1959)",
+  "card.disclaimer.territory": "Gebiet {{sovereign}}",
+  "card.disclaimer.disputed": "Umstrittene Souver\u00e4nit\u00e4t",
+  "card.flagAlt": "Flagge von {{country}}",
+  "card.aria.openWikipedia": "{{country}} auf Wikipedia \u00f6ffnen",
+  "card.aria.dialog": "Steckbrief von {{country}}",
+
+  "card.field.capital": "Hauptstadt",
+  "card.field.population": "Bev\u00f6lkerung",
+  "card.field.area": "Fl\u00e4che",
+  "card.field.density": "Dichte",
+  "card.field.currency": "W\u00e4hrung",
+  "card.field.demonym": "Einwohnerbezeichnung",
+  "card.field.languages": "Sprachen",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "Einw.",
+  "card.unit.densityUnit": "Einw/km\u00b2",
+  "card.na": "k.\u00a0A.",
+
+  "card.tooltip.hdi": "Index der menschlichen Entwicklung: misst Gesundheit, Bildung und Einkommen. Skala 0\u20131.",
+  "card.tooltip.ihdi": "Ungleichheitsbereinigter HDI: bestraft Ungleichheit bei Gesundheit, Bildung und Einkommen.",
+  "card.aria.hdiInfo": "Informationen zum HDI",
+  "card.aria.ihdiInfo": "Informationen zum IHDI",
+
+  "card.antarctica.info": "Die Antarktis geh\u00f6rt keinem Land. Der Antarktisvertrag von 1959 reserviert sie f\u00fcr die wissenschaftliche Forschung und verbietet milit\u00e4rische Aktivit\u00e4ten sowie die Ausbeutung ihrer Ressourcen.",
+
+  "card.sovereign.GB": "des Vereinigten K\u00f6nigreichs",
+  "card.sovereign.FR": "Frankreichs",
+  "card.sovereign.US": "der Vereinigten Staaten",
+  "card.sovereign.NL": "der Niederlande",
+  "card.sovereign.DK": "D\u00e4nemarks",
+  "card.sovereign.CN": "Chinas",
+  "card.sovereign.NZ": "Neuseelands",
+  "card.sovereign.FI": "Finnlands",
+  "card.sovereign.AU": "Australiens"
+}

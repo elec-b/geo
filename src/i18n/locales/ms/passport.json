@@ -1,0 +1,16 @@
+{
+  "header.title": "Pasport {{name}}",
+  "header.globalLevel": "Tahap global: {{level}}",
+  "emptyState": "Setiap setem membuktikan apa yang anda tahu. Bolehkah anda mengisi penuh pasport?",
+
+  "legend.country": "○ Negara",
+  "legend.capital": "◎ Ibu Negeri",
+  "legend.earned": "★ Diperoleh",
+  "legend.locked": "🔒 Dikunci",
+
+  "stampTitle.countries": "Setem Negara",
+  "stampTitle.capitals": "Setem Ibu Negeri",
+
+  "modal.title": "Ujian setem",
+  "modal.questionCount": "Anda perlu melengkapkan {{count}} soalan tanpa kesilapan."
+}

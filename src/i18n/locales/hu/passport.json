@@ -1,0 +1,16 @@
+{
+  "header.title": "{{name}} útlevele",
+  "header.globalLevel": "Globális szint: {{level}}",
+  "emptyState": "Minden pecsét a tudásodat bizonyítja. Megtöltöd az útlevelet?",
+
+  "legend.country": "○ Ország",
+  "legend.capital": "◎ Főváros",
+  "legend.earned": "★ Megszerzett",
+  "legend.locked": "🔒 Zárolva",
+
+  "stampTitle.countries": "Országok pecsét",
+  "stampTitle.capitals": "Fővárosok pecsét",
+
+  "modal.title": "Pecsétpróba",
+  "modal.questionCount": "{{count}} kérdésre kell hibátlanul válaszolnod."
+}

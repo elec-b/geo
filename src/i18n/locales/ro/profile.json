@@ -1,0 +1,19 @@
+{
+  "defaultName": "Explorator",
+
+  "editor.titleEdit": "Editează profilul",
+  "editor.titleCreate": "Creează profil",
+  "editor.chooseAvatar": "Alege-ți avatarul",
+  "editor.nameLabel": "Nume",
+  "editor.namePlaceholder": "Numele profilului",
+  "editor.save": "Salvează",
+  "editor.create": "Creează",
+
+  "selector.title": "Profiluri",
+  "selector.confirmDelete": "Ștergi «{{name}}»?",
+  "selector.delete": "Șterge",
+  "selector.createNew": "Creează profil",
+  "selector.aria.edit": "Editează {{name}}",
+  "selector.aria.delete": "Șterge {{name}}",
+  "selector.aria.dialog": "Selectează profil"
+}

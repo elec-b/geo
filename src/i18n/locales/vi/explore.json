@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Quả cầu",
+  "segmented.table": "Bảng",
+  "labels.countries": "Quốc gia",
+  "labels.capitals": "Thủ đô",
+
+  "table.country": "Quốc gia",
+  "table.capital": "Thủ đô",
+  "table.population": "Dân số",
+  "table.nonUNToggle": "Lãnh thổ ngoài LHQ",
+
+  "card.disclaimer.antarctica": "Lãnh thổ quốc tế — Hiệp ước Nam Cực (1959)",
+  "card.disclaimer.territory": "Lãnh thổ của {{sovereign}}",
+  "card.disclaimer.disputed": "Chủ quyền tranh chấp",
+  "card.flagAlt": "Quốc kỳ {{country}}",
+  "card.aria.openWikipedia": "Mở {{country}} trên Wikipedia",
+  "card.aria.dialog": "Thẻ thông tin {{country}}",
+
+  "card.field.capital": "Thủ đô",
+  "card.field.population": "Dân số",
+  "card.field.area": "Diện tích",
+  "card.field.density": "Mật độ",
+  "card.field.currency": "Tiền tệ",
+  "card.field.demonym": "Tên gọi dân tộc",
+  "card.field.languages": "Ngôn ngữ",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "người",
+  "card.unit.densityUnit": "người/km²",
+  "card.na": "K/C",
+
+  "card.tooltip.hdi": "Chỉ số Phát triển Con người: đo lường sức khỏe, giáo dục và thu nhập. Phạm vi 0–1.",
+  "card.tooltip.ihdi": "HDI điều chỉnh bất bình đẳng: tính đến sự bất bình đẳng về sức khỏe, giáo dục và thu nhập.",
+  "card.aria.hdiInfo": "Thông tin về HDI",
+  "card.aria.ihdiInfo": "Thông tin về IHDI",
+
+  "card.antarctica.info": "Nam Cực không thuộc về bất kỳ quốc gia nào. Hiệp ước Nam Cực, ký năm 1959, dành vùng đất này cho nghiên cứu khoa học và cấm hoạt động quân sự cùng khai thác tài nguyên.",
+
+  "card.sovereign.GB": "Vương quốc Anh",
+  "card.sovereign.FR": "Pháp",
+  "card.sovereign.US": "Hoa Kỳ",
+  "card.sovereign.NL": "Hà Lan",
+  "card.sovereign.DK": "Đan Mạch",
+  "card.sovereign.CN": "Trung Quốc",
+  "card.sovereign.NZ": "New Zealand",
+  "card.sovereign.FI": "Phần Lan",
+  "card.sovereign.AU": "Úc"
+}

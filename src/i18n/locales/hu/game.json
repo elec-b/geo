@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Válassz kontinenst",
+  "selector.chooseLevel": "Válassz szintet",
+  "selector.chooseGame": "Válassz játékot",
+  "selector.adventure": "Kaland",
+  "selector.adventureDesc": "A tudásodhoz igazodik",
+  "selector.specificTypes": "vagy válassz konkrét játékot",
+  "selector.start": "Indítás",
+  "selector.continue": "Tovább",
+  "selector.completed": "Teljesítve ★",
+  "selector.countryCount_one": "{{count}} ország",
+  "selector.countryCount_other": "{{count}} ország",
+  "selector.lockedToast": "Szerezd meg az előző szint pecsétjeit",
+
+  "selector.stampReady.both": "Készen állsz a pecsétpróbákra!",
+  "selector.stampReady.countries": "Készen állsz az országok próbájára!",
+  "selector.stampReady.capitals": "Készen állsz a fővárosok próbájára!",
+
+  "question.locate": "Keresd meg",
+  "question.locateCapital": "Keresd meg a fővárost",
+  "question.capitalOf": "Mi {{country}} fővárosa?",
+  "question.capitalBelongsTo": "{{capital}} a fővárosa...",
+  "question.whichCountry": "Melyik ország van kiemelve?",
+  "question.whichCapital": "Mi ennek az országnak a fővárosa?",
+
+  "progress.stampTest": "Pecsétpróba: {{current}} / {{total}}",
+  "progress.adventurePercent": "{{percent}}% teljesítve",
+  "progress.typeDominated": "{{current}} / {{total}} elsajátítva",
+  "progress.stampBanner.countries": "Pecsétpróba: Országok",
+  "progress.stampBanner.capitals": "Pecsétpróba: Fővárosok",
+
+  "modal.stampEarned.title": "Pecsét megszerzeve",
+  "modal.stampEarned.text": "{{correct}} / {{total}} helyes. Hiba nélkül.",
+
+  "modal.stampFailed.veryClose": "Majdnem sikerült!",
+  "modal.stampFailed.veryCloseText": "Egy hajszálra a pecséttől.",
+  "modal.stampFailed.goodTry": "Jó próbálkozás!",
+  "modal.stampFailed.goodTryText": "Minden próbálkozás közelebb visz.",
+  "modal.stampFailed.onTrack": "Jó úton haladsz",
+  "modal.stampFailed.onTrackText": "Játssz tovább, látszik a fejlődés.",
+  "modal.stampFailed.dontGiveUp": "Ne add fel",
+  "modal.stampFailed.dontGiveUpText": "Gyakorlat teszi a mestert.",
+  "modal.stampFailed.score": "{{correct}} / {{total}} helyes.",
+
+  "modal.poolExhausted.trainingComplete": "Gyakorlás befejezve",
+  "modal.poolExhausted.readyForStamp": "Remek!<br />Készen állsz a pecsétre",
+  "modal.poolExhausted.completedText": "Teljesítetted a(z) <em>{{continent}}</em> kontinenst <em>{{level}}</em> szinten. A statisztikákat visszaállíthatod az újbóli gyakorláshoz.",
+  "modal.poolExhausted.chooseStamp": "Válassz próbát. Hiba nélkül kell teljesítened a pecsét megszerzéséhez.",
+  "modal.poolExhausted.typePassed": "Remek!<br /><em>{{type}}</em> teljesítve",
+  "modal.poolExhausted.stampReady": "Készen állsz a pecsétpróbára. Teljesítsd hiba nélkül a megszerzéséhez.",
+  "modal.poolExhausted.tryStamp.countries": "Országok pecsétpróba",
+  "modal.poolExhausted.tryStamp.capitals": "Fővárosok pecsétpróba",
+  "modal.poolExhausted.selectOther": "Válassz másik játékot",
+  "modal.poolExhausted.playType": "<em>{{type}}</em> játszása",
+  "modal.poolExhausted.playAdventure": "<em>Kaland</em> játszása",
+
+  "stamp.countries": "Országok pecsét",
+  "stamp.capitals": "Fővárosok pecsét",
+
+  "modal.stampChooser.title": "Pecsétpróba",
+  "modal.stampChooser.text": "Válassz próbát. {{count}} kérdésre kell hibátlanul válaszolnod.",
+
+  "modal.alreadyDominated.title": "Már elsajátítottad<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Az összes országra helyesen válaszoltál. A statisztikákat visszaállíthatod az újbóli gyakorláshoz.",
+  "modal.alreadyDominated.completedTraining": "Teljesítetted a(z) <em>{{continent}}</em> gyakorlást <em>{{level}}</em> szinten.",
+  "modal.alreadyDominated.tryStamp": "Pecsétpróba megkísérlése",
+  "modal.alreadyDominated.goToStats": "Statisztikák megtekintése"
+}

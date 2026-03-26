@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Kies een continent",
+  "selector.chooseLevel": "Kies een niveau",
+  "selector.chooseGame": "Kies een spel",
+  "selector.adventure": "Avontuur",
+  "selector.adventureDesc": "Past zich aan je kennis aan",
+  "selector.specificTypes": "of kies een specifiek spel",
+  "selector.start": "Starten",
+  "selector.continue": "Doorgaan",
+  "selector.completed": "Gehaald \u2605",
+  "selector.countryCount_one": "{{count}} land",
+  "selector.countryCount_other": "{{count}} landen",
+  "selector.lockedToast": "Haal de stempels van het vorige niveau",
+
+  "selector.stampReady.both": "Klaar voor de stempelproeven!",
+  "selector.stampReady.countries": "Klaar voor de landenproef!",
+  "selector.stampReady.capitals": "Klaar voor de hoofdstedenproef!",
+
+  "question.locate": "Zoek",
+  "question.locateCapital": "Zoek de hoofdstad",
+  "question.capitalOf": "Wat is de hoofdstad van {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} is de hoofdstad van\u2026",
+  "question.whichCountry": "Welk land is gemarkeerd?",
+  "question.whichCapital": "Wat is de hoofdstad van dit land?",
+
+  "progress.stampTest": "Stempelproef: {{current}} van {{total}}",
+  "progress.adventurePercent": "{{percent}}% voltooid",
+  "progress.typeDominated": "{{current}} van {{total}} beheerst",
+  "progress.stampBanner.countries": "Stempelproef: Landen",
+  "progress.stampBanner.capitals": "Stempelproef: Hoofdsteden",
+
+  "modal.stampEarned.title": "Stempel behaald",
+  "modal.stampEarned.text": "{{correct}} van {{total}} correct. Geen fouten.",
+
+  "modal.stampFailed.veryClose": "Bijna!",
+  "modal.stampFailed.veryCloseText": "Nog een klein stapje naar de stempel.",
+  "modal.stampFailed.goodTry": "Goed geprobeerd!",
+  "modal.stampFailed.goodTryText": "Elke poging brengt je dichterbij.",
+  "modal.stampFailed.onTrack": "Je bent op de goede weg",
+  "modal.stampFailed.onTrackText": "Blijf spelen \u2014 je vooruitgang is zichtbaar.",
+  "modal.stampFailed.dontGiveUp": "Geef niet op",
+  "modal.stampFailed.dontGiveUpText": "Oefening baart kunst.",
+  "modal.stampFailed.score": "{{correct}} van {{total}} correct.",
+
+  "modal.poolExhausted.trainingComplete": "Training voltooid",
+  "modal.poolExhausted.readyForStamp": "Geweldig!<br />Klaar voor de stempel",
+  "modal.poolExhausted.completedText": "Je hebt <em>{{continent}}</em> op niveau <em>{{level}}</em> voltooid. Je kunt de statistieken resetten om opnieuw te oefenen.",
+  "modal.poolExhausted.chooseStamp": "Kies een proef. Je moet deze foutloos voltooien om de stempel te krijgen.",
+  "modal.poolExhausted.typePassed": "Geweldig!<br /><em>{{type}}</em> voltooid",
+  "modal.poolExhausted.stampReady": "Je bent klaar voor de stempelproef. Voltooi deze foutloos om de stempel te krijgen.",
+  "modal.poolExhausted.tryStamp.countries": "Landenstempel proberen",
+  "modal.poolExhausted.tryStamp.capitals": "Hoofdstedenstempel proberen",
+  "modal.poolExhausted.selectOther": "Ander spel kiezen",
+  "modal.poolExhausted.playType": "<em>{{type}}</em> spelen",
+  "modal.poolExhausted.playAdventure": "<em>Avontuur</em> spelen",
+
+  "stamp.countries": "Landenstempel",
+  "stamp.capitals": "Hoofdstedenstempel",
+
+  "modal.stampChooser.title": "Stempelproef",
+  "modal.stampChooser.text": "Kies een proef. Je moet {{count}} vragen foutloos beantwoorden.",
+
+  "modal.alreadyDominated.title": "Je beheerst<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Je hebt alle landen goed. Je kunt de statistieken resetten om opnieuw te oefenen.",
+  "modal.alreadyDominated.completedTraining": "Je hebt de training van <em>{{continent}}</em> op niveau <em>{{level}}</em> voltooid.",
+  "modal.alreadyDominated.tryStamp": "Stempelproef proberen",
+  "modal.alreadyDominated.goToStats": "Naar Statistieken"
+}

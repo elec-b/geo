@@ -1,0 +1,33 @@
+{
+  "title": "Statistici",
+  "aria.close": "Închide",
+  "tabs.play": "Joacă",
+  "tabs.stamps": "Probe de ștampilă",
+
+  "table.country": "Țară",
+  "aria.showIndicators": "Arată indicatorii",
+  "aria.showPercent": "Arată procentele",
+
+  "typeLabel.E": "Identifică țara",
+  "typeLabel.C": "Țară la capitală",
+  "typeLabel.D": "Capitală la țară",
+  "typeLabel.F": "Identifică capitala",
+  "typeLabel.A": "Arată țara",
+  "typeLabel.B": "Arată capitala",
+
+  "stampLabel.A.short": "◯ Țări",
+  "stampLabel.A.full": "Probă de ștampilă de Țări",
+  "stampLabel.B.short": "◎ Capitale",
+  "stampLabel.B.full": "Probă de ștampilă de Capitale",
+
+  "legend.dominated": "Stăpânit",
+  "legend.inferred": "Dedus",
+  "legend.reinforcement": "Consolidare",
+  "legend.noData": "Fără date",
+  "legend.correct": "Corect",
+  "legend.incorrect": "Greșit",
+
+  "reset.button": "Resetează statisticile",
+  "reset.confirm": "Resetezi statisticile de joc pentru {{level}} - {{continent}}?",
+  "stampNotice": "Ștampilele și istoricul probelor sunt permanente, ca într-un pașaport real. Dacă vrei să o iei de la zero, creează un profil nou."
+}

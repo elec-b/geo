@@ -1,0 +1,33 @@
+{
+  "title": "Statystyki",
+  "aria.close": "Zamknij",
+  "tabs.play": "Graj",
+  "tabs.stamps": "Próby pieczątki",
+
+  "table.country": "Kraj",
+  "aria.showIndicators": "Pokaż wskaźniki",
+  "aria.showPercent": "Pokaż procenty",
+
+  "typeLabel.E": "Rozpoznaj kraj",
+  "typeLabel.C": "Kraj na stolicę",
+  "typeLabel.D": "Stolica na kraj",
+  "typeLabel.F": "Rozpoznaj stolicę",
+  "typeLabel.A": "Wskaż kraj",
+  "typeLabel.B": "Wskaż stolicę",
+
+  "stampLabel.A.short": "◯ Kraje",
+  "stampLabel.A.full": "Próba pieczątki z Krajów",
+  "stampLabel.B.short": "◎ Stolice",
+  "stampLabel.B.full": "Próba pieczątki ze Stolic",
+
+  "legend.dominated": "Opanowane",
+  "legend.inferred": "Wywnioskowane",
+  "legend.reinforcement": "Utrwalanie",
+  "legend.noData": "Brak danych",
+  "legend.correct": "Poprawne",
+  "legend.incorrect": "Błędne",
+
+  "reset.button": "Resetuj statystyki",
+  "reset.confirm": "Zresetować statystyki gry dla {{level}} - {{continent}}?",
+  "stampNotice": "Pieczątki i historia prób są trwałe, jak w prawdziwym paszporcie. Jeśli chcesz zacząć od nowa, utwórz nowy profil."
+}

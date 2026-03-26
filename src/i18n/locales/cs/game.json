@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Vyber kontinent",
+  "selector.chooseLevel": "Vyber úroveň",
+  "selector.chooseGame": "Vyber hru",
+  "selector.adventure": "Dobrodružství",
+  "selector.adventureDesc": "Přizpůsobí se tomu, co umíš",
+  "selector.specificTypes": "nebo vyber konkrétní hru",
+  "selector.start": "Start",
+  "selector.continue": "Pokračovat",
+  "selector.completed": "Splněno ★",
+  "selector.countryCount_one": "{{count}} země",
+  "selector.countryCount_other": "{{count}} zemí",
+  "selector.lockedToast": "Získej razítka z předchozí úrovně",
+
+  "selector.stampReady.both": "Připraven na zkoušky razítka!",
+  "selector.stampReady.countries": "Připraven na zkoušku ze zemí!",
+  "selector.stampReady.capitals": "Připraven na zkoušku z hlavních měst!",
+
+  "question.locate": "Najdi",
+  "question.locateCapital": "Najdi hlavní město",
+  "question.capitalOf": "Jaké je hlavní město {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} je hlavní město...",
+  "question.whichCountry": "Která země je zvýrazněná?",
+  "question.whichCapital": "Jaké je hlavní město této země?",
+
+  "progress.stampTest": "Zkouška razítka: {{current}} z {{total}}",
+  "progress.adventurePercent": "{{percent}} % dokončeno",
+  "progress.typeDominated": "{{current}} z {{total}} zvládnutých",
+  "progress.stampBanner.countries": "Zkouška razítka: Země",
+  "progress.stampBanner.capitals": "Zkouška razítka: Hlavní města",
+
+  "modal.stampEarned.title": "Razítko získáno",
+  "modal.stampEarned.text": "{{correct}} z {{total}} správně. Bez chyb.",
+
+  "modal.stampFailed.veryClose": "Skoro to vyšlo!",
+  "modal.stampFailed.veryCloseText": "Kousek od razítka.",
+  "modal.stampFailed.goodTry": "Dobrý pokus!",
+  "modal.stampFailed.goodTryText": "Každý pokus tě přibližuje k cíli.",
+  "modal.stampFailed.onTrack": "Jdeš správným směrem",
+  "modal.stampFailed.onTrackText": "Pokračuj ve hře, pokrok je vidět.",
+  "modal.stampFailed.dontGiveUp": "Nevzdávej to",
+  "modal.stampFailed.dontGiveUpText": "Cvičení dělá mistra.",
+  "modal.stampFailed.score": "{{correct}} z {{total}} správně.",
+
+  "modal.poolExhausted.trainingComplete": "Trénink dokončen",
+  "modal.poolExhausted.readyForStamp": "Skvěle!<br />Připraven na razítko",
+  "modal.poolExhausted.completedText": "Dokončil jsi <em>{{continent}}</em> na úrovni <em>{{level}}</em>. Můžeš resetovat statistiky a cvičit znovu.",
+  "modal.poolExhausted.chooseStamp": "Vyber zkoušku. Musíš ji splnit bez chyb, abys získal razítko.",
+  "modal.poolExhausted.typePassed": "Skvěle!<br /><em>{{type}}</em> splněno",
+  "modal.poolExhausted.stampReady": "Jsi připraven na zkoušku razítka. Splň ji bez chyb, abys ho získal.",
+  "modal.poolExhausted.tryStamp.countries": "Zkusit razítko ze Zemí",
+  "modal.poolExhausted.tryStamp.capitals": "Zkusit razítko z Hlavních měst",
+  "modal.poolExhausted.selectOther": "Vyber jinou hru",
+  "modal.poolExhausted.playType": "Hrát <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Hrát <em>Dobrodružství</em>",
+
+  "stamp.countries": "Razítko ze Zemí",
+  "stamp.capitals": "Razítko z Hlavních měst",
+
+  "modal.stampChooser.title": "Zkouška razítka",
+  "modal.stampChooser.text": "Vyber zkoušku. Musíš správně odpovědět na {{count}} otázek bez jediné chyby.",
+
+  "modal.alreadyDominated.title": "Už ovládáš<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Správně jsi odpověděl na všechny země. Můžeš resetovat statistiky a cvičit znovu.",
+  "modal.alreadyDominated.completedTraining": "Dokončil jsi trénink <em>{{continent}}</em> na úrovni <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Zkusit zkoušku razítka",
+  "modal.alreadyDominated.goToStats": "Přejít na Statistiky"
+}

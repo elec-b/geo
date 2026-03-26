@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "地球仪",
+  "segmented.table": "列表",
+  "labels.countries": "国家",
+  "labels.capitals": "首都",
+
+  "table.country": "国家",
+  "table.capital": "首都",
+  "table.population": "人口",
+  "table.nonUNToggle": "非联合国领土",
+
+  "card.disclaimer.antarctica": "国际领土 — 南极条约（1959年）",
+  "card.disclaimer.territory": "{{sovereign}}领土",
+  "card.disclaimer.disputed": "主权争议地区",
+  "card.flagAlt": "{{country}}国旗",
+  "card.aria.openWikipedia": "在维基百科中打开{{country}}",
+  "card.aria.dialog": "{{country}}信息卡",
+
+  "card.field.capital": "首都",
+  "card.field.population": "人口",
+  "card.field.area": "面积",
+  "card.field.density": "人口密度",
+  "card.field.currency": "货币",
+  "card.field.demonym": "国民称谓",
+  "card.field.languages": "语言",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "人",
+  "card.unit.densityUnit": "人/km²",
+  "card.na": "暂无",
+
+  "card.tooltip.hdi": "人类发展指数：衡量健康、教育和收入。范围0–1。",
+  "card.tooltip.ihdi": "不平等调整后人类发展指数：反映健康、教育和收入的不平等。",
+  "card.aria.hdiInfo": "HDI 相关信息",
+  "card.aria.ihdiInfo": "IHDI 相关信息",
+
+  "card.antarctica.info": "南极洲不属于任何国家。1959年签署的《南极条约》将其保留用于科学研究，并禁止军事活动和资源开发。",
+
+  "card.sovereign.GB": "英国",
+  "card.sovereign.FR": "法国",
+  "card.sovereign.US": "美国",
+  "card.sovereign.NL": "荷兰",
+  "card.sovereign.DK": "丹麦",
+  "card.sovereign.CN": "中国",
+  "card.sovereign.NZ": "新西兰",
+  "card.sovereign.FI": "芬兰",
+  "card.sovereign.AU": "澳大利亚"
+}

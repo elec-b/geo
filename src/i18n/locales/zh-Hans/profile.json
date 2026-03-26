@@ -1,0 +1,19 @@
+{
+  "defaultName": "探索者",
+
+  "editor.titleEdit": "编辑资料",
+  "editor.titleCreate": "创建资料",
+  "editor.chooseAvatar": "选择你的头像",
+  "editor.nameLabel": "名称",
+  "editor.namePlaceholder": "资料名称",
+  "editor.save": "保存",
+  "editor.create": "创建",
+
+  "selector.title": "个人资料",
+  "selector.confirmDelete": "删除\u00ab{{name}}\u00bb？",
+  "selector.delete": "删除",
+  "selector.createNew": "创建资料",
+  "selector.aria.edit": "编辑{{name}}",
+  "selector.aria.delete": "删除{{name}}",
+  "selector.aria.dialog": "选择资料"
+}

@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Обери континент",
+  "selector.chooseLevel": "Обери рівень",
+  "selector.chooseGame": "Обери гру",
+  "selector.adventure": "Пригода",
+  "selector.adventureDesc": "Підлаштовується під твої знання",
+  "selector.specificTypes": "або обери конкретну гру",
+  "selector.start": "Почати",
+  "selector.continue": "Продовжити",
+  "selector.completed": "Пройдено ★",
+  "selector.countryCount_one": "{{count}} країна",
+  "selector.countryCount_other": "{{count}} країн",
+  "selector.lockedToast": "Отримай печатки попереднього рівня",
+
+  "selector.stampReady.both": "Готовий до випробувань на печатку!",
+  "selector.stampReady.countries": "Готовий до випробування з країн!",
+  "selector.stampReady.capitals": "Готовий до випробування зі столиць!",
+
+  "question.locate": "Знайди",
+  "question.locateCapital": "Знайди столицю",
+  "question.capitalOf": "Яка столиця {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} — столиця...",
+  "question.whichCountry": "Яка країна виділена?",
+  "question.whichCapital": "Яка столиця цієї країни?",
+
+  "progress.stampTest": "Випробування на печатку: {{current}} з {{total}}",
+  "progress.adventurePercent": "{{percent}}% пройдено",
+  "progress.typeDominated": "{{current}} з {{total}} опановано",
+  "progress.stampBanner.countries": "Випробування на печатку: Країни",
+  "progress.stampBanner.capitals": "Випробування на печатку: Столиці",
+
+  "modal.stampEarned.title": "Печатку отримано",
+  "modal.stampEarned.text": "{{correct}} з {{total}} правильно. Без помилок.",
+
+  "modal.stampFailed.veryClose": "Майже вдалося!",
+  "modal.stampFailed.veryCloseText": "Зовсім трохи до печатки.",
+  "modal.stampFailed.goodTry": "Гарна спроба!",
+  "modal.stampFailed.goodTryText": "Кожна спроба наближає до мети.",
+  "modal.stampFailed.onTrack": "Ти на правильному шляху",
+  "modal.stampFailed.onTrackText": "Продовжуй грати, прогрес помітний.",
+  "modal.stampFailed.dontGiveUp": "Не здавайся",
+  "modal.stampFailed.dontGiveUpText": "Практика робить майстра.",
+  "modal.stampFailed.score": "{{correct}} з {{total}} правильно.",
+
+  "modal.poolExhausted.trainingComplete": "Тренування завершено",
+  "modal.poolExhausted.readyForStamp": "Чудово!<br />Готовий до печатки",
+  "modal.poolExhausted.completedText": "Ти пройшов <em>{{continent}}</em> на рівні <em>{{level}}</em>. Можеш скинути статистику для повторної практики.",
+  "modal.poolExhausted.chooseStamp": "Обери випробування. Потрібно пройти його без помилок, щоб отримати печатку.",
+  "modal.poolExhausted.typePassed": "Чудово!<br /><em>{{type}}</em> пройдено",
+  "modal.poolExhausted.stampReady": "Ти готовий до випробування на печатку. Пройди його без помилок, щоб отримати її.",
+  "modal.poolExhausted.tryStamp.countries": "Спробувати печатку з Країн",
+  "modal.poolExhausted.tryStamp.capitals": "Спробувати печатку зі Столиць",
+  "modal.poolExhausted.selectOther": "Обрати іншу гру",
+  "modal.poolExhausted.playType": "Грати в <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Грати в <em>Пригоду</em>",
+
+  "stamp.countries": "Печатка з Країн",
+  "stamp.capitals": "Печатка зі Столиць",
+
+  "modal.stampChooser.title": "Випробування на печатку",
+  "modal.stampChooser.text": "Обери випробування. Потрібно відповісти на {{count}} запитань без жодної помилки.",
+
+  "modal.alreadyDominated.title": "Ти вже опанував<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Ти правильно відповів на всі країни. Можеш скинути статистику для повторної практики.",
+  "modal.alreadyDominated.completedTraining": "Ти завершив тренування <em>{{continent}}</em> на рівні <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Спробувати випробування на печатку",
+  "modal.alreadyDominated.goToStats": "Перейти до Статистики"
+}

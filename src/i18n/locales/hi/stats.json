@@ -1,0 +1,33 @@
+{
+  "title": "आँकड़े",
+  "aria.close": "बंद करें",
+  "tabs.play": "खेलें",
+  "tabs.stamps": "मुहर परीक्षाएँ",
+
+  "table.country": "देश",
+  "aria.showIndicators": "संकेतक दिखाएँ",
+  "aria.showPercent": "प्रतिशत दिखाएँ",
+
+  "typeLabel.E": "देश पहचानो",
+  "typeLabel.C": "देश से राजधानी",
+  "typeLabel.D": "राजधानी से देश",
+  "typeLabel.F": "राजधानी पहचानो",
+  "typeLabel.A": "देश को इंगित करो",
+  "typeLabel.B": "राजधानी को इंगित करो",
+
+  "stampLabel.A.short": "◯ देश",
+  "stampLabel.A.full": "देश मुहर परीक्षा",
+  "stampLabel.B.short": "◎ राजधानी",
+  "stampLabel.B.full": "राजधानी मुहर परीक्षा",
+
+  "legend.dominated": "महारत",
+  "legend.inferred": "अनुमानित",
+  "legend.reinforcement": "अभ्यास",
+  "legend.noData": "कोई डेटा नहीं",
+  "legend.correct": "सही",
+  "legend.incorrect": "गलत",
+
+  "reset.button": "आँकड़े रीसेट करें",
+  "reset.confirm": "{{level}} - {{continent}} के खेल आँकड़े रीसेट करें?",
+  "stampNotice": "मुहरें और परीक्षा का इतिहास स्थायी हैं, असली पासपोर्ट की तरह। शुरू से शुरू करने के लिए नया प्रोफ़ाइल बनाएँ।"
+}

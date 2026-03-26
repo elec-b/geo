@@ -1,0 +1,16 @@
+{
+  "header.title": "{{name}}のパスポート",
+  "header.globalLevel": "グローバルレベル：{{level}}",
+  "emptyState": "スタンプはあなたの知識の証。パスポートを埋められますか？",
+
+  "legend.country": "○ 国",
+  "legend.capital": "◎ 首都",
+  "legend.earned": "★ 獲得済み",
+  "legend.locked": "🔒 ロック中",
+
+  "stampTitle.countries": "国スタンプ",
+  "stampTitle.capitals": "首都スタンプ",
+
+  "modal.title": "スタンプ試験",
+  "modal.questionCount": "{{count}}問をミスなしで完了する必要があります。"
+}

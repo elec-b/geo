@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "เลือกทวีป",
+  "selector.chooseLevel": "เลือกระดับ",
+  "selector.chooseGame": "เลือกเกม",
+  "selector.adventure": "ผจญภัย",
+  "selector.adventureDesc": "ปรับตามความรู้ของคุณ",
+  "selector.specificTypes": "หรือเลือกเกมเฉพาะ",
+  "selector.start": "เริ่ม",
+  "selector.continue": "ดำเนินต่อ",
+  "selector.completed": "ผ่านแล้ว ★",
+  "selector.countryCount_one": "{{count}} ประเทศ",
+  "selector.countryCount_other": "{{count}} ประเทศ",
+  "selector.lockedToast": "ต้องได้ตราประทับจากระดับก่อนหน้า",
+
+  "selector.stampReady.both": "พร้อมสอบตราประทับแล้ว!",
+  "selector.stampReady.countries": "พร้อมสอบตราประเทศแล้ว!",
+  "selector.stampReady.capitals": "พร้อมสอบตราเมืองหลวงแล้ว!",
+
+  "question.locate": "หาให้เจอ",
+  "question.locateCapital": "หาเมืองหลวง",
+  "question.capitalOf": "เมืองหลวงของ{{country}}คือ?",
+  "question.capitalBelongsTo": "{{capital}}เป็นเมืองหลวงของ...",
+  "question.whichCountry": "ประเทศที่ถูกไฮไลท์คือ?",
+  "question.whichCapital": "เมืองหลวงของประเทศนี้คือ?",
+
+  "progress.stampTest": "สอบตราประทับ: {{current}} / {{total}}",
+  "progress.adventurePercent": "เสร็จ {{percent}}%",
+  "progress.typeDominated": "เชี่ยวชาญ {{current}} / {{total}}",
+  "progress.stampBanner.countries": "สอบตราประทับ: ประเทศ",
+  "progress.stampBanner.capitals": "สอบตราประทับ: เมืองหลวง",
+
+  "modal.stampEarned.title": "ได้ตราประทับ",
+  "modal.stampEarned.text": "ถูก {{correct}} จาก {{total}} ข้อ ไม่มีผิดเลย",
+
+  "modal.stampFailed.veryClose": "เกือบสำเร็จ!",
+  "modal.stampFailed.veryCloseText": "อีกนิดเดียวจะได้ตราประทับ",
+  "modal.stampFailed.goodTry": "พยายามดีแล้ว!",
+  "modal.stampFailed.goodTryText": "ทุกครั้งที่ลองจะยิ่งเก่งขึ้น",
+  "modal.stampFailed.onTrack": "กำลังไปได้ดี",
+  "modal.stampFailed.onTrackText": "เล่นต่อเถอะ เห็นความก้าวหน้าชัดเจน",
+  "modal.stampFailed.dontGiveUp": "อย่าท้อ",
+  "modal.stampFailed.dontGiveUpText": "ฝึกมากเท่าไหร่ เก่งมากเท่านั้น",
+  "modal.stampFailed.score": "ถูก {{correct}} จาก {{total}} ข้อ",
+
+  "modal.poolExhausted.trainingComplete": "ฝึกฝนเสร็จสิ้น",
+  "modal.poolExhausted.readyForStamp": "ยอดเยี่ยม!<br />พร้อมรับตราประทับ",
+  "modal.poolExhausted.completedText": "คุณผ่าน <em>{{continent}}</em> ในระดับ <em>{{level}}</em> แล้ว สามารถรีเซ็ตสถิติเพื่อฝึกอีกครั้ง",
+  "modal.poolExhausted.chooseStamp": "เลือกบททดสอบ ต้องทำให้ถูกทุกข้อจึงจะได้ตราประทับ",
+  "modal.poolExhausted.typePassed": "ยอดเยี่ยม!<br /><em>{{type}}</em> ผ่านแล้ว",
+  "modal.poolExhausted.stampReady": "คุณพร้อมสอบตราประทับแล้ว ทำให้ถูกทุกข้อเพื่อรับตราประทับ",
+  "modal.poolExhausted.tryStamp.countries": "ลองตราประเทศ",
+  "modal.poolExhausted.tryStamp.capitals": "ลองตราเมืองหลวง",
+  "modal.poolExhausted.selectOther": "เลือกเกมอื่น",
+  "modal.poolExhausted.playType": "เล่น <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "เล่น <em>ผจญภัย</em>",
+
+  "stamp.countries": "ตราประเทศ",
+  "stamp.capitals": "ตราเมืองหลวง",
+
+  "modal.stampChooser.title": "สอบตราประทับ",
+  "modal.stampChooser.text": "เลือกบททดสอบ ต้องตอบถูก {{count}} ข้อโดยไม่ผิดเลย",
+
+  "modal.alreadyDominated.title": "เชี่ยวชาญแล้ว<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "คุณตอบถูกทุกประเทศแล้ว สามารถรีเซ็ตสถิติเพื่อฝึกอีกครั้ง",
+  "modal.alreadyDominated.completedTraining": "คุณผ่านการฝึก <em>{{continent}}</em> ในระดับ <em>{{level}}</em> แล้ว",
+  "modal.alreadyDominated.tryStamp": "ลองสอบตราประทับ",
+  "modal.alreadyDominated.goToStats": "ดูสถิติ"
+}

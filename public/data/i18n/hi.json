@@ -1,0 +1,2959 @@
+{
+  "AD": {
+    "name": "एंडोरा",
+    "capital": "अण्डोरा ला वेला",
+    "demonym": "अंडोरा का",
+    "languages": [
+      "कातालान"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "AE": {
+    "name": "संयुक्त अरब अमीरात",
+    "capital": "अबू धाबी",
+    "demonym": "अमीराती",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "संयुक्त अरब अमीरात दिरहाम"
+    ],
+    "wikipediaSlug": null
+  },
+  "AF": {
+    "name": "अफ़गानिस्तान",
+    "capital": "काबुल",
+    "demonym": "अफ़गान",
+    "languages": [
+      "दारी",
+      "पश्तो"
+    ],
+    "currencyNames": [
+      "अफ़गान अफ़गानी"
+    ],
+    "wikipediaSlug": null
+  },
+  "AG": {
+    "name": "एंटिगुआ और बरबुडा",
+    "capital": "सेंटजॉन्स",
+    "demonym": "एंटीगुआन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "पूर्वी कैरिबियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "AI": {
+    "name": "एंग्विला",
+    "capital": "द वैली",
+    "demonym": "एंगुइलन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "पूर्वी कैरिबियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "AL": {
+    "name": "अल्बानिया",
+    "capital": "तिराना",
+    "demonym": "अल्बानियाई",
+    "languages": [
+      "अल्बानियाई"
+    ],
+    "currencyNames": [
+      "अल्बानियाई लेक"
+    ],
+    "wikipediaSlug": null
+  },
+  "AM": {
+    "name": "आर्मेनिया",
+    "capital": "येरवान",
+    "demonym": "आर्मेनियाई",
+    "languages": [
+      "आर्मेनियाई"
+    ],
+    "currencyNames": [
+      "आर्मेनियाई द्राम"
+    ],
+    "wikipediaSlug": null
+  },
+  "AO": {
+    "name": "अंगोला",
+    "capital": "लुआण्डा",
+    "demonym": "अंगोलन",
+    "languages": [
+      "पुर्तगाली"
+    ],
+    "currencyNames": [
+      "अंगोला क्वांज़ा"
+    ],
+    "wikipediaSlug": null
+  },
+  "AR": {
+    "name": "अर्जेंटीना",
+    "capital": "ब्यूनस आयर्स",
+    "demonym": "अर्जेंटीनी",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "अर्जेंटीनी पेसो"
+    ],
+    "wikipediaSlug": null
+  },
+  "AS": {
+    "name": "अमेरिकी समोआ",
+    "capital": "पागो पागो",
+    "demonym": "अमेरिकी समोआई",
+    "languages": [
+      "अंग्रेज़ी",
+      "सामोन"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "AT": {
+    "name": "ऑस्ट्रिया",
+    "capital": "वियना",
+    "demonym": "ऑस्ट्रियाई",
+    "languages": [
+      "जर्मन"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "AU": {
+    "name": "ऑस्ट्रेलिया",
+    "capital": "कैनबरा",
+    "demonym": "ऑस्ट्रेलियाई",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "ऑस्ट्रेलियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "AW": {
+    "name": "अरूबा",
+    "capital": "ओरान्जेस्टाड",
+    "demonym": "अरूबन",
+    "languages": [
+      "डच",
+      "पापियामेन्टो"
+    ],
+    "currencyNames": [
+      "अरूबाई फ़्लोरिन"
+    ],
+    "wikipediaSlug": null
+  },
+  "AX": {
+    "name": "एलैंड द्वीपसमूह",
+    "capital": "मेरिहामैन",
+    "demonym": "ऑलैंड का",
+    "languages": [
+      "स्वीडिश"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "AZ": {
+    "name": "अज़रबैजान",
+    "capital": "बाकू",
+    "demonym": "अज़रबैजानी",
+    "languages": [
+      "अज़रबैजानी"
+    ],
+    "currencyNames": [
+      "अज़रबैजानी मैनेट"
+    ],
+    "wikipediaSlug": null
+  },
+  "BA": {
+    "name": "बोस्निया और हर्ज़ेगोविना",
+    "capital": "साराजेवो",
+    "demonym": "बोस्नियाई",
+    "languages": [
+      "बोस्नियाई",
+      "क्रोएशियाई",
+      "सर्बियाई"
+    ],
+    "currencyNames": [
+      "बोस्निया हर्ज़ेगोविना परिवर्तनीय मार्क"
+    ],
+    "wikipediaSlug": null
+  },
+  "BB": {
+    "name": "बारबाडोस",
+    "capital": "ब्रिजटाउन",
+    "demonym": "बारबेडियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "बार्बेडियन डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "BD": {
+    "name": "बांग्लादेश",
+    "capital": "ढाका",
+    "demonym": "बांग्लादेशी",
+    "languages": [
+      "बंगाली"
+    ],
+    "currencyNames": [
+      "बांग्लादेशी टका"
+    ],
+    "wikipediaSlug": null
+  },
+  "BE": {
+    "name": "बेल्जियम",
+    "capital": "ब्रसेल्स",
+    "demonym": "बेल्जियन",
+    "languages": [
+      "डच",
+      "फ़्रेंच",
+      "जर्मन"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "BF": {
+    "name": "बुर्किना फ़ासो",
+    "capital": "ऊगाडूगू",
+    "demonym": "बुर्किनाबे",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "पश्चिमी अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "BG": {
+    "name": "बुल्गारिया",
+    "capital": "सोफिया",
+    "demonym": "बुल्गारियाई",
+    "languages": [
+      "बुल्गारियाई"
+    ],
+    "currencyNames": [
+      "बुल्गारियाई लेव"
+    ],
+    "wikipediaSlug": null
+  },
+  "BH": {
+    "name": "बहरीन",
+    "capital": "मनामा",
+    "demonym": "बहरीनी",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "बहरीनी दिनार"
+    ],
+    "wikipediaSlug": null
+  },
+  "BI": {
+    "name": "बुरुंडी",
+    "capital": "गीटेगा",
+    "demonym": "बुरुंडियन",
+    "languages": [
+      "रुन्दी",
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "बुरूंडी फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "BJ": {
+    "name": "बेनिन",
+    "capital": "पोर्टो-नोवो",
+    "demonym": "बेनिनी",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "पश्चिमी अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "BL": {
+    "name": "सेंट बार्थेलेमी",
+    "capital": "गुस्ताविया",
+    "demonym": "सेंट बार्थेलेमी का",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "BM": {
+    "name": "बरमूडा",
+    "capital": "हैमिल्टन",
+    "demonym": "बरमूडियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "बरमूडा डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "BN": {
+    "name": "ब्रूनेई",
+    "capital": "बंदर सेरी बेगावान",
+    "demonym": "ब्रूनेई",
+    "languages": [
+      "मलय"
+    ],
+    "currencyNames": [
+      "ब्रूनेई डॉलर",
+      "सिंगापुर डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "BO": {
+    "name": "बोलीविया",
+    "capital": "ला पास",
+    "demonym": "बोलीवियाई",
+    "languages": [
+      "स्पेनिश",
+      "क्वेचुआ",
+      "आयमारा"
+    ],
+    "currencyNames": [
+      "बोलिवियाई बोलिवियानो"
+    ],
+    "wikipediaSlug": null
+  },
+  "BR": {
+    "name": "ब्राज़ील",
+    "capital": "ब्रासीलिया",
+    "demonym": "ब्राज़ीलियन",
+    "languages": [
+      "पुर्तगाली"
+    ],
+    "currencyNames": [
+      "ब्राज़ीली रियाल"
+    ],
+    "wikipediaSlug": null
+  },
+  "BS": {
+    "name": "बहामास",
+    "capital": "नासाउ",
+    "demonym": "बहामियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "बहामाई डॉलर",
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "BT": {
+    "name": "भूटान",
+    "capital": "थिम्फू",
+    "demonym": "भूटानी",
+    "languages": [
+      "ज़ोन्गखा"
+    ],
+    "currencyNames": [
+      "भूटानी नंगलट्रम",
+      "भारतीय रुपया"
+    ],
+    "wikipediaSlug": null
+  },
+  "BW": {
+    "name": "बोत्स्वाना",
+    "capital": "गोबोर्नी",
+    "demonym": "बोत्सवाना",
+    "languages": [
+      "अंग्रेज़ी",
+      "सेत्स्वाना"
+    ],
+    "currencyNames": [
+      "बोत्सवानियाई पुला"
+    ],
+    "wikipediaSlug": null
+  },
+  "BY": {
+    "name": "बेलारूस",
+    "capital": "मिन्स्क",
+    "demonym": "बेलारूसी",
+    "languages": [
+      "बेलारूसी",
+      "रूसी"
+    ],
+    "currencyNames": [
+      "बेलारूसी रूबल"
+    ],
+    "wikipediaSlug": null
+  },
+  "BZ": {
+    "name": "बेलीज़",
+    "capital": "बेल्मोपान",
+    "demonym": "बेलीज़ियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "बेलीज़ डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "CA": {
+    "name": "कनाडा",
+    "capital": "ओटावा",
+    "demonym": "कैनेडियन",
+    "languages": [
+      "अंग्रेज़ी",
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "कनाडाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "CD": {
+    "name": "कांगो - किंशासा",
+    "capital": "किन्शासा",
+    "demonym": "कांगोली",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "कोंगोली फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "CF": {
+    "name": "मध्य अफ़्रीकी गणराज्य",
+    "capital": "बैंगुई",
+    "demonym": "मध्य अफ़्रीकी",
+    "languages": [
+      "फ़्रेंच",
+      "सांगो"
+    ],
+    "currencyNames": [
+      "केंद्रीय अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "CG": {
+    "name": "कांगो – ब्राज़ाविल",
+    "capital": "ब्राजाविल",
+    "demonym": "कांगोली",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "केंद्रीय अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "CH": {
+    "name": "स्विट्ज़रलैंड",
+    "capital": "बर्न",
+    "demonym": "स्विस",
+    "languages": [
+      "जर्मन",
+      "फ़्रेंच",
+      "इतालवी",
+      "रोमान्श"
+    ],
+    "currencyNames": [
+      "स्विस फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "CI": {
+    "name": "कोत दिवुआर",
+    "capital": "यामूसूक्रो",
+    "demonym": "आइवरी कोस्ट का",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "पश्चिमी अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "CK": {
+    "name": "कुक द्वीपसमूह",
+    "capital": "आवारुआ",
+    "demonym": "कुक द्वीपवासी",
+    "languages": [
+      "अंग्रेज़ी",
+      "रारोतोंगन"
+    ],
+    "currencyNames": [
+      "न्यूज़ीलैंड डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "CL": {
+    "name": "चिली",
+    "capital": "सेण्टियागो",
+    "demonym": "चिलीयन",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "चिली पेसो"
+    ],
+    "wikipediaSlug": null
+  },
+  "CM": {
+    "name": "कैमरून",
+    "capital": "याउन्दे",
+    "demonym": "कैमरूनी",
+    "languages": [
+      "फ़्रेंच",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "केंद्रीय अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "CN": {
+    "name": "चीन",
+    "capital": "बीजिंग",
+    "demonym": "चीनी",
+    "languages": [
+      "चीनी"
+    ],
+    "currencyNames": [
+      "चीनी युआन"
+    ],
+    "wikipediaSlug": null
+  },
+  "CO": {
+    "name": "कोलंबिया",
+    "capital": "बोगोटा",
+    "demonym": "कोलम्बियाई",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "कोलंबियाई पेसो"
+    ],
+    "wikipediaSlug": null
+  },
+  "CR": {
+    "name": "कोस्टारिका",
+    "capital": "सान होज़े",
+    "demonym": "कोस्टा रिकन",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "कोस्टा रिका कोलोन"
+    ],
+    "wikipediaSlug": null
+  },
+  "CU": {
+    "name": "क्यूबा",
+    "capital": "हवाना",
+    "demonym": "क्यूबन",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "क्यूबाई परिवर्तनीय पेसो",
+      "क्यूबाई पेसो"
+    ],
+    "wikipediaSlug": null
+  },
+  "CV": {
+    "name": "केप वर्ड",
+    "capital": "प्राये",
+    "demonym": "केप वर्दियन",
+    "languages": [
+      "पुर्तगाली"
+    ],
+    "currencyNames": [
+      "केप वर्ड एस्कूडो"
+    ],
+    "wikipediaSlug": null
+  },
+  "CW": {
+    "name": "कुरासाओ",
+    "capital": "विलेमस्टाद",
+    "demonym": "कुराकाओ",
+    "languages": [
+      "डच",
+      "पापियामेन्टो"
+    ],
+    "currencyNames": [
+      "नीदरलैंड एंटीलियन गिल्डर"
+    ],
+    "wikipediaSlug": null
+  },
+  "CY": {
+    "name": "साइप्रस",
+    "capital": "निकोसिया",
+    "demonym": "साइप्रियट",
+    "languages": [
+      "यूनानी",
+      "तुर्की"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "CZ": {
+    "name": "चेकिया",
+    "capital": "प्राग",
+    "demonym": "चेक",
+    "languages": [
+      "चेक"
+    ],
+    "currencyNames": [
+      "चेक गणराज्य कोरुना"
+    ],
+    "wikipediaSlug": null
+  },
+  "DE": {
+    "name": "जर्मनी",
+    "capital": "बर्लिन",
+    "demonym": "जर्मन",
+    "languages": [
+      "जर्मन"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "DJ": {
+    "name": "जिबूती",
+    "capital": "जिबूटी",
+    "demonym": "जिबूती",
+    "languages": [
+      "फ़्रेंच",
+      "अरबी"
+    ],
+    "currencyNames": [
+      "जिबूती फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "DK": {
+    "name": "डेनमार्क",
+    "capital": "कोपनहेगन",
+    "demonym": "डेनिश",
+    "languages": [
+      "डेनिश"
+    ],
+    "currencyNames": [
+      "डैनिश क्रोन"
+    ],
+    "wikipediaSlug": null
+  },
+  "DM": {
+    "name": "डोमिनिका",
+    "capital": "रोसीयू",
+    "demonym": "डोमिनिकन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "पूर्वी कैरिबियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "DO": {
+    "name": "डोमिनिकन गणराज्य",
+    "capital": "सेंटो डोमिंगो",
+    "demonym": "डोमिनिकन",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "डोमिनिकन पेसो"
+    ],
+    "wikipediaSlug": null
+  },
+  "DZ": {
+    "name": "अल्जीरिया",
+    "capital": "अल्जीयर्स",
+    "demonym": "अल्जीरियाई",
+    "languages": [
+      "अरबी",
+      "मध्य एटलस तमाज़ित"
+    ],
+    "currencyNames": [
+      "अल्जीरियाई दिनार"
+    ],
+    "wikipediaSlug": null
+  },
+  "EC": {
+    "name": "इक्वाडोर",
+    "capital": "क्वीटो",
+    "demonym": "इक्वाडोरियन",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "EE": {
+    "name": "एस्टोनिया",
+    "capital": "ताल्लिन",
+    "demonym": "एस्टोनियन",
+    "languages": [
+      "एस्टोनियाई"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "EG": {
+    "name": "मिस्र",
+    "capital": "काहिरा",
+    "demonym": "मिस्री",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "मिस्र पाउंड"
+    ],
+    "wikipediaSlug": null
+  },
+  "EH": {
+    "name": "पश्चिमी सहारा",
+    "capital": "अल आइउन",
+    "demonym": "सहरावी",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "अल्जीरियाई दिनार",
+      "मोरक्को दिरहम",
+      "मॉरीटेनियन ओगुइया"
+    ],
+    "wikipediaSlug": null
+  },
+  "ER": {
+    "name": "इरिट्रिया",
+    "capital": "अस्मारा",
+    "demonym": "इरीट्रियन",
+    "languages": [
+      "तिग्रीन्या",
+      "अरबी",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "इरीट्रियन नाक्फ़ा"
+    ],
+    "wikipediaSlug": null
+  },
+  "ES": {
+    "name": "स्पेन",
+    "capital": "मद्रिद",
+    "demonym": "स्पेनिश",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "ET": {
+    "name": "इथियोपिया",
+    "capital": "अदीस अबाबा",
+    "demonym": "इथियोपियन",
+    "languages": [
+      "अम्हेरी"
+    ],
+    "currencyNames": [
+      "इथियोपियन बिर"
+    ],
+    "wikipediaSlug": null
+  },
+  "FI": {
+    "name": "फ़िनलैंड",
+    "capital": "हेलसिंकी",
+    "demonym": "फ़िनिश",
+    "languages": [
+      "फ़िनिश",
+      "स्वीडिश"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "FJ": {
+    "name": "फ़िजी",
+    "capital": "सुवा",
+    "demonym": "फिजियन",
+    "languages": [
+      "अंग्रेज़ी",
+      "फिजियन",
+      "hif"
+    ],
+    "currencyNames": [
+      "फ़िजी डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "FK": {
+    "name": "फ़ॉकलैंड द्वीपसमूह",
+    "capital": "स्टैनली",
+    "demonym": "फ़ॉकलैंड द्वीपवासी",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "फ़ॉकलैंड द्वीपसमूह पाउंड"
+    ],
+    "wikipediaSlug": null
+  },
+  "FM": {
+    "name": "माइक्रोनेशिया",
+    "capital": "पेलिकियर",
+    "demonym": "माइक्रोनेशियाई",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "FO": {
+    "name": "फ़ेरो द्वीपसमूह",
+    "capital": "टोर्सहावन",
+    "demonym": "फ़ैरोइज़",
+    "languages": [
+      "फ़ैरोइज़",
+      "डेनिश"
+    ],
+    "currencyNames": [
+      "डैनिश क्रोन"
+    ],
+    "wikipediaSlug": null
+  },
+  "FR": {
+    "name": "फ़्रांस",
+    "capital": "पैरिस",
+    "demonym": "फ़्रेंच",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "GA": {
+    "name": "गैबॉन",
+    "capital": "लिब्रेविले",
+    "demonym": "गैबोनी",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "केंद्रीय अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "GB": {
+    "name": "यूनाइटेड किंगडम",
+    "capital": "लंदन",
+    "demonym": "ब्रिटिश",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "ब्रिटिश पाउंड स्टर्लिंग"
+    ],
+    "wikipediaSlug": null
+  },
+  "GD": {
+    "name": "ग्रेनाडा",
+    "capital": "सेंट जॉर्ज",
+    "demonym": "ग्रेनेडियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "पूर्वी कैरिबियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "GE": {
+    "name": "जॉर्जिया",
+    "capital": "तिब्लिसी",
+    "demonym": "जॉर्जियन",
+    "languages": [
+      "जॉर्जियाई"
+    ],
+    "currencyNames": [
+      "जॉर्जियन लारी"
+    ],
+    "wikipediaSlug": null
+  },
+  "GF": {
+    "name": "फ़्रेंच गुयाना",
+    "capital": "केयेन",
+    "demonym": "फ़्रेंच गयानी",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "GG": {
+    "name": "गर्नसी",
+    "capital": "सेंट पीटर पोर्ट",
+    "demonym": "ग्वेर्नसी",
+    "languages": [
+      "अंग्रेज़ी",
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "ब्रिटिश पाउंड स्टर्लिंग"
+    ],
+    "wikipediaSlug": null
+  },
+  "GH": {
+    "name": "घाना",
+    "capital": "अक्रा",
+    "demonym": "घानाई",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "घानियन सेडी"
+    ],
+    "wikipediaSlug": null
+  },
+  "GL": {
+    "name": "ग्रीनलैंड",
+    "capital": "नुक",
+    "demonym": "ग्रीनलैंडिक",
+    "languages": [
+      "कलालीसुत"
+    ],
+    "currencyNames": [
+      "डैनिश क्रोन"
+    ],
+    "wikipediaSlug": null
+  },
+  "GM": {
+    "name": "गाम्बिया",
+    "capital": "बाञ्जुल",
+    "demonym": "गैम्बियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "गैंबियन डलासी"
+    ],
+    "wikipediaSlug": null
+  },
+  "GN": {
+    "name": "गिनी",
+    "capital": "कोनाक्री",
+    "demonym": "गिनी",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "गिनीयन फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "GP": {
+    "name": "ग्वाडेलूप",
+    "capital": "बास-टेयर",
+    "demonym": "ग्वाडेलूप",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "GQ": {
+    "name": "इक्वेटोरियल गिनी",
+    "capital": "मलाबो",
+    "demonym": "भूमध्यरेखीय गिनी",
+    "languages": [
+      "स्पेनिश",
+      "फ़्रेंच",
+      "पुर्तगाली"
+    ],
+    "currencyNames": [
+      "केंद्रीय अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "GR": {
+    "name": "यूनान",
+    "capital": "एथेंस",
+    "demonym": "यूनानी",
+    "languages": [
+      "यूनानी"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "GT": {
+    "name": "ग्वाटेमाला",
+    "capital": "ग्वाटेमाला नगर",
+    "demonym": "ग्वाटेमाला",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "ग्वाटेमाला क्वेटज़ल"
+    ],
+    "wikipediaSlug": null
+  },
+  "GU": {
+    "name": "गुआम",
+    "capital": "हगातना",
+    "demonym": "गुआमी",
+    "languages": [
+      "अंग्रेज़ी",
+      "कमोरो"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "GW": {
+    "name": "गिनी-बिसाउ",
+    "capital": "बिसाउ",
+    "demonym": "गिनी-बिसाऊ",
+    "languages": [
+      "पुर्तगाली"
+    ],
+    "currencyNames": [
+      "पश्चिमी अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "GY": {
+    "name": "गुयाना",
+    "capital": "जॉर्जटाउन",
+    "demonym": "गयानी",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "गयानीज़ डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "HK": {
+    "name": "हाँग काँग",
+    "capital": "विक्टोरिया",
+    "demonym": "हांगकांगी",
+    "languages": [
+      "चीनी",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "हाँगकाँग डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "HN": {
+    "name": "होंडूरास",
+    "capital": "टेगुसिगाल्पा",
+    "demonym": "होंडुरन",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "होंडुरन लेम्पिरा"
+    ],
+    "wikipediaSlug": null
+  },
+  "HR": {
+    "name": "क्रोएशिया",
+    "capital": "ज़ाग्रेब",
+    "demonym": "क्रोएशियन",
+    "languages": [
+      "क्रोएशियाई"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "HT": {
+    "name": "हैती",
+    "capital": "पोर्ट-ऑ-प्रिंस",
+    "demonym": "हैतियन",
+    "languages": [
+      "फ़्रेंच",
+      "हैतियाई"
+    ],
+    "currencyNames": [
+      "हैतियाई गर्ड"
+    ],
+    "wikipediaSlug": null
+  },
+  "HU": {
+    "name": "हंगरी",
+    "capital": "बुडापेस्ट",
+    "demonym": "हंगेरियन",
+    "languages": [
+      "हंगेरियाई"
+    ],
+    "currencyNames": [
+      "हंगेरियन फ़ोरिंट"
+    ],
+    "wikipediaSlug": null
+  },
+  "ID": {
+    "name": "इंडोनेशिया",
+    "capital": "जकार्ता",
+    "demonym": "इंडोनेशियाई",
+    "languages": [
+      "इंडोनेशियाई"
+    ],
+    "currencyNames": [
+      "इंडोनेशियाई रुपिया"
+    ],
+    "wikipediaSlug": null
+  },
+  "IE": {
+    "name": "आयरलैंड",
+    "capital": "डबलिन",
+    "demonym": "आयरिश",
+    "languages": [
+      "आयरिश",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "IL": {
+    "name": "इज़राइल",
+    "capital": "यरुशलम",
+    "demonym": "इज़रायली",
+    "languages": [
+      "हिब्रू",
+      "अरबी"
+    ],
+    "currencyNames": [
+      "इज़राइली न्यू शेकेल"
+    ],
+    "wikipediaSlug": null
+  },
+  "IM": {
+    "name": "आइल ऑफ़ मैन",
+    "capital": "डगलस",
+    "demonym": "मैंक्स",
+    "languages": [
+      "अंग्रेज़ी",
+      "मैंक्स"
+    ],
+    "currencyNames": [
+      "ब्रिटिश पाउंड स्टर्लिंग"
+    ],
+    "wikipediaSlug": null
+  },
+  "IN": {
+    "name": "भारत",
+    "capital": "नई दिल्ली",
+    "demonym": "भारतीय",
+    "languages": [
+      "हिन्दी",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "भारतीय रुपया"
+    ],
+    "wikipediaSlug": null
+  },
+  "IQ": {
+    "name": "इराक",
+    "capital": "बग़दाद",
+    "demonym": "इराकी",
+    "languages": [
+      "अरबी",
+      "कुर्दिश"
+    ],
+    "currencyNames": [
+      "इराकी दिनार"
+    ],
+    "wikipediaSlug": null
+  },
+  "IR": {
+    "name": "ईरान",
+    "capital": "तेहरान",
+    "demonym": "ईरानी",
+    "languages": [
+      "फ़ारसी"
+    ],
+    "currencyNames": [
+      "ईरानी रियाल"
+    ],
+    "wikipediaSlug": null
+  },
+  "IS": {
+    "name": "आइसलैंड",
+    "capital": "रेक्जाविक",
+    "demonym": "आइसलैंडिक",
+    "languages": [
+      "आइसलैंडिक"
+    ],
+    "currencyNames": [
+      "आइसलैंडिक क्रोना"
+    ],
+    "wikipediaSlug": null
+  },
+  "IT": {
+    "name": "इटली",
+    "capital": "रोम",
+    "demonym": "इतालवी",
+    "languages": [
+      "इतालवी"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "JE": {
+    "name": "जर्सी",
+    "capital": "सेंट हेलियर",
+    "demonym": "जर्सी",
+    "languages": [
+      "अंग्रेज़ी",
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "ब्रिटिश पाउंड स्टर्लिंग"
+    ],
+    "wikipediaSlug": null
+  },
+  "JM": {
+    "name": "जमैका",
+    "capital": "किंग्सटन",
+    "demonym": "जमैकन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "जमैकन डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "JO": {
+    "name": "जॉर्डन",
+    "capital": "अम्मान",
+    "demonym": "जॉर्डनी",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "जॉर्डनियन दिनार"
+    ],
+    "wikipediaSlug": null
+  },
+  "JP": {
+    "name": "जापान",
+    "capital": "टोक्यो",
+    "demonym": "जापानी",
+    "languages": [
+      "जापानी"
+    ],
+    "currencyNames": [
+      "जापानी येन"
+    ],
+    "wikipediaSlug": null
+  },
+  "KE": {
+    "name": "केन्या",
+    "capital": "नायरोबी",
+    "demonym": "केन्याई",
+    "languages": [
+      "स्वाहिली",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "केन्याई शिलिंग"
+    ],
+    "wikipediaSlug": null
+  },
+  "KG": {
+    "name": "किर्गिज़स्तान",
+    "capital": "बिश्केक",
+    "demonym": "किर्गिज़",
+    "languages": [
+      "किर्गीज़",
+      "रूसी"
+    ],
+    "currencyNames": [
+      "किर्गिस्तानी सोम"
+    ],
+    "wikipediaSlug": null
+  },
+  "KH": {
+    "name": "कंबोडिया",
+    "capital": "नामपेन्ह",
+    "demonym": "कंबोडियाई",
+    "languages": [
+      "खमेर"
+    ],
+    "currencyNames": [
+      "कंबोडियाई रियाल",
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "KI": {
+    "name": "किरिबाती",
+    "capital": "टारावा",
+    "demonym": "किरिबाती",
+    "languages": [
+      "अंग्रेज़ी",
+      "गिल्बरतीस"
+    ],
+    "currencyNames": [
+      "ऑस्ट्रेलियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "KM": {
+    "name": "कोमोरोस",
+    "capital": "मोरोनी",
+    "demonym": "कोमोरियन",
+    "languages": [
+      "zdj",
+      "अरबी",
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "कोमोरियन फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "KN": {
+    "name": "सेंट किट्स और नेविस",
+    "capital": "बासेटेयर",
+    "demonym": "किट्सियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "पूर्वी कैरिबियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "KP": {
+    "name": "उत्तर कोरिया",
+    "capital": "प्योंगयांग",
+    "demonym": "उत्तर कोरियाई",
+    "languages": [
+      "कोरियाई"
+    ],
+    "currencyNames": [
+      "उत्तर कोरियाई वॉन"
+    ],
+    "wikipediaSlug": null
+  },
+  "KR": {
+    "name": "दक्षिण कोरिया",
+    "capital": "सियोल",
+    "demonym": "दक्षिण कोरियाई",
+    "languages": [
+      "कोरियाई"
+    ],
+    "currencyNames": [
+      "दक्षिण कोरियाई वॉन"
+    ],
+    "wikipediaSlug": null
+  },
+  "KW": {
+    "name": "कुवैत",
+    "capital": "कुवैत नगर",
+    "demonym": "कुवैती",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "कुवैती दिनार"
+    ],
+    "wikipediaSlug": null
+  },
+  "KY": {
+    "name": "कैमेन द्वीपसमूह",
+    "capital": "जॉर्ज टाउन",
+    "demonym": "केमैन द्वीपवासी",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "कैमेन द्वीपसमूह डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "KZ": {
+    "name": "कज़ाखस्तान",
+    "capital": "अस्ताना",
+    "demonym": "कज़ाख",
+    "languages": [
+      "कज़ाख़",
+      "रूसी"
+    ],
+    "currencyNames": [
+      "कज़ाखिस्तानी टेंज़"
+    ],
+    "wikipediaSlug": null
+  },
+  "LA": {
+    "name": "लाओस",
+    "capital": "व्यिंचन",
+    "demonym": "लाओशियन",
+    "languages": [
+      "लाओ"
+    ],
+    "currencyNames": [
+      "लाओशियन किप"
+    ],
+    "wikipediaSlug": null
+  },
+  "LB": {
+    "name": "लेबनान",
+    "capital": "बेयरूत",
+    "demonym": "लेबनानी",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "लेबनानी पाउंड"
+    ],
+    "wikipediaSlug": null
+  },
+  "LC": {
+    "name": "सेंट लूसिया",
+    "capital": "कैस्ट्रीज",
+    "demonym": "सेंट लूसियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "पूर्वी कैरिबियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "LI": {
+    "name": "लिचेंस्टीन",
+    "capital": "वादुज़",
+    "demonym": "लिकटेंस्टाइनी",
+    "languages": [
+      "जर्मन"
+    ],
+    "currencyNames": [
+      "स्विस फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "LK": {
+    "name": "श्रीलंका",
+    "capital": "श्री जयवर्धनेपुरा कोट्टी",
+    "demonym": "श्रीलंकाई",
+    "languages": [
+      "सिंहली",
+      "तमिल"
+    ],
+    "currencyNames": [
+      "श्रीलंकाई रुपया"
+    ],
+    "wikipediaSlug": null
+  },
+  "LR": {
+    "name": "लाइबेरिया",
+    "capital": "मोनरोविया",
+    "demonym": "लाइबेरियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "लाइबेरियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "LS": {
+    "name": "लेसोथो",
+    "capital": "मासेरु",
+    "demonym": "लेसोथो",
+    "languages": [
+      "दक्षिणी सेसेथो",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "लेसोथो लोटी",
+      "दक्षिण अफ़्रीकी रैंड"
+    ],
+    "wikipediaSlug": null
+  },
+  "LT": {
+    "name": "लिथुआनिया",
+    "capital": "विल्नुस",
+    "demonym": "लिथुआनियाई",
+    "languages": [
+      "लिथुआनियाई"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "LU": {
+    "name": "लग्ज़मबर्ग",
+    "capital": "लक्ज़मबर्ग नगर",
+    "demonym": "लक्ज़मबर्गी",
+    "languages": [
+      "लग्ज़मबर्गी",
+      "फ़्रेंच",
+      "जर्मन"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "LV": {
+    "name": "लातविया",
+    "capital": "रीगा",
+    "demonym": "लातवियाई",
+    "languages": [
+      "लातवियाई"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "LY": {
+    "name": "लीबिया",
+    "capital": "ताराबूलस",
+    "demonym": "लीबियाई",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "लीबियाई दिनार"
+    ],
+    "wikipediaSlug": null
+  },
+  "MA": {
+    "name": "मोरक्को",
+    "capital": "रबात",
+    "demonym": "मोरक्कन",
+    "languages": [
+      "अरबी",
+      "मध्य एटलस तमाज़ित"
+    ],
+    "currencyNames": [
+      "मोरक्को दिरहम"
+    ],
+    "wikipediaSlug": null
+  },
+  "MC": {
+    "name": "मोनाको",
+    "capital": "मोनाको",
+    "demonym": "मोनेगास्क",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "MD": {
+    "name": "मॉल्डोवा",
+    "capital": "चिशिनाउ",
+    "demonym": "मोल्दोवन",
+    "languages": [
+      "रोमानियाई"
+    ],
+    "currencyNames": [
+      "मोल्डोवन लियू"
+    ],
+    "wikipediaSlug": null
+  },
+  "ME": {
+    "name": "मोंटेनेग्रो",
+    "capital": "पॉडगिरिट्सा",
+    "demonym": "मोंटेनेग्रिन",
+    "languages": [
+      "सर्बियाई (मोंटेनेग्रो)"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "MF": {
+    "name": "सेंट मार्टिन",
+    "capital": "मेरीगौट",
+    "demonym": "सेंट मार्टिन का",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "MG": {
+    "name": "मेडागास्कर",
+    "capital": "अन्टाननरीवो",
+    "demonym": "मेलागासी",
+    "languages": [
+      "मालागासी",
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "मालागासी आरियरी"
+    ],
+    "wikipediaSlug": null
+  },
+  "MH": {
+    "name": "मार्शल द्वीपसमूह",
+    "capital": "माजुरो",
+    "demonym": "मार्शलीज़",
+    "languages": [
+      "मार्शलीज़",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "MK": {
+    "name": "उत्तरी मकदूनिया",
+    "capital": "स्कोपिये",
+    "demonym": "मैसेडोनियन",
+    "languages": [
+      "मकदूनियाई"
+    ],
+    "currencyNames": [
+      "मैसीडोनियन दिनार"
+    ],
+    "wikipediaSlug": null
+  },
+  "ML": {
+    "name": "माली",
+    "capital": "बमाको",
+    "demonym": "मालियन",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "पश्चिमी अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "MM": {
+    "name": "म्यांमार (बर्मा)",
+    "capital": "नाएप्यीडॉ",
+    "demonym": "बर्मी",
+    "languages": [
+      "बर्मीज़"
+    ],
+    "currencyNames": [
+      "म्यांमार क्याट"
+    ],
+    "wikipediaSlug": null
+  },
+  "MN": {
+    "name": "मंगोलिया",
+    "capital": "उलान बतोर",
+    "demonym": "मंगोलियाई",
+    "languages": [
+      "मंगोलियाई"
+    ],
+    "currencyNames": [
+      "मंगोलियाई टगरिक"
+    ],
+    "wikipediaSlug": null
+  },
+  "MO": {
+    "name": "मकाऊ",
+    "capital": "",
+    "demonym": "मकाऊ",
+    "languages": [
+      "चीनी",
+      "पुर्तगाली"
+    ],
+    "currencyNames": [
+      "मेकानीज़ पाटाका"
+    ],
+    "wikipediaSlug": null
+  },
+  "MP": {
+    "name": "उत्तरी मारियाना द्वीपसमूह",
+    "capital": "सायपन",
+    "demonym": "उत्तरी मारियाना द्वीपवासी",
+    "languages": [
+      "अंग्रेज़ी",
+      "कमोरो",
+      "cal"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "MQ": {
+    "name": "मार्टीनिक",
+    "capital": "फोर्ट-डी-फ़्रांस",
+    "demonym": "मार्टिनिकन",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "MR": {
+    "name": "मॉरिटानिया",
+    "capital": "नुआकशोत",
+    "demonym": "मॉरीटानियाई",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "मॉरीटेनियन ओगुइया"
+    ],
+    "wikipediaSlug": null
+  },
+  "MS": {
+    "name": "मोंटसेरात",
+    "capital": "प्लायमाउथ",
+    "demonym": "मॉन्टसेरटियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "पूर्वी कैरिबियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "MT": {
+    "name": "माल्टा",
+    "capital": "वैलेटा",
+    "demonym": "माल्टीज़",
+    "languages": [
+      "माल्टीज़",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "MU": {
+    "name": "मॉरीशस",
+    "capital": "पोर्ट लुई",
+    "demonym": "मॉरीशसी",
+    "languages": [
+      "अंग्रेज़ी",
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "मॉरिशियन रुपया"
+    ],
+    "wikipediaSlug": null
+  },
+  "MV": {
+    "name": "मालदीव",
+    "capital": "माले",
+    "demonym": "मालदीवी",
+    "languages": [
+      "दिवेही"
+    ],
+    "currencyNames": [
+      "मालदीवी रुफ़िया"
+    ],
+    "wikipediaSlug": null
+  },
+  "MW": {
+    "name": "मलावी",
+    "capital": "लिलोंगवे",
+    "demonym": "मलावियन",
+    "languages": [
+      "अंग्रेज़ी",
+      "न्यानजा"
+    ],
+    "currencyNames": [
+      "मालावियन क्वाचा"
+    ],
+    "wikipediaSlug": null
+  },
+  "MX": {
+    "name": "मैक्सिको",
+    "capital": "मेक्सिको नगर",
+    "demonym": "मैक्सिकन",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "मैक्सिकन पेसो"
+    ],
+    "wikipediaSlug": null
+  },
+  "MY": {
+    "name": "मलेशिया",
+    "capital": "कुआलालम्पुर",
+    "demonym": "मलेशियाई",
+    "languages": [
+      "मलय"
+    ],
+    "currencyNames": [
+      "मलेशियाई रिंगित"
+    ],
+    "wikipediaSlug": null
+  },
+  "MZ": {
+    "name": "मोज़ांबिक",
+    "capital": "मपूटो",
+    "demonym": "मोज़ाम्बिकन",
+    "languages": [
+      "पुर्तगाली"
+    ],
+    "currencyNames": [
+      "मोज़ाम्बिकन मेटिकल"
+    ],
+    "wikipediaSlug": null
+  },
+  "NA": {
+    "name": "नामीबिया",
+    "capital": "विंडहोक",
+    "demonym": "नामीबियाई",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "नामीबियाई डॉलर",
+      "दक्षिण अफ़्रीकी रैंड"
+    ],
+    "wikipediaSlug": null
+  },
+  "NC": {
+    "name": "न्यू कैलेडोनिया",
+    "capital": "नुमेया",
+    "demonym": "न्यू कैलेडोनियन",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "[CFP] फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "NE": {
+    "name": "नाइजर",
+    "capital": "नियामी",
+    "demonym": "नाइजीरियन",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "पश्चिमी अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "NF": {
+    "name": "नॉरफ़ॉक द्वीप",
+    "capital": "किंग्स्टन, नॉर्फ़ोक द्वीप",
+    "demonym": "नॉरफ़ॉक द्वीपवासी",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "ऑस्ट्रेलियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "NG": {
+    "name": "नाइजीरिया",
+    "capital": "अबुजा",
+    "demonym": "नाइजीरियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "नाइजीरियाई नाइरा"
+    ],
+    "wikipediaSlug": null
+  },
+  "NI": {
+    "name": "निकारागुआ",
+    "capital": "मनागुआ",
+    "demonym": "निकारागुआन",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "निकारागुअन कोरडोबा"
+    ],
+    "wikipediaSlug": null
+  },
+  "NL": {
+    "name": "नीदरलैंड",
+    "capital": "ऐम्स्टर्डैम",
+    "demonym": "डच",
+    "languages": [
+      "डच"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "NO": {
+    "name": "नॉर्वे",
+    "capital": "ओस्लो",
+    "demonym": "नॉर्वेजियन",
+    "languages": [
+      "नॉर्वेजियाई"
+    ],
+    "currencyNames": [
+      "नॉर्वेजियन क्रोन"
+    ],
+    "wikipediaSlug": null
+  },
+  "NP": {
+    "name": "नेपाल",
+    "capital": "काठमांडू",
+    "demonym": "नेपाली",
+    "languages": [
+      "नेपाली"
+    ],
+    "currencyNames": [
+      "नेपाली रुपया"
+    ],
+    "wikipediaSlug": null
+  },
+  "NR": {
+    "name": "नाउरु",
+    "capital": "यारेन जिला",
+    "demonym": "नाउरुआन",
+    "languages": [
+      "अंग्रेज़ी",
+      "नाउरू"
+    ],
+    "currencyNames": [
+      "ऑस्ट्रेलियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "NU": {
+    "name": "नीयू",
+    "capital": "अलोफ़ी",
+    "demonym": "नीयूईयन",
+    "languages": [
+      "अंग्रेज़ी",
+      "नियुआन"
+    ],
+    "currencyNames": [
+      "न्यूज़ीलैंड डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "NZ": {
+    "name": "न्यूज़ीलैंड",
+    "capital": "वेलिंग्टन",
+    "demonym": "न्यूज़ीलैंडर",
+    "languages": [
+      "अंग्रेज़ी",
+      "माओरी"
+    ],
+    "currencyNames": [
+      "न्यूज़ीलैंड डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "OM": {
+    "name": "ओमान",
+    "capital": "मस्कट",
+    "demonym": "ओमानी",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "ओमानी रियाल"
+    ],
+    "wikipediaSlug": null
+  },
+  "PA": {
+    "name": "पनामा",
+    "capital": "पनामा सिटी",
+    "demonym": "पनामी",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "पनामेनियन बैल्बोआ",
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "PE": {
+    "name": "पेरू",
+    "capital": "लीमा",
+    "demonym": "पेरूवी",
+    "languages": [
+      "स्पेनिश",
+      "क्वेचुआ",
+      "आयमारा"
+    ],
+    "currencyNames": [
+      "पेरूवियन सोल"
+    ],
+    "wikipediaSlug": null
+  },
+  "PF": {
+    "name": "फ़्रेंच पोलिनेशिया",
+    "capital": "पापीटे",
+    "demonym": "फ्रेंच पॉलिनेशियन",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "[CFP] फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "PG": {
+    "name": "पापुआ न्यू गिनी",
+    "capital": "पोर्ट मोरेस्बी",
+    "demonym": "पापुआ न्यू गिनी",
+    "languages": [
+      "अंग्रेज़ी",
+      "टोक पिसिन",
+      "हिरी मोटू"
+    ],
+    "currencyNames": [
+      "पापुआ न्यू गिनीयन किना"
+    ],
+    "wikipediaSlug": null
+  },
+  "PH": {
+    "name": "फ़िलिपींस",
+    "capital": "मनीला",
+    "demonym": "फ़िलिपीनो",
+    "languages": [
+      "फ़िलिपीनो",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "फ़िलिपीनी पेसो"
+    ],
+    "wikipediaSlug": null
+  },
+  "PK": {
+    "name": "पाकिस्तान",
+    "capital": "इस्लामाबाद",
+    "demonym": "पाकिस्तानी",
+    "languages": [
+      "उर्दू",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "पाकिस्तानी रुपया"
+    ],
+    "wikipediaSlug": null
+  },
+  "PL": {
+    "name": "पोलैंड",
+    "capital": "वारसॉ",
+    "demonym": "पोलिश",
+    "languages": [
+      "पोलिश"
+    ],
+    "currencyNames": [
+      "पोलिश ज़्लॉटी"
+    ],
+    "wikipediaSlug": null
+  },
+  "PM": {
+    "name": "सेंट पिएरे और मिक्वेलान",
+    "capital": "सेंट-पियरे",
+    "demonym": "सेंट-पियरे",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "PN": {
+    "name": "पिटकैर्न द्वीपसमूह",
+    "capital": "ऐडम्सटाउन",
+    "demonym": "पिटकेर्न",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "न्यूज़ीलैंड डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "PR": {
+    "name": "पोर्टो रिको",
+    "capital": "सैन जुआन",
+    "demonym": "प्यूर्टो रिकन",
+    "languages": [
+      "स्पेनिश",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "PS": {
+    "name": "फ़िलिस्तीन",
+    "capital": "पूर्व यरुशलम",
+    "demonym": "फ़िलिस्तीनी",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "मिस्र पाउंड",
+      "इज़राइली न्यू शेकेल",
+      "जॉर्डनियन दिनार"
+    ],
+    "wikipediaSlug": null
+  },
+  "PT": {
+    "name": "पुर्तगाल",
+    "capital": "लिस्बन",
+    "demonym": "पुर्तगाली",
+    "languages": [
+      "पुर्तगाली"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "PW": {
+    "name": "पलाऊ",
+    "capital": "ञुरूलमुड",
+    "demonym": "पलाऊ",
+    "languages": [
+      "पलोउआन",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "PY": {
+    "name": "पराग्वे",
+    "capital": "असुन्सियोन",
+    "demonym": "पैराग्वेयन",
+    "languages": [
+      "स्पेनिश",
+      "गुआरानी"
+    ],
+    "currencyNames": [
+      "पैराग्वियन गुआरानी"
+    ],
+    "wikipediaSlug": null
+  },
+  "QA": {
+    "name": "क़तर",
+    "capital": "दोहा",
+    "demonym": "कतरी",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "क़तरी रियाल"
+    ],
+    "wikipediaSlug": null
+  },
+  "RE": {
+    "name": "रियूनियन",
+    "capital": "सेंट-डेनिस",
+    "demonym": "रेयूनियन",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "RO": {
+    "name": "रोमानिया",
+    "capital": "बुखारेस्ट",
+    "demonym": "रोमानियाई",
+    "languages": [
+      "रोमानियाई"
+    ],
+    "currencyNames": [
+      "रोमानियाई ल्यू"
+    ],
+    "wikipediaSlug": null
+  },
+  "RS": {
+    "name": "सर्बिया",
+    "capital": "बॅलग्रेड",
+    "demonym": "सर्बियन",
+    "languages": [
+      "सर्बियाई"
+    ],
+    "currencyNames": [
+      "सर्बियन दिनार"
+    ],
+    "wikipediaSlug": null
+  },
+  "RU": {
+    "name": "रूस",
+    "capital": "मास्को",
+    "demonym": "रूसी",
+    "languages": [
+      "रूसी"
+    ],
+    "currencyNames": [
+      "रूसी रूबल"
+    ],
+    "wikipediaSlug": null
+  },
+  "RW": {
+    "name": "रवांडा",
+    "capital": "किगाली",
+    "demonym": "रवांडन",
+    "languages": [
+      "किन्यारवांडा",
+      "फ़्रेंच",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "रवांडाई फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "SA": {
+    "name": "सऊदी अरब",
+    "capital": "रियाद",
+    "demonym": "सऊदी",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "सउदी रियाल"
+    ],
+    "wikipediaSlug": null
+  },
+  "SB": {
+    "name": "सोलोमन द्वीपसमूह",
+    "capital": "होनिअरा",
+    "demonym": "सोलोमन द्वीपवासी",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "सोलोमन द्वीपसमूह डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "SC": {
+    "name": "सेशेल्स",
+    "capital": "विक्टोरिया",
+    "demonym": "सेशेली",
+    "languages": [
+      "सेसेल्वा क्रिओल फ्रेंच",
+      "फ़्रेंच",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "सेशेल्सियाई रुपया"
+    ],
+    "wikipediaSlug": null
+  },
+  "SD": {
+    "name": "सूडान",
+    "capital": "खार्तूम",
+    "demonym": "सूडानी",
+    "languages": [
+      "अरबी",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "सूडानी पाउंड"
+    ],
+    "wikipediaSlug": null
+  },
+  "SE": {
+    "name": "स्वीडन",
+    "capital": "स्टॉकहोम",
+    "demonym": "स्वीडिश",
+    "languages": [
+      "स्वीडिश"
+    ],
+    "currencyNames": [
+      "स्वीडीश क्रोना"
+    ],
+    "wikipediaSlug": null
+  },
+  "SG": {
+    "name": "सिंगापुर",
+    "capital": "सिंगापुर",
+    "demonym": "सिंगापुरी",
+    "languages": [
+      "अंग्रेज़ी",
+      "मलय",
+      "चीनी",
+      "तमिल"
+    ],
+    "currencyNames": [
+      "सिंगापुर डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "SH": {
+    "name": "सेंट हेलेना",
+    "capital": "जेम्सटाउन, सेंट हेलेना",
+    "demonym": "सेंट हेलेनियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "ब्रिटिश पाउंड स्टर्लिंग",
+      "सेंट हेलेना पाउंड"
+    ],
+    "wikipediaSlug": null
+  },
+  "SI": {
+    "name": "स्लोवेनिया",
+    "capital": "लुब्लियाना",
+    "demonym": "स्लोवेनियाई",
+    "languages": [
+      "स्लोवेनियाई"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "SK": {
+    "name": "स्लोवाकिया",
+    "capital": "ब्रातिस्लावा",
+    "demonym": "स्लोवाक",
+    "languages": [
+      "स्लोवाक"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "SL": {
+    "name": "सिएरा लियोन",
+    "capital": "फ़्रीटाउन",
+    "demonym": "सिएरा लियोनी",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "सिएरा लियोनियन लियोन"
+    ],
+    "wikipediaSlug": null
+  },
+  "SM": {
+    "name": "सैन मेरीनो",
+    "capital": "सैन मारिनो नगर",
+    "demonym": "सैन मैरिनो",
+    "languages": [
+      "इतालवी"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "SN": {
+    "name": "सेनेगल",
+    "capital": "डकार",
+    "demonym": "सेनेगली",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "पश्चिमी अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "SO": {
+    "name": "सोमालिया",
+    "capital": "मोगादीशू",
+    "demonym": "सोमाली",
+    "languages": [
+      "सोमाली",
+      "अरबी"
+    ],
+    "currencyNames": [
+      "सोमाली शिलिंग"
+    ],
+    "wikipediaSlug": null
+  },
+  "SR": {
+    "name": "सूरीनाम",
+    "capital": "पारामरिबो",
+    "demonym": "सूरीनामी",
+    "languages": [
+      "डच"
+    ],
+    "currencyNames": [
+      "सूरीनामी डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "SS": {
+    "name": "दक्षिण सूडान",
+    "capital": "जुबा",
+    "demonym": "दक्षिण सूडानी",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "दक्षिण सूडानी पाउंड"
+    ],
+    "wikipediaSlug": null
+  },
+  "ST": {
+    "name": "साओ टोम और प्रिंसिपे",
+    "capital": "सो टोमे",
+    "demonym": "साओ तोमे",
+    "languages": [
+      "पुर्तगाली"
+    ],
+    "currencyNames": [
+      "साओ टोम और प्रिंसिपे डोबरा"
+    ],
+    "wikipediaSlug": null
+  },
+  "SV": {
+    "name": "अल सल्वाडोर",
+    "capital": "सान-साल्वाडोर",
+    "demonym": "साल्वाडोरन",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "SX": {
+    "name": "सिंट मार्टिन",
+    "capital": "फिलिप्सबर्ग",
+    "demonym": "सिंट मार्टन",
+    "languages": [
+      "डच",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "नीदरलैंड एंटीलियन गिल्डर"
+    ],
+    "wikipediaSlug": null
+  },
+  "SY": {
+    "name": "सीरिया",
+    "capital": "दमिश्क",
+    "demonym": "सीरियाई",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "सीरियाई पाउंड"
+    ],
+    "wikipediaSlug": null
+  },
+  "SZ": {
+    "name": "एस्वाटिनी",
+    "capital": "बाबाने",
+    "demonym": "स्वाज़ी",
+    "languages": [
+      "स्वाती",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "स्वाज़ी लिलांजेनी",
+      "दक्षिण अफ़्रीकी रैंड"
+    ],
+    "wikipediaSlug": null
+  },
+  "TC": {
+    "name": "तुर्क और कैकोज़ द्वीपसमूह",
+    "capital": "कॉकबर्न टाउन",
+    "demonym": "टर्क्स और कैकोस",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "TD": {
+    "name": "चाड",
+    "capital": "अन जमेना",
+    "demonym": "चाडियन",
+    "languages": [
+      "फ़्रेंच",
+      "अरबी"
+    ],
+    "currencyNames": [
+      "केंद्रीय अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "TG": {
+    "name": "टोगो",
+    "capital": "लोमे",
+    "demonym": "टोगोली",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "पश्चिमी अफ़्रीकी CFA फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "TH": {
+    "name": "थाईलैंड",
+    "capital": "बैंकॉक",
+    "demonym": "थाई",
+    "languages": [
+      "थाई"
+    ],
+    "currencyNames": [
+      "थाई बहत"
+    ],
+    "wikipediaSlug": null
+  },
+  "TJ": {
+    "name": "ताजिकिस्तान",
+    "capital": "दुशान्बे",
+    "demonym": "ताजिक",
+    "languages": [
+      "ताजिक"
+    ],
+    "currencyNames": [
+      "ताजिकिस्तानी सोमोनी"
+    ],
+    "wikipediaSlug": null
+  },
+  "TL": {
+    "name": "पूर्वी तिमोर",
+    "capital": "दिली",
+    "demonym": "तिमोरी",
+    "languages": [
+      "पुर्तगाली",
+      "तेतुम"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "TM": {
+    "name": "तुर्कमेनिस्तान",
+    "capital": "अश्क़ाबाद",
+    "demonym": "तुर्कमेन",
+    "languages": [
+      "तुर्कमेन"
+    ],
+    "currencyNames": [
+      "तुर्कमेनिस्तानी मैनत"
+    ],
+    "wikipediaSlug": null
+  },
+  "TN": {
+    "name": "ट्यूनीशिया",
+    "capital": "तूनिस",
+    "demonym": "ट्यूनीशियन",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "ट्यूनीशियाई दिनार"
+    ],
+    "wikipediaSlug": null
+  },
+  "TO": {
+    "name": "टोंगा",
+    "capital": "नुकुअलोफ़ा",
+    "demonym": "टोंगन",
+    "languages": [
+      "टोंगन",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "टोंगन पांगा"
+    ],
+    "wikipediaSlug": null
+  },
+  "TR": {
+    "name": "तुर्किये",
+    "capital": "अंकारा",
+    "demonym": "तुर्की",
+    "languages": [
+      "तुर्की"
+    ],
+    "currencyNames": [
+      "तुर्की लीरा"
+    ],
+    "wikipediaSlug": null
+  },
+  "TT": {
+    "name": "त्रिनिदाद और टोबैगो",
+    "capital": "पोर्ट ऑफ स्पेन",
+    "demonym": "त्रिनिडाडियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "त्रिनिदाद और टोबैगो डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "TV": {
+    "name": "तुवालू",
+    "capital": "फुनाफुति",
+    "demonym": "तुवालुआन",
+    "languages": [
+      "तुवालु",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "ऑस्ट्रेलियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "TW": {
+    "name": "ताइवान",
+    "capital": "ताइपे",
+    "demonym": "ताइवानी",
+    "languages": [
+      "चीनी"
+    ],
+    "currencyNames": [
+      "नया ताईवानी डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "TZ": {
+    "name": "तंज़ानिया",
+    "capital": "दोदोमा",
+    "demonym": "तंज़ानियाई",
+    "languages": [
+      "स्वाहिली",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "तंज़ानियाई शिलिंग"
+    ],
+    "wikipediaSlug": null
+  },
+  "UA": {
+    "name": "यूक्रेन",
+    "capital": "कीव",
+    "demonym": "यूक्रेनी",
+    "languages": [
+      "यूक्रेनियाई"
+    ],
+    "currencyNames": [
+      "यूक्रेनियन रिव्निया"
+    ],
+    "wikipediaSlug": null
+  },
+  "UG": {
+    "name": "युगांडा",
+    "capital": "कम्पाला",
+    "demonym": "युगांडाई",
+    "languages": [
+      "अंग्रेज़ी",
+      "स्वाहिली"
+    ],
+    "currencyNames": [
+      "युगांडाई शिलिंग"
+    ],
+    "wikipediaSlug": null
+  },
+  "US": {
+    "name": "संयुक्त राज्य",
+    "capital": "वॉशिंगटन डी॰ सी॰",
+    "demonym": "अमेरिकी",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "UY": {
+    "name": "उरूग्वे",
+    "capital": "मोण्टेवीडियो",
+    "demonym": "उरुग्वेयन",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "उरुग्वियन पेसो"
+    ],
+    "wikipediaSlug": null
+  },
+  "UZ": {
+    "name": "उज़्बेकिस्तान",
+    "capital": "ताशकन्द",
+    "demonym": "उज़्बेक",
+    "languages": [
+      "उज़्बेक"
+    ],
+    "currencyNames": [
+      "उज़्बेकिस्तानी सोम"
+    ],
+    "wikipediaSlug": null
+  },
+  "VA": {
+    "name": "वेटिकन सिटी",
+    "capital": "वैटिकन सिटी",
+    "demonym": "वैटिकन",
+    "languages": [
+      "इतालवी",
+      "लैटिन"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "VC": {
+    "name": "सेंट विंसेंट और ग्रेनाडाइंस",
+    "capital": "किंग्सटाउन",
+    "demonym": "विंसेंशियन",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "पूर्वी कैरिबियाई डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "VE": {
+    "name": "वेनेज़ुएला",
+    "capital": "काराकास",
+    "demonym": "वेनेज़ुएलन",
+    "languages": [
+      "स्पेनिश"
+    ],
+    "currencyNames": [
+      "वेनेज़ुएला बोलिवर"
+    ],
+    "wikipediaSlug": null
+  },
+  "VG": {
+    "name": "ब्रिटिश वर्जिन द्वीपसमूह",
+    "capital": "रोड टाउन",
+    "demonym": "वर्जिन द्वीपवासी",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "VI": {
+    "name": "यू॰एस॰ वर्जिन द्वीपसमूह",
+    "capital": "शार्लोट अमाली",
+    "demonym": "वर्जिन द्वीपवासी",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "यूएस डॉलर"
+    ],
+    "wikipediaSlug": null
+  },
+  "VN": {
+    "name": "वियतनाम",
+    "capital": "हनोई",
+    "demonym": "वियतनामी",
+    "languages": [
+      "वियतनामी"
+    ],
+    "currencyNames": [
+      "वियतनामी डोंग"
+    ],
+    "wikipediaSlug": null
+  },
+  "VU": {
+    "name": "वनुआतू",
+    "capital": "पोर्ट विला",
+    "demonym": "वनुआतुई",
+    "languages": [
+      "बिस्लामा",
+      "अंग्रेज़ी",
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "वनुआतू वातू"
+    ],
+    "wikipediaSlug": null
+  },
+  "WF": {
+    "name": "वालिस और फ़्यूचूना",
+    "capital": "माता उतु",
+    "demonym": "वॉलिसियन",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "[CFP] फ़्रैंक"
+    ],
+    "wikipediaSlug": null
+  },
+  "WS": {
+    "name": "समोआ",
+    "capital": "आपिया",
+    "demonym": "समोआई",
+    "languages": [
+      "सामोन",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "समोआई ताला"
+    ],
+    "wikipediaSlug": null
+  },
+  "XK": {
+    "name": "कोसोवो",
+    "capital": "प्रिश्तीना",
+    "demonym": "कोसोवन",
+    "languages": [
+      "अल्बानियाई",
+      "सर्बियाई"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "YE": {
+    "name": "यमन",
+    "capital": "साना",
+    "demonym": "यमनी",
+    "languages": [
+      "अरबी"
+    ],
+    "currencyNames": [
+      "यमनी रियाल"
+    ],
+    "wikipediaSlug": null
+  },
+  "YT": {
+    "name": "मायोते",
+    "capital": "मेमोद्जाउ",
+    "demonym": "माहोरन",
+    "languages": [
+      "फ़्रेंच"
+    ],
+    "currencyNames": [
+      "यूरो"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZA": {
+    "name": "दक्षिण अफ़्रीका",
+    "capital": "प्रिटोरिया",
+    "demonym": "दक्षिण अफ़्रीकी",
+    "languages": [
+      "ज़ुलू",
+      "ख़ोसा",
+      "अफ़्रीकी",
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "दक्षिण अफ़्रीकी रैंड"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZM": {
+    "name": "ज़ाम्बिया",
+    "capital": "लुसाका",
+    "demonym": "ज़ाम्बियाई",
+    "languages": [
+      "अंग्रेज़ी"
+    ],
+    "currencyNames": [
+      "ज़ाम्बियन क्वाचा"
+    ],
+    "wikipediaSlug": null
+  },
+  "ZW": {
+    "name": "ज़िम्बाब्वे",
+    "capital": "हरारे",
+    "demonym": "ज़िम्बाब्वे",
+    "languages": [
+      "अंग्रेज़ी",
+      "शोणा",
+      "दक्षिण देबेल"
+    ],
+    "currencyNames": [
+      "ZWL"
+    ],
+    "wikipediaSlug": null
+  }
+}

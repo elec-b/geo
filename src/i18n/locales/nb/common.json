@@ -1,0 +1,41 @@
+{
+  "continent.africa": "Afrika",
+  "continent.america": "Amerika",
+  "continent.asia": "Asia",
+  "continent.europe": "Europa",
+  "continent.oceania": "Oseania",
+  "continent.antarctica": "Antarktis",
+  "continentFilter.all": "Alle",
+
+  "level.tourist": "Turist",
+  "level.backpacker": "Backpacker",
+  "level.guide": "Guide",
+
+  "questionType.E": "Identifiser landet",
+  "questionType.C": "Land til hovedstad",
+  "questionType.D": "Hovedstad til land",
+  "questionType.F": "Identifiser hovedstaden",
+  "questionType.A": "Pek p\u00e5 landet",
+  "questionType.B": "Pek p\u00e5 hovedstaden",
+
+  "questionTypeShort.E": "Identifiser land",
+  "questionTypeShort.C": "Land til hovedstad",
+  "questionTypeShort.D": "Hovedstad til land",
+  "questionTypeShort.F": "Identifiser hovedstad",
+  "questionTypeShort.A": "Pek p\u00e5 landet",
+  "questionTypeShort.B": "Pek p\u00e5 hovedstaden",
+
+  "tabs.explore": "Utforsk",
+  "tabs.play": "Spill",
+  "tabs.passport": "Pass",
+
+  "loading": "Laster globusen\u2026",
+  "cancel": "Avbryt",
+  "close": "Lukk",
+  "continue": "Fortsett",
+
+  "aria.userProfile": "Brukerprofil",
+  "aria.stats": "Statistikk",
+  "aria.settings": "Innstillinger",
+  "aria.navigation": "Hovednavigasjon"
+}

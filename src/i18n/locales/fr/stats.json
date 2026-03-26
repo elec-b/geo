@@ -1,0 +1,33 @@
+{
+  "title": "Statistiques",
+  "aria.close": "Fermer",
+  "tabs.play": "Jouer",
+  "tabs.stamps": "\u00c9preuves de tampon",
+
+  "table.country": "Pays",
+  "aria.showIndicators": "Afficher les indicateurs",
+  "aria.showPercent": "Afficher les pourcentages",
+
+  "typeLabel.E": "Identifie le pays",
+  "typeLabel.C": "Pays vers capitale",
+  "typeLabel.D": "Capitale vers pays",
+  "typeLabel.F": "Identifie la capitale",
+  "typeLabel.A": "Montre le pays",
+  "typeLabel.B": "Montre la capitale",
+
+  "stampLabel.A.short": "\u25ef Pays",
+  "stampLabel.A.full": "\u00c9preuve de tampon Pays",
+  "stampLabel.B.short": "\u25ce Capitales",
+  "stampLabel.B.full": "\u00c9preuve de tampon Capitales",
+
+  "legend.dominated": "Ma\u00eetris\u00e9",
+  "legend.inferred": "Inf\u00e9r\u00e9",
+  "legend.reinforcement": "Renforcement",
+  "legend.noData": "Aucune donn\u00e9e",
+  "legend.correct": "Correct",
+  "legend.incorrect": "Incorrect",
+
+  "reset.button": "R\u00e9initialiser les statistiques",
+  "reset.confirm": "R\u00e9initialiser les statistiques de Jouer pour {{level}} - {{continent}}\u00a0?",
+  "stampNotice": "Les tampons et l'historique des \u00e9preuves sont permanents, comme dans un vrai passeport. Pour repartir de z\u00e9ro, cr\u00e9e un nouveau profil."
+}

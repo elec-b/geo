@@ -1,0 +1,33 @@
+{
+  "title": "สถิติ",
+  "aria.close": "ปิด",
+  "tabs.play": "เล่น",
+  "tabs.stamps": "สอบตราประทับ",
+
+  "table.country": "ประเทศ",
+  "aria.showIndicators": "แสดงตัวชี้วัด",
+  "aria.showPercent": "แสดงเปอร์เซ็นต์",
+
+  "typeLabel.E": "ทายชื่อประเทศ",
+  "typeLabel.C": "ประเทศไปเมืองหลวง",
+  "typeLabel.D": "เมืองหลวงไปประเทศ",
+  "typeLabel.F": "ทายชื่อเมืองหลวง",
+  "typeLabel.A": "ชี้ประเทศ",
+  "typeLabel.B": "ชี้เมืองหลวง",
+
+  "stampLabel.A.short": "◯ ประเทศ",
+  "stampLabel.A.full": "สอบตราประทับประเทศ",
+  "stampLabel.B.short": "◎ เมืองหลวง",
+  "stampLabel.B.full": "สอบตราประทับเมืองหลวง",
+
+  "legend.dominated": "เชี่ยวชาญ",
+  "legend.inferred": "อนุมาน",
+  "legend.reinforcement": "ทบทวน",
+  "legend.noData": "ไม่มีข้อมูล",
+  "legend.correct": "ถูก",
+  "legend.incorrect": "ผิด",
+
+  "reset.button": "รีเซ็ตสถิติ",
+  "reset.confirm": "รีเซ็ตสถิติการเล่นของ {{level}} - {{continent}}?",
+  "stampNotice": "ตราประทับและประวัติการสอบเป็นแบบถาวร เหมือนพาสปอร์ตจริง หากต้องการเริ่มใหม่ ให้สร้างโปรไฟล์ใหม่"
+}

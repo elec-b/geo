@@ -1,0 +1,19 @@
+{
+  "defaultName": "Nhà thám hiểm",
+
+  "editor.titleEdit": "Chỉnh sửa hồ sơ",
+  "editor.titleCreate": "Tạo hồ sơ",
+  "editor.chooseAvatar": "Chọn hình đại diện",
+  "editor.nameLabel": "Tên",
+  "editor.namePlaceholder": "Tên hồ sơ",
+  "editor.save": "Lưu",
+  "editor.create": "Tạo",
+
+  "selector.title": "Hồ sơ",
+  "selector.confirmDelete": "Xoá «{{name}}»?",
+  "selector.delete": "Xoá",
+  "selector.createNew": "Tạo hồ sơ",
+  "selector.aria.edit": "Chỉnh sửa {{name}}",
+  "selector.aria.delete": "Xoá {{name}}",
+  "selector.aria.dialog": "Chọn hồ sơ"
+}

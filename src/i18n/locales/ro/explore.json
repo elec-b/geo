@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Glob",
+  "segmented.table": "Tabel",
+  "labels.countries": "Țări",
+  "labels.capitals": "Capitale",
+
+  "table.country": "Țară",
+  "table.capital": "Capitală",
+  "table.population": "Pop.",
+  "table.nonUNToggle": "Teritorii non-ONU",
+
+  "card.disclaimer.antarctica": "Teritoriu internațional — Tratatul Antarctic (1959)",
+  "card.disclaimer.territory": "Teritoriu {{sovereign}}",
+  "card.disclaimer.disputed": "Suveranitate disputată",
+  "card.flagAlt": "Steagul {{country}}",
+  "card.aria.openWikipedia": "Deschide {{country}} pe Wikipedia",
+  "card.aria.dialog": "Fișa {{country}}",
+
+  "card.field.capital": "Capitală",
+  "card.field.population": "Populație",
+  "card.field.area": "Suprafață",
+  "card.field.density": "Densitate",
+  "card.field.currency": "Monedă",
+  "card.field.demonym": "Demonim",
+  "card.field.languages": "Limbi",
+  "card.field.hdi": "IDU",
+  "card.field.ihdi": "IDU-I",
+  "card.unit.inhabitants": "loc.",
+  "card.unit.densityUnit": "loc./km²",
+  "card.na": "N/D",
+
+  "card.tooltip.hdi": "Indicele Dezvoltării Umane: măsoară sănătatea, educația și veniturile. Interval 0–1.",
+  "card.tooltip.ihdi": "IDU ajustat pentru inegalitate: penalizează inegalitatea în sănătate, educație și venituri.",
+  "card.aria.hdiInfo": "Informații despre IDU",
+  "card.aria.ihdiInfo": "Informații despre IDU-I",
+
+  "card.antarctica.info": "Antarctica nu aparține niciunei țări. Tratatul Antarctic, semnat în 1959, o rezervă pentru cercetare științifică și interzice activitatea militară și exploatarea resurselor.",
+
+  "card.sovereign.GB": "al Regatului Unit",
+  "card.sovereign.FR": "al Franței",
+  "card.sovereign.US": "al Statelor Unite",
+  "card.sovereign.NL": "al Țărilor de Jos",
+  "card.sovereign.DK": "al Danemarcei",
+  "card.sovereign.CN": "al Chinei",
+  "card.sovereign.NZ": "al Noii Zeelande",
+  "card.sovereign.FI": "al Finlandei",
+  "card.sovereign.AU": "al Australiei"
+}

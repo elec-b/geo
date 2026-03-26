@@ -1,0 +1,19 @@
+{
+  "defaultName": "अन्वेषक",
+
+  "editor.titleEdit": "प्रोफ़ाइल संपादित करें",
+  "editor.titleCreate": "प्रोफ़ाइल बनाएँ",
+  "editor.chooseAvatar": "अपना अवतार चुनें",
+  "editor.nameLabel": "नाम",
+  "editor.namePlaceholder": "प्रोफ़ाइल का नाम",
+  "editor.save": "सहेजें",
+  "editor.create": "बनाएँ",
+
+  "selector.title": "प्रोफ़ाइल",
+  "selector.confirmDelete": "\u00ab{{name}}\u00bb हटाएँ?",
+  "selector.delete": "हटाएँ",
+  "selector.createNew": "प्रोफ़ाइल बनाएँ",
+  "selector.aria.edit": "{{name}} संपादित करें",
+  "selector.aria.delete": "{{name}} हटाएँ",
+  "selector.aria.dialog": "प्रोफ़ाइल चुनें"
+}

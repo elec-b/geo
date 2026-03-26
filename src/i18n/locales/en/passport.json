@@ -1,0 +1,16 @@
+{
+  "header.title": "{{name}}'s Passport",
+  "header.globalLevel": "Global level: {{level}}",
+  "emptyState": "Each stamp proves what you know. Will you fill the passport?",
+
+  "legend.country": "\u25cb Country",
+  "legend.capital": "\u25ce Capital",
+  "legend.earned": "\u2605 Earned",
+  "legend.locked": "\ud83d\udd12 Locked",
+
+  "stampTitle.countries": "Countries Stamp",
+  "stampTitle.capitals": "Capitals Stamp",
+
+  "modal.title": "Stamp test",
+  "modal.questionCount": "You must answer {{count}} questions with no mistakes."
+}

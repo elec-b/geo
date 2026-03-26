@@ -6,6 +6,7 @@ import type { AppSettings, AppState, UserProfile, ProfileId, AvatarId, ProfilePr
 import type { Continent, GameLevel, QuestionType } from '../data/types';
 import { CONTINENTS } from '../data/continents';
 import { LEVELS } from '../data/levels';
+import { detectLocale } from '../utils/locale';
 
 /** Genera un progreso vacío para un nuevo perfil */
 function emptyProgress(): ProfileProgress {
@@ -34,7 +35,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   showSeaLabels: true,
   vibration: true,
   theme: 'dark',
-  locale: 'es',
+  locale: detectLocale(),
   lastPlayed: null,
   lastStampPlayed: null,
   lastActiveContinent: null,

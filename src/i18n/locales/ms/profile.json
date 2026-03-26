@@ -1,0 +1,19 @@
+{
+  "defaultName": "Peneroka",
+
+  "editor.titleEdit": "Edit profil",
+  "editor.titleCreate": "Cipta profil",
+  "editor.chooseAvatar": "Pilih avatar anda",
+  "editor.nameLabel": "Nama",
+  "editor.namePlaceholder": "Nama profil",
+  "editor.save": "Simpan",
+  "editor.create": "Cipta",
+
+  "selector.title": "Profil",
+  "selector.confirmDelete": "Padam \u00ab{{name}}\u00bb?",
+  "selector.delete": "Padam",
+  "selector.createNew": "Cipta profil",
+  "selector.aria.edit": "Edit {{name}}",
+  "selector.aria.delete": "Padam {{name}}",
+  "selector.aria.dialog": "Pilih profil"
+}

@@ -1,0 +1,19 @@
+{
+  "defaultName": "Kaşif",
+
+  "editor.titleEdit": "Profili düzenle",
+  "editor.titleCreate": "Profil oluştur",
+  "editor.chooseAvatar": "Avatarını seç",
+  "editor.nameLabel": "İsim",
+  "editor.namePlaceholder": "Profil adı",
+  "editor.save": "Kaydet",
+  "editor.create": "Oluştur",
+
+  "selector.title": "Profiller",
+  "selector.confirmDelete": "«{{name}}» silinsin mi?",
+  "selector.delete": "Sil",
+  "selector.createNew": "Profil oluştur",
+  "selector.aria.edit": "{{name}} düzenle",
+  "selector.aria.delete": "{{name}} sil",
+  "selector.aria.dialog": "Profil seç"
+}

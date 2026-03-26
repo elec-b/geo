@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "V\u00e4lj kontinent",
+  "selector.chooseLevel": "V\u00e4lj niv\u00e5",
+  "selector.chooseGame": "V\u00e4lj spel",
+  "selector.adventure": "\u00c4ventyr",
+  "selector.adventureDesc": "Anpassar sig till vad du kan",
+  "selector.specificTypes": "eller v\u00e4lj ett specifikt spel",
+  "selector.start": "Starta",
+  "selector.continue": "Forts\u00e4tt",
+  "selector.completed": "Klarat \u2605",
+  "selector.countryCount_one": "{{count}} land",
+  "selector.countryCount_other": "{{count}} l\u00e4nder",
+  "selector.lockedToast": "Skaffa st\u00e4mplarna fr\u00e5n f\u00f6reg\u00e5ende niv\u00e5",
+
+  "selector.stampReady.both": "Redo f\u00f6r st\u00e4mpelproven!",
+  "selector.stampReady.countries": "Redo f\u00f6r l\u00e4nderprovet!",
+  "selector.stampReady.capitals": "Redo f\u00f6r huvudstadsprovet!",
+
+  "question.locate": "Hitta",
+  "question.locateCapital": "Hitta huvudstaden",
+  "question.capitalOf": "Vad \u00e4r huvudstaden i {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} \u00e4r huvudstad i\u2026",
+  "question.whichCountry": "Vilket land \u00e4r markerat?",
+  "question.whichCapital": "Vad \u00e4r huvudstaden i detta land?",
+
+  "progress.stampTest": "St\u00e4mpelprov: {{current}} av {{total}}",
+  "progress.adventurePercent": "{{percent}} % klart",
+  "progress.typeDominated": "{{current}} av {{total}} bemästrade",
+  "progress.stampBanner.countries": "St\u00e4mpelprov: L\u00e4nder",
+  "progress.stampBanner.capitals": "St\u00e4mpelprov: Huvudst\u00e4der",
+
+  "modal.stampEarned.title": "St\u00e4mpel erh\u00e5llen",
+  "modal.stampEarned.text": "{{correct}} av {{total}} r\u00e4tt. Inga fel.",
+
+  "modal.stampFailed.veryClose": "N\u00e4stan!",
+  "modal.stampFailed.veryCloseText": "Bara ett steg fr\u00e5n st\u00e4mpeln.",
+  "modal.stampFailed.goodTry": "Bra f\u00f6rs\u00f6k!",
+  "modal.stampFailed.goodTryText": "Varje f\u00f6rs\u00f6k f\u00f6r dig n\u00e4rmare.",
+  "modal.stampFailed.onTrack": "Du \u00e4r p\u00e5 r\u00e4tt sp\u00e5r",
+  "modal.stampFailed.onTrackText": "Forts\u00e4tt spela \u2014 dina framsteg syns.",
+  "modal.stampFailed.dontGiveUp": "Ge inte upp",
+  "modal.stampFailed.dontGiveUpText": "\u00d6vning ger f\u00e4rdighet.",
+  "modal.stampFailed.score": "{{correct}} av {{total}} r\u00e4tt.",
+
+  "modal.poolExhausted.trainingComplete": "Tr\u00e4ning avslutad",
+  "modal.poolExhausted.readyForStamp": "Fantastiskt!<br />Redo f\u00f6r st\u00e4mpeln",
+  "modal.poolExhausted.completedText": "Du har klarat <em>{{continent}}</em> p\u00e5 niv\u00e5 <em>{{level}}</em>. Du kan \u00e5terst\u00e4lla statistiken f\u00f6r att \u00f6va igen.",
+  "modal.poolExhausted.chooseStamp": "V\u00e4lj ett prov. Du m\u00e5ste klara det felfritt f\u00f6r att f\u00e5 st\u00e4mpeln.",
+  "modal.poolExhausted.typePassed": "Fantastiskt!<br /><em>{{type}}</em> klarat",
+  "modal.poolExhausted.stampReady": "Du \u00e4r redo f\u00f6r st\u00e4mpelprovet. Klara det felfritt f\u00f6r att f\u00e5 st\u00e4mpeln.",
+  "modal.poolExhausted.tryStamp.countries": "F\u00f6rs\u00f6k l\u00e4nderst\u00e4mpeln",
+  "modal.poolExhausted.tryStamp.capitals": "F\u00f6rs\u00f6k huvudstadsst\u00e4mpeln",
+  "modal.poolExhausted.selectOther": "V\u00e4lj annat spel",
+  "modal.poolExhausted.playType": "Spela <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Spela <em>\u00c4ventyr</em>",
+
+  "stamp.countries": "L\u00e4nderst\u00e4mpel",
+  "stamp.capitals": "Huvudstadsst\u00e4mpel",
+
+  "modal.stampChooser.title": "St\u00e4mpelprov",
+  "modal.stampChooser.text": "V\u00e4lj ett prov. Du m\u00e5ste svara p\u00e5 {{count}} fr\u00e5gor utan fel.",
+
+  "modal.alreadyDominated.title": "Du beh\u00e4rskar<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Du fick alla l\u00e4nder r\u00e4tt. Du kan \u00e5terst\u00e4lla statistiken f\u00f6r att \u00f6va igen.",
+  "modal.alreadyDominated.completedTraining": "Du har klarat tr\u00e4ningen av <em>{{continent}}</em> p\u00e5 niv\u00e5 <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "F\u00f6rs\u00f6k st\u00e4mpelprovet",
+  "modal.alreadyDominated.goToStats": "G\u00e5 till Statistik"
+}

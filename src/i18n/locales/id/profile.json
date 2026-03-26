@@ -1,0 +1,19 @@
+{
+  "defaultName": "Penjelajah",
+
+  "editor.titleEdit": "Edit profil",
+  "editor.titleCreate": "Buat profil",
+  "editor.chooseAvatar": "Pilih avatarmu",
+  "editor.nameLabel": "Nama",
+  "editor.namePlaceholder": "Nama profil",
+  "editor.save": "Simpan",
+  "editor.create": "Buat",
+
+  "selector.title": "Profil",
+  "selector.confirmDelete": "Hapus \u00ab{{name}}\u00bb?",
+  "selector.delete": "Hapus",
+  "selector.createNew": "Buat profil",
+  "selector.aria.edit": "Edit {{name}}",
+  "selector.aria.delete": "Hapus {{name}}",
+  "selector.aria.dialog": "Pilih profil"
+}
