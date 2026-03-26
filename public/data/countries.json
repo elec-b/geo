@@ -180,7 +180,7 @@
     "flagSvg": "https://flagcdn.com/ao.svg",
     "currencies": [
       {
-        "name": "Kwanza angoleño",
+        "name": "Kuanza angoleño",
         "symbol": "Kz"
       }
     ],
@@ -320,7 +320,7 @@
   {
     "cca2": "AX",
     "ccn3": "248",
-    "name": "Alandia",
+    "name": "Islas Aland",
     "capital": "Mariehamn",
     "continent": "europe",
     "population": 30654,
@@ -501,7 +501,7 @@
     "flagSvg": "https://flagcdn.com/bg.svg",
     "currencies": [
       {
-        "name": "Lev búlgaro",
+        "name": "Leva búlgara",
         "symbol": "лв"
       }
     ],
@@ -648,7 +648,11 @@
     "flagSvg": "https://flagcdn.com/bn.svg",
     "currencies": [
       {
-        "name": "Dólar de Brunéi",
+        "name": "Dólar bruneano",
+        "symbol": "$"
+      },
+      {
+        "name": "Dólar singapurense",
         "symbol": "$"
       }
     ],
@@ -673,7 +677,7 @@
     "currencies": [
       {
         "name": "Boliviano",
-        "symbol": "Bs."
+        "symbol": "Bs"
       }
     ],
     "languages": [
@@ -724,6 +728,10 @@
       {
         "name": "Dólar bahameño",
         "symbol": "$"
+      },
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
       }
     ],
     "languages": [
@@ -746,8 +754,12 @@
     "flagSvg": "https://flagcdn.com/bt.svg",
     "currencies": [
       {
-        "name": "Ngultrum butanés",
+        "name": "Gultrum butanés",
         "symbol": "Nu."
+      },
+      {
+        "name": "Rupia india",
+        "symbol": "₹"
       }
     ],
     "languages": [
@@ -796,7 +808,7 @@
     "currencies": [
       {
         "name": "Rublo bielorruso",
-        "symbol": "Br"
+        "symbol": "р."
       }
     ],
     "languages": [
@@ -861,7 +873,7 @@
   {
     "cca2": "CD",
     "ccn3": "180",
-    "name": "Congo (Rep. Dem.)",
+    "name": "República Democrática del Congo",
     "capital": "Kinsasa",
     "continent": "africa",
     "population": 112832000,
@@ -870,7 +882,7 @@
     "currencies": [
       {
         "name": "Franco congoleño",
-        "symbol": "Fr"
+        "symbol": "FC"
       }
     ],
     "languages": [
@@ -1068,7 +1080,7 @@
     "flagSvg": "https://flagcdn.com/cn.svg",
     "currencies": [
       {
-        "name": "Yuan chino",
+        "name": "Yuan renminbi",
         "symbol": "¥"
       }
     ],
@@ -1140,6 +1152,10 @@
     "flagSvg": "https://flagcdn.com/cu.svg",
     "currencies": [
       {
+        "name": "Peso cubano convertible",
+        "symbol": "$"
+      },
+      {
         "name": "Peso cubano",
         "symbol": "$"
       }
@@ -1164,8 +1180,8 @@
     "flagSvg": "https://flagcdn.com/cv.svg",
     "currencies": [
       {
-        "name": "Escudo caboverdiano",
-        "symbol": "$"
+        "name": "Escudo de Cabo Verde",
+        "symbol": "Esc"
       }
     ],
     "languages": [
@@ -1188,7 +1204,7 @@
     "flagSvg": "https://flagcdn.com/cw.svg",
     "currencies": [
       {
-        "name": "Florín antillano neerlandés",
+        "name": "Florín antillano",
         "symbol": "ƒ"
       }
     ],
@@ -1481,8 +1497,16 @@
     "flagSvg": "https://flagcdn.com/eh.svg",
     "currencies": [
       {
+        "name": "Dinar argelino",
+        "symbol": "د.ج"
+      },
+      {
         "name": "Dírham marroquí",
         "symbol": "د.م."
+      },
+      {
+        "name": "Uguiya mauritano",
+        "symbol": "UM"
       }
     ],
     "languages": [
@@ -1555,7 +1579,7 @@
     "flagSvg": "https://flagcdn.com/et.svg",
     "currencies": [
       {
-        "name": "Birr etíope",
+        "name": "Bir etíope",
         "symbol": "Br"
       }
     ],
@@ -1841,7 +1865,7 @@
   {
     "cca2": "GG",
     "ccn3": "831",
-    "name": "Guernsey",
+    "name": "Guernesey",
     "capital": "Saint Peter Port",
     "continent": "europe",
     "population": 64781,
@@ -1876,7 +1900,7 @@
     "currencies": [
       {
         "name": "Cedi ghanés",
-        "symbol": "₵"
+        "symbol": "GH₵"
       }
     ],
     "languages": [
@@ -1949,7 +1973,7 @@
     "currencies": [
       {
         "name": "Franco guineano",
-        "symbol": "Fr"
+        "symbol": "FG"
       }
     ],
     "languages": [
@@ -2145,7 +2169,7 @@
     "flagSvg": "https://flagcdn.com/hk.svg",
     "currencies": [
       {
-        "name": "Dólar de Hong Kong",
+        "name": "Dólar hongkonés",
         "symbol": "$"
       }
     ],
@@ -2219,7 +2243,7 @@
     "flagSvg": "https://flagcdn.com/ht.svg",
     "currencies": [
       {
-        "name": "Gurda haitiana",
+        "name": "Gurde haitiano",
         "symbol": "G"
       }
     ],
@@ -2614,7 +2638,7 @@
     "currencies": [
       {
         "name": "Som kirguís",
-        "symbol": "С"
+        "symbol": "⃀"
       }
     ],
     "languages": [
@@ -2640,6 +2664,10 @@
       {
         "name": "Riel camboyano",
         "symbol": "៛"
+      },
+      {
+        "name": "Dólar estadounidense",
+        "symbol": "$"
       }
     ],
     "languages": [
@@ -2688,7 +2716,7 @@
     "currencies": [
       {
         "name": "Franco comorense",
-        "symbol": "Fr"
+        "symbol": "CF"
       }
     ],
     "languages": [
@@ -2834,7 +2862,7 @@
     "flagSvg": "https://flagcdn.com/kz.svg",
     "currencies": [
       {
-        "name": "Tenge kazajo",
+        "name": "Tengue kazajo",
         "symbol": "₸"
       }
     ],
@@ -2884,7 +2912,7 @@
     "currencies": [
       {
         "name": "Libra libanesa",
-        "symbol": "ل.ل"
+        "symbol": "L£"
       }
     ],
     "languages": [
@@ -2955,7 +2983,7 @@
     "flagSvg": "https://flagcdn.com/lk.svg",
     "currencies": [
       {
-        "name": "Rupia ceilanesa",
+        "name": "Rupia esrilanquesa",
         "symbol": "Rs"
       }
     ],
@@ -3006,6 +3034,10 @@
       {
         "name": "Loti lesotense",
         "symbol": "L"
+      },
+      {
+        "name": "Rand sudafricano",
+        "symbol": "R"
       }
     ],
     "languages": [
@@ -3299,7 +3331,7 @@
     "flagSvg": "https://flagcdn.com/mk.svg",
     "currencies": [
       {
-        "name": "Denar macedonio",
+        "name": "Dinar macedonio",
         "symbol": "ден"
       }
     ],
@@ -3347,7 +3379,7 @@
     "flagSvg": "https://flagcdn.com/mm.svg",
     "currencies": [
       {
-        "name": "Kiat birmano",
+        "name": "Kiat de Myanmar",
         "symbol": "K"
       }
     ],
@@ -3473,7 +3505,7 @@
     "flagSvg": "https://flagcdn.com/mr.svg",
     "currencies": [
       {
-        "name": "Uguiya mauritana",
+        "name": "Uguiya mauritano",
         "symbol": "UM"
       }
     ],
@@ -3548,7 +3580,7 @@
     "currencies": [
       {
         "name": "Rupia mauriciana",
-        "symbol": "₨"
+        "symbol": "Rs"
       }
     ],
     "languages": [
@@ -3596,7 +3628,7 @@
     "flagSvg": "https://flagcdn.com/mw.svg",
     "currencies": [
       {
-        "name": "Kwacha malauí",
+        "name": "Kuacha malauí",
         "symbol": "MK"
       }
     ],
@@ -3645,7 +3677,7 @@
     "flagSvg": "https://flagcdn.com/my.svg",
     "currencies": [
       {
-        "name": "Ringgit malasio",
+        "name": "Ringit malasio",
         "symbol": "RM"
       }
     ],
@@ -3695,6 +3727,10 @@
       {
         "name": "Dólar namibio",
         "symbol": "$"
+      },
+      {
+        "name": "Rand sudafricano",
+        "symbol": "R"
       }
     ],
     "languages": [
@@ -3718,7 +3754,7 @@
     "currencies": [
       {
         "name": "Franco CFP",
-        "symbol": "₣"
+        "symbol": "Fr"
       }
     ],
     "languages": [
@@ -3758,7 +3794,7 @@
   {
     "cca2": "NF",
     "ccn3": "574",
-    "name": "Isla de Norfolk",
+    "name": "Isla Norfolk",
     "capital": "Kingston",
     "continent": "oceania",
     "population": 2188,
@@ -3791,7 +3827,7 @@
     "flagSvg": "https://flagcdn.com/ng.svg",
     "currencies": [
       {
-        "name": "Naira nigeriana",
+        "name": "Naira nigeriano",
         "symbol": "₦"
       }
     ],
@@ -3815,7 +3851,7 @@
     "flagSvg": "https://flagcdn.com/ni.svg",
     "currencies": [
       {
-        "name": "Córdoba nicaragüense",
+        "name": "Córdoba oro",
         "symbol": "C$"
       }
     ],
@@ -3887,8 +3923,8 @@
     "flagSvg": "https://flagcdn.com/np.svg",
     "currencies": [
       {
-        "name": "Rupia nepalesa",
-        "symbol": "₨"
+        "name": "Rupia nepalí",
+        "symbol": "Rs"
       }
     ],
     "languages": [
@@ -4040,7 +4076,7 @@
     "currencies": [
       {
         "name": "Sol peruano",
-        "symbol": "S/."
+        "symbol": "S/"
       }
     ],
     "languages": [
@@ -4066,7 +4102,7 @@
     "currencies": [
       {
         "name": "Franco CFP",
-        "symbol": "₣"
+        "symbol": "Fr"
       }
     ],
     "languages": [
@@ -4090,7 +4126,7 @@
     "flagSvg": "https://flagcdn.com/pg.svg",
     "currencies": [
       {
-        "name": "Kina papuana",
+        "name": "Kina papú",
         "symbol": "K"
       }
     ],
@@ -4142,7 +4178,7 @@
     "currencies": [
       {
         "name": "Rupia pakistaní",
-        "symbol": "₨"
+        "symbol": "Rs"
       }
     ],
     "languages": [
@@ -4266,8 +4302,16 @@
     "flagSvg": "https://flagcdn.com/ps.svg",
     "currencies": [
       {
+        "name": "Libra egipcia",
+        "symbol": "£"
+      },
+      {
         "name": "Nuevo séquel israelí",
         "symbol": "₪"
+      },
+      {
+        "name": "Dinar jordano",
+        "symbol": "د.ا"
       }
     ],
     "languages": [
@@ -4405,7 +4449,7 @@
   {
     "cca2": "RO",
     "ccn3": "642",
-    "name": "Rumania",
+    "name": "Rumanía",
     "capital": "Bucarest",
     "continent": "europe",
     "population": 19036031,
@@ -4414,7 +4458,7 @@
     "currencies": [
       {
         "name": "Leu rumano",
-        "symbol": "lei"
+        "symbol": "L"
       }
     ],
     "languages": [
@@ -4486,7 +4530,7 @@
     "currencies": [
       {
         "name": "Franco ruandés",
-        "symbol": "Fr"
+        "symbol": "RF"
       }
     ],
     "languages": [
@@ -4535,7 +4579,7 @@
     "flagSvg": "https://flagcdn.com/sb.svg",
     "currencies": [
       {
-        "name": "Dólar de las Islas Salomón",
+        "name": "Dólar salomonense",
         "symbol": "$"
       }
     ],
@@ -4559,7 +4603,7 @@
     "flagSvg": "https://flagcdn.com/sc.svg",
     "currencies": [
       {
-        "name": "Rupia seychelense",
+        "name": "Rupia seychellense",
         "symbol": "₨"
       }
     ],
@@ -4634,7 +4678,7 @@
     "flagSvg": "https://flagcdn.com/sg.svg",
     "currencies": [
       {
-        "name": "Dólar de Singapur",
+        "name": "Dólar singapurense",
         "symbol": "$"
       }
     ],
@@ -4653,7 +4697,7 @@
   {
     "cca2": "SH",
     "ccn3": "654",
-    "name": "Santa Elena, Ascensión y Tristán de Acuña",
+    "name": "Santa Elena",
     "capital": "Jamestown",
     "continent": "africa",
     "population": 5651,
@@ -4661,7 +4705,11 @@
     "flagSvg": "https://flagcdn.com/sh.svg",
     "currencies": [
       {
-        "name": "Libra de Santa Helena",
+        "name": "Libra esterlina",
+        "symbol": "£"
+      },
+      {
+        "name": "Libra de Santa Elena",
         "symbol": "£"
       }
     ],
@@ -4734,7 +4782,7 @@
     "flagSvg": "https://flagcdn.com/sl.svg",
     "currencies": [
       {
-        "name": "Leone sierraleonés",
+        "name": "Leona sierraleonesa",
         "symbol": "Le"
       }
     ],
@@ -4927,7 +4975,7 @@
     "flagSvg": "https://flagcdn.com/sx.svg",
     "currencies": [
       {
-        "name": "Florín antillano neerlandés",
+        "name": "Florín antillano",
         "symbol": "ƒ"
       }
     ],
@@ -4969,7 +5017,7 @@
   {
     "cca2": "SZ",
     "ccn3": "748",
-    "name": "Suazilandia",
+    "name": "Esuatini",
     "capital": "Mbabane",
     "continent": "africa",
     "population": 1235549,
@@ -4977,8 +5025,12 @@
     "flagSvg": "https://flagcdn.com/sz.svg",
     "currencies": [
       {
-        "name": "Lilangeni suazi",
-        "symbol": "E"
+        "name": "Lilangeni esuatiní",
+        "symbol": "L"
+      },
+      {
+        "name": "Rand sudafricano",
+        "symbol": "R"
       }
     ],
     "languages": [
@@ -5076,7 +5128,7 @@
     "flagSvg": "https://flagcdn.com/th.svg",
     "currencies": [
       {
-        "name": "Baht tailandés",
+        "name": "Bat tailandés",
         "symbol": "฿"
       }
     ],
@@ -5441,7 +5493,7 @@
     "flagSvg": "https://flagcdn.com/uz.svg",
     "currencies": [
       {
-        "name": "Som uzbeko",
+        "name": "Sum uzbeko",
         "symbol": "сўм"
       }
     ],
@@ -5515,7 +5567,7 @@
     "currencies": [
       {
         "name": "Bolívar venezolano",
-        "symbol": "Bs."
+        "symbol": "Bs.S"
       }
     ],
     "languages": [
@@ -5530,7 +5582,7 @@
   {
     "cca2": "VG",
     "ccn3": "092",
-    "name": "Islas Vírgenes del Reino Unido",
+    "name": "Islas Vírgenes Británicas",
     "capital": "Road Town",
     "continent": "america",
     "population": 39471,
@@ -5555,7 +5607,7 @@
   {
     "cca2": "VI",
     "ccn3": "850",
-    "name": "Islas Vírgenes de los Estados Unidos",
+    "name": "Islas Vírgenes de EE. UU.",
     "capital": "Charlotte Amalie",
     "continent": "america",
     "population": 87146,
@@ -5612,7 +5664,7 @@
     "flagSvg": "https://flagcdn.com/vu.svg",
     "currencies": [
       {
-        "name": "Vatu vanuatuense",
+        "name": "Vatu vanuatense",
         "symbol": "VT"
       }
     ],
@@ -5639,7 +5691,7 @@
     "currencies": [
       {
         "name": "Franco CFP",
-        "symbol": "₣"
+        "symbol": "Fr"
       }
     ],
     "languages": [
@@ -5789,7 +5841,7 @@
     "flagSvg": "https://flagcdn.com/zm.svg",
     "currencies": [
       {
-        "name": "Kwacha zambiano",
+        "name": "Kuacha zambiano",
         "symbol": "ZK"
       }
     ],

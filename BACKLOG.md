@@ -33,8 +33,8 @@
 
 - [x] **(a)** Librería de i18n: `i18next` + `react-i18next`
 - [x] **(b)** Externalizar textos de la app a archivos de traducción. Tipos `Continent`/`GameLevel` migrados a claves neutras, Zustand persist v1 con migración automática, ~200 strings externalizados en 7 namespaces i18next
-- [ ] **(c)** Cambiar fuente de nombres de países a CLDR + ~6 overrides/idioma. Pipeline con diff entre runs que flaggee cambios para revisión. Absorbe los overrides manuales de español. Spike: `docs/spikes/typos-español-i18n.md` § 4
-- [ ] **(d)** Símbolos y nombres de moneda via `Intl.NumberFormat` (CLDR): usar `narrowSymbol` como base + mapa de ~15 overrides curados. Spike: `docs/spikes/validacion-simbolos-moneda.md`
+- [x] **(c)** Nombres de países desde CLDR (`Intl.DisplayNames`) + 8 overrides/es. Diff entre runs. Absorbe 24 overrides manuales
+- [x] **(d)** Nombres y símbolos de moneda desde CLDR (`Intl.DisplayNames` + `Intl.NumberFormat` narrowSymbol) + 59 overrides de símbolo. Filtro de códigos no reconocidos. 5 correcciones de símbolos (CD, PE, VE, CV, SZ). Eliminadas 237 entradas manuales de monedas
 - [ ] **(e)** Generar datos multi-idioma (ampliar script para todos los idiomas soportados)
 - [ ] **(f)** Validación con Claude: validador primario para todos los idiomas. El desarrollador valida español e inglés personalmente; para el resto, Claude genera informe de anomalías por idioma (ortografía, traducciones incorrectas, incoherencias). No genera traducciones — solo valida
 - [ ] **(g)** Traducir textos de UI a todos los idiomas soportados

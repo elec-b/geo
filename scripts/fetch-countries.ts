@@ -7,7 +7,7 @@
  * Ejecutar: npm run fetch-data
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -31,7 +31,6 @@ interface RestCountry {
   cca2: string;
   ccn3?: string;
   name: { common: string; official: string };
-  translations?: Record<string, { official: string; common: string }>;
   capital?: string[];
   capitalInfo?: { latlng?: [number, number] };
   region: string;
@@ -44,10 +43,10 @@ interface RestCountry {
 }
 
 interface SupplementaryEntry {
+  /** Override de nombre CLDR (solo ~8 casos donde CLDR prefiere endónimos) */
   name?: string;
   capital: string;
   demonym: string;
-  currencies?: { name: string; symbol: string }[];
   languages?: string[];
 }
 
@@ -94,6 +93,99 @@ for (const t of Object.values(NON_UN_TERRITORIES_BY_NAME)) {
   if (t.sovereignCca2) sovereignByCca2.set(t.cca2, t.sovereignCca2);
 }
 
+// --- CLDR: nombres de países vía Intl.DisplayNames (fuente primaria) ---
+const territoryNames = new Intl.DisplayNames(['es'], { type: 'region' });
+
+function cldrTerritoryName(cca2: string): string {
+  const name = territoryNames.of(cca2);
+  if (!name) throw new Error(`CLDR: sin nombre en español para ${cca2}`);
+  return name;
+}
+
+// --- CLDR: nombres y símbolos de monedas ---
+const currencyDisplayNames = new Intl.DisplayNames(['es'], { type: 'currency' });
+
+function cldrCurrencyName(code: string): string {
+  const raw = currencyDisplayNames.of(code);
+  if (!raw || raw === code) return code; // fallback para códigos desconocidos (ej. KID)
+  // CLDR devuelve minúsculas ("euro", "dólar estadounidense") → Title Case
+  return raw.charAt(0).toUpperCase() + raw.slice(1);
+}
+
+// Overrides de símbolos: monedas donde narrowSymbol devuelve el código ISO
+// y la app tiene un símbolo más informativo. Incluye 5 correcciones del spike
+// de validación (CDF, PEN, VES, CVE, SZL).
+const SYMBOL_OVERRIDES: Record<string, string> = {
+  AED: 'د.إ',  ALL: 'L',    ANG: 'ƒ',    AWG: 'ƒ',    BGN: 'лв',
+  BHD: '.د.ب', BIF: 'Fr',   BTN: 'Nu.',  CDF: 'FC',   CHF: 'Fr',
+  CVE: 'Esc',  DJF: 'Fr',   DZD: 'د.ج',  EGP: '£',    ERN: 'Nfk',
+  ETB: 'Br',   GMD: 'D',    HTG: 'G',    IQD: 'ع.د',  IRR: '﷼',
+  JOD: 'د.ا',  KES: 'KSh',  KID: '$',    KWD: 'د.ك',  LSL: 'L',
+  LYD: 'ل.د',  MAD: 'د.م.', MDL: 'L',    MKD: 'ден',  MOP: 'MOP$',
+  MRU: 'UM',   MVR: 'Rf',   MWK: 'MK',   MZN: 'MT',   OMR: 'ر.ع.',
+  PAB: 'B/.',  PEN: 'S/',   PGK: 'K',    QAR: 'ر.ق',  RSD: 'din.',
+  SAR: 'ر.س',  SCR: '₨',   SDG: 'ج.س.', SLE: 'Le',   SOS: 'Sh',
+  SZL: 'L',    TJS: 'SM',   TMT: 'T',    TND: 'د.ت',  TZS: 'TSh',
+  UGX: 'USh',  UZS: 'сўм',  VES: 'Bs.S', VUV: 'VT',   WST: 'T',
+  XAF: 'Fr',   XOF: 'Fr',   XPF: 'Fr',   YER: '﷼',   ZWL: '$',
+};
+
+function currencySymbol(code: string): string {
+  if (SYMBOL_OVERRIDES[code]) return SYMBOL_OVERRIDES[code];
+  try {
+    const parts = new Intl.NumberFormat('es', {
+      style: 'currency', currency: code, currencyDisplay: 'narrowSymbol',
+    }).formatToParts(0);
+    return parts.find((p) => p.type === 'currency')?.value ?? code;
+  } catch {
+    return code;
+  }
+}
+
+// --- Diff entre runs: compara countries.json anterior vs nuevo ---
+function diffAndReport(prev: CountryEntry[], next: CountryEntry[]): void {
+  const prevMap = new Map(prev.map((c) => [c.cca2, c]));
+  const nameChanges: string[] = [];
+  const currencyChanges: string[] = [];
+  const added: string[] = [];
+
+  for (const entry of next) {
+    const old = prevMap.get(entry.cca2);
+    if (!old) {
+      added.push(entry.cca2);
+      continue;
+    }
+    if (old.name !== entry.name) {
+      nameChanges.push(`  ${entry.cca2}: "${old.name}" → "${entry.name}"`);
+    }
+    const oldCur = old.currencies.map((c) => `${c.name} (${c.symbol})`).join(', ');
+    const newCur = entry.currencies.map((c) => `${c.name} (${c.symbol})`).join(', ');
+    if (oldCur !== newCur) {
+      currencyChanges.push(`  ${entry.cca2}: "${oldCur}" → "${newCur}"`);
+    }
+  }
+
+  const removed = [...prevMap.keys()].filter((k) => !next.some((c) => c.cca2 === k));
+
+  if (nameChanges.length === 0 && currencyChanges.length === 0 && added.length === 0 && removed.length === 0) {
+    console.log('\n✓ Sin cambios respecto al run anterior');
+    return;
+  }
+
+  console.log('\n--- Diff entre runs ---');
+  if (nameChanges.length > 0) {
+    console.log(`\nNombres cambiados (${nameChanges.length}):`);
+    nameChanges.forEach((l) => console.log(l));
+  }
+  if (currencyChanges.length > 0) {
+    console.log(`\nMonedas cambiadas (${currencyChanges.length}):`);
+    currencyChanges.forEach((l) => console.log(l));
+  }
+  if (added.length > 0) console.log(`\nNuevos: ${added.join(', ')}`);
+  if (removed.length > 0) console.log(`\nEliminados: ${removed.join(', ')}`);
+  console.log('--- Fin diff ---\n');
+}
+
 function toCountryEntry(
   c: RestCountry,
   isUN: boolean,
@@ -105,15 +197,22 @@ function toCountryEntry(
   const suppEntry = supp[c.cca2];
   if (!suppEntry) throw new Error(`Sin datos suplementarios para ${c.cca2} (${c.name.common})`);
 
-  // Nombre del país en español: suplementario tiene prioridad sobre REST Countries
-  const name = suppEntry.name ?? c.translations?.spa?.common;
-  if (!name) throw new Error(`Sin traducción española para ${c.cca2} (${c.name.common})`);
+  // Nombre del país en español: override suplementario → CLDR (Intl.DisplayNames)
+  const name = suppEntry.name ?? cldrTerritoryName(c.cca2);
 
-  // Monedas: preferir suplementario (español), fallback a REST Countries
-  const currencies: { name: string; symbol: string }[] = suppEntry.currencies
-    ?? (c.currencies
-      ? Object.values(c.currencies).map((cur) => ({ name: cur.name, symbol: cur.symbol ?? '' }))
-      : []);
+  // Monedas: códigos de REST Countries → nombre y símbolo de CLDR + overrides
+  // Se filtran códigos no reconocidos por CLDR (CKD, FOK, GGP, IMP, JEP, TVD…)
+  const currencies: { name: string; symbol: string }[] = c.currencies
+    ? Object.keys(c.currencies)
+        .filter((code) => {
+          const resolved = currencyDisplayNames.of(code);
+          return resolved != null && resolved !== code;
+        })
+        .map((code) => ({
+          name: cldrCurrencyName(code),
+          symbol: currencySymbol(code),
+        }))
+    : [];
 
   // Idiomas: preferir suplementario (español), fallback a REST Countries
   const languages: string[] = suppEntry.languages
@@ -151,7 +250,7 @@ function toCountryEntry(
 }
 
 async function main() {
-  // Cargar datos suplementarios (capitales, gentilicios, monedas e idiomas en español)
+  // Cargar datos suplementarios (capitales, gentilicios e idiomas en español)
   const SUPP_PATH = resolve(__dirname, 'data', 'capitals-es.json');
   const supplementary: Record<string, SupplementaryEntry> =
     JSON.parse(readFileSync(SUPP_PATH, 'utf-8'));
@@ -268,8 +367,14 @@ async function main() {
   // Crear directorio si no existe
   mkdirSync(DATA_DIR, { recursive: true });
 
-  // Escribir archivos
+  // Diff contra el run anterior (si existe)
   const countriesPath = resolve(DATA_DIR, 'countries.json');
+  if (existsSync(countriesPath)) {
+    const prevData: CountryEntry[] = JSON.parse(readFileSync(countriesPath, 'utf-8'));
+    diffAndReport(prevData, countries);
+  }
+
+  // Escribir archivos
   writeFileSync(countriesPath, JSON.stringify(countries, null, 2), 'utf-8');
   console.log(`✓ ${countries.length} países escritos → ${countriesPath}`);
 
