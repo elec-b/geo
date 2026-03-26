@@ -31,11 +31,8 @@
 ### Internacionalización
 > Pre-lanzamiento. La app se lanza en todos los idiomas soportados por iOS/Android. Las tareas siguen la cadena de dependencias: a → b → c → d → e → f → g.
 
-- [ ] **(a)** Elegir librería de i18n (i18next, react-intl u otra)
-- [ ] **(b)** Externalizar textos de la app a archivos de traducción
-  - Migrar tipos `Continent` y `GameLevel` de literales en español a claves neutras (`africa`, `tourist`, etc.)
-  - Añadir `version` + `migrate` a Zustand persist para migrar datos de usuarios existentes
-  - Los datos sintéticos en `countryData.ts` (SOL, CYN, AQ) tienen nombres hardcodeados en español
+- [x] **(a)** Librería de i18n: `i18next` + `react-i18next`
+- [x] **(b)** Externalizar textos de la app a archivos de traducción. Tipos `Continent`/`GameLevel` migrados a claves neutras, Zustand persist v1 con migración automática, ~200 strings externalizados en 7 namespaces i18next
 - [ ] **(c)** Cambiar fuente de nombres de países a CLDR + ~6 overrides/idioma. Pipeline con diff entre runs que flaggee cambios para revisión. Absorbe los overrides manuales de español. Spike: `docs/spikes/typos-español-i18n.md` § 4
 - [ ] **(d)** Símbolos y nombres de moneda via `Intl.NumberFormat` (CLDR): usar `narrowSymbol` como base + mapa de ~15 overrides curados. Spike: `docs/spikes/validacion-simbolos-moneda.md`
 - [ ] **(e)** Generar datos multi-idioma (ampliar script para todos los idiomas soportados)

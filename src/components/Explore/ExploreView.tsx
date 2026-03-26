@@ -1,6 +1,7 @@
 // ExploreView — contenedor de la experiencia Explorar
 // Gestiona modo (países/capitales), selección, filtros y etiquetas.
 import { useState, useCallback, useMemo, useEffect, type RefObject, type MutableRefObject } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { GlobeD3Ref } from '../Globe';
 import type { CountryFeature } from '../../data/countries';
 import type { CountryData, CapitalCoords, Continent } from '../../data/types';
@@ -53,6 +54,7 @@ export function ExploreView({
   onCountryClickRef,
   onCountryDeselectRef,
 }: ExploreViewProps) {
+  const { t } = useTranslation('explore');
   const lastActiveContinent = useAppStore((s) => s.settings.lastActiveContinent) ?? null;
   const lastTableSort = useAppStore((s) => s.settings.lastTableSort) ?? null;
   const setLastActiveContinent = useAppStore((s) => s.setLastActiveContinent);
@@ -250,7 +252,7 @@ export function ExploreView({
             role="tab"
             aria-selected={visualMode === 'countries'}
           >
-            Globo
+            {t('segmented.globe')}
           </button>
           <button
             className={`explore-segmented__btn ${visualMode === 'capitals' ? 'explore-segmented__btn--active' : ''}`}
@@ -258,7 +260,7 @@ export function ExploreView({
             role="tab"
             aria-selected={visualMode === 'capitals'}
           >
-            Tabla
+            {t('segmented.table')}
           </button>
         </div>
 
@@ -273,14 +275,14 @@ export function ExploreView({
               onClick={() => setShowCountryLabels(prev => !prev)}
               aria-pressed={showCountryLabels}
             >
-              Países
+              {t('labels.countries')}
             </button>
             <button
               className={`explore-labels__btn ${showCapitalLabels ? 'explore-labels__btn--active' : ''}`}
               onClick={() => setShowCapitalLabels(prev => !prev)}
               aria-pressed={showCapitalLabels}
             >
-              Capitales
+              {t('labels.capitals')}
             </button>
           </div>
         )}

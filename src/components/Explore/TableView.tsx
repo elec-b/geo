@@ -1,6 +1,7 @@
 // TableView — tabla país-capital-población a pantalla completa
 // Soporta ordenamiento por columna y vista plana o agrupada por continente.
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { CountryData, Continent } from '../../data/types';
 import './TableView.css';
 
@@ -53,6 +54,7 @@ export function TableView({
   onSortChange,
   style,
 }: TableViewProps) {
+  const { t } = useTranslation('explore');
   const [sortKey, setSortKey] = useState<SortKey>(initialSort?.key ?? 'population');
   const [sortDir, setSortDir] = useState<SortDir>(initialSort?.dir ?? 'desc');
   const [showNonUN, setShowNonUN] = useState(false);
@@ -97,13 +99,13 @@ export function TableView({
   const renderHeader = () => (
     <div className="table-view__table-header">
       <button className="table-view__header-btn" onClick={() => toggleSort('name')}>
-        País<SortIndicator active={sortKey === 'name'} dir={sortDir} />
+        {t('table.country')}<SortIndicator active={sortKey === 'name'} dir={sortDir} />
       </button>
       <button className="table-view__header-btn" onClick={() => toggleSort('capital')}>
-        Capital<SortIndicator active={sortKey === 'capital'} dir={sortDir} />
+        {t('table.capital')}<SortIndicator active={sortKey === 'capital'} dir={sortDir} />
       </button>
       <button className="table-view__header-btn table-view__header-btn--right" onClick={() => toggleSort('population')}>
-        Pob.<SortIndicator active={sortKey === 'population'} dir={sortDir} />
+        {t('table.population')}<SortIndicator active={sortKey === 'population'} dir={sortDir} />
       </button>
     </div>
   );
@@ -141,7 +143,7 @@ export function TableView({
       <div className="table-view__scroll">
         {/* Toggle de territorios no-ONU */}
         <div className="table-view__toggle-row">
-          <span className="table-view__toggle-label">Territorios no-ONU</span>
+          <span className="table-view__toggle-label">{t('table.nonUNToggle')}</span>
           <button
             className={`table-view__toggle ${showNonUN ? 'table-view__toggle--active' : ''}`}
             role="switch"
@@ -160,7 +162,7 @@ export function TableView({
         ) : (
           // Tabla con header de continente cuando hay filtro
           <section className="table-view__section">
-            <h3 className="table-view__continent-header">{continentFilter}</h3>
+            <h3 className="table-view__continent-header">{t(`common:continent.${continentFilter}`)}</h3>
             <div className="table-view__table">
               {renderHeader()}
               {(groupedList ?? []).map(renderRow)}

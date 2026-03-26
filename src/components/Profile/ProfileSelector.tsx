@@ -1,5 +1,6 @@
 // Selector de perfil — modal con lista de perfiles y acciones
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../stores/appStore';
 import { AvatarIcon } from './AvatarIcon';
 import { DEFAULT_AVATAR } from '../../data/avatars';
@@ -13,24 +14,26 @@ interface ProfileSelectorProps {
   onEdit: (profile: UserProfile) => void;
 }
 
-/** Calcula el siguiente nombre por defecto: "Explorador", "Explorador 2", etc. */
-function getNextDefaultName(profiles: UserProfile[]): string {
+/** Calcula el siguiente nombre por defecto: "baseName", "baseName 2", etc. */
+function getNextDefaultName(profiles: UserProfile[], baseName: string): string {
+  const regex = new RegExp(`^${baseName}\\s*\\d*$`);
   const nums = profiles
     .map((p) => p.name)
-    .filter((n) => /^Explorador\s*\d*$/.test(n))
+    .filter((n) => regex.test(n))
     .map((n) => {
-      const m = n.match(/^Explorador\s*(\d*)$/);
+      const m = n.match(new RegExp(`^${baseName}\\s*(\\d*)$`));
       return m ? (m[1] ? parseInt(m[1]) : 1) : 0;
     })
     .filter((n) => n > 0);
 
-  if (nums.length === 0) return 'Explorador';
-  return `Explorador ${Math.max(...nums) + 1}`;
+  if (nums.length === 0) return baseName;
+  return `${baseName} ${Math.max(...nums) + 1}`;
 }
 
 export { getNextDefaultName };
 
 export function ProfileSelector({ onClose, onProfileChange, onCreateNew, onEdit }: ProfileSelectorProps) {
+  const { t } = useTranslation('profile');
   const profiles = useAppStore((s) => s.profiles);
   const activeProfileId = useAppStore((s) => s.activeProfileId);
   const deleteProfile = useAppStore((s) => s.deleteProfile);
@@ -51,7 +54,7 @@ export function ProfileSelector({ onClose, onProfileChange, onCreateNew, onEdit 
 
     if (remaining.length === 0) {
       // Si no quedan perfiles, crear uno por defecto
-      createProfile('Explorador', DEFAULT_AVATAR);
+      createProfile(t('defaultName'), DEFAULT_AVATAR);
       const newId = useAppStore.getState().activeProfileId!;
       onProfileChange(newId);
     } else if (wasActive) {
@@ -68,11 +71,11 @@ export function ProfileSelector({ onClose, onProfileChange, onCreateNew, onEdit 
   };
 
   return (
-    <div className="profile-selector-overlay" onClick={handleOverlayClick} role="dialog" aria-label="Seleccionar perfil">
+    <div className="profile-selector-overlay" onClick={handleOverlayClick} role="dialog" aria-label={t('selector.aria.dialog')}>
       <div className="profile-selector">
         <div className="profile-selector__header">
-          <h2 className="profile-selector__title">Perfiles</h2>
-          <button className="profile-selector__close" onClick={onClose} aria-label="Cerrar">
+          <h2 className="profile-selector__title">{t('selector.title')}</h2>
+          <button className="profile-selector__close" onClick={onClose} aria-label={t('common:close')}>
             ✕
           </button>
         </div>
@@ -83,20 +86,20 @@ export function ProfileSelector({ onClose, onProfileChange, onCreateNew, onEdit 
               {confirmDeleteId === profile.id ? (
                 <div className="profile-selector__confirm">
                   <p className="profile-selector__confirm-text">
-                    ¿Eliminar «{profile.name}»?
+                    {t('selector.confirmDelete', { name: profile.name })}
                   </p>
                   <div className="profile-selector__confirm-actions">
                     <button
                       className="profile-selector__confirm-btn"
                       onClick={() => setConfirmDeleteId(null)}
                     >
-                      Cancelar
+                      {t('common:cancel')}
                     </button>
                     <button
                       className="profile-selector__confirm-btn profile-selector__confirm-btn--delete"
                       onClick={() => handleDelete(profile.id)}
                     >
-                      Eliminar
+                      {t('selector.delete')}
                     </button>
                   </div>
                 </div>
@@ -116,7 +119,7 @@ export function ProfileSelector({ onClose, onProfileChange, onCreateNew, onEdit 
                     <button
                       className="profile-selector__action-btn"
                       onClick={() => onEdit(profile)}
-                      aria-label={`Editar ${profile.name}`}
+                      aria-label={t('selector.aria.edit', { name: profile.name })}
                     >
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
@@ -125,7 +128,7 @@ export function ProfileSelector({ onClose, onProfileChange, onCreateNew, onEdit 
                     <button
                       className="profile-selector__action-btn profile-selector__action-btn--delete"
                       onClick={() => setConfirmDeleteId(profile.id)}
-                      aria-label={`Eliminar ${profile.name}`}
+                      aria-label={t('selector.aria.delete', { name: profile.name })}
                     >
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M3 6h18" />
@@ -141,7 +144,7 @@ export function ProfileSelector({ onClose, onProfileChange, onCreateNew, onEdit 
         </div>
 
         <button className="profile-selector__create-btn" onClick={onCreateNew}>
-          Crear perfil
+          {t('selector.createNew')}
         </button>
       </div>
     </div>

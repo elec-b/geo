@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Globo",
+  "segmented.table": "Tabla",
+  "labels.countries": "Países",
+  "labels.capitals": "Capitales",
+
+  "table.country": "País",
+  "table.capital": "Capital",
+  "table.population": "Pob.",
+  "table.nonUNToggle": "Territorios no-ONU",
+
+  "card.disclaimer.antarctica": "Territorio internacional — Tratado Antártico (1959)",
+  "card.disclaimer.territory": "Territorio {{sovereign}}",
+  "card.disclaimer.disputed": "Soberanía en disputa",
+  "card.flagAlt": "Bandera de {{country}}",
+  "card.aria.openWikipedia": "Abrir {{country}} en Wikipedia",
+  "card.aria.dialog": "Ficha de {{country}}",
+
+  "card.field.capital": "Capital",
+  "card.field.population": "Población",
+  "card.field.area": "Superficie",
+  "card.field.density": "Densidad",
+  "card.field.currency": "Moneda",
+  "card.field.demonym": "Gentilicio",
+  "card.field.languages": "Idiomas",
+  "card.field.hdi": "IDH",
+  "card.field.ihdi": "IDH-D",
+  "card.unit.inhabitants": "hab.",
+  "card.unit.densityUnit": "hab/km²",
+  "card.na": "N/D",
+
+  "card.tooltip.hdi": "Índice de Desarrollo Humano: mide salud, educación e ingresos. Rango 0–1.",
+  "card.tooltip.ihdi": "IDH ajustado por Desigualdad: penaliza la desigualdad en salud, educación e ingresos.",
+  "card.aria.hdiInfo": "Información sobre IDH",
+  "card.aria.ihdiInfo": "Información sobre IDH-D",
+
+  "card.antarctica.info": "La Antártida no pertenece a ningún país. El Tratado Antártico, firmado en 1959, la reserva para la investigación científica y prohíbe la actividad militar y la explotación de sus recursos.",
+
+  "card.sovereign.GB": "del Reino Unido",
+  "card.sovereign.FR": "de Francia",
+  "card.sovereign.US": "de Estados Unidos",
+  "card.sovereign.NL": "de Países Bajos",
+  "card.sovereign.DK": "de Dinamarca",
+  "card.sovereign.CN": "de China",
+  "card.sovereign.NZ": "de Nueva Zelanda",
+  "card.sovereign.FI": "de Finlandia",
+  "card.sovereign.AU": "de Australia"
+}

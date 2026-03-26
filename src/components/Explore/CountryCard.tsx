@@ -1,35 +1,14 @@
 // Ficha de país — bottom sheet que muestra info detallada del país seleccionado
 import { useState, useRef } from 'react';
-import type { CountryData } from '../../data/types';
+import { useTranslation } from 'react-i18next';
+import type { CountryData, ContinentOrSpecial } from '../../data/types';
 import type { CountryRankings } from '../../data/rankings';
+import { CONTINENT_CSS_VAR_SPECIAL } from '../../data/continents';
 import { useBottomSheetDrag } from '../../hooks/useBottomSheetDrag';
 import './CountryCard.css';
 
-/** Color CSS del continente */
-const CONTINENT_COLORS: Record<string, string> = {
-  'África': 'var(--color-africa)',
-  'América': 'var(--color-america)',
-  'Asia': 'var(--color-asia)',
-  'Europa': 'var(--color-europe)',
-  'Oceanía': 'var(--color-oceania)',
-  'Antártida': 'var(--color-accent-amber)',
-};
-
 /** Máximo de idiomas visibles antes de truncar */
 const MAX_LANGUAGES = 3;
-
-/** Preposiciones en español para cada país soberano de territorios dependientes */
-const SOVEREIGN_LABELS: Record<string, string> = {
-  'GB': 'del Reino Unido',
-  'FR': 'de Francia',
-  'US': 'de Estados Unidos',
-  'NL': 'de Países Bajos',
-  'DK': 'de Dinamarca',
-  'CN': 'de China',
-  'NZ': 'de Nueva Zelanda',
-  'FI': 'de Finlandia',
-  'AU': 'de Australia',
-};
 
 type TooltipId = 'hdi' | 'ihdi' | null;
 
@@ -71,13 +50,15 @@ function InfoIcon() {
 }
 
 export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
+  const { t } = useTranslation('explore');
   const sheetRef = useRef<HTMLDivElement>(null);
   const { dragHandlers } = useBottomSheetDrag({
     sheetRef,
     onClose,
   });
 
-  const continentColor = CONTINENT_COLORS[country.continent] ?? 'var(--color-text-secondary)';
+  const cssVar = CONTINENT_CSS_VAR_SPECIAL[country.continent as ContinentOrSpecial];
+  const continentColor = cssVar ? `var(${cssVar})` : 'var(--color-text-secondary)';
   const isAntarctica = country.cca2 === 'AQ';
   const [activeTooltip, setActiveTooltip] = useState<TooltipId>(null);
 
@@ -101,7 +82,7 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
       ref={sheetRef}
       className="country-card"
       role="dialog"
-      aria-label={`Ficha de ${country.name}`}
+      aria-label={t('card.aria.dialog', { country: country.name })}
     >
       {/* Drag zone: handle + disclaimer + header — touch-action: none para drag fiable */}
       <div className="country-card__drag-zone" {...dragHandlers}>
@@ -109,13 +90,13 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
         {/* Disclaimer contextual */}
         {isAntarctica ? (
           <div className="country-card__disclaimer">
-            Territorio internacional — Tratado Antártico (1959)
+            {t('card.disclaimer.antarctica')}
           </div>
         ) : !country.unMember ? (
           <div className="country-card__disclaimer">
-            {country.sovereignCountry && SOVEREIGN_LABELS[country.sovereignCountry]
-              ? `Territorio ${SOVEREIGN_LABELS[country.sovereignCountry]}`
-              : 'Soberanía en disputa'}
+            {country.sovereignCountry
+              ? t('card.disclaimer.territory', { sovereign: t(`card.sovereign.${country.sovereignCountry}`) })
+              : t('card.disclaimer.disputed')}
           </div>
         ) : null}
 
@@ -125,7 +106,7 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
             <img
               className="country-card__flag"
               src={country.flagSvg}
-              alt={`Bandera de ${country.name}`}
+              alt={t('card.flagAlt', { country: country.name })}
               loading="eager"
             />
           )}
@@ -135,14 +116,14 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
               className="country-card__continent"
               style={{ color: continentColor }}
             >
-              {country.continent}
+              {t(`common:continent.${country.continent}`)}
             </span>
           </div>
           {wikipediaUrl && (
             <button
               className="country-card__wikipedia"
               onClick={() => window.open(wikipediaUrl, '_blank')}
-              aria-label={`Abrir ${country.name} en Wikipedia`}
+              aria-label={t('card.aria.openWikipedia', { country: country.name })}
             >
               <img
                 className="country-card__wikipedia-icon"
@@ -159,32 +140,30 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
       {isAntarctica ? (
         <div className="country-card__grid">
           <div className="country-card__field">
-            <span className="country-card__label">Superficie</span>
+            <span className="country-card__label">{t('card.field.area')}</span>
             <span className="country-card__value">{formatNumber(country.area)} km²</span>
           </div>
           <div className="country-card__field country-card__field--full">
             <span className="country-card__value country-card__value--info">
-              La Antártida no pertenece a ningún país. El Tratado Antártico, firmado en 1959, la
-              reserva para la investigación científica y prohíbe la actividad militar y la
-              explotación de sus recursos.
+              {t('card.antarctica.info')}
             </span>
           </div>
         </div>
       ) : (
         <div className="country-card__grid">
           <div className="country-card__field country-card__field--full">
-            <span className="country-card__label">Capital</span>
+            <span className="country-card__label">{t('card.field.capital')}</span>
             <span className="country-card__value">{country.capital || '—'}</span>
           </div>
           <div className="country-card__field">
-            <span className="country-card__label">Población</span>
+            <span className="country-card__label">{t('card.field.population')}</span>
             <span className="country-card__value">
-              {formatNumber(country.population)} hab.
+              {formatNumber(country.population)} {t('card.unit.inhabitants')}
               {rankings && <span className="country-card__rank"> #{rankings.populationRank}</span>}
             </span>
           </div>
           <div className="country-card__field">
-            <span className="country-card__label">Superficie</span>
+            <span className="country-card__label">{t('card.field.area')}</span>
             <span className="country-card__value">
               {formatNumber(country.area)} km²
               {rankings && <span className="country-card__rank"> #{rankings.areaRank}</span>}
@@ -192,19 +171,19 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
           </div>
           {country.area > 0 && (
             <div className="country-card__field">
-              <span className="country-card__label">Densidad</span>
+              <span className="country-card__label">{t('card.field.density')}</span>
               <span className="country-card__value">
-                {formatNumber(Math.round(country.population / country.area))} hab/km²
+                {formatNumber(Math.round(country.population / country.area))} {t('card.unit.densityUnit')}
                 {rankings && <span className="country-card__rank"> #{rankings.densityRank}</span>}
               </span>
             </div>
           )}
           <div className="country-card__field">
-            <span className="country-card__label">Moneda</span>
+            <span className="country-card__label">{t('card.field.currency')}</span>
             <span className="country-card__value">{formatCurrencies(country.currencies)}</span>
           </div>
           <div className="country-card__field">
-            <span className="country-card__label">Gentilicio</span>
+            <span className="country-card__label">{t('card.field.demonym')}</span>
             <span className="country-card__value">
               {country.demonym
                 ? country.demonym.charAt(0).toUpperCase() + country.demonym.slice(1)
@@ -212,18 +191,18 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
             </span>
           </div>
           <div className="country-card__field">
-            <span className="country-card__label">Idiomas</span>
+            <span className="country-card__label">{t('card.field.languages')}</span>
             <span className="country-card__value">{formatLanguages(country.languages)}</span>
           </div>
           {country.hdi !== null && (
             <>
               <div className="country-card__field country-card__field--tooltip-parent">
                 <span className="country-card__label">
-                  IDH
+                  {t('card.field.hdi')}
                   <button
                     className="country-card__info-btn"
                     onClick={() => toggleTooltip('hdi')}
-                    aria-label="Información sobre IDH"
+                    aria-label={t('card.aria.hdiInfo')}
                   >
                     <InfoIcon />
                   </button>
@@ -236,17 +215,17 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
                 </span>
                 {activeTooltip === 'hdi' && (
                   <div className="country-card__tooltip">
-                    Índice de Desarrollo Humano: mide salud, educación e ingresos. Rango 0–1.
+                    {t('card.tooltip.hdi')}
                   </div>
                 )}
               </div>
               <div className="country-card__field country-card__field--tooltip-parent">
                 <span className="country-card__label">
-                  IDH-D
+                  {t('card.field.ihdi')}
                   <button
                     className="country-card__info-btn"
                     onClick={() => toggleTooltip('ihdi')}
-                    aria-label="Información sobre IDH-D"
+                    aria-label={t('card.aria.ihdiInfo')}
                   >
                     <InfoIcon />
                   </button>
@@ -259,11 +238,11 @@ export function CountryCard({ country, rankings, onClose }: CountryCardProps) {
                         <span className="country-card__rank"> #{rankings.ihdiRank}</span>
                       )}
                     </>
-                  ) : 'N/D'}
+                  ) : t('card.na')}
                 </span>
                 {activeTooltip === 'ihdi' && (
                   <div className="country-card__tooltip">
-                    IDH ajustado por Desigualdad: penaliza la desigualdad en salud, educación e ingresos.
+                    {t('card.tooltip.ihdi')}
                   </div>
                 )}
               </div>

@@ -1,13 +1,13 @@
 // Tipos centrales de datos de GeoExpert
 
-/** Continentes (5 regiones del mundo) */
-export type Continent = 'África' | 'América' | 'Asia' | 'Europa' | 'Oceanía';
+/** Continentes (5 regiones del mundo) — claves neutras para i18n */
+export type Continent = 'africa' | 'america' | 'asia' | 'europe' | 'oceania';
 
 /** Continente extendido para incluir Antártida (no es un continente habitado) */
-export type ContinentOrSpecial = Continent | 'Antártida';
+export type ContinentOrSpecial = Continent | 'antarctica';
 
-/** Niveles de dificultad del juego */
-export type GameLevel = 'turista' | 'mochilero' | 'guía';
+/** Niveles de dificultad del juego — claves neutras para i18n */
+export type GameLevel = 'tourist' | 'backpacker' | 'guide';
 
 /** Datos de un país (provenientes de countries.json) */
 export interface CountryData {

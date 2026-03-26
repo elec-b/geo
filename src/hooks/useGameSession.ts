@@ -1,6 +1,7 @@
 // Hook de sesión de juego — gestiona el game loop de una partida
 // Paradigma: selección pregunta-a-pregunta (no cola pre-generada)
 import { useState, useCallback, useRef } from 'react';
+import type { TFunction } from 'i18next';
 import { generateSingleQuestion, generateQuestionsByType, type GameQuestion, type QuestionTypeFilter } from '../data/gameQuestions';
 import { selectNextQuestion, isDominated } from '../data/learningAlgorithm';
 import type { CountryData, CapitalCoords, Continent, GameLevel, QuestionType } from '../data/types';
@@ -63,6 +64,8 @@ export interface GameSessionOptions {
   getAttempts?: () => Record<string, CountryAttempts>;
   /** Función para obtener los países heredados: mapa de país → tipos sin datos propios */
   getInheritedCountries?: () => Map<string, Set<QuestionType>>;
+  /** Función de traducción i18next (para prompts de preguntas) */
+  t?: TFunction;
 }
 
 /**
@@ -113,6 +116,8 @@ export function useGameSession(
   getAttemptsRef.current = options?.getAttempts;
   const getInheritedCountriesRef = useRef(options?.getInheritedCountries);
   getInheritedCountriesRef.current = options?.getInheritedCountries;
+  const tRef = useRef(options?.t);
+  tRef.current = options?.t;
 
   /** Configura correctCca2 según el tipo de pregunta */
   const applyHighlight = useCallback((question: GameQuestion) => {
@@ -138,7 +143,7 @@ export function useGameSession(
         const pending = def.countries.filter((cca2) => !isDominated(attempts[cca2], qt as QuestionType));
         if (pending.length === 0) return null; // pool agotado
         const lastCca2 = recentCountriesRef.current[recentCountriesRef.current.length - 1];
-        questionsRef.current = generateQuestionsByType(qt, pending, countries, capitals, lastCca2, def.countries);
+        questionsRef.current = generateQuestionsByType(qt, pending, countries, capitals, lastCca2, def.countries, tRef.current);
       }
       const question = questionsRef.current.shift() ?? null;
       if (question) {
@@ -156,13 +161,13 @@ export function useGameSession(
     );
     if (!selection) return null;
 
-    let question = generateSingleQuestion(selection, def.countries, countries, capitals);
+    let question = generateSingleQuestion(selection, def.countries, countries, capitals, tRef.current);
 
     // Fallback: si no se pudo generar (ej: tipo B sin capital), intentar tipo A
     if (!question) {
       question = generateSingleQuestion(
         { cca2: selection.cca2, questionType: 'A' },
-        def.countries, countries, capitals,
+        def.countries, countries, capitals, tRef.current,
       );
     }
 
@@ -209,7 +214,7 @@ export function useGameSession(
         const attempts = getAttemptsRef.current?.() ?? {};
         const pending = def.countries.filter((cca2) => !isDominated(attempts[cca2], questionType as QuestionType));
         if (pending.length > 0) {
-          questionsRef.current = generateQuestionsByType(questionType, pending, countries, capitals, undefined, def.countries);
+          questionsRef.current = generateQuestionsByType(questionType, pending, countries, capitals, undefined, def.countries, tRef.current);
         }
       }
 
@@ -250,7 +255,7 @@ export function useGameSession(
       setStampTestProgress({ current: 0, total: def.countries.length });
 
       // Pre-generar cola completa con todos los países (sin repeticiones)
-      questionsRef.current = generateQuestionsByType(gameType, def.countries, countries, capitals);
+      questionsRef.current = generateQuestionsByType(gameType, def.countries, countries, capitals, undefined, undefined, tRef.current);
 
       const question = questionsRef.current.shift() ?? null;
       setCurrentQuestion(question);

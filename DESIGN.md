@@ -681,6 +681,10 @@ El script `fetch-countries.ts` genera `countries.json` y `capitals.json` en el i
 *   **Cobertura de idiomas**: Todos los idiomas soportados por iOS y Android. El pipeline genera datos para cada idioma de forma automatizada.
 *   **Idioma actual de generación**: Español (`spa`). Cuando se implemente i18n completa, se generarán archivos por idioma o un JSON multi-idioma.
 
+### Internacionalización de UI
+*   **Librería**: `i18next` + `react-i18next`. Estándar de facto para React, con detección de idioma del dispositivo, namespaces, interpolación, pluralización y carga lazy por idioma.
+*   **Scope**: Todos los textos de UI (labels, modales, mensajes, etc.). Los datos de países se gestionan por el pipeline descrito en § Internacionalización de datos.
+
 ### Identificadores
 - **Clave primaria**: ISO 3166-1 alpha-2 (`cca2`)
 - **Vinculación**: GeoJSON ↔ REST Countries ↔ Capitales

@@ -1,15 +1,24 @@
 // Generación de definiciones de niveles por continente
 import type { CountryData, Continent, GameLevel, LevelDefinition } from './types';
+import { CONTINENTS } from './continents';
 
-const CONTINENTS: Continent[] = ['África', 'América', 'Asia', 'Europa', 'Oceanía'];
+/** Array canónico de niveles (orden de progresión) */
+export const LEVELS: GameLevel[] = ['tourist', 'backpacker', 'guide'];
+
+/** Emoji asociado a cada nivel */
+export const LEVEL_EMOJI: Record<GameLevel, string> = {
+  tourist: '🧳',
+  backpacker: '🎒',
+  guide: '🗺️',
+};
 
 /** Número de países en nivel Turista por continente */
 const TOURIST_COUNT: Record<Continent, number> = {
-  'África': 10,
-  'América': 10,
-  'Asia': 10,
-  'Europa': 10,
-  'Oceanía': 5,
+  'africa': 10,
+  'america': 10,
+  'asia': 10,
+  'europe': 10,
+  'oceania': 5,
 };
 
 /**
@@ -46,9 +55,9 @@ export function buildLevelDefinitions(
     const guideCodes = allCodes;
 
     const levels: [GameLevel, string[]][] = [
-      ['turista', touristCodes],
-      ['mochilero', backpackerCodes],
-      ['guía', guideCodes],
+      ['tourist', touristCodes],
+      ['backpacker', backpackerCodes],
+      ['guide', guideCodes],
     ];
 
     for (const [level, codes] of levels) {

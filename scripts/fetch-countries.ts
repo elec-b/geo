@@ -17,14 +17,14 @@ import { UN_COUNTRY_CODES, NON_UN_CODES, NON_UN_TERRITORIES_BY_ID, NON_UN_TERRIT
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = resolve(__dirname, '..', 'public', 'data');
 
-// Mapeo de region de REST Countries → continente en español
+// Mapeo de region de REST Countries → clave neutra de continente (i18n)
 const REGION_MAP: Record<string, string> = {
-  Africa: 'África',
-  Americas: 'América',
-  Asia: 'Asia',
-  Europe: 'Europa',
-  Oceania: 'Oceanía',
-  Antarctic: 'Antártida',
+  Africa: 'africa',
+  Americas: 'america',
+  Asia: 'asia',
+  Europe: 'europe',
+  Oceania: 'oceania',
+  Antarctic: 'antarctica',
 };
 
 interface RestCountry {

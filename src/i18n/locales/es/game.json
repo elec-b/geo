@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Elige continente",
+  "selector.chooseLevel": "Elige nivel",
+  "selector.chooseGame": "Elige juego",
+  "selector.adventure": "Aventura",
+  "selector.adventureDesc": "Se adapta a lo que sabes",
+  "selector.specificTypes": "o elige juego concreto",
+  "selector.start": "Empezar",
+  "selector.continue": "Continuar",
+  "selector.completed": "Superado ★",
+  "selector.countryCount_one": "{{count}} país",
+  "selector.countryCount_other": "{{count}} países",
+  "selector.lockedToast": "Consigue los sellos del nivel anterior",
+
+  "selector.stampReady.both": "¡Listo para las pruebas de sello!",
+  "selector.stampReady.countries": "¡Listo para la prueba de países!",
+  "selector.stampReady.capitals": "¡Listo para la prueba de capitales!",
+
+  "question.locate": "Localiza",
+  "question.locateCapital": "Localiza la capital",
+  "question.capitalOf": "¿Cuál es la capital de {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} es la capital de...",
+  "question.whichCountry": "¿Qué país está resaltado?",
+  "question.whichCapital": "¿Cuál es la capital de este país?",
+
+  "progress.stampTest": "Prueba de sello: {{current}} de {{total}}",
+  "progress.adventurePercent": "{{percent}}% completado",
+  "progress.typeDominated": "{{current}} de {{total}} dominados",
+  "progress.stampBanner.countries": "Prueba de sello: Países",
+  "progress.stampBanner.capitals": "Prueba de sello: Capitales",
+
+  "modal.stampEarned.title": "Sello conseguido",
+  "modal.stampEarned.text": "{{correct}} de {{total}} correctos. Sin errores.",
+
+  "modal.stampFailed.veryClose": "¡Muy cerca!",
+  "modal.stampFailed.veryCloseText": "A nada del sello.",
+  "modal.stampFailed.goodTry": "¡Buen intento!",
+  "modal.stampFailed.goodTryText": "Cada intento te acerca más.",
+  "modal.stampFailed.onTrack": "Vas por buen camino",
+  "modal.stampFailed.onTrackText": "Sigue jugando, se nota el progreso.",
+  "modal.stampFailed.dontGiveUp": "No te rindas",
+  "modal.stampFailed.dontGiveUpText": "La práctica hace al maestro.",
+  "modal.stampFailed.score": "{{correct}} de {{total}} correctos.",
+
+  "modal.poolExhausted.trainingComplete": "Entrenamiento completado",
+  "modal.poolExhausted.readyForStamp": "¡Fenomenal!<br />Listo para el sello",
+  "modal.poolExhausted.completedText": "Has completado <em>{{continent}}</em> en nivel <em>{{level}}</em>. Puedes resetear las estadísticas para volver a practicar.",
+  "modal.poolExhausted.chooseStamp": "Elige una prueba. Deberás completarla sin errores para conseguir el sello.",
+  "modal.poolExhausted.typePassed": "¡Fenomenal!<br /><em>{{type}}</em> superado",
+  "modal.poolExhausted.stampReady": "Estás listo para la prueba de sello. Complétala sin errores para conseguirlo.",
+  "modal.poolExhausted.tryStamp.countries": "Intentar sello de Países",
+  "modal.poolExhausted.tryStamp.capitals": "Intentar sello de Capitales",
+  "modal.poolExhausted.selectOther": "Seleccionar otro juego",
+  "modal.poolExhausted.playType": "Jugar <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Jugar <em>Aventura</em>",
+
+  "stamp.countries": "Sello de Países",
+  "stamp.capitals": "Sello de Capitales",
+
+  "modal.stampChooser.title": "Prueba de sello",
+  "modal.stampChooser.text": "Elige una prueba. Deberás completar {{count}} preguntas sin ningún error.",
+
+  "modal.alreadyDominated.title": "Ya dominas<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Has acertado todos los países. Puedes resetear las estadísticas para volver a practicar.",
+  "modal.alreadyDominated.completedTraining": "Has completado el entrenamiento de <em>{{continent}}</em> en nivel <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Intentar prueba de sello",
+  "modal.alreadyDominated.goToStats": "Ir a Estadísticas"
+}

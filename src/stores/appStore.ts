@@ -4,9 +4,8 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import { capacitorStorage } from './persistStorage';
 import type { AppSettings, AppState, UserProfile, ProfileId, AvatarId, ProfileProgress, CountryAttempts, StampCountryAttempts } from './types';
 import type { Continent, GameLevel, QuestionType } from '../data/types';
-
-const LEVELS: GameLevel[] = ['turista', 'mochilero', 'guía'];
-const CONTINENTS: Continent[] = ['África', 'América', 'Asia', 'Europa', 'Oceanía'];
+import { CONTINENTS } from '../data/continents';
+import { LEVELS } from '../data/levels';
 
 /** Genera un progreso vacío para un nuevo perfil */
 function emptyProgress(): ProfileProgress {
@@ -345,6 +344,54 @@ export const useAppStore = create<AppStore>()(
     {
       name: 'geoexpert-store',
       storage: createJSONStorage(() => capacitorStorage),
+      version: 1,
+      migrate: (persisted: unknown, version: number) => {
+        if (version === 0) {
+          // Migración v0→v1: claves de continente y nivel de español a neutras
+          const CONTINENT_MAP: Record<string, Continent> = {
+            'África': 'africa', 'América': 'america', 'Asia': 'asia',
+            'Europa': 'europe', 'Oceanía': 'oceania',
+          };
+          const LEVEL_MAP: Record<string, GameLevel> = {
+            'turista': 'tourist', 'mochilero': 'backpacker', 'guía': 'guide',
+          };
+          const s = persisted as Record<string, any>;
+
+          // Migrar profiles[].progress (Record<GameLevel, Record<Continent, ...>>)
+          if (Array.isArray(s.profiles)) {
+            for (const profile of s.profiles) {
+              if (!profile.progress) continue;
+              const oldProgress = profile.progress;
+              const newProgress: Record<string, Record<string, unknown>> = {};
+              for (const [oldLevel, continents] of Object.entries(oldProgress)) {
+                const newLevel = LEVEL_MAP[oldLevel] ?? oldLevel;
+                newProgress[newLevel] = {};
+                for (const [oldContinent, data] of Object.entries(continents as Record<string, unknown>)) {
+                  const newContinent = CONTINENT_MAP[oldContinent] ?? oldContinent;
+                  newProgress[newLevel][newContinent] = data;
+                }
+              }
+              profile.progress = newProgress;
+            }
+          }
+
+          // Migrar settings.lastPlayed, lastStampPlayed, lastActiveContinent
+          if (s.settings) {
+            if (s.settings.lastPlayed) {
+              s.settings.lastPlayed.continent = CONTINENT_MAP[s.settings.lastPlayed.continent] ?? s.settings.lastPlayed.continent;
+              s.settings.lastPlayed.level = LEVEL_MAP[s.settings.lastPlayed.level] ?? s.settings.lastPlayed.level;
+            }
+            if (s.settings.lastStampPlayed) {
+              s.settings.lastStampPlayed.continent = CONTINENT_MAP[s.settings.lastStampPlayed.continent] ?? s.settings.lastStampPlayed.continent;
+              s.settings.lastStampPlayed.level = LEVEL_MAP[s.settings.lastStampPlayed.level] ?? s.settings.lastStampPlayed.level;
+            }
+            if (s.settings.lastActiveContinent) {
+              s.settings.lastActiveContinent = CONTINENT_MAP[s.settings.lastActiveContinent] ?? s.settings.lastActiveContinent;
+            }
+          }
+        }
+        return persisted as AppState;
+      },
       partialize: (state) => ({
         profiles: state.profiles,
         activeProfileId: state.activeProfileId,

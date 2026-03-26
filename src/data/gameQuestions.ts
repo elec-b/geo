@@ -1,4 +1,5 @@
 // Generación de preguntas para el juego — Tipos A-F
+import type { TFunction } from 'i18next';
 import type { CountryData, CapitalCoords } from './types';
 import type { QuestionSelection } from './learningAlgorithm';
 
@@ -77,6 +78,7 @@ export function generateQuestionsTypeC(
   levelCountries: string[],
   countries: Map<string, CountryData>,
   distractorPool?: string[],
+  t?: TFunction,
 ): GameQuestion[] {
   // Recoger las capitales del pool de distractores (todos los países del nivel)
   const allCapitals = (distractorPool ?? levelCountries)
@@ -90,7 +92,7 @@ export function generateQuestionsTypeC(
       return {
         type: 'C' as const,
         targetCca2: cca2,
-        prompt: `¿Cuál es la capital de ${country.name}?`,
+        prompt: t ? t('game:question.capitalOf', { country: country.name }) : `¿Cuál es la capital de ${country.name}?`,
         options: pickOptions(allCapitals, country.capital),
         correctAnswer: country.capital,
       };
@@ -102,6 +104,7 @@ export function generateQuestionsTypeD(
   levelCountries: string[],
   countries: Map<string, CountryData>,
   distractorPool?: string[],
+  t?: TFunction,
 ): GameQuestion[] {
   const allNames = (distractorPool ?? levelCountries)
     .map((cca2) => countries.get(cca2)?.name)
@@ -114,7 +117,7 @@ export function generateQuestionsTypeD(
       return {
         type: 'D' as const,
         targetCca2: cca2,
-        prompt: `${country.capital} es la capital de...`,
+        prompt: t ? t('game:question.capitalBelongsTo', { capital: country.capital }) : `${country.capital} es la capital de...`,
         options: pickOptions(allNames, country.name),
         correctAnswer: country.name,
       };
@@ -126,6 +129,7 @@ export function generateQuestionsTypeE(
   levelCountries: string[],
   countries: Map<string, CountryData>,
   distractorPool?: string[],
+  t?: TFunction,
 ): GameQuestion[] {
   const allNames = (distractorPool ?? levelCountries)
     .map((cca2) => countries.get(cca2)?.name)
@@ -136,7 +140,7 @@ export function generateQuestionsTypeE(
     return {
       type: 'E' as const,
       targetCca2: cca2,
-      prompt: '¿Qué país está resaltado?',
+      prompt: t ? t('game:question.whichCountry') : '¿Qué país está resaltado?',
       options: pickOptions(allNames, country.name),
       correctAnswer: country.name,
     };
@@ -148,6 +152,7 @@ export function generateQuestionsTypeF(
   levelCountries: string[],
   countries: Map<string, CountryData>,
   distractorPool?: string[],
+  t?: TFunction,
 ): GameQuestion[] {
   const allCapitals = (distractorPool ?? levelCountries)
     .map((cca2) => countries.get(cca2)?.capital)
@@ -160,7 +165,7 @@ export function generateQuestionsTypeF(
       return {
         type: 'F' as const,
         targetCca2: cca2,
-        prompt: '¿Cuál es la capital de este país?',
+        prompt: t ? t('game:question.whichCapital') : '¿Cuál es la capital de este país?',
         options: pickOptions(allCapitals, country.capital),
         correctAnswer: country.capital,
       };
@@ -181,6 +186,7 @@ export function generateQuestionsByType(
   capitals: Map<string, CapitalCoords>,
   lastAskedCca2?: string,
   distractorPool?: string[],
+  t?: TFunction,
 ): GameQuestion[] {
   let questions: GameQuestion[];
   const pool = distractorPool ?? levelCountries;
@@ -193,16 +199,16 @@ export function generateQuestionsByType(
       questions = generateQuestionsTypeB(levelCountries, capitals);
       break;
     case 'C':
-      questions = generateQuestionsTypeC(levelCountries, countries, pool);
+      questions = generateQuestionsTypeC(levelCountries, countries, pool, t);
       break;
     case 'D':
-      questions = generateQuestionsTypeD(levelCountries, countries, pool);
+      questions = generateQuestionsTypeD(levelCountries, countries, pool, t);
       break;
     case 'E':
-      questions = generateQuestionsTypeE(levelCountries, countries, pool);
+      questions = generateQuestionsTypeE(levelCountries, countries, pool, t);
       break;
     case 'F':
-      questions = generateQuestionsTypeF(levelCountries, countries, pool);
+      questions = generateQuestionsTypeF(levelCountries, countries, pool, t);
       break;
   }
 
@@ -226,6 +232,7 @@ export function generateSingleQuestion(
   levelCountries: string[],
   countries: Map<string, CountryData>,
   capitals: Map<string, CapitalCoords>,
+  t?: TFunction,
 ): GameQuestion | null {
   const { cca2, questionType } = selection;
   const country = countries.get(cca2);
@@ -251,7 +258,7 @@ export function generateSingleQuestion(
       if (!country.capital || allCapitals.length < 4) return null;
       return {
         type: 'C', targetCca2: cca2,
-        prompt: `¿Cuál es la capital de ${country.name}?`,
+        prompt: t ? t('game:question.capitalOf', { country: country.name }) : `¿Cuál es la capital de ${country.name}?`,
         options: pickOptions(allCapitals, country.capital),
         correctAnswer: country.capital,
       };
@@ -260,7 +267,7 @@ export function generateSingleQuestion(
       if (!country.capital || allNames.length < 4) return null;
       return {
         type: 'D', targetCca2: cca2,
-        prompt: `${country.capital} es la capital de...`,
+        prompt: t ? t('game:question.capitalBelongsTo', { capital: country.capital }) : `${country.capital} es la capital de...`,
         options: pickOptions(allNames, country.name),
         correctAnswer: country.name,
       };
@@ -269,7 +276,7 @@ export function generateSingleQuestion(
       if (allNames.length < 4) return null;
       return {
         type: 'E', targetCca2: cca2,
-        prompt: '¿Qué país está resaltado?',
+        prompt: t ? t('game:question.whichCountry') : '¿Qué país está resaltado?',
         options: pickOptions(allNames, country.name),
         correctAnswer: country.name,
       };
@@ -278,7 +285,7 @@ export function generateSingleQuestion(
       if (!country.capital || allCapitals.length < 4) return null;
       return {
         type: 'F', targetCca2: cca2,
-        prompt: '¿Cuál es la capital de este país?',
+        prompt: t ? t('game:question.whichCapital') : '¿Cuál es la capital de este país?',
         options: pickOptions(allCapitals, country.capital),
         correctAnswer: country.capital,
       };

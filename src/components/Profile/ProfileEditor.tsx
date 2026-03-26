@@ -1,5 +1,6 @@
 // Editor de perfil — crear o editar nombre y avatar
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../stores/appStore';
 import { AVATARS, DEFAULT_AVATAR, AVATAR_MAP } from '../../data/avatars';
 import type { UserProfile, AvatarId } from '../../stores/types';
@@ -14,10 +15,11 @@ interface ProfileEditorProps {
 }
 
 export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: ProfileEditorProps) {
+  const { t } = useTranslation('profile');
   const createProfile = useAppStore((s) => s.createProfile);
   const updateProfile = useAppStore((s) => s.updateProfile);
 
-  const [name, setName] = useState(editProfile?.name ?? defaultName ?? 'Explorador');
+  const [name, setName] = useState(editProfile?.name ?? defaultName ?? t('defaultName'));
   const [avatar, setAvatar] = useState<AvatarId>(editProfile?.avatar ?? DEFAULT_AVATAR);
 
   const isEdit = !!editProfile;
@@ -43,11 +45,11 @@ export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: Pro
   const selectedDef = AVATAR_MAP.get(avatar) ?? AVATAR_MAP.get(DEFAULT_AVATAR)!;
 
   return (
-    <div className="profile-editor-overlay" onClick={handleOverlayClick} role="dialog" aria-label={isEdit ? 'Editar perfil' : 'Crear perfil'}>
+    <div className="profile-editor-overlay" onClick={handleOverlayClick} role="dialog" aria-label={isEdit ? t('editor.titleEdit') : t('editor.titleCreate')}>
       <div className="profile-editor">
         <div className="profile-editor__header">
-          <h2 className="profile-editor__title">{isEdit ? 'Editar perfil' : 'Crear perfil'}</h2>
-          <button className="profile-editor__close" onClick={onClose} aria-label="Cerrar">
+          <h2 className="profile-editor__title">{isEdit ? t('editor.titleEdit') : t('editor.titleCreate')}</h2>
+          <button className="profile-editor__close" onClick={onClose} aria-label={t('common:close')}>
             ✕
           </button>
         </div>
@@ -63,7 +65,7 @@ export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: Pro
         </div>
 
         {/* Grid de avatares */}
-        <p className="profile-editor__avatar-label">Elige tu avatar</p>
+        <p className="profile-editor__avatar-label">{t('editor.chooseAvatar')}</p>
         <div className="profile-editor__avatar-grid">
           {AVATARS.map((a) => (
             <button
@@ -78,13 +80,13 @@ export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: Pro
         </div>
 
         {/* Input nombre */}
-        <label className="profile-editor__name-label">Nombre</label>
+        <label className="profile-editor__name-label">{t('editor.nameLabel')}</label>
         <input
           className="profile-editor__name-input"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Nombre del perfil"
+          placeholder={t('editor.namePlaceholder')}
           maxLength={30}
           autoFocus={!isEdit}
         />
@@ -96,10 +98,10 @@ export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: Pro
             onClick={handleSave}
             disabled={!canSave}
           >
-            {isEdit ? 'Guardar' : 'Crear'}
+            {isEdit ? t('editor.save') : t('editor.create')}
           </button>
           <button className="profile-editor__cancel-btn" onClick={onClose}>
-            Cancelar
+            {t('common:cancel')}
           </button>
         </div>
       </div>

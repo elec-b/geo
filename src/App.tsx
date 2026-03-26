@@ -1,5 +1,6 @@
 // GeoExpert - Aplicación principal
 import { lazy, Suspense, useState, useCallback, useEffect, useRef, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { LoadingScreen } from './components/UI/LoadingScreen';
 import { TabBar } from './components/Navigation/TabBar';
 import { AppHeader } from './components/Layout/AppHeader';
@@ -34,6 +35,7 @@ const DEFAULT_GLOBE_CONTROL: GlobeControlProps = {
 };
 
 function App() {
+  const { t } = useTranslation('profile');
   const [globeReady, setGlobeReady] = useState(false);
   const [activeTab, setActiveTab] = useState<TabId>('explore');
   const [jugarResetSignal, setJugarResetSignal] = useState(0);
@@ -294,7 +296,7 @@ function App() {
       {showProfileEditor && (
         <ProfileEditor
           editProfile={editingProfile ?? undefined}
-          defaultName={editingProfile ? undefined : getNextDefaultName(useAppStore.getState().profiles)}
+          defaultName={editingProfile ? undefined : getNextDefaultName(useAppStore.getState().profiles, t('defaultName'))}
           onClose={() => {
             setShowProfileEditor(false);
             setEditingProfile(null);
