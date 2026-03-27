@@ -47,7 +47,7 @@
 - [x] **(j)** Mapeo de locales para stores: `scripts/data/store-locale-map.json` con los 32 idiomas → App Store / Google Play (ej. `nb` → `no`/`no-NO`)
 - [x] **(k)** Variantes regionales registradas en `store-locale-map.json`: es-419/es-MX, fr-CA, en-GB, en-AU, zh-HK (coste cero, reutilizan traducciones base)
 - [x] **(fix)** Ordenar idiomas en Configuración alfabéticamente por nombre nativo (estándar de iOS Settings / Google Play), lectura por columna
-- [ ] **(final-check)** Lanzar agent team, para verificar datos de internacionalización creados vs. fuentes reputadas. Similar al check que se hizo en Español frente a la RAE (apéndice del diccionario panhispánico de dudas) y otras fuentes. Crear spike sugiriendo cambios. Importante pensar también en cómo mantener esto bien automáticamente en el futuro (ya caputrado en design.md, pero es un punto muy importante y que debe estar presente a lo largo del proyecto)
+- [ ] **(final-check)** Lanzar agent team, para verificar datos de internacionalización creados vs. fuentes reputadas. Similar al check que se hizo en Español frente a la RAE (apéndice del diccionario panhispánico de dudas) y otras fuentes. Deberíamos encontrar los equivalentes a la RAE par otros países, para chequear los nombres de los países, capitales, gentilicios, mares y océanos, igual que hicimos para España con la RAE. Seguramente, para esto, lo mejor sea crear un spike, con un agent team, y que el líder aterrice las conclusiones en un .md. Es importante pensar también en cómo mantener estos datos automáticamente en el futuro (ya caputrado en design.md, pero es un punto muy importante y que debe estar presente a lo largo del proyecto)
 
 ### Acabados pre-lanzamiento
 - [ ] Logo/branding en LoadingScreen (antes de publicar en stores)
