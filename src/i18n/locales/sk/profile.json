@@ -1,0 +1,17 @@
+{
+  "defaultName": "Prieskumník",
+  "editor.titleEdit": "Upraviť profil",
+  "editor.titleCreate": "Vytvoriť profil",
+  "editor.chooseAvatar": "Vyber si avatara",
+  "editor.nameLabel": "Meno",
+  "editor.namePlaceholder": "Názov profilu",
+  "editor.save": "Uložiť",
+  "editor.create": "Vytvoriť",
+  "selector.title": "Profily",
+  "selector.confirmDelete": "Odstrániť «{{name}}»?",
+  "selector.delete": "Odstrániť",
+  "selector.createNew": "Vytvoriť profil",
+  "selector.aria.edit": "Upraviť {{name}}",
+  "selector.aria.delete": "Odstrániť {{name}}",
+  "selector.aria.dialog": "Vybrať profil"
+}

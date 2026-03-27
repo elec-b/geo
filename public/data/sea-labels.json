@@ -30,7 +30,13 @@
     "lat": -5,
     "lon": -150,
     "scalerank": 0,
-    "minZoom": 1.5
+    "minZoom": 1.5,
+    "name_el": "Ειρηνικός Ωκεανός",
+    "name_ca": "Oceà Pacífic",
+    "name_da": "Stillehavet",
+    "name_fi": "Tyynimeri",
+    "name_sk": "Tichý oceán",
+    "name_hr": "Tihi ocean"
   },
   {
     "id": "atlantic",
@@ -63,7 +69,13 @@
     "lat": 0,
     "lon": -28,
     "scalerank": 0,
-    "minZoom": 2.0
+    "minZoom": 2.0,
+    "name_el": "Ατλαντικός Ωκεανός",
+    "name_ca": "Oceà Atlàntic",
+    "name_da": "Atlanterhavet",
+    "name_fi": "Atlantin valtameri",
+    "name_sk": "Atlantický oceán",
+    "name_hr": "Atlantski ocean"
   },
   {
     "id": "indian",
@@ -96,7 +108,13 @@
     "lat": -20,
     "lon": 75,
     "scalerank": 0,
-    "minZoom": 1.5
+    "minZoom": 1.5,
+    "name_el": "Ινδικός Ωκεανός",
+    "name_ca": "Oceà Índic",
+    "name_da": "Det Indiske Ocean",
+    "name_fi": "Intian valtameri",
+    "name_sk": "Indický oceán",
+    "name_hr": "Indijski ocean"
   },
   {
     "id": "arctic",
@@ -129,7 +147,13 @@
     "lat": 85,
     "lon": 0,
     "scalerank": 0,
-    "minZoom": 3.0
+    "minZoom": 3.0,
+    "name_el": "Αρκτικός Ωκεανός",
+    "name_ca": "Oceà Àrtic",
+    "name_da": "Ishavet",
+    "name_fi": "Pohjoinen jäämeri",
+    "name_sk": "Severný ľadový oceán",
+    "name_hr": "Sjeverni ledeni ocean"
   },
   {
     "id": "southern",
@@ -162,9 +186,14 @@
     "lat": -62,
     "lon": 0,
     "scalerank": 0,
-    "minZoom": 1.8
+    "minZoom": 1.8,
+    "name_el": "Νότιος Ωκεανός",
+    "name_ca": "Oceà Antàrtic",
+    "name_da": "Sydhavet",
+    "name_fi": "Eteläinen jäämeri",
+    "name_sk": "Južný oceán",
+    "name_hr": "Južni ocean"
   },
-
   {
     "id": "mediterranean",
     "name_es": "Mar Mediterráneo",
@@ -196,7 +225,13 @@
     "lat": 34.5,
     "lon": 19,
     "scalerank": 1,
-    "minZoom": 5.5
+    "minZoom": 5.5,
+    "name_el": "Μεσόγειος Θάλασσα",
+    "name_ca": "Mar Mediterrània",
+    "name_da": "Middelhavet",
+    "name_fi": "Välimeri",
+    "name_sk": "Stredozemné more",
+    "name_hr": "Sredozemno more"
   },
   {
     "id": "caribbean",
@@ -229,7 +264,13 @@
     "lat": 15,
     "lon": -73,
     "scalerank": 1,
-    "minZoom": 3.0
+    "minZoom": 3.0,
+    "name_el": "Καραϊβική Θάλασσα",
+    "name_ca": "Mar del Carib",
+    "name_da": "Caribien",
+    "name_fi": "Karibia",
+    "name_sk": "Karibské more",
+    "name_hr": "Karipsko more"
   },
   {
     "id": "south_china",
@@ -262,7 +303,13 @@
     "lat": 12,
     "lon": 114,
     "scalerank": 1,
-    "minZoom": 3.5
+    "minZoom": 3.5,
+    "name_el": "Νότια Θάλασσα της Κίνας",
+    "name_ca": "Mar de la Xina Meridional",
+    "name_da": "Det Sydkinesiske Hav",
+    "name_fi": "Etelä-Kiinanmeri",
+    "name_sk": "Juhočínske more",
+    "name_hr": "Južnokinesko more"
   },
   {
     "id": "arabian",
@@ -295,7 +342,13 @@
     "lat": 14,
     "lon": 63,
     "scalerank": 1,
-    "minZoom": 2.5
+    "minZoom": 2.5,
+    "name_el": "Αραβική Θάλασσα",
+    "name_ca": "Mar d'Aràbia",
+    "name_da": "Det Arabiske Hav",
+    "name_fi": "Arabianmeri",
+    "name_sk": "Arabské more",
+    "name_hr": "Arabijsko more"
   },
   {
     "id": "coral",
@@ -328,7 +381,13 @@
     "lat": -18,
     "lon": 155,
     "scalerank": 1,
-    "minZoom": 2.5
+    "minZoom": 2.5,
+    "name_el": "Θάλασσα των Κοραλλιών",
+    "name_ca": "Mar del Coral",
+    "name_da": "Koralhavet",
+    "name_fi": "Korallimeri",
+    "name_sk": "Korálové more",
+    "name_hr": "Koraljno more"
   },
   {
     "id": "philippine",
@@ -361,9 +420,14 @@
     "lat": 20,
     "lon": 133,
     "scalerank": 1,
-    "minZoom": 3.0
+    "minZoom": 3.0,
+    "name_el": "Θάλασσα των Φιλιππίνων",
+    "name_ca": "Mar de Filipines",
+    "name_da": "Filipinskehavet",
+    "name_fi": "Filippiinienimeri",
+    "name_sk": "Filipínske more",
+    "name_hr": "Filipinsko more"
   },
-
   {
     "id": "baltic",
     "name_es": "Mar Báltico",
@@ -395,7 +459,13 @@
     "lat": 56,
     "lon": 19,
     "scalerank": 2,
-    "minZoom": 8.0
+    "minZoom": 8.0,
+    "name_el": "Βαλτική Θάλασσα",
+    "name_ca": "Mar Bàltic",
+    "name_da": "Østersøen",
+    "name_fi": "Itämeri",
+    "name_sk": "Baltické more",
+    "name_hr": "Baltičko more"
   },
   {
     "id": "black",
@@ -428,7 +498,13 @@
     "lat": 43.5,
     "lon": 35,
     "scalerank": 2,
-    "minZoom": 5.0
+    "minZoom": 5.0,
+    "name_el": "Μαύρη Θάλασσα",
+    "name_ca": "Mar Negre",
+    "name_da": "Sortehavet",
+    "name_fi": "Mustameri",
+    "name_sk": "Čierne more",
+    "name_hr": "Crno more"
   },
   {
     "id": "red",
@@ -461,7 +537,13 @@
     "lat": 19.5,
     "lon": 39,
     "scalerank": 2,
-    "minZoom": 10.0
+    "minZoom": 10.0,
+    "name_el": "Ερυθρά Θάλασσα",
+    "name_ca": "Mar Roig",
+    "name_da": "Rødehavet",
+    "name_fi": "Punainen meri",
+    "name_sk": "Červené more",
+    "name_hr": "Crveno more"
   },
   {
     "id": "north",
@@ -494,7 +576,13 @@
     "lat": 56,
     "lon": 3,
     "scalerank": 2,
-    "minZoom": 4.5
+    "minZoom": 4.5,
+    "name_el": "Βόρεια Θάλασσα",
+    "name_ca": "Mar del Nord",
+    "name_da": "Nordsøen",
+    "name_fi": "Pohjanmeri",
+    "name_sk": "Severné more",
+    "name_hr": "Sjeverno more"
   },
   {
     "id": "japan",
@@ -527,7 +615,13 @@
     "lat": 40,
     "lon": 134,
     "scalerank": 2,
-    "minZoom": 4.5
+    "minZoom": 4.5,
+    "name_el": "Θάλασσα της Ιαπωνίας",
+    "name_ca": "Mar del Japó",
+    "name_da": "Japanhavet",
+    "name_fi": "Japaninmeri",
+    "name_sk": "Japonské more",
+    "name_hr": "Japansko more"
   },
   {
     "id": "okhotsk",
@@ -560,7 +654,13 @@
     "lat": 55,
     "lon": 150,
     "scalerank": 2,
-    "minZoom": 3.5
+    "minZoom": 3.5,
+    "name_el": "Θάλασσα Οχότσκ",
+    "name_ca": "Mar d'Okhotsk",
+    "name_da": "Okhotskhavet",
+    "name_fi": "Ohotanmeri",
+    "name_sk": "Ochotské more",
+    "name_hr": "Ohotsko more"
   },
   {
     "id": "east_china",
@@ -593,7 +693,13 @@
     "lat": 28.5,
     "lon": 125,
     "scalerank": 2,
-    "minZoom": 5.0
+    "minZoom": 5.0,
+    "name_el": "Ανατολική Θάλασσα της Κίνας",
+    "name_ca": "Mar de la Xina Oriental",
+    "name_da": "Det Østkinesiske Hav",
+    "name_fi": "Itä-Kiinanmeri",
+    "name_sk": "Východočínske more",
+    "name_hr": "Istočnokinesko more"
   },
   {
     "id": "tasman",
@@ -626,7 +732,13 @@
     "lat": -38,
     "lon": 162,
     "scalerank": 2,
-    "minZoom": 3.0
+    "minZoom": 3.0,
+    "name_el": "Θάλασσα της Τασμανίας",
+    "name_ca": "Mar de Tasmàn",
+    "name_da": "Tasmanhavet",
+    "name_fi": "Tasmanmeri",
+    "name_sk": "Tasmánske more",
+    "name_hr": "Tasmanovo more"
   },
   {
     "id": "bering",
@@ -659,7 +771,13 @@
     "lat": 59,
     "lon": -175,
     "scalerank": 2,
-    "minZoom": 3.5
+    "minZoom": 3.5,
+    "name_el": "Θάλασσα του Μπέρινγκ",
+    "name_ca": "Mar de Bering",
+    "name_da": "Beringshavet",
+    "name_fi": "Beringinmeri",
+    "name_sk": "Beringovo more",
+    "name_hr": "Beringovo more"
   },
   {
     "id": "caspian",
@@ -692,7 +810,13 @@
     "lat": 41.5,
     "lon": 50.5,
     "scalerank": 2,
-    "minZoom": 5.5
+    "minZoom": 5.5,
+    "name_el": "Κασπία Θάλασσα",
+    "name_ca": "Mar Càspia",
+    "name_da": "Det Kaspiske Hav",
+    "name_fi": "Kaspianmeri",
+    "name_sk": "Kaspické more",
+    "name_hr": "Kaspijsko more"
   },
   {
     "id": "yellow",
@@ -725,9 +849,14 @@
     "lat": 35,
     "lon": 123,
     "scalerank": 2,
-    "minZoom": 5.0
+    "minZoom": 5.0,
+    "name_el": "Κίτρινη Θάλασσα",
+    "name_ca": "Mar Groc",
+    "name_da": "Gulhavet",
+    "name_fi": "Keltainenmeri",
+    "name_sk": "Žlté more",
+    "name_hr": "Žuto more"
   },
-
   {
     "id": "norway",
     "name_es": "Mar de Noruega",
@@ -759,7 +888,13 @@
     "lat": 68,
     "lon": 3,
     "scalerank": 3,
-    "minZoom": 4.5
+    "minZoom": 4.5,
+    "name_el": "Νορβηγική Θάλασσα",
+    "name_ca": "Mar de Noruega",
+    "name_da": "Norskehavet",
+    "name_fi": "Norjanmeri",
+    "name_sk": "Nórske more",
+    "name_hr": "Norveško more"
   },
   {
     "id": "barents",
@@ -792,7 +927,13 @@
     "lat": 75,
     "lon": 38,
     "scalerank": 3,
-    "minZoom": 4.5
+    "minZoom": 4.5,
+    "name_el": "Θάλασσα Μπάρεντς",
+    "name_ca": "Mar de Barents",
+    "name_da": "Barentshavet",
+    "name_fi": "Barentsinmeri",
+    "name_sk": "Barentsovo more",
+    "name_hr": "Barentsovo more"
   },
   {
     "id": "weddell",
@@ -825,9 +966,14 @@
     "lat": -72,
     "lon": -42,
     "scalerank": 3,
-    "minZoom": 3.5
+    "minZoom": 3.5,
+    "name_el": "Θάλασσα Ουέντελ",
+    "name_ca": "Mar de Weddell",
+    "name_da": "Weddellhavet",
+    "name_fi": "Weddenmeri",
+    "name_sk": "Weddellovo more",
+    "name_hr": "Weddellov more"
   },
-
   {
     "id": "gulf_mexico",
     "name_es": "Golfo de México",
@@ -859,7 +1005,13 @@
     "lat": 25,
     "lon": -90,
     "scalerank": 2,
-    "minZoom": 3.5
+    "minZoom": 3.5,
+    "name_el": "Κόλπος του Μεξικού",
+    "name_ca": "Golf de Mèxic",
+    "name_da": "Mexicogolfen",
+    "name_fi": "Meksikonlahti",
+    "name_sk": "Mexický záliv",
+    "name_hr": "Meksički zaljev"
   },
   {
     "id": "persian_gulf",
@@ -892,7 +1044,13 @@
     "lat": 26.5,
     "lon": 52,
     "scalerank": 3,
-    "minZoom": 10.0
+    "minZoom": 10.0,
+    "name_el": "Περσικός Κόλπος",
+    "name_ca": "Golf Pèrsic",
+    "name_da": "Den Persiske Golf",
+    "name_fi": "Persianlahti",
+    "name_sk": "Perzský záliv",
+    "name_hr": "Perzijski zaljev"
   },
   {
     "id": "bay_bengal",
@@ -925,6 +1083,12 @@
     "lat": 14,
     "lon": 87,
     "scalerank": 2,
-    "minZoom": 3.0
+    "minZoom": 3.0,
+    "name_el": "Κόλπος της Βεγγάλης",
+    "name_ca": "Golf de Bengala",
+    "name_da": "Bengalbugten",
+    "name_fi": "Bengalinlahti",
+    "name_sk": "Bengálsky záliv",
+    "name_hr": "Bengalski zaljev"
   }
 ]

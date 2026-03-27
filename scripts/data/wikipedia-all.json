@@ -25,7 +25,13 @@
     "hu": "Andorra",
     "id": "Andorra",
     "ms": "Andorra",
-    "nb": "Andorra"
+    "nb": "Andorra",
+    "el": "Ανδόρρα",
+    "ca": "Andorra",
+    "da": "Andorra",
+    "fi": "Andorra",
+    "sk": "Andorra",
+    "hr": "Andora"
   },
   "AE": {
     "es": "Emiratos_Árabes_Unidos",
@@ -53,7 +59,13 @@
     "hu": "Egyesült_Arab_Emírségek",
     "id": "Uni_Emirat_Arab",
     "ms": "Emiriah_Arab_Bersatu",
-    "nb": "De_forente_arabiske_emirater"
+    "nb": "De_forente_arabiske_emirater",
+    "el": "Ηνωμένα_Αραβικά_Εμιράτα",
+    "ca": "Emirats_Àrabs_Units",
+    "da": "Forenede_Arabiske_Emirater",
+    "fi": "Yhdistyneet_arabiemiraatit",
+    "sk": "Spojené_arabské_emiráty",
+    "hr": "Ujedinjeni_Arapski_Emirati"
   },
   "AF": {
     "es": "Afganistán",
@@ -81,7 +93,13 @@
     "hu": "Afganisztán",
     "id": "Afganistan",
     "ms": "Afghanistan",
-    "nb": "Afghanistan"
+    "nb": "Afghanistan",
+    "el": "Αφγανιστάν",
+    "ca": "Afganistan",
+    "da": "Afghanistan",
+    "fi": "Afganistan",
+    "sk": "Afganistan",
+    "hr": "Afganistan"
   },
   "AG": {
     "es": "Antigua_y_Barbuda",
@@ -109,7 +127,13 @@
     "hu": "Antigua_és_Barbuda",
     "id": "Antigua_dan_Barbuda",
     "ms": "Antigua_dan_Barbuda",
-    "nb": "Antigua_og_Barbuda"
+    "nb": "Antigua_og_Barbuda",
+    "el": "Αντίγκουα_και_Μπαρμπούντα",
+    "ca": "Antigua_i_Barbuda",
+    "da": "Antigua_og_Barbuda",
+    "fi": "Antigua_ja_Barbuda",
+    "sk": "Antigua_a_Barbuda",
+    "hr": "Antigva_i_Barbuda"
   },
   "AI": {
     "es": "Anguila_(territorio_británico_de_ultramar)",
@@ -137,7 +161,13 @@
     "hu": "Anguilla",
     "id": "Anguilla",
     "ms": "Anguilla",
-    "nb": "Anguilla"
+    "nb": "Anguilla",
+    "el": "Ανγκουίλα",
+    "ca": "Anguilla",
+    "da": "Anguilla_(land)",
+    "fi": "Anguilla",
+    "sk": "Anguilla",
+    "hr": "Angvila"
   },
   "AL": {
     "es": "Albania",
@@ -165,7 +195,13 @@
     "hu": "Albánia",
     "id": "Albania",
     "ms": "Albania",
-    "nb": "Albania"
+    "nb": "Albania",
+    "el": "Αλβανία",
+    "ca": "Albània",
+    "da": "Albanien",
+    "fi": "Albania",
+    "sk": "Albánsko",
+    "hr": "Albanija"
   },
   "AM": {
     "es": "Armenia",
@@ -193,7 +229,13 @@
     "hu": "Örményország",
     "id": "Armenia",
     "ms": "Armenia",
-    "nb": "Armenia"
+    "nb": "Armenia",
+    "el": "Αρμενία",
+    "ca": "Armènia",
+    "da": "Armenien",
+    "fi": "Armenia",
+    "sk": "Arménsko",
+    "hr": "Armenija"
   },
   "AN": {
     "es": "Antillas_Neerlandesas",
@@ -221,7 +263,13 @@
     "hu": "Holland_Antillák",
     "id": "Antillen_Belanda",
     "ms": "Antillen_Belanda",
-    "nb": "De_nederlandske_Antiller"
+    "nb": "De_nederlandske_Antiller",
+    "el": "Ολλανδικές_Αντίλλες",
+    "ca": "Antilles_Neerlandeses",
+    "da": "Nederlandske_Antiller",
+    "fi": "Alankomaiden_Antillit",
+    "sk": "Holandské_Antily",
+    "hr": "Nizozemski_Antili"
   },
   "AO": {
     "es": "Angola",
@@ -249,7 +297,13 @@
     "hu": "Angola",
     "id": "Angola",
     "ms": "Angola",
-    "nb": "Angola"
+    "nb": "Angola",
+    "el": "Ανγκόλα",
+    "ca": "Angola",
+    "da": "Angola",
+    "fi": "Angola",
+    "sk": "Angola",
+    "hr": "Angola"
   },
   "AQ": {
     "es": "Antártida",
@@ -277,7 +331,13 @@
     "hu": "Antarktika",
     "id": "Antarktika",
     "ms": "Antartika",
-    "nb": "Antarktika"
+    "nb": "Antarktika",
+    "el": "Ανταρκτική",
+    "ca": "Antàrtida",
+    "da": "Antarktis",
+    "fi": "Etelämanner",
+    "sk": "Antarktída",
+    "hr": "Antarktika"
   },
   "AR": {
     "es": "Argentina",
@@ -305,7 +365,13 @@
     "hu": "Argentína",
     "id": "Argentina",
     "ms": "Argentina",
-    "nb": "Argentina"
+    "nb": "Argentina",
+    "el": "Αργεντινή",
+    "ca": "Argentina",
+    "da": "Argentina",
+    "fi": "Argentiina",
+    "sk": "Argentína",
+    "hr": "Argentina"
   },
   "AS": {
     "es": "Samoa_Americana",
@@ -333,7 +399,13 @@
     "hu": "Amerikai_Szamoa",
     "id": "Samoa_Amerika",
     "ms": "Samoa_Amerika",
-    "nb": "Amerikansk_Samoa"
+    "nb": "Amerikansk_Samoa",
+    "el": "Αμερικανική_Σαμόα",
+    "ca": "Samoa_Nord-americana",
+    "da": "Amerikansk_Samoa",
+    "fi": "Amerikan_Samoa",
+    "sk": "Americká_Samoa",
+    "hr": "Američka_Samoa"
   },
   "AT": {
     "es": "Austria",
@@ -361,7 +433,13 @@
     "hu": "Ausztria",
     "id": "Austria",
     "ms": "Austria",
-    "nb": "Østerrike"
+    "nb": "Østerrike",
+    "el": "Αυστρία",
+    "ca": "Àustria",
+    "da": "Østrig",
+    "fi": "Itävalta",
+    "sk": "Rakúsko",
+    "hr": "Austrija"
   },
   "AU": {
     "es": "Australia",
@@ -389,7 +467,13 @@
     "hu": "Ausztrália_(ország)",
     "id": "Australia",
     "ms": "Australia",
-    "nb": "Australia"
+    "nb": "Australia",
+    "el": "Αυστραλία",
+    "ca": "Austràlia",
+    "da": "Australien",
+    "fi": "Australia",
+    "sk": "Austrália_(štát)",
+    "hr": "Australija"
   },
   "AW": {
     "es": "Aruba",
@@ -417,7 +501,13 @@
     "hu": "Aruba",
     "id": "Aruba",
     "ms": "Aruba",
-    "nb": "Aruba"
+    "nb": "Aruba",
+    "el": "Αρούμπα",
+    "ca": "Aruba",
+    "da": "Aruba",
+    "fi": "Aruba",
+    "sk": "Aruba",
+    "hr": "Aruba"
   },
   "AX": {
     "es": "Åland",
@@ -445,7 +535,13 @@
     "hu": "Åland",
     "id": "Åland",
     "ms": "Kepulauan_Åland",
-    "nb": "Åland"
+    "nb": "Åland",
+    "el": "Ώλαντ",
+    "ca": "Illes_Åland",
+    "da": "Åland",
+    "fi": "Ahvenanmaan_maakunta",
+    "sk": "Alandy",
+    "hr": "Ålandski_otoci"
   },
   "AZ": {
     "es": "Azerbaiyán",
@@ -473,7 +569,13 @@
     "hu": "Azerbajdzsán",
     "id": "Azerbaijan",
     "ms": "Azerbaijan",
-    "nb": "Aserbajdsjan"
+    "nb": "Aserbajdsjan",
+    "el": "Αζερμπαϊτζάν",
+    "ca": "Azerbaidjan",
+    "da": "Aserbajdsjan",
+    "fi": "Azerbaidžan",
+    "sk": "Azerbajdžan",
+    "hr": "Azerbajdžan"
   },
   "BA": {
     "es": "Bosnia_y_Herzegovina",
@@ -501,7 +603,13 @@
     "hu": "Bosznia-Hercegovina",
     "id": "Bosnia_dan_Herzegovina",
     "ms": "Bosnia_dan_Herzegovina",
-    "nb": "Bosnia-Hercegovina"
+    "nb": "Bosnia-Hercegovina",
+    "el": "Βοσνία_και_Ερζεγοβίνη",
+    "ca": "Bòsnia_i_Hercegovina",
+    "da": "Bosnien-Hercegovina",
+    "fi": "Bosnia_ja_Hertsegovina",
+    "sk": "Bosna_a_Hercegovina",
+    "hr": "Bosna_i_Hercegovina"
   },
   "BB": {
     "es": "Barbados",
@@ -529,7 +637,13 @@
     "hu": "Barbados",
     "id": "Barbados",
     "ms": "Barbados",
-    "nb": "Barbados"
+    "nb": "Barbados",
+    "el": "Μπαρμπάντος",
+    "ca": "Barbados",
+    "da": "Barbados",
+    "fi": "Barbados",
+    "sk": "Barbados",
+    "hr": "Barbados"
   },
   "BD": {
     "es": "Bangladés",
@@ -557,7 +671,13 @@
     "hu": "Banglades",
     "id": "Bangladesh",
     "ms": "Bangladesh",
-    "nb": "Bangladesh"
+    "nb": "Bangladesh",
+    "el": "Μπανγκλαντές",
+    "ca": "Bangladesh",
+    "da": "Bangladesh",
+    "fi": "Bangladesh",
+    "sk": "Bangladéš",
+    "hr": "Bangladeš"
   },
   "BE": {
     "es": "Bélgica",
@@ -585,7 +705,13 @@
     "hu": "Belgium",
     "id": "Belgia",
     "ms": "Belgium",
-    "nb": "Belgia"
+    "nb": "Belgia",
+    "el": "Βέλγιο",
+    "ca": "Bèlgica",
+    "da": "Belgien",
+    "fi": "Belgia",
+    "sk": "Belgicko",
+    "hr": "Belgija"
   },
   "BF": {
     "es": "Burkina_Faso",
@@ -613,7 +739,13 @@
     "hu": "Burkina_Faso",
     "id": "Burkina_Faso",
     "ms": "Burkina_Faso",
-    "nb": "Burkina_Faso"
+    "nb": "Burkina_Faso",
+    "el": "Μπουρκίνα_Φάσο",
+    "ca": "Burkina_Faso",
+    "da": "Burkina_Faso",
+    "fi": "Burkina_Faso",
+    "sk": "Burkina",
+    "hr": "Burkina_Faso"
   },
   "BG": {
     "es": "Bulgaria",
@@ -641,7 +773,13 @@
     "hu": "Bulgária",
     "id": "Bulgaria",
     "ms": "Bulgaria",
-    "nb": "Bulgaria"
+    "nb": "Bulgaria",
+    "el": "Βουλγαρία",
+    "ca": "Bulgària",
+    "da": "Bulgarien",
+    "fi": "Bulgaria",
+    "sk": "Bulharsko",
+    "hr": "Bugarska"
   },
   "BH": {
     "es": "Baréin",
@@ -669,7 +807,13 @@
     "hu": "Bahrein",
     "id": "Bahrain",
     "ms": "Bahrain",
-    "nb": "Bahrain"
+    "nb": "Bahrain",
+    "el": "Μπαχρέιν",
+    "ca": "Bahrain",
+    "da": "Bahrain",
+    "fi": "Bahrain",
+    "sk": "Bahrajn",
+    "hr": "Bahrein"
   },
   "BI": {
     "es": "Burundi",
@@ -697,7 +841,13 @@
     "hu": "Burundi",
     "id": "Burundi",
     "ms": "Burundi",
-    "nb": "Burundi"
+    "nb": "Burundi",
+    "el": "Μπουρούντι",
+    "ca": "Burundi",
+    "da": "Burundi",
+    "fi": "Burundi",
+    "sk": "Burundi",
+    "hr": "Burundi"
   },
   "BJ": {
     "es": "Benín",
@@ -725,7 +875,13 @@
     "hu": "Benin",
     "id": "Benin",
     "ms": "Benin",
-    "nb": "Benin"
+    "nb": "Benin",
+    "el": "Μπενίν",
+    "ca": "Benín",
+    "da": "Benin",
+    "fi": "Benin",
+    "sk": "Benin",
+    "hr": "Benin"
   },
   "BL": {
     "es": "San_Bartolomé_(Francia)",
@@ -753,7 +909,13 @@
     "hu": "Saint-Barthélemy_(francia_tengerentúli_terület)",
     "id": "Saint-Barthélemy",
     "ms": "en:Saint_Barthélemy",
-    "nb": "Saint-Barthélemy"
+    "nb": "Saint-Barthélemy",
+    "el": "Άγιος_Βαρθολομαίος",
+    "ca": "Saint-Barthélemy_(Antilles)",
+    "da": "Saint-Barthélemy",
+    "fi": "Saint-Barthélemy",
+    "sk": "Svätý_Bartolomej_(ostrov)",
+    "hr": "Sveti_Bartolomej_(otok)"
   },
   "BM": {
     "es": "Bermudas",
@@ -781,7 +943,13 @@
     "hu": "Bermuda",
     "id": "Bermuda",
     "ms": "Bermuda",
-    "nb": "Bermuda"
+    "nb": "Bermuda",
+    "el": "Βερμούδες",
+    "ca": "Bermudes",
+    "da": "Bermuda",
+    "fi": "Bermuda",
+    "sk": "Bermudy",
+    "hr": "Bermudi"
   },
   "BN": {
     "es": "Brunéi",
@@ -809,7 +977,13 @@
     "hu": "Brunei",
     "id": "Brunei_Darussalam",
     "ms": "Brunei",
-    "nb": "Brunei"
+    "nb": "Brunei",
+    "el": "Μπρουνέι",
+    "ca": "Brunei",
+    "da": "Brunei",
+    "fi": "Brunei",
+    "sk": "Brunej",
+    "hr": "Brunej"
   },
   "BO": {
     "es": "Bolivia",
@@ -837,7 +1011,13 @@
     "hu": "Bolívia",
     "id": "Bolivia",
     "ms": "Bolivia",
-    "nb": "Bolivia"
+    "nb": "Bolivia",
+    "el": "Βολιβία",
+    "ca": "Bolívia",
+    "da": "Bolivia",
+    "fi": "Bolivia",
+    "sk": "Bolívia",
+    "hr": "Bolivija"
   },
   "BQ": {
     "es": "Caribe_Neerlandés",
@@ -865,7 +1045,13 @@
     "hu": "Karibi_Hollandia",
     "id": "Belanda_Karibia",
     "ms": "en:Caribbean_Netherlands",
-    "nb": "Karibisk_Nederland"
+    "nb": "Karibisk_Nederland",
+    "el": "Καραϊβική_Ολλανδία",
+    "ca": "Illes_BES",
+    "da": "Caribisk_Nederlandene",
+    "fi": "Alankomaiden_Karibia",
+    "sk": "en:Caribbean_Netherlands",
+    "hr": "Karipska_Nizozemska"
   },
   "BR": {
     "es": "Brasil",
@@ -893,7 +1079,13 @@
     "hu": "Brazília",
     "id": "Brasil",
     "ms": "Brazil",
-    "nb": "Brasil"
+    "nb": "Brasil",
+    "el": "Βραζιλία",
+    "ca": "Brasil",
+    "da": "Brasilien",
+    "fi": "Brasilia",
+    "sk": "Brazília",
+    "hr": "Brazil"
   },
   "BS": {
     "es": "Bahamas",
@@ -921,7 +1113,13 @@
     "hu": "Bahama-szigetek",
     "id": "Bahama",
     "ms": "Bahamas",
-    "nb": "Bahamas"
+    "nb": "Bahamas",
+    "el": "Μπαχάμες",
+    "ca": "Bahames",
+    "da": "Bahamas",
+    "fi": "Bahama",
+    "sk": "Bahamy",
+    "hr": "Bahami"
   },
   "BT": {
     "es": "Bután",
@@ -949,7 +1147,13 @@
     "hu": "Bhután",
     "id": "Bhutan",
     "ms": "Bhutan",
-    "nb": "Bhutan"
+    "nb": "Bhutan",
+    "el": "Μπουτάν",
+    "ca": "Bhutan",
+    "da": "Bhutan",
+    "fi": "Bhutan",
+    "sk": "Bhután",
+    "hr": "Kraljevina_Butan"
   },
   "BV": {
     "es": "Isla_Bouvet",
@@ -977,7 +1181,13 @@
     "hu": "Bouvet-sziget",
     "id": "Pulau_Bouvet",
     "ms": "Pulau_Bouvet",
-    "nb": "Bouvetøya"
+    "nb": "Bouvetøya",
+    "el": "Μπουβέ",
+    "ca": "Bouvet",
+    "da": "Bouvetøen",
+    "fi": "Bouvet’nsaari",
+    "sk": "Bouvetov_ostrov",
+    "hr": "Bouvet_(otok)"
   },
   "BW": {
     "es": "Botsuana",
@@ -1005,7 +1215,13 @@
     "hu": "Botswana",
     "id": "Botswana",
     "ms": "Botswana",
-    "nb": "Botswana"
+    "nb": "Botswana",
+    "el": "Μποτσουάνα",
+    "ca": "Botswana",
+    "da": "Botswana",
+    "fi": "Botswana",
+    "sk": "Botswana",
+    "hr": "Bocvana"
   },
   "BY": {
     "es": "Bielorrusia",
@@ -1033,7 +1249,13 @@
     "hu": "Fehéroroszország",
     "id": "Belarus",
     "ms": "Belarus",
-    "nb": "Belarus"
+    "nb": "Belarus",
+    "el": "Λευκορωσία",
+    "ca": "Belarús",
+    "da": "Belarus",
+    "fi": "Valko-Venäjä",
+    "sk": "Bielorusko",
+    "hr": "Bjelorusija"
   },
   "BZ": {
     "es": "Belice",
@@ -1061,7 +1283,13 @@
     "hu": "Belize",
     "id": "Belize",
     "ms": "Belize",
-    "nb": "Belize"
+    "nb": "Belize",
+    "el": "Μπελίζ",
+    "ca": "Belize",
+    "da": "Belize",
+    "fi": "Belize",
+    "sk": "Belize",
+    "hr": "Belize"
   },
   "CA": {
     "es": "Canadá",
@@ -1089,7 +1317,13 @@
     "hu": "Kanada",
     "id": "Kanada",
     "ms": "Kanada",
-    "nb": "Canada"
+    "nb": "Canada",
+    "el": "Καναδάς",
+    "ca": "Canadà",
+    "da": "Canada",
+    "fi": "Kanada",
+    "sk": "Kanada",
+    "hr": "Kanada"
   },
   "CC": {
     "es": "Islas_Cocos",
@@ -1117,7 +1351,13 @@
     "hu": "Kókusz_(Keeling)-szigetek",
     "id": "Kepulauan_Cocos_(Keeling)",
     "ms": "Kepulauan_Cocos_(Keeling)",
-    "nb": "Kokosøyene"
+    "nb": "Kokosøyene",
+    "el": "Νησιά_Κόκος",
+    "ca": "Illes_Cocos",
+    "da": "Cocosøerne",
+    "fi": "Kookossaaret",
+    "sk": "Kokosové_ostrovy",
+    "hr": "Kokosovi_otoci"
   },
   "CD": {
     "es": "República_Democrática_del_Congo",
@@ -1145,7 +1385,13 @@
     "hu": "Kongói_Demokratikus_Köztársaság",
     "id": "Republik_Demokratik_Kongo",
     "ms": "Republik_Demokratik_Congo",
-    "nb": "Den_demokratiske_republikken_Kongo"
+    "nb": "Den_demokratiske_republikken_Kongo",
+    "el": "Λαϊκή_Δημοκρατία_του_Κονγκό",
+    "ca": "República_Democràtica_del_Congo",
+    "da": "Demokratiske_Republik_Congo",
+    "fi": "Kongon_demokraattinen_tasavalta",
+    "sk": "Konžská_demokratická_republika",
+    "hr": "Demokratska_Republika_Kongo"
   },
   "CF": {
     "es": "República_Centroafricana",
@@ -1173,7 +1419,13 @@
     "hu": "Közép-afrikai_Köztársaság",
     "id": "Afrika_Tengah",
     "ms": "Republik_Afrika_Tengah",
-    "nb": "Den_sentralafrikanske_republikk"
+    "nb": "Den_sentralafrikanske_republikk",
+    "el": "Κεντροαφρικανική_Δημοκρατία",
+    "ca": "República_Centreafricana",
+    "da": "Centralafrikanske_Republik",
+    "fi": "Keski-Afrikan_tasavalta",
+    "sk": "Stredoafrická_republika",
+    "hr": "Srednjoafrička_Republika"
   },
   "CG": {
     "es": "República_del_Congo",
@@ -1201,7 +1453,13 @@
     "hu": "Kongói_Köztársaság",
     "id": "Republik_Kongo",
     "ms": "Republik_Congo",
-    "nb": "Republikken_Kongo"
+    "nb": "Republikken_Kongo",
+    "el": "Δημοκρατία_του_Κονγκό",
+    "ca": "República_del_Congo",
+    "da": "Republikken_Congo",
+    "fi": "Kongon_tasavalta",
+    "sk": "Kongo_(Brazzaville)",
+    "hr": "Republika_Kongo"
   },
   "CH": {
     "es": "Suiza",
@@ -1229,7 +1487,13 @@
     "hu": "Svájc",
     "id": "Swiss",
     "ms": "Switzerland",
-    "nb": "Sveits"
+    "nb": "Sveits",
+    "el": "Ελβετία",
+    "ca": "Suïssa",
+    "da": "Schweiz",
+    "fi": "Sveitsi",
+    "sk": "Švajčiarsko",
+    "hr": "Švicarska"
   },
   "CI": {
     "es": "Costa_de_Marfil",
@@ -1257,7 +1521,13 @@
     "hu": "Elefántcsontpart",
     "id": "Pantai_Gading",
     "ms": "Ivory_Coast",
-    "nb": "Elfenbenskysten"
+    "nb": "Elfenbenskysten",
+    "el": "Ακτή_Ελεφαντοστού",
+    "ca": "Costa_d'Ivori",
+    "da": "Elfenbenskysten",
+    "fi": "Norsunluurannikko",
+    "sk": "Pobrežie_Slonoviny",
+    "hr": "Obala_Bjelokosti"
   },
   "CK": {
     "es": "Islas_Cook",
@@ -1285,7 +1555,13 @@
     "hu": "Cook-szigetek",
     "id": "Kepulauan_Cook",
     "ms": "Kepulauan_Cook",
-    "nb": "Cookøyene"
+    "nb": "Cookøyene",
+    "el": "Νήσοι_Κουκ",
+    "ca": "Illes_Cook",
+    "da": "Cookøerne",
+    "fi": "Cookinsaaret",
+    "sk": "Cookove_ostrovy",
+    "hr": "Cookovo_Otočje"
   },
   "CL": {
     "es": "Chile",
@@ -1313,7 +1589,13 @@
     "hu": "Chile",
     "id": "Chili",
     "ms": "Chile",
-    "nb": "Chile"
+    "nb": "Chile",
+    "el": "Χιλή",
+    "ca": "Xile",
+    "da": "Chile",
+    "fi": "Chile",
+    "sk": "Čile",
+    "hr": "Čile"
   },
   "CM": {
     "es": "Camerún",
@@ -1341,7 +1623,13 @@
     "hu": "Kamerun",
     "id": "Kamerun",
     "ms": "Cameroon",
-    "nb": "Kamerun"
+    "nb": "Kamerun",
+    "el": "Καμερούν",
+    "ca": "Camerun",
+    "da": "Cameroun",
+    "fi": "Kamerun",
+    "sk": "Kamerun",
+    "hr": "Kamerun"
   },
   "CN": {
     "es": "República_Popular_China",
@@ -1369,7 +1657,13 @@
     "hu": "Kína",
     "id": "Tiongkok",
     "ms": "China",
-    "nb": "Kina"
+    "nb": "Kina",
+    "el": "Κίνα",
+    "ca": "República_Popular_de_la_Xina",
+    "da": "Kina",
+    "fi": "Kiina",
+    "sk": "Čína",
+    "hr": "Kina"
   },
   "CO": {
     "es": "Colombia",
@@ -1397,7 +1691,13 @@
     "hu": "Kolumbia",
     "id": "Kolombia",
     "ms": "Colombia",
-    "nb": "Colombia"
+    "nb": "Colombia",
+    "el": "Κολομβία",
+    "ca": "Colòmbia",
+    "da": "Colombia",
+    "fi": "Kolumbia",
+    "sk": "Kolumbia",
+    "hr": "Kolumbija"
   },
   "CP": {
     "es": "Isla_Clipperton",
@@ -1425,7 +1725,13 @@
     "hu": "Clipperton-sziget",
     "id": "Pulau_Clipperton",
     "ms": "Pulau_Clipperton",
-    "nb": "Clipperton"
+    "nb": "Clipperton",
+    "el": "Νήσος_Κλίπερτον",
+    "ca": "Illa_Clipperton",
+    "da": "Clippertonøen",
+    "fi": "Clippertoninsaari",
+    "sk": "Clippertonov_ostrov",
+    "hr": "Clipperton_(otok)"
   },
   "CQ": {
     "es": "Sark",
@@ -1453,7 +1759,13 @@
     "hu": "Sark",
     "id": "Sark",
     "ms": "Sark",
-    "nb": "Sark"
+    "nb": "Sark",
+    "el": "Σαρκ",
+    "ca": "Sark",
+    "da": "Sark",
+    "fi": "Sark",
+    "sk": "Sark",
+    "hr": "Sark"
   },
   "CR": {
     "es": "Costa_Rica",
@@ -1481,7 +1793,13 @@
     "hu": "Costa_Rica",
     "id": "Kosta_Rika",
     "ms": "Costa_Rica",
-    "nb": "Costa_Rica"
+    "nb": "Costa_Rica",
+    "el": "Κόστα_Ρίκα",
+    "ca": "Costa_Rica",
+    "da": "Costa_Rica",
+    "fi": "Costa_Rica",
+    "sk": "Kostarika",
+    "hr": "Kostarika"
   },
   "CU": {
     "es": "Cuba",
@@ -1509,7 +1827,13 @@
     "hu": "Kuba",
     "id": "Kuba",
     "ms": "Cuba",
-    "nb": "Cuba"
+    "nb": "Cuba",
+    "el": "Κούβα",
+    "ca": "Cuba",
+    "da": "Cuba",
+    "fi": "Kuuba",
+    "sk": "Kuba",
+    "hr": "Kuba"
   },
   "CV": {
     "es": "Cabo_Verde",
@@ -1537,7 +1861,13 @@
     "hu": "Zöld-foki_Köztársaság",
     "id": "Tanjung_Verde",
     "ms": "Tanjung_Verde",
-    "nb": "Kapp_Verde"
+    "nb": "Kapp_Verde",
+    "el": "Πράσινο_Ακρωτήριο",
+    "ca": "Cap_Verd",
+    "da": "Kap_Verde",
+    "fi": "Kap_Verde",
+    "sk": "Kapverdy",
+    "hr": "Zelenortska_Republika"
   },
   "CW": {
     "es": "Curazao",
@@ -1565,7 +1895,13 @@
     "hu": "Curaçao",
     "id": "Curaçao",
     "ms": "Curaçao",
-    "nb": "Curaçao"
+    "nb": "Curaçao",
+    "el": "Κουρασάο",
+    "ca": "Curaçao",
+    "da": "Curaçao",
+    "fi": "Curaçao",
+    "sk": "Curaçao",
+    "hr": "Curaçao"
   },
   "CX": {
     "es": "Isla_de_Navidad",
@@ -1593,7 +1929,13 @@
     "hu": "Karácsony-sziget",
     "id": "Pulau_Natal",
     "ms": "Pulau_Krismas",
-    "nb": "Christmasøya"
+    "nb": "Christmasøya",
+    "el": "Νήσος_των_Χριστουγέννων",
+    "ca": "Illa_Christmas",
+    "da": "Christmas_Island_(Indiske_Ocean)",
+    "fi": "Joulusaari",
+    "sk": "Vianočný_ostrov_(Indický_oceán)",
+    "hr": "Božićni_otok"
   },
   "CY": {
     "es": "Chipre",
@@ -1621,7 +1963,13 @@
     "hu": "Ciprusi_Köztársaság",
     "id": "Siprus",
     "ms": "Cyprus",
-    "nb": "Republikken_Kypros"
+    "nb": "Republikken_Kypros",
+    "el": "Κύπρος",
+    "ca": "Xipre",
+    "da": "Cypern",
+    "fi": "Kyproksen_tasavalta",
+    "sk": "Cyprus",
+    "hr": "Cipar"
   },
   "CZ": {
     "es": "República_Checa",
@@ -1649,7 +1997,13 @@
     "hu": "Csehország",
     "id": "Ceko",
     "ms": "Republik_Czech",
-    "nb": "Tsjekkia"
+    "nb": "Tsjekkia",
+    "el": "Τσεχία",
+    "ca": "Txèquia",
+    "da": "Tjekkiet",
+    "fi": "Tšekki",
+    "sk": "Česko",
+    "hr": "Češka"
   },
   "DD": {
     "es": "República_Democrática_Alemana",
@@ -1677,7 +2031,13 @@
     "hu": "Német_Demokratikus_Köztársaság",
     "id": "Jerman_Timur",
     "ms": "Jerman_Timur",
-    "nb": "Øst-Tyskland"
+    "nb": "Øst-Tyskland",
+    "el": "Λαοκρατική_Δημοκρατία_της_Γερμανίας",
+    "ca": "República_Democràtica_Alemanya",
+    "da": "DDR",
+    "fi": "Saksan_demokraattinen_tasavalta",
+    "sk": "Nemecká_demokratická_republika",
+    "hr": "Njemačka_Demokratska_Republika"
   },
   "DE": {
     "es": "Alemania",
@@ -1705,7 +2065,13 @@
     "hu": "Németország",
     "id": "Jerman",
     "ms": "Jerman",
-    "nb": "Tyskland"
+    "nb": "Tyskland",
+    "el": "Γερμανία",
+    "ca": "Alemanya",
+    "da": "Tyskland",
+    "fi": "Saksa",
+    "sk": "Nemecko",
+    "hr": "Njemačka"
   },
   "DG": {
     "es": "Diego_García",
@@ -1733,7 +2099,13 @@
     "hu": "Diego_Garcia",
     "id": "Diego_Garcia",
     "ms": "Diego_Garcia",
-    "nb": "Diego_Garcia"
+    "nb": "Diego_Garcia",
+    "el": "Ντιέγκο_Γκαρσία",
+    "ca": "Diego_Garcia",
+    "da": "Diego_Garcia",
+    "fi": "Diego_Garcia",
+    "sk": "en:Diego_Garcia",
+    "hr": "en:Diego_Garcia"
   },
   "DJ": {
     "es": "Yibuti",
@@ -1761,7 +2133,13 @@
     "hu": "Dzsibuti",
     "id": "Jibuti",
     "ms": "Djibouti",
-    "nb": "Djibouti"
+    "nb": "Djibouti",
+    "el": "Τζιμπουτί",
+    "ca": "Djibouti",
+    "da": "Djibouti",
+    "fi": "Djibouti",
+    "sk": "Džibutsko",
+    "hr": "Džibuti"
   },
   "DK": {
     "es": "Dinamarca",
@@ -1789,7 +2167,13 @@
     "hu": "Dánia",
     "id": "Denmark",
     "ms": "Denmark",
-    "nb": "Danmark"
+    "nb": "Danmark",
+    "el": "Δανία",
+    "ca": "Dinamarca",
+    "da": "Danmark",
+    "fi": "Tanska",
+    "sk": "Dánsko",
+    "hr": "Danska"
   },
   "DM": {
     "es": "Dominica",
@@ -1817,7 +2201,13 @@
     "hu": "Dominikai_Közösség",
     "id": "Dominika",
     "ms": "Dominika",
-    "nb": "Dominica"
+    "nb": "Dominica",
+    "el": "Δομινίκα",
+    "ca": "Dominica",
+    "da": "Dominica",
+    "fi": "Dominica",
+    "sk": "Dominika_(štát)",
+    "hr": "Dominika"
   },
   "DO": {
     "es": "República_Dominicana",
@@ -1845,7 +2235,13 @@
     "hu": "Dominikai_Köztársaság",
     "id": "Republik_Dominika",
     "ms": "Republik_Dominika",
-    "nb": "Den_dominikanske_republikk"
+    "nb": "Den_dominikanske_republikk",
+    "el": "Δομινικανή_Δημοκρατία",
+    "ca": "República_Dominicana",
+    "da": "Dominikanske_Republik",
+    "fi": "Dominikaaninen_tasavalta",
+    "sk": "Dominikánska_republika",
+    "hr": "Dominikanska_Republika"
   },
   "DZ": {
     "es": "Argelia",
@@ -1873,7 +2269,13 @@
     "hu": "Algéria",
     "id": "Aljazair",
     "ms": "Algeria",
-    "nb": "Algerie"
+    "nb": "Algerie",
+    "el": "Αλγερία",
+    "ca": "Algèria",
+    "da": "Algeriet",
+    "fi": "Algeria",
+    "sk": "Alžírsko",
+    "hr": "Alžir"
   },
   "EC": {
     "es": "Ecuador",
@@ -1901,7 +2303,13 @@
     "hu": "Ecuador",
     "id": "Ekuador",
     "ms": "Ecuador",
-    "nb": "Ecuador"
+    "nb": "Ecuador",
+    "el": "Ισημερινός_(χώρα)",
+    "ca": "Equador",
+    "da": "Ecuador",
+    "fi": "Ecuador",
+    "sk": "Ekvádor",
+    "hr": "Ekvador"
   },
   "EE": {
     "es": "Estonia",
@@ -1929,7 +2337,13 @@
     "hu": "Észtország",
     "id": "Estonia",
     "ms": "Estonia",
-    "nb": "Estland"
+    "nb": "Estland",
+    "el": "Εσθονία",
+    "ca": "Estònia",
+    "da": "Estland",
+    "fi": "Viro",
+    "sk": "Estónsko",
+    "hr": "Estonija"
   },
   "EG": {
     "es": "Egipto",
@@ -1957,7 +2371,13 @@
     "hu": "Egyiptom",
     "id": "Mesir",
     "ms": "Mesir",
-    "nb": "Egypt"
+    "nb": "Egypt",
+    "el": "Αίγυπτος",
+    "ca": "Egipte",
+    "da": "Egypten",
+    "fi": "Egypti",
+    "sk": "Egypt",
+    "hr": "Egipat"
   },
   "EH": {
     "es": "Sahara_Occidental",
@@ -1985,7 +2405,13 @@
     "hu": "en:Western_Sahara",
     "id": "Sahara_Barat",
     "ms": "Sahara_Barat",
-    "nb": "Vest-Sahara"
+    "nb": "Vest-Sahara",
+    "el": "Δυτική_Σαχάρα",
+    "ca": "Sàhara_Occidental",
+    "da": "Vestsahara",
+    "fi": "Länsi-Sahara",
+    "sk": "Západná_Sahara_(územie)",
+    "hr": "Zapadna_Sahara"
   },
   "ER": {
     "es": "Eritrea",
@@ -2013,7 +2439,13 @@
     "hu": "Eritrea",
     "id": "Eritrea",
     "ms": "Eritrea",
-    "nb": "Eritrea"
+    "nb": "Eritrea",
+    "el": "Ερυθραία",
+    "ca": "Eritrea",
+    "da": "Eritrea",
+    "fi": "Eritrea",
+    "sk": "Eritrea",
+    "hr": "Eritreja"
   },
   "ES": {
     "es": "España",
@@ -2041,7 +2473,13 @@
     "hu": "Spanyolország",
     "id": "Spanyol",
     "ms": "Sepanyol",
-    "nb": "Spania"
+    "nb": "Spania",
+    "el": "Ισπανία",
+    "ca": "Espanya",
+    "da": "Spanien",
+    "fi": "Espanja",
+    "sk": "Španielsko",
+    "hr": "Španjolska"
   },
   "ET": {
     "es": "Etiopía",
@@ -2069,7 +2507,13 @@
     "hu": "Etiópia",
     "id": "Etiopia",
     "ms": "Habsyah",
-    "nb": "Etiopia"
+    "nb": "Etiopia",
+    "el": "Αιθιοπία",
+    "ca": "Etiòpia",
+    "da": "Etiopien",
+    "fi": "Etiopia",
+    "sk": "Etiópia",
+    "hr": "Etiopija"
   },
   "FI": {
     "es": "Finlandia",
@@ -2097,7 +2541,13 @@
     "hu": "Finnország",
     "id": "Finlandia",
     "ms": "Finland",
-    "nb": "Finland"
+    "nb": "Finland",
+    "el": "Φινλανδία",
+    "ca": "Finlàndia",
+    "da": "Finland",
+    "fi": "Suomi",
+    "sk": "Fínsko",
+    "hr": "Finska"
   },
   "FJ": {
     "es": "Fiyi",
@@ -2125,7 +2575,13 @@
     "hu": "Fidzsi-szigetek",
     "id": "Fiji",
     "ms": "Fiji",
-    "nb": "Fiji"
+    "nb": "Fiji",
+    "el": "Φίτζι",
+    "ca": "Fiji",
+    "da": "Fiji",
+    "fi": "Fidži",
+    "sk": "Fidži",
+    "hr": "Fidži"
   },
   "FK": {
     "es": "Islas_Malvinas_(territorio_británico_de_ultramar)",
@@ -2153,7 +2609,13 @@
     "hu": "Falkland-szigetek",
     "id": "Kepulauan_Falkland",
     "ms": "Kepulauan_Falkland",
-    "nb": "Falklandsøyene"
+    "nb": "Falklandsøyene",
+    "el": "Νήσοι_Φώκλαντ",
+    "ca": "Illes_Malvines",
+    "da": "Falklandsøerne",
+    "fi": "Falklandinsaaret",
+    "sk": "Falklandy",
+    "hr": "Falklandski_otoci"
   },
   "FM": {
     "es": "Estados_Federados_de_Micronesia",
@@ -2181,7 +2643,13 @@
     "hu": "Mikronéziai_Szövetségi_Államok",
     "id": "Federasi_Mikronesia",
     "ms": "Negeri_Bersekutu_Mikronesia",
-    "nb": "Mikronesiaføderasjonen"
+    "nb": "Mikronesiaføderasjonen",
+    "el": "Ομόσπονδες_Πολιτείες_της_Μικρονησίας",
+    "ca": "Estats_Federats_de_Micronèsia",
+    "da": "Mikronesien",
+    "fi": "Mikronesian_federaatio",
+    "sk": "Mikronézia_(štát)",
+    "hr": "Savezne_Države_Mikronezije"
   },
   "FO": {
     "es": "Islas_Feroe",
@@ -2209,7 +2677,13 @@
     "hu": "Feröer",
     "id": "Kepulauan_Faroe",
     "ms": "Kepulauan_Faroe",
-    "nb": "Færøyene"
+    "nb": "Færøyene",
+    "el": "Νήσοι_Φερόες",
+    "ca": "Illes_Fèroe",
+    "da": "Færøerne",
+    "fi": "Färsaaret",
+    "sk": "Faerské_ostrovy",
+    "hr": "Farski_otoci"
   },
   "FR": {
     "es": "Francia",
@@ -2237,7 +2711,13 @@
     "hu": "Franciaország",
     "id": "Prancis",
     "ms": "Perancis",
-    "nb": "Frankrike"
+    "nb": "Frankrike",
+    "el": "Γαλλία",
+    "ca": "França",
+    "da": "Frankrig",
+    "fi": "Ranska",
+    "sk": "Francúzsko",
+    "hr": "Francuska"
   },
   "GA": {
     "es": "Gabón",
@@ -2265,7 +2745,13 @@
     "hu": "Gabon",
     "id": "Gabon",
     "ms": "Gabon",
-    "nb": "Gabon"
+    "nb": "Gabon",
+    "el": "Γκαμπόν",
+    "ca": "Gabon",
+    "da": "Gabon",
+    "fi": "Gabon",
+    "sk": "Gabon",
+    "hr": "Gabon"
   },
   "GB": {
     "es": "Reino_Unido",
@@ -2293,7 +2779,13 @@
     "hu": "Egyesült_Királyság",
     "id": "Britania_Raya",
     "ms": "United_Kingdom",
-    "nb": "Storbritannia"
+    "nb": "Storbritannia",
+    "el": "Ηνωμένο_Βασίλειο",
+    "ca": "Regne_Unit",
+    "da": "Storbritannien",
+    "fi": "Yhdistynyt_kuningaskunta",
+    "sk": "Spojené_kráľovstvo",
+    "hr": "Ujedinjeno_Kraljevstvo"
   },
   "GD": {
     "es": "Granada_(país)",
@@ -2321,7 +2813,13 @@
     "hu": "Grenada",
     "id": "Grenada",
     "ms": "Grenada",
-    "nb": "Grenada"
+    "nb": "Grenada",
+    "el": "Γρενάδα",
+    "ca": "Grenada",
+    "da": "Grenada",
+    "fi": "Grenada",
+    "sk": "Grenada",
+    "hr": "Grenada"
   },
   "GE": {
     "es": "Georgia",
@@ -2349,7 +2847,13 @@
     "hu": "Grúzia",
     "id": "Georgia",
     "ms": "Georgia",
-    "nb": "Georgia"
+    "nb": "Georgia",
+    "el": "Γεωργία",
+    "ca": "Geòrgia",
+    "da": "Georgien",
+    "fi": "Georgia",
+    "sk": "Gruzínsko",
+    "hr": "Gruzija"
   },
   "GF": {
     "es": "Guayana_Francesa",
@@ -2377,7 +2881,13 @@
     "hu": "Francia_Guyana",
     "id": "Guyana_Prancis",
     "ms": "Guiana_Perancis",
-    "nb": "Fransk_Guyana"
+    "nb": "Fransk_Guyana",
+    "el": "Γαλλική_Γουιάνα",
+    "ca": "Guaiana_Francesa",
+    "da": "Fransk_Guyana",
+    "fi": "Ranskan_Guayana",
+    "sk": "Francúzska_Guyana",
+    "hr": "Francuska_Gijana"
   },
   "GG": {
     "es": "Bailía_de_Guernsey",
@@ -2405,7 +2915,13 @@
     "hu": "Guernsey_Bailiffség",
     "id": "Bailiwick_of_Guernsey",
     "ms": "Guernsey",
-    "nb": "Guernsey"
+    "nb": "Guernsey",
+    "el": "Βαϊλάτο_του_Γκέρνζι",
+    "ca": "Guernsey",
+    "da": "Bailiwick_of_Guernsey",
+    "fi": "Guernsey",
+    "sk": "Guernsey",
+    "hr": "Bailiwick_Guernsey"
   },
   "GH": {
     "es": "Ghana",
@@ -2433,7 +2949,13 @@
     "hu": "Ghána",
     "id": "Ghana",
     "ms": "Ghana",
-    "nb": "Ghana"
+    "nb": "Ghana",
+    "el": "Γκάνα",
+    "ca": "Ghana",
+    "da": "Ghana",
+    "fi": "Ghana",
+    "sk": "Ghana",
+    "hr": "Gana"
   },
   "GI": {
     "es": "Gibraltar",
@@ -2461,7 +2983,13 @@
     "hu": "Gibraltár_(brit_tengerentúli_terület)",
     "id": "Gibraltar",
     "ms": "Gibraltar",
-    "nb": "Gibraltar"
+    "nb": "Gibraltar",
+    "el": "Γιβραλτάρ",
+    "ca": "Gibraltar",
+    "da": "Gibraltar",
+    "fi": "Gibraltar",
+    "sk": "Gibraltár",
+    "hr": "Gibraltar"
   },
   "GL": {
     "es": "Groenlandia",
@@ -2489,7 +3017,13 @@
     "hu": "Grönland",
     "id": "Greenland",
     "ms": "Greenland",
-    "nb": "Grønland"
+    "nb": "Grønland",
+    "el": "Γροιλανδία",
+    "ca": "Groenlàndia",
+    "da": "Grønland",
+    "fi": "Grönlanti",
+    "sk": "Grónsko",
+    "hr": "Grenland"
   },
   "GM": {
     "es": "Gambia",
@@ -2517,7 +3051,13 @@
     "hu": "Gambia",
     "id": "Gambia",
     "ms": "Gambia",
-    "nb": "Gambia"
+    "nb": "Gambia",
+    "el": "Γκάμπια",
+    "ca": "Gàmbia",
+    "da": "Gambia",
+    "fi": "Gambia",
+    "sk": "Gambia_(štát)",
+    "hr": "Gambija"
   },
   "GN": {
     "es": "Guinea",
@@ -2545,7 +3085,13 @@
     "hu": "Guinea",
     "id": "Guinea",
     "ms": "Guinea",
-    "nb": "Guinea"
+    "nb": "Guinea",
+    "el": "Γουινέα",
+    "ca": "Guinea",
+    "da": "Guinea",
+    "fi": "Guinea",
+    "sk": "Guinea_(štát)",
+    "hr": "Gvineja"
   },
   "GP": {
     "es": "Guadalupe_(Francia)",
@@ -2573,7 +3119,13 @@
     "hu": "Guadeloupe",
     "id": "Guadeloupe",
     "ms": "Guadeloupe",
-    "nb": "Guadeloupe"
+    "nb": "Guadeloupe",
+    "el": "Γουαδελούπη",
+    "ca": "Guadalupe_(França)",
+    "da": "Guadeloupe",
+    "fi": "Guadeloupe",
+    "sk": "Guadeloupe",
+    "hr": "Gvadalupa"
   },
   "GQ": {
     "es": "Guinea_Ecuatorial",
@@ -2601,7 +3153,13 @@
     "hu": "Egyenlítői-Guinea",
     "id": "Guinea_Khatulistiwa",
     "ms": "Guinea_Khatulistiwa",
-    "nb": "Ekvatorial-Guinea"
+    "nb": "Ekvatorial-Guinea",
+    "el": "Ισημερινή_Γουινέα",
+    "ca": "Guinea_Equatorial",
+    "da": "Ækvatorialguinea",
+    "fi": "Päiväntasaajan_Guinea",
+    "sk": "Rovníková_Guinea",
+    "hr": "Ekvatorska_Gvineja"
   },
   "GR": {
     "es": "Grecia",
@@ -2629,7 +3187,13 @@
     "hu": "Görögország",
     "id": "Yunani",
     "ms": "Yunani",
-    "nb": "Hellas"
+    "nb": "Hellas",
+    "el": "Ελλάδα",
+    "ca": "Grècia",
+    "da": "Grækenland",
+    "fi": "Kreikka",
+    "sk": "Grécko",
+    "hr": "Grčka"
   },
   "GS": {
     "es": "Islas_Georgias_del_Sur_y_Sandwich_del_Sur",
@@ -2657,7 +3221,13 @@
     "hu": "Déli-Georgia_és_Déli-Sandwich-szigetek",
     "id": "Georgia_Selatan_dan_Kepulauan_Sandwich_Selatan",
     "ms": "Georgia_Selatan_dan_Kepulauan_Sandwich_Selatan",
-    "nb": "Sør-Georgia_og_Sør-Sandwichøyene"
+    "nb": "Sør-Georgia_og_Sør-Sandwichøyene",
+    "el": "Νήσοι_Νότια_Γεωργία_και_Νότιες_Σάντουιτς",
+    "ca": "Illes_Geòrgia_del_Sud_i_Sandwich_del_Sud",
+    "da": "South_Georgia_og_South_Sandwich_Islands",
+    "fi": "Etelä-Georgia_ja_Eteläiset_Sandwichsaaret",
+    "sk": "Južná_Georgia_a_Južné_Sandwichove_ostrovy",
+    "hr": "Južna_Georgia_i_otočje_Južni_Sandwich"
   },
   "GT": {
     "es": "Guatemala",
@@ -2685,7 +3255,13 @@
     "hu": "Guatemala",
     "id": "Guatemala",
     "ms": "Guatemala",
-    "nb": "Guatemala"
+    "nb": "Guatemala",
+    "el": "Γουατεμάλα",
+    "ca": "Guatemala",
+    "da": "Guatemala",
+    "fi": "Guatemala",
+    "sk": "Guatemala_(štát)",
+    "hr": "Gvatemala"
   },
   "GU": {
     "es": "Guam",
@@ -2713,7 +3289,13 @@
     "hu": "Guam",
     "id": "Guam",
     "ms": "Guam",
-    "nb": "Guam"
+    "nb": "Guam",
+    "el": "Γκουάμ",
+    "ca": "Guam",
+    "da": "Guam",
+    "fi": "Guam",
+    "sk": "Guam",
+    "hr": "Guam"
   },
   "GW": {
     "es": "Guinea-Bisáu",
@@ -2741,7 +3323,13 @@
     "hu": "Bissau-Guinea",
     "id": "Guinea-Bissau",
     "ms": "Guinea-Bissau",
-    "nb": "Guinea-Bissau"
+    "nb": "Guinea-Bissau",
+    "el": "Γουινέα-Μπισάου",
+    "ca": "Guinea_Bissau",
+    "da": "Guinea-Bissau",
+    "fi": "Guinea-Bissau",
+    "sk": "Guinea-Bissau",
+    "hr": "Gvineja_Bisau"
   },
   "GY": {
     "es": "Guyana",
@@ -2769,7 +3357,13 @@
     "hu": "Guyana",
     "id": "Guyana",
     "ms": "Guyana",
-    "nb": "Guyana"
+    "nb": "Guyana",
+    "el": "Γουιάνα",
+    "ca": "Guyana",
+    "da": "Guyana",
+    "fi": "Guyana",
+    "sk": "Guyana_(štát)",
+    "hr": "Gvajana"
   },
   "HK": {
     "es": "Hong_Kong",
@@ -2797,7 +3391,13 @@
     "hu": "Hongkong",
     "id": "Hong_Kong",
     "ms": "Hong_Kong",
-    "nb": "Hongkong"
+    "nb": "Hongkong",
+    "el": "Χονγκ_Κονγκ",
+    "ca": "Hong_Kong",
+    "da": "Hongkong",
+    "fi": "Hongkong",
+    "sk": "Hongkong",
+    "hr": "Hong_Kong"
   },
   "HM": {
     "es": "Territorio_de_las_Islas_Heard_y_McDonald",
@@ -2825,7 +3425,13 @@
     "hu": "Heard-sziget_és_McDonald-szigetek",
     "id": "Pulau_Heard_dan_Kepulauan_McDonald",
     "ms": "Pulau_Heard_dan_Kepulauan_McDonald",
-    "nb": "Heard-_og_McDonaldøyene"
+    "nb": "Heard-_og_McDonaldøyene",
+    "el": "Νήσοι_Χερντ_και_Μακντόναλντ",
+    "ca": "Illes_Heard_i_McDonald",
+    "da": "en:Heard_Island_and_McDonald_Islands",
+    "fi": "Heard_ja_McDonaldinsaaret",
+    "sk": "Heardov_ostrov_(teritórium)",
+    "hr": "Otok_Heard_i_otočje_McDonald"
   },
   "HN": {
     "es": "Honduras",
@@ -2853,7 +3459,13 @@
     "hu": "Honduras",
     "id": "Honduras",
     "ms": "Honduras",
-    "nb": "Honduras"
+    "nb": "Honduras",
+    "el": "Ονδούρα",
+    "ca": "Hondures",
+    "da": "Honduras",
+    "fi": "Honduras",
+    "sk": "Honduras",
+    "hr": "Honduras"
   },
   "HR": {
     "es": "Croacia",
@@ -2881,7 +3493,13 @@
     "hu": "Horvátország",
     "id": "Kroasia",
     "ms": "Croatia",
-    "nb": "Kroatia"
+    "nb": "Kroatia",
+    "el": "Κροατία",
+    "ca": "Croàcia",
+    "da": "Kroatien",
+    "fi": "Kroatia",
+    "sk": "Chorvátsko",
+    "hr": "Hrvatska"
   },
   "HT": {
     "es": "Haití",
@@ -2909,7 +3527,13 @@
     "hu": "Haiti",
     "id": "Haiti",
     "ms": "Haiti",
-    "nb": "Haiti"
+    "nb": "Haiti",
+    "el": "Αϊτή",
+    "ca": "Haití",
+    "da": "Haiti",
+    "fi": "Haiti",
+    "sk": "Haiti_(štát)",
+    "hr": "Haiti"
   },
   "HU": {
     "es": "Hungría",
@@ -2937,7 +3561,13 @@
     "hu": "Magyarország",
     "id": "Hungaria",
     "ms": "Hungary",
-    "nb": "Ungarn"
+    "nb": "Ungarn",
+    "el": "Ουγγαρία",
+    "ca": "Hongria",
+    "da": "Ungarn",
+    "fi": "Unkari",
+    "sk": "Maďarsko",
+    "hr": "Mađarska"
   },
   "ID": {
     "es": "Indonesia",
@@ -2965,7 +3595,13 @@
     "hu": "Indonézia",
     "id": "Indonesia",
     "ms": "Indonesia",
-    "nb": "Indonesia"
+    "nb": "Indonesia",
+    "el": "Ινδονησία",
+    "ca": "Indonèsia",
+    "da": "Indonesien",
+    "fi": "Indonesia",
+    "sk": "Indonézia",
+    "hr": "Indonezija"
   },
   "IE": {
     "es": "Irlanda",
@@ -2993,7 +3629,13 @@
     "hu": "Írország",
     "id": "Republik_Irlandia",
     "ms": "Republik_Ireland",
-    "nb": "Irland"
+    "nb": "Irland",
+    "el": "Δημοκρατία_της_Ιρλανδίας",
+    "ca": "Irlanda",
+    "da": "Irland",
+    "fi": "Irlanti",
+    "sk": "Írsko",
+    "hr": "Irska"
   },
   "IL": {
     "es": "Israel",
@@ -3021,7 +3663,13 @@
     "hu": "Izrael",
     "id": "Israel",
     "ms": "Israel",
-    "nb": "Israel"
+    "nb": "Israel",
+    "el": "Ισραήλ",
+    "ca": "Israel",
+    "da": "Israel",
+    "fi": "Israel",
+    "sk": "Izrael",
+    "hr": "Izrael"
   },
   "IM": {
     "es": "Isla_de_Man",
@@ -3049,7 +3697,13 @@
     "hu": "Man-sziget",
     "id": "Pulau_Man",
     "ms": "Pulau_Man",
-    "nb": "Man"
+    "nb": "Man",
+    "el": "Νήσος_του_Μαν",
+    "ca": "Illa_de_Man",
+    "da": "Isle_of_Man",
+    "fi": "Mansaari",
+    "sk": "Ostrov_Man",
+    "hr": "Otok_Man"
   },
   "IN": {
     "es": "India",
@@ -3077,7 +3731,13 @@
     "hu": "India",
     "id": "India",
     "ms": "India",
-    "nb": "India"
+    "nb": "India",
+    "el": "Ινδία",
+    "ca": "Índia",
+    "da": "Indien",
+    "fi": "Intia",
+    "sk": "India",
+    "hr": "Indija"
   },
   "IO": {
     "es": "Territorio_Británico_del_Océano_Índico",
@@ -3105,7 +3765,13 @@
     "hu": "Brit_Indiai-óceáni_Terület",
     "id": "Wilayah_Samudra_Hindia_Britania_Raya",
     "ms": "Wilayah_Lautan_Hindi_British",
-    "nb": "Det_britiske_territoriet_i_Indiahavet"
+    "nb": "Det_britiske_territoriet_i_Indiahavet",
+    "el": "Βρετανικό_Έδαφος_Ινδικού_Ωκεανού",
+    "ca": "Territori_Britànic_de_l'Oceà_Índic",
+    "da": "Britisk_territorium_i_det_indiske_ocean",
+    "fi": "Brittiläinen_Intian_valtameren_alue",
+    "sk": "Britské_indickooceánske_územie",
+    "hr": "Britanski_Indijskooceanski_teritorij"
   },
   "IQ": {
     "es": "Irak",
@@ -3133,7 +3799,13 @@
     "hu": "Irak",
     "id": "Irak",
     "ms": "Iraq",
-    "nb": "Irak"
+    "nb": "Irak",
+    "el": "Ιράκ",
+    "ca": "Iraq",
+    "da": "Irak",
+    "fi": "Irak",
+    "sk": "Irak",
+    "hr": "Irak"
   },
   "IR": {
     "es": "Irán",
@@ -3161,7 +3833,13 @@
     "hu": "Irán",
     "id": "Iran",
     "ms": "Iran",
-    "nb": "Iran"
+    "nb": "Iran",
+    "el": "Ιράν",
+    "ca": "Iran",
+    "da": "Iran",
+    "fi": "Iran",
+    "sk": "Irán",
+    "hr": "Iran"
   },
   "IS": {
     "es": "Islandia",
@@ -3189,7 +3867,13 @@
     "hu": "Izland",
     "id": "Islandia",
     "ms": "Iceland",
-    "nb": "Island"
+    "nb": "Island",
+    "el": "Ισλανδία",
+    "ca": "Islàndia",
+    "da": "Island",
+    "fi": "Islanti",
+    "sk": "Island",
+    "hr": "Island"
   },
   "IT": {
     "es": "Italia",
@@ -3217,7 +3901,13 @@
     "hu": "Olaszország",
     "id": "Italia",
     "ms": "Itali",
-    "nb": "Italia"
+    "nb": "Italia",
+    "el": "Ιταλία",
+    "ca": "Itàlia",
+    "da": "Italien",
+    "fi": "Italia",
+    "sk": "Taliansko",
+    "hr": "Italija"
   },
   "JE": {
     "es": "Jersey",
@@ -3245,7 +3935,13 @@
     "hu": "Jersey_Bailiffség",
     "id": "Jersey",
     "ms": "Jersey",
-    "nb": "Jersey"
+    "nb": "Jersey",
+    "el": "Βαϊλάτο_του_Τζέρσεϊ",
+    "ca": "Illa_de_Jersey",
+    "da": "Jersey",
+    "fi": "Jersey",
+    "sk": "Jersey",
+    "hr": "Bailiwick_Jersey"
   },
   "JM": {
     "es": "Jamaica",
@@ -3273,7 +3969,13 @@
     "hu": "Jamaica",
     "id": "Jamaika",
     "ms": "Jamaica",
-    "nb": "Jamaica"
+    "nb": "Jamaica",
+    "el": "Τζαμάικα",
+    "ca": "Jamaica",
+    "da": "Jamaica",
+    "fi": "Jamaika",
+    "sk": "Jamajka",
+    "hr": "Jamajka"
   },
   "JO": {
     "es": "Jordania",
@@ -3301,7 +4003,13 @@
     "hu": "Jordánia",
     "id": "Yordania",
     "ms": "Jordan",
-    "nb": "Jordan"
+    "nb": "Jordan",
+    "el": "Ιορδανία",
+    "ca": "Jordània",
+    "da": "Jordan",
+    "fi": "Jordania",
+    "sk": "Jordánsko",
+    "hr": "Jordan"
   },
   "JP": {
     "es": "Japón",
@@ -3329,7 +4037,13 @@
     "hu": "Japán",
     "id": "Jepang",
     "ms": "Jepun",
-    "nb": "Japan"
+    "nb": "Japan",
+    "el": "Ιαπωνία",
+    "ca": "Japó",
+    "da": "Japan",
+    "fi": "Japani",
+    "sk": "Japonsko",
+    "hr": "Japan"
   },
   "KE": {
     "es": "Kenia",
@@ -3357,7 +4071,13 @@
     "hu": "Kenya",
     "id": "Kenya",
     "ms": "Kenya",
-    "nb": "Kenya"
+    "nb": "Kenya",
+    "el": "Κένυα",
+    "ca": "Kenya",
+    "da": "Kenya",
+    "fi": "Kenia",
+    "sk": "Keňa",
+    "hr": "Kenija"
   },
   "KG": {
     "es": "Kirguistán",
@@ -3385,7 +4105,13 @@
     "hu": "Kirgizisztán",
     "id": "Kirgizstan",
     "ms": "Kyrgyzstan",
-    "nb": "Kirgisistan"
+    "nb": "Kirgisistan",
+    "el": "Κιργιζία",
+    "ca": "Kirguizstan",
+    "da": "Kirgisistan",
+    "fi": "Kirgisia",
+    "sk": "Kirgizsko",
+    "hr": "Kirgistan"
   },
   "KH": {
     "es": "Camboya",
@@ -3413,7 +4139,13 @@
     "hu": "Kambodzsa",
     "id": "Kamboja",
     "ms": "Kemboja",
-    "nb": "Kambodsja"
+    "nb": "Kambodsja",
+    "el": "Καμπότζη",
+    "ca": "Cambodja",
+    "da": "Cambodja",
+    "fi": "Kambodža",
+    "sk": "Kambodža",
+    "hr": "Kambodža"
   },
   "KI": {
     "es": "Kiribati",
@@ -3441,7 +4173,13 @@
     "hu": "Kiribati",
     "id": "Kiribati",
     "ms": "Kiribati",
-    "nb": "Kiribati"
+    "nb": "Kiribati",
+    "el": "Κιριμπάτι",
+    "ca": "Kiribati",
+    "da": "Kiribati",
+    "fi": "Kiribati",
+    "sk": "Kiribati",
+    "hr": "Kiribati"
   },
   "KM": {
     "es": "Comoras",
@@ -3469,7 +4207,13 @@
     "hu": "Comore-szigetek",
     "id": "Komoro",
     "ms": "Comoros",
-    "nb": "Komorene"
+    "nb": "Komorene",
+    "el": "Κομόρες",
+    "ca": "Comores",
+    "da": "Comorerne",
+    "fi": "Komorit",
+    "sk": "Komory",
+    "hr": "Komori"
   },
   "KN": {
     "es": "San_Cristóbal_y_Nieves",
@@ -3497,7 +4241,13 @@
     "hu": "Saint_Kitts_és_Nevis",
     "id": "Saint_Kitts_dan_Nevis",
     "ms": "Saint_Kitts_dan_Nevis",
-    "nb": "Saint_Kitts_og_Nevis"
+    "nb": "Saint_Kitts_og_Nevis",
+    "el": "Άγιος_Χριστόφορος_και_Νέβις",
+    "ca": "Saint_Kitts_i_Nevis",
+    "da": "Saint_Kitts_og_Nevis",
+    "fi": "Saint_Kitts_ja_Nevis",
+    "sk": "Svätý_Krištof_a_Nevis",
+    "hr": "Sveti_Kristofor_i_Nevis"
   },
   "KP": {
     "es": "Corea_del_Norte",
@@ -3525,7 +4275,13 @@
     "hu": "Észak-Korea",
     "id": "Korea_Utara",
     "ms": "Korea_Utara",
-    "nb": "Nord-Korea"
+    "nb": "Nord-Korea",
+    "el": "Βόρεια_Κορέα",
+    "ca": "Corea_del_Nord",
+    "da": "Nordkorea",
+    "fi": "Korean_demokraattinen_kansantasavalta",
+    "sk": "Kórejská_ľudovodemokratická_republika",
+    "hr": "Sjeverna_Koreja"
   },
   "KR": {
     "es": "Corea_del_Sur",
@@ -3553,7 +4309,13 @@
     "hu": "Dél-Korea",
     "id": "Korea_Selatan",
     "ms": "Korea_Selatan",
-    "nb": "Sør-Korea"
+    "nb": "Sør-Korea",
+    "el": "Νότια_Κορέα",
+    "ca": "Corea_del_Sud",
+    "da": "Sydkorea",
+    "fi": "Korean_tasavalta",
+    "sk": "Kórejská_republika",
+    "hr": "Južna_Koreja"
   },
   "KW": {
     "es": "Kuwait",
@@ -3581,7 +4343,13 @@
     "hu": "Kuvait",
     "id": "Kuwait",
     "ms": "Kuwait",
-    "nb": "Kuwait"
+    "nb": "Kuwait",
+    "el": "Κουβέιτ",
+    "ca": "Kuwait",
+    "da": "Kuwait",
+    "fi": "Kuwait",
+    "sk": "Kuvajt_(štát)",
+    "hr": "Kuvajt"
   },
   "KY": {
     "es": "Islas_Caimán",
@@ -3609,7 +4377,13 @@
     "hu": "Kajmán-szigetek",
     "id": "Kepulauan_Cayman",
     "ms": "Kepulauan_Cayman",
-    "nb": "Caymanøyene"
+    "nb": "Caymanøyene",
+    "el": "Κέιμαν_Νήσοι",
+    "ca": "Illes_Caiman",
+    "da": "Caymanøerne",
+    "fi": "Caymansaaret",
+    "sk": "Kajmanie_ostrovy",
+    "hr": "Kajmanski_otoci"
   },
   "KZ": {
     "es": "Kazajistán",
@@ -3637,7 +4411,13 @@
     "hu": "Kazahsztán",
     "id": "Kazakhstan",
     "ms": "Kazakhstan",
-    "nb": "Kasakhstan"
+    "nb": "Kasakhstan",
+    "el": "Καζακστάν",
+    "ca": "Kazakhstan",
+    "da": "Kasakhstan",
+    "fi": "Kazakstan",
+    "sk": "Kazachstan",
+    "hr": "Kazahstan"
   },
   "LA": {
     "es": "Laos",
@@ -3665,7 +4445,13 @@
     "hu": "Laosz",
     "id": "Laos",
     "ms": "Laos",
-    "nb": "Laos"
+    "nb": "Laos",
+    "el": "Λάος",
+    "ca": "Laos",
+    "da": "Laos",
+    "fi": "Laos",
+    "sk": "Laos",
+    "hr": "Laos"
   },
   "LB": {
     "es": "Líbano",
@@ -3693,7 +4479,13 @@
     "hu": "Libanon",
     "id": "Lebanon",
     "ms": "Lubnan",
-    "nb": "Libanon"
+    "nb": "Libanon",
+    "el": "Λίβανος",
+    "ca": "Líban",
+    "da": "Libanon",
+    "fi": "Libanon",
+    "sk": "Libanon",
+    "hr": "Libanon"
   },
   "LC": {
     "es": "Santa_Lucía",
@@ -3721,7 +4513,13 @@
     "hu": "Saint_Lucia",
     "id": "Saint_Lucia",
     "ms": "Saint_Lucia",
-    "nb": "Saint_Lucia"
+    "nb": "Saint_Lucia",
+    "el": "Αγία_Λουκία_(χώρα)",
+    "ca": "Saint_Lucia",
+    "da": "Saint_Lucia",
+    "fi": "Saint_Lucia",
+    "sk": "Svätá_Lucia",
+    "hr": "Sveta_Lucija_(država)"
   },
   "LI": {
     "es": "Liechtenstein",
@@ -3749,7 +4547,13 @@
     "hu": "Liechtenstein",
     "id": "Liechtenstein",
     "ms": "Liechtenstein",
-    "nb": "Liechtenstein"
+    "nb": "Liechtenstein",
+    "el": "Λίχτενσταϊν",
+    "ca": "Liechtenstein",
+    "da": "Liechtenstein",
+    "fi": "Liechtenstein",
+    "sk": "Lichtenštajnsko",
+    "hr": "Lihtenštajn"
   },
   "LK": {
     "es": "Sri_Lanka",
@@ -3777,7 +4581,13 @@
     "hu": "Srí_Lanka",
     "id": "Sri_Lanka",
     "ms": "Sri_Lanka",
-    "nb": "Sri_Lanka"
+    "nb": "Sri_Lanka",
+    "el": "Σρι_Λάνκα",
+    "ca": "Sri_Lanka",
+    "da": "Sri_Lanka",
+    "fi": "Sri_Lanka",
+    "sk": "Srí_Lanka",
+    "hr": "Šri_Lanka"
   },
   "LR": {
     "es": "Liberia",
@@ -3805,7 +4615,13 @@
     "hu": "Libéria",
     "id": "Liberia",
     "ms": "Liberia",
-    "nb": "Liberia"
+    "nb": "Liberia",
+    "el": "Λιβερία",
+    "ca": "Libèria",
+    "da": "Liberia",
+    "fi": "Liberia",
+    "sk": "Libéria",
+    "hr": "Liberija"
   },
   "LS": {
     "es": "Lesoto",
@@ -3833,7 +4649,13 @@
     "hu": "Lesotho",
     "id": "Lesotho",
     "ms": "Lesotho",
-    "nb": "Lesotho"
+    "nb": "Lesotho",
+    "el": "Λεσότο",
+    "ca": "Lesotho",
+    "da": "Lesotho",
+    "fi": "Lesotho",
+    "sk": "Lesotho",
+    "hr": "Lesoto"
   },
   "LT": {
     "es": "Lituania",
@@ -3861,7 +4683,13 @@
     "hu": "Litvánia",
     "id": "Lituania",
     "ms": "Lithuania",
-    "nb": "Litauen"
+    "nb": "Litauen",
+    "el": "Λιθουανία",
+    "ca": "Lituània",
+    "da": "Litauen",
+    "fi": "Liettua",
+    "sk": "Litva",
+    "hr": "Litva"
   },
   "LU": {
     "es": "Luxemburgo",
@@ -3889,7 +4717,13 @@
     "hu": "Luxemburg",
     "id": "Luksemburg",
     "ms": "Luxembourg",
-    "nb": "Luxembourg"
+    "nb": "Luxembourg",
+    "el": "Λουξεμβούργο",
+    "ca": "Luxemburg",
+    "da": "Luxembourg",
+    "fi": "Luxemburg",
+    "sk": "Luxembursko",
+    "hr": "Luksemburg"
   },
   "LV": {
     "es": "Letonia",
@@ -3917,7 +4751,13 @@
     "hu": "Lettország",
     "id": "Latvia",
     "ms": "Latvia",
-    "nb": "Latvia"
+    "nb": "Latvia",
+    "el": "Λετονία",
+    "ca": "Letònia",
+    "da": "Letland",
+    "fi": "Latvia",
+    "sk": "Lotyšsko",
+    "hr": "Latvija"
   },
   "LY": {
     "es": "Libia",
@@ -3945,7 +4785,13 @@
     "hu": "Líbia",
     "id": "Libya",
     "ms": "Libya",
-    "nb": "Libya"
+    "nb": "Libya",
+    "el": "Λιβύη",
+    "ca": "Líbia",
+    "da": "Libyen",
+    "fi": "Libya",
+    "sk": "Líbya",
+    "hr": "Libija"
   },
   "MA": {
     "es": "Marruecos",
@@ -3973,7 +4819,13 @@
     "hu": "Marokkó",
     "id": "Maroko",
     "ms": "Maghribi",
-    "nb": "Marokko"
+    "nb": "Marokko",
+    "el": "Μαρόκο",
+    "ca": "Marroc",
+    "da": "Marokko",
+    "fi": "Marokko",
+    "sk": "Maroko",
+    "hr": "Maroko"
   },
   "MC": {
     "es": "Mónaco",
@@ -4001,7 +4853,13 @@
     "hu": "Monaco",
     "id": "Monako",
     "ms": "Monaco",
-    "nb": "Monaco"
+    "nb": "Monaco",
+    "el": "Μονακό",
+    "ca": "Mònaco",
+    "da": "Monaco",
+    "fi": "Monaco",
+    "sk": "Monako",
+    "hr": "Monako"
   },
   "MD": {
     "es": "Moldavia",
@@ -4029,7 +4887,13 @@
     "hu": "Moldova",
     "id": "Moldova",
     "ms": "Moldova",
-    "nb": "Moldova"
+    "nb": "Moldova",
+    "el": "Μολδαβία",
+    "ca": "República_de_Moldàvia",
+    "da": "Moldova",
+    "fi": "Moldova",
+    "sk": "Moldavsko",
+    "hr": "Moldavija"
   },
   "ME": {
     "es": "Montenegro",
@@ -4057,7 +4921,13 @@
     "hu": "Montenegró",
     "id": "Montenegro",
     "ms": "Montenegro",
-    "nb": "Montenegro"
+    "nb": "Montenegro",
+    "el": "Μαυροβούνιο",
+    "ca": "Montenegro",
+    "da": "Montenegro",
+    "fi": "Montenegro",
+    "sk": "Čierna_Hora",
+    "hr": "Crna_Gora"
   },
   "MF": {
     "es": "San_Martín_(Francia)",
@@ -4085,7 +4955,13 @@
     "hu": "Saint-Martin_(francia_tengerentúli_terület)",
     "id": "Saint_Martin_(Prancis)",
     "ms": "en:Collectivity_of_Saint_Martin",
-    "nb": "Saint-Martin"
+    "nb": "Saint-Martin",
+    "el": "Άγιος_Μαρτίνος_(Γαλλία)",
+    "ca": "Saint-Martin_(Antilles_Franceses)",
+    "da": "Saint-Martin",
+    "fi": "Saint-Martin_(Ranska)",
+    "sk": "Saint-Martin_(zámorská_správna_korporácia)",
+    "hr": "en:Collectivity_of_Saint_Martin"
   },
   "MG": {
     "es": "Madagascar",
@@ -4113,7 +4989,13 @@
     "hu": "Madagaszkár",
     "id": "Madagaskar",
     "ms": "Madagaskar",
-    "nb": "Madagaskar"
+    "nb": "Madagaskar",
+    "el": "Μαδαγασκάρη",
+    "ca": "Madagascar",
+    "da": "Madagaskar",
+    "fi": "Madagaskar",
+    "sk": "Madagaskar",
+    "hr": "Madagaskar"
   },
   "MH": {
     "es": "Islas_Marshall",
@@ -4141,7 +5023,13 @@
     "hu": "Marshall-szigetek",
     "id": "Kepulauan_Marshall",
     "ms": "Kepulauan_Marshall",
-    "nb": "Marshalløyene"
+    "nb": "Marshalløyene",
+    "el": "Νήσοι_Μάρσαλ",
+    "ca": "Illes_Marshall",
+    "da": "Marshalløerne",
+    "fi": "Marshallinsaaret",
+    "sk": "Marshallove_ostrovy",
+    "hr": "Maršalovi_Otoci"
   },
   "MK": {
     "es": "Macedonia_del_Norte",
@@ -4169,7 +5057,13 @@
     "hu": "Észak-Macedónia",
     "id": "Makedonia_Utara",
     "ms": "Macedonia_Utara",
-    "nb": "Nord-Makedonia"
+    "nb": "Nord-Makedonia",
+    "el": "Βόρεια_Μακεδονία",
+    "ca": "Macedònia_del_Nord",
+    "da": "Nordmakedonien",
+    "fi": "Pohjois-Makedonia",
+    "sk": "Severné_Macedónsko",
+    "hr": "Sjeverna_Makedonija"
   },
   "ML": {
     "es": "Mali",
@@ -4197,7 +5091,13 @@
     "hu": "Mali",
     "id": "Mali",
     "ms": "Mali",
-    "nb": "Mali"
+    "nb": "Mali",
+    "el": "Μάλι",
+    "ca": "Mali",
+    "da": "Mali",
+    "fi": "Mali",
+    "sk": "Mali",
+    "hr": "Mali"
   },
   "MM": {
     "es": "Birmania",
@@ -4225,7 +5125,13 @@
     "hu": "Mianmar",
     "id": "Myanmar",
     "ms": "Myanmar",
-    "nb": "Myanmar"
+    "nb": "Myanmar",
+    "el": "Μιανμάρ",
+    "ca": "Myanmar",
+    "da": "Myanmar",
+    "fi": "Myanmar",
+    "sk": "Mjanmarsko",
+    "hr": "Mjanmar"
   },
   "MN": {
     "es": "Mongolia",
@@ -4253,7 +5159,13 @@
     "hu": "Mongólia",
     "id": "Mongolia",
     "ms": "Mongolia",
-    "nb": "Mongolia"
+    "nb": "Mongolia",
+    "el": "Μογγολία",
+    "ca": "Mongòlia",
+    "da": "Mongoliet",
+    "fi": "Mongolia",
+    "sk": "Mongolsko",
+    "hr": "Mongolija"
   },
   "MO": {
     "es": "Macao",
@@ -4281,7 +5193,13 @@
     "hu": "Makaó",
     "id": "Makau",
     "ms": "Makau",
-    "nb": "Macao"
+    "nb": "Macao",
+    "el": "Μακάου",
+    "ca": "Macau",
+    "da": "Macao",
+    "fi": "Macao",
+    "sk": "Macao",
+    "hr": "Makao"
   },
   "MP": {
     "es": "Islas_Marianas_del_Norte",
@@ -4309,7 +5227,13 @@
     "hu": "Északi-Mariana-szigetek",
     "id": "Kepulauan_Mariana_Utara",
     "ms": "Kepulauan_Mariana_Utara",
-    "nb": "Nord-Marianene"
+    "nb": "Nord-Marianene",
+    "el": "Βόρειες_Μαριάνες_Νήσοι",
+    "ca": "Illes_Mariannes_Septentrionals",
+    "da": "Nordmarianerne",
+    "fi": "Pohjois-Mariaanit",
+    "sk": "Severné_Mariány",
+    "hr": "Sjevernomarijanski_otoci"
   },
   "MQ": {
     "es": "Martinica",
@@ -4337,7 +5261,13 @@
     "hu": "Martinique",
     "id": "Martinik",
     "ms": "Martinique",
-    "nb": "Martinique"
+    "nb": "Martinique",
+    "el": "Μαρτινίκα",
+    "ca": "Martinica",
+    "da": "Martinique",
+    "fi": "Martinique",
+    "sk": "Martinik",
+    "hr": "Martinik"
   },
   "MR": {
     "es": "Mauritania",
@@ -4365,7 +5295,13 @@
     "hu": "Mauritánia",
     "id": "Mauritania",
     "ms": "Mauritania",
-    "nb": "Mauritania"
+    "nb": "Mauritania",
+    "el": "Μαυριτανία",
+    "ca": "Mauritània",
+    "da": "Mauretanien",
+    "fi": "Mauritania",
+    "sk": "Mauritánia",
+    "hr": "Mauretanija"
   },
   "MS": {
     "es": "Montserrat",
@@ -4393,7 +5329,13 @@
     "hu": "Montserrat_(sziget)",
     "id": "Montserrat",
     "ms": "Montserrat",
-    "nb": "Montserrat"
+    "nb": "Montserrat",
+    "el": "Μοντσερράτ",
+    "ca": "Montserrat_(illa)",
+    "da": "Montserrat",
+    "fi": "Montserrat",
+    "sk": "Montserrat_(ostrov)",
+    "hr": "Montserrat"
   },
   "MT": {
     "es": "Malta",
@@ -4421,7 +5363,13 @@
     "hu": "Málta",
     "id": "Malta",
     "ms": "Malta",
-    "nb": "Malta"
+    "nb": "Malta",
+    "el": "Μάλτα",
+    "ca": "Malta",
+    "da": "Malta",
+    "fi": "Malta",
+    "sk": "Malta",
+    "hr": "Malta"
   },
   "MU": {
     "es": "Mauricio",
@@ -4449,7 +5397,13 @@
     "hu": "Mauritius",
     "id": "Mauritius",
     "ms": "Mauritius",
-    "nb": "Mauritius"
+    "nb": "Mauritius",
+    "el": "Μαυρίκιος",
+    "ca": "Maurici",
+    "da": "Mauritius",
+    "fi": "Mauritius",
+    "sk": "Maurícius",
+    "hr": "Mauricijus"
   },
   "MV": {
     "es": "Maldivas",
@@ -4477,7 +5431,13 @@
     "hu": "Maldív-szigetek",
     "id": "Maladewa",
     "ms": "Maldives",
-    "nb": "Maldivene"
+    "nb": "Maldivene",
+    "el": "Μαλδίβες",
+    "ca": "Maldives",
+    "da": "Maldiverne",
+    "fi": "Malediivit",
+    "sk": "Maldivy",
+    "hr": "Maldivi"
   },
   "MW": {
     "es": "Malaui",
@@ -4505,7 +5465,13 @@
     "hu": "Malawi",
     "id": "Malawi",
     "ms": "Malawi",
-    "nb": "Malawi"
+    "nb": "Malawi",
+    "el": "Μαλάουι",
+    "ca": "Malawi",
+    "da": "Malawi",
+    "fi": "Malawi",
+    "sk": "Malawi_(štát)",
+    "hr": "Malavi"
   },
   "MX": {
     "es": "México",
@@ -4533,7 +5499,13 @@
     "hu": "Mexikó",
     "id": "Meksiko",
     "ms": "Mexico",
-    "nb": "Mexico"
+    "nb": "Mexico",
+    "el": "Μεξικό",
+    "ca": "Mèxic",
+    "da": "Mexico",
+    "fi": "Meksiko",
+    "sk": "Mexiko",
+    "hr": "Meksiko"
   },
   "MY": {
     "es": "Malasia",
@@ -4561,7 +5533,13 @@
     "hu": "Malajzia",
     "id": "Malaysia",
     "ms": "Malaysia",
-    "nb": "Malaysia"
+    "nb": "Malaysia",
+    "el": "Μαλαισία",
+    "ca": "Malàisia",
+    "da": "Malaysia",
+    "fi": "Malesia",
+    "sk": "Malajzia",
+    "hr": "Malezija"
   },
   "MZ": {
     "es": "Mozambique",
@@ -4589,7 +5567,13 @@
     "hu": "Mozambik",
     "id": "Mozambik",
     "ms": "Mozambique",
-    "nb": "Mosambik"
+    "nb": "Mosambik",
+    "el": "Μοζαμβίκη",
+    "ca": "Moçambic",
+    "da": "Mozambique",
+    "fi": "Mosambik",
+    "sk": "Mozambik",
+    "hr": "Mozambik"
   },
   "NA": {
     "es": "Namibia",
@@ -4617,7 +5601,13 @@
     "hu": "Namíbia",
     "id": "Namibia",
     "ms": "Namibia",
-    "nb": "Namibia"
+    "nb": "Namibia",
+    "el": "Ναμίμπια",
+    "ca": "Namíbia",
+    "da": "Namibia",
+    "fi": "Namibia",
+    "sk": "Namíbia",
+    "hr": "Namibija"
   },
   "NC": {
     "es": "Nueva_Caledonia",
@@ -4645,7 +5635,13 @@
     "hu": "Új-Kaledónia",
     "id": "Kaledonia_Baru",
     "ms": "New_Caledonia",
-    "nb": "Ny-Caledonia"
+    "nb": "Ny-Caledonia",
+    "el": "Νέα_Καληδονία",
+    "ca": "Nova_Caledònia",
+    "da": "Ny_Kaledonien",
+    "fi": "Uusi-Kaledonia",
+    "sk": "Nová_Kaledónia",
+    "hr": "Nova_Kaledonija"
   },
   "NE": {
     "es": "Níger",
@@ -4673,7 +5669,13 @@
     "hu": "Niger_(ország)",
     "id": "Niger",
     "ms": "Niger",
-    "nb": "Niger"
+    "nb": "Niger",
+    "el": "Νίγηρας",
+    "ca": "Níger",
+    "da": "Niger",
+    "fi": "Niger",
+    "sk": "Niger",
+    "hr": "Niger"
   },
   "NF": {
     "es": "Isla_Norfolk",
@@ -4701,7 +5703,13 @@
     "hu": "Norfolk-sziget",
     "id": "Pulau_Norfolk",
     "ms": "Pulau_Norfolk",
-    "nb": "Norfolkøya"
+    "nb": "Norfolkøya",
+    "el": "Νησί_Νόρφολκ",
+    "ca": "Illa_Norfolk",
+    "da": "Norfolk_Island",
+    "fi": "Norfolkinsaari",
+    "sk": "Norfolk_(ostrov)",
+    "hr": "Norfolk_(otok)"
   },
   "NG": {
     "es": "Nigeria",
@@ -4729,7 +5737,13 @@
     "hu": "Nigéria",
     "id": "Nigeria",
     "ms": "Nigeria",
-    "nb": "Nigeria"
+    "nb": "Nigeria",
+    "el": "Νιγηρία",
+    "ca": "Nigèria",
+    "da": "Nigeria",
+    "fi": "Nigeria",
+    "sk": "Nigéria",
+    "hr": "Nigerija"
   },
   "NI": {
     "es": "Nicaragua",
@@ -4757,7 +5771,13 @@
     "hu": "Nicaragua",
     "id": "Nikaragua",
     "ms": "Nicaragua",
-    "nb": "Nicaragua"
+    "nb": "Nicaragua",
+    "el": "Νικαράγουα",
+    "ca": "Nicaragua",
+    "da": "Nicaragua",
+    "fi": "Nicaragua",
+    "sk": "Nikaragua",
+    "hr": "Nikaragva"
   },
   "NL": {
     "es": "Reino_de_los_Países_Bajos",
@@ -4785,7 +5805,13 @@
     "hu": "Holland_Királyság",
     "id": "Kerajaan_Belanda",
     "ms": "Kerajaan_Belanda",
-    "nb": "Kongeriket_Nederlandene"
+    "nb": "Kongeriket_Nederlandene",
+    "el": "Βασίλειο_των_Κάτω_Χωρών",
+    "ca": "Regne_dels_Països_Baixos",
+    "da": "Kongeriget_Nederlandene",
+    "fi": "Alankomaiden_kuningaskunta",
+    "sk": "Holandsko_(kráľovstvo)",
+    "hr": "Kraljevina_Nizozemska"
   },
   "NO": {
     "es": "Noruega",
@@ -4813,7 +5839,13 @@
     "hu": "Norvégia",
     "id": "Norwegia",
     "ms": "Norway",
-    "nb": "Norge"
+    "nb": "Norge",
+    "el": "Νορβηγία",
+    "ca": "Noruega",
+    "da": "Norge",
+    "fi": "Norja",
+    "sk": "Nórsko",
+    "hr": "Norveška"
   },
   "NP": {
     "es": "Nepal",
@@ -4841,7 +5873,13 @@
     "hu": "Nepál",
     "id": "Nepal",
     "ms": "Nepal",
-    "nb": "Nepal"
+    "nb": "Nepal",
+    "el": "Νεπάλ",
+    "ca": "Nepal",
+    "da": "Nepal",
+    "fi": "Nepal",
+    "sk": "Nepál",
+    "hr": "Nepal"
   },
   "NR": {
     "es": "Nauru",
@@ -4869,7 +5907,13 @@
     "hu": "Nauru",
     "id": "Nauru",
     "ms": "Nauru",
-    "nb": "Nauru"
+    "nb": "Nauru",
+    "el": "Ναουρού",
+    "ca": "Nauru",
+    "da": "Nauru",
+    "fi": "Nauru",
+    "sk": "Nauru",
+    "hr": "Nauru"
   },
   "NU": {
     "es": "Niue",
@@ -4897,7 +5941,13 @@
     "hu": "Niue",
     "id": "Niue",
     "ms": "Niue",
-    "nb": "Niue"
+    "nb": "Niue",
+    "el": "Νιούε",
+    "ca": "Niue",
+    "da": "Niue",
+    "fi": "Niue",
+    "sk": "Niue",
+    "hr": "Niue"
   },
   "NZ": {
     "es": "Nueva_Zelanda",
@@ -4925,7 +5975,13 @@
     "hu": "Új-Zéland",
     "id": "Selandia_Baru",
     "ms": "New_Zealand",
-    "nb": "New_Zealand"
+    "nb": "New_Zealand",
+    "el": "Νέα_Ζηλανδία",
+    "ca": "Nova_Zelanda",
+    "da": "New_Zealand",
+    "fi": "Uusi-Seelanti",
+    "sk": "Nový_Zéland",
+    "hr": "Novi_Zeland"
   },
   "OM": {
     "es": "Omán",
@@ -4953,7 +6009,13 @@
     "hu": "Omán",
     "id": "Oman",
     "ms": "Oman",
-    "nb": "Oman"
+    "nb": "Oman",
+    "el": "Ομάν",
+    "ca": "Oman",
+    "da": "Oman",
+    "fi": "Oman",
+    "sk": "Omán",
+    "hr": "Oman"
   },
   "PA": {
     "es": "Panamá",
@@ -4981,7 +6043,13 @@
     "hu": "Panama",
     "id": "Panama",
     "ms": "Panama",
-    "nb": "Panama"
+    "nb": "Panama",
+    "el": "Παναμάς",
+    "ca": "Panamà",
+    "da": "Panama",
+    "fi": "Panama",
+    "sk": "Panama_(štát)",
+    "hr": "Panama"
   },
   "PC": {
     "es": "Territorio_en_Fideicomiso_de_las_Islas_del_Pacífico",
@@ -5009,7 +6077,13 @@
     "hu": "Csendes-óceáni-szigetek_Gyámsági_Terület",
     "id": "Wilayah_Perwalian_Kepulauan_Pasifik",
     "ms": "en:Trust_Territory_of_the_Pacific_Islands",
-    "nb": "USAs_tilsynsområde_i_Stillehavet"
+    "nb": "USAs_tilsynsområde_i_Stillehavet",
+    "el": "en:Trust_Territory_of_the_Pacific_Islands",
+    "ca": "Territori_en_Fideïcomís_de_les_Illes_del_Pacífic",
+    "da": "en:Trust_Territory_of_the_Pacific_Islands",
+    "fi": "Tyynenmeren_saarten_huoltohallintoalue",
+    "sk": "en:Trust_Territory_of_the_Pacific_Islands",
+    "hr": "Starateljsko_područje_Pacifičkih_Otoka"
   },
   "PE": {
     "es": "Perú",
@@ -5037,7 +6111,13 @@
     "hu": "Peru",
     "id": "Peru",
     "ms": "Peru",
-    "nb": "Peru"
+    "nb": "Peru",
+    "el": "Περού",
+    "ca": "Perú",
+    "da": "Peru",
+    "fi": "Peru",
+    "sk": "Peru",
+    "hr": "Peru"
   },
   "PF": {
     "es": "Polinesia_Francesa",
@@ -5065,7 +6145,13 @@
     "hu": "Francia_Polinézia",
     "id": "Polinesia_Prancis",
     "ms": "Polinesia_Perancis",
-    "nb": "Fransk_Polynesia"
+    "nb": "Fransk_Polynesia",
+    "el": "Γαλλική_Πολυνησία",
+    "ca": "Polinèsia_Francesa",
+    "da": "Fransk_Polynesien",
+    "fi": "Ranskan_Polynesia",
+    "sk": "Francúzska_Polynézia",
+    "hr": "Francuska_Polinezija"
   },
   "PG": {
     "es": "Papúa_Nueva_Guinea",
@@ -5093,7 +6179,13 @@
     "hu": "Pápua_Új-Guinea",
     "id": "Papua_Nugini",
     "ms": "Papua_New_Guinea",
-    "nb": "Papua_Ny-Guinea"
+    "nb": "Papua_Ny-Guinea",
+    "el": "Παπούα_Νέα_Γουινέα",
+    "ca": "Papua_Nova_Guinea",
+    "da": "Papua_Ny_Guinea",
+    "fi": "Papua-Uusi-Guinea",
+    "sk": "Papua-Nová_Guinea",
+    "hr": "Papua_Nova_Gvineja"
   },
   "PH": {
     "es": "Filipinas",
@@ -5121,7 +6213,13 @@
     "hu": "Fülöp-szigetek",
     "id": "Filipina",
     "ms": "Filipina",
-    "nb": "Filippinene"
+    "nb": "Filippinene",
+    "el": "Φιλιππίνες",
+    "ca": "Filipines",
+    "da": "Filippinerne",
+    "fi": "Filippiinit",
+    "sk": "Filipíny",
+    "hr": "Filipini"
   },
   "PK": {
     "es": "Pakistán",
@@ -5149,7 +6247,13 @@
     "hu": "Pakisztán",
     "id": "Pakistan",
     "ms": "Pakistan",
-    "nb": "Pakistan"
+    "nb": "Pakistan",
+    "el": "Πακιστάν",
+    "ca": "Pakistan",
+    "da": "Pakistan",
+    "fi": "Pakistan",
+    "sk": "Pakistan",
+    "hr": "Pakistan"
   },
   "PL": {
     "es": "Polonia",
@@ -5177,7 +6281,13 @@
     "hu": "Lengyelország",
     "id": "Polandia",
     "ms": "Poland",
-    "nb": "Polen"
+    "nb": "Polen",
+    "el": "Πολωνία",
+    "ca": "Polònia",
+    "da": "Polen",
+    "fi": "Puola",
+    "sk": "Poľsko",
+    "hr": "Poljska"
   },
   "PM": {
     "es": "San_Pedro_y_Miquelón",
@@ -5205,7 +6315,13 @@
     "hu": "Saint-Pierre_és_Miquelon",
     "id": "Saint_Pierre_dan_Miquelon",
     "ms": "Saint_Pierre_dan_Miquelon",
-    "nb": "Saint-Pierre_og_Miquelon"
+    "nb": "Saint-Pierre_og_Miquelon",
+    "el": "Σαιν-Πιερ_και_Μικελόν",
+    "ca": "Saint-Pierre_i_Miquelon",
+    "da": "Saint-Pierre_og_Miquelon",
+    "fi": "Saint-Pierre_ja_Miquelon",
+    "sk": "Saint_Pierre_a_Miquelon",
+    "hr": "Sveti_Petar_i_Mikelon"
   },
   "PN": {
     "es": "Islas_Pitcairn",
@@ -5233,7 +6349,13 @@
     "hu": "Pitcairn-szigetek",
     "id": "Kepulauan_Pitcairn",
     "ms": "Kepulauan_Pitcairn",
-    "nb": "Pitcairnøyene"
+    "nb": "Pitcairnøyene",
+    "el": "Νήσοι_Πίτκαιρν",
+    "ca": "Illes_Pitcairn",
+    "da": "Pitcairn",
+    "fi": "Pitcairnsaaret",
+    "sk": "Pitcairnove_ostrovy",
+    "hr": "Pitcairnovo_Otočje"
   },
   "PR": {
     "es": "Puerto_Rico",
@@ -5261,7 +6383,13 @@
     "hu": "Puerto_Rico",
     "id": "Puerto_Riko",
     "ms": "Puerto_Rico",
-    "nb": "Puerto_Rico"
+    "nb": "Puerto_Rico",
+    "el": "Πουέρτο_Ρίκο",
+    "ca": "Puerto_Rico",
+    "da": "Puerto_Rico",
+    "fi": "Puerto_Rico",
+    "sk": "Portoriko",
+    "hr": "Portoriko"
   },
   "PS": {
     "es": "Palestina",
@@ -5289,7 +6417,13 @@
     "hu": "Palesztina",
     "id": "Palestina",
     "ms": "Negara_Palestin",
-    "nb": "Palestina"
+    "nb": "Palestina",
+    "el": "Κράτος_της_Παλαιστίνης",
+    "ca": "Estat_de_Palestina",
+    "da": "Palæstina_(stat)",
+    "fi": "Palestiina_(valtio)",
+    "sk": "Palestína_(štát)",
+    "hr": "Država_Palestina"
   },
   "PT": {
     "es": "Portugal",
@@ -5317,7 +6451,13 @@
     "hu": "Portugália",
     "id": "Portugal",
     "ms": "Portugal",
-    "nb": "Portugal"
+    "nb": "Portugal",
+    "el": "Πορτογαλία",
+    "ca": "Portugal",
+    "da": "Portugal",
+    "fi": "Portugali",
+    "sk": "Portugalsko",
+    "hr": "Portugal"
   },
   "PW": {
     "es": "Palaos",
@@ -5345,7 +6485,13 @@
     "hu": "Palau_(állam)",
     "id": "Palau",
     "ms": "Palau",
-    "nb": "Palau"
+    "nb": "Palau",
+    "el": "Παλάου",
+    "ca": "República_de_Palau",
+    "da": "Palau",
+    "fi": "Palau",
+    "sk": "Palau",
+    "hr": "Palau"
   },
   "PY": {
     "es": "Paraguay",
@@ -5373,7 +6519,13 @@
     "hu": "Paraguay",
     "id": "Paraguay",
     "ms": "Paraguay",
-    "nb": "Paraguay"
+    "nb": "Paraguay",
+    "el": "Παραγουάη",
+    "ca": "Paraguai",
+    "da": "Paraguay",
+    "fi": "Paraguay",
+    "sk": "Paraguaj",
+    "hr": "Paragvaj"
   },
   "QA": {
     "es": "Catar",
@@ -5401,7 +6553,13 @@
     "hu": "Katar",
     "id": "Qatar",
     "ms": "Qatar",
-    "nb": "Qatar"
+    "nb": "Qatar",
+    "el": "Κατάρ",
+    "ca": "Qatar",
+    "da": "Qatar",
+    "fi": "Qatar",
+    "sk": "Katar_(štát)",
+    "hr": "Katar"
   },
   "RE": {
     "es": "Reunión_(Francia)",
@@ -5429,7 +6587,13 @@
     "hu": "Réunion",
     "id": "Réunion",
     "ms": "Réunion",
-    "nb": "Réunion"
+    "nb": "Réunion",
+    "el": "Ρεϋνιόν",
+    "ca": "Illa_de_la_Reunió",
+    "da": "Réunion",
+    "fi": "Réunion",
+    "sk": "Réunion",
+    "hr": "Réunion"
   },
   "RO": {
     "es": "Rumania",
@@ -5457,7 +6621,13 @@
     "hu": "Románia",
     "id": "Rumania",
     "ms": "Romania",
-    "nb": "Romania"
+    "nb": "Romania",
+    "el": "Ρουμανία",
+    "ca": "Romania",
+    "da": "Rumænien",
+    "fi": "Romania",
+    "sk": "Rumunsko",
+    "hr": "Rumunjska"
   },
   "RS": {
     "es": "Serbia",
@@ -5485,7 +6655,13 @@
     "hu": "Szerbia",
     "id": "Serbia",
     "ms": "Serbia",
-    "nb": "Serbia"
+    "nb": "Serbia",
+    "el": "Σερβία",
+    "ca": "Sèrbia",
+    "da": "Serbien",
+    "fi": "Serbia",
+    "sk": "Srbsko",
+    "hr": "Srbija"
   },
   "RU": {
     "es": "Rusia",
@@ -5513,7 +6689,13 @@
     "hu": "Oroszország",
     "id": "Rusia",
     "ms": "Rusia",
-    "nb": "Russland"
+    "nb": "Russland",
+    "el": "Ρωσία",
+    "ca": "Rússia",
+    "da": "Rusland",
+    "fi": "Venäjä",
+    "sk": "Rusko",
+    "hr": "Rusija"
   },
   "RW": {
     "es": "Ruanda",
@@ -5541,7 +6723,13 @@
     "hu": "Ruanda",
     "id": "Rwanda",
     "ms": "Rwanda",
-    "nb": "Rwanda"
+    "nb": "Rwanda",
+    "el": "Ρουάντα",
+    "ca": "Ruanda",
+    "da": "Rwanda",
+    "fi": "Ruanda",
+    "sk": "Rwanda",
+    "hr": "Ruanda"
   },
   "SA": {
     "es": "Arabia_Saudita",
@@ -5569,7 +6757,13 @@
     "hu": "Szaúd-Arábia",
     "id": "Arab_Saudi",
     "ms": "Arab_Saudi",
-    "nb": "Saudi-Arabia"
+    "nb": "Saudi-Arabia",
+    "el": "Σαουδική_Αραβία",
+    "ca": "Aràbia_Saudita",
+    "da": "Saudi-Arabien",
+    "fi": "Saudi-Arabia",
+    "sk": "Saudská_Arábia",
+    "hr": "Saudijska_Arabija"
   },
   "SB": {
     "es": "Islas_Salomón",
@@ -5597,7 +6791,13 @@
     "hu": "Salamon-szigetek",
     "id": "Kepulauan_Solomon",
     "ms": "Kepulauan_Solomon",
-    "nb": "Salomonøyene"
+    "nb": "Salomonøyene",
+    "el": "Νήσοι_Σολομώντα",
+    "ca": "Illes_Salomó",
+    "da": "Salomonøerne",
+    "fi": "Salomoninsaaret",
+    "sk": "Šalamúnove_ostrovy_(štát)",
+    "hr": "Solomonski_Otoci"
   },
   "SC": {
     "es": "Seychelles",
@@ -5625,7 +6825,13 @@
     "hu": "Seychelle-szigetek",
     "id": "Seychelles",
     "ms": "Seychelles",
-    "nb": "Seychellene"
+    "nb": "Seychellene",
+    "el": "Σεϋχέλλες",
+    "ca": "Seychelles",
+    "da": "Seychellerne",
+    "fi": "Seychellit",
+    "sk": "Seychely",
+    "hr": "Sejšeli"
   },
   "SD": {
     "es": "Sudán",
@@ -5653,7 +6859,13 @@
     "hu": "Szudán",
     "id": "Sudan",
     "ms": "Sudan",
-    "nb": "Sudan"
+    "nb": "Sudan",
+    "el": "Σουδάν",
+    "ca": "Sudan",
+    "da": "Sudan",
+    "fi": "Sudan",
+    "sk": "Sudán",
+    "hr": "Sudan"
   },
   "SE": {
     "es": "Suecia",
@@ -5681,7 +6893,13 @@
     "hu": "Svédország",
     "id": "Swedia",
     "ms": "Sweden",
-    "nb": "Sverige"
+    "nb": "Sverige",
+    "el": "Σουηδία",
+    "ca": "Suècia",
+    "da": "Sverige",
+    "fi": "Ruotsi",
+    "sk": "Švédsko",
+    "hr": "Švedska"
   },
   "SG": {
     "es": "Singapur",
@@ -5709,7 +6927,13 @@
     "hu": "Szingapúr",
     "id": "Singapura",
     "ms": "Singapura",
-    "nb": "Singapore"
+    "nb": "Singapore",
+    "el": "Σιγκαπούρη",
+    "ca": "Singapur",
+    "da": "Singapore",
+    "fi": "Singapore",
+    "sk": "Singapur",
+    "hr": "Singapur"
   },
   "SH": {
     "es": "Santa_Elena,_Ascensión_y_Tristán_de_Acuña",
@@ -5737,7 +6961,13 @@
     "hu": "Szent_Ilona,_Ascension_és_Tristan_da_Cunha",
     "id": "Saint_Helena,_Ascension_dan_Tristan_da_Cunha",
     "ms": "Saint_Helena,_Ascension_dan_Tristan_da_Cunha",
-    "nb": "St._Helena,_Ascension_og_Tristan_da_Cunha"
+    "nb": "St._Helena,_Ascension_og_Tristan_da_Cunha",
+    "el": "Αγία_Ελένη,_Ασενσιόν_και_Τριστάν_ντα_Κούνια",
+    "ca": "Santa_Helena,_Ascensió_i_Tristan_da_Cunha",
+    "da": "Sankt_Helena,_Ascension_og_Tristan_da_Cunha",
+    "fi": "Saint_Helena,_Ascension_ja_Tristan_da_Cunha",
+    "sk": "Svätá_Helena_(zámorské_územie)",
+    "hr": "Sveta_Helena,_Ascension_i_Tristan_da_Cunha"
   },
   "SI": {
     "es": "Eslovenia",
@@ -5765,7 +6995,13 @@
     "hu": "Szlovénia",
     "id": "Slovenia",
     "ms": "Slovenia",
-    "nb": "Slovenia"
+    "nb": "Slovenia",
+    "el": "Σλοβενία",
+    "ca": "Eslovènia",
+    "da": "Slovenien",
+    "fi": "Slovenia",
+    "sk": "Slovinsko",
+    "hr": "Slovenija"
   },
   "SJ": {
     "es": "Svalbard_y_Jan_Mayen",
@@ -5793,7 +7029,13 @@
     "hu": "Svalbard_és_Jan_Mayen",
     "id": "Svalbard_dan_Jan_Mayen",
     "ms": "en:Svalbard_and_Jan_Mayen",
-    "nb": "Svalbard_og_Jan_Mayen"
+    "nb": "Svalbard_og_Jan_Mayen",
+    "el": "en:Svalbard_and_Jan_Mayen",
+    "ca": "Svalbard_i_Jan_Mayen",
+    "da": "en:Svalbard_and_Jan_Mayen",
+    "fi": "Huippuvuoret_ja_Jan_Mayen",
+    "sk": "en:Svalbard_and_Jan_Mayen",
+    "hr": "en:Svalbard_and_Jan_Mayen"
   },
   "SK": {
     "es": "Eslovaquia",
@@ -5821,7 +7063,13 @@
     "hu": "Szlovákia",
     "id": "Slowakia",
     "ms": "Slovakia",
-    "nb": "Slovakia"
+    "nb": "Slovakia",
+    "el": "Σλοβακία",
+    "ca": "Eslovàquia",
+    "da": "Slovakiet",
+    "fi": "Slovakia",
+    "sk": "Slovensko",
+    "hr": "Slovačka"
   },
   "SL": {
     "es": "Sierra_Leona",
@@ -5849,7 +7097,13 @@
     "hu": "Sierra_Leone",
     "id": "Sierra_Leone",
     "ms": "Sierra_Leone",
-    "nb": "Sierra_Leone"
+    "nb": "Sierra_Leone",
+    "el": "Σιέρα_Λεόνε",
+    "ca": "Sierra_Leone",
+    "da": "Sierra_Leone",
+    "fi": "Sierra_Leone",
+    "sk": "Sierra_Leone",
+    "hr": "Sijera_Leone"
   },
   "SM": {
     "es": "San_Marino",
@@ -5877,7 +7131,13 @@
     "hu": "San_Marino",
     "id": "San_Marino",
     "ms": "San_Marino",
-    "nb": "San_Marino"
+    "nb": "San_Marino",
+    "el": "Άγιος_Μαρίνος",
+    "ca": "San_Marino",
+    "da": "San_Marino",
+    "fi": "San_Marino",
+    "sk": "San_Maríno",
+    "hr": "San_Marino"
   },
   "SN": {
     "es": "Senegal",
@@ -5905,7 +7165,13 @@
     "hu": "Szenegál",
     "id": "Senegal",
     "ms": "Senegal",
-    "nb": "Senegal"
+    "nb": "Senegal",
+    "el": "Σενεγάλη",
+    "ca": "Senegal",
+    "da": "Senegal",
+    "fi": "Senegal",
+    "sk": "Senegal",
+    "hr": "Senegal"
   },
   "SO": {
     "es": "Somalia",
@@ -5933,7 +7199,13 @@
     "hu": "Szomália",
     "id": "Somalia",
     "ms": "Somalia",
-    "nb": "Somalia"
+    "nb": "Somalia",
+    "el": "Σομαλία",
+    "ca": "Somàlia",
+    "da": "Somalia",
+    "fi": "Somalia",
+    "sk": "Somálsko",
+    "hr": "Somalija"
   },
   "SR": {
     "es": "Surinam",
@@ -5961,7 +7233,13 @@
     "hu": "Suriname",
     "id": "Suriname",
     "ms": "Suriname",
-    "nb": "Surinam"
+    "nb": "Surinam",
+    "el": "Σουρινάμ",
+    "ca": "Surinam",
+    "da": "Surinam",
+    "fi": "Suriname",
+    "sk": "Surinam",
+    "hr": "Surinam"
   },
   "SS": {
     "es": "Sudán_del_Sur",
@@ -5989,7 +7267,13 @@
     "hu": "Dél-Szudán",
     "id": "Sudan_Selatan",
     "ms": "Sudan_Selatan",
-    "nb": "Sør-Sudan"
+    "nb": "Sør-Sudan",
+    "el": "Νότιο_Σουδάν",
+    "ca": "Sudan_del_Sud",
+    "da": "Sydsudan",
+    "fi": "Etelä-Sudan",
+    "sk": "Južný_Sudán",
+    "hr": "Južni_Sudan"
   },
   "ST": {
     "es": "Santo_Tomé_y_Príncipe",
@@ -6017,7 +7301,13 @@
     "hu": "São_Tomé_és_Príncipe",
     "id": "Sao_Tome_dan_Principe",
     "ms": "São_Tomé_dan_Príncipe",
-    "nb": "São_Tomé_og_Príncipe"
+    "nb": "São_Tomé_og_Príncipe",
+    "el": "Σάο_Τομέ_και_Πρίνσιπε",
+    "ca": "São_Tomé_i_Príncipe",
+    "da": "São_Tomé_og_Príncipe",
+    "fi": "São_Tomé_ja_Príncipe",
+    "sk": "Svätý_Tomáš_a_Princov_ostrov",
+    "hr": "Sveti_Toma_i_Princip"
   },
   "SV": {
     "es": "El_Salvador",
@@ -6045,7 +7335,13 @@
     "hu": "Salvador",
     "id": "El_Salvador",
     "ms": "El_Salvador",
-    "nb": "El_Salvador"
+    "nb": "El_Salvador",
+    "el": "Ελ_Σαλβαδόρ",
+    "ca": "El_Salvador",
+    "da": "El_Salvador",
+    "fi": "El_Salvador",
+    "sk": "Salvádor",
+    "hr": "Salvador"
   },
   "SX": {
     "es": "San_Martín_(Países_Bajos)",
@@ -6073,7 +7369,13 @@
     "hu": "Sint_Maarten",
     "id": "Sint_Maarten",
     "ms": "Sint_Maarten",
-    "nb": "Sint_Maarten"
+    "nb": "Sint_Maarten",
+    "el": "Άγιος_Μαρτίνος_(Ολλανδία)",
+    "ca": "Sint_Maarten",
+    "da": "Sint_Maarten",
+    "fi": "Sint_Maarten_(Alankomaat)",
+    "sk": "Sint_Maarten",
+    "hr": "Zemlja_Sveti_Martin"
   },
   "SY": {
     "es": "Siria",
@@ -6101,7 +7403,13 @@
     "hu": "Szíria",
     "id": "Suriah",
     "ms": "Syria",
-    "nb": "Syria"
+    "nb": "Syria",
+    "el": "Συρία",
+    "ca": "Síria",
+    "da": "Syrien",
+    "fi": "Syyria",
+    "sk": "Sýria",
+    "hr": "Sirija"
   },
   "SZ": {
     "es": "Suazilandia",
@@ -6129,7 +7437,13 @@
     "hu": "Szváziföld",
     "id": "Eswatini",
     "ms": "Eswatini",
-    "nb": "Eswatini"
+    "nb": "Eswatini",
+    "el": "Εσουατίνι",
+    "ca": "Eswatini",
+    "da": "Eswatini",
+    "fi": "Swazimaa",
+    "sk": "Eswatini",
+    "hr": "Esvatini"
   },
   "TC": {
     "es": "Islas_Turcas_y_Caicos",
@@ -6157,7 +7471,13 @@
     "hu": "Turks-_és_Caicos-szigetek",
     "id": "Kepulauan_Turks_dan_Caicos",
     "ms": "Kepulauan_Turks_dan_Caicos",
-    "nb": "Turks-_og_Caicosøyene"
+    "nb": "Turks-_og_Caicosøyene",
+    "el": "Τερκς_και_Κέικος",
+    "ca": "Illes_Turks_i_Caicos",
+    "da": "Turks-_og_Caicosøerne",
+    "fi": "Turks-_ja_Caicossaaret",
+    "sk": "Turks_a_Caicos",
+    "hr": "Otoci_Turks_i_Caicos"
   },
   "TD": {
     "es": "Chad",
@@ -6185,7 +7505,13 @@
     "hu": "Csád",
     "id": "Chad",
     "ms": "Chad",
-    "nb": "Tsjad"
+    "nb": "Tsjad",
+    "el": "Τσαντ",
+    "ca": "Txad",
+    "da": "Tchad",
+    "fi": "Tšad",
+    "sk": "Čad",
+    "hr": "Čad"
   },
   "TF": {
     "es": "Tierras_Australes_y_Antárticas_Francesas",
@@ -6213,7 +7539,13 @@
     "hu": "Francia_déli_és_antarktiszi_területek",
     "id": "Daratan_Selatan_dan_Antarktika_Prancis",
     "ms": "Tanah_Selatan_dan_Antartika_Perancis",
-    "nb": "De_franske_sørterritorier"
+    "nb": "De_franske_sørterritorier",
+    "el": "Γαλλικά_Νότια_και_Ανταρκτικά_Εδάφη",
+    "ca": "Terres_Australs_i_Antàrtiques_Franceses",
+    "da": "Franske_Sydlige_og_Antarktiske_Territorier",
+    "fi": "Ranskan_eteläiset_ja_antarktiset_alueet",
+    "sk": "Francúzske_južné_a_antarktické_územie",
+    "hr": "Francuski_južni_i_antarktički_teritoriji"
   },
   "TG": {
     "es": "Togo",
@@ -6241,7 +7573,13 @@
     "hu": "Togo",
     "id": "Togo",
     "ms": "Togo",
-    "nb": "Togo"
+    "nb": "Togo",
+    "el": "Τόγκο",
+    "ca": "Togo",
+    "da": "Togo",
+    "fi": "Togo",
+    "sk": "Togo",
+    "hr": "Togo"
   },
   "TH": {
     "es": "Tailandia",
@@ -6269,7 +7607,13 @@
     "hu": "Thaiföld",
     "id": "Thailand",
     "ms": "Thailand",
-    "nb": "Thailand"
+    "nb": "Thailand",
+    "el": "Ταϊλάνδη",
+    "ca": "Tailàndia",
+    "da": "Thailand",
+    "fi": "Thaimaa",
+    "sk": "Thajsko",
+    "hr": "Tajland"
   },
   "TJ": {
     "es": "Tayikistán",
@@ -6297,7 +7641,13 @@
     "hu": "Tádzsikisztán",
     "id": "Tajikistan",
     "ms": "Tajikistan",
-    "nb": "Tadsjikistan"
+    "nb": "Tadsjikistan",
+    "el": "Τατζικιστάν",
+    "ca": "Tadjikistan",
+    "da": "Tadsjikistan",
+    "fi": "Tadžikistan",
+    "sk": "Tadžikistan",
+    "hr": "Tadžikistan"
   },
   "TK": {
     "es": "Tokelau",
@@ -6325,7 +7675,13 @@
     "hu": "Tokelau-szigetek",
     "id": "Tokelau",
     "ms": "Tokelau",
-    "nb": "Tokelau"
+    "nb": "Tokelau",
+    "el": "Τοκελάου",
+    "ca": "Tokelau",
+    "da": "Tokelau",
+    "fi": "Tokelau",
+    "sk": "Tokelau",
+    "hr": "Tokelau"
   },
   "TL": {
     "es": "Timor_Oriental",
@@ -6353,7 +7709,13 @@
     "hu": "Kelet-Timor",
     "id": "Timor_Leste",
     "ms": "Timor_Leste",
-    "nb": "Øst-Timor"
+    "nb": "Øst-Timor",
+    "el": "Ανατολικό_Τιμόρ",
+    "ca": "Timor_Oriental",
+    "da": "Østtimor",
+    "fi": "Itä-Timor",
+    "sk": "Východný_Timor",
+    "hr": "Istočni_Timor"
   },
   "TM": {
     "es": "Turkmenistán",
@@ -6381,7 +7743,13 @@
     "hu": "Türkmenisztán",
     "id": "Turkmenistan",
     "ms": "Turkmenistan",
-    "nb": "Turkmenistan"
+    "nb": "Turkmenistan",
+    "el": "Τουρκμενιστάν",
+    "ca": "Turkmenistan",
+    "da": "Turkmenistan",
+    "fi": "Turkmenistan",
+    "sk": "Turkménsko",
+    "hr": "Turkmenistan"
   },
   "TN": {
     "es": "Túnez",
@@ -6409,7 +7777,13 @@
     "hu": "Tunézia",
     "id": "Tunisia",
     "ms": "Tunisia",
-    "nb": "Tunisia"
+    "nb": "Tunisia",
+    "el": "Τυνησία",
+    "ca": "Tunísia",
+    "da": "Tunesien",
+    "fi": "Tunisia",
+    "sk": "Tunisko",
+    "hr": "Tunis"
   },
   "TO": {
     "es": "Tonga",
@@ -6437,7 +7811,13 @@
     "hu": "Tonga",
     "id": "Tonga",
     "ms": "Tonga",
-    "nb": "Tonga"
+    "nb": "Tonga",
+    "el": "Τόνγκα",
+    "ca": "Tonga",
+    "da": "Tonga",
+    "fi": "Tonga",
+    "sk": "Tonga",
+    "hr": "Tonga"
   },
   "TR": {
     "es": "Turquía",
@@ -6465,7 +7845,13 @@
     "hu": "Törökország",
     "id": "Turki",
     "ms": "Turki",
-    "nb": "Tyrkia"
+    "nb": "Tyrkia",
+    "el": "Τουρκία",
+    "ca": "Turquia",
+    "da": "Tyrkiet",
+    "fi": "Turkki",
+    "sk": "Turecko",
+    "hr": "Turska"
   },
   "TT": {
     "es": "Trinidad_y_Tobago",
@@ -6493,7 +7879,13 @@
     "hu": "Trinidad_és_Tobago",
     "id": "Trinidad_dan_Tobago",
     "ms": "Trinidad_dan_Tobago",
-    "nb": "Trinidad_og_Tobago"
+    "nb": "Trinidad_og_Tobago",
+    "el": "Τρινιντάντ_και_Tομπάγκο",
+    "ca": "Trinidad_i_Tobago",
+    "da": "Trinidad_og_Tobago",
+    "fi": "Trinidad_ja_Tobago",
+    "sk": "Trinidad_a_Tobago",
+    "hr": "Trinidad_i_Tobago"
   },
   "TV": {
     "es": "Tuvalu",
@@ -6521,7 +7913,13 @@
     "hu": "Tuvalu",
     "id": "Tuvalu",
     "ms": "Tuvalu",
-    "nb": "Tuvalu"
+    "nb": "Tuvalu",
+    "el": "Τουβαλού",
+    "ca": "Tuvalu",
+    "da": "Tuvalu",
+    "fi": "Tuvalu",
+    "sk": "Tuvalu",
+    "hr": "Tuvalu"
   },
   "TW": {
     "es": "República_de_China",
@@ -6549,7 +7947,13 @@
     "hu": "Kínai_Köztársaság",
     "id": "Taiwan",
     "ms": "Taiwan",
-    "nb": "Republikken_Kina_(Taiwan)"
+    "nb": "Republikken_Kina_(Taiwan)",
+    "el": "Ταϊβάν",
+    "ca": "República_de_la_Xina",
+    "da": "Taiwan",
+    "fi": "Taiwan",
+    "sk": "Taiwan",
+    "hr": "Republika_Kina"
   },
   "TZ": {
     "es": "Tanzania",
@@ -6577,7 +7981,13 @@
     "hu": "Tanzánia",
     "id": "Tanzania",
     "ms": "Tanzania",
-    "nb": "Tanzania"
+    "nb": "Tanzania",
+    "el": "Τανζανία",
+    "ca": "Tanzània",
+    "da": "Tanzania",
+    "fi": "Tansania",
+    "sk": "Tanzánia",
+    "hr": "Tanzanija"
   },
   "UA": {
     "es": "Ucrania",
@@ -6605,7 +8015,13 @@
     "hu": "Ukrajna",
     "id": "Ukraina",
     "ms": "Ukraine",
-    "nb": "Ukraina"
+    "nb": "Ukraina",
+    "el": "Ουκρανία",
+    "ca": "Ucraïna",
+    "da": "Ukraine",
+    "fi": "Ukraina",
+    "sk": "Ukrajina",
+    "hr": "Ukrajina"
   },
   "UG": {
     "es": "Uganda",
@@ -6633,7 +8049,13 @@
     "hu": "Uganda",
     "id": "Uganda",
     "ms": "Uganda",
-    "nb": "Uganda"
+    "nb": "Uganda",
+    "el": "Ουγκάντα",
+    "ca": "Uganda",
+    "da": "Uganda",
+    "fi": "Uganda",
+    "sk": "Uganda",
+    "hr": "Uganda"
   },
   "UM": {
     "es": "Islas_Ultramarinas_Menores_de_los_Estados_Unidos",
@@ -6661,7 +8083,13 @@
     "hu": "Az_Amerikai_Egyesült_Államok_lakatlan_külbirtokai",
     "id": "Kepulauan_Terluar_Kecil_Amerika_Serikat",
     "ms": "en:United_States_Minor_Outlying_Islands",
-    "nb": "USAs_ytre_småøyer"
+    "nb": "USAs_ytre_småøyer",
+    "el": "Απομακρυσμένες_Νησίδες_των_Ηνωμένων_Πολιτειών",
+    "ca": "Illes_d'Ultramar_Menors_dels_Estats_Units",
+    "da": "USA's_ydre_småøer",
+    "fi": "Yhdysvaltain_pienet_erillissaaret",
+    "sk": "Menšie_odľahlé_ostrovy_USA",
+    "hr": "Mali_udaljeni_otoci_SAD-a"
   },
   "US": {
     "es": "Estados_Unidos",
@@ -6689,7 +8117,13 @@
     "hu": "Amerikai_Egyesült_Államok",
     "id": "Amerika_Serikat",
     "ms": "Amerika_Syarikat",
-    "nb": "USA"
+    "nb": "USA",
+    "el": "Ηνωμένες_Πολιτείες_Αμερικής",
+    "ca": "Estats_Units_d'Amèrica",
+    "da": "USA",
+    "fi": "Yhdysvallat",
+    "sk": "Spojené_štáty",
+    "hr": "Sjedinjene_Američke_Države"
   },
   "UY": {
     "es": "Uruguay",
@@ -6717,7 +8151,13 @@
     "hu": "Uruguay",
     "id": "Uruguay",
     "ms": "Uruguay",
-    "nb": "Uruguay"
+    "nb": "Uruguay",
+    "el": "Ουρουγουάη",
+    "ca": "Uruguai",
+    "da": "Uruguay",
+    "fi": "Uruguay",
+    "sk": "Uruguaj",
+    "hr": "Urugvaj"
   },
   "UZ": {
     "es": "Uzbekistán",
@@ -6745,7 +8185,13 @@
     "hu": "Üzbegisztán",
     "id": "Uzbekistan",
     "ms": "Uzbekistan",
-    "nb": "Usbekistan"
+    "nb": "Usbekistan",
+    "el": "Ουζμπεκιστάν",
+    "ca": "Uzbekistan",
+    "da": "Usbekistan",
+    "fi": "Uzbekistan",
+    "sk": "Uzbekistan",
+    "hr": "Uzbekistan"
   },
   "VA": {
     "es": "Ciudad_del_Vaticano",
@@ -6773,7 +8219,13 @@
     "hu": "Vatikán",
     "id": "Vatikan",
     "ms": "Kota_Vatikan",
-    "nb": "Vatikanstaten"
+    "nb": "Vatikanstaten",
+    "el": "Βατικανό",
+    "ca": "Ciutat_del_Vaticà",
+    "da": "Vatikanstaten",
+    "fi": "Vatikaani",
+    "sk": "Vatikán",
+    "hr": "Vatikan"
   },
   "VC": {
     "es": "San_Vicente_y_las_Granadinas",
@@ -6801,7 +8253,13 @@
     "hu": "Saint_Vincent_és_a_Grenadine-szigetek",
     "id": "Saint_Vincent_dan_Grenadines",
     "ms": "Saint_Vincent_dan_Kepulauan_Grenadine",
-    "nb": "Saint_Vincent_og_Grenadinene"
+    "nb": "Saint_Vincent_og_Grenadinene",
+    "el": "Άγιος_Βικέντιος_και_Γρεναδίνες",
+    "ca": "Saint_Vincent_i_les_Grenadines",
+    "da": "Saint_Vincent_og_Grenadinerne",
+    "fi": "Saint_Vincent_ja_Grenadiinit",
+    "sk": "Svätý_Vincent_a_Grenadíny",
+    "hr": "Sveti_Vincent_i_Grenadini"
   },
   "VE": {
     "es": "Venezuela",
@@ -6829,7 +8287,13 @@
     "hu": "Venezuela",
     "id": "Venezuela",
     "ms": "Venezuela",
-    "nb": "Venezuela"
+    "nb": "Venezuela",
+    "el": "Βενεζουέλα",
+    "ca": "Veneçuela",
+    "da": "Venezuela",
+    "fi": "Venezuela",
+    "sk": "Venezuela",
+    "hr": "Venezuela"
   },
   "VG": {
     "es": "Islas_Vírgenes_Británicas",
@@ -6857,7 +8321,13 @@
     "hu": "Brit_Virgin-szigetek",
     "id": "Kepulauan_Virgin_Britania_Raya",
     "ms": "Kepulauan_Virgin_British",
-    "nb": "De_britiske_Jomfruøyer"
+    "nb": "De_britiske_Jomfruøyer",
+    "el": "Βρετανικές_Παρθένοι_Νήσοι",
+    "ca": "Illes_Verges_Britàniques",
+    "da": "Britiske_Jomfruøer",
+    "fi": "Brittiläiset_Neitsytsaaret",
+    "sk": "Britské_Panenské_ostrovy",
+    "hr": "Britanski_Djevičanski_otoci"
   },
   "VI": {
     "es": "Islas_Vírgenes_de_los_Estados_Unidos",
@@ -6885,7 +8355,13 @@
     "hu": "Amerikai_Virgin-szigetek",
     "id": "Kepulauan_Virgin_Amerika_Serikat",
     "ms": "Kepulauan_Virgin_Amerika_Syarikat",
-    "nb": "De_amerikanske_Jomfruøyer"
+    "nb": "De_amerikanske_Jomfruøyer",
+    "el": "Αμερικανικές_Παρθένοι_Νήσοι",
+    "ca": "Illes_Verges_Nord-americanes",
+    "da": "Amerikanske_Jomfruøer",
+    "fi": "Yhdysvaltain_Neitsytsaaret",
+    "sk": "Americké_Panenské_ostrovy",
+    "hr": "Američki_Djevičanski_otoci"
   },
   "VN": {
     "es": "Vietnam",
@@ -6913,7 +8389,13 @@
     "hu": "Vietnám",
     "id": "Vietnam",
     "ms": "Vietnam",
-    "nb": "Vietnam"
+    "nb": "Vietnam",
+    "el": "Βιετνάμ",
+    "ca": "Vietnam",
+    "da": "Vietnam",
+    "fi": "Vietnam",
+    "sk": "Vietnam",
+    "hr": "Vijetnam"
   },
   "VU": {
     "es": "Vanuatu",
@@ -6941,7 +8423,13 @@
     "hu": "Vanuatu",
     "id": "Vanuatu",
     "ms": "Vanuatu",
-    "nb": "Vanuatu"
+    "nb": "Vanuatu",
+    "el": "Βανουάτου",
+    "ca": "Vanuatu",
+    "da": "Vanuatu",
+    "fi": "Vanuatu",
+    "sk": "Vanuatu",
+    "hr": "Vanuatu"
   },
   "WF": {
     "es": "Wallis_y_Futuna",
@@ -6969,7 +8457,13 @@
     "hu": "Wallis_és_Futuna",
     "id": "Wallis_dan_Futuna",
     "ms": "Wallis_dan_Futuna",
-    "nb": "Wallis-_og_Futunaøyene"
+    "nb": "Wallis-_og_Futunaøyene",
+    "el": "Ουαλίς_και_Φουτουνά",
+    "ca": "Wallis_i_Futuna",
+    "da": "Wallis_og_Futuna",
+    "fi": "Wallis_ja_Futuna",
+    "sk": "Wallis_a_Futuna",
+    "hr": "Wallis_i_Futuna"
   },
   "WS": {
     "es": "Samoa",
@@ -6997,7 +8491,13 @@
     "hu": "Szamoa",
     "id": "Samoa",
     "ms": "Samoa",
-    "nb": "Samoa"
+    "nb": "Samoa",
+    "el": "Σαμόα",
+    "ca": "Samoa",
+    "da": "Samoa",
+    "fi": "Samoa",
+    "sk": "Samoa_(štát)",
+    "hr": "Samoa"
   },
   "XK": {
     "es": "Kosovo",
@@ -7025,7 +8525,13 @@
     "hu": "Koszovó",
     "id": "Kosovo",
     "ms": "Kosovo",
-    "nb": "Kosovo"
+    "nb": "Kosovo",
+    "el": "Κοσσυφοπέδιο",
+    "ca": "Kosovo",
+    "da": "Kosovo",
+    "fi": "Kosovo",
+    "sk": "Kosovo",
+    "hr": "Kosovo"
   },
   "YE": {
     "es": "Yemen",
@@ -7053,7 +8559,13 @@
     "hu": "Jemen",
     "id": "Yaman",
     "ms": "Yaman",
-    "nb": "Jemen"
+    "nb": "Jemen",
+    "el": "Υεμένη",
+    "ca": "Iemen",
+    "da": "Yemen",
+    "fi": "Jemen",
+    "sk": "Jemen",
+    "hr": "Jemen"
   },
   "YT": {
     "es": "Mayotte",
@@ -7081,7 +8593,13 @@
     "hu": "Mayotte",
     "id": "Mayotte",
     "ms": "Mayotte",
-    "nb": "Mayotte"
+    "nb": "Mayotte",
+    "el": "Μαγιότ",
+    "ca": "Mayotte",
+    "da": "Mayotte",
+    "fi": "Mayotte",
+    "sk": "Mayotte",
+    "hr": "Mayotte"
   },
   "YU": {
     "es": "Yugoslavia",
@@ -7109,7 +8627,13 @@
     "hu": "Jugoszlávia",
     "id": "Yugoslavia",
     "ms": "Yugoslavia",
-    "nb": "Jugoslavia"
+    "nb": "Jugoslavia",
+    "el": "Γιουγκοσλαβία",
+    "ca": "Iugoslàvia",
+    "da": "Jugoslavien",
+    "fi": "Jugoslavia",
+    "sk": "Juhoslávia",
+    "hr": "en:Yugoslavia"
   },
   "ZA": {
     "es": "Sudáfrica",
@@ -7137,7 +8661,13 @@
     "hu": "Dél-afrikai_Köztársaság",
     "id": "Afrika_Selatan",
     "ms": "Afrika_Selatan",
-    "nb": "Sør-Afrika"
+    "nb": "Sør-Afrika",
+    "el": "Νότια_Αφρική",
+    "ca": "Sud-àfrica",
+    "da": "Sydafrika",
+    "fi": "Etelä-Afrikka",
+    "sk": "Južná_Afrika_(štát)",
+    "hr": "Južna_Afrika"
   },
   "ZM": {
     "es": "Zambia",
@@ -7165,7 +8695,13 @@
     "hu": "Zambia",
     "id": "Zambia",
     "ms": "Zambia",
-    "nb": "Zambia"
+    "nb": "Zambia",
+    "el": "Ζάμπια",
+    "ca": "Zàmbia",
+    "da": "Zambia",
+    "fi": "Sambia",
+    "sk": "Zambia",
+    "hr": "Zambija"
   },
   "ZW": {
     "es": "Zimbabue",
@@ -7193,6 +8729,12 @@
     "hu": "Zimbabwe",
     "id": "Zimbabwe",
     "ms": "Zimbabwe",
-    "nb": "Zimbabwe"
+    "nb": "Zimbabwe",
+    "el": "Ζιμπάμπουε",
+    "ca": "Zimbàbue",
+    "da": "Zimbabwe",
+    "fi": "Zimbabwe",
+    "sk": "Zimbabwe",
+    "hr": "Zimbabve"
   }
 }

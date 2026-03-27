@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Sahara Barat",
-    "capital": "El Aaiún",
+    "capital": "",
     "demonym": "Sahara Barat",
     "languages": [
       "Arab"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hong Kong",
-    "capital": "Victoria",
+    "capital": "",
     "demonym": "Hong Kong",
     "languages": [
       "Tionghoa",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Kepulauan Mariana Utara",
-    "capital": "Saipan",
+    "capital": "",
     "demonym": "Kepulauan Mariana Utara",
     "languages": [
       "Inggris",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Plymouth",
+    "capital": "Brades",
     "demonym": "Montserrat",
     "languages": [
       "Inggris"
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "Palestina",
-    "capital": "Yerusalem Timur",
+    "capital": "Ramallah",
     "demonym": "Palestina",
     "languages": [
       "Arab"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatikan",
-    "capital": "Kota Vatikan",
+    "capital": "",
     "demonym": "Vatikan",
     "languages": [
       "Italia",

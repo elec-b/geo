@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Sahara occidental",
-    "capital": "Laâyoune",
+    "capital": "",
     "demonym": "sahraoui",
     "languages": [
       "Arabe"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hong Kong",
-    "capital": "Victoria",
+    "capital": "",
     "demonym": "hongkongais",
     "languages": [
       "Chinois",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Plymouth",
+    "capital": "Brades",
     "demonym": "montserratien",
     "languages": [
       "Anglais"
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "Palestine",
-    "capital": "Jérusalem-Est",
+    "capital": "Ramallah",
     "demonym": "palestinien",
     "languages": [
       "Arabe"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "État de la Cité du Vatican",
-    "capital": "Cité du Vatican",
+    "capital": "",
     "demonym": "vatican",
     "languages": [
       "Italien",

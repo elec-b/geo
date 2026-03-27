@@ -1,0 +1,17 @@
+{
+  "defaultName": "Istraživač",
+  "editor.titleEdit": "Uredi profil",
+  "editor.titleCreate": "Stvori profil",
+  "editor.chooseAvatar": "Odaberi avatara",
+  "editor.nameLabel": "Ime",
+  "editor.namePlaceholder": "Naziv profila",
+  "editor.save": "Spremi",
+  "editor.create": "Stvori",
+  "selector.title": "Profili",
+  "selector.confirmDelete": "Izbriši «{{name}}»?",
+  "selector.delete": "Izbriši",
+  "selector.createNew": "Stvori profil",
+  "selector.aria.edit": "Uredi {{name}}",
+  "selector.aria.delete": "Izbriši {{name}}",
+  "selector.aria.dialog": "Odaberi profil"
+}

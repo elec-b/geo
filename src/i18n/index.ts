@@ -33,6 +33,12 @@ export const SUPPORTED_LOCALES: Record<string, string> = {
   id: 'Bahasa Indonesia',
   ms: 'Bahasa Melayu',
   nb: 'Norsk',
+  el: 'Ελληνικά',
+  ca: 'Català',
+  da: 'Dansk',
+  fi: 'Suomi',
+  sk: 'Slovenčina',
+  hr: 'Hrvatski',
 };
 
 /** Carga los 7 namespaces de un idioma vía dynamic import */

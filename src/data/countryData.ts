@@ -65,6 +65,12 @@ const SYNTHETIC_I18N: Record<string, Record<string, { name: string; capital: str
     nb: { name: 'Somaliland', capital: 'Hargeisa', demonym: 'somalilandsk', languages: ['Somali', 'Arabisk'], currencyNames: ['Somalilandsk shilling'], wikipediaSlug: null },
     'pt-BR': { name: 'Somalilândia', capital: 'Hargeisa', demonym: 'somalilandês', languages: ['Somali', 'Árabe'], currencyNames: ['Xelim da Somalilândia'], wikipediaSlug: 'Somalilândia' },
     'pt-PT': { name: 'Somalilândia', capital: 'Hargeisa', demonym: 'somalilandês', languages: ['Somali', 'Árabe'], currencyNames: ['Xelim da Somalilândia'], wikipediaSlug: 'Somalilândia' },
+    el: { name: 'Σομαλιλάνδη', capital: 'Χαργκέισα', demonym: 'σομαλιλανδικός', languages: ['Σομαλική', 'Αραβική'], currencyNames: ['Σελίνι Σομαλιλάνδης'], wikipediaSlug: null },
+    ca: { name: 'Somaliland', capital: 'Hargeisa', demonym: 'somalilandès', languages: ['Somalí', 'Àrab'], currencyNames: ['Xíling de Somaliland'], wikipediaSlug: null },
+    da: { name: 'Somaliland', capital: 'Hargeisa', demonym: 'somalilandsk', languages: ['Somali', 'Arabisk'], currencyNames: ['Somalilandsk shilling'], wikipediaSlug: null },
+    fi: { name: 'Somaliland', capital: 'Hargeisa', demonym: 'somalilandilainen', languages: ['Somali', 'Arabia'], currencyNames: ['Somalimaan šillinki'], wikipediaSlug: null },
+    sk: { name: 'Somaliland', capital: 'Hargeisa', demonym: 'somalilandský', languages: ['Somálčina', 'Arabčina'], currencyNames: ['Somalilandský šiling'], wikipediaSlug: null },
+    hr: { name: 'Somaliland', capital: 'Hargeisa', demonym: 'somalilandski', languages: ['Somalski', 'Arapski'], currencyNames: ['Somalilandski šiling'], wikipediaSlug: null },
   },
   CYN: {
     es: { name: 'Chipre del Norte', capital: 'Nicosia del Norte', demonym: 'turcochipriota', languages: ['Turco'], currencyNames: ['Lira turca'], wikipediaSlug: 'República_Turca_del_Norte_de_Chipre' },
@@ -93,6 +99,12 @@ const SYNTHETIC_I18N: Record<string, Record<string, { name: string; capital: str
     nb: { name: 'Nord-Kypros', capital: 'Nord-Nikosia', demonym: 'nordkypriotisk', languages: ['Tyrkisk'], currencyNames: ['Tyrkisk lira'], wikipediaSlug: null },
     'pt-BR': { name: 'Chipre do Norte', capital: 'Nicósia do Norte', demonym: 'cipriota turco', languages: ['Turco'], currencyNames: ['Lira turca'], wikipediaSlug: null },
     'pt-PT': { name: 'Chipre do Norte', capital: 'Nicósia do Norte', demonym: 'cipriota turco', languages: ['Turco'], currencyNames: ['Lira turca'], wikipediaSlug: null },
+    el: { name: 'Βόρεια Κύπρος', capital: 'Βόρεια Λευκωσία', demonym: 'βορειοκυπριακός', languages: ['Τουρκικά'], currencyNames: ['Τουρκική λίρα'], wikipediaSlug: null },
+    ca: { name: 'Xipre del Nord', capital: 'Nicòsia del Nord', demonym: 'xipriota turc', languages: ['Turc'], currencyNames: ['Lira turca'], wikipediaSlug: null },
+    da: { name: 'Nordcypern', capital: 'Nord-Nicosia', demonym: 'nordcypriotisk', languages: ['Tyrkisk'], currencyNames: ['Tyrkisk lira'], wikipediaSlug: null },
+    fi: { name: 'Pohjois-Kypros', capital: 'Pohjois-Nikosia', demonym: 'pohjoiskypriolainen', languages: ['Turkki'], currencyNames: ['Turkin liira'], wikipediaSlug: null },
+    sk: { name: 'Severný Cyprus', capital: 'Severná Nikózia', demonym: 'severocyperský', languages: ['Turečtina'], currencyNames: ['Turecká líra'], wikipediaSlug: null },
+    hr: { name: 'Sjeverni Cipar', capital: 'Sjeverna Nikozija', demonym: 'sjevernociparski', languages: ['Turski'], currencyNames: ['Turska lira'], wikipediaSlug: null },
   },
   AQ: {
     es: { name: 'Antártida', capital: '', demonym: '', languages: [], currencyNames: [], wikipediaSlug: 'Antártida' },
@@ -121,6 +133,12 @@ const SYNTHETIC_I18N: Record<string, Record<string, { name: string; capital: str
     nb: { name: 'Antarktis', capital: '', demonym: '', languages: [], currencyNames: [], wikipediaSlug: 'Antarktis' },
     'pt-BR': { name: 'Antártida', capital: '', demonym: '', languages: [], currencyNames: [], wikipediaSlug: 'Antártida' },
     'pt-PT': { name: 'Antártida', capital: '', demonym: '', languages: [], currencyNames: [], wikipediaSlug: 'Antártida' },
+    el: { name: 'Ανταρκτική', capital: '', demonym: '', languages: [], currencyNames: [], wikipediaSlug: 'Ανταρκτική' },
+    ca: { name: 'Antàrtida', capital: '', demonym: '', languages: [], currencyNames: [], wikipediaSlug: 'Antàrtida' },
+    da: { name: 'Antarktis', capital: '', demonym: '', languages: [], currencyNames: [], wikipediaSlug: 'Antarktis' },
+    fi: { name: 'Etelämanner', capital: '', demonym: '', languages: [], currencyNames: [], wikipediaSlug: 'Etelämanner' },
+    sk: { name: 'Antarktída', capital: '', demonym: '', languages: [], currencyNames: [], wikipediaSlug: 'Antarktída' },
+    hr: { name: 'Antarktika', capital: '', demonym: '', languages: [], currencyNames: [], wikipediaSlug: 'Antarktika' },
   },
 };
 

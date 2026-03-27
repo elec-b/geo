@@ -1,0 +1,13 @@
+{
+  "header.title": "Διαβατήριο του {{name}}",
+  "header.globalLevel": "Παγκόσμιο επίπεδο: {{level}}",
+  "emptyState": "Κάθε σφραγίδα αποδεικνύει τι ξέρεις. Θα γεμίσεις το διαβατήριο;",
+  "legend.country": "○ Χώρα",
+  "legend.capital": "◎ Πρωτεύουσα",
+  "legend.earned": "★ Αποκτήθηκε",
+  "legend.locked": "🔒 Κλειδωμένο",
+  "stampTitle.countries": "Σφραγίδα Χωρών",
+  "stampTitle.capitals": "Σφραγίδα Πρωτευουσών",
+  "modal.title": "Δοκιμή σφραγίδας",
+  "modal.questionCount": "Πρέπει να ολοκληρώσεις {{count}} ερωτήσεις χωρίς κανένα λάθος."
+}

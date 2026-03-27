@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Sara Ocidental",
-    "capital": "El Aaiún",
+    "capital": "",
     "demonym": "saarauí",
     "languages": [
       "Árabe"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hong Kong",
-    "capital": "Victoria",
+    "capital": "",
     "demonym": "honconguês",
     "languages": [
       "Chinês",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Ilhas Marianas do Norte",
-    "capital": "Saipã",
+    "capital": "",
     "demonym": "marianense",
     "languages": [
       "Inglês",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Monserrate",
-    "capital": "Brades",
+    "capital": "Plymouth",
     "demonym": "montserratense",
     "languages": [
       "Inglês"
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "Palestina",
-    "capital": "Ramallah",
+    "capital": "Jerusalém Oriental",
     "demonym": "palestiniano",
     "languages": [
       "Árabe"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Cidade do Vaticano",
-    "capital": "Cidade do Vaticano",
+    "capital": "",
     "demonym": "vaticano",
     "languages": [
       "Italiano",

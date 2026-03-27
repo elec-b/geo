@@ -1,0 +1,17 @@
+{
+  "defaultName": "Explorador",
+  "editor.titleEdit": "Editar perfil",
+  "editor.titleCreate": "Crear perfil",
+  "editor.chooseAvatar": "Tria el teu avatar",
+  "editor.nameLabel": "Nom",
+  "editor.namePlaceholder": "Nom del perfil",
+  "editor.save": "Desar",
+  "editor.create": "Crear",
+  "selector.title": "Perfils",
+  "selector.confirmDelete": "Eliminar «{{name}}»?",
+  "selector.delete": "Eliminar",
+  "selector.createNew": "Crear perfil",
+  "selector.aria.edit": "Editar {{name}}",
+  "selector.aria.delete": "Eliminar {{name}}",
+  "selector.aria.dialog": "Seleccionar perfil"
+}

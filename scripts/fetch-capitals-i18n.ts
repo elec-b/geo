@@ -21,6 +21,7 @@ const LANGUAGES: Record<string, string> = {
   ru: 'ru', ja: 'ja', ko: 'ko', zh: 'zh-Hans', hi: 'hi', th: 'th',
   vi: 'vi', tr: 'tr', pl: 'pl', nl: 'nl', sv: 'sv', ro: 'ro',
   uk: 'uk', cs: 'cs', hu: 'hu', id: 'id', ms: 'ms', nb: 'nb',
+  el: 'el', ca: 'ca', da: 'da', fi: 'fi', sk: 'sk', hr: 'hr',
 };
 
 // Idiomas para la consulta SPARQL (BCP 47 básicos)

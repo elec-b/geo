@@ -1,0 +1,17 @@
+{
+  "defaultName": "Εξερευνητής",
+  "editor.titleEdit": "Επεξεργασία προφίλ",
+  "editor.titleCreate": "Δημιουργία προφίλ",
+  "editor.chooseAvatar": "Επίλεξε το avatar σου",
+  "editor.nameLabel": "Όνομα",
+  "editor.namePlaceholder": "Όνομα προφίλ",
+  "editor.save": "Αποθήκευση",
+  "editor.create": "Δημιουργία",
+  "selector.title": "Προφίλ",
+  "selector.confirmDelete": "Διαγραφή «{{name}}»;",
+  "selector.delete": "Διαγραφή",
+  "selector.createNew": "Δημιουργία προφίλ",
+  "selector.aria.edit": "Επεξεργασία {{name}}",
+  "selector.aria.delete": "Διαγραφή {{name}}",
+  "selector.aria.dialog": "Επιλογή προφίλ"
+}

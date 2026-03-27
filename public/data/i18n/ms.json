@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Sahara Barat",
-    "capital": "El Aaiún",
+    "capital": "",
     "demonym": "Sahara Barat",
     "languages": [
       "Arab"
@@ -851,7 +851,7 @@
   },
   "FO": {
     "name": "Kepulauan Faroe",
-    "capital": "Tórshavn",
+    "capital": "",
     "demonym": "Kepulauan Faroe",
     "languages": [
       "Faroe",
@@ -936,7 +936,7 @@
   },
   "GG": {
     "name": "Guernsey",
-    "capital": "Saint Peter Port",
+    "capital": "",
     "demonym": "Guernsey",
     "languages": [
       "Inggeris",
@@ -1009,7 +1009,7 @@
   },
   "GQ": {
     "name": "Guinea Khatulistiwa",
-    "capital": "Malabo",
+    "capital": "",
     "demonym": "Guinea Khatulistiwa",
     "languages": [
       "Sepanyol",
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hong Kong",
-    "capital": "Victoria",
+    "capital": "",
     "demonym": "Hong Kong",
     "languages": [
       "Cina",
@@ -1184,7 +1184,7 @@
   },
   "IM": {
     "name": "Isle of Man",
-    "capital": "Douglas",
+    "capital": "",
     "demonym": "Isle of Man",
     "languages": [
       "Inggeris",
@@ -1259,7 +1259,7 @@
   },
   "JE": {
     "name": "Jersey",
-    "capital": "Saint Helier",
+    "capital": "",
     "demonym": "Jersey",
     "languages": [
       "Inggeris",
@@ -1597,7 +1597,7 @@
   },
   "MC": {
     "name": "Monaco",
-    "capital": "Monaco",
+    "capital": "",
     "demonym": "Monaco",
     "languages": [
       "Perancis"
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Kepulauan Mariana Utara",
-    "capital": "Saipan",
+    "capital": "",
     "demonym": "Kepulauan Mariana Utara",
     "languages": [
       "Inggeris",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Brades",
+    "capital": "Plymouth",
     "demonym": "Montserrat",
     "languages": [
       "Inggeris"
@@ -1906,7 +1906,7 @@
   },
   "NF": {
     "name": "Pulau Norfolk",
-    "capital": "Kingston",
+    "capital": "",
     "demonym": "Pulau Norfolk",
     "languages": [
       "Inggeris"
@@ -2132,7 +2132,7 @@
   },
   "PN": {
     "name": "Kepulauan Pitcairn",
-    "capital": "Adamstown",
+    "capital": "",
     "demonym": "Kepulauan Pitcairn",
     "languages": [
       "Inggeris"
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "Palestin",
-    "capital": "Baitulmaqdis Timur",
+    "capital": "Ramallah",
     "demonym": "Palestin",
     "languages": [
       "Arab"
@@ -2183,7 +2183,7 @@
   },
   "PW": {
     "name": "Palau",
-    "capital": "Ngerulmud",
+    "capital": "",
     "demonym": "Palau",
     "languages": [
       "Palauan",
@@ -2361,7 +2361,7 @@
   },
   "SH": {
     "name": "Saint Helena",
-    "capital": "Jamestown",
+    "capital": "",
     "demonym": "Saint Helena",
     "languages": [
       "Inggeris"
@@ -2495,7 +2495,7 @@
   },
   "SX": {
     "name": "Sint Maarten",
-    "capital": "Philipsburg",
+    "capital": "",
     "demonym": "Sint Maarten",
     "languages": [
       "Belanda",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Kota Vatican",
-    "capital": "Kota Vatican",
+    "capital": "",
     "demonym": "Vatikan",
     "languages": [
       "Itali",
@@ -2805,7 +2805,7 @@
   },
   "VG": {
     "name": "Kepulauan Virgin British",
-    "capital": "Road Town",
+    "capital": "",
     "demonym": "Kepulauan Virgin British",
     "languages": [
       "Inggeris"

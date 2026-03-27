@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "西撒哈拉",
-    "capital": "阿尤恩",
+    "capital": "",
     "demonym": "西撒哈拉的",
     "languages": [
       "阿拉伯文"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "香港",
-    "capital": "維多利亞城",
+    "capital": "",
     "demonym": "香港的",
     "languages": [
       "中文",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "北馬利安納群島",
-    "capital": "塞班島",
+    "capital": "",
     "demonym": "北馬里亞納群島的",
     "languages": [
       "英文",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "蒙哲臘",
-    "capital": "布莱兹",
+    "capital": "普利茅斯",
     "demonym": "蒙特塞拉特的",
     "languages": [
       "英文"
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "巴勒斯坦",
-    "capital": "拉姆安拉",
+    "capital": "东耶路撒冷",
     "demonym": "巴勒斯坦的",
     "languages": [
       "阿拉伯文"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "梵蒂岡",
-    "capital": "梵蒂岡城",
+    "capital": "",
     "demonym": "梵蒂岡的",
     "languages": [
       "義大利文",

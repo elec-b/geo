@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Westsahara",
-    "capital": "El Aaiún",
+    "capital": "",
     "demonym": "sahrawisch",
     "languages": [
       "Arabisch"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hongkong",
-    "capital": "Victoria",
+    "capital": "",
     "demonym": "hongkong-chinesisch",
     "languages": [
       "Chinesisch",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Nördliche Marianen",
-    "capital": "Saipan",
+    "capital": "",
     "demonym": "nordmarianisch",
     "languages": [
       "Englisch",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Plymouth",
+    "capital": "Brades",
     "demonym": "montserratisch",
     "languages": [
       "Englisch"
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "Palästina",
-    "capital": "Ostjerusalem",
+    "capital": "Ramallah",
     "demonym": "palästinensisch",
     "languages": [
       "Arabisch"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatikanstadt",
-    "capital": "Vatikanstadt",
+    "capital": "",
     "demonym": "vatikanisch",
     "languages": [
       "Italienisch",

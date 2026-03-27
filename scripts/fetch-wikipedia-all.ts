@@ -24,6 +24,7 @@ const WIKI_LANGS = [
   'es', 'en', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'ko', 'zh',
   'hi', 'th', 'vi', 'tr', 'pl', 'nl', 'sv', 'ro', 'uk', 'cs',
   'hu', 'id', 'ms', 'no',
+  'el', 'ca', 'da', 'fi', 'sk', 'hr',
 ];
 
 // Mapeo: código Wikipedia → locales de la app que comparten ese Wikipedia
@@ -37,6 +38,7 @@ const WIKI_TO_APP_LOCALES: Record<string, string[]> = {
   uk: ['uk'], cs: ['cs'], hu: ['hu'],
   id: ['id'], ms: ['ms'],
   no: ['nb'],
+  el: ['el'], ca: ['ca'], da: ['da'], fi: ['fi'], sk: ['sk'], hr: ['hr'],
 };
 
 // Mapeo inverso: locale de la app → código Wikipedia

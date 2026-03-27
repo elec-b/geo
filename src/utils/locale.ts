@@ -6,6 +6,7 @@ const SUPPORTED: Set<string> = new Set([
   'ru', 'ja', 'ko', 'zh-Hans', 'zh-Hant',
   'hi', 'th', 'vi', 'tr', 'pl', 'nl', 'sv', 'ro',
   'uk', 'cs', 'hu', 'id', 'ms', 'nb',
+  'el', 'ca', 'da', 'fi', 'sk', 'hr',
 ]);
 
 /** Detecta el idioma del dispositivo y lo mapea al más cercano soportado */

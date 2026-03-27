@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Západní Sahara",
-    "capital": "El Aaiún",
+    "capital": "",
     "demonym": "západosaharský",
     "languages": [
       "Arabština"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hongkong",
-    "capital": "Victoria",
+    "capital": "",
     "demonym": "hongkongský",
     "languages": [
       "Čínština",
@@ -1495,7 +1495,7 @@
   },
   "LK": {
     "name": "Srí Lanka",
-    "capital": "Šrí Džajavardanapura Kotte",
+    "capital": "Kolombo",
     "demonym": "srílanský",
     "languages": [
       "Sinhálština",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Severní Mariany",
-    "capital": "Saipan",
+    "capital": "",
     "demonym": "severomariánský",
     "languages": [
       "Angličtina",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Plymouth",
+    "capital": "Brades",
     "demonym": "montserratský",
     "languages": [
       "Angličtina"
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "Palestina",
-    "capital": "Východní Jeruzalém",
+    "capital": "Rámaláh",
     "demonym": "palestinský",
     "languages": [
       "Arabština"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatikán",
-    "capital": "Vatikán",
+    "capital": "",
     "demonym": "vatikánský",
     "languages": [
       "Italština",

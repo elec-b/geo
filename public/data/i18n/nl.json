@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Westelijke Sahara",
-    "capital": "El Aaiún",
+    "capital": "",
     "demonym": "Sahrawi",
     "languages": [
       "Arabisch"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hongkong",
-    "capital": "Victoria",
+    "capital": "",
     "demonym": "Hongkongs",
     "languages": [
       "Chinees",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Noordelijke Marianen",
-    "capital": "Saipan",
+    "capital": "",
     "demonym": "Noord-Mariaans",
     "languages": [
       "Engels",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Brades",
+    "capital": "Plymouth",
     "demonym": "Montserrataans",
     "languages": [
       "Engels"
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "Palestina",
-    "capital": "Oost-Jeruzalem",
+    "capital": "Ramallah",
     "demonym": "Palestijns",
     "languages": [
       "Arabisch"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vaticaanstad",
-    "capital": "Vaticaanstad",
+    "capital": "",
     "demonym": "Vaticaans",
     "languages": [
       "Italiaans",

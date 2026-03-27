@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "西サハラ",
-    "capital": "ラユーン",
+    "capital": "",
     "demonym": "西サハラの",
     "languages": [
       "アラビア語"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "香港",
-    "capital": "ヴィクトリア",
+    "capital": "",
     "demonym": "香港の",
     "languages": [
       "中国語",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "北マリアナ諸島",
-    "capital": "サイパン",
+    "capital": "",
     "demonym": "北マリアナ諸島の",
     "languages": [
       "英語",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "モントセラト",
-    "capital": "プリマス",
+    "capital": "ブレイズ",
     "demonym": "モントセラトの",
     "languages": [
       "英語"
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "パレスチナ",
-    "capital": "エルサレム",
+    "capital": "ラマッラー",
     "demonym": "パレスチナの",
     "languages": [
       "アラビア語"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "バチカン市国",
-    "capital": "バチカン",
+    "capital": "",
     "demonym": "バチカンの",
     "languages": [
       "イタリア語",

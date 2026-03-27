@@ -32,6 +32,7 @@ const SUPPORTED_LANGUAGES: Record<string, string> = {
   pl: 'pl', nl: 'nl', sv: 'sv', ro: 'ro',
   uk: 'uk', cs: 'cs', hu: 'hu',
   id: 'id', ms: 'ms', nb: 'nb',
+  el: 'el', ca: 'ca', da: 'da', fi: 'fi', sk: 'sk', hr: 'hr',
 };
 
 // Mapeo de region de REST Countries → clave neutra de continente

@@ -25,7 +25,13 @@
     "ms": "Andorra",
     "nb": "andorransk",
     "zh-Hant": "安道爾的",
-    "pt-PT": "andorrano"
+    "pt-PT": "andorrano",
+    "el": "ανδορρανός",
+    "ca": "andorrà",
+    "da": "andorraner",
+    "fi": "andorralainen",
+    "sk": "andorrský",
+    "hr": "andorski"
   },
   "AE": {
     "es": "emiratí",
@@ -53,7 +59,13 @@
     "ms": "Emirat",
     "nb": "emiratisk",
     "zh-Hant": "阿聯酋的",
-    "pt-PT": "emiradense"
+    "pt-PT": "emiradense",
+    "el": "εμιρατιανός",
+    "ca": "emiratià",
+    "da": "emiratiarabisk",
+    "fi": "arabiemiraattilainen",
+    "sk": "emirátsky",
+    "hr": "emiratski"
   },
   "AF": {
     "es": "afgano",
@@ -81,7 +93,13 @@
     "ms": "Afghanistan",
     "nb": "afghansk",
     "zh-Hant": "阿富汗的",
-    "pt-PT": "afegão"
+    "pt-PT": "afegão",
+    "el": "αφγανός",
+    "ca": "afganès",
+    "da": "afghaner",
+    "fi": "afganilainen",
+    "sk": "afganský",
+    "hr": "afganistanski"
   },
   "AG": {
     "es": "antigüeño",
@@ -109,7 +127,13 @@
     "ms": "Antigua",
     "nb": "antiguansk",
     "zh-Hant": "安提瓜的",
-    "pt-PT": "antiguano"
+    "pt-PT": "antiguano",
+    "el": "αντιγκουανός",
+    "ca": "antiguà",
+    "da": "antiguaner",
+    "fi": "antigualainen",
+    "sk": "antiguánsky",
+    "hr": "antigvanski"
   },
   "AI": {
     "es": "anguilense",
@@ -137,7 +161,13 @@
     "ms": "Anguilla",
     "nb": "anguillansk",
     "zh-Hant": "安圭拉的",
-    "pt-PT": "anguilano"
+    "pt-PT": "anguilano",
+    "el": "ανγκουιλιανός",
+    "ca": "anguilà",
+    "da": "anguillaner",
+    "fi": "anguillalainen",
+    "sk": "anguilský",
+    "hr": "angvilski"
   },
   "AL": {
     "es": "albanés",
@@ -165,7 +195,13 @@
     "ms": "Albania",
     "nb": "albansk",
     "zh-Hant": "阿爾巴尼亞的",
-    "pt-PT": "albanês"
+    "pt-PT": "albanês",
+    "el": "αλβανός",
+    "ca": "albanès",
+    "da": "albaner",
+    "fi": "albanialainen",
+    "sk": "albánsky",
+    "hr": "albanski"
   },
   "AM": {
     "es": "armenio",
@@ -193,7 +229,13 @@
     "ms": "Armenia",
     "nb": "armensk",
     "zh-Hant": "亞美尼亞的",
-    "pt-PT": "arménio"
+    "pt-PT": "arménio",
+    "el": "αρμένιος",
+    "ca": "armeni",
+    "da": "armenier",
+    "fi": "armenialainen",
+    "sk": "arménsky",
+    "hr": "armenski"
   },
   "AO": {
     "es": "angoleño",
@@ -221,7 +263,13 @@
     "ms": "Angola",
     "nb": "angolansk",
     "zh-Hant": "安哥拉的",
-    "pt-PT": "angolano"
+    "pt-PT": "angolano",
+    "el": "αγκολέζος",
+    "ca": "angolès",
+    "da": "angolaner",
+    "fi": "angolalainen",
+    "sk": "angolský",
+    "hr": "angolski"
   },
   "AR": {
     "es": "argentino",
@@ -249,7 +297,13 @@
     "ms": "Argentina",
     "nb": "argentinsk",
     "zh-Hant": "阿根廷的",
-    "pt-PT": "argentino"
+    "pt-PT": "argentino",
+    "el": "αργεντινός",
+    "ca": "argentí",
+    "da": "argentinier",
+    "fi": "argentiinalainen",
+    "sk": "argentínsky",
+    "hr": "argentinski"
   },
   "AS": {
     "es": "samoano americano",
@@ -277,7 +331,13 @@
     "ms": "Samoa Amerika",
     "nb": "amerikansksamoansk",
     "zh-Hant": "美屬薩摩亞的",
-    "pt-PT": "samoano americano"
+    "pt-PT": "samoano americano",
+    "el": "αμερικανοσαμοανός",
+    "ca": "samoà americà",
+    "da": "amerikansk samoaner",
+    "fi": "amerikansamoalainen",
+    "sk": "americko-samojský",
+    "hr": "američkosamojski"
   },
   "AT": {
     "es": "austriaco",
@@ -305,7 +365,13 @@
     "ms": "Austria",
     "nb": "østerriksk",
     "zh-Hant": "奧地利的",
-    "pt-PT": "austríaco"
+    "pt-PT": "austríaco",
+    "el": "αυστριακός",
+    "ca": "austríac",
+    "da": "østrigger",
+    "fi": "itävaltalainen",
+    "sk": "rakúsky",
+    "hr": "austrijski"
   },
   "AU": {
     "es": "australiano",
@@ -333,7 +399,13 @@
     "ms": "Australia",
     "nb": "australsk",
     "zh-Hant": "澳大利亞的",
-    "pt-PT": "australiano"
+    "pt-PT": "australiano",
+    "el": "αυστραλός",
+    "ca": "australià",
+    "da": "australier",
+    "fi": "australialainen",
+    "sk": "austrálsky",
+    "hr": "australski"
   },
   "AW": {
     "es": "arubeño",
@@ -361,7 +433,13 @@
     "ms": "Aruba",
     "nb": "arubansk",
     "zh-Hant": "阿魯巴的",
-    "pt-PT": "arubano"
+    "pt-PT": "arubano",
+    "el": "αρουβανός",
+    "ca": "arubà",
+    "da": "arubaner",
+    "fi": "arubalainen",
+    "sk": "arubský",
+    "hr": "arubski"
   },
   "AX": {
     "es": "alandés",
@@ -389,7 +467,13 @@
     "ms": "Åland",
     "nb": "ålandsk",
     "zh-Hant": "奧蘭的",
-    "pt-PT": "alandês"
+    "pt-PT": "alandês",
+    "el": "αλανδικός",
+    "ca": "alandès",
+    "da": "ålænding",
+    "fi": "ahvenanmaalainen",
+    "sk": "ålandský",
+    "hr": "ålandski"
   },
   "AZ": {
     "es": "azerbaiyano",
@@ -417,7 +501,13 @@
     "ms": "Azerbaijan",
     "nb": "aserbajdsjansk",
     "zh-Hant": "阿塞拜疆的",
-    "pt-PT": "azerbaijano"
+    "pt-PT": "azerbaijano",
+    "el": "αζέρος",
+    "ca": "azerbaidjanès",
+    "da": "aserbajdsjaner",
+    "fi": "azerbaidžanilainen",
+    "sk": "azerbajdžanský",
+    "hr": "azerbajdžanski"
   },
   "BA": {
     "es": "bosnio",
@@ -445,7 +535,13 @@
     "ms": "Bosnia",
     "nb": "bosnisk",
     "zh-Hant": "波斯尼亞的",
-    "pt-PT": "bósnio"
+    "pt-PT": "bósnio",
+    "el": "βόσνιος",
+    "ca": "bosni",
+    "da": "bosnier",
+    "fi": "bosnialainen",
+    "sk": "bosniackohercegovínsky",
+    "hr": "bosanskohercegovački"
   },
   "BB": {
     "es": "barbadense",
@@ -473,7 +569,13 @@
     "ms": "Barbados",
     "nb": "barbadisk",
     "zh-Hant": "巴巴多斯的",
-    "pt-PT": "barbadiano"
+    "pt-PT": "barbadiano",
+    "el": "βαρβαδιανός",
+    "ca": "barbadià",
+    "da": "barbadier",
+    "fi": "barbadoslainen",
+    "sk": "barbadoský",
+    "hr": "barbadoski"
   },
   "BD": {
     "es": "bangladesí",
@@ -501,7 +603,13 @@
     "ms": "Bangladesh",
     "nb": "bangladeshisk",
     "zh-Hant": "孟加拉國的",
-    "pt-PT": "bangladeshiano"
+    "pt-PT": "bangladeshiano",
+    "el": "μπανγκλαντεσιανός",
+    "ca": "bangladèsic",
+    "da": "bangladesher",
+    "fi": "bangladeshilainen",
+    "sk": "bangladéšsky",
+    "hr": "bangladeški"
   },
   "BE": {
     "es": "belga",
@@ -529,7 +637,13 @@
     "ms": "Belgium",
     "nb": "belgisk",
     "zh-Hant": "比利時的",
-    "pt-PT": "belga"
+    "pt-PT": "belga",
+    "el": "βέλγος",
+    "ca": "belga",
+    "da": "belgier",
+    "fi": "belgialainen",
+    "sk": "belgický",
+    "hr": "belgijski"
   },
   "BF": {
     "es": "burkinés",
@@ -557,7 +671,13 @@
     "ms": "Burkina Faso",
     "nb": "burkinsk",
     "zh-Hant": "布基納法索的",
-    "pt-PT": "burquinense"
+    "pt-PT": "burquinense",
+    "el": "μπουρκινέζος",
+    "ca": "burkinès",
+    "da": "burkinabé",
+    "fi": "burkinalainen",
+    "sk": "burkinský",
+    "hr": "burkinabeški"
   },
   "BG": {
     "es": "búlgaro",
@@ -585,7 +705,13 @@
     "ms": "Bulgaria",
     "nb": "bulgarsk",
     "zh-Hant": "保加利亞的",
-    "pt-PT": "búlgaro"
+    "pt-PT": "búlgaro",
+    "el": "βούλγαρος",
+    "ca": "búlgar",
+    "da": "bulgarer",
+    "fi": "bulgarialainen",
+    "sk": "bulharský",
+    "hr": "bugarski"
   },
   "BH": {
     "es": "bareiní",
@@ -613,7 +739,13 @@
     "ms": "Bahrain",
     "nb": "bahrainsk",
     "zh-Hant": "巴林的",
-    "pt-PT": "barenita"
+    "pt-PT": "barenita",
+    "el": "μπαχρεϊνός",
+    "ca": "bahreïnià",
+    "da": "bahraini",
+    "fi": "bahrainilainen",
+    "sk": "bahrajnský",
+    "hr": "bahreinski"
   },
   "BI": {
     "es": "burundés",
@@ -641,7 +773,13 @@
     "ms": "Burundi",
     "nb": "burundisk",
     "zh-Hant": "布隆迪的",
-    "pt-PT": "burundiano"
+    "pt-PT": "burundiano",
+    "el": "μπουρουντιανός",
+    "ca": "burundès",
+    "da": "burundier",
+    "fi": "burundilainen",
+    "sk": "burundský",
+    "hr": "burundski"
   },
   "BJ": {
     "es": "beninés",
@@ -669,7 +807,13 @@
     "ms": "Benin",
     "nb": "beninsk",
     "zh-Hant": "貝寧的",
-    "pt-PT": "beninense"
+    "pt-PT": "beninense",
+    "el": "μπενινέζος",
+    "ca": "beninès",
+    "da": "beniner",
+    "fi": "beniniläinen",
+    "sk": "beninský",
+    "hr": "beninski"
   },
   "BL": {
     "es": "sanbartolomeño",
@@ -697,7 +841,13 @@
     "ms": "Saint-Barthélemy",
     "nb": "saint-barthélemysk",
     "zh-Hant": "聖巴泰勒米的",
-    "pt-PT": "são-bartolomeense"
+    "pt-PT": "são-bartolomeense",
+    "el": "αγιοβαρθολομαιός",
+    "ca": "bartolomeà",
+    "da": "skt.-barthélemy-borger",
+    "fi": "saint-barthélemylainen",
+    "sk": "svätobartolomejský",
+    "hr": "svetobartolomejski"
   },
   "BM": {
     "es": "bermudeño",
@@ -725,7 +875,13 @@
     "ms": "Bermuda",
     "nb": "bermudisk",
     "zh-Hant": "百慕大的",
-    "pt-PT": "bermudense"
+    "pt-PT": "bermudense",
+    "el": "βερμουδιανός",
+    "ca": "bermudià",
+    "da": "bermudaner",
+    "fi": "bermudalainen",
+    "sk": "bermudský",
+    "hr": "bermudski"
   },
   "BN": {
     "es": "bruneano",
@@ -753,7 +909,13 @@
     "ms": "Brunei",
     "nb": "bruneisk",
     "zh-Hant": "文萊的",
-    "pt-PT": "bruneíno"
+    "pt-PT": "bruneíno",
+    "el": "μπρουνεϊανός",
+    "ca": "bruneià",
+    "da": "bruneier",
+    "fi": "bruneilainen",
+    "sk": "brunejský",
+    "hr": "brunejski"
   },
   "BO": {
     "es": "boliviano",
@@ -781,7 +943,13 @@
     "ms": "Bolivia",
     "nb": "boliviansk",
     "zh-Hant": "玻利維亞的",
-    "pt-PT": "boliviano"
+    "pt-PT": "boliviano",
+    "el": "βολιβιανός",
+    "ca": "bolivià",
+    "da": "bolivianer",
+    "fi": "bolivialainen",
+    "sk": "bolívijský",
+    "hr": "bolivijski"
   },
   "BR": {
     "es": "brasileño",
@@ -809,7 +977,13 @@
     "ms": "Brazil",
     "nb": "brasiliansk",
     "zh-Hant": "巴西的",
-    "pt-PT": "brasileiro"
+    "pt-PT": "brasileiro",
+    "el": "βραζιλιάνος",
+    "ca": "brasiler",
+    "da": "brasilianer",
+    "fi": "brasilialainen",
+    "sk": "brazílsky",
+    "hr": "brazilski"
   },
   "BS": {
     "es": "bahameño",
@@ -837,7 +1011,13 @@
     "ms": "Bahamas",
     "nb": "bahamansk",
     "zh-Hant": "巴哈馬的",
-    "pt-PT": "bahamense"
+    "pt-PT": "bahamense",
+    "el": "μπαχαμιανός",
+    "ca": "bahamès",
+    "da": "bahameser",
+    "fi": "bahamaslainen",
+    "sk": "bahamský",
+    "hr": "bahamski"
   },
   "BT": {
     "es": "butanés",
@@ -865,7 +1045,13 @@
     "ms": "Bhutan",
     "nb": "bhutansk",
     "zh-Hant": "不丹的",
-    "pt-PT": "butanês"
+    "pt-PT": "butanês",
+    "el": "μπουτανέζος",
+    "ca": "butanès",
+    "da": "bhutaner",
+    "fi": "bhutanilainen",
+    "sk": "bhutánsky",
+    "hr": "butanski"
   },
   "BW": {
     "es": "botsuano",
@@ -893,7 +1079,13 @@
     "ms": "Botswana",
     "nb": "botswansk",
     "zh-Hant": "博茨瓦納的",
-    "pt-PT": "botsuanês"
+    "pt-PT": "botsuanês",
+    "el": "μποτσουανός",
+    "ca": "botswanès",
+    "da": "botswaner",
+    "fi": "botswanalainen",
+    "sk": "botswanský",
+    "hr": "bocvanski"
   },
   "BY": {
     "es": "bielorruso",
@@ -921,7 +1113,13 @@
     "ms": "Belarus",
     "nb": "hviterussisk",
     "zh-Hant": "白俄羅斯的",
-    "pt-PT": "bielorrusso"
+    "pt-PT": "bielorrusso",
+    "el": "λευκορώσος",
+    "ca": "bielorús",
+    "da": "hviderusser",
+    "fi": "valkovenäläinen",
+    "sk": "bieloruský",
+    "hr": "bjeloruski"
   },
   "BZ": {
     "es": "beliceño",
@@ -949,7 +1147,13 @@
     "ms": "Belize",
     "nb": "belizisk",
     "zh-Hant": "伯利茲的",
-    "pt-PT": "belizenho"
+    "pt-PT": "belizenho",
+    "el": "μπελιζιανός",
+    "ca": "belizenc",
+    "da": "belizer",
+    "fi": "belizeläinen",
+    "sk": "belizský",
+    "hr": "beliski"
   },
   "CA": {
     "es": "canadiense",
@@ -977,7 +1181,13 @@
     "ms": "Kanada",
     "nb": "kanadisk",
     "zh-Hant": "加拿大的",
-    "pt-PT": "canadiano"
+    "pt-PT": "canadiano",
+    "el": "καναδός",
+    "ca": "canadenc",
+    "da": "canadier",
+    "fi": "kanadalainen",
+    "sk": "kanadský",
+    "hr": "kanadski"
   },
   "CD": {
     "es": "congoleño",
@@ -1005,7 +1215,13 @@
     "ms": "Kongo",
     "nb": "kongolesisk",
     "zh-Hant": "剛果（金）的",
-    "pt-PT": "congolês"
+    "pt-PT": "congolês",
+    "el": "κονγκολέζος",
+    "ca": "congolès",
+    "da": "congoleser",
+    "fi": "kongolainenkinshasa",
+    "sk": "konžský",
+    "hr": "kongoanski"
   },
   "CF": {
     "es": "centroafricano",
@@ -1033,7 +1249,13 @@
     "ms": "Afrika Tengah",
     "nb": "sentralafrikansk",
     "zh-Hant": "中非的",
-    "pt-PT": "centro-africano"
+    "pt-PT": "centro-africano",
+    "el": "κεντροαφρικανός",
+    "ca": "centreafricà",
+    "da": "centralafrikaner",
+    "fi": "keskiafriккalainen",
+    "sk": "stredoafrický",
+    "hr": "srednjoafrički"
   },
   "CG": {
     "es": "congoleño",
@@ -1061,7 +1283,13 @@
     "ms": "Kongo",
     "nb": "kongolesisk",
     "zh-Hant": "剛果（布）的",
-    "pt-PT": "congolês"
+    "pt-PT": "congolês",
+    "el": "κονγκολέζος",
+    "ca": "congolès",
+    "da": "congoleser",
+    "fi": "kongolainenbrazzaville",
+    "sk": "konžský",
+    "hr": "kongoanski"
   },
   "CH": {
     "es": "suizo",
@@ -1089,7 +1317,13 @@
     "ms": "Switzerland",
     "nb": "sveitsisk",
     "zh-Hant": "瑞士的",
-    "pt-PT": "suíço"
+    "pt-PT": "suíço",
+    "el": "ελβετός",
+    "ca": "suís",
+    "da": "schweizer",
+    "fi": "sveitsiläinen",
+    "sk": "švajčiarsky",
+    "hr": "švicarski"
   },
   "CI": {
     "es": "marfileño",
@@ -1117,7 +1351,13 @@
     "ms": "Pantai Gading",
     "nb": "ivoriansk",
     "zh-Hant": "科特迪瓦的",
-    "pt-PT": "marfinense"
+    "pt-PT": "marfinense",
+    "el": "ακτιβοριανός",
+    "ca": "ivorià",
+    "da": "ivorianer",
+    "fi": "norsunluurannikkоlainen",
+    "sk": "pobrežnoivorský",
+    "hr": "bjelokosnoobalni"
   },
   "CK": {
     "es": "cookiano",
@@ -1145,7 +1385,13 @@
     "ms": "Kepulauan Cook",
     "nb": "cookøysk",
     "zh-Hant": "庫克群島的",
-    "pt-PT": "cookiano"
+    "pt-PT": "cookiano",
+    "el": "κουκιανός",
+    "ca": "cookià",
+    "da": "cookøboer",
+    "fi": "cookinsaarelainen",
+    "sk": "cookský",
+    "hr": "cookski"
   },
   "CL": {
     "es": "chileno",
@@ -1173,7 +1419,13 @@
     "ms": "Chile",
     "nb": "chilensk",
     "zh-Hant": "智利的",
-    "pt-PT": "chileno"
+    "pt-PT": "chileno",
+    "el": "χιλιανός",
+    "ca": "xilè",
+    "da": "chilener",
+    "fi": "chileläinen",
+    "sk": "čilský",
+    "hr": "čileanski"
   },
   "CM": {
     "es": "camerunés",
@@ -1201,7 +1453,13 @@
     "ms": "Kamerun",
     "nb": "kamerunsk",
     "zh-Hant": "喀麥隆的",
-    "pt-PT": "camaronês"
+    "pt-PT": "camaronês",
+    "el": "καμερουνέζος",
+    "ca": "camerunès",
+    "da": "kameruner",
+    "fi": "kamerunilainen",
+    "sk": "kamerunský",
+    "hr": "kamerunski"
   },
   "CN": {
     "es": "chino",
@@ -1229,7 +1487,13 @@
     "ms": "China",
     "nb": "kinesisk",
     "zh-Hant": "中國的",
-    "pt-PT": "chinês"
+    "pt-PT": "chinês",
+    "el": "κινέζος",
+    "ca": "xinès",
+    "da": "kineser",
+    "fi": "kiinalainen",
+    "sk": "čínsky",
+    "hr": "kineski"
   },
   "CO": {
     "es": "colombiano",
@@ -1257,7 +1521,13 @@
     "ms": "Colombia",
     "nb": "colombiansk",
     "zh-Hant": "哥倫比亞的",
-    "pt-PT": "colombiano"
+    "pt-PT": "colombiano",
+    "el": "κολομβιανός",
+    "ca": "colombià",
+    "da": "colombianer",
+    "fi": "kolumbialainen",
+    "sk": "kolumbijský",
+    "hr": "kolumbijski"
   },
   "CR": {
     "es": "costarricense",
@@ -1285,7 +1555,13 @@
     "ms": "Costa Rica",
     "nb": "costaricansk",
     "zh-Hant": "哥斯達黎加的",
-    "pt-PT": "costarriquenho"
+    "pt-PT": "costarriquenho",
+    "el": "κοσταρικανός",
+    "ca": "costarriqueny",
+    "da": "costaricaner",
+    "fi": "costaricalainen",
+    "sk": "kostarický",
+    "hr": "kostarikanski"
   },
   "CU": {
     "es": "cubano",
@@ -1313,7 +1589,13 @@
     "ms": "Cuba",
     "nb": "kubansk",
     "zh-Hant": "古巴的",
-    "pt-PT": "cubano"
+    "pt-PT": "cubano",
+    "el": "κουβανός",
+    "ca": "cubà",
+    "da": "cubaner",
+    "fi": "kuubalainen",
+    "sk": "kubánsky",
+    "hr": "kubanski"
   },
   "CV": {
     "es": "caboverdiano",
@@ -1341,7 +1623,13 @@
     "ms": "Tanjung Verde",
     "nb": "kappverdisk",
     "zh-Hant": "佛得角的",
-    "pt-PT": "cabo-verdiano"
+    "pt-PT": "cabo-verdiano",
+    "el": "πρασινοακριτικός",
+    "ca": "capverdià",
+    "da": "capverdier",
+    "fi": "kappverdeniläinen",
+    "sk": "kapverdský",
+    "hr": "kapverdski"
   },
   "CW": {
     "es": "curazaleño",
@@ -1369,7 +1657,13 @@
     "ms": "Curaçao",
     "nb": "curaçaosk",
     "zh-Hant": "庫拉索的",
-    "pt-PT": "curaçauense"
+    "pt-PT": "curaçauense",
+    "el": "κουρασαοανός",
+    "ca": "curassaoleny",
+    "da": "curaçaoaner",
+    "fi": "curaçaolainen",
+    "sk": "curaçaoský",
+    "hr": "kurasaoski"
   },
   "CY": {
     "es": "chipriota",
@@ -1397,7 +1691,13 @@
     "ms": "Cyprus",
     "nb": "kypriotisk",
     "zh-Hant": "塞浦路斯的",
-    "pt-PT": "cipriota"
+    "pt-PT": "cipriota",
+    "el": "κύπριος",
+    "ca": "xipriota",
+    "da": "cypriot",
+    "fi": "kyproslainen",
+    "sk": "cyperský",
+    "hr": "ciparski"
   },
   "CZ": {
     "es": "checo",
@@ -1425,7 +1725,13 @@
     "ms": "Czech",
     "nb": "tsjekkisk",
     "zh-Hant": "捷克的",
-    "pt-PT": "checo"
+    "pt-PT": "checo",
+    "el": "τσέχος",
+    "ca": "txec",
+    "da": "tjekke",
+    "fi": "tšekkiläinen",
+    "sk": "český",
+    "hr": "češki"
   },
   "DE": {
     "es": "alemán",
@@ -1453,7 +1759,13 @@
     "ms": "Jerman",
     "nb": "tysk",
     "zh-Hant": "德國的",
-    "pt-PT": "alemão"
+    "pt-PT": "alemão",
+    "el": "γερμανός",
+    "ca": "alemany",
+    "da": "tysker",
+    "fi": "saksalainen",
+    "sk": "nemecký",
+    "hr": "njemački"
   },
   "DJ": {
     "es": "yibutiano",
@@ -1481,7 +1793,13 @@
     "ms": "Djibouti",
     "nb": "djiboutisk",
     "zh-Hant": "吉布提的",
-    "pt-PT": "jibutiano"
+    "pt-PT": "jibutiano",
+    "el": "τζιμπουτιανός",
+    "ca": "djiboutià",
+    "da": "djiboutianer",
+    "fi": "djiboutilainen",
+    "sk": "džibutský",
+    "hr": "džibutski"
   },
   "DK": {
     "es": "danés",
@@ -1509,7 +1827,13 @@
     "ms": "Denmark",
     "nb": "dansk",
     "zh-Hant": "丹麥的",
-    "pt-PT": "dinamarquês"
+    "pt-PT": "dinamarquês",
+    "el": "δανός",
+    "ca": "danès",
+    "da": "dansker",
+    "fi": "tanskalainen",
+    "sk": "dánsky",
+    "hr": "danski"
   },
   "DM": {
     "es": "dominiqués",
@@ -1537,7 +1861,13 @@
     "ms": "Dominica",
     "nb": "dominicansk",
     "zh-Hant": "多米尼加的",
-    "pt-PT": "dominiquense"
+    "pt-PT": "dominiquense",
+    "el": "δομινικανός",
+    "ca": "dominiquès",
+    "da": "dominicaner",
+    "fi": "dominicalainen",
+    "sk": "dominický",
+    "hr": "dominički"
   },
   "DO": {
     "es": "dominicano",
@@ -1565,7 +1895,13 @@
     "ms": "Republik Dominican",
     "nb": "dominikansk",
     "zh-Hant": "多米尼加共和國的",
-    "pt-PT": "dominicano"
+    "pt-PT": "dominicano",
+    "el": "δομινικανός",
+    "ca": "dominicà",
+    "da": "dominikaner",
+    "fi": "dominikaanilainen",
+    "sk": "dominikánsky",
+    "hr": "dominikanski"
   },
   "DZ": {
     "es": "argelino",
@@ -1593,7 +1929,13 @@
     "ms": "Algeria",
     "nb": "algerisk",
     "zh-Hant": "阿爾及利亞的",
-    "pt-PT": "argelino"
+    "pt-PT": "argelino",
+    "el": "αλγερινός",
+    "ca": "algerià",
+    "da": "algerianer",
+    "fi": "algerialainen",
+    "sk": "alžírsky",
+    "hr": "alžirski"
   },
   "EC": {
     "es": "ecuatoriano",
@@ -1621,7 +1963,13 @@
     "ms": "Ecuador",
     "nb": "ecuadoriansk",
     "zh-Hant": "厄瓜多爾的",
-    "pt-PT": "equatoriano"
+    "pt-PT": "equatoriano",
+    "el": "ισημερινός",
+    "ca": "equatorià",
+    "da": "ecuadorianer",
+    "fi": "ecuadorilainen",
+    "sk": "ekvádorský",
+    "hr": "ekvadorski"
   },
   "EE": {
     "es": "estonio",
@@ -1649,7 +1997,13 @@
     "ms": "Estonia",
     "nb": "estisk",
     "zh-Hant": "愛沙尼亞的",
-    "pt-PT": "estoniano"
+    "pt-PT": "estoniano",
+    "el": "εσθονός",
+    "ca": "estonià",
+    "da": "estlænding",
+    "fi": "virolainen",
+    "sk": "estónsky",
+    "hr": "estonski"
   },
   "EG": {
     "es": "egipcio",
@@ -1677,7 +2031,13 @@
     "ms": "Mesir",
     "nb": "egyptisk",
     "zh-Hant": "埃及的",
-    "pt-PT": "egípcio"
+    "pt-PT": "egípcio",
+    "el": "αιγύπτιος",
+    "ca": "egipci",
+    "da": "ægypter",
+    "fi": "egyptiläinen",
+    "sk": "egyptský",
+    "hr": "egipatski"
   },
   "EH": {
     "es": "saharaui",
@@ -1705,7 +2065,13 @@
     "ms": "Sahara Barat",
     "nb": "vestsaharisk",
     "zh-Hant": "西撒哈拉的",
-    "pt-PT": "saarauí"
+    "pt-PT": "saarauí",
+    "el": "σαχραουιανός",
+    "ca": "sahrauí",
+    "da": "saharaui",
+    "fi": "länsisaharalainen",
+    "sk": "saharský",
+    "hr": "zapadnosaharski"
   },
   "ER": {
     "es": "eritreo",
@@ -1733,7 +2099,13 @@
     "ms": "Eritrea",
     "nb": "eritreisk",
     "zh-Hant": "厄立特里亞的",
-    "pt-PT": "eritreu"
+    "pt-PT": "eritreu",
+    "el": "ερυθραίος",
+    "ca": "eritreu",
+    "da": "eritreer",
+    "fi": "eritrealainen",
+    "sk": "eritrejský",
+    "hr": "eritrejski"
   },
   "ES": {
     "es": "español",
@@ -1761,7 +2133,13 @@
     "ms": "Sepanyol",
     "nb": "spansk",
     "zh-Hant": "西班牙的",
-    "pt-PT": "espanhol"
+    "pt-PT": "espanhol",
+    "el": "ισπανός",
+    "ca": "espanyol",
+    "da": "spanier",
+    "fi": "espanjalainen",
+    "sk": "španielsky",
+    "hr": "španjolski"
   },
   "ET": {
     "es": "etíope",
@@ -1789,7 +2167,13 @@
     "ms": "Ethiopia",
     "nb": "etiopisk",
     "zh-Hant": "埃塞俄比亞的",
-    "pt-PT": "etíope"
+    "pt-PT": "etíope",
+    "el": "αιθίοπας",
+    "ca": "etiop",
+    "da": "etiopier",
+    "fi": "etiopialainen",
+    "sk": "etiópsky",
+    "hr": "etiopski"
   },
   "FI": {
     "es": "finlandés",
@@ -1817,7 +2201,13 @@
     "ms": "Finland",
     "nb": "finsk",
     "zh-Hant": "芬蘭的",
-    "pt-PT": "finlandês"
+    "pt-PT": "finlandês",
+    "el": "φινλανδός",
+    "ca": "finlandès",
+    "da": "finne",
+    "fi": "suomalainen",
+    "sk": "fínsky",
+    "hr": "finski"
   },
   "FJ": {
     "es": "fiyiano",
@@ -1845,7 +2235,13 @@
     "ms": "Fiji",
     "nb": "fijiansk",
     "zh-Hant": "斐濟的",
-    "pt-PT": "fijiano"
+    "pt-PT": "fijiano",
+    "el": "φιτζιανός",
+    "ca": "fijià",
+    "da": "fijianer",
+    "fi": "fidžiläinen",
+    "sk": "fidžijský",
+    "hr": "fidžijski"
   },
   "FK": {
     "es": "malvinense",
@@ -1873,7 +2269,13 @@
     "ms": "Kepulauan Falkland",
     "nb": "falklandsk",
     "zh-Hant": "福克蘭群島的",
-    "pt-PT": "malvinense"
+    "pt-PT": "malvinense",
+    "el": "φαλκλανδικός",
+    "ca": "malvinès",
+    "da": "falklandsk",
+    "fi": "falklandinsaarelainen",
+    "sk": "falklandský",
+    "hr": "falklandski"
   },
   "FM": {
     "es": "micronesio",
@@ -1901,7 +2303,13 @@
     "ms": "Micronesia",
     "nb": "mikronesisk",
     "zh-Hant": "密克羅尼西亞的",
-    "pt-PT": "micronésio"
+    "pt-PT": "micronésio",
+    "el": "μικρονήσιος",
+    "ca": "micronesià",
+    "da": "mikronesier",
+    "fi": "mikronesialainen",
+    "sk": "mikronézsky",
+    "hr": "mikronezijski"
   },
   "FO": {
     "es": "feroés",
@@ -1929,7 +2337,13 @@
     "ms": "Kepulauan Faroe",
     "nb": "færøysk",
     "zh-Hant": "法羅群島的",
-    "pt-PT": "feroense"
+    "pt-PT": "feroense",
+    "el": "φεροεσιανός",
+    "ca": "feroès",
+    "da": "færing",
+    "fi": "färsaarelainen",
+    "sk": "faerský",
+    "hr": "ferojski"
   },
   "FR": {
     "es": "francés",
@@ -1957,7 +2371,13 @@
     "ms": "Perancis",
     "nb": "fransk",
     "zh-Hant": "法國的",
-    "pt-PT": "francês"
+    "pt-PT": "francês",
+    "el": "γάλλος",
+    "ca": "francès",
+    "da": "franskmand",
+    "fi": "ranskalainen",
+    "sk": "francúzsky",
+    "hr": "francuski"
   },
   "GA": {
     "es": "gabonés",
@@ -1985,7 +2405,13 @@
     "ms": "Gabon",
     "nb": "gabonsk",
     "zh-Hant": "加蓬的",
-    "pt-PT": "gabonês"
+    "pt-PT": "gabonês",
+    "el": "γκαμπονέζος",
+    "ca": "gabonès",
+    "da": "gabonesisk",
+    "fi": "gabonilainen",
+    "sk": "gabonský",
+    "hr": "gabonski"
   },
   "GB": {
     "es": "británico",
@@ -2013,7 +2439,13 @@
     "ms": "British",
     "nb": "britisk",
     "zh-Hant": "英國的",
-    "pt-PT": "britânico"
+    "pt-PT": "britânico",
+    "el": "βρετανός",
+    "ca": "britànic",
+    "da": "brite",
+    "fi": "brittiläinen",
+    "sk": "britský",
+    "hr": "britanski"
   },
   "GD": {
     "es": "granadino",
@@ -2041,7 +2473,13 @@
     "ms": "Grenada",
     "nb": "grenadisk",
     "zh-Hant": "格林納達的",
-    "pt-PT": "granadino"
+    "pt-PT": "granadino",
+    "el": "γρεναδινός",
+    "ca": "granadí",
+    "da": "grenader",
+    "fi": "grenadalainen",
+    "sk": "grenadský",
+    "hr": "grenadski"
   },
   "GE": {
     "es": "georgiano",
@@ -2069,7 +2507,13 @@
     "ms": "Georgia",
     "nb": "georgisk",
     "zh-Hant": "格魯吉亞的",
-    "pt-PT": "georgiano"
+    "pt-PT": "georgiano",
+    "el": "γεωργιανός",
+    "ca": "georgià",
+    "da": "georgier",
+    "fi": "georgialainen",
+    "sk": "gruzínsky",
+    "hr": "gruzijski"
   },
   "GF": {
     "es": "guayanés",
@@ -2097,7 +2541,13 @@
     "ms": "Guiana Perancis",
     "nb": "franskguyanansk",
     "zh-Hant": "法屬圭亞那的",
-    "pt-PT": "guianense"
+    "pt-PT": "guianense",
+    "el": "γαλλογουιανός",
+    "ca": "guaianès",
+    "da": "fransk guyanesisk",
+    "fi": "ranskanaguayalainen",
+    "sk": "francúzskogujanský",
+    "hr": "francuskoguajanski"
   },
   "GG": {
     "es": "guernesiano",
@@ -2125,7 +2575,13 @@
     "ms": "Guernsey",
     "nb": "guernseysk",
     "zh-Hant": "根西島的",
-    "pt-PT": "guernesiano"
+    "pt-PT": "guernesiano",
+    "el": "γκέρνσεϊος",
+    "ca": "guernesià",
+    "da": "guernseyboer",
+    "fi": "guernseyläinen",
+    "sk": "guernseyský",
+    "hr": "gernzijski"
   },
   "GH": {
     "es": "ghanés",
@@ -2153,7 +2609,13 @@
     "ms": "Ghana",
     "nb": "ghanansk",
     "zh-Hant": "加納的",
-    "pt-PT": "ganense"
+    "pt-PT": "ganense",
+    "el": "γκανέζος",
+    "ca": "ghanès",
+    "da": "ghaneser",
+    "fi": "ghanalainen",
+    "sk": "ghanský",
+    "hr": "ganski"
   },
   "GL": {
     "es": "groenlandés",
@@ -2181,7 +2643,13 @@
     "ms": "Greenland",
     "nb": "grønlandsk",
     "zh-Hant": "格陵蘭的",
-    "pt-PT": "groenlandês"
+    "pt-PT": "groenlandês",
+    "el": "γροιλανδός",
+    "ca": "groenlandès",
+    "da": "grønlænder",
+    "fi": "grönlantilainen",
+    "sk": "grónsky",
+    "hr": "grenlandski"
   },
   "GM": {
     "es": "gambiano",
@@ -2209,7 +2677,13 @@
     "ms": "Gambia",
     "nb": "gambisk",
     "zh-Hant": "岡比亞的",
-    "pt-PT": "gambiano"
+    "pt-PT": "gambiano",
+    "el": "γκαμπιανός",
+    "ca": "gambià",
+    "da": "gambier",
+    "fi": "gambialainen",
+    "sk": "gambijský",
+    "hr": "gambijski"
   },
   "GN": {
     "es": "guineano",
@@ -2237,7 +2711,13 @@
     "ms": "Guinea",
     "nb": "guineansk",
     "zh-Hant": "幾內亞的",
-    "pt-PT": "guineano"
+    "pt-PT": "guineano",
+    "el": "γουινεάτης",
+    "ca": "guineà",
+    "da": "guineaner",
+    "fi": "guinealainen",
+    "sk": "guinejský",
+    "hr": "gvinejski"
   },
   "GP": {
     "es": "guadalupeño",
@@ -2265,7 +2745,13 @@
     "ms": "Guadeloupe",
     "nb": "guadeloupisk",
     "zh-Hant": "瓜德羅普的",
-    "pt-PT": "guadalupense"
+    "pt-PT": "guadalupense",
+    "el": "γουαδελουπιανός",
+    "ca": "guadalupeny",
+    "da": "guadeloupeaner",
+    "fi": "guadeloupelainen",
+    "sk": "guadelupský",
+    "hr": "gvadelupski"
   },
   "GQ": {
     "es": "ecuatoguineano",
@@ -2293,7 +2779,13 @@
     "ms": "Guinea Khatulistiwa",
     "nb": "ekvatorialguineansk",
     "zh-Hant": "赤道幾內亞的",
-    "pt-PT": "equato-guineense"
+    "pt-PT": "equato-guineense",
+    "el": "ισημερινογουινεάτης",
+    "ca": "equatoguineà",
+    "da": "ækvatorialguineaner",
+    "fi": "päiväntasaajanguinealainen",
+    "sk": "rovníkovogujnejský",
+    "hr": "ekvatorijalnogvinejski"
   },
   "GR": {
     "es": "griego",
@@ -2321,7 +2813,13 @@
     "ms": "Yunani",
     "nb": "gresk",
     "zh-Hant": "希臘的",
-    "pt-PT": "grego"
+    "pt-PT": "grego",
+    "el": "έλληνας",
+    "ca": "grec",
+    "da": "græker",
+    "fi": "kreikkalainen",
+    "sk": "grécky",
+    "hr": "grčki"
   },
   "GT": {
     "es": "guatemalteco",
@@ -2349,7 +2847,13 @@
     "ms": "Guatemala",
     "nb": "guatemalansk",
     "zh-Hant": "危地馬拉的",
-    "pt-PT": "guatemalteco"
+    "pt-PT": "guatemalteco",
+    "el": "γουατεμαλτέκος",
+    "ca": "guatemalenc",
+    "da": "guatemalaner",
+    "fi": "guatemalalainen",
+    "sk": "guatemalský",
+    "hr": "gvatemalski"
   },
   "GU": {
     "es": "guameño",
@@ -2377,7 +2881,13 @@
     "ms": "Guam",
     "nb": "guamsk",
     "zh-Hant": "關島的",
-    "pt-PT": "guamense"
+    "pt-PT": "guamense",
+    "el": "γκουαμιανός",
+    "ca": "guamanià",
+    "da": "guamaner",
+    "fi": "guamilainen",
+    "sk": "guamský",
+    "hr": "guamski"
   },
   "GW": {
     "es": "guineano-bisauense",
@@ -2405,7 +2915,13 @@
     "ms": "Guinea-Bissau",
     "nb": "guinea-bissausk",
     "zh-Hant": "幾內亞比紹的",
-    "pt-PT": "guineense"
+    "pt-PT": "guineense",
+    "el": "γουινεοβισσαουανός",
+    "ca": "guineabissauenc",
+    "da": "guinea-bissauer",
+    "fi": "guinea-bissaulainen",
+    "sk": "guinejskobissauský",
+    "hr": "gvinejskobisavski"
   },
   "GY": {
     "es": "guyanés",
@@ -2433,7 +2949,13 @@
     "ms": "Guyana",
     "nb": "guyansk",
     "zh-Hant": "圭亞那的",
-    "pt-PT": "guianense"
+    "pt-PT": "guianense",
+    "el": "γουιανός",
+    "ca": "guaianès",
+    "da": "guyaneser",
+    "fi": "guyananalainen",
+    "sk": "gujanský",
+    "hr": "gvajanski"
   },
   "HK": {
     "es": "hongkonés",
@@ -2461,7 +2983,13 @@
     "ms": "Hong Kong",
     "nb": "hongkongsk",
     "zh-Hant": "香港的",
-    "pt-PT": "honconguês"
+    "pt-PT": "honconguês",
+    "el": "χονγκκονγκέζος",
+    "ca": "hongkonguès",
+    "da": "hongkongenser",
+    "fi": "hongkongilainen",
+    "sk": "hongkonský",
+    "hr": "hongkonški"
   },
   "HN": {
     "es": "hondureño",
@@ -2489,7 +3017,13 @@
     "ms": "Honduras",
     "nb": "honduransk",
     "zh-Hant": "洪都拉斯的",
-    "pt-PT": "hondurenho"
+    "pt-PT": "hondurenho",
+    "el": "ονδουρέζος",
+    "ca": "hondureny",
+    "da": "honduraner",
+    "fi": "honduraslainen",
+    "sk": "honduraský",
+    "hr": "honduraški"
   },
   "HR": {
     "es": "croata",
@@ -2517,7 +3051,13 @@
     "ms": "Croatia",
     "nb": "kroatisk",
     "zh-Hant": "克羅地亞的",
-    "pt-PT": "croata"
+    "pt-PT": "croata",
+    "el": "κροάτης",
+    "ca": "croat",
+    "da": "kroat",
+    "fi": "kroatialainen",
+    "sk": "chorvátsky",
+    "hr": "hrvatski"
   },
   "HT": {
     "es": "haitiano",
@@ -2545,7 +3085,13 @@
     "ms": "Haiti",
     "nb": "haitisk",
     "zh-Hant": "海地的",
-    "pt-PT": "haitiano"
+    "pt-PT": "haitiano",
+    "el": "αϊτινός",
+    "ca": "haitià",
+    "da": "haitianer",
+    "fi": "haitilainen",
+    "sk": "haitský",
+    "hr": "haićanski"
   },
   "HU": {
     "es": "húngaro",
@@ -2573,7 +3119,13 @@
     "ms": "Hungary",
     "nb": "ungarsk",
     "zh-Hant": "匈牙利的",
-    "pt-PT": "húngaro"
+    "pt-PT": "húngaro",
+    "el": "ούγγρος",
+    "ca": "hongarès",
+    "da": "ungarer",
+    "fi": "unkarilainen",
+    "sk": "maďarský",
+    "hr": "mađarski"
   },
   "ID": {
     "es": "indonesio",
@@ -2601,7 +3153,13 @@
     "ms": "Indonesia",
     "nb": "indonesisk",
     "zh-Hant": "印度尼西亞的",
-    "pt-PT": "indonésio"
+    "pt-PT": "indonésio",
+    "el": "ινδονήσιος",
+    "ca": "indonesi",
+    "da": "indonesier",
+    "fi": "indonesialainen",
+    "sk": "indonézsky",
+    "hr": "indonezijski"
   },
   "IE": {
     "es": "irlandés",
@@ -2629,7 +3187,13 @@
     "ms": "Ireland",
     "nb": "irsk",
     "zh-Hant": "愛爾蘭的",
-    "pt-PT": "irlandês"
+    "pt-PT": "irlandês",
+    "el": "ιρλανδός",
+    "ca": "irlandès",
+    "da": "irer",
+    "fi": "irlantilainen",
+    "sk": "írsky",
+    "hr": "irski"
   },
   "IL": {
     "es": "israelí",
@@ -2657,7 +3221,13 @@
     "ms": "Israel",
     "nb": "israelsk",
     "zh-Hant": "以色列的",
-    "pt-PT": "israelita"
+    "pt-PT": "israelita",
+    "el": "ισραηλινός",
+    "ca": "israelià",
+    "da": "israelisk",
+    "fi": "israelilainen",
+    "sk": "izraelský",
+    "hr": "izraelski"
   },
   "IM": {
     "es": "manés",
@@ -2685,7 +3255,13 @@
     "ms": "Isle of Man",
     "nb": "mansk",
     "zh-Hant": "馬恩島的",
-    "pt-PT": "manês"
+    "pt-PT": "manês",
+    "el": "μανξ",
+    "ca": "manès",
+    "da": "manxboer",
+    "fi": "mansaarelainen",
+    "sk": "mannský",
+    "hr": "manski"
   },
   "IN": {
     "es": "indio",
@@ -2713,7 +3289,13 @@
     "ms": "India",
     "nb": "indisk",
     "zh-Hant": "印度的",
-    "pt-PT": "indiano"
+    "pt-PT": "indiano",
+    "el": "ινδός",
+    "ca": "indi",
+    "da": "inder",
+    "fi": "intialainen",
+    "sk": "indický",
+    "hr": "indijski"
   },
   "IQ": {
     "es": "iraquí",
@@ -2741,7 +3323,13 @@
     "ms": "Iraq",
     "nb": "irakisk",
     "zh-Hant": "伊拉克的",
-    "pt-PT": "iraquiano"
+    "pt-PT": "iraquiano",
+    "el": "ιρακινός",
+    "ca": "iraquià",
+    "da": "iraker",
+    "fi": "irakilainen",
+    "sk": "iracký",
+    "hr": "irački"
   },
   "IR": {
     "es": "iraní",
@@ -2769,7 +3357,13 @@
     "ms": "Iran",
     "nb": "iransk",
     "zh-Hant": "伊朗的",
-    "pt-PT": "iraniano"
+    "pt-PT": "iraniano",
+    "el": "ιρανός",
+    "ca": "iranià",
+    "da": "iraner",
+    "fi": "iranilainen",
+    "sk": "iránsky",
+    "hr": "iranski"
   },
   "IS": {
     "es": "islandés",
@@ -2797,7 +3391,13 @@
     "ms": "Iceland",
     "nb": "islandsk",
     "zh-Hant": "冰島的",
-    "pt-PT": "islandês"
+    "pt-PT": "islandês",
+    "el": "ισλανδός",
+    "ca": "islandès",
+    "da": "islænding",
+    "fi": "islantilainen",
+    "sk": "islandský",
+    "hr": "islandski"
   },
   "IT": {
     "es": "italiano",
@@ -2825,7 +3425,13 @@
     "ms": "Itali",
     "nb": "italiensk",
     "zh-Hant": "意大利的",
-    "pt-PT": "italiano"
+    "pt-PT": "italiano",
+    "el": "ιταλός",
+    "ca": "italià",
+    "da": "italiener",
+    "fi": "italialainen",
+    "sk": "taliansky",
+    "hr": "talijanski"
   },
   "JE": {
     "es": "jerseyano",
@@ -2853,7 +3459,13 @@
     "ms": "Jersey",
     "nb": "jerseysk",
     "zh-Hant": "澤西島的",
-    "pt-PT": "jerseyano"
+    "pt-PT": "jerseyano",
+    "el": "τζέρσεϊος",
+    "ca": "jerseyà",
+    "da": "jerseyboer",
+    "fi": "jerseyläinen",
+    "sk": "jerseyský",
+    "hr": "džersijski"
   },
   "JM": {
     "es": "jamaicano",
@@ -2881,7 +3493,13 @@
     "ms": "Jamaica",
     "nb": "jamaicansk",
     "zh-Hant": "牙買加的",
-    "pt-PT": "jamaicano"
+    "pt-PT": "jamaicano",
+    "el": "τζαμαϊκανός",
+    "ca": "jamaicà",
+    "da": "jamaicaner",
+    "fi": "jamaikalainen",
+    "sk": "jamajský",
+    "hr": "jamajčanski"
   },
   "JO": {
     "es": "jordano",
@@ -2909,7 +3527,13 @@
     "ms": "Jordan",
     "nb": "jordansk",
     "zh-Hant": "約旦的",
-    "pt-PT": "jordaniano"
+    "pt-PT": "jordaniano",
+    "el": "ιορδανός",
+    "ca": "jordanià",
+    "da": "jordaner",
+    "fi": "jordanialainen",
+    "sk": "jordánsky",
+    "hr": "jordanski"
   },
   "JP": {
     "es": "japonés",
@@ -2937,7 +3561,13 @@
     "ms": "Jepun",
     "nb": "japansk",
     "zh-Hant": "日本的",
-    "pt-PT": "japonês"
+    "pt-PT": "japonês",
+    "el": "ιάπωνας",
+    "ca": "japonès",
+    "da": "japaner",
+    "fi": "japanilainen",
+    "sk": "japonský",
+    "hr": "japanski"
   },
   "KE": {
     "es": "keniano",
@@ -2965,7 +3595,13 @@
     "ms": "Kenya",
     "nb": "kenyansk",
     "zh-Hant": "肯尼亞的",
-    "pt-PT": "queniano"
+    "pt-PT": "queniano",
+    "el": "κενυάτης",
+    "ca": "kenià",
+    "da": "kenyaner",
+    "fi": "kenyalainen",
+    "sk": "kenský",
+    "hr": "kenijski"
   },
   "KG": {
     "es": "kirguís",
@@ -2993,7 +3629,13 @@
     "ms": "Kyrgyzstan",
     "nb": "kirgisisk",
     "zh-Hant": "吉爾吉斯斯坦的",
-    "pt-PT": "quirguiz"
+    "pt-PT": "quirguiz",
+    "el": "κιργίζιος",
+    "ca": "kirguís",
+    "da": "kirgiser",
+    "fi": "kirgisialainen",
+    "sk": "kirgizský",
+    "hr": "kirgiski"
   },
   "KH": {
     "es": "camboyano",
@@ -3021,7 +3663,13 @@
     "ms": "Kemboja",
     "nb": "kambodjansk",
     "zh-Hant": "柬埔寨的",
-    "pt-PT": "cambojano"
+    "pt-PT": "cambojano",
+    "el": "καμποτζιανός",
+    "ca": "cambodjà",
+    "da": "cambodjaner",
+    "fi": "kambodžalainen",
+    "sk": "kambodžský",
+    "hr": "kambodžanski"
   },
   "KI": {
     "es": "kiribatiano",
@@ -3049,7 +3697,13 @@
     "ms": "Kiribati",
     "nb": "kiribatisk",
     "zh-Hant": "基里巴斯的",
-    "pt-PT": "kiribatiano"
+    "pt-PT": "kiribatiano",
+    "el": "κιριμπατιανός",
+    "ca": "kiribatià",
+    "da": "kiribatianer",
+    "fi": "kiribatilainen",
+    "sk": "kiribatský",
+    "hr": "kiribatski"
   },
   "KM": {
     "es": "comorense",
@@ -3077,7 +3731,13 @@
     "ms": "Comoros",
     "nb": "komorisk",
     "zh-Hant": "科摩羅的",
-    "pt-PT": "comorense"
+    "pt-PT": "comorense",
+    "el": "κομοριανός",
+    "ca": "comorià",
+    "da": "comorisk",
+    "fi": "komoralainen",
+    "sk": "komorský",
+    "hr": "komorski"
   },
   "KN": {
     "es": "sancrístobaleño",
@@ -3105,7 +3765,13 @@
     "ms": "Saint Kitts dan Nevis",
     "nb": "kittitisk",
     "zh-Hant": "聖基茨和尼維斯的",
-    "pt-PT": "são-cristovense"
+    "pt-PT": "são-cristovense",
+    "el": "αγιοχριστοφορίτης",
+    "ca": "kittità",
+    "da": "kittiter",
+    "fi": "saint-kittsläinen",
+    "sk": "svätokristofský",
+    "hr": "svetokristofski"
   },
   "KP": {
     "es": "norcoreano",
@@ -3133,7 +3799,13 @@
     "ms": "Korea Utara",
     "nb": "nordkoreansk",
     "zh-Hant": "朝鮮的",
-    "pt-PT": "norte-coreano"
+    "pt-PT": "norte-coreano",
+    "el": "βορειοκορεάτης",
+    "ca": "nordcoreà",
+    "da": "nordkoreaner",
+    "fi": "pohjoiskoреalainen",
+    "sk": "severokórejský",
+    "hr": "sjevernokorejski"
   },
   "KR": {
     "es": "surcoreano",
@@ -3161,7 +3833,13 @@
     "ms": "Korea Selatan",
     "nb": "sørkoreansk",
     "zh-Hant": "韓國的",
-    "pt-PT": "sul-coreano"
+    "pt-PT": "sul-coreano",
+    "el": "νοτιοκορεάτης",
+    "ca": "sudcoreà",
+    "da": "sydkoreaner",
+    "fi": "eteläkorealainen",
+    "sk": "juhokórejský",
+    "hr": "južnokorejski"
   },
   "KW": {
     "es": "kuwaití",
@@ -3189,7 +3867,13 @@
     "ms": "Kuwait",
     "nb": "kuwaitisk",
     "zh-Hant": "科威特的",
-    "pt-PT": "kuwaitiano"
+    "pt-PT": "kuwaitiano",
+    "el": "κουβεϊτιανός",
+    "ca": "kuwaitià",
+    "da": "kuwaiter",
+    "fi": "kuwaitilainen",
+    "sk": "kuvajtský",
+    "hr": "kuvajtski"
   },
   "KY": {
     "es": "caimanés",
@@ -3217,7 +3901,13 @@
     "ms": "Kepulauan Cayman",
     "nb": "caymanøysk",
     "zh-Hant": "開曼群島的",
-    "pt-PT": "caimanense"
+    "pt-PT": "caimanense",
+    "el": "κέιμανικός",
+    "ca": "caimanenc",
+    "da": "caymanboer",
+    "fi": "caymansaarelainen",
+    "sk": "kajmanský",
+    "hr": "kajmanski"
   },
   "KZ": {
     "es": "kazajo",
@@ -3245,7 +3935,13 @@
     "ms": "Kazakhstan",
     "nb": "kasakhisk",
     "zh-Hant": "哈薩克斯坦的",
-    "pt-PT": "cazaque"
+    "pt-PT": "cazaque",
+    "el": "καζάχος",
+    "ca": "kazakh",
+    "da": "kasakh",
+    "fi": "kazakstanilainen",
+    "sk": "kazašský",
+    "hr": "kazahstanski"
   },
   "LA": {
     "es": "laosiano",
@@ -3273,7 +3969,13 @@
     "ms": "Laos",
     "nb": "laotisk",
     "zh-Hant": "老撾的",
-    "pt-PT": "laosiano"
+    "pt-PT": "laosiano",
+    "el": "λαοτιανός",
+    "ca": "laosià",
+    "da": "laotianer",
+    "fi": "laosilainen",
+    "sk": "laoský",
+    "hr": "laoski"
   },
   "LB": {
     "es": "libanés",
@@ -3301,7 +4003,13 @@
     "ms": "Lubnan",
     "nb": "libanesisk",
     "zh-Hant": "黎巴嫩的",
-    "pt-PT": "libanês"
+    "pt-PT": "libanês",
+    "el": "λιβανέζος",
+    "ca": "libanès",
+    "da": "libaneser",
+    "fi": "libanonilainen",
+    "sk": "libanonský",
+    "hr": "libanonski"
   },
   "LC": {
     "es": "santalucense",
@@ -3329,7 +4037,13 @@
     "ms": "Saint Lucia",
     "nb": "santaluciansk",
     "zh-Hant": "聖盧西亞的",
-    "pt-PT": "santa-lucense"
+    "pt-PT": "santa-lucense",
+    "el": "αγιολουκιανός",
+    "ca": "santallucenc",
+    "da": "saint-lucianer",
+    "fi": "saint-lucialainen",
+    "sk": "svätolucijský",
+    "hr": "svetolucijski"
   },
   "LI": {
     "es": "liechtensteiniano",
@@ -3357,7 +4071,13 @@
     "ms": "Liechtenstein",
     "nb": "liechtensteinsk",
     "zh-Hant": "列支敦士登的",
-    "pt-PT": "liechtensteinense"
+    "pt-PT": "liechtensteinense",
+    "el": "λιχτενστάινιος",
+    "ca": "liechtensteinià",
+    "da": "liechtensteiner",
+    "fi": "liechtensteinläinen",
+    "sk": "lichtenštajnský",
+    "hr": "lihtenštajnski"
   },
   "LK": {
     "es": "ceilanés",
@@ -3385,7 +4105,13 @@
     "ms": "Sri Lanka",
     "nb": "srilankisk",
     "zh-Hant": "斯里蘭卡的",
-    "pt-PT": "cingalês"
+    "pt-PT": "cingalês",
+    "el": "σριλανκέζος",
+    "ca": "singalès",
+    "da": "sri-lanker",
+    "fi": "srilanкalainen",
+    "sk": "srílanský",
+    "hr": "šrilančanski"
   },
   "LR": {
     "es": "liberiano",
@@ -3413,7 +4139,13 @@
     "ms": "Liberia",
     "nb": "liberiansk",
     "zh-Hant": "利比里亞的",
-    "pt-PT": "liberiano"
+    "pt-PT": "liberiano",
+    "el": "λιβεριανός",
+    "ca": "liberià",
+    "da": "liberianer",
+    "fi": "liberialainen",
+    "sk": "libérijský",
+    "hr": "liberijski"
   },
   "LS": {
     "es": "lesotense",
@@ -3441,7 +4173,13 @@
     "ms": "Lesotho",
     "nb": "lesothisk",
     "zh-Hant": "萊索托的",
-    "pt-PT": "lesotiano"
+    "pt-PT": "lesotiano",
+    "el": "λεσοθιανός",
+    "ca": "lesotenc",
+    "da": "lesothaner",
+    "fi": "lesotholainen",
+    "sk": "lesotský",
+    "hr": "lesotski"
   },
   "LT": {
     "es": "lituano",
@@ -3469,7 +4207,13 @@
     "ms": "Lithuania",
     "nb": "litauisk",
     "zh-Hant": "立陶宛的",
-    "pt-PT": "lituano"
+    "pt-PT": "lituano",
+    "el": "λιθουανός",
+    "ca": "lituà",
+    "da": "litauer",
+    "fi": "liettualainen",
+    "sk": "litovský",
+    "hr": "litvanski"
   },
   "LU": {
     "es": "luxemburgués",
@@ -3497,7 +4241,13 @@
     "ms": "Luxembourg",
     "nb": "luxemburgsk",
     "zh-Hant": "盧森堡的",
-    "pt-PT": "luxemburguês"
+    "pt-PT": "luxemburguês",
+    "el": "λουξεμβουργιανός",
+    "ca": "luxemburguès",
+    "da": "luxembourger",
+    "fi": "luxemburgilainen",
+    "sk": "luxemburský",
+    "hr": "luksemburški"
   },
   "LV": {
     "es": "letón",
@@ -3525,7 +4275,13 @@
     "ms": "Latvia",
     "nb": "latvisk",
     "zh-Hant": "拉脫維亞的",
-    "pt-PT": "letão"
+    "pt-PT": "letão",
+    "el": "λετονός",
+    "ca": "letó",
+    "da": "letter",
+    "fi": "latvialainen",
+    "sk": "lotyšský",
+    "hr": "latvijski"
   },
   "LY": {
     "es": "libio",
@@ -3553,7 +4309,13 @@
     "ms": "Libya",
     "nb": "libysk",
     "zh-Hant": "利比亞的",
-    "pt-PT": "líbio"
+    "pt-PT": "líbio",
+    "el": "λίβυος",
+    "ca": "libi",
+    "da": "libyer",
+    "fi": "libyalainen",
+    "sk": "líbyjský",
+    "hr": "libijski"
   },
   "MA": {
     "es": "marroquí",
@@ -3581,7 +4343,13 @@
     "ms": "Maghribi",
     "nb": "marokkansk",
     "zh-Hant": "摩洛哥的",
-    "pt-PT": "marroquino"
+    "pt-PT": "marroquino",
+    "el": "μαροκινός",
+    "ca": "marroquí",
+    "da": "marokkaner",
+    "fi": "marokkolainen",
+    "sk": "marocký",
+    "hr": "marokanski"
   },
   "MC": {
     "es": "monegasco",
@@ -3609,7 +4377,13 @@
     "ms": "Monaco",
     "nb": "monegaskisk",
     "zh-Hant": "摩納哥的",
-    "pt-PT": "monegasco"
+    "pt-PT": "monegasco",
+    "el": "μονεγάσκος",
+    "ca": "monegasc",
+    "da": "monegasker",
+    "fi": "monacоlainen",
+    "sk": "monacký",
+    "hr": "monegaški"
   },
   "MD": {
     "es": "moldavo",
@@ -3637,7 +4411,13 @@
     "ms": "Moldova",
     "nb": "moldovsk",
     "zh-Hant": "摩爾多瓦的",
-    "pt-PT": "moldavo"
+    "pt-PT": "moldavo",
+    "el": "μολδαβός",
+    "ca": "moldau",
+    "da": "moldover",
+    "fi": "moldovalainen",
+    "sk": "moldavský",
+    "hr": "moldavski"
   },
   "ME": {
     "es": "montenegrino",
@@ -3665,7 +4445,13 @@
     "ms": "Montenegro",
     "nb": "montenegrinsk",
     "zh-Hant": "黑山的",
-    "pt-PT": "montenegrino"
+    "pt-PT": "montenegrino",
+    "el": "μαυροβούνιος",
+    "ca": "montenegrí",
+    "da": "montenegriner",
+    "fi": "montenegrolainen",
+    "sk": "čiernohorský",
+    "hr": "crnogorski"
   },
   "MF": {
     "es": "sanmartinense",
@@ -3693,7 +4479,13 @@
     "ms": "Saint-Martin",
     "nb": "saint-martinsk",
     "zh-Hant": "聖馬丁的",
-    "pt-PT": "são-martinhense"
+    "pt-PT": "são-martinhense",
+    "el": "αγιομαρτινιανός",
+    "ca": "santmartinenc",
+    "da": "saint-martinboer",
+    "fi": "saint-martinlainen",
+    "sk": "svätomartinský",
+    "hr": "svetomartinski"
   },
   "MG": {
     "es": "malgache",
@@ -3721,7 +4513,13 @@
     "ms": "Madagaskar",
     "nb": "madagassisk",
     "zh-Hant": "馬達加斯加的",
-    "pt-PT": "malgaxe"
+    "pt-PT": "malgaxe",
+    "el": "μαλγάσιος",
+    "ca": "malgaix",
+    "da": "madagassisk",
+    "fi": "madagaskarilainen",
+    "sk": "madagaskarský",
+    "hr": "madagaskarski"
   },
   "MH": {
     "es": "marshalés",
@@ -3749,7 +4547,13 @@
     "ms": "Kepulauan Marshall",
     "nb": "marshallsk",
     "zh-Hant": "馬紹爾群島的",
-    "pt-PT": "marshalês"
+    "pt-PT": "marshalês",
+    "el": "μαρσαλέζος",
+    "ca": "marshallès",
+    "da": "marshalløboer",
+    "fi": "marshallinsaarelainen",
+    "sk": "marshallský",
+    "hr": "maršalski"
   },
   "MK": {
     "es": "macedonio",
@@ -3777,7 +4581,13 @@
     "ms": "Macedonia Utara",
     "nb": "nordmakedonsk",
     "zh-Hant": "北馬其頓的",
-    "pt-PT": "macedónio"
+    "pt-PT": "macedónio",
+    "el": "μακεδόνας",
+    "ca": "macedoni",
+    "da": "macedonier",
+    "fi": "makedonialainen",
+    "sk": "macedónsky",
+    "hr": "makedonski"
   },
   "ML": {
     "es": "maliense",
@@ -3805,7 +4615,13 @@
     "ms": "Mali",
     "nb": "malisk",
     "zh-Hant": "馬里的",
-    "pt-PT": "malinês"
+    "pt-PT": "malinês",
+    "el": "μαλιανός",
+    "ca": "malià",
+    "da": "malier",
+    "fi": "malilainen",
+    "sk": "malský",
+    "hr": "malijski"
   },
   "MM": {
     "es": "birmano",
@@ -3833,7 +4649,13 @@
     "ms": "Myanmar",
     "nb": "myanmarsk",
     "zh-Hant": "緬甸的",
-    "pt-PT": "birmanês"
+    "pt-PT": "birmanês",
+    "el": "βιρμανός",
+    "ca": "birmà",
+    "da": "burmeser",
+    "fi": "myanmarilainen",
+    "sk": "mjanmarský",
+    "hr": "mjanmarski"
   },
   "MN": {
     "es": "mongol",
@@ -3861,7 +4683,13 @@
     "ms": "Mongolia",
     "nb": "mongolsk",
     "zh-Hant": "蒙古的",
-    "pt-PT": "mongol"
+    "pt-PT": "mongol",
+    "el": "μογγόλος",
+    "ca": "mongol",
+    "da": "mongol",
+    "fi": "mongolialainen",
+    "sk": "mongolský",
+    "hr": "mongolski"
   },
   "MO": {
     "es": "macaense",
@@ -3889,7 +4717,13 @@
     "ms": "Macau",
     "nb": "macaosk",
     "zh-Hant": "澳門的",
-    "pt-PT": "macaense"
+    "pt-PT": "macaense",
+    "el": "μακαέζος",
+    "ca": "macaenc",
+    "da": "macaoboer",
+    "fi": "macaolainen",
+    "sk": "macajský",
+    "hr": "makaoški"
   },
   "MP": {
     "es": "mariañense",
@@ -3917,7 +4751,13 @@
     "ms": "Kepulauan Mariana Utara",
     "nb": "nordmariansk",
     "zh-Hant": "北馬里亞納群島的",
-    "pt-PT": "marianense"
+    "pt-PT": "marianense",
+    "el": "βορειομαριανός",
+    "ca": "marianenc",
+    "da": "nordmarianeboer",
+    "fi": "pohjois-mariaanilainen",
+    "sk": "severomariánsky",
+    "hr": "sjevernomarijanski"
   },
   "MQ": {
     "es": "martiniqués",
@@ -3945,7 +4785,13 @@
     "ms": "Martinique",
     "nb": "martinikansk",
     "zh-Hant": "馬提尼克的",
-    "pt-PT": "martinicano"
+    "pt-PT": "martinicano",
+    "el": "μαρτινικανός",
+    "ca": "martiniquès",
+    "da": "martiniquaner",
+    "fi": "martiniquelainen",
+    "sk": "martinický",
+    "hr": "martiniški"
   },
   "MR": {
     "es": "mauritano",
@@ -3973,7 +4819,13 @@
     "ms": "Mauritania",
     "nb": "mauretansk",
     "zh-Hant": "毛里塔尼亞的",
-    "pt-PT": "mauritano"
+    "pt-PT": "mauritano",
+    "el": "μαυριτανός",
+    "ca": "mauritanià",
+    "da": "mauritanier",
+    "fi": "mauritanialainen",
+    "sk": "mauritánsky",
+    "hr": "mauritanski"
   },
   "MS": {
     "es": "montserratense",
@@ -4001,7 +4853,13 @@
     "ms": "Montserrat",
     "nb": "montserratsk",
     "zh-Hant": "蒙特塞拉特的",
-    "pt-PT": "montserratense"
+    "pt-PT": "montserratense",
+    "el": "μοντσερρατιανός",
+    "ca": "montserratenc",
+    "da": "montserratboer",
+    "fi": "montserratlainen",
+    "sk": "montserratský",
+    "hr": "montseratski"
   },
   "MT": {
     "es": "maltés",
@@ -4029,7 +4887,13 @@
     "ms": "Malta",
     "nb": "maltesisk",
     "zh-Hant": "馬耳他的",
-    "pt-PT": "maltês"
+    "pt-PT": "maltês",
+    "el": "μαλτέζος",
+    "ca": "maltès",
+    "da": "malteser",
+    "fi": "maltalainen",
+    "sk": "maltský",
+    "hr": "malteški"
   },
   "MU": {
     "es": "mauriciano",
@@ -4057,7 +4921,13 @@
     "ms": "Mauritius",
     "nb": "mauritisk",
     "zh-Hant": "毛里求斯的",
-    "pt-PT": "mauriciano"
+    "pt-PT": "mauriciano",
+    "el": "μαυρικιανός",
+    "ca": "mauricià",
+    "da": "mauritier",
+    "fi": "mauritiuslainen",
+    "sk": "maurícijský",
+    "hr": "mauricijski"
   },
   "MV": {
     "es": "maldivo",
@@ -4085,7 +4955,13 @@
     "ms": "Maldives",
     "nb": "maldivisk",
     "zh-Hant": "馬爾代夫的",
-    "pt-PT": "maldivo"
+    "pt-PT": "maldivo",
+    "el": "μαλδιβιανός",
+    "ca": "maldivià",
+    "da": "maldiver",
+    "fi": "malediviläinen",
+    "sk": "maldivský",
+    "hr": "maldivski"
   },
   "MW": {
     "es": "malauí",
@@ -4113,7 +4989,13 @@
     "ms": "Malawi",
     "nb": "malawisk",
     "zh-Hant": "馬拉維的",
-    "pt-PT": "malauiano"
+    "pt-PT": "malauiano",
+    "el": "μαλαουιανός",
+    "ca": "malauí",
+    "da": "malawier",
+    "fi": "malawilainen",
+    "sk": "malawijský",
+    "hr": "malavijski"
   },
   "MX": {
     "es": "mexicano",
@@ -4141,7 +5023,13 @@
     "ms": "Mexico",
     "nb": "meksikansk",
     "zh-Hant": "墨西哥的",
-    "pt-PT": "mexicano"
+    "pt-PT": "mexicano",
+    "el": "μεξικανός",
+    "ca": "mexicà",
+    "da": "mexicaner",
+    "fi": "meksikоlainen",
+    "sk": "mexický",
+    "hr": "meksički"
   },
   "MY": {
     "es": "malasio",
@@ -4169,7 +5057,13 @@
     "ms": "Malaysia",
     "nb": "malaysisk",
     "zh-Hant": "馬來西亞的",
-    "pt-PT": "malaio"
+    "pt-PT": "malaio",
+    "el": "μαλαισιανός",
+    "ca": "malai",
+    "da": "malaysier",
+    "fi": "malesialainen",
+    "sk": "malajzijský",
+    "hr": "malezijski"
   },
   "MZ": {
     "es": "mozambiqueño",
@@ -4197,7 +5091,13 @@
     "ms": "Mozambique",
     "nb": "mosambikisk",
     "zh-Hant": "莫桑比克的",
-    "pt-PT": "moçambicano"
+    "pt-PT": "moçambicano",
+    "el": "μοζαμβικανός",
+    "ca": "moçambiquès",
+    "da": "mozambiquer",
+    "fi": "mosambikilainen",
+    "sk": "mozambický",
+    "hr": "mozambički"
   },
   "NA": {
     "es": "namibio",
@@ -4225,7 +5125,13 @@
     "ms": "Namibia",
     "nb": "namibisk",
     "zh-Hant": "納米比亞的",
-    "pt-PT": "namibiano"
+    "pt-PT": "namibiano",
+    "el": "ναμίμπιος",
+    "ca": "namibià",
+    "da": "namibier",
+    "fi": "namibialainen",
+    "sk": "namíbijský",
+    "hr": "namibijski"
   },
   "NC": {
     "es": "neocaledonio",
@@ -4253,7 +5159,13 @@
     "ms": "New Caledonia",
     "nb": "nykaledonsk",
     "zh-Hant": "新喀里多尼亞的",
-    "pt-PT": "neocaledónio"
+    "pt-PT": "neocaledónio",
+    "el": "νεοκαληδονιανός",
+    "ca": "neocaledoni",
+    "da": "nykaledonier",
+    "fi": "uuskaledonialainen",
+    "sk": "novokaledonský",
+    "hr": "novokaledoniski"
   },
   "NE": {
     "es": "nigerino",
@@ -4281,7 +5193,13 @@
     "ms": "Niger",
     "nb": "nigersk",
     "zh-Hant": "尼日爾的",
-    "pt-PT": "nigerino"
+    "pt-PT": "nigerino",
+    "el": "νιγηριανός",
+    "ca": "nigerí",
+    "da": "nigerier",
+    "fi": "nigeriläinen",
+    "sk": "nigerský",
+    "hr": "nigerski"
   },
   "NF": {
     "es": "norfolense",
@@ -4309,7 +5227,13 @@
     "ms": "Pulau Norfolk",
     "nb": "norfolksk",
     "zh-Hant": "諾福克島的",
-    "pt-PT": "norfolquino"
+    "pt-PT": "norfolquino",
+    "el": "νορφολκιανός",
+    "ca": "norfolquès",
+    "da": "norfolkøboer",
+    "fi": "norfolkinsaarelainen",
+    "sk": "norfolský",
+    "hr": "norfolški"
   },
   "NG": {
     "es": "nigeriano",
@@ -4337,7 +5261,13 @@
     "ms": "Nigeria",
     "nb": "nigeriansk",
     "zh-Hant": "尼日利亞的",
-    "pt-PT": "nigeriano"
+    "pt-PT": "nigeriano",
+    "el": "νιγηριανός",
+    "ca": "nigerià",
+    "da": "nigerianer",
+    "fi": "nigerialainen",
+    "sk": "nigérijský",
+    "hr": "nigerijski"
   },
   "NI": {
     "es": "nicaragüense",
@@ -4365,7 +5295,13 @@
     "ms": "Nicaragua",
     "nb": "nicaraguansk",
     "zh-Hant": "尼加拉瓜的",
-    "pt-PT": "nicaraguense"
+    "pt-PT": "nicaraguense",
+    "el": "νικαραγουανός",
+    "ca": "nicaragüenc",
+    "da": "nicaraguaner",
+    "fi": "nicaragualainen",
+    "sk": "nikaragujský",
+    "hr": "nikaragvanski"
   },
   "NL": {
     "es": "neerlandés",
@@ -4393,7 +5329,13 @@
     "ms": "Belanda",
     "nb": "nederlandsk",
     "zh-Hant": "荷蘭的",
-    "pt-PT": "neerlandês"
+    "pt-PT": "neerlandês",
+    "el": "ολλανδός",
+    "ca": "neerlandès",
+    "da": "nederlandsk",
+    "fi": "alankomaalainen",
+    "sk": "holandský",
+    "hr": "nizozemski"
   },
   "NO": {
     "es": "noruego",
@@ -4421,7 +5363,13 @@
     "ms": "Norway",
     "nb": "norsk",
     "zh-Hant": "挪威的",
-    "pt-PT": "norueguês"
+    "pt-PT": "norueguês",
+    "el": "νορβηγός",
+    "ca": "noruec",
+    "da": "nordmand",
+    "fi": "norjalainen",
+    "sk": "nórsky",
+    "hr": "norveški"
   },
   "NP": {
     "es": "nepalí",
@@ -4449,7 +5397,13 @@
     "ms": "Nepal",
     "nb": "nepalsk",
     "zh-Hant": "尼泊爾的",
-    "pt-PT": "nepalês"
+    "pt-PT": "nepalês",
+    "el": "νεπαλέζος",
+    "ca": "nepalès",
+    "da": "nepaleser",
+    "fi": "nepalilainen",
+    "sk": "nepálsky",
+    "hr": "nepalski"
   },
   "NR": {
     "es": "nauruano",
@@ -4477,7 +5431,13 @@
     "ms": "Nauru",
     "nb": "nauruansk",
     "zh-Hant": "瑙魯的",
-    "pt-PT": "nauruano"
+    "pt-PT": "nauruano",
+    "el": "ναουρουανός",
+    "ca": "nauruà",
+    "da": "nauruaner",
+    "fi": "naurulainen",
+    "sk": "nauruský",
+    "hr": "nauruski"
   },
   "NU": {
     "es": "niueño",
@@ -4505,7 +5465,13 @@
     "ms": "Niue",
     "nb": "niueansk",
     "zh-Hant": "紐埃的",
-    "pt-PT": "niuano"
+    "pt-PT": "niuano",
+    "el": "νιουεανός",
+    "ca": "niueà",
+    "da": "niueboer",
+    "fi": "niuelainen",
+    "sk": "niuejský",
+    "hr": "niuejski"
   },
   "NZ": {
     "es": "neozelandés",
@@ -4533,7 +5499,13 @@
     "ms": "New Zealand",
     "nb": "newzealandsk",
     "zh-Hant": "新西蘭的",
-    "pt-PT": "neozelandês"
+    "pt-PT": "neozelandês",
+    "el": "νεοζηλανδός",
+    "ca": "neozelandès",
+    "da": "new zealænder",
+    "fi": "uusiseelantilainen",
+    "sk": "novozélandský",
+    "hr": "novozelandski"
   },
   "OM": {
     "es": "omaní",
@@ -4561,7 +5533,13 @@
     "ms": "Oman",
     "nb": "omansk",
     "zh-Hant": "阿曼的",
-    "pt-PT": "omanense"
+    "pt-PT": "omanense",
+    "el": "ομανικός",
+    "ca": "omaní",
+    "da": "omaner",
+    "fi": "omanilainen",
+    "sk": "ománsky",
+    "hr": "omanski"
   },
   "PA": {
     "es": "panameño",
@@ -4589,7 +5567,13 @@
     "ms": "Panama",
     "nb": "panamansk",
     "zh-Hant": "巴拿馬的",
-    "pt-PT": "panamenho"
+    "pt-PT": "panamenho",
+    "el": "παναμαίος",
+    "ca": "panameny",
+    "da": "panamaer",
+    "fi": "panamalainen",
+    "sk": "panamský",
+    "hr": "panamski"
   },
   "PE": {
     "es": "peruano",
@@ -4617,7 +5601,13 @@
     "ms": "Peru",
     "nb": "peruansk",
     "zh-Hant": "秘魯的",
-    "pt-PT": "peruano"
+    "pt-PT": "peruano",
+    "el": "περουβιανός",
+    "ca": "peruà",
+    "da": "peruaner",
+    "fi": "perulainen",
+    "sk": "peruánsky",
+    "hr": "peruanski"
   },
   "PF": {
     "es": "polinesio",
@@ -4645,7 +5635,13 @@
     "ms": "Polinesia Perancis",
     "nb": "franskpolynesisk",
     "zh-Hant": "法屬波利尼西亞的",
-    "pt-PT": "polinésio"
+    "pt-PT": "polinésio",
+    "el": "γαλλοπολυνήσιος",
+    "ca": "polinesi",
+    "da": "fransk polynesier",
+    "fi": "ranskanpolynesiaalainen",
+    "sk": "francúzskopolynézsky",
+    "hr": "francusko-polinezijski"
   },
   "PG": {
     "es": "papú",
@@ -4673,7 +5669,13 @@
     "ms": "Papua New Guinea",
     "nb": "papuansk",
     "zh-Hant": "巴布亞新幾內亞的",
-    "pt-PT": "papua-nova-guineense"
+    "pt-PT": "papua-nova-guineense",
+    "el": "παπουανός",
+    "ca": "papuà",
+    "da": "papuaer",
+    "fi": "papuauusiguinealainen",
+    "sk": "papuánsky",
+    "hr": "papuanskonovogvinejski"
   },
   "PH": {
     "es": "filipino",
@@ -4701,7 +5703,13 @@
     "ms": "Filipina",
     "nb": "filippinsk",
     "zh-Hant": "菲律賓的",
-    "pt-PT": "filipino"
+    "pt-PT": "filipino",
+    "el": "φιλιππινέζος",
+    "ca": "filipí",
+    "da": "filippiner",
+    "fi": "filippiiniläinen",
+    "sk": "filipínsky",
+    "hr": "filipinski"
   },
   "PK": {
     "es": "pakistaní",
@@ -4729,7 +5737,13 @@
     "ms": "Pakistan",
     "nb": "pakistansk",
     "zh-Hant": "巴基斯坦的",
-    "pt-PT": "paquistanês"
+    "pt-PT": "paquistanês",
+    "el": "πακιστανός",
+    "ca": "pakistanès",
+    "da": "pakistaner",
+    "fi": "pakistanilainen",
+    "sk": "pakistanský",
+    "hr": "pakistanski"
   },
   "PL": {
     "es": "polaco",
@@ -4757,7 +5771,13 @@
     "ms": "Poland",
     "nb": "polsk",
     "zh-Hant": "波蘭的",
-    "pt-PT": "polaco"
+    "pt-PT": "polaco",
+    "el": "πολωνός",
+    "ca": "polonès",
+    "da": "polak",
+    "fi": "puolalainen",
+    "sk": "poľský",
+    "hr": "poljski"
   },
   "PM": {
     "es": "sanpedrino",
@@ -4785,7 +5805,13 @@
     "ms": "Saint Pierre dan Miquelon",
     "nb": "saint-pierrais",
     "zh-Hant": "聖皮埃爾和密克隆的",
-    "pt-PT": "são-pedrense"
+    "pt-PT": "são-pedrense",
+    "el": "αγιοπετρινός",
+    "ca": "santpedrinenc",
+    "da": "saint-pierreboer",
+    "fi": "saint-pierrelainen",
+    "sk": "svätopiersky",
+    "hr": "svetopjetrski"
   },
   "PN": {
     "es": "pitcairnés",
@@ -4813,7 +5839,13 @@
     "ms": "Kepulauan Pitcairn",
     "nb": "pitcairnsk",
     "zh-Hant": "皮特凱恩群島的",
-    "pt-PT": "pitcairnense"
+    "pt-PT": "pitcairnense",
+    "el": "πίτκαιρνιος",
+    "ca": "pitcairnès",
+    "da": "pitcairnøboer",
+    "fi": "pitcairnsaarelainen",
+    "sk": "pitcairnský",
+    "hr": "pitcairnski"
   },
   "PR": {
     "es": "puertorriqueño",
@@ -4841,7 +5873,13 @@
     "ms": "Puerto Rico",
     "nb": "puertoricansk",
     "zh-Hant": "波多黎各的",
-    "pt-PT": "porto-riquenho"
+    "pt-PT": "porto-riquenho",
+    "el": "πορτορικανός",
+    "ca": "portoriqueny",
+    "da": "puertoricaner",
+    "fi": "puertoricolainen",
+    "sk": "portorický",
+    "hr": "portorički"
   },
   "PS": {
     "es": "palestino",
@@ -4869,7 +5907,13 @@
     "ms": "Palestin",
     "nb": "palestinsk",
     "zh-Hant": "巴勒斯坦的",
-    "pt-PT": "palestiniano"
+    "pt-PT": "palestiniano",
+    "el": "παλαιστίνιος",
+    "ca": "palestí",
+    "da": "palæstinenser",
+    "fi": "palestiinalainen",
+    "sk": "palestínsky",
+    "hr": "palestinski"
   },
   "PT": {
     "es": "portugués",
@@ -4897,7 +5941,13 @@
     "ms": "Portugal",
     "nb": "portugisisk",
     "zh-Hant": "葡萄牙的",
-    "pt-PT": "português"
+    "pt-PT": "português",
+    "el": "πορτογάλος",
+    "ca": "portuguès",
+    "da": "portugiser",
+    "fi": "portugalilainen",
+    "sk": "portugalský",
+    "hr": "portugalski"
   },
   "PW": {
     "es": "palauano",
@@ -4925,7 +5975,13 @@
     "ms": "Palau",
     "nb": "palauansk",
     "zh-Hant": "帕勞的",
-    "pt-PT": "palauano"
+    "pt-PT": "palauano",
+    "el": "παλαουανός",
+    "ca": "palauà",
+    "da": "palauaner",
+    "fi": "palaulainen",
+    "sk": "palauský",
+    "hr": "palauski"
   },
   "PY": {
     "es": "paraguayo",
@@ -4953,7 +6009,13 @@
     "ms": "Paraguay",
     "nb": "paraguayansk",
     "zh-Hant": "巴拉圭的",
-    "pt-PT": "paraguaio"
+    "pt-PT": "paraguaio",
+    "el": "παραγουανός",
+    "ca": "paraguaià",
+    "da": "paraguayaner",
+    "fi": "paraguaylainen",
+    "sk": "paraguajský",
+    "hr": "paragvajski"
   },
   "QA": {
     "es": "catarí",
@@ -4981,7 +6043,13 @@
     "ms": "Qatar",
     "nb": "qatarsk",
     "zh-Hant": "卡塔爾的",
-    "pt-PT": "catariano"
+    "pt-PT": "catariano",
+    "el": "καταριανός",
+    "ca": "qatarià",
+    "da": "qatarisk",
+    "fi": "qatarilainen",
+    "sk": "katarský",
+    "hr": "katarski"
   },
   "RE": {
     "es": "reunionés",
@@ -5009,7 +6077,13 @@
     "ms": "Réunion",
     "nb": "réunionsk",
     "zh-Hant": "留尼汪的",
-    "pt-PT": "reunionense"
+    "pt-PT": "reunionense",
+    "el": "ρεϊνιονέζος",
+    "ca": "reunionès",
+    "da": "réunionboer",
+    "fi": "réunionlainen",
+    "sk": "réunionský",
+    "hr": "reunionski"
   },
   "RO": {
     "es": "rumano",
@@ -5037,7 +6111,13 @@
     "ms": "Romania",
     "nb": "rumensk",
     "zh-Hant": "羅馬尼亞的",
-    "pt-PT": "romeno"
+    "pt-PT": "romeno",
+    "el": "ρουμάνος",
+    "ca": "romanès",
+    "da": "rumæner",
+    "fi": "romanialainen",
+    "sk": "rumunský",
+    "hr": "rumunjski"
   },
   "RS": {
     "es": "serbio",
@@ -5065,7 +6145,13 @@
     "ms": "Serbia",
     "nb": "serbisk",
     "zh-Hant": "塞爾維亞的",
-    "pt-PT": "sérvio"
+    "pt-PT": "sérvio",
+    "el": "σέρβος",
+    "ca": "serbi",
+    "da": "serber",
+    "fi": "serbialainen",
+    "sk": "srbský",
+    "hr": "srpski"
   },
   "RU": {
     "es": "ruso",
@@ -5093,7 +6179,13 @@
     "ms": "Rusia",
     "nb": "russisk",
     "zh-Hant": "俄羅斯的",
-    "pt-PT": "russo"
+    "pt-PT": "russo",
+    "el": "ρώσος",
+    "ca": "rus",
+    "da": "russer",
+    "fi": "venäläinen",
+    "sk": "ruský",
+    "hr": "ruski"
   },
   "RW": {
     "es": "ruandés",
@@ -5121,7 +6213,13 @@
     "ms": "Rwanda",
     "nb": "rwandisk",
     "zh-Hant": "盧旺達的",
-    "pt-PT": "ruandês"
+    "pt-PT": "ruandês",
+    "el": "ρουαντέζος",
+    "ca": "ruandès",
+    "da": "rwandisk",
+    "fi": "rwandalainen",
+    "sk": "rwandský",
+    "hr": "ruandski"
   },
   "SA": {
     "es": "saudí",
@@ -5149,7 +6247,13 @@
     "ms": "Arab Saudi",
     "nb": "saudiarabisk",
     "zh-Hant": "沙特阿拉伯的",
-    "pt-PT": "saudita"
+    "pt-PT": "saudita",
+    "el": "σαουδαραβικός",
+    "ca": "saudita",
+    "da": "saudi-araber",
+    "fi": "saudiarabialainen",
+    "sk": "saudskoarabský",
+    "hr": "saudijskoarapski"
   },
   "SB": {
     "es": "salomonense",
@@ -5177,7 +6281,13 @@
     "ms": "Kepulauan Solomon",
     "nb": "salomonsk",
     "zh-Hant": "所羅門群島的",
-    "pt-PT": "salomónico"
+    "pt-PT": "salomónico",
+    "el": "σολομώντιος",
+    "ca": "salomonenc",
+    "da": "salomonøboer",
+    "fi": "salomonsaarelainen",
+    "sk": "šalamúnsky",
+    "hr": "salomonski"
   },
   "SC": {
     "es": "seychellense",
@@ -5205,7 +6315,13 @@
     "ms": "Seychelles",
     "nb": "seychellisk",
     "zh-Hant": "塞舌爾的",
-    "pt-PT": "seichelense"
+    "pt-PT": "seichelense",
+    "el": "σεϋχελλιανός",
+    "ca": "seychellès",
+    "da": "seychellois",
+    "fi": "seychelliläinen",
+    "sk": "seychelský",
+    "hr": "sejšelski"
   },
   "SD": {
     "es": "sudanés",
@@ -5233,7 +6349,13 @@
     "ms": "Sudan",
     "nb": "sudansk",
     "zh-Hant": "蘇丹的",
-    "pt-PT": "sudanês"
+    "pt-PT": "sudanês",
+    "el": "σουδανέζος",
+    "ca": "sudanès",
+    "da": "sudaneser",
+    "fi": "sudanilainen",
+    "sk": "sudánsky",
+    "hr": "sudanski"
   },
   "SE": {
     "es": "sueco",
@@ -5261,7 +6383,13 @@
     "ms": "Sweden",
     "nb": "svensk",
     "zh-Hant": "瑞典的",
-    "pt-PT": "sueco"
+    "pt-PT": "sueco",
+    "el": "σουηδός",
+    "ca": "suec",
+    "da": "svensker",
+    "fi": "ruotsalainen",
+    "sk": "švédsky",
+    "hr": "švedski"
   },
   "SG": {
     "es": "singapurense",
@@ -5289,7 +6417,13 @@
     "ms": "Singapura",
     "nb": "singaporsk",
     "zh-Hant": "新加坡的",
-    "pt-PT": "singapuriano"
+    "pt-PT": "singapuriano",
+    "el": "σιγκαπουριανός",
+    "ca": "singapurenc",
+    "da": "singaporeaner",
+    "fi": "singaporelainen",
+    "sk": "singapurský",
+    "hr": "singapurski"
   },
   "SH": {
     "es": "santaeleno",
@@ -5317,7 +6451,13 @@
     "ms": "Saint Helena",
     "nb": "sankthelensk",
     "zh-Hant": "聖赫勒拿的",
-    "pt-PT": "santa-helenense"
+    "pt-PT": "santa-helenense",
+    "el": "αγιοελενίτης",
+    "ca": "santaelonenc",
+    "da": "skt.-helenaboer",
+    "fi": "saint-helenalainen",
+    "sk": "svätoheleňský",
+    "hr": "svetohelenaški"
   },
   "SI": {
     "es": "esloveno",
@@ -5345,7 +6485,13 @@
     "ms": "Slovenia",
     "nb": "slovensk",
     "zh-Hant": "斯洛文尼亞的",
-    "pt-PT": "esloveno"
+    "pt-PT": "esloveno",
+    "el": "σλοβένος",
+    "ca": "eslovè",
+    "da": "slovener",
+    "fi": "slovenialainen",
+    "sk": "slovinský",
+    "hr": "slovenski"
   },
   "SK": {
     "es": "eslovaco",
@@ -5373,7 +6519,13 @@
     "ms": "Slovakia",
     "nb": "slovakisk",
     "zh-Hant": "斯洛伐克的",
-    "pt-PT": "eslovaco"
+    "pt-PT": "eslovaco",
+    "el": "σλοβάκος",
+    "ca": "eslovac",
+    "da": "slovakisk",
+    "fi": "slovakialainen",
+    "sk": "slovenský",
+    "hr": "slovački"
   },
   "SL": {
     "es": "sierraleonés",
@@ -5401,7 +6553,13 @@
     "ms": "Sierra Leone",
     "nb": "sierraleonsk",
     "zh-Hant": "塞拉利昂的",
-    "pt-PT": "serra-leonês"
+    "pt-PT": "serra-leonês",
+    "el": "σιερραλεονέζος",
+    "ca": "sierraleonès",
+    "da": "sierra-leonisk",
+    "fi": "sierraleonelainen",
+    "sk": "sierraleonský",
+    "hr": "sijeraleonski"
   },
   "SM": {
     "es": "sanmarinense",
@@ -5429,7 +6587,13 @@
     "ms": "San Marino",
     "nb": "sanmarinsk",
     "zh-Hant": "聖馬力諾的",
-    "pt-PT": "são-marinense"
+    "pt-PT": "são-marinense",
+    "el": "σαμαρινέζος",
+    "ca": "sanmarinenc",
+    "da": "sanmarineser",
+    "fi": "sanmarinоlainen",
+    "sk": "sanmarínsky",
+    "hr": "sanmarinski"
   },
   "SN": {
     "es": "senegalés",
@@ -5457,7 +6621,13 @@
     "ms": "Senegal",
     "nb": "senegalesisk",
     "zh-Hant": "塞內加爾的",
-    "pt-PT": "senegalês"
+    "pt-PT": "senegalês",
+    "el": "σενεγαλέζος",
+    "ca": "senegalès",
+    "da": "senegaleser",
+    "fi": "senegalilainen",
+    "sk": "senegalský",
+    "hr": "senegalaski"
   },
   "SO": {
     "es": "somalí",
@@ -5485,7 +6655,13 @@
     "ms": "Somalia",
     "nb": "somalisk",
     "zh-Hant": "索馬里的",
-    "pt-PT": "somali"
+    "pt-PT": "somali",
+    "el": "σομαλός",
+    "ca": "somali",
+    "da": "somalier",
+    "fi": "somalialainen",
+    "sk": "somálsky",
+    "hr": "somalijski"
   },
   "SR": {
     "es": "surinamés",
@@ -5513,7 +6689,13 @@
     "ms": "Suriname",
     "nb": "surinamsk",
     "zh-Hant": "蘇里南的",
-    "pt-PT": "surinamês"
+    "pt-PT": "surinamês",
+    "el": "σουριναμέζος",
+    "ca": "surinamès",
+    "da": "surinameser",
+    "fi": "surinamilainen",
+    "sk": "surinamský",
+    "hr": "surinamski"
   },
   "SS": {
     "es": "sursudanés",
@@ -5541,7 +6723,13 @@
     "ms": "Sudan Selatan",
     "nb": "sørsudansk",
     "zh-Hant": "南蘇丹的",
-    "pt-PT": "sul-sudanês"
+    "pt-PT": "sul-sudanês",
+    "el": "νοτιοσουδανέζος",
+    "ca": "sursudanès",
+    "da": "sydsudaneser",
+    "fi": "eteläsudanilainen",
+    "sk": "juhosudánsky",
+    "hr": "južnosudanski"
   },
   "ST": {
     "es": "santotomense",
@@ -5569,7 +6757,13 @@
     "ms": "São Tomé dan Príncipe",
     "nb": "saotomensk",
     "zh-Hant": "聖多美和普林西比的",
-    "pt-PT": "são-tomense"
+    "pt-PT": "são-tomense",
+    "el": "σαντομεανός",
+    "ca": "santotomenc",
+    "da": "saotomesisk",
+    "fi": "sãotomélainen",
+    "sk": "svätotomášsky",
+    "hr": "svetotomejski"
   },
   "SV": {
     "es": "salvadoreño",
@@ -5597,7 +6791,13 @@
     "ms": "El Salvador",
     "nb": "salvadoransk",
     "zh-Hant": "薩爾瓦多的",
-    "pt-PT": "salvadorenho"
+    "pt-PT": "salvadorenho",
+    "el": "σαλβαδοριανός",
+    "ca": "salvadorenc",
+    "da": "salvadorianer",
+    "fi": "salvadorilainen",
+    "sk": "salvádorský",
+    "hr": "salvadorski"
   },
   "SX": {
     "es": "sanmartinense",
@@ -5625,7 +6825,13 @@
     "ms": "Sint Maarten",
     "nb": "sint-maartensk",
     "zh-Hant": "荷屬聖馬丁的",
-    "pt-PT": "são-martinhense"
+    "pt-PT": "são-martinhense",
+    "el": "αγιομαρτινιανός",
+    "ca": "sintmaartenenc",
+    "da": "sint-maartenboer",
+    "fi": "sint-maartenlainen",
+    "sk": "svätomartinský",
+    "hr": "sintmaartenski"
   },
   "SY": {
     "es": "sirio",
@@ -5653,7 +6859,13 @@
     "ms": "Syria",
     "nb": "syrisk",
     "zh-Hant": "敘利亞的",
-    "pt-PT": "sírio"
+    "pt-PT": "sírio",
+    "el": "σύριος",
+    "ca": "sirià",
+    "da": "syrer",
+    "fi": "syyrialainen",
+    "sk": "sýrsky",
+    "hr": "sirijski"
   },
   "SZ": {
     "es": "suazi",
@@ -5681,7 +6893,13 @@
     "ms": "Eswatini",
     "nb": "swazilandsk",
     "zh-Hant": "斯威士蘭的",
-    "pt-PT": "suázi"
+    "pt-PT": "suázi",
+    "el": "σουαζιλανδός",
+    "ca": "suazí",
+    "da": "swazilænder",
+    "fi": "swazimaalaiinen",
+    "sk": "eswatínsky",
+    "hr": "svazijski"
   },
   "TC": {
     "es": "turcocaiqueño",
@@ -5709,7 +6927,13 @@
     "ms": "Kepulauan Turks dan Caicos",
     "nb": "turks- og caicosøysk",
     "zh-Hant": "特克斯和凱科斯群島的",
-    "pt-PT": "turcocaicoense"
+    "pt-PT": "turcocaicoense",
+    "el": "τουρκοκαϊκάνιος",
+    "ca": "turcocaicanenc",
+    "da": "turks- og caicosboer",
+    "fi": "turks-ja-caicossaarelainen",
+    "sk": "turkokaický",
+    "hr": "turkskokajkoski"
   },
   "TD": {
     "es": "chadiano",
@@ -5737,7 +6961,13 @@
     "ms": "Chad",
     "nb": "tchadisk",
     "zh-Hant": "乍得的",
-    "pt-PT": "chadiano"
+    "pt-PT": "chadiano",
+    "el": "τσαντιανός",
+    "ca": "txadià",
+    "da": "chadianer",
+    "fi": "tšadilainen",
+    "sk": "čadský",
+    "hr": "čadski"
   },
   "TG": {
     "es": "togolés",
@@ -5765,7 +6995,13 @@
     "ms": "Togo",
     "nb": "togolsk",
     "zh-Hant": "多哥的",
-    "pt-PT": "togolês"
+    "pt-PT": "togolês",
+    "el": "τογκολέζος",
+    "ca": "togolès",
+    "da": "togoleser",
+    "fi": "togolaiinen",
+    "sk": "togský",
+    "hr": "togoanski"
   },
   "TH": {
     "es": "tailandés",
@@ -5793,7 +7029,13 @@
     "ms": "Thailand",
     "nb": "thailandsk",
     "zh-Hant": "泰國的",
-    "pt-PT": "tailandês"
+    "pt-PT": "tailandês",
+    "el": "ταϊλανδός",
+    "ca": "tailandès",
+    "da": "thailænder",
+    "fi": "thaimaalainen",
+    "sk": "thajský",
+    "hr": "tajlandski"
   },
   "TJ": {
     "es": "tayiko",
@@ -5821,7 +7063,13 @@
     "ms": "Tajikistan",
     "nb": "tadsjikisk",
     "zh-Hant": "塔吉克斯坦的",
-    "pt-PT": "tajique"
+    "pt-PT": "tajique",
+    "el": "τατζίκος",
+    "ca": "tadjik",
+    "da": "tadsjik",
+    "fi": "tadžikilainen",
+    "sk": "tadžický",
+    "hr": "tadžikistanski"
   },
   "TL": {
     "es": "timorense",
@@ -5849,7 +7097,13 @@
     "ms": "Timor Leste",
     "nb": "østtimorsk",
     "zh-Hant": "東帝汶的",
-    "pt-PT": "timorense"
+    "pt-PT": "timorense",
+    "el": "τιμορέζος",
+    "ca": "timorenc",
+    "da": "timorenser",
+    "fi": "itätimorilainen",
+    "sk": "východotimorský",
+    "hr": "istočnotimorski"
   },
   "TM": {
     "es": "turcomano",
@@ -5877,7 +7131,13 @@
     "ms": "Turkmenistan",
     "nb": "turkmensk",
     "zh-Hant": "土庫曼斯坦的",
-    "pt-PT": "turcomano"
+    "pt-PT": "turcomano",
+    "el": "τουρκμένος",
+    "ca": "turcmè",
+    "da": "turkmenisk",
+    "fi": "turkmenistanilainen",
+    "sk": "turkménsky",
+    "hr": "turkmenistanski"
   },
   "TN": {
     "es": "tunecino",
@@ -5905,7 +7165,13 @@
     "ms": "Tunisia",
     "nb": "tunisisk",
     "zh-Hant": "突尼斯的",
-    "pt-PT": "tunisino"
+    "pt-PT": "tunisino",
+    "el": "τυνήσιος",
+    "ca": "tunisenc",
+    "da": "tuneser",
+    "fi": "tunisialainen",
+    "sk": "tuniský",
+    "hr": "tuniski"
   },
   "TO": {
     "es": "tongano",
@@ -5933,7 +7199,13 @@
     "ms": "Tonga",
     "nb": "tongansk",
     "zh-Hant": "湯加的",
-    "pt-PT": "tonganês"
+    "pt-PT": "tonganês",
+    "el": "τονγκανός",
+    "ca": "tongà",
+    "da": "tonganer",
+    "fi": "tongalainen",
+    "sk": "tongský",
+    "hr": "tonganski"
   },
   "TR": {
     "es": "turco",
@@ -5961,7 +7233,13 @@
     "ms": "Turki",
     "nb": "tyrkisk",
     "zh-Hant": "土耳其的",
-    "pt-PT": "turco"
+    "pt-PT": "turco",
+    "el": "τούρκος",
+    "ca": "turc",
+    "da": "tyrker",
+    "fi": "turkkilainen",
+    "sk": "turecký",
+    "hr": "turski"
   },
   "TT": {
     "es": "trinitense",
@@ -5989,7 +7267,13 @@
     "ms": "Trinidad dan Tobago",
     "nb": "trinidadisk",
     "zh-Hant": "特立尼達和多巴哥的",
-    "pt-PT": "trinitário"
+    "pt-PT": "trinitário",
+    "el": "τρινιδαδιανός",
+    "ca": "trinidadenc",
+    "da": "trinidader",
+    "fi": "trinidadilainen",
+    "sk": "trinidadský",
+    "hr": "trinidadski"
   },
   "TV": {
     "es": "tuvaluano",
@@ -6017,7 +7301,13 @@
     "ms": "Tuvalu",
     "nb": "tuvalsk",
     "zh-Hant": "圖瓦盧的",
-    "pt-PT": "tuvaluano"
+    "pt-PT": "tuvaluano",
+    "el": "τουβαλουανός",
+    "ca": "tuvaluà",
+    "da": "tuvaluer",
+    "fi": "tuvalulainen",
+    "sk": "tuvalský",
+    "hr": "tuvaluski"
   },
   "TW": {
     "es": "taiwanés",
@@ -6045,7 +7335,13 @@
     "ms": "Taiwan",
     "nb": "taiwansk",
     "zh-Hant": "台灣的",
-    "pt-PT": "taiwanês"
+    "pt-PT": "taiwanês",
+    "el": "ταϊβανέζος",
+    "ca": "taiwanès",
+    "da": "taiwaner",
+    "fi": "taiwanilainen",
+    "sk": "taiwanský",
+    "hr": "tajvanski"
   },
   "TZ": {
     "es": "tanzano",
@@ -6073,7 +7369,13 @@
     "ms": "Tanzania",
     "nb": "tanzaniansk",
     "zh-Hant": "坦桑尼亞的",
-    "pt-PT": "tanzaniano"
+    "pt-PT": "tanzaniano",
+    "el": "τανζανός",
+    "ca": "tanzanià",
+    "da": "tanzanianer",
+    "fi": "tansanialainen",
+    "sk": "tanzánsky",
+    "hr": "tanzanijski"
   },
   "UA": {
     "es": "ucraniano",
@@ -6101,7 +7403,13 @@
     "ms": "Ukraine",
     "nb": "ukrainsk",
     "zh-Hant": "烏克蘭的",
-    "pt-PT": "ucraniano"
+    "pt-PT": "ucraniano",
+    "el": "ουκρανός",
+    "ca": "ucraïnès",
+    "da": "ukrainer",
+    "fi": "ukrainalainen",
+    "sk": "ukrajinský",
+    "hr": "ukrajinski"
   },
   "UG": {
     "es": "ugandés",
@@ -6129,7 +7437,13 @@
     "ms": "Uganda",
     "nb": "ugandisk",
     "zh-Hant": "烏干達的",
-    "pt-PT": "ugandense"
+    "pt-PT": "ugandense",
+    "el": "ουγκαντέζος",
+    "ca": "ugandès",
+    "da": "ugander",
+    "fi": "ugandalainen",
+    "sk": "ugandský",
+    "hr": "ugandski"
   },
   "US": {
     "es": "estadounidense",
@@ -6157,7 +7471,13 @@
     "ms": "Amerika",
     "nb": "amerikansk",
     "zh-Hant": "美國的",
-    "pt-PT": "americano"
+    "pt-PT": "americano",
+    "el": "αμερικανός",
+    "ca": "americà",
+    "da": "amerikaner",
+    "fi": "amerikkalainen",
+    "sk": "americký",
+    "hr": "američki"
   },
   "UY": {
     "es": "uruguayo",
@@ -6185,7 +7505,13 @@
     "ms": "Uruguay",
     "nb": "uruguayansk",
     "zh-Hant": "烏拉圭的",
-    "pt-PT": "uruguaio"
+    "pt-PT": "uruguaio",
+    "el": "ουρουγουανός",
+    "ca": "uruguaià",
+    "da": "uruguayaner",
+    "fi": "uruguaylainen",
+    "sk": "uruguajský",
+    "hr": "urugvajski"
   },
   "UZ": {
     "es": "uzbeko",
@@ -6213,7 +7539,13 @@
     "ms": "Uzbekistan",
     "nb": "usbekisk",
     "zh-Hant": "烏茲別克斯坦的",
-    "pt-PT": "uzbeque"
+    "pt-PT": "uzbeque",
+    "el": "ουζμπέκος",
+    "ca": "uzbek",
+    "da": "uzbekisk",
+    "fi": "uzbekistanilainen",
+    "sk": "uzbekský",
+    "hr": "uzbekistanski"
   },
   "VA": {
     "es": "vaticano",
@@ -6241,7 +7573,13 @@
     "ms": "Vatikan",
     "nb": "vatikansk",
     "zh-Hant": "梵蒂岡的",
-    "pt-PT": "vaticano"
+    "pt-PT": "vaticano",
+    "el": "βατικανός",
+    "ca": "vaticà",
+    "da": "vatikanboer",
+    "fi": "vatikaanilainen",
+    "sk": "vatikánsky",
+    "hr": "vatikanski"
   },
   "VC": {
     "es": "sanvicentino",
@@ -6269,7 +7607,13 @@
     "ms": "Saint Vincent dan Grenadines",
     "nb": "vincentisk",
     "zh-Hant": "聖文森特和格林納丁斯的",
-    "pt-PT": "são-vicentino"
+    "pt-PT": "são-vicentino",
+    "el": "βινσεντιανός",
+    "ca": "vicentí",
+    "da": "vincentiner",
+    "fi": "saint-vincentilainen",
+    "sk": "svätovincenský",
+    "hr": "svetovincentski"
   },
   "VE": {
     "es": "venezolano",
@@ -6297,7 +7641,13 @@
     "ms": "Venezuela",
     "nb": "venezuelansk",
     "zh-Hant": "委內瑞拉的",
-    "pt-PT": "venezuelano"
+    "pt-PT": "venezuelano",
+    "el": "βενεζουελάνος",
+    "ca": "veneçolà",
+    "da": "venezuelaner",
+    "fi": "venezuelalainen",
+    "sk": "venezuelský",
+    "hr": "venezuelski"
   },
   "VG": {
     "es": "virgenense",
@@ -6325,7 +7675,13 @@
     "ms": "Kepulauan Virgin British",
     "nb": "britisk-jomfruøysk",
     "zh-Hant": "英屬維爾京群島的",
-    "pt-PT": "virginense"
+    "pt-PT": "virginense",
+    "el": "βρετανοβιργινιανός",
+    "ca": "virginenc",
+    "da": "britisk virgin-øboer",
+    "fi": "britteinneitsytsaarelainen",
+    "sk": "britskopannenský",
+    "hr": "britanskodjevičanski"
   },
   "VI": {
     "es": "virgenense",
@@ -6353,7 +7709,13 @@
     "ms": "Kepulauan Virgin AS",
     "nb": "amerikansk-jomfruøysk",
     "zh-Hant": "美屬維爾京群島的",
-    "pt-PT": "virginense"
+    "pt-PT": "virginense",
+    "el": "αμερικανοβιργινιανός",
+    "ca": "virginenc",
+    "da": "amerikansk virgin-øboer",
+    "fi": "amerikanneitsytsaarelainen",
+    "sk": "americkopannenský",
+    "hr": "američkodjevičanski"
   },
   "VN": {
     "es": "vietnamita",
@@ -6381,7 +7743,13 @@
     "ms": "Vietnam",
     "nb": "vietnamesisk",
     "zh-Hant": "越南的",
-    "pt-PT": "vietnamita"
+    "pt-PT": "vietnamita",
+    "el": "βιετναμέζος",
+    "ca": "vietnamita",
+    "da": "vietnameser",
+    "fi": "vietnamilainen",
+    "sk": "vietnamský",
+    "hr": "vijetnamski"
   },
   "VU": {
     "es": "vanuatense",
@@ -6409,7 +7777,13 @@
     "ms": "Vanuatu",
     "nb": "vanuatisk",
     "zh-Hant": "瓦努阿圖的",
-    "pt-PT": "vanuatuense"
+    "pt-PT": "vanuatuense",
+    "el": "βανουατιανός",
+    "ca": "vanuatenc",
+    "da": "vanuatuer",
+    "fi": "vanuatulainen",
+    "sk": "vanuatský",
+    "hr": "vanuatski"
   },
   "WF": {
     "es": "wallisiano",
@@ -6437,7 +7811,13 @@
     "ms": "Wallis dan Futuna",
     "nb": "wallisisk",
     "zh-Hant": "瓦利斯和富圖納的",
-    "pt-PT": "wallisiano"
+    "pt-PT": "wallisiano",
+    "el": "ουαλισιανός",
+    "ca": "wallisià",
+    "da": "wallisianer",
+    "fi": "wallis-ja-futunalainen",
+    "sk": "wallisský",
+    "hr": "valiski"
   },
   "WS": {
     "es": "samoano",
@@ -6465,7 +7845,13 @@
     "ms": "Samoa",
     "nb": "samoansk",
     "zh-Hant": "薩摩亞的",
-    "pt-PT": "samoano"
+    "pt-PT": "samoano",
+    "el": "σαμοανός",
+    "ca": "samoà",
+    "da": "samoaner",
+    "fi": "samoalainen",
+    "sk": "samojský",
+    "hr": "samoanski"
   },
   "XK": {
     "es": "kosovar",
@@ -6493,7 +7879,13 @@
     "ms": "Kosovo",
     "nb": "kosovarsk",
     "zh-Hant": "科索沃的",
-    "pt-PT": "kosovar"
+    "pt-PT": "kosovar",
+    "el": "κοσοβάρος",
+    "ca": "kosovar",
+    "da": "kosovar",
+    "fi": "kosovоlainen",
+    "sk": "kosovský",
+    "hr": "kosovski"
   },
   "YE": {
     "es": "yemení",
@@ -6521,7 +7913,13 @@
     "ms": "Yaman",
     "nb": "jemenittisk",
     "zh-Hant": "也門的",
-    "pt-PT": "iemenita"
+    "pt-PT": "iemenita",
+    "el": "υεμενίτης",
+    "ca": "iemenita",
+    "da": "yemenit",
+    "fi": "jemeniläinen",
+    "sk": "jemenský",
+    "hr": "jemenski"
   },
   "YT": {
     "es": "mahorés",
@@ -6549,7 +7947,13 @@
     "ms": "Mayotte",
     "nb": "mahoransk",
     "zh-Hant": "馬約特的",
-    "pt-PT": "maiorense"
+    "pt-PT": "maiorense",
+    "el": "μαγιοτιανός",
+    "ca": "mahorès",
+    "da": "mahoreboer",
+    "fi": "mayottelainen",
+    "sk": "mayotský",
+    "hr": "majotski"
   },
   "ZA": {
     "es": "sudafricano",
@@ -6577,7 +7981,13 @@
     "ms": "Afrika Selatan",
     "nb": "sørafrikansk",
     "zh-Hant": "南非的",
-    "pt-PT": "sul-africano"
+    "pt-PT": "sul-africano",
+    "el": "νοτιοαφρικανός",
+    "ca": "sudafricà",
+    "da": "sydafrikaner",
+    "fi": "eteläafrikkalainen",
+    "sk": "juhoafrický",
+    "hr": "južnoafrički"
   },
   "ZM": {
     "es": "zambiano",
@@ -6605,7 +8015,13 @@
     "ms": "Zambia",
     "nb": "zambisk",
     "zh-Hant": "贊比亞的",
-    "pt-PT": "zambiano"
+    "pt-PT": "zambiano",
+    "el": "ζαμβιανός",
+    "ca": "zambià",
+    "da": "zambier",
+    "fi": "sambialainen",
+    "sk": "zambijský",
+    "hr": "zambijski"
   },
   "ZW": {
     "es": "zimbabuense",
@@ -6633,6 +8049,12 @@
     "ms": "Zimbabwe",
     "nb": "zimbabwisk",
     "zh-Hant": "津巴布韋的",
-    "pt-PT": "zimbabuano"
+    "pt-PT": "zimbabuano",
+    "el": "ζιμπαμπουανός",
+    "ca": "zimbabuenc",
+    "da": "zimbabwer",
+    "fi": "zimbabwelainen",
+    "sk": "zimbabwiský",
+    "hr": "zimbabveanski"
   }
 }

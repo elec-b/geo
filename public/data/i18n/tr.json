@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Batı Sahra",
-    "capital": "El Aaiún",
+    "capital": "",
     "demonym": "Batı Sahra",
     "languages": [
       "Arapça"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hong Kong",
-    "capital": "Victoria",
+    "capital": "",
     "demonym": "Hong Konglu",
     "languages": [
       "Çince",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Kuzey Mariana Adaları",
-    "capital": "Saipan",
+    "capital": "",
     "demonym": "Kuzey Mariana Adaları",
     "languages": [
       "İngilizce",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Brades",
+    "capital": "Plymouth",
     "demonym": "Montserratlı",
     "languages": [
       "İngilizce"
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "Filistin",
-    "capital": "Ramallah",
+    "capital": "Doğu Kudüs",
     "demonym": "Filistinli",
     "languages": [
       "Arapça"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatikan",
-    "capital": "Vatikan",
+    "capital": "",
     "demonym": "Vatikanlı",
     "languages": [
       "İtalyanca",

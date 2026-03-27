@@ -1,0 +1,2959 @@
+{
+  "AD": {
+    "name": "Ανδόρα",
+    "capital": "Ανδόρρα λα Βέλια",
+    "demonym": "ανδορρανός",
+    "languages": [
+      "Καταλανικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Ανδόρρα"
+  },
+  "AE": {
+    "name": "Ηνωμένα Αραβικά Εμιράτα",
+    "capital": "Άμπου Ντάμπι",
+    "demonym": "εμιρατιανός",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Ντιράμ Ηνωμένων Αραβικών Εμιράτων"
+    ],
+    "wikipediaSlug": "Ηνωμένα_Αραβικά_Εμιράτα"
+  },
+  "AF": {
+    "name": "Αφγανιστάν",
+    "capital": "Καμπούλ",
+    "demonym": "αφγανός",
+    "languages": [
+      "Νταρί",
+      "Πάστο"
+    ],
+    "currencyNames": [
+      "Αφγάνι Αφγανιστάν"
+    ],
+    "wikipediaSlug": "Αφγανιστάν"
+  },
+  "AG": {
+    "name": "Αντίγκουα και Μπαρμπούντα",
+    "capital": "Σεντ Τζονς",
+    "demonym": "αντιγκουανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Ανατολικής Καραϊβικής"
+    ],
+    "wikipediaSlug": "Αντίγκουα_και_Μπαρμπούντα"
+  },
+  "AI": {
+    "name": "Ανγκουίλα",
+    "capital": "Δε Βάλεϊ",
+    "demonym": "ανγκουιλιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Ανατολικής Καραϊβικής"
+    ],
+    "wikipediaSlug": "Ανγκουίλα"
+  },
+  "AL": {
+    "name": "Αλβανία",
+    "capital": "Τίρανα",
+    "demonym": "αλβανός",
+    "languages": [
+      "Αλβανικά"
+    ],
+    "currencyNames": [
+      "Λεκ Αλβανίας"
+    ],
+    "wikipediaSlug": "Αλβανία"
+  },
+  "AM": {
+    "name": "Αρμενία",
+    "capital": "Γερεβάν",
+    "demonym": "αρμένιος",
+    "languages": [
+      "Αρμενικά"
+    ],
+    "currencyNames": [
+      "Ντραμ Αρμενίας"
+    ],
+    "wikipediaSlug": "Αρμενία"
+  },
+  "AO": {
+    "name": "Αγκόλα",
+    "capital": "Λουάντα",
+    "demonym": "αγκολέζος",
+    "languages": [
+      "Πορτογαλικά"
+    ],
+    "currencyNames": [
+      "Κουάνζα Ανγκόλας"
+    ],
+    "wikipediaSlug": "Ανγκόλα"
+  },
+  "AR": {
+    "name": "Αργεντινή",
+    "capital": "Μπουένος Άιρες",
+    "demonym": "αργεντινός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Πέσο Αργεντινής"
+    ],
+    "wikipediaSlug": "Αργεντινή"
+  },
+  "AS": {
+    "name": "Αμερικανική Σαμόα",
+    "capital": "Πάγκο Πάγκο",
+    "demonym": "αμερικανοσαμοανός",
+    "languages": [
+      "Αγγλικά",
+      "Σαμοανά"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Αμερικανική_Σαμόα"
+  },
+  "AT": {
+    "name": "Αυστρία",
+    "capital": "Βιέννη",
+    "demonym": "αυστριακός",
+    "languages": [
+      "Γερμανικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Αυστρία"
+  },
+  "AU": {
+    "name": "Αυστραλία",
+    "capital": "Καμπέρα",
+    "demonym": "αυστραλός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Αυστραλίας"
+    ],
+    "wikipediaSlug": "Αυστραλία"
+  },
+  "AW": {
+    "name": "Αρούμπα",
+    "capital": "Οράνιεστατ",
+    "demonym": "αρουβανός",
+    "languages": [
+      "Ολλανδικά",
+      "Παπιαμέντο"
+    ],
+    "currencyNames": [
+      "Φλορίνι Αρούμπας"
+    ],
+    "wikipediaSlug": "Αρούμπα"
+  },
+  "AX": {
+    "name": "Νήσοι Όλαντ",
+    "capital": "Μαριεχάμν",
+    "demonym": "αλανδικός",
+    "languages": [
+      "Σουηδικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Ώλαντ"
+  },
+  "AZ": {
+    "name": "Αζερμπαϊτζάν",
+    "capital": "Μπακού",
+    "demonym": "αζέρος",
+    "languages": [
+      "Αζερμπαϊτζανικά"
+    ],
+    "currencyNames": [
+      "Μανάτ Αζερμπαϊτζάν"
+    ],
+    "wikipediaSlug": "Αζερμπαϊτζάν"
+  },
+  "BA": {
+    "name": "Βοσνία - Ερζεγοβίνη",
+    "capital": "Σαράγιεβο",
+    "demonym": "βόσνιος",
+    "languages": [
+      "Βοσνιακά",
+      "Κροατικά",
+      "Σερβικά"
+    ],
+    "currencyNames": [
+      "Μετατρέψιμο Μάρκο Βοσνίας-Ερζεγοβίνης"
+    ],
+    "wikipediaSlug": "Βοσνία_και_Ερζεγοβίνη"
+  },
+  "BB": {
+    "name": "Μπαρμπέιντος",
+    "capital": "Μπριτζτάουν",
+    "demonym": "βαρβαδιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Μπαρμπέιντος"
+    ],
+    "wikipediaSlug": "Μπαρμπάντος"
+  },
+  "BD": {
+    "name": "Μπανγκλαντές",
+    "capital": "Ντάκα",
+    "demonym": "μπανγκλαντεσιανός",
+    "languages": [
+      "Βεγγαλικά"
+    ],
+    "currencyNames": [
+      "Τάκα Μπαγκλαντές"
+    ],
+    "wikipediaSlug": "Μπανγκλαντές"
+  },
+  "BE": {
+    "name": "Βέλγιο",
+    "capital": "Βρυξέλλες",
+    "demonym": "βέλγος",
+    "languages": [
+      "Ολλανδικά",
+      "Γαλλικά",
+      "Γερμανικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Βέλγιο"
+  },
+  "BF": {
+    "name": "Μπουρκίνα Φάσο",
+    "capital": "Ουαγκαντουγκού",
+    "demonym": "μπουρκινέζος",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Δυτικής Αφρικής"
+    ],
+    "wikipediaSlug": "Μπουρκίνα_Φάσο"
+  },
+  "BG": {
+    "name": "Βουλγαρία",
+    "capital": "Σόφια",
+    "demonym": "βούλγαρος",
+    "languages": [
+      "Βουλγαρικά"
+    ],
+    "currencyNames": [
+      "Λεβ Βουλγαρίας"
+    ],
+    "wikipediaSlug": "Βουλγαρία"
+  },
+  "BH": {
+    "name": "Μπαχρέιν",
+    "capital": "Μανάμα",
+    "demonym": "μπαχρεϊνός",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Δηνάριο Μπαχρέιν"
+    ],
+    "wikipediaSlug": "Μπαχρέιν"
+  },
+  "BI": {
+    "name": "Μπουρούντι",
+    "capital": "Γκιτέγκα",
+    "demonym": "μπουρουντιανός",
+    "languages": [
+      "Ρούντι",
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο Μπουρούντι"
+    ],
+    "wikipediaSlug": "Μπουρούντι"
+  },
+  "BJ": {
+    "name": "Μπενίν",
+    "capital": "Πόρτο-Νόβο",
+    "demonym": "μπενινέζος",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Δυτικής Αφρικής"
+    ],
+    "wikipediaSlug": "Μπενίν"
+  },
+  "BL": {
+    "name": "Άγιος Βαρθολομαίος",
+    "capital": "Γουσταβία",
+    "demonym": "αγιοβαρθολομαιός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Άγιος_Βαρθολομαίος"
+  },
+  "BM": {
+    "name": "Βερμούδες",
+    "capital": "Χάμιλτον",
+    "demonym": "βερμουδιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Βερμούδων"
+    ],
+    "wikipediaSlug": "Βερμούδες"
+  },
+  "BN": {
+    "name": "Μπρουνέι",
+    "capital": "Μπαντάρ Σερί Μπεγκαβάν",
+    "demonym": "μπρουνεϊανός",
+    "languages": [
+      "Μαλαισιανά"
+    ],
+    "currencyNames": [
+      "Δολάριο Μπρουνέι",
+      "Δολάριο Σιγκαπούρης"
+    ],
+    "wikipediaSlug": "Μπρουνέι"
+  },
+  "BO": {
+    "name": "Βολιβία",
+    "capital": "Λα Παζ",
+    "demonym": "βολιβιανός",
+    "languages": [
+      "Ισπανικά",
+      "Κέτσουα",
+      "Αϊμάρα"
+    ],
+    "currencyNames": [
+      "Μπολιβιάνο Βολιβίας"
+    ],
+    "wikipediaSlug": "Βολιβία"
+  },
+  "BR": {
+    "name": "Βραζιλία",
+    "capital": "Μπραζίλια",
+    "demonym": "βραζιλιάνος",
+    "languages": [
+      "Πορτογαλικά"
+    ],
+    "currencyNames": [
+      "Ρεάλ Βραζιλίας"
+    ],
+    "wikipediaSlug": "Βραζιλία"
+  },
+  "BS": {
+    "name": "Μπαχάμες",
+    "capital": "Νασσάου",
+    "demonym": "μπαχαμιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Μπαχαμών",
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Μπαχάμες"
+  },
+  "BT": {
+    "name": "Μπουτάν",
+    "capital": "Τιμπού",
+    "demonym": "μπουτανέζος",
+    "languages": [
+      "Ντζόνγκχα"
+    ],
+    "currencyNames": [
+      "Νγκούλτρουμ Μπουτάν",
+      "Ρουπία Ινδίας"
+    ],
+    "wikipediaSlug": "Μπουτάν"
+  },
+  "BW": {
+    "name": "Μποτσουάνα",
+    "capital": "Γκαμπορόνε",
+    "demonym": "μποτσουανός",
+    "languages": [
+      "Αγγλικά",
+      "Τσουάνα"
+    ],
+    "currencyNames": [
+      "Πούλα Μποτσουάνας"
+    ],
+    "wikipediaSlug": "Μποτσουάνα"
+  },
+  "BY": {
+    "name": "Λευκορωσία",
+    "capital": "Μινσκ",
+    "demonym": "λευκορώσος",
+    "languages": [
+      "Λευκορωσικά",
+      "Ρωσικά"
+    ],
+    "currencyNames": [
+      "Ρούβλι Λευκορωσίας"
+    ],
+    "wikipediaSlug": "Λευκορωσία"
+  },
+  "BZ": {
+    "name": "Μπελίζ",
+    "capital": "Μπελμοπάν",
+    "demonym": "μπελιζιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Μπελίζ"
+    ],
+    "wikipediaSlug": "Μπελίζ"
+  },
+  "CA": {
+    "name": "Καναδάς",
+    "capital": "Οττάβα",
+    "demonym": "καναδός",
+    "languages": [
+      "Αγγλικά",
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Καναδά"
+    ],
+    "wikipediaSlug": "Καναδάς"
+  },
+  "CD": {
+    "name": "Κονγκό - Κινσάσα",
+    "capital": "Κινσασά",
+    "demonym": "κονγκολέζος",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο Κονγκό"
+    ],
+    "wikipediaSlug": "Λαϊκή_Δημοκρατία_του_Κονγκό"
+  },
+  "CF": {
+    "name": "Κεντροαφρικανική Δημοκρατία",
+    "capital": "Μπανγκί",
+    "demonym": "κεντροαφρικανός",
+    "languages": [
+      "Γαλλικά",
+      "Σάνγκο"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Κεντρικής Αφρικής"
+    ],
+    "wikipediaSlug": "Κεντροαφρικανική_Δημοκρατία"
+  },
+  "CG": {
+    "name": "Κονγκό - Μπραζαβίλ",
+    "capital": "Μπραζαβίλ",
+    "demonym": "κονγκολέζος",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Κεντρικής Αφρικής"
+    ],
+    "wikipediaSlug": "Δημοκρατία_του_Κονγκό"
+  },
+  "CH": {
+    "name": "Ελβετία",
+    "capital": "Βέρνη",
+    "demonym": "ελβετός",
+    "languages": [
+      "Γερμανικά",
+      "Γαλλικά",
+      "Ιταλικά",
+      "Ρομανικά"
+    ],
+    "currencyNames": [
+      "Φράγκο Ελβετίας"
+    ],
+    "wikipediaSlug": "Ελβετία"
+  },
+  "CI": {
+    "name": "Ακτή Ελεφαντοστού",
+    "capital": "Γιαμουσουκρό",
+    "demonym": "ακτιβοριανός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Δυτικής Αφρικής"
+    ],
+    "wikipediaSlug": "Ακτή_Ελεφαντοστού"
+  },
+  "CK": {
+    "name": "Νήσοι Κουκ",
+    "capital": "Αβαρούα",
+    "demonym": "κουκιανός",
+    "languages": [
+      "Αγγλικά",
+      "Ραροτονγκάν"
+    ],
+    "currencyNames": [
+      "Δολάριο Νέας Ζηλανδίας"
+    ],
+    "wikipediaSlug": "Νήσοι_Κουκ"
+  },
+  "CL": {
+    "name": "Χιλή",
+    "capital": "Σαντιάγο",
+    "demonym": "χιλιανός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Πέσο Χιλής"
+    ],
+    "wikipediaSlug": "Χιλή"
+  },
+  "CM": {
+    "name": "Καμερούν",
+    "capital": "Γιαουντέ",
+    "demonym": "καμερουνέζος",
+    "languages": [
+      "Γαλλικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Κεντρικής Αφρικής"
+    ],
+    "wikipediaSlug": "Καμερούν"
+  },
+  "CN": {
+    "name": "Κίνα",
+    "capital": "Πεκίνο",
+    "demonym": "κινέζος",
+    "languages": [
+      "Κινεζικά"
+    ],
+    "currencyNames": [
+      "Γουάν Κίνας"
+    ],
+    "wikipediaSlug": "Κίνα"
+  },
+  "CO": {
+    "name": "Κολομβία",
+    "capital": "Μπογκοτά",
+    "demonym": "κολομβιανός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Πέσο Κολομβίας"
+    ],
+    "wikipediaSlug": "Κολομβία"
+  },
+  "CR": {
+    "name": "Κόστα Ρίκα",
+    "capital": "Σαν Χοσέ",
+    "demonym": "κοσταρικανός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Κολόν Κόστα Ρίκα"
+    ],
+    "wikipediaSlug": "Κόστα_Ρίκα"
+  },
+  "CU": {
+    "name": "Κούβα",
+    "capital": "Αβάνα",
+    "demonym": "κουβανός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Μετατρέψιμο πέσο Κούβας",
+      "Πέσο Κούβας"
+    ],
+    "wikipediaSlug": "Κούβα"
+  },
+  "CV": {
+    "name": "Πράσινο Ακρωτήριο",
+    "capital": "Πράια",
+    "demonym": "πρασινοακριτικός",
+    "languages": [
+      "Πορτογαλικά"
+    ],
+    "currencyNames": [
+      "Εσκούδο Πράσινου Ακρωτηρίου"
+    ],
+    "wikipediaSlug": "Πράσινο_Ακρωτήριο"
+  },
+  "CW": {
+    "name": "Κουρασάο",
+    "capital": "Βίλλεμστατ",
+    "demonym": "κουρασαοανός",
+    "languages": [
+      "Ολλανδικά",
+      "Παπιαμέντο"
+    ],
+    "currencyNames": [
+      "Γκίλντα Ολλανδικών Αντιλλών"
+    ],
+    "wikipediaSlug": "Κουρασάο"
+  },
+  "CY": {
+    "name": "Κύπρος",
+    "capital": "Λευκωσία",
+    "demonym": "κύπριος",
+    "languages": [
+      "Ελληνικά",
+      "Τουρκικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Κύπρος"
+  },
+  "CZ": {
+    "name": "Τσεχία",
+    "capital": "Πράγα",
+    "demonym": "τσέχος",
+    "languages": [
+      "Τσεχικά"
+    ],
+    "currencyNames": [
+      "Κορόνα Τσεχίας"
+    ],
+    "wikipediaSlug": "Τσεχία"
+  },
+  "DE": {
+    "name": "Γερμανία",
+    "capital": "Βερολίνο",
+    "demonym": "γερμανός",
+    "languages": [
+      "Γερμανικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Γερμανία"
+  },
+  "DJ": {
+    "name": "Τζιμπουτί",
+    "capital": "Τζιμπουτί",
+    "demonym": "τζιμπουτιανός",
+    "languages": [
+      "Γαλλικά",
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Φράγκο Τζιμπουτί"
+    ],
+    "wikipediaSlug": "Τζιμπουτί"
+  },
+  "DK": {
+    "name": "Δανία",
+    "capital": "Κοπεγχάγη",
+    "demonym": "δανός",
+    "languages": [
+      "Δανικά"
+    ],
+    "currencyNames": [
+      "Κορόνα Δανίας"
+    ],
+    "wikipediaSlug": "Δανία"
+  },
+  "DM": {
+    "name": "Ντομίνικα",
+    "capital": "Ροζό",
+    "demonym": "δομινικανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Ανατολικής Καραϊβικής"
+    ],
+    "wikipediaSlug": "Δομινίκα"
+  },
+  "DO": {
+    "name": "Δομινικανή Δημοκρατία",
+    "capital": "Σάντο Ντομίγκο",
+    "demonym": "δομινικανός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Πέσο Δομινικανής Δημοκρατίας"
+    ],
+    "wikipediaSlug": "Δομινικανή_Δημοκρατία"
+  },
+  "DZ": {
+    "name": "Αλγερία",
+    "capital": "Αλγέρι",
+    "demonym": "αλγερινός",
+    "languages": [
+      "Αραβικά",
+      "Ταμαζίτ Κεντρικού Μαρόκο"
+    ],
+    "currencyNames": [
+      "Δηνάριο Αλγερίας"
+    ],
+    "wikipediaSlug": "Αλγερία"
+  },
+  "EC": {
+    "name": "Ισημερινός",
+    "capital": "Κίτο",
+    "demonym": "ισημερινός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Ισημερινός_(χώρα)"
+  },
+  "EE": {
+    "name": "Εσθονία",
+    "capital": "Τάλιν",
+    "demonym": "εσθονός",
+    "languages": [
+      "Εσθονικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Εσθονία"
+  },
+  "EG": {
+    "name": "Αίγυπτος",
+    "capital": "Κάιρο",
+    "demonym": "αιγύπτιος",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Λίρα Αιγύπτου"
+    ],
+    "wikipediaSlug": "Αίγυπτος"
+  },
+  "EH": {
+    "name": "Δυτική Σαχάρα",
+    "capital": "",
+    "demonym": "σαχραουιανός",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Δηνάριο Αλγερίας",
+      "Ντιράμ Μαρόκου",
+      "Ουγκίγια Μαυριτανίας"
+    ],
+    "wikipediaSlug": "Δυτική_Σαχάρα"
+  },
+  "ER": {
+    "name": "Ερυθραία",
+    "capital": "Ασμάρα",
+    "demonym": "ερυθραίος",
+    "languages": [
+      "Τιγκρινικά",
+      "Αραβικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Νάκφα Ερυθραίας"
+    ],
+    "wikipediaSlug": "Ερυθραία"
+  },
+  "ES": {
+    "name": "Ισπανία",
+    "capital": "Μαδρίτη",
+    "demonym": "ισπανός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Ισπανία"
+  },
+  "ET": {
+    "name": "Αιθιοπία",
+    "capital": "Αντίς Αμπέμπα",
+    "demonym": "αιθίοπας",
+    "languages": [
+      "Αμχαρικά"
+    ],
+    "currencyNames": [
+      "Μπιρ Αιθιοπίας"
+    ],
+    "wikipediaSlug": "Αιθιοπία"
+  },
+  "FI": {
+    "name": "Φινλανδία",
+    "capital": "Ελσίνκι",
+    "demonym": "φινλανδός",
+    "languages": [
+      "Φινλανδικά",
+      "Σουηδικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Φινλανδία"
+  },
+  "FJ": {
+    "name": "Φίτζι",
+    "capital": "Σούβα",
+    "demonym": "φιτζιανός",
+    "languages": [
+      "Αγγλικά",
+      "Φίτζι",
+      "hif"
+    ],
+    "currencyNames": [
+      "Δολάριο Φίτζι"
+    ],
+    "wikipediaSlug": "Φίτζι"
+  },
+  "FK": {
+    "name": "Νήσοι Φόκλαντ",
+    "capital": "Στάνλεϋ",
+    "demonym": "φαλκλανδικός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Λίρα Νήσων Φόκλαντ"
+    ],
+    "wikipediaSlug": "Νήσοι_Φώκλαντ"
+  },
+  "FM": {
+    "name": "Μικρονησία",
+    "capital": "Παλικίρ",
+    "demonym": "μικρονήσιος",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Ομόσπονδες_Πολιτείες_της_Μικρονησίας"
+  },
+  "FO": {
+    "name": "Νήσοι Φερόες",
+    "capital": "Τόρσχαβν",
+    "demonym": "φεροεσιανός",
+    "languages": [
+      "Φεροϊκά",
+      "Δανικά"
+    ],
+    "currencyNames": [
+      "Κορόνα Δανίας"
+    ],
+    "wikipediaSlug": "Νήσοι_Φερόες"
+  },
+  "FR": {
+    "name": "Γαλλία",
+    "capital": "Παρίσι",
+    "demonym": "γάλλος",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Γαλλία"
+  },
+  "GA": {
+    "name": "Γκαμπόν",
+    "capital": "Λιμπρεβίλ",
+    "demonym": "γκαμπονέζος",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Κεντρικής Αφρικής"
+    ],
+    "wikipediaSlug": "Γκαμπόν"
+  },
+  "GB": {
+    "name": "Ηνωμένο Βασίλειο",
+    "capital": "Λονδίνο",
+    "demonym": "βρετανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Λίρα Στερλίνα Βρετανίας"
+    ],
+    "wikipediaSlug": "Ηνωμένο_Βασίλειο"
+  },
+  "GD": {
+    "name": "Γρενάδα",
+    "capital": "Σαιντ Τζόρτζις",
+    "demonym": "γρεναδινός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Ανατολικής Καραϊβικής"
+    ],
+    "wikipediaSlug": "Γρενάδα"
+  },
+  "GE": {
+    "name": "Γεωργία",
+    "capital": "Τιφλίδα",
+    "demonym": "γεωργιανός",
+    "languages": [
+      "Γεωργιανά"
+    ],
+    "currencyNames": [
+      "Λάρι Γεωργίας"
+    ],
+    "wikipediaSlug": "Γεωργία"
+  },
+  "GF": {
+    "name": "Γαλλική Γουιάνα",
+    "capital": "Καγιέν",
+    "demonym": "γαλλογουιανός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Γαλλική_Γουιάνα"
+  },
+  "GG": {
+    "name": "Γκέρνζι",
+    "capital": "Σεντ Πίτερ Πορτ",
+    "demonym": "γκέρνσεϊος",
+    "languages": [
+      "Αγγλικά",
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Λίρα Στερλίνα Βρετανίας"
+    ],
+    "wikipediaSlug": "Βαϊλάτο_του_Γκέρνζι"
+  },
+  "GH": {
+    "name": "Γκάνα",
+    "capital": "Άκκρα",
+    "demonym": "γκανέζος",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Σέντι Γκάνας"
+    ],
+    "wikipediaSlug": "Γκάνα"
+  },
+  "GL": {
+    "name": "Γροιλανδία",
+    "capital": "Νουούκ",
+    "demonym": "γροιλανδός",
+    "languages": [
+      "Καλαάλισουτ"
+    ],
+    "currencyNames": [
+      "Κορόνα Δανίας"
+    ],
+    "wikipediaSlug": "Γροιλανδία"
+  },
+  "GM": {
+    "name": "Γκάμπια",
+    "capital": "Μπανζούλ",
+    "demonym": "γκαμπιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Νταλάσι Γκάμπιας"
+    ],
+    "wikipediaSlug": "Γκάμπια"
+  },
+  "GN": {
+    "name": "Γουινέα",
+    "capital": "Κονακρί",
+    "demonym": "γουινεάτης",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο Γουινέας"
+    ],
+    "wikipediaSlug": "Γουινέα"
+  },
+  "GP": {
+    "name": "Γουαδελούπη",
+    "capital": "Μπας-Τερ",
+    "demonym": "γουαδελουπιανός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Γουαδελούπη"
+  },
+  "GQ": {
+    "name": "Ισημερινή Γουινέα",
+    "capital": "Θιουδάδ ντε λα Παθ",
+    "demonym": "ισημερινογουινεάτης",
+    "languages": [
+      "Ισπανικά",
+      "Γαλλικά",
+      "Πορτογαλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Κεντρικής Αφρικής"
+    ],
+    "wikipediaSlug": "Ισημερινή_Γουινέα"
+  },
+  "GR": {
+    "name": "Ελλάδα",
+    "capital": "Αθήνα",
+    "demonym": "έλληνας",
+    "languages": [
+      "Ελληνικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Ελλάδα"
+  },
+  "GT": {
+    "name": "Γουατεμάλα",
+    "capital": "πόλη της Γουατεμάλας",
+    "demonym": "γουατεμαλτέκος",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Κουετσάλ Γουατεμάλας"
+    ],
+    "wikipediaSlug": "Γουατεμάλα"
+  },
+  "GU": {
+    "name": "Γκουάμ",
+    "capital": "Χαγκάτνια",
+    "demonym": "γκουαμιανός",
+    "languages": [
+      "Αγγλικά",
+      "Τσαμόρο"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Γκουάμ"
+  },
+  "GW": {
+    "name": "Γουινέα Μπισάου",
+    "capital": "Μπισάου",
+    "demonym": "γουινεοβισσαουανός",
+    "languages": [
+      "Πορτογαλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Δυτικής Αφρικής"
+    ],
+    "wikipediaSlug": "Γουινέα-Μπισάου"
+  },
+  "GY": {
+    "name": "Γουιάνα",
+    "capital": "Τζώρτζταουν",
+    "demonym": "γουιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Γουιάνας"
+    ],
+    "wikipediaSlug": "Γουιάνα"
+  },
+  "HK": {
+    "name": "Χονγκ Κονγκ ΕΔΠ Κίνας",
+    "capital": "",
+    "demonym": "χονγκκονγκέζος",
+    "languages": [
+      "Κινεζικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Χονγκ Κονγκ"
+    ],
+    "wikipediaSlug": "Χονγκ_Κονγκ"
+  },
+  "HN": {
+    "name": "Ονδούρα",
+    "capital": "Τεγκουσιγκάλπα",
+    "demonym": "ονδουρέζος",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Λεμπίρα Ονδούρας"
+    ],
+    "wikipediaSlug": "Ονδούρα"
+  },
+  "HR": {
+    "name": "Κροατία",
+    "capital": "Ζάγκρεμπ",
+    "demonym": "κροάτης",
+    "languages": [
+      "Κροατικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Κροατία"
+  },
+  "HT": {
+    "name": "Αϊτή",
+    "capital": "Πορ-ω-Πρενς",
+    "demonym": "αϊτινός",
+    "languages": [
+      "Γαλλικά",
+      "Αϊτιανά"
+    ],
+    "currencyNames": [
+      "Γκουρντ Αϊτής"
+    ],
+    "wikipediaSlug": "Αϊτή"
+  },
+  "HU": {
+    "name": "Ουγγαρία",
+    "capital": "Βουδαπέστη",
+    "demonym": "ούγγρος",
+    "languages": [
+      "Ουγγρικά"
+    ],
+    "currencyNames": [
+      "Φιορίνι Ουγγαρίας"
+    ],
+    "wikipediaSlug": "Ουγγαρία"
+  },
+  "ID": {
+    "name": "Ινδονησία",
+    "capital": "Τζακάρτα",
+    "demonym": "ινδονήσιος",
+    "languages": [
+      "Ινδονησιακά"
+    ],
+    "currencyNames": [
+      "Ρουπία Ινδονησίας"
+    ],
+    "wikipediaSlug": "Ινδονησία"
+  },
+  "IE": {
+    "name": "Ιρλανδία",
+    "capital": "Δουβλίνο",
+    "demonym": "ιρλανδός",
+    "languages": [
+      "Ιρλανδικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Δημοκρατία_της_Ιρλανδίας"
+  },
+  "IL": {
+    "name": "Ισραήλ",
+    "capital": "Ιερουσαλήμ",
+    "demonym": "ισραηλινός",
+    "languages": [
+      "Εβραϊκά",
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Νέο Σέκελ Ισραήλ"
+    ],
+    "wikipediaSlug": "Ισραήλ"
+  },
+  "IM": {
+    "name": "Νήσος του Μαν",
+    "capital": "Ντάγκλας",
+    "demonym": "μανξ",
+    "languages": [
+      "Αγγλικά",
+      "Μανξ"
+    ],
+    "currencyNames": [
+      "Λίρα Στερλίνα Βρετανίας"
+    ],
+    "wikipediaSlug": "Νήσος_του_Μαν"
+  },
+  "IN": {
+    "name": "Ινδία",
+    "capital": "Νέο Δελχί",
+    "demonym": "ινδός",
+    "languages": [
+      "Χίντι",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Ρουπία Ινδίας"
+    ],
+    "wikipediaSlug": "Ινδία"
+  },
+  "IQ": {
+    "name": "Ιράκ",
+    "capital": "Βαγδάτη",
+    "demonym": "ιρακινός",
+    "languages": [
+      "Αραβικά",
+      "Κουρδικά"
+    ],
+    "currencyNames": [
+      "Δηνάριο Ιράκ"
+    ],
+    "wikipediaSlug": "Ιράκ"
+  },
+  "IR": {
+    "name": "Ιράν",
+    "capital": "Τεχεράνη",
+    "demonym": "ιρανός",
+    "languages": [
+      "Περσικά"
+    ],
+    "currencyNames": [
+      "Ριάλ Ιράν"
+    ],
+    "wikipediaSlug": "Ιράν"
+  },
+  "IS": {
+    "name": "Ισλανδία",
+    "capital": "Ρέυκιαβικ",
+    "demonym": "ισλανδός",
+    "languages": [
+      "Ισλανδικά"
+    ],
+    "currencyNames": [
+      "Κορόνα Ισλανδίας"
+    ],
+    "wikipediaSlug": "Ισλανδία"
+  },
+  "IT": {
+    "name": "Ιταλία",
+    "capital": "Ρώμη",
+    "demonym": "ιταλός",
+    "languages": [
+      "Ιταλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Ιταλία"
+  },
+  "JE": {
+    "name": "Τζέρζι",
+    "capital": "Σεντ Χέλιερ",
+    "demonym": "τζέρσεϊος",
+    "languages": [
+      "Αγγλικά",
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Λίρα Στερλίνα Βρετανίας"
+    ],
+    "wikipediaSlug": "Βαϊλάτο_του_Τζέρσεϊ"
+  },
+  "JM": {
+    "name": "Τζαμάικα",
+    "capital": "Κίνγκστον",
+    "demonym": "τζαμαϊκανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Τζαμάικας"
+    ],
+    "wikipediaSlug": "Τζαμάικα"
+  },
+  "JO": {
+    "name": "Ιορδανία",
+    "capital": "Αμμάν",
+    "demonym": "ιορδανός",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Δηνάριο Ιορδανίας"
+    ],
+    "wikipediaSlug": "Ιορδανία"
+  },
+  "JP": {
+    "name": "Ιαπωνία",
+    "capital": "Τόκιο",
+    "demonym": "ιάπωνας",
+    "languages": [
+      "Ιαπωνικά"
+    ],
+    "currencyNames": [
+      "Γιεν Ιαπωνίας"
+    ],
+    "wikipediaSlug": "Ιαπωνία"
+  },
+  "KE": {
+    "name": "Κένυα",
+    "capital": "Ναϊρόμπι",
+    "demonym": "κενυάτης",
+    "languages": [
+      "Σουαχίλι",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Σελίνι Κένυας"
+    ],
+    "wikipediaSlug": "Κένυα"
+  },
+  "KG": {
+    "name": "Κιργιστάν",
+    "capital": "Μπισκέκ",
+    "demonym": "κιργίζιος",
+    "languages": [
+      "Κιργιζικά",
+      "Ρωσικά"
+    ],
+    "currencyNames": [
+      "Σομ Κιργιζίας"
+    ],
+    "wikipediaSlug": "Κιργιζία"
+  },
+  "KH": {
+    "name": "Καμπότζη",
+    "capital": "Πνομ Πεν",
+    "demonym": "καμποτζιανός",
+    "languages": [
+      "Χμερ"
+    ],
+    "currencyNames": [
+      "Ρίελ Καμπότζης",
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Καμπότζη"
+  },
+  "KI": {
+    "name": "Κιριμπάτι",
+    "capital": "Ταράουα",
+    "demonym": "κιριμπατιανός",
+    "languages": [
+      "Αγγλικά",
+      "Γκιλμπερτίζ"
+    ],
+    "currencyNames": [
+      "Δολάριο Αυστραλίας"
+    ],
+    "wikipediaSlug": "Κιριμπάτι"
+  },
+  "KM": {
+    "name": "Κομόρες",
+    "capital": "Μορονί",
+    "demonym": "κομοριανός",
+    "languages": [
+      "zdj",
+      "Αραβικά",
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο Κομορών"
+    ],
+    "wikipediaSlug": "Κομόρες"
+  },
+  "KN": {
+    "name": "Σεν Κιτς και Νέβις",
+    "capital": "Μπαστέρ",
+    "demonym": "αγιοχριστοφορίτης",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Ανατολικής Καραϊβικής"
+    ],
+    "wikipediaSlug": "Άγιος_Χριστόφορος_και_Νέβις"
+  },
+  "KP": {
+    "name": "Βόρεια Κορέα",
+    "capital": "Πιονγιάνγκ",
+    "demonym": "βορειοκορεάτης",
+    "languages": [
+      "Κορεατικά"
+    ],
+    "currencyNames": [
+      "Γουόν Βόρειας Κορέας"
+    ],
+    "wikipediaSlug": "Βόρεια_Κορέα"
+  },
+  "KR": {
+    "name": "Νότια Κορέα",
+    "capital": "Σεούλ",
+    "demonym": "νοτιοκορεάτης",
+    "languages": [
+      "Κορεατικά"
+    ],
+    "currencyNames": [
+      "Γουόν Νότιας Κορέας"
+    ],
+    "wikipediaSlug": "Νότια_Κορέα"
+  },
+  "KW": {
+    "name": "Κουβέιτ",
+    "capital": "Κουβέιτ",
+    "demonym": "κουβεϊτιανός",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Δηνάριο Κουβέιτ"
+    ],
+    "wikipediaSlug": "Κουβέιτ"
+  },
+  "KY": {
+    "name": "Νήσοι Κέιμαν",
+    "capital": "Τζορτζτάουν",
+    "demonym": "κέιμανικός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Νήσων Κέιμαν"
+    ],
+    "wikipediaSlug": "Κέιμαν_Νήσοι"
+  },
+  "KZ": {
+    "name": "Καζακστάν",
+    "capital": "Αστανά",
+    "demonym": "καζάχος",
+    "languages": [
+      "Καζακικά",
+      "Ρωσικά"
+    ],
+    "currencyNames": [
+      "Τένγκε Καζακστάν"
+    ],
+    "wikipediaSlug": "Καζακστάν"
+  },
+  "LA": {
+    "name": "Λάος",
+    "capital": "Βιεντιάν",
+    "demonym": "λαοτιανός",
+    "languages": [
+      "Λαοτινά"
+    ],
+    "currencyNames": [
+      "Κιπ Λάος"
+    ],
+    "wikipediaSlug": "Λάος"
+  },
+  "LB": {
+    "name": "Λίβανος",
+    "capital": "Βηρυτός",
+    "demonym": "λιβανέζος",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Λίρα Λιβάνου"
+    ],
+    "wikipediaSlug": "Λίβανος"
+  },
+  "LC": {
+    "name": "Αγία Λουκία",
+    "capital": "Κάστρις",
+    "demonym": "αγιολουκιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Ανατολικής Καραϊβικής"
+    ],
+    "wikipediaSlug": "Αγία_Λουκία_(χώρα)"
+  },
+  "LI": {
+    "name": "Λιχτενστάιν",
+    "capital": "Βαντούζ",
+    "demonym": "λιχτενστάινιος",
+    "languages": [
+      "Γερμανικά"
+    ],
+    "currencyNames": [
+      "Φράγκο Ελβετίας"
+    ],
+    "wikipediaSlug": "Λίχτενσταϊν"
+  },
+  "LK": {
+    "name": "Σρι Λάνκα",
+    "capital": "Κολόμπο",
+    "demonym": "σριλανκέζος",
+    "languages": [
+      "Σινχαλεζικά",
+      "Ταμιλικά"
+    ],
+    "currencyNames": [
+      "Ρουπία Σρι Λάνκα"
+    ],
+    "wikipediaSlug": "Σρι_Λάνκα"
+  },
+  "LR": {
+    "name": "Λιβερία",
+    "capital": "Μονρόβια",
+    "demonym": "λιβεριανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Λιβερίας"
+    ],
+    "wikipediaSlug": "Λιβερία"
+  },
+  "LS": {
+    "name": "Λεσότο",
+    "capital": "Μαζέρου",
+    "demonym": "λεσοθιανός",
+    "languages": [
+      "Νότια Σόθο",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Λότι Λεσότο",
+      "Ραντ Νότιας Αφρικής"
+    ],
+    "wikipediaSlug": "Λεσότο"
+  },
+  "LT": {
+    "name": "Λιθουανία",
+    "capital": "Βίλνιους",
+    "demonym": "λιθουανός",
+    "languages": [
+      "Λιθουανικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Λιθουανία"
+  },
+  "LU": {
+    "name": "Λουξεμβούργο",
+    "capital": "Λουξεμβούργο",
+    "demonym": "λουξεμβουργιανός",
+    "languages": [
+      "Λουξεμβουργιανά",
+      "Γαλλικά",
+      "Γερμανικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Λουξεμβούργο"
+  },
+  "LV": {
+    "name": "Λετονία",
+    "capital": "Ρίγα",
+    "demonym": "λετονός",
+    "languages": [
+      "Λετονικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Λετονία"
+  },
+  "LY": {
+    "name": "Λιβύη",
+    "capital": "Τρίπολη",
+    "demonym": "λίβυος",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Δηνάριο Λιβύης"
+    ],
+    "wikipediaSlug": "Λιβύη"
+  },
+  "MA": {
+    "name": "Μαρόκο",
+    "capital": "Ραμπάτ",
+    "demonym": "μαροκινός",
+    "languages": [
+      "Αραβικά",
+      "Ταμαζίτ Κεντρικού Μαρόκο"
+    ],
+    "currencyNames": [
+      "Ντιράμ Μαρόκου"
+    ],
+    "wikipediaSlug": "Μαρόκο"
+  },
+  "MC": {
+    "name": "Μονακό",
+    "capital": "Μονακό-Βιλ",
+    "demonym": "μονεγάσκος",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Μονακό"
+  },
+  "MD": {
+    "name": "Μολδαβία",
+    "capital": "Κισινάου",
+    "demonym": "μολδαβός",
+    "languages": [
+      "Ρουμανικά"
+    ],
+    "currencyNames": [
+      "Λέου Μολδαβίας"
+    ],
+    "wikipediaSlug": "Μολδαβία"
+  },
+  "ME": {
+    "name": "Μαυροβούνιο",
+    "capital": "Ποντγκόριτσα",
+    "demonym": "μαυροβούνιος",
+    "languages": [
+      "Σερβικά (Μαυροβούνιο)"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Μαυροβούνιο"
+  },
+  "MF": {
+    "name": "Άγιος Μαρτίνος (Γαλλικό τμήμα)",
+    "capital": "Μαριγκό",
+    "demonym": "αγιομαρτινιανός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Άγιος_Μαρτίνος_(Γαλλία)"
+  },
+  "MG": {
+    "name": "Μαδαγασκάρη",
+    "capital": "Ανταναναρίβο",
+    "demonym": "μαλγάσιος",
+    "languages": [
+      "Μαλγασικά",
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Αριάρι Μαδαγασκάρης"
+    ],
+    "wikipediaSlug": "Μαδαγασκάρη"
+  },
+  "MH": {
+    "name": "Νήσοι Μάρσαλ",
+    "capital": "Ματζούρο",
+    "demonym": "μαρσαλέζος",
+    "languages": [
+      "Μαρσαλέζικα",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Νήσοι_Μάρσαλ"
+  },
+  "MK": {
+    "name": "Βόρεια Μακεδονία",
+    "capital": "Σκόπια",
+    "demonym": "μακεδόνας",
+    "languages": [
+      "Σλαβομακεδονικά"
+    ],
+    "currencyNames": [
+      "Δηνάριο ΠΓΔΜ"
+    ],
+    "wikipediaSlug": "Βόρεια_Μακεδονία"
+  },
+  "ML": {
+    "name": "Μάλι",
+    "capital": "Μπαμακό",
+    "demonym": "μαλιανός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Δυτικής Αφρικής"
+    ],
+    "wikipediaSlug": "Μάλι"
+  },
+  "MM": {
+    "name": "Μιανμάρ (Βιρμανία)",
+    "capital": "Νέπιντο",
+    "demonym": "βιρμανός",
+    "languages": [
+      "Βιρμανικά"
+    ],
+    "currencyNames": [
+      "Κιάτ Μιανμάρ"
+    ],
+    "wikipediaSlug": "Μιανμάρ"
+  },
+  "MN": {
+    "name": "Μογγολία",
+    "capital": "Ουλάν Μπατόρ",
+    "demonym": "μογγόλος",
+    "languages": [
+      "Μογγολικά"
+    ],
+    "currencyNames": [
+      "Τουγκρίκ Μογγολίας"
+    ],
+    "wikipediaSlug": "Μογγολία"
+  },
+  "MO": {
+    "name": "Μακάο ΕΔΠ Κίνας",
+    "capital": "",
+    "demonym": "μακαέζος",
+    "languages": [
+      "Κινεζικά",
+      "Πορτογαλικά"
+    ],
+    "currencyNames": [
+      "Πατάκα Μακάο"
+    ],
+    "wikipediaSlug": "Μακάου"
+  },
+  "MP": {
+    "name": "Νήσοι Βόρειες Μαριάνες",
+    "capital": "",
+    "demonym": "βορειομαριανός",
+    "languages": [
+      "Αγγλικά",
+      "Τσαμόρο",
+      "cal"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Βόρειες_Μαριάνες_Νήσοι"
+  },
+  "MQ": {
+    "name": "Μαρτινίκα",
+    "capital": "Φορ-ντε-Φρανς",
+    "demonym": "μαρτινικανός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Μαρτινίκα"
+  },
+  "MR": {
+    "name": "Μαυριτανία",
+    "capital": "Νουακσότ",
+    "demonym": "μαυριτανός",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Ουγκίγια Μαυριτανίας"
+    ],
+    "wikipediaSlug": "Μαυριτανία"
+  },
+  "MS": {
+    "name": "Μονσεράτ",
+    "capital": "Πλίμουθ",
+    "demonym": "μοντσερρατιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Ανατολικής Καραϊβικής"
+    ],
+    "wikipediaSlug": "Μοντσερράτ"
+  },
+  "MT": {
+    "name": "Μάλτα",
+    "capital": "Βαλέτα",
+    "demonym": "μαλτέζος",
+    "languages": [
+      "Μαλτεζικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Μάλτα"
+  },
+  "MU": {
+    "name": "Μαυρίκιος",
+    "capital": "Πορ-Λουί",
+    "demonym": "μαυρικιανός",
+    "languages": [
+      "Αγγλικά",
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Ρουπία Μαυρικίου"
+    ],
+    "wikipediaSlug": "Μαυρίκιος"
+  },
+  "MV": {
+    "name": "Μαλδίβες",
+    "capital": "Μαλέ",
+    "demonym": "μαλδιβιανός",
+    "languages": [
+      "Ντιβέχι"
+    ],
+    "currencyNames": [
+      "Ρουφίγια Μαλδίβων"
+    ],
+    "wikipediaSlug": "Μαλδίβες"
+  },
+  "MW": {
+    "name": "Μαλάουι",
+    "capital": "Λιλόνγκουε",
+    "demonym": "μαλαουιανός",
+    "languages": [
+      "Αγγλικά",
+      "Νιάντζα"
+    ],
+    "currencyNames": [
+      "Κουάτσα Μαλάουι"
+    ],
+    "wikipediaSlug": "Μαλάουι"
+  },
+  "MX": {
+    "name": "Μεξικό",
+    "capital": "Πόλη του Μεξικού",
+    "demonym": "μεξικανός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Πέσο Μεξικού"
+    ],
+    "wikipediaSlug": "Μεξικό"
+  },
+  "MY": {
+    "name": "Μαλαισία",
+    "capital": "Κουάλα Λουμπούρ",
+    "demonym": "μαλαισιανός",
+    "languages": [
+      "Μαλαισιανά"
+    ],
+    "currencyNames": [
+      "Ρινγκίτ Μαλαισίας"
+    ],
+    "wikipediaSlug": "Μαλαισία"
+  },
+  "MZ": {
+    "name": "Μοζαμβίκη",
+    "capital": "Μαπούτο",
+    "demonym": "μοζαμβικανός",
+    "languages": [
+      "Πορτογαλικά"
+    ],
+    "currencyNames": [
+      "Μετικάλ Μοζαμβίκης"
+    ],
+    "wikipediaSlug": "Μοζαμβίκη"
+  },
+  "NA": {
+    "name": "Ναμίμπια",
+    "capital": "Βίντχουκ",
+    "demonym": "ναμίμπιος",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Ναμίμπιας",
+      "Ραντ Νότιας Αφρικής"
+    ],
+    "wikipediaSlug": "Ναμίμπια"
+  },
+  "NC": {
+    "name": "Νέα Καληδονία",
+    "capital": "Νουμεά",
+    "demonym": "νεοκαληδονιανός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFP"
+    ],
+    "wikipediaSlug": "Νέα_Καληδονία"
+  },
+  "NE": {
+    "name": "Νίγηρας",
+    "capital": "Νιαμέυ",
+    "demonym": "νιγηριανός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Δυτικής Αφρικής"
+    ],
+    "wikipediaSlug": "Νίγηρας"
+  },
+  "NF": {
+    "name": "Νήσος Νόρφολκ",
+    "capital": "Κίνγκστον",
+    "demonym": "νορφολκιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Αυστραλίας"
+    ],
+    "wikipediaSlug": "Νησί_Νόρφολκ"
+  },
+  "NG": {
+    "name": "Νιγηρία",
+    "capital": "Αμπούτζα",
+    "demonym": "νιγηριανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Νάιρα Νιγηρίας"
+    ],
+    "wikipediaSlug": "Νιγηρία"
+  },
+  "NI": {
+    "name": "Νικαράγουα",
+    "capital": "Μανάγκουα",
+    "demonym": "νικαραγουανός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Χρυσή Κόρδοβα Νικαράγουας"
+    ],
+    "wikipediaSlug": "Νικαράγουα"
+  },
+  "NL": {
+    "name": "Κάτω Χώρες",
+    "capital": "Άμστερνταμ",
+    "demonym": "ολλανδός",
+    "languages": [
+      "Ολλανδικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Βασίλειο_των_Κάτω_Χωρών"
+  },
+  "NO": {
+    "name": "Νορβηγία",
+    "capital": "Όσλο",
+    "demonym": "νορβηγός",
+    "languages": [
+      "Νορβηγικά"
+    ],
+    "currencyNames": [
+      "Κορόνα Νορβηγίας"
+    ],
+    "wikipediaSlug": "Νορβηγία"
+  },
+  "NP": {
+    "name": "Νεπάλ",
+    "capital": "Κατμαντού",
+    "demonym": "νεπαλέζος",
+    "languages": [
+      "Νεπαλικά"
+    ],
+    "currencyNames": [
+      "Ρουπία Νεπάλ"
+    ],
+    "wikipediaSlug": "Νεπάλ"
+  },
+  "NR": {
+    "name": "Ναουρού",
+    "capital": "Γιαρέν",
+    "demonym": "ναουρουανός",
+    "languages": [
+      "Αγγλικά",
+      "Ναούρου"
+    ],
+    "currencyNames": [
+      "Δολάριο Αυστραλίας"
+    ],
+    "wikipediaSlug": "Ναουρού"
+  },
+  "NU": {
+    "name": "Νιούε",
+    "capital": "Αλόφι",
+    "demonym": "νιουεανός",
+    "languages": [
+      "Αγγλικά",
+      "Νιούε"
+    ],
+    "currencyNames": [
+      "Δολάριο Νέας Ζηλανδίας"
+    ],
+    "wikipediaSlug": "Νιούε"
+  },
+  "NZ": {
+    "name": "Νέα Ζηλανδία",
+    "capital": "Ουέλλινγκτον",
+    "demonym": "νεοζηλανδός",
+    "languages": [
+      "Αγγλικά",
+      "Μαορί"
+    ],
+    "currencyNames": [
+      "Δολάριο Νέας Ζηλανδίας"
+    ],
+    "wikipediaSlug": "Νέα_Ζηλανδία"
+  },
+  "OM": {
+    "name": "Ομάν",
+    "capital": "Μουσκάτ",
+    "demonym": "ομανικός",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Ριάλ Ομάν"
+    ],
+    "wikipediaSlug": "Ομάν"
+  },
+  "PA": {
+    "name": "Παναμάς",
+    "capital": "Πόλη του Παναμά",
+    "demonym": "παναμαίος",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Μπαλμπόα Παναμά",
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Παναμάς"
+  },
+  "PE": {
+    "name": "Περού",
+    "capital": "Λίμα",
+    "demonym": "περουβιανός",
+    "languages": [
+      "Ισπανικά",
+      "Κέτσουα",
+      "Αϊμάρα"
+    ],
+    "currencyNames": [
+      "Σολ Περού"
+    ],
+    "wikipediaSlug": "Περού"
+  },
+  "PF": {
+    "name": "Γαλλική Πολυνησία",
+    "capital": "Παπεέτε",
+    "demonym": "γαλλοπολυνήσιος",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFP"
+    ],
+    "wikipediaSlug": "Γαλλική_Πολυνησία"
+  },
+  "PG": {
+    "name": "Παπούα Νέα Γουινέα",
+    "capital": "Πορτ Μόρεσμπι",
+    "demonym": "παπουανός",
+    "languages": [
+      "Αγγλικά",
+      "Τοκ Πισίν",
+      "Χίρι Μότου"
+    ],
+    "currencyNames": [
+      "Κίνα Παπούας Νέας Γουινέας"
+    ],
+    "wikipediaSlug": "Παπούα_Νέα_Γουινέα"
+  },
+  "PH": {
+    "name": "Φιλιππίνες",
+    "capital": "Μανίλα",
+    "demonym": "φιλιππινέζος",
+    "languages": [
+      "Φιλιππινικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Πέσο Φιλιππίνων"
+    ],
+    "wikipediaSlug": "Φιλιππίνες"
+  },
+  "PK": {
+    "name": "Πακιστάν",
+    "capital": "Ισλαμαμπάντ",
+    "demonym": "πακιστανός",
+    "languages": [
+      "Ούρντου",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Ρουπία Πακιστάν"
+    ],
+    "wikipediaSlug": "Πακιστάν"
+  },
+  "PL": {
+    "name": "Πολωνία",
+    "capital": "Βαρσοβία",
+    "demonym": "πολωνός",
+    "languages": [
+      "Πολωνικά"
+    ],
+    "currencyNames": [
+      "Ζλότι Πολωνίας"
+    ],
+    "wikipediaSlug": "Πολωνία"
+  },
+  "PM": {
+    "name": "Σεν Πιερ και Μικελόν",
+    "capital": "Σαιν-Πιερ",
+    "demonym": "αγιοπετρινός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Σαιν-Πιερ_και_Μικελόν"
+  },
+  "PN": {
+    "name": "Νήσοι Πίτκερν",
+    "capital": "Άνταμσταουν",
+    "demonym": "πίτκαιρνιος",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Νέας Ζηλανδίας"
+    ],
+    "wikipediaSlug": "Νήσοι_Πίτκαιρν"
+  },
+  "PR": {
+    "name": "Πουέρτο Ρίκο",
+    "capital": "Σαν Χουάν",
+    "demonym": "πορτορικανός",
+    "languages": [
+      "Ισπανικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Πουέρτο_Ρίκο"
+  },
+  "PS": {
+    "name": "Παλαιστινιακά Εδάφη",
+    "capital": "Ραμάλα",
+    "demonym": "παλαιστίνιος",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Λίρα Αιγύπτου",
+      "Νέο Σέκελ Ισραήλ",
+      "Δηνάριο Ιορδανίας"
+    ],
+    "wikipediaSlug": "Κράτος_της_Παλαιστίνης"
+  },
+  "PT": {
+    "name": "Πορτογαλία",
+    "capital": "Λισαβόνα",
+    "demonym": "πορτογάλος",
+    "languages": [
+      "Πορτογαλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Πορτογαλία"
+  },
+  "PW": {
+    "name": "Παλάου",
+    "capital": "Νγκερουλμούντ",
+    "demonym": "παλαουανός",
+    "languages": [
+      "Παλάουαν",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Παλάου"
+  },
+  "PY": {
+    "name": "Παραγουάη",
+    "capital": "Ασουνσιόν",
+    "demonym": "παραγουανός",
+    "languages": [
+      "Ισπανικά",
+      "Γκουαρανί"
+    ],
+    "currencyNames": [
+      "Γκουαρανί Παραγουάης"
+    ],
+    "wikipediaSlug": "Παραγουάη"
+  },
+  "QA": {
+    "name": "Κατάρ",
+    "capital": "Ντόχα",
+    "demonym": "καταριανός",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Ριάλ Κατάρ"
+    ],
+    "wikipediaSlug": "Κατάρ"
+  },
+  "RE": {
+    "name": "Ρεϊνιόν",
+    "capital": "Σαιν-Ντενί",
+    "demonym": "ρεϊνιονέζος",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Ρεϋνιόν"
+  },
+  "RO": {
+    "name": "Ρουμανία",
+    "capital": "Βουκουρέστι",
+    "demonym": "ρουμάνος",
+    "languages": [
+      "Ρουμανικά"
+    ],
+    "currencyNames": [
+      "Λέου Ρουμανίας"
+    ],
+    "wikipediaSlug": "Ρουμανία"
+  },
+  "RS": {
+    "name": "Σερβία",
+    "capital": "Βελιγράδι",
+    "demonym": "σέρβος",
+    "languages": [
+      "Σερβικά"
+    ],
+    "currencyNames": [
+      "Δηνάριο Σερβίας"
+    ],
+    "wikipediaSlug": "Σερβία"
+  },
+  "RU": {
+    "name": "Ρωσία",
+    "capital": "Μόσχα",
+    "demonym": "ρώσος",
+    "languages": [
+      "Ρωσικά"
+    ],
+    "currencyNames": [
+      "Ρούβλι Ρωσίας"
+    ],
+    "wikipediaSlug": "Ρωσία"
+  },
+  "RW": {
+    "name": "Ρουάντα",
+    "capital": "Κιγκάλι",
+    "demonym": "ρουαντέζος",
+    "languages": [
+      "Κινιαρουάντα",
+      "Γαλλικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο Ρουάντας"
+    ],
+    "wikipediaSlug": "Ρουάντα"
+  },
+  "SA": {
+    "name": "Σαουδική Αραβία",
+    "capital": "Ριάντ",
+    "demonym": "σαουδαραβικός",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Ριάλ Σαουδικής Αραβίας"
+    ],
+    "wikipediaSlug": "Σαουδική_Αραβία"
+  },
+  "SB": {
+    "name": "Νήσοι Σολομώντος",
+    "capital": "Ονιάρα",
+    "demonym": "σολομώντιος",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Νήσων Σολομώντος"
+    ],
+    "wikipediaSlug": "Νήσοι_Σολομώντα"
+  },
+  "SC": {
+    "name": "Σεϋχέλλες",
+    "capital": "Βικτώρια",
+    "demonym": "σεϋχελλιανός",
+    "languages": [
+      "Κρεολικά Γαλλικά Σεϋχελλών",
+      "Γαλλικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Ρουπία Σεϋχελλών"
+    ],
+    "wikipediaSlug": "Σεϋχέλλες"
+  },
+  "SD": {
+    "name": "Σουδάν",
+    "capital": "Χαρτούμ",
+    "demonym": "σουδανέζος",
+    "languages": [
+      "Αραβικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Λίρα Σουδάν"
+    ],
+    "wikipediaSlug": "Σουδάν"
+  },
+  "SE": {
+    "name": "Σουηδία",
+    "capital": "Στοκχόλμη",
+    "demonym": "σουηδός",
+    "languages": [
+      "Σουηδικά"
+    ],
+    "currencyNames": [
+      "Κορόνα Σουηδίας"
+    ],
+    "wikipediaSlug": "Σουηδία"
+  },
+  "SG": {
+    "name": "Σιγκαπούρη",
+    "capital": "Σιγκαπούρη",
+    "demonym": "σιγκαπουριανός",
+    "languages": [
+      "Αγγλικά",
+      "Μαλαισιανά",
+      "Κινεζικά",
+      "Ταμιλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Σιγκαπούρης"
+    ],
+    "wikipediaSlug": "Σιγκαπούρη"
+  },
+  "SH": {
+    "name": "Αγία Ελένη",
+    "capital": "Τζέιμσταουν",
+    "demonym": "αγιοελενίτης",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Λίρα Στερλίνα Βρετανίας",
+      "Λίρα Αγίας Ελένης"
+    ],
+    "wikipediaSlug": "Αγία_Ελένη,_Ασενσιόν_και_Τριστάν_ντα_Κούνια"
+  },
+  "SI": {
+    "name": "Σλοβενία",
+    "capital": "Λιουμπλιάνα",
+    "demonym": "σλοβένος",
+    "languages": [
+      "Σλοβενικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Σλοβενία"
+  },
+  "SK": {
+    "name": "Σλοβακία",
+    "capital": "Μπρατισλάβα",
+    "demonym": "σλοβάκος",
+    "languages": [
+      "Σλοβακικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Σλοβακία"
+  },
+  "SL": {
+    "name": "Σιέρα Λεόνε",
+    "capital": "Φρίταουν",
+    "demonym": "σιερραλεονέζος",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Λεόνε Σιέρα Λεόνε"
+    ],
+    "wikipediaSlug": "Σιέρα_Λεόνε"
+  },
+  "SM": {
+    "name": "Άγιος Μαρίνος",
+    "capital": "Άγιος Μαρίνος",
+    "demonym": "σαμαρινέζος",
+    "languages": [
+      "Ιταλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Άγιος_Μαρίνος"
+  },
+  "SN": {
+    "name": "Σενεγάλη",
+    "capital": "Ντακάρ",
+    "demonym": "σενεγαλέζος",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Δυτικής Αφρικής"
+    ],
+    "wikipediaSlug": "Σενεγάλη"
+  },
+  "SO": {
+    "name": "Σομαλία",
+    "capital": "Μογκαντίσου",
+    "demonym": "σομαλός",
+    "languages": [
+      "Σομαλικά",
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Σελίνι Σομαλίας"
+    ],
+    "wikipediaSlug": "Σομαλία"
+  },
+  "SR": {
+    "name": "Σουρινάμ",
+    "capital": "Παραμαρίμπο",
+    "demonym": "σουριναμέζος",
+    "languages": [
+      "Ολλανδικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Σουρινάμ"
+    ],
+    "wikipediaSlug": "Σουρινάμ"
+  },
+  "SS": {
+    "name": "Νότιο Σουδάν",
+    "capital": "Τζούμπα",
+    "demonym": "νοτιοσουδανέζος",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Λίρα Νότιου Σουδάν"
+    ],
+    "wikipediaSlug": "Νότιο_Σουδάν"
+  },
+  "ST": {
+    "name": "Σάο Τομέ και Πρίνσιπε",
+    "capital": "Σάο Τομέ",
+    "demonym": "σαντομεανός",
+    "languages": [
+      "Πορτογαλικά"
+    ],
+    "currencyNames": [
+      "Ντόμπρα Σάο Τομέ και Πρίνσιπε"
+    ],
+    "wikipediaSlug": "Σάο_Τομέ_και_Πρίνσιπε"
+  },
+  "SV": {
+    "name": "Ελ Σαλβαδόρ",
+    "capital": "Σαν Σαλβαδόρ",
+    "demonym": "σαλβαδοριανός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Ελ_Σαλβαδόρ"
+  },
+  "SX": {
+    "name": "Άγιος Μαρτίνος (Ολλανδικό τμήμα)",
+    "capital": "Φίλιπσμπουργκ",
+    "demonym": "αγιομαρτινιανός",
+    "languages": [
+      "Ολλανδικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Γκίλντα Ολλανδικών Αντιλλών"
+    ],
+    "wikipediaSlug": "Άγιος_Μαρτίνος_(Ολλανδία)"
+  },
+  "SY": {
+    "name": "Συρία",
+    "capital": "Δαμασκός",
+    "demonym": "σύριος",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Λίρα Συρίας"
+    ],
+    "wikipediaSlug": "Συρία"
+  },
+  "SZ": {
+    "name": "Εσουατίνι",
+    "capital": "Μπαμπάνε",
+    "demonym": "σουαζιλανδός",
+    "languages": [
+      "Σουάτι",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Λιλανγκένι Σουαζιλάνδης",
+      "Ραντ Νότιας Αφρικής"
+    ],
+    "wikipediaSlug": "Εσουατίνι"
+  },
+  "TC": {
+    "name": "Νήσοι Τερκς και Κάικος",
+    "capital": "Κόκμπερν Τάουν",
+    "demonym": "τουρκοκαϊκάνιος",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Τερκς_και_Κέικος"
+  },
+  "TD": {
+    "name": "Τσαντ",
+    "capital": "Ντζαμένα",
+    "demonym": "τσαντιανός",
+    "languages": [
+      "Γαλλικά",
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Κεντρικής Αφρικής"
+    ],
+    "wikipediaSlug": "Τσαντ"
+  },
+  "TG": {
+    "name": "Τόγκο",
+    "capital": "Λομέ",
+    "demonym": "τογκολέζος",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFA Δυτικής Αφρικής"
+    ],
+    "wikipediaSlug": "Τόγκο"
+  },
+  "TH": {
+    "name": "Ταϊλάνδη",
+    "capital": "Μπανγκόκ",
+    "demonym": "ταϊλανδός",
+    "languages": [
+      "Ταϊλανδικά"
+    ],
+    "currencyNames": [
+      "Μπατ Ταϊλάνδης"
+    ],
+    "wikipediaSlug": "Ταϊλάνδη"
+  },
+  "TJ": {
+    "name": "Τατζικιστάν",
+    "capital": "Ντουσαμπέ",
+    "demonym": "τατζίκος",
+    "languages": [
+      "Τατζικικά"
+    ],
+    "currencyNames": [
+      "Σομόνι Τατζικιστάν"
+    ],
+    "wikipediaSlug": "Τατζικιστάν"
+  },
+  "TL": {
+    "name": "Τιμόρ-Λέστε",
+    "capital": "Ντίλι",
+    "demonym": "τιμορέζος",
+    "languages": [
+      "Πορτογαλικά",
+      "Τέτουμ"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Ανατολικό_Τιμόρ"
+  },
+  "TM": {
+    "name": "Τουρκμενιστάν",
+    "capital": "Ασγκαμπάτ",
+    "demonym": "τουρκμένος",
+    "languages": [
+      "Τουρκμενικά"
+    ],
+    "currencyNames": [
+      "Μάνατ Τουρκμενιστάν"
+    ],
+    "wikipediaSlug": "Τουρκμενιστάν"
+  },
+  "TN": {
+    "name": "Τυνησία",
+    "capital": "Τύνιδα",
+    "demonym": "τυνήσιος",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Δηνάριο Τυνησίας"
+    ],
+    "wikipediaSlug": "Τυνησία"
+  },
+  "TO": {
+    "name": "Τόνγκα",
+    "capital": "Νουκουαλόφα",
+    "demonym": "τονγκανός",
+    "languages": [
+      "Τονγκανικά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Παάγκα Τόνγκα"
+    ],
+    "wikipediaSlug": "Τόνγκα"
+  },
+  "TR": {
+    "name": "Τουρκία",
+    "capital": "Άγκυρα",
+    "demonym": "τούρκος",
+    "languages": [
+      "Τουρκικά"
+    ],
+    "currencyNames": [
+      "Λίρα Τουρκίας"
+    ],
+    "wikipediaSlug": "Τουρκία"
+  },
+  "TT": {
+    "name": "Τρινιντάντ και Τομπάγκο",
+    "capital": "Πορτ-οφ-Σπέιν",
+    "demonym": "τρινιδαδιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Τρινιντάντ και Τομπάγκο"
+    ],
+    "wikipediaSlug": "Τρινιντάντ_και_Tομπάγκο"
+  },
+  "TV": {
+    "name": "Τουβαλού",
+    "capital": "Φουναφούτι",
+    "demonym": "τουβαλουανός",
+    "languages": [
+      "Τουβαλού",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Αυστραλίας"
+    ],
+    "wikipediaSlug": "Τουβαλού"
+  },
+  "TW": {
+    "name": "Ταϊβάν",
+    "capital": "Ταϊπέι",
+    "demonym": "ταϊβανέζος",
+    "languages": [
+      "Κινεζικά"
+    ],
+    "currencyNames": [
+      "Νέο δολάριο Ταϊβάν"
+    ],
+    "wikipediaSlug": "Ταϊβάν"
+  },
+  "TZ": {
+    "name": "Τανζανία",
+    "capital": "Ντοντόμα",
+    "demonym": "τανζανός",
+    "languages": [
+      "Σουαχίλι",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Σελίνι Τανζανίας"
+    ],
+    "wikipediaSlug": "Τανζανία"
+  },
+  "UA": {
+    "name": "Ουκρανία",
+    "capital": "Κίεβο",
+    "demonym": "ουκρανός",
+    "languages": [
+      "Ουκρανικά"
+    ],
+    "currencyNames": [
+      "Γρίβνα Ουκρανίας"
+    ],
+    "wikipediaSlug": "Ουκρανία"
+  },
+  "UG": {
+    "name": "Ουγκάντα",
+    "capital": "Καμπάλα",
+    "demonym": "ουγκαντέζος",
+    "languages": [
+      "Αγγλικά",
+      "Σουαχίλι"
+    ],
+    "currencyNames": [
+      "Σελίνι Ουγκάντας"
+    ],
+    "wikipediaSlug": "Ουγκάντα"
+  },
+  "US": {
+    "name": "Ηνωμένες Πολιτείες",
+    "capital": "Ουάσινγκτον",
+    "demonym": "αμερικανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Ηνωμένες_Πολιτείες_Αμερικής"
+  },
+  "UY": {
+    "name": "Ουρουγουάη",
+    "capital": "Μοντεβιδέο",
+    "demonym": "ουρουγουανός",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Πέσο Ουρουγουάης"
+    ],
+    "wikipediaSlug": "Ουρουγουάη"
+  },
+  "UZ": {
+    "name": "Ουζμπεκιστάν",
+    "capital": "Τασκένδη",
+    "demonym": "ουζμπέκος",
+    "languages": [
+      "Ουζμπεκικά"
+    ],
+    "currencyNames": [
+      "Σομ Ουζμπεκιστάν"
+    ],
+    "wikipediaSlug": "Ουζμπεκιστάν"
+  },
+  "VA": {
+    "name": "Βατικανό",
+    "capital": "",
+    "demonym": "βατικανός",
+    "languages": [
+      "Ιταλικά",
+      "Λατινικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Βατικανό"
+  },
+  "VC": {
+    "name": "Άγιος Βικέντιος και Γρεναδίνες",
+    "capital": "Κίνγκσταουν",
+    "demonym": "βινσεντιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο Ανατολικής Καραϊβικής"
+    ],
+    "wikipediaSlug": "Άγιος_Βικέντιος_και_Γρεναδίνες"
+  },
+  "VE": {
+    "name": "Βενεζουέλα",
+    "capital": "Καράκας",
+    "demonym": "βενεζουελάνος",
+    "languages": [
+      "Ισπανικά"
+    ],
+    "currencyNames": [
+      "Μπολιβάρ Βενεζουέλας"
+    ],
+    "wikipediaSlug": "Βενεζουέλα"
+  },
+  "VG": {
+    "name": "Βρετανικές Παρθένες Νήσοι",
+    "capital": "Ρόουντ Τάουν",
+    "demonym": "βρετανοβιργινιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Βρετανικές_Παρθένοι_Νήσοι"
+  },
+  "VI": {
+    "name": "Αμερικανικές Παρθένες Νήσοι",
+    "capital": "Σαρλότ Αμαλί",
+    "demonym": "αμερικανοβιργινιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Δολάριο ΗΠΑ"
+    ],
+    "wikipediaSlug": "Αμερικανικές_Παρθένοι_Νήσοι"
+  },
+  "VN": {
+    "name": "Βιετνάμ",
+    "capital": "Ανόι",
+    "demonym": "βιετναμέζος",
+    "languages": [
+      "Βιετναμικά"
+    ],
+    "currencyNames": [
+      "Ντονγκ Βιετνάμ"
+    ],
+    "wikipediaSlug": "Βιετνάμ"
+  },
+  "VU": {
+    "name": "Βανουάτου",
+    "capital": "Πορτ Βίλα",
+    "demonym": "βανουατιανός",
+    "languages": [
+      "Μπισλάμα",
+      "Αγγλικά",
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Βατού Βανουάτου"
+    ],
+    "wikipediaSlug": "Βανουάτου"
+  },
+  "WF": {
+    "name": "Γουάλις και Φουτούνα",
+    "capital": "Ματά-Ουτού",
+    "demonym": "ουαλισιανός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Φράγκο CFP"
+    ],
+    "wikipediaSlug": "Ουαλίς_και_Φουτουνά"
+  },
+  "WS": {
+    "name": "Σαμόα",
+    "capital": "Απία",
+    "demonym": "σαμοανός",
+    "languages": [
+      "Σαμοανά",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Τάλα Σαμόα"
+    ],
+    "wikipediaSlug": "Σαμόα"
+  },
+  "XK": {
+    "name": "Κοσσυφοπέδιο",
+    "capital": "Πρίστινα",
+    "demonym": "κοσοβάρος",
+    "languages": [
+      "Αλβανικά",
+      "Σερβικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Κοσσυφοπέδιο"
+  },
+  "YE": {
+    "name": "Υεμένη",
+    "capital": "Σαναά",
+    "demonym": "υεμενίτης",
+    "languages": [
+      "Αραβικά"
+    ],
+    "currencyNames": [
+      "Ριάλ Υεμένης"
+    ],
+    "wikipediaSlug": "Υεμένη"
+  },
+  "YT": {
+    "name": "Μαγιότ",
+    "capital": "Μαμουτζού",
+    "demonym": "μαγιοτιανός",
+    "languages": [
+      "Γαλλικά"
+    ],
+    "currencyNames": [
+      "Ευρώ"
+    ],
+    "wikipediaSlug": "Μαγιότ"
+  },
+  "ZA": {
+    "name": "Νότια Αφρική",
+    "capital": "Πρετόρια",
+    "demonym": "νοτιοαφρικανός",
+    "languages": [
+      "Ζουλού",
+      "Κόσα",
+      "Αφρικάανς",
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Ραντ Νότιας Αφρικής"
+    ],
+    "wikipediaSlug": "Νότια_Αφρική"
+  },
+  "ZM": {
+    "name": "Ζάμπια",
+    "capital": "Λουσάκα",
+    "demonym": "ζαμβιανός",
+    "languages": [
+      "Αγγλικά"
+    ],
+    "currencyNames": [
+      "Κουάτσα Ζάμπιας"
+    ],
+    "wikipediaSlug": "Ζάμπια"
+  },
+  "ZW": {
+    "name": "Ζιμπάμπουε",
+    "capital": "Χαράρε",
+    "demonym": "ζιμπαμπουανός",
+    "languages": [
+      "Αγγλικά",
+      "Σόνα",
+      "Νότια Ντεμπέλε"
+    ],
+    "currencyNames": [
+      "Δολάριο Ζιμπάμπουε (2009)"
+    ],
+    "wikipediaSlug": "Ζιμπάμπουε"
+  }
+}

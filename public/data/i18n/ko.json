@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "서사하라",
-    "capital": "라윤",
+    "capital": "",
     "demonym": "서사하라의",
     "languages": [
       "아랍어"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "홍콩",
-    "capital": "빅토리아",
+    "capital": "",
     "demonym": "홍콩의",
     "languages": [
       "중국어",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "북마리아나제도",
-    "capital": "사이판",
+    "capital": "",
     "demonym": "북마리아나 제도의",
     "languages": [
       "영어",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "몬트세라트",
-    "capital": "브레이즈",
+    "capital": "플리머스",
     "demonym": "몬트세랫의",
     "languages": [
       "영어"
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "팔레스타인",
-    "capital": "동예루살렘",
+    "capital": "라말라",
     "demonym": "팔레스타인의",
     "languages": [
       "아랍어"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "바티칸 시국",
-    "capital": "바티칸시",
+    "capital": "",
     "demonym": "바티칸의",
     "languages": [
       "이탈리아어",

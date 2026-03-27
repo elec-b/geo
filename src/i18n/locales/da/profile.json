@@ -1,0 +1,17 @@
+{
+  "defaultName": "Udforsker",
+  "editor.titleEdit": "Rediger profil",
+  "editor.titleCreate": "Opret profil",
+  "editor.chooseAvatar": "Vælg din avatar",
+  "editor.nameLabel": "Navn",
+  "editor.namePlaceholder": "Profilnavn",
+  "editor.save": "Gem",
+  "editor.create": "Opret",
+  "selector.title": "Profiler",
+  "selector.confirmDelete": "Slet «{{name}}»?",
+  "selector.delete": "Slet",
+  "selector.createNew": "Opret profil",
+  "selector.aria.edit": "Rediger {{name}}",
+  "selector.aria.delete": "Slet {{name}}",
+  "selector.aria.dialog": "Vælg profil"
+}

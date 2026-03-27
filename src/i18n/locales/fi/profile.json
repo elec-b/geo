@@ -1,0 +1,17 @@
+{
+  "defaultName": "Tutkimusmatkailija",
+  "editor.titleEdit": "Muokkaa profiilia",
+  "editor.titleCreate": "Luo profiili",
+  "editor.chooseAvatar": "Valitse avatarisi",
+  "editor.nameLabel": "Nimi",
+  "editor.namePlaceholder": "Profiilin nimi",
+  "editor.save": "Tallenna",
+  "editor.create": "Luo",
+  "selector.title": "Profiilit",
+  "selector.confirmDelete": "Poistetaanko «{{name}}»?",
+  "selector.delete": "Poista",
+  "selector.createNew": "Luo profiili",
+  "selector.aria.edit": "Muokkaa {{name}}",
+  "selector.aria.delete": "Poista {{name}}",
+  "selector.aria.dialog": "Valitse profiili"
+}
