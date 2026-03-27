@@ -89,7 +89,16 @@ export function SettingsSheet({ onClose }: SettingsSheetProps) {
           </div>
           {showLangPicker && (
             <div className="settings-sheet__lang-picker">
-              {Object.entries(SUPPORTED_LOCALES).map(([code, name]) => (
+              {(() => {
+                const sorted = Object.entries(SUPPORTED_LOCALES).sort((a, b) => a[1].localeCompare(b[1]));
+                const half = Math.ceil(sorted.length / 2);
+                const cols: typeof sorted = [];
+                for (let i = 0; i < half; i++) {
+                  cols.push(sorted[i]);
+                  if (i + half < sorted.length) cols.push(sorted[i + half]);
+                }
+                return cols;
+              })().map(([code, name]) => (
                 <button
                   key={code}
                   className={`settings-sheet__lang-option${code === locale ? ' settings-sheet__lang-option--active' : ''}`}

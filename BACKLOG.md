@@ -46,7 +46,7 @@
 - [x] **(i)** 6 idiomas nuevos (el, ca, da, fi, sk, hr): pipeline completo — datos CLDR+Wikidata+Claude (237 países × 32 idiomas), 42 archivos UI (6×7 namespaces), plurales CLDR correctos (sk: one/few/many/other; hr: one/few/other), Wikipedia slugs. Fix: territorios sintéticos (Somaliland, Chipre del Norte, Antártida) añadidos a `SYNTHETIC_I18N` en `countryData.ts`
 - [x] **(j)** Mapeo de locales para stores: `scripts/data/store-locale-map.json` con los 32 idiomas → App Store / Google Play (ej. `nb` → `no`/`no-NO`)
 - [x] **(k)** Variantes regionales registradas en `store-locale-map.json`: es-419/es-MX, fr-CA, en-GB, en-AU, zh-HK (coste cero, reutilizan traducciones base)
-- [ ] **(fix)** Ordenar idiomas en Configuración alfabéticamente por nombre nativo (estándar de iOS Settings / Google Play). Actualmente están ordenados vagamente por número de hablantes, lo que obliga a los idiomas menos hablados a scrollear.
+- [x] **(fix)** Ordenar idiomas en Configuración alfabéticamente por nombre nativo (estándar de iOS Settings / Google Play), lectura por columna
 - [ ] **(final-check)** Lanzar agent team, para verificar datos de internacionalización creados vs. fuentes reputadas. Similar al check que se hizo en Español frente a la RAE (apéndice del diccionario panhispánico de dudas) y otras fuentes. Crear spike sugiriendo cambios. Importante pensar también en cómo mantener esto bien automáticamente en el futuro (ya caputrado en design.md, pero es un punto muy importante y que debe estar presente a lo largo del proyecto)
 
 ### Acabados pre-lanzamiento
