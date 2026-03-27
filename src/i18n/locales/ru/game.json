@@ -9,6 +9,8 @@
   "selector.continue": "Продолжить",
   "selector.completed": "Пройдено ★",
   "selector.countryCount_one": "{{count}} страна",
+  "selector.countryCount_few": "{{count}} страны",
+  "selector.countryCount_many": "{{count}} стран",
   "selector.countryCount_other": "{{count}} стран",
   "selector.lockedToast": "Получи печати предыдущего уровня",
 

@@ -9,6 +9,8 @@
   "selector.continue": "Pokračovat",
   "selector.completed": "Splněno ★",
   "selector.countryCount_one": "{{count}} země",
+  "selector.countryCount_few": "{{count}} země",
+  "selector.countryCount_many": "{{count}} zemí",
   "selector.countryCount_other": "{{count}} zemí",
   "selector.lockedToast": "Získej razítka z předchozí úrovně",
 

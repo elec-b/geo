@@ -9,6 +9,7 @@
   "selector.continue": "Continuă",
   "selector.completed": "Trecut ★",
   "selector.countryCount_one": "{{count}} țară",
+  "selector.countryCount_few": "{{count}} țări",
   "selector.countryCount_other": "{{count}} țări",
   "selector.lockedToast": "Obține ștampilele de la nivelul anterior",
 

@@ -9,6 +9,8 @@
   "selector.continue": "Kontynuuj",
   "selector.completed": "Ukończone ★",
   "selector.countryCount_one": "{{count}} kraj",
+  "selector.countryCount_few": "{{count}} kraje",
+  "selector.countryCount_many": "{{count}} krajów",
   "selector.countryCount_other": "{{count}} krajów",
   "selector.lockedToast": "Zdobądź pieczątki z poprzedniego poziomu",
 
