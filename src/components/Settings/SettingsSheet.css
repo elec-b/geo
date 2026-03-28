@@ -128,32 +128,6 @@
   flex-shrink: 0;
 }
 
-/* Picker de idioma desplegable */
-.settings-sheet__lang-picker {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.25rem;
-  padding: 0 var(--spacing-md) var(--spacing-sm);
-}
-
-.settings-sheet__lang-option {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-sm);
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  text-align: left;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.settings-sheet__lang-option--active {
-  background: rgba(100, 180, 255, 0.15);
-  border-color: rgba(100, 180, 255, 0.3);
-  color: var(--color-text-primary);
-}
-
 /* Toggle switch (patrón de TableView) */
 .settings-sheet__toggle {
   position: relative;

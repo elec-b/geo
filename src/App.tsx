@@ -11,6 +11,7 @@ import { PassportView } from './components/Passport/PassportView';
 import { ProfileSelector, getNextDefaultName } from './components/Profile/ProfileSelector';
 import { ProfileEditor } from './components/Profile/ProfileEditor';
 import { SettingsSheet } from './components/Settings/SettingsSheet';
+import { LanguageSheet } from './components/Settings/LanguageSheet';
 import { loadCountryData, loadCapitals, invalidateCache } from './data/countryData';
 import { changeAppLanguage } from './i18n';
 import { buildRankings, type CountryRankings } from './data/rankings';
@@ -62,6 +63,7 @@ function App() {
 
   // Modal de configuración
   const [showSettings, setShowSettings] = useState(false);
+  const [showLanguage, setShowLanguage] = useState(false);
 
   // Modales de gestión de perfiles
   const [showProfileSelector, setShowProfileSelector] = useState(false);
@@ -327,6 +329,13 @@ function App() {
       {showSettings && (
         <SettingsSheet
           onClose={() => setShowSettings(false)}
+          onOpenLanguage={() => { setShowSettings(false); setShowLanguage(true); }}
+        />
+      )}
+
+      {showLanguage && (
+        <LanguageSheet
+          onClose={() => { setShowLanguage(false); setShowSettings(true); }}
         />
       )}
 

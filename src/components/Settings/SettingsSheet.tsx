@@ -1,18 +1,18 @@
 // SettingsSheet — bottom sheet de configuración
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../stores/appStore';
 import { hapticSelection } from '../../utils/haptics';
 import { useBottomSheetDrag } from '../../hooks/useBottomSheetDrag';
-import { SUPPORTED_LOCALES, changeAppLanguage } from '../../i18n';
-import { invalidateCache } from '../../data/countryData';
+import { SUPPORTED_LOCALES } from '../../i18n';
 import './SettingsSheet.css';
 
 interface SettingsSheetProps {
   onClose: () => void;
+  onOpenLanguage: () => void;
 }
 
-export function SettingsSheet({ onClose }: SettingsSheetProps) {
+export function SettingsSheet({ onClose, onOpenLanguage }: SettingsSheetProps) {
   const { t } = useTranslation('settings');
   const sheetRef = useRef<HTMLDivElement>(null);
   const { dragHandlers, isClosing, closeAnimated } = useBottomSheetDrag({ sheetRef, onClose });
@@ -22,7 +22,6 @@ export function SettingsSheet({ onClose }: SettingsSheetProps) {
   const showSeaLabels = useAppStore((s) => s.settings.showSeaLabels);
   const locale = useAppStore((s) => s.settings.locale);
   const updateSettings = useAppStore((s) => s.updateSettings);
-  const [showLangPicker, setShowLangPicker] = useState(false);
 
   const toggleVibration = () => {
     updateSettings({ vibration: !vibration });
@@ -77,7 +76,7 @@ export function SettingsSheet({ onClose }: SettingsSheetProps) {
           </div>
 
           {/* Idioma */}
-          <div className="settings-sheet__row" onClick={() => { setShowLangPicker(!showLangPicker); hapticSelection(); }}>
+          <div className="settings-sheet__row" onClick={() => { hapticSelection(); onOpenLanguage(); }}>
             <svg className="settings-sheet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" />
               <path d="M2 12h20" />
@@ -85,37 +84,8 @@ export function SettingsSheet({ onClose }: SettingsSheetProps) {
             </svg>
             <span className="settings-sheet__label">{t('language')}</span>
             <span className="settings-sheet__value">{SUPPORTED_LOCALES[locale] ?? locale}</span>
-            <span className="settings-sheet__chevron">{showLangPicker ? '▴' : '▾'}</span>
+            <span className="settings-sheet__chevron">›</span>
           </div>
-          {showLangPicker && (
-            <div className="settings-sheet__lang-picker">
-              {(() => {
-                const sorted = Object.entries(SUPPORTED_LOCALES).sort((a, b) => a[1].localeCompare(b[1]));
-                const half = Math.ceil(sorted.length / 2);
-                const cols: typeof sorted = [];
-                for (let i = 0; i < half; i++) {
-                  cols.push(sorted[i]);
-                  if (i + half < sorted.length) cols.push(sorted[i + half]);
-                }
-                return cols;
-              })().map(([code, name]) => (
-                <button
-                  key={code}
-                  className={`settings-sheet__lang-option${code === locale ? ' settings-sheet__lang-option--active' : ''}`}
-                  onClick={async () => {
-                    if (code === locale) return;
-                    hapticSelection();
-                    invalidateCache();
-                    updateSettings({ locale: code });
-                    await changeAppLanguage(code);
-                    setShowLangPicker(false);
-                  }}
-                >
-                  {name}
-                </button>
-              ))}
-            </div>
-          )}
 
           {/* Tema (deshabilitado) */}
           <div className="settings-sheet__row settings-sheet__row--disabled">
