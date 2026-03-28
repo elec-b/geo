@@ -58,6 +58,8 @@ Los **177 overrides** en `country-name-overrides.json` (24 idiomas) fueron verif
 
 **Nota**: Las 34 divergencias pt-BR y 31 pt-PT son mayoritariamente variantes ortográficas legítimas entre portugués brasileño y europeo, no errores. Las 93 divergencias hindi son variaciones de transliteración sin autoridad para decidir.
 
+**Resolución (28 Marzo)**: Spike detallado con análisis caso por caso → `divergencias-cldr-wikipedia.md`. Resultado: 346 divergencias analizadas por agent team (2 auditores + 2 refutadores). 94 overrides nuevos aprobados, 248 mantenidos como CLDR. Principales cambios: vi (29 anglicismos→nombres nativos), hi (19 transliteraciones mejoradas), ms (15 nombres malayos nativos).
+
 ### 1.5 Hallazgo transversal: Eswatini/Swaziland
 
 CLDR adoptó "Eswatini" (endónimo) para muchos idiomas, pero el uso consuetudinario mantiene el nombre tradicional en 7+ idiomas. Ya existe override para es y nl. Otros idiomas afectados: it, fi, da, sv, cs, el, th, vi (sin override — documentado como divergencia).

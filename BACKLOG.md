@@ -49,6 +49,7 @@
 - [x] **(fix)** Ordenar idiomas en Configuración alfabéticamente por nombre nativo (estándar de iOS Settings / Google Play), lectura por columna
 - [x] **(final-check)** Verificación de datos i18n contra fuentes autoritativas (32 idiomas). Spikes: `docs/spikes/fuentes-autoritativas-i18n.md` y `docs/spikes/verificacion-i18n-datos.md`. Correcciones aplicadas: 237 capitales zh-Hant (simplificado→tradicional + fix pipeline), 5 errores puntuales de capitales, ~90 limpiezas de formato, unificación GQ/BO/LK/MS, 13 overrides de nombres de países (incl. Eswatini→nombre tradicional en 8 idiomas), 11 correcciones de gentilicios, 14 correcciones de mares/océanos
 - [ ] **(final-check-b)** Overrides de nombres de países para vi, ms y da: ~64 divergencias CLDR vs Wikipedia donde CLDR usa anglicismos y Wikipedia usa el nombre nativo (ej. vi: "Australia"→"Úc"). Escribir script de comparación, generar lista y añadir overrides a `country-name-overrides.json`
+- [ ] **(fix)** Mejorar el selector de idioma. Mostrar problema y pensar distintas ideas.
 
 ### Eficientar workflow de trabajo
 - [ ] design.md se está haciendo demasiado extenso para cargar siempre en contexto con /lee_doc (que solemos hacer siempre al inicio de la sesión). Pensar cómo reestructurarlo, para ser más eficientes.
