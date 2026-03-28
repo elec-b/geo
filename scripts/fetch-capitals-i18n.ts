@@ -11,6 +11,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { Converter } from 'opencc-js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = resolve(__dirname, 'data');
@@ -95,12 +96,13 @@ async function main() {
     }
   }
 
-  // zh-Hant: copiar de zh si existe (CLDR no distingue en Wikidata labels)
+  // zh-Hant: convertir de zh-Hans a caracteres tradicionales (opencc-js)
   // pt-PT: copiar de pt-BR
   // nb: copiar de nb (ya incluido directamente)
+  const s2t = Converter({ from: 'cn', to: 'tw' });
   for (const iso of Object.keys(result)) {
     if (result[iso]['zh-Hans'] && !result[iso]['zh-Hant']) {
-      result[iso]['zh-Hant'] = result[iso]['zh-Hans'];
+      result[iso]['zh-Hant'] = s2t(result[iso]['zh-Hans']);
     }
     if (result[iso]['pt-BR'] && !result[iso]['pt-PT']) {
       result[iso]['pt-PT'] = result[iso]['pt-BR'];

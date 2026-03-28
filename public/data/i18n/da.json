@@ -1009,7 +1009,7 @@
   },
   "GQ": {
     "name": "Ækvatorialguinea",
-    "capital": "",
+    "capital": "Ciudad de la Paz",
     "demonym": "ækvatorialguineaner",
     "languages": [
       "Spansk",
@@ -1035,7 +1035,7 @@
   },
   "GT": {
     "name": "Guatemala",
-    "capital": "Guatamala City",
+    "capital": "Guatemala City",
     "demonym": "guatemalaner",
     "languages": [
       "Spansk"
@@ -2519,7 +2519,7 @@
     "wikipediaSlug": "Syrien"
   },
   "SZ": {
-    "name": "Eswatini",
+    "name": "Swaziland",
     "capital": "Mbabane",
     "demonym": "swazilænder",
     "languages": [

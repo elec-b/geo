@@ -210,7 +210,7 @@
   },
   "BD": {
     "name": "孟加拉国",
-    "capital": "达卡市",
+    "capital": "达卡",
     "demonym": "孟加拉国的",
     "languages": [
       "孟加拉语"
@@ -321,7 +321,7 @@
   },
   "BN": {
     "name": "文莱",
-    "capital": "斯里巴加灣市",
+    "capital": "斯里巴加灣",
     "demonym": "文莱的",
     "languages": [
       "马来语"
@@ -650,7 +650,7 @@
   },
   "DJ": {
     "name": "吉布提",
-    "capital": "吉布地市",
+    "capital": "吉布地",
     "demonym": "吉布提的",
     "languages": [
       "法语",
@@ -1009,7 +1009,7 @@
   },
   "GQ": {
     "name": "赤道几内亚",
-    "capital": "欧亚拉",
+    "capital": "拉巴斯城",
     "demonym": "赤道几内亚的",
     "languages": [
       "西班牙语",
@@ -1035,7 +1035,7 @@
   },
   "GT": {
     "name": "危地马拉",
-    "capital": "瓜地馬拉市",
+    "capital": "瓜地馬拉",
     "demonym": "危地马拉的",
     "languages": [
       "西班牙语"
@@ -1546,7 +1546,7 @@
   },
   "LU": {
     "name": "卢森堡",
-    "capital": "卢森堡市",
+    "capital": "卢森堡",
     "demonym": "卢森堡的",
     "languages": [
       "卢森堡语",
@@ -1978,7 +1978,7 @@
   },
   "NR": {
     "name": "瑙鲁",
-    "capital": "亞倫區",
+    "capital": "亞倫",
     "demonym": "瑙鲁的",
     "languages": [
       "英语",
@@ -2082,7 +2082,7 @@
   },
   "PH": {
     "name": "菲律宾",
-    "capital": "马尼拉市",
+    "capital": "马尼拉",
     "demonym": "菲律宾的",
     "languages": [
       "菲律宾语",
@@ -2620,7 +2620,7 @@
   },
   "TN": {
     "name": "突尼斯",
-    "capital": "突尼斯市",
+    "capital": "突尼斯",
     "demonym": "突尼斯的",
     "languages": [
       "阿拉伯语"

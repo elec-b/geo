@@ -38,7 +38,7 @@
   },
   "AG": {
     "name": "Antigua dan Barbuda",
-    "capital": "St. John's, Antigua dan Barbuda",
+    "capital": "St. John's",
     "demonym": "Antigua",
     "languages": [
       "Inggris"
@@ -334,7 +334,7 @@
   },
   "BO": {
     "name": "Bolivia",
-    "capital": "La Paz, Bolivia",
+    "capital": "La Paz",
     "demonym": "Bolivia",
     "languages": [
       "Spanyol",
@@ -563,7 +563,7 @@
   },
   "CR": {
     "name": "Kosta Rika",
-    "capital": "San José, Kosta Rika",
+    "capital": "San José",
     "demonym": "Kosta Rika",
     "languages": [
       "Spanyol"
@@ -1422,7 +1422,7 @@
   },
   "KY": {
     "name": "Kepulauan Cayman",
-    "capital": "George Town, Kepulauan Cayman",
+    "capital": "George Town",
     "demonym": "Kepulauan Cayman",
     "languages": [
       "Inggris"
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Brades",
+    "capital": "Plymouth",
     "demonym": "Montserrat",
     "languages": [
       "Inggris"
@@ -1906,7 +1906,7 @@
   },
   "NF": {
     "name": "Kepulauan Norfolk",
-    "capital": "Kingston, Pulau Norfolk",
+    "capital": "Kingston",
     "demonym": "Pulau Norfolk",
     "languages": [
       "Inggris"
@@ -2120,7 +2120,7 @@
   },
   "PM": {
     "name": "Saint Pierre dan Miquelon",
-    "capital": "Saint-Pierre, Saint-Pierre dan Miquelon",
+    "capital": "Saint-Pierre",
     "demonym": "Saint Pierre dan Miquelon",
     "languages": [
       "Prancis"
@@ -2144,7 +2144,7 @@
   },
   "PR": {
     "name": "Puerto Riko",
-    "capital": "San Juan, Puerto Riko",
+    "capital": "San Juan",
     "demonym": "Puerto Riko",
     "languages": [
       "Spanyol",
@@ -2307,7 +2307,7 @@
   },
   "SC": {
     "name": "Seychelles",
-    "capital": "Victoria, Seychelles",
+    "capital": "Victoria",
     "demonym": "Seychelles",
     "languages": [
       "Seselwa Kreol Prancis",
@@ -2361,7 +2361,7 @@
   },
   "SH": {
     "name": "Saint Helena",
-    "capital": "Jamestown, Saint Helena",
+    "capital": "Jamestown",
     "demonym": "Saint Helena",
     "languages": [
       "Inggris"
@@ -2459,7 +2459,7 @@
   },
   "SS": {
     "name": "Sudan Selatan",
-    "capital": "Juba, Sudan Selatan",
+    "capital": "Juba",
     "demonym": "Sudan Selatan",
     "languages": [
       "Inggris"
@@ -2495,7 +2495,7 @@
   },
   "SX": {
     "name": "Sint Maarten",
-    "capital": "Philipsburg, Sint Maarten",
+    "capital": "Philipsburg",
     "demonym": "Sint Maarten",
     "languages": [
       "Belanda",

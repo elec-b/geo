@@ -488,7 +488,7 @@
     "wikipediaSlug": "Suïssa"
   },
   "CI": {
-    "name": "Côte d’Ivoire",
+    "name": "Costa d'Ivori",
     "capital": "Yamoussoukro",
     "demonym": "ivorià",
     "languages": [
@@ -1009,7 +1009,7 @@
   },
   "GQ": {
     "name": "Guinea Equatorial",
-    "capital": "Oyala",
+    "capital": "Ciudad de la Paz",
     "demonym": "equatoguineà",
     "languages": [
       "Espanyol",
@@ -1446,7 +1446,7 @@
     "wikipediaSlug": "Kazakhstan"
   },
   "LA": {
-    "name": "Lao",
+    "name": "Laos",
     "capital": "Vientiane",
     "demonym": "laosià",
     "languages": [
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Brades",
+    "capital": "Plymouth",
     "demonym": "montserratenc",
     "languages": [
       "Anglès"
@@ -2594,7 +2594,7 @@
     "wikipediaSlug": "Tadjikistan"
   },
   "TL": {
-    "name": "Timor-Leste",
+    "name": "Timor Oriental",
     "capital": "Dili",
     "demonym": "timorenc",
     "languages": [

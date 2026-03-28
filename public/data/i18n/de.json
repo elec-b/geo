@@ -900,7 +900,7 @@
   },
   "GD": {
     "name": "Grenada",
-    "capital": "St. George’s",
+    "capital": "St. George's",
     "demonym": "grenadisch",
     "languages": [
       "Englisch"
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Brades",
+    "capital": "Plymouth",
     "demonym": "montserratisch",
     "languages": [
       "Englisch"
@@ -2546,7 +2546,7 @@
   },
   "TD": {
     "name": "Tschad",
-    "capital": "N’Djamena",
+    "capital": "N'Djamena",
     "demonym": "tschadisch",
     "languages": [
       "Französisch",

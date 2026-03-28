@@ -676,7 +676,7 @@
   "DM": {
     "name": "Dominica",
     "capital": "Roseau",
-    "demonym": "dominicano",
+    "demonym": "dominicense",
     "languages": [
       "Inglese"
     ],
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Brades",
+    "capital": "Plymouth",
     "demonym": "montserratiano",
     "languages": [
       "Inglese"
@@ -2519,7 +2519,7 @@
     "wikipediaSlug": "Siria"
   },
   "SZ": {
-    "name": "Eswatini",
+    "name": "Swaziland",
     "capital": "Mbabane",
     "demonym": "swazi",
     "languages": [
@@ -2546,7 +2546,7 @@
   },
   "TD": {
     "name": "Ciad",
-    "capital": "N’Djamena",
+    "capital": "N'Djamena",
     "demonym": "ciadiano",
     "languages": [
       "Francese",

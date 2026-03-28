@@ -38,7 +38,7 @@
   },
   "AG": {
     "name": "Antigua dan Barbuda",
-    "capital": "St. John's, Antigua dan Barbuda",
+    "capital": "St. John's",
     "demonym": "Antigua",
     "languages": [
       "Inggeris"
@@ -600,7 +600,7 @@
   },
   "CW": {
     "name": "Curacao",
-    "capital": "Willemstad, Curaçao",
+    "capital": "Willemstad",
     "demonym": "Curaçao",
     "languages": [
       "Belanda",
@@ -827,7 +827,7 @@
   },
   "FK": {
     "name": "Kepulauan Falkland",
-    "capital": "Stanley, Kepulauan Falkland",
+    "capital": "Stanley",
     "demonym": "Kepulauan Falkland",
     "languages": [
       "Inggeris"
@@ -1009,7 +1009,7 @@
   },
   "GQ": {
     "name": "Guinea Khatulistiwa",
-    "capital": "",
+    "capital": "Ciudad de la Paz",
     "demonym": "Guinea Khatulistiwa",
     "languages": [
       "Sepanyol",
@@ -1422,7 +1422,7 @@
   },
   "KY": {
     "name": "Kepulauan Cayman",
-    "capital": "George Town, Kepulauan Cayman",
+    "capital": "George Town",
     "demonym": "Kepulauan Cayman",
     "languages": [
       "Inggeris"
@@ -2144,7 +2144,7 @@
   },
   "PR": {
     "name": "Puerto Rico",
-    "capital": "San Juan, Puerto Rico",
+    "capital": "San Juan",
     "demonym": "Puerto Rico",
     "languages": [
       "Sepanyol",
@@ -2459,7 +2459,7 @@
   },
   "SS": {
     "name": "Sudan Selatan",
-    "capital": "Juba, Sudan Selatan",
+    "capital": "Juba",
     "demonym": "Sudan Selatan",
     "languages": [
       "Inggeris"

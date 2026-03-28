@@ -1,7 +1,7 @@
 {
   "AD": {
     "name": "Andora",
-    "capital": "Andora",
+    "capital": "Andorra la Vella",
     "demonym": "andorski",
     "languages": [
       "Kataloński"
@@ -840,7 +840,7 @@
   "FM": {
     "name": "Mikronezja",
     "capital": "Palikir",
-    "demonym": "mikronezysjki",
+    "demonym": "mikronezyjski",
     "languages": [
       "Angielski"
     ],
@@ -925,7 +925,7 @@
   "GF": {
     "name": "Gujana Francuska",
     "capital": "Kajenna",
-    "demonym": "gujański",
+    "demonym": "francuskogujański",
     "languages": [
       "Francuski"
     ],
@@ -1009,7 +1009,7 @@
   },
   "GQ": {
     "name": "Gwinea Równikowa",
-    "capital": "Oyala",
+    "capital": "Ciudad de la Paz",
     "demonym": "równikogwinejski",
     "languages": [
       "Hiszpański",

@@ -1,7 +1,7 @@
 {
   "AD": {
     "name": "安道爾",
-    "capital": "安道尔城",
+    "capital": "安道爾城",
     "demonym": "安道爾的",
     "languages": [
       "加泰蘭文"
@@ -25,7 +25,7 @@
   },
   "AF": {
     "name": "阿富汗",
-    "capital": "喀布尔",
+    "capital": "喀布爾",
     "demonym": "阿富汗的",
     "languages": [
       "波斯文（阿富汗）",
@@ -74,7 +74,7 @@
   },
   "AM": {
     "name": "亞美尼亞",
-    "capital": "葉里溫",
+    "capital": "葉裡溫",
     "demonym": "亞美尼亞的",
     "languages": [
       "亞美尼亞文"
@@ -86,7 +86,7 @@
   },
   "AO": {
     "name": "安哥拉",
-    "capital": "罗安达",
+    "capital": "羅安達",
     "demonym": "安哥拉的",
     "languages": [
       "葡萄牙文"
@@ -147,7 +147,7 @@
   },
   "AW": {
     "name": "荷屬阿魯巴",
-    "capital": "奥腊涅斯塔德",
+    "capital": "奧臘涅斯塔德",
     "demonym": "阿魯巴的",
     "languages": [
       "荷蘭文",
@@ -160,7 +160,7 @@
   },
   "AX": {
     "name": "奧蘭群島",
-    "capital": "玛丽港",
+    "capital": "瑪麗港",
     "demonym": "奧蘭的",
     "languages": [
       "瑞典文"
@@ -198,7 +198,7 @@
   },
   "BB": {
     "name": "巴貝多",
-    "capital": "布里奇顿",
+    "capital": "布里奇頓",
     "demonym": "巴巴多斯的",
     "languages": [
       "英文"
@@ -210,7 +210,7 @@
   },
   "BD": {
     "name": "孟加拉",
-    "capital": "达卡市",
+    "capital": "達卡",
     "demonym": "孟加拉國的",
     "languages": [
       "孟加拉文"
@@ -222,7 +222,7 @@
   },
   "BE": {
     "name": "比利時",
-    "capital": "布鲁塞尔",
+    "capital": "布魯塞爾",
     "demonym": "比利時的",
     "languages": [
       "荷蘭文",
@@ -260,7 +260,7 @@
   },
   "BH": {
     "name": "巴林",
-    "capital": "麦纳麦",
+    "capital": "麥納麥",
     "demonym": "巴林的",
     "languages": [
       "阿拉伯文"
@@ -285,7 +285,7 @@
   },
   "BJ": {
     "name": "貝南",
-    "capital": "波多诺伏",
+    "capital": "波多諾伏",
     "demonym": "貝寧的",
     "languages": [
       "法文"
@@ -297,7 +297,7 @@
   },
   "BL": {
     "name": "聖巴瑟米",
-    "capital": "古斯塔维亚",
+    "capital": "古斯塔維亞",
     "demonym": "聖巴泰勒米的",
     "languages": [
       "法文"
@@ -309,7 +309,7 @@
   },
   "BM": {
     "name": "百慕達",
-    "capital": "哈密尔顿",
+    "capital": "哈密爾頓",
     "demonym": "百慕大的",
     "languages": [
       "英文"
@@ -321,7 +321,7 @@
   },
   "BN": {
     "name": "汶萊",
-    "capital": "斯里巴加灣市",
+    "capital": "斯里巴加灣",
     "demonym": "文萊的",
     "languages": [
       "馬來文"
@@ -348,7 +348,7 @@
   },
   "BR": {
     "name": "巴西",
-    "capital": "巴西利亚",
+    "capital": "巴西利亞",
     "demonym": "巴西的",
     "languages": [
       "葡萄牙文"
@@ -360,7 +360,7 @@
   },
   "BS": {
     "name": "巴哈馬",
-    "capital": "拿骚",
+    "capital": "拿騷",
     "demonym": "巴哈馬的",
     "languages": [
       "英文"
@@ -437,7 +437,7 @@
   },
   "CD": {
     "name": "剛果（金夏沙）",
-    "capital": "金沙萨",
+    "capital": "金沙薩",
     "demonym": "剛果（金）的",
     "languages": [
       "法文"
@@ -462,7 +462,7 @@
   },
   "CG": {
     "name": "剛果（布拉薩）",
-    "capital": "布拉柴维尔",
+    "capital": "布拉柴維爾",
     "demonym": "剛果（布）的",
     "languages": [
       "法文"
@@ -474,7 +474,7 @@
   },
   "CH": {
     "name": "瑞士",
-    "capital": "伯尔尼",
+    "capital": "伯爾尼",
     "demonym": "瑞士的",
     "languages": [
       "德文",
@@ -489,7 +489,7 @@
   },
   "CI": {
     "name": "象牙海岸",
-    "capital": "亚穆苏克罗",
+    "capital": "亞穆蘇克羅",
     "demonym": "科特迪瓦的",
     "languages": [
       "法文"
@@ -501,7 +501,7 @@
   },
   "CK": {
     "name": "庫克群島",
-    "capital": "阿瓦鲁阿",
+    "capital": "阿瓦魯阿",
     "demonym": "庫克群島的",
     "languages": [
       "英文",
@@ -514,7 +514,7 @@
   },
   "CL": {
     "name": "智利",
-    "capital": "圣地亚哥",
+    "capital": "聖地亞哥",
     "demonym": "智利的",
     "languages": [
       "西班牙文"
@@ -526,7 +526,7 @@
   },
   "CM": {
     "name": "喀麥隆",
-    "capital": "雅温得",
+    "capital": "雅溫得",
     "demonym": "喀麥隆的",
     "languages": [
       "法文",
@@ -563,7 +563,7 @@
   },
   "CR": {
     "name": "哥斯大黎加",
-    "capital": "圣何塞",
+    "capital": "聖何塞",
     "demonym": "哥斯達黎加的",
     "languages": [
       "西班牙文"
@@ -588,7 +588,7 @@
   },
   "CV": {
     "name": "維德角",
-    "capital": "普拉亚",
+    "capital": "普拉亞",
     "demonym": "佛得角的",
     "languages": [
       "葡萄牙文"
@@ -613,7 +613,7 @@
   },
   "CY": {
     "name": "賽普勒斯",
-    "capital": "尼科西亚",
+    "capital": "尼科西亞",
     "demonym": "塞浦路斯的",
     "languages": [
       "希臘文",
@@ -650,7 +650,7 @@
   },
   "DJ": {
     "name": "吉布地",
-    "capital": "吉布地市",
+    "capital": "吉布地",
     "demonym": "吉布提的",
     "languages": [
       "法文",
@@ -687,7 +687,7 @@
   },
   "DO": {
     "name": "多明尼加共和國",
-    "capital": "圣多明各",
+    "capital": "聖多明各",
     "demonym": "多米尼加共和國的",
     "languages": [
       "西班牙文"
@@ -762,7 +762,7 @@
   },
   "ER": {
     "name": "厄利垂亞",
-    "capital": "阿斯马拉",
+    "capital": "阿斯馬拉",
     "demonym": "厄立特里亞的",
     "languages": [
       "提格利尼亞文",
@@ -776,7 +776,7 @@
   },
   "ES": {
     "name": "西班牙",
-    "capital": "马德里",
+    "capital": "馬德里",
     "demonym": "西班牙的",
     "languages": [
       "西班牙文"
@@ -788,7 +788,7 @@
   },
   "ET": {
     "name": "衣索比亞",
-    "capital": "亚的斯亚贝巴",
+    "capital": "亞的斯亞貝巴",
     "demonym": "埃塞俄比亞的",
     "languages": [
       "阿姆哈拉文"
@@ -800,7 +800,7 @@
   },
   "FI": {
     "name": "芬蘭",
-    "capital": "赫尔辛基",
+    "capital": "赫爾辛基",
     "demonym": "芬蘭的",
     "languages": [
       "芬蘭文",
@@ -839,7 +839,7 @@
   },
   "FM": {
     "name": "密克羅尼西亞",
-    "capital": "帕利基尔",
+    "capital": "帕利基爾",
     "demonym": "密克羅尼西亞的",
     "languages": [
       "英文"
@@ -851,7 +851,7 @@
   },
   "FO": {
     "name": "法羅群島",
-    "capital": "托爾斯港",
+    "capital": "託爾斯港",
     "demonym": "法羅群島的",
     "languages": [
       "法羅文",
@@ -876,7 +876,7 @@
   },
   "GA": {
     "name": "加彭",
-    "capital": "利伯维尔",
+    "capital": "利伯維爾",
     "demonym": "加蓬的",
     "languages": [
       "法文"
@@ -900,7 +900,7 @@
   },
   "GD": {
     "name": "格瑞那達",
-    "capital": "圣乔治",
+    "capital": "聖喬治",
     "demonym": "格林納達的",
     "languages": [
       "英文"
@@ -936,7 +936,7 @@
   },
   "GG": {
     "name": "根息",
-    "capital": "圣彼得港",
+    "capital": "聖彼得港",
     "demonym": "根西島的",
     "languages": [
       "英文",
@@ -973,7 +973,7 @@
   },
   "GM": {
     "name": "甘比亞",
-    "capital": "班珠尔",
+    "capital": "班珠爾",
     "demonym": "岡比亞的",
     "languages": [
       "英文"
@@ -997,7 +997,7 @@
   },
   "GP": {
     "name": "瓜地洛普",
-    "capital": "巴斯特尔",
+    "capital": "巴斯特爾",
     "demonym": "瓜德羅普的",
     "languages": [
       "法文"
@@ -1009,7 +1009,7 @@
   },
   "GQ": {
     "name": "赤道幾內亞",
-    "capital": "欧亚拉",
+    "capital": "拉巴斯城",
     "demonym": "赤道幾內亞的",
     "languages": [
       "西班牙文",
@@ -1035,7 +1035,7 @@
   },
   "GT": {
     "name": "瓜地馬拉",
-    "capital": "瓜地馬拉市",
+    "capital": "瓜地馬拉",
     "demonym": "危地馬拉的",
     "languages": [
       "西班牙文"
@@ -1047,7 +1047,7 @@
   },
   "GU": {
     "name": "關島",
-    "capital": "阿加尼亚",
+    "capital": "阿加尼亞",
     "demonym": "關島的",
     "languages": [
       "英文",
@@ -1060,7 +1060,7 @@
   },
   "GW": {
     "name": "幾內亞比索",
-    "capital": "比绍",
+    "capital": "比紹",
     "demonym": "幾內亞比紹的",
     "languages": [
       "葡萄牙文"
@@ -1072,7 +1072,7 @@
   },
   "GY": {
     "name": "蓋亞那",
-    "capital": "乔治敦",
+    "capital": "喬治敦",
     "demonym": "圭亞那的",
     "languages": [
       "英文"
@@ -1097,7 +1097,7 @@
   },
   "HN": {
     "name": "宏都拉斯",
-    "capital": "特古西加尔巴",
+    "capital": "特古西加爾巴",
     "demonym": "洪都拉斯的",
     "languages": [
       "西班牙文"
@@ -1109,7 +1109,7 @@
   },
   "HR": {
     "name": "克羅埃西亞",
-    "capital": "萨格勒布",
+    "capital": "薩格勒布",
     "demonym": "克羅地亞的",
     "languages": [
       "克羅埃西亞文"
@@ -1134,7 +1134,7 @@
   },
   "HU": {
     "name": "匈牙利",
-    "capital": "布达佩斯",
+    "capital": "布達佩斯",
     "demonym": "匈牙利的",
     "languages": [
       "匈牙利文"
@@ -1146,7 +1146,7 @@
   },
   "ID": {
     "name": "印尼",
-    "capital": "雅加达",
+    "capital": "雅加達",
     "demonym": "印度尼西亞的",
     "languages": [
       "印尼文"
@@ -1223,7 +1223,7 @@
   },
   "IR": {
     "name": "伊朗",
-    "capital": "德黑兰",
+    "capital": "德黑蘭",
     "demonym": "伊朗的",
     "languages": [
       "波斯文"
@@ -1247,7 +1247,7 @@
   },
   "IT": {
     "name": "義大利",
-    "capital": "罗马",
+    "capital": "羅馬",
     "demonym": "意大利的",
     "languages": [
       "義大利文"
@@ -1259,7 +1259,7 @@
   },
   "JE": {
     "name": "澤西島",
-    "capital": "圣赫利尔",
+    "capital": "聖赫利爾",
     "demonym": "澤西島的",
     "languages": [
       "英文",
@@ -1321,7 +1321,7 @@
   },
   "KG": {
     "name": "吉爾吉斯",
-    "capital": "比什凯克",
+    "capital": "比什凱克",
     "demonym": "吉爾吉斯斯坦的",
     "languages": [
       "吉爾吉斯文",
@@ -1334,7 +1334,7 @@
   },
   "KH": {
     "name": "柬埔寨",
-    "capital": "金边",
+    "capital": "金邊",
     "demonym": "柬埔寨的",
     "languages": [
       "高棉文"
@@ -1347,7 +1347,7 @@
   },
   "KI": {
     "name": "吉里巴斯",
-    "capital": "塔拉瓦环礁",
+    "capital": "塔拉瓦環礁",
     "demonym": "基里巴斯的",
     "languages": [
       "英文",
@@ -1374,7 +1374,7 @@
   },
   "KN": {
     "name": "聖克里斯多福及尼維斯",
-    "capital": "巴斯特尔",
+    "capital": "巴斯特爾",
     "demonym": "聖基茨和尼維斯的",
     "languages": [
       "英文"
@@ -1434,7 +1434,7 @@
   },
   "KZ": {
     "name": "哈薩克",
-    "capital": "阿斯塔纳",
+    "capital": "阿斯塔納",
     "demonym": "哈薩克斯坦的",
     "languages": [
       "哈薩克文",
@@ -1459,7 +1459,7 @@
   },
   "LB": {
     "name": "黎巴嫩",
-    "capital": "贝鲁特",
+    "capital": "貝魯特",
     "demonym": "黎巴嫩的",
     "languages": [
       "阿拉伯文"
@@ -1483,7 +1483,7 @@
   },
   "LI": {
     "name": "列支敦斯登",
-    "capital": "瓦杜兹",
+    "capital": "瓦杜茲",
     "demonym": "列支敦士登的",
     "languages": [
       "德文"
@@ -1495,7 +1495,7 @@
   },
   "LK": {
     "name": "斯里蘭卡",
-    "capital": "科伦坡",
+    "capital": "科倫坡",
     "demonym": "斯里蘭卡的",
     "languages": [
       "僧伽羅文",
@@ -1520,7 +1520,7 @@
   },
   "LS": {
     "name": "賴索托",
-    "capital": "马塞卢",
+    "capital": "馬塞盧",
     "demonym": "萊索托的",
     "languages": [
       "塞索托文",
@@ -1534,7 +1534,7 @@
   },
   "LT": {
     "name": "立陶宛",
-    "capital": "维尔纽斯",
+    "capital": "維爾紐斯",
     "demonym": "立陶宛的",
     "languages": [
       "立陶宛文"
@@ -1546,7 +1546,7 @@
   },
   "LU": {
     "name": "盧森堡",
-    "capital": "卢森堡市",
+    "capital": "盧森堡",
     "demonym": "盧森堡的",
     "languages": [
       "盧森堡文",
@@ -1597,7 +1597,7 @@
   },
   "MC": {
     "name": "摩納哥",
-    "capital": "摩纳哥城",
+    "capital": "摩納哥城",
     "demonym": "摩納哥的",
     "languages": [
       "法文"
@@ -1609,7 +1609,7 @@
   },
   "MD": {
     "name": "摩爾多瓦",
-    "capital": "基希讷乌",
+    "capital": "基希訥烏",
     "demonym": "摩爾多瓦的",
     "languages": [
       "羅馬尼亞文"
@@ -1621,7 +1621,7 @@
   },
   "ME": {
     "name": "蒙特內哥羅",
-    "capital": "波德戈里察",
+    "capital": "波德戈裡察",
     "demonym": "黑山的",
     "languages": [
       "塞爾維亞文（蒙特內哥羅）"
@@ -1633,7 +1633,7 @@
   },
   "MF": {
     "name": "法屬聖馬丁",
-    "capital": "马里戈特",
+    "capital": "馬裡戈特",
     "demonym": "聖馬丁的",
     "languages": [
       "法文"
@@ -1707,7 +1707,7 @@
   },
   "MN": {
     "name": "蒙古",
-    "capital": "乌兰巴托",
+    "capital": "烏蘭巴托",
     "demonym": "蒙古的",
     "languages": [
       "蒙古文"
@@ -1746,7 +1746,7 @@
   },
   "MQ": {
     "name": "馬丁尼克",
-    "capital": "法兰西堡",
+    "capital": "法蘭西堡",
     "demonym": "馬提尼克的",
     "languages": [
       "法文"
@@ -1782,7 +1782,7 @@
   },
   "MT": {
     "name": "馬爾他",
-    "capital": "瓦莱塔",
+    "capital": "瓦萊塔",
     "demonym": "馬耳他的",
     "languages": [
       "馬爾他文",
@@ -1857,7 +1857,7 @@
   },
   "MZ": {
     "name": "莫三比克",
-    "capital": "马普托",
+    "capital": "馬普托",
     "demonym": "莫桑比克的",
     "languages": [
       "葡萄牙文"
@@ -1869,7 +1869,7 @@
   },
   "NA": {
     "name": "納米比亞",
-    "capital": "温得和克",
+    "capital": "溫得和克",
     "demonym": "納米比亞的",
     "languages": [
       "英文"
@@ -1918,7 +1918,7 @@
   },
   "NG": {
     "name": "奈及利亞",
-    "capital": "阿布贾",
+    "capital": "阿布賈",
     "demonym": "尼日利亞的",
     "languages": [
       "英文"
@@ -1954,7 +1954,7 @@
   },
   "NO": {
     "name": "挪威",
-    "capital": "奥斯陆",
+    "capital": "奧斯陸",
     "demonym": "挪威的",
     "languages": [
       "挪威文"
@@ -1978,7 +1978,7 @@
   },
   "NR": {
     "name": "諾魯",
-    "capital": "亞倫區",
+    "capital": "亞倫",
     "demonym": "瑙魯的",
     "languages": [
       "英文",
@@ -2004,7 +2004,7 @@
   },
   "NZ": {
     "name": "紐西蘭",
-    "capital": "惠灵顿",
+    "capital": "惠靈頓",
     "demonym": "新西蘭的",
     "languages": [
       "英文",
@@ -2017,7 +2017,7 @@
   },
   "OM": {
     "name": "阿曼",
-    "capital": "马斯喀特",
+    "capital": "馬斯喀特",
     "demonym": "阿曼的",
     "languages": [
       "阿拉伯文"
@@ -2068,7 +2068,7 @@
   },
   "PG": {
     "name": "巴布亞紐幾內亞",
-    "capital": "莫尔斯比港",
+    "capital": "莫爾斯比港",
     "demonym": "巴布亞新幾內亞的",
     "languages": [
       "英文",
@@ -2082,7 +2082,7 @@
   },
   "PH": {
     "name": "菲律賓",
-    "capital": "马尼拉市",
+    "capital": "馬尼拉",
     "demonym": "菲律賓的",
     "languages": [
       "菲律賓文",
@@ -2095,7 +2095,7 @@
   },
   "PK": {
     "name": "巴基斯坦",
-    "capital": "伊斯兰堡",
+    "capital": "伊斯蘭堡",
     "demonym": "巴基斯坦的",
     "languages": [
       "烏都文",
@@ -2108,7 +2108,7 @@
   },
   "PL": {
     "name": "波蘭",
-    "capital": "华沙",
+    "capital": "華沙",
     "demonym": "波蘭的",
     "languages": [
       "波蘭文"
@@ -2120,7 +2120,7 @@
   },
   "PM": {
     "name": "聖皮埃與密克隆群島",
-    "capital": "圣皮埃尔",
+    "capital": "聖皮埃爾",
     "demonym": "聖皮埃爾和密克隆的",
     "languages": [
       "法文"
@@ -2132,7 +2132,7 @@
   },
   "PN": {
     "name": "皮特肯群島",
-    "capital": "亚当斯敦",
+    "capital": "亞當斯敦",
     "demonym": "皮特凱恩群島的",
     "languages": [
       "英文"
@@ -2144,7 +2144,7 @@
   },
   "PR": {
     "name": "波多黎各",
-    "capital": "圣胡安",
+    "capital": "聖胡安",
     "demonym": "波多黎各的",
     "languages": [
       "西班牙文",
@@ -2157,7 +2157,7 @@
   },
   "PS": {
     "name": "巴勒斯坦",
-    "capital": "东耶路撒冷",
+    "capital": "東耶路撒冷",
     "demonym": "巴勒斯坦的",
     "languages": [
       "阿拉伯文"
@@ -2183,7 +2183,7 @@
   },
   "PW": {
     "name": "帛琉",
-    "capital": "恩吉鲁穆德",
+    "capital": "恩吉魯穆德",
     "demonym": "帕勞的",
     "languages": [
       "帛琉文",
@@ -2196,7 +2196,7 @@
   },
   "PY": {
     "name": "巴拉圭",
-    "capital": "亚松森",
+    "capital": "亞松森",
     "demonym": "巴拉圭的",
     "languages": [
       "西班牙文",
@@ -2221,7 +2221,7 @@
   },
   "RE": {
     "name": "留尼旺",
-    "capital": "圣但尼",
+    "capital": "聖但尼",
     "demonym": "留尼汪的",
     "languages": [
       "法文"
@@ -2245,7 +2245,7 @@
   },
   "RS": {
     "name": "塞爾維亞",
-    "capital": "贝尔格莱德",
+    "capital": "貝爾格萊德",
     "demonym": "塞爾維亞的",
     "languages": [
       "塞爾維亞文"
@@ -2295,7 +2295,7 @@
   },
   "SB": {
     "name": "索羅門群島",
-    "capital": "霍尼亚拉",
+    "capital": "霍尼亞拉",
     "demonym": "所羅門群島的",
     "languages": [
       "英文"
@@ -2334,7 +2334,7 @@
   },
   "SE": {
     "name": "瑞典",
-    "capital": "斯德哥尔摩",
+    "capital": "斯德哥爾摩",
     "demonym": "瑞典的",
     "languages": [
       "瑞典文"
@@ -2374,7 +2374,7 @@
   },
   "SI": {
     "name": "斯洛維尼亞",
-    "capital": "卢布尔雅那",
+    "capital": "盧布爾雅那",
     "demonym": "斯洛文尼亞的",
     "languages": [
       "斯洛維尼亞文"
@@ -2386,7 +2386,7 @@
   },
   "SK": {
     "name": "斯洛伐克",
-    "capital": "布拉迪斯拉发",
+    "capital": "布拉迪斯拉發",
     "demonym": "斯洛伐克的",
     "languages": [
       "斯洛伐克文"
@@ -2447,7 +2447,7 @@
   },
   "SR": {
     "name": "蘇利南",
-    "capital": "帕拉马里博",
+    "capital": "帕拉馬裡博",
     "demonym": "蘇里南的",
     "languages": [
       "荷蘭文"
@@ -2471,7 +2471,7 @@
   },
   "ST": {
     "name": "聖多美普林西比",
-    "capital": "圣多美",
+    "capital": "聖多美",
     "demonym": "聖多美和普林西比的",
     "languages": [
       "葡萄牙文"
@@ -2508,7 +2508,7 @@
   },
   "SY": {
     "name": "敘利亞",
-    "capital": "大马士革",
+    "capital": "大馬士革",
     "demonym": "敘利亞的",
     "languages": [
       "阿拉伯文"
@@ -2520,7 +2520,7 @@
   },
   "SZ": {
     "name": "史瓦帝尼",
-    "capital": "姆巴巴内",
+    "capital": "姆巴巴內",
     "demonym": "斯威士蘭的",
     "languages": [
       "斯瓦特文",
@@ -2583,7 +2583,7 @@
   },
   "TJ": {
     "name": "塔吉克",
-    "capital": "杜尚别",
+    "capital": "杜尚別",
     "demonym": "塔吉克斯坦的",
     "languages": [
       "塔吉克文"
@@ -2620,7 +2620,7 @@
   },
   "TN": {
     "name": "突尼西亞",
-    "capital": "突尼斯市",
+    "capital": "突尼斯",
     "demonym": "突尼斯的",
     "languages": [
       "阿拉伯文"
@@ -2632,7 +2632,7 @@
   },
   "TO": {
     "name": "東加",
-    "capital": "努库阿洛法",
+    "capital": "努庫阿洛法",
     "demonym": "湯加的",
     "languages": [
       "東加文",
@@ -2669,7 +2669,7 @@
   },
   "TV": {
     "name": "吐瓦魯",
-    "capital": "富纳富提",
+    "capital": "富納富提",
     "demonym": "圖瓦盧的",
     "languages": [
       "吐瓦魯文",
@@ -2694,7 +2694,7 @@
   },
   "TZ": {
     "name": "坦尚尼亞",
-    "capital": "多多马",
+    "capital": "多多馬",
     "demonym": "坦桑尼亞的",
     "languages": [
       "史瓦希里文",
@@ -2744,7 +2744,7 @@
   },
   "UY": {
     "name": "烏拉圭",
-    "capital": "蒙得维的亚",
+    "capital": "蒙得維的亞",
     "demonym": "烏拉圭的",
     "languages": [
       "西班牙文"
@@ -2805,7 +2805,7 @@
   },
   "VG": {
     "name": "英屬維京群島",
-    "capital": "罗德城",
+    "capital": "羅德城",
     "demonym": "英屬維爾京群島的",
     "languages": [
       "英文"
@@ -2817,7 +2817,7 @@
   },
   "VI": {
     "name": "美屬維京群島",
-    "capital": "夏洛特阿马利亚",
+    "capital": "夏洛特阿馬利亞",
     "demonym": "美屬維爾京群島的",
     "languages": [
       "英文"
@@ -2841,7 +2841,7 @@
   },
   "VU": {
     "name": "萬那杜",
-    "capital": "维拉港",
+    "capital": "維拉港",
     "demonym": "瓦努阿圖的",
     "languages": [
       "比斯拉馬文",
@@ -2855,7 +2855,7 @@
   },
   "WF": {
     "name": "瓦利斯群島和富圖那群島",
-    "capital": "马塔乌图",
+    "capital": "馬塔烏圖",
     "demonym": "瓦利斯和富圖納的",
     "languages": [
       "法文"
@@ -2867,7 +2867,7 @@
   },
   "WS": {
     "name": "薩摩亞",
-    "capital": "阿皮亚",
+    "capital": "阿皮亞",
     "demonym": "薩摩亞的",
     "languages": [
       "薩摩亞文",
@@ -2880,7 +2880,7 @@
   },
   "XK": {
     "name": "科索沃",
-    "capital": "普里什蒂纳",
+    "capital": "普裡什蒂納",
     "demonym": "科索沃的",
     "languages": [
       "阿爾巴尼亞文",
@@ -2893,7 +2893,7 @@
   },
   "YE": {
     "name": "葉門",
-    "capital": "萨那",
+    "capital": "薩那",
     "demonym": "也門的",
     "languages": [
       "阿拉伯文"
@@ -2905,7 +2905,7 @@
   },
   "YT": {
     "name": "馬約特島",
-    "capital": "马穆楚",
+    "capital": "馬穆楚",
     "demonym": "馬約特的",
     "languages": [
       "法文"
@@ -2917,7 +2917,7 @@
   },
   "ZA": {
     "name": "南非",
-    "capital": "比勒陀利亚",
+    "capital": "比勒陀利亞",
     "demonym": "南非的",
     "languages": [
       "祖魯文",

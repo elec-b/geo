@@ -222,7 +222,7 @@
   },
   "BE": {
     "name": "ベルギー",
-    "capital": "ブリュッセル市",
+    "capital": "ブリュッセル",
     "demonym": "ベルギーの",
     "languages": [
       "オランダ語",
@@ -650,7 +650,7 @@
   },
   "DJ": {
     "name": "ジブチ",
-    "capital": "ジブチ市",
+    "capital": "ジブチ",
     "demonym": "ジブチの",
     "languages": [
       "フランス語",
@@ -1009,7 +1009,7 @@
   },
   "GQ": {
     "name": "赤道ギニア",
-    "capital": "ラパス",
+    "capital": "シウダー・デ・ラ・パス",
     "demonym": "赤道ギニアの",
     "languages": [
       "スペイン語",
@@ -1386,7 +1386,7 @@
   },
   "KP": {
     "name": "北朝鮮",
-    "capital": "平壌市",
+    "capital": "平壌",
     "demonym": "北朝鮮の",
     "languages": [
       "韓国語"
@@ -1398,7 +1398,7 @@
   },
   "KR": {
     "name": "韓国",
-    "capital": "ソウル特別市",
+    "capital": "ソウル",
     "demonym": "韓国の",
     "languages": [
       "韓国語"
@@ -1410,7 +1410,7 @@
   },
   "KW": {
     "name": "クウェート",
-    "capital": "クウェート市",
+    "capital": "クウェート",
     "demonym": "クウェートの",
     "languages": [
       "アラビア語"
@@ -1546,7 +1546,7 @@
   },
   "LU": {
     "name": "ルクセンブルク",
-    "capital": "ルクセンブルク市",
+    "capital": "ルクセンブルク",
     "demonym": "ルクセンブルクの",
     "languages": [
       "ルクセンブルク語",
@@ -1597,7 +1597,7 @@
   },
   "MC": {
     "name": "モナコ",
-    "capital": "モナコ市",
+    "capital": "モナコ",
     "demonym": "モナコの",
     "languages": [
       "フランス語"
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "モントセラト",
-    "capital": "ブレイズ",
+    "capital": "プリマス",
     "demonym": "モントセラトの",
     "languages": [
       "英語"
@@ -1978,7 +1978,7 @@
   },
   "NR": {
     "name": "ナウル",
-    "capital": "ヤレン地区",
+    "capital": "ヤレン",
     "demonym": "ナウルの",
     "languages": [
       "英語",
@@ -2029,7 +2029,7 @@
   },
   "PA": {
     "name": "パナマ",
-    "capital": "パナマ市",
+    "capital": "パナマ",
     "demonym": "パナマの",
     "languages": [
       "スペイン語"
@@ -2410,7 +2410,7 @@
   },
   "SM": {
     "name": "サンマリノ",
-    "capital": "サンマリノ市",
+    "capital": "サンマリノ",
     "demonym": "サンマリノの",
     "languages": [
       "イタリア語"

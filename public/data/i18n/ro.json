@@ -1184,7 +1184,7 @@
   },
   "IM": {
     "name": "Insula Man",
-    "capital": "Douglas, Insula Man",
+    "capital": "Douglas",
     "demonym": "din Insula Man",
     "languages": [
       "Engleză",
@@ -1422,7 +1422,7 @@
   },
   "KY": {
     "name": "Insulele Cayman",
-    "capital": "George Town, Insulele Cayman",
+    "capital": "George Town",
     "demonym": "din Insulele Cayman",
     "languages": [
       "Engleză"
@@ -2120,7 +2120,7 @@
   },
   "PM": {
     "name": "Saint-Pierre și Miquelon",
-    "capital": "Saint-Pierre, Saint Pierre și Miquelon",
+    "capital": "Saint-Pierre",
     "demonym": "din Saint-Pierre și Miquelon",
     "languages": [
       "Franceză"
@@ -2144,7 +2144,7 @@
   },
   "PR": {
     "name": "Puerto Rico",
-    "capital": "San Juan, Puerto Rico",
+    "capital": "San Juan",
     "demonym": "portorican",
     "languages": [
       "Spaniolă",
@@ -2495,7 +2495,7 @@
   },
   "SX": {
     "name": "Sint-Maarten",
-    "capital": "Philipsburg, Sint Maarten",
+    "capital": "Philipsburg",
     "demonym": "din Sint Maarten",
     "languages": [
       "Neerlandeză",

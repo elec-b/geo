@@ -1,7 +1,7 @@
 {
   "AD": {
     "name": "Andorra",
-    "capital": "Andorra",
+    "capital": "Andorra la Vella",
     "demonym": "andorrský",
     "languages": [
       "Katalánčina"
@@ -38,7 +38,7 @@
   },
   "AG": {
     "name": "Antigua a Barbuda",
-    "capital": "Saint John’s",
+    "capital": "Saint John's",
     "demonym": "antiguánsky",
     "languages": [
       "Angličtina"
@@ -900,7 +900,7 @@
   },
   "GD": {
     "name": "Grenada",
-    "capital": "Saint George’s",
+    "capital": "Saint George's",
     "demonym": "grenadský",
     "languages": [
       "Angličtina"
@@ -1009,7 +1009,7 @@
   },
   "GQ": {
     "name": "Rovníková Guinea",
-    "capital": "",
+    "capital": "Ciudad de la Paz",
     "demonym": "rovníkovogujnejský",
     "languages": [
       "Španielčina",
@@ -2546,7 +2546,7 @@
   },
   "TD": {
     "name": "Čad",
-    "capital": "N’Djamena",
+    "capital": "N'Djamena",
     "demonym": "čadský",
     "languages": [
       "Francúzština",
@@ -2632,7 +2632,7 @@
   },
   "TO": {
     "name": "Tonga",
-    "capital": "Nuku’alofa",
+    "capital": "Nuku'alofa",
     "demonym": "tongský",
     "languages": [
       "Tongčina",

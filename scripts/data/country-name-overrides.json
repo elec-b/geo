@@ -1,9 +1,15 @@
 {
+  "ca": {
+    "CI": "Costa d'Ivori",
+    "LA": "Laos",
+    "TL": "Timor Oriental"
+  },
   "cs": {
     "HK": "Hongkong",
     "MO": "Macao",
     "PS": "Palestina",
-    "SX": "Svatý Martin"
+    "SX": "Svatý Martin",
+    "SZ": "Svazijsko"
   },
   "de": {
     "CI": "Elfenbeinküste",
@@ -21,6 +27,12 @@
     "SX": "Sint Maarten",
     "TL": "East Timor"
   },
+  "da": {
+    "SZ": "Swaziland"
+  },
+  "el": {
+    "SZ": "Σουαζιλάνδη"
+  },
   "es": {
     "CI": "Costa de Marfil",
     "HK": "Hong Kong",
@@ -29,7 +41,11 @@
     "MO": "Macao",
     "PS": "Palestina",
     "SX": "San Martín",
+    "SZ": "Suazilandia",
     "TL": "Timor Oriental"
+  },
+  "fi": {
+    "SZ": "Swazimaa"
   },
   "fr": {
     "HK": "Hong Kong",
@@ -61,6 +77,7 @@
     "MO": "Macao",
     "PS": "Palestina",
     "SX": "Sint Maarten",
+    "SZ": "Swaziland",
     "TL": "Timor Est"
   },
   "ja": {
@@ -91,7 +108,9 @@
   "nl": {
     "HK": "Hongkong",
     "MO": "Macau",
+    "MV": "Malediven",
     "PS": "Palestina",
+    "SZ": "Swaziland",
     "TL": "Oost-Timor"
   },
   "pl": {
@@ -115,6 +134,7 @@
     "HK": "Hong Kong",
     "MO": "Macau",
     "PS": "Palestina",
+    "SV": "El Salvador",
     "SX": "São Martinho",
     "TL": "Timor-Leste"
   },
@@ -135,7 +155,8 @@
     "HK": "Hongkong",
     "MO": "Macao",
     "PS": "Palestina",
-    "SX": "Sint Maarten"
+    "SX": "Sint Maarten",
+    "SZ": "Swaziland"
   },
   "th": {
     "HK": "ฮ่องกง",

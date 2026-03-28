@@ -47,7 +47,11 @@
 - [x] **(j)** Mapeo de locales para stores: `scripts/data/store-locale-map.json` con los 32 idiomas → App Store / Google Play (ej. `nb` → `no`/`no-NO`)
 - [x] **(k)** Variantes regionales registradas en `store-locale-map.json`: es-419/es-MX, fr-CA, en-GB, en-AU, zh-HK (coste cero, reutilizan traducciones base)
 - [x] **(fix)** Ordenar idiomas en Configuración alfabéticamente por nombre nativo (estándar de iOS Settings / Google Play), lectura por columna
-- [ ] **(final-check)** Lanzar agent team, para verificar datos de internacionalización creados vs. fuentes reputadas. Similar al check que se hizo en Español frente a la RAE (apéndice del diccionario panhispánico de dudas) y otras fuentes. Deberíamos encontrar los equivalentes a la RAE par otros países, para chequear los nombres de los países, capitales, gentilicios, mares y océanos, igual que hicimos para España con la RAE. Seguramente, para esto, lo mejor sea crear un spike, con un agent team, y que el líder aterrice las conclusiones en un .md. Es importante pensar también en cómo mantener estos datos automáticamente en el futuro (ya caputrado en design.md, pero es un punto muy importante y que debe estar presente a lo largo del proyecto)
+- [x] **(final-check)** Verificación de datos i18n contra fuentes autoritativas (32 idiomas). Spikes: `docs/spikes/fuentes-autoritativas-i18n.md` y `docs/spikes/verificacion-i18n-datos.md`. Correcciones aplicadas: 237 capitales zh-Hant (simplificado→tradicional + fix pipeline), 5 errores puntuales de capitales, ~90 limpiezas de formato, unificación GQ/BO/LK/MS, 13 overrides de nombres de países (incl. Eswatini→nombre tradicional en 8 idiomas), 11 correcciones de gentilicios, 14 correcciones de mares/océanos
+- [ ] **(final-check-b)** Overrides de nombres de países para vi, ms y da: ~64 divergencias CLDR vs Wikipedia donde CLDR usa anglicismos y Wikipedia usa el nombre nativo (ej. vi: "Australia"→"Úc"). Escribir script de comparación, generar lista y añadir overrides a `country-name-overrides.json`
+
+### Eficientar workflow de trabajo
+- [ ] design.md se está haciendo demasiado extenso para cargar siempre en contexto con /lee_doc (que solemos hacer siempre al inicio de la sesión). Pensar cómo reestructurarlo, para ser más eficientes.
 
 ### Acabados pre-lanzamiento
 - [ ] Logo/branding en LoadingScreen (antes de publicar en stores)

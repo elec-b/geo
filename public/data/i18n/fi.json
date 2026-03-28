@@ -38,7 +38,7 @@
   },
   "AG": {
     "name": "Antigua ja Barbuda",
-    "capital": "St. John’s",
+    "capital": "St. John's",
     "demonym": "antigualainen",
     "languages": [
       "Englanti"
@@ -438,7 +438,7 @@
   "CD": {
     "name": "Kongon demokraattinen tasavalta",
     "capital": "Kinshasa",
-    "demonym": "kongolainenkinshasa",
+    "demonym": "kongolainen",
     "languages": [
       "Ranska"
     ],
@@ -463,7 +463,7 @@
   "CG": {
     "name": "Kongon tasavalta",
     "capital": "Brazzaville",
-    "demonym": "kongolainenbrazzaville",
+    "demonym": "kongolainen",
     "languages": [
       "Ranska"
     ],
@@ -900,7 +900,7 @@
   },
   "GD": {
     "name": "Grenada",
-    "capital": "St. George’s",
+    "capital": "St. George's",
     "demonym": "grenadalainen",
     "languages": [
       "Englanti"
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "Brades",
+    "capital": "Plymouth",
     "demonym": "montserratlainen",
     "languages": [
       "Englanti"
@@ -2519,9 +2519,9 @@
     "wikipediaSlug": "Syyria"
   },
   "SZ": {
-    "name": "Eswatini",
+    "name": "Swazimaa",
     "capital": "Mbabane",
-    "demonym": "swazimaalaiinen",
+    "demonym": "swazimaalainen",
     "languages": [
       "Swazi",
       "Englanti"
@@ -2546,7 +2546,7 @@
   },
   "TD": {
     "name": "Tšad",
-    "capital": "N’Djamena",
+    "capital": "N'Djamena",
     "demonym": "tšadilainen",
     "languages": [
       "Ranska",
@@ -2560,7 +2560,7 @@
   "TG": {
     "name": "Togo",
     "capital": "Lomé",
-    "demonym": "togolaiinen",
+    "demonym": "togolainen",
     "languages": [
       "Ranska"
     ],

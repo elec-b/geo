@@ -19,18 +19,18 @@
     "ms": "Andorra la Vella",
     "nb": "Andorra la Vella",
     "nl": "Andorra la Vella",
-    "pl": "Andora",
+    "pl": "Andorra la Vella",
     "pt-BR": "Andorra-a-Velha",
     "ro": "Andorra la Vella",
     "ru": "Андорра-ла-Велья",
-    "sk": "Andorra",
+    "sk": "Andorra la Vella",
     "sv": "Andorra la Vella",
     "th": "อันดอร์ราลาเวยา",
     "tr": "Andorra la Vella",
     "uk": "Андорра-ла-Велья",
     "vi": "Andorra la Vella",
     "zh-Hans": "安道尔城",
-    "zh-Hant": "安道尔城",
+    "zh-Hant": "安道爾城",
     "pt-PT": "Andorra-a-Velha"
   },
   "AE": {
@@ -98,7 +98,7 @@
     "uk": "Кабул",
     "vi": "Kabul",
     "zh-Hans": "喀布尔",
-    "zh-Hant": "喀布尔",
+    "zh-Hant": "喀布爾",
     "pt-PT": "Cabul"
   },
   "AG": {
@@ -109,28 +109,28 @@
     "el": "Σεντ Τζονς",
     "en": "St. John's",
     "es": "Saint John's",
-    "fi": "St. John’s",
+    "fi": "St. John's",
     "fr": "Saint John's",
     "hi": "सेंटजॉन्स",
     "hr": "St. John's",
-    "hu": "St. John’s",
-    "id": "St. John's, Antigua dan Barbuda",
+    "hu": "St. John's",
+    "id": "St. John's",
     "it": "Saint John's",
     "ja": "セントジョンズ",
     "ko": "세인트존스",
-    "ms": "St. John's, Antigua dan Barbuda",
+    "ms": "St. John's",
     "nb": "Saint John's",
     "nl": "Saint John's",
     "pl": "Saint John's",
     "pt-BR": "São João",
     "ro": "St. John's",
     "ru": "Сент-Джонс",
-    "sk": "Saint John’s",
+    "sk": "Saint John's",
     "sv": "Saint John's",
     "th": "เซนต์จอนส์",
     "tr": "St. John's",
     "uk": "Сент-Джонс",
-    "vi": "St. John's, Antigua và Barbuda",
+    "vi": "St. John's",
     "zh-Hans": "聖約翰",
     "zh-Hant": "聖約翰",
     "pt-PT": "São João"
@@ -233,7 +233,7 @@
     "uk": "Єреван",
     "vi": "Yerevan",
     "zh-Hans": "葉里溫",
-    "zh-Hant": "葉里溫",
+    "zh-Hant": "葉裡溫",
     "pt-PT": "Erevã"
   },
   "AO": {
@@ -267,7 +267,7 @@
     "uk": "Луанда",
     "vi": "Luanda",
     "zh-Hans": "罗安达",
-    "zh-Hant": "罗安达",
+    "zh-Hant": "羅安達",
     "pt-PT": "Luanda"
   },
   "AR": {
@@ -436,7 +436,7 @@
     "uk": "Ораньєстад",
     "vi": "Oranjestad",
     "zh-Hans": "奥腊涅斯塔德",
-    "zh-Hant": "奥腊涅斯塔德",
+    "zh-Hant": "奧臘涅斯塔德",
     "pt-PT": "Oranjestad"
   },
   "AX": {
@@ -470,7 +470,7 @@
     "uk": "Марієгамн",
     "vi": "Mariehamn",
     "zh-Hans": "玛丽港",
-    "zh-Hant": "玛丽港",
+    "zh-Hant": "瑪麗港",
     "pt-PT": "Mariehamn"
   },
   "AZ": {
@@ -572,7 +572,7 @@
     "uk": "Бриджтаун",
     "vi": "Bridgetown",
     "zh-Hans": "布里奇顿",
-    "zh-Hant": "布里奇顿",
+    "zh-Hant": "布里奇頓",
     "pt-PT": "Bridgetown"
   },
   "BD": {
@@ -605,8 +605,8 @@
     "tr": "Dakka",
     "uk": "Дакка",
     "vi": "Dhaka",
-    "zh-Hans": "达卡市",
-    "zh-Hant": "达卡市",
+    "zh-Hans": "达卡",
+    "zh-Hant": "達卡",
     "pt-PT": "Daca"
   },
   "BE": {
@@ -624,7 +624,7 @@
     "hu": "Brüsszel",
     "id": "Kota Brussel",
     "it": "Bruxelles",
-    "ja": "ブリュッセル市",
+    "ja": "ブリュッセル",
     "ko": "브뤼셀",
     "ms": "Brussel",
     "nb": "Brussel",
@@ -640,7 +640,7 @@
     "uk": "Брюссель",
     "vi": "Bruxelles",
     "zh-Hans": "布鲁塞尔",
-    "zh-Hant": "布鲁塞尔",
+    "zh-Hant": "布魯塞爾",
     "pt-PT": "Bruxelas"
   },
   "BF": {
@@ -742,7 +742,7 @@
     "uk": "Манама",
     "vi": "Manama",
     "zh-Hans": "麦纳麦",
-    "zh-Hant": "麦纳麦",
+    "zh-Hant": "麥納麥",
     "pt-PT": "Manama"
   },
   "BI": {
@@ -810,7 +810,7 @@
     "uk": "Порто-Ново",
     "vi": "Porto-Novo",
     "zh-Hans": "波多诺伏",
-    "zh-Hant": "波多诺伏",
+    "zh-Hant": "波多諾伏",
     "pt-PT": "Porto Novo"
   },
   "BL": {
@@ -844,7 +844,7 @@
     "uk": "Густавія",
     "vi": "Gustavia",
     "zh-Hans": "古斯塔维亚",
-    "zh-Hant": "古斯塔维亚",
+    "zh-Hant": "古斯塔維亞",
     "pt-PT": "Gustávia"
   },
   "BM": {
@@ -878,7 +878,7 @@
     "uk": "Гамільтон",
     "vi": "Hamilton",
     "zh-Hans": "哈密尔顿",
-    "zh-Hant": "哈密尔顿",
+    "zh-Hant": "哈密爾頓",
     "pt-PT": "Hamilton"
   },
   "BN": {
@@ -911,8 +911,8 @@
     "tr": "Bandar Seri Begavan",
     "uk": "Бандар Сері Беґаван",
     "vi": "Bandar Seri Begawan",
-    "zh-Hans": "斯里巴加灣市",
-    "zh-Hant": "斯里巴加灣市",
+    "zh-Hans": "斯里巴加灣",
+    "zh-Hant": "斯里巴加灣",
     "pt-PT": "Bandar Seri Begawan"
   },
   "BO": {
@@ -922,13 +922,13 @@
     "de": "La Paz",
     "el": "Λα Παζ",
     "en": "La Paz",
-    "es": "Sucre",
+    "es": "La Paz",
     "fi": "La Paz",
     "fr": "La Paz",
     "hi": "ला पास",
     "hr": "La Paz",
     "hu": "La Paz",
-    "id": "La Paz, Bolivia",
+    "id": "La Paz",
     "it": "La Paz",
     "ja": "ラパス",
     "ko": "라파스",
@@ -980,7 +980,7 @@
     "uk": "Бразиліа",
     "vi": "Brasilia",
     "zh-Hans": "巴西利亚",
-    "zh-Hant": "巴西利亚",
+    "zh-Hant": "巴西利亞",
     "pt-PT": "Brasília"
   },
   "BS": {
@@ -1014,7 +1014,7 @@
     "uk": "Нассау",
     "vi": "Nassau",
     "zh-Hans": "拿骚",
-    "zh-Hant": "拿骚",
+    "zh-Hant": "拿騷",
     "pt-PT": "Nassau"
   },
   "BT": {
@@ -1218,7 +1218,7 @@
     "uk": "Кіншаса",
     "vi": "Kinshasa",
     "zh-Hans": "金沙萨",
-    "zh-Hant": "金沙萨",
+    "zh-Hant": "金沙薩",
     "pt-PT": "Quinxassa"
   },
   "CF": {
@@ -1286,7 +1286,7 @@
     "uk": "Браззавіль",
     "vi": "Brazzaville",
     "zh-Hans": "布拉柴维尔",
-    "zh-Hant": "布拉柴维尔",
+    "zh-Hant": "布拉柴維爾",
     "pt-PT": "Brazavile"
   },
   "CH": {
@@ -1320,7 +1320,7 @@
     "uk": "Берн",
     "vi": "Bern",
     "zh-Hans": "伯尔尼",
-    "zh-Hant": "伯尔尼",
+    "zh-Hant": "伯爾尼",
     "pt-PT": "Berna"
   },
   "CI": {
@@ -1354,7 +1354,7 @@
     "uk": "Ямусукро",
     "vi": "Yamoussoukro",
     "zh-Hans": "亚穆苏克罗",
-    "zh-Hant": "亚穆苏克罗",
+    "zh-Hant": "亞穆蘇克羅",
     "pt-PT": "Yamoussoukro"
   },
   "CK": {
@@ -1387,7 +1387,7 @@
     "uk": "Аваруа",
     "vi": "Avarua",
     "zh-Hans": "阿瓦鲁阿",
-    "zh-Hant": "阿瓦鲁阿",
+    "zh-Hant": "阿瓦魯阿",
     "pt-PT": "Avarua"
   },
   "CL": {
@@ -1421,7 +1421,7 @@
     "uk": "Сантьяго",
     "vi": "Santiago",
     "zh-Hans": "圣地亚哥",
-    "zh-Hant": "圣地亚哥",
+    "zh-Hant": "聖地亞哥",
     "pt-PT": "Santiago"
   },
   "CM": {
@@ -1455,7 +1455,7 @@
     "uk": "Яунде",
     "vi": "Yaoundé",
     "zh-Hans": "雅温得",
-    "zh-Hant": "雅温得",
+    "zh-Hant": "雅溫得",
     "pt-PT": "Iaundé"
   },
   "CN": {
@@ -1537,9 +1537,9 @@
     "fi": "San José",
     "fr": "San José",
     "hi": "सान होज़े",
-    "hr": "San José, Kostarika",
+    "hr": "San José",
     "hu": "San José",
-    "id": "San José, Kosta Rika",
+    "id": "San José",
     "it": "San José",
     "ja": "サンホセ",
     "ko": "산호세",
@@ -1557,7 +1557,7 @@
     "uk": "Сан-Хосе",
     "vi": "San José",
     "zh-Hans": "圣何塞",
-    "zh-Hant": "圣何塞",
+    "zh-Hant": "聖何塞",
     "pt-PT": "San José"
   },
   "CU": {
@@ -1625,7 +1625,7 @@
     "uk": "Прая",
     "vi": "Praia",
     "zh-Hans": "普拉亚",
-    "zh-Hant": "普拉亚",
+    "zh-Hant": "普拉亞",
     "pt-PT": "Praia"
   },
   "CW": {
@@ -1645,7 +1645,7 @@
     "it": "Willemstad",
     "ja": "ウィレムスタッド",
     "ko": "빌렘스타트",
-    "ms": "Willemstad, Curaçao",
+    "ms": "Willemstad",
     "nb": "Willemstad",
     "nl": "Willemstad",
     "pl": "Willemstad",
@@ -1693,7 +1693,7 @@
     "uk": "Нікосія",
     "vi": "Nicosia",
     "zh-Hans": "尼科西亚",
-    "zh-Hant": "尼科西亚",
+    "zh-Hant": "尼科西亞",
     "pt-PT": "Nicósia"
   },
   "CZ": {
@@ -1779,7 +1779,7 @@
     "hu": "Dzsibuti",
     "id": "Kota Djibouti",
     "it": "Gibuti",
-    "ja": "ジブチ市",
+    "ja": "ジブチ",
     "ko": "지부티",
     "ms": "Djibouti",
     "nb": "Djibouti",
@@ -1794,8 +1794,8 @@
     "tr": "Cibuti",
     "uk": "Джибуті",
     "vi": "Djibouti",
-    "zh-Hans": "吉布地市",
-    "zh-Hant": "吉布地市",
+    "zh-Hans": "吉布地",
+    "zh-Hant": "吉布地",
     "pt-PT": "Djibouti"
   },
   "DK": {
@@ -1897,7 +1897,7 @@
     "uk": "Санто-Домінго",
     "vi": "Santo Domingo",
     "zh-Hans": "圣多明各",
-    "zh-Hant": "圣多明各",
+    "zh-Hant": "聖多明各",
     "pt-PT": "São Domingos"
   },
   "DZ": {
@@ -2070,7 +2070,7 @@
     "uk": "Асмера",
     "vi": "Asmara",
     "zh-Hans": "阿斯马拉",
-    "zh-Hant": "阿斯马拉",
+    "zh-Hant": "阿斯馬拉",
     "pt-PT": "Asmara"
   },
   "ES": {
@@ -2104,7 +2104,7 @@
     "uk": "Мадрид",
     "vi": "Madrid",
     "zh-Hans": "马德里",
-    "zh-Hant": "马德里",
+    "zh-Hant": "馬德里",
     "pt-PT": "Madrid"
   },
   "ET": {
@@ -2138,7 +2138,7 @@
     "uk": "Аддис-Абеба",
     "vi": "Addis Ababa",
     "zh-Hans": "亚的斯亚贝巴",
-    "zh-Hant": "亚的斯亚贝巴",
+    "zh-Hant": "亞的斯亞貝巴",
     "pt-PT": "Adis Abeba"
   },
   "FI": {
@@ -2172,7 +2172,7 @@
     "uk": "Гельсінкі",
     "vi": "Helsinki",
     "zh-Hans": "赫尔辛基",
-    "zh-Hant": "赫尔辛基",
+    "zh-Hant": "赫爾辛基",
     "pt-PT": "Helsínquia"
   },
   "FJ": {
@@ -2219,13 +2219,13 @@
     "es": "Stanley",
     "fi": "Port Stanley",
     "fr": "Port Stanley",
-    "hr": "Stanley, Falklandski otoci",
+    "hr": "Stanley",
     "hu": "Stanley",
     "id": "Stanley",
     "it": "Stanley",
     "ja": "スタンリー",
     "ko": "스탠리",
-    "ms": "Stanley, Kepulauan Falkland",
+    "ms": "Stanley",
     "nb": "Stanley",
     "nl": "Stanley",
     "pl": "Stanley",
@@ -2273,7 +2273,7 @@
     "uk": "Палікір",
     "vi": "Palikir",
     "zh-Hans": "帕利基尔",
-    "zh-Hant": "帕利基尔",
+    "zh-Hant": "帕利基爾",
     "pt-PT": "Paliquir"
   },
   "FO": {
@@ -2305,7 +2305,7 @@
     "uk": "Торсгавн",
     "vi": "Tórshavn",
     "zh-Hans": "托爾斯港",
-    "zh-Hant": "托爾斯港",
+    "zh-Hant": "託爾斯港",
     "pt-PT": "Tórshavn"
   },
   "FR": {
@@ -2373,7 +2373,7 @@
     "uk": "Лібревіль",
     "vi": "Libreville",
     "zh-Hans": "利伯维尔",
-    "zh-Hant": "利伯维尔",
+    "zh-Hant": "利伯維爾",
     "pt-PT": "Libreville"
   },
   "GB": {
@@ -2414,15 +2414,15 @@
     "ca": "Saint George's",
     "cs": "Saint George's",
     "da": "Saint George's",
-    "de": "St. George’s",
+    "de": "St. George's",
     "el": "Σαιντ Τζόρτζις",
     "en": "St. George's",
     "es": "Saint George's",
-    "fi": "St. George’s",
+    "fi": "St. George's",
     "fr": "Saint-Georges",
     "hi": "सेंट जॉर्ज",
     "hr": "St. George's",
-    "hu": "St. George’s",
+    "hu": "St. George's",
     "id": "St. George's",
     "it": "Saint George's",
     "ja": "セントジョージズ",
@@ -2434,14 +2434,14 @@
     "pt-BR": "São Jorge",
     "ro": "Saint George's",
     "ru": "Сент-Джорджес",
-    "sk": "Saint George’s",
+    "sk": "Saint George's",
     "sv": "Saint George's",
     "th": "เซนต์จอร์เจส",
     "tr": "Saint George's",
     "uk": "Сент-Джорджес",
     "vi": "St. George's",
     "zh-Hans": "圣乔治",
-    "zh-Hant": "圣乔治",
+    "zh-Hant": "聖喬治",
     "pt-PT": "São Jorge"
   },
   "GE": {
@@ -2541,7 +2541,7 @@
     "uk": "Сент-Пітер-Порт",
     "vi": "Saint Peter Port",
     "zh-Hans": "圣彼得港",
-    "zh-Hant": "圣彼得港",
+    "zh-Hant": "聖彼得港",
     "pt-PT": "Saint Peter Port"
   },
   "GH": {
@@ -2643,7 +2643,7 @@
     "uk": "Банжул",
     "vi": "Banjul",
     "zh-Hans": "班珠尔",
-    "zh-Hant": "班珠尔",
+    "zh-Hant": "班珠爾",
     "pt-PT": "Banjul"
   },
   "GN": {
@@ -2711,26 +2711,26 @@
     "uk": "Бас-Тер",
     "vi": "Basse-Terre",
     "zh-Hans": "巴斯特尔",
-    "zh-Hant": "巴斯特尔",
+    "zh-Hant": "巴斯特爾",
     "pt-PT": "Basse-Terre"
   },
   "GQ": {
-    "ca": "Oyala",
+    "ca": "Ciudad de la Paz",
     "cs": "Ciudad de la Paz",
     "de": "Ciudad de la Paz",
     "el": "Θιουδάδ ντε λα Παθ",
     "en": "Ciudad de la Paz",
-    "es": "Malabo",
+    "es": "Ciudad de la Paz",
     "fi": "Ciudad de la Paz",
     "fr": "Ciudad de la Paz",
     "hr": "Ciudad de la Paz",
     "hu": "Ciudad de la Paz",
     "id": "Ciudad de la Paz",
     "it": "Ciudad de la Paz",
-    "ja": "ラパス",
-    "ko": "오얄라",
+    "ja": "シウダー・デ・ラ・パス",
+    "ko": "시우다드데라파스",
     "nl": "Ciudad de la Paz",
-    "pl": "Oyala",
+    "pl": "Ciudad de la Paz",
     "pt-BR": "Ciudad de la Paz",
     "ro": "Ciudad de la Paz",
     "ru": "Сьюдад-де-ла-Пас",
@@ -2739,9 +2739,14 @@
     "tr": "Ciudad de la Paz",
     "uk": "Сьюдад-де-ла-Пас",
     "vi": "Ciudad de la Paz",
-    "zh-Hans": "欧亚拉",
-    "zh-Hant": "欧亚拉",
-    "pt-PT": "Ciudad de la Paz"
+    "zh-Hans": "拉巴斯城",
+    "zh-Hant": "拉巴斯城",
+    "pt-PT": "Ciudad de la Paz",
+    "da": "Ciudad de la Paz",
+    "hi": "सिउदाद दे ला पास",
+    "ms": "Ciudad de la Paz",
+    "nb": "Ciudad de la Paz",
+    "sk": "Ciudad de la Paz"
   },
   "GR": {
     "ca": "Atenes",
@@ -2780,7 +2785,7 @@
   "GT": {
     "ca": "Guatemala",
     "cs": "Ciudad de Guatemala",
-    "da": "Guatamala City",
+    "da": "Guatemala City",
     "de": "Guatemala-Stadt",
     "el": "πόλη της Γουατεμάλας",
     "en": "Guatemala City",
@@ -2807,8 +2812,8 @@
     "tr": "Guatemala",
     "uk": "Гватемала",
     "vi": "Thành phố Guatemala",
-    "zh-Hans": "瓜地馬拉市",
-    "zh-Hant": "瓜地馬拉市",
+    "zh-Hans": "瓜地馬拉",
+    "zh-Hant": "瓜地馬拉",
     "pt-PT": "Cidade da Guatemala"
   },
   "GU": {
@@ -2842,7 +2847,7 @@
     "uk": "Гаґатна",
     "vi": "Hagåtña",
     "zh-Hans": "阿加尼亚",
-    "zh-Hant": "阿加尼亚",
+    "zh-Hant": "阿加尼亞",
     "pt-PT": "Hagåtña"
   },
   "GW": {
@@ -2876,7 +2881,7 @@
     "uk": "Бісау",
     "vi": "Bissau",
     "zh-Hans": "比绍",
-    "zh-Hant": "比绍",
+    "zh-Hant": "比紹",
     "pt-PT": "Bissau"
   },
   "GY": {
@@ -2910,7 +2915,7 @@
     "uk": "Джорджтаун",
     "vi": "Georgetown",
     "zh-Hans": "乔治敦",
-    "zh-Hant": "乔治敦",
+    "zh-Hant": "喬治敦",
     "pt-PT": "Georgetown"
   },
   "HK": {
@@ -2947,7 +2952,7 @@
     "uk": "Тегусігальпа",
     "vi": "Tegucigalpa",
     "zh-Hans": "特古西加尔巴",
-    "zh-Hant": "特古西加尔巴",
+    "zh-Hant": "特古西加爾巴",
     "pt-PT": "Tegucigalpa"
   },
   "HR": {
@@ -2981,7 +2986,7 @@
     "uk": "Загреб",
     "vi": "Zagreb",
     "zh-Hans": "萨格勒布",
-    "zh-Hant": "萨格勒布",
+    "zh-Hant": "薩格勒布",
     "pt-PT": "Zagreb"
   },
   "HT": {
@@ -3049,7 +3054,7 @@
     "uk": "Будапешт",
     "vi": "Budapest",
     "zh-Hans": "布达佩斯",
-    "zh-Hant": "布达佩斯",
+    "zh-Hant": "布達佩斯",
     "pt-PT": "Budapeste"
   },
   "ID": {
@@ -3083,7 +3088,7 @@
     "uk": "Джакарта",
     "vi": "Jakarta",
     "zh-Hans": "雅加达",
-    "zh-Hant": "雅加达",
+    "zh-Hant": "雅加達",
     "pt-PT": "Jacarta"
   },
   "IE": {
@@ -3164,7 +3169,7 @@
     "es": "Douglas",
     "fi": "Douglas",
     "fr": "Douglas",
-    "hr": "Douglas, Otok Man",
+    "hr": "Douglas",
     "hu": "Douglas",
     "id": "Douglas",
     "it": "Douglas",
@@ -3174,14 +3179,14 @@
     "nl": "Douglas",
     "pl": "Douglas",
     "pt-BR": "Douglas",
-    "ro": "Douglas, Insula Man",
+    "ro": "Douglas",
     "ru": "Дуглас",
     "sk": "Douglas",
     "sv": "Douglas",
     "th": "ดักลาส",
     "tr": "Douglas",
     "uk": "Дуглас",
-    "vi": "Douglas, đảo Man",
+    "vi": "Douglas",
     "zh-Hans": "道格拉斯",
     "zh-Hant": "道格拉斯",
     "pt-PT": "Douglas"
@@ -3285,7 +3290,7 @@
     "uk": "Тегеран",
     "vi": "Tehran",
     "zh-Hans": "德黑兰",
-    "zh-Hant": "德黑兰",
+    "zh-Hant": "德黑蘭",
     "pt-PT": "Teerão"
   },
   "IS": {
@@ -3353,7 +3358,7 @@
     "uk": "Рим",
     "vi": "Roma",
     "zh-Hans": "罗马",
-    "zh-Hant": "罗马",
+    "zh-Hant": "羅馬",
     "pt-PT": "Roma"
   },
   "JE": {
@@ -3384,7 +3389,7 @@
     "uk": "Сент-Гелієр",
     "vi": "Saint Helier",
     "zh-Hans": "圣赫利尔",
-    "zh-Hant": "圣赫利尔",
+    "zh-Hant": "聖赫利爾",
     "pt-PT": "Saint Helier"
   },
   "JM": {
@@ -3554,7 +3559,7 @@
     "uk": "Бішкек",
     "vi": "Bishkek",
     "zh-Hans": "比什凯克",
-    "zh-Hant": "比什凯克",
+    "zh-Hant": "比什凱克",
     "pt-PT": "Bisqueque"
   },
   "KH": {
@@ -3588,7 +3593,7 @@
     "uk": "Пномпень",
     "vi": "Phnôm Pênh",
     "zh-Hans": "金边",
-    "zh-Hant": "金边",
+    "zh-Hant": "金邊",
     "pt-PT": "Phnom Penh"
   },
   "KI": {
@@ -3622,7 +3627,7 @@
     "uk": "Тарава",
     "vi": "Tarawa",
     "zh-Hans": "塔拉瓦环礁",
-    "zh-Hant": "塔拉瓦环礁",
+    "zh-Hant": "塔拉瓦環礁",
     "pt-PT": "Tarawa"
   },
   "KM": {
@@ -3654,7 +3659,7 @@
     "th": "โมโรนี",
     "tr": "Moroni",
     "uk": "Мороні",
-    "vi": "Moroni, Comoros",
+    "vi": "Moroni",
     "zh-Hans": "莫洛尼",
     "zh-Hant": "莫洛尼",
     "pt-PT": "Moroni"
@@ -3690,7 +3695,7 @@
     "uk": "Бастер",
     "vi": "Basseterre",
     "zh-Hans": "巴斯特尔",
-    "zh-Hant": "巴斯特尔",
+    "zh-Hant": "巴斯特爾",
     "pt-PT": "Basseterre"
   },
   "KP": {
@@ -3708,7 +3713,7 @@
     "hu": "Phenjan",
     "id": "Pyongyang",
     "it": "Pyongyang",
-    "ja": "平壌市",
+    "ja": "平壌",
     "ko": "평양시",
     "ms": "Pyongyang",
     "nb": "Pyongyang",
@@ -3742,7 +3747,7 @@
     "hu": "Szöul",
     "id": "Seoul",
     "it": "Seul",
-    "ja": "ソウル特別市",
+    "ja": "ソウル",
     "ko": "서울특별시",
     "ms": "Seoul",
     "nb": "Seoul",
@@ -3776,7 +3781,7 @@
     "hu": "Kuvaitváros",
     "id": "Kota Kuwait",
     "it": "Al Kuwait",
-    "ja": "クウェート市",
+    "ja": "クウェート",
     "ko": "쿠웨이트 시",
     "ms": "Bandar Kuwait",
     "nb": "Kuwait",
@@ -3808,16 +3813,16 @@
     "hi": "जॉर्ज टाउन",
     "hr": "George Town",
     "hu": "George Town",
-    "id": "George Town, Kepulauan Cayman",
+    "id": "George Town",
     "it": "George Town",
     "ja": "ジョージタウン",
     "ko": "조지타운",
-    "ms": "George Town, Kepulauan Cayman",
+    "ms": "George Town",
     "nb": "George Town",
     "nl": "George Town",
     "pl": "George Town",
     "pt-BR": "George Town",
-    "ro": "George Town, Insulele Cayman",
+    "ro": "George Town",
     "ru": "Джорджтаун",
     "sk": "George Town",
     "sv": "George Town",
@@ -3860,7 +3865,7 @@
     "uk": "Астана",
     "vi": "Astana",
     "zh-Hans": "阿斯塔纳",
-    "zh-Hant": "阿斯塔纳",
+    "zh-Hant": "阿斯塔納",
     "pt-PT": "Astana"
   },
   "LA": {
@@ -3928,7 +3933,7 @@
     "uk": "Бейрут",
     "vi": "Beirut",
     "zh-Hans": "贝鲁特",
-    "zh-Hant": "贝鲁特",
+    "zh-Hant": "貝魯特",
     "pt-PT": "Beirute"
   },
   "LC": {
@@ -3996,7 +4001,7 @@
     "uk": "Вадуц",
     "vi": "Vaduz",
     "zh-Hans": "瓦杜兹",
-    "zh-Hant": "瓦杜兹",
+    "zh-Hant": "瓦杜茲",
     "pt-PT": "Vaduz"
   },
   "LK": {
@@ -4006,7 +4011,7 @@
     "de": "Colombo",
     "el": "Κολόμπο",
     "en": "Colombo",
-    "es": "Sri Jayawardenepura Kotte",
+    "es": "Colombo",
     "fi": "Colombo",
     "fr": "Colombo",
     "hi": "कोलंबो",
@@ -4030,7 +4035,7 @@
     "uk": "Коломбо",
     "vi": "Colombo",
     "zh-Hans": "科伦坡",
-    "zh-Hant": "科伦坡",
+    "zh-Hant": "科倫坡",
     "pt-PT": "Colombo"
   },
   "LR": {
@@ -4098,7 +4103,7 @@
     "uk": "Масеру",
     "vi": "Maseru",
     "zh-Hans": "马塞卢",
-    "zh-Hant": "马塞卢",
+    "zh-Hant": "馬塞盧",
     "pt-PT": "Maseru"
   },
   "LT": {
@@ -4132,7 +4137,7 @@
     "uk": "Вільнюс",
     "vi": "Vilnius",
     "zh-Hans": "维尔纽斯",
-    "zh-Hant": "维尔纽斯",
+    "zh-Hant": "維爾紐斯",
     "pt-PT": "Vilnius"
   },
   "LU": {
@@ -4150,7 +4155,7 @@
     "hu": "Luxembourg",
     "id": "Luksemburg",
     "it": "Lussemburgo",
-    "ja": "ルクセンブルク市",
+    "ja": "ルクセンブルク",
     "ko": "룩셈부르크",
     "ms": "Bandar Luxembourg",
     "nb": "Luxembourg by",
@@ -4165,8 +4170,8 @@
     "tr": "Lüksemburg",
     "uk": "Люксембург",
     "vi": "Luxembourg",
-    "zh-Hans": "卢森堡市",
-    "zh-Hant": "卢森堡市",
+    "zh-Hans": "卢森堡",
+    "zh-Hant": "盧森堡",
     "pt-PT": "Luxemburgo"
   },
   "LV": {
@@ -4284,7 +4289,7 @@
     "hu": "Monaco",
     "id": "Kota Monako",
     "it": "Monaco Vecchia",
-    "ja": "モナコ市",
+    "ja": "モナコ",
     "ko": "모나코빌",
     "nb": "Monaco-Ville",
     "nl": "Monaco-Stad",
@@ -4297,7 +4302,7 @@
     "tr": "Monaco-Ville",
     "uk": "Монако",
     "zh-Hans": "摩纳哥城",
-    "zh-Hant": "摩纳哥城",
+    "zh-Hant": "摩納哥城",
     "pt-PT": "Monaco-Ville"
   },
   "MD": {
@@ -4331,7 +4336,7 @@
     "uk": "Кишинів",
     "vi": "Chișinău",
     "zh-Hans": "基希讷乌",
-    "zh-Hant": "基希讷乌",
+    "zh-Hant": "基希訥烏",
     "pt-PT": "Chișinău"
   },
   "ME": {
@@ -4365,7 +4370,7 @@
     "uk": "Подгориця",
     "vi": "Podgorica",
     "zh-Hans": "波德戈里察",
-    "zh-Hant": "波德戈里察",
+    "zh-Hant": "波德戈裡察",
     "pt-PT": "Podgorica"
   },
   "MF": {
@@ -4399,7 +4404,7 @@
     "uk": "Маріго",
     "vi": "Marigot",
     "zh-Hans": "马里戈特",
-    "zh-Hant": "马里戈特",
+    "zh-Hant": "馬裡戈特",
     "pt-PT": "Marigot"
   },
   "MG": {
@@ -4603,7 +4608,7 @@
     "uk": "Улан-Батор",
     "vi": "Ulaanbaatar",
     "zh-Hans": "乌兰巴托",
-    "zh-Hant": "乌兰巴托",
+    "zh-Hant": "烏蘭巴托",
     "pt-PT": "Ulã Bator"
   },
   "MO": {
@@ -4645,7 +4650,7 @@
     "uk": "Фор-де-Франс",
     "vi": "Fort-de-France",
     "zh-Hans": "法兰西堡",
-    "zh-Hant": "法兰西堡",
+    "zh-Hant": "法蘭西堡",
     "pt-PT": "Forte de França"
   },
   "MR": {
@@ -4683,19 +4688,19 @@
     "pt-PT": "Nouakchott"
   },
   "MS": {
-    "ca": "Brades",
-    "cs": "Brades",
+    "ca": "Plymouth",
+    "cs": "Plymouth",
     "da": "Plymouth",
-    "de": "Brades",
+    "de": "Plymouth",
     "el": "Πλίμουθ",
-    "en": "Brades",
+    "en": "Plymouth",
     "es": "Plymouth",
-    "fi": "Brades",
-    "fr": "Brades",
-    "hr": "Plymouth (Montserrat)",
-    "id": "Brades",
-    "it": "Brades",
-    "ja": "ブレイズ",
+    "fi": "Plymouth",
+    "fr": "Plymouth",
+    "hr": "Plymouth",
+    "id": "Plymouth",
+    "it": "Plymouth",
+    "ja": "プリマス",
     "ko": "플리머스",
     "ms": "Plymouth",
     "nb": "Plymouth",
@@ -4745,7 +4750,7 @@
     "uk": "Валлетта",
     "vi": "Valletta",
     "zh-Hans": "瓦莱塔",
-    "zh-Hant": "瓦莱塔",
+    "zh-Hant": "瓦萊塔",
     "pt-PT": "Valeta"
   },
   "MU": {
@@ -4949,7 +4954,7 @@
     "uk": "Мапуту",
     "vi": "Maputo",
     "zh-Hans": "马普托",
-    "zh-Hant": "马普托",
+    "zh-Hant": "馬普托",
     "pt-PT": "Maputo"
   },
   "NA": {
@@ -4983,7 +4988,7 @@
     "uk": "Віндгук",
     "vi": "Windhoek",
     "zh-Hans": "温得和克",
-    "zh-Hant": "温得和克",
+    "zh-Hant": "溫得和克",
     "pt-PT": "Windhoek"
   },
   "NC": {
@@ -5064,10 +5069,10 @@
     "es": "Kingston",
     "fi": "Kingston",
     "fr": "Kingston",
-    "hi": "किंग्स्टन, नॉर्फ़ोक द्वीप",
+    "hi": "किंग्स्टन",
     "hr": "Kingston",
     "hu": "Kingston",
-    "id": "Kingston, Pulau Norfolk",
+    "id": "Kingston",
     "it": "Kingston",
     "ja": "キングストン",
     "ko": "킹스턴",
@@ -5118,7 +5123,7 @@
     "uk": "Абуджа",
     "vi": "Abuja",
     "zh-Hans": "阿布贾",
-    "zh-Hant": "阿布贾",
+    "zh-Hant": "阿布賈",
     "pt-PT": "Abuja"
   },
   "NI": {
@@ -5220,7 +5225,7 @@
     "uk": "Осло",
     "vi": "Oslo",
     "zh-Hans": "奥斯陆",
-    "zh-Hant": "奥斯陆",
+    "zh-Hant": "奧斯陸",
     "pt-PT": "Oslo"
   },
   "NP": {
@@ -5263,7 +5268,7 @@
     "da": "Yaren",
     "de": "Yaren",
     "el": "Γιαρέν",
-    "en": "Yaren District",
+    "en": "Yaren",
     "es": "Yaren",
     "fi": "Yaren",
     "fr": "Yaren",
@@ -5272,7 +5277,7 @@
     "hu": "Yaren",
     "id": "Yaren",
     "it": "Yaren",
-    "ja": "ヤレン地区",
+    "ja": "ヤレン",
     "ko": "야렌구",
     "ms": "Yaren",
     "nb": "Yaren",
@@ -5287,8 +5292,8 @@
     "tr": "Yaren",
     "uk": "Ярен",
     "vi": "Yaren",
-    "zh-Hans": "亞倫區",
-    "zh-Hant": "亞倫區",
+    "zh-Hans": "亞倫",
+    "zh-Hant": "亞倫",
     "pt-PT": "Yaren"
   },
   "NU": {
@@ -5355,7 +5360,7 @@
     "uk": "Веллінгтон",
     "vi": "Wellington",
     "zh-Hans": "惠灵顿",
-    "zh-Hant": "惠灵顿",
+    "zh-Hant": "惠靈頓",
     "pt-PT": "Wellington"
   },
   "OM": {
@@ -5389,7 +5394,7 @@
     "uk": "Маскат",
     "vi": "Muscat",
     "zh-Hans": "马斯喀特",
-    "zh-Hant": "马斯喀特",
+    "zh-Hant": "馬斯喀特",
     "pt-PT": "Mascate"
   },
   "PA": {
@@ -5407,7 +5412,7 @@
     "hu": "Panamaváros",
     "id": "Kota Panama",
     "it": "Panama",
-    "ja": "パナマ市",
+    "ja": "パナマ",
     "ko": "파나마시티",
     "ms": "Kota Panama",
     "nb": "Panama by",
@@ -5525,7 +5530,7 @@
     "uk": "Порт-Морсбі",
     "vi": "Port Moresby",
     "zh-Hans": "莫尔斯比港",
-    "zh-Hant": "莫尔斯比港",
+    "zh-Hant": "莫爾斯比港",
     "pt-PT": "Port Moresby"
   },
   "PH": {
@@ -5558,8 +5563,8 @@
     "tr": "Manila",
     "uk": "Маніла",
     "vi": "Manila",
-    "zh-Hans": "马尼拉市",
-    "zh-Hant": "马尼拉市",
+    "zh-Hans": "马尼拉",
+    "zh-Hant": "馬尼拉",
     "pt-PT": "Manila"
   },
   "PK": {
@@ -5593,7 +5598,7 @@
     "uk": "Ісламабад",
     "vi": "Islamabad",
     "zh-Hans": "伊斯兰堡",
-    "zh-Hant": "伊斯兰堡",
+    "zh-Hant": "伊斯蘭堡",
     "pt-PT": "Islamabad"
   },
   "PL": {
@@ -5627,7 +5632,7 @@
     "uk": "Варшава",
     "vi": "Warszawa",
     "zh-Hans": "华沙",
-    "zh-Hant": "华沙",
+    "zh-Hant": "華沙",
     "pt-PT": "Varsóvia"
   },
   "PM": {
@@ -5642,7 +5647,7 @@
     "fr": "Saint-Pierre",
     "hr": "Saint-Pierre",
     "hu": "Saint-Pierre",
-    "id": "Saint-Pierre, Saint-Pierre dan Miquelon",
+    "id": "Saint-Pierre",
     "it": "Saint-Pierre",
     "ja": "サン＝ピエール",
     "ko": "생피에르",
@@ -5651,16 +5656,16 @@
     "nl": "Saint-Pierre",
     "pl": "Saint-Pierre",
     "pt-BR": "Saint-Pierre",
-    "ro": "Saint-Pierre, Saint Pierre și Miquelon",
+    "ro": "Saint-Pierre",
     "ru": "Сен-Пьер",
     "sk": "Saint-Pierre",
     "sv": "Saint-Pierre",
     "th": "แซ็ง-ปีแยร์",
     "tr": "Saint-Pierre",
     "uk": "Сен-П'єр",
-    "vi": "Saint-Pierre, Saint-Pierre và Miquelon",
+    "vi": "Saint-Pierre",
     "zh-Hans": "圣皮埃尔",
-    "zh-Hant": "圣皮埃尔",
+    "zh-Hant": "聖皮埃爾",
     "pt-PT": "Saint-Pierre"
   },
   "PN": {
@@ -5692,7 +5697,7 @@
     "uk": "Адамстаун",
     "vi": "Adamstown",
     "zh-Hans": "亚当斯敦",
-    "zh-Hant": "亚当斯敦",
+    "zh-Hant": "亞當斯敦",
     "pt-PT": "Adamstown"
   },
   "PR": {
@@ -5708,16 +5713,16 @@
     "hi": "सैन जुआन",
     "hr": "San Juan",
     "hu": "San Juan",
-    "id": "San Juan, Puerto Riko",
+    "id": "San Juan",
     "it": "San Juan",
     "ja": "サン・フアン",
     "ko": "산후안",
-    "ms": "San Juan, Puerto Rico",
+    "ms": "San Juan",
     "nb": "San Juan",
     "nl": "San Juan",
     "pl": "San Juan",
     "pt-BR": "San Juan",
-    "ro": "San Juan, Puerto Rico",
+    "ro": "San Juan",
     "ru": "Сан-Хуан",
     "sk": "San Juan",
     "sv": "San Juan",
@@ -5726,7 +5731,7 @@
     "uk": "Сан-Хуан",
     "vi": "San Juan",
     "zh-Hans": "圣胡安",
-    "zh-Hant": "圣胡安",
+    "zh-Hant": "聖胡安",
     "pt-PT": "San Juan"
   },
   "PS": {
@@ -5760,7 +5765,7 @@
     "uk": "Східний Єрусалим",
     "vi": "Đông Jerusalem",
     "zh-Hans": "东耶路撒冷",
-    "zh-Hant": "东耶路撒冷",
+    "zh-Hant": "東耶路撒冷",
     "pt-PT": "Jerusalém Oriental"
   },
   "PT": {
@@ -5825,7 +5830,7 @@
     "uk": "Нгерулмуд",
     "vi": "Ngerulmud",
     "zh-Hans": "恩吉鲁穆德",
-    "zh-Hant": "恩吉鲁穆德",
+    "zh-Hant": "恩吉魯穆德",
     "pt-PT": "Ngerulmud"
   },
   "PY": {
@@ -5859,7 +5864,7 @@
     "uk": "Асунсьйон",
     "vi": "Asunción",
     "zh-Hans": "亚松森",
-    "zh-Hant": "亚松森",
+    "zh-Hant": "亞松森",
     "pt-PT": "Assunção"
   },
   "QA": {
@@ -5927,7 +5932,7 @@
     "uk": "Сен-Дені",
     "vi": "Saint-Denis",
     "zh-Hans": "圣但尼",
-    "zh-Hant": "圣但尼",
+    "zh-Hant": "聖但尼",
     "pt-PT": "Saint-Denis"
   },
   "RO": {
@@ -5995,7 +6000,7 @@
     "uk": "Белград",
     "vi": "Beograd",
     "zh-Hans": "贝尔格莱德",
-    "zh-Hant": "贝尔格莱德",
+    "zh-Hant": "貝爾格萊德",
     "pt-PT": "Belgrado"
   },
   "RU": {
@@ -6131,7 +6136,7 @@
     "uk": "Хоніара",
     "vi": "Honiara",
     "zh-Hans": "霍尼亚拉",
-    "zh-Hant": "霍尼亚拉",
+    "zh-Hant": "霍尼亞拉",
     "pt-PT": "Honiara"
   },
   "SC": {
@@ -6145,9 +6150,9 @@
     "fi": "Victoria",
     "fr": "Victoria",
     "hi": "विक्टोरिया",
-    "hr": "Victoria, Sejšeli",
+    "hr": "Victoria",
     "hu": "Victoria",
-    "id": "Victoria, Seychelles",
+    "id": "Victoria",
     "it": "Victoria",
     "ja": "ヴィクトリア",
     "ko": "빅토리아",
@@ -6233,7 +6238,7 @@
     "uk": "Стокгольм",
     "vi": "Stockholm",
     "zh-Hans": "斯德哥尔摩",
-    "zh-Hant": "斯德哥尔摩",
+    "zh-Hant": "斯德哥爾摩",
     "pt-PT": "Estocolmo"
   },
   "SG": {
@@ -6262,7 +6267,7 @@
     "ru": "Сингапур",
     "sk": "Singapur",
     "sv": "Singapore",
-    "th": "ประเทศสิงคโปร์",
+    "th": "สิงคโปร์",
     "tr": "Singapur",
     "uk": "Сінгапур",
     "vi": "Singapore",
@@ -6280,10 +6285,10 @@
     "es": "Jamestown",
     "fi": "Jamestown",
     "fr": "Jamestown",
-    "hi": "जेम्सटाउन, सेंट हेलेना",
+    "hi": "जेम्सटाउन",
     "hr": "Jamestown",
     "hu": "Jamestown",
-    "id": "Jamestown, Saint Helena",
+    "id": "Jamestown",
     "it": "Jamestown",
     "ja": "ジェームズタウン",
     "ko": "제임스타운",
@@ -6334,7 +6339,7 @@
     "uk": "Любляна",
     "vi": "Ljubljana",
     "zh-Hans": "卢布尔雅那",
-    "zh-Hant": "卢布尔雅那",
+    "zh-Hant": "盧布爾雅那",
     "pt-PT": "Liubliana"
   },
   "SK": {
@@ -6368,7 +6373,7 @@
     "uk": "Братислава",
     "vi": "Bratislava",
     "zh-Hans": "布拉迪斯拉发",
-    "zh-Hant": "布拉迪斯拉发",
+    "zh-Hant": "布拉迪斯拉發",
     "pt-PT": "Bratislava"
   },
   "SL": {
@@ -6420,7 +6425,7 @@
     "hu": "San Marino",
     "id": "San Marino",
     "it": "Città di San Marino",
-    "ja": "サンマリノ市",
+    "ja": "サンマリノ",
     "ko": "산마리노",
     "ms": "San Marino",
     "nb": "San Marino",
@@ -6538,7 +6543,7 @@
     "uk": "Парамарибо",
     "vi": "Paramaribo",
     "zh-Hans": "帕拉马里博",
-    "zh-Hant": "帕拉马里博",
+    "zh-Hant": "帕拉馬裡博",
     "pt-PT": "Paramaribo"
   },
   "SS": {
@@ -6552,13 +6557,13 @@
     "fi": "Juba",
     "fr": "Djouba",
     "hi": "जुबा",
-    "hr": "Juba, grad",
+    "hr": "Juba",
     "hu": "Juba",
-    "id": "Juba, Sudan Selatan",
+    "id": "Juba",
     "it": "Giuba",
     "ja": "ジュバ",
     "ko": "주바",
-    "ms": "Juba, Sudan Selatan",
+    "ms": "Juba",
     "nb": "Juba",
     "nl": "Djoeba",
     "pl": "Dżuba",
@@ -6570,7 +6575,7 @@
     "th": "จูบา",
     "tr": "Cuba",
     "uk": "Джуба",
-    "vi": "Juba, Nam Sudan",
+    "vi": "Juba",
     "zh-Hans": "朱巴",
     "zh-Hant": "朱巴",
     "pt-PT": "Juba"
@@ -6606,7 +6611,7 @@
     "uk": "Сан-Томе",
     "vi": "São Tomé",
     "zh-Hans": "圣多美",
-    "zh-Hant": "圣多美",
+    "zh-Hant": "聖多美",
     "pt-PT": "São Tomé"
   },
   "SV": {
@@ -6652,8 +6657,8 @@
     "es": "Philipsburg",
     "fi": "Philipsburg",
     "fr": "Philipsburg",
-    "hr": "Philipsburg (Zemlja Sveti Martin)",
-    "id": "Philipsburg, Sint Maarten",
+    "hr": "Philipsburg",
+    "id": "Philipsburg",
     "it": "Philipsburg",
     "ja": "フィリップスブルフ",
     "ko": "필립스뷔르흐",
@@ -6661,7 +6666,7 @@
     "nl": "Philipsburg",
     "pl": "Philipsburg",
     "pt-BR": "Philipsburg",
-    "ro": "Philipsburg, Sint Maarten",
+    "ro": "Philipsburg",
     "ru": "Филипсбург",
     "sv": "Philipsburg",
     "th": "ฟิลิปส์บืร์ค",
@@ -6703,7 +6708,7 @@
     "uk": "Дамаск",
     "vi": "Damas",
     "zh-Hans": "大马士革",
-    "zh-Hant": "大马士革",
+    "zh-Hant": "大馬士革",
     "pt-PT": "Damasco"
   },
   "SZ": {
@@ -6737,7 +6742,7 @@
     "uk": "Мбабане",
     "vi": "Mbabane",
     "zh-Hans": "姆巴巴内",
-    "zh-Hant": "姆巴巴内",
+    "zh-Hant": "姆巴巴內",
     "pt-PT": "Mebabane"
   },
   "TC": {
@@ -6775,17 +6780,17 @@
     "ca": "N'Djamena",
     "cs": "N'Djamena",
     "da": "N'Djamena",
-    "de": "N’Djamena",
+    "de": "N'Djamena",
     "el": "Ντζαμένα",
     "en": "N'Djamena",
     "es": "Yamena",
-    "fi": "N’Djamena",
+    "fi": "N'Djamena",
     "fr": "N'Djaména",
     "hi": "अन जमेना",
     "hr": "N'Djamena",
-    "hu": "N’Djamena",
+    "hu": "N'Djamena",
     "id": "N'Djamena",
-    "it": "N’Djamena",
+    "it": "N'Djamena",
     "ja": "ンジャメナ",
     "ko": "은자메나",
     "ms": "N'Djamena",
@@ -6795,7 +6800,7 @@
     "pt-BR": "Jamena",
     "ro": "N'Djamena",
     "ru": "Нджамена",
-    "sk": "N’Djamena",
+    "sk": "N'Djamena",
     "sv": "N'Djamena",
     "th": "อึนจาเมนา",
     "tr": "N'Camena",
@@ -6904,7 +6909,7 @@
     "uk": "Душанбе",
     "vi": "Dushanbe",
     "zh-Hans": "杜尚别",
-    "zh-Hant": "杜尚别",
+    "zh-Hant": "杜尚別",
     "pt-PT": "Duchambe"
   },
   "TL": {
@@ -7005,8 +7010,8 @@
     "tr": "Tunus",
     "uk": "Туніс",
     "vi": "Tunis",
-    "zh-Hans": "突尼斯市",
-    "zh-Hant": "突尼斯市",
+    "zh-Hans": "突尼斯",
+    "zh-Hant": "突尼斯",
     "pt-PT": "Tunes"
   },
   "TO": {
@@ -7033,14 +7038,14 @@
     "pt-BR": "Nuku'alofa",
     "ro": "Nuku'alofa",
     "ru": "Нукуалофа",
-    "sk": "Nuku’alofa",
+    "sk": "Nuku'alofa",
     "sv": "Nuku'alofa",
     "th": "นูกูอาโลฟา",
     "tr": "Nuku'alofa",
     "uk": "Нукуалофа",
     "vi": "Nukuʻalofa",
     "zh-Hans": "努库阿洛法",
-    "zh-Hant": "努库阿洛法",
+    "zh-Hant": "努庫阿洛法",
     "pt-PT": "Nuku'alofa"
   },
   "TR": {
@@ -7142,7 +7147,7 @@
     "uk": "Фунафуті",
     "vi": "Funafuti",
     "zh-Hans": "富纳富提",
-    "zh-Hant": "富纳富提",
+    "zh-Hant": "富納富提",
     "pt-PT": "Funafuti"
   },
   "TW": {
@@ -7210,7 +7215,7 @@
     "uk": "Додома",
     "vi": "Dodoma",
     "zh-Hans": "多多马",
-    "zh-Hant": "多多马",
+    "zh-Hant": "多多馬",
     "pt-PT": "Dodoma"
   },
   "UA": {
@@ -7346,7 +7351,7 @@
     "uk": "Монтевідео",
     "vi": "Montevideo",
     "zh-Hans": "蒙得维的亚",
-    "zh-Hant": "蒙得维的亚",
+    "zh-Hant": "蒙得維的亞",
     "pt-PT": "Montevidéu"
   },
   "UZ": {
@@ -7483,7 +7488,7 @@
     "uk": "Род-Таун",
     "vi": "Road Town",
     "zh-Hans": "罗德城",
-    "zh-Hant": "罗德城",
+    "zh-Hant": "羅德城",
     "pt-PT": "Road Town"
   },
   "VI": {
@@ -7517,7 +7522,7 @@
     "uk": "Шарлотта-Амалія",
     "vi": "Charlotte Amalie",
     "zh-Hans": "夏洛特阿马利亚",
-    "zh-Hant": "夏洛特阿马利亚",
+    "zh-Hant": "夏洛特阿馬利亞",
     "pt-PT": "Charlotte Amalie"
   },
   "VN": {
@@ -7585,7 +7590,7 @@
     "uk": "Порт-Віла",
     "vi": "Port Vila",
     "zh-Hans": "维拉港",
-    "zh-Hant": "维拉港",
+    "zh-Hant": "維拉港",
     "pt-PT": "Porto Vila"
   },
   "WF": {
@@ -7619,7 +7624,7 @@
     "uk": "Мата-Уту",
     "vi": "Mata-Utu",
     "zh-Hans": "马塔乌图",
-    "zh-Hant": "马塔乌图",
+    "zh-Hant": "馬塔烏圖",
     "pt-PT": "Mata-Utu"
   },
   "WS": {
@@ -7653,7 +7658,7 @@
     "uk": "Апіа",
     "vi": "Apia",
     "zh-Hans": "阿皮亚",
-    "zh-Hant": "阿皮亚",
+    "zh-Hant": "阿皮亞",
     "pt-PT": "Apia"
   },
   "XK": {
@@ -7686,7 +7691,7 @@
     "uk": "Приштина",
     "vi": "Priština",
     "zh-Hans": "普里什蒂纳",
-    "zh-Hant": "普里什蒂纳",
+    "zh-Hant": "普裡什蒂納",
     "pt-PT": "Pristina"
   },
   "YE": {
@@ -7720,7 +7725,7 @@
     "uk": "Сана",
     "vi": "Sana'a",
     "zh-Hans": "萨那",
-    "zh-Hant": "萨那",
+    "zh-Hant": "薩那",
     "pt-PT": "Sana"
   },
   "YT": {
@@ -7754,7 +7759,7 @@
     "uk": "Мамудзу",
     "vi": "Mamoudzou",
     "zh-Hans": "马穆楚",
-    "zh-Hant": "马穆楚",
+    "zh-Hant": "馬穆楚",
     "pt-PT": "Mamoudzou"
   },
   "ZA": {
@@ -7785,10 +7790,10 @@
     "sv": "Pretoria",
     "th": "พริทอเรีย",
     "tr": "Pretoria",
-    "uk": "Кейптаун",
+    "uk": "Преторія",
     "vi": "Pretoria",
     "zh-Hans": "比勒陀利亚",
-    "zh-Hant": "比勒陀利亚",
+    "zh-Hant": "比勒陀利亞",
     "pt-PT": "Pretória"
   },
   "ZM": {

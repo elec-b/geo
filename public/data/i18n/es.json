@@ -334,7 +334,7 @@
   },
   "BO": {
     "name": "Bolivia",
-    "capital": "Sucre",
+    "capital": "La Paz",
     "demonym": "boliviano",
     "languages": [
       "Español",
@@ -1009,7 +1009,7 @@
   },
   "GQ": {
     "name": "Guinea Ecuatorial",
-    "capital": "Malabo",
+    "capital": "Ciudad de la Paz",
     "demonym": "ecuatoguineano",
     "languages": [
       "Español",
@@ -1495,7 +1495,7 @@
   },
   "LK": {
     "name": "Sri Lanka",
-    "capital": "Sri Jayawardenepura Kotte",
+    "capital": "Colombo",
     "demonym": "ceilanés",
     "languages": [
       "Cingalés",
@@ -2519,7 +2519,7 @@
     "wikipediaSlug": "Siria"
   },
   "SZ": {
-    "name": "Esuatini",
+    "name": "Suazilandia",
     "capital": "Mbabane",
     "demonym": "suazi",
     "languages": [
