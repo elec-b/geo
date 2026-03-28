@@ -134,7 +134,7 @@
     "wikipediaSlug": "Áo"
   },
   "AU": {
-    "name": "Australia",
+    "name": "Úc",
     "capital": "Canberra",
     "demonym": "Úc",
     "languages": [
@@ -183,7 +183,7 @@
     "wikipediaSlug": "Azerbaijan"
   },
   "BA": {
-    "name": "Bosnia và Herzegovina",
+    "name": "Bosna và Hercegovina",
     "capital": "Sarajevo",
     "demonym": "Bosnia",
     "languages": [
@@ -284,7 +284,7 @@
     "wikipediaSlug": "Burundi"
   },
   "BJ": {
-    "name": "Benin",
+    "name": "Bénin",
     "capital": "Porto-Novo",
     "demonym": "Bénin",
     "languages": [
@@ -296,7 +296,7 @@
     "wikipediaSlug": "Bénin"
   },
   "BL": {
-    "name": "St. Barthélemy",
+    "name": "Saint-Barthélemy",
     "capital": "Gustavia",
     "demonym": "Saint-Barthélemy",
     "languages": [
@@ -347,7 +347,7 @@
     "wikipediaSlug": "Bolivia"
   },
   "BR": {
-    "name": "Brazil",
+    "name": "Brasil",
     "capital": "Brasilia",
     "demonym": "Brazil",
     "languages": [
@@ -587,7 +587,7 @@
     "wikipediaSlug": "Cuba"
   },
   "CV": {
-    "name": "Cape Verde",
+    "name": "Cabo Verde",
     "capital": "Praia",
     "demonym": "Cabo Verde",
     "languages": [
@@ -698,7 +698,7 @@
     "wikipediaSlug": "Cộng_hòa_Dominica"
   },
   "DZ": {
-    "name": "Algeria",
+    "name": "Algérie",
     "capital": "Algiers",
     "demonym": "Algérie",
     "languages": [
@@ -911,7 +911,7 @@
     "wikipediaSlug": "Grenada"
   },
   "GE": {
-    "name": "Georgia",
+    "name": "Gruzia",
     "capital": "Tbilisi",
     "demonym": "Gruzia",
     "languages": [
@@ -923,7 +923,7 @@
     "wikipediaSlug": "Gruzia"
   },
   "GF": {
-    "name": "Guiana thuộc Pháp",
+    "name": "Guyane thuộc Pháp",
     "capital": "Cayenne",
     "demonym": "Guyane thuộc Pháp",
     "languages": [
@@ -984,7 +984,7 @@
     "wikipediaSlug": "Gambia"
   },
   "GN": {
-    "name": "Guinea",
+    "name": "Guinée",
     "capital": "Conakry",
     "demonym": "Guinée",
     "languages": [
@@ -1059,7 +1059,7 @@
     "wikipediaSlug": "Guam"
   },
   "GW": {
-    "name": "Guinea-Bissau",
+    "name": "Guiné-Bissau",
     "capital": "Bissau",
     "demonym": "Guiné-Bissau",
     "languages": [
@@ -1246,7 +1246,7 @@
     "wikipediaSlug": "Iceland"
   },
   "IT": {
-    "name": "Italy",
+    "name": "Ý",
     "capital": "Roma",
     "demonym": "Ý",
     "languages": [
@@ -1373,7 +1373,7 @@
     "wikipediaSlug": "Comoros"
   },
   "KN": {
-    "name": "St. Kitts và Nevis",
+    "name": "Saint Kitts và Nevis",
     "capital": "Basseterre",
     "demonym": "Saint Kitts và Nevis",
     "languages": [
@@ -1458,7 +1458,7 @@
     "wikipediaSlug": "Lào"
   },
   "LB": {
-    "name": "Li-băng",
+    "name": "Liban",
     "capital": "Beirut",
     "demonym": "Liban",
     "languages": [
@@ -1470,7 +1470,7 @@
     "wikipediaSlug": "Liban"
   },
   "LC": {
-    "name": "St. Lucia",
+    "name": "Saint Lucia",
     "capital": "Castries",
     "demonym": "Saint Lucia",
     "languages": [
@@ -1583,7 +1583,7 @@
     "wikipediaSlug": "Libya"
   },
   "MA": {
-    "name": "Ma-rốc",
+    "name": "Maroc",
     "capital": "Rabat",
     "demonym": "Maroc",
     "languages": [
@@ -1632,7 +1632,7 @@
     "wikipediaSlug": "Montenegro"
   },
   "MF": {
-    "name": "St. Martin",
+    "name": "Saint-Martin",
     "capital": "Marigot",
     "demonym": "Saint-Martin",
     "languages": [
@@ -1757,7 +1757,7 @@
     "wikipediaSlug": "Martinique"
   },
   "MR": {
-    "name": "Mauritania",
+    "name": "Mauritanie",
     "capital": "Nouakchott",
     "demonym": "Mauritanie",
     "languages": [
@@ -1832,7 +1832,7 @@
     "wikipediaSlug": "Malawi"
   },
   "MX": {
-    "name": "Mexico",
+    "name": "México",
     "capital": "Thành phố México",
     "demonym": "Mexico",
     "languages": [
@@ -1881,7 +1881,7 @@
     "wikipediaSlug": "Namibia"
   },
   "NC": {
-    "name": "New Caledonia",
+    "name": "Nouvelle-Calédonie",
     "capital": "Nouméa",
     "demonym": "Nouvelle-Calédonie",
     "languages": [
@@ -2028,7 +2028,7 @@
     "wikipediaSlug": "Oman"
   },
   "PA": {
-    "name": "Panama",
+    "name": "Panamá",
     "capital": "Thành phố Panama",
     "demonym": "Panama",
     "languages": [
@@ -2041,7 +2041,7 @@
     "wikipediaSlug": "Panamá"
   },
   "PE": {
-    "name": "Peru",
+    "name": "Perú",
     "capital": "Lima",
     "demonym": "Peru",
     "languages": [
@@ -2055,7 +2055,7 @@
     "wikipediaSlug": "Perú"
   },
   "PF": {
-    "name": "Polynesia thuộc Pháp",
+    "name": "Polynésie thuộc Pháp",
     "capital": "Papeete",
     "demonym": "Polynésie thuộc Pháp",
     "languages": [
@@ -2119,7 +2119,7 @@
     "wikipediaSlug": "Ba_Lan"
   },
   "PM": {
-    "name": "Saint Pierre và Miquelon",
+    "name": "Saint-Pierre và Miquelon",
     "capital": "Saint-Pierre",
     "demonym": "Saint-Pierre-et-Miquelon",
     "languages": [
@@ -2232,7 +2232,7 @@
     "wikipediaSlug": "Réunion"
   },
   "RO": {
-    "name": "Romania",
+    "name": "România",
     "capital": "Bucharest",
     "demonym": "Romania",
     "languages": [
@@ -2360,7 +2360,7 @@
     "wikipediaSlug": "Singapore"
   },
   "SH": {
-    "name": "St. Helena",
+    "name": "Saint Helena",
     "capital": "Jamestown",
     "demonym": "Saint Helena",
     "languages": [
@@ -2421,7 +2421,7 @@
     "wikipediaSlug": "San_Marino"
   },
   "SN": {
-    "name": "Senegal",
+    "name": "Sénégal",
     "capital": "Dakar",
     "demonym": "Sénégal",
     "languages": [
@@ -2545,7 +2545,7 @@
     "wikipediaSlug": "Quần_đảo_Turks_và_Caicos"
   },
   "TD": {
-    "name": "Chad",
+    "name": "Tchad",
     "capital": "N'Djamena",
     "demonym": "Tchad",
     "languages": [
@@ -2780,7 +2780,7 @@
     "wikipediaSlug": "Thành_Vatican"
   },
   "VC": {
-    "name": "St. Vincent và Grenadines",
+    "name": "Saint Vincent và Grenadines",
     "capital": "Kingstown",
     "demonym": "Saint Vincent và Grenadines",
     "languages": [

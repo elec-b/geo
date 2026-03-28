@@ -24,7 +24,7 @@
     "wikipediaSlug": "संयुक्त_अरब_अमीरात"
   },
   "AF": {
-    "name": "अफ़गानिस्तान",
+    "name": "अफ़ग़ानिस्तान",
     "capital": "काबुल",
     "demonym": "अफ़गान",
     "languages": [
@@ -159,7 +159,7 @@
     "wikipediaSlug": "अरूबा"
   },
   "AX": {
-    "name": "एलैंड द्वीपसमूह",
+    "name": "ऑलैण्ड द्वीपसमूह",
     "capital": "मेरिहामैन",
     "demonym": "ऑलैंड का",
     "languages": [
@@ -587,7 +587,7 @@
     "wikipediaSlug": "क्यूबा"
   },
   "CV": {
-    "name": "केप वर्ड",
+    "name": "केप वर्दे",
     "capital": "प्राये",
     "demonym": "केप वर्दियन",
     "languages": [
@@ -923,7 +923,7 @@
     "wikipediaSlug": "जॉर्जिया_(देश)"
   },
   "GF": {
-    "name": "फ़्रेंच गुयाना",
+    "name": "फ्रांसीसी गुयाना",
     "capital": "केयेन",
     "demonym": "फ़्रेंच गयानी",
     "languages": [
@@ -1008,7 +1008,7 @@
     "wikipediaSlug": "गुआदेलूप"
   },
   "GQ": {
-    "name": "इक्वेटोरियल गिनी",
+    "name": "भूमध्यरेखीय गिनी",
     "capital": "सिउदाद दे ला पास",
     "demonym": "भूमध्यरेखीय गिनी",
     "languages": [
@@ -1209,7 +1209,7 @@
     "wikipediaSlug": "भारत"
   },
   "IQ": {
-    "name": "इराक",
+    "name": "इराक़",
     "capital": "बग़दाद",
     "demonym": "इराकी",
     "languages": [
@@ -1433,7 +1433,7 @@
     "wikipediaSlug": "केमन_द्वीपसमूह"
   },
   "KZ": {
-    "name": "कज़ाखस्तान",
+    "name": "कज़ाख़िस्तान",
     "capital": "अस्ताना",
     "demonym": "कज़ाख",
     "languages": [
@@ -1482,7 +1482,7 @@
     "wikipediaSlug": "सेण्ट_लूसिया"
   },
   "LI": {
-    "name": "लिचेंस्टीन",
+    "name": "लिख्टेंश्टाइन",
     "capital": "वादुज़",
     "demonym": "लिकटेंस्टाइनी",
     "languages": [
@@ -1832,7 +1832,7 @@
     "wikipediaSlug": "मलावी"
   },
   "MX": {
-    "name": "मैक्सिको",
+    "name": "मेक्सिको",
     "capital": "मेक्सिको नगर",
     "demonym": "मैक्सिकन",
     "languages": [
@@ -1881,7 +1881,7 @@
     "wikipediaSlug": "नामीबिया"
   },
   "NC": {
-    "name": "न्यू कैलेडोनिया",
+    "name": "नया कैलेडोनिया",
     "capital": "नुमेया",
     "demonym": "न्यू कैलेडोनियन",
     "languages": [
@@ -1990,7 +1990,7 @@
     "wikipediaSlug": "नाउरु"
   },
   "NU": {
-    "name": "नीयू",
+    "name": "निउए",
     "capital": "",
     "demonym": "नीयूईयन",
     "languages": [
@@ -2055,7 +2055,7 @@
     "wikipediaSlug": "पेरू"
   },
   "PF": {
-    "name": "फ़्रेंच पोलिनेशिया",
+    "name": "फ़्रान्सीसी पॉलिनेशिया",
     "capital": "पापीटे",
     "demonym": "फ्रेंच पॉलिनेशियन",
     "languages": [
@@ -2268,7 +2268,7 @@
     "wikipediaSlug": "रूस"
   },
   "RW": {
-    "name": "रवांडा",
+    "name": "रुआण्डा",
     "capital": "किगाली",
     "demonym": "रवांडन",
     "languages": [
@@ -2409,7 +2409,7 @@
     "wikipediaSlug": "सिएरा_लियोन"
   },
   "SM": {
-    "name": "सैन मेरीनो",
+    "name": "सान मारिनो",
     "capital": "सैन मारिनो नगर",
     "demonym": "सैन मैरिनो",
     "languages": [
@@ -2470,7 +2470,7 @@
     "wikipediaSlug": "दक्षिण_सूडान"
   },
   "ST": {
-    "name": "साओ टोम और प्रिंसिपे",
+    "name": "साओ तोमे और प्रिन्सिपी",
     "capital": "सो टोमे",
     "demonym": "साओ तोमे",
     "languages": [
@@ -2494,7 +2494,7 @@
     "wikipediaSlug": "अल_साल्वाडोर"
   },
   "SX": {
-    "name": "सिंट मार्टिन",
+    "name": "सिण्ट मार्टेन",
     "capital": "",
     "demonym": "सिंट मार्टन",
     "languages": [
@@ -2619,7 +2619,7 @@
     "wikipediaSlug": "तुर्कमेनिस्तान"
   },
   "TN": {
-    "name": "ट्यूनीशिया",
+    "name": "तूनिसीया",
     "capital": "तूनिस",
     "demonym": "ट्यूनीशियन",
     "languages": [
@@ -2731,7 +2731,7 @@
     "wikipediaSlug": "युगाण्डा"
   },
   "US": {
-    "name": "संयुक्त राज्य",
+    "name": "संयुक्त राज्य अमेरिका",
     "capital": "वॉशिंगटन डी॰ सी॰",
     "demonym": "अमेरिकी",
     "languages": [
@@ -2840,7 +2840,7 @@
     "wikipediaSlug": "वियतनाम"
   },
   "VU": {
-    "name": "वनुआतू",
+    "name": "वानूआतू",
     "capital": "पोर्ट विला",
     "demonym": "वनुआतुई",
     "languages": [

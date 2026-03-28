@@ -11,6 +11,16 @@
     "SX": "Svatý Martin",
     "SZ": "Svazijsko"
   },
+  "da": {
+    "BL": "Saint-Barthélemy",
+    "HK": "Hongkong",
+    "MF": "Saint-Martin",
+    "MO": "Macao",
+    "PM": "Saint-Pierre og Miquelon",
+    "PS": "Palæstina",
+    "SZ": "Swaziland",
+    "TL": "Østtimor"
+  },
   "de": {
     "CI": "Elfenbeinküste",
     "HK": "Hongkong",
@@ -19,6 +29,9 @@
     "SX": "Sint Maarten",
     "TL": "Osttimor"
   },
+  "el": {
+    "SZ": "Σουαζιλάνδη"
+  },
   "en": {
     "CI": "Ivory Coast",
     "HK": "Hong Kong",
@@ -26,12 +39,6 @@
     "PS": "Palestine",
     "SX": "Sint Maarten",
     "TL": "East Timor"
-  },
-  "da": {
-    "SZ": "Swaziland"
-  },
-  "el": {
-    "SZ": "Σουαζιλάνδη"
   },
   "es": {
     "CI": "Costa de Marfil",
@@ -54,10 +61,29 @@
     "SX": "Saint-Martin"
   },
   "hi": {
+    "AF": "अफ़ग़ानिस्तान",
+    "AX": "ऑलैण्ड द्वीपसमूह",
+    "CV": "केप वर्दे",
+    "GF": "फ्रांसीसी गुयाना",
+    "GQ": "भूमध्यरेखीय गिनी",
     "HK": "हाँग काँग",
+    "IQ": "इराक़",
+    "KZ": "कज़ाख़िस्तान",
+    "LI": "लिख्टेंश्टाइन",
     "MO": "मकाऊ",
+    "MX": "मेक्सिको",
+    "NC": "नया कैलेडोनिया",
+    "NU": "निउए",
+    "PF": "फ़्रान्सीसी पॉलिनेशिया",
     "PS": "फ़िलिस्तीन",
-    "TL": "पूर्वी तिमोर"
+    "RW": "रुआण्डा",
+    "SM": "सान मारिनो",
+    "ST": "साओ तोमे और प्रिन्सिपी",
+    "SX": "सिण्ट मार्टेन",
+    "TL": "पूर्वी तिमोर",
+    "TN": "तूनिसीया",
+    "US": "संयुक्त राज्य अमेरिका",
+    "VU": "वानूआतू"
   },
   "hu": {
     "HK": "Hongkong",
@@ -73,12 +99,18 @@
     "TL": "Timor Leste"
   },
   "it": {
+    "GF": "Guyana francese",
     "HK": "Hong Kong",
+    "MF": "Saint-Martin",
     "MO": "Macao",
+    "PF": "Polinesia francese",
+    "PR": "Porto Rico",
     "PS": "Palestina",
+    "SS": "Sudan del Sud",
     "SX": "Sint Maarten",
     "SZ": "Swaziland",
-    "TL": "Timor Est"
+    "TL": "Timor Est",
+    "US": "Stati Uniti d'America"
   },
   "ja": {
     "HK": "香港",
@@ -92,11 +124,24 @@
     "PS": "팔레스타인"
   },
   "ms": {
+    "AX": "Kepulauan Åland",
     "CI": "Pantai Gading",
+    "CV": "Cabo Verde",
+    "CW": "Curaçao",
+    "DM": "Dominika",
+    "DO": "Republik Dominika",
+    "ET": "Habsyah",
+    "GR": "Yunani",
+    "GW": "Guinea-Bissau",
     "HK": "Hong Kong",
-    "MO": "Macau",
+    "IM": "Pulau Man",
+    "MO": "Makau",
     "PS": "Palestin",
-    "TL": "Timor Timur"
+    "RE": "Réunion",
+    "SR": "Suriname",
+    "ST": "São Tomé dan Príncipe",
+    "TL": "Timor Leste",
+    "VA": "Kota Vatikan"
   },
   "nb": {
     "HK": "Hongkong",
@@ -122,6 +167,8 @@
     "TL": "Timor Wschodni"
   },
   "pt-BR": {
+    "AX": "Ilhas Åland",
+    "BH": "Bahrein",
     "CI": "Costa do Marfim",
     "HK": "Hong Kong",
     "MO": "Macau",
@@ -130,20 +177,37 @@
     "TL": "Timor-Leste"
   },
   "pt-PT": {
+    "AX": "Ilhas Åland",
+    "BS": "Bahamas",
     "CI": "Costa do Marfim",
+    "DJ": "Djibuti",
+    "EH": "Saara Ocidental",
+    "GG": "Guernsey",
+    "GU": "Guam",
     "HK": "Hong Kong",
+    "KW": "Kuwait",
+    "LI": "Liechtenstein",
+    "LK": "Sri Lanka",
+    "MF": "São Martinho",
     "MO": "Macau",
     "PS": "Palestina",
+    "SM": "San Marino",
     "SV": "El Salvador",
     "SX": "São Martinho",
-    "TL": "Timor-Leste"
+    "TL": "Timor-Leste",
+    "VI": "Ilhas Virgens Americanas"
   },
   "ro": {
     "CI": "Coasta de Fildeș",
     "HK": "Hong Kong",
     "MO": "Macao",
+    "PG": "Papua Noua Guinee",
     "PS": "Palestina",
-    "TL": "Timorul de Est"
+    "SR": "Surinam",
+    "SX": "Sint Maarten",
+    "TL": "Timorul de Est",
+    "VA": "Vatican",
+    "VC": "Sfântul Vincențiu și Grenadinele"
   },
   "ru": {
     "HK": "Гонконг",
@@ -159,10 +223,15 @@
     "SZ": "Swaziland"
   },
   "th": {
+    "BL": "แซ็ง-บาร์เตเลมี",
+    "CV": "กาบูเวร์ดี",
     "HK": "ฮ่องกง",
+    "LI": "ลีชเทินชไตน์",
     "MO": "มาเก๊า",
     "PS": "ปาเลสไตน์",
-    "TL": "ติมอร์ตะวันออก"
+    "TC": "หมู่เกาะเติกส์และเคคอส",
+    "TL": "ติมอร์ตะวันออก",
+    "VI": "หมู่เกาะเวอร์จินของสหรัฐ"
   },
   "tr": {
     "CI": "Fildişi Sahili",
@@ -179,11 +248,40 @@
     "TL": "Східний Тимор"
   },
   "vi": {
+    "AU": "Úc",
+    "BA": "Bosna và Hercegovina",
+    "BJ": "Bénin",
+    "BL": "Saint-Barthélemy",
+    "BR": "Brasil",
     "CI": "Bờ Biển Ngà",
+    "CV": "Cabo Verde",
+    "DZ": "Algérie",
+    "GE": "Gruzia",
+    "GF": "Guyane thuộc Pháp",
+    "GN": "Guinée",
+    "GW": "Guiné-Bissau",
     "HK": "Hồng Kông",
+    "IT": "Ý",
+    "KN": "Saint Kitts và Nevis",
+    "LB": "Liban",
+    "LC": "Saint Lucia",
+    "MA": "Maroc",
+    "MF": "Saint-Martin",
     "MO": "Ma Cao",
+    "MR": "Mauritanie",
+    "MX": "México",
+    "NC": "Nouvelle-Calédonie",
+    "PA": "Panamá",
+    "PE": "Perú",
+    "PF": "Polynésie thuộc Pháp",
+    "PM": "Saint-Pierre và Miquelon",
     "PS": "Palestine",
-    "TL": "Đông Timor"
+    "RO": "România",
+    "SH": "Saint Helena",
+    "SN": "Sénégal",
+    "TD": "Tchad",
+    "TL": "Đông Timor",
+    "VC": "Saint Vincent và Grenadines"
   },
   "zh-Hans": {
     "HK": "香港",

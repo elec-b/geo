@@ -12,19 +12,19 @@
 |--------|-------------|------|----------------|-----------|
 | hi (Hindi) | 102 | 83 | 19 | 19 |
 | vi (Vietnamita) | 42 | 13 | 29 | 29 |
-| ms (Malayo) | 25 | 11 | 14 | 14 |
-| pt-PT (Portugués Portugal) | 35 | 24 | 11 | 11 |
-| da (Danés) | 17 | 9 | 8 | 6 (*) |
+| ms (Malayo) | 25 | 10 | 15 | 15 |
+| pt-PT (Portugués Portugal) | 35 | 23 | 12 | 12 |
+| da (Danés) | 17 | 9 | 8 | 7 (*) |
 | th (Tailandés) | 40 | 35 | 5 | 5 |
-| it (Italiano) | 20 | 13 | 7 | 5 (*) |
-| ro (Rumano) | 17 | 13 | 4 | 4 |
+| it (Italiano) | 20 | 12 | 8 | 6 (*) |
+| ro (Rumano) | 17 | 12 | 5 | 5 |
 | pt-BR (Portugués Brasil) | 38 | 36 | 2 | 2 |
 | sv (Sueco) | 10 | 10 | 0 | 0 |
-| **Total** | **346** | **247** | **99** | **95** |
+| **Total** | **346** | **243** | **103** | **100** |
 
-(*) Overrides descartados: it/SZ y da/SZ ya tienen override "Swaziland" de tarea anterior. Correcciones del Refutador A: ms/TR vuelve a CLDR (Turquía pidió "Türkiye"); ms/CV→"Cabo Verde" (nombre oficial); it/GF y it/PF añadidos ("francese" en minúscula, correcto en italiano).
+(*) Overrides descartados: it/SZ y da/SZ ya tienen override "Swaziland" de tarea anterior. Correcciones del Refutador A: ms/TR vuelve a CLDR (Turquía pidió "Türkiye"); ms/CV→"Cabo Verde" (nombre oficial); it/GF y it/PF añadidos ("francese" en minúscula, correcto en italiano). Correcciones del Refutador B: pt-PT/SM→"San Marino" ("São Marinho" en desuso); ro/SX→"Sint Maarten" (sin guión, grafía oficial).
 
-**Resultado**: 95 overrides nuevos a añadir a `country-name-overrides.json`. 247 divergencias son variantes legítimas donde CLDR es correcto o preferible.
+**Resultado**: 100 overrides nuevos a añadir a `country-name-overrides.json`. 243 divergencias son variantes legítimas donde CLDR es correcto o preferible.
 
 ---
 

@@ -159,7 +159,7 @@
     "wikipediaSlug": "Aruba"
   },
   "AX": {
-    "name": "Alanda",
+    "name": "Ilhas Åland",
     "capital": "Mariehamn",
     "demonym": "alandês",
     "languages": [
@@ -359,7 +359,7 @@
     "wikipediaSlug": "Brasil"
   },
   "BS": {
-    "name": "Baamas",
+    "name": "Bahamas",
     "capital": "Nassau",
     "demonym": "bahamense",
     "languages": [
@@ -649,7 +649,7 @@
     "wikipediaSlug": "Alemanha"
   },
   "DJ": {
-    "name": "Jibuti",
+    "name": "Djibuti",
     "capital": "Djibouti",
     "demonym": "jibutiano",
     "languages": [
@@ -747,7 +747,7 @@
     "wikipediaSlug": "Egito"
   },
   "EH": {
-    "name": "Sara Ocidental",
+    "name": "Saara Ocidental",
     "capital": "",
     "demonym": "saarauí",
     "languages": [
@@ -935,7 +935,7 @@
     "wikipediaSlug": "Guiana_Francesa"
   },
   "GG": {
-    "name": "Guernesey",
+    "name": "Guernsey",
     "capital": "Saint Peter Port",
     "demonym": "guernesiano",
     "languages": [
@@ -1046,7 +1046,7 @@
     "wikipediaSlug": "Guatemala"
   },
   "GU": {
-    "name": "Guame",
+    "name": "Guam",
     "capital": "Hagåtña",
     "demonym": "guamense",
     "languages": [
@@ -1409,7 +1409,7 @@
     "wikipediaSlug": "Coreia_do_Sul"
   },
   "KW": {
-    "name": "Koweit",
+    "name": "Kuwait",
     "capital": "Kuwait",
     "demonym": "kuwaitiano",
     "languages": [
@@ -1482,7 +1482,7 @@
     "wikipediaSlug": "Santa_Lúcia"
   },
   "LI": {
-    "name": "Listenstaine",
+    "name": "Liechtenstein",
     "capital": "Vaduz",
     "demonym": "liechtensteinense",
     "languages": [
@@ -1494,7 +1494,7 @@
     "wikipediaSlug": "Liechtenstein"
   },
   "LK": {
-    "name": "Sri Lanca",
+    "name": "Sri Lanka",
     "capital": "Colombo",
     "demonym": "cingalês",
     "languages": [
@@ -1632,7 +1632,7 @@
     "wikipediaSlug": "Montenegro"
   },
   "MF": {
-    "name": "São Martinho (Saint-Martin)",
+    "name": "São Martinho",
     "capital": "Marigot",
     "demonym": "são-martinhense",
     "languages": [
@@ -2409,7 +2409,7 @@
     "wikipediaSlug": "Serra_Leoa"
   },
   "SM": {
-    "name": "São Marinho",
+    "name": "San Marino",
     "capital": "San Marino",
     "demonym": "são-marinense",
     "languages": [
@@ -2816,7 +2816,7 @@
     "wikipediaSlug": "Ilhas_Virgens_Britânicas"
   },
   "VI": {
-    "name": "Ilhas Virgens dos EUA",
+    "name": "Ilhas Virgens Americanas",
     "capital": "Charlotte Amalie",
     "demonym": "virginense",
     "languages": [

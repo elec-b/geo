@@ -296,7 +296,7 @@
     "wikipediaSlug": "Benin"
   },
   "BL": {
-    "name": "Saint Barthélemy",
+    "name": "Saint-Barthélemy",
     "capital": "Gustavia",
     "demonym": "skt.-barthélemy-borger",
     "languages": [
@@ -1083,7 +1083,7 @@
     "wikipediaSlug": "Guyana"
   },
   "HK": {
-    "name": "SAR Hongkong",
+    "name": "Hongkong",
     "capital": "",
     "demonym": "hongkongenser",
     "languages": [
@@ -1632,7 +1632,7 @@
     "wikipediaSlug": "Montenegro"
   },
   "MF": {
-    "name": "Saint Martin",
+    "name": "Saint-Martin",
     "capital": "Marigot",
     "demonym": "saint-martinboer",
     "languages": [
@@ -1718,7 +1718,7 @@
     "wikipediaSlug": "Mongoliet"
   },
   "MO": {
-    "name": "SAR Macao",
+    "name": "Macao",
     "capital": "",
     "demonym": "macaoboer",
     "languages": [
@@ -2119,7 +2119,7 @@
     "wikipediaSlug": "Polen"
   },
   "PM": {
-    "name": "Saint Pierre og Miquelon",
+    "name": "Saint-Pierre og Miquelon",
     "capital": "Saint-Pierre",
     "demonym": "saint-pierreboer",
     "languages": [
@@ -2156,7 +2156,7 @@
     "wikipediaSlug": "Puerto_Rico"
   },
   "PS": {
-    "name": "De palæstinensiske områder",
+    "name": "Palæstina",
     "capital": "Ramallah",
     "demonym": "palæstinenser",
     "languages": [
@@ -2594,7 +2594,7 @@
     "wikipediaSlug": "Tadsjikistan"
   },
   "TL": {
-    "name": "Timor-Leste",
+    "name": "Østtimor",
     "capital": "Dili",
     "demonym": "timorenser",
     "languages": [

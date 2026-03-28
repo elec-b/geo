@@ -159,7 +159,7 @@
     "wikipediaSlug": "Aruba"
   },
   "AX": {
-    "name": "Kepulauan Aland",
+    "name": "Kepulauan Åland",
     "capital": "Mariehamn",
     "demonym": "Åland",
     "languages": [
@@ -587,7 +587,7 @@
     "wikipediaSlug": "Cuba"
   },
   "CV": {
-    "name": "Cape Verde",
+    "name": "Cabo Verde",
     "capital": "Praia",
     "demonym": "Tanjung Verde",
     "languages": [
@@ -599,7 +599,7 @@
     "wikipediaSlug": "Tanjung_Verde"
   },
   "CW": {
-    "name": "Curacao",
+    "name": "Curaçao",
     "capital": "Willemstad",
     "demonym": "Curaçao",
     "languages": [
@@ -674,7 +674,7 @@
     "wikipediaSlug": "Denmark"
   },
   "DM": {
-    "name": "Dominica",
+    "name": "Dominika",
     "capital": "Roseau",
     "demonym": "Dominica",
     "languages": [
@@ -686,7 +686,7 @@
     "wikipediaSlug": "Dominika"
   },
   "DO": {
-    "name": "Republik Dominica",
+    "name": "Republik Dominika",
     "capital": "Santo Domingo",
     "demonym": "Republik Dominican",
     "languages": [
@@ -787,7 +787,7 @@
     "wikipediaSlug": "Sepanyol"
   },
   "ET": {
-    "name": "Ethiopia",
+    "name": "Habsyah",
     "capital": "Addis Ababa",
     "demonym": "Ethiopia",
     "languages": [
@@ -1022,7 +1022,7 @@
     "wikipediaSlug": "Guinea_Khatulistiwa"
   },
   "GR": {
-    "name": "Greece",
+    "name": "Yunani",
     "capital": "Athens",
     "demonym": "Yunani",
     "languages": [
@@ -1059,7 +1059,7 @@
     "wikipediaSlug": "Guam"
   },
   "GW": {
-    "name": "Guinea Bissau",
+    "name": "Guinea-Bissau",
     "capital": "Bissau",
     "demonym": "Guinea-Bissau",
     "languages": [
@@ -1183,7 +1183,7 @@
     "wikipediaSlug": "Israel"
   },
   "IM": {
-    "name": "Isle of Man",
+    "name": "Pulau Man",
     "capital": "",
     "demonym": "Isle of Man",
     "languages": [
@@ -1718,7 +1718,7 @@
     "wikipediaSlug": "Mongolia"
   },
   "MO": {
-    "name": "Macau",
+    "name": "Makau",
     "capital": "",
     "demonym": "Macau",
     "languages": [
@@ -2220,7 +2220,7 @@
     "wikipediaSlug": "Qatar"
   },
   "RE": {
-    "name": "Reunion",
+    "name": "Réunion",
     "capital": "Saint-Denis",
     "demonym": "Réunion",
     "languages": [
@@ -2446,7 +2446,7 @@
     "wikipediaSlug": "Somalia"
   },
   "SR": {
-    "name": "Surinam",
+    "name": "Suriname",
     "capital": "Paramaribo",
     "demonym": "Suriname",
     "languages": [
@@ -2470,7 +2470,7 @@
     "wikipediaSlug": "Sudan_Selatan"
   },
   "ST": {
-    "name": "Sao Tome dan Principe",
+    "name": "São Tomé dan Príncipe",
     "capital": "São Tomé",
     "demonym": "São Tomé dan Príncipe",
     "languages": [
@@ -2594,7 +2594,7 @@
     "wikipediaSlug": "Tajikistan"
   },
   "TL": {
-    "name": "Timor Timur",
+    "name": "Timor Leste",
     "capital": "Dili",
     "demonym": "Timor Leste",
     "languages": [
@@ -2767,7 +2767,7 @@
     "wikipediaSlug": "Uzbekistan"
   },
   "VA": {
-    "name": "Kota Vatican",
+    "name": "Kota Vatikan",
     "capital": "",
     "demonym": "Vatikan",
     "languages": [

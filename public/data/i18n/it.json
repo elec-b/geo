@@ -923,7 +923,7 @@
     "wikipediaSlug": "Georgia"
   },
   "GF": {
-    "name": "Guyana Francese",
+    "name": "Guyana francese",
     "capital": "Caienna",
     "demonym": "guianese",
     "languages": [
@@ -1632,7 +1632,7 @@
     "wikipediaSlug": "Montenegro"
   },
   "MF": {
-    "name": "Saint Martin",
+    "name": "Saint-Martin",
     "capital": "Marigot",
     "demonym": "sanmartinense",
     "languages": [
@@ -2055,7 +2055,7 @@
     "wikipediaSlug": "Perù"
   },
   "PF": {
-    "name": "Polinesia Francese",
+    "name": "Polinesia francese",
     "capital": "Papeete",
     "demonym": "polinesiano",
     "languages": [
@@ -2143,7 +2143,7 @@
     "wikipediaSlug": "Isole_Pitcairn"
   },
   "PR": {
-    "name": "Portorico",
+    "name": "Porto Rico",
     "capital": "San Juan",
     "demonym": "portoricano",
     "languages": [
@@ -2458,7 +2458,7 @@
     "wikipediaSlug": "Suriname"
   },
   "SS": {
-    "name": "Sud Sudan",
+    "name": "Sudan del Sud",
     "capital": "Giuba",
     "demonym": "sudsudanese",
     "languages": [
@@ -2731,7 +2731,7 @@
     "wikipediaSlug": "Uganda"
   },
   "US": {
-    "name": "Stati Uniti",
+    "name": "Stati Uniti d'America",
     "capital": "Washington",
     "demonym": "americano",
     "languages": [
