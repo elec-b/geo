@@ -2,7 +2,7 @@
 
 - **Fecha**: 2026-03-29
 - **Método**: 2 agent teams. Ronda 1: investigador de mercado, refutador-investigador, estratega creativo, refutador-creativo. Ronda 2: stress-tester, creativo (aprendizaje/progreso), refutador. Búsquedas web en App Store, Google Play, dominios, trademarks, bases de datos de marcas.
-- **Contexto**: La app se llama internamente "GeoExpert". Antes de publicar en stores, evaluar si el nombre es viable y explorar alternativas.
+- **Contexto**: La app se llamaba internamente "Exploris" (antes "GeoExpert"). Spike para evaluar nombres antes de publicar en stores.
 - **Fuentes**: App Store (Apple), Google Play, AppBrain, EUIPO, USPTO (indirecto), dominios (WHOIS), búsquedas web generales.
 
 ---

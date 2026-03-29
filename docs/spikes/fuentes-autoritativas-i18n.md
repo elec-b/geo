@@ -1,7 +1,7 @@
 # Spike: Fuentes autoritativas para nombres geográficos (32 idiomas)
 
 **Fecha**: 2026-03-27
-**Contexto**: La app GeoExpert soporta 32 idiomas. Para español se validaron los datos contra la RAE/DPD (encontrando ~27 errores). Este spike identifica el equivalente a la RAE para cada uno de los 31 idiomas restantes, evaluando accesibilidad y cobertura para preparar el Spike 2 (verificación de datos).
+**Contexto**: La app Exploris soporta 32 idiomas. Para español se validaron los datos contra la RAE/DPD (encontrando ~27 errores). Este spike identifica el equivalente a la RAE para cada uno de los 31 idiomas restantes, evaluando accesibilidad y cobertura para preparar el Spike 2 (verificación de datos).
 **Método**: Agent team de 5 agentes (2 investigadores + 2 refutadores + líder sintetizador) con revisión cruzada.
 **Fuentes**: WebSearch, documentación UNGEGN, portales gubernamentales, CLDR documentation.
 

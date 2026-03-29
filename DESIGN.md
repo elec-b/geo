@@ -1,4 +1,4 @@
-# GeoExpert
+# Exploris
 
 ## Filosofía de diseño
 - **Estética**: «Premium dark mode» (con tema claro como opción futura). Diseño limpio, oscuro y minimalista. Azules profundos, negros, acentos (púrpura/ámbar) y azules fríos.
@@ -724,7 +724,7 @@ A diferencia de los territorios no-ONU (que son estados de facto con población 
 
 ### Política de representación cartográfica
 
-GeoExpert usa la representación **de facto** de Natural Earth sin modificaciones cartográficas. Las fronteras reflejan el control territorial efectivo, no las reclamaciones legales.
+Exploris usa la representación **de facto** de Natural Earth sin modificaciones cartográficas. Las fronteras reflejan el control territorial efectivo, no las reclamaciones legales.
 
 *   **Criterio de países**: Estándar de la ONU (195 miembros y observadores). Este es el criterio para el juego, no el de Natural Earth.
 *   **Territorios disputados**: Se muestran tal como los representa Natural Earth (de facto). La ficha muestra «Soberanía en disputa» sin tomar partido. Los 4 casos actuales (TW, XK, EH, FK) ya siguen este criterio.

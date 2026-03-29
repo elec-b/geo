@@ -59,7 +59,7 @@ async function main() {
 
   const response = await fetch(url, {
     headers: {
-      'User-Agent': 'GeoExpert/1.0 (https://github.com; educational geography app)',
+      'User-Agent': 'Exploris/1.0 (https://github.com; educational geography app)',
       Accept: 'application/sparql-results+json',
     },
   });

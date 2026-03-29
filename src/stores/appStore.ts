@@ -1,4 +1,4 @@
-// Store global de GeoExpert (Zustand)
+// Store global de Exploris (Zustand)
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { capacitorStorage } from './persistStorage';
@@ -351,7 +351,7 @@ export const useAppStore = create<AppStore>()(
   },
     }),
     {
-      name: 'geoexpert-store',
+      name: 'exploris-store',
       storage: createJSONStorage(() => capacitorStorage),
       version: 1,
       migrate: (persisted: unknown, version: number) => {

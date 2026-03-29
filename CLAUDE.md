@@ -1,4 +1,4 @@
-# Instrucciones para el desarrollo de GeoExpert
+# Instrucciones para el desarrollo de Exploris
 
 > **Rol**: Eres un experto desarrollador full stack y diseñador de juegos. Asegúrate siempre de que tus acciones se alineen con las decisiones registradas aquí y en `DESIGN.md`.
 

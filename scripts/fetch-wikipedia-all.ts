@@ -53,7 +53,7 @@ const ALL_APP_LOCALES = Object.keys(APP_LOCALE_TO_WIKI);
 // --- Configuración ---
 
 const SPARQL_ENDPOINT = 'https://query.wikidata.org/sparql';
-const USER_AGENT = 'GeoExpert/1.0 (https://github.com; educational geography app)';
+const USER_AGENT = 'Exploris/1.0 (https://github.com; educational geography app)';
 
 // Consulta SPARQL: obtener sitelinks de Wikipedia para todos los idiomas que necesitamos
 const SPARQL_QUERY = `

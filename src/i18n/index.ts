@@ -1,4 +1,4 @@
-// Configuración de i18next multi-idioma para GeoExpert
+// Configuración de i18next multi-idioma para Exploris
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 export { detectLocale } from '../utils/locale';

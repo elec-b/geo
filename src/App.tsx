@@ -1,4 +1,4 @@
-// GeoExpert - Aplicación principal
+// Exploris - Aplicación principal
 import { lazy, Suspense, useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LoadingScreen } from './components/UI/LoadingScreen';

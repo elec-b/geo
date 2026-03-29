@@ -1,4 +1,4 @@
-// Tipos del estado global de GeoExpert
+// Tipos del estado global de Exploris
 import type { Continent, GameLevel, QuestionType } from '../data/types';
 
 /** Identificador de perfil (UUID) */

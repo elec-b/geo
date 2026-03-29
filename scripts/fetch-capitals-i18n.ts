@@ -56,7 +56,7 @@ async function main() {
 
   const response = await fetch(url, {
     headers: {
-      'User-Agent': 'GeoExpert/1.0 (educational geography app)',
+      'User-Agent': 'Exploris/1.0 (educational geography app)',
       Accept: 'application/sparql-results+json',
     },
   });

@@ -1,4 +1,4 @@
-// Tipos centrales de datos de GeoExpert
+// Tipos centrales de datos de Exploris
 
 /** Continentes (5 regiones del mundo) — claves neutras para i18n */
 export type Continent = 'africa' | 'america' | 'asia' | 'europe' | 'oceania';

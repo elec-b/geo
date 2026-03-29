@@ -22,7 +22,7 @@
 - [x] **Testing manual**: Todos los sellos en todos los continentes, aventura en todos los continente-nivel, feedback anotado
 - [x] **UX pre-lanzamiento**: N.º de países en modal de sello, label simplificado de marcadores, orden de tabs (Explorar/Jugar/Pasaporte), persistencia de continente y sorting en Tabla, onboarding en Pasaporte. Persistencia de modo Explorar (Globo/Tabla) entre tabs, reset a Globo+Todos al abrir app
 - [x] **Internacionalización**: 32 idiomas (26 base + 6 ampliación) + 5 variantes regionales. i18next con lazy loading y plurales CLDR. Datos multi-idioma: CLDR (países/monedas/idiomas), Wikidata SPARQL (capitales/Wikipedia slugs), Claude (gentilicios/mares). 175 archivos UI, 6682 Wikipedia slugs. Verificación contra fuentes autoritativas (32 idiomas). ~100 overrides de nombres, fixes de layout multi-idioma, selector de idioma en bottom sheet dedicado
-- [x] **Logo/branding**: Globo wireframe SVG (blanco→gris, paralelos curvos, glow sutil). LoadingScreen con logo + título "GeoExpert". Icono iOS 1024×1024 y splash screens generados desde SVG. Script `generate-icons.mjs`
+- [x] **Logo/branding**: Globo wireframe SVG (blanco→gris, paralelos curvos, glow sutil). LoadingScreen con logo + título "Exploris". Icono iOS 1024×1024 y splash screens generados desde SVG. Script `generate-icons.mjs`
 
 ---
 
@@ -40,7 +40,7 @@
 - [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
 - [ ] Permitir al usuario elegir un color de logo, además de los iconos de animales que ya tenemos
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
-- [x] Nombre de la app: **Exploris** (spike en `docs/spikes/naming-app.md` — 23 nombres evaluados, GeoExpert inviable por colisión directa)
+- [x] Nombre de la app: **Exploris** (spike en `docs/spikes/naming-app.md` — 23 nombres evaluados, nombre anterior inviable por colisión directa)
 
 ### Preparación y publicación iOS
 - [ ] Fix orientación: eliminar landscape de Info.plist (la UI es portrait-only). Decidir si se soporta iPad
