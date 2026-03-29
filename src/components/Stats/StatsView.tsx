@@ -203,8 +203,28 @@ export function StatsView({ countries, levels, onClose, onCountryClick, context,
   }, []);
 
   const resetAttempts = useAppStore((s) => s.resetAttempts);
+  const getAttempts = useAppStore((s) => s.getAttempts);
   const getStamps = useAppStore((s) => s.getStamps);
   const getStampAttempts = useAppStore((s) => s.getStampAttempts);
+
+  // Al cambiar continente, seleccionar el nivel más alto con datos
+  const handleContinentChange = useCallback((c: Continent) => {
+    setSelectedContinent(c);
+    const levelsDesc: GameLevel[] = ['guide', 'backpacker', 'tourist'];
+    const hasData = (level: GameLevel): boolean => {
+      if (activeTab === 'jugar') {
+        const att = getAttempts(level, c);
+        return Object.keys(att).some((k) => {
+          const ca = att[k];
+          return ca && Object.values(ca).some((v) => v && (v.correct > 0 || v.incorrect > 0));
+        });
+      }
+      const sa = getStampAttempts(level, c);
+      return Object.keys(sa).length > 0;
+    };
+    const best = levelsDesc.find(hasData) ?? 'tourist';
+    setSelectedLevel(best);
+  }, [activeTab, getAttempts, getStampAttempts]);
 
   // Países del nivel × continente actual
   const levelDef = levels.get(`${selectedLevel}-${selectedContinent}`);
@@ -312,7 +332,7 @@ export function StatsView({ countries, levels, onClose, onCountryClick, context,
             <button
               key={c}
               className={`stats-pill${c === selectedContinent ? ' stats-pill--active' : ''}`}
-              onClick={() => setSelectedContinent(c)}
+              onClick={() => handleContinentChange(c)}
             >
               {t(`common:continent.${c}`)}
             </button>
