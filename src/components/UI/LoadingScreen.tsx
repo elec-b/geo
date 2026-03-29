@@ -11,6 +11,8 @@ export function LoadingScreen({ visible = true }: LoadingScreenProps) {
 
   return (
     <div className={`loading-screen ${visible ? '' : 'loading-screen--hidden'}`}>
+      <img className="loading-logo" src="/assets/logo.svg" alt="" />
+      <h1 className="loading-title">GeoExpert</h1>
       <div className="loading-spinner" />
       <p className="loading-text">{t('loading')}</p>
     </div>

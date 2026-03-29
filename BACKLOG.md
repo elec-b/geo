@@ -22,6 +22,7 @@
 - [x] **Testing manual**: Todos los sellos en todos los continentes, aventura en todos los continente-nivel, feedback anotado
 - [x] **UX pre-lanzamiento**: N.º de países en modal de sello, label simplificado de marcadores, orden de tabs (Explorar/Jugar/Pasaporte), persistencia de continente y sorting en Tabla, onboarding en Pasaporte
 - [x] **Internacionalización**: 32 idiomas (26 base + 6 ampliación) + 5 variantes regionales. i18next con lazy loading y plurales CLDR. Datos multi-idioma: CLDR (países/monedas/idiomas), Wikidata SPARQL (capitales/Wikipedia slugs), Claude (gentilicios/mares). 175 archivos UI, 6682 Wikipedia slugs. Verificación contra fuentes autoritativas (32 idiomas). ~100 overrides de nombres, fixes de layout multi-idioma, selector de idioma en bottom sheet dedicado
+- [x] **Logo/branding**: Globo wireframe SVG (blanco→gris, paralelos curvos, glow sutil). LoadingScreen con logo + título "GeoExpert". Icono iOS 1024×1024 y splash screens generados desde SVG. Script `generate-icons.mjs`
 
 ---
 
@@ -30,16 +31,19 @@
 > Ordenados por prioridad. Cada bloque debe completarse antes de avanzar al siguiente (salvo tareas marcadas como opcionales).
 
 ### Acabados pre-lanzamiento
-- [ ] Logo/branding en LoadingScreen (antes de publicar en stores). También utilizaremos este logo para app store y google play. Pensar opciones para diseñar y después diseñar.
 - [ ] Mejora: en Estadísticas, tanto en el tab de jugar como en el de pruebas de sello, si el usuario hace click en un país, se ilumina el país en explorar y se abre su ficha de país.
     - Asegurar que el país se ve bien, con el zoom correcto, considerando que se abre la ficha de país
     - Tip: esto es prácticamente igual a lo que ocurre en Explorar, en la vista tabla (lo que pasa que aquí, no queremos abrir la ficha de país automáticsamente)
 - [ ] Sección «Acerca de»: explicar criterios (países ONU, fuentes UNDP, REST Countries, etc.)
+- [ ] Refinar tema oscuro.
+    - Buscar tonos más en escala de negros y grises en vez de tantos tonos azules
+    - Si cambia, asegurar que todo es coherente, incluyendo el logo / icono, que ahora tiene fondo azul
 - [ ] Diseñar e implementar tema claro
 - [ ] Revisar que los datos de la ficha de país están actualizados + asegurar que se actualicen bien en el futuro
 - [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
 - [ ] Permitir al usuario elegir un color de logo, además de los iconos de animales que ya tenemos
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
+- [ ] Pensar el nombre de la app: es GeoExpert el mejor nombre? Está cogido? Cómo nos diferenciamos? Hacer un spike con esto
 
 ### Preparación y publicación iOS
 - [ ] Fix orientación: eliminar landscape de Info.plist (la UI es portrait-only). Decidir si se soporta iPad
