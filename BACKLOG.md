@@ -18,7 +18,7 @@
 - [x] **Estadísticas**: Dos pestañas (Jugar + Pruebas de sello). Toggle ✓/%, código de colores, sorting por columna, defaults inteligentes según origen, aviso de permanencia de sellos
 - [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente, limpieza de sesión al cambiar
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores, mares/océanos). Feedback háptico
-- [x] **UX general**: Bottom sheets con drag-to-dismiss, selección de texto deshabilitada, feedback verde/rojo al 5%, colores olímpicos unificados, anti-viudas tipográficas (`text-wrap: pretty/balance`)
+- [x] **UX general**: Bottom sheets con drag-to-dismiss, selección de texto deshabilitada, feedback verde/rojo al 5%, colores olímpicos unificados, anti-viudas tipográficas (`text-wrap: pretty/balance`), fix animación sello capital (limpieza de `--animating`)
 - [x] **Testing manual**: Todos los sellos en todos los continentes, aventura en todos los continente-nivel, feedback anotado
 - [x] **UX pre-lanzamiento**: N.º de países en modal de sello, label simplificado de marcadores, orden de tabs (Explorar/Jugar/Pasaporte), persistencia de continente y sorting en Tabla, onboarding en Pasaporte
 - [x] **Internacionalización**: 32 idiomas (26 base + 6 ampliación) + 5 variantes regionales. i18next con lazy loading y plurales CLDR. Datos multi-idioma: CLDR (países/monedas/idiomas), Wikidata SPARQL (capitales/Wikipedia slugs), Claude (gentilicios/mares). 175 archivos UI, 6682 Wikipedia slugs. Verificación contra fuentes autoritativas (32 idiomas). ~100 overrides de nombres, fixes de layout multi-idioma, selector de idioma en bottom sheet dedicado
@@ -30,15 +30,14 @@
 > Ordenados por prioridad. Cada bloque debe completarse antes de avanzar al siguiente (salvo tareas marcadas como opcionales).
 
 ### Acabados pre-lanzamiento
+- [ ] En el selector de Jugar y en Pasaporte (y en cualquier otro sitio que aplique y me haya olvidado), en vez de mostrar un emoji de maleta para el nivel turista, mostrar un emoji de gafas de sol.
 - [ ] Logo/branding en LoadingScreen (antes de publicar en stores)
-- [ ] Diseñar e implementar tema claro
-- [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
-- [ ] Revisar que los datos de la ficha de país están actualizados + asegurar que se actualicen bien en el futuro
-- [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
 - [ ] Sección «Acerca de»: explicar criterios (países ONU, fuentes UNDP, REST Countries, etc.)
+- [ ] Diseñar e implementar tema claro
+- [ ] Revisar que los datos de la ficha de país están actualizados + asegurar que se actualicen bien en el futuro
+- [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
 - [ ] Permitir al usuario elegir un color de logo, además de los iconos de animales que ya tenemos
-- [ ] En el selector de Jugar y en Pasaporte (y en cualquier otro sitio que aplique y me haya olvidado), en vez de mostrar un emoji de maleta para el nivel turista, mostrar un emoji de gafas de sol. 
-- [ ] Bug: al conseguir un sello de capital, la estrella toca el doble círculo interior y se ve mal, luego se ve bien cuando se entra y se sale de pasaporte
+- [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
 
 ### Preparación y publicación iOS
 - [ ] Fix orientación: eliminar landscape de Info.plist (la UI es portrait-only). Decidir si se soporta iPad

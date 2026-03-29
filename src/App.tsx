@@ -158,6 +158,7 @@ function App() {
   }, []);
 
   const handleGlobeReady = useCallback(() => setGlobeReady(true), []);
+  const handleStampAnimationDone = useCallback(() => setRecentlyEarnedStamp(null), []);
 
   // Precargar datos estáticos en paralelo con el globo
   const locale = useAppStore((s) => s.settings.locale);
@@ -276,7 +277,7 @@ function App() {
           levels={levels}
           onStartStampTest={handleStartStampTest}
           recentlyEarnedStamp={recentlyEarnedStamp}
-          onStampAnimationDone={() => setRecentlyEarnedStamp(null)}
+          onStampAnimationDone={handleStampAnimationDone}
         />
       )}
 
