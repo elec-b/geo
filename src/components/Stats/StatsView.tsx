@@ -25,7 +25,9 @@ interface StatsViewProps {
   countries: Map<string, CountryData>;
   levels: Map<string, LevelDefinition>;
   onClose: () => void;
+  onCountryClick?: (cca2: string) => void;
   context?: StatsContext;
+  style?: React.CSSProperties;
 }
 
 // --- Indicadores de celda (pestaña Jugar) ---
@@ -166,7 +168,7 @@ function getStampPercentValue(sca: StampCountryAttempts | undefined, type: 'A' |
   return Math.round((rec.correct / (rec.correct + rec.incorrect)) * 100);
 }
 
-export function StatsView({ countries, levels, onClose, context }: StatsViewProps) {
+export function StatsView({ countries, levels, onClose, onCountryClick, context, style }: StatsViewProps) {
   const { t } = useTranslation('stats');
   const lastPlayed = useAppStore((s) => s.settings.lastPlayed);
   const lastStampPlayed = useAppStore((s) => s.settings.lastStampPlayed);
@@ -278,7 +280,7 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
   };
 
   return (
-    <div className="stats-overlay">
+    <div className="stats-overlay" style={style}>
       <div className="stats-view">
         {/* Cabecera */}
         <div className="stats-header">
@@ -366,7 +368,7 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
                   const ca = allAttempts[cca2];
                   const ownCa = ownAttempts[cca2];
                   return (
-                    <tr key={cca2}>
+                    <tr key={cca2} onClick={() => onCountryClick?.(cca2)} className={onCountryClick ? 'stats-table__tr--clickable' : ''}>
                       <td className="stats-table__td-name">{name}</td>
                       {ALL_TYPES.map((qt) => {
                         const isInferredType = isDominated(ca, qt) && !isDirectlyDominated(ownCa, qt);
@@ -411,7 +413,7 @@ export function StatsView({ countries, levels, onClose, context }: StatsViewProp
                 {sortedCountries.map(({ cca2, name }) => {
                   const sca = stampAttempts[cca2];
                   return (
-                    <tr key={cca2}>
+                    <tr key={cca2} onClick={() => onCountryClick?.(cca2)} className={onCountryClick ? 'stats-table__tr--clickable' : ''}>
                       <td className="stats-table__td-name">{name}</td>
                       {STAMP_TYPES.map((st) => (
                         <td key={st} className="stats-table__td-type">

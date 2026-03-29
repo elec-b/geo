@@ -42,6 +42,8 @@ function App() {
   const [activeTab, setActiveTab] = useState<TabId>('explore');
   const [jugarResetSignal, setJugarResetSignal] = useState(0);
   const [showStats, setShowStats] = useState(false);
+  const [statsMinimized, setStatsMinimized] = useState(false);
+  const [exploreCountryRequest, setExploreCountryRequest] = useState<string | null>(null);
   const showMarkers = useAppStore((s) => s.settings.showMarkers);
   const showSeaLabels = useAppStore((s) => s.settings.showSeaLabels);
 
@@ -94,6 +96,32 @@ function App() {
     }
     setActiveTab(tab);
   }, [activeTab, stampTestActive, stampTestRequest]);
+
+  // Callback para navegar a un país desde Estadísticas → oculta Stats, cambia a Explorar
+  const handleStatsCountryClick = useCallback((cca2: string) => {
+    setStatsMinimized(true);
+    if (stampTestActive) {
+      setStampTestActive(false);
+      setStampTestRequest(null);
+    }
+    setExploreCountryRequest(cca2);
+    setActiveTab('explore');
+  }, [stampTestActive]);
+
+  // Abrir/restaurar Estadísticas
+  const handleOpenStats = useCallback(() => {
+    if (showStats && statsMinimized) {
+      setStatsMinimized(false);
+    } else {
+      setShowStats(true);
+    }
+  }, [showStats, statsMinimized]);
+
+  // Cerrar Estadísticas completamente (desmonta)
+  const handleCloseStats = useCallback(() => {
+    setShowStats(false);
+    setStatsMinimized(false);
+  }, []);
 
   // Callback para lanzar prueba de sello desde Pasaporte → cambia a tab Jugar
   const handleStartStampTest = useCallback(
@@ -213,7 +241,7 @@ function App() {
       <LoadingScreen visible={!globeReady} />
 
       <AppHeader
-        onStatsClick={() => setShowStats(true)}
+        onStatsClick={handleOpenStats}
         onAvatarClick={() => setShowProfileSelector(true)}
         onSettingsClick={() => setShowSettings(true)}
       />
@@ -251,6 +279,8 @@ function App() {
           onGlobePropsChange={setGlobeControl}
           onCountryClickRef={exploreClickRef}
           onCountryDeselectRef={exploreDeselectRef}
+          pendingCountry={exploreCountryRequest}
+          onPendingCountryConsumed={() => setExploreCountryRequest(null)}
         />
       )}
 
@@ -267,7 +297,7 @@ function App() {
           stampTestRequest={stampTestRequest}
           onStampTestDone={handleStampTestDone}
           onStampTestStarted={handleStampTestStarted}
-          onNavigateStats={() => setShowStats(true)}
+          onNavigateStats={handleOpenStats}
           resetSignal={jugarResetSignal}
         />
       )}
@@ -285,7 +315,8 @@ function App() {
         <StatsView
           countries={countries}
           levels={levels}
-          onClose={() => setShowStats(false)}
+          onClose={handleCloseStats}
+          onCountryClick={handleStatsCountryClick}
           context={
             (stampTestRequest || stampTestActive)
               ? { tab: 'sellos', ...(stampTestRequest && { continent: stampTestRequest.continent, level: stampTestRequest.level }) }
@@ -293,6 +324,7 @@ function App() {
                 ? { tab: 'sellos' }
                 : undefined
           }
+          style={statsMinimized ? { display: 'none' } : undefined}
         />
       )}
 

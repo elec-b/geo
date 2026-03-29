@@ -243,6 +243,21 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
+.stats-table__tr--clickable {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.stats-table__tr--clickable:active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .stats-table__tr--clickable:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
 /* Indicadores de celda */
 .stats-cell {
   font-size: var(--font-size-sm);

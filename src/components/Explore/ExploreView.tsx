@@ -1,6 +1,6 @@
 // ExploreView — contenedor de la experiencia Explorar
 // Gestiona modo (países/capitales), selección, filtros y etiquetas.
-import { useState, useCallback, useMemo, useEffect, type RefObject, type MutableRefObject } from 'react';
+import { useState, useCallback, useMemo, useEffect, useRef, type RefObject, type MutableRefObject } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { GlobeD3Ref } from '../Globe';
 import type { CountryFeature } from '../../data/countries';
@@ -11,7 +11,7 @@ import { CountryCard } from './CountryCard';
 import { ContinentFilter } from './ContinentFilter';
 import { TableView } from './TableView';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
-import { CONTINENT_CENTERS } from '../../data/continents';
+import { CONTINENT_CENTERS, CONTINENT_ZOOM } from '../../data/continents';
 import { useAppStore } from '../../stores/appStore';
 import './ExploreView.css';
 
@@ -43,6 +43,10 @@ interface ExploreViewProps {
   onCountryClickRef: MutableRefObject<((f: CountryFeature) => void) | undefined>;
   /** Ref donde se registra el handler de deselección (bridge con App.tsx) */
   onCountryDeselectRef: MutableRefObject<(() => void) | undefined>;
+  /** País pendiente de seleccionar (navegación desde Estadísticas) */
+  pendingCountry?: string | null;
+  /** Callback para limpiar la petición pendiente una vez consumida */
+  onPendingCountryConsumed?: () => void;
 }
 
 export function ExploreView({
@@ -53,6 +57,8 @@ export function ExploreView({
   onGlobePropsChange,
   onCountryClickRef,
   onCountryDeselectRef,
+  pendingCountry,
+  onPendingCountryConsumed,
 }: ExploreViewProps) {
   const { t } = useTranslation('explore');
   const lastActiveContinent = useAppStore((s) => s.settings.lastActiveContinent) ?? null;
@@ -67,6 +73,39 @@ export function ExploreView({
   const [showCapitalLabels, setShowCapitalLabels] = useState(false);
   const [capitalsGlobeView, setCapitalsGlobeView] = useState(false);
   const [showCard, setShowCard] = useState(false);
+
+  // Consumir petición pendiente de navegación desde Estadísticas
+  const pendingProcessed = useRef(false);
+  useEffect(() => {
+    if (pendingCountry && !pendingProcessed.current) {
+      pendingProcessed.current = true;
+      // Forzar modo globo (si estaba en tabla)
+      setMode('countries');
+      setCapitalsGlobeView(false);
+      // Quitar filtro de continente para que el país se ilumine siempre
+      setContinentFilter(null);
+      // Seleccionar país y abrir ficha
+      setSelectedCca2(pendingCountry);
+      setShowCard(true);
+      // FlyTo con zoom continental para dar perspectiva de ubicación
+      const countryData = countries.get(pendingCountry);
+      const continent = countryData?.continent;
+      const zoom = continent && continent in CONTINENT_ZOOM ? CONTINENT_ZOOM[continent as keyof typeof CONTINENT_ZOOM] : undefined;
+      if (globeRef.current) {
+        const centroid = globeRef.current.getCentroid(pendingCountry);
+        if (centroid) {
+          globeRef.current.flyTo(centroid[0], centroid[1], zoom, undefined, 15);
+        } else {
+          const cap = capitals.get(pendingCountry);
+          if (cap) globeRef.current.flyTo(cap.latlng[1], cap.latlng[0], zoom, undefined, 15);
+        }
+      }
+      onPendingCountryConsumed?.();
+    }
+    if (!pendingCountry) {
+      pendingProcessed.current = false;
+    }
+  }, [pendingCountry, capitals, globeRef, onPendingCountryConsumed]);
 
   // Sorting inicial: solo restaurar si el continente no cambió externamente
   const initialSort = useMemo(() => {
