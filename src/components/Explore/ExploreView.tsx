@@ -65,8 +65,10 @@ export function ExploreView({
   const lastTableSort = useAppStore((s) => s.settings.lastTableSort) ?? null;
   const setLastActiveContinent = useAppStore((s) => s.setLastActiveContinent);
   const setLastTableSort = useAppStore((s) => s.setLastTableSort);
+  const lastExploreMode = useAppStore((s) => s.settings.lastExploreMode) ?? 'countries';
+  const setLastExploreMode = useAppStore((s) => s.setLastExploreMode);
 
-  const [mode, setMode] = useState<ExploreMode>('countries');
+  const [mode, setMode] = useState<ExploreMode>(lastExploreMode);
   const [selectedCca2, setSelectedCca2] = useState<string | null>(null);
   const [continentFilter, setContinentFilter] = useState<Continent | null>(lastActiveContinent);
   const [showCountryLabels, setShowCountryLabels] = useState(false);
@@ -248,10 +250,11 @@ export function ExploreView({
   // Cambio de modo
   const switchMode = useCallback((newMode: ExploreMode) => {
     setMode(newMode);
+    setLastExploreMode(newMode);
     setCapitalsGlobeView(false);
     setSelectedCca2(null);
     setShowCard(false);
-  }, []);
+  }, [setLastExploreMode]);
 
   // --- Datos del país seleccionado ---
 

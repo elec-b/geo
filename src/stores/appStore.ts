@@ -90,6 +90,8 @@ interface AppStoreActions {
   setLastActiveContinent: (continent: Continent | null) => void;
   /** Persiste el último sorting de la tabla de Explorar */
   setLastTableSort: (key: 'name' | 'capital' | 'population', dir: 'asc' | 'desc') => void;
+  /** Persiste el último modo de Explorar (Globo/Tabla) */
+  setLastExploreMode: (mode: 'countries' | 'capitals') => void;
 }
 
 type AppStore = AppState & AppStoreActions;
@@ -311,6 +313,12 @@ export const useAppStore = create<AppStore>()(
   setLastTableSort: (key, dir) => {
     set((state) => ({
       settings: { ...state.settings, lastTableSort: { key, dir } },
+    }));
+  },
+
+  setLastExploreMode: (mode) => {
+    set((state) => ({
+      settings: { ...state.settings, lastExploreMode: mode },
     }));
   },
 

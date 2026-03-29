@@ -47,6 +47,12 @@ function App() {
   const showMarkers = useAppStore((s) => s.settings.showMarkers);
   const showSeaLabels = useAppStore((s) => s.settings.showSeaLabels);
 
+  // Reset de estado de sesión al abrir la app (Globo + Todos)
+  useEffect(() => {
+    useAppStore.getState().setLastExploreMode('countries');
+    useAppStore.getState().setLastActiveContinent(null);
+  }, []);
+
   // Datos cargados
   const [countries, setCountries] = useState<Map<string, CountryData> | null>(null);
   const [capitals, setCapitals] = useState<Map<string, CapitalCoords> | null>(null);
