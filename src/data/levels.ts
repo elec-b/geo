@@ -7,7 +7,7 @@ export const LEVELS: GameLevel[] = ['tourist', 'backpacker', 'guide'];
 
 /** Emoji asociado a cada nivel */
 export const LEVEL_EMOJI: Record<GameLevel, string> = {
-  tourist: '🧳',
+  tourist: '📸',
   backpacker: '🎒',
   guide: '🗺️',
 };
