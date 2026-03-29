@@ -1,4 +1,4 @@
-# Backlog de GeoExpert
+# Backlog de Exploris
 
 > Historial de desarrollo más reciente y próximos pasos. Para el historial completo, consultar git.
 
@@ -40,7 +40,7 @@
 - [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
 - [ ] Permitir al usuario elegir un color de logo, además de los iconos de animales que ya tenemos
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
-- [ ] Pensar el nombre de la app: es GeoExpert el mejor nombre? Está cogido? Cómo nos diferenciamos? Hacer un spike con esto
+- [x] Nombre de la app: **Exploris** (spike en `docs/spikes/naming-app.md` — 23 nombres evaluados, GeoExpert inviable por colisión directa)
 
 ### Preparación y publicación iOS
 - [ ] Fix orientación: eliminar landscape de Info.plist (la UI es portrait-only). Decidir si se soporta iPad
@@ -51,7 +51,7 @@
 - [ ] Testing en simuladores: iPhone SE, iPhone estándar, iPhone Pro Max, iPad (si se soporta)
 - [ ] Verificar safe areas, status bar, interrupciones (llamadas, notificaciones, background/foreground)
 - [ ] Verificar icono (sin alpha) y splash screen en todos los tamaños
-- [ ] Metadata App Store Connect: nombre, subtítulo, descripción, palabras clave, categoría (Educación), copyright, URLs
+- [ ] Metadata App Store Connect: nombre, subtítulo, descripción, palabras clave, categoría (Educación), copyright, URLs. Ver tips de ASO/descubrimiento en `docs/spikes/naming-app.md` § 7
 - [ ] Screenshots (3-5, resolución 6.9" reutilizable para todos los tamaños)
 - [ ] Clasificación por edad: general audience 4+ (NO categorizar como «directed to children» — evita restricciones de Kids Category y parental gates para el enlace a Wikipedia)
 - [ ] Enviar a App Store Review
