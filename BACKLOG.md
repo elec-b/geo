@@ -21,38 +21,13 @@
 - [x] **UX general**: Bottom sheets con drag-to-dismiss, selección de texto deshabilitada, feedback verde/rojo al 5%, colores olímpicos unificados, anti-viudas tipográficas (`text-wrap: pretty/balance`)
 - [x] **Testing manual**: Todos los sellos en todos los continentes, aventura en todos los continente-nivel, feedback anotado
 - [x] **UX pre-lanzamiento**: N.º de países en modal de sello, label simplificado de marcadores, orden de tabs (Explorar/Jugar/Pasaporte), persistencia de continente y sorting en Tabla, onboarding en Pasaporte
+- [x] **Internacionalización**: 32 idiomas (26 base + 6 ampliación) + 5 variantes regionales. i18next con lazy loading y plurales CLDR. Datos multi-idioma: CLDR (países/monedas/idiomas), Wikidata SPARQL (capitales/Wikipedia slugs), Claude (gentilicios/mares). 175 archivos UI, 6682 Wikipedia slugs. Verificación contra fuentes autoritativas (32 idiomas). ~100 overrides de nombres, fixes de layout multi-idioma, selector de idioma en bottom sheet dedicado
 
 ---
 
 ## Próximos pasos
 
 > Ordenados por prioridad. Cada bloque debe completarse antes de avanzar al siguiente (salvo tareas marcadas como opcionales).
-
-### Internacionalización
-> Pre-lanzamiento. La app se lanza en todos los idiomas soportados por iOS/Android. Las tareas siguen la cadena de dependencias: a → b → c → d → e → f → g -> h.
-
-- [x] **(a)** Librería de i18n: `i18next` + `react-i18next`
-- [x] **(b)** Externalizar textos de la app a archivos de traducción. Tipos `Continent`/`GameLevel` migrados a claves neutras, Zustand persist v1 con migración automática, ~200 strings externalizados en 7 namespaces i18next
-- [x] **(c)** Nombres de países desde CLDR (`Intl.DisplayNames`) + 8 overrides/es. Diff entre runs. Absorbe 24 overrides manuales
-- [x] **(d)** Nombres y símbolos de moneda desde CLDR (`Intl.DisplayNames` + `Intl.NumberFormat` narrowSymbol) + 59 overrides de símbolo. Filtro de códigos no reconocidos. 5 correcciones de símbolos (CD, PE, VE, CV, SZ). Eliminadas 237 entradas manuales de monedas
-- [x] **(e)** Generar datos multi-idioma: 26 idiomas (tier 1 + tier 2). Arquitectura base+i18n: `countries-base.json` (agnóstico) + `i18n/{lang}.json` (×26). CLDR para países/monedas/idiomas, Wikidata SPARQL para capitales, Claude para gentilicios/sea labels. Script refactorizado, runtime multi-idioma con caché por locale
-- [x] **(f)** Validación inline: CLDR automático, Wikidata 6.162 capitales, spot-check es/en/ja/fr. Pendiente: validación profunda del dev para es e en
-- [x] **(g)** UI traducida a 26 idiomas (175 archivos). i18next con lazy loading dinámico. Selector de idioma funcional en Configuración. Detección automática de idioma del dispositivo
-- [x] **(h)** Wikipedia slugs multi-idioma: Wikidata SPARQL para sitelinks en 23 idiomas únicos (26 locales). 257 países × 26 idiomas = 6682 slugs, cobertura 100%. Fix `nb` → `no` en CountryCard
-- [x] **(fix)** en algunos idiomas, e.g. japonés o ruso, en Jugar, hay que hacer scroll down para ver el botón de empezar / continuar. Pensar qué es lo mejor desde un punto de vista de UX, e.g. si hacer auto-scroll down para ver el botón, ampliar altura y anchura del modal del selector, dejarlo como está u otra cosa distinta. Hacer pequeño spike, útil para todos los idiomas.
-- [x] **(fix)** Selector de continentes: layout 3+2 (anillos olímpicos) forzado en todos los idiomas (`min-width` en pills)
-- [x] **(fix)** Pluralización de conteo de países en selector de juego: ru/uk/pl/cs tenían solo `_one`/`_other` — añadidas formas `_few` y `_many` (CLDR). Rumano: añadida `_few`. Nota en tarea (i) para aplicar lo mismo a sk y hr.
-- [x] **(check)** Spike de ampliación de idiomas completado (`docs/spikes/ampliacion-idiomas.md`). Resultado: añadir 6 idiomas (el, ca, da, fi, sk, hr) antes del lanzamiento. Filipino descartado (96% idéntico a inglés en CLDR). RTL (ar, he, fa) requiere spike técnico separado
-- [x] **(i)** 6 idiomas nuevos (el, ca, da, fi, sk, hr): pipeline completo — datos CLDR+Wikidata+Claude (237 países × 32 idiomas), 42 archivos UI (6×7 namespaces), plurales CLDR correctos (sk: one/few/many/other; hr: one/few/other), Wikipedia slugs. Fix: territorios sintéticos (Somaliland, Chipre del Norte, Antártida) añadidos a `SYNTHETIC_I18N` en `countryData.ts`
-- [x] **(j)** Mapeo de locales para stores: `scripts/data/store-locale-map.json` con los 32 idiomas → App Store / Google Play (ej. `nb` → `no`/`no-NO`)
-- [x] **(k)** Variantes regionales registradas en `store-locale-map.json`: es-419/es-MX, fr-CA, en-GB, en-AU, zh-HK (coste cero, reutilizan traducciones base)
-- [x] **(fix)** Ordenar idiomas en Configuración alfabéticamente por nombre nativo (estándar de iOS Settings / Google Play), lectura por columna
-- [x] **(final-check)** Verificación de datos i18n contra fuentes autoritativas (32 idiomas). Spikes: `docs/spikes/fuentes-autoritativas-i18n.md` y `docs/spikes/verificacion-i18n-datos.md`. Correcciones aplicadas: 237 capitales zh-Hant (simplificado→tradicional + fix pipeline), 5 errores puntuales de capitales, ~90 limpiezas de formato, unificación GQ/BO/LK/MS, 13 overrides de nombres de países (incl. Eswatini→nombre tradicional en 8 idiomas), 11 correcciones de gentilicios, 14 correcciones de mares/océanos
-- [x] **(final-check-b)** 100 overrides de nombres de países (10 idiomas Grupo B): hi(19), vi(29), ms(15), pt-PT(12), da(7), it(6), th(5), ro(5), pt-BR(2). Spike: `docs/spikes/divergencias-cldr-wikipedia.md`
-- [x] **(fix)** Selector de idioma extraído a bottom sheet dedicado (drill-down desde Settings, vuelta automática al cerrar)
-
-### Eficientar workflow de trabajo
-- [ ] design.md se está haciendo demasiado extenso para cargar siempre en contexto con /lee_doc (que solemos hacer siempre al inicio de la sesión). Pensar cómo reestructurarlo, para ser más eficientes.
 
 ### Acabados pre-lanzamiento
 - [ ] Logo/branding en LoadingScreen (antes de publicar en stores)
