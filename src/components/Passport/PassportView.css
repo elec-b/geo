@@ -214,6 +214,10 @@
   color: var(--color-text-muted);
 }
 
+.passport-cell--locked .passport-cell__count {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* --- Leyenda --- */
 
 .passport-legend {

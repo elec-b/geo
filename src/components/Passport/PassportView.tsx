@@ -202,9 +202,7 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
                       />
                     </div>
                   )}
-                  {unlocked && (
-                    <span className="passport-cell__count">{countryCount}</span>
-                  )}
+                  <span className="passport-cell__count">{countryCount}</span>
                 </button>
               );
             })}

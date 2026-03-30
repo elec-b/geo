@@ -33,7 +33,7 @@
 
 ### Acabados pre-lanzamiento
 - [x] (**mejora**) Columna de nivel en tabla de Explorar (icono 📸/🎒/🗺️, sorting por tier, header 🏆 en gris)
-- [ ] (**mejora**) En Pasaporte, en los continente-nivel bloqueados, mostrar el número de países debajo del candado
+- [x] (**mejora**) En Pasaporte, en los continente-nivel bloqueados, mostrar el número de países debajo del candado
 - [ ] (**mejora**) Cambié algunas cosas del about.json en español... Pero no en los otros idiomas. Volver a repetir traducciones para todos los idiomas de la app.
 - [ ] (**investigar**) ¿Cómo se dice Turquía en inglés? Me salió un nombre raro jugando
 - [ ] Cuando se crea un nuevo perfil:
@@ -41,6 +41,7 @@
     - al introducir el nombre, no tener que borrar la palabra "Explorador". El usuario debe poder escribir directamente su nombre. Si no se escribe nada el nombre será Explorador (y podemos seguir mostrando la palabra como la opción por defecto, pero el color de la fuente será apagado)
     - [ ] Permitir al usuario elegir un color de logo, además de los iconos de animales que ya tenemos
 - [ ] Refinar tema oscuro.
+    - Repasar colores y asegurar que no hay colores hardcodeados
     - Buscar tonos más en escala de negros y grises en vez de tantos tonos azules
     - Si cambia, asegurar que todo es coherente, incluyendo el logo / icono, que ahora tiene fondo azul
 - [ ] Diseñar e implementar tema claro
