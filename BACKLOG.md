@@ -33,14 +33,17 @@
 
 ### Acabados pre-lanzamiento
 - [ ] (**mejora**) En Explorar, en la tabla, incluir una columna con el nivel. Para que sea estrecha, sugiero que simplemente incluya el icono de nivel para cada país. Se debería poder hacer sorting por nivel - que, si no me equivoco, debería ser lo mismo que hacer sorting por la columna de población.
-- [ ] Permitir al usuario elegir un color de logo, además de los iconos de animales que ya tenemos
+- [ ] Cuando se crea un nuevo perfil:
+    - cerrar la sesión actual (salir del Juego o de la prueba de Sello o de las Estadísticas que haya en curso; quizás lo más fácil sea simplemente ir a Explorar)
+    - al introducir el nombre, no tener que borrar la palabra "Explorador". El usuario debe poder escribir directamente su nombre. Si no se escribe nada el nombre será Explorador (y podemos seguir mostrando la palabra como la opción por defecto, pero el color de la fuente será apagado)
+    - [ ] Permitir al usuario elegir un color de logo, además de los iconos de animales que ya tenemos
 - [ ] Refinar tema oscuro.
     - Buscar tonos más en escala de negros y grises en vez de tantos tonos azules
     - Si cambia, asegurar que todo es coherente, incluyendo el logo / icono, que ahora tiene fondo azul
 - [ ] Diseñar e implementar tema claro
-- [ ] Revisar que los datos de la ficha de país están actualizados + asegurar que se actualicen bien en el futuro
+- [ ] Actualizar HDI/IDH-D: regenerar `hdi.json` desde el Excel oficial del HDR 2025 (spike en `docs/spikes/auditoria-datos-ficha.md` — 192 de 194 países desactualizados + errores de origen). Idealmente con script automatizado
 - [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
-- [ ] Verificar que TODAS las fuentes de datos que utilizamos se mantienen. Por ejemplo, REST Countries dejó de mantenerse en 2024...
+- [ ] Auditar y migrar TODAS las fuentes de datos, asegurar que en la actualidad se mantienen: REST Countries fue archivado en junio 2024 (datos de población congelados, desfase <7% en países grandes). Evaluar World Bank API o UN Stats como reemplazo. Abordar junto con la tarea de CDN. Detalle de algunos datos de la ficha en `docs/spikes/auditoria-datos-ficha.md`
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
 - [x] Nombre de la app: **Exploris** (spike en `docs/spikes/naming-app.md` — 23 nombres evaluados, nombre anterior inviable por colisión directa)
 

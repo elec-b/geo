@@ -68,3 +68,27 @@ export function buildLevelDefinitions(
 
   return result;
 }
+
+/**
+ * Genera un mapa cca2 → nivel más bajo al que pertenece cada país.
+ * Tourist tiene prioridad sobre Backpacker, Backpacker sobre Guide.
+ */
+export function buildCountryLevelMap(
+  levels: Map<string, LevelDefinition>,
+): Map<string, GameLevel> {
+  const result = new Map<string, GameLevel>();
+
+  // Recorrer de guide → backpacker → tourist para que el nivel más bajo sobreescriba
+  for (const level of ['guide', 'backpacker', 'tourist'] as GameLevel[]) {
+    for (const continent of CONTINENTS) {
+      const def = levels.get(`${level}-${continent}`);
+      if (def) {
+        for (const cca2 of def.countries) {
+          result.set(cca2, level);
+        }
+      }
+    }
+  }
+
+  return result;
+}

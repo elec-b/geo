@@ -4,7 +4,7 @@ import { useState, useCallback, useMemo, useEffect, useRef, type RefObject, type
 import { useTranslation } from 'react-i18next';
 import type { GlobeD3Ref } from '../Globe';
 import type { CountryFeature } from '../../data/countries';
-import type { CountryData, CapitalCoords, Continent } from '../../data/types';
+import type { CountryData, CapitalCoords, Continent, GameLevel } from '../../data/types';
 import type { FeedbackLabel } from '../Globe';
 import type { CountryRankings } from '../../data/rankings';
 import { CountryCard } from './CountryCard';
@@ -38,6 +38,7 @@ interface ExploreViewProps {
   countries: Map<string, CountryData>;
   capitals: Map<string, CapitalCoords>;
   rankings: Map<string, CountryRankings>;
+  countryLevelMap: Map<string, GameLevel>;
   onGlobePropsChange: (props: GlobeControlProps) => void;
   /** Ref donde se registra el handler de click en país (bridge con App.tsx) */
   onCountryClickRef: MutableRefObject<((f: CountryFeature) => void) | undefined>;
@@ -54,6 +55,7 @@ export function ExploreView({
   countries,
   capitals,
   rankings,
+  countryLevelMap,
   onGlobePropsChange,
   onCountryClickRef,
   onCountryDeselectRef,
@@ -334,6 +336,7 @@ export function ExploreView({
       {mode === 'capitals' && (
         <TableView
           countries={countries}
+          countryLevelMap={countryLevelMap}
           continentFilter={continentFilter}
           onCountryTap={handleCapitalsCountryTap}
           onCapitalTap={handleCapitalsCapitalTap}

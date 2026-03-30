@@ -65,7 +65,7 @@ export interface AppSettings {
   lastPlayed?: { continent: Continent; level: GameLevel } | null;
   lastStampPlayed?: { continent: Continent; level: GameLevel } | null;
   lastActiveContinent?: Continent | null;
-  lastTableSort?: { key: 'name' | 'capital' | 'population'; dir: 'asc' | 'desc' } | null;
+  lastTableSort?: { key: 'name' | 'capital' | 'population' | 'level'; dir: 'asc' | 'desc' } | null;
   lastExploreMode?: 'countries' | 'capitals';
 }
 

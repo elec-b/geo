@@ -89,7 +89,7 @@ interface AppStoreActions {
   /** Persiste el último continente activo (de cualquier fuente: Jugar, sello, tabla) */
   setLastActiveContinent: (continent: Continent | null) => void;
   /** Persiste el último sorting de la tabla de Explorar */
-  setLastTableSort: (key: 'name' | 'capital' | 'population', dir: 'asc' | 'desc') => void;
+  setLastTableSort: (key: 'name' | 'capital' | 'population' | 'level', dir: 'asc' | 'desc') => void;
   /** Persiste el último modo de Explorar (Globo/Tabla) */
   setLastExploreMode: (mode: 'countries' | 'capitals') => void;
 }

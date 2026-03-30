@@ -16,11 +16,11 @@ import { LanguageSheet } from './components/Settings/LanguageSheet';
 import { loadCountryData, loadCapitals, invalidateCache } from './data/countryData';
 import { changeAppLanguage } from './i18n';
 import { buildRankings, type CountryRankings } from './data/rankings';
-import { buildLevelDefinitions } from './data/levels';
+import { buildLevelDefinitions, buildCountryLevelMap } from './data/levels';
 import { useAppStore } from './stores/appStore';
 import type { GlobeD3Ref } from './components/Globe';
 import type { CountryFeature } from './data/countries';
-import type { CountryData, CapitalCoords, LevelDefinition } from './data/types';
+import type { CountryData, CapitalCoords, GameLevel, LevelDefinition } from './data/types';
 import type { TabId } from './components/Navigation/types';
 import './components/Layout/AppShell.css';
 
@@ -242,6 +242,12 @@ function App() {
     return map;
   }, [countries]);
 
+  // Mapa cca2 → nivel más bajo (para columna de nivel en tabla de Explorar)
+  const countryLevelMap = useMemo(
+    () => levels ? buildCountryLevelMap(levels) : new Map<string, GameLevel>(),
+    [levels],
+  );
+
   const dataReady = countries && capitals && rankings && levels;
 
   return (
@@ -285,6 +291,7 @@ function App() {
           countries={countries}
           capitals={capitals}
           rankings={rankings}
+          countryLevelMap={countryLevelMap}
           onGlobePropsChange={setGlobeControl}
           onCountryClickRef={exploreClickRef}
           onCountryDeselectRef={exploreDeselectRef}

@@ -55,7 +55,7 @@
 
 .table-view__table-header {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: 2rem 2fr 2fr 1fr;
   padding: var(--spacing-xs) var(--spacing-sm);
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
@@ -84,6 +84,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.table-view__header-btn--center {
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+
 .table-view__header-btn--right {
   text-align: right;
 }
@@ -95,7 +100,7 @@
 /* Fila */
 .table-view__row {
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: 2rem 2fr 2fr 1fr;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -130,6 +135,15 @@
 
 .table-view__cell--capital {
   color: rgba(170, 170, 180, 0.9);
+}
+
+/* Celda de nivel (no tappable, solo emoji) */
+.table-view__cell--level {
+  cursor: default;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: var(--font-size-sm);
 }
 
 /* Celda de población (no tappable) */
