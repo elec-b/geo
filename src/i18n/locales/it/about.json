@@ -1,1 +1,30 @@
-{}
+{
+  "title": "Informazioni su Exploris",
+
+  "intro": "Exploris è un'app per imparare la geografia con un globo terrestre interattivo in 3D. Impara paesi, capitali e molto altro in modo visivo e divertente.",
+
+  "section.countries.title": "Paesi",
+  "section.countries.body": "Exploris include i 195 paesi riconosciuti dalle Nazioni Unite, lo standard più accettato a livello mondiale. Puoi anche esplorare sul globo territori non riconosciuti o contesi.\n\nIl globo riproduce la vista della Terra dallo spazio. Questo ti permette di apprezzare le dimensioni reali dei paesi, qualcosa che le mappe piatte non riescono a fare.",
+
+  "section.learn.title": "Come imparare",
+  "section.learn.tips.explore": "Inizia in Esplora: ruota il globo, tocca i paesi per vedere la loro scheda e familiarizzati con la loro forma e posizione. La vista Tabella ti aiuta ad associare ogni paese alla sua capitale. Tocca qualsiasi paese o capitale nella tabella per vederlo sul globo.",
+  "section.learn.tips.play": "Quando sei pronto, lanciati in Gioca. Ti consigliamo di giocare in modalità Avventura, che combina in modo intelligente i diversi tipi di gioco spiegati sotto; si adatta a ciò che sai per aiutarti a imparare.",
+  "section.learn.tips.passport": "Il tuo obiettivo finale è riempire il Passaporto di timbri. Per ottenere un timbro, devi completare una prova timbro senza errori.",
+
+  "section.gameTypes.title": "Tipi di gioco",
+  "section.gameTypes.intro": "Ci sono 6 tipi di gioco, ordinati dal più facile al più difficile:",
+  "section.gameTypes.E": "◯? — Identifica il paese — Un paese viene evidenziato sul globo e scegli il suo nome tra 4 opzioni.",
+  "section.gameTypes.C": "◯→◎ — Paese a capitale — Ti viene dato un paese e scegli la sua capitale tra 4 opzioni.",
+  "section.gameTypes.D": "◎→◯ — Capitale a paese — Ti viene data una capitale e scegli a quale paese appartiene.",
+  "section.gameTypes.F": "◎? — Identifica la capitale — Una capitale viene evidenziata sul globo e scegli il suo nome.",
+  "section.gameTypes.A": "◯ — Indica il paese — Ti viene dato un nome e tocchi il paese sul globo.",
+  "section.gameTypes.B": "◎ — Indica la capitale — Ti viene data una capitale e tocchi la sua posizione sul globo.",
+  "section.gameTypes.adventure": "La modalità Avventura combina tutti i tipi e si adatta ai tuoi progressi. È il modo consigliato di giocare.",
+  "section.gameTypes.stamps": "I tipi «Indica il paese» e «Indica la capitale» sono quelli utilizzati nelle prove timbro del Passaporto.",
+
+  "section.stats.title": "Statistiche",
+  "section.stats.body": "La vista Statistiche ha due schede:\n\n• Gioca — Mostra la tua padronanza in ogni tipo di gioco.\n\n• Prove timbro — Mostra i tuoi risultati nelle prove del Passaporto. \n\nPuoi alternare tra indicatori di padronanza (✓/✗) e percentuali di successo. Tocca un paese per andare direttamente alla sua scheda in Esplora.",
+
+  "section.sources.title": "Fonti dei dati",
+  "section.sources.body": "I dati provengono da fonti pubbliche come le Nazioni Unite, Natural Earth e Wikidata."
+}

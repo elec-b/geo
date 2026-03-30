@@ -23,7 +23,7 @@
 - [x] **UX pre-lanzamiento**: N.º de países en modal de sello, label simplificado de marcadores, orden de tabs (Explorar/Jugar/Pasaporte), persistencia de continente y sorting en Tabla, onboarding en Pasaporte. Persistencia de modo Explorar (Globo/Tabla) entre tabs, reset a Globo+Todos al abrir app
 - [x] **Internacionalización**: 32 idiomas (26 base + 6 ampliación) + 5 variantes regionales. i18next con lazy loading y plurales CLDR. Datos multi-idioma: CLDR (países/monedas/idiomas), Wikidata SPARQL (capitales/Wikipedia slugs), Claude (gentilicios/mares). 175 archivos UI, 6682 Wikipedia slugs. Verificación contra fuentes autoritativas (32 idiomas). ~100 overrides de nombres, fixes de layout multi-idioma, selector de idioma en bottom sheet dedicado
 - [x] **Logo/branding**: Globo wireframe SVG (blanco→gris, paralelos curvos, glow sutil). LoadingScreen con logo + título "Exploris". Icono iOS 1024×1024 y splash screens generados desde SVG. Script `generate-icons.mjs`
-- [x] **Acerca de**: Pantalla completa con secciones colapsables (países, cómo aprender, tipos de juego, estadísticas, fuentes). Icono info en header. Namespace i18n `about` (es + en + 30 placeholders)
+- [x] **Acerca de**: Pantalla completa con secciones colapsables (países, cómo aprender, tipos de juego, estadísticas, fuentes). Icono info en header. Namespace i18n `about` traducido a 32 idiomas
 
 ---
 
@@ -34,7 +34,7 @@
 ### Acabados pre-lanzamiento
 - [x] (**mejora**) Columna de nivel en tabla de Explorar (icono 📸/🎒/🗺️, sorting por tier, header 🏆 en gris)
 - [x] (**mejora**) En Pasaporte, en los continente-nivel bloqueados, mostrar el número de países debajo del candado
-- [ ] (**mejora**) Cambié algunas cosas del about.json en español... Pero no en los otros idiomas. Volver a repetir traducciones para todos los idiomas de la app.
+- [x] (**mejora**) Traducciones del namespace `about` a los 32 idiomas de la app (alineadas con el español como fuente de verdad)
 - [ ] (**investigar**) ¿Cómo se dice Turquía en inglés? Me salió un nombre raro jugando
 - [ ] Cuando se crea un nuevo perfil:
     - cerrar la sesión actual (salir del Juego o de la prueba de Sello o de las Estadísticas que haya en curso; quizás lo más fácil sea simplemente ir a Explorar)

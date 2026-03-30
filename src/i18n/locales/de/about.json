@@ -1,1 +1,30 @@
-{}
+{
+  "title": "Über Exploris",
+
+  "intro": "Exploris ist eine Geografie-Lern-App mit einem interaktiven 3D-Globus. Lerne Länder, Hauptstädte und vieles mehr auf visuelle und unterhaltsame Weise.",
+
+  "section.countries.title": "Länder",
+  "section.countries.body": "Exploris umfasst die 195 von den Vereinten Nationen anerkannten Länder, dem weltweit anerkanntesten Standard. Außerdem kannst du auf dem Globus nicht anerkannte oder umstrittene Gebiete erkunden.\n\nDer Globus zeigt die Erde so, wie sie aus dem Weltraum aussieht. So kannst du die tatsächliche Größe der Länder erfassen — etwas, das flache Karten nicht schaffen.",
+
+  "section.learn.title": "So lernst du",
+  "section.learn.tips.explore": "Starte in Entdecken: drehe den Globus, tippe auf Länder, um ihre Infokarte zu sehen, und mach dich mit ihrer Form und Lage vertraut. Die Tabelle-Ansicht hilft dir, jedes Land mit seiner Hauptstadt zu verknüpfen. Tippe auf ein beliebiges Land oder eine Hauptstadt in der Tabelle, um es auf dem Globus zu sehen.",
+  "section.learn.tips.play": "Wenn du bereit bist, stürze dich in Spielen. Wir empfehlen den Abenteuer-Modus, der die verschiedenen unten erklärten Spieltypen intelligent kombiniert und sich an dein Wissen anpasst, um dir beim Lernen zu helfen.",
+  "section.learn.tips.passport": "Dein ultimatives Ziel ist es, den Reisepass mit Stempeln zu füllen. Um einen Stempel zu bekommen, musst du eine Stempelprüfung fehlerfrei bestehen.",
+
+  "section.gameTypes.title": "Spieltypen",
+  "section.gameTypes.intro": "Es gibt 6 Spieltypen, geordnet von leicht bis schwer:",
+  "section.gameTypes.E": "◯? — Land erkennen — Ein Land wird auf dem Globus hervorgehoben und du wählst seinen Namen aus 4 Optionen.",
+  "section.gameTypes.C": "◯→◎ — Land zu Hauptstadt — Dir wird ein Land genannt und du wählst seine Hauptstadt aus 4 Optionen.",
+  "section.gameTypes.D": "◎→◯ — Hauptstadt zu Land — Dir wird eine Hauptstadt genannt und du wählst das zugehörige Land.",
+  "section.gameTypes.F": "◎? — Hauptstadt erkennen — Eine Hauptstadt wird auf dem Globus hervorgehoben und du wählst ihren Namen.",
+  "section.gameTypes.A": "◯ — Zeige das Land — Dir wird ein Name genannt und du tippst auf das Land auf dem Globus.",
+  "section.gameTypes.B": "◎ — Zeige die Hauptstadt — Dir wird eine Hauptstadt genannt und du tippst auf ihre Position auf dem Globus.",
+  "section.gameTypes.adventure": "Der Abenteuer-Modus kombiniert alle Typen und passt sich deinem Fortschritt an. Es ist die empfohlene Spielweise.",
+  "section.gameTypes.stamps": "Die Typen \u201EZeige das Land\u201C und \u201EZeige die Hauptstadt\u201C werden bei den Stempelpr\u00FCfungen des Reisepass verwendet.",
+
+  "section.stats.title": "Statistiken",
+  "section.stats.body": "Die Statistiken-Ansicht hat zwei Tabs:\n\n• Spielen — Zeigt deinen Fortschritt in jedem Spieltyp.\n\n• Stempelprüfungen — Zeigt deine Ergebnisse bei den Prüfungen des Reisepass.\n\nDu kannst zwischen Beherrschungsindikatoren (✓/✗) und Trefferquoten wechseln. Tippe auf ein Land, um direkt zu seiner Infokarte in Entdecken zu gelangen.",
+
+  "section.sources.title": "Datenquellen",
+  "section.sources.body": "Die Daten stammen aus öffentlichen Quellen wie den Vereinten Nationen, Natural Earth und Wikidata."
+}

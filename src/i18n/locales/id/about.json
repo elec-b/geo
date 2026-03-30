@@ -1,1 +1,30 @@
-{}
+{
+  "title": "Tentang Exploris",
+
+  "intro": "Exploris adalah aplikasi belajar geografi dengan globe 3D interaktif. Pelajari negara, ibu kota, dan banyak lagi secara visual dan menyenangkan.",
+
+  "section.countries.title": "Negara",
+  "section.countries.body": "Exploris mencakup 195 negara yang diakui oleh Perserikatan Bangsa-Bangsa — standar yang paling diterima secara global. Kamu juga bisa menjelajahi wilayah yang belum diakui atau dalam sengketa di globe.\n\nGlobe mereproduksi tampilan Bumi dari luar angkasa. Ini memungkinkan kamu merasakan ukuran sebenarnya dari negara-negara — sesuatu yang tidak bisa dilakukan peta datar.",
+
+  "section.learn.title": "Cara belajar",
+  "section.learn.tips.explore": "Mulai dari Jelajahi: putar globe, ketuk negara untuk melihat kartu informasinya, dan kenali bentuk serta lokasinya. Tampilan Tabel membantu menghubungkan setiap negara dengan ibu kotanya. Ketuk negara atau ibu kota mana pun di tabel untuk melihatnya di globe.",
+  "section.learn.tips.play": "Kalau sudah siap, langsung ke Main. Kami sarankan bermain mode Petualangan — mode ini menggabungkan berbagai tipe permainan yang dijelaskan di bawah secara cerdas, dan menyesuaikan dengan apa yang sudah kamu kuasai.",
+  "section.learn.tips.passport": "Tujuan akhirmu adalah mengisi Paspor dengan stempel. Untuk mendapatkan stempel, kamu harus menyelesaikan ujian stempel tanpa kesalahan.",
+
+  "section.gameTypes.title": "Tipe permainan",
+  "section.gameTypes.intro": "Ada 6 tipe permainan, diurutkan dari yang paling mudah ke paling sulit:",
+  "section.gameTypes.E": "◯? — Kenali negaranya — Sebuah negara di-highlight di globe, pilih namanya dari 4 pilihan.",
+  "section.gameTypes.C": "◯→◎ — Negara ke ibu kota — Diberikan nama negara, pilih ibu kotanya dari 4 pilihan.",
+  "section.gameTypes.D": "◎→◯ — Ibu kota ke negara — Diberikan nama ibu kota, pilih negara yang memilikinya.",
+  "section.gameTypes.F": "◎? — Kenali ibu kotanya — Sebuah ibu kota di-highlight di globe, pilih namanya.",
+  "section.gameTypes.A": "◯ — Tunjukkan negaranya — Diberikan nama negara, ketuk negara tersebut di globe.",
+  "section.gameTypes.B": "◎ — Tunjukkan ibu kotanya — Diberikan nama ibu kota, ketuk lokasinya di globe.",
+  "section.gameTypes.adventure": "Mode Petualangan menggabungkan semua tipe dan menyesuaikan dengan progresmu. Ini cara bermain yang paling direkomendasikan.",
+  "section.gameTypes.stamps": "\u201cTunjukkan negaranya\u201d dan \u201cTunjukkan ibu kotanya\u201d adalah tipe yang digunakan dalam ujian stempel Paspor.",
+
+  "section.stats.title": "Statistik",
+  "section.stats.body": "Tampilan Statistik punya dua tab:\n\n• Main — Menampilkan penguasaanmu di setiap tipe permainan.\n\n• Ujian stempel — Menampilkan hasil ujian Paspor.\n\nKamu bisa beralih antara indikator penguasaan (✓/✗) dan persentase jawaban benar. Ketuk negara untuk langsung ke kartu informasinya di Jelajahi.",
+
+  "section.sources.title": "Sumber data",
+  "section.sources.body": "Data berasal dari sumber publik seperti Perserikatan Bangsa-Bangsa, Natural Earth, dan Wikidata."
+}

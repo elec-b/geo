@@ -1,1 +1,30 @@
-{}
+{
+  "title": "Om Exploris",
+
+  "intro": "Exploris er en geografiapp med en interaktiv 3D-jordkugle. Lær lande, hovedstæder og meget mere på en visuel og underholdende måde.",
+
+  "section.countries.title": "Lande",
+  "section.countries.body": "Exploris indeholder de 195 lande, der er anerkendt af De Forenede Nationer, den mest accepterede standard i verden. Du kan også udforske ikke-anerkendte eller omstridte territorier på globussen.\n\nGlobussen viser jorden, som den ser ud fra rummet. Det lader dig se landenes virkelige størrelse — noget flade kort ikke kan.",
+
+  "section.learn.title": "Sådan lærer du",
+  "section.learn.tips.explore": "Start i Udforsk: drej globussen, tryk på lande for at se deres infokort, og bliv fortrolig med deres form og placering. Tabel-visningen hjælper dig med at forbinde hvert land med sin hovedstad. Tryk på et land eller en hovedstad i tabellen for at se det på globussen.",
+  "section.learn.tips.play": "Når du er klar, kast dig ud i Spil. Vi anbefaler Eventyr-tilstanden, som på en smart måde kombinerer de forskellige spilletyper forklaret nedenfor og tilpasser sig det, du ved, for at hjælpe dig med at lære.",
+  "section.learn.tips.passport": "Dit ultimative mål er at fylde Passet med stempler. For at få et stempel skal du gennemføre en stempelprøve uden fejl.",
+
+  "section.gameTypes.title": "Spilletyper",
+  "section.gameTypes.intro": "Der er 6 spilletyper, ordnet fra nemmest til sværest:",
+  "section.gameTypes.E": "◯? — Identificér landet — Et land fremhæves på globussen, og du vælger dets navn blandt 4 muligheder.",
+  "section.gameTypes.C": "◯→◎ — Land til hovedstad — Du får et land og vælger dets hovedstad blandt 4 muligheder.",
+  "section.gameTypes.D": "◎→◯ — Hovedstad til land — Du får en hovedstad og vælger, hvilket land den tilhører.",
+  "section.gameTypes.F": "◎? — Identificér hovedstaden — En hovedstad fremhæves på globussen, og du vælger dens navn.",
+  "section.gameTypes.A": "◯ — Peg på landet — Du får et navn og trykker på landet på globussen.",
+  "section.gameTypes.B": "◎ — Peg på hovedstaden — Du får en hovedstad og trykker på dens placering på globussen.",
+  "section.gameTypes.adventure": "Eventyr-tilstanden kombinerer alle typer og tilpasser sig dine fremskridt. Det er den anbefalede måde at spille på.",
+  "section.gameTypes.stamps": "Typerne \u00abPeg på landet\u00bb og \u00abPeg på hovedstaden\u00bb bruges til stempelprøverne i Passet.",
+
+  "section.stats.title": "Statistik",
+  "section.stats.body": "Statistik-visningen har to faner:\n\n• Spil — Viser din mestring i hver spilletype.\n\n• Stempelprøver — Viser dine resultater i prøverne i Passet.\n\nDu kan skifte mellem mestringsindikatorer (✓/✗) og træfprocenter. Tryk på et land for at gå direkte til dets infokort i Udforsk.",
+
+  "section.sources.title": "Datakilder",
+  "section.sources.body": "Data stammer fra offentlige kilder som De Forenede Nationer, Natural Earth og Wikidata."
+}

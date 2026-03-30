@@ -1,1 +1,30 @@
-{}
+{
+  "title": "关于 Exploris",
+
+  "intro": "Exploris 是一款通过互动 3D 地球仪学习地理的应用。你可以用直观有趣的方式学习国家、首都等知识。",
+
+  "section.countries.title": "国家",
+  "section.countries.body": "Exploris 收录了联合国承认的 195 个国家，这是全球最广泛接受的标准。你也可以在地球仪上探索未被承认或有争议的地区。\n\n地球仪还原了从太空看地球的视角。这让你能感受到国家的真实大小——平面地图做不到这一点。",
+
+  "section.learn.title": "如何学习",
+  "section.learn.tips.explore": "先从探索开始：转动地球仪，点击国家查看信息卡片，熟悉它们的形状和位置。列表视图可以帮你把国家和首都对应起来。点击列表中的国家或首都，就能在地球仪上看到它。",
+  "section.learn.tips.play": "准备好了就去游戏吧。推荐你玩冒险模式，它会智能组合下面介绍的各种游戏类型，根据你的掌握程度来出题。",
+  "section.learn.tips.passport": "你的终极目标是集满护照上的印章。要获得印章，你需要零失误地通过印章考试。",
+
+  "section.gameTypes.title": "游戏类型",
+  "section.gameTypes.intro": "共有 6 种游戏类型，按难度从低到高排列：",
+  "section.gameTypes.E": "◯? — 认国家 — 地球仪上高亮一个国家，从 4 个选项中选出它的名字。",
+  "section.gameTypes.C": "◯→◎ — 国家到首都 — 给你一个国家，从 4 个选项中选出它的首都。",
+  "section.gameTypes.D": "◎→◯ — 首都到国家 — 给你一个首都，选出它属于哪个国家。",
+  "section.gameTypes.F": "◎? — 认首都 — 地球仪上高亮一个首都，选出它的名字。",
+  "section.gameTypes.A": "◯ — 指出国家 — 给你一个国家名，在地球仪上点击这个国家。",
+  "section.gameTypes.B": "◎ — 指出首都 — 给你一个首都名，在地球仪上点击它的位置。",
+  "section.gameTypes.adventure": "冒险模式会组合所有类型，并根据你的进度调整出题。这是最推荐的玩法。",
+  "section.gameTypes.stamps": "\u201c指出国家\u201d和\u201c指出首都\u201d是护照印章考试中使用的类型。",
+
+  "section.stats.title": "统计",
+  "section.stats.body": "统计页面有两个标签：\n\n• 游戏 — 显示你在每种游戏类型中的掌握程度。\n\n• 印章考试 — 显示你的护照考试结果。\n\n你可以在掌握度指标（✓/✗）和正确率之间切换。点击国家可以直接跳转到探索中的信息卡片。",
+
+  "section.sources.title": "数据来源",
+  "section.sources.body": "数据来自联合国、Natural Earth 和 Wikidata 等公开来源。"
+}

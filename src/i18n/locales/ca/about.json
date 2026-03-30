@@ -1,1 +1,30 @@
-{}
+{
+  "title": "Sobre Exploris",
+
+  "intro": "Exploris és una app d'aprenentatge de geografia amb un globus terraqüi interactiu en 3D. Aprèn països, capitals i molt més de forma visual i entretinguda.",
+
+  "section.countries.title": "Països",
+  "section.countries.body": "Exploris inclou els 195 països reconeguts per les Nacions Unides, l'estàndard més acceptat a nivell mundial. També pots explorar al globus territoris no reconeguts o en disputa.\n\nEl globus reprodueix la vista de la Terra des de l'espai. Això et permet apreciar la mida real dels països, una cosa que els mapes plans no aconsegueixen.",
+
+  "section.learn.title": "Com aprendre",
+  "section.learn.tips.explore": "Comença a Explorar: gira el globus, toca països per veure la seva fitxa i familiaritza't amb la seva forma i ubicació. La vista de Taula t'ajuda a associar cada país amb la seva capital. Prem sobre qualsevol país o capital a la taula per veure'l al globus.",
+  "section.learn.tips.play": "Quan estiguis a punt, llança't a Jugar. Et recomanem que juguis en mode Aventura, que combina de manera intel·ligent els diferents tipus de joc explicats a sota; s'adapta al que saps per ajudar-te a aprendre.",
+  "section.learn.tips.passport": "El teu objectiu final és omplir el Passaport de segells. Per aconseguir un segell, has de completar una prova de segell sense errors.",
+
+  "section.gameTypes.title": "Tipus de joc",
+  "section.gameTypes.intro": "Hi ha 6 tipus de joc, ordenats de menor a major dificultat:",
+  "section.gameTypes.E": "◯? — Identifica el país — Un país es ressalta al globus i tries el seu nom entre 4 opcions.",
+  "section.gameTypes.C": "◯→◎ — País a capital — Et donen un país i tries la seva capital entre 4 opcions.",
+  "section.gameTypes.D": "◎→◯ — Capital a país — Et donen una capital i tries a quin país pertany.",
+  "section.gameTypes.F": "◎? — Identifica la capital — Una capital es ressalta al globus i tries el seu nom.",
+  "section.gameTypes.A": "◯ — Assenyala el país — Et donen un nom i toques el país al globus.",
+  "section.gameTypes.B": "◎ — Assenyala la capital — Et donen una capital i toques la seva ubicació al globus.",
+  "section.gameTypes.adventure": "El mode Aventura combina tots els tipus i s'adapta al teu progrés. És la forma recomanada de jugar.",
+  "section.gameTypes.stamps": "Els tipus «Assenyala el país» i «Assenyala la capital» són els que s'utilitzen a les proves de segell del Passaport.",
+
+  "section.stats.title": "Estadístiques",
+  "section.stats.body": "La vista d'Estadístiques té dues pestanyes:\n\n• Jugar — Mostra el teu domini en cada tipus de joc.\n\n• Proves de segell — Mostra els teus resultats a les proves del Passaport. \n\nPots alternar entre indicadors de domini (✓/✗) i percentatges d'encert. Toca un país per anar directament a la seva fitxa a Explorar.",
+
+  "section.sources.title": "Fonts de dades",
+  "section.sources.body": "Les dades provenen de fonts públiques com les Nacions Unides, Natural Earth i Wikidata."
+}

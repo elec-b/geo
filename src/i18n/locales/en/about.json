@@ -1,30 +1,30 @@
 {
   "title": "About Exploris",
 
-  "intro": "Exploris is an interactive geography learning app with a 3D globe. Learn countries, capitals and much more in a visual and fun way.",
+  "intro": "Exploris is a geography learning app with an interactive 3D globe. Learn countries, capitals, and much more in a visual and engaging way.",
 
-  "section.countries.title": "Countries & data",
-  "section.countries.body": "Exploris includes all 195 countries recognised by the United Nations, the most widely accepted international standard. You can also explore unrecognised or disputed territories on the globe.\n\nThe globe shows Earth as seen from space. This lets you appreciate the true size of countries — something flat maps can't do.",
+  "section.countries.title": "Countries",
+  "section.countries.body": "Exploris includes the 195 countries recognized by the United Nations, the most widely accepted standard worldwide. You can also explore unrecognized or disputed territories on the globe.\n\nThe globe reproduces the view of Earth from space. This lets you appreciate the true size of countries, something flat maps can't achieve.",
 
   "section.learn.title": "How to learn",
-  "section.learn.tips.explore": "Start in Explore: spin the globe, tap countries to see their info card and get familiar with their shape and location. The Table view helps you associate each country with its capital. Tap any country or capital in the table to see it on the globe.",
-  "section.learn.tips.play": "When you're ready, jump into Play. Adventure mode starts easy and ramps up as you get answers right. How far can you go?",
-  "section.learn.tips.passport": "Your ultimate goal is to fill your Passport with stamps. To earn a stamp you must complete a test with zero mistakes.",
+  "section.learn.tips.explore": "Start in Explore: spin the globe, tap countries to see their info card, and get familiar with their shape and location. The Table view helps you associate each country with its capital. Tap any country or capital in the table to see it on the globe.",
+  "section.learn.tips.play": "When you're ready, jump into Play. We recommend playing in Adventure mode, which intelligently combines the different game types explained below; it adapts to what you know to help you learn.",
+  "section.learn.tips.passport": "Your ultimate goal is to fill the Passport with stamps. To earn a stamp, you must complete a stamp test with no mistakes.",
 
   "section.gameTypes.title": "Game types",
-  "section.gameTypes.intro": "There are 6 game types, from easiest to hardest:",
-  "section.gameTypes.E": "◯? Identify the country — A country is highlighted on the globe and you pick its name from 4 options.",
-  "section.gameTypes.C": "◯→◎ Country to capital — You're given a country and pick its capital from 4 options.",
-  "section.gameTypes.D": "◎→◯ Capital to country — You're given a capital and pick which country it belongs to.",
-  "section.gameTypes.F": "◎? Identify the capital — A capital is highlighted on the globe and you pick its name.",
-  "section.gameTypes.A": "◯ Point to the country — You're given a name and tap the country on the globe.",
-  "section.gameTypes.B": "◎ Point to the capital — You're given a capital and tap its location on the globe.",
+  "section.gameTypes.intro": "There are 6 game types, ordered from easiest to hardest:",
+  "section.gameTypes.E": "◯? — Identify the country — A country is highlighted on the globe and you choose its name from 4 options.",
+  "section.gameTypes.C": "◯→◎ — Country to capital — You're given a country and choose its capital from 4 options.",
+  "section.gameTypes.D": "◎→◯ — Capital to country — You're given a capital and choose which country it belongs to.",
+  "section.gameTypes.F": "◎? — Identify the capital — A capital is highlighted on the globe and you choose its name.",
+  "section.gameTypes.A": "◯ — Point to the country — You're given a name and tap the country on the globe.",
+  "section.gameTypes.B": "◎ — Point to the capital — You're given a capital and tap its location on the globe.",
   "section.gameTypes.adventure": "Adventure mode combines all types and adapts to your progress. It's the recommended way to play.",
-  "section.gameTypes.stamps": "\"Point to the country\" and \"Point to the capital\" are the types used in the Passport stamp tests.",
+  "section.gameTypes.stamps": "The \u201cPoint to the country\u201d and \u201cPoint to the capital\u201d types are the ones used in the Passport stamp tests.",
 
   "section.stats.title": "Statistics",
-  "section.stats.body": "The Statistics view has two tabs:\n\n• Play — Shows your mastery of each game type. A green ✓ means you got it right; a grey ✓ means inferred mastery (for example, if you can point to a country on the map, you can also identify it).\n\n• Stamp tests — Shows your results in the Passport tests. Tracked independently from Play.\n\nYou can switch between mastery indicators (✓/✗) and accuracy percentages. Tap a country to go straight to its card in Explore.",
+  "section.stats.body": "The Statistics view has two tabs:\n\n• Play — Shows your mastery in each game type.\n\n• Stamp tests — Shows your results in the Passport tests. \n\nYou can toggle between mastery indicators (✓/✗) and accuracy percentages. Tap a country to go directly to its info card in Explore.",
 
   "section.sources.title": "Data sources",
-  "section.sources.body": "Data comes from public sources such as the United Nations, Natural Earth and Wikidata."
+  "section.sources.body": "Data comes from public sources such as the United Nations, Natural Earth, and Wikidata."
 }

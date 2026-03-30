@@ -1,1 +1,30 @@
-{}
+{
+  "title": "Sobre o Exploris",
+
+  "intro": "Exploris é um app de aprendizado de geografia com um globo terrestre interativo em 3D. Aprenda países, capitais e muito mais de forma visual e divertida.",
+
+  "section.countries.title": "Países",
+  "section.countries.body": "Exploris inclui os 195 países reconhecidos pelas Nações Unidas, o padrão mais aceito em nível mundial. Você também pode explorar no globo territórios não reconhecidos ou em disputa.\n\nO globo reproduz a vista da Terra a partir do espaço. Isso permite que você perceba o tamanho real dos países, algo que mapas planos não conseguem mostrar.",
+
+  "section.learn.title": "Como aprender",
+  "section.learn.tips.explore": "Comece em Explorar: gire o globo, toque nos países para ver sua ficha e familiarize-se com sua forma e localização. A vista de Tabela ajuda a associar cada país à sua capital. Toque em qualquer país ou capital na tabela para vê-lo no globo.",
+  "section.learn.tips.play": "Quando estiver pronto, mergulhe em Jogar. Recomendamos jogar no modo Aventura, que combina de forma inteligente os diferentes tipos de jogo explicados abaixo; ele se adapta ao que você sabe para ajudar a aprender.",
+  "section.learn.tips.passport": "Seu objetivo final é preencher o Passaporte com carimbos. Para conseguir um carimbo, você deve completar uma prova de carimbo sem erros.",
+
+  "section.gameTypes.title": "Tipos de jogo",
+  "section.gameTypes.intro": "Existem 6 tipos de jogo, ordenados do mais fácil ao mais difícil:",
+  "section.gameTypes.E": "◯? — Identifique o país — Um país é destacado no globo e você escolhe seu nome entre 4 opções.",
+  "section.gameTypes.C": "◯→◎ — País para capital — Você recebe um país e escolhe sua capital entre 4 opções.",
+  "section.gameTypes.D": "◎→◯ — Capital para país — Você recebe uma capital e escolhe a qual país ela pertence.",
+  "section.gameTypes.F": "◎? — Identifique a capital — Uma capital é destacada no globo e você escolhe seu nome.",
+  "section.gameTypes.A": "◯ — Aponte o país — Você recebe um nome e toca o país no globo.",
+  "section.gameTypes.B": "◎ — Aponte a capital — Você recebe uma capital e toca sua localização no globo.",
+  "section.gameTypes.adventure": "O modo Aventura combina todos os tipos e se adapta ao seu progresso. É a forma recomendada de jogar.",
+  "section.gameTypes.stamps": "Os tipos \u201cAponte o pa\u00eds\u201d e \u201cAponte a capital\u201d s\u00e3o os usados nas provas de carimbo do Passaporte.",
+
+  "section.stats.title": "Estatísticas",
+  "section.stats.body": "A vista de Estatísticas tem duas abas:\n\n• Jogar — Mostra seu domínio em cada tipo de jogo.\n\n• Provas de carimbo — Mostra seus resultados nas provas do Passaporte. \n\nVocê pode alternar entre indicadores de domínio (✓/✗) e porcentagens de acerto. Toque em um país para ir direto à sua ficha em Explorar.",
+
+  "section.sources.title": "Fontes de dados",
+  "section.sources.body": "Os dados vêm de fontes públicas como as Nações Unidas, Natural Earth e Wikidata."
+}
