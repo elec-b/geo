@@ -4,6 +4,7 @@
   "editor.titleEdit": "프로필 수정",
   "editor.titleCreate": "프로필 만들기",
   "editor.chooseAvatar": "아바타를 선택하세요",
+  "editor.chooseColor": "또는 색상 선택",
   "editor.nameLabel": "이름",
   "editor.namePlaceholder": "프로필 이름",
   "editor.save": "저장",

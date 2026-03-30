@@ -4,6 +4,7 @@
   "editor.titleEdit": "Редактировать профиль",
   "editor.titleCreate": "Создать профиль",
   "editor.chooseAvatar": "Выбери аватар",
+  "editor.chooseColor": "или выбери цвет",
   "editor.nameLabel": "Имя",
   "editor.namePlaceholder": "Название профиля",
   "editor.save": "Сохранить",

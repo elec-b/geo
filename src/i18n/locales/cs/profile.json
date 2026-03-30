@@ -4,6 +4,7 @@
   "editor.titleEdit": "Upravit profil",
   "editor.titleCreate": "Vytvořit profil",
   "editor.chooseAvatar": "Vyber si avatar",
+  "editor.chooseColor": "nebo zvol barvu",
   "editor.nameLabel": "Jméno",
   "editor.namePlaceholder": "Název profilu",
   "editor.save": "Uložit",

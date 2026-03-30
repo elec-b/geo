@@ -367,10 +367,16 @@ function App() {
             setShowProfileEditor(false);
             setEditingProfile(null);
           }}
-          onSave={() => {
+          onSave={(created) => {
             setShowProfileEditor(false);
             setShowProfileSelector(false);
             setEditingProfile(null);
+            if (created) {
+              setStampTestRequest(null);
+              setStampTestActive(false);
+              setActiveTab('explore');
+              globeRef.current?.resetToIdle();
+            }
           }}
         />
       )}

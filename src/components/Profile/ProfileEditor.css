@@ -115,6 +115,53 @@
   height: 2rem;
 }
 
+/* Preview de avatar de color */
+.profile-editor__preview-avatar--color {
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-accent-cyan);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+/* Grid de colores */
+.profile-editor__color-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  justify-items: center;
+}
+
+.profile-editor__color-option {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  background: var(--glass-bg);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-editor__color-option:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-editor__color-option--selected {
+  border-color: var(--color-accent-cyan);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.profile-editor__color-swatch {
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-full);
+}
+
 /* Input de nombre */
 .profile-editor__name-label {
   font-size: var(--font-size-sm);

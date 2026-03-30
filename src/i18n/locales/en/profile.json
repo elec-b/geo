@@ -4,6 +4,7 @@
   "editor.titleEdit": "Edit profile",
   "editor.titleCreate": "Create profile",
   "editor.chooseAvatar": "Choose your avatar",
+  "editor.chooseColor": "or choose a color",
   "editor.nameLabel": "Name",
   "editor.namePlaceholder": "Profile name",
   "editor.save": "Save",

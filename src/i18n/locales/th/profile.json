@@ -4,6 +4,7 @@
   "editor.titleEdit": "แก้ไขโปรไฟล์",
   "editor.titleCreate": "สร้างโปรไฟล์",
   "editor.chooseAvatar": "เลือกอวาตาร์ของคุณ",
+  "editor.chooseColor": "หรือเลือกสี",
   "editor.nameLabel": "ชื่อ",
   "editor.namePlaceholder": "ชื่อโปรไฟล์",
   "editor.save": "บันทึก",

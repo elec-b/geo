@@ -4,6 +4,7 @@
   "editor.titleEdit": "Profil szerkesztése",
   "editor.titleCreate": "Profil létrehozása",
   "editor.chooseAvatar": "Válassz avatárt",
+  "editor.chooseColor": "vagy válassz színt",
   "editor.nameLabel": "Név",
   "editor.namePlaceholder": "Profil neve",
   "editor.save": "Mentés",

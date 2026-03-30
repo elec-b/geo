@@ -4,6 +4,7 @@
   "editor.titleEdit": "プロフィール編集",
   "editor.titleCreate": "プロフィール作成",
   "editor.chooseAvatar": "アバターを選択",
+  "editor.chooseColor": "または色を選ぶ",
   "editor.nameLabel": "名前",
   "editor.namePlaceholder": "プロフィール名",
   "editor.save": "保存",
