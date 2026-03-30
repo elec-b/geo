@@ -35,6 +35,7 @@
 - [x] (**mejora**) Columna de nivel en tabla de Explorar (icono 📸/🎒/🗺️, sorting por tier, header 🏆 en gris)
 - [ ] (**mejora**) En Pasaporte, en los continente-nivel bloqueados, mostrar el número de países debajo del candado
 - [ ] (**mejora**) Cambié algunas cosas del about.json en español... Pero no en los otros idiomas. Volver a repetir traducciones para todos los idiomas de la app.
+- [ ] (**investigar**) ¿Cómo se dice Turquía en inglés? Me salió un nombre raro jugando
 - [ ] Cuando se crea un nuevo perfil:
     - cerrar la sesión actual (salir del Juego o de la prueba de Sello o de las Estadísticas que haya en curso; quizás lo más fácil sea simplemente ir a Explorar)
     - al introducir el nombre, no tener que borrar la palabra "Explorador". El usuario debe poder escribir directamente su nombre. Si no se escribe nada el nombre será Explorador (y podemos seguir mostrando la palabra como la opción por defecto, pero el color de la fuente será apagado)
