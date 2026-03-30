@@ -3,7 +3,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 export { detectLocale } from '../utils/locale';
 
-const NAMESPACES = ['common', 'explore', 'game', 'passport', 'stats', 'settings', 'profile'] as const;
+const NAMESPACES = ['common', 'explore', 'game', 'passport', 'stats', 'settings', 'profile', 'about'] as const;
 
 /** Idiomas soportados → nombre nativo (para el selector de idioma) */
 export const SUPPORTED_LOCALES: Record<string, string> = {

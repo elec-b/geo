@@ -37,5 +37,6 @@
   "aria.userProfile": "User profile",
   "aria.stats": "Statistics",
   "aria.settings": "Settings",
-  "aria.navigation": "Main navigation"
+  "aria.navigation": "Main navigation",
+  "aria.about": "About"
 }

@@ -23,6 +23,7 @@
 - [x] **UX pre-lanzamiento**: N.º de países en modal de sello, label simplificado de marcadores, orden de tabs (Explorar/Jugar/Pasaporte), persistencia de continente y sorting en Tabla, onboarding en Pasaporte. Persistencia de modo Explorar (Globo/Tabla) entre tabs, reset a Globo+Todos al abrir app
 - [x] **Internacionalización**: 32 idiomas (26 base + 6 ampliación) + 5 variantes regionales. i18next con lazy loading y plurales CLDR. Datos multi-idioma: CLDR (países/monedas/idiomas), Wikidata SPARQL (capitales/Wikipedia slugs), Claude (gentilicios/mares). 175 archivos UI, 6682 Wikipedia slugs. Verificación contra fuentes autoritativas (32 idiomas). ~100 overrides de nombres, fixes de layout multi-idioma, selector de idioma en bottom sheet dedicado
 - [x] **Logo/branding**: Globo wireframe SVG (blanco→gris, paralelos curvos, glow sutil). LoadingScreen con logo + título "Exploris". Icono iOS 1024×1024 y splash screens generados desde SVG. Script `generate-icons.mjs`
+- [x] **Acerca de**: Pantalla completa con secciones colapsables (países, cómo aprender, tipos de juego, estadísticas, fuentes). Icono info en header. Namespace i18n `about` (es + en + 30 placeholders)
 
 ---
 
@@ -31,14 +32,15 @@
 > Ordenados por prioridad. Cada bloque debe completarse antes de avanzar al siguiente (salvo tareas marcadas como opcionales).
 
 ### Acabados pre-lanzamiento
-- [ ] Sección «Acerca de»: explicar criterios (países ONU, fuentes UNDP, REST Countries, etc.)
+- [ ] (**mejora**) En Explorar, en la tabla, incluir una columna con el nivel. Para que sea estrecha, sugiero que simplemente incluya el icono de nivel para cada país. Se debería poder hacer sorting por nivel - que, si no me equivoco, debería ser lo mismo que hacer sorting por la columna de población.
+- [ ] Permitir al usuario elegir un color de logo, además de los iconos de animales que ya tenemos
 - [ ] Refinar tema oscuro.
     - Buscar tonos más en escala de negros y grises en vez de tantos tonos azules
     - Si cambia, asegurar que todo es coherente, incluyendo el logo / icono, que ahora tiene fondo azul
 - [ ] Diseñar e implementar tema claro
 - [ ] Revisar que los datos de la ficha de país están actualizados + asegurar que se actualicen bien en el futuro
 - [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
-- [ ] Permitir al usuario elegir un color de logo, además de los iconos de animales que ya tenemos
+- [ ] Verificar que TODAS las fuentes de datos que utilizamos se mantienen. Por ejemplo, REST Countries dejó de mantenerse en 2024...
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
 - [x] Nombre de la app: **Exploris** (spike en `docs/spikes/naming-app.md` — 23 nombres evaluados, nombre anterior inviable por colisión directa)
 

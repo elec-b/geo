@@ -10,6 +10,7 @@ import { JugarView, type StampTestRequest } from './components/Game/JugarView';
 import { PassportView } from './components/Passport/PassportView';
 import { ProfileSelector, getNextDefaultName } from './components/Profile/ProfileSelector';
 import { ProfileEditor } from './components/Profile/ProfileEditor';
+import { AboutSheet } from './components/About/AboutSheet';
 import { SettingsSheet } from './components/Settings/SettingsSheet';
 import { LanguageSheet } from './components/Settings/LanguageSheet';
 import { loadCountryData, loadCapitals, invalidateCache } from './data/countryData';
@@ -69,7 +70,8 @@ function App() {
   const activeTabRef = useRef<TabId>(activeTab);
   activeTabRef.current = activeTab;
 
-  // Modal de configuración
+  // Modales
+  const [showAbout, setShowAbout] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [showLanguage, setShowLanguage] = useState(false);
 
@@ -250,6 +252,7 @@ function App() {
         onStatsClick={handleOpenStats}
         onAvatarClick={() => setShowProfileSelector(true)}
         onSettingsClick={() => setShowSettings(true)}
+        onAboutClick={() => setShowAbout(true)}
       />
 
       {/* Globo: siempre montado, sin wrapper — iOS rompe touch tras re-render si se envuelve */}
@@ -363,6 +366,10 @@ function App() {
             setEditingProfile(null);
           }}
         />
+      )}
+
+      {showAbout && (
+        <AboutSheet onClose={() => setShowAbout(false)} />
       )}
 
       {showSettings && (

@@ -9,9 +9,10 @@ interface AppHeaderProps {
   onStatsClick?: () => void;
   onAvatarClick?: () => void;
   onSettingsClick?: () => void;
+  onAboutClick?: () => void;
 }
 
-export function AppHeader({ onStatsClick, onAvatarClick, onSettingsClick }: AppHeaderProps) {
+export function AppHeader({ onStatsClick, onAvatarClick, onSettingsClick, onAboutClick }: AppHeaderProps) {
   const { t } = useTranslation('common');
   const activeAvatar = useAppStore((s) => {
     const profile = s.profiles.find((p) => p.id === s.activeProfileId);
@@ -20,14 +21,27 @@ export function AppHeader({ onStatsClick, onAvatarClick, onSettingsClick }: AppH
 
   return (
     <header className="app-header">
-      {/* Avatar del perfil activo (izquierda) */}
-      <button
-        className="app-header__button app-header__button--avatar"
-        onClick={onAvatarClick}
-        aria-label={t('aria.userProfile')}
-      >
-        <AvatarIcon avatarId={activeAvatar} size="sm" />
-      </button>
+      {/* Grupo izquierdo: avatar + info */}
+      <div className="app-header__left">
+        <button
+          className="app-header__button app-header__button--avatar"
+          onClick={onAvatarClick}
+          aria-label={t('aria.userProfile')}
+        >
+          <AvatarIcon avatarId={activeAvatar} size="sm" />
+        </button>
+        <button
+          className="app-header__button"
+          onClick={onAboutClick}
+          aria-label={t('aria.about')}
+        >
+          <svg className="app-header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="16" x2="12" y2="12" />
+            <circle cx="12" cy="8" r="0.5" fill="currentColor" stroke="none" />
+          </svg>
+        </button>
+      </div>
 
       {/* Botones derechos: estadísticas + configuración */}
       <div className="app-header__right">
