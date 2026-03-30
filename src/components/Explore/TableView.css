@@ -84,9 +84,14 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.table-view__header-btn--center {
+.table-view__header-btn--level {
   text-align: center;
-  font-size: var(--font-size-sm);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: grayscale(1);
+  opacity: 0.6;
 }
 
 .table-view__header-btn--right {
@@ -101,6 +106,7 @@
 .table-view__row {
   display: grid;
   grid-template-columns: 2rem 2fr 2fr 1fr;
+  padding: 0 var(--spacing-sm);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -143,6 +149,7 @@
   justify-content: center;
   padding-left: 0;
   padding-right: 0;
+  gap: 0;
   font-size: var(--font-size-sm);
 }
 

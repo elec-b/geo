@@ -32,7 +32,9 @@
 > Ordenados por prioridad. Cada bloque debe completarse antes de avanzar al siguiente (salvo tareas marcadas como opcionales).
 
 ### Acabados pre-lanzamiento
-- [ ] (**mejora**) En Explorar, en la tabla, incluir una columna con el nivel. Para que sea estrecha, sugiero que simplemente incluya el icono de nivel para cada país. Se debería poder hacer sorting por nivel - que, si no me equivoco, debería ser lo mismo que hacer sorting por la columna de población.
+- [x] (**mejora**) Columna de nivel en tabla de Explorar (icono 📸/🎒/🗺️, sorting por tier, header 🏆 en gris)
+- [ ] (**mejora**) En Pasaporte, en los continente-nivel bloqueados, mostrar el número de países debajo del candado
+- [ ] (**mejora**) Cambié algunas cosas del about.json en español... Pero no en los otros idiomas. Volver a repetir traducciones para todos los idiomas de la app.
 - [ ] Cuando se crea un nuevo perfil:
     - cerrar la sesión actual (salir del Juego o de la prueba de Sello o de las Estadísticas que haya en curso; quizás lo más fácil sea simplemente ir a Explorar)
     - al introducir el nombre, no tener que borrar la palabra "Explorador". El usuario debe poder escribir directamente su nombre. Si no se escribe nada el nombre será Explorador (y podemos seguir mostrando la palabra como la opción por defecto, pero el color de la fuente será apagado)

@@ -119,8 +119,8 @@ export function TableView({
 
   const renderHeader = () => (
     <div className="table-view__table-header">
-      <button className="table-view__header-btn table-view__header-btn--center" onClick={() => toggleSort('level')}>
-        {'⭐'}<SortIndicator active={sortKey === 'level'} dir={sortDir} />
+      <button className="table-view__header-btn table-view__header-btn--level" onClick={() => toggleSort('level')}>
+        {'🏆'}<SortIndicator active={sortKey === 'level'} dir={sortDir} />
       </button>
       <button className="table-view__header-btn" onClick={() => toggleSort('name')}>
         {t('table.country')}<SortIndicator active={sortKey === 'name'} dir={sortDir} />
