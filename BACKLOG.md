@@ -38,8 +38,8 @@
 - [x] (**mejora**) Traducciones del namespace `about` a los 32 idiomas de la app (alineadas con el español como fuente de verdad)
 - [ ] Refinar tema oscuro.
     - Repasar colores y asegurar que no hay colores hardcodeados
-    - Buscar tonos más en escala de negros y grises en vez de tantos tonos azules
-    - Si cambia, asegurar que todo es coherente, incluyendo el logo / icono, que ahora tiene fondo azul
+    - Buscarr y probar tonos más en escala de negros y grises en vez de tantos tonos azules
+    - Si decidimos cambiar colores, asegurar que todo es coherente, incluyendo el logo / icono, que ahora tiene fondo azul
 - [ ] Diseñar e implementar tema claro
 - [ ] Actualizar HDI/IDH-D: regenerar `hdi.json` desde el Excel oficial del HDR 2025 (spike en `docs/spikes/auditoria-datos-ficha.md` — 192 de 194 países desactualizados + errores de origen). Idealmente con script automatizado
 - [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
