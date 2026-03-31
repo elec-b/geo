@@ -1,9 +1,9 @@
 /* Variables del tema oscuro - Exploris */
 :root {
-  /* Colores base */
-  --color-bg-primary: #0a0a0c;
-  --color-bg-secondary: #141416;
-  --color-bg-tertiary: #1e1e22;
+  /* Colores base (espacio — más oscuro que el océano, con sutil tinte azul) */
+  --color-bg-primary: #04060a;
+  --color-bg-secondary: #0a0e16;
+  --color-bg-tertiary: #141a22;
 
   /* Acentos */
   --color-accent-cyan: #60a5fa;
@@ -27,9 +27,9 @@
   --color-oceania: #22c55e;
 
   /* Superficies semi-transparentes (paneles, sheets) */
-  --color-surface: rgba(20, 20, 22, 0.85);
-  --color-surface-heavy: rgba(20, 20, 22, 0.95);
-  --color-surface-solid: rgba(20, 20, 22, 0.98);
+  --color-surface: rgba(14, 14, 16, 0.85);
+  --color-surface-heavy: rgba(14, 14, 16, 0.95);
+  --color-surface-solid: rgba(14, 14, 16, 0.98);
 
   /* Overlays (fondo oscuro detrás de modales) */
   --color-overlay: rgba(0, 0, 0, 0.5);
