@@ -18,7 +18,7 @@
 - [x] **Estadísticas**: Dos pestañas (Jugar + Pruebas de sello). Toggle ✓/%, código de colores, sorting por columna, defaults inteligentes según origen, aviso de permanencia de sellos. Click en país navega a Explorar con ficha (Stats se minimiza y restaura). Auto-selección de nivel al cambiar continente
 - [x] **Perfiles**: Multi-perfil con avatares, cambio rápido, progreso independiente, limpieza de sesión al cambiar
 - [x] **Configuración**: Bottom sheet (vibración, idioma, tema, marcadores, mares/océanos). Feedback háptico
-- [x] **UX general**: Bottom sheets con drag-to-dismiss, selección de texto deshabilitada, feedback verde/rojo al 5%, colores olímpicos unificados, anti-viudas tipográficas (`text-wrap: pretty/balance`), fix animación sello capital (limpieza de `--animating`), emoji de nivel Turista cambiado de 🧳 a 📸
+- [x] **UX general**: Bottom sheets con drag-to-dismiss, selección de texto deshabilitada, feedback verde/rojo al 2%, colores olímpicos unificados, anti-viudas tipográficas (`text-wrap: pretty/balance`), fix animación sello capital (limpieza de `--animating`), emoji de nivel Turista cambiado de 🧳 a 📸
 - [x] **Testing manual**: Todos los sellos en todos los continentes, aventura en todos los continente-nivel, feedback anotado
 - [x] **UX pre-lanzamiento**: N.º de países en modal de sello, label simplificado de marcadores, orden de tabs (Explorar/Jugar/Pasaporte), persistencia de continente y sorting en Tabla, onboarding en Pasaporte. Persistencia de modo Explorar (Globo/Tabla) entre tabs, reset a Globo+Todos al abrir app
 - [x] **Internacionalización**: 32 idiomas (26 base + 6 ampliación) + 5 variantes regionales. i18next con lazy loading y plurales CLDR. Datos multi-idioma: CLDR (países/monedas/idiomas), Wikidata SPARQL (capitales/Wikipedia slugs), Claude (gentilicios/mares). 175 archivos UI, 6682 Wikipedia slugs. Verificación contra fuentes autoritativas (32 idiomas). ~100 overrides de nombres, fixes de layout multi-idioma, selector de idioma en bottom sheet dedicado
@@ -36,14 +36,13 @@
 - [x] (**mejora**) Columna de nivel en tabla de Explorar (icono 📸/🎒/🗺️, sorting por tier, header 🏆 en gris)
 - [x] (**mejora**) En Pasaporte, en los continente-nivel bloqueados, mostrar el número de países debajo del candado
 - [x] (**mejora**) Traducciones del namespace `about` a los 32 idiomas de la app (alineadas con el español como fuente de verdad)
-- [ ] Refinar tema oscuro.
-    - Repasar colores y asegurar que no hay colores hardcodeados
-    - Buscarr y probar tonos más en escala de negros y grises en vez de tantos tonos azules
-    - Si decidimos cambiar colores, asegurar que todo es coherente, incluyendo el logo / icono, que ahora tiene fondo azul
+- [x] Refinar tema oscuro. Paleta premium: espacio negro (#04060a), océano azul oscuro (#060a12), tierra gris azulada (#222630), superficies con tinte azul (rgba(8,14,24,...)). Cyan neón → azul suave (#60a5fa), púrpura → indigo (#818cf8). ~90 colores hardcodeados → 14 variables semánticas. Estrellas eliminadas. Feedback: ocre para corrección A/B, verde/rojo desaturados, flash al 2%. Texto más legible. Icono/splash regenerados
 - [ ] Diseñar e implementar tema claro
 - [ ] Actualizar HDI/IDH-D: regenerar `hdi.json` desde el Excel oficial del HDR 2025 (spike en `docs/spikes/auditoria-datos-ficha.md` — 192 de 194 países desactualizados + errores de origen). Idealmente con script automatizado
 - [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
-- [ ] Auditar y migrar TODAS las fuentes de datos, asegurar que en la actualidad se mantienen: REST Countries fue archivado en junio 2024 (datos de población congelados, desfase <7% en países grandes). Evaluar World Bank API o UN Stats como reemplazo. Abordar junto con la tarea de CDN. Detalle de algunos datos de la ficha en `docs/spikes/auditoria-datos-ficha.md`
+- [ ] Auditar y migrar TODAS las fuentes de datos, y asegurar que en la actualidad se mantienen. El problema principal está en los datos de población y de HDI e IHDI. REST Countries fue archivado en junio 2024 (datos de población congelados, desfase <7% en países grandes). Evaluar World Bank API o UN Stats como reemplazo. Notas:
+    - Ser inteligentes para simplificar tarea de CDN posterior. 
+    - Hay que detalle del problema de los datos de la ficha en `docs/spikes/auditoria-datos-ficha.md` - ahora es el momento de abordar esos cambios (cuando se hizo el spike acordamos no llevar a cabo ninguna acción inmediata)
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
 - [x] Nombre de la app: **Exploris** (spike en `docs/spikes/naming-app.md` — 23 nombres evaluados, nombre anterior inviable por colisión directa)
 
