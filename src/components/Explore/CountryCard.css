@@ -226,4 +226,5 @@
   height: 2rem;
   object-fit: contain;
   border-radius: var(--radius-full);
+  border: 1px solid var(--glass-border);
 }
