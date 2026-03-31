@@ -23,6 +23,8 @@ export interface GlobeThemeColors {
   correction: string;
   /** Pin de capital destacado en juego (sobre país coloreado) */
   capitalPinHighlight: string;
+  /** País dimmed (filtro continente activo) — color sólido, no alpha */
+  countryDimmed: string;
 }
 
 const DARK_GLOBE: GlobeThemeColors = {
@@ -45,6 +47,7 @@ const DARK_GLOBE: GlobeThemeColors = {
   incorrect: '#a05050',
   correction: '#a08850',
   capitalPinHighlight: 'rgba(255, 255, 255, 0.85)',
+  countryDimmed: '#131620',
 };
 
 const LIGHT_GLOBE: GlobeThemeColors = {
@@ -60,13 +63,14 @@ const LIGHT_GLOBE: GlobeThemeColors = {
   labelCapital: 'rgba(70, 60, 40, 0.7)',
   labelCapitalNonUn: 'rgba(160, 100, 20, 0.6)',
   labelShadow: 'rgba(245, 240, 230, 0.7)',
-  seaLabelRgb: '30, 60, 120',
+  seaLabelRgb: '15, 35, 80',
   markerRgb: '80, 65, 35',
   selected: '#c49a4c',
   correct: '#3a9a5c',
   incorrect: '#c44040',
   correction: '#b8922e',
   capitalPinHighlight: 'rgba(60, 45, 20, 0.85)',
+  countryDimmed: '#9ab4c8',
 };
 
 export function getGlobeTheme(theme: 'dark' | 'light'): GlobeThemeColors {

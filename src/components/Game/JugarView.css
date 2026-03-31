@@ -65,9 +65,9 @@
 }
 
 .jugar-modal__btn--capitals {
-  border-color: var(--color-accent-purple);
-  color: var(--color-accent-purple);
-  background: var(--color-accent-purple-bg);
+  border-color: var(--color-accent-teal);
+  color: var(--color-accent-teal);
+  background: var(--color-accent-secondary-bg);
 }
 
 .jugar-modal__btn--primary {

@@ -65,8 +65,7 @@ const CAPITAL_PIN_INNER_R = 4.5;
 const CAPITAL_PIN_FILL_ALPHA = 0.30; // × alpha del color (0.7) ≈ 0.21 efectivo
 const LABEL_FONT_BASE = 9;
 
-// Opacidad de países fuera del filtro de continente
-const DIMMED_ALPHA = 0.15;
+
 
 /** Features sin código ISO: heredan dimming de sus países vecinos */
 const ORPHAN_NEIGHBORS: Record<string, string[]> = {
@@ -706,9 +705,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         fillColor = gt.countryHover;
       }
 
-      // Dimming por filtro de continente
-      let isDimmed = false;
+      // Dimming por filtro de continente (color sólido, no alpha)
       if (filter != null) {
+        let isDimmed: boolean;
         if (cca2 != null) {
           isDimmed = !filter.has(cca2);
         } else {
@@ -716,15 +715,13 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           const neighbors = ORPHAN_NEIGHBORS[feature.properties?.name as string];
           isDimmed = neighbors ? !neighbors.some(n => filter.has(n)) : false;
         }
+        if (isDimmed) fillColor = gt.countryDimmed;
       }
-      if (isDimmed) ctx.globalAlpha = DIMMED_ALPHA;
 
       ctx.beginPath();
       path(feature);
       ctx.fillStyle = fillColor;
       ctx.fill();
-
-      if (isDimmed) ctx.globalAlpha = 1;
     }
 
     // Bordes (mesh 50m, excluye países con override 10m)

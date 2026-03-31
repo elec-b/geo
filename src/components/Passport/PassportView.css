@@ -230,12 +230,11 @@
 
 .passport-legend__item {
   font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
+  color: var(--color-text-primary);
 }
 
 .passport-legend__item--muted {
-  opacity: 0.5;
-  filter: grayscale(1);
+  /* Sin tratamiento especial — el icono del candado ya comunica "bloqueado" */
 }
 
 /* --- Keyframes --- */

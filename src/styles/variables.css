@@ -7,7 +7,7 @@
 
   /* Acentos */
   --color-accent-cyan: #60a5fa;
-  --color-accent-purple: #818cf8;
+  --color-accent-teal: #0d9488;
   --color-accent-amber: #f59e0b;
 
   /* Colores de feedback */
@@ -44,7 +44,7 @@
 
   /* Acento con alpha (fondos activos, selección) */
   --color-accent-bg: rgba(96, 165, 250, 0.1);
-  --color-accent-purple-bg: rgba(129, 140, 248, 0.1);
+  --color-accent-secondary-bg: rgba(13, 148, 136, 0.1);
   --color-accent-border: rgba(96, 165, 250, 0.25);
 
   /* Glassmorphism */
@@ -54,7 +54,7 @@
 
   /* Sombras */
   --shadow-glow-cyan: 0 0 15px rgba(96, 165, 250, 0.2);
-  --shadow-glow-purple: 0 0 15px rgba(129, 140, 248, 0.2);
+
 
   /* Feedback con alpha */
   --color-success-bg: rgba(34, 197, 94, 0.2);
@@ -129,7 +129,7 @@
 
   /* Acentos — más saturados para contraste sobre fondo claro */
   --color-accent-cyan: #2563eb;
-  --color-accent-purple: #6366f1;
+  --color-accent-teal: #0f766e;
   --color-accent-amber: #d97706;
 
   /* Feedback */
@@ -139,7 +139,7 @@
   /* Texto — marrones oscuros cálidos, nunca negro puro */
   --color-text-primary: #2a2520;
   --color-text-secondary: #6a6258;
-  --color-text-muted: #7a7268;
+  --color-text-muted: #5a5248;
 
   /* Continentes — versiones con contraste sobre fondo claro */
   --color-africa: #334155;
@@ -166,7 +166,7 @@
 
   /* Acento alpha */
   --color-accent-bg: rgba(37, 99, 235, 0.10);
-  --color-accent-purple-bg: rgba(99, 102, 241, 0.10);
+  --color-accent-secondary-bg: rgba(15, 118, 110, 0.10);
   --color-accent-border: rgba(37, 99, 235, 0.25);
 
   /* Glass — blanco cálido sobre fondo crema */
@@ -176,7 +176,7 @@
 
   /* Sombras — box-shadow suave en vez de glow */
   --shadow-glow-cyan: 0 2px 8px rgba(37, 99, 235, 0.15);
-  --shadow-glow-purple: 0 2px 8px rgba(99, 102, 241, 0.15);
+
 
   /* Feedback con alpha */
   --color-success-bg: rgba(22, 163, 74, 0.25);
@@ -199,5 +199,5 @@
   --color-toggle-thumb: #ffffff;
   --color-spinner-border: rgba(90, 70, 40, 0.15);
   --color-spinner-top: rgba(90, 70, 40, 0.5);
-  --color-pill-bg: rgba(255, 252, 248, 0.70);
+  --color-pill-bg: rgba(210, 200, 185, 0.50);
 }
