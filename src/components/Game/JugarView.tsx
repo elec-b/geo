@@ -4,7 +4,7 @@ import { useState, useCallback, useMemo, useEffect, useRef, type RefObject, type
 import { useTranslation } from 'react-i18next';
 import { geoDistance } from 'd3-geo';
 import type { GlobeD3Ref, FeedbackLabel } from '../Globe';
-import { COUNTRY_CORRECT_COLOR, COUNTRY_INCORRECT_COLOR } from '../Globe/colors';
+import { COUNTRY_CORRECT_COLOR, COUNTRY_INCORRECT_COLOR, COUNTRY_CORRECTION_COLOR } from '../Globe/colors';
 import type { GlobeControlProps } from '../Explore/ExploreView';
 import type { CountryFeature } from '../../data/countries';
 import type { GameQuestionChoice, QuestionTypeFilter } from '../../data/gameQuestions';
@@ -383,7 +383,12 @@ export function JugarView({
       return { highlightCca2: feedbackCoordsRef.current.wrongCca2, highlightColor: COUNTRY_INCORRECT_COLOR };
     }
 
-    // Error C-F, error A/B step2, pregunta E/F, idle: dorado (default)
+    // Error (todos los tipos, incluido A/B step2): país correcto en ocre
+    if (session.feedbackState === 'incorrect') {
+      return { highlightCca2: session.correctCca2, highlightColor: COUNTRY_CORRECTION_COLOR };
+    }
+
+    // Pregunta E/F, idle: plata (default)
     return { highlightCca2: session.correctCca2, highlightColor: undefined };
   }, [session.currentQuestion, session.feedbackState, session.correctCca2, feedbackStep]);
 
