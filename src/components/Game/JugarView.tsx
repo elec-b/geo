@@ -383,9 +383,10 @@ export function JugarView({
       return { highlightCca2: feedbackCoordsRef.current.wrongCca2, highlightColor: COUNTRY_INCORRECT_COLOR };
     }
 
-    // Error (todos los tipos, incluido A/B step2): país correcto en ocre
+    // Error: A/B step2 → ocre (corrección espacial), C-F → rojo (has fallado este país)
     if (session.feedbackState === 'incorrect') {
-      return { highlightCca2: session.correctCca2, highlightColor: COUNTRY_CORRECTION_COLOR };
+      const color = isAB && feedbackStep === 'step2' ? COUNTRY_CORRECTION_COLOR : COUNTRY_INCORRECT_COLOR;
+      return { highlightCca2: session.correctCca2, highlightColor: color };
     }
 
     // Pregunta E/F, idle: plata (default)
