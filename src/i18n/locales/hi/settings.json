@@ -3,9 +3,9 @@
   "vibration": "कंपन",
   "language": "भाषा",
   "languageValue": "हिन्दी",
-  "comingSoon": "",
   "theme": "थीम",
   "themeValue": "डार्क",
+  "themeLightValue": "लाइट",
   "markers": "द्वीप और छोटे देशों के चिह्न",
   "seaLabels": "सागर और महासागर"
 }

@@ -3,9 +3,9 @@
   "vibration": "Vibration",
   "language": "Language",
   "languageValue": "English",
-  "comingSoon": "",
   "theme": "Theme",
   "themeValue": "Dark",
+  "themeLightValue": "Light",
   "markers": "Island and small country markers",
   "seaLabels": "Seas and oceans"
 }

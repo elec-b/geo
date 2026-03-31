@@ -3,9 +3,9 @@
   "vibration": "Vibration",
   "language": "Langue",
   "languageValue": "Fran\u00e7ais",
-  "comingSoon": "",
   "theme": "Th\u00e8me",
   "themeValue": "Sombre",
+  "themeLightValue": "Clair",
   "markers": "Marqueurs d'\u00eeles et petits pays",
   "seaLabels": "Mers et oc\u00e9ans"
 }

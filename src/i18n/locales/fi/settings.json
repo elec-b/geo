@@ -5,6 +5,7 @@
   "languageValue": "Suomi",
   "theme": "Teema",
   "themeValue": "Tumma",
+  "themeLightValue": "Vaalea",
   "markers": "Saarimerkit ja pienten maiden merkit",
   "seaLabels": "Meret ja valtameret"
 }

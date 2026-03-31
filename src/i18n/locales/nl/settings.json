@@ -3,9 +3,9 @@
   "vibration": "Trillen",
   "language": "Taal",
   "languageValue": "Nederlands",
-  "comingSoon": "",
   "theme": "Thema",
   "themeValue": "Donker",
+  "themeLightValue": "Licht",
   "markers": "Markeringen voor eilanden en kleine landen",
   "seaLabels": "Zee\u00ebn en oceanen"
 }

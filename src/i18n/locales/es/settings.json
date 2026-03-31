@@ -5,6 +5,7 @@
   "languageValue": "Español",
   "theme": "Tema",
   "themeValue": "Oscuro",
+  "themeLightValue": "Claro",
   "markers": "Marcadores de islas y países pequeños",
   "seaLabels": "Mares y océanos"
 }

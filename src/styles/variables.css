@@ -44,6 +44,7 @@
 
   /* Acento con alpha (fondos activos, selección) */
   --color-accent-bg: rgba(96, 165, 250, 0.1);
+  --color-accent-purple-bg: rgba(129, 140, 248, 0.1);
   --color-accent-border: rgba(96, 165, 250, 0.25);
 
   /* Glassmorphism */
@@ -76,6 +77,7 @@
   --color-toggle-thumb: #ffffff;
   --color-spinner-border: rgba(255, 255, 255, 0.15);
   --color-spinner-top: rgba(255, 255, 255, 0.6);
+  --color-pill-bg: transparent;
 
   /* Tipografía */
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -120,10 +122,10 @@
 
 /* Tema claro */
 [data-theme="light"] {
-  /* Fondos — crema cálido, estilo atlas */
-  --color-bg-primary: #f5f1ea;
-  --color-bg-secondary: #ece7de;
-  --color-bg-tertiary: #e2ddd4;
+  /* Fondos — azul grisáceo suave, cielo diurno */
+  --color-bg-primary: #dde4ec;
+  --color-bg-secondary: #d4dbe4;
+  --color-bg-tertiary: #cad2dc;
 
   /* Acentos — más saturados para contraste sobre fondo claro */
   --color-accent-cyan: #2563eb;
@@ -137,7 +139,7 @@
   /* Texto — marrones oscuros cálidos, nunca negro puro */
   --color-text-primary: #2a2520;
   --color-text-secondary: #6a6258;
-  --color-text-muted: #9a9488;
+  --color-text-muted: #7a7268;
 
   /* Continentes — versiones con contraste sobre fondo claro */
   --color-africa: #334155;
@@ -153,7 +155,7 @@
 
   /* Overlays — más suaves que en dark */
   --color-overlay: rgba(0, 0, 0, 0.25);
-  --color-overlay-heavy: rgba(0, 0, 0, 0.4);
+  --color-overlay-heavy: rgba(0, 0, 0, 0.5);
   --color-overlay-solid: rgba(0, 0, 0, 0.55);
 
   /* Utility alpha — marrón cálido con alpha */
@@ -164,6 +166,7 @@
 
   /* Acento alpha */
   --color-accent-bg: rgba(37, 99, 235, 0.10);
+  --color-accent-purple-bg: rgba(99, 102, 241, 0.10);
   --color-accent-border: rgba(37, 99, 235, 0.25);
 
   /* Glass — blanco cálido sobre fondo crema */
@@ -176,8 +179,8 @@
   --shadow-glow-purple: 0 2px 8px rgba(99, 102, 241, 0.15);
 
   /* Feedback con alpha */
-  --color-success-bg: rgba(22, 163, 74, 0.15);
-  --color-error-bg: rgba(220, 38, 38, 0.15);
+  --color-success-bg: rgba(22, 163, 74, 0.25);
+  --color-error-bg: rgba(220, 38, 38, 0.25);
   --color-success-flash: rgba(22, 163, 74, 0.03);
   --color-error-flash: rgba(220, 38, 38, 0.03);
   --color-error-flash-geo: rgba(220, 38, 38, 0.02);
@@ -196,4 +199,5 @@
   --color-toggle-thumb: #ffffff;
   --color-spinner-border: rgba(90, 70, 40, 0.15);
   --color-spinner-top: rgba(90, 70, 40, 0.5);
+  --color-pill-bg: rgba(255, 252, 248, 0.70);
 }

@@ -20,6 +20,7 @@
   max-width: 22rem;
   width: 100%;
   text-align: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
 }
 
 .jugar-modal__title {
@@ -60,11 +61,13 @@
 .jugar-modal__btn--countries {
   border-color: var(--color-accent-cyan);
   color: var(--color-accent-cyan);
+  background: var(--color-accent-bg);
 }
 
 .jugar-modal__btn--capitals {
   border-color: var(--color-accent-purple);
   color: var(--color-accent-purple);
+  background: var(--color-accent-purple-bg);
 }
 
 .jugar-modal__btn--primary {

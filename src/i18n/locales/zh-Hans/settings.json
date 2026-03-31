@@ -3,9 +3,9 @@
   "vibration": "振动",
   "language": "语言",
   "languageValue": "简体中文",
-  "comingSoon": "",
   "theme": "主题",
   "themeValue": "深色",
+  "themeLightValue": "浅色",
   "markers": "岛屿和小国标记",
   "seaLabels": "海洋标签"
 }

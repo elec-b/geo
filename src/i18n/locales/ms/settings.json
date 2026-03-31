@@ -3,9 +3,9 @@
   "vibration": "Getaran",
   "language": "Bahasa",
   "languageValue": "Bahasa Melayu",
-  "comingSoon": "",
   "theme": "Tema",
   "themeValue": "Gelap",
+  "themeLightValue": "Cerah",
   "markers": "Penanda pulau dan negara kecil",
   "seaLabels": "Laut dan lautan"
 }

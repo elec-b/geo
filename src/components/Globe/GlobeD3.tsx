@@ -62,7 +62,7 @@ const VELOCITY_SAMPLES = 5;
 // Pin de capital (doble círculo ◎)
 const CAPITAL_PIN_OUTER_R = 7;
 const CAPITAL_PIN_INNER_R = 4.5;
-const CAPITAL_PIN_FILL_ALPHA = 0.20; // × alpha del color (0.5) ≈ 0.10 efectivo
+const CAPITAL_PIN_FILL_ALPHA = 0.30; // × alpha del color (0.7) ≈ 0.21 efectivo
 const LABEL_FONT_BASE = 9;
 
 // Opacidad de países fuera del filtro de continente

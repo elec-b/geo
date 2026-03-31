@@ -3,9 +3,9 @@
   "vibration": "การสั่น",
   "language": "ภาษา",
   "languageValue": "ภาษาไทย",
-  "comingSoon": "",
   "theme": "ธีม",
   "themeValue": "มืด",
+  "themeLightValue": "สว่าง",
   "markers": "เครื่องหมายเกาะและประเทศเล็ก",
   "seaLabels": "ทะเลและมหาสมุทร"
 }

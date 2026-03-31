@@ -3,9 +3,9 @@
   "vibration": "Vibra\u00e7\u00e3o",
   "language": "Idioma",
   "languageValue": "Portugu\u00eas (Brasil)",
-  "comingSoon": "",
   "theme": "Tema",
   "themeValue": "Escuro",
+  "themeLightValue": "Claro",
   "markers": "Marcadores de ilhas e pa\u00edses pequenos",
   "seaLabels": "Mares e oceanos"
 }

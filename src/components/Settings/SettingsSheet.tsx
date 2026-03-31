@@ -106,6 +106,7 @@ export function SettingsSheet({ onClose, onOpenLanguage }: SettingsSheetProps) {
               )}
             </svg>
             <span className="settings-sheet__label">{t('theme')}</span>
+            <span className="settings-sheet__value">{theme === 'dark' ? t('themeValue') : t('themeLightValue')}</span>
             <button
               className={`settings-sheet__toggle${theme === 'light' ? ' settings-sheet__toggle--active' : ''}`}
               role="switch"

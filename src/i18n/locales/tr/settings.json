@@ -3,9 +3,9 @@
   "vibration": "Titreşim",
   "language": "Dil",
   "languageValue": "Türkçe",
-  "comingSoon": "",
   "theme": "Tema",
   "themeValue": "Koyu",
+  "themeLightValue": "Açık",
   "markers": "Ada ve küçük ülke işaretçileri",
   "seaLabels": "Denizler ve okyanuslar"
 }

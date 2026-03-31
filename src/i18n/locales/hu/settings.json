@@ -3,9 +3,9 @@
   "vibration": "Rezgés",
   "language": "Nyelv",
   "languageValue": "Magyar",
-  "comingSoon": "",
   "theme": "Téma",
   "themeValue": "Sötét",
+  "themeLightValue": "Világos",
   "markers": "Szigetek és kis országok jelölői",
   "seaLabels": "Tengerek és óceánok"
 }

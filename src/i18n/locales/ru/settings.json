@@ -3,9 +3,9 @@
   "vibration": "Вибрация",
   "language": "Язык",
   "languageValue": "Русский",
-  "comingSoon": "",
   "theme": "Тема",
   "themeValue": "Тёмная",
+  "themeLightValue": "Светлая",
   "markers": "Маркеры островов и малых стран",
   "seaLabels": "Моря и океаны"
 }

@@ -3,9 +3,9 @@
   "vibration": "バイブレーション",
   "language": "言語",
   "languageValue": "日本語",
-  "comingSoon": "",
   "theme": "テーマ",
   "themeValue": "ダーク",
+  "themeLightValue": "ライト",
   "markers": "島・小国のマーカー",
   "seaLabels": "海と大洋"
 }
