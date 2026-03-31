@@ -4,7 +4,7 @@
   position: fixed;
   inset: 0;
   z-index: var(--z-modal);
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--color-overlay-solid);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
@@ -240,7 +240,7 @@
 }
 
 .stats-table tbody tr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--color-white-4);
 }
 
 .stats-table__tr--clickable {

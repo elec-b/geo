@@ -63,7 +63,7 @@
 
 /* Glow cian sutil en "Jugar" activo */
 .tab-bar__button--play.tab-bar__button--active .tab-bar__icon {
-  filter: drop-shadow(0 0 6px rgba(0, 240, 255, 0.5));
+  filter: drop-shadow(0 0 6px rgba(96, 165, 250, 0.35));
 }
 
 /* Label */

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const LOGO_SVG = readFileSync(join(ROOT, 'public/assets/logo.svg'));
-const BG = { r: 10, g: 10, b: 26, alpha: 255 }; // #0a0a1a
+const BG = { r: 10, g: 10, b: 12, alpha: 255 }; // #0a0a0c
 
 async function generateIcon() {
   const iconSize = 1024;

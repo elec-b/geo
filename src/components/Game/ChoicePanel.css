@@ -18,7 +18,7 @@
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-md);
   border: 1px solid var(--glass-border);
-  background: rgba(12, 12, 30, 0.85);
+  background: var(--color-surface);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   color: var(--color-text-primary);

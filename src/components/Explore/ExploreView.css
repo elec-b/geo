@@ -22,7 +22,7 @@
 .explore-segmented {
   align-self: center;
   display: flex;
-  background: rgba(12, 12, 30, 0.8);
+  background: var(--color-surface);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);

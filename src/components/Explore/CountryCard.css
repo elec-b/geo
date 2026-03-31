@@ -9,7 +9,7 @@
   max-height: 45vh;
   display: flex;
   flex-direction: column;
-  background: rgba(12, 12, 30, 0.92);
+  background: var(--color-surface-heavy);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid var(--glass-border);
@@ -42,7 +42,7 @@
   height: 0.25rem;
   margin: 0 auto var(--spacing-xs);
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-white-20);
   flex-shrink: 0;
 }
 

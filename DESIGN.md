@@ -1,7 +1,7 @@
 # Exploris
 
 ## Filosofía de diseño
-- **Estética**: «Premium dark mode» (con tema claro como opción futura). Diseño limpio, oscuro y minimalista. Azules profundos, negros, acentos (púrpura/ámbar) y azules fríos.
+- **Estética**: «Premium dark mode» (con tema claro como opción futura). Diseño limpio, oscuro y minimalista. Negros neutros, grises oscuros, acentos suaves (azul/indigo/ámbar). Inspirado en dark mode premium.
 - **Interacción**: Animaciones fluidas. Sin recargas de página bruscas. El globo siempre es el protagonista.
 - **Feedback**: Corrección visual inmediata (filtro verde/rojo al 5% de opacidad), háptica en móvil (acierto: tap ligero único; error: doble tap ligero; toggles: tap ligero). Sin efectos de sonido (por ahora).
 

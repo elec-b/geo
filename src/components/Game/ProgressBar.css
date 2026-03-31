@@ -12,7 +12,7 @@
   gap: var(--spacing-xs);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-lg);
-  background: rgba(12, 12, 30, 0.85);
+  background: var(--color-surface);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
@@ -30,7 +30,7 @@
 .progress-bar__track {
   height: 0.25rem;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--color-white-8);
   overflow: hidden;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .progress-bar__fill--complete {
-  box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.35);
 }
 
 /* Fila con stats y botón */

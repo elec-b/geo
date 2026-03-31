@@ -15,11 +15,11 @@ import { COUNTRY_SELECTED_COLOR } from './colors';
 
 // --- Constantes del tema espacial ---
 
-const OCEAN_COLOR = '#0a0a1a';
-const COUNTRY_FILL_COLOR = '#3a3a4a';
-const COUNTRY_HOVER_COLOR = '#2a2a3a';
-const BORDER_COLOR = 'rgba(255, 255, 255, 0.3)';
-const ATMOSPHERE_COLOR = 'rgba(100, 150, 255, 0.08)';
+const OCEAN_COLOR = '#0a0a0c';
+const COUNTRY_FILL_COLOR = '#2a2a2e';
+const COUNTRY_HOVER_COLOR = '#1e1e22';
+const BORDER_COLOR = 'rgba(255, 255, 255, 0.25)';
+const ATMOSPHERE_COLOR = 'rgba(180, 200, 220, 0.06)';
 
 // Rotación automática (°/s)
 const ROTATION_SPEED = 6;
@@ -665,7 +665,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         const fontBase = SEA_FONT_BASE[label.scalerank] ?? 7;
         const fontSize = Math.round(fontBase + Math.sqrt(zoom) * 1.2);
         ctx.font = `italic 300 ${fontSize}px Georgia, "New York", serif`;
-        ctx.fillStyle = `rgba(100, 180, 255, ${alpha})`;
+        ctx.fillStyle = `rgba(140, 160, 190, ${alpha})`;
 
         const spacing = SEA_LETTER_SPACING[label.scalerank] ?? 0;
         const seaNameKey = `name_${localeRef.current.replace('-', '_')}`;
