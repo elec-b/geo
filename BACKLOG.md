@@ -37,12 +37,15 @@
 - [x] (**mejora**) En Pasaporte, en los continente-nivel bloqueados, mostrar el número de países debajo del candado
 - [x] (**mejora**) Traducciones del namespace `about` a los 32 idiomas de la app (alineadas con el español como fuente de verdad)
 - [x] Refinar tema oscuro. Paleta premium: espacio negro (#04060a), océano azul oscuro (#060a12), tierra gris azulada (#222630), superficies con tinte azul (rgba(8,14,24,...)). Cyan neón → azul suave (#60a5fa), púrpura → indigo (#818cf8). ~90 colores hardcodeados → 14 variables semánticas. Estrellas eliminadas. Feedback: ocre para corrección A/B, verde/rojo desaturados, flash al 2%. Texto más legible. Icono/splash regenerados
-- [ ] Diseñar e implementar tema claro
-- [ ] Actualizar HDI/IDH-D: regenerar `hdi.json` desde el Excel oficial del HDR 2025 (spike en `docs/spikes/auditoria-datos-ficha.md` — 192 de 194 países desactualizados + errores de origen). Idealmente con script automatizado
+- [testeando] Diseñar e implementar tema claro
+- [ ] (**bug**) si estoy jugando en un continente-nivel y reseteo las estadísticas de ese continente nivel, la barra de progreso solo se actualiza después de la primera pregunta (de ese continente-nivel). He notado que esto ocurre en Aventura, pero supongo que ocurre en todos los juegos
+- [ ] (**mejora**) el icono de información (acerca de) es muy feo, cómo / de dónde sacamos los de estadísticas y los de configuración? Esos son más bonitos
+- [ ] (**mejora**) la cuadrícula que hay debajo del pasaporte, queda un poco rara, tanto en modo claro como en modo oscuro. ¿Quitar en ambos modos?
 - [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
 - [ ] Auditar y migrar TODAS las fuentes de datos, y asegurar que en la actualidad se mantienen. El problema principal está en los datos de población y de HDI e IHDI. REST Countries fue archivado en junio 2024 (datos de población congelados, desfase <7% en países grandes). Evaluar World Bank API o UN Stats como reemplazo. Notas:
     - Ser inteligentes para simplificar tarea de CDN posterior. 
     - Hay que detalle del problema de los datos de la ficha en `docs/spikes/auditoria-datos-ficha.md` - ahora es el momento de abordar esos cambios (cuando se hizo el spike acordamos no llevar a cabo ninguna acción inmediata)
+        - Solución propuesta: actualizar HDI/IDH-D: regenerar `hdi.json` desde el Excel oficial del HDR 2025 (spike en `docs/spikes/auditoria-datos-ficha.md` — 192 de 194 países desactualizados + errores de origen). Idealmente con script automatizado
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
 - [x] Nombre de la app: **Exploris** (spike en `docs/spikes/naming-app.md` — 23 nombres evaluados, nombre anterior inviable por colisión directa)
 
