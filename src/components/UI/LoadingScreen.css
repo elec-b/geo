@@ -36,8 +36,8 @@
   width: 1.5rem;
   height: 1.5rem;
   margin-top: var(--spacing-lg);
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  border-top-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid var(--color-spinner-border);
+  border-top-color: var(--color-spinner-top);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }

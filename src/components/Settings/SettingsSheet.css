@@ -91,11 +91,7 @@
   border-bottom: none;
 }
 
-.settings-sheet__row--disabled {
-  opacity: 0.4;
-  pointer-events: none;
-  cursor: default;
-}
+
 
 /* Icono SVG */
 .settings-sheet__icon {
@@ -154,7 +150,7 @@
   width: 1.125rem;
   height: 1.125rem;
   border-radius: var(--radius-full);
-  background: #fff;
+  background: var(--color-toggle-thumb);
   transition: transform var(--transition-fast);
 }
 

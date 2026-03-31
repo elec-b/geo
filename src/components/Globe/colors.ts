@@ -1,5 +1,15 @@
 // Colores de highlight de países en el globo
-export const COUNTRY_SELECTED_COLOR = '#909098';   // plata neutra (selección/pregunta)
-export const COUNTRY_CORRECT_COLOR = '#3d8a6a';     // verde esmeralda apagado (acierto)
-export const COUNTRY_INCORRECT_COLOR = '#a05050';   // rojo desaturado (error)
-export const COUNTRY_CORRECTION_COLOR = '#a08850';  // ocre apagado (corrección tras error A/B)
+// Importar getGlobeTheme para acceso theme-aware
+import { getGlobeTheme } from '../../styles/globeTheme';
+
+/** Retorna los colores de highlight según el tema activo */
+export function getHighlightColors(theme: 'dark' | 'light') {
+  const gt = getGlobeTheme(theme);
+  return {
+    selected: gt.selected,
+    correct: gt.correct,
+    incorrect: gt.incorrect,
+    correction: gt.correction,
+    capitalPinHighlight: gt.capitalPinHighlight,
+  };
+}

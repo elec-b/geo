@@ -34,7 +34,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   showMarkers: true,
   showSeaLabels: true,
   vibration: true,
-  theme: 'dark',
+  theme: (typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: light)').matches) ? 'light' : 'dark',
   locale: detectLocale(),
   lastPlayed: null,
   lastStampPlayed: null,

@@ -54,7 +54,7 @@
 }
 
 .jugar-modal__btn:active {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-white-8);
 }
 
 .jugar-modal__btn--countries {

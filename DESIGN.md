@@ -1,7 +1,7 @@
 # Exploris
 
 ## Filosofía de diseño
-- **Estética**: «Premium dark mode» (con tema claro como opción futura). Diseño limpio, oscuro y minimalista. Negros neutros, grises oscuros, acentos suaves (azul/indigo/ámbar). Inspirado en dark mode premium.
+- **Estética**: Dos temas: **oscuro** (por defecto) y **claro**. Diseño limpio y minimalista en ambos. El dark mode usa negros azulados con acentos suaves; el light mode usa grises azulados claros (#f0f2f5) con acentos más saturados para mantener contraste. Toggle en Configuración.
 - **Interacción**: Animaciones fluidas. Sin recargas de página bruscas. El globo siempre es el protagonista.
 - **Feedback**: Corrección visual inmediata (filtro verde/rojo al 5% de opacidad), háptica en móvil (acierto: tap ligero único; error: doble tap ligero; toggles: tap ligero). Sin efectos de sonido (por ahora).
 
@@ -488,7 +488,7 @@ Configuración **ultra-sencilla**. Un solo punto de acceso: el **botón de engra
 |--------|----------|-------------|-------------|
 | Vibración | On/Off | On | Siempre |
 | Idioma de la app | Todos los soportados por iOS/Android | Idioma del teléfono (fallback: inglés) | Siempre |
-| Tema claro/oscuro | Claro / Oscuro | Oscuro | Siempre |
+| Tema | Oscuro / Claro (toggle) | Oscuro | Siempre |
 | Mares y océanos | On/Off | On | Siempre |
 | Marcadores de microestados y archipiélagos | On/Off | On | Siempre |
 
@@ -496,7 +496,7 @@ Configuración **ultra-sencilla**. Un solo punto de acceso: el **botón de engra
 
 **Etiquetas de países/capitales**: Son controles exclusivos de la experiencia Explorar (ver § Explorar), no forman parte de la configuración.
 
-**Nota sobre tema claro/oscuro**: Tarea de baja prioridad, a implementar cuando la app esté prácticamente terminada. La identidad visual principal sigue siendo el dark mode.
+**Implementación del tema**: Variables CSS en `:root` (dark) con override en `[data-theme="light"]`. Los colores del canvas (GlobeD3) se gestionan en `src/styles/globeTheme.ts` (objeto JS por tema, ya que el canvas no lee CSS variables). El atributo `data-theme` se sincroniza desde el store vía `useEffect` en `App.tsx`. El splash screen lee el tema del localStorage antes de que React cargue para evitar flash.
 
 **Filosofía**: Sin menús complicados. La app debe funcionar bien "out of the box".
 

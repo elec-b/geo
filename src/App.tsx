@@ -47,6 +47,12 @@ function App() {
   const [exploreCountryRequest, setExploreCountryRequest] = useState<string | null>(null);
   const showMarkers = useAppStore((s) => s.settings.showMarkers);
   const showSeaLabels = useAppStore((s) => s.settings.showSeaLabels);
+  const theme = useAppStore((s) => s.settings.theme);
+
+  // Sincronizar data-theme en <html> con el store
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   // Reset de estado de sesión al abrir la app (Globo + Todos)
   useEffect(() => {

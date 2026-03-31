@@ -60,7 +60,7 @@ export interface AppSettings {
   showMarkers: boolean;
   showSeaLabels: boolean;
   vibration: boolean;
-  theme: 'dark';        // por ahora solo dark
+  theme: 'dark' | 'light';
   locale: string;       // código de idioma (ej. 'es', 'en')
   lastPlayed?: { continent: Continent; level: GameLevel } | null;
   lastStampPlayed?: { continent: Continent; level: GameLevel } | null;

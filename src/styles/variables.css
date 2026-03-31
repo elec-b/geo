@@ -55,6 +55,28 @@
   --shadow-glow-cyan: 0 0 15px rgba(96, 165, 250, 0.2);
   --shadow-glow-purple: 0 0 15px rgba(129, 140, 248, 0.2);
 
+  /* Feedback con alpha */
+  --color-success-bg: rgba(34, 197, 94, 0.2);
+  --color-error-bg: rgba(239, 68, 68, 0.2);
+  --color-success-flash: rgba(52, 211, 153, 0.02);
+  --color-error-flash: rgba(212, 96, 96, 0.02);
+  --color-error-flash-geo: rgba(212, 96, 96, 0.01);
+  --color-success-glow: rgba(52, 211, 153, 0.4);
+  --color-error-glow: rgba(212, 96, 96, 0.4);
+  --color-error-bg-subtle: rgba(255, 107, 107, 0.15);
+  --color-error-border-subtle: rgba(255, 107, 107, 0.3);
+
+  /* Amber con alpha */
+  --color-amber-bg: rgba(245, 158, 11, 0.1);
+  --color-amber-border: rgba(245, 158, 11, 0.3);
+
+  /* Misceláneos */
+  --color-surface-dark: rgba(0, 0, 0, 0.4);
+  --color-text-capital: rgba(170, 170, 180, 0.9);
+  --color-toggle-thumb: #ffffff;
+  --color-spinner-border: rgba(255, 255, 255, 0.15);
+  --color-spinner-top: rgba(255, 255, 255, 0.6);
+
   /* Tipografía */
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-size-xs: 0.75rem;
@@ -94,4 +116,84 @@
   --z-tabbar: 50;
   --z-loading: 100;
   --z-modal: 200;
+}
+
+/* Tema claro */
+[data-theme="light"] {
+  /* Fondos — gris azulado claro, nunca blanco puro */
+  --color-bg-primary: #f0f2f5;
+  --color-bg-secondary: #e8ebf0;
+  --color-bg-tertiary: #dde1e8;
+
+  /* Acentos — más saturados para contraste sobre fondo claro */
+  --color-accent-cyan: #2563eb;
+  --color-accent-purple: #6366f1;
+  --color-accent-amber: #d97706;
+
+  /* Feedback */
+  --color-success: #16a34a;
+  --color-error: #dc2626;
+
+  /* Texto — grises oscuros con tinte azul, nunca negro puro */
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #4a4a5a;
+  --color-text-muted: #8a8a96;
+
+  /* Continentes — versiones con contraste sobre fondo claro */
+  --color-africa: #334155;
+  --color-america: #dc2626;
+  --color-asia: #ca8a04;
+  --color-europe: #2563eb;
+  --color-oceania: #16a34a;
+
+  /* Superficies — blancas semitransparentes */
+  --color-surface: rgba(255, 255, 255, 0.88);
+  --color-surface-heavy: rgba(255, 255, 255, 0.95);
+  --color-surface-solid: rgba(255, 255, 255, 0.98);
+
+  /* Overlays — más suaves que en dark */
+  --color-overlay: rgba(0, 0, 0, 0.25);
+  --color-overlay-heavy: rgba(0, 0, 0, 0.4);
+  --color-overlay-solid: rgba(0, 0, 0, 0.55);
+
+  /* Utility alpha — inversion: negro con alpha en vez de blanco */
+  --color-white-4: rgba(0, 0, 0, 0.04);
+  --color-white-8: rgba(0, 0, 0, 0.07);
+  --color-white-12: rgba(0, 0, 0, 0.10);
+  --color-white-20: rgba(0, 0, 0, 0.16);
+
+  /* Acento alpha */
+  --color-accent-bg: rgba(37, 99, 235, 0.08);
+  --color-accent-border: rgba(37, 99, 235, 0.25);
+
+  /* Glass — más opaco sobre fondo claro */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(0, 0, 0, 0.10);
+  --glass-blur: 12px;
+
+  /* Sombras — box-shadow suave en vez de glow */
+  --shadow-glow-cyan: 0 2px 8px rgba(37, 99, 235, 0.15);
+  --shadow-glow-purple: 0 2px 8px rgba(99, 102, 241, 0.15);
+
+  /* Feedback con alpha */
+  --color-success-bg: rgba(22, 163, 74, 0.15);
+  --color-error-bg: rgba(220, 38, 38, 0.15);
+  --color-success-flash: rgba(22, 163, 74, 0.03);
+  --color-error-flash: rgba(220, 38, 38, 0.03);
+  --color-error-flash-geo: rgba(220, 38, 38, 0.02);
+  --color-success-glow: rgba(22, 163, 74, 0.3);
+  --color-error-glow: rgba(220, 38, 38, 0.3);
+  --color-error-bg-subtle: rgba(220, 38, 38, 0.1);
+  --color-error-border-subtle: rgba(220, 38, 38, 0.25);
+
+  /* Amber con alpha */
+  --color-amber-bg: rgba(217, 119, 6, 0.08);
+  --color-amber-border: rgba(217, 119, 6, 0.25);
+
+  /* Misceláneos */
+  --color-surface-dark: rgba(0, 0, 0, 0.06);
+  --color-text-capital: rgba(60, 60, 80, 0.85);
+  --color-toggle-thumb: #ffffff;
+  --color-spinner-border: rgba(0, 0, 0, 0.12);
+  --color-spinner-top: rgba(0, 0, 0, 0.5);
 }

@@ -65,7 +65,7 @@
   padding: 0.1875rem 0.625rem;
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-full);
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--color-surface-dark);
   color: var(--color-text-secondary);
   font-size: var(--font-size-xs);
   font-family: var(--font-family);
@@ -75,8 +75,8 @@
 }
 
 .explore-labels__btn--active {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-white-8);
   color: var(--color-text-primary);
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: var(--color-white-20);
 }
 

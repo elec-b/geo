@@ -21,10 +21,16 @@ export function SettingsSheet({ onClose, onOpenLanguage }: SettingsSheetProps) {
   const showMarkers = useAppStore((s) => s.settings.showMarkers);
   const showSeaLabels = useAppStore((s) => s.settings.showSeaLabels);
   const locale = useAppStore((s) => s.settings.locale);
+  const theme = useAppStore((s) => s.settings.theme);
   const updateSettings = useAppStore((s) => s.updateSettings);
 
   const toggleVibration = () => {
     updateSettings({ vibration: !vibration });
+    hapticSelection();
+  };
+
+  const toggleTheme = () => {
+    updateSettings({ theme: theme === 'dark' ? 'light' : 'dark' });
     hapticSelection();
   };
 
@@ -87,14 +93,27 @@ export function SettingsSheet({ onClose, onOpenLanguage }: SettingsSheetProps) {
             <span className="settings-sheet__chevron">›</span>
           </div>
 
-          {/* Tema (deshabilitado) */}
-          <div className="settings-sheet__row settings-sheet__row--disabled">
+          {/* Tema claro / oscuro */}
+          <div className="settings-sheet__row" onClick={toggleTheme}>
             <svg className="settings-sheet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              {theme === 'dark' ? (
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              ) : (
+                <>
+                  <circle cx="12" cy="12" r="5" />
+                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                </>
+              )}
             </svg>
             <span className="settings-sheet__label">{t('theme')}</span>
-            <span className="settings-sheet__value">{t('themeValue')}</span>
-            <span className="settings-sheet__badge">{t('comingSoon')}</span>
+            <button
+              className={`settings-sheet__toggle${theme === 'light' ? ' settings-sheet__toggle--active' : ''}`}
+              role="switch"
+              aria-checked={theme === 'light'}
+              aria-label={t('theme')}
+            >
+              <span className="settings-sheet__toggle-thumb" />
+            </button>
           </div>
 
           {/* Marcadores de islas y países pequeños */}

@@ -4,7 +4,7 @@ import { useState, useCallback, useMemo, useEffect, useRef, type RefObject, type
 import { useTranslation } from 'react-i18next';
 import { geoDistance } from 'd3-geo';
 import type { GlobeD3Ref, FeedbackLabel } from '../Globe';
-import { COUNTRY_CORRECT_COLOR, COUNTRY_INCORRECT_COLOR, COUNTRY_CORRECTION_COLOR } from '../Globe/colors';
+import { getHighlightColors } from '../Globe/colors';
 import type { GlobeControlProps } from '../Explore/ExploreView';
 import type { CountryFeature } from '../../data/countries';
 import type { GameQuestionChoice, QuestionTypeFilter } from '../../data/gameQuestions';
@@ -182,6 +182,8 @@ export function JugarView({
   const earnStamp = useAppStore((s) => s.earnStamp);
   const setLastPlayed = useAppStore((s) => s.setLastPlayed);
   const setLastStampPlayed = useAppStore((s) => s.setLastStampPlayed);
+  const theme = useAppStore((s) => s.settings.theme);
+  const hlColors = useMemo(() => getHighlightColors(theme), [theme]);
 
   // Modales de prueba de sello y fin de pool
   const [showStampChooser, setShowStampChooser] = useState(false);
@@ -375,17 +377,17 @@ export function JugarView({
 
     // Acierto (todos los tipos): verde
     if (session.feedbackState === 'correct') {
-      return { highlightCca2: session.correctCca2, highlightColor: COUNTRY_CORRECT_COLOR };
+      return { highlightCca2: session.correctCca2, highlightColor: hlColors.correct };
     }
 
     // Error A/B step1: país equivocado en rojo
     if (session.feedbackState === 'incorrect' && isAB && feedbackStep === 'step1' && feedbackCoordsRef.current) {
-      return { highlightCca2: feedbackCoordsRef.current.wrongCca2, highlightColor: COUNTRY_INCORRECT_COLOR };
+      return { highlightCca2: feedbackCoordsRef.current.wrongCca2, highlightColor: hlColors.incorrect };
     }
 
     // Error: A/B step2 → ocre (corrección espacial), C-F → rojo (has fallado este país)
     if (session.feedbackState === 'incorrect') {
-      const color = isAB && feedbackStep === 'step2' ? COUNTRY_CORRECTION_COLOR : COUNTRY_INCORRECT_COLOR;
+      const color = isAB && feedbackStep === 'step2' ? hlColors.correction : hlColors.incorrect;
       return { highlightCca2: session.correctCca2, highlightColor: color };
     }
 
@@ -404,7 +406,7 @@ export function JugarView({
     if (!cap) return null;
     return {
       coords: [cap.latlng[1], cap.latlng[0]],
-      color: 'rgba(255, 255, 255, 0.85)',
+      color: hlColors.capitalPinHighlight,
     };
   }, [session.currentQuestion, capitalPins, capitals, session.feedbackState]);
 

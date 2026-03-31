@@ -42,7 +42,7 @@
 }
 
 .progress-bar__fill--complete {
-  box-shadow: 0 0 8px rgba(96, 165, 250, 0.35);
+  box-shadow: var(--shadow-glow-cyan);
 }
 
 /* Fila con stats y botón */
@@ -81,7 +81,7 @@
 
 .progress-bar__banner--stamp-test {
   color: var(--color-accent-amber);
-  background: rgba(245, 158, 11, 0.1);
+  background: var(--color-amber-bg);
 }
 
 @keyframes banner-enter {

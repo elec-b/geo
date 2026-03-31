@@ -5,11 +5,28 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Exploris</title>
+    <script>
+      // Leer tema persistido antes de renderizar para evitar flash
+      (function() {
+        try {
+          var s = JSON.parse(localStorage.getItem('exploris-store') || '{}');
+          var t = s.state && s.state.settings && s.state.settings.theme;
+        } catch(e) { var t = null; }
+        // Fallback: preferencia del sistema, o dark si no hay media query
+        if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+        var d = t === 'dark';
+        document.documentElement.style.setProperty('--splash-bg', d ? '#04060a' : '#f0f2f5');
+        document.documentElement.style.setProperty('--splash-text', d ? '#a1a1aa' : '#6a6a76');
+        document.documentElement.style.setProperty('--splash-spinner-border', d ? 'rgba(96,165,250,0.2)' : 'rgba(37,99,235,0.15)');
+        document.documentElement.style.setProperty('--splash-spinner-top', d ? '#60a5fa' : '#2563eb');
+      })();
+    </script>
     <style>
       /* Splash screen inline - se muestra antes de que cargue React */
       body {
         margin: 0;
-        background: #04060a;
+        background: var(--splash-bg, #04060a);
       }
       .splash {
         position: fixed;
@@ -18,22 +35,22 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: #04060a;
+        background: var(--splash-bg, #04060a);
         color: #ffffff;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
       .splash-spinner {
         width: 48px;
         height: 48px;
-        border: 3px solid rgba(96, 165, 250, 0.2);
-        border-top-color: #60a5fa;
+        border: 3px solid var(--splash-spinner-border, rgba(96, 165, 250, 0.2));
+        border-top-color: var(--splash-spinner-top, #60a5fa);
         border-radius: 50%;
         animation: spin 1s linear infinite;
       }
       .splash-text {
         margin-top: 1rem;
         font-size: 0.875rem;
-        color: #a1a1aa;
+        color: var(--splash-text, #a1a1aa);
       }
       @keyframes spin {
         to { transform: rotate(360deg); }
