@@ -237,6 +237,14 @@
   /* Sin tratamiento especial — el icono del candado ya comunica "bloqueado" */
 }
 
+.passport-legend__lock-icon {
+  filter: grayscale(1) contrast(0) brightness(2);
+}
+
+[data-theme="light"] .passport-legend__lock-icon {
+  filter: grayscale(1) contrast(0) brightness(0.3);
+}
+
 /* --- Keyframes --- */
 
 @keyframes stampPulse {

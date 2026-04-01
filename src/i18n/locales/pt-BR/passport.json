@@ -6,7 +6,7 @@
   "legend.country": "\u25cb Pa\u00eds",
   "legend.capital": "\u25ce Capital",
   "legend.earned": "\u2605 Conquistado",
-  "legend.locked": "\ud83d\udd12 Bloqueado",
+  "legend.locked": "Bloqueado",
 
   "stampTitle.countries": "Carimbo de Pa\u00edses",
   "stampTitle.capitals": "Carimbo de Capitais",

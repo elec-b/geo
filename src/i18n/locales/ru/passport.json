@@ -6,7 +6,7 @@
   "legend.country": "○ Страна",
   "legend.capital": "◎ Столица",
   "legend.earned": "★ Получено",
-  "legend.locked": "🔒 Заблокировано",
+  "legend.locked": "Заблокировано",
 
   "stampTitle.countries": "Печать по Странам",
   "stampTitle.capitals": "Печать по Столицам",

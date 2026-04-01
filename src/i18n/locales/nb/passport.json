@@ -6,7 +6,7 @@
   "legend.country": "\u25cb Land",
   "legend.capital": "\u25ce Hovedstad",
   "legend.earned": "\u2605 Oppn\u00e5dd",
-  "legend.locked": "\ud83d\udd12 L\u00e5st",
+  "legend.locked": "L\u00e5st",
 
   "stampTitle.countries": "Landstempel",
   "stampTitle.capitals": "Hovedstadsstempel",

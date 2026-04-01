@@ -40,11 +40,12 @@
 - [x] Diseñar e implementar tema claro
 - [] Mejoras tema claro y oscuro, tras testing
     - ambos
-        - [ ] en pasaporte, en el candado de "bloqueado" debe tener el mismo color que los símbolos de círculo / doble círculo / estrella (no hay misma grafía para candado? Sería ideal)
+        - [ ] en pasaporte, el candado de "bloqueado" de la leyenda, debe tener el mismo color que los símbolos de círculo / doble círculo / estrella (no hay misma grafía para candado? Sería ideal)
         - [x] la doble circunferencia que indica las capitales en el globo no tiene que estar coloreada
     - claro
         - [ ] las fronteras se deben ver mejor en el globo
     - oscuro
+- [ ] (**mejora**) en Pasaporte, me gustaría probar a quitar la cuadrícula que hay detrás de la tabla, creo que molesta visualmente, sobre todo en el tema claro. Además, el candado de los continente-nivel en el tema claro no se ve de masiado bien. Veamso qué tal queda cuando quitemos la cuadrícula o si hay que cambiar su color.
 - [ ] (**mejora**) en Estadísticas, tanto en la tab de Jugar como en la de Pruebas de sello, la leyenda (en la parte inferior) está demasiado pegada al borde inferior de la tabla, se puede desplazar un poco hacia abajo para que quede menos apretada
 - [ ] (**mejora**) en Explorar, los tres niveles de selector arriba en la pantalla [1) globo/tabla 2) continentes 3) pills de etiquetas de países y capitales] están demasiado apretados, se pueden separar un poco (vérticalmente, mantener desde un punto de vista horizontal)
 - [ ] (**bug**) si estoy jugando en un continente-nivel y reseteo las estadísticas de ese continente nivel, la barra de progreso solo se actualiza después de la primera pregunta (de ese continente-nivel). He notado que esto ocurre en Aventura, pero supongo que ocurre en todos los juegos

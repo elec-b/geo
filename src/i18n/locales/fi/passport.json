@@ -5,7 +5,7 @@
   "legend.country": "○ Maa",
   "legend.capital": "◎ Pääkaupunki",
   "legend.earned": "★ Saavutettu",
-  "legend.locked": "🔒 Lukittu",
+  "legend.locked": "Lukittu",
   "stampTitle.countries": "Maiden leima",
   "stampTitle.capitals": "Pääkaupunkien leima",
   "modal.title": "Leimaus-koe",

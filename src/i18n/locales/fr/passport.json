@@ -6,7 +6,7 @@
   "legend.country": "\u25cb Pays",
   "legend.capital": "\u25ce Capitale",
   "legend.earned": "\u2605 Obtenu",
-  "legend.locked": "\ud83d\udd12 Bloqu\u00e9",
+  "legend.locked": "Bloqu\u00e9",
 
   "stampTitle.countries": "Tampon Pays",
   "stampTitle.capitals": "Tampon Capitales",

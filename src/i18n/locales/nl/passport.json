@@ -6,7 +6,7 @@
   "legend.country": "\u25cb Land",
   "legend.capital": "\u25ce Hoofdstad",
   "legend.earned": "\u2605 Behaald",
-  "legend.locked": "\ud83d\udd12 Vergrendeld",
+  "legend.locked": "Vergrendeld",
 
   "stampTitle.countries": "Landenstempel",
   "stampTitle.capitals": "Hoofdstedenstempel",

@@ -215,7 +215,7 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
         <span className="passport-legend__item">{t('legend.country')}</span>
         <span className="passport-legend__item">{t('legend.capital')}</span>
         <span className="passport-legend__item">{t('legend.earned')}</span>
-        <span className="passport-legend__item passport-legend__item--muted">{t('legend.locked')}</span>
+        <span className="passport-legend__item passport-legend__item--muted"><span className="passport-legend__lock-icon">🔒</span> {t('legend.locked')}</span>
       </div>
 
       {/* Modal: elegir qué sello intentar */}

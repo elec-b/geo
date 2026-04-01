@@ -6,7 +6,7 @@
   "legend.country": "\u25cb Country",
   "legend.capital": "\u25ce Capital",
   "legend.earned": "\u2605 Earned",
-  "legend.locked": "\ud83d\udd12 Locked",
+  "legend.locked": "Locked",
 
   "stampTitle.countries": "Countries Stamp",
   "stampTitle.capitals": "Capitals Stamp",

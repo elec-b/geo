@@ -6,7 +6,7 @@
   "legend.country": "\u25cb Paese",
   "legend.capital": "\u25ce Capitale",
   "legend.earned": "\u2605 Ottenuto",
-  "legend.locked": "\ud83d\udd12 Bloccato",
+  "legend.locked": "Bloccato",
 
   "stampTitle.countries": "Timbro Paesi",
   "stampTitle.capitals": "Timbro Capitali",
