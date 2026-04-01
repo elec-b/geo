@@ -57,21 +57,6 @@
   border: 2px solid var(--glass-border);
   border-radius: var(--radius-lg);
   background-color: var(--glass-bg);
-  background-image:
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 2px,
-      var(--color-white-4) 2px,
-      var(--color-white-4) 4px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      var(--color-white-4) 2px,
-      var(--color-white-4) 4px
-    );
 }
 
 .passport-grid__corner {
@@ -146,6 +131,10 @@
 .passport-cell__lock {
   font-size: var(--font-size-sm);
   opacity: 0.6;
+}
+
+[data-theme="light"] .passport-cell__lock {
+  opacity: 0.8;
 }
 
 .passport-cell__stamps {
