@@ -37,7 +37,16 @@
 - [x] (**mejora**) En Pasaporte, en los continente-nivel bloqueados, mostrar el número de países debajo del candado
 - [x] (**mejora**) Traducciones del namespace `about` a los 32 idiomas de la app (alineadas con el español como fuente de verdad)
 - [x] Refinar tema oscuro. Paleta premium: espacio negro (#04060a), océano azul oscuro (#060a12), tierra gris azulada (#222630), superficies con tinte azul (rgba(8,14,24,...)). Cyan neón → azul suave (#60a5fa), púrpura → indigo (#818cf8). ~90 colores hardcodeados → 14 variables semánticas. Estrellas eliminadas. Feedback: ocre para corrección A/B, verde/rojo desaturados, flash al 2%. Texto más legible. Icono/splash regenerados
-- [testeando] Diseñar e implementar tema claro
+- [x] Diseñar e implementar tema claro
+- [] Mejoras tema claro y oscuro, tras testing
+    - ambos
+        - [ ] en pasaporte, en el candado de "bloqueado" debe tener el mismo color que los símbolos de círculo / doble círculo / estrella (no hay misma grafía para candado? Sería ideal)
+        - [x] la doble circunferencia que indica las capitales en el globo no tiene que estar coloreada
+    - claro
+        - [ ] las fronteras se deben ver mejor en el globo
+    - oscuro
+- [ ] (**mejora**) en Estadísticas, tanto en la tab de Jugar como en la de Pruebas de sello, la leyenda (en la parte inferior) está demasiado pegada al borde inferior de la tabla, se puede desplazar un poco hacia abajo para que quede menos apretada
+- [ ] (**mejora**) en Explorar, los tres niveles de selector arriba en la pantalla [1) globo/tabla 2) continentes 3) pills de etiquetas de países y capitales] están demasiado apretados, se pueden separar un poco (vérticalmente, mantener desde un punto de vista horizontal)
 - [ ] (**bug**) si estoy jugando en un continente-nivel y reseteo las estadísticas de ese continente nivel, la barra de progreso solo se actualiza después de la primera pregunta (de ese continente-nivel). He notado que esto ocurre en Aventura, pero supongo que ocurre en todos los juegos
 - [ ] (**mejora**) el icono de información (acerca de) es muy feo, cómo / de dónde sacamos los de estadísticas y los de configuración? Esos son más bonitos
 - [ ] (**mejora**) la cuadrícula que hay debajo del pasaporte, queda un poco rara, tanto en modo claro como en modo oscuro. ¿Quitar en ambos modos?

@@ -33,7 +33,7 @@ const DARK_GLOBE: GlobeThemeColors = {
   countryHover: '#1a1e26',
   border: 'rgba(255, 255, 255, 0.25)',
   atmosphere: 'rgba(100, 150, 220, 0.06)',
-  capitalPin: 'rgba(220, 220, 225, 0.7)',
+  capitalPin: 'rgba(200, 200, 200, 0.7)',
   capitalPinNonUn: 'rgba(255, 180, 50, 0.7)',
   label: 'rgba(255, 255, 255, 0.8)',
   labelNonUn: 'rgba(255, 180, 50, 0.6)',
@@ -46,7 +46,7 @@ const DARK_GLOBE: GlobeThemeColors = {
   correct: '#3d8a6a',
   incorrect: '#a05050',
   correction: '#a08850',
-  capitalPinHighlight: 'rgba(255, 255, 255, 0.85)',
+  capitalPinHighlight: 'rgba(210, 210, 210, 0.85)',
   countryDimmed: '#131620',
 };
 
@@ -56,7 +56,7 @@ const LIGHT_GLOBE: GlobeThemeColors = {
   countryHover: '#c8c0a8',
   border: 'rgba(90, 70, 40, 0.25)',
   atmosphere: 'rgba(100, 150, 220, 0.10)',
-  capitalPin: 'rgba(60, 50, 30, 0.75)',
+  capitalPin: 'rgba(90, 90, 90, 0.75)',
   capitalPinNonUn: 'rgba(160, 100, 10, 0.75)',
   label: 'rgba(40, 35, 25, 0.85)',
   labelNonUn: 'rgba(160, 100, 20, 0.7)',
@@ -69,7 +69,7 @@ const LIGHT_GLOBE: GlobeThemeColors = {
   correct: '#3a9a5c',
   incorrect: '#c44040',
   correction: '#b8922e',
-  capitalPinHighlight: 'rgba(60, 45, 20, 0.85)',
+  capitalPinHighlight: 'rgba(80, 80, 80, 0.85)',
   countryDimmed: '#9ab4c8',
 };
 

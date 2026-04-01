@@ -62,7 +62,6 @@ const VELOCITY_SAMPLES = 5;
 // Pin de capital (doble círculo ◎)
 const CAPITAL_PIN_OUTER_R = 7;
 const CAPITAL_PIN_INNER_R = 4.5;
-const CAPITAL_PIN_FILL_ALPHA = 0.30; // × alpha del color (0.7) ≈ 0.21 efectivo
 const LABEL_FONT_BASE = 9;
 
 
@@ -899,13 +898,6 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         const currentColor = (hl && pinCoords[0] === hl.coords[0] && pinCoords[1] === hl.coords[1])
           ? hl.color
           : pinColor;
-        // Relleno sutil interior
-        ctx.globalAlpha = CAPITAL_PIN_FILL_ALPHA;
-        ctx.beginPath();
-        ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER_R, 0, Math.PI * 2);
-        ctx.fillStyle = currentColor;
-        ctx.fill();
-        ctx.globalAlpha = 1;
         // Anillo exterior
         ctx.strokeStyle = currentColor;
         ctx.beginPath();
