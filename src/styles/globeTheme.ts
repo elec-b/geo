@@ -54,7 +54,7 @@ const LIGHT_GLOBE: GlobeThemeColors = {
   ocean: '#6b9fd4',
   countryFill: '#d4ccb4',
   countryHover: '#c8c0a8',
-  border: 'rgba(90, 70, 40, 0.25)',
+  border: 'rgba(90, 70, 40, 0.4)',
   atmosphere: 'rgba(100, 150, 220, 0.10)',
   capitalPin: 'rgba(90, 90, 90, 0.75)',
   capitalPinNonUn: 'rgba(160, 100, 10, 0.75)',

@@ -43,7 +43,7 @@
         - [x] en pasaporte, el candado de "bloqueado" de la leyenda, debe tener el mismo color que los símbolos de círculo / doble círculo / estrella (no hay misma grafía para candado? Sería ideal)
         - [x] la doble circunferencia que indica las capitales en el globo no tiene que estar coloreada
     - claro
-        - [ ] las fronteras se deben ver mejor en el globo
+        - [x] las fronteras se deben ver mejor en el globo
     - oscuro
 - [ ] (**mejora**) en Pasaporte, me gustaría probar a quitar la cuadrícula que hay detrás de la tabla, creo que molesta visualmente, sobre todo en el tema claro. Además, el candado de los continente-nivel en el tema claro no se ve de masiado bien. Veamso qué tal queda cuando quitemos la cuadrícula o si hay que cambiar su color.
 - [ ] (**mejora**) en Estadísticas, tanto en la tab de Jugar como en la de Pruebas de sello, la leyenda (en la parte inferior) está demasiado pegada al borde inferior de la tabla, se puede desplazar un poco hacia abajo para que quede menos apretada
