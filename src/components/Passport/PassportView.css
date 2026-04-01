@@ -238,6 +238,7 @@
 }
 
 .passport-legend__lock-icon {
+  font-size: 0.75em;
   filter: grayscale(1) contrast(0) brightness(2);
 }
 

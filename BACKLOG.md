@@ -40,7 +40,7 @@
 - [x] Diseñar e implementar tema claro
 - [] Mejoras tema claro y oscuro, tras testing
     - ambos
-        - [ ] en pasaporte, el candado de "bloqueado" de la leyenda, debe tener el mismo color que los símbolos de círculo / doble círculo / estrella (no hay misma grafía para candado? Sería ideal)
+        - [x] en pasaporte, el candado de "bloqueado" de la leyenda, debe tener el mismo color que los símbolos de círculo / doble círculo / estrella (no hay misma grafía para candado? Sería ideal)
         - [x] la doble circunferencia que indica las capitales en el globo no tiene que estar coloreada
     - claro
         - [ ] las fronteras se deben ver mejor en el globo
