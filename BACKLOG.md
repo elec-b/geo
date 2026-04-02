@@ -47,7 +47,7 @@
     - oscuro
 - [x] (**mejora**) Pasaporte: eliminada cuadrícula guilloché de la matriz + candado más visible en tema claro (opacidad 0.6→0.8)
 - [x] (**mejora**) en Estadísticas, tanto en la tab de Jugar como en la de Pruebas de sello, la leyenda (en la parte inferior) está demasiado pegada al borde inferior de la tabla, se puede desplazar un poco hacia abajo para que quede menos apretada
-- [ ] (**mejora**) en Explorar, los tres niveles de selector arriba en la pantalla [1) globo/tabla 2) continentes 3) pills de etiquetas de países y capitales] están demasiado apretados, se pueden separar un poco (vérticalmente, mantener desde un punto de vista horizontal)
+- [x] (**mejora**) en Explorar, los tres niveles de selector arriba en la pantalla [1) globo/tabla 2) continentes 3) pills de etiquetas de países y capitales] están demasiado apretados, se pueden separar un poco (vérticalmente, mantener desde un punto de vista horizontal)
 - [ ] (**bug**) si estoy jugando en un continente-nivel y reseteo las estadísticas de ese continente nivel, la barra de progreso solo se actualiza después de la primera pregunta (de ese continente-nivel). He notado que esto ocurre en Aventura, pero supongo que ocurre en todos los juegos
 - [ ] (**mejora**) el icono de información (acerca de) es muy feo, cómo / de dónde sacamos los de estadísticas y los de configuración? Esos son más bonitos
 - [ ] (**mejora**) la cuadrícula que hay debajo del pasaporte, queda un poco rara, tanto en modo claro como en modo oscuro. ¿Quitar en ambos modos?
