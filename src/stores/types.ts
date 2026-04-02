@@ -74,4 +74,6 @@ export interface AppState {
   profiles: UserProfile[];
   activeProfileId: ProfileId | null;
   settings: AppSettings;
+  /** Señal reactiva: se incrementa al resetear attempts (invalida useMemos en consumidores) */
+  attemptsVersion: number;
 }

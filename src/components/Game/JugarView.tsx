@@ -183,6 +183,7 @@ export function JugarView({
   const setLastPlayed = useAppStore((s) => s.setLastPlayed);
   const setLastStampPlayed = useAppStore((s) => s.setLastStampPlayed);
   const theme = useAppStore((s) => s.settings.theme);
+  const attemptsVersion = useAppStore((s) => s.attemptsVersion);
   const hlColors = useMemo(() => getHighlightColors(theme), [theme]);
 
   // Modales de prueba de sello y fin de pool
@@ -1053,8 +1054,9 @@ export function JugarView({
     const mode = activeQuestionTypeRef.current === 'mixed' ? 'adventure' : activeQuestionTypeRef.current;
     return calculateProgress(att, def.countries, mode, getInheritedCountries());
     // session.score en deps para recalcular tras cada respuesta
+    // attemptsVersion para recalcular tras resetear estadísticas
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session.level, session.continent, session.score, getAttemptsForSession, levels]);
+  }, [session.level, session.continent, session.score, getAttemptsForSession, levels, attemptsVersion]);
 
   // Invitación a sello desde tipo concreto A/B (Step 6c)
   const readyForStampType = useMemo((): 'countries' | 'capitals' | null => {
@@ -1069,7 +1071,7 @@ export function JugarView({
     if (qt === 'B' && !stamps.capitals && isTypeFullyDominated(att, def.countries, 'B')) return 'capitals';
     return null;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session.level, session.continent, session.score, getAttemptsForSession, getStamps, levels]);
+  }, [session.level, session.continent, session.score, getAttemptsForSession, getStamps, levels, attemptsVersion]);
 
   // Siguiente tipo sugerido tras agotar pool de tipo concreto (Step 7)
   const nextSuggestedType = useMemo((): QuestionType | null => {

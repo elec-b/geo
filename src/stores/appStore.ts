@@ -103,6 +103,7 @@ export const useAppStore = create<AppStore>()(
   profiles: [defaultProfile],
   activeProfileId: defaultProfileId,
   settings: { ...DEFAULT_SETTINGS },
+  attemptsVersion: 0,
 
   createProfile: (name: string, avatar: AvatarId): ProfileId => {
     const id = uuid();
@@ -346,7 +347,7 @@ export const useAppStore = create<AppStore>()(
         },
       };
 
-      return { profiles: newProfiles };
+      return { profiles: newProfiles, attemptsVersion: state.attemptsVersion + 1 };
     });
   },
     }),
