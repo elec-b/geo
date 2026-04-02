@@ -50,7 +50,8 @@
 - [x] (**mejora**) en Explorar, los tres niveles de selector arriba en la pantalla [1) globo/tabla 2) continentes 3) pills de etiquetas de países y capitales] están demasiado apretados, se pueden separar un poco (vérticalmente, mantener desde un punto de vista horizontal)
 - [x] (**bug**) barra de progreso no se actualizaba tras resetear estadísticas del continente-nivel activo (attemptsVersion como señal reactiva)
 - [x] (**mejora**) icono de información (acerca de) reemplazado por libro abierto (Feather Icons `book-open`), consistente con estadísticas y configuración
-- [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
+- [ ] (**mejora**) en explorar, la línea de hull de archipiélagos no se ve bien cuando se selecciona un archipiélago. Lo he detectado con los archipiélagos de Oceanía, e.g. Kiribati
+- [x] Validación automática de coordenadas de capitales en `fetch-countries.ts` (geoContains + tolerancia 20 km, bloquea generación si falla). Overrides manuales ampliados (EH, GD, SN, KI, MO, WF, PN). Override 10m añadido para Pitcairn (Adamstown ausente en 50m)
 - [ ] Auditar y migrar TODAS las fuentes de datos, y asegurar que en la actualidad se mantienen. El problema principal está en los datos de población y de HDI e IHDI. REST Countries fue archivado en junio 2024 (datos de población congelados, desfase <7% en países grandes). Evaluar World Bank API o UN Stats como reemplazo. Notas:
     - Ser inteligentes para simplificar tarea de CDN posterior. 
     - Hay que detalle del problema de los datos de la ficha en `docs/spikes/auditoria-datos-ficha.md` - ahora es el momento de abordar esos cambios (cuando se hizo el spike acordamos no llevar a cabo ninguna acción inmediata)

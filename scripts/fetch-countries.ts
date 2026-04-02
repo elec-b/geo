@@ -12,9 +12,11 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { geoContains, geoDistance, geoArea } from 'd3-geo';
+import * as topojson from 'topojson-client';
 
 // Importar mapeos desde el proyecto
-import { UN_COUNTRY_CODES, NON_UN_CODES, NON_UN_TERRITORIES_BY_ID, NON_UN_TERRITORIES_BY_NAME } from '../src/data/isoMapping.js';
+import { ISO_NUMERIC_TO_ALPHA2, UN_COUNTRY_CODES, NON_UN_CODES, NON_UN_TERRITORIES_BY_ID, NON_UN_TERRITORIES_BY_NAME } from '../src/data/isoMapping.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = resolve(__dirname, '..', 'public', 'data');
@@ -170,11 +172,46 @@ function cldrLanguageName(langCode: string, locale: string): string {
 }
 
 // --- Overrides de coordenadas de capital ---
+// Coordenadas corregidas manualmente donde REST Countries es incorrecto o impreciso.
+// Formato: [lat, lng] (mismo que REST Countries capitalInfo.latlng).
 const CAPITAL_COORD_OVERRIDES: Record<string, [number, number]> = {
-  EH: [27.15, -13.20],
-  GD: [12.05, -61.75],
-  SN: [14.69, -17.44],
+  EH: [27.15, -13.20],   // El Aaiún — REST Countries sin dato fiable
+  GD: [12.05, -61.75],   // St. George's — error conocido en REST Countries
+  SN: [14.69, -17.44],   // Dakar — corrección de coordenada
+  KI: [1.36, 173.09],    // South Tarawa — centroide del atolón principal
+  MO: [22.20, 113.55],   // Macao — REST Countries devuelve [0, 0]
+  WF: [-13.28, -176.17], // Mata-Utu — REST Countries apunta a isla incorrecta
+  PN: [-25.07, -130.10], // Adamstown — refinar precisión
 };
+
+// Capitales donde geoContains falla >20 km por limitación de la geometría simplificada,
+// no por error de coordenadas. Se excluyen del bloqueo de validación.
+const GEOCONTAINS_EXCEPTIONS = new Set([
+  'EH', // El Aaiún: polígono simplificado no llega a la costa
+  'KI', // South Tarawa: atolón no representado en geometría
+  'TC', // Cockburn Town: Grand Turk demasiado pequeña para 50m
+  'WF', // Mata-Utu: archipiélago disperso
+  'PN', // Adamstown: isla diminuta (cubierta por override 10m, pero no por 50m)
+]);
+
+// --- Helpers de geometría ---
+
+/** Extrae todos los vértices [lng, lat] de un Polygon o MultiPolygon. */
+function extractCoordinates(geometry: GeoJSON.Geometry): [number, number][] {
+  const result: [number, number][] = [];
+  if (geometry.type === 'Polygon') {
+    for (const ring of geometry.coordinates) {
+      for (const coord of ring) result.push([coord[0], coord[1]]);
+    }
+  } else if (geometry.type === 'MultiPolygon') {
+    for (const poly of geometry.coordinates) {
+      for (const ring of poly) {
+        for (const coord of ring) result.push([coord[0], coord[1]]);
+      }
+    }
+  }
+  return result;
+}
 
 // --- Generación ---
 
@@ -365,7 +402,84 @@ async function main() {
     for (const w of warnings) console.log(`  - ${w}`);
   }
 
-  // --- 5. Resumen ---
+  // --- 5. Validación de coordenadas (geoContains) ---
+  // Verifica que cada capital cae dentro del polígono de su país (geometría 50m).
+  // Bloquea la generación si se detecta un error inesperado (>8 km del borde).
+
+  console.log('\n--- Validación de coordenadas ---');
+
+  const topoPath = resolve(DATA_DIR, 'countries-50m.json');
+  const topo = JSON.parse(readFileSync(topoPath, 'utf-8'));
+  const geo = topojson.feature(topo, topo.objects.countries) as GeoJSON.FeatureCollection;
+
+  // Mapear features por cca2. Para IDs duplicados (ej. Australia/Ashmore), quedarse con la de mayor área.
+  const featureByCca2 = new Map<string, GeoJSON.Feature>();
+  for (const f of geo.features) {
+    const id = String(f.id).padStart(3, '0');
+    const cca2 = ISO_NUMERIC_TO_ALPHA2[id]
+      ?? NON_UN_TERRITORIES_BY_ID[id]?.cca2;
+    if (!cca2) continue;
+    const existing = featureByCca2.get(cca2);
+    if (!existing || geoArea(f) > geoArea(existing)) {
+      featureByCca2.set(cca2, f);
+    }
+  }
+
+  const EARTH_RADIUS_KM = 6371;
+  const TOLERANCE_KM = 20;
+  let insideCount = 0;
+  let coastalCount = 0;
+  let exceptionCount = 0;
+  const noGeometry: string[] = [];
+  const errors: string[] = [];
+
+  for (const [cca2, data] of Object.entries(capitals)) {
+    const [lat, lng] = data.latlng;
+    if (lat === 0 && lng === 0) continue; // Sin coordenadas reales
+
+    const feature = featureByCca2.get(cca2);
+    if (!feature) {
+      noGeometry.push(cca2);
+      continue;
+    }
+
+    if (geoContains(feature, [lng, lat])) {
+      insideCount++;
+      continue;
+    }
+
+    // Capital fuera del polígono: calcular distancia al borde más cercano
+    let minDist = Infinity;
+    const coords = extractCoordinates(feature.geometry);
+    for (const [vLng, vLat] of coords) {
+      const d = geoDistance([lng, lat], [vLng, vLat]) * EARTH_RADIUS_KM;
+      if (d < minDist) minDist = d;
+    }
+
+    if (minDist <= TOLERANCE_KM) {
+      coastalCount++;
+    } else if (GEOCONTAINS_EXCEPTIONS.has(cca2)) {
+      exceptionCount++;
+    } else {
+      errors.push(`${cca2} a ${minDist.toFixed(1)} km de su polígono`);
+    }
+  }
+
+  console.log(`  ✓ ${insideCount} capitales dentro de su polígono`);
+  if (coastalCount > 0) console.log(`  ℹ ${coastalCount} capitales costeras (<${TOLERANCE_KM} km del borde) — OK`);
+  if (exceptionCount > 0) console.log(`  ⚠ ${exceptionCount} excepciones conocidas (${[...GEOCONTAINS_EXCEPTIONS].join(', ')})`);
+  if (noGeometry.length > 0) console.log(`  ✗ ${noGeometry.length} capitales sin geometría (${noGeometry.join(', ')})`);
+
+  if (errors.length > 0) {
+    console.log('');
+    for (const e of errors) console.log(`  ✗ ERROR: ${e}`);
+    console.error('\n✗ Validación fallida. Revisar coordenadas o añadir a CAPITAL_COORD_OVERRIDES / GEOCONTAINS_EXCEPTIONS.');
+    process.exit(1);
+  }
+
+  console.log('✓ Validación de coordenadas completada');
+
+  // --- 6. Resumen ---
   console.log(`\n✓ Generación completada: ${Object.keys(SUPPORTED_LANGUAGES).length} idiomas`);
 }
 
