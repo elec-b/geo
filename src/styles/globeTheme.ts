@@ -25,6 +25,8 @@ export interface GlobeThemeColors {
   capitalPinHighlight: string;
   /** País dimmed (filtro continente activo) — color sólido, no alpha */
   countryDimmed: string;
+  /** Hull de archipiélago seleccionado — dorado destacado */
+  selectedHull: string;
 }
 
 const DARK_GLOBE: GlobeThemeColors = {
@@ -48,6 +50,7 @@ const DARK_GLOBE: GlobeThemeColors = {
   correction: '#a08850',
   capitalPinHighlight: 'rgba(210, 210, 210, 0.85)',
   countryDimmed: '#131620',
+  selectedHull: 'rgba(210, 180, 100, 0.7)',
 };
 
 const LIGHT_GLOBE: GlobeThemeColors = {
@@ -71,6 +74,7 @@ const LIGHT_GLOBE: GlobeThemeColors = {
   correction: '#b8922e',
   capitalPinHighlight: 'rgba(80, 80, 80, 0.85)',
   countryDimmed: '#9ab4c8',
+  selectedHull: 'rgba(160, 120, 30, 0.7)',
 };
 
 export function getGlobeTheme(theme: 'dark' | 'light'): GlobeThemeColors {
