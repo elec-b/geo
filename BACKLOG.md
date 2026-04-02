@@ -49,8 +49,7 @@
 - [x] (**mejora**) en Estadísticas, tanto en la tab de Jugar como en la de Pruebas de sello, la leyenda (en la parte inferior) está demasiado pegada al borde inferior de la tabla, se puede desplazar un poco hacia abajo para que quede menos apretada
 - [x] (**mejora**) en Explorar, los tres niveles de selector arriba en la pantalla [1) globo/tabla 2) continentes 3) pills de etiquetas de países y capitales] están demasiado apretados, se pueden separar un poco (vérticalmente, mantener desde un punto de vista horizontal)
 - [x] (**bug**) barra de progreso no se actualizaba tras resetear estadísticas del continente-nivel activo (attemptsVersion como señal reactiva)
-- [ ] (**mejora**) el icono de información (acerca de) es muy feo, cómo / de dónde sacamos los de estadísticas y los de configuración? Esos son más bonitos
-- [ ] (**mejora**) la cuadrícula que hay debajo del pasaporte, queda un poco rara, tanto en modo claro como en modo oscuro. ¿Quitar en ambos modos?
+- [x] (**mejora**) icono de información (acerca de) reemplazado por libro abierto (Feather Icons `book-open`), consistente con estadísticas y configuración
 - [ ] Validación automática de coordenadas de capitales en `fetch-countries.ts` (d3.geoContains + Wikidata SPARQL como fallback). De momento funciona con CAPITAL_OVERRIDES manual (EH, GD, KI, SN)
 - [ ] Auditar y migrar TODAS las fuentes de datos, y asegurar que en la actualidad se mantienen. El problema principal está en los datos de población y de HDI e IHDI. REST Countries fue archivado en junio 2024 (datos de población congelados, desfase <7% en países grandes). Evaluar World Bank API o UN Stats como reemplazo. Notas:
     - Ser inteligentes para simplificar tarea de CDN posterior. 

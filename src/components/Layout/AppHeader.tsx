@@ -36,9 +36,8 @@ export function AppHeader({ onStatsClick, onAvatarClick, onSettingsClick, onAbou
           aria-label={t('aria.about')}
         >
           <svg className="app-header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="10" />
-            <line x1="12" y1="16" x2="12" y2="12" />
-            <circle cx="12" cy="8" r="0.5" fill="currentColor" stroke="none" />
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
           </svg>
         </button>
       </div>
