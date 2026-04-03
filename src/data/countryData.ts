@@ -1,5 +1,6 @@
 // Loader de datos estáticos de países y capitales con caché multi-idioma
 import type { CountryData, CapitalCoords, ContinentOrSpecial } from './types';
+import { getCdnCountriesBase } from './cdnUpdate';
 
 /** Datos base agnósticos al idioma (de countries-base.json) */
 interface BaseEntry {
@@ -191,10 +192,15 @@ function mergeEntry(base: BaseEntry, i18n: I18nEntry): CountryData {
 export async function loadCountryData(locale = 'es'): Promise<Map<string, CountryData>> {
   if (cachedLocale === locale && cachedCountries) return cachedCountries;
 
-  // Cargar base (una sola vez)
+  // Cargar base (una sola vez): CDN tiene prioridad sobre bundled
   if (!cachedBase) {
-    const resp = await fetch(`${import.meta.env.BASE_URL}data/countries-base.json`);
-    cachedBase = await resp.json();
+    const cdnBase = await getCdnCountriesBase();
+    if (cdnBase) {
+      cachedBase = cdnBase as BaseEntry[];
+    } else {
+      const resp = await fetch(`${import.meta.env.BASE_URL}data/countries-base.json`);
+      cachedBase = await resp.json();
+    }
   }
 
   // Cargar i18n

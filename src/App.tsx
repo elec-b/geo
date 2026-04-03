@@ -14,6 +14,7 @@ import { AboutSheet } from './components/About/AboutSheet';
 import { SettingsSheet } from './components/Settings/SettingsSheet';
 import { LanguageSheet } from './components/Settings/LanguageSheet';
 import { loadCountryData, loadCapitals, invalidateCache } from './data/countryData';
+import { checkAndUpdate } from './data/cdnUpdate';
 import { changeAppLanguage } from './i18n';
 import { buildRankings, type CountryRankings } from './data/rankings';
 import { buildLevelDefinitions, buildCountryLevelMap } from './data/levels';
@@ -224,6 +225,9 @@ function App() {
         setCapitals(capitalsData);
         setRankings(ranksData);
         setLevels(levelsData);
+
+        // Verificar actualizaciones CDN en background (se aplican al siguiente inicio)
+        checkAndUpdate().catch(() => {});
       });
     });
   }, [locale]);

@@ -637,13 +637,20 @@ Nombres de mares, océanos y golfos principales sobre el globo, siguiendo la con
 
 ### Actualización automática de datos
 - **Estrategia**: Verificación silenciosa al abrir la app (si hay conexión)
+- **Alcance v1**: Solo `countries-base.json` (~75 KB) — contiene los datos dinámicos (población, HDI, IHDI)
 - **Funcionamiento**:
-  1. Al iniciar, la app compara versión local vs versión en servidor
-  2. Si hay nueva versión, descarga en background (~200 KB)
-  3. El usuario nunca nota la actualización
+  1. Al iniciar, la app carga datos: si hay datos CDN en Preferences con versión > bundled, los usa; si no, usa bundled
+  2. Tras la carga inicial (UI lista), verifica `manifest.json` en el CDN en background
+  3. Si hay versión más nueva, descarga `countries-base.json` y lo guarda en Preferences
+  4. Los datos nuevos se aplican en el **siguiente inicio** (sin hot-swap en sesión activa)
 - **Servidor**: JSON estático en CDN (GitHub Pages, Cloudflare, etc.)
+- **Versionado**: `public/data/data-version.json` define la versión bundled. El CDN sirve `manifest.json` con su versión. La app compara: si CDN > max(bundled, descargado) → descarga
+- **Almacenamiento**: Capacitor Preferences (UserDefaults en iOS, SharedPreferences en Android). Suficiente para ~75 KB de datos
+- **Resiliencia**: Todos los errores se silencian (timeout 5s manifest, 15s datos). La app nunca se bloquea por falta de CDN
 - **Frecuencia real**: Los datos de países cambian muy poco (~1-2 veces/año)
 - **Offline**: La app siempre funciona con datos locales empaquetados
+- **Pipeline de actualización**: `npm run update-data` → bump versión en `data-version.json` → `npm run generate-cdn` → subir `cdn-output/` al hosting
+- **Implementación**: `src/data/cdnUpdate.ts` (servicio), integrado en `countryData.ts` (carga) y `App.tsx` (check background)
 
 ### Coordenadas de capitales
 - **Fuente**: REST Countries v3.1 (`capitalInfo.latlng`)
