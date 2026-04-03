@@ -53,10 +53,7 @@
 - [x] (**mejora**) hull de archipiélagos seleccionados: color dorado dedicado (antes usaba el mismo gris/dorado del relleno del país, casi invisible)
 - [x] Validación automática de coordenadas de capitales en `fetch-countries.ts` (geoContains + tolerancia 20 km, bloquea generación si falla). Overrides manuales ampliados (EH, GD, SN, KI, MO, WF, PN). Override 10m añadido para Pitcairn (Adamstown ausente en 50m)
 - [x] Hit testing de hulls visibles: tap dentro del hull siempre selecciona el país del hull (centroid override solo aplica a hulls invisibles de archipiélagos grandes)
-- [ ] Auditar y migrar TODAS las fuentes de datos, y asegurar que en la actualidad se mantienen. El problema principal está en los datos de población y de HDI e IHDI. REST Countries fue archivado en junio 2024 (datos de población congelados, desfase <7% en países grandes). Evaluar World Bank API o UN Stats como reemplazo. Notas:
-    - Ser inteligentes para simplificar tarea de CDN posterior. 
-    - Hay que detalle del problema de los datos de la ficha en `docs/spikes/auditoria-datos-ficha.md` - ahora es el momento de abordar esos cambios (cuando se hizo el spike acordamos no llevar a cabo ninguna acción inmediata)
-        - Solución propuesta: actualizar HDI/IDH-D: regenerar `hdi.json` desde el Excel oficial del HDR 2025 (spike en `docs/spikes/auditoria-datos-ficha.md` — 192 de 194 países desactualizados + errores de origen). Idealmente con script automatizado
+- [x] Auditar y migrar fuentes de datos (población, HDI, IHDI). Spike de fuentes en `docs/spikes/auditoria-datos-ficha.md` §6. Scripts automatizados: `update-hdi.ts` (UNDP HDR 2025 CSV, 198 países), `update-population.ts` (World Bank API, 216 entidades). Pipeline: `npm run update-data`. REST Countries mantenido como scaffolding para datos estáticos
 - [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md)
 - [x] Nombre de la app: **Exploris** (spike en `docs/spikes/naming-app.md` — 23 nombres evaluados, nombre anterior inviable por colisión directa)
 

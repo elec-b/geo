@@ -481,6 +481,149 @@ Estos errores quedan corregidos al actualizar a HDR 2025. No se requiere acción
 
 ### Recomendaciones de proceso
 
-1. **Crear script de generación** de `hdi.json` desde el Excel oficial de UNDP, para evitar errores manuales.
+1. **Crear script de generación** de `hdi.json` desde el CSV oficial de UNDP, para evitar errores manuales.
 2. **Añadir año de referencia** al archivo (`"_meta": { "source": "HDR 2025", "dataYear": 2023 }`).
-3. **Fuente de población**: planificar migración de REST Countries a World Bank API o UN Stats como parte de la tarea de CDN.
+3. **Fuente de población**: migrar de REST Countries a World Bank API (ver §6).
+
+---
+
+## 6. Evaluación de fuentes futuras (spike de expansión)
+
+**Fecha**: 2026-04-03
+**Contexto**: Decidir qué fuentes usar para actualizar datos dinámicos (población, HDI, IHDI) y preparar el pipeline de actualización vía CDN.
+**Método**: Agent team (2 investigadores + 2 refutadores). Investigadores evaluaron fuentes en paralelo (población e HDI). Refutadores verificaron claims, probaron edge cases y validaron datos contra muestras reales.
+**Fuentes evaluadas**: World Bank API v2, UN Population Division (DESA) API, UNDP HDR 2025 (CSV/Excel), FAO, REST Countries (actual).
+
+### 6.1 Población → World Bank API
+
+**Recomendación: World Bank API, indicador SP.POP.TOTL.**
+
+**Endpoint**:
+```
+https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2024&format=json&per_page=300
+```
+
+| Criterio | Resultado |
+|----------|-----------|
+| Cobertura | 194/195 países ONU. Único gap: Vaticano (VA) — hardcodear ~800 hab |
+| Formato | JSON limpio. Campos: `country.id` (ISO alpha-2), `countryiso3code` (alpha-3), `date`, `value` |
+| Autenticación | No requiere API key ni auth |
+| Frecuencia actualización | Anual. Última actualización: feb 2026. Datos disponibles hasta 2024 |
+| Rate limits | No documentados. Una sola request (`per_page=300`) basta para los 195 países |
+| Estabilidad | API v2 activa desde hace años. Detrás de Cloudflare CDN. Sin timeline de deprecación |
+| Licencia | CC BY-4.0 |
+
+**Verificación de datos (muestra ref-pop, WB 2024 vs app actual)**:
+
+| País | App (REST Countries) | WB 2024 | Diferencia |
+|------|---------------------|---------|------------|
+| India | 1,417M | 1,451M | +2.4% |
+| Nigeria | 224M | 233M | +4.0% |
+| Indonesia | 284M | 283M | -0.3% |
+| España | 49.3M | 48.8M | -0.9% |
+| Tuvalu | 10,643 | 9,646 | -9.4% |
+| Nauru | 11,680 | 11,947 | +2.3% |
+| Palau | 16,733 | 17,695 | +5.7% |
+
+**Alternativa descartada: UN Population Division (DESA)**. La API de datos (`population.un.org/dataportalapi`) requiere Bearer auth no documentada públicamente. Las URLs de descarga de CSVs del WPP devuelven 404. No es viable como fuente automatizada.
+
+**Notas para el script**:
+- Filtrar por códigos cca2 de los 195 países (la API devuelve ~266 registros incluyendo agregados regionales)
+- Hardcodear Vaticano (VA): población ~800
+- Guardar año de referencia en metadata
+
+### 6.2 HDI / IHDI → UNDP HDR 2025 (CSV)
+
+**Recomendación: CSV de índices compuestos del HDR 2025, descarga directa.**
+
+**URL**:
+```
+https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_complete_time_series.csv
+```
+
+| Criterio | Resultado |
+|----------|-----------|
+| Cobertura | 192 países + Palestina (PS). Sin: VA, KP (parcial), MC (parcial), TW, XK |
+| Formato | CSV. Columnas: `iso3` (alpha-3), `hdi_YYYY`, `ihdi_YYYY`. Serie temporal 1990-2023 |
+| Descarga | Directa vía `curl`/`fetch`, sin captcha ni JS |
+| IHDI | Disponible desde 2010. HDR 2025 añade 25 países nuevos con IHDI (ver §3a) |
+| Identificadores | ISO alpha-3 → requiere mapeo a cca2 (trivial via REST Countries cca2↔cca3) |
+
+**Archivos alternativos** (todos descargables directamente):
+- Excel HDI: `.../2025_HDR/HDR25_Statistical_Annex_HDI_Table.xlsx`
+- Excel IHDI: `.../2025_HDR/HDR25_Statistical_Annex_IHDI_Table.xlsx`
+- Excel tablas 1-7: `.../2025_HDR/HDR25_Statistical_Annex_Tables_1-7.xlsx`
+
+**Riesgo: URL no estable entre ediciones**. El patrón de nombre cambia (HDR 2023/24: `2023-24_HDR/HDR23-24_...`, HDR 2025: `2025_HDR/HDR25_...`). No existe URL tipo "latest". Mitigación: actualización manual de la URL ~1 vez/año al publicarse nueva edición. Aceptable.
+
+**Países sin cobertura HDR** (mantener valores actuales en la app):
+
+| País | cca2 | HDI actual | Motivo ausencia |
+|------|------|-----------|-----------------|
+| Corea del Norte | KP | 0.733 | No reporta a UNDP |
+| Taiwán | TW | 0.926 | No miembro ONU |
+| Kosovo | XK | 0.750 | Soberanía en disputa |
+| Mónaco | MC | 0.956 | Solo componentes parciales, sin HDI calculado |
+| Vaticano | VA | — | Excluido completamente del HDR |
+
+**API HDR Data 2.0**: Descartada. La API original fue shut down. La 2.0 (hdrdata.org) no tiene estabilidad garantizada. El CSV estático es más robusto para un script anual.
+
+**Notas para el script**:
+- Parsear CSV (no Excel — más simple, sin dependencia xlsx)
+- Extraer columnas por patrón `hdi_YYYY` e `ihdi_YYYY` (los nombres de columna pueden variar entre ediciones)
+- Mapear ISO alpha-3 → cca2
+- Mantener valores manuales para KP/TW/XK/MC/VA (no sobreescribir con null)
+- Añadir metadata: `{ "source": "HDR 2025", "dataYear": 2023 }`
+
+### 6.3 Superficie → Mantener REST Countries
+
+**Recomendación: no migrar. REST Countries (CIA World Factbook) ya es la fuente óptima.**
+
+| Criterio | REST Countries (actual) | World Bank AG.LND.TOTL.K2 | World Bank AG.SRF.TOTL.K2 |
+|----------|------------------------|---------------------------|---------------------------|
+| Canadá | 9,984,670 km² ✓ | 8,788,700 km² (excluye lagos) | 15,634,410 km² (incluye agua costera) |
+| Francia | 543,908 km² ✓ | 538,950 km² (solo metrópoli) | 606,410 km² |
+| Valores esperados | Sí (CIA Factbook) | No (land area ≠ expectativa) | No (surface area inflada) |
+| Cobertura | 195+ países | Falta VA, TW; Kosovo null | Similar |
+
+La superficie es un dato estático (fronteras no cambian). Que REST Countries esté archivado es irrelevante para este campo. Los valores CIA Factbook son los que el público reconoce.
+
+### 6.4 Mapa de campos: dinámicos vs estáticos
+
+| Campo | Categoría | Fuente futura | Actualización |
+|-------|-----------|---------------|---------------|
+| Población | **Dinámico** | World Bank API | Anual |
+| HDI | **Dinámico** | UNDP HDR CSV | Anual (~mayo) |
+| IHDI | **Dinámico** | UNDP HDR CSV | Anual (~mayo) |
+| Superficie | Estático | REST Countries (actual) | No requiere |
+| Nombres de país | Semi-estático | REST Countries + Wikidata CLDR | Raro |
+| Capitales | Semi-estático | REST Countries + Wikidata | Raro |
+| Monedas | Semi-estático | REST Countries + suplementario | Raro |
+| Idiomas oficiales | Semi-estático | REST Countries + suplementario | Raro |
+| Gentilicios | Semi-estático | REST Countries + Claude | Raro |
+| Banderas SVG | Estático | REST Countries (URLs flagcdn) | Raro |
+| Coordenadas capitales | Estático | REST Countries + overrides | No cambia |
+| Geometrías (TopoJSON) | Estático | Natural Earth via world-atlas | No cambia |
+| Slugs Wikipedia | Semi-estático | Wikidata SPARQL | Raro |
+
+**Para CDN v1**: Solo los 3 campos dinámicos (población, HDI, IHDI). Los semi-estáticos se pueden incluir en futuras versiones si es necesario.
+
+### 6.5 Decisión sobre REST Countries
+
+**No eliminar REST Countries del pipeline.** Sigue siendo útil como scaffolding para datos estáticos y semi-estáticos (códigos ISO, nombres base, superficie, banderas, estructura). Solo se reemplazan los campos dinámicos con fuentes activamente mantenidas. El pipeline queda:
+
+```
+REST Countries (base) + Wikidata (traducciones) + World Bank (población) + UNDP HDR (HDI/IHDI) + overrides manuales
+```
+
+### 6.6 Plan de acción
+
+**Fase 1 — Actualizar datos** (próximo paso):
+1. Script `update-hdi.ts`: descargar CSV HDR 2025 → parsear → generar `hdi.json` con HDI + IHDI actualizados
+2. Script `update-population.ts`: consultar World Bank API → actualizar población en `countries-base.json`
+3. Verificar en app (ficha de país) que los datos nuevos se muestran correctamente
+
+**Fase 2 — CDN** (posterior):
+1. JSON estático en CDN con los 3 campos dinámicos + versión/timestamp
+2. Lógica en app: comparar versión local vs CDN al abrir, descargar en background si hay update
+3. Pipeline de generación: ejecutar scripts de fase 1 → publicar JSON → CDN lo sirve

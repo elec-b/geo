@@ -13,6 +13,9 @@
     "fetch-wikipedia-all": "tsx scripts/fetch-wikipedia-all.ts",
     "generate-overrides": "tsx scripts/generate-island-overrides.ts",
     "generate-overseas": "tsx scripts/generate-overseas-overrides.ts",
+    "update-hdi": "tsx scripts/update-hdi.ts",
+    "update-population": "tsx scripts/update-population.ts",
+    "update-data": "npm run update-hdi && npm run update-population && npm run fetch-data",
     "device": "source .env.local && vite build && npx cap copy ios && xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug -destination \"id=$IOS_DEVICE_UDID\" -derivedDataPath ios/DerivedData COMPILER_INDEX_STORE_ENABLE=NO build && xcrun devicectl device install app --device $IOS_DEVICE_ID ios/DerivedData/Build/Products/Debug-iphoneos/App.app && xcrun devicectl device process launch --terminate-existing --device $IOS_DEVICE_ID $IOS_BUNDLE_ID",
     "device:live": "source .env.local && LIVE_RELOAD=http://$(ipconfig getifaddr en0):5173 npx cap copy ios && xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug -destination \"id=$IOS_DEVICE_UDID\" -derivedDataPath ios/DerivedData COMPILER_INDEX_STORE_ENABLE=NO build && xcrun devicectl device install app --device $IOS_DEVICE_ID ios/DerivedData/Build/Products/Debug-iphoneos/App.app && xcrun devicectl device process launch --terminate-existing --device $IOS_DEVICE_ID $IOS_BUNDLE_ID"
   },

@@ -228,6 +228,12 @@ async function main() {
   const hdiData: Record<string, HdiEntry> =
     JSON.parse(readFileSync(resolve(SCRIPTS_DATA, 'hdi.json'), 'utf-8'));
 
+  // Población (World Bank, override de REST Countries) — opcional
+  const populationData: Record<string, number> =
+    existsSync(resolve(SCRIPTS_DATA, 'population.json'))
+      ? JSON.parse(readFileSync(resolve(SCRIPTS_DATA, 'population.json'), 'utf-8'))
+      : {};
+
   // Wikipedia slugs (solo español por ahora; los demás se generarán con fetch-wikipedia-i18n)
   const wikiEs: Record<string, { slug: string; lang: string }> =
     existsSync(resolve(SCRIPTS_DATA, 'wikipedia-es.json'))
@@ -245,7 +251,8 @@ async function main() {
   console.log(`  Gentilicios: ${Object.keys(demonymsAll).length} países`);
   console.log(`  Códigos de idiomas: ${Object.keys(langCodesBase).length} países`);
   console.log(`  Overrides de nombre: ${Object.keys(nameOverrides).length} idiomas`);
-  console.log(`  HDI: ${Object.keys(hdiData).length} países`);
+  console.log(`  HDI: ${Object.keys(hdiData).filter(k => k !== '_meta').length} países`);
+  console.log(`  Población (WB): ${Object.keys(populationData).filter(k => k !== '_meta').length} países`);
   console.log(`  Wikipedia (es): ${Object.keys(wikiEs).length} países`);
   console.log(`  Wikipedia (multi): ${Object.keys(wikiAll).length} países`);
 
@@ -304,7 +311,7 @@ async function main() {
       cca2: c.cca2,
       ccn3: c.ccn3 ?? '',
       continent: REGION_MAP[c.region] ?? c.region,
-      population: c.population,
+      population: populationData[c.cca2] ?? c.population,
       area: c.area,
       flagSvg: c.flags.svg,
       currencies: currencyCodes.map((code) => ({
