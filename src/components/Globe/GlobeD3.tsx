@@ -1242,19 +1242,22 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           bestFeature = feature as Feature<Geometry, CountryProperties>;
         }
       }
-      // Antes de retornar el hull match, verificar si hay un país (sin hull)
-      // cuyo centroide esté más cerca del tap. Esto evita que hulls invisibles
-      // de archipiélagos grandes (ej. Indonesia) intercepten taps destinados
-      // a vecinos pequeños (ej. Timor-Leste).
+      // Los hulls visibles (archipiélagos pequeños) no contienen islas de
+      // otros países — tap dentro del hull = siempre ese país.
+      // El centroid override solo aplica a hulls invisibles de archipiélagos
+      // grandes (ej. Indonesia) que pueden contener vecinos (ej. Timor-Leste).
       if (bestFeature) {
-        for (const [cca2, centroid] of countryCentroidsRef.current) {
-          if (hulls.has(cca2)) continue;
-          const dist = geoDistance(coords as [number, number], centroid);
-          if (dist < bestDist) {
-            const feat = countries.features.find(f => f.properties?.cca2 === cca2);
-            if (feat) {
-              bestDist = dist;
-              bestFeature = feat as Feature<Geometry, CountryProperties>;
+        const bestCca2 = bestFeature.properties?.cca2;
+        if (!bestCca2 || !HULL_VISIBLE_CODES.has(bestCca2)) {
+          for (const [cca2, centroid] of countryCentroidsRef.current) {
+            if (hulls.has(cca2)) continue;
+            const dist = geoDistance(coords as [number, number], centroid);
+            if (dist < bestDist) {
+              const feat = countries.features.find(f => f.properties?.cca2 === cca2);
+              if (feat) {
+                bestDist = dist;
+                bestFeature = feat as Feature<Geometry, CountryProperties>;
+              }
             }
           }
         }

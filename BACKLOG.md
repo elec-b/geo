@@ -52,12 +52,7 @@
 - [x] (**mejora**) icono de información (acerca de) reemplazado por libro abierto (Feather Icons `book-open`), consistente con estadísticas y configuración
 - [x] (**mejora**) hull de archipiélagos seleccionados: color dorado dedicado (antes usaba el mismo gris/dorado del relleno del país, casi invisible)
 - [x] Validación automática de coordenadas de capitales en `fetch-countries.ts` (geoContains + tolerancia 20 km, bloquea generación si falla). Overrides manuales ampliados (EH, GD, SN, KI, MO, WF, PN). Override 10m añadido para Pitcairn (Adamstown ausente en 50m)
-- [ ] Testeando oceanía-mochilero me pasa lo siguiente: en la prueba de sello de países, cuando me pregunta por Kiribati, si pulso en el centro del hull se selecciona Samoa Americana y cuenta como error. Investigar por qué es y corregir - no solo para Kiribati, sino para todos los casos similares donde ocurra este problema
-    - de los hulls que tienen línea discontinua visible para el usuario, hay algún caso de hull que contenga islas que pertenezcan a algún país distinto al del hull? 
-    - Investigación muy preliminar, necesario verificar:
-        - **Root cause**: centroid override en hitTest (GlobeD3.tsx ~L1249-1262) compara centroides con TODOS los países sin hull tras un hull match. Territorios no-ONU con centroide más cercano roban el tap
-        - **Fix**: excluir no-ONU del centroid override usando `nonUnCodesRef` (ya existe, cubre todos). `NON_UN_MICROSTATE_CODES` no basta (falta NU, PF, etc.)
-        - **Verificado**: Timor-Leste y Brunéi (ambos ONU) siguen protegidos. Ningún hull visible contiene islas de otro país
+- [x] Hit testing de hulls visibles: tap dentro del hull siempre selecciona el país del hull (centroid override solo aplica a hulls invisibles de archipiélagos grandes)
 - [ ] Auditar y migrar TODAS las fuentes de datos, y asegurar que en la actualidad se mantienen. El problema principal está en los datos de población y de HDI e IHDI. REST Countries fue archivado en junio 2024 (datos de población congelados, desfase <7% en países grandes). Evaluar World Bank API o UN Stats como reemplazo. Notas:
     - Ser inteligentes para simplificar tarea de CDN posterior. 
     - Hay que detalle del problema de los datos de la ficha en `docs/spikes/auditoria-datos-ficha.md` - ahora es el momento de abordar esos cambios (cuando se hizo el spike acordamos no llevar a cabo ninguna acción inmediata)
