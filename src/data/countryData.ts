@@ -1,6 +1,6 @@
 // Loader de datos estáticos de países y capitales con caché multi-idioma
 import type { CountryData, CapitalCoords, ContinentOrSpecial } from './types';
-import { getCdnCountriesBase } from './cdnUpdate';
+import { getCdnCountriesBase, getCdnCapitals, getCdnI18n } from './cdnUpdate';
 
 /** Datos base agnósticos al idioma (de countries-base.json) */
 interface BaseEntry {
@@ -203,9 +203,15 @@ export async function loadCountryData(locale = 'es'): Promise<Map<string, Countr
     }
   }
 
-  // Cargar i18n
-  const i18nResp = await fetch(`${import.meta.env.BASE_URL}data/i18n/${locale}.json`);
-  const i18nData: Record<string, I18nEntry> = await i18nResp.json();
+  // Cargar i18n: CDN tiene prioridad sobre bundled
+  let i18nData: Record<string, I18nEntry>;
+  const cdnI18n = await getCdnI18n(locale);
+  if (cdnI18n) {
+    i18nData = cdnI18n as Record<string, I18nEntry>;
+  } else {
+    const i18nResp = await fetch(`${import.meta.env.BASE_URL}data/i18n/${locale}.json`);
+    i18nData = await i18nResp.json();
+  }
 
   // Fusionar
   const map = new Map<string, CountryData>();
@@ -240,10 +246,15 @@ export async function loadCountryData(locale = 'es'): Promise<Map<string, Countr
 export async function loadCapitals(): Promise<Map<string, CapitalCoords>> {
   if (cachedCapitals) return cachedCapitals;
 
-  // Cargar coords (una sola vez)
+  // Cargar coords (una sola vez): CDN tiene prioridad sobre bundled
   if (!cachedCoordsRaw) {
-    const resp = await fetch(`${import.meta.env.BASE_URL}data/capitals.json`);
-    cachedCoordsRaw = await resp.json();
+    const cdnCaps = await getCdnCapitals();
+    if (cdnCaps) {
+      cachedCoordsRaw = cdnCaps;
+    } else {
+      const resp = await fetch(`${import.meta.env.BASE_URL}data/capitals.json`);
+      cachedCoordsRaw = await resp.json();
+    }
   }
 
   const countries = getCountryData();

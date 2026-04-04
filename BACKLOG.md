@@ -54,9 +54,9 @@
 - [x] Validación automática de coordenadas de capitales en `fetch-countries.ts` (geoContains + tolerancia 20 km, bloquea generación si falla). Overrides manuales ampliados (EH, GD, SN, KI, MO, WF, PN). Override 10m añadido para Pitcairn (Adamstown ausente en 50m)
 - [x] Hit testing de hulls visibles: tap dentro del hull siempre selecciona el país del hull (centroid override solo aplica a hulls invisibles de archipiélagos grandes)
 - [x] Auditar y migrar fuentes de datos (población, HDI, IHDI). Spike de fuentes en `docs/spikes/auditoria-datos-ficha.md` §6. Scripts automatizados: `update-hdi.ts` (UNDP HDR 2025 CSV, 198 países), `update-population.ts` (World Bank API, 216 entidades). Pipeline: `npm run update-data`. REST Countries mantenido como scaffolding para datos estáticos
-- [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md). Código de la app listo (`src/data/cdnUpdate.ts`, integrado en `countryData.ts` y `App.tsx`). Script de generación: `npm run generate-cdn`. Falta:
+- [ ] Actualización silenciosa de datos vía CDN (ver DESIGN.md). Código de la app listo (`src/data/cdnUpdate.ts`, integrado en `countryData.ts` y `App.tsx`). Alcance: countries-base + capitals + i18n-all (todos los idiomas). Script de generación: `npm run generate-cdn`. Falta:
     - [ ] Crear repo `exploris-data` en GitHub + activar GitHub Pages (o alternativa: Cloudflare Pages, S3)
-    - [ ] Subir `cdn-output/` (manifest.json + countries-base.json) al hosting
+    - [ ] Subir `cdn-output/` (manifest.json + countries-base.json + capitals.json + i18n-all.json) al hosting
     - [ ] Configurar `VITE_CDN_URL` con la URL real del CDN
     - [ ] Testear flujo completo en dispositivo: app descarga datos CDN, se aplican al siguiente inicio
     - [ ] Testear offline: sin CDN la app sigue funcionando con datos bundled

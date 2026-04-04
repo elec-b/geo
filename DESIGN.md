@@ -637,16 +637,16 @@ Nombres de mares, océanos y golfos principales sobre el globo, siguiendo la con
 
 ### Actualización automática de datos
 - **Estrategia**: Verificación silenciosa al abrir la app (si hay conexión)
-- **Alcance v1**: Solo `countries-base.json` (~75 KB) — contiene los datos dinámicos (población, HDI, IHDI)
+- **Alcance**: Todos los datos de países — `countries-base.json` (~74 KB), `capitals.json` (~14 KB) e `i18n-all.json` (~1.9 MB, todos los idiomas combinados). Total: ~2 MB raw (~600 KB gzipped). Los archivos TopoJSON (geometrías) no se actualizan vía CDN (muy pesados, rarísimo que cambien)
 - **Funcionamiento**:
   1. Al iniciar, la app carga datos: si hay datos CDN en Preferences con versión > bundled, los usa; si no, usa bundled
   2. Tras la carga inicial (UI lista), verifica `manifest.json` en el CDN en background
-  3. Si hay versión más nueva, descarga `countries-base.json` y lo guarda en Preferences
+  3. Si hay versión más nueva, descarga los 3 archivos en paralelo y los guarda en Preferences
   4. Los datos nuevos se aplican en el **siguiente inicio** (sin hot-swap en sesión activa)
 - **Servidor**: JSON estático en CDN (GitHub Pages, Cloudflare, etc.)
-- **Versionado**: `public/data/data-version.json` define la versión bundled. El CDN sirve `manifest.json` con su versión. La app compara: si CDN > max(bundled, descargado) → descarga
-- **Almacenamiento**: Capacitor Preferences (UserDefaults en iOS, SharedPreferences en Android). Suficiente para ~75 KB de datos
-- **Resiliencia**: Todos los errores se silencian (timeout 5s manifest, 15s datos). La app nunca se bloquea por falta de CDN
+- **Versionado**: `public/data/data-version.json` define la versión bundled. El CDN sirve `manifest.json` con su versión. La app compara: si CDN > max(bundled, descargado) → descarga. Versión única compartida por todos los archivos (mismo pipeline de generación)
+- **Almacenamiento**: Capacitor Preferences (UserDefaults en iOS, SharedPreferences en Android). ~2 MB total
+- **Resiliencia**: Todos los errores se silencian (timeout 5s manifest, 15s datos). Cada archivo se descarga y guarda de forma independiente (si uno falla, los demás se guardan). La app nunca se bloquea por falta de CDN
 - **Frecuencia real**: Los datos de países cambian muy poco (~1-2 veces/año)
 - **Offline**: La app siempre funciona con datos locales empaquetados
 - **Pipeline de actualización**: `npm run update-data` → bump versión en `data-version.json` → `npm run generate-cdn` → subir `cdn-output/` al hosting
