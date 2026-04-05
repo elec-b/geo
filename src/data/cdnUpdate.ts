@@ -23,7 +23,7 @@ import { Preferences } from '@capacitor/preferences';
 
 // --- Configuración ---
 
-const CDN_BASE_URL = import.meta.env.VITE_CDN_URL || 'https://exploris.github.io/data';
+const CDN_BASE_URL = import.meta.env.VITE_CDN_URL || 'https://elec-b.github.io/exploris-data';
 const CDN_MANIFEST_URL = `${CDN_BASE_URL}/manifest.json`;
 const CDN_COUNTRIES_BASE_URL = `${CDN_BASE_URL}/countries-base.json`;
 const CDN_CAPITALS_URL = `${CDN_BASE_URL}/capitals.json`;
