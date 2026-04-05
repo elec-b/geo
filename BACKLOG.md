@@ -57,6 +57,9 @@
 - [x] Actualización silenciosa de datos vía CDN. Repo `elec-b/exploris-data` en GitHub Pages. Código app-side (`cdnUpdate.ts`, `countryData.ts`, `App.tsx`), script `npm run generate-cdn`. Alcance: countries-base + capitals + i18n-all. Testeado en dispositivo: descarga + aplicación al reinicio, offline, no-retroceso (bundled > CDN)
 - [x] Nombre de la app: **Exploris** (spike en `docs/spikes/naming-app.md` — 23 nombres evaluados, nombre anterior inviable por colisión directa)
 
+### Preparación compartida (iOS + Android)
+- [x] Solicitud de valoración in-app (SKStoreReviewController en iOS, Google Play In-App Review en Android). Plugin `@capacitor-community/in-app-review`, trigger tras animación de sello ganado, condiciones: ≥5 sesiones y ≥7 días
+
 ### Preparación y publicación iOS
 - [ ] Fix orientación: eliminar landscape de Info.plist (la UI es portrait-only). Decidir si se soporta iPad
 - [ ] Privacy policy en URL pública (la app no recopila datos — declararlo explícitamente). Landing page mínima (GitHub Pages): privacy policy + URL de soporte
@@ -70,7 +73,6 @@
 - [ ] Screenshots (3-5, resolución 6.9" reutilizable para todos los tamaños)
 - [ ] Clasificación por edad: general audience 4+ (NO categorizar como «directed to children» — evita restricciones de Kids Category y parental gates para el enlace a Wikipedia)
 - [ ] Enviar a App Store Review
-- [ ] (Recomendado) Solicitud de valoración in-app (SKStoreReviewController) — alto ROI, bajo esfuerzo
 
 ### Preparación y publicación Android
 - [ ] Cuenta Google Play Console + verificación de identidad ($25, pago único)

@@ -15,6 +15,7 @@ import { SettingsSheet } from './components/Settings/SettingsSheet';
 import { LanguageSheet } from './components/Settings/LanguageSheet';
 import { loadCountryData, loadCapitals, invalidateCache } from './data/countryData';
 import { checkAndUpdate } from './data/cdnUpdate';
+import { maybeRequestReview } from './utils/reviewPrompt';
 import { changeAppLanguage } from './i18n';
 import { buildRankings, type CountryRankings } from './data/rankings';
 import { buildLevelDefinitions, buildCountryLevelMap } from './data/levels';
@@ -55,10 +56,12 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  // Reset de estado de sesión al abrir la app (Globo + Todos)
+  // Reset de estado de sesión al abrir la app (Globo + Todos) + contador de sesiones
   useEffect(() => {
     useAppStore.getState().setLastExploreMode('countries');
     useAppStore.getState().setLastActiveContinent(null);
+    const current = useAppStore.getState().settings.sessionCount ?? 0;
+    useAppStore.getState().updateSettings({ sessionCount: current + 1 });
   }, []);
 
   // Datos cargados
@@ -201,7 +204,10 @@ function App() {
   }, []);
 
   const handleGlobeReady = useCallback(() => setGlobeReady(true), []);
-  const handleStampAnimationDone = useCallback(() => setRecentlyEarnedStamp(null), []);
+  const handleStampAnimationDone = useCallback(() => {
+    setRecentlyEarnedStamp(null);
+    maybeRequestReview();
+  }, []);
 
   // Precargar datos estáticos en paralelo con el globo
   const locale = useAppStore((s) => s.settings.locale);

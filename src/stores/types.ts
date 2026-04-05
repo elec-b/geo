@@ -67,6 +67,8 @@ export interface AppSettings {
   lastActiveContinent?: Continent | null;
   lastTableSort?: { key: 'name' | 'capital' | 'population' | 'level'; dir: 'asc' | 'desc' } | null;
   lastExploreMode?: 'countries' | 'capitals';
+  /** Contador de aperturas de la app (para decidir cuándo solicitar valoración) */
+  sessionCount?: number;
 }
 
 /** Estado completo de la aplicación */
