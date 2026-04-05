@@ -1,16 +1,12 @@
 {
   "title": "À propos d'Exploris",
-
   "intro": "Exploris est une app d'apprentissage de la géographie avec un globe terrestre interactif en 3D. Apprends les pays, les capitales et bien plus de manière visuelle et divertissante.",
-
   "section.countries.title": "Pays",
   "section.countries.body": "Exploris inclut les 195 pays reconnus par les Nations Unies, le standard le plus accepté au niveau mondial. Tu peux aussi explorer sur le globe des territoires non reconnus ou en litige.\n\nLe globe reproduit la vue de la Terre depuis l'espace. Cela te permet d'apprécier la taille réelle des pays, ce que les cartes planes ne permettent pas.",
-
   "section.learn.title": "Comment apprendre",
   "section.learn.tips.explore": "Commence dans Explorer : fais tourner le globe, touche les pays pour voir leur fiche et familiarise-toi avec leur forme et leur emplacement. La vue Tableau t'aide à associer chaque pays à sa capitale. Touche n'importe quel pays ou capitale dans le tableau pour le voir sur le globe.",
   "section.learn.tips.play": "Quand tu es prêt, lance-toi dans Jouer. Nous te recommandons de jouer en mode Aventure, qui combine intelligemment les différents types de jeu expliqués ci-dessous ; il s'adapte à ce que tu sais pour t'aider à apprendre.",
   "section.learn.tips.passport": "Ton objectif final est de remplir le Passeport de tampons. Pour obtenir un tampon, tu dois réussir une épreuve de tampon sans erreur.",
-
   "section.gameTypes.title": "Types de jeu",
   "section.gameTypes.intro": "Il y a 6 types de jeu, classés du plus facile au plus difficile :",
   "section.gameTypes.E": "◯? — Identifie le pays — Un pays est mis en évidence sur le globe et tu choisis son nom parmi 4 options.",
@@ -21,10 +17,8 @@
   "section.gameTypes.B": "◎ — Montre la capitale — On te donne une capitale et tu touches son emplacement sur le globe.",
   "section.gameTypes.adventure": "Le mode Aventure combine tous les types et s'adapte à ta progression. C'est la façon recommandée de jouer.",
   "section.gameTypes.stamps": "Les types «Montre le pays» et «Montre la capitale» sont ceux utilisés dans les épreuves de tampon du Passeport.",
-
   "section.stats.title": "Statistiques",
   "section.stats.body": "La vue Statistiques a deux onglets :\n\n• Jouer — Affiche ta maîtrise dans chaque type de jeu.\n\n• Épreuves de tampon — Affiche tes résultats aux épreuves du Passeport. \n\nTu peux alterner entre indicateurs de maîtrise (✓/✗) et pourcentages de réussite. Touche un pays pour aller directement à sa fiche dans Explorer.",
-
   "section.sources.title": "Sources des données",
-  "section.sources.body": "Les données proviennent de sources publiques telles que les Nations Unies, Natural Earth et Wikidata."
+  "section.sources.body": "Les données proviennent de sources publiques telles que les Nations Unies, Natural Earth, la Banque mondiale et Wikidata. L'application vérifie automatiquement si des données plus récentes sont disponibles et les met à jour en arrière-plan. Les cartes ne changent qu'avec les nouvelles versions de l'application."
 }

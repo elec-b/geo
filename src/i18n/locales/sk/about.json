@@ -1,16 +1,12 @@
 {
   "title": "O Exploris",
-
   "intro": "Exploris je aplikácia na učenie geografie s interaktívnym 3D glóbusom. Spoznávaj krajiny, hlavné mestá a oveľa viac — názorne a zábavne.",
-
   "section.countries.title": "Krajiny",
   "section.countries.body": "Exploris obsahuje 195 krajín uznaných Organizáciou Spojených národov — celosvetovo najprijímanejší štandard. Na glóbuse môžeš tiež preskúmať neuznané alebo sporné územia.\n\nGlóbus zobrazuje Zem tak, ako vyzerá z vesmíru. Vďaka tomu si uvedomíš skutočnú veľkosť krajín — niečo, čo ploché mapy nedokážu.",
-
   "section.learn.title": "Ako sa učiť",
   "section.learn.tips.explore": "Začni v sekcii „Preskúmaj“: otáčaj glóbusom, ťukaj na krajiny, aby si videl ich kartu, a zapamätaj si ich tvar a polohu. Zobrazenie „Tabuľka“ ti pomôže prepojiť každú krajinu s jej hlavným mestom. Ťukni na akúkoľvek krajinu alebo hlavné mesto v tabuľke a zobraz ich na glóbuse.",
   "section.learn.tips.play": "Keď budeš pripravený, prejdi do sekcie „Hraj“. Odporúčame režim „Dobrodružstvo“, ktorý šikovne kombinuje všetky typy hier popísané nižšie a prispôsobuje sa tvojim znalostiam, aby ti pomohol učiť sa.",
   "section.learn.tips.passport": "Tvojím konečným cieľom je naplniť „Pas“ pečiatkami. Na získanie pečiatky musíš dokončiť pečiatkovú skúšku bez chýb.",
-
   "section.gameTypes.title": "Typy hier",
   "section.gameTypes.intro": "Existuje 6 typov hier, zoradených od najľahšieho po najťažší:",
   "section.gameTypes.E": "◯? — Urči krajinu — Krajina sa zvýrazní na glóbuse a ty vyberieš jej názov zo 4 možností.",
@@ -21,10 +17,8 @@
   "section.gameTypes.B": "◎ — Ukáž hlavné mesto — Dostaneš hlavné mesto a nájdeš ho na glóbuse.",
   "section.gameTypes.adventure": "Režim „Dobrodružstvo“ kombinuje všetky typy a prispôsobuje sa tvojmu pokroku. Je to odporúčaný spôsob hry.",
   "section.gameTypes.stamps": "Typy „Ukáž krajinu“ a „Ukáž hlavné mesto“ sa používajú v pečiatkových skúškach „Pasu“.",
-
   "section.stats.title": "Štatistiky",
   "section.stats.body": "Sekcia „Štatistiky“ má dve záložky:\n\n• Hraj — Zobrazuje tvoju úroveň zvládnutia každého typu hry.\n\n• Pečiatkové skúšky — Zobrazuje tvoje výsledky v skúškach „Pasu“. \n\nMôžeš prepínať medzi ukazovateľmi zvládnutia (✓/✗) a percentami úspešnosti. Ťukni na krajinu pre priamy prechod na jej kartu v sekcii „Preskúmaj“.",
-
   "section.sources.title": "Zdroje údajov",
-  "section.sources.body": "Údaje pochádzajú z verejných zdrojov: Organizácia Spojených národov, Natural Earth a Wikidata."
+  "section.sources.body": "Údaje pochádzajú z verejných zdrojov: Organizácia Spojených národov, Natural Earth, Svetová banka a Wikidata. Aplikácia automaticky kontroluje, či sú k dispozícii novšie údaje, a aktualizuje ich na pozadí. Mapy sa menia len s novými verziami aplikácie."
 }

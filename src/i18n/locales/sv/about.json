@@ -1,16 +1,12 @@
 {
   "title": "Om Exploris",
-
   "intro": "Exploris är en geografiapp med en interaktiv 3D-jordglob. Lär dig länder, huvudstäder och mycket mer på ett visuellt och underhållande sätt.",
-
   "section.countries.title": "Länder",
   "section.countries.body": "Exploris innehåller de 195 länder som erkänns av Förenta nationerna, den mest accepterade standarden i världen. Du kan också utforska icke-erkända eller omtvistade territorier på globen.\n\nGloben visar jorden som den ser ut från rymden. Det låter dig uppfatta ländernas verkliga storlek — något som platta kartor inte klarar av.",
-
   "section.learn.title": "Så lär du dig",
   "section.learn.tips.explore": "Börja i Utforska: snurra på globen, tryck på länder för att se deras infokort och bekanta dig med deras form och plats. Tabell-vyn hjälper dig att koppla ihop varje land med sin huvudstad. Tryck på ett land eller en huvudstad i tabellen för att se det på globen.",
   "section.learn.tips.play": "När du är redo, kasta dig in i Spela. Vi rekommenderar Äventyr-läget, som smart kombinerar de olika speltyperna som förklaras nedan och anpassar sig efter vad du kan för att hjälpa dig lära.",
   "section.learn.tips.passport": "Ditt slutmål är att fylla Passet med stämplar. För att få en stämpel måste du klara ett stämpelprov utan fel.",
-
   "section.gameTypes.title": "Speltyper",
   "section.gameTypes.intro": "Det finns 6 speltyper, ordnade från lättast till svårast:",
   "section.gameTypes.E": "◯? — Identifiera landet — Ett land markeras på globen och du väljer dess namn bland 4 alternativ.",
@@ -20,11 +16,9 @@
   "section.gameTypes.A": "◯ — Peka ut landet — Du får ett namn och trycker på landet på globen.",
   "section.gameTypes.B": "◎ — Peka ut huvudstaden — Du får en huvudstad och trycker på dess plats på globen.",
   "section.gameTypes.adventure": "Äventyr-läget kombinerar alla typer och anpassar sig efter dina framsteg. Det är det rekommenderade sättet att spela.",
-  "section.gameTypes.stamps": "Typerna \u201cPeka ut landet\u201d och \u201cPeka ut huvudstaden\u201d är de som används i stämpelproven i Passet.",
-
+  "section.gameTypes.stamps": "Typerna “Peka ut landet” och “Peka ut huvudstaden” är de som används i stämpelproven i Passet.",
   "section.stats.title": "Statistik",
   "section.stats.body": "Statistik-vyn har två flikar:\n\n• Spela — Visar din behärskning i varje speltyp.\n\n• Stämpelprov — Visar dina resultat i proverna i Passet.\n\nDu kan växla mellan behärskningsindikatorer (✓/✗) och träffprocent. Tryck på ett land för att gå direkt till dess infokort i Utforska.",
-
   "section.sources.title": "Datakällor",
-  "section.sources.body": "Data kommer från offentliga källor som Förenta nationerna, Natural Earth och Wikidata."
+  "section.sources.body": "Data kommer från offentliga källor som Förenta nationerna, Natural Earth, Världsbanken och Wikidata. Appen kontrollerar automatiskt om det finns nyare data och uppdaterar i bakgrunden. Kartor ändras bara med nya versioner av appen."
 }

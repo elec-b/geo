@@ -1,16 +1,12 @@
 {
   "title": "Về Exploris",
-
   "intro": "Exploris là ứng dụng học địa lý với quả địa cầu 3D tương tác. Học về các quốc gia, thủ đô và nhiều hơn nữa theo cách trực quan và thú vị.",
-
   "section.countries.title": "Quốc gia",
   "section.countries.body": "Exploris bao gồm 195 quốc gia được Liên Hợp Quốc công nhận — tiêu chuẩn được chấp nhận rộng rãi nhất trên thế giới. Bạn cũng có thể khám phá các vùng lãnh thổ chưa được công nhận hoặc đang tranh chấp trên quả địa cầu.\n\nQuả địa cầu tái hiện hình ảnh Trái Đất nhìn từ không gian. Điều này giúp bạn cảm nhận được kích thước thật của các quốc gia — điều mà bản đồ phẳng không làm được.",
-
   "section.learn.title": "Cách học",
   "section.learn.tips.explore": "Bắt đầu từ Khám phá: xoay quả địa cầu, chạm vào quốc gia để xem thẻ thông tin, và làm quen với hình dạng cùng vị trí của chúng. Chế độ Bảng giúp bạn liên kết mỗi quốc gia với thủ đô. Chạm vào bất kỳ quốc gia hoặc thủ đô nào trong bảng để xem trên địa cầu.",
   "section.learn.tips.play": "Khi đã sẵn sàng, hãy nhảy vào Chơi. Mình khuyên bạn chơi chế độ Phiêu lưu — nó kết hợp thông minh các loại trò chơi được giải thích bên dưới và điều chỉnh theo những gì bạn đã biết để giúp bạn học tốt hơn.",
   "section.learn.tips.passport": "Mục tiêu cuối cùng là lấp đầy Hộ chiếu bằng các con tem. Để có được một con tem, bạn phải hoàn thành bài kiểm tra tem không sai lần nào.",
-
   "section.gameTypes.title": "Loại trò chơi",
   "section.gameTypes.intro": "Có 6 loại trò chơi, sắp xếp từ dễ đến khó:",
   "section.gameTypes.E": "◯? — Nhận diện quốc gia — Một quốc gia được tô sáng trên địa cầu, chọn tên đúng trong 4 đáp án.",
@@ -21,10 +17,8 @@
   "section.gameTypes.B": "◎ — Chỉ thủ đô — Cho tên thủ đô, chạm vào vị trí của nó trên địa cầu.",
   "section.gameTypes.adventure": "Chế độ Phiêu lưu kết hợp tất cả các loại và điều chỉnh theo tiến trình của bạn. Đây là cách chơi được khuyên dùng.",
   "section.gameTypes.stamps": "«Chỉ quốc gia» và «Chỉ thủ đô» là các loại được sử dụng trong bài kiểm tra tem của Hộ chiếu.",
-
   "section.stats.title": "Thống kê",
   "section.stats.body": "Trang Thống kê có hai tab:\n\n• Chơi — Hiển thị mức thành thạo của bạn trong từng loại trò chơi.\n\n• Bài kiểm tra tem — Hiển thị kết quả các bài kiểm tra của Hộ chiếu.\n\nBạn có thể chuyển đổi giữa chỉ báo thành thạo (✓/✗) và tỷ lệ trả lời đúng. Chạm vào quốc gia để đi thẳng đến thẻ thông tin trong Khám phá.",
-
   "section.sources.title": "Nguồn dữ liệu",
-  "section.sources.body": "Dữ liệu đến từ các nguồn công khai như Liên Hợp Quốc, Natural Earth và Wikidata."
+  "section.sources.body": "Dữ liệu đến từ các nguồn công khai như Liên Hợp Quốc, Natural Earth, Ngân hàng Thế giới và Wikidata. Ứng dụng tự động kiểm tra dữ liệu mới và cập nhật trong nền. Bản đồ chỉ thay đổi khi có phiên bản mới của ứng dụng."
 }

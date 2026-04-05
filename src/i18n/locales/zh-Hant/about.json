@@ -1,16 +1,12 @@
 {
   "title": "關於 Exploris",
-
   "intro": "Exploris 是一款透過互動 3D 地球儀學習地理的應用程式。你可以用直觀有趣的方式學習國家、首都等知識。",
-
   "section.countries.title": "國家",
   "section.countries.body": "Exploris 收錄了聯合國承認的 195 個國家，這是全球最廣泛接受的標準。你也可以在地球儀上探索未被承認或有爭議的地區。\n\n地球儀還原了從太空看地球的視角。這讓你能感受到國家的真實大小——平面地圖做不到這一點。",
-
   "section.learn.title": "如何學習",
   "section.learn.tips.explore": "先從探索開始：轉動地球儀，點擊國家查看資訊卡片，熟悉它們的形狀和位置。列表檢視可以幫你把國家和首都對應起來。點擊列表中的國家或首都，就能在地球儀上看到它。",
   "section.learn.tips.play": "準備好了就去遊戲吧。推薦你玩冒險模式，它會智慧組合下面介紹的各種遊戲類型，根據你的掌握程度來出題。",
   "section.learn.tips.passport": "你的終極目標是集滿護照上的印章。要獲得印章，你需要零失誤地通過印章測驗。",
-
   "section.gameTypes.title": "遊戲類型",
   "section.gameTypes.intro": "共有 6 種遊戲類型，按難度從低到高排列：",
   "section.gameTypes.E": "◯? — 認國家 — 地球儀上高亮一個國家，從 4 個選項中選出它的名字。",
@@ -21,10 +17,8 @@
   "section.gameTypes.B": "◎ — 指出首都 — 給你一個首都名，在地球儀上點擊它的位置。",
   "section.gameTypes.adventure": "冒險模式會組合所有類型，並根據你的進度調整出題。這是最推薦的玩法。",
   "section.gameTypes.stamps": "「指出國家」和「指出首都」是護照印章測驗中使用的類型。",
-
   "section.stats.title": "統計",
   "section.stats.body": "統計頁面有兩個標籤：\n\n• 遊戲 — 顯示你在每種遊戲類型中的掌握程度。\n\n• 印章測驗 — 顯示你的護照測驗結果。\n\n你可以在掌握度指標（✓/✗）和正確率之間切換。點擊國家可以直接跳轉到探索中的資訊卡片。",
-
   "section.sources.title": "資料來源",
-  "section.sources.body": "資料來自聯合國、Natural Earth 和 Wikidata 等公開來源。"
+  "section.sources.body": "資料來自聯合國、Natural Earth、世界銀行和 Wikidata 等公開來源。應用程式會自動檢查是否有更新的資料，並在背景中更新。地圖僅在應用程式更新版本時才會改變。"
 }

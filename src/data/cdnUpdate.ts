@@ -50,7 +50,7 @@ async function getBundledVersion(): Promise<number> {
   } catch {
     bundledVersion = 0;
   }
-  return bundledVersion;
+  return bundledVersion!;
 }
 
 // --- Helpers de storage (agnóstico plataforma) ---

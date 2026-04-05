@@ -1,16 +1,12 @@
 {
   "title": "Sobre o Exploris",
-
   "intro": "Exploris é uma app de aprendizagem de geografia com um globo terrestre interativo em 3D. Aprende países, capitais e muito mais de forma visual e divertida.",
-
   "section.countries.title": "Países",
   "section.countries.body": "Exploris inclui os 195 países reconhecidos pelas Nações Unidas, o padrão mais aceite a nível mundial. Também podes explorar no globo territórios não reconhecidos ou em disputa.\n\nO globo reproduz a vista da Terra a partir do espaço. Isto permite-te apreciar o tamanho real dos países, algo que os mapas planos não conseguem.",
-
   "section.learn.title": "Como aprender",
   "section.learn.tips.explore": "Começa em Explorar: roda o globo, toca nos países para ver a sua ficha e familiariza-te com a sua forma e localização. A vista de Tabela ajuda-te a associar cada país à sua capital. Toca em qualquer país ou capital na tabela para o ver no globo.",
   "section.learn.tips.play": "Quando estiveres pronto, lança-te em Jogar. Recomendamos que jogues no modo Aventura, que combina de forma inteligente os diferentes tipos de jogo explicados abaixo; adapta-se ao que sabes para te ajudar a aprender.",
   "section.learn.tips.passport": "O teu objetivo final é preencher o Passaporte com carimbos. Para conseguir um carimbo, deves completar uma prova de carimbo sem erros.",
-
   "section.gameTypes.title": "Tipos de jogo",
   "section.gameTypes.intro": "Há 6 tipos de jogo, ordenados do mais fácil ao mais difícil:",
   "section.gameTypes.E": "◯? — Identifica o país — Um país é destacado no globo e escolhes o seu nome entre 4 opções.",
@@ -21,10 +17,8 @@
   "section.gameTypes.B": "◎ — Aponta a capital — Recebes uma capital e tocas a sua localização no globo.",
   "section.gameTypes.adventure": "O modo Aventura combina todos os tipos e adapta-se ao teu progresso. É a forma recomendada de jogar.",
   "section.gameTypes.stamps": "Os tipos «Aponta o país» e «Aponta a capital» são os usados nas provas de carimbo do Passaporte.",
-
   "section.stats.title": "Estatísticas",
   "section.stats.body": "A vista de Estatísticas tem dois separadores:\n\n• Jogar — Mostra o teu domínio em cada tipo de jogo.\n\n• Provas de carimbo — Mostra os teus resultados nas provas do Passaporte. \n\nPodes alternar entre indicadores de domínio (✓/✗) e percentagens de acerto. Toca num país para ir diretamente à sua ficha em Explorar.",
-
   "section.sources.title": "Fontes de dados",
-  "section.sources.body": "Os dados provêm de fontes públicas como as Nações Unidas, Natural Earth e Wikidata."
+  "section.sources.body": "Os dados provêm de fontes públicas como as Nações Unidas, Natural Earth, Banco Mundial e Wikidata. A app verifica automaticamente se há dados mais recentes e atualiza-os em segundo plano. Os mapas só mudam com novas versões da app."
 }

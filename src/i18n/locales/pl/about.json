@@ -1,16 +1,12 @@
 {
   "title": "O Exploris",
-
   "intro": "Exploris to aplikacja do nauki geografii z interaktywnym globusem 3D. Poznawaj kraje, stolice i wiele więcej — wizualnie i z przyjemnością.",
-
   "section.countries.title": "Kraje",
   "section.countries.body": "Exploris zawiera 195 krajów uznanych przez Organizację Narodów Zjednoczonych — najbardziej powszechny standard na świecie. Na globusie możesz też odkrywać terytoria nieuznane lub sporne.\n\nGlobus odwzorowuje widok Ziemi z kosmosu. Pozwala to ocenić rzeczywisty rozmiar krajów — coś, czego płaskie mapy nie potrafią pokazać.",
-
   "section.learn.title": "Jak się uczyć",
   "section.learn.tips.explore": "Zacznij od zakładki „Eksploruj“: obracaj globus, dotykaj krajów, aby zobaczyć ich kartę, i zapamiętuj ich kształt oraz położenie. Widok „Tabela“ pomaga powiązać każdy kraj z jego stolicą. Dotknij dowolnego kraju lub stolicy w tabeli, aby zobaczyć go na globusie.",
   "section.learn.tips.play": "Gdy będziesz gotowy, przejdź do zakładki „Graj“. Polecamy tryb „Przygoda“, który w inteligentny sposób łączy wszystkie typy gier opisane poniżej i dostosowuje się do Twojej wiedzy, pomagając Ci się uczyć.",
   "section.learn.tips.passport": "Twoim ostatecznym celem jest wypełnienie „Paszportu“ pieczątkami. Aby zdobyć pieczątkę, musisz ukończyć próbę pieczątki bez błędów.",
-
   "section.gameTypes.title": "Typy gier",
   "section.gameTypes.intro": "Jest 6 typów gier, od najłatwiejszego do najtrudniejszego:",
   "section.gameTypes.E": "◯? — Rozpoznaj kraj — Kraj zostaje podświetlony na globusie, a Ty wybierasz jego nazwę spośród 4 opcji.",
@@ -21,10 +17,8 @@
   "section.gameTypes.B": "◎ — Wskaż stolicę — Dostajesz stolicę i wskazujesz jej położenie na globusie.",
   "section.gameTypes.adventure": "Tryb „Przygoda“ łączy wszystkie typy i dostosowuje się do Twojego postępu. To zalecany sposób gry.",
   "section.gameTypes.stamps": "Typy „Wskaż kraj“ i „Wskaż stolicę“ są używane w próbach pieczątki „Paszportu“.",
-
   "section.stats.title": "Statystyki",
   "section.stats.body": "Zakładka „Statystyki“ ma dwie karty:\n\n• Graj — Pokazuje Twój poziom opanowania każdego typu gry.\n\n• Próby pieczątki — Pokazuje Twoje wyniki w próbach „Paszportu“. \n\nMożesz przełączać się między wskaźnikami opanowania (✓/✗) a procentami trafień. Dotknij kraju, aby przejść do jego karty w zakładce „Eksploruj“.",
-
   "section.sources.title": "Źródła danych",
-  "section.sources.body": "Dane pochodzą ze źródeł publicznych: Organizacja Narodów Zjednoczonych, Natural Earth i Wikidata."
+  "section.sources.body": "Dane pochodzą ze źródeł publicznych: Organizacja Narodów Zjednoczonych, Natural Earth, Bank Światowy i Wikidata. Aplikacja automatycznie sprawdza, czy są nowsze dane, i aktualizuje je w tle. Mapy zmieniają się tylko z nowymi wersjami aplikacji."
 }
