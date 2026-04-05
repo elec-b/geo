@@ -5,6 +5,10 @@
 - **Interacción**: Animaciones fluidas. Sin recargas de página bruscas. El globo siempre es el protagonista.
 - **Feedback**: Corrección visual inmediata (filtro verde/rojo al 5% de opacidad), háptica en móvil (acierto: tap ligero único; error: doble tap ligero; toggles: tap ligero). Sin efectos de sonido (por ahora).
 
+### Orientación y dispositivos
+- **Phones** (iPhone + Android): Portrait-only.
+- **Tablets** (iPad + Android): Portrait y landscape. El layout basado en `rem` escala correctamente sin adaptaciones específicas.
+
 ---
 
 ## Datos base

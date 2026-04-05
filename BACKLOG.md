@@ -35,7 +35,8 @@
 
 ### Preparación compartida (iOS + Android)
 - [x] Solicitud de valoración in-app (SKStoreReviewController en iOS, Google Play In-App Review en Android). Plugin `@capacitor-community/in-app-review`, trigger tras animación de sello ganado, condiciones: ≥5 sesiones y ≥7 días
-- [ ] Fix orientación portrait-only (Info.plist + AndroidManifest.xml). Decidir si se soportan tablets (iPad + Android)
+- [x] Fix orientación portrait-only (iOS hecho; Android pendiente de `cap add`). Tablets soportados (iPad + Android) con landscape
+- [ ] Fix: cuando se abre la app en otro idioma el nombre de perfíl por defecto es Explorador (en Español). ¿Nos hemos dejado algún otro término en español hardcodeado? 
 - [ ] Versionado: 0.1.0 → 1.0.0 (package.json + MARKETING_VERSION + CURRENT_PROJECT_VERSION en Xcode)
 - [ ] Privacy policy + URL de soporte en página pública (GitHub Pages). La app no recopila datos — declararlo explícitamente
 - [ ] Redactar metadata stores: título, subtítulo, descripción, palabras clave, categoría (Educación), copyright. Localizar a los 32 idiomas de la app (la app ya está traducida — consistencia store ↔ in-app). Tips de ASO en `docs/spikes/naming-app.md` § 7
