@@ -25,6 +25,7 @@
 - [x] **Logo/branding**: Globo wireframe SVG (blanco→gris, paralelos curvos, glow sutil). LoadingScreen con logo + título "Exploris". Icono iOS 1024×1024 y splash screens generados desde SVG. Script `generate-icons.mjs`
 - [x] **Acerca de**: Pantalla completa con secciones colapsables (países, cómo aprender, tipos de juego, estadísticas, fuentes). Icono info en header. Namespace i18n `about` traducido a 32 idiomas. Fuentes de datos: mención a Banco Mundial, actualización automática vía CDN, mapas solo con nuevas versiones
 - [x] **Perfiles**: Mejoras al crear nuevo perfil — cerrar sesión activa y navegar a Explorar, input de nombre con placeholder, avatares de color (10 círculos) como alternativa a animales
+- [x] **Acabados pre-lanzamiento**: Temas claro/oscuro (paleta premium, 14 variables semánticas). Mejoras de Explorar (columna nivel, spacing selectores), Pasaporte (candados, guilloché), Estadísticas (spacing leyenda). Hull dorado para archipiélagos seleccionados. Validación de coordenadas de capitales. Hit testing de hulls visibles. Auditoría y migración de fuentes de datos (UNDP HDR, World Bank API). CDN operativo (countries-base + capitals + i18n-all). Naming: Exploris
 
 ---
 
@@ -32,58 +33,47 @@
 
 > Ordenados por prioridad. Cada bloque debe completarse antes de avanzar al siguiente (salvo tareas marcadas como opcionales).
 
-### Acabados pre-lanzamiento
-- [x] (**mejora**) Columna de nivel en tabla de Explorar (icono 📸/🎒/🗺️, sorting por tier, header 🏆 en gris)
-- [x] (**mejora**) En Pasaporte, en los continente-nivel bloqueados, mostrar el número de países debajo del candado
-- [x] (**mejora**) Traducciones del namespace `about` a los 32 idiomas de la app (alineadas con el español como fuente de verdad)
-- [x] Refinar tema oscuro. Paleta premium: espacio negro (#04060a), océano azul oscuro (#060a12), tierra gris azulada (#222630), superficies con tinte azul (rgba(8,14,24,...)). Cyan neón → azul suave (#60a5fa), púrpura → indigo (#818cf8). ~90 colores hardcodeados → 14 variables semánticas. Estrellas eliminadas. Feedback: ocre para corrección A/B, verde/rojo desaturados, flash al 2%. Texto más legible. Icono/splash regenerados
-- [x] Diseñar e implementar tema claro
-- [] Mejoras tema claro y oscuro, tras testing
-    - ambos
-        - [x] en pasaporte, el candado de "bloqueado" de la leyenda, debe tener el mismo color que los símbolos de círculo / doble círculo / estrella (no hay misma grafía para candado? Sería ideal)
-        - [x] la doble circunferencia que indica las capitales en el globo no tiene que estar coloreada
-    - claro
-        - [x] las fronteras se deben ver mejor en el globo
-    - oscuro
-- [x] (**mejora**) Pasaporte: eliminada cuadrícula guilloché de la matriz + candado más visible en tema claro (opacidad 0.6→0.8)
-- [x] (**mejora**) en Estadísticas, tanto en la tab de Jugar como en la de Pruebas de sello, la leyenda (en la parte inferior) está demasiado pegada al borde inferior de la tabla, se puede desplazar un poco hacia abajo para que quede menos apretada
-- [x] (**mejora**) en Explorar, los tres niveles de selector arriba en la pantalla [1) globo/tabla 2) continentes 3) pills de etiquetas de países y capitales] están demasiado apretados, se pueden separar un poco (vérticalmente, mantener desde un punto de vista horizontal)
-- [x] (**bug**) barra de progreso no se actualizaba tras resetear estadísticas del continente-nivel activo (attemptsVersion como señal reactiva)
-- [x] (**mejora**) icono de información (acerca de) reemplazado por libro abierto (Feather Icons `book-open`), consistente con estadísticas y configuración
-- [x] (**mejora**) hull de archipiélagos seleccionados: color dorado dedicado (antes usaba el mismo gris/dorado del relleno del país, casi invisible)
-- [x] Validación automática de coordenadas de capitales en `fetch-countries.ts` (geoContains + tolerancia 20 km, bloquea generación si falla). Overrides manuales ampliados (EH, GD, SN, KI, MO, WF, PN). Override 10m añadido para Pitcairn (Adamstown ausente en 50m)
-- [x] Hit testing de hulls visibles: tap dentro del hull siempre selecciona el país del hull (centroid override solo aplica a hulls invisibles de archipiélagos grandes)
-- [x] Auditar y migrar fuentes de datos (población, HDI, IHDI). Spike de fuentes en `docs/spikes/auditoria-datos-ficha.md` §6. Scripts automatizados: `update-hdi.ts` (UNDP HDR 2025 CSV, 198 países), `update-population.ts` (World Bank API, 216 entidades). Pipeline: `npm run update-data`. REST Countries mantenido como scaffolding para datos estáticos
-- [x] Actualización silenciosa de datos vía CDN. Repo `elec-b/exploris-data` en GitHub Pages. Código app-side (`cdnUpdate.ts`, `countryData.ts`, `App.tsx`), script `npm run generate-cdn`. Alcance: countries-base + capitals + i18n-all. Testeado en dispositivo: descarga + aplicación al reinicio, offline, no-retroceso (bundled > CDN)
-- [x] Nombre de la app: **Exploris** (spike en `docs/spikes/naming-app.md` — 23 nombres evaluados, nombre anterior inviable por colisión directa)
-
 ### Preparación compartida (iOS + Android)
 - [x] Solicitud de valoración in-app (SKStoreReviewController en iOS, Google Play In-App Review en Android). Plugin `@capacitor-community/in-app-review`, trigger tras animación de sello ganado, condiciones: ≥5 sesiones y ≥7 días
-
-### Preparación y publicación iOS
-- [ ] Fix orientación: eliminar landscape de Info.plist (la UI es portrait-only). Decidir si se soporta iPad
-- [ ] Privacy policy en URL pública (la app no recopila datos — declararlo explícitamente). Landing page mínima (GitHub Pages): privacy policy + URL de soporte
-- [ ] Certificados y provisioning profiles de distribución (actualmente solo Debug)
-- [ ] Build de producción (Archive / Release)
+- [ ] Fix orientación portrait-only (Info.plist + AndroidManifest.xml). Decidir si se soportan tablets (iPad + Android)
 - [ ] Versionado: 0.1.0 → 1.0.0 (package.json + MARKETING_VERSION + CURRENT_PROJECT_VERSION en Xcode)
-- [ ] Testing en simuladores: iPhone SE, iPhone estándar, iPhone Pro Max, iPad (si se soporta)
+- [ ] Privacy policy + URL de soporte en página pública (GitHub Pages). La app no recopila datos — declararlo explícitamente
+- [ ] Redactar metadata stores: título, subtítulo, descripción, palabras clave, categoría (Educación), copyright. Localizar a los 32 idiomas de la app (la app ya está traducida — consistencia store ↔ in-app). Tips de ASO en `docs/spikes/naming-app.md` § 7
+- [ ] Clasificación por edad: 4+ (iOS) / Everyone (Android). Cuestionario IARC (se hace una vez, válido para ambas). NO categorizar como «directed to children» — evita restricciones de Kids Category y parental gates para el enlace a Wikipedia
+
+### iOS — Build & Test
+- [ ] Certificados y provisioning profiles de distribución (actualmente solo Debug)
+- [ ] Crear app record en App Store Connect
+- [ ] Export compliance: `ITSAppUsesNonExemptEncryption = NO` en Info.plist (HTTPS al CDN es cifrado del sistema, exento)
+- [ ] MARKETING_VERSION + CURRENT_PROJECT_VERSION en Xcode (sync con package.json)
+- [ ] Testing en simuladores: iPhone SE, estándar, Pro Max, iPad (si se soporta)
 - [ ] Verificar safe areas, status bar, interrupciones (llamadas, notificaciones, background/foreground)
 - [ ] Verificar icono (sin alpha) y splash screen en todos los tamaños
-- [ ] Metadata App Store Connect: nombre, subtítulo, descripción, palabras clave, categoría (Educación), copyright, URLs. Ver tips de ASO/descubrimiento en `docs/spikes/naming-app.md` § 7
-- [ ] Screenshots (3-5, resolución 6.9" reutilizable para todos los tamaños)
-- [ ] Clasificación por edad: general audience 4+ (NO categorizar como «directed to children» — evita restricciones de Kids Category y parental gates para el enlace a Wikipedia)
+- [ ] Build de producción (Archive)
+- [ ] TestFlight: subir build, validar instalación + CDN + permisos en dispositivo real (5-7 días)
+
+### iOS — Submission
+- [ ] Metadata en App Store Connect + App Privacy label («No data collected») + screenshots (3-5, resolución 6.9" reutilizable para todos los tamaños)
 - [ ] Enviar a App Store Review
 
-### Preparación y publicación Android
+### Android — Setup (iniciar en paralelo con iOS Build & Test)
 - [ ] Cuenta Google Play Console + verificación de identidad ($25, pago único)
 - [ ] `npx cap add android` + configuración del proyecto
-- [ ] Testing en emulador y dispositivos Android reales (mínimo 2-3 resoluciones/versiones). Verificar `text-wrap: pretty/balance` (requiere Chrome 117+, agosto 2023)
 - [ ] Icono adaptativo (foreground + background layers, diferente del iOS)
-- [ ] Build de producción (AAB) + signing key (guardar keystore en lugar seguro)
-- [ ] Metadata Google Play: título, descripciones, categoría, Data Safety form, contacto
-- [ ] Screenshots + Feature Graphic (1024×500, obligatoria)
-- [ ] Testing cerrado (≥20 testers, ≥14 días) — requisito para cuentas personales nuevas
-- [ ] Clasificación de contenido (cuestionario IARC)
+- [ ] Orientación portrait-only en AndroidManifest.xml
+- [ ] Signing: generar upload keystore (guardar en lugar seguro). Google gestiona la app signing key
+- [ ] Build de producción (AAB)
+- [ ] Testing en emulador y dispositivos Android reales (mínimo 2-3 resoluciones/versiones). Verificar `text-wrap: pretty/balance` (requiere Chrome 117+)
+
+### Android — Closed Testing (lanzar cuanto antes: 14 días obligatorios)
+- [ ] Data Safety form («No data collected»)
+- [ ] Clasificación de contenido IARC (reutilizar cuestionario de la preparación compartida)
+- [ ] Setup closed testing con ≥12 testers reales, 14 días consecutivos (requisito para cuentas personales nuevas, dic 2024)
+- [ ] Subir AAB a closed testing track → esperar 14 días
+
+### Android — Submission
+- [ ] Apply for Production en Play Console (tras completar closed testing)
+- [ ] Metadata Google Play + screenshots + Feature Graphic (1024×500, obligatoria)
 - [ ] Enviar a revisión
 
 ### Post-lanzamiento
