@@ -765,7 +765,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
       ctx.beginPath();
       path(hullGeoJSON as GeoPermissibleObjects);
-      ctx.strokeStyle = gt.selectedHull;
+      ctx.strokeStyle = selectedColorPropRef.current ?? gt.selectedHull;
       ctx.globalAlpha = 1;
       ctx.lineWidth = 1.5;
       ctx.lineJoin = 'round';
