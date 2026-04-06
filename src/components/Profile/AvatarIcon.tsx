@@ -1,4 +1,5 @@
 // Componente que renderiza un avatar de perfil (animal SVG o círculo de color)
+import { useTranslation } from 'react-i18next';
 import { AVATAR_MAP, DEFAULT_AVATAR, isColorAvatar } from '../../data/avatars';
 import type { AvatarId } from '../../stores/types';
 
@@ -15,6 +16,7 @@ interface AvatarIconProps {
 }
 
 export function AvatarIcon({ avatarId, size = 'md', className }: AvatarIconProps) {
+  const { t } = useTranslation('profile');
   const def = AVATAR_MAP.get(avatarId) ?? AVATAR_MAP.get(DEFAULT_AVATAR)!;
   const dim = SIZES[size];
 
@@ -22,7 +24,7 @@ export function AvatarIcon({ avatarId, size = 'md', className }: AvatarIconProps
     return (
       <div
         role="img"
-        aria-label={def.label}
+        aria-label={t(def.label)}
         className={className}
         style={{
           width: dim,
@@ -38,7 +40,7 @@ export function AvatarIcon({ avatarId, size = 'md', className }: AvatarIconProps
   return (
     <img
       src={def.path}
-      alt={def.label}
+      alt={t(def.label)}
       className={className}
       style={{ width: dim, height: dim, objectFit: 'contain' }}
       draggable={false}

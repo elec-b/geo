@@ -63,12 +63,12 @@ export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: Pro
               className="profile-editor__preview-avatar profile-editor__preview-avatar--color"
               style={{ backgroundColor: selectedDef.color }}
               role="img"
-              aria-label={selectedDef.label}
+              aria-label={t(selectedDef.label)}
             />
           ) : (
             <img
               src={selectedDef.path}
-              alt={selectedDef.label}
+              alt={t(selectedDef.label)}
               className="profile-editor__preview-avatar"
               draggable={false}
             />
@@ -83,9 +83,9 @@ export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: Pro
               key={a.id}
               className={`profile-editor__avatar-option${a.id === avatar ? ' profile-editor__avatar-option--selected' : ''}`}
               onClick={() => setAvatar(a.id)}
-              aria-label={a.label}
+              aria-label={t(a.label)}
             >
-              <img src={a.path} alt={a.label} draggable={false} />
+              <img src={a.path} alt={t(a.label)} draggable={false} />
             </button>
           ))}
         </div>
@@ -98,7 +98,7 @@ export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: Pro
               key={c.id}
               className={`profile-editor__color-option${c.id === avatar ? ' profile-editor__color-option--selected' : ''}`}
               onClick={() => setAvatar(c.id)}
-              aria-label={c.label}
+              aria-label={t(c.label)}
             >
               <div className="profile-editor__color-swatch" style={{ backgroundColor: c.color }} />
             </button>

@@ -92,7 +92,7 @@ export function generateQuestionsTypeC(
       return {
         type: 'C' as const,
         targetCca2: cca2,
-        prompt: t ? t('game:question.capitalOf', { country: country.name }) : `¿Cuál es la capital de ${country.name}?`,
+        prompt: t ? t('game:question.capitalOf', { country: country.name }) : `What is the capital of ${country.name}?`,
         options: pickOptions(allCapitals, country.capital),
         correctAnswer: country.capital,
       };
@@ -117,7 +117,7 @@ export function generateQuestionsTypeD(
       return {
         type: 'D' as const,
         targetCca2: cca2,
-        prompt: t ? t('game:question.capitalBelongsTo', { capital: country.capital }) : `${country.capital} es la capital de...`,
+        prompt: t ? t('game:question.capitalBelongsTo', { capital: country.capital }) : `${country.capital} is the capital of...`,
         options: pickOptions(allNames, country.name),
         correctAnswer: country.name,
       };
@@ -140,7 +140,7 @@ export function generateQuestionsTypeE(
     return {
       type: 'E' as const,
       targetCca2: cca2,
-      prompt: t ? t('game:question.whichCountry') : '¿Qué país está resaltado?',
+      prompt: t ? t('game:question.whichCountry') : 'Which country is highlighted?',
       options: pickOptions(allNames, country.name),
       correctAnswer: country.name,
     };
@@ -165,7 +165,7 @@ export function generateQuestionsTypeF(
       return {
         type: 'F' as const,
         targetCca2: cca2,
-        prompt: t ? t('game:question.whichCapital') : '¿Cuál es la capital de este país?',
+        prompt: t ? t('game:question.whichCapital') : 'What is the capital of this country?',
         options: pickOptions(allCapitals, country.capital),
         correctAnswer: country.capital,
       };
@@ -258,7 +258,7 @@ export function generateSingleQuestion(
       if (!country.capital || allCapitals.length < 4) return null;
       return {
         type: 'C', targetCca2: cca2,
-        prompt: t ? t('game:question.capitalOf', { country: country.name }) : `¿Cuál es la capital de ${country.name}?`,
+        prompt: t ? t('game:question.capitalOf', { country: country.name }) : `What is the capital of ${country.name}?`,
         options: pickOptions(allCapitals, country.capital),
         correctAnswer: country.capital,
       };
@@ -267,7 +267,7 @@ export function generateSingleQuestion(
       if (!country.capital || allNames.length < 4) return null;
       return {
         type: 'D', targetCca2: cca2,
-        prompt: t ? t('game:question.capitalBelongsTo', { capital: country.capital }) : `${country.capital} es la capital de...`,
+        prompt: t ? t('game:question.capitalBelongsTo', { capital: country.capital }) : `${country.capital} is the capital of...`,
         options: pickOptions(allNames, country.name),
         correctAnswer: country.name,
       };
@@ -276,7 +276,7 @@ export function generateSingleQuestion(
       if (allNames.length < 4) return null;
       return {
         type: 'E', targetCca2: cca2,
-        prompt: t ? t('game:question.whichCountry') : '¿Qué país está resaltado?',
+        prompt: t ? t('game:question.whichCountry') : 'Which country is highlighted?',
         options: pickOptions(allNames, country.name),
         correctAnswer: country.name,
       };
@@ -285,7 +285,7 @@ export function generateSingleQuestion(
       if (!country.capital || allCapitals.length < 4) return null;
       return {
         type: 'F', targetCca2: cca2,
-        prompt: t ? t('game:question.whichCapital') : '¿Cuál es la capital de este país?',
+        prompt: t ? t('game:question.whichCapital') : 'What is the capital of this country?',
         options: pickOptions(allCapitals, country.capital),
         correctAnswer: country.capital,
       };

@@ -64,6 +64,18 @@ function App() {
     useAppStore.getState().updateSettings({ sessionCount: current + 1 });
   }, []);
 
+  // Fix nombre de perfil por defecto hardcodeado en español
+  useEffect(() => {
+    const translatedDefault = t('defaultName');
+    if (translatedDefault === 'Explorador') return;
+    const { profiles, updateProfile } = useAppStore.getState();
+    for (const profile of profiles) {
+      if (profile.name === 'Explorador') {
+        updateProfile(profile.id, { name: translatedDefault });
+      }
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Datos cargados
   const [countries, setCountries] = useState<Map<string, CountryData> | null>(null);
   const [capitals, setCapitals] = useState<Map<string, CapitalCoords> | null>(null);
