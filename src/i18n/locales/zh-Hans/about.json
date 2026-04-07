@@ -20,5 +20,9 @@
   "section.stats.title": "统计",
   "section.stats.body": "统计页面有两个标签：\n\n• 游戏 — 显示你在每种游戏类型中的掌握程度。\n\n• 印章考试 — 显示你的护照考试结果。\n\n你可以在掌握度指标（✓/✗）和正确率之间切换。点击国家可以直接跳转到探索中的信息卡片。",
   "section.sources.title": "数据来源",
-  "section.sources.body": "数据来自联合国、Natural Earth、世界银行和 Wikidata 等公开来源。应用会自动检查是否有更新的数据，并在后台更新。地图仅在应用更新版本时才会改变。"
+  "section.sources.body": "数据来自联合国、Natural Earth、世界银行和 Wikidata 等公开来源。应用会自动检查是否有更新的数据，并在后台更新。地图仅在应用更新版本时才会改变。",
+
+  "section.privacy.title": "隐私",
+  "section.privacy.body": "Exploris 不收集任何个人数据。您的进度仅保存在您的设备上。",
+  "section.privacy.linkLabel": "查看隐私政策"
 }

@@ -20,5 +20,9 @@
   "section.stats.title": "Statistici",
   "section.stats.body": "Vizualizarea Statistici are două file:\n\n• Joacă — Arată stăpânirea ta în fiecare tip de joc.\n\n• Probe de ștampilă — Arată rezultatele tale în probele din Pașaport. \n\nPoți alterna între indicatori de stăpânire (✓/✗) și procente de reușită. Atinge o țară pentru a merge direct la fișa ei în Explorează.",
   "section.sources.title": "Surse de date",
-  "section.sources.body": "Datele provin din surse publice precum Națiunile Unite, Natural Earth, Banca Mondială și Wikidata. Aplicația verifică automat dacă există date mai recente și le actualizează în fundal. Hărțile se schimbă doar cu versiunile noi ale aplicației."
+  "section.sources.body": "Datele provin din surse publice precum Națiunile Unite, Natural Earth, Banca Mondială și Wikidata. Aplicația verifică automat dacă există date mai recente și le actualizează în fundal. Hărțile se schimbă doar cu versiunile noi ale aplicației.",
+
+  "section.privacy.title": "Confidențialitate",
+  "section.privacy.body": "Exploris nu colectează niciun fel de date personale. Progresul tău este salvat doar pe dispozitivul tău.",
+  "section.privacy.linkLabel": "Vezi politica de confidențialitate"
 }

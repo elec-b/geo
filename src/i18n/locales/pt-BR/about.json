@@ -20,5 +20,9 @@
   "section.stats.title": "Estatísticas",
   "section.stats.body": "A vista de Estatísticas tem duas abas:\n\n• Jogar — Mostra seu domínio em cada tipo de jogo.\n\n• Provas de carimbo — Mostra seus resultados nas provas do Passaporte. \n\nVocê pode alternar entre indicadores de domínio (✓/✗) e porcentagens de acerto. Toque em um país para ir direto à sua ficha em Explorar.",
   "section.sources.title": "Fontes de dados",
-  "section.sources.body": "Os dados vêm de fontes públicas como as Nações Unidas, Natural Earth, Banco Mundial e Wikidata. O app verifica automaticamente se há dados mais recentes e os atualiza em segundo plano. Os mapas só mudam com novas versões do app."
+  "section.sources.body": "Os dados vêm de fontes públicas como as Nações Unidas, Natural Earth, Banco Mundial e Wikidata. O app verifica automaticamente se há dados mais recentes e os atualiza em segundo plano. Os mapas só mudam com novas versões do app.",
+
+  "section.privacy.title": "Privacidade",
+  "section.privacy.body": "O Exploris não coleta nenhum dado pessoal. Seu progresso é salvo apenas no seu dispositivo.",
+  "section.privacy.linkLabel": "Ver política de privacidade"
 }

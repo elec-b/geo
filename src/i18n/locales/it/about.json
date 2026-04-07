@@ -20,5 +20,9 @@
   "section.stats.title": "Statistiche",
   "section.stats.body": "La vista Statistiche ha due schede:\n\n• Gioca — Mostra la tua padronanza in ogni tipo di gioco.\n\n• Prove timbro — Mostra i tuoi risultati nelle prove del Passaporto. \n\nPuoi alternare tra indicatori di padronanza (✓/✗) e percentuali di successo. Tocca un paese per andare direttamente alla sua scheda in Esplora.",
   "section.sources.title": "Fonti dei dati",
-  "section.sources.body": "I dati provengono da fonti pubbliche come le Nazioni Unite, Natural Earth, la Banca Mondiale e Wikidata. L'app verifica automaticamente se ci sono dati più recenti e li aggiorna in background. Le mappe cambiano solo con le nuove versioni dell'app."
+  "section.sources.body": "I dati provengono da fonti pubbliche come le Nazioni Unite, Natural Earth, la Banca Mondiale e Wikidata. L'app verifica automaticamente se ci sono dati più recenti e li aggiorna in background. Le mappe cambiano solo con le nuove versioni dell'app.",
+
+  "section.privacy.title": "Privacy",
+  "section.privacy.body": "Exploris non raccoglie alcun dato personale. I tuoi progressi sono salvati solo sul tuo dispositivo.",
+  "section.privacy.linkLabel": "Vedi informativa sulla privacy"
 }

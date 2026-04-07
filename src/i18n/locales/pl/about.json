@@ -20,5 +20,9 @@
   "section.stats.title": "Statystyki",
   "section.stats.body": "Zakładka „Statystyki“ ma dwie karty:\n\n• Graj — Pokazuje Twój poziom opanowania każdego typu gry.\n\n• Próby pieczątki — Pokazuje Twoje wyniki w próbach „Paszportu“. \n\nMożesz przełączać się między wskaźnikami opanowania (✓/✗) a procentami trafień. Dotknij kraju, aby przejść do jego karty w zakładce „Eksploruj“.",
   "section.sources.title": "Źródła danych",
-  "section.sources.body": "Dane pochodzą ze źródeł publicznych: Organizacja Narodów Zjednoczonych, Natural Earth, Bank Światowy i Wikidata. Aplikacja automatycznie sprawdza, czy są nowsze dane, i aktualizuje je w tle. Mapy zmieniają się tylko z nowymi wersjami aplikacji."
+  "section.sources.body": "Dane pochodzą ze źródeł publicznych: Organizacja Narodów Zjednoczonych, Natural Earth, Bank Światowy i Wikidata. Aplikacja automatycznie sprawdza, czy są nowsze dane, i aktualizuje je w tle. Mapy zmieniają się tylko z nowymi wersjami aplikacji.",
+
+  "section.privacy.title": "Prywatność",
+  "section.privacy.body": "Exploris nie zbiera żadnych danych osobowych. Twoje postępy są zapisywane tylko na Twoim urządzeniu.",
+  "section.privacy.linkLabel": "Zobacz politykę prywatności"
 }

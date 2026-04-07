@@ -20,5 +20,9 @@
   "section.stats.title": "Statisztikák",
   "section.stats.body": "A Statisztikák nézetnek két füle van:\n\n• Játék — Megmutatja az elsajátítási szintedet minden játéktípusban.\n\n• Pecsétpróbák — Megmutatja az eredményeidet az Útlevél próbáin.\n\nVálthatsz az elsajátítási jelzők (✓/✗) és a találati százalékok között. Érintsd meg egy országot, hogy közvetlenül az infókártyájára ugorj a Felfedezésben.",
   "section.sources.title": "Adatforrások",
-  "section.sources.body": "Az adatok nyilvános forrásokból származnak, mint az Egyesült Nemzetek, a Natural Earth, a Világbank és a Wikidata. Az alkalmazás automatikusan ellenőrzi, hogy vannak-e frissebb adatok, és a háttérben frissíti őket. A térképek csak az alkalmazás új verzióival változnak."
+  "section.sources.body": "Az adatok nyilvános forrásokból származnak, mint az Egyesült Nemzetek, a Natural Earth, a Világbank és a Wikidata. Az alkalmazás automatikusan ellenőrzi, hogy vannak-e frissebb adatok, és a háttérben frissíti őket. A térképek csak az alkalmazás új verzióival változnak.",
+
+  "section.privacy.title": "Adatvédelem",
+  "section.privacy.body": "Az Exploris nem gyűjt személyes adatokat. A fejlődésed csak a készülékeden van tárolva.",
+  "section.privacy.linkLabel": "Adatvédelmi szabályzat megtekintése"
 }

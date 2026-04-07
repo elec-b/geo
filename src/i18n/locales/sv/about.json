@@ -20,5 +20,9 @@
   "section.stats.title": "Statistik",
   "section.stats.body": "Statistik-vyn har två flikar:\n\n• Spela — Visar din behärskning i varje speltyp.\n\n• Stämpelprov — Visar dina resultat i proverna i Passet.\n\nDu kan växla mellan behärskningsindikatorer (✓/✗) och träffprocent. Tryck på ett land för att gå direkt till dess infokort i Utforska.",
   "section.sources.title": "Datakällor",
-  "section.sources.body": "Data kommer från offentliga källor som Förenta nationerna, Natural Earth, Världsbanken och Wikidata. Appen kontrollerar automatiskt om det finns nyare data och uppdaterar i bakgrunden. Kartor ändras bara med nya versioner av appen."
+  "section.sources.body": "Data kommer från offentliga källor som Förenta nationerna, Natural Earth, Världsbanken och Wikidata. Appen kontrollerar automatiskt om det finns nyare data och uppdaterar i bakgrunden. Kartor ändras bara med nya versioner av appen.",
+
+  "section.privacy.title": "Integritet",
+  "section.privacy.body": "Exploris samlar inte in några personuppgifter. Dina framsteg sparas endast på din enhet.",
+  "section.privacy.linkLabel": "Visa integritetspolicy"
 }

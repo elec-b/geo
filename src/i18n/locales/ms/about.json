@@ -20,5 +20,9 @@
   "section.stats.title": "Statistik",
   "section.stats.body": "Paparan Statistik mempunyai dua tab:\n\n• Main — Menunjukkan penguasaan kamu dalam setiap jenis permainan.\n\n• Ujian setem — Menunjukkan keputusan ujian Pasport.\n\nKamu boleh bertukar antara penunjuk penguasaan (✓/✗) dan peratusan jawapan betul. Ketik negara untuk terus ke kad maklumatnya di Teroka.",
   "section.sources.title": "Sumber data",
-  "section.sources.body": "Data diperoleh daripada sumber awam seperti Pertubuhan Bangsa-Bangsa Bersatu, Natural Earth, Bank Dunia dan Wikidata. Aplikasi menyemak data terkini secara automatik dan mengemas kininya di latar belakang. Peta hanya berubah dengan versi baharu aplikasi."
+  "section.sources.body": "Data diperoleh daripada sumber awam seperti Pertubuhan Bangsa-Bangsa Bersatu, Natural Earth, Bank Dunia dan Wikidata. Aplikasi menyemak data terkini secara automatik dan mengemas kininya di latar belakang. Peta hanya berubah dengan versi baharu aplikasi.",
+
+  "section.privacy.title": "Privasi",
+  "section.privacy.body": "Exploris tidak mengumpul sebarang data peribadi. Kemajuan anda disimpan hanya pada peranti anda.",
+  "section.privacy.linkLabel": "Lihat dasar privasi"
 }

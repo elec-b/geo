@@ -20,5 +20,9 @@
   "section.stats.title": "İstatistikler",
   "section.stats.body": "\"İstatistikler\" görünümünde iki sekme var:\n\n• Oyna — Her oyun türündeki hakimiyet seviyeni gösterir.\n\n• Damga sınavları — \"Pasaport\" sınavlarındaki sonuçlarını gösterir. \n\nHakimiyet göstergeleri (✓/✗) ile başarı yüzdeleri arasında geçiş yapabilirsin. Bir ülkeye dokunarak doğrudan \"Keşfet\" bölümündeki kartına gidebilirsin.",
   "section.sources.title": "Veri kaynakları",
-  "section.sources.body": "Veriler Birleşmiş Milletler, Natural Earth, Dünya Bankası ve Wikidata gibi kamuya açık kaynaklardan alınmıştır. Uygulama otomatik olarak daha güncel verileri kontrol eder ve arka planda günceller. Haritalar yalnızca uygulamanın yeni sürümleriyle değişir."
+  "section.sources.body": "Veriler Birleşmiş Milletler, Natural Earth, Dünya Bankası ve Wikidata gibi kamuya açık kaynaklardan alınmıştır. Uygulama otomatik olarak daha güncel verileri kontrol eder ve arka planda günceller. Haritalar yalnızca uygulamanın yeni sürümleriyle değişir.",
+
+  "section.privacy.title": "Gizlilik",
+  "section.privacy.body": "Exploris hiçbir kişisel veri toplamaz. İlerlemen yalnızca cihazında saklanır.",
+  "section.privacy.linkLabel": "Gizlilik politikasını görüntüle"
 }

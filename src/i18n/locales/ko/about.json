@@ -20,5 +20,9 @@
   "section.stats.title": "통계",
   "section.stats.body": "통계 화면에는 두 개의 탭이 있어요:\n\n• 플레이 — 각 게임 유형의 숙련도를 보여줘요.\n\n• 스탬프 시험 — 여권 시험 결과를 보여줘요.\n\n숙련도 표시(✓/✗)와 정답률을 전환할 수 있어요. 나라를 탭하면 탐험의 정보 카드로 바로 이동해요.",
   "section.sources.title": "데이터 출처",
-  "section.sources.body": "데이터는 국제연합, Natural Earth, 세계은행, Wikidata 등 공개 출처에서 가져왔어요. 앱이 자동으로 최신 데이터를 확인하고 백그라운드에서 업데이트해요. 지도는 앱의 새 버전에서만 변경돼요."
+  "section.sources.body": "데이터는 국제연합, Natural Earth, 세계은행, Wikidata 등 공개 출처에서 가져왔어요. 앱이 자동으로 최신 데이터를 확인하고 백그라운드에서 업데이트해요. 지도는 앱의 새 버전에서만 변경돼요.",
+
+  "section.privacy.title": "개인정보 보호",
+  "section.privacy.body": "Exploris는 어떠한 개인 정보도 수집하지 않습니다. 진행 상황은 기기에만 저장됩니다.",
+  "section.privacy.linkLabel": "개인정보 처리방침 보기"
 }

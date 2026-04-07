@@ -20,5 +20,9 @@
   "section.stats.title": "Statistiques",
   "section.stats.body": "La vue Statistiques a deux onglets :\n\n• Jouer — Affiche ta maîtrise dans chaque type de jeu.\n\n• Épreuves de tampon — Affiche tes résultats aux épreuves du Passeport. \n\nTu peux alterner entre indicateurs de maîtrise (✓/✗) et pourcentages de réussite. Touche un pays pour aller directement à sa fiche dans Explorer.",
   "section.sources.title": "Sources des données",
-  "section.sources.body": "Les données proviennent de sources publiques telles que les Nations Unies, Natural Earth, la Banque mondiale et Wikidata. L'application vérifie automatiquement si des données plus récentes sont disponibles et les met à jour en arrière-plan. Les cartes ne changent qu'avec les nouvelles versions de l'application."
+  "section.sources.body": "Les données proviennent de sources publiques telles que les Nations Unies, Natural Earth, la Banque mondiale et Wikidata. L'application vérifie automatiquement si des données plus récentes sont disponibles et les met à jour en arrière-plan. Les cartes ne changent qu'avec les nouvelles versions de l'application.",
+
+  "section.privacy.title": "Confidentialité",
+  "section.privacy.body": "Exploris ne collecte aucune donnée personnelle. Ta progression est enregistrée uniquement sur ton appareil.",
+  "section.privacy.linkLabel": "Voir la politique de confidentialité"
 }

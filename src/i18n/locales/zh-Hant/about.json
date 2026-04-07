@@ -20,5 +20,9 @@
   "section.stats.title": "統計",
   "section.stats.body": "統計頁面有兩個標籤：\n\n• 遊戲 — 顯示你在每種遊戲類型中的掌握程度。\n\n• 印章測驗 — 顯示你的護照測驗結果。\n\n你可以在掌握度指標（✓/✗）和正確率之間切換。點擊國家可以直接跳轉到探索中的資訊卡片。",
   "section.sources.title": "資料來源",
-  "section.sources.body": "資料來自聯合國、Natural Earth、世界銀行和 Wikidata 等公開來源。應用程式會自動檢查是否有更新的資料，並在背景中更新。地圖僅在應用程式更新版本時才會改變。"
+  "section.sources.body": "資料來自聯合國、Natural Earth、世界銀行和 Wikidata 等公開來源。應用程式會自動檢查是否有更新的資料，並在背景中更新。地圖僅在應用程式更新版本時才會改變。",
+
+  "section.privacy.title": "隱私",
+  "section.privacy.body": "Exploris 不收集任何個人資料。您的進度僅儲存在您的裝置上。",
+  "section.privacy.linkLabel": "查看隱私政策"
 }

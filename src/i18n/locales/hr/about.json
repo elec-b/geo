@@ -20,5 +20,9 @@
   "section.stats.title": "Statistike",
   "section.stats.body": "Prikaz Statistike ima dvije kartice:\n\n• Igraj — Prikazuje tvoje znanje u svakoj vrsti igre.\n\n• Ispiti pečata — Prikazuje tvoje rezultate u ispitima Putovnice. \n\nMožeš prebacivati između pokazatelja znanja (✓/✗) i postotaka točnosti. Dodirni zemlju da odeš izravno na njezin profil u Istraži.",
   "section.sources.title": "Izvori podataka",
-  "section.sources.body": "Podaci dolaze iz javnih izvora poput Ujedinjenih naroda, Natural Earth, Svjetske banke i Wikidata. Aplikacija automatski provjerava ima li novijih podataka i ažurira ih u pozadini. Karte se mijenjaju samo s novim verzijama aplikacije."
+  "section.sources.body": "Podaci dolaze iz javnih izvora poput Ujedinjenih naroda, Natural Earth, Svjetske banke i Wikidata. Aplikacija automatski provjerava ima li novijih podataka i ažurira ih u pozadini. Karte se mijenjaju samo s novim verzijama aplikacije.",
+
+  "section.privacy.title": "Privatnost",
+  "section.privacy.body": "Exploris ne prikuplja nikakve osobne podatke. Tvoj napredak pohranjuje se samo na tvom uređaju.",
+  "section.privacy.linkLabel": "Prikaži pravila privatnosti"
 }

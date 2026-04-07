@@ -20,5 +20,9 @@
   "section.stats.title": "Estadístiques",
   "section.stats.body": "La vista d'Estadístiques té dues pestanyes:\n\n• Jugar — Mostra el teu domini en cada tipus de joc.\n\n• Proves de segell — Mostra els teus resultats a les proves del Passaport. \n\nPots alternar entre indicadors de domini (✓/✗) i percentatges d'encert. Toca un país per anar directament a la seva fitxa a Explorar.",
   "section.sources.title": "Fonts de dades",
-  "section.sources.body": "Les dades provenen de fonts públiques com les Nacions Unides, Natural Earth, Banc Mundial i Wikidata. L'app comprova automàticament si hi ha dades més recents i les actualitza en segon pla. Els mapes només canvien amb noves versions de l'app."
+  "section.sources.body": "Les dades provenen de fonts públiques com les Nacions Unides, Natural Earth, Banc Mundial i Wikidata. L'app comprova automàticament si hi ha dades més recents i les actualitza en segon pla. Els mapes només canvien amb noves versions de l'app.",
+
+  "section.privacy.title": "Privacitat",
+  "section.privacy.body": "Exploris no recull cap dada personal. El teu progrés es desa només al teu dispositiu.",
+  "section.privacy.linkLabel": "Veure política de privacitat"
 }

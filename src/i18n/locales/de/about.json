@@ -20,5 +20,9 @@
   "section.stats.title": "Statistiken",
   "section.stats.body": "Die Statistiken-Ansicht hat zwei Tabs:\n\n• Spielen — Zeigt deinen Fortschritt in jedem Spieltyp.\n\n• Stempelprüfungen — Zeigt deine Ergebnisse bei den Prüfungen des Reisepass.\n\nDu kannst zwischen Beherrschungsindikatoren (✓/✗) und Trefferquoten wechseln. Tippe auf ein Land, um direkt zu seiner Infokarte in Entdecken zu gelangen.",
   "section.sources.title": "Datenquellen",
-  "section.sources.body": "Die Daten stammen aus öffentlichen Quellen wie den Vereinten Nationen, Natural Earth, der Weltbank und Wikidata. Die App prüft automatisch, ob neuere Daten verfügbar sind, und aktualisiert sie im Hintergrund. Karten ändern sich nur mit neuen Versionen der App."
+  "section.sources.body": "Die Daten stammen aus öffentlichen Quellen wie den Vereinten Nationen, Natural Earth, der Weltbank und Wikidata. Die App prüft automatisch, ob neuere Daten verfügbar sind, und aktualisiert sie im Hintergrund. Karten ändern sich nur mit neuen Versionen der App.",
+
+  "section.privacy.title": "Datenschutz",
+  "section.privacy.body": "Exploris sammelt keine personenbezogenen Daten. Dein Fortschritt wird nur auf deinem Gerät gespeichert.",
+  "section.privacy.linkLabel": "Datenschutzerklärung anzeigen"
 }

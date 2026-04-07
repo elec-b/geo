@@ -20,5 +20,9 @@
   "section.stats.title": "Statistiky",
   "section.stats.body": "Sekce „Statistiky“ má dvě záložky:\n\n• Hraj — Zobrazuje tvou úroveň zvládnutí každého typu hry.\n\n• Zkoušky razítka — Zobrazuje tvé výsledky ve zkouškách „Pasu“. \n\nMůžeš přepínat mezi ukazateli zvládnutí (✓/✗) a procenty úspěšnosti. Klepni na zemi pro přímý přechod na její kartu v sekci „Prozkoumej“.",
   "section.sources.title": "Zdroje dat",
-  "section.sources.body": "Data pocházejí z veřejných zdrojů: Organizace spojených národů, Natural Earth, Světová banka a Wikidata. Aplikace automaticky kontroluje, zda jsou k dispozici novější data, a aktualizuje je na pozadí. Mapy se mění pouze s novými verzemi aplikace."
+  "section.sources.body": "Data pocházejí z veřejných zdrojů: Organizace spojených národů, Natural Earth, Světová banka a Wikidata. Aplikace automaticky kontroluje, zda jsou k dispozici novější data, a aktualizuje je na pozadí. Mapy se mění pouze s novými verzemi aplikace.",
+
+  "section.privacy.title": "Soukromí",
+  "section.privacy.body": "Exploris neshromažďuje žádné osobní údaje. Tvůj pokrok je uložen pouze na tvém zařízení.",
+  "section.privacy.linkLabel": "Zobrazit zásady ochrany osobních údajů"
 }

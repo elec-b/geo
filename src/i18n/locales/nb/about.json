@@ -20,5 +20,9 @@
   "section.stats.title": "Statistikk",
   "section.stats.body": "Statistikk-visningen har to faner:\n\n• Spill — Viser mestringen din i hver spilltype.\n\n• Stempelprøver — Viser resultatene dine i prøvene i Passet.\n\nDu kan veksle mellom mestringsindikatorer (✓/✗) og treffprosent. Trykk på et land for å gå direkte til infokortet i Utforsk.",
   "section.sources.title": "Datakilder",
-  "section.sources.body": "Dataene kommer fra offentlige kilder som De forente nasjoner, Natural Earth, Verdensbanken og Wikidata. Appen sjekker automatisk om det finnes nyere data og oppdaterer i bakgrunnen. Kart endres kun med nye versjoner av appen."
+  "section.sources.body": "Dataene kommer fra offentlige kilder som De forente nasjoner, Natural Earth, Verdensbanken og Wikidata. Appen sjekker automatisk om det finnes nyere data og oppdaterer i bakgrunnen. Kart endres kun med nye versjoner av appen.",
+
+  "section.privacy.title": "Personvern",
+  "section.privacy.body": "Exploris samler ikke inn personopplysninger. Fremgangen din lagres kun på enheten din.",
+  "section.privacy.linkLabel": "Vis personvernerklæring"
 }

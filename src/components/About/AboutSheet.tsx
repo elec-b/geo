@@ -9,8 +9,11 @@ interface AboutSheetProps {
 }
 
 /** IDs de las secciones colapsables */
-const SECTIONS = ['countries', 'learn', 'gameTypes', 'stats', 'sources'] as const;
+const SECTIONS = ['countries', 'learn', 'gameTypes', 'stats', 'sources', 'privacy'] as const;
 type SectionId = (typeof SECTIONS)[number];
+
+/** URL de la política de privacidad pública */
+const PRIVACY_POLICY_URL = 'https://elec-b.github.io/exploris-data/privacy.html';
 
 export function AboutSheet({ onClose }: AboutSheetProps) {
   const { t } = useTranslation('about');
@@ -79,6 +82,19 @@ export function AboutSheet({ onClose }: AboutSheetProps) {
           {/* Fuentes de datos */}
           <Section id="sources" expanded={expanded.has('sources')} onToggle={toggle}>
             <p className="about-sheet__text">{t('section.sources.body')}</p>
+          </Section>
+
+          {/* Privacidad */}
+          <Section id="privacy" expanded={expanded.has('privacy')} onToggle={toggle}>
+            <p className="about-sheet__text">{t('section.privacy.body')}</p>
+            <a
+              className="about-sheet__link"
+              href={PRIVACY_POLICY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('section.privacy.linkLabel')}
+            </a>
           </Section>
         </div>
       </div>

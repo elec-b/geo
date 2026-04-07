@@ -20,5 +20,9 @@
   "section.stats.title": "Štatistiky",
   "section.stats.body": "Sekcia „Štatistiky“ má dve záložky:\n\n• Hraj — Zobrazuje tvoju úroveň zvládnutia každého typu hry.\n\n• Pečiatkové skúšky — Zobrazuje tvoje výsledky v skúškach „Pasu“. \n\nMôžeš prepínať medzi ukazovateľmi zvládnutia (✓/✗) a percentami úspešnosti. Ťukni na krajinu pre priamy prechod na jej kartu v sekcii „Preskúmaj“.",
   "section.sources.title": "Zdroje údajov",
-  "section.sources.body": "Údaje pochádzajú z verejných zdrojov: Organizácia Spojených národov, Natural Earth, Svetová banka a Wikidata. Aplikácia automaticky kontroluje, či sú k dispozícii novšie údaje, a aktualizuje ich na pozadí. Mapy sa menia len s novými verziami aplikácie."
+  "section.sources.body": "Údaje pochádzajú z verejných zdrojov: Organizácia Spojených národov, Natural Earth, Svetová banka a Wikidata. Aplikácia automaticky kontroluje, či sú k dispozícii novšie údaje, a aktualizuje ich na pozadí. Mapy sa menia len s novými verziami aplikácie.",
+
+  "section.privacy.title": "Súkromie",
+  "section.privacy.body": "Exploris nezhromažďuje žiadne osobné údaje. Tvoj pokrok sa ukladá iba v tvojom zariadení.",
+  "section.privacy.linkLabel": "Zobraziť zásady ochrany súkromia"
 }

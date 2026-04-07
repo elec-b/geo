@@ -26,5 +26,9 @@
   "section.stats.body": "The Statistics view has two tabs:\n\n• Play — Shows your mastery in each game type.\n\n• Stamp tests — Shows your results in the Passport tests. \n\nYou can toggle between mastery indicators (✓/✗) and accuracy percentages. Tap a country to go directly to its info card in Explore.",
 
   "section.sources.title": "Data sources",
-  "section.sources.body": "Data comes from public sources such as the United Nations, Natural Earth, the World Bank, and Wikidata. The app automatically checks for newer data and updates it in the background. Maps only change with new versions of the app."
+  "section.sources.body": "Data comes from public sources such as the United Nations, Natural Earth, the World Bank, and Wikidata. The app automatically checks for newer data and updates it in the background. Maps only change with new versions of the app.",
+
+  "section.privacy.title": "Privacy",
+  "section.privacy.body": "Exploris does not collect any personal data. Your progress is stored only on your device.",
+  "section.privacy.linkLabel": "View privacy policy"
 }

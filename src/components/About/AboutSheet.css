@@ -188,6 +188,21 @@
   color: var(--color-text-muted);
 }
 
+/* Link externo (sección privacidad) */
+.about-sheet__link {
+  display: inline-block;
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-cyan);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent-border);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.about-sheet__link:active {
+  border-bottom-color: var(--color-accent-cyan);
+}
+
 /* Lista de tipos de juego */
 .about-sheet__game-types {
   list-style: none;

@@ -20,5 +20,9 @@
   "section.stats.title": "統計",
   "section.stats.body": "統計ビューには2つのタブがあります：\n\n• プレイ — 各ゲームタイプの習熟度を表示します。\n\n• スタンプ試験 — パスポートの試験結果を表示します。\n\n習熟度インジケーター（✓/✗）と正答率を切り替えられます。国をタップすると、探索の情報カードに直接ジャンプできます。",
   "section.sources.title": "データソース",
-  "section.sources.body": "データは国際連合、Natural Earth、世界銀行、Wikidataなどの公開ソースから取得しています。アプリは自動的に新しいデータがないか確認し、バックグラウンドで更新します。地図はアプリの新しいバージョンでのみ変わります。"
+  "section.sources.body": "データは国際連合、Natural Earth、世界銀行、Wikidataなどの公開ソースから取得しています。アプリは自動的に新しいデータがないか確認し、バックグラウンドで更新します。地図はアプリの新しいバージョンでのみ変わります。",
+
+  "section.privacy.title": "プライバシー",
+  "section.privacy.body": "Exploris は個人データを一切収集しません。あなたの進捗はあなたの端末にのみ保存されます。",
+  "section.privacy.linkLabel": "プライバシーポリシーを見る"
 }

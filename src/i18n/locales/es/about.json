@@ -26,5 +26,9 @@
   "section.stats.body": "La vista de Estadísticas tiene dos pestañas:\n\n• Jugar — Muestra tu dominio en cada tipo de juego.\n\n• Pruebas de sello — Muestra tus resultados en las pruebas del Pasaporte. \n\nPuedes alternar entre indicadores de dominio (✓/✗) y porcentajes de acierto. Toca un país para ir directamente a su ficha en Explorar.",
 
   "section.sources.title": "Fuentes de datos",
-  "section.sources.body": "Los datos provienen de fuentes públicas como las Naciones Unidas, Natural Earth, Banco Mundial y Wikidata. La app comprueba automáticamente si hay datos más recientes y los actualiza en segundo plano. Los mapas solo cambian con nuevas versiones de la app."
+  "section.sources.body": "Los datos provienen de fuentes públicas como las Naciones Unidas, Natural Earth, Banco Mundial y Wikidata. La app comprueba automáticamente si hay datos más recientes y los actualiza en segundo plano. Los mapas solo cambian con nuevas versiones de la app.",
+
+  "section.privacy.title": "Privacidad",
+  "section.privacy.body": "Exploris no recopila ningún dato personal. Tu progreso se guarda solo en tu dispositivo.",
+  "section.privacy.linkLabel": "Ver política de privacidad"
 }

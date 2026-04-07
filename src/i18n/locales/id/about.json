@@ -20,5 +20,9 @@
   "section.stats.title": "Statistik",
   "section.stats.body": "Tampilan Statistik punya dua tab:\n\n• Main — Menampilkan penguasaanmu di setiap tipe permainan.\n\n• Ujian stempel — Menampilkan hasil ujian Paspor.\n\nKamu bisa beralih antara indikator penguasaan (✓/✗) dan persentase jawaban benar. Ketuk negara untuk langsung ke kartu informasinya di Jelajahi.",
   "section.sources.title": "Sumber data",
-  "section.sources.body": "Data berasal dari sumber publik seperti Perserikatan Bangsa-Bangsa, Natural Earth, Bank Dunia, dan Wikidata. Aplikasi secara otomatis memeriksa data terbaru dan memperbaruinya di latar belakang. Peta hanya berubah dengan versi baru aplikasi."
+  "section.sources.body": "Data berasal dari sumber publik seperti Perserikatan Bangsa-Bangsa, Natural Earth, Bank Dunia, dan Wikidata. Aplikasi secara otomatis memeriksa data terbaru dan memperbaruinya di latar belakang. Peta hanya berubah dengan versi baru aplikasi.",
+
+  "section.privacy.title": "Privasi",
+  "section.privacy.body": "Exploris tidak mengumpulkan data pribadi apa pun. Kemajuanmu hanya disimpan di perangkatmu.",
+  "section.privacy.linkLabel": "Lihat kebijakan privasi"
 }

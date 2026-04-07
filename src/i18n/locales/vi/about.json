@@ -20,5 +20,9 @@
   "section.stats.title": "Thống kê",
   "section.stats.body": "Trang Thống kê có hai tab:\n\n• Chơi — Hiển thị mức thành thạo của bạn trong từng loại trò chơi.\n\n• Bài kiểm tra tem — Hiển thị kết quả các bài kiểm tra của Hộ chiếu.\n\nBạn có thể chuyển đổi giữa chỉ báo thành thạo (✓/✗) và tỷ lệ trả lời đúng. Chạm vào quốc gia để đi thẳng đến thẻ thông tin trong Khám phá.",
   "section.sources.title": "Nguồn dữ liệu",
-  "section.sources.body": "Dữ liệu đến từ các nguồn công khai như Liên Hợp Quốc, Natural Earth, Ngân hàng Thế giới và Wikidata. Ứng dụng tự động kiểm tra dữ liệu mới và cập nhật trong nền. Bản đồ chỉ thay đổi khi có phiên bản mới của ứng dụng."
+  "section.sources.body": "Dữ liệu đến từ các nguồn công khai như Liên Hợp Quốc, Natural Earth, Ngân hàng Thế giới và Wikidata. Ứng dụng tự động kiểm tra dữ liệu mới và cập nhật trong nền. Bản đồ chỉ thay đổi khi có phiên bản mới của ứng dụng.",
+
+  "section.privacy.title": "Quyền riêng tư",
+  "section.privacy.body": "Exploris không thu thập bất kỳ dữ liệu cá nhân nào. Tiến trình của bạn chỉ được lưu trên thiết bị của bạn.",
+  "section.privacy.linkLabel": "Xem chính sách bảo mật"
 }

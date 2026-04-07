@@ -20,5 +20,9 @@
   "section.stats.title": "Statistieken",
   "section.stats.body": "De Statistieken-weergave heeft twee tabbladen:\n\n• Spelen — Toont je beheersing per speltype.\n\n• Stempelproeven — Toont je resultaten bij de proeven van het Paspoort.\n\nJe kunt schakelen tussen beheersingsindicatoren (✓/✗) en slagingspercentages. Tik op een land om direct naar de infokaart in Ontdekken te gaan.",
   "section.sources.title": "Gegevensbronnen",
-  "section.sources.body": "De gegevens zijn afkomstig uit openbare bronnen zoals de Verenigde Naties, Natural Earth, de Wereldbank en Wikidata. De app controleert automatisch of er nieuwere gegevens beschikbaar zijn en werkt ze bij op de achtergrond. Kaarten veranderen alleen met nieuwe versies van de app."
+  "section.sources.body": "De gegevens zijn afkomstig uit openbare bronnen zoals de Verenigde Naties, Natural Earth, de Wereldbank en Wikidata. De app controleert automatisch of er nieuwere gegevens beschikbaar zijn en werkt ze bij op de achtergrond. Kaarten veranderen alleen met nieuwe versies van de app.",
+
+  "section.privacy.title": "Privacy",
+  "section.privacy.body": "Exploris verzamelt geen persoonlijke gegevens. Je voortgang wordt alleen op je apparaat opgeslagen.",
+  "section.privacy.linkLabel": "Privacybeleid bekijken"
 }

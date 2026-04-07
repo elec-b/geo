@@ -20,5 +20,9 @@
   "section.stats.title": "Tilastot",
   "section.stats.body": "Tilastot-näkymässä on kaksi välilehteä:\n\n• Pelaa — Näyttää hallintasi jokaisessa pelityypissä.\n\n• Leimaus-kokeet — Näyttää tuloksesi Passin kokeissa.\n\nVoit vaihtaa hallintaindikaattoreiden (✓/✗) ja osumaprosenttien välillä. Napauta maata siirtyäksesi suoraan sen tietokorttiin kohdassa Tutki.",
   "section.sources.title": "Tietolähteet",
-  "section.sources.body": "Tiedot ovat peräisin julkisista lähteistä, kuten Yhdistyneiltä kansakunnilta, Natural Earthilta, Maailmanpankilta ja Wikidatasta. Sovellus tarkistaa automaattisesti, onko uudempaa tietoa saatavilla, ja päivittää sen taustalla. Kartat muuttuvat vain sovelluksen uusien versioiden myötä."
+  "section.sources.body": "Tiedot ovat peräisin julkisista lähteistä, kuten Yhdistyneiltä kansakunnilta, Natural Earthilta, Maailmanpankilta ja Wikidatasta. Sovellus tarkistaa automaattisesti, onko uudempaa tietoa saatavilla, ja päivittää sen taustalla. Kartat muuttuvat vain sovelluksen uusien versioiden myötä.",
+
+  "section.privacy.title": "Yksityisyys",
+  "section.privacy.body": "Exploris ei kerää mitään henkilötietoja. Edistymisesi tallennetaan vain laitteellesi.",
+  "section.privacy.linkLabel": "Näytä tietosuojakäytäntö"
 }
