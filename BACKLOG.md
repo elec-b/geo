@@ -38,6 +38,7 @@
 - [x] Fix orientación portrait-only (iOS hecho; Android pendiente de `cap add`). Tablets soportados (iPad + Android) con landscape
 - [x] Fix: nombre de perfil por defecto y otros strings en español hardcodeados (perfil "Explorador" traducido al idioma activo, fallbacks de preguntas en inglés, labels de avatares i18n en 32 idiomas)
 - [x] Hulls de archipiélago con colores de feedback (verde acierto, rojo error, ocre corrección) en vez de siempre dorado. Aplica a Jugar y pruebas de sello, ambos temas
+- [x] Fix: al cambiar de idioma con pregunta en curso, la pregunta se regenera al vuelo en el nuevo idioma (prompt y opciones). Prueba de sello reconstruye la cola pendiente sin terminar prematuramente. Si el usuario está viendo feedback tras responder, se mantiene hasta pulsar siguiente
 - [ ] Versionado: 0.1.0 → 1.0.0 (package.json + MARKETING_VERSION + CURRENT_PROJECT_VERSION en Xcode)
 - [ ] Privacy policy + URL de soporte en página pública (GitHub Pages). La app no recopila datos — declararlo explícitamente
 - [ ] Redactar metadata stores: título, subtítulo, descripción, palabras clave, categoría (Educación), copyright. Localizar a los 32 idiomas de la app (la app ya está traducida — consistencia store ↔ in-app). Tips de ASO en `docs/spikes/naming-app.md` § 7
