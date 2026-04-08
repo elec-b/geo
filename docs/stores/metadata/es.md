@@ -19,14 +19,14 @@ Aprende los países y capitales del mundo en un globo terráqueo interactivo en 
 geografía,países,capitales,mapamundi,globo,banderas,quiz,atlas,aprender,niños,educación,escuela · 95/100 chars
 
 ## Description (≤4000)
-Aprende los países, las capitales y la geografía del mundo con Exploris: un globo terráqueo interactivo en 3D que reproduce la vista de la Tierra desde el espacio. Sin distorsiones de Mercator, sin anuncios y sin recopilar datos.
+Aprende los países, las capitales y la geografía del mundo con Exploris: un globo terráqueo interactivo en 3D que reproduce la vista de la Tierra desde el espacio. Sin distorsiones, sin anuncios y sin recopilar datos.
 
 POR QUÉ EXPLORIS ES DIFERENTE
 
 · Globo terráqueo real en 3D — aprecia el tamaño verdadero de los países, algo que los mapas planos no consiguen.
-· Pasaporte con sellos — tu progreso se materializa en una matriz de niveles y continentes. Llena el pasaporte mientras subes de nivel.
 · 6 tipos de juego — desde reconocer un país en el mapa hasta señalar capitales: practica de varias formas y ponte a prueba al máximo.
-· Modo Aventura adaptativo — un algoritmo inteligente que se adapta a lo que sabes, refuerza tus puntos débiles y te lleva hasta las pruebas de sello.
+· Modo Aventura adaptativo — un algoritmo inteligente que se adapta a lo que sabes, refuerza tus puntos débiles y te ayuda a aprender combinando los distintos juegos.
+· Pasaporte con sellos — tu progreso se materializa en una tabla de niveles y continentes. Llena el pasaporte mientras subes de nivel.
 · 195 países reconocidos por la ONU — el estándar más aceptado a nivel mundial. También puedes explorar territorios disputados y dependencias.
 · 32 idiomas — datos verificados con fuentes autoritativas: nombres, capitales, monedas, idiomas, gentilicios y mucho más.
 · Sin anuncios y sin datos personales — tu progreso se guarda solo en tu dispositivo. Funciona offline.
@@ -53,7 +53,7 @@ Exploris no recopila ningún dato personal. Sin cuentas, sin tracking, sin anunc
 
 ¡Descarga Exploris y empieza a llenar tu pasaporte!
 
-· 2207/4000 chars
+· 2209/4000 chars
 
 ## Category
 Education

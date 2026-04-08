@@ -13,20 +13,20 @@ Learn Geography on a 3D Globe · 29/30 chars
 Learn countries, capitals and geography on a real 3D globe. No ads. · 67/80 chars
 
 ## Promotional Text — iOS only (≤170)
-Learn the world's countries and capitals on an interactive 3D globe. No Mercator distortion, no ads, no tracking. Your progress, your rules. · 140/170 chars
+Learn the world's countries and capitals on an interactive 3D globe. No distortion, no ads, no tracking. Your progress, your rules. · 131/170 chars
 
 ## Keywords — iOS only (≤100)
 geography,countries,capitals,world,map,globe,flags,quiz,atlas,learn,kids,education,school · 89/100 chars
 
 ## Description (≤4000)
-Learn the world's countries, capitals and geography with Exploris: an interactive 3D globe that reproduces the view of Earth from space. No Mercator distortion, no ads, no tracking.
+Learn the world's countries, capitals and geography with Exploris: an interactive 3D globe that reproduces the view of Earth from space. No distortion, no ads, no tracking.
 
 WHY EXPLORIS IS DIFFERENT
 
 · A real 3D globe — appreciate the true size of countries, something flat maps can never show you.
-· A passport full of stamps — your progress takes shape as a matrix of levels and continents. Fill the passport as you level up.
 · 6 game types — from recognizing a country on the map to pointing out its capital: practice in many ways and challenge yourself to the max.
-· Adaptive Adventure mode — a smart algorithm that adapts to what you know, reinforces your weak spots and guides you toward the stamp tests.
+· Adaptive Adventure mode — a smart algorithm that adapts to what you know, reinforces your weak spots and helps you learn by combining the different game types.
+· A passport full of stamps — your progress takes shape as a grid of levels and continents. Fill the passport as you level up.
 · 195 countries recognized by the United Nations — the world's most accepted standard. You can also explore disputed territories and dependencies on the globe.
 · 32 languages — verified data from authoritative sources: names, capitals, currencies, languages, demonyms and much more.
 · No ads, no personal data — your progress lives only on your device. Works offline.
@@ -53,7 +53,7 @@ Exploris does not collect any personal data. No accounts, no tracking, no ads. Y
 
 Download Exploris and start filling your passport!
 
-· 2098/4000 chars
+· 2106/4000 chars
 
 ## Category
 Education
