@@ -4,19 +4,19 @@
 Exploris
 
 ## Android Title (≤30)
-Exploris: Zeměpis · NN/30 chars
+Exploris: Zeměpis · 17/30 chars
 
 ## Subtitle — iOS only (≤30)
-Zeměpis na 3D glóbu · NN/30 chars
+Zeměpis na 3D glóbu · 19/30 chars
 
 ## Short Description — Android only (≤80)
-Země, hlavní města a zeměpis na interaktivním 3D glóbu. Bez reklam. · NN/80 chars
+Země, hlavní města a zeměpis na interaktivním 3D glóbu. Bez reklam. · 67/80 chars
 
 ## Promotional Text — iOS only (≤170)
-Poznávej země a hlavní města světa na interaktivním 3D glóbu. Bez zkreslení, bez reklam, bez sledování. Tvůj pokrok, tvá pravidla. · NN/170 chars
+Poznávej země a hlavní města světa na interaktivním 3D glóbu. Bez zkreslení, bez reklam, bez sledování. Tvůj pokrok, tvá pravidla. · 130/170 chars
 
 ## Keywords — iOS only (≤100)
-zeměpis,země,hlavní města,mapa světa,glóbus,vlajky,kvíz,atlas,učení,děti,vzdělávání,škola · NN/100 chars
+zeměpis,země,hlavní města,mapa světa,glóbus,vlajky,kvíz,atlas,učení,děti,vzdělávání,škola · 89/100 chars
 
 ## Description (≤4000)
 Poznávej země, hlavní města a zeměpis světa s aplikací Exploris: interaktivním 3D glóbem, který zobrazuje Zemi tak, jak vypadá z vesmíru. Bez zkreslení, bez reklam a bez sledování.
@@ -53,7 +53,7 @@ Exploris neshromažďuje žádné osobní údaje. Žádné účty, žádné sled
 
 Stáhni si Exploris a začni plnit svůj pas!
 
-· NN/4000 chars
+· 2047/4000 chars
 
 ## Category
 Education

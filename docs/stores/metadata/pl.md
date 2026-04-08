@@ -4,19 +4,19 @@
 Exploris
 
 ## Android Title (≤30)
-Exploris: Geografia · NN/30 chars
+Exploris: Geografia · 19/30 chars
 
 ## Subtitle — iOS only (≤30)
-Geografia na globusie 3D · NN/30 chars
+Geografia na globusie 3D · 24/30 chars
 
 ## Short Description — Android only (≤80)
-Kraje, stolice i geografia na interaktywnym globusie 3D. Bez reklam. · NN/80 chars
+Kraje, stolice i geografia na interaktywnym globusie 3D. Bez reklam. · 68/80 chars
 
 ## Promotional Text — iOS only (≤170)
-Poznawaj kraje i stolice świata na interaktywnym globusie 3D. Bez zniekształceń, bez reklam, bez śledzenia. Twój postęp, twoje zasady. · NN/170 chars
+Poznawaj kraje i stolice świata na interaktywnym globusie 3D. Bez zniekształceń, bez reklam, bez śledzenia. Twój postęp, twoje zasady. · 134/170 chars
 
 ## Keywords — iOS only (≤100)
-geografia,kraje,stolice,mapa świata,globus,flagi,quiz,atlas,nauka,dzieci,edukacja,szkoła · NN/100 chars
+geografia,kraje,stolice,mapa świata,globus,flagi,quiz,atlas,nauka,dzieci,edukacja,szkoła · 88/100 chars
 
 ## Description (≤4000)
 Poznawaj kraje, stolice i geografię świata z Exploris: interaktywnym globusem 3D, który pokazuje Ziemię tak, jak wygląda z kosmosu. Bez zniekształceń, bez reklam i bez śledzenia.
@@ -53,7 +53,7 @@ Exploris nie zbiera żadnych danych osobowych. Żadnych kont, żadnego śledzeni
 
 Pobierz Exploris i zacznij wypełniać swój paszport!
 
-· NN/4000 chars
+· 2156/4000 chars
 
 ## Category
 Education

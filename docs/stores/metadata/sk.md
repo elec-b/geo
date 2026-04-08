@@ -4,19 +4,19 @@
 Exploris
 
 ## Android Title (≤30)
-Exploris: Geografia · NN/30 chars
+Exploris: Geografia · 19/30 chars
 
 ## Subtitle — iOS only (≤30)
-Geografia na 3D glóbuse · NN/30 chars
+Geografia na 3D glóbuse · 23/30 chars
 
 ## Short Description — Android only (≤80)
-Krajiny, hlavné mestá a geografia na interaktívnom 3D glóbuse. Bez reklám. · NN/80 chars
+Krajiny, hlavné mestá a geografia na interaktívnom 3D glóbuse. Bez reklám. · 74/80 chars
 
 ## Promotional Text — iOS only (≤170)
-Spoznávaj krajiny a hlavné mestá sveta na interaktívnom 3D glóbuse. Bez skreslenia, bez reklám, bez sledovania. Tvoj pokrok, tvoje pravidlá. · NN/170 chars
+Spoznávaj krajiny a hlavné mestá sveta na interaktívnom 3D glóbuse. Bez skreslenia, bez reklám, bez sledovania. Tvoj pokrok, tvoje pravidlá. · 140/170 chars
 
 ## Keywords — iOS only (≤100)
-geografia,krajiny,hlavné mestá,mapa sveta,glóbus,vlajky,kvíz,atlas,učenie,deti,vzdelávanie,škola · NN/100 chars
+geografia,krajiny,hlavné mestá,mapa sveta,glóbus,vlajky,kvíz,atlas,učenie,deti,vzdelávanie,škola · 96/100 chars
 
 ## Description (≤4000)
 Spoznávaj krajiny, hlavné mestá a geografiu sveta s aplikáciou Exploris: interaktívnym 3D glóbusom, ktorý zobrazuje Zem tak, ako vyzerá z vesmíru. Bez skreslenia, bez reklám a bez sledovania.
@@ -53,7 +53,7 @@ Exploris nezhromažďuje žiadne osobné údaje. Žiadne účty, žiadne sledova
 
 Stiahni si Exploris a začni plniť svoj pas!
 
-· NN/4000 chars
+· 2115/4000 chars
 
 ## Category
 Education
