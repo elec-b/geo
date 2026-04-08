@@ -26,6 +26,7 @@
 - [x] **Acerca de**: Pantalla completa con secciones colapsables (países, cómo aprender, tipos de juego, estadísticas, fuentes). Icono info en header. Namespace i18n `about` traducido a 32 idiomas. Fuentes de datos: mención a Banco Mundial, actualización automática vía CDN, mapas solo con nuevas versiones
 - [x] **Perfiles**: Mejoras al crear nuevo perfil — cerrar sesión activa y navegar a Explorar, input de nombre con placeholder, avatares de color (10 círculos) como alternativa a animales
 - [x] **Acabados pre-lanzamiento**: Temas claro/oscuro (paleta premium, 14 variables semánticas). Mejoras de Explorar (columna nivel, spacing selectores), Pasaporte (candados, guilloché), Estadísticas (spacing leyenda). Hull dorado para archipiélagos seleccionados. Validación de coordenadas de capitales. Hit testing de hulls visibles. Auditoría y migración de fuentes de datos (UNDP HDR, World Bank API). CDN operativo (countries-base + capitals + i18n-all). Naming: Exploris
+- [x] **Metadata stores**: Redacción completa para App Store y Google Play en los 32 idiomas (`docs/stores/metadata/`). Consistencia terminológica con `about.json` de cada idioma (Aventura/Pasaporte/sello en su variante local). Validación automática de longitudes por campo (name, subtitle, shortDescription, promotionalText, description, keywords) — todos los archivos dentro de límites. Lista para subir cuando se proceda con las stores
 
 ---
 
@@ -41,7 +42,6 @@
 - [x] Fix: al cambiar de idioma con pregunta en curso, la pregunta se regenera al vuelo en el nuevo idioma (prompt y opciones). Prueba de sello reconstruye la cola pendiente sin terminar prematuramente. Si el usuario está viendo feedback tras responder, se mantiene hasta pulsar siguiente
 - [x] Versionado: 0.1.0 → 1.0.0 (package.json + MARKETING_VERSION en Xcode). CURRENT_PROJECT_VERSION se mantiene en 1 para primera release
 - [x] Privacy policy + URL de soporte en página pública: reutilizado repo `exploris-data` (GitHub Pages). Páginas en inglés (index/privacy/support). Sección «Privacidad» in-app en About con link externo, traducida a 32 idiomas
-- [ ] Redactar metadata stores: título, subtítulo, descripción, palabras clave, categoría (Educación), copyright. Localizar a los 32 idiomas de la app (la app ya está traducida — consistencia store ↔ in-app). Tips de ASO en `docs/spikes/naming-app.md` § 7
 - [ ] Clasificación por edad: 4+ (iOS) / Everyone (Android). Cuestionario IARC (se hace una vez, válido para ambas). NO categorizar como «directed to children» — evita restricciones de Kids Category y parental gates para el enlace a Wikipedia
 
 ### iOS — Build & Test
