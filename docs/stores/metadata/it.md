@@ -1,0 +1,62 @@
+# Exploris — App Store / Google Play metadata (it)
+
+## iOS Name (≤30)
+Exploris
+
+## Android Title (≤30)
+Exploris: Geografia · 19/30 chars
+
+## Subtitle — iOS only (≤30)
+Geografia su un globo 3D · 24/30 chars
+
+## Short Description — Android only (≤80)
+Paesi, capitali e geografia su un globo interattivo. Senza pubblicità. · 70/80 chars
+
+## Promotional Text — iOS only (≤170)
+Impara paesi e capitali del mondo su un globo terrestre interattivo in 3D. Senza distorsione, senza pubblicità e senza raccogliere dati. I tuoi progressi, le tue regole. · 169/170 chars
+
+## Keywords — iOS only (≤100)
+geografia,paesi,capitali,mappamondo,globo,bandiere,quiz,atlante,imparare,bambini,educazione,scuola · 98/100 chars
+
+## Description (≤4000)
+Impara i paesi, le capitali e la geografia del mondo con Exploris: un globo terrestre interattivo in 3D che riproduce la vista della Terra dallo spazio. Senza distorsioni, senza pubblicità e senza raccogliere dati.
+
+PERCHÉ EXPLORIS È DIVERSO
+
+· Un vero globo 3D — apprezza le dimensioni reali dei paesi, qualcosa che le mappe piatte non riescono mai a mostrare.
+· 6 tipi di gioco — dal riconoscere un paese sulla mappa all'indicare le capitali: esercitati in vari modi e mettiti alla prova al massimo.
+· Modalità Avventura adattiva — un algoritmo intelligente che si adatta a ciò che sai, rafforza i tuoi punti deboli e ti aiuta a imparare combinando i diversi giochi.
+· Passaporto pieno di timbri — i tuoi progressi prendono forma in una griglia di livelli e continenti. Riempi il passaporto mentre sali di livello.
+· 195 paesi riconosciuti dalle Nazioni Unite — lo standard più accettato al mondo. Puoi anche esplorare sul globo territori contesi e dipendenze.
+· 32 lingue — dati verificati da fonti autorevoli: nomi, capitali, monete, lingue, demonimi e molto altro.
+· Senza pubblicità e senza dati personali — i tuoi progressi rimangono solo sul tuo dispositivo. Funziona offline.
+
+COME FUNZIONA
+
+Esplora — ruota il globo, tocca i paesi e scopri schede con bandiera, capitale, popolazione, superficie, valuta, lingue, ISU e un link diretto a Wikipedia.
+
+Gioca — inizia con la modalità Avventura. L'algoritmo ti propone domande adatte ai tuoi progressi e combina diversi tipi di gioco perché tu impari senza annoiarti.
+
+Passaporto — guadagna timbri completando prove senza errori. Sali da Turista a Zaino in spalla, e da Zaino in spalla a Guida, in ogni continente. Il tuo obiettivo: riempire il passaporto.
+
+PER CHI
+
+Pensato per bambini e ragazzi dagli 8 ai 15 anni, ma così coinvolgente da appassionare anche qualsiasi adulto curioso del mondo.
+
+FONTI DEI DATI
+
+Dati pubblici verificati delle Nazioni Unite, Natural Earth, Banca Mondiale e Wikidata. L'app controlla in background se ci sono dati più recenti e li aggiorna automaticamente.
+
+PRIVACY
+
+Exploris non raccoglie alcun dato personale. Niente account, niente tracking, niente pubblicità. I tuoi progressi vivono solo sul tuo dispositivo.
+
+Scarica Exploris e inizia a riempire il tuo passaporto!
+
+· 2257/4000 chars
+
+## Category
+Education
+
+## Copyright
+© 2026 Exploris
