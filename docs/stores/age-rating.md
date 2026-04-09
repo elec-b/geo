@@ -28,11 +28,13 @@ Cumplir con ellas implicaría retirar el enlace a Wikipedia o añadir un parenta
 
 ## Pre-requisito verificado
 
-**Comportamiento del enlace Wikipedia en iOS/Android**: debe abrir el navegador **externo** (Safari/Chrome), saliendo de la app. Si la app abre el enlace en un WebView embebido o SFSafariViewController, tendríamos «navegación web sin restricciones dentro de la app» y el rating Apple saltaría a 17+.
+**Comportamiento del enlace Wikipedia en iOS**: abre el navegador **externo** (Safari del sistema), saliendo de la app. **Verificado en iPhone real (2026-04-09)**. Esto habilita la respuesta «Unrestricted Web Access: No» en el cuestionario de Apple, necesaria para mantener el rating 4+.
 
-Verificación en dispositivo (iPhone): Explorar → tocar país → pulsar icono Wikipedia → comprobar que Safari pasa a primer plano y Exploris queda en background. Idem para el link de Privacy Policy en About. Verificación equivalente en Android cuando se añada la plataforma.
+Idem para el link de Privacy Policy en About (mismo patrón `window.open` / `target="_blank"`, mismo comportamiento externo).
 
-> El código actual usa `window.open(url, '_blank')`, que en Capacitor por defecto sale al navegador del sistema. No hay plugin `@capacitor/browser` instalado.
+> El código usa `window.open(url, '_blank')` sin plugin `@capacitor/browser`. En Capacitor por defecto esto sale al navegador del sistema en iOS — no se abre en WebView embebido ni en SFSafariViewController. **Si en el futuro se añade cualquier otro enlace externo a la app, verificar que mantenga este comportamiento antes de la siguiente release** (un cambio a `Browser.open()` con `presentationStyle: 'popover'` abriría in-app y haría saltar el rating a 17+).
+>
+> **Android**: no verificado todavía (pendiente `cap add android`). El comportamiento por defecto de Capacitor en Android es también abrir Chrome externo, pero conviene confirmarlo en dispositivo antes de enviar el cuestionario de Play Console.
 
 ---
 
@@ -110,7 +112,8 @@ Rating resultante esperado: **Everyone** (PEGI 3, ESRB Everyone, USK 0, ClassInd
 
 Marcar cuando el cuestionario esté **enviado y aprobado** en cada consola. Solo entonces la tarea se mueve a `Completado` en `BACKLOG.md`.
 
-- [ ] Verificación en dispositivo iPhone: Wikipedia y Privacy Policy abren en Safari externo (paso bloqueante previo)
+- [x] Verificación en dispositivo iPhone: Wikipedia y Privacy Policy abren en Safari externo (2026-04-09)
+- [ ] Verificación en dispositivo Android: Wikipedia y Privacy Policy abren en Chrome externo (pendiente `cap add android`)
 - [ ] Apple — Age Rating enviado en App Store Connect, rating mostrado: 4+
 - [ ] Apple — Screenshot del rating guardado como evidencia
 - [ ] Google Play — Content Rating (IARC) enviado, certificado recibido
