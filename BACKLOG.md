@@ -53,8 +53,8 @@
 - [x] Testing en simuladores: iPhone SE, estándar, Pro Max, iPad (si se soporta)
 - [x] Verificar safe areas, status bar, interrupciones (llamadas, notificaciones, background/foreground)
 - [x] Verificar icono (sin alpha) y splash screen en todos los tamaños
-- [ ] Build de producción (Archive)
-- [ ] TestFlight: subir build, validar instalación + CDN + permisos en dispositivo real (5-7 días)
+- [x] Build de producción (Archive) + upload a App Store Connect
+- [ ] TestFlight: validar instalación + CDN + permisos en dispositivo real (5-7 días)
 
 ### iOS — Submission
 - [ ] Metadata en App Store Connect + App Privacy label («No data collected») + screenshots (3-5, resolución 6.9" reutilizable para todos los tamaños)
