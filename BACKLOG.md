@@ -50,9 +50,9 @@
 - [x] Crear app record en App Store Connect
 - [x] Export compliance: `ITSAppUsesNonExemptEncryption = NO` en Info.plist (HTTPS al CDN es cifrado del sistema, exento)
 - [x] MARKETING_VERSION + CURRENT_PROJECT_VERSION en Xcode (sync con package.json)
-- [ ] Testing en simuladores: iPhone SE, estándar, Pro Max, iPad (si se soporta)
-- [ ] Verificar safe areas, status bar, interrupciones (llamadas, notificaciones, background/foreground)
-- [ ] Verificar icono (sin alpha) y splash screen en todos los tamaños
+- [x] Testing en simuladores: iPhone SE, estándar, Pro Max, iPad (si se soporta)
+- [x] Verificar safe areas, status bar, interrupciones (llamadas, notificaciones, background/foreground)
+- [x] Verificar icono (sin alpha) y splash screen en todos los tamaños
 - [ ] Build de producción (Archive)
 - [ ] TestFlight: subir build, validar instalación + CDN + permisos en dispositivo real (5-7 días)
 
