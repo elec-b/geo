@@ -1,0 +1,33 @@
+{
+  "title": "Statistieken",
+  "aria.close": "Sluiten",
+  "tabs.play": "Spelen",
+  "tabs.stamps": "Stempelproeven",
+
+  "table.country": "Land",
+  "aria.showIndicators": "Indicatoren tonen",
+  "aria.showPercent": "Percentages tonen",
+
+  "typeLabel.E": "Herken het land",
+  "typeLabel.C": "Land naar hoofdstad",
+  "typeLabel.D": "Hoofdstad naar land",
+  "typeLabel.F": "Herken de hoofdstad",
+  "typeLabel.A": "Wijs het land aan",
+  "typeLabel.B": "Wijs de hoofdstad aan",
+
+  "stampLabel.A.short": "\u25ef Landen",
+  "stampLabel.A.full": "Stempelproef Landen",
+  "stampLabel.B.short": "\u25ce Hoofdsteden",
+  "stampLabel.B.full": "Stempelproef Hoofdsteden",
+
+  "legend.dominated": "Beheerst",
+  "legend.inferred": "Afgeleid",
+  "legend.reinforcement": "Herhaling",
+  "legend.noData": "Geen data",
+  "legend.correct": "Correct",
+  "legend.incorrect": "Fout",
+
+  "reset.button": "Statistieken resetten",
+  "reset.confirm": "Spelstatistieken resetten voor {{level}} - {{continent}}?",
+  "stampNotice": "Stempels en proefgeschiedenis zijn permanent, net als in een echt paspoort. Wil je opnieuw beginnen, maak dan een nieuw profiel aan."
+}

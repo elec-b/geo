@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "ลูกโลก",
+  "segmented.table": "ตาราง",
+  "labels.countries": "ประเทศ",
+  "labels.capitals": "เมืองหลวง",
+
+  "table.country": "ประเทศ",
+  "table.capital": "เมืองหลวง",
+  "table.population": "ปชก.",
+  "table.nonUNToggle": "ดินแดนที่ไม่ใช่สมาชิก UN",
+
+  "card.disclaimer.antarctica": "ดินแดนสากล — สนธิสัญญาแอนตาร์กติก (1959)",
+  "card.disclaimer.territory": "ดินแดนของ{{sovereign}}",
+  "card.disclaimer.disputed": "อธิปไตยเป็นที่โต้แย้ง",
+  "card.flagAlt": "ธงชาติ{{country}}",
+  "card.aria.openWikipedia": "เปิด{{country}}ในวิกิพีเดีย",
+  "card.aria.dialog": "การ์ดข้อมูล{{country}}",
+
+  "card.field.capital": "เมืองหลวง",
+  "card.field.population": "ประชากร",
+  "card.field.area": "พื้นที่",
+  "card.field.density": "ความหนาแน่น",
+  "card.field.currency": "สกุลเงิน",
+  "card.field.demonym": "ชื่อเรียกพลเมือง",
+  "card.field.languages": "ภาษา",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "คน",
+  "card.unit.densityUnit": "คน/km²",
+  "card.na": "ไม่มีข้อมูล",
+
+  "card.tooltip.hdi": "ดัชนีการพัฒนามนุษย์: วัดสุขภาพ การศึกษา และรายได้ ช่วง 0–1",
+  "card.tooltip.ihdi": "HDI ปรับความเหลื่อมล้ำ: สะท้อนความเหลื่อมล้ำด้านสุขภาพ การศึกษา และรายได้",
+  "card.aria.hdiInfo": "ข้อมูลเกี่ยวกับ HDI",
+  "card.aria.ihdiInfo": "ข้อมูลเกี่ยวกับ IHDI",
+
+  "card.antarctica.info": "แอนตาร์กติกาไม่ได้เป็นของประเทศใด สนธิสัญญาแอนตาร์กติกที่ลงนามในปี 1959 สงวนไว้เพื่อการวิจัยทางวิทยาศาสตร์ และห้ามกิจกรรมทางทหารและการแสวงหาผลประโยชน์จากทรัพยากร",
+
+  "card.sovereign.GB": "สหราชอาณาจักร",
+  "card.sovereign.FR": "ฝรั่งเศส",
+  "card.sovereign.US": "สหรัฐอเมริกา",
+  "card.sovereign.NL": "เนเธอร์แลนด์",
+  "card.sovereign.DK": "เดนมาร์ก",
+  "card.sovereign.CN": "จีน",
+  "card.sovereign.NZ": "นิวซีแลนด์",
+  "card.sovereign.FI": "ฟินแลนด์",
+  "card.sovereign.AU": "ออสเตรเลีย"
+}

@@ -1,0 +1,13 @@
+{
+  "header.title": "Putovnica {{name}}",
+  "header.globalLevel": "Globalna razina: {{level}}",
+  "emptyState": "Svaki pečat dokazuje što znaš. Hoćeš li napuniti putovnicu?",
+  "legend.country": "○ Zemlja",
+  "legend.capital": "◎ Glavni grad",
+  "legend.earned": "★ Osvojeno",
+  "legend.locked": "Zaključano",
+  "stampTitle.countries": "Pečat Zemalja",
+  "stampTitle.capitals": "Pečat Glavnih gradova",
+  "modal.title": "Ispit pečata",
+  "modal.questionCount": "Moraš završiti {{count}} pitanja bez ijedne greške."
+}

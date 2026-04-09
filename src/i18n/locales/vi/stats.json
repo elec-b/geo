@@ -1,0 +1,33 @@
+{
+  "title": "Thống kê",
+  "aria.close": "Đóng",
+  "tabs.play": "Chơi",
+  "tabs.stamps": "Bài kiểm tra tem",
+
+  "table.country": "Quốc gia",
+  "aria.showIndicators": "Hiển thị chỉ số",
+  "aria.showPercent": "Hiển thị phần trăm",
+
+  "typeLabel.E": "Nhận diện quốc gia",
+  "typeLabel.C": "Quốc gia theo thủ đô",
+  "typeLabel.D": "Thủ đô theo quốc gia",
+  "typeLabel.F": "Nhận diện thủ đô",
+  "typeLabel.A": "Chỉ quốc gia",
+  "typeLabel.B": "Chỉ thủ đô",
+
+  "stampLabel.A.short": "◯ Quốc gia",
+  "stampLabel.A.full": "Bài kiểm tra tem Quốc gia",
+  "stampLabel.B.short": "◎ Thủ đô",
+  "stampLabel.B.full": "Bài kiểm tra tem Thủ đô",
+
+  "legend.dominated": "Thành thạo",
+  "legend.inferred": "Suy luận",
+  "legend.reinforcement": "Củng cố",
+  "legend.noData": "Chưa có dữ liệu",
+  "legend.correct": "Đúng",
+  "legend.incorrect": "Sai",
+
+  "reset.button": "Đặt lại thống kê",
+  "reset.confirm": "Đặt lại thống kê trò chơi cho {{level}} - {{continent}}?",
+  "stampNotice": "Tem và lịch sử bài kiểm tra là vĩnh viễn, giống như trong hộ chiếu thật. Nếu bạn muốn bắt đầu lại, hãy tạo hồ sơ mới."
+}

@@ -1,0 +1,41 @@
+{
+  "continent.africa": "แอฟริกา",
+  "continent.america": "อเมริกา",
+  "continent.asia": "เอเชีย",
+  "continent.europe": "ยุโรป",
+  "continent.oceania": "โอเชียเนีย",
+  "continent.antarctica": "แอนตาร์กติกา",
+  "continentFilter.all": "ทั้งหมด",
+
+  "level.tourist": "นักท่องเที่ยว",
+  "level.backpacker": "แบ็คแพ็คเกอร์",
+  "level.guide": "ไกด์",
+
+  "questionType.E": "ทายชื่อประเทศ",
+  "questionType.C": "ประเทศไปเมืองหลวง",
+  "questionType.D": "เมืองหลวงไปประเทศ",
+  "questionType.F": "ทายชื่อเมืองหลวง",
+  "questionType.A": "ชี้ประเทศ",
+  "questionType.B": "ชี้เมืองหลวง",
+
+  "questionTypeShort.E": "ทายประเทศ",
+  "questionTypeShort.C": "ประเทศไปเมืองหลวง",
+  "questionTypeShort.D": "เมืองหลวงไปประเทศ",
+  "questionTypeShort.F": "ทายเมืองหลวง",
+  "questionTypeShort.A": "ชี้ประเทศ",
+  "questionTypeShort.B": "ชี้เมืองหลวง",
+
+  "tabs.explore": "สำรวจ",
+  "tabs.play": "เล่น",
+  "tabs.passport": "พาสปอร์ต",
+
+  "loading": "กำลังโหลดลูกโลก\u2026",
+  "cancel": "ยกเลิก",
+  "close": "ปิด",
+  "continue": "ดำเนินต่อ",
+
+  "aria.userProfile": "โปรไฟล์ผู้ใช้",
+  "aria.stats": "สถิติ",
+  "aria.settings": "ตั้งค่า",
+  "aria.navigation": "การนำทางหลัก"
+}

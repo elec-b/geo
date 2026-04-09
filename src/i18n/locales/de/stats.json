@@ -1,0 +1,33 @@
+{
+  "title": "Statistiken",
+  "aria.close": "Schlie\u00dfen",
+  "tabs.play": "Spielen",
+  "tabs.stamps": "Stempelpr\u00fcfungen",
+
+  "table.country": "Land",
+  "aria.showIndicators": "Indikatoren anzeigen",
+  "aria.showPercent": "Prozents\u00e4tze anzeigen",
+
+  "typeLabel.E": "Erkenne das Land",
+  "typeLabel.C": "Land zur Hauptstadt",
+  "typeLabel.D": "Hauptstadt zum Land",
+  "typeLabel.F": "Erkenne die Hauptstadt",
+  "typeLabel.A": "Zeige das Land",
+  "typeLabel.B": "Zeige die Hauptstadt",
+
+  "stampLabel.A.short": "\u25ef L\u00e4nder",
+  "stampLabel.A.full": "Stempelpr\u00fcfung L\u00e4nder",
+  "stampLabel.B.short": "\u25ce Hauptst\u00e4dte",
+  "stampLabel.B.full": "Stempelpr\u00fcfung Hauptst\u00e4dte",
+
+  "legend.dominated": "Gemeistert",
+  "legend.inferred": "Abgeleitet",
+  "legend.reinforcement": "Vertiefung",
+  "legend.noData": "Keine Daten",
+  "legend.correct": "Richtig",
+  "legend.incorrect": "Falsch",
+
+  "reset.button": "Statistiken zur\u00fccksetzen",
+  "reset.confirm": "Spielstatistiken f\u00fcr {{level}} - {{continent}} zur\u00fccksetzen?",
+  "stampNotice": "Stempel und Pr\u00fcfungshistorie sind dauerhaft, wie in einem echten Reisepass. Wenn du von vorne beginnen m\u00f6chtest, erstelle ein neues Profil."
+}

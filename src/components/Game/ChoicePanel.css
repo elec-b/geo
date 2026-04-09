@@ -18,7 +18,7 @@
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-md);
   border: 1px solid var(--glass-border);
-  background: rgba(12, 12, 30, 0.85);
+  background: var(--color-surface);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   color: var(--color-text-primary);
@@ -31,7 +31,7 @@
 }
 
 .choice-panel__btn:active:not(:disabled) {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-white-8);
 }
 
 .choice-panel__btn:disabled {
@@ -41,12 +41,12 @@
 
 .choice-panel__btn--correct {
   border-color: var(--color-success);
-  background: rgba(34, 197, 94, 0.2);
+  background: var(--color-success-bg);
 }
 
 .choice-panel__btn--incorrect {
   border-color: var(--color-error);
-  background: rgba(239, 68, 68, 0.2);
+  background: var(--color-error-bg);
 }
 
 @keyframes choice-panel-enter {

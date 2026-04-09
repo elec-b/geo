@@ -1,0 +1,16 @@
+{
+  "header.title": "Pașaportul lui {{name}}",
+  "header.globalLevel": "Nivel global: {{level}}",
+  "emptyState": "Fiecare ștampilă dovedește ce știi. Vei completa pașaportul?",
+
+  "legend.country": "○ Țară",
+  "legend.capital": "◎ Capitală",
+  "legend.earned": "★ Obținut",
+  "legend.locked": "Blocat",
+
+  "stampTitle.countries": "Ștampilă de Țări",
+  "stampTitle.capitals": "Ștampilă de Capitale",
+
+  "modal.title": "Probă de ștampilă",
+  "modal.questionCount": "Trebuie să completezi {{count}} întrebări fără nicio greșeală."
+}

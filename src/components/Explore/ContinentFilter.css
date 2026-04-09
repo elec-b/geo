@@ -12,7 +12,7 @@
   padding: 0.1875rem 0.5rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--pill-color, var(--glass-border));
-  background: transparent;
+  background: var(--color-pill-bg);
   color: var(--pill-color, var(--color-text-secondary));
   font-size: var(--font-size-xs);
   font-family: var(--font-family);
@@ -30,5 +30,5 @@
 }
 
 .continent-filter__pill:not(.continent-filter__pill--active):active {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--color-white-8);
 }

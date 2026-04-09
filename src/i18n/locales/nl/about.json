@@ -1,0 +1,28 @@
+{
+  "title": "Over Exploris",
+  "intro": "Exploris is een app om aardrijkskunde te leren met een interactieve 3D-wereldbol. Leer landen, hoofdsteden en nog veel meer op een visuele en vermakelijke manier.",
+  "section.countries.title": "Landen",
+  "section.countries.body": "Exploris bevat de 195 landen die erkend zijn door de Verenigde Naties, de meest geaccepteerde standaard wereldwijd. Je kunt op de wereldbol ook niet-erkende of betwiste gebieden verkennen.\n\nDe wereldbol toont de aarde zoals je die vanuit de ruimte ziet. Zo kun je de werkelijke grootte van landen zien — iets wat platte kaarten niet kunnen.",
+  "section.learn.title": "Hoe je leert",
+  "section.learn.tips.explore": "Begin bij Ontdekken: draai de wereldbol, tik op landen om hun infokaart te zien en maak je vertrouwd met hun vorm en locatie. De Tabel-weergave helpt je elk land aan zijn hoofdstad te koppelen. Tik op een land of hoofdstad in de tabel om het op de wereldbol te zien.",
+  "section.learn.tips.play": "Als je er klaar voor bent, duik in Spelen. We raden de Avontuur-modus aan, die de verschillende hieronder beschreven speltypen slim combineert en zich aanpast aan wat je weet om je te helpen leren.",
+  "section.learn.tips.passport": "Je uiteindelijke doel is het Paspoort vol stempels te krijgen. Om een stempel te verdienen, moet je een stempelproef foutloos voltooien.",
+  "section.gameTypes.title": "Speltypen",
+  "section.gameTypes.intro": "Er zijn 6 speltypen, gerangschikt van makkelijk naar moeilijk:",
+  "section.gameTypes.E": "◯? — Herken het land — Een land wordt op de wereldbol gemarkeerd en je kiest de naam uit 4 opties.",
+  "section.gameTypes.C": "◯→◎ — Land naar hoofdstad — Je krijgt een land en kiest de hoofdstad uit 4 opties.",
+  "section.gameTypes.D": "◎→◯ — Hoofdstad naar land — Je krijgt een hoofdstad en kiest bij welk land die hoort.",
+  "section.gameTypes.F": "◎? — Herken de hoofdstad — Een hoofdstad wordt op de wereldbol gemarkeerd en je kiest de naam.",
+  "section.gameTypes.A": "◯ — Wijs het land aan — Je krijgt een naam en tikt op het land op de wereldbol.",
+  "section.gameTypes.B": "◎ — Wijs de hoofdstad aan — Je krijgt een hoofdstad en tikt op de locatie op de wereldbol.",
+  "section.gameTypes.adventure": "De Avontuur-modus combineert alle typen en past zich aan je voortgang aan. Het is de aanbevolen manier om te spelen.",
+  "section.gameTypes.stamps": "De typen “Wijs het land aan” en “Wijs de hoofdstad aan” worden gebruikt bij de stempelproeven van het Paspoort.",
+  "section.stats.title": "Statistieken",
+  "section.stats.body": "De Statistieken-weergave heeft twee tabbladen:\n\n• Spelen — Toont je beheersing per speltype.\n\n• Stempelproeven — Toont je resultaten bij de proeven van het Paspoort.\n\nJe kunt schakelen tussen beheersingsindicatoren (✓/✗) en slagingspercentages. Tik op een land om direct naar de infokaart in Ontdekken te gaan.",
+  "section.sources.title": "Gegevensbronnen",
+  "section.sources.body": "De gegevens zijn afkomstig uit openbare bronnen zoals de Verenigde Naties, Natural Earth, de Wereldbank en Wikidata. De app controleert automatisch of er nieuwere gegevens beschikbaar zijn en werkt ze bij op de achtergrond. Kaarten veranderen alleen met nieuwe versies van de app.",
+
+  "section.privacy.title": "Privacy",
+  "section.privacy.body": "Exploris verzamelt geen persoonlijke gegevens. Je voortgang wordt alleen op je apparaat opgeslagen.",
+  "section.privacy.linkLabel": "Privacybeleid bekijken"
+}

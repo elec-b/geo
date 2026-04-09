@@ -1,0 +1,33 @@
+{
+  "title": "Estadísticas",
+  "aria.close": "Cerrar",
+  "tabs.play": "Jugar",
+  "tabs.stamps": "Pruebas de sello",
+
+  "table.country": "País",
+  "aria.showIndicators": "Mostrar indicadores",
+  "aria.showPercent": "Mostrar porcentajes",
+
+  "typeLabel.E": "Identifica el país",
+  "typeLabel.C": "País a capital",
+  "typeLabel.D": "Capital a país",
+  "typeLabel.F": "Identifica la capital",
+  "typeLabel.A": "Señala el país",
+  "typeLabel.B": "Señala la capital",
+
+  "stampLabel.A.short": "◯ Países",
+  "stampLabel.A.full": "Prueba de sello de Países",
+  "stampLabel.B.short": "◎ Capitales",
+  "stampLabel.B.full": "Prueba de sello de Capitales",
+
+  "legend.dominated": "Dominado",
+  "legend.inferred": "Inferido",
+  "legend.reinforcement": "Refuerzo",
+  "legend.noData": "Sin datos",
+  "legend.correct": "Acertado",
+  "legend.incorrect": "Fallado",
+
+  "reset.button": "Resetear estadísticas",
+  "reset.confirm": "¿Resetear estadísticas de Jugar para {{level}} - {{continent}}?",
+  "stampNotice": "Los sellos y el historial de pruebas son permanentes, como en un pasaporte real. Si quieres empezar de cero, crea un nuevo perfil."
+}

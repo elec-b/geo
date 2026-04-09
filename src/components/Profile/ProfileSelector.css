@@ -3,7 +3,7 @@
 .profile-selector-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--color-overlay-heavy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,7 +82,7 @@
 }
 
 .profile-selector__item:active {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-white-8);
 }
 
 .profile-selector__item--active {
@@ -166,7 +166,7 @@
   padding: var(--spacing-md);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-error);
-  background: rgba(239, 68, 68, 0.1);
+  background: var(--color-error-bg-subtle);
 }
 
 .profile-selector__confirm-text {

@@ -16,16 +16,16 @@
 }
 
 .game-feedback--correct {
-  background: rgba(34, 197, 94, 0.05);
+  background: var(--color-success-flash);
 }
 
 .game-feedback--incorrect {
-  background: rgba(239, 68, 68, 0.05);
+  background: var(--color-error-flash);
 }
 
 /* Overlay reducido cuando las etiquetas van sobre el globo */
 .game-feedback--geo.game-feedback--incorrect {
-  background: rgba(239, 68, 68, 0.03);
+  background: var(--color-error-flash-geo);
 }
 
 .game-feedback__details {
@@ -41,7 +41,7 @@
   color: var(--color-error);
   font-size: 1.25rem;
   font-weight: 600;
-  text-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+  text-shadow: 0 0 10px var(--color-error-glow);
   text-align: center;
 }
 
@@ -49,7 +49,7 @@
   color: var(--color-success);
   font-size: 1rem;
   font-weight: 500;
-  text-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+  text-shadow: 0 0 10px var(--color-success-glow);
   text-align: center;
 }
 

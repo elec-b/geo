@@ -8,17 +8,10 @@ import type { FeatureCollection, Feature, Geometry, MultiLineString } from 'geoj
 import { loadCountriesGeoJson, loadBordersGeoJson, getOverrideCca2s } from '../../data/countries';
 import type { CountryFeature, CountryProperties } from '../../data/countries';
 import type { CapitalCoords } from '../../data/types';
+import { useAppStore } from '../../stores/appStore';
 import { App as CapacitorApp } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
-import { COUNTRY_SELECTED_COLOR } from './colors';
-
-// --- Constantes del tema espacial ---
-
-const OCEAN_COLOR = '#0a0a1a';
-const COUNTRY_FILL_COLOR = '#3a3a4a';
-const COUNTRY_HOVER_COLOR = '#2a2a3a';
-const BORDER_COLOR = 'rgba(255, 255, 255, 0.3)';
-const ATMOSPHERE_COLOR = 'rgba(100, 150, 255, 0.08)';
+import { getGlobeTheme, type GlobeThemeColors } from '../../styles/globeTheme';
 
 // Rotación automática (°/s)
 const ROTATION_SPEED = 6;
@@ -69,20 +62,9 @@ const VELOCITY_SAMPLES = 5;
 // Pin de capital (doble círculo ◎)
 const CAPITAL_PIN_OUTER_R = 7;
 const CAPITAL_PIN_INNER_R = 4.5;
-const CAPITAL_PIN_FILL_ALPHA = 0.20; // × alpha del color (0.5) ≈ 0.10 efectivo
-const CAPITAL_PIN_COLOR = 'rgba(224, 224, 224, 0.5)'; // ligeramente más visible que fronteras
-const CAPITAL_PIN_NON_UN_COLOR = 'rgba(255, 180, 50, 0.5)'; // ámbar, misma opacidad
-
-// Etiquetas
-const LABEL_COLOR = 'rgba(255, 255, 255, 0.8)';
-const LABEL_NON_UN_COLOR = 'rgba(255, 180, 50, 0.6)';
-const LABEL_CAPITAL_COLOR = 'rgba(170, 170, 180, 0.75)';
-const LABEL_CAPITAL_NON_UN_COLOR = 'rgba(255, 180, 50, 0.5)';
-const LABEL_SHADOW = 'rgba(0, 0, 0, 0.7)';
 const LABEL_FONT_BASE = 9;
 
-// Opacidad de países fuera del filtro de continente
-const DIMMED_ALPHA = 0.15;
+
 
 /** Features sin código ISO: heredan dimming de sus países vecinos */
 const ORPHAN_NEIGHBORS: Record<string, string[]> = {
@@ -96,11 +78,11 @@ const SEA_LETTER_SPACING: Record<number, number> = { 0: 3, 1: 2, 2: 1, 3: 0 };
 
 interface SeaLabel {
   id: string;
-  name_es: string;
   lat: number;
   lon: number;
   scalerank: number;
   minZoom: number;
+  [key: string]: string | number; // name_{locale} campos dinámicos
 }
 
 // Overrides de centroides visuales para países con forma irregular.
@@ -241,7 +223,7 @@ export interface GlobeD3Props {
   capitalLabelsData?: Map<string, CapitalCoords> | null;
   /** Población por país (Map<cca2, population>) para prioridad de etiquetas */
   countryPopulations?: Map<string, number> | null;
-  /** Nombres de países en español (Map<cca2, nombre>) para etiquetas del globo */
+  /** Nombres de países traducidos (Map<cca2, nombre>) para etiquetas del globo */
   countryNames?: Map<string, string> | null;
   /** Etiquetas puntuales de feedback geográfico (error/correcto sobre el globo) */
   feedbackLabels?: FeedbackLabel[] | null;
@@ -275,6 +257,8 @@ export interface GlobeD3Ref {
   getLastTapCoords(): [number, number] | null;
   /** Retorna la distancia angular mínima (radianes) desde un punto a la frontera del país */
   getMinDistanceToBoundary(cca2: string, point: [number, number]): number | null;
+  /** Retorna todos los centroides (ONU + no-ONU) para validación de vecindad */
+  getAllCentroids(): Map<string, [number, number]>;
 }
 
 // --- Utilidades ---
@@ -386,6 +370,20 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
   if (showSeaLabelsRef.current !== showSeaLabels) needsRedrawRef.current = true;
   showSeaLabelsRef.current = showSeaLabels;
 
+  // Tema activo (colores del canvas)
+  const theme = useAppStore((s) => s.settings.theme);
+  const globeThemeRef = useRef<GlobeThemeColors>(getGlobeTheme(theme));
+  if (globeThemeRef.current !== getGlobeTheme(theme)) {
+    globeThemeRef.current = getGlobeTheme(theme);
+    needsRedrawRef.current = true;
+  }
+
+  // Locale activo (para sea labels multi-idioma)
+  const locale = useAppStore((s) => s.settings.locale);
+  const localeRef = useRef(locale);
+  if (localeRef.current !== locale) needsRedrawRef.current = true;
+  localeRef.current = locale;
+
   // Datos de etiquetas de mares/océanos
   const seaLabelsRef = useRef<SeaLabel[]>([]);
   const seaLabelsLoadedRef = useRef(false);
@@ -483,6 +481,9 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     },
     getCentroid(cca2: string): [number, number] | null {
       return countryCentroidsRef.current.get(cca2) ?? null;
+    },
+    getAllCentroids() {
+      return countryCentroidsRef.current;
     },
     getCountryZoom(cca2: string): number | null {
       const area = geoAreasRef.current.get(cca2);
@@ -605,7 +606,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
     // Atmósfera (halo exterior)
     const gradient = ctx.createRadialGradient(cx, cy, scaledRadius * 0.95, cx, cy, scaledRadius * 1.15);
-    gradient.addColorStop(0, ATMOSPHERE_COLOR);
+    const gt = globeThemeRef.current;
+    gradient.addColorStop(0, gt.atmosphere);
     gradient.addColorStop(1, 'transparent');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, width, height);
@@ -613,7 +615,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     // Océano
     ctx.beginPath();
     path({ type: 'Sphere' });
-    ctx.fillStyle = OCEAN_COLOR;
+    ctx.fillStyle = gt.ocean;
     ctx.fill();
 
     // Etiquetas de mares y océanos (underlay: después de océano, antes de países)
@@ -653,10 +655,11 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         const fontBase = SEA_FONT_BASE[label.scalerank] ?? 7;
         const fontSize = Math.round(fontBase + Math.sqrt(zoom) * 1.2);
         ctx.font = `italic 300 ${fontSize}px Georgia, "New York", serif`;
-        ctx.fillStyle = `rgba(100, 180, 255, ${alpha})`;
+        ctx.fillStyle = `rgba(${gt.seaLabelRgb}, ${alpha})`;
 
         const spacing = SEA_LETTER_SPACING[label.scalerank] ?? 0;
-        const text = label.name_es;
+        const seaNameKey = `name_${localeRef.current.replace('-', '_')}`;
+        const text = (label[seaNameKey] as string) ?? (label.name_es as string) ?? '';
 
         if (spacing > 0) {
           // Resetear textAlign para evitar herencia de 'center' de iteración anterior
@@ -693,17 +696,17 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     // Países (relleno)
     for (const feature of countries.features) {
       const cca2 = feature.properties?.cca2;
-      let fillColor = COUNTRY_FILL_COLOR;
+      let fillColor = gt.countryFill;
 
       if (cca2 && cca2 === effectiveSelected) {
-        fillColor = selectedColorPropRef.current ?? COUNTRY_SELECTED_COLOR;
+        fillColor = selectedColorPropRef.current ?? gt.selected;
       } else if (cca2 && cca2 === hoveredRef.current) {
-        fillColor = COUNTRY_HOVER_COLOR;
+        fillColor = gt.countryHover;
       }
 
-      // Dimming por filtro de continente
-      let isDimmed = false;
+      // Dimming por filtro de continente (color sólido, no alpha)
       if (filter != null) {
+        let isDimmed: boolean;
         if (cca2 != null) {
           isDimmed = !filter.has(cca2);
         } else {
@@ -711,15 +714,13 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           const neighbors = ORPHAN_NEIGHBORS[feature.properties?.name as string];
           isDimmed = neighbors ? !neighbors.some(n => filter.has(n)) : false;
         }
+        if (isDimmed) fillColor = gt.countryDimmed;
       }
-      if (isDimmed) ctx.globalAlpha = DIMMED_ALPHA;
 
       ctx.beginPath();
       path(feature);
       ctx.fillStyle = fillColor;
       ctx.fill();
-
-      if (isDimmed) ctx.globalAlpha = 1;
     }
 
     // Bordes (mesh 50m, excluye países con override 10m)
@@ -727,14 +728,14 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
     if (borders) {
       ctx.beginPath();
       path(borders);
-      ctx.strokeStyle = BORDER_COLOR;
+      ctx.strokeStyle = gt.border;
       ctx.lineWidth = borderLineWidth;
       ctx.stroke();
     }
 
     // Bordes de países con override 10m (excluidos del mesh para evitar contornos fantasma)
     if (overrideCca2sRef.current.size > 0) {
-      ctx.strokeStyle = BORDER_COLOR;
+      ctx.strokeStyle = gt.border;
       ctx.lineWidth = borderLineWidth;
       for (const feature of countries.features) {
         const cca2 = feature.properties?.cca2;
@@ -764,9 +765,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
 
       ctx.beginPath();
       path(hullGeoJSON as GeoPermissibleObjects);
-      const outlineColor = selectedColorPropRef.current ?? COUNTRY_SELECTED_COLOR;
-      ctx.strokeStyle = outlineColor;
-      ctx.globalAlpha = 0.45;
+      ctx.strokeStyle = selectedColorPropRef.current ?? gt.selectedHull;
+      ctx.globalAlpha = 1;
       ctx.lineWidth = 1.5;
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
@@ -810,7 +810,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         };
         ctx.beginPath();
         path(hullGeoJSON as GeoPermissibleObjects);
-        ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+        ctx.strokeStyle = `rgba(${gt.markerRgb}, ${opacity})`;
         ctx.lineWidth = MARKER_LINE_WIDTH;
         ctx.lineJoin = 'round';
         ctx.lineCap = 'round';
@@ -851,7 +851,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           }
         }
 
-        ctx.strokeStyle = `rgba(255, 255, 255, ${markerOpacity})`;
+        ctx.strokeStyle = `rgba(${gt.markerRgb}, ${markerOpacity})`;
         ctx.beginPath();
         ctx.arc(pos[0], pos[1], MARKER_RADIUS, 0, Math.PI * 2);
         ctx.stroke();
@@ -871,7 +871,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         if (!pos) continue;
         ctx.beginPath();
         ctx.arc(pos[0], pos[1], 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = nonUnCodesRef.current.has(cca2) ? CAPITAL_PIN_NON_UN_COLOR : CAPITAL_PIN_COLOR;
+        ctx.fillStyle = nonUnCodesRef.current.has(cca2) ? gt.capitalPinNonUn : gt.capitalPin;
         ctx.globalAlpha = 0.6;
         ctx.fill();
       }
@@ -885,8 +885,8 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
       const viewCenter: [number, number] = [-rotation[0], -rotation[1]];
       const selCca2 = selectedCca2PropRef.current;
       const pinColor = (selCca2 && nonUnCodesRef.current.has(selCca2))
-        ? CAPITAL_PIN_NON_UN_COLOR
-        : CAPITAL_PIN_COLOR;
+        ? gt.capitalPinNonUn
+        : gt.capitalPin;
       ctx.lineWidth = Math.max(0.5, 1.0 / Math.sqrt(zoom));
       const hl = capitalPinHighlightRef.current;
       for (const pinCoords of pins) {
@@ -897,13 +897,6 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         const currentColor = (hl && pinCoords[0] === hl.coords[0] && pinCoords[1] === hl.coords[1])
           ? hl.color
           : pinColor;
-        // Relleno sutil interior
-        ctx.globalAlpha = CAPITAL_PIN_FILL_ALPHA;
-        ctx.beginPath();
-        ctx.arc(pos[0], pos[1], CAPITAL_PIN_OUTER_R, 0, Math.PI * 2);
-        ctx.fillStyle = currentColor;
-        ctx.fill();
-        ctx.globalAlpha = 1;
         // Anillo exterior
         ctx.strokeStyle = currentColor;
         ctx.beginPath();
@@ -926,15 +919,15 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         const pos = projection(label.coords);
         if (!pos) continue;
 
-        // Siempre blanco: el color del país (rojo/verde) ya indica acierto/error
-        const color = '#ffffff';
+        // Color según tema: el color del país (rojo/verde) ya indica acierto/error
+        const color = gt.label;
         const lines = label.text.split('\n');
         const mainSize = Math.round(12 + Math.sqrt(zoom) * 2);
         const subSize = Math.round(mainSize * 0.75);
 
         ctx.textAlign = 'center';
         ctx.textBaseline = 'bottom';
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+        ctx.shadowColor = gt.labelShadow;
         ctx.shadowBlur = 4;
         ctx.fillStyle = color;
 
@@ -982,7 +975,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         ctx.font = `500 ${fontSize}px -apple-system, sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.shadowColor = LABEL_SHADOW;
+        ctx.shadowColor = gt.labelShadow;
         ctx.shadowBlur = 3;
 
         // Iterar features ordenados por área descendente: países grandes tienen prioridad visual
@@ -1027,7 +1020,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           countryRectIndex.set(cca2, usedRects.length);
           usedRects.push(rect);
 
-          ctx.fillStyle = feature.properties.isUNMember ? LABEL_COLOR : LABEL_NON_UN_COLOR;
+          ctx.fillStyle = feature.properties.isUNMember ? gt.label : gt.labelNonUn;
           ctx.fillText(labelName, pos[0], pos[1] + yOffset);
         }
         ctx.shadowBlur = 0;
@@ -1039,7 +1032,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
         ctx.font = `${fontSize}px -apple-system, sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
-        ctx.shadowColor = LABEL_SHADOW;
+        ctx.shadowColor = gt.labelShadow;
         ctx.shadowBlur = 3;
 
         const sortedCapitals = [...capitalLabelsRef.current.entries()]
@@ -1095,7 +1088,7 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           }
           usedRects.push(rect);
 
-          ctx.fillStyle = nonUnCodesRef.current.has(cca2) ? LABEL_CAPITAL_NON_UN_COLOR : LABEL_CAPITAL_COLOR;
+          ctx.fillStyle = nonUnCodesRef.current.has(cca2) ? gt.labelCapitalNonUn : gt.labelCapital;
           ctx.fillText(capital.name, pos[0], yPos);
         }
         ctx.shadowBlur = 0;
@@ -1249,19 +1242,22 @@ export const GlobeD3 = forwardRef<GlobeD3Ref, GlobeD3Props>(function GlobeD3(
           bestFeature = feature as Feature<Geometry, CountryProperties>;
         }
       }
-      // Antes de retornar el hull match, verificar si hay un país (sin hull)
-      // cuyo centroide esté más cerca del tap. Esto evita que hulls invisibles
-      // de archipiélagos grandes (ej. Indonesia) intercepten taps destinados
-      // a vecinos pequeños (ej. Timor-Leste).
+      // Los hulls visibles (archipiélagos pequeños) no contienen islas de
+      // otros países — tap dentro del hull = siempre ese país.
+      // El centroid override solo aplica a hulls invisibles de archipiélagos
+      // grandes (ej. Indonesia) que pueden contener vecinos (ej. Timor-Leste).
       if (bestFeature) {
-        for (const [cca2, centroid] of countryCentroidsRef.current) {
-          if (hulls.has(cca2)) continue;
-          const dist = geoDistance(coords as [number, number], centroid);
-          if (dist < bestDist) {
-            const feat = countries.features.find(f => f.properties?.cca2 === cca2);
-            if (feat) {
-              bestDist = dist;
-              bestFeature = feat as Feature<Geometry, CountryProperties>;
+        const bestCca2 = bestFeature.properties?.cca2;
+        if (!bestCca2 || !HULL_VISIBLE_CODES.has(bestCca2)) {
+          for (const [cca2, centroid] of countryCentroidsRef.current) {
+            if (hulls.has(cca2)) continue;
+            const dist = geoDistance(coords as [number, number], centroid);
+            if (dist < bestDist) {
+              const feat = countries.features.find(f => f.properties?.cca2 === cca2);
+              if (feat) {
+                bestDist = dist;
+                bestFeature = feat as Feature<Geometry, CountryProperties>;
+              }
             }
           }
         }

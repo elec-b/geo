@@ -1,4 +1,5 @@
 // Banner con la pregunta del juego (estilo unificado A-F)
+import { useTranslation } from 'react-i18next';
 import type { GameQuestion } from '../../data/gameQuestions';
 import './QuestionBanner.css';
 
@@ -7,17 +8,13 @@ interface QuestionBannerProps {
   type: GameQuestion['type'];
 }
 
-/** Instrucción según tipo de pregunta (A/B muestran label, C-F no) */
-function getLabel(type: GameQuestion['type']): string | null {
-  switch (type) {
-    case 'A': return 'Localiza';
-    case 'B': return 'Localiza la capital';
-    default: return null;
-  }
-}
-
 export function QuestionBanner({ prompt, type }: QuestionBannerProps) {
-  const label = getLabel(type);
+  const { t } = useTranslation('game');
+
+  /** Instrucción según tipo de pregunta (A/B muestran label, C-F no) */
+  const label = type === 'A' ? t('question.locate')
+    : type === 'B' ? t('question.locateCapital')
+    : null;
 
   return (
     <div className="question-banner" key={prompt}>

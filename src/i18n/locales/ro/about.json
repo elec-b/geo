@@ -1,0 +1,28 @@
+{
+  "title": "Despre Exploris",
+  "intro": "Exploris este o aplicație de învățare a geografiei cu un glob terestru interactiv 3D. Învață țări, capitale și multe altele într-un mod vizual și captivant.",
+  "section.countries.title": "Țări",
+  "section.countries.body": "Exploris include cele 195 de țări recunoscute de Națiunile Unite, cel mai acceptat standard la nivel mondial. Poți explora pe glob și teritorii nerecunoscute sau disputate.\n\nGlobul reproduce vederea Pământului din spațiu. Acest lucru îți permite să apreciezi dimensiunea reală a țărilor, ceva ce hărțile plane nu reușesc.",
+  "section.learn.title": "Cum să înveți",
+  "section.learn.tips.explore": "Începe în Explorează: rotește globul, atinge țări pentru a vedea fișa lor și familiarizează-te cu forma și locația lor. Vizualizarea Tabel te ajută să asociezi fiecare țară cu capitala sa. Atinge orice țară sau capitală din tabel pentru a o vedea pe glob.",
+  "section.learn.tips.play": "Când ești pregătit, aruncă-te în Joacă. Îți recomandăm să joci în modul Aventură, care combină inteligent diferitele tipuri de joc explicate mai jos; se adaptează la ceea ce știi pentru a te ajuta să înveți.",
+  "section.learn.tips.passport": "Obiectivul tău final este să umpli Pașaportul cu ștampile. Pentru a obține o ștampilă, trebuie să completezi o probă de ștampilă fără greșeli.",
+  "section.gameTypes.title": "Tipuri de joc",
+  "section.gameTypes.intro": "Există 6 tipuri de joc, ordonate de la cel mai ușor la cel mai greu:",
+  "section.gameTypes.E": "◯? — Identifică țara — O țară este evidențiată pe glob și alegi numele ei din 4 opțiuni.",
+  "section.gameTypes.C": "◯→◎ — Țara la capitală — Primești o țară și alegi capitala ei din 4 opțiuni.",
+  "section.gameTypes.D": "◎→◯ — Capitala la țară — Primești o capitală și alegi cărei țări îi aparține.",
+  "section.gameTypes.F": "◎? — Identifică capitala — O capitală este evidențiată pe glob și alegi numele ei.",
+  "section.gameTypes.A": "◯ — Arată țara — Primești un nume și atingi țara pe glob.",
+  "section.gameTypes.B": "◎ — Arată capitala — Primești o capitală și atingi locația ei pe glob.",
+  "section.gameTypes.adventure": "Modul Aventură combină toate tipurile și se adaptează la progresul tău. Este modul recomandat de a juca.",
+  "section.gameTypes.stamps": "Tipurile «Arată țara» și «Arată capitala» sunt cele utilizate în probele de ștampilă ale Pașaportului.",
+  "section.stats.title": "Statistici",
+  "section.stats.body": "Vizualizarea Statistici are două file:\n\n• Joacă — Arată stăpânirea ta în fiecare tip de joc.\n\n• Probe de ștampilă — Arată rezultatele tale în probele din Pașaport. \n\nPoți alterna între indicatori de stăpânire (✓/✗) și procente de reușită. Atinge o țară pentru a merge direct la fișa ei în Explorează.",
+  "section.sources.title": "Surse de date",
+  "section.sources.body": "Datele provin din surse publice precum Națiunile Unite, Natural Earth, Banca Mondială și Wikidata. Aplicația verifică automat dacă există date mai recente și le actualizează în fundal. Hărțile se schimbă doar cu versiunile noi ale aplicației.",
+
+  "section.privacy.title": "Confidențialitate",
+  "section.privacy.body": "Exploris nu colectează niciun fel de date personale. Progresul tău este salvat doar pe dispozitivul tău.",
+  "section.privacy.linkLabel": "Vezi politica de confidențialitate"
+}

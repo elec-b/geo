@@ -1,0 +1,16 @@
+{
+  "header.title": "Paspoort van {{name}}",
+  "header.globalLevel": "Globaal niveau: {{level}}",
+  "emptyState": "Elke stempel bewijst wat je weet. Vul jij het paspoort?",
+
+  "legend.country": "\u25cb Land",
+  "legend.capital": "\u25ce Hoofdstad",
+  "legend.earned": "\u2605 Behaald",
+  "legend.locked": "Vergrendeld",
+
+  "stampTitle.countries": "Landenstempel",
+  "stampTitle.capitals": "Hoofdstedenstempel",
+
+  "modal.title": "Stempelproef",
+  "modal.questionCount": "Je moet {{count}} vragen foutloos beantwoorden."
+}

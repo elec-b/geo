@@ -1,0 +1,41 @@
+{
+  "continent.africa": "非洲",
+  "continent.america": "美洲",
+  "continent.asia": "亞洲",
+  "continent.europe": "歐洲",
+  "continent.oceania": "大洋洲",
+  "continent.antarctica": "南極洲",
+  "continentFilter.all": "全部",
+
+  "level.tourist": "遊客",
+  "level.backpacker": "背包客",
+  "level.guide": "導遊",
+
+  "questionType.E": "辨識國家",
+  "questionType.C": "國家猜首都",
+  "questionType.D": "首都猜國家",
+  "questionType.F": "辨識首都",
+  "questionType.A": "指出國家",
+  "questionType.B": "指出首都",
+
+  "questionTypeShort.E": "辨識國家",
+  "questionTypeShort.C": "國家猜首都",
+  "questionTypeShort.D": "首都猜國家",
+  "questionTypeShort.F": "辨識首都",
+  "questionTypeShort.A": "指出國家",
+  "questionTypeShort.B": "指出首都",
+
+  "tabs.explore": "探索",
+  "tabs.play": "遊戲",
+  "tabs.passport": "護照",
+
+  "loading": "正在載入地球儀\u2026",
+  "cancel": "取消",
+  "close": "關閉",
+  "continue": "繼續",
+
+  "aria.userProfile": "使用者資料",
+  "aria.stats": "統計",
+  "aria.settings": "設定",
+  "aria.navigation": "主導覽"
+}

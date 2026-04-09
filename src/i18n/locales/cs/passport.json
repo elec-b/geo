@@ -1,0 +1,16 @@
+{
+  "header.title": "Pas {{name}}",
+  "header.globalLevel": "Globální úroveň: {{level}}",
+  "emptyState": "Každé razítko dokazuje tvé znalosti. Zaplníš celý pas?",
+
+  "legend.country": "○ Země",
+  "legend.capital": "◎ Hlavní město",
+  "legend.earned": "★ Získáno",
+  "legend.locked": "Zamčeno",
+
+  "stampTitle.countries": "Razítko ze Zemí",
+  "stampTitle.capitals": "Razítko z Hlavních měst",
+
+  "modal.title": "Zkouška razítka",
+  "modal.questionCount": "Musíš správně odpovědět na {{count}} otázek bez jediné chyby."
+}

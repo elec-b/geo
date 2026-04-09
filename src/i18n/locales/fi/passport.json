@@ -1,0 +1,13 @@
+{
+  "header.title": "{{name}}n passi",
+  "header.globalLevel": "Maailmantaso: {{level}}",
+  "emptyState": "Jokainen leima osoittaa mitä tiedät. Täytätkö passin?",
+  "legend.country": "○ Maa",
+  "legend.capital": "◎ Pääkaupunki",
+  "legend.earned": "★ Saavutettu",
+  "legend.locked": "Lukittu",
+  "stampTitle.countries": "Maiden leima",
+  "stampTitle.capitals": "Pääkaupunkien leima",
+  "modal.title": "Leimaus-koe",
+  "modal.questionCount": "Sinun täytyy suorittaa {{count}} kysymystä ilman yhtään virhettä."
+}

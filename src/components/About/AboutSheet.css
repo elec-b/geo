@@ -1,0 +1,223 @@
+/* AboutSheet — pantalla completa informativa */
+
+.about-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: var(--color-overlay);
+  animation: about-sheet-fade-in 200ms ease-out;
+}
+
+@keyframes about-sheet-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.about-sheet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--tabbar-height);
+  z-index: var(--z-modal);
+  display: flex;
+  flex-direction: column;
+  padding: calc(env(safe-area-inset-top, 0px) + var(--spacing-md)) var(--spacing-lg) 0;
+  background: var(--color-surface-solid);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: about-sheet-slide-up 300ms ease-out;
+}
+
+@keyframes about-sheet-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Header con título + botón cerrar */
+.about-sheet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.about-sheet__title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.about-sheet__close {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-white-8);
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+
+.about-sheet__close svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.about-sheet__close:active {
+  color: var(--color-text-primary);
+}
+
+/* Área scrollable — solo vertical */
+.about-sheet__scroll {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: none;
+  padding-bottom: calc(var(--spacing-lg) + env(safe-area-inset-bottom, 0px));
+}
+
+/* Intro (siempre visible) */
+.about-sheet__intro {
+  margin: 0 0 var(--spacing-md);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* Sección colapsable */
+.about-sheet__section {
+  border-top: 1px solid var(--glass-border);
+}
+
+.about-sheet__section:last-child {
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.about-sheet__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-md) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  color: var(--color-text-primary);
+}
+
+.about-sheet__section-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.about-sheet__chevron {
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.about-sheet__chevron--open {
+  transform: rotate(90deg);
+}
+
+/* Cuerpo colapsable con grid-template-rows para transición suave */
+.about-sheet__section-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 250ms ease-out;
+}
+
+.about-sheet__section-body--open {
+  grid-template-rows: 1fr;
+}
+
+.about-sheet__section-content {
+  overflow: hidden;
+}
+
+/* Texto de contenido */
+.about-sheet__text {
+  margin: 0 0 var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  white-space: pre-line;
+}
+
+.about-sheet__text--muted {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Lista de tips (Cómo aprender) */
+.about-sheet__tips {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-sm);
+}
+
+.about-sheet__tips li {
+  position: relative;
+  padding-left: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.about-sheet__tips li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-text-muted);
+}
+
+/* Link externo (sección privacidad) */
+.about-sheet__link {
+  display: inline-block;
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-cyan);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent-border);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.about-sheet__link:active {
+  border-bottom-color: var(--color-accent-cyan);
+}
+
+/* Lista de tipos de juego */
+.about-sheet__game-types {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-sm);
+}
+
+.about-sheet__game-types li {
+  padding: var(--spacing-xs) 0;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-white-4);
+}
+
+.about-sheet__game-types li:last-child {
+  border-bottom: none;
+}

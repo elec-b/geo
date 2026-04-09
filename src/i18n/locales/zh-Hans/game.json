@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "选择大洲",
+  "selector.chooseLevel": "选择等级",
+  "selector.chooseGame": "选择游戏",
+  "selector.adventure": "冒险",
+  "selector.adventureDesc": "根据你的知识智能出题",
+  "selector.specificTypes": "或选择指定游戏",
+  "selector.start": "开始",
+  "selector.continue": "继续",
+  "selector.completed": "已通过 ★",
+  "selector.countryCount_one": "{{count}} 个国家",
+  "selector.countryCount_other": "{{count}} 个国家",
+  "selector.lockedToast": "先获得上一等级的印章",
+
+  "selector.stampReady.both": "印章考试准备就绪！",
+  "selector.stampReady.countries": "国家印章考试准备就绪！",
+  "selector.stampReady.capitals": "首都印章考试准备就绪！",
+
+  "question.locate": "找一找",
+  "question.locateCapital": "找出首都",
+  "question.capitalOf": "{{country}}的首都是？",
+  "question.capitalBelongsTo": "{{capital}}是哪个国家的首都？",
+  "question.whichCountry": "高亮的是哪个国家？",
+  "question.whichCapital": "这个国家的首都是？",
+
+  "progress.stampTest": "印章考试：{{current}} / {{total}}",
+  "progress.adventurePercent": "已完成 {{percent}}%",
+  "progress.typeDominated": "已掌握 {{current}} / {{total}}",
+  "progress.stampBanner.countries": "印章考试：国家",
+  "progress.stampBanner.capitals": "印章考试：首都",
+
+  "modal.stampEarned.title": "印章获得",
+  "modal.stampEarned.text": "{{total}} 题中答对 {{correct}} 题。零失误。",
+
+  "modal.stampFailed.veryClose": "就差一点！",
+  "modal.stampFailed.veryCloseText": "离印章只差一步。",
+  "modal.stampFailed.goodTry": "不错的尝试！",
+  "modal.stampFailed.goodTryText": "每次尝试都在进步。",
+  "modal.stampFailed.onTrack": "进展顺利",
+  "modal.stampFailed.onTrackText": "继续加油，进步显而易见。",
+  "modal.stampFailed.dontGiveUp": "别放弃",
+  "modal.stampFailed.dontGiveUpText": "熟能生巧。",
+  "modal.stampFailed.score": "{{total}} 题中答对 {{correct}} 题。",
+
+  "modal.poolExhausted.trainingComplete": "训练完成",
+  "modal.poolExhausted.readyForStamp": "太棒了！<br />准备获取印章",
+  "modal.poolExhausted.completedText": "你已完成 <em>{{level}}</em> 等级的 <em>{{continent}}</em>。可以重置统计数据重新练习。",
+  "modal.poolExhausted.chooseStamp": "选择一项考试。你需要零失误通过才能获得印章。",
+  "modal.poolExhausted.typePassed": "太棒了！<br /><em>{{type}}</em> 已通过",
+  "modal.poolExhausted.stampReady": "你已准备好参加印章考试。零失误完成即可获得印章。",
+  "modal.poolExhausted.tryStamp.countries": "挑战国家印章",
+  "modal.poolExhausted.tryStamp.capitals": "挑战首都印章",
+  "modal.poolExhausted.selectOther": "选择其他游戏",
+  "modal.poolExhausted.playType": "玩 <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "玩 <em>冒险</em>",
+
+  "stamp.countries": "国家印章",
+  "stamp.capitals": "首都印章",
+
+  "modal.stampChooser.title": "印章考试",
+  "modal.stampChooser.text": "选择一项考试。你需要零失误完成 {{count}} 道题。",
+
+  "modal.alreadyDominated.title": "已掌握<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "你已正确回答所有国家。可以重置统计数据重新练习。",
+  "modal.alreadyDominated.completedTraining": "你已完成 <em>{{level}}</em> 等级的 <em>{{continent}}</em> 训练。",
+  "modal.alreadyDominated.tryStamp": "挑战印章考试",
+  "modal.alreadyDominated.goToStats": "查看统计"
+}

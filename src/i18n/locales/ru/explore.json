@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Глобус",
+  "segmented.table": "Таблица",
+  "labels.countries": "Страны",
+  "labels.capitals": "Столицы",
+
+  "table.country": "Страна",
+  "table.capital": "Столица",
+  "table.population": "Нас.",
+  "table.nonUNToggle": "Территории вне ООН",
+
+  "card.disclaimer.antarctica": "Международная территория — Договор об Антарктике (1959)",
+  "card.disclaimer.territory": "Территория {{sovereign}}",
+  "card.disclaimer.disputed": "Спорный суверенитет",
+  "card.flagAlt": "Флаг {{country}}",
+  "card.aria.openWikipedia": "Открыть {{country}} в Википедии",
+  "card.aria.dialog": "Карточка {{country}}",
+
+  "card.field.capital": "Столица",
+  "card.field.population": "Население",
+  "card.field.area": "Площадь",
+  "card.field.density": "Плотность",
+  "card.field.currency": "Валюта",
+  "card.field.demonym": "Самоназвание",
+  "card.field.languages": "Языки",
+  "card.field.hdi": "ИЧР",
+  "card.field.ihdi": "ИЧРН",
+  "card.unit.inhabitants": "чел.",
+  "card.unit.densityUnit": "чел./км²",
+  "card.na": "Н/Д",
+
+  "card.tooltip.hdi": "Индекс человеческого развития: измеряет здоровье, образование и доходы. Диапазон 0–1.",
+  "card.tooltip.ihdi": "ИЧР с учётом неравенства: учитывает неравенство в здоровье, образовании и доходах.",
+  "card.aria.hdiInfo": "Информация об ИЧР",
+  "card.aria.ihdiInfo": "Информация об ИЧРН",
+
+  "card.antarctica.info": "Антарктида не принадлежит ни одной стране. Договор об Антарктике, подписанный в 1959 году, отводит её для научных исследований и запрещает военную деятельность и добычу ресурсов.",
+
+  "card.sovereign.GB": "Великобритании",
+  "card.sovereign.FR": "Франции",
+  "card.sovereign.US": "США",
+  "card.sovereign.NL": "Нидерландов",
+  "card.sovereign.DK": "Дании",
+  "card.sovereign.CN": "Китая",
+  "card.sovereign.NZ": "Новой Зеландии",
+  "card.sovereign.FI": "Финляндии",
+  "card.sovereign.AU": "Австралии"
+}

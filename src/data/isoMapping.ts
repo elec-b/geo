@@ -249,57 +249,63 @@ interface NonUnTerritory {
 /** Mapeo por ID numérico del TopoJSON → territorio no-ONU */
 export const NON_UN_TERRITORIES_BY_ID: Record<string, NonUnTerritory> = {
   // Soberanía en disputa (sin sovereignCca2)
-  '158': { cca2: 'TW', continent: 'Asia' },           // Taiwán
-  '732': { cca2: 'EH', continent: 'África' },          // Sáhara Occidental
-  '238': { cca2: 'FK', continent: 'América' },         // Islas Malvinas
+  '158': { cca2: 'TW', continent: 'asia' },           // Taiwán
+  '732': { cca2: 'EH', continent: 'africa' },          // Sáhara Occidental
+  '238': { cca2: 'FK', continent: 'america' },         // Islas Malvinas
   // Territorios de Estados Unidos
-  '630': { cca2: 'PR', continent: 'América', sovereignCca2: 'US' },   // Puerto Rico
-  '316': { cca2: 'GU', continent: 'Oceanía', sovereignCca2: 'US' },   // Guam
-  '016': { cca2: 'AS', continent: 'Oceanía', sovereignCca2: 'US' },   // Samoa Americana
-  '580': { cca2: 'MP', continent: 'Oceanía', sovereignCca2: 'US' },   // Islas Marianas del Norte
-  '850': { cca2: 'VI', continent: 'América', sovereignCca2: 'US' },   // Islas Vírgenes de EE.UU.
+  '630': { cca2: 'PR', continent: 'america', sovereignCca2: 'US' },   // Puerto Rico
+  '316': { cca2: 'GU', continent: 'oceania', sovereignCca2: 'US' },   // Guam
+  '016': { cca2: 'AS', continent: 'oceania', sovereignCca2: 'US' },   // Samoa Americana
+  '580': { cca2: 'MP', continent: 'oceania', sovereignCca2: 'US' },   // Islas Marianas del Norte
+  '850': { cca2: 'VI', continent: 'america', sovereignCca2: 'US' },   // Islas Vírgenes de EE.UU.
   // Territorios del Reino Unido
-  '060': { cca2: 'BM', continent: 'América', sovereignCca2: 'GB' },   // Bermudas
-  '092': { cca2: 'VG', continent: 'América', sovereignCca2: 'GB' },   // Islas Vírgenes Británicas
-  '136': { cca2: 'KY', continent: 'América', sovereignCca2: 'GB' },   // Islas Caimán
-  '796': { cca2: 'TC', continent: 'América', sovereignCca2: 'GB' },   // Islas Turcas y Caicos
-  '832': { cca2: 'JE', continent: 'Europa', sovereignCca2: 'GB' },    // Jersey
-  '831': { cca2: 'GG', continent: 'Europa', sovereignCca2: 'GB' },    // Guernsey
-  '833': { cca2: 'IM', continent: 'Europa', sovereignCca2: 'GB' },    // Isla de Man
-  '500': { cca2: 'MS', continent: 'América', sovereignCca2: 'GB' },   // Montserrat
-  '660': { cca2: 'AI', continent: 'América', sovereignCca2: 'GB' },   // Anguila
-  '654': { cca2: 'SH', continent: 'África', sovereignCca2: 'GB' },    // Santa Elena
-  '612': { cca2: 'PN', continent: 'Oceanía', sovereignCca2: 'GB' },   // Islas Pitcairn
+  '060': { cca2: 'BM', continent: 'america', sovereignCca2: 'GB' },   // Bermudas
+  '092': { cca2: 'VG', continent: 'america', sovereignCca2: 'GB' },   // Islas Vírgenes Británicas
+  '136': { cca2: 'KY', continent: 'america', sovereignCca2: 'GB' },   // Islas Caimán
+  '796': { cca2: 'TC', continent: 'america', sovereignCca2: 'GB' },   // Islas Turcas y Caicos
+  '832': { cca2: 'JE', continent: 'europe', sovereignCca2: 'GB' },    // Jersey
+  '831': { cca2: 'GG', continent: 'europe', sovereignCca2: 'GB' },    // Guernsey
+  '833': { cca2: 'IM', continent: 'europe', sovereignCca2: 'GB' },    // Isla de Man
+  '500': { cca2: 'MS', continent: 'america', sovereignCca2: 'GB' },   // Montserrat
+  '660': { cca2: 'AI', continent: 'america', sovereignCca2: 'GB' },   // Anguila
+  '654': { cca2: 'SH', continent: 'africa', sovereignCca2: 'GB' },    // Santa Elena
+  '612': { cca2: 'PN', continent: 'oceania', sovereignCca2: 'GB' },   // Islas Pitcairn
   // Territorios de Francia
-  '540': { cca2: 'NC', continent: 'Oceanía', sovereignCca2: 'FR' },   // Nueva Caledonia
-  '258': { cca2: 'PF', continent: 'Oceanía', sovereignCca2: 'FR' },   // Polinesia Francesa
-  '666': { cca2: 'PM', continent: 'América', sovereignCca2: 'FR' },   // San Pedro y Miquelón
-  '663': { cca2: 'MF', continent: 'América', sovereignCca2: 'FR' },   // San Martín
-  '652': { cca2: 'BL', continent: 'América', sovereignCca2: 'FR' },   // San Bartolomé
-  '876': { cca2: 'WF', continent: 'Oceanía', sovereignCca2: 'FR' },   // Wallis y Futuna
+  '540': { cca2: 'NC', continent: 'oceania', sovereignCca2: 'FR' },   // Nueva Caledonia
+  '258': { cca2: 'PF', continent: 'oceania', sovereignCca2: 'FR' },   // Polinesia Francesa
+  '666': { cca2: 'PM', continent: 'america', sovereignCca2: 'FR' },   // San Pedro y Miquelón
+  '663': { cca2: 'MF', continent: 'america', sovereignCca2: 'FR' },   // San Martín
+  '652': { cca2: 'BL', continent: 'america', sovereignCca2: 'FR' },   // San Bartolomé
+  '876': { cca2: 'WF', continent: 'oceania', sovereignCca2: 'FR' },   // Wallis y Futuna
+  // Territorios de Francia (ultramar, separados del MultiPolygon metropolitano)
+  '254': { cca2: 'GF', continent: 'america', sovereignCca2: 'FR' },   // Guayana Francesa
+  '312': { cca2: 'GP', continent: 'america', sovereignCca2: 'FR' },   // Guadalupe
+  '474': { cca2: 'MQ', continent: 'america', sovereignCca2: 'FR' },   // Martinica
+  '638': { cca2: 'RE', continent: 'africa', sovereignCca2: 'FR' },    // Reunión
+  '175': { cca2: 'YT', continent: 'africa', sovereignCca2: 'FR' },    // Mayotte
   // Territorios de Países Bajos
-  '533': { cca2: 'AW', continent: 'América', sovereignCca2: 'NL' },   // Aruba
-  '531': { cca2: 'CW', continent: 'América', sovereignCca2: 'NL' },   // Curazao
-  '534': { cca2: 'SX', continent: 'América', sovereignCca2: 'NL' },   // Sint Maarten
+  '533': { cca2: 'AW', continent: 'america', sovereignCca2: 'NL' },   // Aruba
+  '531': { cca2: 'CW', continent: 'america', sovereignCca2: 'NL' },   // Curazao
+  '534': { cca2: 'SX', continent: 'america', sovereignCca2: 'NL' },   // Sint Maarten
   // Territorios de Dinamarca
-  '304': { cca2: 'GL', continent: 'América', sovereignCca2: 'DK' },   // Groenlandia
-  '234': { cca2: 'FO', continent: 'Europa', sovereignCca2: 'DK' },    // Islas Feroe
+  '304': { cca2: 'GL', continent: 'america', sovereignCca2: 'DK' },   // Groenlandia
+  '234': { cca2: 'FO', continent: 'europe', sovereignCca2: 'DK' },    // Islas Feroe
   // Territorios de China
-  '344': { cca2: 'HK', continent: 'Asia', sovereignCca2: 'CN' },      // Hong Kong
-  '446': { cca2: 'MO', continent: 'Asia', sovereignCca2: 'CN' },      // Macao
+  '344': { cca2: 'HK', continent: 'asia', sovereignCca2: 'CN' },      // Hong Kong
+  '446': { cca2: 'MO', continent: 'asia', sovereignCca2: 'CN' },      // Macao
   // Territorios de Nueva Zelanda
-  '570': { cca2: 'NU', continent: 'Oceanía', sovereignCca2: 'NZ' },   // Niue
-  '184': { cca2: 'CK', continent: 'Oceanía', sovereignCca2: 'NZ' },   // Islas Cook
+  '570': { cca2: 'NU', continent: 'oceania', sovereignCca2: 'NZ' },   // Niue
+  '184': { cca2: 'CK', continent: 'oceania', sovereignCca2: 'NZ' },   // Islas Cook
   // Otros
-  '248': { cca2: 'AX', continent: 'Europa', sovereignCca2: 'FI' },    // Åland (Finlandia)
-  '574': { cca2: 'NF', continent: 'Oceanía', sovereignCca2: 'AU' },   // Isla Norfolk (Australia)
+  '248': { cca2: 'AX', continent: 'europe', sovereignCca2: 'FI' },    // Åland (Finlandia)
+  '574': { cca2: 'NF', continent: 'oceania', sovereignCca2: 'AU' },   // Isla Norfolk (Australia)
 };
 
 /** Mapeo por nombre para territorios sin ID numérico en el TopoJSON */
 export const NON_UN_TERRITORIES_BY_NAME: Record<string, NonUnTerritory> = {
-  'Kosovo':       { cca2: 'XK', continent: 'Europa' },
-  'Somaliland':   { cca2: 'SOL', continent: 'África' },  // Sin código ISO oficial
-  'N. Cyprus':    { cca2: 'CYN', continent: 'Europa' },  // Sin código ISO oficial
+  'Kosovo':       { cca2: 'XK', continent: 'europe' },
+  'Somaliland':   { cca2: 'SOL', continent: 'africa' },  // Sin código ISO oficial
+  'N. Cyprus':    { cca2: 'CYN', continent: 'europe' },  // Sin código ISO oficial
 };
 
 /** Set con todos los códigos alpha-2 de territorios no-ONU */

@@ -1,0 +1,28 @@
+{
+  "title": "O Exploris",
+  "intro": "Exploris je aplikace pro učení zeměpisu s interaktivním 3D glóbem. Poznávej země, hlavní města a mnohem více — názorně a zábavně.",
+  "section.countries.title": "Země",
+  "section.countries.body": "Exploris zahrnuje 195 zemí uznaných Organizací spojených národů — celosvětově nejužnávanější standard. Na glóbu můžeš také prozkoumat neuznané nebo sporné území.\n\nGlóbus zobrazuje Zemi tak, jak vypadá z vesmíru. Díky tomu si uvědomíš skutečnou velikost zemí — něco, co ploché mapy nedokážou.",
+  "section.learn.title": "Jak se učit",
+  "section.learn.tips.explore": "Začni v sekci „Prozkoumej“: otáčej glóbem, klepej na země pro zobrazení jejich karty a zapamatuj si jejich tvar a polohu. Zobrazení „Tabulka“ ti pomůže propojit každou zemi s jejím hlavním městem. Klepni na jakoukoliv zemi nebo hlavní město v tabulce a zobraz je na glóbu.",
+  "section.learn.tips.play": "Až budeš připraven, přejdi do sekce „Hraj“. Doporučujeme režim „Dobrodružství“, který chytře kombinuje všechny typy her popsané níže a přizpůsobuje se tvým znalostem, aby ti pomohl se učit.",
+  "section.learn.tips.passport": "Tvým konečným cílem je naplnit „Pas“ razítky. Pro získání razítka musíš dokončit zkoušku razítka bez chyb.",
+  "section.gameTypes.title": "Typy her",
+  "section.gameTypes.intro": "Existuje 6 typů her, seřazených od nejlehčího po nejtěžší:",
+  "section.gameTypes.E": "◯? — Urči zemi — Země se zvýrazní na glóbu a ty vybereš její název ze 4 možností.",
+  "section.gameTypes.C": "◯→◎ — Země → hlavní město — Dostaneš zemi a vybereš její hlavní město ze 4 možností.",
+  "section.gameTypes.D": "◎→◯ — Hlavní město → země — Dostaneš hlavní město a vybereš, které zemi patří.",
+  "section.gameTypes.F": "◎? — Urči hlavní město — Hlavní město se zvýrazní na glóbu a ty vybereš jeho název.",
+  "section.gameTypes.A": "◯ — Ukaž zemi — Dostaneš název a najdeš zemi na glóbu.",
+  "section.gameTypes.B": "◎ — Ukaž hlavní město — Dostaneš hlavní město a najdeš ho na glóbu.",
+  "section.gameTypes.adventure": "Režim „Dobrodružství“ kombinuje všechny typy a přizpůsobuje se tvému pokroku. Je to doporučený způsob hry.",
+  "section.gameTypes.stamps": "Typy „Ukaž zemi“ a „Ukaž hlavní město“ se používají ve zkouškách razítka „Pasu“.",
+  "section.stats.title": "Statistiky",
+  "section.stats.body": "Sekce „Statistiky“ má dvě záložky:\n\n• Hraj — Zobrazuje tvou úroveň zvládnutí každého typu hry.\n\n• Zkoušky razítka — Zobrazuje tvé výsledky ve zkouškách „Pasu“. \n\nMůžeš přepínat mezi ukazateli zvládnutí (✓/✗) a procenty úspěšnosti. Klepni na zemi pro přímý přechod na její kartu v sekci „Prozkoumej“.",
+  "section.sources.title": "Zdroje dat",
+  "section.sources.body": "Data pocházejí z veřejných zdrojů: Organizace spojených národů, Natural Earth, Světová banka a Wikidata. Aplikace automaticky kontroluje, zda jsou k dispozici novější data, a aktualizuje je na pozadí. Mapy se mění pouze s novými verzemi aplikace.",
+
+  "section.privacy.title": "Soukromí",
+  "section.privacy.body": "Exploris neshromažďuje žádné osobní údaje. Tvůj pokrok je uložen pouze na tvém zařízení.",
+  "section.privacy.linkLabel": "Zobrazit zásady ochrany osobních údajů"
+}

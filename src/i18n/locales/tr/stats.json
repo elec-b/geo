@@ -1,0 +1,33 @@
+{
+  "title": "İstatistikler",
+  "aria.close": "Kapat",
+  "tabs.play": "Oyna",
+  "tabs.stamps": "Damga sınavları",
+
+  "table.country": "Ülke",
+  "aria.showIndicators": "Göstergeleri göster",
+  "aria.showPercent": "Yüzdeleri göster",
+
+  "typeLabel.E": "Ülkeyi tanı",
+  "typeLabel.C": "Ülkeden başkente",
+  "typeLabel.D": "Başkentten ülkeye",
+  "typeLabel.F": "Başkenti tanı",
+  "typeLabel.A": "Ülkeyi göster",
+  "typeLabel.B": "Başkenti göster",
+
+  "stampLabel.A.short": "◯ Ülkeler",
+  "stampLabel.A.full": "Ülkeler damga sınavı",
+  "stampLabel.B.short": "◎ Başkentler",
+  "stampLabel.B.full": "Başkentler damga sınavı",
+
+  "legend.dominated": "Öğrenildi",
+  "legend.inferred": "Çıkarsanmış",
+  "legend.reinforcement": "Pekiştirme",
+  "legend.noData": "Veri yok",
+  "legend.correct": "Doğru",
+  "legend.incorrect": "Yanlış",
+
+  "reset.button": "İstatistikleri sıfırla",
+  "reset.confirm": "{{level}} - {{continent}} için oyun istatistiklerini sıfırlansın mı?",
+  "stampNotice": "Damgalar ve sınav geçmişi kalıcıdır, tıpkı gerçek bir pasaporttaki gibi. Sıfırdan başlamak istiyorsan yeni bir profil oluştur."
+}

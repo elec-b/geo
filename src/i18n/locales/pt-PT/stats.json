@@ -1,0 +1,33 @@
+{
+  "title": "Estat\u00edsticas",
+  "aria.close": "Fechar",
+  "tabs.play": "Jogar",
+  "tabs.stamps": "Provas de carimbo",
+
+  "table.country": "Pa\u00eds",
+  "aria.showIndicators": "Mostrar indicadores",
+  "aria.showPercent": "Mostrar percentagens",
+
+  "typeLabel.E": "Identifica o pa\u00eds",
+  "typeLabel.C": "Pa\u00eds para capital",
+  "typeLabel.D": "Capital para pa\u00eds",
+  "typeLabel.F": "Identifica a capital",
+  "typeLabel.A": "Aponta o pa\u00eds",
+  "typeLabel.B": "Aponta a capital",
+
+  "stampLabel.A.short": "\u25ef Pa\u00edses",
+  "stampLabel.A.full": "Prova de carimbo de Pa\u00edses",
+  "stampLabel.B.short": "\u25ce Capitais",
+  "stampLabel.B.full": "Prova de carimbo de Capitais",
+
+  "legend.dominated": "Dominado",
+  "legend.inferred": "Inferido",
+  "legend.reinforcement": "Refor\u00e7o",
+  "legend.noData": "Sem dados",
+  "legend.correct": "Correto",
+  "legend.incorrect": "Errado",
+
+  "reset.button": "Repor estat\u00edsticas",
+  "reset.confirm": "Repor estat\u00edsticas de Jogar para {{level}} - {{continent}}?",
+  "stampNotice": "Os carimbos e o hist\u00f3rico de provas s\u00e3o permanentes, como num passaporte real. Se quiseres come\u00e7ar de novo, cria um novo perfil."
+}

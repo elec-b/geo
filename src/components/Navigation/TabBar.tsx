@@ -1,4 +1,5 @@
 // TabBar - Navegación principal inferior
+import { useTranslation } from 'react-i18next';
 import { TABS } from './types';
 import type { TabId } from './types';
 import './TabBar.css';
@@ -44,11 +45,13 @@ interface TabBarProps {
 }
 
 export function TabBar({ activeTab, onTabChange, visible = true }: TabBarProps) {
+  const { t } = useTranslation('common');
+
   return (
     <nav
       className={`tab-bar ${!visible ? 'tab-bar--hidden' : ''}`}
       role="tablist"
-      aria-label="Navegación principal"
+      aria-label={t('aria.navigation')}
     >
       {TABS.map((tab) => {
         const isActive = activeTab === tab.id;
@@ -67,7 +70,7 @@ export function TabBar({ activeTab, onTabChange, visible = true }: TabBarProps) 
             onClick={() => onTabChange(tab.id)}
           >
             <TabIcon iconId={tab.iconId} />
-            <span className="tab-bar__label">{tab.label}</span>
+            <span className="tab-bar__label">{t(tab.label)}</span>
           </button>
         );
       })}

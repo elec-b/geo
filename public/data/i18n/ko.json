@@ -1,0 +1,2959 @@
+{
+  "AD": {
+    "name": "안도라",
+    "capital": "안도라라벨랴",
+    "demonym": "안도라의",
+    "languages": [
+      "카탈로니아어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "안도라"
+  },
+  "AE": {
+    "name": "아랍에미리트",
+    "capital": "아부다비",
+    "demonym": "아랍에미리트의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "아랍에미리트 디르함"
+    ],
+    "wikipediaSlug": "아랍에미리트"
+  },
+  "AF": {
+    "name": "아프가니스탄",
+    "capital": "카불",
+    "demonym": "아프가니스탄의",
+    "languages": [
+      "다리어",
+      "파슈토어"
+    ],
+    "currencyNames": [
+      "아프가니스탄 아프가니"
+    ],
+    "wikipediaSlug": "아프가니스탄"
+  },
+  "AG": {
+    "name": "앤티가 바부다",
+    "capital": "세인트존스",
+    "demonym": "앤티가의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "동카리브 달러"
+    ],
+    "wikipediaSlug": "앤티가_바부다"
+  },
+  "AI": {
+    "name": "앵귈라",
+    "capital": "더밸리",
+    "demonym": "앵귈라의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "동카리브 달러"
+    ],
+    "wikipediaSlug": "앵귈라"
+  },
+  "AL": {
+    "name": "알바니아",
+    "capital": "티라나",
+    "demonym": "알바니아의",
+    "languages": [
+      "알바니아어"
+    ],
+    "currencyNames": [
+      "알바니아 레크"
+    ],
+    "wikipediaSlug": "알바니아"
+  },
+  "AM": {
+    "name": "아르메니아",
+    "capital": "예레반",
+    "demonym": "아르메니아의",
+    "languages": [
+      "아르메니아어"
+    ],
+    "currencyNames": [
+      "아르메니아 드람"
+    ],
+    "wikipediaSlug": "아르메니아"
+  },
+  "AO": {
+    "name": "앙골라",
+    "capital": "루안다",
+    "demonym": "앙골라의",
+    "languages": [
+      "포르투갈어"
+    ],
+    "currencyNames": [
+      "앙골라 콴자"
+    ],
+    "wikipediaSlug": "앙골라"
+  },
+  "AR": {
+    "name": "아르헨티나",
+    "capital": "부에노스아이레스",
+    "demonym": "아르헨티나의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "아르헨티나 페소"
+    ],
+    "wikipediaSlug": "아르헨티나"
+  },
+  "AS": {
+    "name": "아메리칸 사모아",
+    "capital": "팡오팡오",
+    "demonym": "미국령 사모아의",
+    "languages": [
+      "영어",
+      "사모아어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "아메리칸사모아"
+  },
+  "AT": {
+    "name": "오스트리아",
+    "capital": "빈",
+    "demonym": "오스트리아의",
+    "languages": [
+      "독일어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "오스트리아"
+  },
+  "AU": {
+    "name": "오스트레일리아",
+    "capital": "캔버라",
+    "demonym": "호주의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "호주 달러"
+    ],
+    "wikipediaSlug": "오스트레일리아"
+  },
+  "AW": {
+    "name": "아루바",
+    "capital": "오라녜스타트",
+    "demonym": "아루바의",
+    "languages": [
+      "네덜란드어",
+      "파피아먼토어"
+    ],
+    "currencyNames": [
+      "아루바 플로린"
+    ],
+    "wikipediaSlug": "아루바"
+  },
+  "AX": {
+    "name": "올란드 제도",
+    "capital": "마리에함",
+    "demonym": "올란드의",
+    "languages": [
+      "스웨덴어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "올란드_제도"
+  },
+  "AZ": {
+    "name": "아제르바이잔",
+    "capital": "바쿠",
+    "demonym": "아제르바이잔의",
+    "languages": [
+      "아제르바이잔어"
+    ],
+    "currencyNames": [
+      "아제르바이잔 마나트"
+    ],
+    "wikipediaSlug": "아제르바이잔"
+  },
+  "BA": {
+    "name": "보스니아 헤르체고비나",
+    "capital": "사라예보",
+    "demonym": "보스니아의",
+    "languages": [
+      "보스니아어",
+      "크로아티아어",
+      "세르비아어"
+    ],
+    "currencyNames": [
+      "보스니아-헤르체고비나 태환 마르크"
+    ],
+    "wikipediaSlug": "보스니아_헤르체고비나"
+  },
+  "BB": {
+    "name": "바베이도스",
+    "capital": "브리지타운",
+    "demonym": "바베이도스의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "바베이도스 달러"
+    ],
+    "wikipediaSlug": "바베이도스"
+  },
+  "BD": {
+    "name": "방글라데시",
+    "capital": "다카",
+    "demonym": "방글라데시의",
+    "languages": [
+      "벵골어"
+    ],
+    "currencyNames": [
+      "방글라데시 타카"
+    ],
+    "wikipediaSlug": "방글라데시"
+  },
+  "BE": {
+    "name": "벨기에",
+    "capital": "브뤼셀",
+    "demonym": "벨기에의",
+    "languages": [
+      "네덜란드어",
+      "프랑스어",
+      "독일어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "벨기에"
+  },
+  "BF": {
+    "name": "부르키나파소",
+    "capital": "와가두구",
+    "demonym": "부르키나파소의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "서아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "부르키나파소"
+  },
+  "BG": {
+    "name": "불가리아",
+    "capital": "소피아",
+    "demonym": "불가리아의",
+    "languages": [
+      "불가리아어"
+    ],
+    "currencyNames": [
+      "불가리아 레프"
+    ],
+    "wikipediaSlug": "불가리아"
+  },
+  "BH": {
+    "name": "바레인",
+    "capital": "마나마",
+    "demonym": "바레인의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "바레인 디나르"
+    ],
+    "wikipediaSlug": "바레인"
+  },
+  "BI": {
+    "name": "부룬디",
+    "capital": "기테가",
+    "demonym": "부룬디의",
+    "languages": [
+      "룬디어",
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "부룬디 프랑"
+    ],
+    "wikipediaSlug": "부룬디"
+  },
+  "BJ": {
+    "name": "베냉",
+    "capital": "포르토노보",
+    "demonym": "베냉의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "서아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "베냉"
+  },
+  "BL": {
+    "name": "생바르텔레미",
+    "capital": "귀스타비아",
+    "demonym": "생바르텔레미의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "생바르텔레미"
+  },
+  "BM": {
+    "name": "버뮤다",
+    "capital": "해밀턴",
+    "demonym": "버뮤다의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "버뮤다 달러"
+    ],
+    "wikipediaSlug": "버뮤다"
+  },
+  "BN": {
+    "name": "브루나이",
+    "capital": "반다르스리브가완",
+    "demonym": "브루나이의",
+    "languages": [
+      "말레이어"
+    ],
+    "currencyNames": [
+      "부루나이 달러",
+      "싱가포르 달러"
+    ],
+    "wikipediaSlug": "브루나이"
+  },
+  "BO": {
+    "name": "볼리비아",
+    "capital": "라파스",
+    "demonym": "볼리비아의",
+    "languages": [
+      "스페인어",
+      "케추아어",
+      "아이마라어"
+    ],
+    "currencyNames": [
+      "볼리비아 볼리비아노"
+    ],
+    "wikipediaSlug": "볼리비아"
+  },
+  "BR": {
+    "name": "브라질",
+    "capital": "브라질리아",
+    "demonym": "브라질의",
+    "languages": [
+      "포르투갈어"
+    ],
+    "currencyNames": [
+      "브라질 레알"
+    ],
+    "wikipediaSlug": "브라질"
+  },
+  "BS": {
+    "name": "바하마",
+    "capital": "나소",
+    "demonym": "바하마의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "바하마 달러",
+      "미국 달러"
+    ],
+    "wikipediaSlug": "바하마"
+  },
+  "BT": {
+    "name": "부탄",
+    "capital": "팀부",
+    "demonym": "부탄의",
+    "languages": [
+      "종카어"
+    ],
+    "currencyNames": [
+      "부탄 눌투눔",
+      "인도 루피"
+    ],
+    "wikipediaSlug": "부탄"
+  },
+  "BW": {
+    "name": "보츠와나",
+    "capital": "가보로네",
+    "demonym": "보츠와나의",
+    "languages": [
+      "영어",
+      "츠와나어"
+    ],
+    "currencyNames": [
+      "보츠와나 풀라"
+    ],
+    "wikipediaSlug": "보츠와나"
+  },
+  "BY": {
+    "name": "벨라루스",
+    "capital": "민스크",
+    "demonym": "벨라루스의",
+    "languages": [
+      "벨라루스어",
+      "러시아어"
+    ],
+    "currencyNames": [
+      "벨라루스 루블"
+    ],
+    "wikipediaSlug": "벨라루스"
+  },
+  "BZ": {
+    "name": "벨리즈",
+    "capital": "벨모판",
+    "demonym": "벨리즈의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "벨리즈 달러"
+    ],
+    "wikipediaSlug": "벨리즈"
+  },
+  "CA": {
+    "name": "캐나다",
+    "capital": "오타와",
+    "demonym": "캐나다의",
+    "languages": [
+      "영어",
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "캐나다 달러"
+    ],
+    "wikipediaSlug": "캐나다"
+  },
+  "CD": {
+    "name": "콩고-킨샤사",
+    "capital": "킨샤사",
+    "demonym": "콩고 민주 공화국의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "콩고 프랑"
+    ],
+    "wikipediaSlug": "콩고_민주_공화국"
+  },
+  "CF": {
+    "name": "중앙 아프리카 공화국",
+    "capital": "방기",
+    "demonym": "중앙아프리카의",
+    "languages": [
+      "프랑스어",
+      "산고어"
+    ],
+    "currencyNames": [
+      "중앙아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "중앙아프리카_공화국"
+  },
+  "CG": {
+    "name": "콩고-브라자빌",
+    "capital": "브라자빌",
+    "demonym": "콩고의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "중앙아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "콩고_공화국"
+  },
+  "CH": {
+    "name": "스위스",
+    "capital": "베른",
+    "demonym": "스위스의",
+    "languages": [
+      "독일어",
+      "프랑스어",
+      "이탈리아어",
+      "로만시어"
+    ],
+    "currencyNames": [
+      "스위스 프랑"
+    ],
+    "wikipediaSlug": "스위스"
+  },
+  "CI": {
+    "name": "코트디부아르",
+    "capital": "야무수크로",
+    "demonym": "코트디부아르의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "서아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "코트디부아르"
+  },
+  "CK": {
+    "name": "쿡 제도",
+    "capital": "아바루아",
+    "demonym": "쿡 제도의",
+    "languages": [
+      "영어",
+      "라로통가어"
+    ],
+    "currencyNames": [
+      "뉴질랜드 달러"
+    ],
+    "wikipediaSlug": "쿡_제도"
+  },
+  "CL": {
+    "name": "칠레",
+    "capital": "산티아고",
+    "demonym": "칠레의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "칠레 페소"
+    ],
+    "wikipediaSlug": "칠레"
+  },
+  "CM": {
+    "name": "카메룬",
+    "capital": "야운데",
+    "demonym": "카메룬의",
+    "languages": [
+      "프랑스어",
+      "영어"
+    ],
+    "currencyNames": [
+      "중앙아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "카메룬"
+  },
+  "CN": {
+    "name": "중국",
+    "capital": "베이징시",
+    "demonym": "중국의",
+    "languages": [
+      "중국어"
+    ],
+    "currencyNames": [
+      "중국 위안화"
+    ],
+    "wikipediaSlug": "중화인민공화국"
+  },
+  "CO": {
+    "name": "콜롬비아",
+    "capital": "보고타",
+    "demonym": "콜롬비아의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "콜롬비아 페소"
+    ],
+    "wikipediaSlug": "콜롬비아"
+  },
+  "CR": {
+    "name": "코스타리카",
+    "capital": "산호세",
+    "demonym": "코스타리카의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "코스타리카 콜론"
+    ],
+    "wikipediaSlug": "코스타리카"
+  },
+  "CU": {
+    "name": "쿠바",
+    "capital": "아바나",
+    "demonym": "쿠바의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "쿠바 태환 페소",
+      "쿠바 페소"
+    ],
+    "wikipediaSlug": "쿠바"
+  },
+  "CV": {
+    "name": "카보베르데",
+    "capital": "프라이아",
+    "demonym": "카보베르데의",
+    "languages": [
+      "포르투갈어"
+    ],
+    "currencyNames": [
+      "카보베르데 에스쿠도"
+    ],
+    "wikipediaSlug": "카보베르데"
+  },
+  "CW": {
+    "name": "퀴라소",
+    "capital": "빌렘스타트",
+    "demonym": "퀴라소의",
+    "languages": [
+      "네덜란드어",
+      "파피아먼토어"
+    ],
+    "currencyNames": [
+      "네덜란드령 안틸레스 길더"
+    ],
+    "wikipediaSlug": "퀴라소"
+  },
+  "CY": {
+    "name": "키프로스",
+    "capital": "니코시아",
+    "demonym": "키프로스의",
+    "languages": [
+      "그리스어",
+      "튀르키예어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "키프로스"
+  },
+  "CZ": {
+    "name": "체코",
+    "capital": "프라하",
+    "demonym": "체코의",
+    "languages": [
+      "체코어"
+    ],
+    "currencyNames": [
+      "체코 코루나"
+    ],
+    "wikipediaSlug": "체코"
+  },
+  "DE": {
+    "name": "독일",
+    "capital": "베를린",
+    "demonym": "독일의",
+    "languages": [
+      "독일어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "독일"
+  },
+  "DJ": {
+    "name": "지부티",
+    "capital": "지부티",
+    "demonym": "지부티의",
+    "languages": [
+      "프랑스어",
+      "아랍어"
+    ],
+    "currencyNames": [
+      "지부티 프랑"
+    ],
+    "wikipediaSlug": "지부티"
+  },
+  "DK": {
+    "name": "덴마크",
+    "capital": "코펜하겐",
+    "demonym": "덴마크의",
+    "languages": [
+      "덴마크어"
+    ],
+    "currencyNames": [
+      "덴마크 크로네"
+    ],
+    "wikipediaSlug": "덴마크"
+  },
+  "DM": {
+    "name": "도미니카",
+    "capital": "로조",
+    "demonym": "도미니카의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "동카리브 달러"
+    ],
+    "wikipediaSlug": "도미니카_연방"
+  },
+  "DO": {
+    "name": "도미니카 공화국",
+    "capital": "산토도밍고",
+    "demonym": "도미니카 공화국의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "도미니카 페소"
+    ],
+    "wikipediaSlug": "도미니카_공화국"
+  },
+  "DZ": {
+    "name": "알제리",
+    "capital": "알제",
+    "demonym": "알제리의",
+    "languages": [
+      "아랍어",
+      "중앙 모로코 타마지트어"
+    ],
+    "currencyNames": [
+      "알제리 디나르"
+    ],
+    "wikipediaSlug": "알제리"
+  },
+  "EC": {
+    "name": "에콰도르",
+    "capital": "키토",
+    "demonym": "에콰도르의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "에콰도르"
+  },
+  "EE": {
+    "name": "에스토니아",
+    "capital": "탈린",
+    "demonym": "에스토니아의",
+    "languages": [
+      "에스토니아어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "에스토니아"
+  },
+  "EG": {
+    "name": "이집트",
+    "capital": "카이로",
+    "demonym": "이집트의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "이집트 파운드"
+    ],
+    "wikipediaSlug": "이집트"
+  },
+  "EH": {
+    "name": "서사하라",
+    "capital": "",
+    "demonym": "서사하라의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "알제리 디나르",
+      "모로코 디르함",
+      "모리타니 우기야"
+    ],
+    "wikipediaSlug": "서사하라"
+  },
+  "ER": {
+    "name": "에리트리아",
+    "capital": "아스마라",
+    "demonym": "에리트레아의",
+    "languages": [
+      "티그리냐어",
+      "아랍어",
+      "영어"
+    ],
+    "currencyNames": [
+      "에리트리아 나크파"
+    ],
+    "wikipediaSlug": "에리트레아"
+  },
+  "ES": {
+    "name": "스페인",
+    "capital": "마드리드",
+    "demonym": "스페인의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "스페인"
+  },
+  "ET": {
+    "name": "에티오피아",
+    "capital": "아디스아바바",
+    "demonym": "에티오피아의",
+    "languages": [
+      "암하라어"
+    ],
+    "currencyNames": [
+      "에티오피아 비르"
+    ],
+    "wikipediaSlug": "에티오피아"
+  },
+  "FI": {
+    "name": "핀란드",
+    "capital": "헬싱키",
+    "demonym": "핀란드의",
+    "languages": [
+      "핀란드어",
+      "스웨덴어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "핀란드"
+  },
+  "FJ": {
+    "name": "피지",
+    "capital": "수바",
+    "demonym": "피지의",
+    "languages": [
+      "영어",
+      "피지어",
+      "피지 힌디어"
+    ],
+    "currencyNames": [
+      "피지 달러"
+    ],
+    "wikipediaSlug": "피지"
+  },
+  "FK": {
+    "name": "포클랜드 제도",
+    "capital": "스탠리",
+    "demonym": "포클랜드의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "포클랜드제도 파운드"
+    ],
+    "wikipediaSlug": "포클랜드_제도"
+  },
+  "FM": {
+    "name": "미크로네시아",
+    "capital": "팔리키르",
+    "demonym": "미크로네시아의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "미크로네시아_연방"
+  },
+  "FO": {
+    "name": "페로 제도",
+    "capital": "토르스하운",
+    "demonym": "페로의",
+    "languages": [
+      "페로어",
+      "덴마크어"
+    ],
+    "currencyNames": [
+      "덴마크 크로네"
+    ],
+    "wikipediaSlug": "페로_제도"
+  },
+  "FR": {
+    "name": "프랑스",
+    "capital": "파리",
+    "demonym": "프랑스의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "프랑스"
+  },
+  "GA": {
+    "name": "가봉",
+    "capital": "리브르빌",
+    "demonym": "가봉의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "중앙아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "가봉"
+  },
+  "GB": {
+    "name": "영국",
+    "capital": "런던",
+    "demonym": "영국의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "영국 파운드"
+    ],
+    "wikipediaSlug": "영국"
+  },
+  "GD": {
+    "name": "그레나다",
+    "capital": "세인트조지스",
+    "demonym": "그레나다의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "동카리브 달러"
+    ],
+    "wikipediaSlug": "그레나다"
+  },
+  "GE": {
+    "name": "조지아",
+    "capital": "트빌리시",
+    "demonym": "조지아의",
+    "languages": [
+      "조지아어"
+    ],
+    "currencyNames": [
+      "조지아 라리"
+    ],
+    "wikipediaSlug": "조지아"
+  },
+  "GF": {
+    "name": "프랑스령 기아나",
+    "capital": "카옌",
+    "demonym": "프랑스령 기아나의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "프랑스령_기아나"
+  },
+  "GG": {
+    "name": "건지",
+    "capital": "세인트피터포트",
+    "demonym": "건지의",
+    "languages": [
+      "영어",
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "영국 파운드"
+    ],
+    "wikipediaSlug": "건지_관할구"
+  },
+  "GH": {
+    "name": "가나",
+    "capital": "아크라",
+    "demonym": "가나의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "가나 세디"
+    ],
+    "wikipediaSlug": "가나"
+  },
+  "GL": {
+    "name": "그린란드",
+    "capital": "누크",
+    "demonym": "그린란드의",
+    "languages": [
+      "그린란드어"
+    ],
+    "currencyNames": [
+      "덴마크 크로네"
+    ],
+    "wikipediaSlug": "그린란드"
+  },
+  "GM": {
+    "name": "감비아",
+    "capital": "반줄",
+    "demonym": "감비아의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "감비아 달라시"
+    ],
+    "wikipediaSlug": "감비아"
+  },
+  "GN": {
+    "name": "기니",
+    "capital": "코나크리",
+    "demonym": "기니의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "기니 프랑"
+    ],
+    "wikipediaSlug": "기니"
+  },
+  "GP": {
+    "name": "과들루프",
+    "capital": "바스테르",
+    "demonym": "과들루프의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "과들루프"
+  },
+  "GQ": {
+    "name": "적도 기니",
+    "capital": "시우다드데라파스",
+    "demonym": "적도 기니의",
+    "languages": [
+      "스페인어",
+      "프랑스어",
+      "포르투갈어"
+    ],
+    "currencyNames": [
+      "중앙아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "적도_기니"
+  },
+  "GR": {
+    "name": "그리스",
+    "capital": "아테네",
+    "demonym": "그리스의",
+    "languages": [
+      "그리스어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "그리스"
+  },
+  "GT": {
+    "name": "과테말라",
+    "capital": "과테말라시티",
+    "demonym": "과테말라의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "과테말라 케트살"
+    ],
+    "wikipediaSlug": "과테말라"
+  },
+  "GU": {
+    "name": "괌",
+    "capital": "하갓냐",
+    "demonym": "괌의",
+    "languages": [
+      "영어",
+      "차모로어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "괌"
+  },
+  "GW": {
+    "name": "기니비사우",
+    "capital": "비사우",
+    "demonym": "기니비사우의",
+    "languages": [
+      "포르투갈어"
+    ],
+    "currencyNames": [
+      "서아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "기니비사우"
+  },
+  "GY": {
+    "name": "가이아나",
+    "capital": "조지타운",
+    "demonym": "가이아나의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "가이아나 달러"
+    ],
+    "wikipediaSlug": "가이아나"
+  },
+  "HK": {
+    "name": "홍콩",
+    "capital": "",
+    "demonym": "홍콩의",
+    "languages": [
+      "중국어",
+      "영어"
+    ],
+    "currencyNames": [
+      "홍콩 달러"
+    ],
+    "wikipediaSlug": "홍콩"
+  },
+  "HN": {
+    "name": "온두라스",
+    "capital": "테구시갈파",
+    "demonym": "온두라스의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "온두라스 렘피라"
+    ],
+    "wikipediaSlug": "온두라스"
+  },
+  "HR": {
+    "name": "크로아티아",
+    "capital": "자그레브",
+    "demonym": "크로아티아의",
+    "languages": [
+      "크로아티아어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "크로아티아"
+  },
+  "HT": {
+    "name": "아이티",
+    "capital": "포르토프랭스",
+    "demonym": "아이티의",
+    "languages": [
+      "프랑스어",
+      "아이티어"
+    ],
+    "currencyNames": [
+      "아이티 구르드"
+    ],
+    "wikipediaSlug": "아이티"
+  },
+  "HU": {
+    "name": "헝가리",
+    "capital": "부다페스트",
+    "demonym": "헝가리의",
+    "languages": [
+      "헝가리어"
+    ],
+    "currencyNames": [
+      "헝가리 포린트"
+    ],
+    "wikipediaSlug": "헝가리"
+  },
+  "ID": {
+    "name": "인도네시아",
+    "capital": "자카르타",
+    "demonym": "인도네시아의",
+    "languages": [
+      "인도네시아어"
+    ],
+    "currencyNames": [
+      "인도네시아 루피아"
+    ],
+    "wikipediaSlug": "인도네시아"
+  },
+  "IE": {
+    "name": "아일랜드",
+    "capital": "더블린",
+    "demonym": "아일랜드의",
+    "languages": [
+      "아일랜드어",
+      "영어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "아일랜드"
+  },
+  "IL": {
+    "name": "이스라엘",
+    "capital": "예루살렘",
+    "demonym": "이스라엘의",
+    "languages": [
+      "히브리어",
+      "아랍어"
+    ],
+    "currencyNames": [
+      "이스라엘 신권 세켈"
+    ],
+    "wikipediaSlug": "이스라엘"
+  },
+  "IM": {
+    "name": "맨섬",
+    "capital": "더글러스",
+    "demonym": "맨섬의",
+    "languages": [
+      "영어",
+      "맹크스어"
+    ],
+    "currencyNames": [
+      "영국 파운드"
+    ],
+    "wikipediaSlug": "맨섬"
+  },
+  "IN": {
+    "name": "인도",
+    "capital": "뉴델리",
+    "demonym": "인도의",
+    "languages": [
+      "힌디어",
+      "영어"
+    ],
+    "currencyNames": [
+      "인도 루피"
+    ],
+    "wikipediaSlug": "인도"
+  },
+  "IQ": {
+    "name": "이라크",
+    "capital": "바그다드",
+    "demonym": "이라크의",
+    "languages": [
+      "아랍어",
+      "쿠르드어"
+    ],
+    "currencyNames": [
+      "이라크 디나르"
+    ],
+    "wikipediaSlug": "이라크"
+  },
+  "IR": {
+    "name": "이란",
+    "capital": "테헤란",
+    "demonym": "이란의",
+    "languages": [
+      "페르시아어"
+    ],
+    "currencyNames": [
+      "이란 리얄"
+    ],
+    "wikipediaSlug": "이란"
+  },
+  "IS": {
+    "name": "아이슬란드",
+    "capital": "레이캬비크",
+    "demonym": "아이슬란드의",
+    "languages": [
+      "아이슬란드어"
+    ],
+    "currencyNames": [
+      "아이슬란드 크로나"
+    ],
+    "wikipediaSlug": "아이슬란드"
+  },
+  "IT": {
+    "name": "이탈리아",
+    "capital": "로마",
+    "demonym": "이탈리아의",
+    "languages": [
+      "이탈리아어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "이탈리아"
+  },
+  "JE": {
+    "name": "저지",
+    "capital": "세인트헬리어",
+    "demonym": "저지의",
+    "languages": [
+      "영어",
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "영국 파운드"
+    ],
+    "wikipediaSlug": "저지섬"
+  },
+  "JM": {
+    "name": "자메이카",
+    "capital": "킹스턴",
+    "demonym": "자메이카의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "자메이카 달러"
+    ],
+    "wikipediaSlug": "자메이카"
+  },
+  "JO": {
+    "name": "요르단",
+    "capital": "암만",
+    "demonym": "요르단의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "요르단 디나르"
+    ],
+    "wikipediaSlug": "요르단"
+  },
+  "JP": {
+    "name": "일본",
+    "capital": "도쿄도",
+    "demonym": "일본의",
+    "languages": [
+      "일본어"
+    ],
+    "currencyNames": [
+      "일본 엔화"
+    ],
+    "wikipediaSlug": "일본"
+  },
+  "KE": {
+    "name": "케냐",
+    "capital": "나이로비",
+    "demonym": "케냐의",
+    "languages": [
+      "스와힐리어",
+      "영어"
+    ],
+    "currencyNames": [
+      "케냐 실링"
+    ],
+    "wikipediaSlug": "케냐"
+  },
+  "KG": {
+    "name": "키르기스스탄",
+    "capital": "비슈케크",
+    "demonym": "키르기스스탄의",
+    "languages": [
+      "키르기스어",
+      "러시아어"
+    ],
+    "currencyNames": [
+      "키르기스스탄 솜"
+    ],
+    "wikipediaSlug": "키르기스스탄"
+  },
+  "KH": {
+    "name": "캄보디아",
+    "capital": "프놈펜",
+    "demonym": "캄보디아의",
+    "languages": [
+      "크메르어"
+    ],
+    "currencyNames": [
+      "캄보디아 리엘",
+      "미국 달러"
+    ],
+    "wikipediaSlug": "캄보디아"
+  },
+  "KI": {
+    "name": "키리바시",
+    "capital": "타라와",
+    "demonym": "키리바시의",
+    "languages": [
+      "영어",
+      "키리바시어"
+    ],
+    "currencyNames": [
+      "호주 달러"
+    ],
+    "wikipediaSlug": "키리바시"
+  },
+  "KM": {
+    "name": "코모로",
+    "capital": "모로니",
+    "demonym": "코모로의",
+    "languages": [
+      "zdj",
+      "아랍어",
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "코모르 프랑"
+    ],
+    "wikipediaSlug": "코모로"
+  },
+  "KN": {
+    "name": "세인트키츠 네비스",
+    "capital": "바스테르",
+    "demonym": "세인트키츠 네비스의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "동카리브 달러"
+    ],
+    "wikipediaSlug": "세인트키츠_네비스"
+  },
+  "KP": {
+    "name": "북한",
+    "capital": "평양시",
+    "demonym": "북한의",
+    "languages": [
+      "한국어"
+    ],
+    "currencyNames": [
+      "조선 민주주의 인민 공화국 원"
+    ],
+    "wikipediaSlug": "조선민주주의인민공화국"
+  },
+  "KR": {
+    "name": "대한민국",
+    "capital": "서울특별시",
+    "demonym": "한국의",
+    "languages": [
+      "한국어"
+    ],
+    "currencyNames": [
+      "대한민국 원"
+    ],
+    "wikipediaSlug": "대한민국"
+  },
+  "KW": {
+    "name": "쿠웨이트",
+    "capital": "쿠웨이트 시",
+    "demonym": "쿠웨이트의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "쿠웨이트 디나르"
+    ],
+    "wikipediaSlug": "쿠웨이트"
+  },
+  "KY": {
+    "name": "케이맨 제도",
+    "capital": "조지타운",
+    "demonym": "케이맨 제도의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "케이맨 제도 달러"
+    ],
+    "wikipediaSlug": "케이맨_제도"
+  },
+  "KZ": {
+    "name": "카자흐스탄",
+    "capital": "아스타나",
+    "demonym": "카자흐스탄의",
+    "languages": [
+      "카자흐어",
+      "러시아어"
+    ],
+    "currencyNames": [
+      "카자흐스탄 텡게"
+    ],
+    "wikipediaSlug": "카자흐스탄"
+  },
+  "LA": {
+    "name": "라오스",
+    "capital": "비엔티안",
+    "demonym": "라오스의",
+    "languages": [
+      "라오어"
+    ],
+    "currencyNames": [
+      "라오스 키프"
+    ],
+    "wikipediaSlug": "라오스"
+  },
+  "LB": {
+    "name": "레바논",
+    "capital": "베이루트",
+    "demonym": "레바논의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "레바논 파운드"
+    ],
+    "wikipediaSlug": "레바논"
+  },
+  "LC": {
+    "name": "세인트루시아",
+    "capital": "캐스트리스",
+    "demonym": "세인트루시아의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "동카리브 달러"
+    ],
+    "wikipediaSlug": "세인트루시아"
+  },
+  "LI": {
+    "name": "리히텐슈타인",
+    "capital": "파두츠",
+    "demonym": "리히텐슈타인의",
+    "languages": [
+      "독일어"
+    ],
+    "currencyNames": [
+      "스위스 프랑"
+    ],
+    "wikipediaSlug": "리히텐슈타인"
+  },
+  "LK": {
+    "name": "스리랑카",
+    "capital": "콜롬보",
+    "demonym": "스리랑카의",
+    "languages": [
+      "싱할라어",
+      "타밀어"
+    ],
+    "currencyNames": [
+      "스리랑카 루피"
+    ],
+    "wikipediaSlug": "스리랑카"
+  },
+  "LR": {
+    "name": "라이베리아",
+    "capital": "몬로비아",
+    "demonym": "라이베리아의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "라이베리아 달러"
+    ],
+    "wikipediaSlug": "라이베리아"
+  },
+  "LS": {
+    "name": "레소토",
+    "capital": "마세루",
+    "demonym": "레소토의",
+    "languages": [
+      "남부 소토어",
+      "영어"
+    ],
+    "currencyNames": [
+      "레소토 로티",
+      "남아프리카 랜드"
+    ],
+    "wikipediaSlug": "레소토"
+  },
+  "LT": {
+    "name": "리투아니아",
+    "capital": "빌뉴스",
+    "demonym": "리투아니아의",
+    "languages": [
+      "리투아니아어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "리투아니아"
+  },
+  "LU": {
+    "name": "룩셈부르크",
+    "capital": "룩셈부르크",
+    "demonym": "룩셈부르크의",
+    "languages": [
+      "룩셈부르크어",
+      "프랑스어",
+      "독일어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "룩셈부르크"
+  },
+  "LV": {
+    "name": "라트비아",
+    "capital": "리가",
+    "demonym": "라트비아의",
+    "languages": [
+      "라트비아어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "라트비아"
+  },
+  "LY": {
+    "name": "리비아",
+    "capital": "트리폴리",
+    "demonym": "리비아의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "리비아 디나르"
+    ],
+    "wikipediaSlug": "리비아"
+  },
+  "MA": {
+    "name": "모로코",
+    "capital": "라바트",
+    "demonym": "모로코의",
+    "languages": [
+      "아랍어",
+      "중앙 모로코 타마지트어"
+    ],
+    "currencyNames": [
+      "모로코 디르함"
+    ],
+    "wikipediaSlug": "모로코"
+  },
+  "MC": {
+    "name": "모나코",
+    "capital": "모나코빌",
+    "demonym": "모나코의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "모나코"
+  },
+  "MD": {
+    "name": "몰도바",
+    "capital": "키시너우",
+    "demonym": "몰도바의",
+    "languages": [
+      "루마니아어"
+    ],
+    "currencyNames": [
+      "몰도바 레이"
+    ],
+    "wikipediaSlug": "몰도바"
+  },
+  "ME": {
+    "name": "몬테네그로",
+    "capital": "포드고리차",
+    "demonym": "몬테네그로의",
+    "languages": [
+      "세르비아어(몬테네그로)"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "몬테네그로"
+  },
+  "MF": {
+    "name": "생마르탱",
+    "capital": "마리고",
+    "demonym": "생마르탱의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "생마르탱"
+  },
+  "MG": {
+    "name": "마다가스카르",
+    "capital": "안타나나리보",
+    "demonym": "마다가스카르의",
+    "languages": [
+      "말라가시어",
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "마다가스카르 아리아리"
+    ],
+    "wikipediaSlug": "마다가스카르"
+  },
+  "MH": {
+    "name": "마셜 제도",
+    "capital": "마주로",
+    "demonym": "마셜 제도의",
+    "languages": [
+      "마셜어",
+      "영어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "마셜_제도"
+  },
+  "MK": {
+    "name": "북마케도니아",
+    "capital": "스코페",
+    "demonym": "북마케도니아의",
+    "languages": [
+      "마케도니아어"
+    ],
+    "currencyNames": [
+      "마케도니아 디나르"
+    ],
+    "wikipediaSlug": "북마케도니아"
+  },
+  "ML": {
+    "name": "말리",
+    "capital": "바마코",
+    "demonym": "말리의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "서아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "말리"
+  },
+  "MM": {
+    "name": "미얀마",
+    "capital": "네피도",
+    "demonym": "미얀마의",
+    "languages": [
+      "버마어"
+    ],
+    "currencyNames": [
+      "미얀마 키얏"
+    ],
+    "wikipediaSlug": "미얀마"
+  },
+  "MN": {
+    "name": "몽골",
+    "capital": "울란바타르",
+    "demonym": "몽골의",
+    "languages": [
+      "몽골어"
+    ],
+    "currencyNames": [
+      "몽골 투그릭"
+    ],
+    "wikipediaSlug": "몽골"
+  },
+  "MO": {
+    "name": "마카오",
+    "capital": "",
+    "demonym": "마카오의",
+    "languages": [
+      "중국어",
+      "포르투갈어"
+    ],
+    "currencyNames": [
+      "마카오 파타카"
+    ],
+    "wikipediaSlug": "마카오"
+  },
+  "MP": {
+    "name": "북마리아나제도",
+    "capital": "",
+    "demonym": "북마리아나 제도의",
+    "languages": [
+      "영어",
+      "차모로어",
+      "cal"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "북마리아나_제도"
+  },
+  "MQ": {
+    "name": "마르티니크",
+    "capital": "포르드프랑스",
+    "demonym": "마르티니크의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "마르티니크"
+  },
+  "MR": {
+    "name": "모리타니",
+    "capital": "누악쇼트",
+    "demonym": "모리타니의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "모리타니 우기야"
+    ],
+    "wikipediaSlug": "모리타니"
+  },
+  "MS": {
+    "name": "몬트세라트",
+    "capital": "플리머스",
+    "demonym": "몬트세랫의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "동카리브 달러"
+    ],
+    "wikipediaSlug": "몬트세랫"
+  },
+  "MT": {
+    "name": "몰타",
+    "capital": "발레타",
+    "demonym": "몰타의",
+    "languages": [
+      "몰타어",
+      "영어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "몰타"
+  },
+  "MU": {
+    "name": "모리셔스",
+    "capital": "포트루이스",
+    "demonym": "모리셔스의",
+    "languages": [
+      "영어",
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "모리셔스 루피"
+    ],
+    "wikipediaSlug": "모리셔스"
+  },
+  "MV": {
+    "name": "몰디브",
+    "capital": "말레",
+    "demonym": "몰디브의",
+    "languages": [
+      "디베히어"
+    ],
+    "currencyNames": [
+      "몰디브 제도 루피아"
+    ],
+    "wikipediaSlug": "몰디브"
+  },
+  "MW": {
+    "name": "말라위",
+    "capital": "릴롱궤",
+    "demonym": "말라위의",
+    "languages": [
+      "영어",
+      "냔자어"
+    ],
+    "currencyNames": [
+      "말라위 콰차"
+    ],
+    "wikipediaSlug": "말라위"
+  },
+  "MX": {
+    "name": "멕시코",
+    "capital": "멕시코시티",
+    "demonym": "멕시코의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "멕시코 페소"
+    ],
+    "wikipediaSlug": "멕시코"
+  },
+  "MY": {
+    "name": "말레이시아",
+    "capital": "쿠알라룸푸르",
+    "demonym": "말레이시아의",
+    "languages": [
+      "말레이어"
+    ],
+    "currencyNames": [
+      "말레이시아 링깃"
+    ],
+    "wikipediaSlug": "말레이시아"
+  },
+  "MZ": {
+    "name": "모잠비크",
+    "capital": "마푸투",
+    "demonym": "모잠비크의",
+    "languages": [
+      "포르투갈어"
+    ],
+    "currencyNames": [
+      "모잠비크 메티칼"
+    ],
+    "wikipediaSlug": "모잠비크"
+  },
+  "NA": {
+    "name": "나미비아",
+    "capital": "빈트후크",
+    "demonym": "나미비아의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "나미비아 달러",
+      "남아프리카 랜드"
+    ],
+    "wikipediaSlug": "나미비아"
+  },
+  "NC": {
+    "name": "뉴칼레도니아",
+    "capital": "누메아",
+    "demonym": "누벨칼레도니의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "CFP 프랑"
+    ],
+    "wikipediaSlug": "누벨칼레도니"
+  },
+  "NE": {
+    "name": "니제르",
+    "capital": "니아메",
+    "demonym": "니제르의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "서아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "니제르"
+  },
+  "NF": {
+    "name": "노퍽섬",
+    "capital": "킹스턴",
+    "demonym": "노퍽섬의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "호주 달러"
+    ],
+    "wikipediaSlug": "노퍽섬"
+  },
+  "NG": {
+    "name": "나이지리아",
+    "capital": "아부자",
+    "demonym": "나이지리아의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "나이지리아 나이라"
+    ],
+    "wikipediaSlug": "나이지리아"
+  },
+  "NI": {
+    "name": "니카라과",
+    "capital": "마나과",
+    "demonym": "니카라과의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "니카라과 코르도바"
+    ],
+    "wikipediaSlug": "니카라과"
+  },
+  "NL": {
+    "name": "네덜란드",
+    "capital": "암스테르담",
+    "demonym": "네덜란드의",
+    "languages": [
+      "네덜란드어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "네덜란드_왕국"
+  },
+  "NO": {
+    "name": "노르웨이",
+    "capital": "오슬로",
+    "demonym": "노르웨이의",
+    "languages": [
+      "노르웨이어"
+    ],
+    "currencyNames": [
+      "노르웨이 크로네"
+    ],
+    "wikipediaSlug": "노르웨이"
+  },
+  "NP": {
+    "name": "네팔",
+    "capital": "카트만두",
+    "demonym": "네팔의",
+    "languages": [
+      "네팔어"
+    ],
+    "currencyNames": [
+      "네팔 루피"
+    ],
+    "wikipediaSlug": "네팔"
+  },
+  "NR": {
+    "name": "나우루",
+    "capital": "야렌구",
+    "demonym": "나우루의",
+    "languages": [
+      "영어",
+      "나우루어"
+    ],
+    "currencyNames": [
+      "호주 달러"
+    ],
+    "wikipediaSlug": "나우루"
+  },
+  "NU": {
+    "name": "니우에",
+    "capital": "알로피",
+    "demonym": "니우에의",
+    "languages": [
+      "영어",
+      "니웨언어"
+    ],
+    "currencyNames": [
+      "뉴질랜드 달러"
+    ],
+    "wikipediaSlug": "니우에"
+  },
+  "NZ": {
+    "name": "뉴질랜드",
+    "capital": "웰링턴",
+    "demonym": "뉴질랜드의",
+    "languages": [
+      "영어",
+      "마오리어"
+    ],
+    "currencyNames": [
+      "뉴질랜드 달러"
+    ],
+    "wikipediaSlug": "뉴질랜드"
+  },
+  "OM": {
+    "name": "오만",
+    "capital": "무스카트",
+    "demonym": "오만의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "오만 리알"
+    ],
+    "wikipediaSlug": "오만"
+  },
+  "PA": {
+    "name": "파나마",
+    "capital": "파나마시티",
+    "demonym": "파나마의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "파나마 발보아",
+      "미국 달러"
+    ],
+    "wikipediaSlug": "파나마"
+  },
+  "PE": {
+    "name": "페루",
+    "capital": "리마",
+    "demonym": "페루의",
+    "languages": [
+      "스페인어",
+      "케추아어",
+      "아이마라어"
+    ],
+    "currencyNames": [
+      "페루 솔"
+    ],
+    "wikipediaSlug": "페루"
+  },
+  "PF": {
+    "name": "프랑스령 폴리네시아",
+    "capital": "파페에테",
+    "demonym": "프랑스령 폴리네시아의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "CFP 프랑"
+    ],
+    "wikipediaSlug": "프랑스령_폴리네시아"
+  },
+  "PG": {
+    "name": "파푸아뉴기니",
+    "capital": "포트모르즈비",
+    "demonym": "파푸아뉴기니의",
+    "languages": [
+      "영어",
+      "토크 피신어",
+      "히리 모투어"
+    ],
+    "currencyNames": [
+      "파푸아뉴기니 키나"
+    ],
+    "wikipediaSlug": "파푸아뉴기니"
+  },
+  "PH": {
+    "name": "필리핀",
+    "capital": "마닐라",
+    "demonym": "필리핀의",
+    "languages": [
+      "필리핀어",
+      "영어"
+    ],
+    "currencyNames": [
+      "필리핀 페소"
+    ],
+    "wikipediaSlug": "필리핀"
+  },
+  "PK": {
+    "name": "파키스탄",
+    "capital": "이슬라마바드",
+    "demonym": "파키스탄의",
+    "languages": [
+      "우르두어",
+      "영어"
+    ],
+    "currencyNames": [
+      "파키스탄 루피"
+    ],
+    "wikipediaSlug": "파키스탄"
+  },
+  "PL": {
+    "name": "폴란드",
+    "capital": "바르샤바",
+    "demonym": "폴란드의",
+    "languages": [
+      "폴란드어"
+    ],
+    "currencyNames": [
+      "폴란드 즈워티"
+    ],
+    "wikipediaSlug": "폴란드"
+  },
+  "PM": {
+    "name": "생피에르 미클롱",
+    "capital": "생피에르",
+    "demonym": "생피에르 미클롱의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "생피에르_미클롱"
+  },
+  "PN": {
+    "name": "핏케언 제도",
+    "capital": "애덤스타운",
+    "demonym": "핏케언의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "뉴질랜드 달러"
+    ],
+    "wikipediaSlug": "핏케언_제도"
+  },
+  "PR": {
+    "name": "푸에르토리코",
+    "capital": "산후안",
+    "demonym": "푸에르토리코의",
+    "languages": [
+      "스페인어",
+      "영어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "푸에르토리코"
+  },
+  "PS": {
+    "name": "팔레스타인",
+    "capital": "라말라",
+    "demonym": "팔레스타인의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "이집트 파운드",
+      "이스라엘 신권 세켈",
+      "요르단 디나르"
+    ],
+    "wikipediaSlug": "팔레스타인"
+  },
+  "PT": {
+    "name": "포르투갈",
+    "capital": "리스본",
+    "demonym": "포르투갈의",
+    "languages": [
+      "포르투갈어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "포르투갈"
+  },
+  "PW": {
+    "name": "팔라우",
+    "capital": "응게룰무드",
+    "demonym": "팔라우의",
+    "languages": [
+      "팔라우어",
+      "영어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "팔라우"
+  },
+  "PY": {
+    "name": "파라과이",
+    "capital": "아순시온",
+    "demonym": "파라과이의",
+    "languages": [
+      "스페인어",
+      "과라니어"
+    ],
+    "currencyNames": [
+      "파라과이 과라니"
+    ],
+    "wikipediaSlug": "파라과이"
+  },
+  "QA": {
+    "name": "카타르",
+    "capital": "도하",
+    "demonym": "카타르의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "카타르 리얄"
+    ],
+    "wikipediaSlug": "카타르"
+  },
+  "RE": {
+    "name": "레위니옹",
+    "capital": "생드니",
+    "demonym": "레위니옹의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "레위니옹"
+  },
+  "RO": {
+    "name": "루마니아",
+    "capital": "부쿠레슈티",
+    "demonym": "루마니아의",
+    "languages": [
+      "루마니아어"
+    ],
+    "currencyNames": [
+      "루마니아 레우"
+    ],
+    "wikipediaSlug": "루마니아"
+  },
+  "RS": {
+    "name": "세르비아",
+    "capital": "베오그라드",
+    "demonym": "세르비아의",
+    "languages": [
+      "세르비아어"
+    ],
+    "currencyNames": [
+      "세르비아 디나르"
+    ],
+    "wikipediaSlug": "세르비아"
+  },
+  "RU": {
+    "name": "러시아",
+    "capital": "모스크바",
+    "demonym": "러시아의",
+    "languages": [
+      "러시아어"
+    ],
+    "currencyNames": [
+      "러시아 루블"
+    ],
+    "wikipediaSlug": "러시아"
+  },
+  "RW": {
+    "name": "르완다",
+    "capital": "키갈리",
+    "demonym": "르완다의",
+    "languages": [
+      "르완다어",
+      "프랑스어",
+      "영어"
+    ],
+    "currencyNames": [
+      "르완다 프랑"
+    ],
+    "wikipediaSlug": "르완다"
+  },
+  "SA": {
+    "name": "사우디아라비아",
+    "capital": "리야드",
+    "demonym": "사우디아라비아의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "사우디아라비아 리얄"
+    ],
+    "wikipediaSlug": "사우디아라비아"
+  },
+  "SB": {
+    "name": "솔로몬 제도",
+    "capital": "호니아라",
+    "demonym": "솔로몬 제도의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "솔로몬 제도 달러"
+    ],
+    "wikipediaSlug": "솔로몬_제도"
+  },
+  "SC": {
+    "name": "세이셸",
+    "capital": "빅토리아",
+    "demonym": "세이셸의",
+    "languages": [
+      "세이셸 크리올 프랑스어",
+      "프랑스어",
+      "영어"
+    ],
+    "currencyNames": [
+      "세이셸 루피"
+    ],
+    "wikipediaSlug": "세이셸"
+  },
+  "SD": {
+    "name": "수단",
+    "capital": "하르툼",
+    "demonym": "수단의",
+    "languages": [
+      "아랍어",
+      "영어"
+    ],
+    "currencyNames": [
+      "수단 파운드"
+    ],
+    "wikipediaSlug": "수단"
+  },
+  "SE": {
+    "name": "스웨덴",
+    "capital": "스톡홀름",
+    "demonym": "스웨덴의",
+    "languages": [
+      "스웨덴어"
+    ],
+    "currencyNames": [
+      "스웨덴 크로나"
+    ],
+    "wikipediaSlug": "스웨덴"
+  },
+  "SG": {
+    "name": "싱가포르",
+    "capital": "싱가포르",
+    "demonym": "싱가포르의",
+    "languages": [
+      "영어",
+      "말레이어",
+      "중국어",
+      "타밀어"
+    ],
+    "currencyNames": [
+      "싱가포르 달러"
+    ],
+    "wikipediaSlug": "싱가포르"
+  },
+  "SH": {
+    "name": "세인트헬레나",
+    "capital": "제임스타운",
+    "demonym": "세인트헬레나의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "영국 파운드",
+      "세인트헬레나 파운드"
+    ],
+    "wikipediaSlug": "세인트헬레나_어센션_트리스탄다쿠냐"
+  },
+  "SI": {
+    "name": "슬로베니아",
+    "capital": "류블랴나",
+    "demonym": "슬로베니아의",
+    "languages": [
+      "슬로베니아어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "슬로베니아"
+  },
+  "SK": {
+    "name": "슬로바키아",
+    "capital": "브라티슬라바",
+    "demonym": "슬로바키아의",
+    "languages": [
+      "슬로바키아어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "슬로바키아"
+  },
+  "SL": {
+    "name": "시에라리온",
+    "capital": "프리타운",
+    "demonym": "시에라리온의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "시에라리온 리온"
+    ],
+    "wikipediaSlug": "시에라리온"
+  },
+  "SM": {
+    "name": "산마리노",
+    "capital": "산마리노",
+    "demonym": "산마리노의",
+    "languages": [
+      "이탈리아어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "산마리노"
+  },
+  "SN": {
+    "name": "세네갈",
+    "capital": "다카르",
+    "demonym": "세네갈의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "서아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "세네갈"
+  },
+  "SO": {
+    "name": "소말리아",
+    "capital": "모가디슈",
+    "demonym": "소말리아의",
+    "languages": [
+      "소말리아어",
+      "아랍어"
+    ],
+    "currencyNames": [
+      "소말리아 실링"
+    ],
+    "wikipediaSlug": "소말리아"
+  },
+  "SR": {
+    "name": "수리남",
+    "capital": "파라마리보",
+    "demonym": "수리남의",
+    "languages": [
+      "네덜란드어"
+    ],
+    "currencyNames": [
+      "수리남 달러"
+    ],
+    "wikipediaSlug": "수리남"
+  },
+  "SS": {
+    "name": "남수단",
+    "capital": "주바",
+    "demonym": "남수단의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "남수단 파운드"
+    ],
+    "wikipediaSlug": "남수단"
+  },
+  "ST": {
+    "name": "상투메 프린시페",
+    "capital": "상투메",
+    "demonym": "상투메 프린시페의",
+    "languages": [
+      "포르투갈어"
+    ],
+    "currencyNames": [
+      "상투메 프린시페 도브라"
+    ],
+    "wikipediaSlug": "상투메_프린시페"
+  },
+  "SV": {
+    "name": "엘살바도르",
+    "capital": "산살바도르",
+    "demonym": "엘살바도르의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "엘살바도르"
+  },
+  "SX": {
+    "name": "신트마르턴",
+    "capital": "필립스뷔르흐",
+    "demonym": "신트마르턴의",
+    "languages": [
+      "네덜란드어",
+      "영어"
+    ],
+    "currencyNames": [
+      "네덜란드령 안틸레스 길더"
+    ],
+    "wikipediaSlug": "신트마르턴"
+  },
+  "SY": {
+    "name": "시리아",
+    "capital": "다마스쿠스",
+    "demonym": "시리아의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "시리아 파운드"
+    ],
+    "wikipediaSlug": "시리아"
+  },
+  "SZ": {
+    "name": "에스와티니",
+    "capital": "음바바네",
+    "demonym": "에스와티니의",
+    "languages": [
+      "시스와티어",
+      "영어"
+    ],
+    "currencyNames": [
+      "스와질란드 릴랑게니",
+      "남아프리카 랜드"
+    ],
+    "wikipediaSlug": "에스와티니"
+  },
+  "TC": {
+    "name": "터크스 케이커스 제도",
+    "capital": "코크번타운",
+    "demonym": "터크스 케이커스 제도의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "터크스_케이커스_제도"
+  },
+  "TD": {
+    "name": "차드",
+    "capital": "은자메나",
+    "demonym": "차드의",
+    "languages": [
+      "프랑스어",
+      "아랍어"
+    ],
+    "currencyNames": [
+      "중앙아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "차드"
+  },
+  "TG": {
+    "name": "토고",
+    "capital": "로메",
+    "demonym": "토고의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "서아프리카 CFA 프랑"
+    ],
+    "wikipediaSlug": "토고"
+  },
+  "TH": {
+    "name": "태국",
+    "capital": "방콕",
+    "demonym": "태국의",
+    "languages": [
+      "태국어"
+    ],
+    "currencyNames": [
+      "태국 바트"
+    ],
+    "wikipediaSlug": "태국"
+  },
+  "TJ": {
+    "name": "타지키스탄",
+    "capital": "두샨베",
+    "demonym": "타지키스탄의",
+    "languages": [
+      "타지크어"
+    ],
+    "currencyNames": [
+      "타지키스탄 소모니"
+    ],
+    "wikipediaSlug": "타지키스탄"
+  },
+  "TL": {
+    "name": "동티모르",
+    "capital": "딜리",
+    "demonym": "동티모르의",
+    "languages": [
+      "포르투갈어",
+      "테툼어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "동티모르"
+  },
+  "TM": {
+    "name": "투르크메니스탄",
+    "capital": "아시가바트",
+    "demonym": "투르크메니스탄의",
+    "languages": [
+      "투르크멘어"
+    ],
+    "currencyNames": [
+      "투르크메니스탄 마나트"
+    ],
+    "wikipediaSlug": "투르크메니스탄"
+  },
+  "TN": {
+    "name": "튀니지",
+    "capital": "튀니스",
+    "demonym": "튀니지의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "튀니지 디나르"
+    ],
+    "wikipediaSlug": "튀니지"
+  },
+  "TO": {
+    "name": "통가",
+    "capital": "누쿠알로파",
+    "demonym": "통가의",
+    "languages": [
+      "통가어",
+      "영어"
+    ],
+    "currencyNames": [
+      "통가 파앙가"
+    ],
+    "wikipediaSlug": "통가"
+  },
+  "TR": {
+    "name": "튀르키예",
+    "capital": "앙카라",
+    "demonym": "터키의",
+    "languages": [
+      "튀르키예어"
+    ],
+    "currencyNames": [
+      "튀르키예 리라"
+    ],
+    "wikipediaSlug": "튀르키예"
+  },
+  "TT": {
+    "name": "트리니다드 토바고",
+    "capital": "포트오브스페인",
+    "demonym": "트리니다드 토바고의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "트리니다드 토바고 달러"
+    ],
+    "wikipediaSlug": "트리니다드_토바고"
+  },
+  "TV": {
+    "name": "투발루",
+    "capital": "푸나푸티",
+    "demonym": "투발루의",
+    "languages": [
+      "투발루어",
+      "영어"
+    ],
+    "currencyNames": [
+      "호주 달러"
+    ],
+    "wikipediaSlug": "투발루"
+  },
+  "TW": {
+    "name": "대만",
+    "capital": "타이베이시",
+    "demonym": "대만의",
+    "languages": [
+      "중국어"
+    ],
+    "currencyNames": [
+      "신 타이완 달러"
+    ],
+    "wikipediaSlug": "중화민국"
+  },
+  "TZ": {
+    "name": "탄자니아",
+    "capital": "도도마",
+    "demonym": "탄자니아의",
+    "languages": [
+      "스와힐리어",
+      "영어"
+    ],
+    "currencyNames": [
+      "탄자니아 실링"
+    ],
+    "wikipediaSlug": "탄자니아"
+  },
+  "UA": {
+    "name": "우크라이나",
+    "capital": "키이우",
+    "demonym": "우크라이나의",
+    "languages": [
+      "우크라이나어"
+    ],
+    "currencyNames": [
+      "우크라이나 그리브나"
+    ],
+    "wikipediaSlug": "우크라이나"
+  },
+  "UG": {
+    "name": "우간다",
+    "capital": "캄팔라",
+    "demonym": "우간다의",
+    "languages": [
+      "영어",
+      "스와힐리어"
+    ],
+    "currencyNames": [
+      "우간다 실링"
+    ],
+    "wikipediaSlug": "우간다"
+  },
+  "US": {
+    "name": "미국",
+    "capital": "워싱턴 D.C.",
+    "demonym": "미국의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "미국"
+  },
+  "UY": {
+    "name": "우루과이",
+    "capital": "몬테비데오",
+    "demonym": "우루과이의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "우루과이 페소"
+    ],
+    "wikipediaSlug": "우루과이"
+  },
+  "UZ": {
+    "name": "우즈베키스탄",
+    "capital": "타슈켄트",
+    "demonym": "우즈베키스탄의",
+    "languages": [
+      "우즈베크어"
+    ],
+    "currencyNames": [
+      "우즈베키스탄 숨"
+    ],
+    "wikipediaSlug": "우즈베키스탄"
+  },
+  "VA": {
+    "name": "바티칸 시국",
+    "capital": "",
+    "demonym": "바티칸의",
+    "languages": [
+      "이탈리아어",
+      "라틴어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "바티칸_시국"
+  },
+  "VC": {
+    "name": "세인트빈센트그레나딘",
+    "capital": "킹스타운",
+    "demonym": "세인트빈센트 그레나딘의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "동카리브 달러"
+    ],
+    "wikipediaSlug": "세인트빈센트_그레나딘"
+  },
+  "VE": {
+    "name": "베네수엘라",
+    "capital": "카라카스",
+    "demonym": "베네수엘라의",
+    "languages": [
+      "스페인어"
+    ],
+    "currencyNames": [
+      "베네수엘라 볼리바르"
+    ],
+    "wikipediaSlug": "베네수엘라"
+  },
+  "VG": {
+    "name": "영국령 버진아일랜드",
+    "capital": "로드타운",
+    "demonym": "영국령 버진아일랜드의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "영국령_버진아일랜드"
+  },
+  "VI": {
+    "name": "미국령 버진아일랜드",
+    "capital": "샬럿아말리에",
+    "demonym": "미국령 버진아일랜드의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "미국 달러"
+    ],
+    "wikipediaSlug": "미국령_버진아일랜드"
+  },
+  "VN": {
+    "name": "베트남",
+    "capital": "하노이",
+    "demonym": "베트남의",
+    "languages": [
+      "베트남어"
+    ],
+    "currencyNames": [
+      "베트남 동"
+    ],
+    "wikipediaSlug": "베트남"
+  },
+  "VU": {
+    "name": "바누아투",
+    "capital": "포트빌라",
+    "demonym": "바누아투의",
+    "languages": [
+      "비슬라마어",
+      "영어",
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "바누아투 바투"
+    ],
+    "wikipediaSlug": "바누아투"
+  },
+  "WF": {
+    "name": "왈리스-푸투나 제도",
+    "capital": "마타우투",
+    "demonym": "왈리스 푸투나의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "CFP 프랑"
+    ],
+    "wikipediaSlug": "왈리스_푸투나"
+  },
+  "WS": {
+    "name": "사모아",
+    "capital": "아피아",
+    "demonym": "사모아의",
+    "languages": [
+      "사모아어",
+      "영어"
+    ],
+    "currencyNames": [
+      "서 사모아 탈라"
+    ],
+    "wikipediaSlug": "사모아"
+  },
+  "XK": {
+    "name": "코소보",
+    "capital": "프리슈티나",
+    "demonym": "코소보의",
+    "languages": [
+      "알바니아어",
+      "세르비아어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "코소보"
+  },
+  "YE": {
+    "name": "예멘",
+    "capital": "사나",
+    "demonym": "예멘의",
+    "languages": [
+      "아랍어"
+    ],
+    "currencyNames": [
+      "예멘 리알"
+    ],
+    "wikipediaSlug": "예멘"
+  },
+  "YT": {
+    "name": "마요트",
+    "capital": "마무추",
+    "demonym": "마요트의",
+    "languages": [
+      "프랑스어"
+    ],
+    "currencyNames": [
+      "유로"
+    ],
+    "wikipediaSlug": "마요트"
+  },
+  "ZA": {
+    "name": "남아프리카",
+    "capital": "프리토리아",
+    "demonym": "남아프리카의",
+    "languages": [
+      "줄루어",
+      "코사어",
+      "아프리칸스어",
+      "영어"
+    ],
+    "currencyNames": [
+      "남아프리카 랜드"
+    ],
+    "wikipediaSlug": "남아프리카_공화국"
+  },
+  "ZM": {
+    "name": "잠비아",
+    "capital": "루사카",
+    "demonym": "잠비아의",
+    "languages": [
+      "영어"
+    ],
+    "currencyNames": [
+      "잠비아 콰차"
+    ],
+    "wikipediaSlug": "잠비아"
+  },
+  "ZW": {
+    "name": "짐바브웨",
+    "capital": "하라레",
+    "demonym": "짐바브웨의",
+    "languages": [
+      "영어",
+      "쇼나어",
+      "남부 은데벨레어"
+    ],
+    "currencyNames": [
+      "짐바브웨 달러 (2009)"
+    ],
+    "wikipediaSlug": "짐바브웨"
+  }
+}

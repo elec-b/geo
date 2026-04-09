@@ -1,0 +1,41 @@
+{
+  "continent.africa": "\u00c1frica",
+  "continent.america": "Am\u00e9rica",
+  "continent.asia": "\u00c1sia",
+  "continent.europe": "Europa",
+  "continent.oceania": "Oceania",
+  "continent.antarctica": "Ant\u00e1rtida",
+  "continentFilter.all": "Todos",
+
+  "level.tourist": "Turista",
+  "level.backpacker": "Mochileiro",
+  "level.guide": "Guia",
+
+  "questionType.E": "Identifica o pa\u00eds",
+  "questionType.C": "Pa\u00eds para capital",
+  "questionType.D": "Capital para pa\u00eds",
+  "questionType.F": "Identifica a capital",
+  "questionType.A": "Aponta o pa\u00eds",
+  "questionType.B": "Aponta a capital",
+
+  "questionTypeShort.E": "Identifica pa\u00eds",
+  "questionTypeShort.C": "Pa\u00eds para capital",
+  "questionTypeShort.D": "Capital para pa\u00eds",
+  "questionTypeShort.F": "Identifica capital",
+  "questionTypeShort.A": "Aponta o pa\u00eds",
+  "questionTypeShort.B": "Aponta a capital",
+
+  "tabs.explore": "Explorar",
+  "tabs.play": "Jogar",
+  "tabs.passport": "Passaporte",
+
+  "loading": "A carregar o globo\u2026",
+  "cancel": "Cancelar",
+  "close": "Fechar",
+  "continue": "Continuar",
+
+  "aria.userProfile": "Perfil do utilizador",
+  "aria.stats": "Estat\u00edsticas",
+  "aria.settings": "Defini\u00e7\u00f5es",
+  "aria.navigation": "Navega\u00e7\u00e3o principal"
+}

@@ -1,0 +1,101 @@
+/* LanguageSheet — bottom sheet dedicado para selección de idioma */
+
+.language-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: var(--color-overlay);
+  animation: language-sheet-fade-in 200ms ease-out;
+}
+
+.language-sheet-overlay--closing {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+@keyframes language-sheet-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.language-sheet {
+  position: fixed;
+  bottom: var(--tabbar-height);
+  left: 0;
+  right: 0;
+  z-index: var(--z-modal);
+  padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-lg);
+  padding-bottom: calc(var(--spacing-lg) + env(safe-area-inset-bottom, 0px));
+  background: var(--color-surface-heavy);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  animation: language-sheet-slide-up 300ms ease-out;
+  touch-action: none;
+}
+
+@keyframes language-sheet-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Handle de arrastre */
+.language-sheet .bottom-sheet-handle {
+  width: 2.25rem;
+  height: 0.25rem;
+  margin: 0 auto var(--spacing-xs);
+  border-radius: var(--radius-full);
+  background: var(--color-white-20);
+}
+
+/* Header */
+.language-sheet__header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.language-sheet__title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.language-sheet__current {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Grid de idiomas */
+.language-sheet__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem;
+}
+
+.language-sheet__option {
+  background: var(--color-white-4);
+  border: 1px solid var(--color-white-8);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.language-sheet__option--active {
+  background: var(--color-accent-bg);
+  border-color: var(--color-accent-border);
+  color: var(--color-text-primary);
+}

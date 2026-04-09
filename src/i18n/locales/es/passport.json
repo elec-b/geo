@@ -1,0 +1,16 @@
+{
+  "header.title": "Pasaporte de {{name}}",
+  "header.globalLevel": "Nivel global: {{level}}",
+  "emptyState": "Cada sello demuestra lo que sabes. ¿Llenarás el pasaporte?",
+
+  "legend.country": "○ País",
+  "legend.capital": "◎ Capital",
+  "legend.earned": "★ Conseguido",
+  "legend.locked": "Bloqueado",
+
+  "stampTitle.countries": "Sello de Países",
+  "stampTitle.capitals": "Sello de Capitales",
+
+  "modal.title": "Prueba de sello",
+  "modal.questionCount": "Deberás completar {{count}} preguntas sin ningún error."
+}

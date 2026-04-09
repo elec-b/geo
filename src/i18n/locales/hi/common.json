@@ -1,0 +1,41 @@
+{
+  "continent.africa": "अफ़्रीका",
+  "continent.america": "अमेरिका",
+  "continent.asia": "एशिया",
+  "continent.europe": "यूरोप",
+  "continent.oceania": "ओशिनिया",
+  "continent.antarctica": "अंटार्कटिका",
+  "continentFilter.all": "सभी",
+
+  "level.tourist": "पर्यटक",
+  "level.backpacker": "बैकपैकर",
+  "level.guide": "गाइड",
+
+  "questionType.E": "देश पहचानो",
+  "questionType.C": "देश से राजधानी",
+  "questionType.D": "राजधानी से देश",
+  "questionType.F": "राजधानी पहचानो",
+  "questionType.A": "देश को इंगित करो",
+  "questionType.B": "राजधानी को इंगित करो",
+
+  "questionTypeShort.E": "देश पहचानो",
+  "questionTypeShort.C": "देश से राजधानी",
+  "questionTypeShort.D": "राजधानी से देश",
+  "questionTypeShort.F": "राजधानी पहचानो",
+  "questionTypeShort.A": "देश इंगित करो",
+  "questionTypeShort.B": "राजधानी इंगित करो",
+
+  "tabs.explore": "खोजें",
+  "tabs.play": "खेलें",
+  "tabs.passport": "पासपोर्ट",
+
+  "loading": "ग्लोब लोड हो रहा है\u2026",
+  "cancel": "रद्द करें",
+  "close": "बंद करें",
+  "continue": "जारी रखें",
+
+  "aria.userProfile": "उपयोगकर्ता प्रोफ़ाइल",
+  "aria.stats": "आँकड़े",
+  "aria.settings": "सेटिंग्स",
+  "aria.navigation": "मुख्य नेविगेशन"
+}

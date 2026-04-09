@@ -1,0 +1,11 @@
+{
+  "title": "Settings",
+  "vibration": "Vibration",
+  "language": "Language",
+  "languageValue": "English",
+  "theme": "Theme",
+  "themeValue": "Dark",
+  "themeLightValue": "Light",
+  "markers": "Island and small country markers",
+  "seaLabels": "Seas and oceans"
+}

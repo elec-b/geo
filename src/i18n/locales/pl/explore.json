@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Globus",
+  "segmented.table": "Tabela",
+  "labels.countries": "Kraje",
+  "labels.capitals": "Stolice",
+
+  "table.country": "Kraj",
+  "table.capital": "Stolica",
+  "table.population": "Lud.",
+  "table.nonUNToggle": "Terytoria spoza ONZ",
+
+  "card.disclaimer.antarctica": "Terytorium międzynarodowe — Traktat Antarktyczny (1959)",
+  "card.disclaimer.territory": "Terytorium {{sovereign}}",
+  "card.disclaimer.disputed": "Sporny status suwerenności",
+  "card.flagAlt": "Flaga {{country}}",
+  "card.aria.openWikipedia": "Otwórz {{country}} w Wikipedii",
+  "card.aria.dialog": "Karta {{country}}",
+
+  "card.field.capital": "Stolica",
+  "card.field.population": "Ludność",
+  "card.field.area": "Powierzchnia",
+  "card.field.density": "Gęstość",
+  "card.field.currency": "Waluta",
+  "card.field.demonym": "Demonym",
+  "card.field.languages": "Języki",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "mieszk.",
+  "card.unit.densityUnit": "mieszk./km²",
+  "card.na": "B/D",
+
+  "card.tooltip.hdi": "Wskaźnik Rozwoju Społecznego: mierzy zdrowie, edukację i dochody. Zakres 0–1.",
+  "card.tooltip.ihdi": "HDI skorygowany o nierówności: uwzględnia nierówności w zdrowiu, edukacji i dochodach.",
+  "card.aria.hdiInfo": "Informacja o HDI",
+  "card.aria.ihdiInfo": "Informacja o IHDI",
+
+  "card.antarctica.info": "Antarktyda nie należy do żadnego kraju. Traktat Antarktyczny, podpisany w 1959 roku, rezerwuje ją dla badań naukowych i zabrania działalności wojskowej oraz eksploatacji zasobów.",
+
+  "card.sovereign.GB": "Wielkiej Brytanii",
+  "card.sovereign.FR": "Francji",
+  "card.sovereign.US": "Stanów Zjednoczonych",
+  "card.sovereign.NL": "Holandii",
+  "card.sovereign.DK": "Danii",
+  "card.sovereign.CN": "Chin",
+  "card.sovereign.NZ": "Nowej Zelandii",
+  "card.sovereign.FI": "Finlandii",
+  "card.sovereign.AU": "Australii"
+}

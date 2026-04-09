@@ -1,0 +1,41 @@
+{
+  "continent.africa": "아프리카",
+  "continent.america": "아메리카",
+  "continent.asia": "아시아",
+  "continent.europe": "유럽",
+  "continent.oceania": "오세아니아",
+  "continent.antarctica": "남극",
+  "continentFilter.all": "전체",
+
+  "level.tourist": "여행자",
+  "level.backpacker": "배낭여행자",
+  "level.guide": "가이드",
+
+  "questionType.E": "나라를 맞혀보세요",
+  "questionType.C": "나라에서 수도로",
+  "questionType.D": "수도에서 나라로",
+  "questionType.F": "수도를 맞혀보세요",
+  "questionType.A": "나라를 찾아보세요",
+  "questionType.B": "수도를 찾아보세요",
+
+  "questionTypeShort.E": "나라 맞히기",
+  "questionTypeShort.C": "나라에서 수도",
+  "questionTypeShort.D": "수도에서 나라",
+  "questionTypeShort.F": "수도 맞히기",
+  "questionTypeShort.A": "나라 찾기",
+  "questionTypeShort.B": "수도 찾기",
+
+  "tabs.explore": "탐험",
+  "tabs.play": "플레이",
+  "tabs.passport": "여권",
+
+  "loading": "지구본 로딩 중\u2026",
+  "cancel": "취소",
+  "close": "닫기",
+  "continue": "계속",
+
+  "aria.userProfile": "사용자 프로필",
+  "aria.stats": "통계",
+  "aria.settings": "설정",
+  "aria.navigation": "메인 내비게이션"
+}

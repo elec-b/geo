@@ -1,0 +1,16 @@
+{
+  "header.title": "Passeport de {{name}}",
+  "header.globalLevel": "Niveau global\u00a0: {{level}}",
+  "emptyState": "Chaque tampon prouve ce que tu sais. Rempliras-tu le passeport\u00a0?",
+
+  "legend.country": "\u25cb Pays",
+  "legend.capital": "\u25ce Capitale",
+  "legend.earned": "\u2605 Obtenu",
+  "legend.locked": "Bloqu\u00e9",
+
+  "stampTitle.countries": "Tampon Pays",
+  "stampTitle.capitals": "Tampon Capitales",
+
+  "modal.title": "\u00c9preuve de tampon",
+  "modal.questionCount": "Tu devras r\u00e9pondre \u00e0 {{count}} questions sans aucune erreur."
+}

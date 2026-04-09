@@ -1,0 +1,33 @@
+{
+  "title": "Statistik",
+  "aria.close": "St\u00e4ng",
+  "tabs.play": "Spela",
+  "tabs.stamps": "St\u00e4mpelprov",
+
+  "table.country": "Land",
+  "aria.showIndicators": "Visa indikatorer",
+  "aria.showPercent": "Visa procent",
+
+  "typeLabel.E": "Identifiera landet",
+  "typeLabel.C": "Land till huvudstad",
+  "typeLabel.D": "Huvudstad till land",
+  "typeLabel.F": "Identifiera huvudstaden",
+  "typeLabel.A": "Peka ut landet",
+  "typeLabel.B": "Peka ut huvudstaden",
+
+  "stampLabel.A.short": "\u25ef L\u00e4nder",
+  "stampLabel.A.full": "St\u00e4mpelprov L\u00e4nder",
+  "stampLabel.B.short": "\u25ce Huvudst\u00e4der",
+  "stampLabel.B.full": "St\u00e4mpelprov Huvudst\u00e4der",
+
+  "legend.dominated": "Bemästrat",
+  "legend.inferred": "H\u00e4rlett",
+  "legend.reinforcement": "F\u00f6rst\u00e4rkning",
+  "legend.noData": "Ingen data",
+  "legend.correct": "R\u00e4tt",
+  "legend.incorrect": "Fel",
+
+  "reset.button": "\u00c5terst\u00e4ll statistik",
+  "reset.confirm": "\u00c5terst\u00e4lla spelstatistik f\u00f6r {{level}} - {{continent}}?",
+  "stampNotice": "St\u00e4mplar och provhistorik \u00e4r permanenta, precis som i ett riktigt pass. Vill du b\u00f6rja om, skapa en ny profil."
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Statistiky",
+  "aria.close": "Zavřít",
+  "tabs.play": "Hraj",
+  "tabs.stamps": "Zkoušky razítka",
+
+  "table.country": "Země",
+  "aria.showIndicators": "Zobrazit ukazatele",
+  "aria.showPercent": "Zobrazit procenta",
+
+  "typeLabel.E": "Rozpoznej zemi",
+  "typeLabel.C": "Země na hlavní město",
+  "typeLabel.D": "Hlavní město na zemi",
+  "typeLabel.F": "Rozpoznej hlavní město",
+  "typeLabel.A": "Ukaž zemi",
+  "typeLabel.B": "Ukaž hlavní město",
+
+  "stampLabel.A.short": "◯ Země",
+  "stampLabel.A.full": "Zkouška razítka ze Zemí",
+  "stampLabel.B.short": "◎ Hlavní města",
+  "stampLabel.B.full": "Zkouška razítka z Hlavních měst",
+
+  "legend.dominated": "Zvládnuto",
+  "legend.inferred": "Odvozeno",
+  "legend.reinforcement": "Upevňování",
+  "legend.noData": "Bez dat",
+  "legend.correct": "Správně",
+  "legend.incorrect": "Špatně",
+
+  "reset.button": "Resetovat statistiky",
+  "reset.confirm": "Resetovat statistiky hry pro {{level}} - {{continent}}?",
+  "stampNotice": "Razítka a historie zkoušek jsou trvalé, jako v opravdovém pasu. Pokud chceš začít od nuly, vytvoř nový profil."
+}

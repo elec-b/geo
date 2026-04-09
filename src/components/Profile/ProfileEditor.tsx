@@ -1,7 +1,8 @@
 // Editor de perfil — crear o editar nombre y avatar
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../stores/appStore';
-import { AVATARS, DEFAULT_AVATAR, AVATAR_MAP } from '../../data/avatars';
+import { ANIMAL_AVATARS, COLOR_AVATARS, DEFAULT_AVATAR, AVATAR_MAP, isColorAvatar } from '../../data/avatars';
 import type { UserProfile, AvatarId } from '../../stores/types';
 import './ProfileEditor.css';
 
@@ -10,18 +11,20 @@ interface ProfileEditorProps {
   editProfile?: UserProfile;
   defaultName?: string;
   onClose: () => void;
-  onSave: () => void;
+  onSave: (created: boolean) => void;
 }
 
 export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: ProfileEditorProps) {
+  const { t } = useTranslation('profile');
   const createProfile = useAppStore((s) => s.createProfile);
   const updateProfile = useAppStore((s) => s.updateProfile);
 
-  const [name, setName] = useState(editProfile?.name ?? defaultName ?? 'Explorador');
+  const isEdit = !!editProfile;
+  const [name, setName] = useState(isEdit ? (editProfile?.name ?? '') : '');
   const [avatar, setAvatar] = useState<AvatarId>(editProfile?.avatar ?? DEFAULT_AVATAR);
 
-  const isEdit = !!editProfile;
-  const canSave = name.trim().length > 0;
+  // En creación, vacío = nombre por defecto; en edición, se requiere nombre
+  const canSave = isEdit ? name.trim().length > 0 : true;
 
   const handleSave = () => {
     if (!canSave) return;
@@ -30,9 +33,10 @@ export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: Pro
     if (isEdit) {
       updateProfile(editProfile.id, { name: trimmed, avatar });
     } else {
-      createProfile(trimmed, avatar);
+      const finalName = trimmed || defaultName || t('defaultName');
+      createProfile(finalName, avatar);
     }
-    onSave();
+    onSave(!isEdit);
   };
 
   // Cerrar al pulsar el overlay
@@ -43,50 +47,74 @@ export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: Pro
   const selectedDef = AVATAR_MAP.get(avatar) ?? AVATAR_MAP.get(DEFAULT_AVATAR)!;
 
   return (
-    <div className="profile-editor-overlay" onClick={handleOverlayClick} role="dialog" aria-label={isEdit ? 'Editar perfil' : 'Crear perfil'}>
+    <div className="profile-editor-overlay" onClick={handleOverlayClick} role="dialog" aria-label={isEdit ? t('editor.titleEdit') : t('editor.titleCreate')}>
       <div className="profile-editor">
         <div className="profile-editor__header">
-          <h2 className="profile-editor__title">{isEdit ? 'Editar perfil' : 'Crear perfil'}</h2>
-          <button className="profile-editor__close" onClick={onClose} aria-label="Cerrar">
+          <h2 className="profile-editor__title">{isEdit ? t('editor.titleEdit') : t('editor.titleCreate')}</h2>
+          <button className="profile-editor__close" onClick={onClose} aria-label={t('common:close')}>
             ✕
           </button>
         </div>
 
         {/* Avatar preview */}
         <div className="profile-editor__preview">
-          <img
-            src={selectedDef.path}
-            alt={selectedDef.label}
-            className="profile-editor__preview-avatar"
-            draggable={false}
-          />
+          {isColorAvatar(selectedDef) ? (
+            <div
+              className="profile-editor__preview-avatar profile-editor__preview-avatar--color"
+              style={{ backgroundColor: selectedDef.color }}
+              role="img"
+              aria-label={t(selectedDef.label)}
+            />
+          ) : (
+            <img
+              src={selectedDef.path}
+              alt={t(selectedDef.label)}
+              className="profile-editor__preview-avatar"
+              draggable={false}
+            />
+          )}
         </div>
 
-        {/* Grid de avatares */}
-        <p className="profile-editor__avatar-label">Elige tu avatar</p>
+        {/* Grid de avatares animales */}
+        <p className="profile-editor__avatar-label">{t('editor.chooseAvatar')}</p>
         <div className="profile-editor__avatar-grid">
-          {AVATARS.map((a) => (
+          {ANIMAL_AVATARS.map((a) => (
             <button
               key={a.id}
               className={`profile-editor__avatar-option${a.id === avatar ? ' profile-editor__avatar-option--selected' : ''}`}
               onClick={() => setAvatar(a.id)}
-              aria-label={a.label}
+              aria-label={t(a.label)}
             >
-              <img src={a.path} alt={a.label} draggable={false} />
+              <img src={a.path} alt={t(a.label)} draggable={false} />
+            </button>
+          ))}
+        </div>
+
+        {/* Grid de avatares de color */}
+        <p className="profile-editor__avatar-label">{t('editor.chooseColor')}</p>
+        <div className="profile-editor__color-grid">
+          {COLOR_AVATARS.map((c) => (
+            <button
+              key={c.id}
+              className={`profile-editor__color-option${c.id === avatar ? ' profile-editor__color-option--selected' : ''}`}
+              onClick={() => setAvatar(c.id)}
+              aria-label={t(c.label)}
+            >
+              <div className="profile-editor__color-swatch" style={{ backgroundColor: c.color }} />
             </button>
           ))}
         </div>
 
         {/* Input nombre */}
-        <label className="profile-editor__name-label">Nombre</label>
+        <label className="profile-editor__name-label">{t('editor.nameLabel')}</label>
         <input
           className="profile-editor__name-input"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Nombre del perfil"
+          placeholder={isEdit ? t('editor.namePlaceholder') : (defaultName || t('defaultName'))}
           maxLength={30}
-          autoFocus={!isEdit}
+          autoFocus={false}
         />
 
         {/* Acciones */}
@@ -96,10 +124,10 @@ export function ProfileEditor({ editProfile, defaultName, onClose, onSave }: Pro
             onClick={handleSave}
             disabled={!canSave}
           >
-            {isEdit ? 'Guardar' : 'Crear'}
+            {isEdit ? t('editor.save') : t('editor.create')}
           </button>
           <button className="profile-editor__cancel-btn" onClick={onClose}>
-            Cancelar
+            {t('common:cancel')}
           </button>
         </div>
       </div>

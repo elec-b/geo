@@ -15,9 +15,9 @@ import type { FeatureCollection } from 'geojson';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 
-// IDs numéricos ISO 3166 de los 10 países a extraer
+// IDs numéricos ISO 3166 de los 11 países/territorios a extraer
 const OVERRIDE_IDS = new Set([
-  // Pacífico (8)
+  // Pacífico (9)
   '583',  // FM — Micronesia
   '584',  // MH — Islas Marshall
   '798',  // TV — Tuvalu
@@ -26,6 +26,7 @@ const OVERRIDE_IDS = new Set([
   '296',  // KI — Kiribati
   '548',  // VU — Vanuatu
   '242',  // FJ — Fiyi
+  '612',  // PN — Pitcairn (Adamstown ausente en 50m, solo Henderson)
   // Índico (2)
   '690',  // SC — Seychelles
   '462',  // MV — Maldivas
@@ -40,6 +41,7 @@ const ID_TO_NAME: Record<string, string> = {
   '296': 'Kiribati',
   '548': 'Vanuatu',
   '242': 'Fiji',
+  '612': 'Pitcairn Islands',
   '690': 'Seychelles',
   '462': 'Maldives',
 };

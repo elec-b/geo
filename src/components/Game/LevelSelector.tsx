@@ -1,34 +1,21 @@
 // Selector de continente + nivel para iniciar una partida
 import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { Continent, GameLevel, LevelDefinition } from '../../data/types';
 import type { QuestionTypeFilter } from '../../data/gameQuestions';
 import { useAppStore } from '../../stores/appStore';
 import { isLevelUnlocked, isTypeFullyDominated, getAttemptsWithInheritance, type StampsData } from '../../data/learningAlgorithm';
-import { inferContinentFromTimezone } from '../../data/continents';
+import { CONTINENTS, CONTINENT_CSS_VAR, inferContinentFromTimezone } from '../../data/continents';
+import { LEVELS, LEVEL_EMOJI } from '../../data/levels';
 import './LevelSelector.css';
 
-// Orden olímpico — colores vía CSS variables (compartidos con Explorar y Pasaporte)
-const CONTINENTS: { id: Continent; label: string; cssVar: string }[] = [
-  { id: 'Europa', label: 'Europa', cssVar: '--color-europe' },
-  { id: 'África', label: 'África', cssVar: '--color-africa' },
-  { id: 'América', label: 'América', cssVar: '--color-america' },
-  { id: 'Asia', label: 'Asia', cssVar: '--color-asia' },
-  { id: 'Oceanía', label: 'Oceanía', cssVar: '--color-oceania' },
-];
-
-const LEVELS: { id: GameLevel; label: string; emoji: string }[] = [
-  { id: 'turista', label: 'Turista', emoji: '🧳' },
-  { id: 'mochilero', label: 'Mochilero', emoji: '🎒' },
-  { id: 'guía', label: 'Guía', emoji: '🗺️' },
-];
-
-const SPECIFIC_TYPES: { id: QuestionTypeFilter; label: string; icon: string; badge?: string }[] = [
-  { id: 'E', label: 'Identifica país', icon: '◯?' },
-  { id: 'C', label: 'País a capital', icon: '◯→◎' },
-  { id: 'D', label: 'Capital a país', icon: '◎→◯' },
-  { id: 'F', label: 'Identifica capital', icon: '◎?' },
-  { id: 'A', label: 'Señala el país', icon: '◯', badge: '🔖' },
-  { id: 'B', label: 'Señala la capital', icon: '◎', badge: '🔖' },
+const SPECIFIC_TYPES: { id: QuestionTypeFilter; icon: string; badge?: string }[] = [
+  { id: 'E', icon: '◯?' },
+  { id: 'C', icon: '◯→◎' },
+  { id: 'D', icon: '◎→◯' },
+  { id: 'F', icon: '◎?' },
+  { id: 'A', icon: '◯', badge: '🔖' },
+  { id: 'B', icon: '◎', badge: '🔖' },
 ];
 
 interface LevelSelectorProps {
@@ -39,6 +26,7 @@ interface LevelSelectorProps {
 }
 
 export function LevelSelector({ levels, onStart, onContinentSelect, onStampBannerClick }: LevelSelectorProps) {
+  const { t } = useTranslation('game');
   const lastPlayed = useAppStore((s) => s.settings.lastPlayed);
   const getStamps = useAppStore((s) => s.getStamps);
   const activeProfile = useAppStore((s) => s.getActiveProfile());
@@ -51,15 +39,15 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
   const [selectedType, setSelectedType] = useState<QuestionTypeFilter>('mixed');
   const [typesExpanded, setTypesExpanded] = useState(false);
   const [lockedToast, setLockedToast] = useState<string | null>(null);
-  const startRef = useRef<HTMLButtonElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   // Construir StampsData para verificar desbloqueo de niveles
   const stampsData = useMemo((): StampsData => {
     const data = {} as StampsData;
     for (const level of LEVELS) {
-      data[level.id] = {} as Record<Continent, { countries: boolean; capitals: boolean }>;
+      data[level] = {} as Record<Continent, { countries: boolean; capitals: boolean }>;
       for (const continent of CONTINENTS) {
-        data[level.id][continent.id] = getStamps(level.id, continent.id);
+        data[level][continent] = getStamps(level, continent);
       }
     }
     return data;
@@ -69,8 +57,8 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
   const defaultContinent = lastPlayed?.continent ?? inferContinentFromTimezone();
   // Siempre pre-seleccionar el máximo nivel desbloqueado
   const defaultLevel = useMemo(() => {
-    const unlocked = [...LEVELS].reverse().find((l) => isLevelUnlocked(l.id, defaultContinent, stampsData));
-    return unlocked?.id ?? ('turista' as GameLevel);
+    const unlocked = [...LEVELS].reverse().find((l) => isLevelUnlocked(l, defaultContinent, stampsData));
+    return unlocked ?? ('tourist' as GameLevel);
   }, [defaultContinent, stampsData]);
 
   const [selectedContinent, setSelectedContinent] = useState<Continent | null>(defaultContinent);
@@ -109,9 +97,9 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
     const readyB = !stamps.capitals && isTypeFullyDominated(attempts, def.countries, 'B');
 
     if (!readyA && !readyB) return null;
-    if (readyA && readyB) return '¡Listo para las pruebas de sello!';
-    if (readyA) return '¡Listo para la prueba de países!';
-    return '¡Listo para la prueba de capitales!';
+    if (readyA && readyB) return t('selector.stampReady.both');
+    if (readyA) return t('selector.stampReady.countries');
+    return t('selector.stampReady.capitals');
   }, [selectedLevel, selectedContinent, stampsData, levels, getStamps, getCountriesForLevel]);
 
   // Tipos de juego ya dominados para la combinación nivel-continente seleccionada
@@ -146,8 +134,8 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
       setSelectedContinent(continent);
       onContinentSelect(continent);
       // Siempre seleccionar el máximo nivel desbloqueado para el nuevo continente
-      const unlocked = [...LEVELS].reverse().find((l) => isLevelUnlocked(l.id, continent, stampsData));
-      if (unlocked) setSelectedLevel(unlocked.id);
+      const unlocked = [...LEVELS].reverse().find((l) => isLevelUnlocked(l, continent, stampsData));
+      if (unlocked) setSelectedLevel(unlocked);
     },
     [onContinentSelect, selectedLevel, stampsData],
   );
@@ -165,55 +153,56 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
   return (
     <div className="level-selector">
       <div className="level-selector__content">
-        <h2 className="level-selector__title">Elige continente</h2>
+        <div className="level-selector__scroll" ref={scrollRef}>
+        <h2 className="level-selector__title">{t('selector.chooseContinent')}</h2>
 
         {/* Pills de continente */}
         <div className="level-selector__continents">
-          {CONTINENTS.map(({ id, label, cssVar }) => (
+          {CONTINENTS.map((c) => (
             <button
-              key={id}
-              className={`level-selector__continent-pill ${selectedContinent === id ? 'level-selector__continent-pill--active' : ''}`}
-              onClick={() => handleContinentSelect(id)}
-              style={{ '--pill-color': `var(${cssVar})` } as React.CSSProperties}
+              key={c}
+              className={`level-selector__continent-pill ${selectedContinent === c ? 'level-selector__continent-pill--active' : ''}`}
+              onClick={() => handleContinentSelect(c)}
+              style={{ '--pill-color': `var(${CONTINENT_CSS_VAR[c]})` } as React.CSSProperties}
             >
-              {label}
+              {t(`common:continent.${c}`)}
             </button>
           ))}
         </div>
 
         {/* Tarjetas de nivel */}
-        <h2 className="level-selector__title level-selector__title--level">Elige nivel</h2>
+        <h2 className="level-selector__title level-selector__title--level">{t('selector.chooseLevel')}</h2>
         <div className="level-selector__levels">
-          {LEVELS.map(({ id, label, emoji }) => {
-            const count = selectedContinent ? getCountryCount(id, selectedContinent) : null;
+          {LEVELS.map((l) => {
+            const count = selectedContinent ? getCountryCount(l, selectedContinent) : null;
             const unlocked = selectedContinent
-              ? isLevelUnlocked(id, selectedContinent, stampsData)
+              ? isLevelUnlocked(l, selectedContinent, stampsData)
               : true;
-            const stamps = selectedContinent ? stampsData[id]?.[selectedContinent] : null;
+            const stamps = selectedContinent ? stampsData[l]?.[selectedContinent] : null;
             const completed = stamps?.countries && stamps?.capitals;
             return (
               <button
-                key={id}
+                key={l}
                 className={[
                   'level-selector__level-card',
-                  selectedLevel === id && 'level-selector__level-card--active',
+                  selectedLevel === l && 'level-selector__level-card--active',
                   !unlocked && 'level-selector__level-card--locked',
                 ].filter(Boolean).join(' ')}
                 onClick={() => {
                   if (unlocked) {
-                    setSelectedLevel(id);
+                    setSelectedLevel(l);
                   } else {
-                    setLockedToast('Consigue los sellos del nivel anterior');
+                    setLockedToast(t('selector.lockedToast'));
                     setTimeout(() => setLockedToast(null), 2500);
                   }
                 }}
               >
-                <span className="level-selector__level-emoji">{unlocked ? emoji : '🔒'}</span>
-                <span className="level-selector__level-name">{label}</span>
+                <span className="level-selector__level-emoji">{unlocked ? LEVEL_EMOJI[l] : '🔒'}</span>
+                <span className="level-selector__level-name">{t(`common:level.${l}`)}</span>
                 <span className={`level-selector__level-count${completed ? ' level-selector__level-count--completed' : ''}`}>
                   {completed
-                    ? 'Superado ★'
-                    : count != null ? `${count} ${count === 1 ? 'país' : 'países'}` : '—'}
+                    ? t('selector.completed')
+                    : count != null ? t('selector.countryCount', { count }) : '—'}
                 </span>
               </button>
             );
@@ -221,7 +210,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
         </div>
 
         {/* Tipo de juego */}
-        <h2 className="level-selector__title level-selector__title--level">Elige juego</h2>
+        <h2 className="level-selector__title level-selector__title--level">{t('selector.chooseGame')}</h2>
 
         {/* Botón Aventura (ancho completo, destacado) */}
         <button
@@ -234,8 +223,8 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
         >
           <span className="level-selector__aventura-icon">🧭</span>
           <span className="level-selector__aventura-text">
-            <span className="level-selector__aventura-name">Aventura{dominatedTypes.has('mixed') ? ' ✓' : ''}</span>
-            <span className="level-selector__aventura-desc">Se adapta a lo que sabes</span>
+            <span className="level-selector__aventura-name">{t('selector.adventure')}{dominatedTypes.has('mixed') ? ' ✓' : ''}</span>
+            <span className="level-selector__aventura-desc">{t('selector.adventureDesc')}</span>
           </span>
         </button>
 
@@ -246,7 +235,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
             setTypesExpanded((v) => {
               if (!v) {
                 requestAnimationFrame(() => {
-                  startRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                  scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' });
                 });
               }
               return !v;
@@ -255,7 +244,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
         >
           <span className="level-selector__types-divider-line" />
           <span className="level-selector__types-divider-text">
-            o elige juego concreto {typesExpanded ? '▴' : '▾'}
+            {t('selector.specificTypes')} {typesExpanded ? '▴' : '▾'}
           </span>
           <span className="level-selector__types-divider-line" />
         </button>
@@ -263,7 +252,7 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
         {/* Grid de tipos concretos (colapsable) */}
         {typesExpanded && (
           <div className="level-selector__types-grid">
-            {SPECIFIC_TYPES.map(({ id, label, icon, badge }) => {
+            {SPECIFIC_TYPES.map(({ id, icon, badge }) => {
               const isDominated = dominatedTypes.has(id);
               return (
                 <button
@@ -276,38 +265,41 @@ export function LevelSelector({ levels, onStart, onContinentSelect, onStampBanne
                   onClick={() => setSelectedType(id)}
                 >
                   <span className="level-selector__type-icon">{icon}</span>
-                  <span className="level-selector__type-label">{label}{badge ? ` ${badge}` : ''}{isDominated ? ' ✓' : ''}</span>
+                  <span className="level-selector__type-label">{t(`common:questionTypeShort.${id}`)}{badge ? ` ${badge}` : ''}{isDominated ? ' ✓' : ''}</span>
                 </button>
               );
             })}
           </div>
         )}
 
-        {/* Toast de nivel bloqueado */}
-        {lockedToast && (
-          <div className="level-selector__toast">{lockedToast}</div>
-        )}
+        </div>
 
-        {/* Banner de invitación a pruebas de sello (clickable) */}
-        {stampReadiness && !lockedToast && (
+        <div className="level-selector__footer">
+          {/* Toast de nivel bloqueado */}
+          {lockedToast && (
+            <div className="level-selector__toast">{lockedToast}</div>
+          )}
+
+          {/* Banner de invitación a pruebas de sello (clickable) */}
+          {stampReadiness && !lockedToast && (
+            <button
+              className="level-selector__stamp-banner"
+              onClick={() => selectedContinent && onStampBannerClick?.(selectedLevel, selectedContinent)}
+            >
+              {stampReadiness}
+            </button>
+          )}
+
+          {/* Botón empezar / continuar */}
           <button
-            className="level-selector__stamp-banner"
-            onClick={() => selectedContinent && onStampBannerClick?.(selectedLevel, selectedContinent)}
+            className={`level-selector__start ${!selectedContinent ? 'level-selector__start--disabled' : ''}`}
+            onClick={handleStart}
           >
-            {stampReadiness}
+            {selectedContinent && Object.keys(getAttempts(selectedLevel, selectedContinent)).length > 0
+              ? t('selector.continue')
+              : t('selector.start')}
           </button>
-        )}
-
-        {/* Botón empezar / continuar */}
-        <button
-          ref={startRef}
-          className={`level-selector__start ${!selectedContinent ? 'level-selector__start--disabled' : ''}`}
-          onClick={handleStart}
-        >
-          {selectedContinent && Object.keys(getAttempts(selectedLevel, selectedContinent)).length > 0
-            ? 'Continuar'
-            : 'Empezar'}
-        </button>
+        </div>
       </div>
     </div>
   );

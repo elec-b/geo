@@ -1,0 +1,16 @@
+{
+  "header.title": "Passaporto di {{name}}",
+  "header.globalLevel": "Livello globale: {{level}}",
+  "emptyState": "Ogni timbro dimostra ci\u00f2 che sai. Riempirai il passaporto?",
+
+  "legend.country": "\u25cb Paese",
+  "legend.capital": "\u25ce Capitale",
+  "legend.earned": "\u2605 Ottenuto",
+  "legend.locked": "Bloccato",
+
+  "stampTitle.countries": "Timbro Paesi",
+  "stampTitle.capitals": "Timbro Capitali",
+
+  "modal.title": "Prova timbro",
+  "modal.questionCount": "Dovrai rispondere a {{count}} domande senza nessun errore."
+}

@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Escolhe o continente",
+  "selector.chooseLevel": "Escolhe o n\u00edvel",
+  "selector.chooseGame": "Escolhe o jogo",
+  "selector.adventure": "Aventura",
+  "selector.adventureDesc": "Adapta-se ao que sabes",
+  "selector.specificTypes": "ou escolhe um jogo espec\u00edfico",
+  "selector.start": "Come\u00e7ar",
+  "selector.continue": "Continuar",
+  "selector.completed": "Superado \u2605",
+  "selector.countryCount_one": "{{count}} pa\u00eds",
+  "selector.countryCount_other": "{{count}} pa\u00edses",
+  "selector.lockedToast": "Obt\u00e9m os carimbos do n\u00edvel anterior",
+
+  "selector.stampReady.both": "Pronto para as provas de carimbo!",
+  "selector.stampReady.countries": "Pronto para a prova de pa\u00edses!",
+  "selector.stampReady.capitals": "Pronto para a prova de capitais!",
+
+  "question.locate": "Localiza",
+  "question.locateCapital": "Localiza a capital",
+  "question.capitalOf": "Qual \u00e9 a capital de {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} \u00e9 a capital de\u2026",
+  "question.whichCountry": "Que pa\u00eds est\u00e1 destacado?",
+  "question.whichCapital": "Qual \u00e9 a capital deste pa\u00eds?",
+
+  "progress.stampTest": "Prova de carimbo: {{current}} de {{total}}",
+  "progress.adventurePercent": "{{percent}}% conclu\u00eddo",
+  "progress.typeDominated": "{{current}} de {{total}} dominados",
+  "progress.stampBanner.countries": "Prova de carimbo: Pa\u00edses",
+  "progress.stampBanner.capitals": "Prova de carimbo: Capitais",
+
+  "modal.stampEarned.title": "Carimbo obtido",
+  "modal.stampEarned.text": "{{correct}} de {{total}} corretos. Sem erros.",
+
+  "modal.stampFailed.veryClose": "Quase!",
+  "modal.stampFailed.veryCloseText": "A um passo do carimbo.",
+  "modal.stampFailed.goodTry": "Boa tentativa!",
+  "modal.stampFailed.goodTryText": "Cada tentativa aproxima-te mais.",
+  "modal.stampFailed.onTrack": "Est\u00e1s no bom caminho",
+  "modal.stampFailed.onTrackText": "Continua a jogar \u2014 o progresso nota-se.",
+  "modal.stampFailed.dontGiveUp": "N\u00e3o desistas",
+  "modal.stampFailed.dontGiveUpText": "A pr\u00e1tica faz o mestre.",
+  "modal.stampFailed.score": "{{correct}} de {{total}} corretos.",
+
+  "modal.poolExhausted.trainingComplete": "Treino conclu\u00eddo",
+  "modal.poolExhausted.readyForStamp": "Fant\u00e1stico!<br />Pronto para o carimbo",
+  "modal.poolExhausted.completedText": "Completaste <em>{{continent}}</em> no n\u00edvel <em>{{level}}</em>. Podes repor as estat\u00edsticas para voltar a praticar.",
+  "modal.poolExhausted.chooseStamp": "Escolhe uma prova. Ter\u00e1s de a completar sem erros para obteres o carimbo.",
+  "modal.poolExhausted.typePassed": "Fant\u00e1stico!<br /><em>{{type}}</em> conclu\u00eddo",
+  "modal.poolExhausted.stampReady": "Est\u00e1s pronto para a prova de carimbo. Completa-a sem erros para o obteres.",
+  "modal.poolExhausted.tryStamp.countries": "Tentar carimbo de Pa\u00edses",
+  "modal.poolExhausted.tryStamp.capitals": "Tentar carimbo de Capitais",
+  "modal.poolExhausted.selectOther": "Escolher outro jogo",
+  "modal.poolExhausted.playType": "Jogar <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Jogar <em>Aventura</em>",
+
+  "stamp.countries": "Carimbo de Pa\u00edses",
+  "stamp.capitals": "Carimbo de Capitais",
+
+  "modal.stampChooser.title": "Prova de carimbo",
+  "modal.stampChooser.text": "Escolhe uma prova. Ter\u00e1s de responder a {{count}} perguntas sem nenhum erro.",
+
+  "modal.alreadyDominated.title": "Dominas<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Acertaste todos os pa\u00edses. Podes repor as estat\u00edsticas para voltar a praticar.",
+  "modal.alreadyDominated.completedTraining": "Completaste o treino de <em>{{continent}}</em> no n\u00edvel <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Tentar prova de carimbo",
+  "modal.alreadyDominated.goToStats": "Ir para Estat\u00edsticas"
+}

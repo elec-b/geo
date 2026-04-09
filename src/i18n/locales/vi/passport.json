@@ -1,0 +1,16 @@
+{
+  "header.title": "Hộ chiếu của {{name}}",
+  "header.globalLevel": "Cấp độ chung: {{level}}",
+  "emptyState": "Mỗi con tem chứng minh kiến thức của bạn. Bạn sẽ lấp đầy hộ chiếu chứ?",
+
+  "legend.country": "○ Quốc gia",
+  "legend.capital": "◎ Thủ đô",
+  "legend.earned": "★ Đã đạt",
+  "legend.locked": "Khoá",
+
+  "stampTitle.countries": "Tem Quốc gia",
+  "stampTitle.capitals": "Tem Thủ đô",
+
+  "modal.title": "Bài kiểm tra tem",
+  "modal.questionCount": "Bạn cần trả lời đúng {{count}} câu hỏi không sai lần nào."
+}

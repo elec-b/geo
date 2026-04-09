@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Choisis un continent",
+  "selector.chooseLevel": "Choisis un niveau",
+  "selector.chooseGame": "Choisis un jeu",
+  "selector.adventure": "Aventure",
+  "selector.adventureDesc": "S'adapte \u00e0 tes connaissances",
+  "selector.specificTypes": "ou choisis un jeu pr\u00e9cis",
+  "selector.start": "Commencer",
+  "selector.continue": "Continuer",
+  "selector.completed": "R\u00e9ussi \u2605",
+  "selector.countryCount_one": "{{count}} pays",
+  "selector.countryCount_other": "{{count}} pays",
+  "selector.lockedToast": "Obtiens les tampons du niveau pr\u00e9c\u00e9dent",
+
+  "selector.stampReady.both": "Pr\u00eat pour les \u00e9preuves de tampon\u00a0!",
+  "selector.stampReady.countries": "Pr\u00eat pour l'\u00e9preuve des pays\u00a0!",
+  "selector.stampReady.capitals": "Pr\u00eat pour l'\u00e9preuve des capitales\u00a0!",
+
+  "question.locate": "Localise",
+  "question.locateCapital": "Localise la capitale",
+  "question.capitalOf": "Quelle est la capitale de {{country}}\u00a0?",
+  "question.capitalBelongsTo": "{{capital}} est la capitale de\u2026",
+  "question.whichCountry": "Quel pays est mis en \u00e9vidence\u00a0?",
+  "question.whichCapital": "Quelle est la capitale de ce pays\u00a0?",
+
+  "progress.stampTest": "\u00c9preuve de tampon\u00a0: {{current}} sur {{total}}",
+  "progress.adventurePercent": "{{percent}}\u00a0% termin\u00e9",
+  "progress.typeDominated": "{{current}} sur {{total}} ma\u00eetris\u00e9s",
+  "progress.stampBanner.countries": "\u00c9preuve de tampon\u00a0: Pays",
+  "progress.stampBanner.capitals": "\u00c9preuve de tampon\u00a0: Capitales",
+
+  "modal.stampEarned.title": "Tampon obtenu",
+  "modal.stampEarned.text": "{{correct}} sur {{total}} corrects. Aucune erreur.",
+
+  "modal.stampFailed.veryClose": "Presque\u00a0!",
+  "modal.stampFailed.veryCloseText": "\u00c0 un cheveu du tampon.",
+  "modal.stampFailed.goodTry": "Bien jou\u00e9\u00a0!",
+  "modal.stampFailed.goodTryText": "Chaque tentative te rapproche.",
+  "modal.stampFailed.onTrack": "Tu es sur la bonne voie",
+  "modal.stampFailed.onTrackText": "Continue \u00e0 jouer, tes progr\u00e8s sont visibles.",
+  "modal.stampFailed.dontGiveUp": "N'abandonne pas",
+  "modal.stampFailed.dontGiveUpText": "C'est en forgeant qu'on devient forgeron.",
+  "modal.stampFailed.score": "{{correct}} sur {{total}} corrects.",
+
+  "modal.poolExhausted.trainingComplete": "Entra\u00eenement termin\u00e9",
+  "modal.poolExhausted.readyForStamp": "G\u00e9nial\u00a0!<br />Pr\u00eat pour le tampon",
+  "modal.poolExhausted.completedText": "Tu as termin\u00e9 <em>{{continent}}</em> au niveau <em>{{level}}</em>. Tu peux r\u00e9initialiser les stats pour t'entra\u00eener \u00e0 nouveau.",
+  "modal.poolExhausted.chooseStamp": "Choisis une \u00e9preuve. Tu devras la r\u00e9ussir sans erreur pour obtenir le tampon.",
+  "modal.poolExhausted.typePassed": "G\u00e9nial\u00a0!<br /><em>{{type}}</em> termin\u00e9",
+  "modal.poolExhausted.stampReady": "Tu es pr\u00eat pour l'\u00e9preuve de tampon. R\u00e9ussis-la sans erreur pour l'obtenir.",
+  "modal.poolExhausted.tryStamp.countries": "Tenter le tampon Pays",
+  "modal.poolExhausted.tryStamp.capitals": "Tenter le tampon Capitales",
+  "modal.poolExhausted.selectOther": "Choisir un autre jeu",
+  "modal.poolExhausted.playType": "Jouer \u00e0 <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Jouer \u00e0 <em>Aventure</em>",
+
+  "stamp.countries": "Tampon Pays",
+  "stamp.capitals": "Tampon Capitales",
+
+  "modal.stampChooser.title": "\u00c9preuve de tampon",
+  "modal.stampChooser.text": "Choisis une \u00e9preuve. Tu devras r\u00e9pondre \u00e0 {{count}} questions sans erreur.",
+
+  "modal.alreadyDominated.title": "Tu ma\u00eetrises<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Tu as trouv\u00e9 tous les pays. Tu peux r\u00e9initialiser les stats pour t'entra\u00eener \u00e0 nouveau.",
+  "modal.alreadyDominated.completedTraining": "Tu as termin\u00e9 l'entra\u00eenement de <em>{{continent}}</em> au niveau <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Tenter l'\u00e9preuve de tampon",
+  "modal.alreadyDominated.goToStats": "Voir les Statistiques"
+}

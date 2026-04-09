@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Kıta seç",
+  "selector.chooseLevel": "Seviye seç",
+  "selector.chooseGame": "Oyun seç",
+  "selector.adventure": "Macera",
+  "selector.adventureDesc": "Bilgine göre uyarlanır",
+  "selector.specificTypes": "veya belirli bir oyun seç",
+  "selector.start": "Başla",
+  "selector.continue": "Devam",
+  "selector.completed": "Tamamlandı ★",
+  "selector.countryCount_one": "{{count}} ülke",
+  "selector.countryCount_other": "{{count}} ülke",
+  "selector.lockedToast": "Önceki seviyenin damgalarını kazan",
+
+  "selector.stampReady.both": "Damga sınavlarına hazırsın!",
+  "selector.stampReady.countries": "Ülkeler sınavına hazırsın!",
+  "selector.stampReady.capitals": "Başkentler sınavına hazırsın!",
+
+  "question.locate": "Bul",
+  "question.locateCapital": "Başkenti bul",
+  "question.capitalOf": "{{country}} başkenti nedir?",
+  "question.capitalBelongsTo": "{{capital}} hangi ülkenin başkentidir?",
+  "question.whichCountry": "Hangi ülke vurgulanmış?",
+  "question.whichCapital": "Bu ülkenin başkenti nedir?",
+
+  "progress.stampTest": "Damga sınavı: {{current}} / {{total}}",
+  "progress.adventurePercent": "%{{percent}} tamamlandı",
+  "progress.typeDominated": "{{current}} / {{total}} öğrenildi",
+  "progress.stampBanner.countries": "Damga sınavı: Ülkeler",
+  "progress.stampBanner.capitals": "Damga sınavı: Başkentler",
+
+  "modal.stampEarned.title": "Damga kazanıldı",
+  "modal.stampEarned.text": "{{correct}} / {{total}} doğru. Hatasız.",
+
+  "modal.stampFailed.veryClose": "Çok yaklaştın!",
+  "modal.stampFailed.veryCloseText": "Damgaya bir adım kaldı.",
+  "modal.stampFailed.goodTry": "İyi deneme!",
+  "modal.stampFailed.goodTryText": "Her deneme seni hedefe yaklaştırıyor.",
+  "modal.stampFailed.onTrack": "Doğru yoldasın",
+  "modal.stampFailed.onTrackText": "Oynamaya devam et, ilerleme görülüyor.",
+  "modal.stampFailed.dontGiveUp": "Vazgeçme",
+  "modal.stampFailed.dontGiveUpText": "Tekrar tekrar yapmak ustayı yapar.",
+  "modal.stampFailed.score": "{{correct}} / {{total}} doğru.",
+
+  "modal.poolExhausted.trainingComplete": "Eğitim tamamlandı",
+  "modal.poolExhausted.readyForStamp": "Harika!<br />Damgaya hazırsın",
+  "modal.poolExhausted.completedText": "<em>{{continent}}</em> kıtasını <em>{{level}}</em> seviyesinde tamamladın. Tekrar pratik yapmak için istatistikleri sıfırlayabilirsin.",
+  "modal.poolExhausted.chooseStamp": "Bir sınav seç. Damgayı kazanmak için hatasız tamamlamalısın.",
+  "modal.poolExhausted.typePassed": "Harika!<br /><em>{{type}}</em> tamamlandı",
+  "modal.poolExhausted.stampReady": "Damga sınavına hazırsın. Damgayı kazanmak için hatasız tamamla.",
+  "modal.poolExhausted.tryStamp.countries": "Ülkeler damgasını dene",
+  "modal.poolExhausted.tryStamp.capitals": "Başkentler damgasını dene",
+  "modal.poolExhausted.selectOther": "Başka oyun seç",
+  "modal.poolExhausted.playType": "<em>{{type}}</em> oyna",
+  "modal.poolExhausted.playAdventure": "<em>Macera</em> oyna",
+
+  "stamp.countries": "Ülkeler Damgası",
+  "stamp.capitals": "Başkentler Damgası",
+
+  "modal.stampChooser.title": "Damga sınavı",
+  "modal.stampChooser.text": "Bir sınav seç. {{count}} soruyu hatasız cevaplamalısın.",
+
+  "modal.alreadyDominated.title": "Zaten öğrendin<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Tüm ülkeleri doğru cevapladın. Tekrar pratik yapmak için istatistikleri sıfırlayabilirsin.",
+  "modal.alreadyDominated.completedTraining": "<em>{{continent}}</em> eğitimini <em>{{level}}</em> seviyesinde tamamladın.",
+  "modal.alreadyDominated.tryStamp": "Damga sınavını dene",
+  "modal.alreadyDominated.goToStats": "İstatistiklere git"
+}

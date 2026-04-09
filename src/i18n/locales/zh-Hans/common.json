@@ -1,0 +1,41 @@
+{
+  "continent.africa": "非洲",
+  "continent.america": "美洲",
+  "continent.asia": "亚洲",
+  "continent.europe": "欧洲",
+  "continent.oceania": "大洋洲",
+  "continent.antarctica": "南极洲",
+  "continentFilter.all": "全部",
+
+  "level.tourist": "游客",
+  "level.backpacker": "背包客",
+  "level.guide": "导游",
+
+  "questionType.E": "识别国家",
+  "questionType.C": "国家猜首都",
+  "questionType.D": "首都猜国家",
+  "questionType.F": "识别首都",
+  "questionType.A": "指出国家",
+  "questionType.B": "指出首都",
+
+  "questionTypeShort.E": "识别国家",
+  "questionTypeShort.C": "国家猜首都",
+  "questionTypeShort.D": "首都猜国家",
+  "questionTypeShort.F": "识别首都",
+  "questionTypeShort.A": "指出国家",
+  "questionTypeShort.B": "指出首都",
+
+  "tabs.explore": "探索",
+  "tabs.play": "游戏",
+  "tabs.passport": "护照",
+
+  "loading": "正在加载地球仪\u2026",
+  "cancel": "取消",
+  "close": "关闭",
+  "continue": "继续",
+
+  "aria.userProfile": "用户资料",
+  "aria.stats": "统计",
+  "aria.settings": "设置",
+  "aria.navigation": "主导航"
+}

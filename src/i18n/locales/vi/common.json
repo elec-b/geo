@@ -1,0 +1,41 @@
+{
+  "continent.africa": "Châu Phi",
+  "continent.america": "Châu Mỹ",
+  "continent.asia": "Châu Á",
+  "continent.europe": "Châu Âu",
+  "continent.oceania": "Châu Đại Dương",
+  "continent.antarctica": "Nam Cực",
+  "continentFilter.all": "Tất cả",
+
+  "level.tourist": "Khách du lịch",
+  "level.backpacker": "Phượt thủ",
+  "level.guide": "Hướng dẫn viên",
+
+  "questionType.E": "Nhận diện quốc gia",
+  "questionType.C": "Quốc gia theo thủ đô",
+  "questionType.D": "Thủ đô theo quốc gia",
+  "questionType.F": "Nhận diện thủ đô",
+  "questionType.A": "Chỉ quốc gia",
+  "questionType.B": "Chỉ thủ đô",
+
+  "questionTypeShort.E": "Nhận diện quốc gia",
+  "questionTypeShort.C": "Quốc gia theo thủ đô",
+  "questionTypeShort.D": "Thủ đô theo quốc gia",
+  "questionTypeShort.F": "Nhận diện thủ đô",
+  "questionTypeShort.A": "Chỉ quốc gia",
+  "questionTypeShort.B": "Chỉ thủ đô",
+
+  "tabs.explore": "Khám phá",
+  "tabs.play": "Chơi",
+  "tabs.passport": "Hộ chiếu",
+
+  "loading": "Đang tải quả địa cầu…",
+  "cancel": "Huỷ",
+  "close": "Đóng",
+  "continue": "Tiếp tục",
+
+  "aria.userProfile": "Hồ sơ người dùng",
+  "aria.stats": "Thống kê",
+  "aria.settings": "Cài đặt",
+  "aria.navigation": "Điều hướng chính"
+}

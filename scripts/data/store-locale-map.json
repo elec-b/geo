@@ -1,0 +1,74 @@
+{
+  "_comment": "Mapeo de nuestros códigos de locale internos → códigos de App Store (iOS) y Google Play (Android). Uso: publicación de metadata en stores. Ver docs/spikes/ampliacion-idiomas.md §4 para contexto.",
+  "locales": [
+    { "our": "es",       "appStore": "es-ES",    "googlePlay": "es-ES"    },
+    { "our": "en",       "appStore": "en-US",    "googlePlay": "en-US"    },
+    { "our": "fr",       "appStore": "fr-FR",    "googlePlay": "fr-FR"    },
+    { "our": "de",       "appStore": "de-DE",    "googlePlay": "de-DE"    },
+    { "our": "it",       "appStore": "it",       "googlePlay": "it-IT"    },
+    { "our": "pt-BR",    "appStore": "pt-BR",    "googlePlay": "pt-BR"    },
+    { "our": "pt-PT",    "appStore": "pt-PT",    "googlePlay": "pt-PT"    },
+    { "our": "ru",       "appStore": "ru",       "googlePlay": "ru-RU"    },
+    { "our": "ja",       "appStore": "ja",       "googlePlay": "ja-JP"    },
+    { "our": "ko",       "appStore": "ko",       "googlePlay": "ko-KR"    },
+    { "our": "zh-Hans",  "appStore": "zh-Hans",  "googlePlay": "zh-CN"    },
+    { "our": "zh-Hant",  "appStore": "zh-Hant",  "googlePlay": "zh-TW"    },
+    { "our": "hi",       "appStore": "hi",       "googlePlay": "hi-IN"    },
+    { "our": "th",       "appStore": "th",       "googlePlay": "th"       },
+    { "our": "vi",       "appStore": "vi",       "googlePlay": "vi"       },
+    { "our": "tr",       "appStore": "tr",       "googlePlay": "tr-TR"    },
+    { "our": "pl",       "appStore": "pl",       "googlePlay": "pl-PL"    },
+    { "our": "nl",       "appStore": "nl-NL",    "googlePlay": "nl-NL"    },
+    { "our": "sv",       "appStore": "sv",       "googlePlay": "sv-SE"    },
+    { "our": "ro",       "appStore": "ro",       "googlePlay": "ro"       },
+    { "our": "uk",       "appStore": "uk",       "googlePlay": "uk"       },
+    { "our": "cs",       "appStore": "cs",       "googlePlay": "cs-CZ"    },
+    { "our": "hu",       "appStore": "hu",       "googlePlay": "hu-HU"    },
+    { "our": "id",       "appStore": "id",       "googlePlay": "id"       },
+    { "our": "ms",       "appStore": "ms",       "googlePlay": "ms"       },
+    { "our": "nb",       "appStore": "no",       "googlePlay": "no-NO",   "_note": "CRÍTICO: nuestro código 'nb' no existe en ningún store — mapear a 'no'/'no-NO'" },
+    { "our": "el",       "appStore": "el",       "googlePlay": "el-GR"    },
+    { "our": "ca",       "appStore": "ca",       "googlePlay": "ca"       },
+    { "our": "da",       "appStore": "da",       "googlePlay": "da-DK"    },
+    { "our": "fi",       "appStore": "fi",       "googlePlay": "fi-FI"    },
+    { "our": "sk",       "appStore": "sk",       "googlePlay": "sk"       },
+    { "our": "hr",       "appStore": "hr",       "googlePlay": "hr"       }
+  ],
+  "regionalVariants": [
+    {
+      "variant": "es-419",
+      "appStore": "es-MX",
+      "googlePlay": "es-419",
+      "base": "es",
+      "_note": "Español LatAm — reutiliza traducción 'es'. Mejora descubrimiento en México, Argentina, Colombia, etc."
+    },
+    {
+      "variant": "fr-CA",
+      "appStore": "fr-CA",
+      "googlePlay": "fr-CA",
+      "base": "fr",
+      "_note": "Francés canadiense — reutiliza traducción 'fr'."
+    },
+    {
+      "variant": "en-GB",
+      "appStore": "en-GB",
+      "googlePlay": "en-GB",
+      "base": "en",
+      "_note": "Inglés UK — reutiliza traducción 'en'."
+    },
+    {
+      "variant": "en-AU",
+      "appStore": "en-AU",
+      "googlePlay": "en-AU",
+      "base": "en",
+      "_note": "Inglés australiano — reutiliza traducción 'en'."
+    },
+    {
+      "variant": "zh-HK",
+      "appStore": null,
+      "googlePlay": "zh-HK",
+      "base": "zh-Hant",
+      "_note": "Chino Hong Kong — solo Google Play. App Store no lo lista por separado. Reutiliza traducción 'zh-Hant'."
+    }
+  ]
+}

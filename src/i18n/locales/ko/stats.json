@@ -1,0 +1,33 @@
+{
+  "title": "통계",
+  "aria.close": "닫기",
+  "tabs.play": "플레이",
+  "tabs.stamps": "스탬프 시험",
+
+  "table.country": "나라",
+  "aria.showIndicators": "지표 보기",
+  "aria.showPercent": "퍼센트 보기",
+
+  "typeLabel.E": "나라를 맞혀보세요",
+  "typeLabel.C": "나라에서 수도로",
+  "typeLabel.D": "수도에서 나라로",
+  "typeLabel.F": "수도를 맞혀보세요",
+  "typeLabel.A": "나라를 찾아보세요",
+  "typeLabel.B": "수도를 찾아보세요",
+
+  "stampLabel.A.short": "◯ 나라",
+  "stampLabel.A.full": "나라 스탬프 시험",
+  "stampLabel.B.short": "◎ 수도",
+  "stampLabel.B.full": "수도 스탬프 시험",
+
+  "legend.dominated": "마스터",
+  "legend.inferred": "추론됨",
+  "legend.reinforcement": "복습",
+  "legend.noData": "데이터 없음",
+  "legend.correct": "정답",
+  "legend.incorrect": "오답",
+
+  "reset.button": "통계 초기화",
+  "reset.confirm": "{{level}} - {{continent}}의 플레이 통계를 초기화할까요?",
+  "stampNotice": "스탬프와 시험 기록은 실제 여권처럼 영구적입니다. 처음부터 시작하려면 새 프로필을 만드세요."
+}

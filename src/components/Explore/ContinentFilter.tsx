@@ -1,14 +1,8 @@
 // Filtro por continente: fila horizontal de pills
+import { useTranslation } from 'react-i18next';
 import type { Continent } from '../../data/types';
+import { CONTINENTS, CONTINENT_CSS_VAR } from '../../data/continents';
 import './ContinentFilter.css';
-
-const CONTINENTS: { id: Continent; label: string; cssVar: string }[] = [
-  { id: 'África', label: 'África', cssVar: '--color-africa' },
-  { id: 'América', label: 'América', cssVar: '--color-america' },
-  { id: 'Asia', label: 'Asia', cssVar: '--color-asia' },
-  { id: 'Europa', label: 'Europa', cssVar: '--color-europe' },
-  { id: 'Oceanía', label: 'Oceanía', cssVar: '--color-oceania' },
-];
 
 interface ContinentFilterProps {
   active: Continent | null;
@@ -16,6 +10,8 @@ interface ContinentFilterProps {
 }
 
 export function ContinentFilter({ active, onChange }: ContinentFilterProps) {
+  const { t } = useTranslation('common');
+
   return (
     <div className="continent-filter" role="radiogroup" aria-label="Filtrar por continente">
       <button
@@ -24,20 +20,20 @@ export function ContinentFilter({ active, onChange }: ContinentFilterProps) {
         aria-checked={active === null}
         role="radio"
       >
-        Todos
+        {t('continentFilter.all')}
       </button>
-      {CONTINENTS.map(({ id, label, cssVar }) => (
+      {CONTINENTS.map((c) => (
         <button
-          key={id}
-          className={`continent-filter__pill ${active === id ? 'continent-filter__pill--active' : ''}`}
-          onClick={() => onChange(id)}
-          aria-checked={active === id}
+          key={c}
+          className={`continent-filter__pill ${active === c ? 'continent-filter__pill--active' : ''}`}
+          onClick={() => onChange(c)}
+          aria-checked={active === c}
           role="radio"
           style={{
-            '--pill-color': `var(${cssVar})`,
+            '--pill-color': `var(${CONTINENT_CSS_VAR[c]})`,
           } as React.CSSProperties}
         >
-          {label}
+          {t(`continent.${c}`)}
         </button>
       ))}
     </div>

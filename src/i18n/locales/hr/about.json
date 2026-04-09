@@ -1,0 +1,28 @@
+{
+  "title": "O aplikaciji Exploris",
+  "intro": "Exploris je aplikacija za učenje geografije s interaktivnim 3D globusom. Nauči zemlje, glavne gradove i mnogo više na vizualan i zabavan način.",
+  "section.countries.title": "Zemlje",
+  "section.countries.body": "Exploris uključuje 195 zemalja koje priznaju Ujedinjeni narodi, najšire prihvaćeni standard na svijetu. Na globusu možeš istraživati i nepriznate ili sporne teritorije.\n\nGlobus reproducira pogled na Zemlju iz svemira. To ti omogućuje da uočiš stvarnu veličinu zemalja, nešto što ravne karte ne mogu prikazati.",
+  "section.learn.title": "Kako učiti",
+  "section.learn.tips.explore": "Počni u Istraži: okreći globus, dodirni zemlje da vidiš njihov profil i upoznaj se s njihovim oblikom i položajem. Prikaz Tablica pomaže ti povezati svaku zemlju s njezinim glavnim gradom. Dodirni bilo koju zemlju ili glavni grad u tablici da je vidiš na globusu.",
+  "section.learn.tips.play": "Kad budeš spreman, baci se u Igraj. Preporučujemo da igraš u načinu Avantura, koji pametno kombinira različite vrste igara objašnjene u nastavku; prilagođava se onome što znaš kako bi ti pomogao učiti.",
+  "section.learn.tips.passport": "Tvoj krajnji cilj je napuniti Putovnicu pečatima. Da dobiješ pečat, moraš završiti ispit pečata bez greške.",
+  "section.gameTypes.title": "Vrste igara",
+  "section.gameTypes.intro": "Postoji 6 vrsta igara, poredanih od najlakše do najteže:",
+  "section.gameTypes.E": "◯? — Identificiraj zemlju — Zemlja je označena na globusu i biraš njezin naziv među 4 ponuđena odgovora.",
+  "section.gameTypes.C": "◯→◎ — Zemlja u glavni grad — Dobiješ zemlju i biraš njezin glavni grad među 4 ponuđena odgovora.",
+  "section.gameTypes.D": "◎→◯ — Glavni grad u zemlju — Dobiješ glavni grad i biraš kojoj zemlji pripada.",
+  "section.gameTypes.F": "◎? — Identificiraj glavni grad — Glavni grad je označen na globusu i biraš njegov naziv.",
+  "section.gameTypes.A": "◯ — Označi zemlju — Dobiješ naziv i dodirneš zemlju na globusu.",
+  "section.gameTypes.B": "◎ — Označi glavni grad — Dobiješ glavni grad i dodirneš njegovu lokaciju na globusu.",
+  "section.gameTypes.adventure": "Način Avantura kombinira sve vrste i prilagođava se tvom napretku. To je preporučeni način igranja.",
+  "section.gameTypes.stamps": "Vrste «Označi zemlju» i «Označi glavni grad» koriste se u ispitima pečata Putovnice.",
+  "section.stats.title": "Statistike",
+  "section.stats.body": "Prikaz Statistike ima dvije kartice:\n\n• Igraj — Prikazuje tvoje znanje u svakoj vrsti igre.\n\n• Ispiti pečata — Prikazuje tvoje rezultate u ispitima Putovnice. \n\nMožeš prebacivati između pokazatelja znanja (✓/✗) i postotaka točnosti. Dodirni zemlju da odeš izravno na njezin profil u Istraži.",
+  "section.sources.title": "Izvori podataka",
+  "section.sources.body": "Podaci dolaze iz javnih izvora poput Ujedinjenih naroda, Natural Earth, Svjetske banke i Wikidata. Aplikacija automatski provjerava ima li novijih podataka i ažurira ih u pozadini. Karte se mijenjaju samo s novim verzijama aplikacije.",
+
+  "section.privacy.title": "Privatnost",
+  "section.privacy.body": "Exploris ne prikuplja nikakve osobne podatke. Tvoj napredak pohranjuje se samo na tvom uređaju.",
+  "section.privacy.linkLabel": "Prikaži pravila privatnosti"
+}

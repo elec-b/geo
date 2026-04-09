@@ -1,0 +1,33 @@
+{
+  "title": "Statistikk",
+  "aria.close": "Lukk",
+  "tabs.play": "Spill",
+  "tabs.stamps": "Stempelpr\u00f8ver",
+
+  "table.country": "Land",
+  "aria.showIndicators": "Vis indikatorer",
+  "aria.showPercent": "Vis prosent",
+
+  "typeLabel.E": "Identifiser landet",
+  "typeLabel.C": "Land til hovedstad",
+  "typeLabel.D": "Hovedstad til land",
+  "typeLabel.F": "Identifiser hovedstaden",
+  "typeLabel.A": "Pek p\u00e5 landet",
+  "typeLabel.B": "Pek p\u00e5 hovedstaden",
+
+  "stampLabel.A.short": "\u25ef Land",
+  "stampLabel.A.full": "Stempelpr\u00f8ve Land",
+  "stampLabel.B.short": "\u25ce Hovedsteder",
+  "stampLabel.B.full": "Stempelpr\u00f8ve Hovedsteder",
+
+  "legend.dominated": "Mestret",
+  "legend.inferred": "Utledet",
+  "legend.reinforcement": "Forsterkning",
+  "legend.noData": "Ingen data",
+  "legend.correct": "Riktig",
+  "legend.incorrect": "Feil",
+
+  "reset.button": "Tilbakestill statistikk",
+  "reset.confirm": "Tilbakestille spillstatistikk for {{level}} - {{continent}}?",
+  "stampNotice": "Stempler og pr\u00f8vehistorikk er permanente, akkurat som i et ekte pass. Vil du starte p\u00e5 nytt, opprett en ny profil."
+}

@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "大陸を選択",
+  "selector.chooseLevel": "レベルを選択",
+  "selector.chooseGame": "ゲームを選択",
+  "selector.adventure": "アドベンチャー",
+  "selector.adventureDesc": "あなたの知識に合わせて出題",
+  "selector.specificTypes": "またはゲームを指定",
+  "selector.start": "スタート",
+  "selector.continue": "続ける",
+  "selector.completed": "クリア ★",
+  "selector.countryCount_one": "{{count}}か国",
+  "selector.countryCount_other": "{{count}}か国",
+  "selector.lockedToast": "前のレベルのスタンプを獲得してください",
+
+  "selector.stampReady.both": "スタンプ試験の準備完了！",
+  "selector.stampReady.countries": "国スタンプ試験の準備完了！",
+  "selector.stampReady.capitals": "首都スタンプ試験の準備完了！",
+
+  "question.locate": "探して",
+  "question.locateCapital": "首都を探して",
+  "question.capitalOf": "{{country}}の首都は？",
+  "question.capitalBelongsTo": "{{capital}}はどの国の首都？",
+  "question.whichCountry": "ハイライトされた国は？",
+  "question.whichCapital": "この国の首都は？",
+
+  "progress.stampTest": "スタンプ試験：{{current}} / {{total}}",
+  "progress.adventurePercent": "{{percent}}% 完了",
+  "progress.typeDominated": "{{total}}中{{current}}をマスター",
+  "progress.stampBanner.countries": "スタンプ試験：国",
+  "progress.stampBanner.capitals": "スタンプ試験：首都",
+
+  "modal.stampEarned.title": "スタンプ獲得",
+  "modal.stampEarned.text": "{{total}}問中{{correct}}問正解。ミスなし。",
+
+  "modal.stampFailed.veryClose": "あと少し！",
+  "modal.stampFailed.veryCloseText": "もう少しでスタンプです。",
+  "modal.stampFailed.goodTry": "いい調子！",
+  "modal.stampFailed.goodTryText": "挑戦するたびに上達しています。",
+  "modal.stampFailed.onTrack": "順調です",
+  "modal.stampFailed.onTrackText": "プレイを続けましょう、成長が見えます。",
+  "modal.stampFailed.dontGiveUp": "あきらめないで",
+  "modal.stampFailed.dontGiveUpText": "練習が上達の鍵です。",
+  "modal.stampFailed.score": "{{total}}問中{{correct}}問正解。",
+
+  "modal.poolExhausted.trainingComplete": "トレーニング完了",
+  "modal.poolExhausted.readyForStamp": "すばらしい！<br />スタンプの準備完了",
+  "modal.poolExhausted.completedText": "<em>{{level}}</em>レベルの<em>{{continent}}</em>を完了しました。統計をリセットして再度練習できます。",
+  "modal.poolExhausted.chooseStamp": "試験を選んでください。スタンプを獲得するにはミスなしで完了する必要があります。",
+  "modal.poolExhausted.typePassed": "すばらしい！<br /><em>{{type}}</em>クリア",
+  "modal.poolExhausted.stampReady": "スタンプ試験の準備ができました。ミスなしで完了してスタンプを獲得しましょう。",
+  "modal.poolExhausted.tryStamp.countries": "国スタンプに挑戦",
+  "modal.poolExhausted.tryStamp.capitals": "首都スタンプに挑戦",
+  "modal.poolExhausted.selectOther": "他のゲームを選択",
+  "modal.poolExhausted.playType": "<em>{{type}}</em>をプレイ",
+  "modal.poolExhausted.playAdventure": "<em>アドベンチャー</em>をプレイ",
+
+  "stamp.countries": "国スタンプ",
+  "stamp.capitals": "首都スタンプ",
+
+  "modal.stampChooser.title": "スタンプ試験",
+  "modal.stampChooser.text": "試験を選んでください。{{count}}問をミスなしで完了する必要があります。",
+
+  "modal.alreadyDominated.title": "<em>{{type}}</em>を<br />マスター済み",
+  "modal.alreadyDominated.allCorrect": "すべての国に正解しました。統計をリセットして再度練習できます。",
+  "modal.alreadyDominated.completedTraining": "<em>{{level}}</em>レベルの<em>{{continent}}</em>のトレーニングを完了しました。",
+  "modal.alreadyDominated.tryStamp": "スタンプ試験に挑戦",
+  "modal.alreadyDominated.goToStats": "統計へ"
+}

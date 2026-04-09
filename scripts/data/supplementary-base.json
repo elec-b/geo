@@ -1,0 +1,1286 @@
+{
+  "AD": {
+    "languageCodes": [
+      "ca"
+    ]
+  },
+  "AE": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "AF": {
+    "languageCodes": [
+      "prs",
+      "ps"
+    ]
+  },
+  "AG": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "AI": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "AL": {
+    "languageCodes": [
+      "sq"
+    ]
+  },
+  "AM": {
+    "languageCodes": [
+      "hy"
+    ]
+  },
+  "AO": {
+    "languageCodes": [
+      "pt"
+    ]
+  },
+  "AR": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "AS": {
+    "languageCodes": [
+      "en",
+      "sm"
+    ]
+  },
+  "AT": {
+    "languageCodes": [
+      "de"
+    ]
+  },
+  "AU": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "AW": {
+    "languageCodes": [
+      "nl",
+      "pap"
+    ]
+  },
+  "AX": {
+    "languageCodes": [
+      "sv"
+    ]
+  },
+  "AZ": {
+    "languageCodes": [
+      "az"
+    ]
+  },
+  "BA": {
+    "languageCodes": [
+      "bs",
+      "hr",
+      "sr"
+    ]
+  },
+  "BB": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "BD": {
+    "languageCodes": [
+      "bn"
+    ]
+  },
+  "BE": {
+    "languageCodes": [
+      "nl",
+      "fr",
+      "de"
+    ]
+  },
+  "BF": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "BG": {
+    "languageCodes": [
+      "bg"
+    ]
+  },
+  "BH": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "BI": {
+    "languageCodes": [
+      "rn",
+      "fr"
+    ]
+  },
+  "BJ": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "BL": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "BM": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "BN": {
+    "languageCodes": [
+      "ms"
+    ]
+  },
+  "BO": {
+    "languageCodes": [
+      "es",
+      "qu",
+      "ay"
+    ]
+  },
+  "BR": {
+    "languageCodes": [
+      "pt"
+    ]
+  },
+  "BS": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "BT": {
+    "languageCodes": [
+      "dz"
+    ]
+  },
+  "BW": {
+    "languageCodes": [
+      "en",
+      "tn"
+    ]
+  },
+  "BY": {
+    "languageCodes": [
+      "be",
+      "ru"
+    ]
+  },
+  "BZ": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "CA": {
+    "languageCodes": [
+      "en",
+      "fr"
+    ]
+  },
+  "CD": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "CF": {
+    "languageCodes": [
+      "fr",
+      "sg"
+    ]
+  },
+  "CG": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "CH": {
+    "languageCodes": [
+      "de",
+      "fr",
+      "it",
+      "rm"
+    ]
+  },
+  "CI": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "CK": {
+    "languageCodes": [
+      "en",
+      "rar"
+    ]
+  },
+  "CL": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "CM": {
+    "languageCodes": [
+      "fr",
+      "en"
+    ]
+  },
+  "CN": {
+    "languageCodes": [
+      "zh"
+    ]
+  },
+  "CO": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "CR": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "CU": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "CV": {
+    "languageCodes": [
+      "pt"
+    ]
+  },
+  "CW": {
+    "languageCodes": [
+      "nl",
+      "pap"
+    ]
+  },
+  "CY": {
+    "languageCodes": [
+      "el",
+      "tr"
+    ]
+  },
+  "CZ": {
+    "languageCodes": [
+      "cs"
+    ]
+  },
+  "DE": {
+    "languageCodes": [
+      "de"
+    ]
+  },
+  "DJ": {
+    "languageCodes": [
+      "fr",
+      "ar"
+    ]
+  },
+  "DK": {
+    "languageCodes": [
+      "da"
+    ]
+  },
+  "DM": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "DO": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "DZ": {
+    "languageCodes": [
+      "ar",
+      "tzm"
+    ]
+  },
+  "EC": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "EE": {
+    "languageCodes": [
+      "et"
+    ]
+  },
+  "EG": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "EH": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "ER": {
+    "languageCodes": [
+      "ti",
+      "ar",
+      "en"
+    ]
+  },
+  "ES": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "ET": {
+    "languageCodes": [
+      "am"
+    ]
+  },
+  "FI": {
+    "languageCodes": [
+      "fi",
+      "sv"
+    ]
+  },
+  "FJ": {
+    "languageCodes": [
+      "en",
+      "fj",
+      "hif"
+    ]
+  },
+  "FK": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "FM": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "FO": {
+    "languageCodes": [
+      "fo",
+      "da"
+    ]
+  },
+  "FR": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "GA": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "GB": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "GD": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "GE": {
+    "languageCodes": [
+      "ka"
+    ]
+  },
+  "GF": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "GG": {
+    "languageCodes": [
+      "en",
+      "fr"
+    ]
+  },
+  "GH": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "GL": {
+    "languageCodes": [
+      "kl"
+    ]
+  },
+  "GM": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "GN": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "GP": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "GQ": {
+    "languageCodes": [
+      "es",
+      "fr",
+      "pt"
+    ]
+  },
+  "GR": {
+    "languageCodes": [
+      "el"
+    ]
+  },
+  "GT": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "GU": {
+    "languageCodes": [
+      "en",
+      "ch"
+    ]
+  },
+  "GW": {
+    "languageCodes": [
+      "pt"
+    ]
+  },
+  "GY": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "HK": {
+    "languageCodes": [
+      "zh",
+      "en"
+    ]
+  },
+  "HN": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "HR": {
+    "languageCodes": [
+      "hr"
+    ]
+  },
+  "HT": {
+    "languageCodes": [
+      "fr",
+      "ht"
+    ]
+  },
+  "HU": {
+    "languageCodes": [
+      "hu"
+    ]
+  },
+  "ID": {
+    "languageCodes": [
+      "id"
+    ]
+  },
+  "IE": {
+    "languageCodes": [
+      "ga",
+      "en"
+    ]
+  },
+  "IL": {
+    "languageCodes": [
+      "he",
+      "ar"
+    ]
+  },
+  "IM": {
+    "languageCodes": [
+      "en",
+      "gv"
+    ]
+  },
+  "IN": {
+    "languageCodes": [
+      "hi",
+      "en"
+    ]
+  },
+  "IQ": {
+    "languageCodes": [
+      "ar",
+      "ku"
+    ]
+  },
+  "IR": {
+    "languageCodes": [
+      "fa"
+    ]
+  },
+  "IS": {
+    "languageCodes": [
+      "is"
+    ]
+  },
+  "IT": {
+    "languageCodes": [
+      "it"
+    ]
+  },
+  "JE": {
+    "languageCodes": [
+      "en",
+      "fr"
+    ]
+  },
+  "JM": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "JO": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "JP": {
+    "languageCodes": [
+      "ja"
+    ]
+  },
+  "KE": {
+    "languageCodes": [
+      "sw",
+      "en"
+    ]
+  },
+  "KG": {
+    "languageCodes": [
+      "ky",
+      "ru"
+    ]
+  },
+  "KH": {
+    "languageCodes": [
+      "km"
+    ]
+  },
+  "KI": {
+    "languageCodes": [
+      "en",
+      "gil"
+    ]
+  },
+  "KM": {
+    "languageCodes": [
+      "zdj",
+      "ar",
+      "fr"
+    ]
+  },
+  "KN": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "KP": {
+    "languageCodes": [
+      "ko"
+    ]
+  },
+  "KR": {
+    "languageCodes": [
+      "ko"
+    ]
+  },
+  "KW": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "KY": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "KZ": {
+    "languageCodes": [
+      "kk",
+      "ru"
+    ]
+  },
+  "LA": {
+    "languageCodes": [
+      "lo"
+    ]
+  },
+  "LB": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "LC": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "LI": {
+    "languageCodes": [
+      "de"
+    ]
+  },
+  "LK": {
+    "languageCodes": [
+      "si",
+      "ta"
+    ]
+  },
+  "LR": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "LS": {
+    "languageCodes": [
+      "st",
+      "en"
+    ]
+  },
+  "LT": {
+    "languageCodes": [
+      "lt"
+    ]
+  },
+  "LU": {
+    "languageCodes": [
+      "lb",
+      "fr",
+      "de"
+    ]
+  },
+  "LV": {
+    "languageCodes": [
+      "lv"
+    ]
+  },
+  "LY": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "MA": {
+    "languageCodes": [
+      "ar",
+      "tzm"
+    ]
+  },
+  "MC": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "MD": {
+    "languageCodes": [
+      "ro"
+    ]
+  },
+  "ME": {
+    "languageCodes": [
+      "cnr"
+    ]
+  },
+  "MF": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "MG": {
+    "languageCodes": [
+      "mg",
+      "fr"
+    ]
+  },
+  "MH": {
+    "languageCodes": [
+      "mh",
+      "en"
+    ]
+  },
+  "MK": {
+    "languageCodes": [
+      "mk"
+    ]
+  },
+  "ML": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "MM": {
+    "languageCodes": [
+      "my"
+    ]
+  },
+  "MN": {
+    "languageCodes": [
+      "mn"
+    ]
+  },
+  "MO": {
+    "languageCodes": [
+      "zh",
+      "pt"
+    ]
+  },
+  "MP": {
+    "languageCodes": [
+      "en",
+      "ch",
+      "cal"
+    ]
+  },
+  "MQ": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "MR": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "MS": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "MT": {
+    "languageCodes": [
+      "mt",
+      "en"
+    ]
+  },
+  "MU": {
+    "languageCodes": [
+      "en",
+      "fr"
+    ]
+  },
+  "MV": {
+    "languageCodes": [
+      "dv"
+    ]
+  },
+  "MW": {
+    "languageCodes": [
+      "en",
+      "ny"
+    ]
+  },
+  "MX": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "MY": {
+    "languageCodes": [
+      "ms"
+    ]
+  },
+  "MZ": {
+    "languageCodes": [
+      "pt"
+    ]
+  },
+  "NA": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "NC": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "NE": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "NF": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "NG": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "NI": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "NL": {
+    "languageCodes": [
+      "nl"
+    ]
+  },
+  "NO": {
+    "languageCodes": [
+      "no"
+    ]
+  },
+  "NP": {
+    "languageCodes": [
+      "ne"
+    ]
+  },
+  "NR": {
+    "languageCodes": [
+      "en",
+      "na"
+    ]
+  },
+  "NU": {
+    "languageCodes": [
+      "en",
+      "niu"
+    ]
+  },
+  "NZ": {
+    "languageCodes": [
+      "en",
+      "mi"
+    ]
+  },
+  "OM": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "PA": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "PE": {
+    "languageCodes": [
+      "es",
+      "qu",
+      "ay"
+    ]
+  },
+  "PF": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "PG": {
+    "languageCodes": [
+      "en",
+      "tpi",
+      "ho"
+    ]
+  },
+  "PH": {
+    "languageCodes": [
+      "fil",
+      "en"
+    ]
+  },
+  "PK": {
+    "languageCodes": [
+      "ur",
+      "en"
+    ]
+  },
+  "PL": {
+    "languageCodes": [
+      "pl"
+    ]
+  },
+  "PM": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "PN": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "PR": {
+    "languageCodes": [
+      "es",
+      "en"
+    ]
+  },
+  "PS": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "PT": {
+    "languageCodes": [
+      "pt"
+    ]
+  },
+  "PW": {
+    "languageCodes": [
+      "pau",
+      "en"
+    ]
+  },
+  "PY": {
+    "languageCodes": [
+      "es",
+      "gn"
+    ]
+  },
+  "QA": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "RE": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "RO": {
+    "languageCodes": [
+      "ro"
+    ]
+  },
+  "RS": {
+    "languageCodes": [
+      "sr"
+    ]
+  },
+  "RU": {
+    "languageCodes": [
+      "ru"
+    ]
+  },
+  "RW": {
+    "languageCodes": [
+      "rw",
+      "fr",
+      "en"
+    ]
+  },
+  "SA": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "SB": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "SC": {
+    "languageCodes": [
+      "crs",
+      "fr",
+      "en"
+    ]
+  },
+  "SD": {
+    "languageCodes": [
+      "ar",
+      "en"
+    ]
+  },
+  "SE": {
+    "languageCodes": [
+      "sv"
+    ]
+  },
+  "SG": {
+    "languageCodes": [
+      "en",
+      "ms",
+      "zh",
+      "ta"
+    ]
+  },
+  "SH": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "SI": {
+    "languageCodes": [
+      "sl"
+    ]
+  },
+  "SK": {
+    "languageCodes": [
+      "sk"
+    ]
+  },
+  "SL": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "SM": {
+    "languageCodes": [
+      "it"
+    ]
+  },
+  "SN": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "SO": {
+    "languageCodes": [
+      "so",
+      "ar"
+    ]
+  },
+  "SR": {
+    "languageCodes": [
+      "nl"
+    ]
+  },
+  "SS": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "ST": {
+    "languageCodes": [
+      "pt"
+    ]
+  },
+  "SV": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "SX": {
+    "languageCodes": [
+      "nl",
+      "en"
+    ]
+  },
+  "SY": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "SZ": {
+    "languageCodes": [
+      "ss",
+      "en"
+    ]
+  },
+  "TC": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "TD": {
+    "languageCodes": [
+      "fr",
+      "ar"
+    ]
+  },
+  "TG": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "TH": {
+    "languageCodes": [
+      "th"
+    ]
+  },
+  "TJ": {
+    "languageCodes": [
+      "tg"
+    ]
+  },
+  "TL": {
+    "languageCodes": [
+      "pt",
+      "tet"
+    ]
+  },
+  "TM": {
+    "languageCodes": [
+      "tk"
+    ]
+  },
+  "TN": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "TO": {
+    "languageCodes": [
+      "to",
+      "en"
+    ]
+  },
+  "TR": {
+    "languageCodes": [
+      "tr"
+    ]
+  },
+  "TT": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "TV": {
+    "languageCodes": [
+      "tvl",
+      "en"
+    ]
+  },
+  "TW": {
+    "languageCodes": [
+      "zh"
+    ]
+  },
+  "TZ": {
+    "languageCodes": [
+      "sw",
+      "en"
+    ]
+  },
+  "UA": {
+    "languageCodes": [
+      "uk"
+    ]
+  },
+  "UG": {
+    "languageCodes": [
+      "en",
+      "sw"
+    ]
+  },
+  "US": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "UY": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "UZ": {
+    "languageCodes": [
+      "uz"
+    ]
+  },
+  "VA": {
+    "languageCodes": [
+      "it",
+      "la"
+    ]
+  },
+  "VC": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "VE": {
+    "languageCodes": [
+      "es"
+    ]
+  },
+  "VG": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "VI": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "VN": {
+    "languageCodes": [
+      "vi"
+    ]
+  },
+  "VU": {
+    "languageCodes": [
+      "bi",
+      "en",
+      "fr"
+    ]
+  },
+  "WF": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "WS": {
+    "languageCodes": [
+      "sm",
+      "en"
+    ]
+  },
+  "XK": {
+    "languageCodes": [
+      "sq",
+      "sr"
+    ]
+  },
+  "YE": {
+    "languageCodes": [
+      "ar"
+    ]
+  },
+  "YT": {
+    "languageCodes": [
+      "fr"
+    ]
+  },
+  "ZA": {
+    "languageCodes": [
+      "zu",
+      "xh",
+      "af",
+      "en"
+    ]
+  },
+  "ZM": {
+    "languageCodes": [
+      "en"
+    ]
+  },
+  "ZW": {
+    "languageCodes": [
+      "en",
+      "sn",
+      "nr"
+    ]
+  }
+}

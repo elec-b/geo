@@ -1,0 +1,33 @@
+{
+  "title": "统计",
+  "aria.close": "关闭",
+  "tabs.play": "游戏",
+  "tabs.stamps": "印章考试",
+
+  "table.country": "国家",
+  "aria.showIndicators": "显示指标",
+  "aria.showPercent": "显示百分比",
+
+  "typeLabel.E": "识别国家",
+  "typeLabel.C": "国家猜首都",
+  "typeLabel.D": "首都猜国家",
+  "typeLabel.F": "识别首都",
+  "typeLabel.A": "指出国家",
+  "typeLabel.B": "指出首都",
+
+  "stampLabel.A.short": "◯ 国家",
+  "stampLabel.A.full": "国家印章考试",
+  "stampLabel.B.short": "◎ 首都",
+  "stampLabel.B.full": "首都印章考试",
+
+  "legend.dominated": "已掌握",
+  "legend.inferred": "推断",
+  "legend.reinforcement": "复习",
+  "legend.noData": "暂无数据",
+  "legend.correct": "正确",
+  "legend.incorrect": "错误",
+
+  "reset.button": "重置统计",
+  "reset.confirm": "重置 {{level}} - {{continent}} 的游戏统计？",
+  "stampNotice": "印章和考试记录是永久的，就像真正的护照一样。如果想从头开始，请创建新的个人资料。"
+}

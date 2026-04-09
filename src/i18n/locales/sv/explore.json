@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Glob",
+  "segmented.table": "Tabell",
+  "labels.countries": "L\u00e4nder",
+  "labels.capitals": "Huvudst\u00e4der",
+
+  "table.country": "Land",
+  "table.capital": "Huvudstad",
+  "table.population": "Inv.",
+  "table.nonUNToggle": "Icke-FN-territorier",
+
+  "card.disclaimer.antarctica": "Internationellt territorium \u2014 Antarktisf\u00f6rdraget (1959)",
+  "card.disclaimer.territory": "Territorium tillh\u00f6rande {{sovereign}}",
+  "card.disclaimer.disputed": "Omtvistad suver\u00e4nitet",
+  "card.flagAlt": "Flagga f\u00f6r {{country}}",
+  "card.aria.openWikipedia": "\u00d6ppna {{country}} p\u00e5 Wikipedia",
+  "card.aria.dialog": "Faktablad f\u00f6r {{country}}",
+
+  "card.field.capital": "Huvudstad",
+  "card.field.population": "Befolkning",
+  "card.field.area": "Yta",
+  "card.field.density": "T\u00e4thet",
+  "card.field.currency": "Valuta",
+  "card.field.demonym": "Inv\u00e5narnamn",
+  "card.field.languages": "Spr\u00e5k",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "inv.",
+  "card.unit.densityUnit": "inv/km\u00b2",
+  "card.na": "Ej tillg.",
+
+  "card.tooltip.hdi": "Index f\u00f6r m\u00e4nsklig utveckling: m\u00e4ter h\u00e4lsa, utbildning och inkomst. Skala 0\u20131.",
+  "card.tooltip.ihdi": "Oj\u00e4mlikhetsjusterat HDI: straffar oj\u00e4mlikhet i h\u00e4lsa, utbildning och inkomst.",
+  "card.aria.hdiInfo": "Information om HDI",
+  "card.aria.ihdiInfo": "Information om IHDI",
+
+  "card.antarctica.info": "Antarktis tillh\u00f6r inget land. Antarktisf\u00f6rdraget, undertecknat 1959, reserverar det f\u00f6r vetenskaplig forskning och f\u00f6rbjuder milit\u00e4r aktivitet och exploatering av dess resurser.",
+
+  "card.sovereign.GB": "tillh\u00f6rande F\u00f6renade kungariket",
+  "card.sovereign.FR": "tillh\u00f6rande Frankrike",
+  "card.sovereign.US": "tillh\u00f6rande F\u00f6renta staterna",
+  "card.sovereign.NL": "tillh\u00f6rande Nederl\u00e4nderna",
+  "card.sovereign.DK": "tillh\u00f6rande Danmark",
+  "card.sovereign.CN": "tillh\u00f6rande Kina",
+  "card.sovereign.NZ": "tillh\u00f6rande Nya Zeeland",
+  "card.sovereign.FI": "tillh\u00f6rande Finland",
+  "card.sovereign.AU": "tillh\u00f6rande Australien"
+}

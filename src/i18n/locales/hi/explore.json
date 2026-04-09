@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "ग्लोब",
+  "segmented.table": "तालिका",
+  "labels.countries": "देश",
+  "labels.capitals": "राजधानियाँ",
+
+  "table.country": "देश",
+  "table.capital": "राजधानी",
+  "table.population": "जन.",
+  "table.nonUNToggle": "गैर-संयुक्त राष्ट्र क्षेत्र",
+
+  "card.disclaimer.antarctica": "अंतर्राष्ट्रीय क्षेत्र — अंटार्कटिक संधि (1959)",
+  "card.disclaimer.territory": "{{sovereign}} का क्षेत्र",
+  "card.disclaimer.disputed": "विवादित संप्रभुता",
+  "card.flagAlt": "{{country}} का झंडा",
+  "card.aria.openWikipedia": "{{country}} को विकिपीडिया पर खोलें",
+  "card.aria.dialog": "{{country}} की जानकारी",
+
+  "card.field.capital": "राजधानी",
+  "card.field.population": "जनसंख्या",
+  "card.field.area": "क्षेत्रफल",
+  "card.field.density": "घनत्व",
+  "card.field.currency": "मुद्रा",
+  "card.field.demonym": "निवासी",
+  "card.field.languages": "भाषाएँ",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "व्यक्ति",
+  "card.unit.densityUnit": "व्यक्ति/km²",
+  "card.na": "उपलब्ध नहीं",
+
+  "card.tooltip.hdi": "मानव विकास सूचकांक: स्वास्थ्य, शिक्षा और आय को मापता है। सीमा 0–1।",
+  "card.tooltip.ihdi": "असमानता-समायोजित HDI: स्वास्थ्य, शिक्षा और आय में असमानता को दर्शाता है।",
+  "card.aria.hdiInfo": "HDI की जानकारी",
+  "card.aria.ihdiInfo": "IHDI की जानकारी",
+
+  "card.antarctica.info": "अंटार्कटिका किसी भी देश का नहीं है। 1959 में हस्ताक्षरित अंटार्कटिक संधि ने इसे वैज्ञानिक अनुसंधान के लिए आरक्षित किया है और सैन्य गतिविधि तथा संसाधनों के दोहन पर प्रतिबंध लगाया है।",
+
+  "card.sovereign.GB": "यूनाइटेड किंगडम",
+  "card.sovereign.FR": "फ़्रांस",
+  "card.sovereign.US": "संयुक्त राज्य अमेरिका",
+  "card.sovereign.NL": "नीदरलैंड",
+  "card.sovereign.DK": "डेनमार्क",
+  "card.sovereign.CN": "चीन",
+  "card.sovereign.NZ": "न्यूज़ीलैंड",
+  "card.sovereign.FI": "फ़िनलैंड",
+  "card.sovereign.AU": "ऑस्ट्रेलिया"
+}

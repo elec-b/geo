@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "지구본",
+  "segmented.table": "표",
+  "labels.countries": "나라",
+  "labels.capitals": "수도",
+
+  "table.country": "나라",
+  "table.capital": "수도",
+  "table.population": "인구",
+  "table.nonUNToggle": "비UN 영토",
+
+  "card.disclaimer.antarctica": "국제 영토 — 남극조약(1959)",
+  "card.disclaimer.territory": "{{sovereign}} 영토",
+  "card.disclaimer.disputed": "주권 분쟁 지역",
+  "card.flagAlt": "{{country}} 국기",
+  "card.aria.openWikipedia": "위키피디아에서 {{country}} 열기",
+  "card.aria.dialog": "{{country}} 정보 카드",
+
+  "card.field.capital": "수도",
+  "card.field.population": "인구",
+  "card.field.area": "면적",
+  "card.field.density": "인구밀도",
+  "card.field.currency": "통화",
+  "card.field.demonym": "국민 명칭",
+  "card.field.languages": "언어",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "명",
+  "card.unit.densityUnit": "명/km²",
+  "card.na": "N/A",
+
+  "card.tooltip.hdi": "인간개발지수: 건강, 교육, 소득을 측정. 범위 0~1.",
+  "card.tooltip.ihdi": "불평등 조정 인간개발지수: 건강, 교육, 소득의 불평등을 반영.",
+  "card.aria.hdiInfo": "HDI 정보",
+  "card.aria.ihdiInfo": "IHDI 정보",
+
+  "card.antarctica.info": "남극은 어떤 나라에도 속하지 않습니다. 1959년에 체결된 남극조약은 남극을 과학 연구를 위해 보전하고, 군사 활동과 자원 개발을 금지하고 있습니다.",
+
+  "card.sovereign.GB": "영국",
+  "card.sovereign.FR": "프랑스",
+  "card.sovereign.US": "미국",
+  "card.sovereign.NL": "네덜란드",
+  "card.sovereign.DK": "덴마크",
+  "card.sovereign.CN": "중국",
+  "card.sovereign.NZ": "뉴질랜드",
+  "card.sovereign.FI": "핀란드",
+  "card.sovereign.AU": "호주"
+}

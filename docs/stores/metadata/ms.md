@@ -1,0 +1,62 @@
+# Exploris — App Store / Google Play metadata (ms)
+
+## iOS Name (≤30)
+Exploris
+
+## Android Title (≤30)
+Exploris: Geografi · 18/30 chars
+
+## Subtitle — iOS only (≤30)
+Geografi di glob 3D · 19/30 chars
+
+## Short Description — Android only (≤80)
+Negara, ibu negeri dan geografi di glob 3D interaktif. Tiada iklan. · 67/80 chars
+
+## Promotional Text — iOS only (≤170)
+Pelajari negara dan ibu negeri dunia di glob 3D interaktif. Tiada herotan, tiada iklan, tiada penjejakan. Kemajuanmu, peraturanmu. · 130/170 chars
+
+## Keywords — iOS only (≤100)
+geografi,negara,ibu negeri,peta dunia,glob,bendera,kuiz,atlas,belajar,kanak-kanak,pendidikan,sekolah · 100/100 chars
+
+## Description (≤4000)
+Pelajari negara, ibu negeri dan geografi dunia dengan Exploris: glob 3D interaktif yang menghasilkan semula pandangan Bumi dari angkasa. Tiada herotan, tiada iklan dan tiada penjejakan.
+
+MENGAPA EXPLORIS BERBEZA
+
+· Glob 3D sebenar — rasai saiz sebenar negara, sesuatu yang tidak pernah dapat ditunjukkan oleh peta rata.
+· 6 jenis permainan — daripada mengenal pasti negara pada peta hingga menunjukkan ibu negeri: berlatih dengan pelbagai cara dan cabar dirimu ke tahap maksimum.
+· Mod Pengembaraan mudah suai — algoritma pintar yang menyesuaikan dengan apa yang kamu tahu, memperkukuh kelemahan, dan membantumu belajar dengan menggabungkan pelbagai permainan.
+· Pasport penuh setem — kemajuanmu berbentuk grid tahap dan benua. Isi pasport sambil naik tahap.
+· 195 negara yang diiktiraf oleh Pertubuhan Bangsa-Bangsa Bersatu — piawai yang paling diterima di dunia. Kamu juga boleh meneroka wilayah pertikaian dan wilayah tanggungan di glob.
+· 32 bahasa — data yang disahkan daripada sumber berwibawa: nama, ibu negeri, mata wang, bahasa, nama penduduk dan banyak lagi.
+· Tiada iklan dan tiada data peribadi — kemajuanmu hanya kekal di peranti kamu. Berfungsi di luar talian.
+
+CARA IA BERFUNGSI
+
+Teroka — putar glob, ketik negara dan temui kad maklumat dengan bendera, ibu negeri, populasi, keluasan, mata wang, bahasa, HDI dan pautan terus ke Wikipedia.
+
+Main — mulakan dengan mod Pengembaraan. Algoritma memberikan soalan yang disesuaikan dengan kemajuanmu dan menggabungkan pelbagai jenis permainan supaya kamu belajar tanpa bosan.
+
+Pasport — dapatkan setem dengan menyelesaikan ujian tanpa kesilapan. Naik daripada Pelancong ke Pengembara, dan daripada Pengembara ke Pemandu di setiap benua. Matlamatmu: mengisi pasport.
+
+UNTUK SIAPA
+
+Direka untuk kanak-kanak dan remaja berusia 8 hingga 15 tahun, tetapi cukup menarik untuk memikat orang dewasa yang ingin tahu tentang dunia.
+
+SUMBER DATA
+
+Data awam yang disahkan daripada Pertubuhan Bangsa-Bangsa Bersatu, Natural Earth, Bank Dunia dan Wikidata. Aplikasi menyemak data terkini di latar belakang dan mengemas kininya secara automatik.
+
+PRIVASI
+
+Exploris tidak mengumpul sebarang data peribadi. Tiada akaun, tiada penjejakan, tiada iklan. Kemajuanmu hanya wujud di peranti kamu.
+
+Muat turun Exploris dan mula isi pasport kamu!
+
+· 2279/4000 chars
+
+## Category
+Education
+
+## Copyright
+© 2026 Exploris

@@ -1,0 +1,33 @@
+{
+  "title": "統計",
+  "aria.close": "關閉",
+  "tabs.play": "遊戲",
+  "tabs.stamps": "印章測驗",
+
+  "table.country": "國家",
+  "aria.showIndicators": "顯示指標",
+  "aria.showPercent": "顯示百分比",
+
+  "typeLabel.E": "辨識國家",
+  "typeLabel.C": "國家猜首都",
+  "typeLabel.D": "首都猜國家",
+  "typeLabel.F": "辨識首都",
+  "typeLabel.A": "指出國家",
+  "typeLabel.B": "指出首都",
+
+  "stampLabel.A.short": "◯ 國家",
+  "stampLabel.A.full": "國家印章測驗",
+  "stampLabel.B.short": "◎ 首都",
+  "stampLabel.B.full": "首都印章測驗",
+
+  "legend.dominated": "已掌握",
+  "legend.inferred": "推斷",
+  "legend.reinforcement": "複習",
+  "legend.noData": "暫無資料",
+  "legend.correct": "正確",
+  "legend.incorrect": "錯誤",
+
+  "reset.button": "重置統計",
+  "reset.confirm": "重置 {{level}} - {{continent}} 的遊戲統計？",
+  "stampNotice": "印章和測驗記錄是永久的，就像真正的護照一樣。如果想從頭開始，請建立新的個人資料。"
+}

@@ -1,0 +1,4125 @@
+[
+  {
+    "cca2": "AD",
+    "ccn3": "020",
+    "continent": "europe",
+    "population": 81938,
+    "area": 468,
+    "flagSvg": "https://flagcdn.com/ad.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.913,
+    "ihdi": 0.837,
+    "unMember": true
+  },
+  {
+    "cca2": "AE",
+    "ccn3": "784",
+    "continent": "asia",
+    "population": 10986400,
+    "area": 83600,
+    "flagSvg": "https://flagcdn.com/ae.svg",
+    "currencies": [
+      {
+        "code": "AED",
+        "symbol": "د.إ"
+      }
+    ],
+    "hdi": 0.94,
+    "ihdi": 0.866,
+    "unMember": true
+  },
+  {
+    "cca2": "AF",
+    "ccn3": "004",
+    "continent": "asia",
+    "population": 42647492,
+    "area": 652230,
+    "flagSvg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+    "currencies": [
+      {
+        "code": "AFN",
+        "symbol": "؋"
+      }
+    ],
+    "hdi": 0.496,
+    "ihdi": 0.321,
+    "unMember": true
+  },
+  {
+    "cca2": "AG",
+    "ccn3": "028",
+    "continent": "america",
+    "population": 93772,
+    "area": 442,
+    "flagSvg": "https://flagcdn.com/ag.svg",
+    "currencies": [
+      {
+        "code": "XCD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.851,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "AI",
+    "ccn3": "660",
+    "continent": "america",
+    "population": 16010,
+    "area": 91,
+    "flagSvg": "https://flagcdn.com/ai.svg",
+    "currencies": [
+      {
+        "code": "XCD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "GB"
+  },
+  {
+    "cca2": "AL",
+    "ccn3": "008",
+    "continent": "europe",
+    "population": 2377128,
+    "area": 28748,
+    "flagSvg": "https://flagcdn.com/al.svg",
+    "currencies": [
+      {
+        "code": "ALL",
+        "symbol": "L"
+      }
+    ],
+    "hdi": 0.81,
+    "ihdi": 0.705,
+    "unMember": true
+  },
+  {
+    "cca2": "AM",
+    "ccn3": "051",
+    "continent": "asia",
+    "population": 3033500,
+    "area": 29743,
+    "flagSvg": "https://flagcdn.com/am.svg",
+    "currencies": [
+      {
+        "code": "AMD",
+        "symbol": "֏"
+      }
+    ],
+    "hdi": 0.811,
+    "ihdi": 0.743,
+    "unMember": true
+  },
+  {
+    "cca2": "AO",
+    "ccn3": "024",
+    "continent": "africa",
+    "population": 37885849,
+    "area": 1246700,
+    "flagSvg": "https://flagcdn.com/ao.svg",
+    "currencies": [
+      {
+        "code": "AOA",
+        "symbol": "Kz"
+      }
+    ],
+    "hdi": 0.616,
+    "ihdi": 0.36,
+    "unMember": true
+  },
+  {
+    "cca2": "AR",
+    "ccn3": "032",
+    "continent": "america",
+    "population": 45696159,
+    "area": 2780400,
+    "flagSvg": "https://flagcdn.com/ar.svg",
+    "currencies": [
+      {
+        "code": "ARS",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.865,
+    "ihdi": 0.761,
+    "unMember": true
+  },
+  {
+    "cca2": "AS",
+    "ccn3": "016",
+    "continent": "oceania",
+    "population": 46765,
+    "area": 199,
+    "flagSvg": "https://flagcdn.com/as.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "US"
+  },
+  {
+    "cca2": "AT",
+    "ccn3": "040",
+    "continent": "europe",
+    "population": 9177982,
+    "area": 83871,
+    "flagSvg": "https://flagcdn.com/at.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.93,
+    "ihdi": 0.861,
+    "unMember": true
+  },
+  {
+    "cca2": "AU",
+    "ccn3": "036",
+    "continent": "oceania",
+    "population": 27196812,
+    "area": 7692024,
+    "flagSvg": "https://flagcdn.com/au.svg",
+    "currencies": [
+      {
+        "code": "AUD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.958,
+    "ihdi": 0.873,
+    "unMember": true
+  },
+  {
+    "cca2": "AW",
+    "ccn3": "533",
+    "continent": "america",
+    "population": 107995,
+    "area": 180,
+    "flagSvg": "https://flagcdn.com/aw.svg",
+    "currencies": [
+      {
+        "code": "AWG",
+        "symbol": "ƒ"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "NL"
+  },
+  {
+    "cca2": "AX",
+    "ccn3": "248",
+    "continent": "europe",
+    "population": 30654,
+    "area": 1580,
+    "flagSvg": "https://flagcdn.com/ax.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FI"
+  },
+  {
+    "cca2": "AZ",
+    "ccn3": "031",
+    "continent": "asia",
+    "population": 10202830,
+    "area": 86600,
+    "flagSvg": "https://flagcdn.com/az.svg",
+    "currencies": [
+      {
+        "code": "AZN",
+        "symbol": "₼"
+      }
+    ],
+    "hdi": 0.789,
+    "ihdi": 0.735,
+    "unMember": true
+  },
+  {
+    "cca2": "BA",
+    "ccn3": "070",
+    "continent": "europe",
+    "population": 3164253,
+    "area": 51209,
+    "flagSvg": "https://flagcdn.com/ba.svg",
+    "currencies": [
+      {
+        "code": "BAM",
+        "symbol": "KM"
+      }
+    ],
+    "hdi": 0.804,
+    "ihdi": 0.689,
+    "unMember": true
+  },
+  {
+    "cca2": "BB",
+    "ccn3": "052",
+    "continent": "america",
+    "population": 282467,
+    "area": 430,
+    "flagSvg": "https://flagcdn.com/bb.svg",
+    "currencies": [
+      {
+        "code": "BBD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.811,
+    "ihdi": 0.62,
+    "unMember": true
+  },
+  {
+    "cca2": "BD",
+    "ccn3": "050",
+    "continent": "asia",
+    "population": 173562364,
+    "area": 147570,
+    "flagSvg": "https://flagcdn.com/bd.svg",
+    "currencies": [
+      {
+        "code": "BDT",
+        "symbol": "৳"
+      }
+    ],
+    "hdi": 0.685,
+    "ihdi": 0.482,
+    "unMember": true
+  },
+  {
+    "cca2": "BE",
+    "ccn3": "056",
+    "continent": "europe",
+    "population": 11858610,
+    "area": 30528,
+    "flagSvg": "https://flagcdn.com/be.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.951,
+    "ihdi": 0.891,
+    "unMember": true
+  },
+  {
+    "cca2": "BF",
+    "ccn3": "854",
+    "continent": "africa",
+    "population": 23548781,
+    "area": 272967,
+    "flagSvg": "https://flagcdn.com/bf.svg",
+    "currencies": [
+      {
+        "code": "XOF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.459,
+    "ihdi": 0.273,
+    "unMember": true
+  },
+  {
+    "cca2": "BG",
+    "ccn3": "100",
+    "continent": "europe",
+    "population": 6441421,
+    "area": 110879,
+    "flagSvg": "https://flagcdn.com/bg.svg",
+    "currencies": [
+      {
+        "code": "BGN",
+        "symbol": "лв"
+      }
+    ],
+    "hdi": 0.845,
+    "ihdi": 0.748,
+    "unMember": true
+  },
+  {
+    "cca2": "BH",
+    "ccn3": "048",
+    "continent": "asia",
+    "population": 1588670,
+    "area": 765,
+    "flagSvg": "https://flagcdn.com/bh.svg",
+    "currencies": [
+      {
+        "code": "BHD",
+        "symbol": ".د.ب"
+      }
+    ],
+    "hdi": 0.899,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "BI",
+    "ccn3": "108",
+    "continent": "africa",
+    "population": 14047786,
+    "area": 27834,
+    "flagSvg": "https://flagcdn.com/bi.svg",
+    "currencies": [
+      {
+        "code": "BIF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.439,
+    "ihdi": 0.286,
+    "unMember": true
+  },
+  {
+    "cca2": "BJ",
+    "ccn3": "204",
+    "continent": "africa",
+    "population": 14462724,
+    "area": 112622,
+    "flagSvg": "https://flagcdn.com/bj.svg",
+    "currencies": [
+      {
+        "code": "XOF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.515,
+    "ihdi": 0.316,
+    "unMember": true
+  },
+  {
+    "cca2": "BL",
+    "ccn3": "652",
+    "continent": "america",
+    "population": 10562,
+    "area": 21,
+    "flagSvg": "https://flagcdn.com/bl.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
+    "cca2": "BM",
+    "ccn3": "060",
+    "continent": "america",
+    "population": 64636,
+    "area": 54,
+    "flagSvg": "https://flagcdn.com/bm.svg",
+    "currencies": [
+      {
+        "code": "BMD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "GB"
+  },
+  {
+    "cca2": "BN",
+    "ccn3": "096",
+    "continent": "asia",
+    "population": 462721,
+    "area": 5765,
+    "flagSvg": "https://flagcdn.com/bn.svg",
+    "currencies": [
+      {
+        "code": "BND",
+        "symbol": "$"
+      },
+      {
+        "code": "SGD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.837,
+    "ihdi": 0.756,
+    "unMember": true
+  },
+  {
+    "cca2": "BO",
+    "ccn3": "068",
+    "continent": "america",
+    "population": 12413315,
+    "area": 1098581,
+    "flagSvg": "https://flagcdn.com/bo.svg",
+    "currencies": [
+      {
+        "code": "BOB",
+        "symbol": "Bs"
+      }
+    ],
+    "hdi": 0.733,
+    "ihdi": 0.578,
+    "unMember": true
+  },
+  {
+    "cca2": "BR",
+    "ccn3": "076",
+    "continent": "america",
+    "population": 211998573,
+    "area": 8515767,
+    "flagSvg": "https://flagcdn.com/br.svg",
+    "currencies": [
+      {
+        "code": "BRL",
+        "symbol": "R$"
+      }
+    ],
+    "hdi": 0.786,
+    "ihdi": 0.594,
+    "unMember": true
+  },
+  {
+    "cca2": "BS",
+    "ccn3": "044",
+    "continent": "america",
+    "population": 401283,
+    "area": 13943,
+    "flagSvg": "https://flagcdn.com/bs.svg",
+    "currencies": [
+      {
+        "code": "BSD",
+        "symbol": "$"
+      },
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.82,
+    "ihdi": 0.67,
+    "unMember": true
+  },
+  {
+    "cca2": "BT",
+    "ccn3": "064",
+    "continent": "asia",
+    "population": 791524,
+    "area": 38394,
+    "flagSvg": "https://flagcdn.com/bt.svg",
+    "currencies": [
+      {
+        "code": "BTN",
+        "symbol": "Nu."
+      },
+      {
+        "code": "INR",
+        "symbol": "₹"
+      }
+    ],
+    "hdi": 0.698,
+    "ihdi": 0.478,
+    "unMember": true
+  },
+  {
+    "cca2": "BW",
+    "ccn3": "072",
+    "continent": "africa",
+    "population": 2521139,
+    "area": 582000,
+    "flagSvg": "https://flagcdn.com/bw.svg",
+    "currencies": [
+      {
+        "code": "BWP",
+        "symbol": "P"
+      }
+    ],
+    "hdi": 0.731,
+    "ihdi": 0.509,
+    "unMember": true
+  },
+  {
+    "cca2": "BY",
+    "ccn3": "112",
+    "continent": "europe",
+    "population": 9132629,
+    "area": 207600,
+    "flagSvg": "https://flagcdn.com/by.svg",
+    "currencies": [
+      {
+        "code": "BYN",
+        "symbol": "BYN"
+      }
+    ],
+    "hdi": 0.824,
+    "ihdi": 0.771,
+    "unMember": true
+  },
+  {
+    "cca2": "BZ",
+    "ccn3": "084",
+    "continent": "america",
+    "population": 417072,
+    "area": 22966,
+    "flagSvg": "https://flagcdn.com/bz.svg",
+    "currencies": [
+      {
+        "code": "BZD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.721,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "CA",
+    "ccn3": "124",
+    "continent": "america",
+    "population": 41288599,
+    "area": 9984670,
+    "flagSvg": "https://flagcdn.com/ca.svg",
+    "currencies": [
+      {
+        "code": "CAD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.939,
+    "ihdi": 0.867,
+    "unMember": true
+  },
+  {
+    "cca2": "CD",
+    "ccn3": "180",
+    "continent": "africa",
+    "population": 109276265,
+    "area": 2344858,
+    "flagSvg": "https://flagcdn.com/cd.svg",
+    "currencies": [
+      {
+        "code": "CDF",
+        "symbol": "FC"
+      }
+    ],
+    "hdi": 0.522,
+    "ihdi": 0.341,
+    "unMember": true
+  },
+  {
+    "cca2": "CF",
+    "ccn3": "140",
+    "continent": "africa",
+    "population": 5330690,
+    "area": 622984,
+    "flagSvg": "https://flagcdn.com/cf.svg",
+    "currencies": [
+      {
+        "code": "XAF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.414,
+    "ihdi": 0.253,
+    "unMember": true
+  },
+  {
+    "cca2": "CG",
+    "ccn3": "178",
+    "continent": "africa",
+    "population": 6332961,
+    "area": 342000,
+    "flagSvg": "https://flagcdn.com/cg.svg",
+    "currencies": [
+      {
+        "code": "XAF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.649,
+    "ihdi": 0.426,
+    "unMember": true
+  },
+  {
+    "cca2": "CH",
+    "ccn3": "756",
+    "continent": "europe",
+    "population": 9005582,
+    "area": 41284,
+    "flagSvg": "https://flagcdn.com/ch.svg",
+    "currencies": [
+      {
+        "code": "CHF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.97,
+    "ihdi": 0.894,
+    "unMember": true
+  },
+  {
+    "cca2": "CI",
+    "ccn3": "384",
+    "continent": "africa",
+    "population": 31934230,
+    "area": 322463,
+    "flagSvg": "https://flagcdn.com/ci.svg",
+    "currencies": [
+      {
+        "code": "XOF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.582,
+    "ihdi": 0.35,
+    "unMember": true
+  },
+  {
+    "cca2": "CK",
+    "ccn3": "184",
+    "continent": "oceania",
+    "population": 15040,
+    "area": 236,
+    "flagSvg": "https://flagcdn.com/ck.svg",
+    "currencies": [
+      {
+        "code": "NZD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "NZ"
+  },
+  {
+    "cca2": "CL",
+    "ccn3": "152",
+    "continent": "america",
+    "population": 19764771,
+    "area": 756102,
+    "flagSvg": "https://flagcdn.com/cl.svg",
+    "currencies": [
+      {
+        "code": "CLP",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.878,
+    "ihdi": 0.723,
+    "unMember": true
+  },
+  {
+    "cca2": "CM",
+    "ccn3": "120",
+    "continent": "africa",
+    "population": 29123744,
+    "area": 475442,
+    "flagSvg": "https://flagcdn.com/cm.svg",
+    "currencies": [
+      {
+        "code": "XAF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.588,
+    "ihdi": 0.361,
+    "unMember": true
+  },
+  {
+    "cca2": "CN",
+    "ccn3": "156",
+    "continent": "asia",
+    "population": 1408975000,
+    "area": 9706961,
+    "flagSvg": "https://flagcdn.com/cn.svg",
+    "currencies": [
+      {
+        "code": "CNY",
+        "symbol": "¥"
+      }
+    ],
+    "hdi": 0.797,
+    "ihdi": 0.67,
+    "unMember": true
+  },
+  {
+    "cca2": "CO",
+    "ccn3": "170",
+    "continent": "america",
+    "population": 52886363,
+    "area": 1141748,
+    "flagSvg": "https://flagcdn.com/co.svg",
+    "currencies": [
+      {
+        "code": "COP",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.788,
+    "ihdi": 0.593,
+    "unMember": true
+  },
+  {
+    "cca2": "CR",
+    "ccn3": "188",
+    "continent": "america",
+    "population": 5129910,
+    "area": 51100,
+    "flagSvg": "https://flagcdn.com/cr.svg",
+    "currencies": [
+      {
+        "code": "CRC",
+        "symbol": "₡"
+      }
+    ],
+    "hdi": 0.833,
+    "ihdi": 0.678,
+    "unMember": true
+  },
+  {
+    "cca2": "CU",
+    "ccn3": "192",
+    "continent": "america",
+    "population": 10979783,
+    "area": 109884,
+    "flagSvg": "https://flagcdn.com/cu.svg",
+    "currencies": [
+      {
+        "code": "CUC",
+        "symbol": "$"
+      },
+      {
+        "code": "CUP",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.762,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "CV",
+    "ccn3": "132",
+    "continent": "africa",
+    "population": 524877,
+    "area": 4033,
+    "flagSvg": "https://flagcdn.com/cv.svg",
+    "currencies": [
+      {
+        "code": "CVE",
+        "symbol": "Esc"
+      }
+    ],
+    "hdi": 0.668,
+    "ihdi": 0.478,
+    "unMember": true
+  },
+  {
+    "cca2": "CW",
+    "ccn3": "531",
+    "continent": "america",
+    "population": 155967,
+    "area": 444,
+    "flagSvg": "https://flagcdn.com/cw.svg",
+    "currencies": [
+      {
+        "code": "ANG",
+        "symbol": "ƒ"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "NL"
+  },
+  {
+    "cca2": "CY",
+    "ccn3": "196",
+    "continent": "europe",
+    "population": 1358282,
+    "area": 9251,
+    "flagSvg": "https://flagcdn.com/cy.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.913,
+    "ihdi": 0.841,
+    "unMember": true
+  },
+  {
+    "cca2": "CZ",
+    "ccn3": "203",
+    "continent": "europe",
+    "population": 10905028,
+    "area": 78865,
+    "flagSvg": "https://flagcdn.com/cz.svg",
+    "currencies": [
+      {
+        "code": "CZK",
+        "symbol": "Kč"
+      }
+    ],
+    "hdi": 0.915,
+    "ihdi": 0.867,
+    "unMember": true
+  },
+  {
+    "cca2": "DE",
+    "ccn3": "276",
+    "continent": "europe",
+    "population": 83516593,
+    "area": 357114,
+    "flagSvg": "https://flagcdn.com/de.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.959,
+    "ihdi": 0.89,
+    "unMember": true
+  },
+  {
+    "cca2": "DJ",
+    "ccn3": "262",
+    "continent": "africa",
+    "population": 1168722,
+    "area": 23200,
+    "flagSvg": "https://flagcdn.com/dj.svg",
+    "currencies": [
+      {
+        "code": "DJF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.513,
+    "ihdi": 0.341,
+    "unMember": true
+  },
+  {
+    "cca2": "DK",
+    "ccn3": "208",
+    "continent": "europe",
+    "population": 5976992,
+    "area": 43094,
+    "flagSvg": "https://flagcdn.com/dk.svg",
+    "currencies": [
+      {
+        "code": "DKK",
+        "symbol": "kr"
+      }
+    ],
+    "hdi": 0.962,
+    "ihdi": 0.909,
+    "unMember": true
+  },
+  {
+    "cca2": "DM",
+    "ccn3": "212",
+    "continent": "america",
+    "population": 66205,
+    "area": 751,
+    "flagSvg": "https://flagcdn.com/dm.svg",
+    "currencies": [
+      {
+        "code": "XCD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.761,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "DO",
+    "ccn3": "214",
+    "continent": "america",
+    "population": 11427557,
+    "area": 48671,
+    "flagSvg": "https://flagcdn.com/do.svg",
+    "currencies": [
+      {
+        "code": "DOP",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.776,
+    "ihdi": 0.634,
+    "unMember": true
+  },
+  {
+    "cca2": "DZ",
+    "ccn3": "012",
+    "continent": "africa",
+    "population": 46814308,
+    "area": 2381741,
+    "flagSvg": "https://flagcdn.com/dz.svg",
+    "currencies": [
+      {
+        "code": "DZD",
+        "symbol": "د.ج"
+      }
+    ],
+    "hdi": 0.763,
+    "ihdi": 0.601,
+    "unMember": true
+  },
+  {
+    "cca2": "EC",
+    "ccn3": "218",
+    "continent": "america",
+    "population": 18135478,
+    "area": 276841,
+    "flagSvg": "https://flagcdn.com/ec.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.777,
+    "ihdi": 0.64,
+    "unMember": true
+  },
+  {
+    "cca2": "EE",
+    "ccn3": "233",
+    "continent": "europe",
+    "population": 1372341,
+    "area": 45227,
+    "flagSvg": "https://flagcdn.com/ee.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.905,
+    "ihdi": 0.841,
+    "unMember": true
+  },
+  {
+    "cca2": "EG",
+    "ccn3": "818",
+    "continent": "africa",
+    "population": 116538258,
+    "area": 1002450,
+    "flagSvg": "https://flagcdn.com/eg.svg",
+    "currencies": [
+      {
+        "code": "EGP",
+        "symbol": "£"
+      }
+    ],
+    "hdi": 0.754,
+    "ihdi": 0.582,
+    "unMember": true
+  },
+  {
+    "cca2": "EH",
+    "ccn3": "732",
+    "continent": "africa",
+    "population": 600904,
+    "area": 266000,
+    "flagSvg": "https://flagcdn.com/eh.svg",
+    "currencies": [
+      {
+        "code": "DZD",
+        "symbol": "د.ج"
+      },
+      {
+        "code": "MAD",
+        "symbol": "د.م."
+      },
+      {
+        "code": "MRU",
+        "symbol": "UM"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false
+  },
+  {
+    "cca2": "ER",
+    "ccn3": "232",
+    "continent": "africa",
+    "population": 3535603,
+    "area": 117600,
+    "flagSvg": "https://flagcdn.com/er.svg",
+    "currencies": [
+      {
+        "code": "ERN",
+        "symbol": "Nfk"
+      }
+    ],
+    "hdi": 0.503,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "ES",
+    "ccn3": "724",
+    "continent": "europe",
+    "population": 48848840,
+    "area": 505992,
+    "flagSvg": "https://flagcdn.com/es.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.918,
+    "ihdi": 0.819,
+    "unMember": true
+  },
+  {
+    "cca2": "ET",
+    "ccn3": "231",
+    "continent": "africa",
+    "population": 132059767,
+    "area": 1104300,
+    "flagSvg": "https://flagcdn.com/et.svg",
+    "currencies": [
+      {
+        "code": "ETB",
+        "symbol": "Br"
+      }
+    ],
+    "hdi": 0.497,
+    "ihdi": 0.326,
+    "unMember": true
+  },
+  {
+    "cca2": "FI",
+    "ccn3": "246",
+    "continent": "europe",
+    "population": 5619911,
+    "area": 338455,
+    "flagSvg": "https://flagcdn.com/fi.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.948,
+    "ihdi": 0.891,
+    "unMember": true
+  },
+  {
+    "cca2": "FJ",
+    "ccn3": "242",
+    "continent": "oceania",
+    "population": 928784,
+    "area": 18272,
+    "flagSvg": "https://flagcdn.com/fj.svg",
+    "currencies": [
+      {
+        "code": "FJD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.731,
+    "ihdi": 0.626,
+    "unMember": true
+  },
+  {
+    "cca2": "FK",
+    "ccn3": "238",
+    "continent": "america",
+    "population": 3662,
+    "area": 12173,
+    "flagSvg": "https://flagcdn.com/fk.svg",
+    "currencies": [
+      {
+        "code": "FKP",
+        "symbol": "£"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false
+  },
+  {
+    "cca2": "FM",
+    "ccn3": "583",
+    "continent": "oceania",
+    "population": 113160,
+    "area": 702,
+    "flagSvg": "https://flagcdn.com/fm.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.615,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "FO",
+    "ccn3": "234",
+    "continent": "europe",
+    "population": 54681,
+    "area": 1393,
+    "flagSvg": "https://flagcdn.com/fo.svg",
+    "currencies": [
+      {
+        "code": "DKK",
+        "symbol": "kr"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "DK"
+  },
+  {
+    "cca2": "FR",
+    "ccn3": "250",
+    "continent": "europe",
+    "population": 68551653,
+    "area": 543908,
+    "flagSvg": "https://flagcdn.com/fr.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.92,
+    "ihdi": 0.836,
+    "unMember": true
+  },
+  {
+    "cca2": "GA",
+    "ccn3": "266",
+    "continent": "africa",
+    "population": 2538952,
+    "area": 267668,
+    "flagSvg": "https://flagcdn.com/ga.svg",
+    "currencies": [
+      {
+        "code": "XAF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.733,
+    "ihdi": 0.558,
+    "unMember": true
+  },
+  {
+    "cca2": "GB",
+    "ccn3": "826",
+    "continent": "europe",
+    "population": 69226000,
+    "area": 244376,
+    "flagSvg": "https://flagcdn.com/gb.svg",
+    "currencies": [
+      {
+        "code": "GBP",
+        "symbol": "£"
+      }
+    ],
+    "hdi": 0.946,
+    "ihdi": 0.869,
+    "unMember": true
+  },
+  {
+    "cca2": "GD",
+    "ccn3": "308",
+    "continent": "america",
+    "population": 117207,
+    "area": 344,
+    "flagSvg": "https://flagcdn.com/gd.svg",
+    "currencies": [
+      {
+        "code": "XCD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.791,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "GE",
+    "ccn3": "268",
+    "continent": "asia",
+    "population": 3699557,
+    "area": 69700,
+    "flagSvg": "https://flagcdn.com/ge.svg",
+    "currencies": [
+      {
+        "code": "GEL",
+        "symbol": "₾"
+      }
+    ],
+    "hdi": 0.844,
+    "ihdi": 0.754,
+    "unMember": true
+  },
+  {
+    "cca2": "GF",
+    "ccn3": "254",
+    "continent": "america",
+    "population": 292354,
+    "area": 83534,
+    "flagSvg": "https://flagcdn.com/gf.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
+    "cca2": "GG",
+    "ccn3": "831",
+    "continent": "europe",
+    "population": 64781,
+    "area": 78,
+    "flagSvg": "https://flagcdn.com/gg.svg",
+    "currencies": [
+      {
+        "code": "GBP",
+        "symbol": "£"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "GB"
+  },
+  {
+    "cca2": "GH",
+    "ccn3": "288",
+    "continent": "africa",
+    "population": 34427414,
+    "area": 238533,
+    "flagSvg": "https://flagcdn.com/gh.svg",
+    "currencies": [
+      {
+        "code": "GHS",
+        "symbol": "GH₵"
+      }
+    ],
+    "hdi": 0.628,
+    "ihdi": 0.399,
+    "unMember": true
+  },
+  {
+    "cca2": "GL",
+    "ccn3": "304",
+    "continent": "america",
+    "population": 56836,
+    "area": 2166086,
+    "flagSvg": "https://flagcdn.com/gl.svg",
+    "currencies": [
+      {
+        "code": "DKK",
+        "symbol": "kr"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "DK"
+  },
+  {
+    "cca2": "GM",
+    "ccn3": "270",
+    "continent": "africa",
+    "population": 2759988,
+    "area": 10689,
+    "flagSvg": "https://flagcdn.com/gm.svg",
+    "currencies": [
+      {
+        "code": "GMD",
+        "symbol": "D"
+      }
+    ],
+    "hdi": 0.524,
+    "ihdi": 0.329,
+    "unMember": true
+  },
+  {
+    "cca2": "GN",
+    "ccn3": "324",
+    "continent": "africa",
+    "population": 14754785,
+    "area": 245857,
+    "flagSvg": "https://flagcdn.com/gn.svg",
+    "currencies": [
+      {
+        "code": "GNF",
+        "symbol": "FG"
+      }
+    ],
+    "hdi": 0.5,
+    "ihdi": 0.302,
+    "unMember": true
+  },
+  {
+    "cca2": "GP",
+    "ccn3": "312",
+    "continent": "america",
+    "population": 378561,
+    "area": 1628,
+    "flagSvg": "https://flagcdn.com/gp.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
+    "cca2": "GQ",
+    "ccn3": "226",
+    "continent": "africa",
+    "population": 1892516,
+    "area": 28051,
+    "flagSvg": "https://flagcdn.com/gq.svg",
+    "currencies": [
+      {
+        "code": "XAF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.674,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "GR",
+    "ccn3": "300",
+    "continent": "europe",
+    "population": 10405134,
+    "area": 131990,
+    "flagSvg": "https://flagcdn.com/gr.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.908,
+    "ihdi": 0.825,
+    "unMember": true
+  },
+  {
+    "cca2": "GT",
+    "ccn3": "320",
+    "continent": "america",
+    "population": 18406359,
+    "area": 108889,
+    "flagSvg": "https://flagcdn.com/gt.svg",
+    "currencies": [
+      {
+        "code": "GTQ",
+        "symbol": "Q"
+      }
+    ],
+    "hdi": 0.662,
+    "ihdi": 0.479,
+    "unMember": true
+  },
+  {
+    "cca2": "GU",
+    "ccn3": "316",
+    "continent": "oceania",
+    "population": 167777,
+    "area": 549,
+    "flagSvg": "https://flagcdn.com/gu.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "US"
+  },
+  {
+    "cca2": "GW",
+    "ccn3": "624",
+    "continent": "africa",
+    "population": 2201352,
+    "area": 36125,
+    "flagSvg": "https://flagcdn.com/gw.svg",
+    "currencies": [
+      {
+        "code": "XOF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.514,
+    "ihdi": 0.331,
+    "unMember": true
+  },
+  {
+    "cca2": "GY",
+    "ccn3": "328",
+    "continent": "america",
+    "population": 831087,
+    "area": 214969,
+    "flagSvg": "https://flagcdn.com/gy.svg",
+    "currencies": [
+      {
+        "code": "GYD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.776,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "HK",
+    "ccn3": "344",
+    "continent": "asia",
+    "population": 7524100,
+    "area": 1104,
+    "flagSvg": "https://flagcdn.com/hk.svg",
+    "currencies": [
+      {
+        "code": "HKD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.955,
+    "ihdi": 0.839,
+    "unMember": false,
+    "sovereignCountry": "CN"
+  },
+  {
+    "cca2": "HN",
+    "ccn3": "340",
+    "continent": "america",
+    "population": 10825703,
+    "area": 112492,
+    "flagSvg": "https://flagcdn.com/hn.svg",
+    "currencies": [
+      {
+        "code": "HNL",
+        "symbol": "L"
+      }
+    ],
+    "hdi": 0.645,
+    "ihdi": 0.496,
+    "unMember": true
+  },
+  {
+    "cca2": "HR",
+    "ccn3": "191",
+    "continent": "europe",
+    "population": 3866200,
+    "area": 56594,
+    "flagSvg": "https://flagcdn.com/hr.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.889,
+    "ihdi": 0.828,
+    "unMember": true
+  },
+  {
+    "cca2": "HT",
+    "ccn3": "332",
+    "continent": "america",
+    "population": 11772557,
+    "area": 27750,
+    "flagSvg": "https://flagcdn.com/ht.svg",
+    "currencies": [
+      {
+        "code": "HTG",
+        "symbol": "G"
+      }
+    ],
+    "hdi": 0.554,
+    "ihdi": 0.337,
+    "unMember": true
+  },
+  {
+    "cca2": "HU",
+    "ccn3": "348",
+    "continent": "europe",
+    "population": 9562065,
+    "area": 93028,
+    "flagSvg": "https://flagcdn.com/hu.svg",
+    "currencies": [
+      {
+        "code": "HUF",
+        "symbol": "Ft"
+      }
+    ],
+    "hdi": 0.87,
+    "ihdi": 0.819,
+    "unMember": true
+  },
+  {
+    "cca2": "ID",
+    "ccn3": "360",
+    "continent": "asia",
+    "population": 283487931,
+    "area": 1904569,
+    "flagSvg": "https://flagcdn.com/id.svg",
+    "currencies": [
+      {
+        "code": "IDR",
+        "symbol": "Rp"
+      }
+    ],
+    "hdi": 0.728,
+    "ihdi": 0.608,
+    "unMember": true
+  },
+  {
+    "cca2": "IE",
+    "ccn3": "372",
+    "continent": "europe",
+    "population": 5395790,
+    "area": 70273,
+    "flagSvg": "https://flagcdn.com/ie.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.949,
+    "ihdi": 0.886,
+    "unMember": true
+  },
+  {
+    "cca2": "IL",
+    "ccn3": "376",
+    "continent": "asia",
+    "population": 9974400,
+    "area": 21937,
+    "flagSvg": "https://flagcdn.com/il.svg",
+    "currencies": [
+      {
+        "code": "ILS",
+        "symbol": "₪"
+      }
+    ],
+    "hdi": 0.919,
+    "ihdi": 0.813,
+    "unMember": true
+  },
+  {
+    "cca2": "IM",
+    "ccn3": "833",
+    "continent": "europe",
+    "population": 84160,
+    "area": 572,
+    "flagSvg": "https://flagcdn.com/im.svg",
+    "currencies": [
+      {
+        "code": "GBP",
+        "symbol": "£"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "GB"
+  },
+  {
+    "cca2": "IN",
+    "ccn3": "356",
+    "continent": "asia",
+    "population": 1450935791,
+    "area": 3287263,
+    "flagSvg": "https://flagcdn.com/in.svg",
+    "currencies": [
+      {
+        "code": "INR",
+        "symbol": "₹"
+      }
+    ],
+    "hdi": 0.685,
+    "ihdi": 0.475,
+    "unMember": true
+  },
+  {
+    "cca2": "IQ",
+    "ccn3": "368",
+    "continent": "asia",
+    "population": 46042015,
+    "area": 438317,
+    "flagSvg": "https://flagcdn.com/iq.svg",
+    "currencies": [
+      {
+        "code": "IQD",
+        "symbol": "ع.د"
+      }
+    ],
+    "hdi": 0.695,
+    "ihdi": 0.534,
+    "unMember": true
+  },
+  {
+    "cca2": "IR",
+    "ccn3": "364",
+    "continent": "asia",
+    "population": 91567738,
+    "area": 1648195,
+    "flagSvg": "https://flagcdn.com/ir.svg",
+    "currencies": [
+      {
+        "code": "IRR",
+        "symbol": "﷼"
+      }
+    ],
+    "hdi": 0.799,
+    "ihdi": 0.643,
+    "unMember": true
+  },
+  {
+    "cca2": "IS",
+    "ccn3": "352",
+    "continent": "europe",
+    "population": 386506,
+    "area": 103000,
+    "flagSvg": "https://flagcdn.com/is.svg",
+    "currencies": [
+      {
+        "code": "ISK",
+        "symbol": "kr"
+      }
+    ],
+    "hdi": 0.972,
+    "ihdi": 0.923,
+    "unMember": true
+  },
+  {
+    "cca2": "IT",
+    "ccn3": "380",
+    "continent": "europe",
+    "population": 58952704,
+    "area": 301336,
+    "flagSvg": "https://flagcdn.com/it.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.915,
+    "ihdi": 0.817,
+    "unMember": true
+  },
+  {
+    "cca2": "JE",
+    "ccn3": "832",
+    "continent": "europe",
+    "population": 103267,
+    "area": 116,
+    "flagSvg": "https://flagcdn.com/je.svg",
+    "currencies": [
+      {
+        "code": "GBP",
+        "symbol": "£"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "GB"
+  },
+  {
+    "cca2": "JM",
+    "ccn3": "388",
+    "continent": "america",
+    "population": 2839175,
+    "area": 10991,
+    "flagSvg": "https://flagcdn.com/jm.svg",
+    "currencies": [
+      {
+        "code": "JMD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.72,
+    "ihdi": 0.59,
+    "unMember": true
+  },
+  {
+    "cca2": "JO",
+    "ccn3": "400",
+    "continent": "asia",
+    "population": 11552876,
+    "area": 89342,
+    "flagSvg": "https://flagcdn.com/jo.svg",
+    "currencies": [
+      {
+        "code": "JOD",
+        "symbol": "د.ا"
+      }
+    ],
+    "hdi": 0.754,
+    "ihdi": 0.637,
+    "unMember": true
+  },
+  {
+    "cca2": "JP",
+    "ccn3": "392",
+    "continent": "asia",
+    "population": 123975371,
+    "area": 377930,
+    "flagSvg": "https://flagcdn.com/jp.svg",
+    "currencies": [
+      {
+        "code": "JPY",
+        "symbol": "¥"
+      }
+    ],
+    "hdi": 0.925,
+    "ihdi": 0.845,
+    "unMember": true
+  },
+  {
+    "cca2": "KE",
+    "ccn3": "404",
+    "continent": "africa",
+    "population": 56432944,
+    "area": 580367,
+    "flagSvg": "https://flagcdn.com/ke.svg",
+    "currencies": [
+      {
+        "code": "KES",
+        "symbol": "KSh"
+      }
+    ],
+    "hdi": 0.628,
+    "ihdi": 0.456,
+    "unMember": true
+  },
+  {
+    "cca2": "KG",
+    "ccn3": "417",
+    "continent": "asia",
+    "population": 7221868,
+    "area": 199951,
+    "flagSvg": "https://flagcdn.com/kg.svg",
+    "currencies": [
+      {
+        "code": "KGS",
+        "symbol": "⃀"
+      }
+    ],
+    "hdi": 0.72,
+    "ihdi": 0.649,
+    "unMember": true
+  },
+  {
+    "cca2": "KH",
+    "ccn3": "116",
+    "continent": "asia",
+    "population": 17638801,
+    "area": 181035,
+    "flagSvg": "https://flagcdn.com/kh.svg",
+    "currencies": [
+      {
+        "code": "KHR",
+        "symbol": "៛"
+      },
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.606,
+    "ihdi": 0.444,
+    "unMember": true
+  },
+  {
+    "cca2": "KI",
+    "ccn3": "296",
+    "continent": "oceania",
+    "population": 134518,
+    "area": 811,
+    "flagSvg": "https://flagcdn.com/ki.svg",
+    "currencies": [
+      {
+        "code": "AUD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.644,
+    "ihdi": 0.535,
+    "unMember": true
+  },
+  {
+    "cca2": "KM",
+    "ccn3": "174",
+    "continent": "africa",
+    "population": 866628,
+    "area": 1862,
+    "flagSvg": "https://flagcdn.com/km.svg",
+    "currencies": [
+      {
+        "code": "KMF",
+        "symbol": "CF"
+      }
+    ],
+    "hdi": 0.603,
+    "ihdi": 0.356,
+    "unMember": true
+  },
+  {
+    "cca2": "KN",
+    "ccn3": "659",
+    "continent": "america",
+    "population": 46843,
+    "area": 261,
+    "flagSvg": "https://flagcdn.com/kn.svg",
+    "currencies": [
+      {
+        "code": "XCD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.84,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "KP",
+    "ccn3": "408",
+    "continent": "asia",
+    "population": 26498823,
+    "area": 120538,
+    "flagSvg": "https://flagcdn.com/kp.svg",
+    "currencies": [
+      {
+        "code": "KPW",
+        "symbol": "₩"
+      }
+    ],
+    "hdi": 0.733,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "KR",
+    "ccn3": "410",
+    "continent": "asia",
+    "population": 51751065,
+    "area": 100210,
+    "flagSvg": "https://flagcdn.com/kr.svg",
+    "currencies": [
+      {
+        "code": "KRW",
+        "symbol": "₩"
+      }
+    ],
+    "hdi": 0.937,
+    "ihdi": 0.857,
+    "unMember": true
+  },
+  {
+    "cca2": "KW",
+    "ccn3": "414",
+    "continent": "asia",
+    "population": 4897263,
+    "area": 17818,
+    "flagSvg": "https://flagcdn.com/kw.svg",
+    "currencies": [
+      {
+        "code": "KWD",
+        "symbol": "د.ك"
+      }
+    ],
+    "hdi": 0.852,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "KY",
+    "ccn3": "136",
+    "continent": "america",
+    "population": 74457,
+    "area": 264,
+    "flagSvg": "https://flagcdn.com/ky.svg",
+    "currencies": [
+      {
+        "code": "KYD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "GB"
+  },
+  {
+    "cca2": "KZ",
+    "ccn3": "398",
+    "continent": "asia",
+    "population": 20592571,
+    "area": 2724900,
+    "flagSvg": "https://flagcdn.com/kz.svg",
+    "currencies": [
+      {
+        "code": "KZT",
+        "symbol": "₸"
+      }
+    ],
+    "hdi": 0.837,
+    "ihdi": 0.766,
+    "unMember": true
+  },
+  {
+    "cca2": "LA",
+    "ccn3": "418",
+    "continent": "asia",
+    "population": 7769819,
+    "area": 236800,
+    "flagSvg": "https://flagcdn.com/la.svg",
+    "currencies": [
+      {
+        "code": "LAK",
+        "symbol": "₭"
+      }
+    ],
+    "hdi": 0.617,
+    "ihdi": 0.462,
+    "unMember": true
+  },
+  {
+    "cca2": "LB",
+    "ccn3": "422",
+    "continent": "asia",
+    "population": 5805962,
+    "area": 10452,
+    "flagSvg": "https://flagcdn.com/lb.svg",
+    "currencies": [
+      {
+        "code": "LBP",
+        "symbol": "L£"
+      }
+    ],
+    "hdi": 0.752,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "LC",
+    "ccn3": "662",
+    "continent": "america",
+    "population": 179744,
+    "area": 616,
+    "flagSvg": "https://flagcdn.com/lc.svg",
+    "currencies": [
+      {
+        "code": "XCD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.748,
+    "ihdi": 0.523,
+    "unMember": true
+  },
+  {
+    "cca2": "LI",
+    "ccn3": "438",
+    "continent": "europe",
+    "population": 40450,
+    "area": 160,
+    "flagSvg": "https://flagcdn.com/li.svg",
+    "currencies": [
+      {
+        "code": "CHF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.938,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "LK",
+    "ccn3": "144",
+    "continent": "asia",
+    "population": 21916000,
+    "area": 65610,
+    "flagSvg": "https://flagcdn.com/lk.svg",
+    "currencies": [
+      {
+        "code": "LKR",
+        "symbol": "Rs"
+      }
+    ],
+    "hdi": 0.776,
+    "ihdi": 0.63,
+    "unMember": true
+  },
+  {
+    "cca2": "LR",
+    "ccn3": "430",
+    "continent": "africa",
+    "population": 5612817,
+    "area": 111369,
+    "flagSvg": "https://flagcdn.com/lr.svg",
+    "currencies": [
+      {
+        "code": "LRD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.51,
+    "ihdi": 0.326,
+    "unMember": true
+  },
+  {
+    "cca2": "LS",
+    "ccn3": "426",
+    "continent": "africa",
+    "population": 2337423,
+    "area": 30355,
+    "flagSvg": "https://flagcdn.com/ls.svg",
+    "currencies": [
+      {
+        "code": "LSL",
+        "symbol": "L"
+      },
+      {
+        "code": "ZAR",
+        "symbol": "R"
+      }
+    ],
+    "hdi": 0.55,
+    "ihdi": 0.357,
+    "unMember": true
+  },
+  {
+    "cca2": "LT",
+    "ccn3": "440",
+    "continent": "europe",
+    "population": 2888278,
+    "area": 65300,
+    "flagSvg": "https://flagcdn.com/lt.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.895,
+    "ihdi": 0.812,
+    "unMember": true
+  },
+  {
+    "cca2": "LU",
+    "ccn3": "442",
+    "continent": "europe",
+    "population": 677012,
+    "area": 2586,
+    "flagSvg": "https://flagcdn.com/lu.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.922,
+    "ihdi": 0.838,
+    "unMember": true
+  },
+  {
+    "cca2": "LV",
+    "ccn3": "428",
+    "continent": "europe",
+    "population": 1866124,
+    "area": 64559,
+    "flagSvg": "https://flagcdn.com/lv.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.889,
+    "ihdi": 0.812,
+    "unMember": true
+  },
+  {
+    "cca2": "LY",
+    "ccn3": "434",
+    "continent": "africa",
+    "population": 7381023,
+    "area": 1759540,
+    "flagSvg": "https://flagcdn.com/ly.svg",
+    "currencies": [
+      {
+        "code": "LYD",
+        "symbol": "ل.د"
+      }
+    ],
+    "hdi": 0.721,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "MA",
+    "ccn3": "504",
+    "continent": "africa",
+    "population": 38081173,
+    "area": 446550,
+    "flagSvg": "https://flagcdn.com/ma.svg",
+    "currencies": [
+      {
+        "code": "MAD",
+        "symbol": "د.م."
+      }
+    ],
+    "hdi": 0.71,
+    "ihdi": 0.517,
+    "unMember": true
+  },
+  {
+    "cca2": "MC",
+    "ccn3": "492",
+    "continent": "europe",
+    "population": 38631,
+    "area": 2.02,
+    "flagSvg": "https://flagcdn.com/mc.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.956,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "MD",
+    "ccn3": "498",
+    "continent": "europe",
+    "population": 2402306,
+    "area": 33847,
+    "flagSvg": "https://flagcdn.com/md.svg",
+    "currencies": [
+      {
+        "code": "MDL",
+        "symbol": "L"
+      }
+    ],
+    "hdi": 0.785,
+    "ihdi": 0.719,
+    "unMember": true
+  },
+  {
+    "cca2": "ME",
+    "ccn3": "499",
+    "continent": "europe",
+    "population": 623525,
+    "area": 13812,
+    "flagSvg": "https://flagcdn.com/me.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.862,
+    "ihdi": 0.771,
+    "unMember": true
+  },
+  {
+    "cca2": "MF",
+    "ccn3": "663",
+    "continent": "america",
+    "population": 26129,
+    "area": 53,
+    "flagSvg": "https://flagcdn.com/mf.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
+    "cca2": "MG",
+    "ccn3": "450",
+    "continent": "africa",
+    "population": 31964956,
+    "area": 587041,
+    "flagSvg": "https://flagcdn.com/mg.svg",
+    "currencies": [
+      {
+        "code": "MGA",
+        "symbol": "Ar"
+      }
+    ],
+    "hdi": 0.487,
+    "ihdi": 0.319,
+    "unMember": true
+  },
+  {
+    "cca2": "MH",
+    "ccn3": "584",
+    "continent": "oceania",
+    "population": 37548,
+    "area": 181,
+    "flagSvg": "https://flagcdn.com/mh.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.733,
+    "ihdi": 0.626,
+    "unMember": true
+  },
+  {
+    "cca2": "MK",
+    "ccn3": "807",
+    "continent": "europe",
+    "population": 1824359,
+    "area": 25713,
+    "flagSvg": "https://flagcdn.com/mk.svg",
+    "currencies": [
+      {
+        "code": "MKD",
+        "symbol": "ден"
+      }
+    ],
+    "hdi": 0.815,
+    "ihdi": 0.723,
+    "unMember": true
+  },
+  {
+    "cca2": "ML",
+    "ccn3": "466",
+    "continent": "africa",
+    "population": 24478595,
+    "area": 1240192,
+    "flagSvg": "https://flagcdn.com/ml.svg",
+    "currencies": [
+      {
+        "code": "XOF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.419,
+    "ihdi": 0.281,
+    "unMember": true
+  },
+  {
+    "cca2": "MM",
+    "ccn3": "104",
+    "continent": "asia",
+    "population": 54500091,
+    "area": 676578,
+    "flagSvg": "https://flagcdn.com/mm.svg",
+    "currencies": [
+      {
+        "code": "MMK",
+        "symbol": "K"
+      }
+    ],
+    "hdi": 0.609,
+    "ihdi": 0.477,
+    "unMember": true
+  },
+  {
+    "cca2": "MN",
+    "ccn3": "496",
+    "continent": "asia",
+    "population": 3524788,
+    "area": 1564110,
+    "flagSvg": "https://flagcdn.com/mn.svg",
+    "currencies": [
+      {
+        "code": "MNT",
+        "symbol": "₮"
+      }
+    ],
+    "hdi": 0.747,
+    "ihdi": 0.647,
+    "unMember": true
+  },
+  {
+    "cca2": "MO",
+    "ccn3": "446",
+    "continent": "asia",
+    "population": 687000,
+    "area": 30,
+    "flagSvg": "https://flagcdn.com/mo.svg",
+    "currencies": [
+      {
+        "code": "MOP",
+        "symbol": "MOP$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "CN"
+  },
+  {
+    "cca2": "MP",
+    "ccn3": "580",
+    "continent": "oceania",
+    "population": 44278,
+    "area": 464,
+    "flagSvg": "https://flagcdn.com/mp.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "US"
+  },
+  {
+    "cca2": "MQ",
+    "ccn3": "474",
+    "continent": "america",
+    "population": 349925,
+    "area": 1128,
+    "flagSvg": "https://flagcdn.com/mq.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
+    "cca2": "MR",
+    "ccn3": "478",
+    "continent": "africa",
+    "population": 5169395,
+    "area": 1030700,
+    "flagSvg": "https://flagcdn.com/mr.svg",
+    "currencies": [
+      {
+        "code": "MRU",
+        "symbol": "UM"
+      }
+    ],
+    "hdi": 0.563,
+    "ihdi": 0.374,
+    "unMember": true
+  },
+  {
+    "cca2": "MS",
+    "ccn3": "500",
+    "continent": "america",
+    "population": 4386,
+    "area": 102,
+    "flagSvg": "https://flagcdn.com/ms.svg",
+    "currencies": [
+      {
+        "code": "XCD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "GB"
+  },
+  {
+    "cca2": "MT",
+    "ccn3": "470",
+    "continent": "europe",
+    "population": 568847,
+    "area": 316,
+    "flagSvg": "https://flagcdn.com/mt.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.924,
+    "ihdi": 0.843,
+    "unMember": true
+  },
+  {
+    "cca2": "MU",
+    "ccn3": "480",
+    "continent": "africa",
+    "population": 1245779,
+    "area": 2040,
+    "flagSvg": "https://flagcdn.com/mu.svg",
+    "currencies": [
+      {
+        "code": "MUR",
+        "symbol": "Rs"
+      }
+    ],
+    "hdi": 0.806,
+    "ihdi": 0.669,
+    "unMember": true
+  },
+  {
+    "cca2": "MV",
+    "ccn3": "462",
+    "continent": "asia",
+    "population": 527799,
+    "area": 300,
+    "flagSvg": "https://flagcdn.com/mv.svg",
+    "currencies": [
+      {
+        "code": "MVR",
+        "symbol": "Rf"
+      }
+    ],
+    "hdi": 0.766,
+    "ihdi": 0.602,
+    "unMember": true
+  },
+  {
+    "cca2": "MW",
+    "ccn3": "454",
+    "continent": "africa",
+    "population": 21655286,
+    "area": 118484,
+    "flagSvg": "https://flagcdn.com/mw.svg",
+    "currencies": [
+      {
+        "code": "MWK",
+        "symbol": "MK"
+      }
+    ],
+    "hdi": 0.517,
+    "ihdi": 0.365,
+    "unMember": true
+  },
+  {
+    "cca2": "MX",
+    "ccn3": "484",
+    "continent": "america",
+    "population": 130861007,
+    "area": 1964375,
+    "flagSvg": "https://flagcdn.com/mx.svg",
+    "currencies": [
+      {
+        "code": "MXN",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.789,
+    "ihdi": 0.646,
+    "unMember": true
+  },
+  {
+    "cca2": "MY",
+    "ccn3": "458",
+    "continent": "asia",
+    "population": 35557673,
+    "area": 330803,
+    "flagSvg": "https://flagcdn.com/my.svg",
+    "currencies": [
+      {
+        "code": "MYR",
+        "symbol": "RM"
+      }
+    ],
+    "hdi": 0.819,
+    "ihdi": 0.707,
+    "unMember": true
+  },
+  {
+    "cca2": "MZ",
+    "ccn3": "508",
+    "continent": "africa",
+    "population": 34631766,
+    "area": 801590,
+    "flagSvg": "https://flagcdn.com/mz.svg",
+    "currencies": [
+      {
+        "code": "MZN",
+        "symbol": "MT"
+      }
+    ],
+    "hdi": 0.493,
+    "ihdi": 0.297,
+    "unMember": true
+  },
+  {
+    "cca2": "NA",
+    "ccn3": "516",
+    "continent": "africa",
+    "population": 3030131,
+    "area": 825615,
+    "flagSvg": "https://flagcdn.com/na.svg",
+    "currencies": [
+      {
+        "code": "NAD",
+        "symbol": "$"
+      },
+      {
+        "code": "ZAR",
+        "symbol": "R"
+      }
+    ],
+    "hdi": 0.665,
+    "ihdi": 0.438,
+    "unMember": true
+  },
+  {
+    "cca2": "NC",
+    "ccn3": "540",
+    "continent": "oceania",
+    "population": 292639,
+    "area": 18575,
+    "flagSvg": "https://flagcdn.com/nc.svg",
+    "currencies": [
+      {
+        "code": "XPF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
+    "cca2": "NE",
+    "ccn3": "562",
+    "continent": "africa",
+    "population": 27032412,
+    "area": 1267000,
+    "flagSvg": "https://flagcdn.com/ne.svg",
+    "currencies": [
+      {
+        "code": "XOF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.419,
+    "ihdi": 0.265,
+    "unMember": true
+  },
+  {
+    "cca2": "NF",
+    "ccn3": "574",
+    "continent": "oceania",
+    "population": 2188,
+    "area": 36,
+    "flagSvg": "https://flagcdn.com/nf.svg",
+    "currencies": [
+      {
+        "code": "AUD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "AU"
+  },
+  {
+    "cca2": "NG",
+    "ccn3": "566",
+    "continent": "africa",
+    "population": 232679478,
+    "area": 923768,
+    "flagSvg": "https://flagcdn.com/ng.svg",
+    "currencies": [
+      {
+        "code": "NGN",
+        "symbol": "₦"
+      }
+    ],
+    "hdi": 0.56,
+    "ihdi": 0.379,
+    "unMember": true
+  },
+  {
+    "cca2": "NI",
+    "ccn3": "558",
+    "continent": "america",
+    "population": 6916140,
+    "area": 130373,
+    "flagSvg": "https://flagcdn.com/ni.svg",
+    "currencies": [
+      {
+        "code": "NIO",
+        "symbol": "C$"
+      }
+    ],
+    "hdi": 0.706,
+    "ihdi": 0.535,
+    "unMember": true
+  },
+  {
+    "cca2": "NL",
+    "ccn3": "528",
+    "continent": "europe",
+    "population": 17993485,
+    "area": 41865,
+    "flagSvg": "https://flagcdn.com/nl.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.955,
+    "ihdi": 0.892,
+    "unMember": true
+  },
+  {
+    "cca2": "NO",
+    "ccn3": "578",
+    "continent": "europe",
+    "population": 5572279,
+    "area": 386224,
+    "flagSvg": "https://flagcdn.com/no.svg",
+    "currencies": [
+      {
+        "code": "NOK",
+        "symbol": "kr"
+      }
+    ],
+    "hdi": 0.97,
+    "ihdi": 0.909,
+    "unMember": true
+  },
+  {
+    "cca2": "NP",
+    "ccn3": "524",
+    "continent": "asia",
+    "population": 29651054,
+    "area": 147181,
+    "flagSvg": "https://flagcdn.com/np.svg",
+    "currencies": [
+      {
+        "code": "NPR",
+        "symbol": "Rs"
+      }
+    ],
+    "hdi": 0.622,
+    "ihdi": 0.437,
+    "unMember": true
+  },
+  {
+    "cca2": "NR",
+    "ccn3": "520",
+    "continent": "oceania",
+    "population": 11947,
+    "area": 21,
+    "flagSvg": "https://flagcdn.com/nr.svg",
+    "currencies": [
+      {
+        "code": "AUD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.703,
+    "ihdi": 0.599,
+    "unMember": true
+  },
+  {
+    "cca2": "NU",
+    "ccn3": "570",
+    "continent": "oceania",
+    "population": 1681,
+    "area": 260,
+    "flagSvg": "https://flagcdn.com/nu.svg",
+    "currencies": [
+      {
+        "code": "NZD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "NZ"
+  },
+  {
+    "cca2": "NZ",
+    "ccn3": "554",
+    "continent": "oceania",
+    "population": 5287500,
+    "area": 268838,
+    "flagSvg": "https://flagcdn.com/nz.svg",
+    "currencies": [
+      {
+        "code": "NZD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.938,
+    "ihdi": 0.853,
+    "unMember": true
+  },
+  {
+    "cca2": "OM",
+    "ccn3": "512",
+    "continent": "asia",
+    "population": 5281538,
+    "area": 309500,
+    "flagSvg": "https://flagcdn.com/om.svg",
+    "currencies": [
+      {
+        "code": "OMR",
+        "symbol": "ر.ع."
+      }
+    ],
+    "hdi": 0.858,
+    "ihdi": 0.75,
+    "unMember": true
+  },
+  {
+    "cca2": "PA",
+    "ccn3": "591",
+    "continent": "america",
+    "population": 4515577,
+    "area": 75417,
+    "flagSvg": "https://flagcdn.com/pa.svg",
+    "currencies": [
+      {
+        "code": "PAB",
+        "symbol": "B/."
+      },
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.839,
+    "ihdi": 0.664,
+    "unMember": true
+  },
+  {
+    "cca2": "PE",
+    "ccn3": "604",
+    "continent": "america",
+    "population": 34217848,
+    "area": 1285216,
+    "flagSvg": "https://flagcdn.com/pe.svg",
+    "currencies": [
+      {
+        "code": "PEN",
+        "symbol": "S/"
+      }
+    ],
+    "hdi": 0.794,
+    "ihdi": 0.633,
+    "unMember": true
+  },
+  {
+    "cca2": "PF",
+    "ccn3": "258",
+    "continent": "oceania",
+    "population": 281807,
+    "area": 4167,
+    "flagSvg": "https://flagcdn.com/pf.svg",
+    "currencies": [
+      {
+        "code": "XPF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
+    "cca2": "PG",
+    "ccn3": "598",
+    "continent": "oceania",
+    "population": 10576502,
+    "area": 462840,
+    "flagSvg": "https://flagcdn.com/pg.svg",
+    "currencies": [
+      {
+        "code": "PGK",
+        "symbol": "K"
+      }
+    ],
+    "hdi": 0.576,
+    "ihdi": 0.423,
+    "unMember": true
+  },
+  {
+    "cca2": "PH",
+    "ccn3": "608",
+    "continent": "asia",
+    "population": 115843670,
+    "area": 342353,
+    "flagSvg": "https://flagcdn.com/ph.svg",
+    "currencies": [
+      {
+        "code": "PHP",
+        "symbol": "₱"
+      }
+    ],
+    "hdi": 0.72,
+    "ihdi": 0.597,
+    "unMember": true
+  },
+  {
+    "cca2": "PK",
+    "ccn3": "586",
+    "continent": "asia",
+    "population": 251269164,
+    "area": 796095,
+    "flagSvg": "https://flagcdn.com/pk.svg",
+    "currencies": [
+      {
+        "code": "PKR",
+        "symbol": "Rs"
+      }
+    ],
+    "hdi": 0.544,
+    "ihdi": 0.364,
+    "unMember": true
+  },
+  {
+    "cca2": "PL",
+    "ccn3": "616",
+    "continent": "europe",
+    "population": 36559233,
+    "area": 312679,
+    "flagSvg": "https://flagcdn.com/pl.svg",
+    "currencies": [
+      {
+        "code": "PLN",
+        "symbol": "zł"
+      }
+    ],
+    "hdi": 0.906,
+    "ihdi": 0.817,
+    "unMember": true
+  },
+  {
+    "cca2": "PM",
+    "ccn3": "666",
+    "continent": "america",
+    "population": 5819,
+    "area": 242,
+    "flagSvg": "https://flagcdn.com/pm.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
+    "cca2": "PN",
+    "ccn3": "612",
+    "continent": "oceania",
+    "population": 35,
+    "area": 47,
+    "flagSvg": "https://flagcdn.com/pn.svg",
+    "currencies": [
+      {
+        "code": "NZD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "GB"
+  },
+  {
+    "cca2": "PR",
+    "ccn3": "630",
+    "continent": "america",
+    "population": 3203295,
+    "area": 8870,
+    "flagSvg": "https://flagcdn.com/pr.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "US"
+  },
+  {
+    "cca2": "PS",
+    "ccn3": "275",
+    "continent": "asia",
+    "population": 5289152,
+    "area": 6220,
+    "flagSvg": "https://flagcdn.com/ps.svg",
+    "currencies": [
+      {
+        "code": "EGP",
+        "symbol": "£"
+      },
+      {
+        "code": "ILS",
+        "symbol": "₪"
+      },
+      {
+        "code": "JOD",
+        "symbol": "د.ا"
+      }
+    ],
+    "hdi": 0.674,
+    "ihdi": 0.538,
+    "unMember": true
+  },
+  {
+    "cca2": "PT",
+    "ccn3": "620",
+    "continent": "europe",
+    "population": 10694681,
+    "area": 92090,
+    "flagSvg": "https://flagcdn.com/pt.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.89,
+    "ihdi": 0.795,
+    "unMember": true
+  },
+  {
+    "cca2": "PW",
+    "ccn3": "585",
+    "continent": "oceania",
+    "population": 17695,
+    "area": 459,
+    "flagSvg": "https://flagcdn.com/pw.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.786,
+    "ihdi": 0.616,
+    "unMember": true
+  },
+  {
+    "cca2": "PY",
+    "ccn3": "600",
+    "continent": "america",
+    "population": 6929153,
+    "area": 406752,
+    "flagSvg": "https://flagcdn.com/py.svg",
+    "currencies": [
+      {
+        "code": "PYG",
+        "symbol": "₲"
+      }
+    ],
+    "hdi": 0.756,
+    "ihdi": 0.599,
+    "unMember": true
+  },
+  {
+    "cca2": "QA",
+    "ccn3": "634",
+    "continent": "asia",
+    "population": 2857822,
+    "area": 11586,
+    "flagSvg": "https://flagcdn.com/qa.svg",
+    "currencies": [
+      {
+        "code": "QAR",
+        "symbol": "ر.ق"
+      }
+    ],
+    "hdi": 0.886,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "RE",
+    "ccn3": "638",
+    "continent": "africa",
+    "population": 896175,
+    "area": 2511,
+    "flagSvg": "https://flagcdn.com/re.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
+    "cca2": "RO",
+    "ccn3": "642",
+    "continent": "europe",
+    "population": 19051804,
+    "area": 238391,
+    "flagSvg": "https://flagcdn.com/ro.svg",
+    "currencies": [
+      {
+        "code": "RON",
+        "symbol": "lei"
+      }
+    ],
+    "hdi": 0.845,
+    "ihdi": 0.758,
+    "unMember": true
+  },
+  {
+    "cca2": "RS",
+    "ccn3": "688",
+    "continent": "europe",
+    "population": 6586476,
+    "area": 77589,
+    "flagSvg": "https://flagcdn.com/rs.svg",
+    "currencies": [
+      {
+        "code": "RSD",
+        "symbol": "din."
+      }
+    ],
+    "hdi": 0.833,
+    "ihdi": 0.772,
+    "unMember": true
+  },
+  {
+    "cca2": "RU",
+    "ccn3": "643",
+    "continent": "europe",
+    "population": 143533851,
+    "area": 17098246,
+    "flagSvg": "https://flagcdn.com/ru.svg",
+    "currencies": [
+      {
+        "code": "RUB",
+        "symbol": "₽"
+      }
+    ],
+    "hdi": 0.832,
+    "ihdi": 0.758,
+    "unMember": true
+  },
+  {
+    "cca2": "RW",
+    "ccn3": "646",
+    "continent": "africa",
+    "population": 14256567,
+    "area": 26338,
+    "flagSvg": "https://flagcdn.com/rw.svg",
+    "currencies": [
+      {
+        "code": "RWF",
+        "symbol": "RF"
+      }
+    ],
+    "hdi": 0.578,
+    "ihdi": 0.399,
+    "unMember": true
+  },
+  {
+    "cca2": "SA",
+    "ccn3": "682",
+    "continent": "asia",
+    "population": 35300280,
+    "area": 2149690,
+    "flagSvg": "https://flagcdn.com/sa.svg",
+    "currencies": [
+      {
+        "code": "SAR",
+        "symbol": "ر.س"
+      }
+    ],
+    "hdi": 0.9,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "SB",
+    "ccn3": "090",
+    "continent": "oceania",
+    "population": 819198,
+    "area": 28896,
+    "flagSvg": "https://flagcdn.com/sb.svg",
+    "currencies": [
+      {
+        "code": "SBD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.584,
+    "ihdi": 0.483,
+    "unMember": true
+  },
+  {
+    "cca2": "SC",
+    "ccn3": "690",
+    "continent": "africa",
+    "population": 121354,
+    "area": 452,
+    "flagSvg": "https://flagcdn.com/sc.svg",
+    "currencies": [
+      {
+        "code": "SCR",
+        "symbol": "₨"
+      }
+    ],
+    "hdi": 0.848,
+    "ihdi": 0.755,
+    "unMember": true
+  },
+  {
+    "cca2": "SD",
+    "ccn3": "729",
+    "continent": "africa",
+    "population": 50448963,
+    "area": 1886068,
+    "flagSvg": "https://flagcdn.com/sd.svg",
+    "currencies": [
+      {
+        "code": "SDG",
+        "symbol": "ج.س."
+      }
+    ],
+    "hdi": 0.511,
+    "ihdi": 0.328,
+    "unMember": true
+  },
+  {
+    "cca2": "SE",
+    "ccn3": "752",
+    "continent": "europe",
+    "population": 10569709,
+    "area": 450295,
+    "flagSvg": "https://flagcdn.com/se.svg",
+    "currencies": [
+      {
+        "code": "SEK",
+        "symbol": "kr"
+      }
+    ],
+    "hdi": 0.959,
+    "ihdi": 0.886,
+    "unMember": true
+  },
+  {
+    "cca2": "SG",
+    "ccn3": "702",
+    "continent": "asia",
+    "population": 6036860,
+    "area": 710,
+    "flagSvg": "https://flagcdn.com/sg.svg",
+    "currencies": [
+      {
+        "code": "SGD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.946,
+    "ihdi": 0.823,
+    "unMember": true
+  },
+  {
+    "cca2": "SH",
+    "ccn3": "654",
+    "continent": "africa",
+    "population": 5651,
+    "area": 394,
+    "flagSvg": "https://flagcdn.com/sh.svg",
+    "currencies": [
+      {
+        "code": "GBP",
+        "symbol": "£"
+      },
+      {
+        "code": "SHP",
+        "symbol": "£"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "GB"
+  },
+  {
+    "cca2": "SI",
+    "ccn3": "705",
+    "continent": "europe",
+    "population": 2127400,
+    "area": 20273,
+    "flagSvg": "https://flagcdn.com/si.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.931,
+    "ihdi": 0.885,
+    "unMember": true
+  },
+  {
+    "cca2": "SK",
+    "ccn3": "703",
+    "continent": "europe",
+    "population": 5422069,
+    "area": 49037,
+    "flagSvg": "https://flagcdn.com/sk.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.88,
+    "ihdi": 0.833,
+    "unMember": true
+  },
+  {
+    "cca2": "SL",
+    "ccn3": "694",
+    "continent": "africa",
+    "population": 8642022,
+    "area": 71740,
+    "flagSvg": "https://flagcdn.com/sl.svg",
+    "currencies": [
+      {
+        "code": "SLE",
+        "symbol": "Le"
+      }
+    ],
+    "hdi": 0.467,
+    "ihdi": 0.281,
+    "unMember": true
+  },
+  {
+    "cca2": "SM",
+    "ccn3": "674",
+    "continent": "europe",
+    "population": 33977,
+    "area": 61,
+    "flagSvg": "https://flagcdn.com/sm.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.915,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "SN",
+    "ccn3": "686",
+    "continent": "africa",
+    "population": 18501984,
+    "area": 196722,
+    "flagSvg": "https://flagcdn.com/sn.svg",
+    "currencies": [
+      {
+        "code": "XOF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.53,
+    "ihdi": 0.34,
+    "unMember": true
+  },
+  {
+    "cca2": "SO",
+    "ccn3": "706",
+    "continent": "africa",
+    "population": 19009151,
+    "area": 637657,
+    "flagSvg": "https://flagcdn.com/so.svg",
+    "currencies": [
+      {
+        "code": "SOS",
+        "symbol": "Sh"
+      }
+    ],
+    "hdi": 0.404,
+    "ihdi": 0.229,
+    "unMember": true
+  },
+  {
+    "cca2": "SR",
+    "ccn3": "740",
+    "continent": "america",
+    "population": 634431,
+    "area": 163820,
+    "flagSvg": "https://flagcdn.com/sr.svg",
+    "currencies": [
+      {
+        "code": "SRD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.722,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "SS",
+    "ccn3": "728",
+    "continent": "africa",
+    "population": 11943408,
+    "area": 619745,
+    "flagSvg": "https://flagcdn.com/ss.svg",
+    "currencies": [
+      {
+        "code": "SSP",
+        "symbol": "£"
+      }
+    ],
+    "hdi": 0.388,
+    "ihdi": 0.226,
+    "unMember": true
+  },
+  {
+    "cca2": "ST",
+    "ccn3": "678",
+    "continent": "africa",
+    "population": 235536,
+    "area": 964,
+    "flagSvg": "https://flagcdn.com/st.svg",
+    "currencies": [
+      {
+        "code": "STN",
+        "symbol": "Db"
+      }
+    ],
+    "hdi": 0.637,
+    "ihdi": 0.478,
+    "unMember": true
+  },
+  {
+    "cca2": "SV",
+    "ccn3": "222",
+    "continent": "america",
+    "population": 6338193,
+    "area": 21041,
+    "flagSvg": "https://flagcdn.com/sv.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.678,
+    "ihdi": 0.555,
+    "unMember": true
+  },
+  {
+    "cca2": "SX",
+    "ccn3": "534",
+    "continent": "america",
+    "population": 43350,
+    "area": 34,
+    "flagSvg": "https://flagcdn.com/sx.svg",
+    "currencies": [
+      {
+        "code": "ANG",
+        "symbol": "ƒ"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "NL"
+  },
+  {
+    "cca2": "SY",
+    "ccn3": "760",
+    "continent": "asia",
+    "population": 24672760,
+    "area": 185180,
+    "flagSvg": "https://flagcdn.com/sy.svg",
+    "currencies": [
+      {
+        "code": "SYP",
+        "symbol": "£"
+      }
+    ],
+    "hdi": 0.564,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "SZ",
+    "ccn3": "748",
+    "continent": "africa",
+    "population": 1242822,
+    "area": 17364,
+    "flagSvg": "https://flagcdn.com/sz.svg",
+    "currencies": [
+      {
+        "code": "SZL",
+        "symbol": "L"
+      },
+      {
+        "code": "ZAR",
+        "symbol": "R"
+      }
+    ],
+    "hdi": 0.695,
+    "ihdi": 0.431,
+    "unMember": true
+  },
+  {
+    "cca2": "TC",
+    "ccn3": "796",
+    "continent": "america",
+    "population": 46535,
+    "area": 948,
+    "flagSvg": "https://flagcdn.com/tc.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "GB"
+  },
+  {
+    "cca2": "TD",
+    "ccn3": "148",
+    "continent": "africa",
+    "population": 20299123,
+    "area": 1284000,
+    "flagSvg": "https://flagcdn.com/td.svg",
+    "currencies": [
+      {
+        "code": "XAF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.416,
+    "ihdi": 0.252,
+    "unMember": true
+  },
+  {
+    "cca2": "TG",
+    "ccn3": "768",
+    "continent": "africa",
+    "population": 9515236,
+    "area": 56785,
+    "flagSvg": "https://flagcdn.com/tg.svg",
+    "currencies": [
+      {
+        "code": "XOF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": 0.571,
+    "ihdi": 0.363,
+    "unMember": true
+  },
+  {
+    "cca2": "TH",
+    "ccn3": "764",
+    "continent": "asia",
+    "population": 71668011,
+    "area": 513120,
+    "flagSvg": "https://flagcdn.com/th.svg",
+    "currencies": [
+      {
+        "code": "THB",
+        "symbol": "฿"
+      }
+    ],
+    "hdi": 0.798,
+    "ihdi": 0.677,
+    "unMember": true
+  },
+  {
+    "cca2": "TJ",
+    "ccn3": "762",
+    "continent": "asia",
+    "population": 10590927,
+    "area": 143100,
+    "flagSvg": "https://flagcdn.com/tj.svg",
+    "currencies": [
+      {
+        "code": "TJS",
+        "symbol": "SM"
+      }
+    ],
+    "hdi": 0.691,
+    "ihdi": 0.594,
+    "unMember": true
+  },
+  {
+    "cca2": "TL",
+    "ccn3": "626",
+    "continent": "asia",
+    "population": 1400638,
+    "area": 14874,
+    "flagSvg": "https://flagcdn.com/tl.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.634,
+    "ihdi": 0.451,
+    "unMember": true
+  },
+  {
+    "cca2": "TM",
+    "ccn3": "795",
+    "continent": "asia",
+    "population": 7494498,
+    "area": 488100,
+    "flagSvg": "https://flagcdn.com/tm.svg",
+    "currencies": [
+      {
+        "code": "TMT",
+        "symbol": "T"
+      }
+    ],
+    "hdi": 0.764,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "TN",
+    "ccn3": "788",
+    "continent": "africa",
+    "population": 12277109,
+    "area": 163610,
+    "flagSvg": "https://flagcdn.com/tn.svg",
+    "currencies": [
+      {
+        "code": "TND",
+        "symbol": "د.ت"
+      }
+    ],
+    "hdi": 0.746,
+    "ihdi": 0.595,
+    "unMember": true
+  },
+  {
+    "cca2": "TO",
+    "ccn3": "776",
+    "continent": "oceania",
+    "population": 104175,
+    "area": 747,
+    "flagSvg": "https://flagcdn.com/to.svg",
+    "currencies": [
+      {
+        "code": "TOP",
+        "symbol": "T$"
+      }
+    ],
+    "hdi": 0.769,
+    "ihdi": 0.682,
+    "unMember": true
+  },
+  {
+    "cca2": "TR",
+    "ccn3": "792",
+    "continent": "asia",
+    "population": 85518661,
+    "area": 783562,
+    "flagSvg": "https://flagcdn.com/tr.svg",
+    "currencies": [
+      {
+        "code": "TRY",
+        "symbol": "₺"
+      }
+    ],
+    "hdi": 0.853,
+    "ihdi": 0.708,
+    "unMember": true
+  },
+  {
+    "cca2": "TT",
+    "ccn3": "780",
+    "continent": "america",
+    "population": 1368333,
+    "area": 5130,
+    "flagSvg": "https://flagcdn.com/tt.svg",
+    "currencies": [
+      {
+        "code": "TTD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.807,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "TV",
+    "ccn3": "798",
+    "continent": "oceania",
+    "population": 9646,
+    "area": 26,
+    "flagSvg": "https://flagcdn.com/tv.svg",
+    "currencies": [
+      {
+        "code": "AUD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.689,
+    "ihdi": 0.578,
+    "unMember": true
+  },
+  {
+    "cca2": "TW",
+    "ccn3": "158",
+    "continent": "asia",
+    "population": 23317031,
+    "area": 36197,
+    "flagSvg": "https://flagcdn.com/tw.svg",
+    "currencies": [
+      {
+        "code": "TWD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.926,
+    "ihdi": null,
+    "unMember": false
+  },
+  {
+    "cca2": "TZ",
+    "ccn3": "834",
+    "continent": "africa",
+    "population": 68560157,
+    "area": 947303,
+    "flagSvg": "https://flagcdn.com/tz.svg",
+    "currencies": [
+      {
+        "code": "TZS",
+        "symbol": "TSh"
+      }
+    ],
+    "hdi": 0.555,
+    "ihdi": 0.391,
+    "unMember": true
+  },
+  {
+    "cca2": "UA",
+    "ccn3": "804",
+    "continent": "europe",
+    "population": 37860221,
+    "area": 603550,
+    "flagSvg": "https://flagcdn.com/ua.svg",
+    "currencies": [
+      {
+        "code": "UAH",
+        "symbol": "₴"
+      }
+    ],
+    "hdi": 0.779,
+    "ihdi": 0.715,
+    "unMember": true
+  },
+  {
+    "cca2": "UG",
+    "ccn3": "800",
+    "continent": "africa",
+    "population": 50015092,
+    "area": 241550,
+    "flagSvg": "https://flagcdn.com/ug.svg",
+    "currencies": [
+      {
+        "code": "UGX",
+        "symbol": "USh"
+      }
+    ],
+    "hdi": 0.582,
+    "ihdi": 0.4,
+    "unMember": true
+  },
+  {
+    "cca2": "US",
+    "ccn3": "840",
+    "continent": "america",
+    "population": 340110988,
+    "area": 9525067,
+    "flagSvg": "https://flagcdn.com/us.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.938,
+    "ihdi": 0.832,
+    "unMember": true
+  },
+  {
+    "cca2": "UY",
+    "ccn3": "858",
+    "continent": "america",
+    "population": 3386588,
+    "area": 181034,
+    "flagSvg": "https://flagcdn.com/uy.svg",
+    "currencies": [
+      {
+        "code": "UYU",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.862,
+    "ihdi": 0.747,
+    "unMember": true
+  },
+  {
+    "cca2": "UZ",
+    "ccn3": "860",
+    "continent": "asia",
+    "population": 36361859,
+    "area": 447400,
+    "flagSvg": "https://flagcdn.com/uz.svg",
+    "currencies": [
+      {
+        "code": "UZS",
+        "symbol": "сўм"
+      }
+    ],
+    "hdi": 0.74,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "VA",
+    "ccn3": "336",
+    "continent": "europe",
+    "population": 800,
+    "area": 0.49,
+    "flagSvg": "https://flagcdn.com/va.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "VC",
+    "ccn3": "670",
+    "continent": "america",
+    "population": 100616,
+    "area": 389,
+    "flagSvg": "https://flagcdn.com/vc.svg",
+    "currencies": [
+      {
+        "code": "XCD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.798,
+    "ihdi": null,
+    "unMember": true
+  },
+  {
+    "cca2": "VE",
+    "ccn3": "862",
+    "continent": "america",
+    "population": 28405543,
+    "area": 916445,
+    "flagSvg": "https://flagcdn.com/ve.svg",
+    "currencies": [
+      {
+        "code": "VES",
+        "symbol": "Bs.S"
+      }
+    ],
+    "hdi": 0.709,
+    "ihdi": 0.605,
+    "unMember": true
+  },
+  {
+    "cca2": "VG",
+    "ccn3": "092",
+    "continent": "america",
+    "population": 39471,
+    "area": 151,
+    "flagSvg": "https://flagcdn.com/vg.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "GB"
+  },
+  {
+    "cca2": "VI",
+    "ccn3": "850",
+    "continent": "america",
+    "population": 104377,
+    "area": 347,
+    "flagSvg": "https://flagcdn.com/vi.svg",
+    "currencies": [
+      {
+        "code": "USD",
+        "symbol": "$"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "US"
+  },
+  {
+    "cca2": "VN",
+    "ccn3": "704",
+    "continent": "asia",
+    "population": 100987686,
+    "area": 331212,
+    "flagSvg": "https://flagcdn.com/vn.svg",
+    "currencies": [
+      {
+        "code": "VND",
+        "symbol": "₫"
+      }
+    ],
+    "hdi": 0.766,
+    "ihdi": 0.641,
+    "unMember": true
+  },
+  {
+    "cca2": "VU",
+    "ccn3": "548",
+    "continent": "oceania",
+    "population": 327777,
+    "area": 12189,
+    "flagSvg": "https://flagcdn.com/vu.svg",
+    "currencies": [
+      {
+        "code": "VUV",
+        "symbol": "VT"
+      }
+    ],
+    "hdi": 0.621,
+    "ihdi": 0.521,
+    "unMember": true
+  },
+  {
+    "cca2": "WF",
+    "ccn3": "876",
+    "continent": "oceania",
+    "population": 11620,
+    "area": 142,
+    "flagSvg": "https://flagcdn.com/wf.svg",
+    "currencies": [
+      {
+        "code": "XPF",
+        "symbol": "Fr"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
+    "cca2": "WS",
+    "ccn3": "882",
+    "continent": "oceania",
+    "population": 218019,
+    "area": 2842,
+    "flagSvg": "https://flagcdn.com/ws.svg",
+    "currencies": [
+      {
+        "code": "WST",
+        "symbol": "T"
+      }
+    ],
+    "hdi": 0.708,
+    "ihdi": 0.609,
+    "unMember": true
+  },
+  {
+    "cca2": "XK",
+    "ccn3": "",
+    "continent": "europe",
+    "population": 1594353,
+    "area": 10908,
+    "flagSvg": "https://flagcdn.com/xk.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": 0.75,
+    "ihdi": null,
+    "unMember": false
+  },
+  {
+    "cca2": "YE",
+    "ccn3": "887",
+    "continent": "asia",
+    "population": 40583164,
+    "area": 527968,
+    "flagSvg": "https://flagcdn.com/ye.svg",
+    "currencies": [
+      {
+        "code": "YER",
+        "symbol": "﷼"
+      }
+    ],
+    "hdi": 0.47,
+    "ihdi": 0.325,
+    "unMember": true
+  },
+  {
+    "cca2": "YT",
+    "ccn3": "175",
+    "continent": "africa",
+    "population": 320901,
+    "area": 374,
+    "flagSvg": "https://flagcdn.com/yt.svg",
+    "currencies": [
+      {
+        "code": "EUR",
+        "symbol": "€"
+      }
+    ],
+    "hdi": null,
+    "ihdi": null,
+    "unMember": false,
+    "sovereignCountry": "FR"
+  },
+  {
+    "cca2": "ZA",
+    "ccn3": "710",
+    "continent": "africa",
+    "population": 64007187,
+    "area": 1221037,
+    "flagSvg": "https://flagcdn.com/za.svg",
+    "currencies": [
+      {
+        "code": "ZAR",
+        "symbol": "R"
+      }
+    ],
+    "hdi": 0.741,
+    "ihdi": 0.476,
+    "unMember": true
+  },
+  {
+    "cca2": "ZM",
+    "ccn3": "894",
+    "continent": "africa",
+    "population": 21314956,
+    "area": 752612,
+    "flagSvg": "https://flagcdn.com/zm.svg",
+    "currencies": [
+      {
+        "code": "ZMW",
+        "symbol": "ZK"
+      }
+    ],
+    "hdi": 0.595,
+    "ihdi": 0.361,
+    "unMember": true
+  },
+  {
+    "cca2": "ZW",
+    "ccn3": "716",
+    "continent": "africa",
+    "population": 16634373,
+    "area": 390757,
+    "flagSvg": "https://flagcdn.com/zw.svg",
+    "currencies": [
+      {
+        "code": "ZWL",
+        "symbol": "$"
+      }
+    ],
+    "hdi": 0.598,
+    "ihdi": 0.406,
+    "unMember": true
+  }
+]

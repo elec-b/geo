@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Globus",
+  "segmented.table": "Tabell",
+  "labels.countries": "Land",
+  "labels.capitals": "Hovedsteder",
+
+  "table.country": "Land",
+  "table.capital": "Hovedstad",
+  "table.population": "Innb.",
+  "table.nonUNToggle": "Ikke-FN-territorier",
+
+  "card.disclaimer.antarctica": "Internasjonalt territorium \u2014 Antarktistraktaten (1959)",
+  "card.disclaimer.territory": "Territorium tilh\u00f8rende {{sovereign}}",
+  "card.disclaimer.disputed": "Omstridt suverenitet",
+  "card.flagAlt": "Flagget til {{country}}",
+  "card.aria.openWikipedia": "\u00c5pne {{country}} p\u00e5 Wikipedia",
+  "card.aria.dialog": "Faktaark for {{country}}",
+
+  "card.field.capital": "Hovedstad",
+  "card.field.population": "Befolkning",
+  "card.field.area": "Areal",
+  "card.field.density": "Tetthet",
+  "card.field.currency": "Valuta",
+  "card.field.demonym": "Innbyggernavn",
+  "card.field.languages": "Spr\u00e5k",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "innb.",
+  "card.unit.densityUnit": "innb/km\u00b2",
+  "card.na": "Ikke tilgj.",
+
+  "card.tooltip.hdi": "Indeks for menneskelig utvikling: m\u00e5ler helse, utdanning og inntekt. Skala 0\u20131.",
+  "card.tooltip.ihdi": "Ulikhetsjustert HDI: straffer ulikhet i helse, utdanning og inntekt.",
+  "card.aria.hdiInfo": "Informasjon om HDI",
+  "card.aria.ihdiInfo": "Informasjon om IHDI",
+
+  "card.antarctica.info": "Antarktis tilh\u00f8rer ikke noe land. Antarktistraktaten, signert i 1959, reserverer det for vitenskapelig forskning og forbyr milit\u00e6r aktivitet og utnyttelse av ressursene.",
+
+  "card.sovereign.GB": "tilh\u00f8rende Storbritannia",
+  "card.sovereign.FR": "tilh\u00f8rende Frankrike",
+  "card.sovereign.US": "tilh\u00f8rende USA",
+  "card.sovereign.NL": "tilh\u00f8rende Nederland",
+  "card.sovereign.DK": "tilh\u00f8rende Danmark",
+  "card.sovereign.CN": "tilh\u00f8rende Kina",
+  "card.sovereign.NZ": "tilh\u00f8rende New Zealand",
+  "card.sovereign.FI": "tilh\u00f8rende Finland",
+  "card.sovereign.AU": "tilh\u00f8rende Australia"
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Statistics",
+  "aria.close": "Close",
+  "tabs.play": "Play",
+  "tabs.stamps": "Stamp tests",
+
+  "table.country": "Country",
+  "aria.showIndicators": "Show indicators",
+  "aria.showPercent": "Show percentages",
+
+  "typeLabel.E": "Identify the country",
+  "typeLabel.C": "Country to capital",
+  "typeLabel.D": "Capital to country",
+  "typeLabel.F": "Identify the capital",
+  "typeLabel.A": "Point to the country",
+  "typeLabel.B": "Point to the capital",
+
+  "stampLabel.A.short": "\u25ef Countries",
+  "stampLabel.A.full": "Countries stamp test",
+  "stampLabel.B.short": "\u25ce Capitals",
+  "stampLabel.B.full": "Capitals stamp test",
+
+  "legend.dominated": "Mastered",
+  "legend.inferred": "Inferred",
+  "legend.reinforcement": "Reinforcement",
+  "legend.noData": "No data",
+  "legend.correct": "Correct",
+  "legend.incorrect": "Incorrect",
+
+  "reset.button": "Reset statistics",
+  "reset.confirm": "Reset Play statistics for {{level}} - {{continent}}?",
+  "stampNotice": "Stamps and test history are permanent, like in a real passport. If you want to start fresh, create a new profile."
+}

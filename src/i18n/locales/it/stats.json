@@ -1,0 +1,33 @@
+{
+  "title": "Statistiche",
+  "aria.close": "Chiudi",
+  "tabs.play": "Gioca",
+  "tabs.stamps": "Prove timbro",
+
+  "table.country": "Paese",
+  "aria.showIndicators": "Mostra indicatori",
+  "aria.showPercent": "Mostra percentuali",
+
+  "typeLabel.E": "Identifica il paese",
+  "typeLabel.C": "Paese verso capitale",
+  "typeLabel.D": "Capitale verso paese",
+  "typeLabel.F": "Identifica la capitale",
+  "typeLabel.A": "Indica il paese",
+  "typeLabel.B": "Indica la capitale",
+
+  "stampLabel.A.short": "\u25ef Paesi",
+  "stampLabel.A.full": "Prova timbro Paesi",
+  "stampLabel.B.short": "\u25ce Capitali",
+  "stampLabel.B.full": "Prova timbro Capitali",
+
+  "legend.dominated": "Padroneggiato",
+  "legend.inferred": "Inferito",
+  "legend.reinforcement": "Rinforzo",
+  "legend.noData": "Nessun dato",
+  "legend.correct": "Corretto",
+  "legend.incorrect": "Sbagliato",
+
+  "reset.button": "Resetta statistiche",
+  "reset.confirm": "Resettare le statistiche di Gioca per {{level}} - {{continent}}?",
+  "stampNotice": "I timbri e lo storico delle prove sono permanenti, come in un vero passaporto. Se vuoi ricominciare da zero, crea un nuovo profilo."
+}

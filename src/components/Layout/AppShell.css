@@ -19,7 +19,7 @@
 
 /* "Mi Pasaporte": blur y oscurecimiento del globo via backdrop-filter */
 .tab-overlay--passport {
-  background: rgba(10, 10, 26, 0.4);
+  background: var(--color-surface-dark);
   backdrop-filter: blur(8px) brightness(0.6);
   -webkit-backdrop-filter: blur(8px) brightness(0.6);
 }

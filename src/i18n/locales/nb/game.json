@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Velg kontinent",
+  "selector.chooseLevel": "Velg niv\u00e5",
+  "selector.chooseGame": "Velg spill",
+  "selector.adventure": "Eventyr",
+  "selector.adventureDesc": "Tilpasser seg det du kan",
+  "selector.specificTypes": "eller velg et bestemt spill",
+  "selector.start": "Start",
+  "selector.continue": "Fortsett",
+  "selector.completed": "Best\u00e5tt \u2605",
+  "selector.countryCount_one": "{{count}} land",
+  "selector.countryCount_other": "{{count}} land",
+  "selector.lockedToast": "F\u00e5 stemplene fra forrige niv\u00e5",
+
+  "selector.stampReady.both": "Klar for stempelpr\u00f8vene!",
+  "selector.stampReady.countries": "Klar for landpr\u00f8ven!",
+  "selector.stampReady.capitals": "Klar for hovedstadspr\u00f8ven!",
+
+  "question.locate": "Finn",
+  "question.locateCapital": "Finn hovedstaden",
+  "question.capitalOf": "Hva er hovedstaden i {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} er hovedstaden i\u2026",
+  "question.whichCountry": "Hvilket land er markert?",
+  "question.whichCapital": "Hva er hovedstaden i dette landet?",
+
+  "progress.stampTest": "Stempelpr\u00f8ve: {{current}} av {{total}}",
+  "progress.adventurePercent": "{{percent}} % fullf\u00f8rt",
+  "progress.typeDominated": "{{current}} av {{total}} mestret",
+  "progress.stampBanner.countries": "Stempelpr\u00f8ve: Land",
+  "progress.stampBanner.capitals": "Stempelpr\u00f8ve: Hovedsteder",
+
+  "modal.stampEarned.title": "Stempel oppn\u00e5dd",
+  "modal.stampEarned.text": "{{correct}} av {{total}} riktige. Ingen feil.",
+
+  "modal.stampFailed.veryClose": "Nesten!",
+  "modal.stampFailed.veryCloseText": "Bare et lite steg fra stempelet.",
+  "modal.stampFailed.goodTry": "Bra fors\u00f8k!",
+  "modal.stampFailed.goodTryText": "Hvert fors\u00f8k bringer deg n\u00e6rmere.",
+  "modal.stampFailed.onTrack": "Du er p\u00e5 rett spor",
+  "modal.stampFailed.onTrackText": "Fortsett \u00e5 spille \u2014 fremgangen synes.",
+  "modal.stampFailed.dontGiveUp": "Ikke gi opp",
+  "modal.stampFailed.dontGiveUpText": "\u00d8velse gj\u00f8r mester.",
+  "modal.stampFailed.score": "{{correct}} av {{total}} riktige.",
+
+  "modal.poolExhausted.trainingComplete": "Trening fullf\u00f8rt",
+  "modal.poolExhausted.readyForStamp": "Fantastisk!<br />Klar for stempelet",
+  "modal.poolExhausted.completedText": "Du har fullf\u00f8rt <em>{{continent}}</em> p\u00e5 niv\u00e5 <em>{{level}}</em>. Du kan tilbakestille statistikken for \u00e5 \u00f8ve igjen.",
+  "modal.poolExhausted.chooseStamp": "Velg en pr\u00f8ve. Du m\u00e5 fullf\u00f8re den feilfritt for \u00e5 f\u00e5 stempelet.",
+  "modal.poolExhausted.typePassed": "Fantastisk!<br /><em>{{type}}</em> fullf\u00f8rt",
+  "modal.poolExhausted.stampReady": "Du er klar for stempelpr\u00f8ven. Fullf\u00f8r den feilfritt for \u00e5 f\u00e5 stempelet.",
+  "modal.poolExhausted.tryStamp.countries": "Pr\u00f8v landstempel",
+  "modal.poolExhausted.tryStamp.capitals": "Pr\u00f8v hovedstadsstempel",
+  "modal.poolExhausted.selectOther": "Velg et annet spill",
+  "modal.poolExhausted.playType": "Spill <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Spill <em>Eventyr</em>",
+
+  "stamp.countries": "Landstempel",
+  "stamp.capitals": "Hovedstadsstempel",
+
+  "modal.stampChooser.title": "Stempelpr\u00f8ve",
+  "modal.stampChooser.text": "Velg en pr\u00f8ve. Du m\u00e5 svare p\u00e5 {{count}} sp\u00f8rsm\u00e5l uten feil.",
+
+  "modal.alreadyDominated.title": "Du mestrer<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Du fikk alle landene riktig. Du kan tilbakestille statistikken for \u00e5 \u00f8ve igjen.",
+  "modal.alreadyDominated.completedTraining": "Du har fullf\u00f8rt treningen av <em>{{continent}}</em> p\u00e5 niv\u00e5 <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Pr\u00f8v stempelpr\u00f8ven",
+  "modal.alreadyDominated.goToStats": "G\u00e5 til Statistikk"
+}

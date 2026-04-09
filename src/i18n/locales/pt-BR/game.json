@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Escolha o continente",
+  "selector.chooseLevel": "Escolha o n\u00edvel",
+  "selector.chooseGame": "Escolha o jogo",
+  "selector.adventure": "Aventura",
+  "selector.adventureDesc": "Se adapta ao que voc\u00ea sabe",
+  "selector.specificTypes": "ou escolha um jogo espec\u00edfico",
+  "selector.start": "Come\u00e7ar",
+  "selector.continue": "Continuar",
+  "selector.completed": "Conclu\u00eddo \u2605",
+  "selector.countryCount_one": "{{count}} pa\u00eds",
+  "selector.countryCount_other": "{{count}} pa\u00edses",
+  "selector.lockedToast": "Conquiste os carimbos do n\u00edvel anterior",
+
+  "selector.stampReady.both": "Pronto para as provas de carimbo!",
+  "selector.stampReady.countries": "Pronto para a prova de pa\u00edses!",
+  "selector.stampReady.capitals": "Pronto para a prova de capitais!",
+
+  "question.locate": "Localize",
+  "question.locateCapital": "Localize a capital",
+  "question.capitalOf": "Qual \u00e9 a capital de {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} \u00e9 a capital de\u2026",
+  "question.whichCountry": "Qual pa\u00eds est\u00e1 destacado?",
+  "question.whichCapital": "Qual \u00e9 a capital deste pa\u00eds?",
+
+  "progress.stampTest": "Prova de carimbo: {{current}} de {{total}}",
+  "progress.adventurePercent": "{{percent}}% conclu\u00eddo",
+  "progress.typeDominated": "{{current}} de {{total}} dominados",
+  "progress.stampBanner.countries": "Prova de carimbo: Pa\u00edses",
+  "progress.stampBanner.capitals": "Prova de carimbo: Capitais",
+
+  "modal.stampEarned.title": "Carimbo conquistado",
+  "modal.stampEarned.text": "{{correct}} de {{total}} corretos. Sem erros.",
+
+  "modal.stampFailed.veryClose": "Quase l\u00e1!",
+  "modal.stampFailed.veryCloseText": "A um passo do carimbo.",
+  "modal.stampFailed.goodTry": "Boa tentativa!",
+  "modal.stampFailed.goodTryText": "Cada tentativa te aproxima mais.",
+  "modal.stampFailed.onTrack": "No caminho certo",
+  "modal.stampFailed.onTrackText": "Continue jogando \u2014 seu progresso \u00e9 vis\u00edvel.",
+  "modal.stampFailed.dontGiveUp": "N\u00e3o desista",
+  "modal.stampFailed.dontGiveUpText": "A pr\u00e1tica leva \u00e0 perfei\u00e7\u00e3o.",
+  "modal.stampFailed.score": "{{correct}} de {{total}} corretos.",
+
+  "modal.poolExhausted.trainingComplete": "Treino conclu\u00eddo",
+  "modal.poolExhausted.readyForStamp": "Incr\u00edvel!<br />Pronto para o carimbo",
+  "modal.poolExhausted.completedText": "Voc\u00ea completou <em>{{continent}}</em> no n\u00edvel <em>{{level}}</em>. Voc\u00ea pode resetar as estat\u00edsticas para praticar novamente.",
+  "modal.poolExhausted.chooseStamp": "Escolha uma prova. Voc\u00ea precisa complet\u00e1-la sem erros para conseguir o carimbo.",
+  "modal.poolExhausted.typePassed": "Incr\u00edvel!<br /><em>{{type}}</em> conclu\u00eddo",
+  "modal.poolExhausted.stampReady": "Voc\u00ea est\u00e1 pronto para a prova de carimbo. Complete-a sem erros para conquist\u00e1-lo.",
+  "modal.poolExhausted.tryStamp.countries": "Tentar carimbo de Pa\u00edses",
+  "modal.poolExhausted.tryStamp.capitals": "Tentar carimbo de Capitais",
+  "modal.poolExhausted.selectOther": "Escolher outro jogo",
+  "modal.poolExhausted.playType": "Jogar <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Jogar <em>Aventura</em>",
+
+  "stamp.countries": "Carimbo de Pa\u00edses",
+  "stamp.capitals": "Carimbo de Capitais",
+
+  "modal.stampChooser.title": "Prova de carimbo",
+  "modal.stampChooser.text": "Escolha uma prova. Voc\u00ea precisa acertar {{count}} perguntas sem nenhum erro.",
+
+  "modal.alreadyDominated.title": "Voc\u00ea domina<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Voc\u00ea acertou todos os pa\u00edses. Voc\u00ea pode resetar as estat\u00edsticas para praticar novamente.",
+  "modal.alreadyDominated.completedTraining": "Voc\u00ea completou o treino de <em>{{continent}}</em> no n\u00edvel <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Tentar prova de carimbo",
+  "modal.alreadyDominated.goToStats": "Ir para Estat\u00edsticas"
+}

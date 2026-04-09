@@ -9,7 +9,7 @@
   max-height: 45vh;
   display: flex;
   flex-direction: column;
-  background: rgba(12, 12, 30, 0.92);
+  background: var(--color-surface-heavy);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid var(--glass-border);
@@ -42,7 +42,7 @@
   height: 0.25rem;
   margin: 0 auto var(--spacing-xs);
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-white-20);
   flex-shrink: 0;
 }
 
@@ -134,8 +134,8 @@
   padding: var(--spacing-xs) var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
   border-radius: var(--radius-sm);
-  background: rgba(245, 158, 11, 0.1);
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: var(--color-amber-bg);
+  border: 1px solid var(--color-amber-border);
   color: var(--color-accent-amber);
   font-size: var(--font-size-xs);
   font-weight: 500;
@@ -226,4 +226,5 @@
   height: 2rem;
   object-fit: contain;
   border-radius: var(--radius-full);
+  border: 1px solid var(--glass-border);
 }

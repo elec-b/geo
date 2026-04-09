@@ -1,16 +1,18 @@
 // ExploreView — contenedor de la experiencia Explorar
 // Gestiona modo (países/capitales), selección, filtros y etiquetas.
-import { useState, useCallback, useMemo, useEffect, type RefObject, type MutableRefObject } from 'react';
+import { useState, useCallback, useMemo, useEffect, useRef, type RefObject, type MutableRefObject } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { GlobeD3Ref } from '../Globe';
 import type { CountryFeature } from '../../data/countries';
-import type { CountryData, CapitalCoords, Continent } from '../../data/types';
+import type { CountryData, CapitalCoords, Continent, GameLevel } from '../../data/types';
 import type { FeedbackLabel } from '../Globe';
 import type { CountryRankings } from '../../data/rankings';
 import { CountryCard } from './CountryCard';
 import { ContinentFilter } from './ContinentFilter';
 import { TableView } from './TableView';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
-import { CONTINENT_CENTERS } from '../../data/continents';
+import { CONTINENT_CENTERS, CONTINENT_ZOOM } from '../../data/continents';
+import { useAppStore } from '../../stores/appStore';
 import './ExploreView.css';
 
 type ExploreMode = 'countries' | 'capitals';
@@ -36,11 +38,16 @@ interface ExploreViewProps {
   countries: Map<string, CountryData>;
   capitals: Map<string, CapitalCoords>;
   rankings: Map<string, CountryRankings>;
+  countryLevelMap: Map<string, GameLevel>;
   onGlobePropsChange: (props: GlobeControlProps) => void;
   /** Ref donde se registra el handler de click en país (bridge con App.tsx) */
   onCountryClickRef: MutableRefObject<((f: CountryFeature) => void) | undefined>;
   /** Ref donde se registra el handler de deselección (bridge con App.tsx) */
   onCountryDeselectRef: MutableRefObject<(() => void) | undefined>;
+  /** País pendiente de seleccionar (navegación desde Estadísticas) */
+  pendingCountry?: string | null;
+  /** Callback para limpiar la petición pendiente una vez consumida */
+  onPendingCountryConsumed?: () => void;
 }
 
 export function ExploreView({
@@ -48,17 +55,68 @@ export function ExploreView({
   countries,
   capitals,
   rankings,
+  countryLevelMap,
   onGlobePropsChange,
   onCountryClickRef,
   onCountryDeselectRef,
+  pendingCountry,
+  onPendingCountryConsumed,
 }: ExploreViewProps) {
-  const [mode, setMode] = useState<ExploreMode>('countries');
+  const { t } = useTranslation('explore');
+  const lastActiveContinent = useAppStore((s) => s.settings.lastActiveContinent) ?? null;
+  const lastTableSort = useAppStore((s) => s.settings.lastTableSort) ?? null;
+  const setLastActiveContinent = useAppStore((s) => s.setLastActiveContinent);
+  const setLastTableSort = useAppStore((s) => s.setLastTableSort);
+  const lastExploreMode = useAppStore((s) => s.settings.lastExploreMode) ?? 'countries';
+  const setLastExploreMode = useAppStore((s) => s.setLastExploreMode);
+
+  const [mode, setMode] = useState<ExploreMode>(lastExploreMode);
   const [selectedCca2, setSelectedCca2] = useState<string | null>(null);
-  const [continentFilter, setContinentFilter] = useState<Continent | null>(null);
+  const [continentFilter, setContinentFilter] = useState<Continent | null>(lastActiveContinent);
   const [showCountryLabels, setShowCountryLabels] = useState(false);
   const [showCapitalLabels, setShowCapitalLabels] = useState(false);
   const [capitalsGlobeView, setCapitalsGlobeView] = useState(false);
   const [showCard, setShowCard] = useState(false);
+
+  // Consumir petición pendiente de navegación desde Estadísticas
+  const pendingProcessed = useRef(false);
+  useEffect(() => {
+    if (pendingCountry && !pendingProcessed.current) {
+      pendingProcessed.current = true;
+      // Forzar modo globo (si estaba en tabla)
+      setMode('countries');
+      setCapitalsGlobeView(false);
+      // Quitar filtro de continente para que el país se ilumine siempre
+      setContinentFilter(null);
+      // Seleccionar país y abrir ficha
+      setSelectedCca2(pendingCountry);
+      setShowCard(true);
+      // FlyTo con zoom continental para dar perspectiva de ubicación
+      const countryData = countries.get(pendingCountry);
+      const continent = countryData?.continent;
+      const zoom = continent && continent in CONTINENT_ZOOM ? CONTINENT_ZOOM[continent as keyof typeof CONTINENT_ZOOM] : undefined;
+      if (globeRef.current) {
+        const centroid = globeRef.current.getCentroid(pendingCountry);
+        if (centroid) {
+          globeRef.current.flyTo(centroid[0], centroid[1], zoom, undefined, 15);
+        } else {
+          const cap = capitals.get(pendingCountry);
+          if (cap) globeRef.current.flyTo(cap.latlng[1], cap.latlng[0], zoom, undefined, 15);
+        }
+      }
+      onPendingCountryConsumed?.();
+    }
+    if (!pendingCountry) {
+      pendingProcessed.current = false;
+    }
+  }, [pendingCountry, capitals, globeRef, onPendingCountryConsumed]);
+
+  // Sorting inicial: solo restaurar si el continente no cambió externamente
+  const initialSort = useMemo(() => {
+    if (lastActiveContinent === continentFilter && lastTableSort) return lastTableSort;
+    return null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // --- Estado derivado ---
 
@@ -178,25 +236,27 @@ export function ExploreView({
   );
 
 
-  // Cambio de filtro de continente con flyTo
+  // Cambio de filtro de continente con flyTo + persistencia
   const handleContinentChange = useCallback(
     (continent: Continent | null) => {
       setContinentFilter(continent);
+      setLastActiveContinent(continent);
       if (continent && globeRef.current) {
         const [lon, lat] = CONTINENT_CENTERS[continent];
         globeRef.current.flyTo(lon, lat, undefined, 800);
       }
     },
-    [globeRef],
+    [globeRef, setLastActiveContinent],
   );
 
   // Cambio de modo
   const switchMode = useCallback((newMode: ExploreMode) => {
     setMode(newMode);
+    setLastExploreMode(newMode);
     setCapitalsGlobeView(false);
     setSelectedCca2(null);
     setShowCard(false);
-  }, []);
+  }, [setLastExploreMode]);
 
   // --- Datos del país seleccionado ---
 
@@ -236,7 +296,7 @@ export function ExploreView({
             role="tab"
             aria-selected={visualMode === 'countries'}
           >
-            Globo
+            {t('segmented.globe')}
           </button>
           <button
             className={`explore-segmented__btn ${visualMode === 'capitals' ? 'explore-segmented__btn--active' : ''}`}
@@ -244,7 +304,7 @@ export function ExploreView({
             role="tab"
             aria-selected={visualMode === 'capitals'}
           >
-            Tabla
+            {t('segmented.table')}
           </button>
         </div>
 
@@ -259,14 +319,14 @@ export function ExploreView({
               onClick={() => setShowCountryLabels(prev => !prev)}
               aria-pressed={showCountryLabels}
             >
-              Países
+              {t('labels.countries')}
             </button>
             <button
               className={`explore-labels__btn ${showCapitalLabels ? 'explore-labels__btn--active' : ''}`}
               onClick={() => setShowCapitalLabels(prev => !prev)}
               aria-pressed={showCapitalLabels}
             >
-              Capitales
+              {t('labels.capitals')}
             </button>
           </div>
         )}
@@ -276,9 +336,12 @@ export function ExploreView({
       {mode === 'capitals' && (
         <TableView
           countries={countries}
+          countryLevelMap={countryLevelMap}
           continentFilter={continentFilter}
           onCountryTap={handleCapitalsCountryTap}
           onCapitalTap={handleCapitalsCapitalTap}
+          initialSort={initialSort}
+          onSortChange={setLastTableSort}
           style={{ display: capitalsGlobeView ? 'none' : undefined }}
         />
       )}

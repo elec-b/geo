@@ -1,0 +1,41 @@
+{
+  "continent.africa": "Africa",
+  "continent.america": "America",
+  "continent.asia": "Asia",
+  "continent.europe": "Europa",
+  "continent.oceania": "Oceania",
+  "continent.antarctica": "Antarctica",
+  "continentFilter.all": "Toate",
+
+  "level.tourist": "Turist",
+  "level.backpacker": "Backpacker",
+  "level.guide": "Ghid",
+
+  "questionType.E": "Identifică țara",
+  "questionType.C": "Țară la capitală",
+  "questionType.D": "Capitală la țară",
+  "questionType.F": "Identifică capitala",
+  "questionType.A": "Arată țara",
+  "questionType.B": "Arată capitala",
+
+  "questionTypeShort.E": "Identifică țara",
+  "questionTypeShort.C": "Țară la capitală",
+  "questionTypeShort.D": "Capitală la țară",
+  "questionTypeShort.F": "Identifică capitala",
+  "questionTypeShort.A": "Arată țara",
+  "questionTypeShort.B": "Arată capitala",
+
+  "tabs.explore": "Explorează",
+  "tabs.play": "Joacă",
+  "tabs.passport": "Pașaport",
+
+  "loading": "Se încarcă globul…",
+  "cancel": "Anulează",
+  "close": "Închide",
+  "continue": "Continuă",
+
+  "aria.userProfile": "Profil utilizator",
+  "aria.stats": "Statistici",
+  "aria.settings": "Setări",
+  "aria.navigation": "Navigare principală"
+}

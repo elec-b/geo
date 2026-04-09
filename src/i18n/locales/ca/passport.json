@@ -1,0 +1,13 @@
+{
+  "header.title": "Passaport de {{name}}",
+  "header.globalLevel": "Nivell global: {{level}}",
+  "emptyState": "Cada segell demostra el que saps. Ompliràs el passaport?",
+  "legend.country": "○ País",
+  "legend.capital": "◎ Capital",
+  "legend.earned": "★ Aconseguit",
+  "legend.locked": "Bloquejat",
+  "stampTitle.countries": "Segell de Països",
+  "stampTitle.capitals": "Segell de Capitals",
+  "modal.title": "Prova de segell",
+  "modal.questionCount": "Hauràs de completar {{count}} preguntes sense cap error."
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Statistik",
+  "aria.close": "Tutup",
+  "tabs.play": "Main",
+  "tabs.stamps": "Ujian setem",
+
+  "table.country": "Negara",
+  "aria.showIndicators": "Papar penunjuk",
+  "aria.showPercent": "Papar peratusan",
+
+  "typeLabel.E": "Kenal pasti negara",
+  "typeLabel.C": "Negara ke ibu negeri",
+  "typeLabel.D": "Ibu negeri ke negara",
+  "typeLabel.F": "Kenal pasti ibu negeri",
+  "typeLabel.A": "Tunjukkan negara",
+  "typeLabel.B": "Tunjukkan ibu negeri",
+
+  "stampLabel.A.short": "◯ Negara",
+  "stampLabel.A.full": "Ujian setem Negara",
+  "stampLabel.B.short": "◎ Ibu Negeri",
+  "stampLabel.B.full": "Ujian setem Ibu Negeri",
+
+  "legend.dominated": "Dikuasai",
+  "legend.inferred": "Disimpulkan",
+  "legend.reinforcement": "Pengukuhan",
+  "legend.noData": "Tiada data",
+  "legend.correct": "Betul",
+  "legend.incorrect": "Salah",
+
+  "reset.button": "Tetapkan semula statistik",
+  "reset.confirm": "Tetapkan semula statistik Main untuk {{level}} - {{continent}}?",
+  "stampNotice": "Setem dan sejarah ujian adalah kekal, seperti pasport sebenar. Jika ingin bermula dari awal, cipta profil baru."
+}

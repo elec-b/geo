@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.geoexpert.app',
-  appName: 'GeoExpert',
+  appId: 'com.exploris.app',
+  appName: 'Exploris',
   webDir: 'dist',
   ...(process.env.LIVE_RELOAD && {
     server: {

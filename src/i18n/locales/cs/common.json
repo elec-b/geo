@@ -1,0 +1,41 @@
+{
+  "continent.africa": "Afrika",
+  "continent.america": "Amerika",
+  "continent.asia": "Asie",
+  "continent.europe": "Evropa",
+  "continent.oceania": "Oceánie",
+  "continent.antarctica": "Antarktida",
+  "continentFilter.all": "Vše",
+
+  "level.tourist": "Turista",
+  "level.backpacker": "Turista s batohem",
+  "level.guide": "Průvodce",
+
+  "questionType.E": "Rozpoznej zemi",
+  "questionType.C": "Země na hlavní město",
+  "questionType.D": "Hlavní město na zemi",
+  "questionType.F": "Rozpoznej hlavní město",
+  "questionType.A": "Ukaž zemi",
+  "questionType.B": "Ukaž hlavní město",
+
+  "questionTypeShort.E": "Rozpoznej zemi",
+  "questionTypeShort.C": "Země na hlavní město",
+  "questionTypeShort.D": "Hlavní město na zemi",
+  "questionTypeShort.F": "Rozpoznej hlavní město",
+  "questionTypeShort.A": "Ukaž zemi",
+  "questionTypeShort.B": "Ukaž hlavní město",
+
+  "tabs.explore": "Prozkoumej",
+  "tabs.play": "Hraj",
+  "tabs.passport": "Pas",
+
+  "loading": "Načítání globu…",
+  "cancel": "Zrušit",
+  "close": "Zavřít",
+  "continue": "Pokračovat",
+
+  "aria.userProfile": "Uživatelský profil",
+  "aria.stats": "Statistiky",
+  "aria.settings": "Nastavení",
+  "aria.navigation": "Hlavní navigace"
+}

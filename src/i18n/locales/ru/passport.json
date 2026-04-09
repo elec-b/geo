@@ -1,0 +1,16 @@
+{
+  "header.title": "Паспорт {{name}}",
+  "header.globalLevel": "Общий уровень: {{level}}",
+  "emptyState": "Каждая печать подтверждает твои знания. Заполнишь паспорт?",
+
+  "legend.country": "○ Страна",
+  "legend.capital": "◎ Столица",
+  "legend.earned": "★ Получено",
+  "legend.locked": "Заблокировано",
+
+  "stampTitle.countries": "Печать по Странам",
+  "stampTitle.capitals": "Печать по Столицам",
+
+  "modal.title": "Испытание на печать",
+  "modal.questionCount": "Нужно ответить на {{count}} вопросов без единой ошибки."
+}

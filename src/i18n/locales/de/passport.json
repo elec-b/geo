@@ -1,0 +1,16 @@
+{
+  "header.title": "Reisepass von {{name}}",
+  "header.globalLevel": "Globales Level: {{level}}",
+  "emptyState": "Jeder Stempel beweist, was du wei\u00dft. F\u00fcllst du den Reisepass?",
+
+  "legend.country": "\u25cb Land",
+  "legend.capital": "\u25ce Hauptstadt",
+  "legend.earned": "\u2605 Erhalten",
+  "legend.locked": "Gesperrt",
+
+  "stampTitle.countries": "L\u00e4nder-Stempel",
+  "stampTitle.capitals": "Hauptstadt-Stempel",
+
+  "modal.title": "Stempelpr\u00fcfung",
+  "modal.questionCount": "Du musst {{count}} Fragen ohne Fehler beantworten."
+}

@@ -1,0 +1,41 @@
+{
+  "continent.africa": "Afrika",
+  "continent.america": "Amerika",
+  "continent.asia": "Asya",
+  "continent.europe": "Avrupa",
+  "continent.oceania": "Okyanusya",
+  "continent.antarctica": "Antarktika",
+  "continentFilter.all": "Tümü",
+
+  "level.tourist": "Turist",
+  "level.backpacker": "Gezgin",
+  "level.guide": "Rehber",
+
+  "questionType.E": "Ülkeyi tanı",
+  "questionType.C": "Ülkeden başkente",
+  "questionType.D": "Başkentten ülkeye",
+  "questionType.F": "Başkenti tanı",
+  "questionType.A": "Ülkeyi göster",
+  "questionType.B": "Başkenti göster",
+
+  "questionTypeShort.E": "Ülkeyi tanı",
+  "questionTypeShort.C": "Ülkeden başkente",
+  "questionTypeShort.D": "Başkentten ülkeye",
+  "questionTypeShort.F": "Başkenti tanı",
+  "questionTypeShort.A": "Ülkeyi göster",
+  "questionTypeShort.B": "Başkenti göster",
+
+  "tabs.explore": "Keşfet",
+  "tabs.play": "Oyna",
+  "tabs.passport": "Pasaport",
+
+  "loading": "Küre yükleniyor…",
+  "cancel": "İptal",
+  "close": "Kapat",
+  "continue": "Devam",
+
+  "aria.userProfile": "Kullanıcı profili",
+  "aria.stats": "İstatistikler",
+  "aria.settings": "Ayarlar",
+  "aria.navigation": "Ana gezinme"
+}

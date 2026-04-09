@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Globe",
+  "segmented.table": "Tabel",
+  "labels.countries": "Landen",
+  "labels.capitals": "Hoofdsteden",
+
+  "table.country": "Land",
+  "table.capital": "Hoofdstad",
+  "table.population": "Inw.",
+  "table.nonUNToggle": "Niet-VN-gebieden",
+
+  "card.disclaimer.antarctica": "Internationaal gebied \u2014 Antarctisch Verdrag (1959)",
+  "card.disclaimer.territory": "Gebied van {{sovereign}}",
+  "card.disclaimer.disputed": "Betwiste soevereiniteit",
+  "card.flagAlt": "Vlag van {{country}}",
+  "card.aria.openWikipedia": "{{country}} openen op Wikipedia",
+  "card.aria.dialog": "Factsheet van {{country}}",
+
+  "card.field.capital": "Hoofdstad",
+  "card.field.population": "Bevolking",
+  "card.field.area": "Oppervlakte",
+  "card.field.density": "Dichtheid",
+  "card.field.currency": "Munteenheid",
+  "card.field.demonym": "Inwonernaam",
+  "card.field.languages": "Talen",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "inw.",
+  "card.unit.densityUnit": "inw/km\u00b2",
+  "card.na": "N.v.t.",
+
+  "card.tooltip.hdi": "Human Development Index: meet gezondheid, onderwijs en inkomen. Schaal 0\u20131.",
+  "card.tooltip.ihdi": "Ongelijkheidsgecorrigeerde HDI: bestraft ongelijkheid in gezondheid, onderwijs en inkomen.",
+  "card.aria.hdiInfo": "Informatie over HDI",
+  "card.aria.ihdiInfo": "Informatie over IHDI",
+
+  "card.antarctica.info": "Antarctica behoort tot geen enkel land. Het Antarctisch Verdrag, ondertekend in 1959, reserveert het voor wetenschappelijk onderzoek en verbiedt militaire activiteiten en de exploitatie van de grondstoffen.",
+
+  "card.sovereign.GB": "van het Verenigd Koninkrijk",
+  "card.sovereign.FR": "van Frankrijk",
+  "card.sovereign.US": "van de Verenigde Staten",
+  "card.sovereign.NL": "van Nederland",
+  "card.sovereign.DK": "van Denemarken",
+  "card.sovereign.CN": "van China",
+  "card.sovereign.NZ": "van Nieuw-Zeeland",
+  "card.sovereign.FI": "van Finland",
+  "card.sovereign.AU": "van Australi\u00eb"
+}

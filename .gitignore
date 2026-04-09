@@ -16,6 +16,9 @@ dist-ssr
 # Claude Code
 .claude/settings.local.json
 
+# CDN output (generado por npm run generate-cdn)
+cdn-output
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

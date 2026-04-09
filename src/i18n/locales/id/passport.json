@@ -1,0 +1,16 @@
+{
+  "header.title": "Paspor {{name}}",
+  "header.globalLevel": "Level global: {{level}}",
+  "emptyState": "Setiap stempel membuktikan pengetahuanmu. Bisakah kamu mengisi penuh paspornya?",
+
+  "legend.country": "○ Negara",
+  "legend.capital": "◎ Ibu Kota",
+  "legend.earned": "★ Diperoleh",
+  "legend.locked": "Terkunci",
+
+  "stampTitle.countries": "Stempel Negara",
+  "stampTitle.capitals": "Stempel Ibu Kota",
+
+  "modal.title": "Ujian stempel",
+  "modal.questionCount": "Kamu harus menyelesaikan {{count}} pertanyaan tanpa kesalahan."
+}

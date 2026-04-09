@@ -1,0 +1,41 @@
+{
+  "continent.africa": "アフリカ",
+  "continent.america": "アメリカ",
+  "continent.asia": "アジア",
+  "continent.europe": "ヨーロッパ",
+  "continent.oceania": "オセアニア",
+  "continent.antarctica": "南極",
+  "continentFilter.all": "すべて",
+
+  "level.tourist": "ツーリスト",
+  "level.backpacker": "バックパッカー",
+  "level.guide": "ガイド",
+
+  "questionType.E": "国を当てよう",
+  "questionType.C": "国から首都へ",
+  "questionType.D": "首都から国へ",
+  "questionType.F": "首都を当てよう",
+  "questionType.A": "国を指そう",
+  "questionType.B": "首都を指そう",
+
+  "questionTypeShort.E": "国を当てる",
+  "questionTypeShort.C": "国から首都",
+  "questionTypeShort.D": "首都から国",
+  "questionTypeShort.F": "首都を当てる",
+  "questionTypeShort.A": "国を指す",
+  "questionTypeShort.B": "首都を指す",
+
+  "tabs.explore": "探索",
+  "tabs.play": "プレイ",
+  "tabs.passport": "パスポート",
+
+  "loading": "地球儀を読み込み中\u2026",
+  "cancel": "キャンセル",
+  "close": "閉じる",
+  "continue": "続ける",
+
+  "aria.userProfile": "ユーザープロフィール",
+  "aria.stats": "統計",
+  "aria.settings": "設定",
+  "aria.navigation": "メインナビゲーション"
+}

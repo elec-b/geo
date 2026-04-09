@@ -1,15 +1,16 @@
 // JugarView — contenedor principal de la experiencia Jugar
 // Gestiona el flujo selector → juego y el bridge con el globo.
 import { useState, useCallback, useMemo, useEffect, useRef, type RefObject, type MutableRefObject } from 'react';
+import { useTranslation } from 'react-i18next';
 import { geoDistance } from 'd3-geo';
 import type { GlobeD3Ref, FeedbackLabel } from '../Globe';
-import { COUNTRY_CORRECT_COLOR, COUNTRY_INCORRECT_COLOR } from '../Globe/colors';
+import { getHighlightColors } from '../Globe/colors';
 import type { GlobeControlProps } from '../Explore/ExploreView';
 import type { CountryFeature } from '../../data/countries';
 import type { GameQuestionChoice, QuestionTypeFilter } from '../../data/gameQuestions';
 import type { CountryData, CapitalCoords, Continent, GameLevel, LevelDefinition, QuestionType } from '../../data/types';
 import type { StampTestType } from '../../hooks/useGameSession';
-import { CONTINENT_CENTERS, CONTINENT_ZOOM } from '../../data/continents';
+import { CONTINENT_CENTERS, CONTINENT_ZOOM, CONTINENT_CSS_VAR } from '../../data/continents';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
 import { useAppStore, type StampType } from '../../stores/appStore';
 import { calculateProgress, isTypeFullyDominated, getNextSuggestedType, getAttemptsWithInheritance, getInheritedTypes } from '../../data/learningAlgorithm';
@@ -23,15 +24,6 @@ import './JugarView.css';
 
 type JugarScreen = 'selector' | 'playing';
 type FeedbackStep = 'idle' | 'step1' | 'step2';
-
-/** Mapeo continente → variable CSS de color olímpico */
-const CONTINENT_CSS_VAR: Record<Continent, string> = {
-  'África': '--color-africa',
-  'América': '--color-america',
-  'Asia': '--color-asia',
-  'Europa': '--color-europe',
-  'Oceanía': '--color-oceania',
-};
 
 /** Pares microestado-contenedor — toque en uno se acepta como toque en el otro */
 const MICROSTATE_PAIRS = new Set([
@@ -58,15 +50,20 @@ function getHitTolerance(zoom: number): number {
   return Math.max(MIN_TOLERANCE_RAD, BASE_TOLERANCE_RAD / zoom);
 }
 
-/** Labels de tipos de pregunta (para modales de progresión) */
-const QUESTION_TYPE_LABELS: Record<QuestionType, string> = {
-  E: 'Identifica el país',
-  C: 'País a capital',
-  D: 'Capital a país',
-  F: 'Identifica la capital',
-  A: 'Señala el país',
-  B: 'Señala la capital',
-};
+/** Verifica que no haya otro país con centroide más cercano al tap que distToTarget.
+ * Evita regalar aciertos por tolerancia cuando hay microestados cercanos (ej. Caribe). */
+function isTargetNearest(
+  tapCoords: [number, number],
+  targetCca2: string,
+  distToTarget: number,
+  centroids: Map<string, [number, number]>,
+): boolean {
+  for (const [cca2, centroid] of centroids) {
+    if (cca2 === targetCca2) continue;
+    if (geoDistance(tapCoords, centroid) < distToTarget) return false;
+  }
+  return true;
+}
 
 /** Zoom de contexto para tipos E/F (identificación visual).
  * Combina el zoom por área con la extensión angular del país para evitar
@@ -174,6 +171,7 @@ export function JugarView({
   resetSignal,
   onNavigateStats,
 }: JugarViewProps) {
+  const { t } = useTranslation('game');
   const [screen, setScreen] = useState<JugarScreen>('selector');
 
   // --- Store y algoritmo de aprendizaje ---
@@ -184,6 +182,9 @@ export function JugarView({
   const earnStamp = useAppStore((s) => s.earnStamp);
   const setLastPlayed = useAppStore((s) => s.setLastPlayed);
   const setLastStampPlayed = useAppStore((s) => s.setLastStampPlayed);
+  const theme = useAppStore((s) => s.settings.theme);
+  const attemptsVersion = useAppStore((s) => s.attemptsVersion);
+  const hlColors = useMemo(() => getHighlightColors(theme), [theme]);
 
   // Modales de prueba de sello y fin de pool
   const [showStampChooser, setShowStampChooser] = useState(false);
@@ -226,7 +227,7 @@ export function JugarView({
   const getAttemptsForSession = useCallback(() => {
     if (!activeLevelRef.current || !activeContinentRef.current) return {};
     const ownAttempts = getAttempts(activeLevelRef.current, activeContinentRef.current);
-    if (activeLevelRef.current === 'turista') return ownAttempts;
+    if (activeLevelRef.current === 'tourist') return ownAttempts;
     return getAttemptsWithInheritance(
       ownAttempts, activeLevelRef.current, activeContinentRef.current,
       getStamps, getCountriesForLevel,
@@ -235,7 +236,7 @@ export function JugarView({
 
   // Callback para obtener países heredados: mapa de país → tipos sin datos propios
   const getInheritedCountries = useCallback((): Map<string, Set<QuestionType>> => {
-    if (!activeLevelRef.current || !activeContinentRef.current || activeLevelRef.current === 'turista') {
+    if (!activeLevelRef.current || !activeContinentRef.current || activeLevelRef.current === 'tourist') {
       return new Map();
     }
     const ownAttempts = getAttempts(activeLevelRef.current, activeContinentRef.current);
@@ -256,6 +257,7 @@ export function JugarView({
     onStampAttempt: handleStampAttempt,
     getAttempts: getAttemptsForSession,
     getInheritedCountries,
+    t,
   });
 
   // Respuesta seleccionada para feedback visual en ChoicePanel
@@ -376,15 +378,21 @@ export function JugarView({
 
     // Acierto (todos los tipos): verde
     if (session.feedbackState === 'correct') {
-      return { highlightCca2: session.correctCca2, highlightColor: COUNTRY_CORRECT_COLOR };
+      return { highlightCca2: session.correctCca2, highlightColor: hlColors.correct };
     }
 
     // Error A/B step1: país equivocado en rojo
     if (session.feedbackState === 'incorrect' && isAB && feedbackStep === 'step1' && feedbackCoordsRef.current) {
-      return { highlightCca2: feedbackCoordsRef.current.wrongCca2, highlightColor: COUNTRY_INCORRECT_COLOR };
+      return { highlightCca2: feedbackCoordsRef.current.wrongCca2, highlightColor: hlColors.incorrect };
     }
 
-    // Error C-F, error A/B step2, pregunta E/F, idle: dorado (default)
+    // Error: A/B step2 → ocre (corrección espacial), C-F → rojo (has fallado este país)
+    if (session.feedbackState === 'incorrect') {
+      const color = isAB && feedbackStep === 'step2' ? hlColors.correction : hlColors.incorrect;
+      return { highlightCca2: session.correctCca2, highlightColor: color };
+    }
+
+    // Pregunta E/F, idle: plata (default)
     return { highlightCca2: session.correctCca2, highlightColor: undefined };
   }, [session.currentQuestion, session.feedbackState, session.correctCca2, feedbackStep]);
 
@@ -399,7 +407,7 @@ export function JugarView({
     if (!cap) return null;
     return {
       coords: [cap.latlng[1], cap.latlng[0]],
-      color: 'rgba(255, 255, 255, 0.85)',
+      color: hlColors.capitalPinHighlight,
     };
   }, [session.currentQuestion, capitalPins, capitals, session.feedbackState]);
 
@@ -554,8 +562,7 @@ export function JugarView({
       if (cca2 !== q.targetCca2 && globeRef.current) {
         const tapCoords = globeRef.current.getLastTapCoords();
         const targetCentroid = globeRef.current.getCentroid(q.targetCca2);
-        const detectedCentroid = globeRef.current.getCentroid(cca2);
-        if (tapCoords && targetCentroid && detectedCentroid) {
+        if (tapCoords && targetCentroid) {
           const zoom = globeRef.current.getCurrentZoom();
           const tolerance = getHitTolerance(zoom);
           const distCentroidTarget = geoDistance(tapCoords, targetCentroid);
@@ -563,8 +570,8 @@ export function JugarView({
           const distToTarget = distBoundaryTarget !== null
             ? Math.min(distCentroidTarget, distBoundaryTarget)
             : distCentroidTarget;
-          const distToDetected = geoDistance(tapCoords, detectedCentroid);
-          if (distToTarget < tolerance && distToTarget < distToDetected) {
+          const allCentroids = globeRef.current.getAllCentroids();
+          if (distToTarget < tolerance && isTargetNearest(tapCoords, q.targetCca2, distToTarget, allCentroids)) {
             cca2 = q.targetCca2;
           }
         }
@@ -604,34 +611,59 @@ export function JugarView({
     if (!globeRef.current) return;
 
     const tapCoords = globeRef.current.getLastTapCoords();
-    const targetCentroid = globeRef.current.getCentroid(q.targetCca2);
-    if (!tapCoords || !targetCentroid) return;
+    if (!tapCoords) return;
 
     const zoom = globeRef.current.getCurrentZoom();
     const tolerance = getHitTolerance(zoom);
-    const distCentroid = geoDistance(tapCoords, targetCentroid);
-    const distBoundary = globeRef.current.getMinDistanceToBoundary(q.targetCca2, tapCoords);
-    const dist = distBoundary !== null
-      ? Math.min(distCentroid, distBoundary)
-      : distCentroid;
+    const allCentroids = globeRef.current.getAllCentroids();
 
-    if (dist < tolerance) {
-      const result = session.submitAnswer(q.targetCca2);
-      if (result === 'correct') {
-        centerOnCorrectAnswer(globeRef.current, q.targetCca2, q.type);
+    // Buscar el país más cercano al tap (centroide)
+    let nearestCca2: string | null = null;
+    let nearestDist = Infinity;
+    for (const [cca2, centroid] of allCentroids) {
+      const d = geoDistance(tapCoords, centroid);
+      if (d < nearestDist) {
+        nearestDist = d;
+        nearestCca2 = cca2;
       }
-      if (result === 'incorrect' && globeRef.current) {
-        const correctCoords = globeRef.current.getCentroid(q.targetCca2);
-        if (correctCoords) {
-          feedbackCoordsRef.current = {
-            wrongCca2: q.targetCca2,
-            wrongCoords: tapCoords,
-            correctCca2: q.targetCca2,
-            correctCoords,
-            questionType: q.type,
-          };
-          setFeedbackStep('step1');
-        }
+    }
+
+    // Refinar con distancia a frontera del país más cercano
+    if (nearestCca2) {
+      const boundaryDist = globeRef.current.getMinDistanceToBoundary(nearestCca2, tapCoords);
+      if (boundaryDist !== null && boundaryDist < nearestDist) {
+        nearestDist = boundaryDist;
+      }
+    }
+
+    // Si no hay país cercano dentro de la tolerancia → océano vacío, ignorar
+    if (!nearestCca2 || nearestDist >= tolerance) return;
+
+    // Tolerancia microestado-contenedor
+    const pair = [nearestCca2, q.targetCca2].sort().join('-');
+    if (MICROSTATE_PAIRS.has(pair)) nearestCca2 = q.targetCca2;
+
+    // Enviar como respuesta (correcta o incorrecta)
+    const answeredCca2 = nearestCca2 === q.targetCca2 ? q.targetCca2 : nearestCca2;
+    const result = session.submitAnswer(answeredCca2);
+
+    if (result === 'correct' && globeRef.current) {
+      centerOnCorrectAnswer(globeRef.current, q.targetCca2, q.type);
+    }
+    if (result === 'incorrect' && globeRef.current) {
+      const correctCoords = globeRef.current.getCentroid(q.targetCca2);
+      const wrongCoords = nearestCca2 !== q.targetCca2
+        ? globeRef.current.getCentroid(nearestCca2) ?? tapCoords
+        : tapCoords;
+      if (correctCoords) {
+        feedbackCoordsRef.current = {
+          wrongCca2: answeredCca2,
+          wrongCoords,
+          correctCca2: q.targetCca2,
+          correctCoords,
+          questionType: q.type,
+        };
+        setFeedbackStep('step1');
       }
     }
   }, [session, globeRef]);
@@ -1022,8 +1054,9 @@ export function JugarView({
     const mode = activeQuestionTypeRef.current === 'mixed' ? 'adventure' : activeQuestionTypeRef.current;
     return calculateProgress(att, def.countries, mode, getInheritedCountries());
     // session.score en deps para recalcular tras cada respuesta
+    // attemptsVersion para recalcular tras resetear estadísticas
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session.level, session.continent, session.score, getAttemptsForSession, levels]);
+  }, [session.level, session.continent, session.score, getAttemptsForSession, levels, attemptsVersion]);
 
   // Invitación a sello desde tipo concreto A/B (Step 6c)
   const readyForStampType = useMemo((): 'countries' | 'capitals' | null => {
@@ -1038,7 +1071,7 @@ export function JugarView({
     if (qt === 'B' && !stamps.capitals && isTypeFullyDominated(att, def.countries, 'B')) return 'capitals';
     return null;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session.level, session.continent, session.score, getAttemptsForSession, getStamps, levels]);
+  }, [session.level, session.continent, session.score, getAttemptsForSession, getStamps, levels, attemptsVersion]);
 
   // Siguiente tipo sugerido tras agotar pool de tipo concreto (Step 7)
   const nextSuggestedType = useMemo((): QuestionType | null => {
@@ -1068,29 +1101,29 @@ export function JugarView({
         {showStampChooser && (
           <div className="jugar-modal-overlay">
             <div className="jugar-modal">
-              <h3 className="jugar-modal__title">Prueba de sello</h3>
+              <h3 className="jugar-modal__title">{t('modal.stampChooser.title')}</h3>
               <p className="jugar-modal__text">
-                Elige una prueba. Deberás completarla sin errores para conseguir el sello.
+                {t('modal.stampChooser.text', { count: levels.get(`${activeLevelRef.current}-${activeContinentRef.current}`)?.countries.length ?? '?' })}
               </p>
               <div className="jugar-modal__buttons">
                 <button
                   className="jugar-modal__btn jugar-modal__btn--countries"
                   onClick={() => handleStartStampTest('countries')}
                 >
-                  Sello de Países
+                  {t('stamp.countries')}
                 </button>
                 <button
                   className="jugar-modal__btn jugar-modal__btn--capitals"
                   onClick={() => handleStartStampTest('capitals')}
                 >
-                  Sello de Capitales
+                  {t('stamp.capitals')}
                 </button>
               </div>
               <button
                 className="jugar-modal__cancel"
                 onClick={() => setShowStampChooser(false)}
               >
-                Cancelar
+                {t('common:cancel')}
               </button>
             </div>
           </div>
@@ -1102,20 +1135,21 @@ export function JugarView({
           const qt = alreadyDominatedType;
           const stamps = level && continent ? getStamps(level, continent) : { countries: true, capitals: true };
           const isAB = qt === 'A' || qt === 'B';
-          const typeLabel = QUESTION_TYPE_LABELS[qt as QuestionType] ?? 'este tipo';
+          const typeLabel = qt !== 'mixed' ? t(`common:questionType.${qt}`) : '';
 
           // Rama Aventura
           if (qt === 'mixed') {
             const bothEarned = stamps.countries && stamps.capitals;
-            const levelLabel = (level ?? '').charAt(0).toUpperCase() + (level ?? '').slice(1);
+            const continentLabel = continent ? t(`common:continent.${continent}`) : '';
+            const levelLabel = level ? t(`common:level.${level}`) : '';
             return (
               <div className="jugar-modal-overlay">
                 <div className="jugar-modal">
-                  <h3 className="jugar-modal__title">Entrenamiento completado</h3>
+                  <h3 className="jugar-modal__title">{t('modal.poolExhausted.trainingComplete')}</h3>
                   <p className="jugar-modal__text">
                     {bothEarned
-                      ? <>Has completado <em>{continent}</em> en nivel <em>{levelLabel}</em>. Puedes resetear las estadísticas para volver a practicar.</>
-                      : <>Has completado el entrenamiento de <em>{continent}</em> en nivel <em>{levelLabel}</em>.</>
+                      ? <span dangerouslySetInnerHTML={{ __html: t('modal.poolExhausted.completedText', { continent: continentLabel, level: levelLabel }) }} />
+                      : <span dangerouslySetInnerHTML={{ __html: t('modal.alreadyDominated.completedTraining', { continent: continentLabel, level: levelLabel }) }} />
                     }
                   </p>
                   <div className="jugar-modal__buttons">
@@ -1124,7 +1158,7 @@ export function JugarView({
                         className="jugar-modal__btn jugar-modal__btn--countries"
                         onClick={() => { setShowAlreadyDominated(false); handleStartStampTest('countries'); }}
                       >
-                        Sello de Países
+                        {t('stamp.countries')}
                       </button>
                     )}
                     {!stamps.capitals && (
@@ -1132,17 +1166,17 @@ export function JugarView({
                         className="jugar-modal__btn jugar-modal__btn--capitals"
                         onClick={() => { setShowAlreadyDominated(false); handleStartStampTest('capitals'); }}
                       >
-                        Sello de Capitales
+                        {t('stamp.capitals')}
                       </button>
                     )}
                     <button
                       className="jugar-modal__btn jugar-modal__btn--primary"
                       onClick={() => { setShowAlreadyDominated(false); onNavigateStats?.(); }}
                     >
-                      Ir a Estadísticas
+                      {t('modal.alreadyDominated.goToStats')}
                     </button>
                     <button className="jugar-modal__cancel" onClick={() => setShowAlreadyDominated(false)}>
-                      Seleccionar otro juego
+                      {t('modal.poolExhausted.selectOther')}
                     </button>
                   </div>
                 </div>
@@ -1157,9 +1191,9 @@ export function JugarView({
             return (
               <div className="jugar-modal-overlay">
                 <div className="jugar-modal">
-                  <h3 className="jugar-modal__title">Ya dominas<br /><em>{typeLabel}</em></h3>
+                  <h3 className="jugar-modal__title" dangerouslySetInnerHTML={{ __html: t('modal.alreadyDominated.title', { type: typeLabel }) }} />
                   <p className="jugar-modal__text">
-                    Has acertado todos los países. Puedes resetear las estadísticas para volver a practicar.
+                    {t('modal.alreadyDominated.allCorrect')}
                   </p>
                   <div className="jugar-modal__buttons">
                     {!hasStamp && (
@@ -1167,17 +1201,17 @@ export function JugarView({
                         className={`jugar-modal__btn jugar-modal__btn--${stampType}`}
                         onClick={() => { setShowAlreadyDominated(false); handleStartStampTest(stampType); }}
                       >
-                        Intentar prueba de sello
+                        {t('modal.alreadyDominated.tryStamp')}
                       </button>
                     )}
                     <button
                       className="jugar-modal__btn jugar-modal__btn--primary"
                       onClick={() => { setShowAlreadyDominated(false); onNavigateStats?.(); }}
                     >
-                      Ir a Estadísticas
+                      {t('modal.alreadyDominated.goToStats')}
                     </button>
                     <button className="jugar-modal__cancel" onClick={() => setShowAlreadyDominated(false)}>
-                      Seleccionar otro juego
+                      {t('modal.poolExhausted.selectOther')}
                     </button>
                   </div>
                 </div>
@@ -1189,19 +1223,19 @@ export function JugarView({
           return (
             <div className="jugar-modal-overlay">
               <div className="jugar-modal">
-                <h3 className="jugar-modal__title">Ya dominas<br /><em>{typeLabel}</em></h3>
+                <h3 className="jugar-modal__title" dangerouslySetInnerHTML={{ __html: t('modal.alreadyDominated.title', { type: typeLabel }) }} />
                 <p className="jugar-modal__text">
-                  Has acertado todos los países. Puedes resetear las estadísticas para volver a practicar.
+                  {t('modal.alreadyDominated.allCorrect')}
                 </p>
                 <div className="jugar-modal__buttons">
                   <button
                     className="jugar-modal__btn jugar-modal__btn--primary"
                     onClick={() => { setShowAlreadyDominated(false); onNavigateStats?.(); }}
                   >
-                    Ir a Estadísticas
+                    {t('modal.alreadyDominated.goToStats')}
                   </button>
                   <button className="jugar-modal__cancel" onClick={() => setShowAlreadyDominated(false)}>
-                    Seleccionar otro juego
+                    {t('modal.poolExhausted.selectOther')}
                   </button>
                 </div>
               </div>
@@ -1261,9 +1295,9 @@ export function JugarView({
         return (
         <div className="jugar-modal-overlay">
           <div className="jugar-modal">
-            <h3 className="jugar-modal__title">Prueba de sello</h3>
+            <h3 className="jugar-modal__title">{t('modal.stampChooser.title')}</h3>
             <p className="jugar-modal__text">
-              Elige una prueba. Deberás completarla sin errores para conseguir el sello.
+              {t('modal.poolExhausted.chooseStamp')}
             </p>
             <div className="jugar-modal__buttons">
               {!stamps.countries && (
@@ -1271,7 +1305,7 @@ export function JugarView({
                   className="jugar-modal__btn jugar-modal__btn--countries"
                   onClick={() => handleStartStampTest('countries')}
                 >
-                  Sello de Países
+                  {t('stamp.countries')}
                 </button>
               )}
               {!stamps.capitals && (
@@ -1279,7 +1313,7 @@ export function JugarView({
                   className="jugar-modal__btn jugar-modal__btn--capitals"
                   onClick={() => handleStartStampTest('capitals')}
                 >
-                  Sello de Capitales
+                  {t('stamp.capitals')}
                 </button>
               )}
             </div>
@@ -1287,7 +1321,7 @@ export function JugarView({
               className="jugar-modal__cancel"
               onClick={() => setShowStampChooser(false)}
             >
-              Cancelar
+              {t('common:cancel')}
             </button>
           </div>
         </div>
@@ -1308,26 +1342,26 @@ export function JugarView({
                   ].filter(Boolean).join(' ')}
                   style={{ '--stamp-color': session.continent ? `var(${CONTINENT_CSS_VAR[session.continent]})` : 'var(--color-text-secondary)' } as React.CSSProperties}
                 />
-                <h3 className="jugar-modal__title">Sello conseguido</h3>
+                <h3 className="jugar-modal__title">{t('modal.stampEarned.title')}</h3>
                 <p className="jugar-modal__text">
-                  {session.score.correct} de {session.score.correct + session.score.incorrect} correctos. Sin errores.
+                  {t('modal.stampEarned.text', { correct: session.score.correct, total: session.score.correct + session.score.incorrect })}
                 </p>
               </>
             ) : (() => {
               const total = session.score.correct + session.score.incorrect;
               const pct = total > 0 ? (session.score.correct / total) * 100 : 0;
               const { title, encouragement } = pct >= 90
-                ? { title: '¡Muy cerca!', encouragement: 'A nada del sello.' }
+                ? { title: t('modal.stampFailed.veryClose'), encouragement: t('modal.stampFailed.veryCloseText') }
                 : pct >= 70
-                ? { title: '¡Buen intento!', encouragement: 'Cada intento te acerca más.' }
+                ? { title: t('modal.stampFailed.goodTry'), encouragement: t('modal.stampFailed.goodTryText') }
                 : pct >= 50
-                ? { title: 'Vas por buen camino', encouragement: 'Sigue jugando, se nota el progreso.' }
-                : { title: 'No te rindas', encouragement: 'La práctica hace al maestro.' };
+                ? { title: t('modal.stampFailed.onTrack'), encouragement: t('modal.stampFailed.onTrackText') }
+                : { title: t('modal.stampFailed.dontGiveUp'), encouragement: t('modal.stampFailed.dontGiveUpText') };
               return (
                 <>
                   <h3 className="jugar-modal__title">{title}</h3>
                   <p className="jugar-modal__text">
-                    {session.score.correct} de {total} correctos.<br />
+                    {t('modal.stampFailed.score', { correct: session.score.correct, total })}<br />
                     {encouragement}
                   </p>
                 </>
@@ -1337,7 +1371,7 @@ export function JugarView({
               className="jugar-modal__btn jugar-modal__btn--primary"
               onClick={handleStampResultClose}
             >
-              Continuar
+              {t('common:continue')}
             </button>
           </div>
         </div>
@@ -1347,7 +1381,7 @@ export function JugarView({
       {showPoolExhausted && (() => {
         const qt = activeQuestionTypeRef.current;
         const isAB = qt === 'A' || qt === 'B';
-        const typeLabel = QUESTION_TYPE_LABELS[qt as QuestionType] ?? 'este tipo';
+        const typeLabel = qt !== 'mixed' ? t(`common:questionType.${qt}`) : '';
 
         // Rama Aventura — invitación a prueba de sello
         if (qt === 'mixed') {
@@ -1355,20 +1389,21 @@ export function JugarView({
             ? getStamps(activeLevelRef.current, activeContinentRef.current)
             : { countries: true, capitals: true };
           const bothEarned = stamps.countries && stamps.capitals;
-          const levelLabel = (activeLevelRef.current ?? '').charAt(0).toUpperCase() + (activeLevelRef.current ?? '').slice(1);
+          const continentLabel = activeContinentRef.current ? t(`common:continent.${activeContinentRef.current}`) : '';
+          const levelLabel = activeLevelRef.current ? t(`common:level.${activeLevelRef.current}`) : '';
           return (
             <div className="jugar-modal-overlay">
               <div className="jugar-modal">
                 <h3 className="jugar-modal__title">
                   {bothEarned
-                    ? 'Entrenamiento completado'
-                    : <>¡Fenomenal!<br />Listo para el sello</>
+                    ? t('modal.poolExhausted.trainingComplete')
+                    : <span dangerouslySetInnerHTML={{ __html: t('modal.poolExhausted.readyForStamp') }} />
                   }
                 </h3>
                 <p className="jugar-modal__text">
                   {bothEarned
-                    ? <>Has completado <em>{activeContinentRef.current}</em> en nivel <em>{levelLabel}</em>. Puedes resetear las estadísticas para volver a practicar.</>
-                    : 'Elige una prueba. Deberás completarla sin errores para conseguir el sello.'
+                    ? <span dangerouslySetInnerHTML={{ __html: t('modal.poolExhausted.completedText', { continent: continentLabel, level: levelLabel }) }} />
+                    : t('modal.poolExhausted.chooseStamp')
                   }
                 </p>
                 <div className="jugar-modal__buttons">
@@ -1377,7 +1412,7 @@ export function JugarView({
                       className="jugar-modal__btn jugar-modal__btn--countries"
                       onClick={() => handleStartStampTest('countries')}
                     >
-                      Sello de Países
+                      {t('stamp.countries')}
                     </button>
                   )}
                   {!stamps.capitals && (
@@ -1385,11 +1420,11 @@ export function JugarView({
                       className="jugar-modal__btn jugar-modal__btn--capitals"
                       onClick={() => handleStartStampTest('capitals')}
                     >
-                      Sello de Capitales
+                      {t('stamp.capitals')}
                     </button>
                   )}
                   <button className="jugar-modal__cancel" onClick={handlePoolExhaustedClose}>
-                    Seleccionar otro juego
+                    {t('modal.poolExhausted.selectOther')}
                   </button>
                 </div>
               </div>
@@ -1401,12 +1436,10 @@ export function JugarView({
         if (isAB) return (
           <div className="jugar-modal-overlay">
             <div className="jugar-modal">
-              <h3 className="jugar-modal__title">
-                ¡Fenomenal!<br /><em>{typeLabel}</em> superado
-              </h3>
+              <h3 className="jugar-modal__title" dangerouslySetInnerHTML={{ __html: t('modal.poolExhausted.typePassed', { type: typeLabel }) }} />
               {readyForStampType && (
                 <p className="jugar-modal__text">
-                  Estás listo para la prueba de sello. Complétala sin errores para conseguirlo.
+                  {t('modal.poolExhausted.stampReady')}
                 </p>
               )}
               <div className="jugar-modal__buttons">
@@ -1415,11 +1448,11 @@ export function JugarView({
                     className={`jugar-modal__btn jugar-modal__btn--${readyForStampType === 'countries' ? 'countries' : 'capitals'}`}
                     onClick={() => handleStartStampTest(readyForStampType)}
                   >
-                    Intentar sello de {readyForStampType === 'countries' ? 'Países' : 'Capitales'}
+                    {readyForStampType === 'countries' ? t('modal.poolExhausted.tryStamp.countries') : t('modal.poolExhausted.tryStamp.capitals')}
                   </button>
                 )}
                 <button className="jugar-modal__cancel" onClick={handlePoolExhaustedClose}>
-                  Seleccionar otro juego
+                  {t('modal.poolExhausted.selectOther')}
                 </button>
               </div>
             </div>
@@ -1430,25 +1463,24 @@ export function JugarView({
         return (
           <div className="jugar-modal-overlay">
             <div className="jugar-modal">
-              <h3 className="jugar-modal__title">
-                ¡Fenomenal!<br /><em>{typeLabel}</em> superado
-              </h3>
+              <h3 className="jugar-modal__title" dangerouslySetInnerHTML={{ __html: t('modal.poolExhausted.typePassed', { type: typeLabel }) }} />
               <div className="jugar-modal__buttons">
                 {nextSuggestedType && (
                   <button
                     className="jugar-modal__btn"
                     onClick={() => handleStartSuggestedType(nextSuggestedType)}
-                  >
-                    Jugar <em>{QUESTION_TYPE_LABELS[nextSuggestedType]}</em>
-                  </button>
+                    dangerouslySetInnerHTML={{ __html: t('modal.poolExhausted.playType', { type: t(`common:questionType.${nextSuggestedType}`) }) }}
+                  />
                 )}
                 {nextSuggestedType !== null && (
-                  <button className="jugar-modal__btn" onClick={handleStartAdventure}>
-                    Jugar <em>Aventura</em>
-                  </button>
+                  <button
+                    className="jugar-modal__btn"
+                    onClick={handleStartAdventure}
+                    dangerouslySetInnerHTML={{ __html: t('modal.poolExhausted.playAdventure') }}
+                  />
                 )}
                 <button className="jugar-modal__cancel" onClick={handlePoolExhaustedClose}>
-                  Seleccionar otro juego
+                  {t('modal.poolExhausted.selectOther')}
                 </button>
               </div>
             </div>

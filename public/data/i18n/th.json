@@ -1,0 +1,2959 @@
+{
+  "AD": {
+    "name": "อันดอร์รา",
+    "capital": "อันดอร์ราลาเวยา",
+    "demonym": "อันดอร์รา",
+    "languages": [
+      "คาตาลัน"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศอันดอร์รา"
+  },
+  "AE": {
+    "name": "สหรัฐอาหรับเอมิเรตส์",
+    "capital": "อาบูดาบี",
+    "demonym": "เอมิเรตส์",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "เดอร์แฮมสหรัฐอาหรับเอมิเรตส์"
+    ],
+    "wikipediaSlug": "สหรัฐอาหรับเอมิเรตส์"
+  },
+  "AF": {
+    "name": "อัฟกานิสถาน",
+    "capital": "คาบูล",
+    "demonym": "อัฟกัน",
+    "languages": [
+      "ดารี",
+      "พัชโต"
+    ],
+    "currencyNames": [
+      "อัฟกานิอัฟกานิสถาน"
+    ],
+    "wikipediaSlug": "ประเทศอัฟกานิสถาน"
+  },
+  "AG": {
+    "name": "แอนติกาและบาร์บูดา",
+    "capital": "เซนต์จอนส์",
+    "demonym": "แอนติกา",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์แคริบเบียนตะวันออก"
+    ],
+    "wikipediaSlug": "ประเทศแอนทีกาและบาร์บิวดา"
+  },
+  "AI": {
+    "name": "แองกวิลลา",
+    "capital": "เดอะแวลลีย์",
+    "demonym": "แองกวิลลา",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์แคริบเบียนตะวันออก"
+    ],
+    "wikipediaSlug": "แองกวิลลา"
+  },
+  "AL": {
+    "name": "แอลเบเนีย",
+    "capital": "ติรานา",
+    "demonym": "แอลเบเนีย",
+    "languages": [
+      "แอลเบเนีย"
+    ],
+    "currencyNames": [
+      "เลกแอลเบเนีย"
+    ],
+    "wikipediaSlug": "ประเทศแอลเบเนีย"
+  },
+  "AM": {
+    "name": "อาร์เมเนีย",
+    "capital": "เยเรวาน",
+    "demonym": "อาร์เมเนีย",
+    "languages": [
+      "อาร์เมเนีย"
+    ],
+    "currencyNames": [
+      "แดรมอาร์เมเนีย"
+    ],
+    "wikipediaSlug": "ประเทศอาร์มีเนีย"
+  },
+  "AO": {
+    "name": "แองโกลา",
+    "capital": "ลูอันดา",
+    "demonym": "แองโกลา",
+    "languages": [
+      "โปรตุเกส"
+    ],
+    "currencyNames": [
+      "กวานซาแองโกลา"
+    ],
+    "wikipediaSlug": "ประเทศแองโกลา"
+  },
+  "AR": {
+    "name": "อาร์เจนตินา",
+    "capital": "บัวโนสไอเรส",
+    "demonym": "อาร์เจนตินา",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "เปโซอาร์เจนตินา"
+    ],
+    "wikipediaSlug": "ประเทศอาร์เจนตินา"
+  },
+  "AS": {
+    "name": "อเมริกันซามัว",
+    "capital": "ปาโกปาโก",
+    "demonym": "อเมริกันซามัว",
+    "languages": [
+      "อังกฤษ",
+      "ซามัว"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "อเมริกันซามัว"
+  },
+  "AT": {
+    "name": "ออสเตรีย",
+    "capital": "เวียนนา",
+    "demonym": "ออสเตรีย",
+    "languages": [
+      "เยอรมัน"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศออสเตรีย"
+  },
+  "AU": {
+    "name": "ออสเตรเลีย",
+    "capital": "แคนเบอร์รา",
+    "demonym": "ออสเตรเลีย",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ออสเตรเลีย"
+    ],
+    "wikipediaSlug": "ประเทศออสเตรเลีย"
+  },
+  "AW": {
+    "name": "อารูบา",
+    "capital": "โอรันเยสตัด",
+    "demonym": "อารูบา",
+    "languages": [
+      "ดัตช์",
+      "ปาเปียเมนโต"
+    ],
+    "currencyNames": [
+      "ฟลอรินอารูบา"
+    ],
+    "wikipediaSlug": "อารูบา"
+  },
+  "AX": {
+    "name": "หมู่เกาะโอลันด์",
+    "capital": "มารีเอฮัมน์",
+    "demonym": "โอลันด์",
+    "languages": [
+      "สวีเดน"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "หมู่เกาะโอลันด์"
+  },
+  "AZ": {
+    "name": "อาเซอร์ไบจาน",
+    "capital": "บากู",
+    "demonym": "อาเซอร์ไบจาน",
+    "languages": [
+      "อาเซอร์ไบจาน"
+    ],
+    "currencyNames": [
+      "มานัตอาเซอร์ไบจาน"
+    ],
+    "wikipediaSlug": "ประเทศอาเซอร์ไบจาน"
+  },
+  "BA": {
+    "name": "บอสเนียและเฮอร์เซโกวีนา",
+    "capital": "ซาราเยโว",
+    "demonym": "บอสเนีย",
+    "languages": [
+      "บอสเนีย",
+      "โครเอเชีย",
+      "เซอร์เบีย"
+    ],
+    "currencyNames": [
+      "มาร์กบอสเนีย-เฮอร์เซโกวีนา"
+    ],
+    "wikipediaSlug": "ประเทศบอสเนียและเฮอร์เซโกวีนา"
+  },
+  "BB": {
+    "name": "บาร์เบโดส",
+    "capital": "บริดจ์ทาวน์",
+    "demonym": "บาร์เบโดส",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์บาร์เบโดส"
+    ],
+    "wikipediaSlug": "ประเทศบาร์เบโดส"
+  },
+  "BD": {
+    "name": "บังกลาเทศ",
+    "capital": "ธากา",
+    "demonym": "บังกลาเทศ",
+    "languages": [
+      "บังกลา"
+    ],
+    "currencyNames": [
+      "ตากาบังกลาเทศ"
+    ],
+    "wikipediaSlug": "ประเทศบังกลาเทศ"
+  },
+  "BE": {
+    "name": "เบลเยียม",
+    "capital": "นครบรัสเซลส์",
+    "demonym": "เบลเยียม",
+    "languages": [
+      "ดัตช์",
+      "ฝรั่งเศส",
+      "เยอรมัน"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศเบลเยียม"
+  },
+  "BF": {
+    "name": "บูร์กินาฟาโซ",
+    "capital": "วากาดูกู",
+    "demonym": "บูร์กินาฟาโซ",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารกลางรัฐแอฟริกาตะวันตก"
+    ],
+    "wikipediaSlug": "ประเทศบูร์กินาฟาโซ"
+  },
+  "BG": {
+    "name": "บัลแกเรีย",
+    "capital": "โซเฟีย",
+    "demonym": "บัลแกเรีย",
+    "languages": [
+      "บัลแกเรีย"
+    ],
+    "currencyNames": [
+      "เลฟบัลแกเรีย"
+    ],
+    "wikipediaSlug": "ประเทศบัลแกเรีย"
+  },
+  "BH": {
+    "name": "บาห์เรน",
+    "capital": "มานามา",
+    "demonym": "บาห์เรน",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ดีนาร์บาห์เรน"
+    ],
+    "wikipediaSlug": "ประเทศบาห์เรน"
+  },
+  "BI": {
+    "name": "บุรุนดี",
+    "capital": "กีเตกา",
+    "demonym": "บุรุนดี",
+    "languages": [
+      "บุรุนดี",
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์บุรุนดี"
+    ],
+    "wikipediaSlug": "ประเทศบุรุนดี"
+  },
+  "BJ": {
+    "name": "เบนิน",
+    "capital": "ปอร์โต-โนโว",
+    "demonym": "เบนิน",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารกลางรัฐแอฟริกาตะวันตก"
+    ],
+    "wikipediaSlug": "ประเทศเบนิน"
+  },
+  "BL": {
+    "name": "แซ็ง-บาร์เตเลมี",
+    "capital": "กุสตาวียา",
+    "demonym": "แซ็ง-บาร์เตเลมี",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "แซ็ง-บาร์เตเลมี"
+  },
+  "BM": {
+    "name": "เบอร์มิวดา",
+    "capital": "แฮมิลตัน",
+    "demonym": "เบอร์มิวดา",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์เบอร์มิวดา"
+    ],
+    "wikipediaSlug": "เบอร์มิวดา"
+  },
+  "BN": {
+    "name": "บรูไน",
+    "capital": "บันดาร์เซอรีเบอกาวัน",
+    "demonym": "บรูไน",
+    "languages": [
+      "มาเลย์"
+    ],
+    "currencyNames": [
+      "ดอลลาร์บรูไน",
+      "ดอลลาร์สิงคโปร์"
+    ],
+    "wikipediaSlug": "ประเทศบรูไน"
+  },
+  "BO": {
+    "name": "โบลิเวีย",
+    "capital": "ลาปาซ",
+    "demonym": "โบลิเวีย",
+    "languages": [
+      "สเปน",
+      "เคชวา",
+      "ไอย์มารา"
+    ],
+    "currencyNames": [
+      "โบลิเวียโนโบลิเวีย"
+    ],
+    "wikipediaSlug": "ประเทศโบลิเวีย"
+  },
+  "BR": {
+    "name": "บราซิล",
+    "capital": "บราซิเลีย",
+    "demonym": "บราซิล",
+    "languages": [
+      "โปรตุเกส"
+    ],
+    "currencyNames": [
+      "เรียลบราซิล"
+    ],
+    "wikipediaSlug": "ประเทศบราซิล"
+  },
+  "BS": {
+    "name": "บาฮามาส",
+    "capital": "แนสซอ",
+    "demonym": "บาฮามาส",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์บาฮามาส",
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "ประเทศบาฮามาส"
+  },
+  "BT": {
+    "name": "ภูฏาน",
+    "capital": "ทิมพู",
+    "demonym": "ภูฏาน",
+    "languages": [
+      "ซองคา"
+    ],
+    "currencyNames": [
+      "เอ็งกุลตรัมภูฏาน",
+      "รูปีอินเดีย"
+    ],
+    "wikipediaSlug": "ประเทศภูฏาน"
+  },
+  "BW": {
+    "name": "บอตสวานา",
+    "capital": "กาโบโรเน",
+    "demonym": "บอตสวานา",
+    "languages": [
+      "อังกฤษ",
+      "สวานา"
+    ],
+    "currencyNames": [
+      "ปูลาบอตสวานา"
+    ],
+    "wikipediaSlug": "ประเทศบอตสวานา"
+  },
+  "BY": {
+    "name": "เบลารุส",
+    "capital": "มินสค์",
+    "demonym": "เบลารุส",
+    "languages": [
+      "เบลารุส",
+      "รัสเซีย"
+    ],
+    "currencyNames": [
+      "รูเบิลเบลารุส"
+    ],
+    "wikipediaSlug": "ประเทศเบลารุส"
+  },
+  "BZ": {
+    "name": "เบลีซ",
+    "capital": "เบลโมแพน",
+    "demonym": "เบลีซ",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์เบลีซ"
+    ],
+    "wikipediaSlug": "ประเทศเบลีซ"
+  },
+  "CA": {
+    "name": "แคนาดา",
+    "capital": "ออตตาวา",
+    "demonym": "แคนาดา",
+    "languages": [
+      "อังกฤษ",
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ดอลลาร์แคนาดา"
+    ],
+    "wikipediaSlug": "ประเทศแคนาดา"
+  },
+  "CD": {
+    "name": "คองโก - กินชาซา",
+    "capital": "กินชาซา",
+    "demonym": "คองโก",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์คองโก"
+    ],
+    "wikipediaSlug": "สาธารณรัฐประชาธิปไตยคองโก"
+  },
+  "CF": {
+    "name": "สาธารณรัฐแอฟริกากลาง",
+    "capital": "บังกี",
+    "demonym": "แอฟริกากลาง",
+    "languages": [
+      "ฝรั่งเศส",
+      "ซันโก"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารรัฐแอฟริกากลาง"
+    ],
+    "wikipediaSlug": "สาธารณรัฐแอฟริกากลาง"
+  },
+  "CG": {
+    "name": "คองโก - บราซซาวิล",
+    "capital": "บราซาวีล",
+    "demonym": "คองโก",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารรัฐแอฟริกากลาง"
+    ],
+    "wikipediaSlug": "สาธารณรัฐคองโก"
+  },
+  "CH": {
+    "name": "สวิตเซอร์แลนด์",
+    "capital": "แบร์น",
+    "demonym": "สวิส",
+    "languages": [
+      "เยอรมัน",
+      "ฝรั่งเศส",
+      "อิตาลี",
+      "โรแมนซ์"
+    ],
+    "currencyNames": [
+      "ฟรังก์สวิส"
+    ],
+    "wikipediaSlug": "ประเทศสวิตเซอร์แลนด์"
+  },
+  "CI": {
+    "name": "โกตดิวัวร์",
+    "capital": "ยามูซูโกร",
+    "demonym": "ไอวอรีโคสต์",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารกลางรัฐแอฟริกาตะวันตก"
+    ],
+    "wikipediaSlug": "ประเทศโกตดิวัวร์"
+  },
+  "CK": {
+    "name": "หมู่เกาะคุก",
+    "capital": "อาวารัว",
+    "demonym": "หมู่เกาะคุก",
+    "languages": [
+      "อังกฤษ",
+      "ราโรทองกา"
+    ],
+    "currencyNames": [
+      "ดอลลาร์นิวซีแลนด์"
+    ],
+    "wikipediaSlug": "หมู่เกาะคุก"
+  },
+  "CL": {
+    "name": "ชิลี",
+    "capital": "ซันติอาโก",
+    "demonym": "ชิลี",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "เปโซชิลี"
+    ],
+    "wikipediaSlug": "ประเทศชิลี"
+  },
+  "CM": {
+    "name": "แคเมอรูน",
+    "capital": "ยาอุนเด",
+    "demonym": "แคเมอรูน",
+    "languages": [
+      "ฝรั่งเศส",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารรัฐแอฟริกากลาง"
+    ],
+    "wikipediaSlug": "ประเทศแคเมอรูน"
+  },
+  "CN": {
+    "name": "จีน",
+    "capital": "ปักกิ่ง",
+    "demonym": "จีน",
+    "languages": [
+      "จีน"
+    ],
+    "currencyNames": [
+      "หยวนจีน"
+    ],
+    "wikipediaSlug": "ประเทศจีน"
+  },
+  "CO": {
+    "name": "โคลอมเบีย",
+    "capital": "โบโกตา",
+    "demonym": "โคลอมเบีย",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "เปโซโคลอมเบีย"
+    ],
+    "wikipediaSlug": "ประเทศโคลอมเบีย"
+  },
+  "CR": {
+    "name": "คอสตาริกา",
+    "capital": "ซานโฮเซ",
+    "demonym": "คอสตาริกา",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "โกลองคอสตาริกา"
+    ],
+    "wikipediaSlug": "ประเทศคอสตาริกา"
+  },
+  "CU": {
+    "name": "คิวบา",
+    "capital": "อาบานา",
+    "demonym": "คิวบา",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "เปโซคิวบา (แปลงสภาพ)",
+      "เปโซคิวบา"
+    ],
+    "wikipediaSlug": "ประเทศคิวบา"
+  },
+  "CV": {
+    "name": "กาบูเวร์ดี",
+    "capital": "ไปรยา",
+    "demonym": "เคปเวิร์ด",
+    "languages": [
+      "โปรตุเกส"
+    ],
+    "currencyNames": [
+      "เอสคูโดเคปเวิร์ด"
+    ],
+    "wikipediaSlug": "ประเทศกาบูเวร์ดี"
+  },
+  "CW": {
+    "name": "คูราเซา",
+    "capital": "วิลเลมสตัด",
+    "demonym": "คูราเซา",
+    "languages": [
+      "ดัตช์",
+      "ปาเปียเมนโต"
+    ],
+    "currencyNames": [
+      "กิลเดอร์เนเธอร์แลนด์แอนทิลลิส"
+    ],
+    "wikipediaSlug": "กูราเซา"
+  },
+  "CY": {
+    "name": "ไซปรัส",
+    "capital": "นิโคเซีย",
+    "demonym": "ไซปรัส",
+    "languages": [
+      "กรีก",
+      "ตุรกี"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศไซปรัส"
+  },
+  "CZ": {
+    "name": "เช็ก",
+    "capital": "ปราก",
+    "demonym": "เช็ก",
+    "languages": [
+      "เช็ก"
+    ],
+    "currencyNames": [
+      "โครูนาสาธารณรัฐเช็ก"
+    ],
+    "wikipediaSlug": "ประเทศเช็กเกีย"
+  },
+  "DE": {
+    "name": "เยอรมนี",
+    "capital": "เบอร์ลิน",
+    "demonym": "เยอรมัน",
+    "languages": [
+      "เยอรมัน"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศเยอรมนี"
+  },
+  "DJ": {
+    "name": "จิบูตี",
+    "capital": "จิบูตี",
+    "demonym": "จิบูตี",
+    "languages": [
+      "ฝรั่งเศส",
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ฟรังก์จิบูตี"
+    ],
+    "wikipediaSlug": "ประเทศจิบูตี"
+  },
+  "DK": {
+    "name": "เดนมาร์ก",
+    "capital": "โคเปนเฮเกน",
+    "demonym": "เดนมาร์ก",
+    "languages": [
+      "เดนมาร์ก"
+    ],
+    "currencyNames": [
+      "โครนเดนมาร์ก"
+    ],
+    "wikipediaSlug": "ประเทศเดนมาร์ก"
+  },
+  "DM": {
+    "name": "โดมินิกา",
+    "capital": "โรโซ",
+    "demonym": "โดมินิกา",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์แคริบเบียนตะวันออก"
+    ],
+    "wikipediaSlug": "ประเทศดอมินีกา"
+  },
+  "DO": {
+    "name": "สาธารณรัฐโดมินิกัน",
+    "capital": "ซานโตโดมิงโก",
+    "demonym": "สาธารณรัฐโดมินิกัน",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "เปโซโดมินิกัน"
+    ],
+    "wikipediaSlug": "สาธารณรัฐโดมินิกัน"
+  },
+  "DZ": {
+    "name": "แอลจีเรีย",
+    "capital": "แอลเจียร์",
+    "demonym": "แอลจีเรีย",
+    "languages": [
+      "อาหรับ",
+      "ทามาไซต์แอตลาสกลาง"
+    ],
+    "currencyNames": [
+      "ดีนาร์แอลจีเรีย"
+    ],
+    "wikipediaSlug": "ประเทศแอลจีเรีย"
+  },
+  "EC": {
+    "name": "เอกวาดอร์",
+    "capital": "กีโต",
+    "demonym": "เอกวาดอร์",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "ประเทศเอกวาดอร์"
+  },
+  "EE": {
+    "name": "เอสโตเนีย",
+    "capital": "ทาลลินน์",
+    "demonym": "เอสโตเนีย",
+    "languages": [
+      "เอสโตเนีย"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศเอสโตเนีย"
+  },
+  "EG": {
+    "name": "อียิปต์",
+    "capital": "ไคโร",
+    "demonym": "อียิปต์",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ปอนด์อียิปต์"
+    ],
+    "wikipediaSlug": "ประเทศอียิปต์"
+  },
+  "EH": {
+    "name": "ซาฮาราตะวันตก",
+    "capital": "",
+    "demonym": "ซาฮาราตะวันตก",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ดีนาร์แอลจีเรีย",
+      "ดีแรห์มโมร็อกโก",
+      "อูกียามอริเตเนีย"
+    ],
+    "wikipediaSlug": "เวสเทิร์นสะฮารา"
+  },
+  "ER": {
+    "name": "เอริเทรีย",
+    "capital": "แอสมารา",
+    "demonym": "เอริเทรีย",
+    "languages": [
+      "ติกริญญา",
+      "อาหรับ",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "แนกฟาเอริเทรีย"
+    ],
+    "wikipediaSlug": "ประเทศเอริเทรีย"
+  },
+  "ES": {
+    "name": "สเปน",
+    "capital": "มาดริด",
+    "demonym": "สเปน",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศสเปน"
+  },
+  "ET": {
+    "name": "เอธิโอเปีย",
+    "capital": "อาดดิสอาบาบา",
+    "demonym": "เอธิโอเปีย",
+    "languages": [
+      "อัมฮารา"
+    ],
+    "currencyNames": [
+      "เบอรร์เอธิโอเปีย"
+    ],
+    "wikipediaSlug": "ประเทศเอธิโอเปีย"
+  },
+  "FI": {
+    "name": "ฟินแลนด์",
+    "capital": "เฮลซิงกิ",
+    "demonym": "ฟินแลนด์",
+    "languages": [
+      "ฟินแลนด์",
+      "สวีเดน"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศฟินแลนด์"
+  },
+  "FJ": {
+    "name": "ฟิจิ",
+    "capital": "ซูวา",
+    "demonym": "ฟิจิ",
+    "languages": [
+      "อังกฤษ",
+      "ฟิจิ",
+      "ฮินดีฟิจิ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ฟิจิ"
+    ],
+    "wikipediaSlug": "ประเทศฟีจี"
+  },
+  "FK": {
+    "name": "หมู่เกาะฟอล์กแลนด์",
+    "capital": "สแตนลีย์",
+    "demonym": "หมู่เกาะฟอล์กแลนด์",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ปอนด์หมู่เกาะฟอล์กแลนด์"
+    ],
+    "wikipediaSlug": "หมู่เกาะฟอล์กแลนด์"
+  },
+  "FM": {
+    "name": "ไมโครนีเซีย",
+    "capital": "ปาลีกีร์",
+    "demonym": "ไมโครนีเซีย",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "ประเทศไมโครนีเชีย"
+  },
+  "FO": {
+    "name": "หมู่เกาะแฟโร",
+    "capital": "ทอร์เชาน์",
+    "demonym": "หมู่เกาะแฟโร",
+    "languages": [
+      "แฟโร",
+      "เดนมาร์ก"
+    ],
+    "currencyNames": [
+      "โครนเดนมาร์ก"
+    ],
+    "wikipediaSlug": "หมู่เกาะแฟโร"
+  },
+  "FR": {
+    "name": "ฝรั่งเศส",
+    "capital": "ปารีส",
+    "demonym": "ฝรั่งเศส",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศฝรั่งเศส"
+  },
+  "GA": {
+    "name": "กาบอง",
+    "capital": "ลีเบรอวีล",
+    "demonym": "กาบอง",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารรัฐแอฟริกากลาง"
+    ],
+    "wikipediaSlug": "ประเทศกาบอง"
+  },
+  "GB": {
+    "name": "สหราชอาณาจักร",
+    "capital": "ลอนดอน",
+    "demonym": "อังกฤษ",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ปอนด์สเตอร์ลิง (สหราชอาณาจักร)"
+    ],
+    "wikipediaSlug": "สหราชอาณาจักร"
+  },
+  "GD": {
+    "name": "เกรเนดา",
+    "capital": "เซนต์จอร์เจส",
+    "demonym": "เกรเนดา",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์แคริบเบียนตะวันออก"
+    ],
+    "wikipediaSlug": "ประเทศกรีเนดา"
+  },
+  "GE": {
+    "name": "จอร์เจีย",
+    "capital": "ทบิลีซี",
+    "demonym": "จอร์เจีย",
+    "languages": [
+      "จอร์เจีย"
+    ],
+    "currencyNames": [
+      "ลารีจอร์เจีย"
+    ],
+    "wikipediaSlug": "ประเทศจอร์เจีย"
+  },
+  "GF": {
+    "name": "เฟรนช์เกียนา",
+    "capital": "กาแยน",
+    "demonym": "เฟรนช์เกียนา",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "เฟรนช์เกียนา"
+  },
+  "GG": {
+    "name": "เกิร์นซีย์",
+    "capital": "เซนต์ปีเตอร์พอร์ต",
+    "demonym": "เกิร์นซีย์",
+    "languages": [
+      "อังกฤษ",
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ปอนด์สเตอร์ลิง (สหราชอาณาจักร)"
+    ],
+    "wikipediaSlug": "เขตเจ้าพนักงานศาลเกิร์นซีย์"
+  },
+  "GH": {
+    "name": "กานา",
+    "capital": "อักกรา",
+    "demonym": "กานา",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "เซดีกานา"
+    ],
+    "wikipediaSlug": "ประเทศกานา"
+  },
+  "GL": {
+    "name": "กรีนแลนด์",
+    "capital": "นุก",
+    "demonym": "กรีนแลนด์",
+    "languages": [
+      "กรีนแลนด์"
+    ],
+    "currencyNames": [
+      "โครนเดนมาร์ก"
+    ],
+    "wikipediaSlug": "กรีนแลนด์"
+  },
+  "GM": {
+    "name": "แกมเบีย",
+    "capital": "บันจูล",
+    "demonym": "แกมเบีย",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดาลาซีแกมเบีย"
+    ],
+    "wikipediaSlug": "ประเทศแกมเบีย"
+  },
+  "GN": {
+    "name": "กินี",
+    "capital": "โคนาครี",
+    "demonym": "กินี",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์กินี"
+    ],
+    "wikipediaSlug": "ประเทศกินี"
+  },
+  "GP": {
+    "name": "กวาเดอลูป",
+    "capital": "บัส-แตร์",
+    "demonym": "กวาเดอลูป",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "กัวเดอลุป"
+  },
+  "GQ": {
+    "name": "อิเควทอเรียลกินี",
+    "capital": "ซิวดัดเดลาปัซ",
+    "demonym": "อิเควทอเรียลกินี",
+    "languages": [
+      "สเปน",
+      "ฝรั่งเศส",
+      "โปรตุเกส"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารรัฐแอฟริกากลาง"
+    ],
+    "wikipediaSlug": "ประเทศอิเควทอเรียลกินี"
+  },
+  "GR": {
+    "name": "กรีซ",
+    "capital": "เอเธนส์",
+    "demonym": "กรีซ",
+    "languages": [
+      "กรีก"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศกรีซ"
+  },
+  "GT": {
+    "name": "กัวเตมาลา",
+    "capital": "กัวเตมาลาซิตี",
+    "demonym": "กัวเตมาลา",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "เควตซัลกัวเตมาลา"
+    ],
+    "wikipediaSlug": "ประเทศกัวเตมาลา"
+  },
+  "GU": {
+    "name": "กวม",
+    "capital": "ฮากัตญา",
+    "demonym": "กวม",
+    "languages": [
+      "อังกฤษ",
+      "ชามอร์โร"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "กวม"
+  },
+  "GW": {
+    "name": "กินี-บิสเซา",
+    "capital": "บิสเซา",
+    "demonym": "กินี-บิสเซา",
+    "languages": [
+      "โปรตุเกส"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารกลางรัฐแอฟริกาตะวันตก"
+    ],
+    "wikipediaSlug": "ประเทศกินี-บิสเซา"
+  },
+  "GY": {
+    "name": "กายอานา",
+    "capital": "จอร์จทาวน์",
+    "demonym": "กายอานา",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์กายอานา"
+    ],
+    "wikipediaSlug": "ประเทศกายอานา"
+  },
+  "HK": {
+    "name": "ฮ่องกง",
+    "capital": "",
+    "demonym": "ฮ่องกง",
+    "languages": [
+      "จีน",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ฮ่องกง"
+    ],
+    "wikipediaSlug": "ฮ่องกง"
+  },
+  "HN": {
+    "name": "ฮอนดูรัส",
+    "capital": "เตกูซิกัลปา",
+    "demonym": "ฮอนดูรัส",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "เลมปิราฮอนดูรัส"
+    ],
+    "wikipediaSlug": "ประเทศฮอนดูรัส"
+  },
+  "HR": {
+    "name": "โครเอเชีย",
+    "capital": "ซาเกร็บ",
+    "demonym": "โครเอเชีย",
+    "languages": [
+      "โครเอเชีย"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศโครเอเชีย"
+  },
+  "HT": {
+    "name": "เฮติ",
+    "capital": "ปอร์โตแปรงซ์",
+    "demonym": "เฮติ",
+    "languages": [
+      "ฝรั่งเศส",
+      "เฮติครีโอล"
+    ],
+    "currencyNames": [
+      "กูร์ดเฮติ"
+    ],
+    "wikipediaSlug": "ประเทศเฮติ"
+  },
+  "HU": {
+    "name": "ฮังการี",
+    "capital": "บูดาเปสต์",
+    "demonym": "ฮังการี",
+    "languages": [
+      "ฮังการี"
+    ],
+    "currencyNames": [
+      "ฟอรินต์ฮังการี"
+    ],
+    "wikipediaSlug": "ประเทศฮังการี"
+  },
+  "ID": {
+    "name": "อินโดนีเซีย",
+    "capital": "จาการ์ตา",
+    "demonym": "อินโดนีเซีย",
+    "languages": [
+      "อินโดนีเซีย"
+    ],
+    "currencyNames": [
+      "รูเปียห์อินโดนีเซีย"
+    ],
+    "wikipediaSlug": "ประเทศอินโดนีเซีย"
+  },
+  "IE": {
+    "name": "ไอร์แลนด์",
+    "capital": "ดับลิน",
+    "demonym": "ไอร์แลนด์",
+    "languages": [
+      "ไอริช",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศไอร์แลนด์"
+  },
+  "IL": {
+    "name": "อิสราเอล",
+    "capital": "เยรูซาเลม",
+    "demonym": "อิสราเอล",
+    "languages": [
+      "ฮิบรู",
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "นิวเชเกลอิสราเอล"
+    ],
+    "wikipediaSlug": "ประเทศอิสราเอล"
+  },
+  "IM": {
+    "name": "เกาะแมน",
+    "capital": "ดักลาส",
+    "demonym": "เกาะแมน",
+    "languages": [
+      "อังกฤษ",
+      "มานซ์"
+    ],
+    "currencyNames": [
+      "ปอนด์สเตอร์ลิง (สหราชอาณาจักร)"
+    ],
+    "wikipediaSlug": "ไอล์ออฟแมน"
+  },
+  "IN": {
+    "name": "อินเดีย",
+    "capital": "นิวเดลี",
+    "demonym": "อินเดีย",
+    "languages": [
+      "ฮินดี",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "รูปีอินเดีย"
+    ],
+    "wikipediaSlug": "ประเทศอินเดีย"
+  },
+  "IQ": {
+    "name": "อิรัก",
+    "capital": "แบกแดด",
+    "demonym": "อิรัก",
+    "languages": [
+      "อาหรับ",
+      "เคิร์ด"
+    ],
+    "currencyNames": [
+      "ดีนาร์อิรัก"
+    ],
+    "wikipediaSlug": "ประเทศอิรัก"
+  },
+  "IR": {
+    "name": "อิหร่าน",
+    "capital": "เตหะราน",
+    "demonym": "อิหร่าน",
+    "languages": [
+      "เปอร์เซีย"
+    ],
+    "currencyNames": [
+      "เรียลอิหร่าน"
+    ],
+    "wikipediaSlug": "ประเทศอิหร่าน"
+  },
+  "IS": {
+    "name": "ไอซ์แลนด์",
+    "capital": "เรคยาวิก",
+    "demonym": "ไอซ์แลนด์",
+    "languages": [
+      "ไอซ์แลนด์"
+    ],
+    "currencyNames": [
+      "โครนาไอซ์แลนด์"
+    ],
+    "wikipediaSlug": "ประเทศไอซ์แลนด์"
+  },
+  "IT": {
+    "name": "อิตาลี",
+    "capital": "โรม",
+    "demonym": "อิตาลี",
+    "languages": [
+      "อิตาลี"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศอิตาลี"
+  },
+  "JE": {
+    "name": "เจอร์ซีย์",
+    "capital": "เซนต์เฮลิเยอร์",
+    "demonym": "เจอร์ซีย์",
+    "languages": [
+      "อังกฤษ",
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ปอนด์สเตอร์ลิง (สหราชอาณาจักร)"
+    ],
+    "wikipediaSlug": "เจอร์ซีย์"
+  },
+  "JM": {
+    "name": "จาเมกา",
+    "capital": "คิงส์ตัน",
+    "demonym": "จาเมกา",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์จาเมกา"
+    ],
+    "wikipediaSlug": "ประเทศจาเมกา"
+  },
+  "JO": {
+    "name": "จอร์แดน",
+    "capital": "อัมมาน",
+    "demonym": "จอร์แดน",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ดีนาร์จอร์แดน"
+    ],
+    "wikipediaSlug": "ประเทศจอร์แดน"
+  },
+  "JP": {
+    "name": "ญี่ปุ่น",
+    "capital": "โตเกียว",
+    "demonym": "ญี่ปุ่น",
+    "languages": [
+      "ญี่ปุ่น"
+    ],
+    "currencyNames": [
+      "เยนญี่ปุ่น"
+    ],
+    "wikipediaSlug": "ประเทศญี่ปุ่น"
+  },
+  "KE": {
+    "name": "เคนยา",
+    "capital": "ไนโรบี",
+    "demonym": "เคนยา",
+    "languages": [
+      "สวาฮีลี",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ชิลลิงเคนยา"
+    ],
+    "wikipediaSlug": "ประเทศเคนยา"
+  },
+  "KG": {
+    "name": "คีร์กีซสถาน",
+    "capital": "บิชเคก",
+    "demonym": "คีร์กีซสถาน",
+    "languages": [
+      "คีร์กีซ",
+      "รัสเซีย"
+    ],
+    "currencyNames": [
+      "ซอมคีร์กีซสถาน"
+    ],
+    "wikipediaSlug": "ประเทศคีร์กีซสถาน"
+  },
+  "KH": {
+    "name": "กัมพูชา",
+    "capital": "พนมเปญ",
+    "demonym": "กัมพูชา",
+    "languages": [
+      "เขมร"
+    ],
+    "currencyNames": [
+      "เรียลกัมพูชา",
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "ประเทศกัมพูชา"
+  },
+  "KI": {
+    "name": "คิริบาส",
+    "capital": "ตาราวา",
+    "demonym": "คิริบาส",
+    "languages": [
+      "อังกฤษ",
+      "กิลเบอร์ต"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ออสเตรเลีย"
+    ],
+    "wikipediaSlug": "ประเทศคิริบาส"
+  },
+  "KM": {
+    "name": "คอโมโรส",
+    "capital": "โมโรนี",
+    "demonym": "คอโมโรส",
+    "languages": [
+      "zdj",
+      "อาหรับ",
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์คอโมโรส"
+    ],
+    "wikipediaSlug": "ประเทศคอโมโรส"
+  },
+  "KN": {
+    "name": "เซนต์คิตส์และเนวิส",
+    "capital": "บาสแตร์",
+    "demonym": "เซนต์คิตส์และเนวิส",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์แคริบเบียนตะวันออก"
+    ],
+    "wikipediaSlug": "ประเทศเซนต์คิตส์และเนวิส"
+  },
+  "KP": {
+    "name": "เกาหลีเหนือ",
+    "capital": "เปียงยาง",
+    "demonym": "เกาหลีเหนือ",
+    "languages": [
+      "เกาหลี"
+    ],
+    "currencyNames": [
+      "วอนเกาหลีเหนือ"
+    ],
+    "wikipediaSlug": "ประเทศเกาหลีเหนือ"
+  },
+  "KR": {
+    "name": "เกาหลีใต้",
+    "capital": "โซล",
+    "demonym": "เกาหลีใต้",
+    "languages": [
+      "เกาหลี"
+    ],
+    "currencyNames": [
+      "วอนเกาหลีใต้"
+    ],
+    "wikipediaSlug": "ประเทศเกาหลีใต้"
+  },
+  "KW": {
+    "name": "คูเวต",
+    "capital": "คูเวตซิตี",
+    "demonym": "คูเวต",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ดีนาร์คูเวต"
+    ],
+    "wikipediaSlug": "ประเทศคูเวต"
+  },
+  "KY": {
+    "name": "หมู่เกาะเคย์แมน",
+    "capital": "จอร์จทาวน์",
+    "demonym": "หมู่เกาะเคย์แมน",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์หมู่เกาะเคย์แมน"
+    ],
+    "wikipediaSlug": "หมู่เกาะเคย์แมน"
+  },
+  "KZ": {
+    "name": "คาซัคสถาน",
+    "capital": "อัสตานา",
+    "demonym": "คาซัคสถาน",
+    "languages": [
+      "คาซัค",
+      "รัสเซีย"
+    ],
+    "currencyNames": [
+      "เทงเจคาซัคสถาน"
+    ],
+    "wikipediaSlug": "ประเทศคาซัคสถาน"
+  },
+  "LA": {
+    "name": "ลาว",
+    "capital": "เวียงจันทน์",
+    "demonym": "ลาว",
+    "languages": [
+      "ลาว"
+    ],
+    "currencyNames": [
+      "กีบลาว"
+    ],
+    "wikipediaSlug": "ประเทศลาว"
+  },
+  "LB": {
+    "name": "เลบานอน",
+    "capital": "เบรุต",
+    "demonym": "เลบานอน",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ปอนด์เลบานอน"
+    ],
+    "wikipediaSlug": "ประเทศเลบานอน"
+  },
+  "LC": {
+    "name": "เซนต์ลูเซีย",
+    "capital": "แคสตรีส์",
+    "demonym": "เซนต์ลูเซีย",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์แคริบเบียนตะวันออก"
+    ],
+    "wikipediaSlug": "ประเทศเซนต์ลูเชีย"
+  },
+  "LI": {
+    "name": "ลีชเทินชไตน์",
+    "capital": "วาดุซ",
+    "demonym": "ลิกเตนสไตน์",
+    "languages": [
+      "เยอรมัน"
+    ],
+    "currencyNames": [
+      "ฟรังก์สวิส"
+    ],
+    "wikipediaSlug": "ประเทศลีชเทินชไตน์"
+  },
+  "LK": {
+    "name": "ศรีลังกา",
+    "capital": "โคลัมโบ",
+    "demonym": "ศรีลังกา",
+    "languages": [
+      "สิงหล",
+      "ทมิฬ"
+    ],
+    "currencyNames": [
+      "รูปีศรีลังกา"
+    ],
+    "wikipediaSlug": "ประเทศศรีลังกา"
+  },
+  "LR": {
+    "name": "ไลบีเรีย",
+    "capital": "มอนโรเวีย",
+    "demonym": "ไลบีเรีย",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ไลบีเรีย"
+    ],
+    "wikipediaSlug": "ประเทศไลบีเรีย"
+  },
+  "LS": {
+    "name": "เลโซโท",
+    "capital": "มาเซรู",
+    "demonym": "เลโซโท",
+    "languages": [
+      "โซโทใต้",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "โลตีเลโซโท",
+      "แรนด์แอฟริกาใต้"
+    ],
+    "wikipediaSlug": "ประเทศเลโซโท"
+  },
+  "LT": {
+    "name": "ลิทัวเนีย",
+    "capital": "วิลนีอัส",
+    "demonym": "ลิทัวเนีย",
+    "languages": [
+      "ลิทัวเนีย"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศลิทัวเนีย"
+  },
+  "LU": {
+    "name": "ลักเซมเบิร์ก",
+    "capital": "ลักเซมเบิร์ก",
+    "demonym": "ลักเซมเบิร์ก",
+    "languages": [
+      "ลักเซมเบิร์ก",
+      "ฝรั่งเศส",
+      "เยอรมัน"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศลักเซมเบิร์ก"
+  },
+  "LV": {
+    "name": "ลัตเวีย",
+    "capital": "รีกา",
+    "demonym": "ลัตเวีย",
+    "languages": [
+      "ลัตเวีย"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศลัตเวีย"
+  },
+  "LY": {
+    "name": "ลิเบีย",
+    "capital": "ตริโปลี",
+    "demonym": "ลิเบีย",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ดีนาร์ลิเบีย"
+    ],
+    "wikipediaSlug": "ประเทศลิเบีย"
+  },
+  "MA": {
+    "name": "โมร็อกโก",
+    "capital": "ราบัต",
+    "demonym": "โมร็อกโก",
+    "languages": [
+      "อาหรับ",
+      "ทามาไซต์แอตลาสกลาง"
+    ],
+    "currencyNames": [
+      "ดีแรห์มโมร็อกโก"
+    ],
+    "wikipediaSlug": "ประเทศโมร็อกโก"
+  },
+  "MC": {
+    "name": "โมนาโก",
+    "capital": "มอนาโก-วีล",
+    "demonym": "โมนาโก",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศโมนาโก"
+  },
+  "MD": {
+    "name": "มอลโดวา",
+    "capital": "คีชีเนา",
+    "demonym": "มอลโดวา",
+    "languages": [
+      "โรมาเนีย"
+    ],
+    "currencyNames": [
+      "ลิวมอลโดวา"
+    ],
+    "wikipediaSlug": "ประเทศมอลโดวา"
+  },
+  "ME": {
+    "name": "มอนเตเนโกร",
+    "capital": "พอดกอรีตซา",
+    "demonym": "มอนเตเนโกร",
+    "languages": [
+      "เซอร์เบีย (มอนเตเนโกร)"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศมอนเตเนโกร"
+  },
+  "MF": {
+    "name": "เซนต์มาร์ติน",
+    "capital": "มารีโก",
+    "demonym": "แซ็ง-มาร์แตง",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "en:Collectivity_of_Saint_Martin"
+  },
+  "MG": {
+    "name": "มาดากัสการ์",
+    "capital": "อันตานานารีโว",
+    "demonym": "มาดากัสการ์",
+    "languages": [
+      "มาลากาซี",
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "อาเรียรีมาลากาซี"
+    ],
+    "wikipediaSlug": "ประเทศมาดากัสการ์"
+  },
+  "MH": {
+    "name": "หมู่เกาะมาร์แชลล์",
+    "capital": "มาจูโร",
+    "demonym": "หมู่เกาะมาร์แชลล์",
+    "languages": [
+      "มาร์แชลล์",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "หมู่เกาะมาร์แชลล์"
+  },
+  "MK": {
+    "name": "มาซิโดเนียเหนือ",
+    "capital": "สกอเปีย",
+    "demonym": "มาซิโดเนีย",
+    "languages": [
+      "มาซิโดเนีย"
+    ],
+    "currencyNames": [
+      "ดีนาร์มาซิโดเนีย"
+    ],
+    "wikipediaSlug": "ประเทศมาซิโดเนียเหนือ"
+  },
+  "ML": {
+    "name": "มาลี",
+    "capital": "บามาโก",
+    "demonym": "มาลี",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารกลางรัฐแอฟริกาตะวันตก"
+    ],
+    "wikipediaSlug": "ประเทศมาลี"
+  },
+  "MM": {
+    "name": "เมียนมา (พม่า)",
+    "capital": "เนปยีดอ",
+    "demonym": "เมียนมา",
+    "languages": [
+      "พม่า"
+    ],
+    "currencyNames": [
+      "จ๊าตพม่า"
+    ],
+    "wikipediaSlug": "ประเทศพม่า"
+  },
+  "MN": {
+    "name": "มองโกเลีย",
+    "capital": "อูลานบาตาร์",
+    "demonym": "มองโกเลีย",
+    "languages": [
+      "มองโกเลีย"
+    ],
+    "currencyNames": [
+      "ทูกริกมองโกเลีย"
+    ],
+    "wikipediaSlug": "ประเทศมองโกเลีย"
+  },
+  "MO": {
+    "name": "มาเก๊า",
+    "capital": "",
+    "demonym": "มาเก๊า",
+    "languages": [
+      "จีน",
+      "โปรตุเกส"
+    ],
+    "currencyNames": [
+      "ปาตากามาเก๊า"
+    ],
+    "wikipediaSlug": "มาเก๊า"
+  },
+  "MP": {
+    "name": "หมู่เกาะนอร์เทิร์นมาเรียนา",
+    "capital": "",
+    "demonym": "หมู่เกาะนอร์เทิร์นมาเรียนา",
+    "languages": [
+      "อังกฤษ",
+      "ชามอร์โร",
+      "cal"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "หมู่เกาะนอร์เทิร์นมาเรียนา"
+  },
+  "MQ": {
+    "name": "มาร์ตินีก",
+    "capital": "ฟอร์-เดอ-ฟร็องส์",
+    "demonym": "มาร์ตินีก",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "มาร์ตีนิก"
+  },
+  "MR": {
+    "name": "มอริเตเนีย",
+    "capital": "นูอากช็อต",
+    "demonym": "มอริเตเนีย",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "อูกียามอริเตเนีย"
+    ],
+    "wikipediaSlug": "ประเทศมอริเตเนีย"
+  },
+  "MS": {
+    "name": "มอนต์เซอร์รัต",
+    "capital": "พลิมัท",
+    "demonym": "มอนต์เซอร์รัต",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์แคริบเบียนตะวันออก"
+    ],
+    "wikipediaSlug": "มอนต์เซอร์รัต"
+  },
+  "MT": {
+    "name": "มอลตา",
+    "capital": "วัลเลตตา",
+    "demonym": "มอลตา",
+    "languages": [
+      "มอลตา",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศมอลตา"
+  },
+  "MU": {
+    "name": "มอริเชียส",
+    "capital": "พอร์ตลูอิส",
+    "demonym": "มอริเชียส",
+    "languages": [
+      "อังกฤษ",
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "รูปีมอริเชียส"
+    ],
+    "wikipediaSlug": "ประเทศมอริเชียส"
+  },
+  "MV": {
+    "name": "มัลดีฟส์",
+    "capital": "มาเล",
+    "demonym": "มัลดีฟส์",
+    "languages": [
+      "ธิเวหิ"
+    ],
+    "currencyNames": [
+      "รูฟิยามัลดีฟส์"
+    ],
+    "wikipediaSlug": "ประเทศมัลดีฟส์"
+  },
+  "MW": {
+    "name": "มาลาวี",
+    "capital": "ลิลองเว",
+    "demonym": "มาลาวี",
+    "languages": [
+      "อังกฤษ",
+      "เนียนจา"
+    ],
+    "currencyNames": [
+      "ควาชามาลาวี"
+    ],
+    "wikipediaSlug": "ประเทศมาลาวี"
+  },
+  "MX": {
+    "name": "เม็กซิโก",
+    "capital": "เม็กซิโกซิตี",
+    "demonym": "เม็กซิโก",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "เปโซเม็กซิโก"
+    ],
+    "wikipediaSlug": "ประเทศเม็กซิโก"
+  },
+  "MY": {
+    "name": "มาเลเซีย",
+    "capital": "กัวลาลัมเปอร์",
+    "demonym": "มาเลเซีย",
+    "languages": [
+      "มาเลย์"
+    ],
+    "currencyNames": [
+      "ริงกิตมาเลเซีย"
+    ],
+    "wikipediaSlug": "ประเทศมาเลเซีย"
+  },
+  "MZ": {
+    "name": "โมซัมบิก",
+    "capital": "มาปูตู",
+    "demonym": "โมซัมบิก",
+    "languages": [
+      "โปรตุเกส"
+    ],
+    "currencyNames": [
+      "เมติคัลโมซัมบิก"
+    ],
+    "wikipediaSlug": "ประเทศโมซัมบิก"
+  },
+  "NA": {
+    "name": "นามิเบีย",
+    "capital": "วินด์ฮุก",
+    "demonym": "นามิเบีย",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์นามิเบีย",
+      "แรนด์แอฟริกาใต้"
+    ],
+    "wikipediaSlug": "ประเทศนามิเบีย"
+  },
+  "NC": {
+    "name": "นิวแคลิโดเนีย",
+    "capital": "นูเมอา",
+    "demonym": "นิวแคลิโดเนีย",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์ซีเอฟพี"
+    ],
+    "wikipediaSlug": "นิวแคลิโดเนีย"
+  },
+  "NE": {
+    "name": "ไนเจอร์",
+    "capital": "นีอาเม",
+    "demonym": "ไนเจอร์",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารกลางรัฐแอฟริกาตะวันตก"
+    ],
+    "wikipediaSlug": "ประเทศไนเจอร์"
+  },
+  "NF": {
+    "name": "เกาะนอร์ฟอล์ก",
+    "capital": "คิงส์ตัน",
+    "demonym": "เกาะนอร์ฟอล์ก",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ออสเตรเลีย"
+    ],
+    "wikipediaSlug": "เกาะนอร์ฟอล์ก"
+  },
+  "NG": {
+    "name": "ไนจีเรีย",
+    "capital": "อาบูจา",
+    "demonym": "ไนจีเรีย",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ไนราไนจีเรีย"
+    ],
+    "wikipediaSlug": "ประเทศไนจีเรีย"
+  },
+  "NI": {
+    "name": "นิการากัว",
+    "capital": "มานากัว",
+    "demonym": "นิการากัว",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "กอร์โดบานิการากัว"
+    ],
+    "wikipediaSlug": "ประเทศนิการากัว"
+  },
+  "NL": {
+    "name": "เนเธอร์แลนด์",
+    "capital": "อัมสเตอร์ดัม",
+    "demonym": "เนเธอร์แลนด์",
+    "languages": [
+      "ดัตช์"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ราชอาณาจักรเนเธอร์แลนด์"
+  },
+  "NO": {
+    "name": "นอร์เวย์",
+    "capital": "ออสโล",
+    "demonym": "นอร์เวย์",
+    "languages": [
+      "นอร์เวย์"
+    ],
+    "currencyNames": [
+      "โครนนอร์เวย์"
+    ],
+    "wikipediaSlug": "ประเทศนอร์เวย์"
+  },
+  "NP": {
+    "name": "เนปาล",
+    "capital": "กาฐมาณฑุ",
+    "demonym": "เนปาล",
+    "languages": [
+      "เนปาล"
+    ],
+    "currencyNames": [
+      "รูปีเนปาล"
+    ],
+    "wikipediaSlug": "ประเทศเนปาล"
+  },
+  "NR": {
+    "name": "นาอูรู",
+    "capital": "ยาเรน",
+    "demonym": "นาอูรู",
+    "languages": [
+      "อังกฤษ",
+      "นาอูรู"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ออสเตรเลีย"
+    ],
+    "wikipediaSlug": "ประเทศนาอูรู"
+  },
+  "NU": {
+    "name": "นีอูเอ",
+    "capital": "อาโลฟี",
+    "demonym": "นีอูเอ",
+    "languages": [
+      "อังกฤษ",
+      "นีวเว"
+    ],
+    "currencyNames": [
+      "ดอลลาร์นิวซีแลนด์"
+    ],
+    "wikipediaSlug": "ประเทศนีวเว"
+  },
+  "NZ": {
+    "name": "นิวซีแลนด์",
+    "capital": "เวลลิงตัน",
+    "demonym": "นิวซีแลนด์",
+    "languages": [
+      "อังกฤษ",
+      "เมารี"
+    ],
+    "currencyNames": [
+      "ดอลลาร์นิวซีแลนด์"
+    ],
+    "wikipediaSlug": "ประเทศนิวซีแลนด์"
+  },
+  "OM": {
+    "name": "โอมาน",
+    "capital": "มัสกัต",
+    "demonym": "โอมาน",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "เรียลโอมาน"
+    ],
+    "wikipediaSlug": "ประเทศโอมาน"
+  },
+  "PA": {
+    "name": "ปานามา",
+    "capital": "ปานามาซิตี",
+    "demonym": "ปานามา",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "บัลบัวปานามา",
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "ประเทศปานามา"
+  },
+  "PE": {
+    "name": "เปรู",
+    "capital": "ลิมา",
+    "demonym": "เปรู",
+    "languages": [
+      "สเปน",
+      "เคชวา",
+      "ไอย์มารา"
+    ],
+    "currencyNames": [
+      "ซอลเปรู"
+    ],
+    "wikipediaSlug": "ประเทศเปรู"
+  },
+  "PF": {
+    "name": "เฟรนช์โปลินีเซีย",
+    "capital": "ปาเปเอเต",
+    "demonym": "เฟรนช์โปลินีเซีย",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์ซีเอฟพี"
+    ],
+    "wikipediaSlug": "เฟรนช์พอลินีเชีย"
+  },
+  "PG": {
+    "name": "ปาปัวนิวกินี",
+    "capital": "พอร์ตมอร์สบี",
+    "demonym": "ปาปัวนิวกินี",
+    "languages": [
+      "อังกฤษ",
+      "ท็อกพิซิน",
+      "ฮีรีโมตู"
+    ],
+    "currencyNames": [
+      "กีนาปาปัวนิวกินี"
+    ],
+    "wikipediaSlug": "ประเทศปาปัวนิวกินี"
+  },
+  "PH": {
+    "name": "ฟิลิปปินส์",
+    "capital": "มะนิลา",
+    "demonym": "ฟิลิปปินส์",
+    "languages": [
+      "ฟิลิปปินส์",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "เปโซฟิลิปปินส์"
+    ],
+    "wikipediaSlug": "ประเทศฟิลิปปินส์"
+  },
+  "PK": {
+    "name": "ปากีสถาน",
+    "capital": "อิสลามาบาด",
+    "demonym": "ปากีสถาน",
+    "languages": [
+      "อูรดู",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "รูปีปากีสถาน"
+    ],
+    "wikipediaSlug": "ประเทศปากีสถาน"
+  },
+  "PL": {
+    "name": "โปแลนด์",
+    "capital": "วอร์ซอ",
+    "demonym": "โปแลนด์",
+    "languages": [
+      "โปแลนด์"
+    ],
+    "currencyNames": [
+      "ซลอตีโปแลนด์"
+    ],
+    "wikipediaSlug": "ประเทศโปแลนด์"
+  },
+  "PM": {
+    "name": "แซงปีแยร์และมีเกอลง",
+    "capital": "แซ็ง-ปีแยร์",
+    "demonym": "แซ็ง-ปีแยร์และมีเกอลง",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "แซ็งปีแยร์และมีเกอลง"
+  },
+  "PN": {
+    "name": "หมู่เกาะพิตแคร์น",
+    "capital": "แอดัมส์ทาวน์",
+    "demonym": "พิตแคร์น",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์นิวซีแลนด์"
+    ],
+    "wikipediaSlug": "หมู่เกาะพิตแคร์น"
+  },
+  "PR": {
+    "name": "เปอร์โตริโก",
+    "capital": "ซานฮวน",
+    "demonym": "เปอร์โตริโก",
+    "languages": [
+      "สเปน",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "ปวยร์โตรีโก"
+  },
+  "PS": {
+    "name": "ปาเลสไตน์",
+    "capital": "เยรูซาเลมตะวันออก",
+    "demonym": "ปาเลสไตน์",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ปอนด์อียิปต์",
+      "นิวเชเกลอิสราเอล",
+      "ดีนาร์จอร์แดน"
+    ],
+    "wikipediaSlug": "รัฐปาเลสไตน์"
+  },
+  "PT": {
+    "name": "โปรตุเกส",
+    "capital": "ลิสบอน",
+    "demonym": "โปรตุเกส",
+    "languages": [
+      "โปรตุเกส"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศโปรตุเกส"
+  },
+  "PW": {
+    "name": "ปาเลา",
+    "capital": "เงรุลมุด",
+    "demonym": "ปาเลา",
+    "languages": [
+      "ปาเลา",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "ประเทศปาเลา"
+  },
+  "PY": {
+    "name": "ปารากวัย",
+    "capital": "อาซุนซิออน",
+    "demonym": "ปารากวัย",
+    "languages": [
+      "สเปน",
+      "กัวรานี"
+    ],
+    "currencyNames": [
+      "กวารานีปารากวัย"
+    ],
+    "wikipediaSlug": "ประเทศปารากวัย"
+  },
+  "QA": {
+    "name": "กาตาร์",
+    "capital": "โดฮา",
+    "demonym": "กาตาร์",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "เรียลกาตาร์"
+    ],
+    "wikipediaSlug": "ประเทศกาตาร์"
+  },
+  "RE": {
+    "name": "เรอูนียง",
+    "capital": "แซ็ง-เดอนี",
+    "demonym": "เรอูนียง",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "เรอูว์นียง"
+  },
+  "RO": {
+    "name": "โรมาเนีย",
+    "capital": "บูคาเรสต์",
+    "demonym": "โรมาเนีย",
+    "languages": [
+      "โรมาเนีย"
+    ],
+    "currencyNames": [
+      "ลิวโรมาเนีย"
+    ],
+    "wikipediaSlug": "ประเทศโรมาเนีย"
+  },
+  "RS": {
+    "name": "เซอร์เบีย",
+    "capital": "เบลเกรด",
+    "demonym": "เซอร์เบีย",
+    "languages": [
+      "เซอร์เบีย"
+    ],
+    "currencyNames": [
+      "ดีนาร์เซอร์เบีย"
+    ],
+    "wikipediaSlug": "ประเทศเซอร์เบีย"
+  },
+  "RU": {
+    "name": "รัสเซีย",
+    "capital": "มอสโก",
+    "demonym": "รัสเซีย",
+    "languages": [
+      "รัสเซีย"
+    ],
+    "currencyNames": [
+      "รูเบิลรัสเซีย"
+    ],
+    "wikipediaSlug": "ประเทศรัสเซีย"
+  },
+  "RW": {
+    "name": "รวันดา",
+    "capital": "คิกาลี",
+    "demonym": "รวันดา",
+    "languages": [
+      "รวันดา",
+      "ฝรั่งเศส",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ฟรังก์รวันดา"
+    ],
+    "wikipediaSlug": "ประเทศรวันดา"
+  },
+  "SA": {
+    "name": "ซาอุดีอาระเบีย",
+    "capital": "รียาด",
+    "demonym": "ซาอุดีอาระเบีย",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ริยัลซาอุดีอาระเบีย"
+    ],
+    "wikipediaSlug": "ประเทศซาอุดีอาระเบีย"
+  },
+  "SB": {
+    "name": "หมู่เกาะโซโลมอน",
+    "capital": "โฮนีอารา",
+    "demonym": "หมู่เกาะโซโลมอน",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์หมู่เกาะโซโลมอน"
+    ],
+    "wikipediaSlug": "หมู่เกาะโซโลมอน"
+  },
+  "SC": {
+    "name": "เซเชลส์",
+    "capital": "วิกทอเรีย",
+    "demonym": "เซเชลส์",
+    "languages": [
+      "ครีโอลเซเซลส์ฝรั่งเศส",
+      "ฝรั่งเศส",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "รูปีเซเชลส์"
+    ],
+    "wikipediaSlug": "ประเทศเซเชลส์"
+  },
+  "SD": {
+    "name": "ซูดาน",
+    "capital": "คาร์ทูม",
+    "demonym": "ซูดาน",
+    "languages": [
+      "อาหรับ",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ปอนด์ซูดาน"
+    ],
+    "wikipediaSlug": "ประเทศซูดาน"
+  },
+  "SE": {
+    "name": "สวีเดน",
+    "capital": "สต็อกโฮล์ม",
+    "demonym": "สวีเดน",
+    "languages": [
+      "สวีเดน"
+    ],
+    "currencyNames": [
+      "โครนาสวีเดน"
+    ],
+    "wikipediaSlug": "ประเทศสวีเดน"
+  },
+  "SG": {
+    "name": "สิงคโปร์",
+    "capital": "สิงคโปร์",
+    "demonym": "สิงคโปร์",
+    "languages": [
+      "อังกฤษ",
+      "มาเลย์",
+      "จีน",
+      "ทมิฬ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สิงคโปร์"
+    ],
+    "wikipediaSlug": "ประเทศสิงคโปร์"
+  },
+  "SH": {
+    "name": "เซนต์เฮเลนา",
+    "capital": "เจมส์ทาวน์",
+    "demonym": "เซนต์เฮเลนา",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ปอนด์สเตอร์ลิง (สหราชอาณาจักร)",
+      "ปอนด์เซนต์เฮเลนา"
+    ],
+    "wikipediaSlug": "เซนต์เฮเลนา_อัสเซนชัน_และตริสตันดากูนยา"
+  },
+  "SI": {
+    "name": "สโลวีเนีย",
+    "capital": "ลูบลิยานา",
+    "demonym": "สโลวีเนีย",
+    "languages": [
+      "สโลวีเนีย"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศสโลวีเนีย"
+  },
+  "SK": {
+    "name": "สโลวะเกีย",
+    "capital": "บราติสลาวา",
+    "demonym": "สโลวาเกีย",
+    "languages": [
+      "สโลวัก"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศสโลวาเกีย"
+  },
+  "SL": {
+    "name": "เซียร์ราลีโอน",
+    "capital": "ฟรีทาวน์",
+    "demonym": "เซียร์ราลีโอน",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ลีโอนเซียร์ราลีโอน"
+    ],
+    "wikipediaSlug": "ประเทศเซียร์ราลีโอน"
+  },
+  "SM": {
+    "name": "ซานมาริโน",
+    "capital": "ซานมารีโน",
+    "demonym": "ซานมารีโน",
+    "languages": [
+      "อิตาลี"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศซานมารีโน"
+  },
+  "SN": {
+    "name": "เซเนกัล",
+    "capital": "ดาการ์",
+    "demonym": "เซเนกัล",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารกลางรัฐแอฟริกาตะวันตก"
+    ],
+    "wikipediaSlug": "ประเทศเซเนกัล"
+  },
+  "SO": {
+    "name": "โซมาเลีย",
+    "capital": "โมกาดิชู",
+    "demonym": "โซมาเลีย",
+    "languages": [
+      "โซมาลี",
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ชิลลิงโซมาเลีย"
+    ],
+    "wikipediaSlug": "ประเทศโซมาเลีย"
+  },
+  "SR": {
+    "name": "ซูรินาเม",
+    "capital": "ปารามาริโบ",
+    "demonym": "ซูรินาม",
+    "languages": [
+      "ดัตช์"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ซูรินาเม"
+    ],
+    "wikipediaSlug": "ประเทศซูรินาม"
+  },
+  "SS": {
+    "name": "ซูดานใต้",
+    "capital": "จูบา",
+    "demonym": "ซูดานใต้",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ปอนด์ซูดานใต้"
+    ],
+    "wikipediaSlug": "ประเทศซูดานใต้"
+  },
+  "ST": {
+    "name": "เซาตูเมและปรินซิปี",
+    "capital": "เซาตูแม",
+    "demonym": "เซาตูเมและปรินซิปี",
+    "languages": [
+      "โปรตุเกส"
+    ],
+    "currencyNames": [
+      "ดอบราเซาตูเมและปรินซิปี"
+    ],
+    "wikipediaSlug": "ประเทศเซาตูแมอีปริงซีป"
+  },
+  "SV": {
+    "name": "เอลซัลวาดอร์",
+    "capital": "ซานซัลวาดอร์",
+    "demonym": "เอลซัลวาดอร์",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "ประเทศเอลซัลวาดอร์"
+  },
+  "SX": {
+    "name": "ซินต์มาร์เทน",
+    "capital": "ฟิลิปส์บืร์ค",
+    "demonym": "ซินต์มาร์เทิน",
+    "languages": [
+      "ดัตช์",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "กิลเดอร์เนเธอร์แลนด์แอนทิลลิส"
+    ],
+    "wikipediaSlug": "ซินต์มาร์เติน"
+  },
+  "SY": {
+    "name": "ซีเรีย",
+    "capital": "ดามัสกัส",
+    "demonym": "ซีเรีย",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ปอนด์ซีเรีย"
+    ],
+    "wikipediaSlug": "ประเทศซีเรีย"
+  },
+  "SZ": {
+    "name": "เอสวาตีนี",
+    "capital": "อึมบาบานี",
+    "demonym": "เอสวาตินี",
+    "languages": [
+      "สวาติ",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ลิลันเจนีสวาซิ",
+      "แรนด์แอฟริกาใต้"
+    ],
+    "wikipediaSlug": "ประเทศเอสวาตินี"
+  },
+  "TC": {
+    "name": "หมู่เกาะเติกส์และเคคอส",
+    "capital": "โคเบิร์นทาวน์",
+    "demonym": "หมู่เกาะเติกส์และเคคอส",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "หมู่เกาะเติกส์และเคคอส"
+  },
+  "TD": {
+    "name": "ชาด",
+    "capital": "อึนจาเมนา",
+    "demonym": "ชาด",
+    "languages": [
+      "ฝรั่งเศส",
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารรัฐแอฟริกากลาง"
+    ],
+    "wikipediaSlug": "ประเทศชาด"
+  },
+  "TG": {
+    "name": "โตโก",
+    "capital": "โลเม",
+    "demonym": "โตโก",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์เซฟาธนาคารกลางรัฐแอฟริกาตะวันตก"
+    ],
+    "wikipediaSlug": "ประเทศโตโก"
+  },
+  "TH": {
+    "name": "ไทย",
+    "capital": "กรุงเทพมหานคร",
+    "demonym": "ไทย",
+    "languages": [
+      "ไทย"
+    ],
+    "currencyNames": [
+      "บาท"
+    ],
+    "wikipediaSlug": "ประเทศไทย"
+  },
+  "TJ": {
+    "name": "ทาจิกิสถาน",
+    "capital": "ดูชานเบ",
+    "demonym": "ทาจิกิสถาน",
+    "languages": [
+      "ทาจิก"
+    ],
+    "currencyNames": [
+      "โซโมนิทาจิกิสถาน"
+    ],
+    "wikipediaSlug": "ประเทศทาจิกิสถาน"
+  },
+  "TL": {
+    "name": "ติมอร์ตะวันออก",
+    "capital": "ดิลี",
+    "demonym": "ติมอร์-เลสเต",
+    "languages": [
+      "โปรตุเกส",
+      "เตตุม"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "ประเทศติมอร์-เลสเต"
+  },
+  "TM": {
+    "name": "เติร์กเมนิสถาน",
+    "capital": "อาชกาบัต",
+    "demonym": "เติร์กเมนิสถาน",
+    "languages": [
+      "เติร์กเมน"
+    ],
+    "currencyNames": [
+      "มานัตเติร์กเมนิสถาน"
+    ],
+    "wikipediaSlug": "ประเทศเติร์กเมนิสถาน"
+  },
+  "TN": {
+    "name": "ตูนิเซีย",
+    "capital": "ตูนิส",
+    "demonym": "ตูนิเซีย",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "ดีนาร์ตูนิเซีย"
+    ],
+    "wikipediaSlug": "ประเทศตูนิเซีย"
+  },
+  "TO": {
+    "name": "ตองกา",
+    "capital": "นูกูอาโลฟา",
+    "demonym": "ตองกา",
+    "languages": [
+      "ตองกา",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "พาแองกาตองกา"
+    ],
+    "wikipediaSlug": "ประเทศตองงา"
+  },
+  "TR": {
+    "name": "ตุรกี",
+    "capital": "อังการา",
+    "demonym": "ตุรกี",
+    "languages": [
+      "ตุรกี"
+    ],
+    "currencyNames": [
+      "ลีราตุรกี"
+    ],
+    "wikipediaSlug": "ประเทศตุรกี"
+  },
+  "TT": {
+    "name": "ตรินิแดดและโตเบโก",
+    "capital": "พอร์ตออฟสเปน",
+    "demonym": "ตรินิแดดและโตเบโก",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ตรินิแดดและโตเบโก"
+    ],
+    "wikipediaSlug": "ประเทศตรินิแดดและโตเบโก"
+  },
+  "TV": {
+    "name": "ตูวาลู",
+    "capital": "ฟูนาฟูตี",
+    "demonym": "ตูวาลู",
+    "languages": [
+      "ตูวาลู",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ออสเตรเลีย"
+    ],
+    "wikipediaSlug": "ประเทศตูวาลู"
+  },
+  "TW": {
+    "name": "ไต้หวัน",
+    "capital": "ไทเป",
+    "demonym": "ไต้หวัน",
+    "languages": [
+      "จีน"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ไต้หวันใหม่"
+    ],
+    "wikipediaSlug": "ประเทศไต้หวัน"
+  },
+  "TZ": {
+    "name": "แทนซาเนีย",
+    "capital": "โดโดมา",
+    "demonym": "แทนซาเนีย",
+    "languages": [
+      "สวาฮีลี",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ชิลลิงแทนซาเนีย"
+    ],
+    "wikipediaSlug": "ประเทศแทนซาเนีย"
+  },
+  "UA": {
+    "name": "ยูเครน",
+    "capital": "เคียฟ",
+    "demonym": "ยูเครน",
+    "languages": [
+      "ยูเครน"
+    ],
+    "currencyNames": [
+      "ฮรีฟเนียยูเครน"
+    ],
+    "wikipediaSlug": "ประเทศยูเครน"
+  },
+  "UG": {
+    "name": "ยูกันดา",
+    "capital": "กัมปาลา",
+    "demonym": "ยูกันดา",
+    "languages": [
+      "อังกฤษ",
+      "สวาฮีลี"
+    ],
+    "currencyNames": [
+      "ชิลลิงยูกันดา"
+    ],
+    "wikipediaSlug": "ประเทศยูกันดา"
+  },
+  "US": {
+    "name": "สหรัฐอเมริกา",
+    "capital": "วอชิงตัน ดี.ซี.",
+    "demonym": "อเมริกัน",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "สหรัฐอเมริกา"
+  },
+  "UY": {
+    "name": "อุรุกวัย",
+    "capital": "มอนเตวิเดโอ",
+    "demonym": "อุรุกวัย",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "เปโซอุรุกวัย"
+    ],
+    "wikipediaSlug": "ประเทศอุรุกวัย"
+  },
+  "UZ": {
+    "name": "อุซเบกิสถาน",
+    "capital": "ทาชเคนต์",
+    "demonym": "อุซเบกิสถาน",
+    "languages": [
+      "อุซเบก"
+    ],
+    "currencyNames": [
+      "ซอมอุซเบกิสถาน"
+    ],
+    "wikipediaSlug": "ประเทศอุซเบกิสถาน"
+  },
+  "VA": {
+    "name": "นครวาติกัน",
+    "capital": "",
+    "demonym": "วาติกัน",
+    "languages": [
+      "อิตาลี",
+      "ละติน"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "นครรัฐวาติกัน"
+  },
+  "VC": {
+    "name": "เซนต์วินเซนต์และเกรนาดีนส์",
+    "capital": "คิงส์ทาวน์",
+    "demonym": "เซนต์วินเซนต์และเกรนาดีนส์",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์แคริบเบียนตะวันออก"
+    ],
+    "wikipediaSlug": "ประเทศเซนต์วินเซนต์และเกรนาดีนส์"
+  },
+  "VE": {
+    "name": "เวเนซุเอลา",
+    "capital": "การากัส",
+    "demonym": "เวเนซุเอลา",
+    "languages": [
+      "สเปน"
+    ],
+    "currencyNames": [
+      "โบลีวาร์เวเนซุเอลา"
+    ],
+    "wikipediaSlug": "ประเทศเวเนซุเอลา"
+  },
+  "VG": {
+    "name": "หมู่เกาะบริติชเวอร์จิน",
+    "capital": "โรดทาวน์",
+    "demonym": "หมู่เกาะเวอร์จินของอังกฤษ",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "หมู่เกาะบริติชเวอร์จิน"
+  },
+  "VI": {
+    "name": "หมู่เกาะเวอร์จินของสหรัฐ",
+    "capital": "ชาร์ลอตต์อะมาลี",
+    "demonym": "หมู่เกาะเวอร์จินของสหรัฐ",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ดอลลาร์สหรัฐ"
+    ],
+    "wikipediaSlug": "หมู่เกาะเวอร์จินของสหรัฐ"
+  },
+  "VN": {
+    "name": "เวียดนาม",
+    "capital": "ฮานอย",
+    "demonym": "เวียดนาม",
+    "languages": [
+      "เวียดนาม"
+    ],
+    "currencyNames": [
+      "ดองเวียดนาม"
+    ],
+    "wikipediaSlug": "ประเทศเวียดนาม"
+  },
+  "VU": {
+    "name": "วานูอาตู",
+    "capital": "พอร์ตวิลา",
+    "demonym": "วานูอาตู",
+    "languages": [
+      "บิสลามา",
+      "อังกฤษ",
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "วาตูวานูอาตู"
+    ],
+    "wikipediaSlug": "ประเทศวานูวาตู"
+  },
+  "WF": {
+    "name": "วาลลิสและฟุตูนา",
+    "capital": "มาตา-อูตู",
+    "demonym": "วาลลิสและฟุตูนา",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ฟรังก์ซีเอฟพี"
+    ],
+    "wikipediaSlug": "วอลิสและฟูตูนา"
+  },
+  "WS": {
+    "name": "ซามัว",
+    "capital": "อาปีอา",
+    "demonym": "ซามัว",
+    "languages": [
+      "ซามัว",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ทาลาซามัว"
+    ],
+    "wikipediaSlug": "ประเทศซามัว"
+  },
+  "XK": {
+    "name": "โคโซโว",
+    "capital": "พริสตีนา",
+    "demonym": "โคโซโว",
+    "languages": [
+      "แอลเบเนีย",
+      "เซอร์เบีย"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "ประเทศคอซอวอ"
+  },
+  "YE": {
+    "name": "เยเมน",
+    "capital": "ซานา",
+    "demonym": "เยเมน",
+    "languages": [
+      "อาหรับ"
+    ],
+    "currencyNames": [
+      "เรียลเยเมน"
+    ],
+    "wikipediaSlug": "ประเทศเยเมน"
+  },
+  "YT": {
+    "name": "มายอต",
+    "capital": "มามูดซู",
+    "demonym": "มายอต",
+    "languages": [
+      "ฝรั่งเศส"
+    ],
+    "currencyNames": [
+      "ยูโร"
+    ],
+    "wikipediaSlug": "มายอต"
+  },
+  "ZA": {
+    "name": "แอฟริกาใต้",
+    "capital": "พริทอเรีย",
+    "demonym": "แอฟริกาใต้",
+    "languages": [
+      "ซูลู",
+      "คะห์โอซา",
+      "แอฟริกานส์",
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "แรนด์แอฟริกาใต้"
+    ],
+    "wikipediaSlug": "ประเทศแอฟริกาใต้"
+  },
+  "ZM": {
+    "name": "แซมเบีย",
+    "capital": "ลูซากา",
+    "demonym": "แซมเบีย",
+    "languages": [
+      "อังกฤษ"
+    ],
+    "currencyNames": [
+      "ควาชาแซมเบีย"
+    ],
+    "wikipediaSlug": "ประเทศแซมเบีย"
+  },
+  "ZW": {
+    "name": "ซิมบับเว",
+    "capital": "ฮาราเร",
+    "demonym": "ซิมบับเว",
+    "languages": [
+      "อังกฤษ",
+      "โชนา",
+      "เอ็นเดเบเลใต้"
+    ],
+    "currencyNames": [
+      "ดอลลาร์ซิมบับเว (2009)"
+    ],
+    "wikipediaSlug": "ประเทศซิมบับเว"
+  }
+}

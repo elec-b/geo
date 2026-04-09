@@ -4,7 +4,7 @@
 .jugar-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--color-overlay-heavy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,6 +20,7 @@
   max-width: 22rem;
   width: 100%;
   text-align: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
 }
 
 .jugar-modal__title {
@@ -54,17 +55,19 @@
 }
 
 .jugar-modal__btn:active {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-white-8);
 }
 
 .jugar-modal__btn--countries {
   border-color: var(--color-accent-cyan);
   color: var(--color-accent-cyan);
+  background: var(--color-accent-bg);
 }
 
 .jugar-modal__btn--capitals {
-  border-color: var(--color-accent-purple);
-  color: var(--color-accent-purple);
+  border-color: var(--color-accent-teal);
+  color: var(--color-accent-teal);
+  background: var(--color-accent-secondary-bg);
 }
 
 .jugar-modal__btn--primary {

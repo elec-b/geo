@@ -1,0 +1,2959 @@
+{
+  "AD": {
+    "name": "安道爾",
+    "capital": "安道爾城",
+    "demonym": "安道爾的",
+    "languages": [
+      "加泰蘭文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "安道尔"
+  },
+  "AE": {
+    "name": "阿拉伯聯合大公國",
+    "capital": "阿布扎比",
+    "demonym": "阿聯酋的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "阿拉伯聯合大公國迪爾汗"
+    ],
+    "wikipediaSlug": "阿拉伯联合酋长国"
+  },
+  "AF": {
+    "name": "阿富汗",
+    "capital": "喀布爾",
+    "demonym": "阿富汗的",
+    "languages": [
+      "波斯文（阿富汗）",
+      "普什圖文"
+    ],
+    "currencyNames": [
+      "阿富汗尼"
+    ],
+    "wikipediaSlug": "阿富汗"
+  },
+  "AG": {
+    "name": "安地卡及巴布達",
+    "capital": "聖約翰",
+    "demonym": "安提瓜的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "格瑞那達元"
+    ],
+    "wikipediaSlug": "安提瓜和巴布达"
+  },
+  "AI": {
+    "name": "安奎拉",
+    "capital": "瓦利",
+    "demonym": "安圭拉的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "格瑞那達元"
+    ],
+    "wikipediaSlug": "安圭拉"
+  },
+  "AL": {
+    "name": "阿爾巴尼亞",
+    "capital": "地拉那",
+    "demonym": "阿爾巴尼亞的",
+    "languages": [
+      "阿爾巴尼亞文"
+    ],
+    "currencyNames": [
+      "阿爾巴尼亞列克"
+    ],
+    "wikipediaSlug": "阿尔巴尼亚"
+  },
+  "AM": {
+    "name": "亞美尼亞",
+    "capital": "葉裡溫",
+    "demonym": "亞美尼亞的",
+    "languages": [
+      "亞美尼亞文"
+    ],
+    "currencyNames": [
+      "亞美尼亞德拉姆"
+    ],
+    "wikipediaSlug": "亞美尼亞"
+  },
+  "AO": {
+    "name": "安哥拉",
+    "capital": "羅安達",
+    "demonym": "安哥拉的",
+    "languages": [
+      "葡萄牙文"
+    ],
+    "currencyNames": [
+      "安哥拉寬扎"
+    ],
+    "wikipediaSlug": "安哥拉"
+  },
+  "AR": {
+    "name": "阿根廷",
+    "capital": "布宜諾斯艾利斯",
+    "demonym": "阿根廷的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "阿根廷披索"
+    ],
+    "wikipediaSlug": "阿根廷"
+  },
+  "AS": {
+    "name": "美屬薩摩亞",
+    "capital": "帕果帕果",
+    "demonym": "美屬薩摩亞的",
+    "languages": [
+      "英文",
+      "薩摩亞文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "美屬薩摩亞"
+  },
+  "AT": {
+    "name": "奧地利",
+    "capital": "維也納",
+    "demonym": "奧地利的",
+    "languages": [
+      "德文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "奥地利"
+  },
+  "AU": {
+    "name": "澳洲",
+    "capital": "堪培拉",
+    "demonym": "澳大利亞的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "澳幣"
+    ],
+    "wikipediaSlug": "澳大利亚"
+  },
+  "AW": {
+    "name": "荷屬阿魯巴",
+    "capital": "奧臘涅斯塔德",
+    "demonym": "阿魯巴的",
+    "languages": [
+      "荷蘭文",
+      "帕皮阿門托文"
+    ],
+    "currencyNames": [
+      "阿路巴盾"
+    ],
+    "wikipediaSlug": "阿魯巴"
+  },
+  "AX": {
+    "name": "奧蘭群島",
+    "capital": "瑪麗港",
+    "demonym": "奧蘭的",
+    "languages": [
+      "瑞典文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "奧蘭"
+  },
+  "AZ": {
+    "name": "亞塞拜然",
+    "capital": "巴庫",
+    "demonym": "阿塞拜疆的",
+    "languages": [
+      "亞塞拜然文"
+    ],
+    "currencyNames": [
+      "亞塞拜然馬納特"
+    ],
+    "wikipediaSlug": "阿塞拜疆"
+  },
+  "BA": {
+    "name": "波士尼亞與赫塞哥維納",
+    "capital": "塞拉耶佛",
+    "demonym": "波斯尼亞的",
+    "languages": [
+      "波士尼亞文",
+      "克羅埃西亞文",
+      "塞爾維亞文"
+    ],
+    "currencyNames": [
+      "波士尼亞-赫塞哥維納可轉換馬克"
+    ],
+    "wikipediaSlug": "波斯尼亚和黑塞哥维那"
+  },
+  "BB": {
+    "name": "巴貝多",
+    "capital": "布里奇頓",
+    "demonym": "巴巴多斯的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "巴貝多元"
+    ],
+    "wikipediaSlug": "巴巴多斯"
+  },
+  "BD": {
+    "name": "孟加拉",
+    "capital": "達卡",
+    "demonym": "孟加拉國的",
+    "languages": [
+      "孟加拉文"
+    ],
+    "currencyNames": [
+      "孟加拉塔卡"
+    ],
+    "wikipediaSlug": "孟加拉国"
+  },
+  "BE": {
+    "name": "比利時",
+    "capital": "布魯塞爾",
+    "demonym": "比利時的",
+    "languages": [
+      "荷蘭文",
+      "法文",
+      "德文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "比利时"
+  },
+  "BF": {
+    "name": "布吉納法索",
+    "capital": "瓦加杜古",
+    "demonym": "布基納法索的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BCEAO)"
+    ],
+    "wikipediaSlug": "布吉納法索"
+  },
+  "BG": {
+    "name": "保加利亞",
+    "capital": "索菲亞",
+    "demonym": "保加利亞的",
+    "languages": [
+      "保加利亞文"
+    ],
+    "currencyNames": [
+      "保加利亞新列弗"
+    ],
+    "wikipediaSlug": "保加利亚"
+  },
+  "BH": {
+    "name": "巴林",
+    "capital": "麥納麥",
+    "demonym": "巴林的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "巴林第納爾"
+    ],
+    "wikipediaSlug": "巴林"
+  },
+  "BI": {
+    "name": "蒲隆地",
+    "capital": "基特加",
+    "demonym": "布隆迪的",
+    "languages": [
+      "隆迪文",
+      "法文"
+    ],
+    "currencyNames": [
+      "蒲隆地法郎"
+    ],
+    "wikipediaSlug": "蒲隆地"
+  },
+  "BJ": {
+    "name": "貝南",
+    "capital": "波多諾伏",
+    "demonym": "貝寧的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BCEAO)"
+    ],
+    "wikipediaSlug": "贝宁"
+  },
+  "BL": {
+    "name": "聖巴瑟米",
+    "capital": "古斯塔維亞",
+    "demonym": "聖巴泰勒米的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "聖巴泰勒米"
+  },
+  "BM": {
+    "name": "百慕達",
+    "capital": "哈密爾頓",
+    "demonym": "百慕大的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "百慕達幣"
+    ],
+    "wikipediaSlug": "百慕大"
+  },
+  "BN": {
+    "name": "汶萊",
+    "capital": "斯里巴加灣",
+    "demonym": "文萊的",
+    "languages": [
+      "馬來文"
+    ],
+    "currencyNames": [
+      "汶萊元",
+      "新加坡幣"
+    ],
+    "wikipediaSlug": "汶莱"
+  },
+  "BO": {
+    "name": "玻利維亞",
+    "capital": "拉巴斯",
+    "demonym": "玻利維亞的",
+    "languages": [
+      "西班牙文",
+      "蓋楚瓦文",
+      "艾馬拉文"
+    ],
+    "currencyNames": [
+      "玻利維亞諾"
+    ],
+    "wikipediaSlug": "玻利維亞"
+  },
+  "BR": {
+    "name": "巴西",
+    "capital": "巴西利亞",
+    "demonym": "巴西的",
+    "languages": [
+      "葡萄牙文"
+    ],
+    "currencyNames": [
+      "巴西雷亞爾"
+    ],
+    "wikipediaSlug": "巴西"
+  },
+  "BS": {
+    "name": "巴哈馬",
+    "capital": "拿騷",
+    "demonym": "巴哈馬的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "巴哈馬元",
+      "美元"
+    ],
+    "wikipediaSlug": "巴哈马"
+  },
+  "BT": {
+    "name": "不丹",
+    "capital": "廷布",
+    "demonym": "不丹的",
+    "languages": [
+      "宗卡文"
+    ],
+    "currencyNames": [
+      "不丹那特倫",
+      "印度盧比"
+    ],
+    "wikipediaSlug": "不丹"
+  },
+  "BW": {
+    "name": "波札那",
+    "capital": "嘉柏隆里",
+    "demonym": "博茨瓦納的",
+    "languages": [
+      "英文",
+      "塞茲瓦納文"
+    ],
+    "currencyNames": [
+      "波札那普拉"
+    ],
+    "wikipediaSlug": "波札那"
+  },
+  "BY": {
+    "name": "白俄羅斯",
+    "capital": "明斯克",
+    "demonym": "白俄羅斯的",
+    "languages": [
+      "白俄羅斯文",
+      "俄文"
+    ],
+    "currencyNames": [
+      "白俄羅斯盧布"
+    ],
+    "wikipediaSlug": "白俄罗斯"
+  },
+  "BZ": {
+    "name": "貝里斯",
+    "capital": "貝爾墨邦",
+    "demonym": "伯利茲的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "貝里斯元"
+    ],
+    "wikipediaSlug": "伯利兹"
+  },
+  "CA": {
+    "name": "加拿大",
+    "capital": "渥太華",
+    "demonym": "加拿大的",
+    "languages": [
+      "英文",
+      "法文"
+    ],
+    "currencyNames": [
+      "加幣"
+    ],
+    "wikipediaSlug": "加拿大"
+  },
+  "CD": {
+    "name": "剛果（金夏沙）",
+    "capital": "金沙薩",
+    "demonym": "剛果（金）的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "剛果法郎"
+    ],
+    "wikipediaSlug": "刚果民主共和国"
+  },
+  "CF": {
+    "name": "中非共和國",
+    "capital": "班基",
+    "demonym": "中非的",
+    "languages": [
+      "法文",
+      "桑戈文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BEAC)"
+    ],
+    "wikipediaSlug": "中非共和國"
+  },
+  "CG": {
+    "name": "剛果（布拉薩）",
+    "capital": "布拉柴維爾",
+    "demonym": "剛果（布）的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BEAC)"
+    ],
+    "wikipediaSlug": "刚果共和国"
+  },
+  "CH": {
+    "name": "瑞士",
+    "capital": "伯爾尼",
+    "demonym": "瑞士的",
+    "languages": [
+      "德文",
+      "法文",
+      "義大利文",
+      "羅曼斯文"
+    ],
+    "currencyNames": [
+      "瑞士法郎"
+    ],
+    "wikipediaSlug": "瑞士"
+  },
+  "CI": {
+    "name": "象牙海岸",
+    "capital": "亞穆蘇克羅",
+    "demonym": "科特迪瓦的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BCEAO)"
+    ],
+    "wikipediaSlug": "科特迪瓦"
+  },
+  "CK": {
+    "name": "庫克群島",
+    "capital": "阿瓦魯阿",
+    "demonym": "庫克群島的",
+    "languages": [
+      "英文",
+      "拉羅通加文"
+    ],
+    "currencyNames": [
+      "紐西蘭幣"
+    ],
+    "wikipediaSlug": "库克群岛"
+  },
+  "CL": {
+    "name": "智利",
+    "capital": "聖地亞哥",
+    "demonym": "智利的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "智利披索"
+    ],
+    "wikipediaSlug": "智利"
+  },
+  "CM": {
+    "name": "喀麥隆",
+    "capital": "雅溫得",
+    "demonym": "喀麥隆的",
+    "languages": [
+      "法文",
+      "英文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BEAC)"
+    ],
+    "wikipediaSlug": "喀麦隆"
+  },
+  "CN": {
+    "name": "中國",
+    "capital": "北京市",
+    "demonym": "中國的",
+    "languages": [
+      "中文"
+    ],
+    "currencyNames": [
+      "人民幣"
+    ],
+    "wikipediaSlug": "中华人民共和国"
+  },
+  "CO": {
+    "name": "哥倫比亞",
+    "capital": "波哥大",
+    "demonym": "哥倫比亞的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "哥倫比亞披索"
+    ],
+    "wikipediaSlug": "哥伦比亚"
+  },
+  "CR": {
+    "name": "哥斯大黎加",
+    "capital": "聖何塞",
+    "demonym": "哥斯達黎加的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "哥斯大黎加科朗"
+    ],
+    "wikipediaSlug": "哥斯达黎加"
+  },
+  "CU": {
+    "name": "古巴",
+    "capital": "哈瓦那",
+    "demonym": "古巴的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "古巴可轉換披索",
+      "古巴披索"
+    ],
+    "wikipediaSlug": "古巴"
+  },
+  "CV": {
+    "name": "維德角",
+    "capital": "普拉亞",
+    "demonym": "佛得角的",
+    "languages": [
+      "葡萄牙文"
+    ],
+    "currencyNames": [
+      "維德角埃斯庫多"
+    ],
+    "wikipediaSlug": "佛得角"
+  },
+  "CW": {
+    "name": "庫拉索",
+    "capital": "威廉斯塔德",
+    "demonym": "庫拉索的",
+    "languages": [
+      "荷蘭文",
+      "帕皮阿門托文"
+    ],
+    "currencyNames": [
+      "荷屬安地列斯盾"
+    ],
+    "wikipediaSlug": "库拉索"
+  },
+  "CY": {
+    "name": "賽普勒斯",
+    "capital": "尼科西亞",
+    "demonym": "塞浦路斯的",
+    "languages": [
+      "希臘文",
+      "土耳其文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "塞浦路斯"
+  },
+  "CZ": {
+    "name": "捷克",
+    "capital": "布拉格",
+    "demonym": "捷克的",
+    "languages": [
+      "捷克文"
+    ],
+    "currencyNames": [
+      "捷克克朗"
+    ],
+    "wikipediaSlug": "捷克"
+  },
+  "DE": {
+    "name": "德國",
+    "capital": "柏林",
+    "demonym": "德國的",
+    "languages": [
+      "德文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "德国"
+  },
+  "DJ": {
+    "name": "吉布地",
+    "capital": "吉布地",
+    "demonym": "吉布提的",
+    "languages": [
+      "法文",
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "吉布地法郎"
+    ],
+    "wikipediaSlug": "吉布提"
+  },
+  "DK": {
+    "name": "丹麥",
+    "capital": "哥本哈根",
+    "demonym": "丹麥的",
+    "languages": [
+      "丹麥文"
+    ],
+    "currencyNames": [
+      "丹麥克朗"
+    ],
+    "wikipediaSlug": "丹麦"
+  },
+  "DM": {
+    "name": "多米尼克",
+    "capital": "羅索",
+    "demonym": "多米尼加的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "格瑞那達元"
+    ],
+    "wikipediaSlug": "多米尼克"
+  },
+  "DO": {
+    "name": "多明尼加共和國",
+    "capital": "聖多明各",
+    "demonym": "多米尼加共和國的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "多明尼加披索"
+    ],
+    "wikipediaSlug": "多明尼加"
+  },
+  "DZ": {
+    "name": "阿爾及利亞",
+    "capital": "阿爾及爾",
+    "demonym": "阿爾及利亞的",
+    "languages": [
+      "阿拉伯文",
+      "中阿特拉斯塔馬塞特文"
+    ],
+    "currencyNames": [
+      "阿爾及利亞第納爾"
+    ],
+    "wikipediaSlug": "阿尔及利亚"
+  },
+  "EC": {
+    "name": "厄瓜多",
+    "capital": "基多",
+    "demonym": "厄瓜多爾的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "厄瓜多尔"
+  },
+  "EE": {
+    "name": "愛沙尼亞",
+    "capital": "塔林",
+    "demonym": "愛沙尼亞的",
+    "languages": [
+      "愛沙尼亞文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "爱沙尼亚"
+  },
+  "EG": {
+    "name": "埃及",
+    "capital": "開羅",
+    "demonym": "埃及的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "埃及鎊"
+    ],
+    "wikipediaSlug": "埃及"
+  },
+  "EH": {
+    "name": "西撒哈拉",
+    "capital": "",
+    "demonym": "西撒哈拉的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "阿爾及利亞第納爾",
+      "摩洛哥迪拉姆",
+      "茅利塔尼亞烏吉亞"
+    ],
+    "wikipediaSlug": "西撒哈拉"
+  },
+  "ER": {
+    "name": "厄利垂亞",
+    "capital": "阿斯馬拉",
+    "demonym": "厄立特里亞的",
+    "languages": [
+      "提格利尼亞文",
+      "阿拉伯文",
+      "英文"
+    ],
+    "currencyNames": [
+      "厄立特里亞納克法"
+    ],
+    "wikipediaSlug": "厄立特里亚"
+  },
+  "ES": {
+    "name": "西班牙",
+    "capital": "馬德里",
+    "demonym": "西班牙的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "西班牙"
+  },
+  "ET": {
+    "name": "衣索比亞",
+    "capital": "亞的斯亞貝巴",
+    "demonym": "埃塞俄比亞的",
+    "languages": [
+      "阿姆哈拉文"
+    ],
+    "currencyNames": [
+      "衣索比亞比爾"
+    ],
+    "wikipediaSlug": "埃塞俄比亚"
+  },
+  "FI": {
+    "name": "芬蘭",
+    "capital": "赫爾辛基",
+    "demonym": "芬蘭的",
+    "languages": [
+      "芬蘭文",
+      "瑞典文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "芬兰"
+  },
+  "FJ": {
+    "name": "斐濟",
+    "capital": "蘇瓦",
+    "demonym": "斐濟的",
+    "languages": [
+      "英文",
+      "斐濟文",
+      "斐濟印地文"
+    ],
+    "currencyNames": [
+      "斐濟元"
+    ],
+    "wikipediaSlug": "斐濟"
+  },
+  "FK": {
+    "name": "福克蘭群島",
+    "capital": "斯坦利",
+    "demonym": "福克蘭群島的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "福克蘭群島鎊"
+    ],
+    "wikipediaSlug": "福克兰群岛"
+  },
+  "FM": {
+    "name": "密克羅尼西亞",
+    "capital": "帕利基爾",
+    "demonym": "密克羅尼西亞的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "密克罗尼西亚联邦"
+  },
+  "FO": {
+    "name": "法羅群島",
+    "capital": "託爾斯港",
+    "demonym": "法羅群島的",
+    "languages": [
+      "法羅文",
+      "丹麥文"
+    ],
+    "currencyNames": [
+      "丹麥克朗"
+    ],
+    "wikipediaSlug": "法罗群岛"
+  },
+  "FR": {
+    "name": "法國",
+    "capital": "巴黎",
+    "demonym": "法國的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "法国"
+  },
+  "GA": {
+    "name": "加彭",
+    "capital": "利伯維爾",
+    "demonym": "加蓬的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BEAC)"
+    ],
+    "wikipediaSlug": "加蓬"
+  },
+  "GB": {
+    "name": "英國",
+    "capital": "倫敦",
+    "demonym": "英國的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "英鎊"
+    ],
+    "wikipediaSlug": "英国"
+  },
+  "GD": {
+    "name": "格瑞那達",
+    "capital": "聖喬治",
+    "demonym": "格林納達的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "格瑞那達元"
+    ],
+    "wikipediaSlug": "格林纳达"
+  },
+  "GE": {
+    "name": "喬治亞",
+    "capital": "第比利斯",
+    "demonym": "格魯吉亞的",
+    "languages": [
+      "喬治亞文"
+    ],
+    "currencyNames": [
+      "喬治亞拉里"
+    ],
+    "wikipediaSlug": "格鲁吉亚"
+  },
+  "GF": {
+    "name": "法屬圭亞那",
+    "capital": "卡宴",
+    "demonym": "法屬圭亞那的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "法屬圭亞那"
+  },
+  "GG": {
+    "name": "根息",
+    "capital": "聖彼得港",
+    "demonym": "根西島的",
+    "languages": [
+      "英文",
+      "法文"
+    ],
+    "currencyNames": [
+      "英鎊"
+    ],
+    "wikipediaSlug": "根西行政區"
+  },
+  "GH": {
+    "name": "迦納",
+    "capital": "阿克拉",
+    "demonym": "加納的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "迦納塞地"
+    ],
+    "wikipediaSlug": "加纳"
+  },
+  "GL": {
+    "name": "格陵蘭",
+    "capital": "努克",
+    "demonym": "格陵蘭的",
+    "languages": [
+      "格陵蘭文"
+    ],
+    "currencyNames": [
+      "丹麥克朗"
+    ],
+    "wikipediaSlug": "格陵兰"
+  },
+  "GM": {
+    "name": "甘比亞",
+    "capital": "班珠爾",
+    "demonym": "岡比亞的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "甘比亞達拉西"
+    ],
+    "wikipediaSlug": "冈比亚"
+  },
+  "GN": {
+    "name": "幾內亞",
+    "capital": "科納克里",
+    "demonym": "幾內亞的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "幾內亞法郎"
+    ],
+    "wikipediaSlug": "几内亚"
+  },
+  "GP": {
+    "name": "瓜地洛普",
+    "capital": "巴斯特爾",
+    "demonym": "瓜德羅普的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "瓜德罗普"
+  },
+  "GQ": {
+    "name": "赤道幾內亞",
+    "capital": "拉巴斯城",
+    "demonym": "赤道幾內亞的",
+    "languages": [
+      "西班牙文",
+      "法文",
+      "葡萄牙文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BEAC)"
+    ],
+    "wikipediaSlug": "赤道几内亚"
+  },
+  "GR": {
+    "name": "希臘",
+    "capital": "雅典",
+    "demonym": "希臘的",
+    "languages": [
+      "希臘文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "希腊"
+  },
+  "GT": {
+    "name": "瓜地馬拉",
+    "capital": "瓜地馬拉",
+    "demonym": "危地馬拉的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "瓜地馬拉格查爾"
+    ],
+    "wikipediaSlug": "危地马拉"
+  },
+  "GU": {
+    "name": "關島",
+    "capital": "阿加尼亞",
+    "demonym": "關島的",
+    "languages": [
+      "英文",
+      "查莫洛文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "關島"
+  },
+  "GW": {
+    "name": "幾內亞比索",
+    "capital": "比紹",
+    "demonym": "幾內亞比紹的",
+    "languages": [
+      "葡萄牙文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BCEAO)"
+    ],
+    "wikipediaSlug": "幾內亞比索"
+  },
+  "GY": {
+    "name": "蓋亞那",
+    "capital": "喬治敦",
+    "demonym": "圭亞那的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "圭亞那元"
+    ],
+    "wikipediaSlug": "圭亚那"
+  },
+  "HK": {
+    "name": "香港",
+    "capital": "",
+    "demonym": "香港的",
+    "languages": [
+      "中文",
+      "英文"
+    ],
+    "currencyNames": [
+      "港幣"
+    ],
+    "wikipediaSlug": "香港"
+  },
+  "HN": {
+    "name": "宏都拉斯",
+    "capital": "特古西加爾巴",
+    "demonym": "洪都拉斯的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "洪都拉斯倫皮拉"
+    ],
+    "wikipediaSlug": "洪都拉斯"
+  },
+  "HR": {
+    "name": "克羅埃西亞",
+    "capital": "薩格勒布",
+    "demonym": "克羅地亞的",
+    "languages": [
+      "克羅埃西亞文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "克罗地亚"
+  },
+  "HT": {
+    "name": "海地",
+    "capital": "太子港",
+    "demonym": "海地的",
+    "languages": [
+      "法文",
+      "海地文"
+    ],
+    "currencyNames": [
+      "海地古德"
+    ],
+    "wikipediaSlug": "海地"
+  },
+  "HU": {
+    "name": "匈牙利",
+    "capital": "布達佩斯",
+    "demonym": "匈牙利的",
+    "languages": [
+      "匈牙利文"
+    ],
+    "currencyNames": [
+      "匈牙利福林"
+    ],
+    "wikipediaSlug": "匈牙利"
+  },
+  "ID": {
+    "name": "印尼",
+    "capital": "雅加達",
+    "demonym": "印度尼西亞的",
+    "languages": [
+      "印尼文"
+    ],
+    "currencyNames": [
+      "印尼盾"
+    ],
+    "wikipediaSlug": "印度尼西亚"
+  },
+  "IE": {
+    "name": "愛爾蘭",
+    "capital": "都柏林",
+    "demonym": "愛爾蘭的",
+    "languages": [
+      "愛爾蘭文",
+      "英文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "爱尔兰"
+  },
+  "IL": {
+    "name": "以色列",
+    "capital": "耶路撒冷",
+    "demonym": "以色列的",
+    "languages": [
+      "希伯來文",
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "以色列新謝克爾"
+    ],
+    "wikipediaSlug": "以色列"
+  },
+  "IM": {
+    "name": "曼島",
+    "capital": "道格拉斯",
+    "demonym": "馬恩島的",
+    "languages": [
+      "英文",
+      "曼島文"
+    ],
+    "currencyNames": [
+      "英鎊"
+    ],
+    "wikipediaSlug": "曼島"
+  },
+  "IN": {
+    "name": "印度",
+    "capital": "新德里",
+    "demonym": "印度的",
+    "languages": [
+      "印地文",
+      "英文"
+    ],
+    "currencyNames": [
+      "印度盧比"
+    ],
+    "wikipediaSlug": "印度"
+  },
+  "IQ": {
+    "name": "伊拉克",
+    "capital": "巴格達",
+    "demonym": "伊拉克的",
+    "languages": [
+      "阿拉伯文",
+      "庫德文"
+    ],
+    "currencyNames": [
+      "伊拉克第納爾"
+    ],
+    "wikipediaSlug": "伊拉克"
+  },
+  "IR": {
+    "name": "伊朗",
+    "capital": "德黑蘭",
+    "demonym": "伊朗的",
+    "languages": [
+      "波斯文"
+    ],
+    "currencyNames": [
+      "伊朗里亞爾"
+    ],
+    "wikipediaSlug": "伊朗"
+  },
+  "IS": {
+    "name": "冰島",
+    "capital": "雷克雅未克",
+    "demonym": "冰島的",
+    "languages": [
+      "冰島文"
+    ],
+    "currencyNames": [
+      "冰島克朗"
+    ],
+    "wikipediaSlug": "冰岛"
+  },
+  "IT": {
+    "name": "義大利",
+    "capital": "羅馬",
+    "demonym": "意大利的",
+    "languages": [
+      "義大利文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "意大利"
+  },
+  "JE": {
+    "name": "澤西島",
+    "capital": "聖赫利爾",
+    "demonym": "澤西島的",
+    "languages": [
+      "英文",
+      "法文"
+    ],
+    "currencyNames": [
+      "英鎊"
+    ],
+    "wikipediaSlug": "澤西"
+  },
+  "JM": {
+    "name": "牙買加",
+    "capital": "金斯敦",
+    "demonym": "牙買加的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "牙買加元"
+    ],
+    "wikipediaSlug": "牙买加"
+  },
+  "JO": {
+    "name": "約旦",
+    "capital": "安曼",
+    "demonym": "約旦的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "約旦第納爾"
+    ],
+    "wikipediaSlug": "约旦"
+  },
+  "JP": {
+    "name": "日本",
+    "capital": "東京都",
+    "demonym": "日本的",
+    "languages": [
+      "日文"
+    ],
+    "currencyNames": [
+      "日圓"
+    ],
+    "wikipediaSlug": "日本"
+  },
+  "KE": {
+    "name": "肯亞",
+    "capital": "奈洛比",
+    "demonym": "肯尼亞的",
+    "languages": [
+      "史瓦希里文",
+      "英文"
+    ],
+    "currencyNames": [
+      "肯尼亞先令"
+    ],
+    "wikipediaSlug": "肯尼亚"
+  },
+  "KG": {
+    "name": "吉爾吉斯",
+    "capital": "比什凱克",
+    "demonym": "吉爾吉斯斯坦的",
+    "languages": [
+      "吉爾吉斯文",
+      "俄文"
+    ],
+    "currencyNames": [
+      "吉爾吉斯索姆"
+    ],
+    "wikipediaSlug": "吉尔吉斯斯坦"
+  },
+  "KH": {
+    "name": "柬埔寨",
+    "capital": "金邊",
+    "demonym": "柬埔寨的",
+    "languages": [
+      "高棉文"
+    ],
+    "currencyNames": [
+      "柬埔寨瑞爾",
+      "美元"
+    ],
+    "wikipediaSlug": "柬埔寨"
+  },
+  "KI": {
+    "name": "吉里巴斯",
+    "capital": "塔拉瓦環礁",
+    "demonym": "基里巴斯的",
+    "languages": [
+      "英文",
+      "吉爾伯特群島文"
+    ],
+    "currencyNames": [
+      "澳幣"
+    ],
+    "wikipediaSlug": "基里巴斯"
+  },
+  "KM": {
+    "name": "葛摩",
+    "capital": "莫洛尼",
+    "demonym": "科摩羅的",
+    "languages": [
+      "zdj",
+      "阿拉伯文",
+      "法文"
+    ],
+    "currencyNames": [
+      "科摩羅法郎"
+    ],
+    "wikipediaSlug": "葛摩"
+  },
+  "KN": {
+    "name": "聖克里斯多福及尼維斯",
+    "capital": "巴斯特爾",
+    "demonym": "聖基茨和尼維斯的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "格瑞那達元"
+    ],
+    "wikipediaSlug": "聖克里斯多福及尼維斯"
+  },
+  "KP": {
+    "name": "北韓",
+    "capital": "平壤",
+    "demonym": "朝鮮的",
+    "languages": [
+      "韓文"
+    ],
+    "currencyNames": [
+      "北韓元"
+    ],
+    "wikipediaSlug": "朝鲜民主主义人民共和国"
+  },
+  "KR": {
+    "name": "南韓",
+    "capital": "首爾",
+    "demonym": "韓國的",
+    "languages": [
+      "韓文"
+    ],
+    "currencyNames": [
+      "韓元"
+    ],
+    "wikipediaSlug": "大韩民国"
+  },
+  "KW": {
+    "name": "科威特",
+    "capital": "科威特城",
+    "demonym": "科威特的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "科威特第納爾"
+    ],
+    "wikipediaSlug": "科威特"
+  },
+  "KY": {
+    "name": "開曼群島",
+    "capital": "喬治敦",
+    "demonym": "開曼群島的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "開曼群島元"
+    ],
+    "wikipediaSlug": "開曼群島"
+  },
+  "KZ": {
+    "name": "哈薩克",
+    "capital": "阿斯塔納",
+    "demonym": "哈薩克斯坦的",
+    "languages": [
+      "哈薩克文",
+      "俄文"
+    ],
+    "currencyNames": [
+      "哈薩克堅戈"
+    ],
+    "wikipediaSlug": "哈萨克斯坦"
+  },
+  "LA": {
+    "name": "寮國",
+    "capital": "永珍",
+    "demonym": "老撾的",
+    "languages": [
+      "寮文"
+    ],
+    "currencyNames": [
+      "寮國基普"
+    ],
+    "wikipediaSlug": "老挝"
+  },
+  "LB": {
+    "name": "黎巴嫩",
+    "capital": "貝魯特",
+    "demonym": "黎巴嫩的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "黎巴嫩鎊"
+    ],
+    "wikipediaSlug": "黎巴嫩"
+  },
+  "LC": {
+    "name": "聖露西亞",
+    "capital": "卡斯特里",
+    "demonym": "聖盧西亞的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "格瑞那達元"
+    ],
+    "wikipediaSlug": "圣卢西亚"
+  },
+  "LI": {
+    "name": "列支敦斯登",
+    "capital": "瓦杜茲",
+    "demonym": "列支敦士登的",
+    "languages": [
+      "德文"
+    ],
+    "currencyNames": [
+      "瑞士法郎"
+    ],
+    "wikipediaSlug": "列支敦斯登"
+  },
+  "LK": {
+    "name": "斯里蘭卡",
+    "capital": "科倫坡",
+    "demonym": "斯里蘭卡的",
+    "languages": [
+      "僧伽羅文",
+      "坦米爾文"
+    ],
+    "currencyNames": [
+      "斯里蘭卡盧比"
+    ],
+    "wikipediaSlug": "斯里蘭卡"
+  },
+  "LR": {
+    "name": "賴比瑞亞",
+    "capital": "蒙羅維亞",
+    "demonym": "利比里亞的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "賴比瑞亞元"
+    ],
+    "wikipediaSlug": "利比里亚"
+  },
+  "LS": {
+    "name": "賴索托",
+    "capital": "馬塞盧",
+    "demonym": "萊索托的",
+    "languages": [
+      "塞索托文",
+      "英文"
+    ],
+    "currencyNames": [
+      "賴索托洛蒂",
+      "南非蘭特"
+    ],
+    "wikipediaSlug": "莱索托"
+  },
+  "LT": {
+    "name": "立陶宛",
+    "capital": "維爾紐斯",
+    "demonym": "立陶宛的",
+    "languages": [
+      "立陶宛文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "立陶宛"
+  },
+  "LU": {
+    "name": "盧森堡",
+    "capital": "盧森堡",
+    "demonym": "盧森堡的",
+    "languages": [
+      "盧森堡文",
+      "法文",
+      "德文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "卢森堡"
+  },
+  "LV": {
+    "name": "拉脫維亞",
+    "capital": "里加",
+    "demonym": "拉脫維亞的",
+    "languages": [
+      "拉脫維亞文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "拉脫維亞"
+  },
+  "LY": {
+    "name": "利比亞",
+    "capital": "的黎波里",
+    "demonym": "利比亞的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "利比亞第納爾"
+    ],
+    "wikipediaSlug": "利比亚"
+  },
+  "MA": {
+    "name": "摩洛哥",
+    "capital": "拉巴特",
+    "demonym": "摩洛哥的",
+    "languages": [
+      "阿拉伯文",
+      "中阿特拉斯塔馬塞特文"
+    ],
+    "currencyNames": [
+      "摩洛哥迪拉姆"
+    ],
+    "wikipediaSlug": "摩洛哥"
+  },
+  "MC": {
+    "name": "摩納哥",
+    "capital": "摩納哥城",
+    "demonym": "摩納哥的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "摩纳哥"
+  },
+  "MD": {
+    "name": "摩爾多瓦",
+    "capital": "基希訥烏",
+    "demonym": "摩爾多瓦的",
+    "languages": [
+      "羅馬尼亞文"
+    ],
+    "currencyNames": [
+      "摩杜雲列伊"
+    ],
+    "wikipediaSlug": "摩尔多瓦"
+  },
+  "ME": {
+    "name": "蒙特內哥羅",
+    "capital": "波德戈裡察",
+    "demonym": "黑山的",
+    "languages": [
+      "塞爾維亞文（蒙特內哥羅）"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "蒙特內哥羅"
+  },
+  "MF": {
+    "name": "法屬聖馬丁",
+    "capital": "馬裡戈特",
+    "demonym": "聖馬丁的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "法屬聖馬丁"
+  },
+  "MG": {
+    "name": "馬達加斯加",
+    "capital": "塔那那利佛",
+    "demonym": "馬達加斯加的",
+    "languages": [
+      "馬達加斯加文",
+      "法文"
+    ],
+    "currencyNames": [
+      "馬達加斯加阿里亞里"
+    ],
+    "wikipediaSlug": "马达加斯加"
+  },
+  "MH": {
+    "name": "馬紹爾群島",
+    "capital": "馬久羅",
+    "demonym": "馬紹爾群島的",
+    "languages": [
+      "馬紹爾文",
+      "英文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "馬紹爾群島"
+  },
+  "MK": {
+    "name": "北馬其頓",
+    "capital": "斯科普里",
+    "demonym": "北馬其頓的",
+    "languages": [
+      "馬其頓文"
+    ],
+    "currencyNames": [
+      "馬其頓第納爾"
+    ],
+    "wikipediaSlug": "北馬其頓"
+  },
+  "ML": {
+    "name": "馬利",
+    "capital": "巴馬科",
+    "demonym": "馬里的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BCEAO)"
+    ],
+    "wikipediaSlug": "马里"
+  },
+  "MM": {
+    "name": "緬甸",
+    "capital": "奈比多",
+    "demonym": "緬甸的",
+    "languages": [
+      "緬甸文"
+    ],
+    "currencyNames": [
+      "緬甸元"
+    ],
+    "wikipediaSlug": "缅甸"
+  },
+  "MN": {
+    "name": "蒙古",
+    "capital": "烏蘭巴托",
+    "demonym": "蒙古的",
+    "languages": [
+      "蒙古文"
+    ],
+    "currencyNames": [
+      "蒙古圖格里克"
+    ],
+    "wikipediaSlug": "蒙古国"
+  },
+  "MO": {
+    "name": "澳門",
+    "capital": "",
+    "demonym": "澳門的",
+    "languages": [
+      "中文",
+      "葡萄牙文"
+    ],
+    "currencyNames": [
+      "澳門元"
+    ],
+    "wikipediaSlug": "澳門"
+  },
+  "MP": {
+    "name": "北馬利安納群島",
+    "capital": "",
+    "demonym": "北馬里亞納群島的",
+    "languages": [
+      "英文",
+      "查莫洛文",
+      "cal"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "北马里亚纳群岛"
+  },
+  "MQ": {
+    "name": "馬丁尼克",
+    "capital": "法蘭西堡",
+    "demonym": "馬提尼克的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "馬提尼克"
+  },
+  "MR": {
+    "name": "茅利塔尼亞",
+    "capital": "努瓦克肖特",
+    "demonym": "毛里塔尼亞的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "茅利塔尼亞烏吉亞"
+    ],
+    "wikipediaSlug": "毛里塔尼亚"
+  },
+  "MS": {
+    "name": "蒙哲臘",
+    "capital": "普利茅斯",
+    "demonym": "蒙特塞拉特的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "格瑞那達元"
+    ],
+    "wikipediaSlug": "蒙特塞拉特"
+  },
+  "MT": {
+    "name": "馬爾他",
+    "capital": "瓦萊塔",
+    "demonym": "馬耳他的",
+    "languages": [
+      "馬爾他文",
+      "英文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "马耳他"
+  },
+  "MU": {
+    "name": "模里西斯",
+    "capital": "路易港",
+    "demonym": "毛里求斯的",
+    "languages": [
+      "英文",
+      "法文"
+    ],
+    "currencyNames": [
+      "模里西斯盧比"
+    ],
+    "wikipediaSlug": "毛里求斯"
+  },
+  "MV": {
+    "name": "馬爾地夫",
+    "capital": "馬累",
+    "demonym": "馬爾代夫的",
+    "languages": [
+      "迪維西文"
+    ],
+    "currencyNames": [
+      "馬爾地夫盧非亞"
+    ],
+    "wikipediaSlug": "马尔代夫"
+  },
+  "MW": {
+    "name": "馬拉威",
+    "capital": "利隆圭",
+    "demonym": "馬拉維的",
+    "languages": [
+      "英文",
+      "尼揚賈文"
+    ],
+    "currencyNames": [
+      "馬拉維克瓦查"
+    ],
+    "wikipediaSlug": "马拉维"
+  },
+  "MX": {
+    "name": "墨西哥",
+    "capital": "墨西哥城",
+    "demonym": "墨西哥的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "墨西哥披索"
+    ],
+    "wikipediaSlug": "墨西哥"
+  },
+  "MY": {
+    "name": "馬來西亞",
+    "capital": "吉隆坡",
+    "demonym": "馬來西亞的",
+    "languages": [
+      "馬來文"
+    ],
+    "currencyNames": [
+      "馬來西亞令吉"
+    ],
+    "wikipediaSlug": "马来西亚"
+  },
+  "MZ": {
+    "name": "莫三比克",
+    "capital": "馬普托",
+    "demonym": "莫桑比克的",
+    "languages": [
+      "葡萄牙文"
+    ],
+    "currencyNames": [
+      "莫三比克梅蒂卡爾"
+    ],
+    "wikipediaSlug": "莫桑比克"
+  },
+  "NA": {
+    "name": "納米比亞",
+    "capital": "溫得和克",
+    "demonym": "納米比亞的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "納米比亞元",
+      "南非蘭特"
+    ],
+    "wikipediaSlug": "纳米比亚"
+  },
+  "NC": {
+    "name": "新喀里多尼亞",
+    "capital": "努美阿",
+    "demonym": "新喀里多尼亞的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFP)"
+    ],
+    "wikipediaSlug": "新喀里多尼亞"
+  },
+  "NE": {
+    "name": "尼日",
+    "capital": "尼亞美",
+    "demonym": "尼日爾的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BCEAO)"
+    ],
+    "wikipediaSlug": "尼日尔"
+  },
+  "NF": {
+    "name": "諾福克島",
+    "capital": "金斯敦",
+    "demonym": "諾福克島的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "澳幣"
+    ],
+    "wikipediaSlug": "诺福克岛"
+  },
+  "NG": {
+    "name": "奈及利亞",
+    "capital": "阿布賈",
+    "demonym": "尼日利亞的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "奈及利亞奈拉"
+    ],
+    "wikipediaSlug": "奈及利亞"
+  },
+  "NI": {
+    "name": "尼加拉瓜",
+    "capital": "馬納瓜",
+    "demonym": "尼加拉瓜的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "尼加拉瓜金科多巴"
+    ],
+    "wikipediaSlug": "尼加拉瓜"
+  },
+  "NL": {
+    "name": "荷蘭",
+    "capital": "阿姆斯特丹",
+    "demonym": "荷蘭的",
+    "languages": [
+      "荷蘭文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "荷兰王国"
+  },
+  "NO": {
+    "name": "挪威",
+    "capital": "奧斯陸",
+    "demonym": "挪威的",
+    "languages": [
+      "挪威文"
+    ],
+    "currencyNames": [
+      "挪威克朗"
+    ],
+    "wikipediaSlug": "挪威"
+  },
+  "NP": {
+    "name": "尼泊爾",
+    "capital": "加德滿都",
+    "demonym": "尼泊爾的",
+    "languages": [
+      "尼泊爾文"
+    ],
+    "currencyNames": [
+      "尼泊爾盧比"
+    ],
+    "wikipediaSlug": "尼泊尔"
+  },
+  "NR": {
+    "name": "諾魯",
+    "capital": "亞倫",
+    "demonym": "瑙魯的",
+    "languages": [
+      "英文",
+      "諾魯文"
+    ],
+    "currencyNames": [
+      "澳幣"
+    ],
+    "wikipediaSlug": "諾魯"
+  },
+  "NU": {
+    "name": "紐埃島",
+    "capital": "阿洛菲",
+    "demonym": "紐埃的",
+    "languages": [
+      "英文",
+      "紐埃文"
+    ],
+    "currencyNames": [
+      "紐西蘭幣"
+    ],
+    "wikipediaSlug": "紐埃"
+  },
+  "NZ": {
+    "name": "紐西蘭",
+    "capital": "惠靈頓",
+    "demonym": "新西蘭的",
+    "languages": [
+      "英文",
+      "毛利文"
+    ],
+    "currencyNames": [
+      "紐西蘭幣"
+    ],
+    "wikipediaSlug": "新西兰"
+  },
+  "OM": {
+    "name": "阿曼",
+    "capital": "馬斯喀特",
+    "demonym": "阿曼的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "阿曼里亞爾"
+    ],
+    "wikipediaSlug": "阿曼"
+  },
+  "PA": {
+    "name": "巴拿馬",
+    "capital": "巴拿馬城",
+    "demonym": "巴拿馬的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "巴拿馬巴波亞",
+      "美元"
+    ],
+    "wikipediaSlug": "巴拿马"
+  },
+  "PE": {
+    "name": "秘魯",
+    "capital": "利馬",
+    "demonym": "秘魯的",
+    "languages": [
+      "西班牙文",
+      "蓋楚瓦文",
+      "艾馬拉文"
+    ],
+    "currencyNames": [
+      "秘魯太陽幣"
+    ],
+    "wikipediaSlug": "秘鲁"
+  },
+  "PF": {
+    "name": "法屬玻里尼西亞",
+    "capital": "帕皮提",
+    "demonym": "法屬波利尼西亞的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFP)"
+    ],
+    "wikipediaSlug": "法屬玻里尼西亞"
+  },
+  "PG": {
+    "name": "巴布亞紐幾內亞",
+    "capital": "莫爾斯比港",
+    "demonym": "巴布亞新幾內亞的",
+    "languages": [
+      "英文",
+      "托比辛文",
+      "西里莫圖土文"
+    ],
+    "currencyNames": [
+      "巴布亞紐幾內亞基那"
+    ],
+    "wikipediaSlug": "巴布亚新几内亚"
+  },
+  "PH": {
+    "name": "菲律賓",
+    "capital": "馬尼拉",
+    "demonym": "菲律賓的",
+    "languages": [
+      "菲律賓文",
+      "英文"
+    ],
+    "currencyNames": [
+      "菲律賓披索"
+    ],
+    "wikipediaSlug": "菲律宾"
+  },
+  "PK": {
+    "name": "巴基斯坦",
+    "capital": "伊斯蘭堡",
+    "demonym": "巴基斯坦的",
+    "languages": [
+      "烏都文",
+      "英文"
+    ],
+    "currencyNames": [
+      "巴基斯坦盧比"
+    ],
+    "wikipediaSlug": "巴基斯坦"
+  },
+  "PL": {
+    "name": "波蘭",
+    "capital": "華沙",
+    "demonym": "波蘭的",
+    "languages": [
+      "波蘭文"
+    ],
+    "currencyNames": [
+      "波蘭茲羅提"
+    ],
+    "wikipediaSlug": "波兰"
+  },
+  "PM": {
+    "name": "聖皮埃與密克隆群島",
+    "capital": "聖皮埃爾",
+    "demonym": "聖皮埃爾和密克隆的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "圣皮埃尔和密克隆"
+  },
+  "PN": {
+    "name": "皮特肯群島",
+    "capital": "亞當斯敦",
+    "demonym": "皮特凱恩群島的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "紐西蘭幣"
+    ],
+    "wikipediaSlug": "皮特凯恩群岛"
+  },
+  "PR": {
+    "name": "波多黎各",
+    "capital": "聖胡安",
+    "demonym": "波多黎各的",
+    "languages": [
+      "西班牙文",
+      "英文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "波多黎各"
+  },
+  "PS": {
+    "name": "巴勒斯坦",
+    "capital": "東耶路撒冷",
+    "demonym": "巴勒斯坦的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "埃及鎊",
+      "以色列新謝克爾",
+      "約旦第納爾"
+    ],
+    "wikipediaSlug": "巴勒斯坦國"
+  },
+  "PT": {
+    "name": "葡萄牙",
+    "capital": "里斯本",
+    "demonym": "葡萄牙的",
+    "languages": [
+      "葡萄牙文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "葡萄牙"
+  },
+  "PW": {
+    "name": "帛琉",
+    "capital": "恩吉魯穆德",
+    "demonym": "帕勞的",
+    "languages": [
+      "帛琉文",
+      "英文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "帛琉"
+  },
+  "PY": {
+    "name": "巴拉圭",
+    "capital": "亞松森",
+    "demonym": "巴拉圭的",
+    "languages": [
+      "西班牙文",
+      "瓜拉尼文"
+    ],
+    "currencyNames": [
+      "巴拉圭瓜拉尼"
+    ],
+    "wikipediaSlug": "巴拉圭"
+  },
+  "QA": {
+    "name": "卡達",
+    "capital": "多哈",
+    "demonym": "卡塔爾的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "卡達里亞爾"
+    ],
+    "wikipediaSlug": "卡塔尔"
+  },
+  "RE": {
+    "name": "留尼旺",
+    "capital": "聖但尼",
+    "demonym": "留尼汪的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "留尼汪"
+  },
+  "RO": {
+    "name": "羅馬尼亞",
+    "capital": "布加勒斯特",
+    "demonym": "羅馬尼亞的",
+    "languages": [
+      "羅馬尼亞文"
+    ],
+    "currencyNames": [
+      "羅馬尼亞列伊"
+    ],
+    "wikipediaSlug": "羅馬尼亞"
+  },
+  "RS": {
+    "name": "塞爾維亞",
+    "capital": "貝爾格萊德",
+    "demonym": "塞爾維亞的",
+    "languages": [
+      "塞爾維亞文"
+    ],
+    "currencyNames": [
+      "塞爾維亞戴納"
+    ],
+    "wikipediaSlug": "塞尔维亚"
+  },
+  "RU": {
+    "name": "俄羅斯",
+    "capital": "莫斯科",
+    "demonym": "俄羅斯的",
+    "languages": [
+      "俄文"
+    ],
+    "currencyNames": [
+      "俄羅斯盧布"
+    ],
+    "wikipediaSlug": "俄罗斯"
+  },
+  "RW": {
+    "name": "盧安達",
+    "capital": "吉佳利",
+    "demonym": "盧旺達的",
+    "languages": [
+      "盧安達文",
+      "法文",
+      "英文"
+    ],
+    "currencyNames": [
+      "盧安達法郎"
+    ],
+    "wikipediaSlug": "卢旺达"
+  },
+  "SA": {
+    "name": "沙烏地阿拉伯",
+    "capital": "利雅德",
+    "demonym": "沙特阿拉伯的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "沙烏地里亞爾"
+    ],
+    "wikipediaSlug": "沙特阿拉伯"
+  },
+  "SB": {
+    "name": "索羅門群島",
+    "capital": "霍尼亞拉",
+    "demonym": "所羅門群島的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "索羅門群島元"
+    ],
+    "wikipediaSlug": "所罗门群岛"
+  },
+  "SC": {
+    "name": "塞席爾",
+    "capital": "維多利亞",
+    "demonym": "塞舌爾的",
+    "languages": [
+      "塞席爾克里奧爾法文",
+      "法文",
+      "英文"
+    ],
+    "currencyNames": [
+      "塞席爾盧比"
+    ],
+    "wikipediaSlug": "塞舌尔"
+  },
+  "SD": {
+    "name": "蘇丹",
+    "capital": "喀土穆",
+    "demonym": "蘇丹的",
+    "languages": [
+      "阿拉伯文",
+      "英文"
+    ],
+    "currencyNames": [
+      "蘇丹鎊"
+    ],
+    "wikipediaSlug": "苏丹"
+  },
+  "SE": {
+    "name": "瑞典",
+    "capital": "斯德哥爾摩",
+    "demonym": "瑞典的",
+    "languages": [
+      "瑞典文"
+    ],
+    "currencyNames": [
+      "瑞典克朗"
+    ],
+    "wikipediaSlug": "瑞典"
+  },
+  "SG": {
+    "name": "新加坡",
+    "capital": "新加坡",
+    "demonym": "新加坡的",
+    "languages": [
+      "英文",
+      "馬來文",
+      "中文",
+      "坦米爾文"
+    ],
+    "currencyNames": [
+      "新加坡幣"
+    ],
+    "wikipediaSlug": "新加坡"
+  },
+  "SH": {
+    "name": "聖赫勒拿島",
+    "capital": "詹姆斯敦",
+    "demonym": "聖赫勒拿的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "英鎊",
+      "聖赫勒拿鎊"
+    ],
+    "wikipediaSlug": "圣赫勒拿、阿森松和特里斯坦-达库尼亚"
+  },
+  "SI": {
+    "name": "斯洛維尼亞",
+    "capital": "盧布爾雅那",
+    "demonym": "斯洛文尼亞的",
+    "languages": [
+      "斯洛維尼亞文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "斯洛文尼亚"
+  },
+  "SK": {
+    "name": "斯洛伐克",
+    "capital": "布拉迪斯拉發",
+    "demonym": "斯洛伐克的",
+    "languages": [
+      "斯洛伐克文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "斯洛伐克"
+  },
+  "SL": {
+    "name": "獅子山",
+    "capital": "弗里敦",
+    "demonym": "塞拉利昂的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "獅子山利昂"
+    ],
+    "wikipediaSlug": "塞拉利昂"
+  },
+  "SM": {
+    "name": "聖馬利諾",
+    "capital": "聖馬力諾",
+    "demonym": "聖馬力諾的",
+    "languages": [
+      "義大利文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "圣马力诺"
+  },
+  "SN": {
+    "name": "塞內加爾",
+    "capital": "達喀爾",
+    "demonym": "塞內加爾的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BCEAO)"
+    ],
+    "wikipediaSlug": "塞内加尔"
+  },
+  "SO": {
+    "name": "索馬利亞",
+    "capital": "摩加迪休",
+    "demonym": "索馬里的",
+    "languages": [
+      "索馬利文",
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "索馬利亞先令"
+    ],
+    "wikipediaSlug": "索马里"
+  },
+  "SR": {
+    "name": "蘇利南",
+    "capital": "帕拉馬裡博",
+    "demonym": "蘇里南的",
+    "languages": [
+      "荷蘭文"
+    ],
+    "currencyNames": [
+      "蘇利南元"
+    ],
+    "wikipediaSlug": "蘇利南"
+  },
+  "SS": {
+    "name": "南蘇丹",
+    "capital": "朱巴",
+    "demonym": "南蘇丹的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "南蘇丹鎊"
+    ],
+    "wikipediaSlug": "南蘇丹"
+  },
+  "ST": {
+    "name": "聖多美普林西比",
+    "capital": "聖多美",
+    "demonym": "聖多美和普林西比的",
+    "languages": [
+      "葡萄牙文"
+    ],
+    "currencyNames": [
+      "聖多美島和普林西比島多布拉"
+    ],
+    "wikipediaSlug": "圣多美和普林西比"
+  },
+  "SV": {
+    "name": "薩爾瓦多",
+    "capital": "聖薩爾瓦多",
+    "demonym": "薩爾瓦多的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "萨尔瓦多"
+  },
+  "SX": {
+    "name": "荷屬聖馬丁",
+    "capital": "菲利普斯堡",
+    "demonym": "荷屬聖馬丁的",
+    "languages": [
+      "荷蘭文",
+      "英文"
+    ],
+    "currencyNames": [
+      "荷屬安地列斯盾"
+    ],
+    "wikipediaSlug": "荷屬聖馬丁"
+  },
+  "SY": {
+    "name": "敘利亞",
+    "capital": "大馬士革",
+    "demonym": "敘利亞的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "敘利亞鎊"
+    ],
+    "wikipediaSlug": "叙利亚"
+  },
+  "SZ": {
+    "name": "史瓦帝尼",
+    "capital": "姆巴巴內",
+    "demonym": "斯威士蘭的",
+    "languages": [
+      "斯瓦特文",
+      "英文"
+    ],
+    "currencyNames": [
+      "史瓦帝尼朗吉尼",
+      "南非蘭特"
+    ],
+    "wikipediaSlug": "史瓦帝尼"
+  },
+  "TC": {
+    "name": "土克斯及開科斯群島",
+    "capital": "科伯恩城",
+    "demonym": "特克斯和凱科斯群島的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "特克斯和凯科斯群岛"
+  },
+  "TD": {
+    "name": "查德",
+    "capital": "恩賈梅納",
+    "demonym": "乍得的",
+    "languages": [
+      "法文",
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BEAC)"
+    ],
+    "wikipediaSlug": "乍得"
+  },
+  "TG": {
+    "name": "多哥",
+    "capital": "洛美",
+    "demonym": "多哥的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFA–BCEAO)"
+    ],
+    "wikipediaSlug": "多哥"
+  },
+  "TH": {
+    "name": "泰國",
+    "capital": "曼谷",
+    "demonym": "泰國的",
+    "languages": [
+      "泰文"
+    ],
+    "currencyNames": [
+      "泰銖"
+    ],
+    "wikipediaSlug": "泰国"
+  },
+  "TJ": {
+    "name": "塔吉克",
+    "capital": "杜尚別",
+    "demonym": "塔吉克斯坦的",
+    "languages": [
+      "塔吉克文"
+    ],
+    "currencyNames": [
+      "塔吉克索莫尼"
+    ],
+    "wikipediaSlug": "塔吉克斯坦"
+  },
+  "TL": {
+    "name": "東帝汶",
+    "capital": "帝力",
+    "demonym": "東帝汶的",
+    "languages": [
+      "葡萄牙文",
+      "泰頓文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "东帝汶"
+  },
+  "TM": {
+    "name": "土庫曼",
+    "capital": "阿什哈巴德",
+    "demonym": "土庫曼斯坦的",
+    "languages": [
+      "土庫曼文"
+    ],
+    "currencyNames": [
+      "土庫曼馬納特"
+    ],
+    "wikipediaSlug": "土库曼斯坦"
+  },
+  "TN": {
+    "name": "突尼西亞",
+    "capital": "突尼斯",
+    "demonym": "突尼斯的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "突尼西亞第納爾"
+    ],
+    "wikipediaSlug": "突尼西亞"
+  },
+  "TO": {
+    "name": "東加",
+    "capital": "努庫阿洛法",
+    "demonym": "湯加的",
+    "languages": [
+      "東加文",
+      "英文"
+    ],
+    "currencyNames": [
+      "東加潘加"
+    ],
+    "wikipediaSlug": "東加"
+  },
+  "TR": {
+    "name": "土耳其",
+    "capital": "安卡拉",
+    "demonym": "土耳其的",
+    "languages": [
+      "土耳其文"
+    ],
+    "currencyNames": [
+      "土耳其里拉"
+    ],
+    "wikipediaSlug": "土耳其"
+  },
+  "TT": {
+    "name": "千里達及托巴哥",
+    "capital": "西班牙港",
+    "demonym": "特立尼達和多巴哥的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "千里達及托巴哥元"
+    ],
+    "wikipediaSlug": "千里達及托巴哥"
+  },
+  "TV": {
+    "name": "吐瓦魯",
+    "capital": "富納富提",
+    "demonym": "圖瓦盧的",
+    "languages": [
+      "吐瓦魯文",
+      "英文"
+    ],
+    "currencyNames": [
+      "澳幣"
+    ],
+    "wikipediaSlug": "圖瓦盧"
+  },
+  "TW": {
+    "name": "台灣",
+    "capital": "臺北市",
+    "demonym": "台灣的",
+    "languages": [
+      "中文"
+    ],
+    "currencyNames": [
+      "新台幣"
+    ],
+    "wikipediaSlug": "中華民國"
+  },
+  "TZ": {
+    "name": "坦尚尼亞",
+    "capital": "多多馬",
+    "demonym": "坦桑尼亞的",
+    "languages": [
+      "史瓦希里文",
+      "英文"
+    ],
+    "currencyNames": [
+      "坦尚尼亞先令"
+    ],
+    "wikipediaSlug": "坦桑尼亚"
+  },
+  "UA": {
+    "name": "烏克蘭",
+    "capital": "基輔",
+    "demonym": "烏克蘭的",
+    "languages": [
+      "烏克蘭文"
+    ],
+    "currencyNames": [
+      "烏克蘭格里夫納"
+    ],
+    "wikipediaSlug": "乌克兰"
+  },
+  "UG": {
+    "name": "烏干達",
+    "capital": "坎帕拉",
+    "demonym": "烏干達的",
+    "languages": [
+      "英文",
+      "史瓦希里文"
+    ],
+    "currencyNames": [
+      "烏干達先令"
+    ],
+    "wikipediaSlug": "乌干达"
+  },
+  "US": {
+    "name": "美國",
+    "capital": "華盛頓哥倫比亞特區",
+    "demonym": "美國的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "美国"
+  },
+  "UY": {
+    "name": "烏拉圭",
+    "capital": "蒙得維的亞",
+    "demonym": "烏拉圭的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "烏拉圭披索"
+    ],
+    "wikipediaSlug": "乌拉圭"
+  },
+  "UZ": {
+    "name": "烏茲別克",
+    "capital": "塔什干",
+    "demonym": "烏茲別克斯坦的",
+    "languages": [
+      "烏茲別克文"
+    ],
+    "currencyNames": [
+      "烏茲別克索姆"
+    ],
+    "wikipediaSlug": "乌兹别克斯坦"
+  },
+  "VA": {
+    "name": "梵蒂岡",
+    "capital": "",
+    "demonym": "梵蒂岡的",
+    "languages": [
+      "義大利文",
+      "拉丁文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "梵蒂冈"
+  },
+  "VC": {
+    "name": "聖文森及格瑞那丁",
+    "capital": "金斯敦",
+    "demonym": "聖文森特和格林納丁斯的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "格瑞那達元"
+    ],
+    "wikipediaSlug": "圣文森特和格林纳丁斯"
+  },
+  "VE": {
+    "name": "委內瑞拉",
+    "capital": "加拉加斯",
+    "demonym": "委內瑞拉的",
+    "languages": [
+      "西班牙文"
+    ],
+    "currencyNames": [
+      "委內瑞拉玻利瓦"
+    ],
+    "wikipediaSlug": "委內瑞拉"
+  },
+  "VG": {
+    "name": "英屬維京群島",
+    "capital": "羅德城",
+    "demonym": "英屬維爾京群島的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "英屬維爾京群島"
+  },
+  "VI": {
+    "name": "美屬維京群島",
+    "capital": "夏洛特阿馬利亞",
+    "demonym": "美屬維爾京群島的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "美元"
+    ],
+    "wikipediaSlug": "美屬維爾京群島"
+  },
+  "VN": {
+    "name": "越南",
+    "capital": "河內",
+    "demonym": "越南的",
+    "languages": [
+      "越南文"
+    ],
+    "currencyNames": [
+      "越南盾"
+    ],
+    "wikipediaSlug": "越南"
+  },
+  "VU": {
+    "name": "萬那杜",
+    "capital": "維拉港",
+    "demonym": "瓦努阿圖的",
+    "languages": [
+      "比斯拉馬文",
+      "英文",
+      "法文"
+    ],
+    "currencyNames": [
+      "萬那杜瓦圖"
+    ],
+    "wikipediaSlug": "瓦努阿图"
+  },
+  "WF": {
+    "name": "瓦利斯群島和富圖那群島",
+    "capital": "馬塔烏圖",
+    "demonym": "瓦利斯和富圖納的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "法郎 (CFP)"
+    ],
+    "wikipediaSlug": "瓦利斯和富圖納"
+  },
+  "WS": {
+    "name": "薩摩亞",
+    "capital": "阿皮亞",
+    "demonym": "薩摩亞的",
+    "languages": [
+      "薩摩亞文",
+      "英文"
+    ],
+    "currencyNames": [
+      "西薩摩亞塔拉"
+    ],
+    "wikipediaSlug": "萨摩亚"
+  },
+  "XK": {
+    "name": "科索沃",
+    "capital": "普裡什蒂納",
+    "demonym": "科索沃的",
+    "languages": [
+      "阿爾巴尼亞文",
+      "塞爾維亞文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "科索沃"
+  },
+  "YE": {
+    "name": "葉門",
+    "capital": "薩那",
+    "demonym": "也門的",
+    "languages": [
+      "阿拉伯文"
+    ],
+    "currencyNames": [
+      "葉門里亞爾"
+    ],
+    "wikipediaSlug": "也门"
+  },
+  "YT": {
+    "name": "馬約特島",
+    "capital": "馬穆楚",
+    "demonym": "馬約特的",
+    "languages": [
+      "法文"
+    ],
+    "currencyNames": [
+      "歐元"
+    ],
+    "wikipediaSlug": "马约特"
+  },
+  "ZA": {
+    "name": "南非",
+    "capital": "比勒陀利亞",
+    "demonym": "南非的",
+    "languages": [
+      "祖魯文",
+      "科薩文",
+      "南非荷蘭文",
+      "英文"
+    ],
+    "currencyNames": [
+      "南非蘭特"
+    ],
+    "wikipediaSlug": "南非"
+  },
+  "ZM": {
+    "name": "尚比亞",
+    "capital": "路沙卡",
+    "demonym": "贊比亞的",
+    "languages": [
+      "英文"
+    ],
+    "currencyNames": [
+      "尚比亞克瓦查"
+    ],
+    "wikipediaSlug": "赞比亚"
+  },
+  "ZW": {
+    "name": "辛巴威",
+    "capital": "哈拉雷",
+    "demonym": "津巴布韋的",
+    "languages": [
+      "英文",
+      "紹納文",
+      "南地畢列文"
+    ],
+    "currencyNames": [
+      "辛巴威元 (2009)"
+    ],
+    "wikipediaSlug": "辛巴威"
+  }
+}

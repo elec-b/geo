@@ -1,25 +1,14 @@
 // PassportView — Dashboard de progreso del usuario
 // Muestra la matriz 5 continentes × 3 niveles con sellos circulares (estética de pasaporte oficial).
 import { useState, useCallback, useMemo, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../stores/appStore';
 import { isLevelUnlocked, getGlobalLevel, type StampsData } from '../../data/learningAlgorithm';
 import type { Continent, GameLevel, LevelDefinition } from '../../data/types';
 import type { StampTestType } from '../../hooks/useGameSession';
+import { CONTINENTS, CONTINENT_CSS_VAR } from '../../data/continents';
+import { LEVELS, LEVEL_EMOJI } from '../../data/levels';
 import './PassportView.css';
-
-const CONTINENTS: { id: Continent; label: string; cssVar: string }[] = [
-  { id: 'África', label: 'África', cssVar: '--color-africa' },
-  { id: 'América', label: 'América', cssVar: '--color-america' },
-  { id: 'Asia', label: 'Asia', cssVar: '--color-asia' },
-  { id: 'Europa', label: 'Europa', cssVar: '--color-europe' },
-  { id: 'Oceanía', label: 'Oceanía', cssVar: '--color-oceania' },
-];
-
-const LEVELS: { id: GameLevel; label: string; emoji: string }[] = [
-  { id: 'turista', label: 'Turista', emoji: '🧳' },
-  { id: 'mochilero', label: 'Mochilero', emoji: '🎒' },
-  { id: 'guía', label: 'Guía', emoji: '🗺️' },
-];
 
 
 /** Rotación determinista por posición (hash simple → rango [-8, 8]) */
@@ -28,7 +17,7 @@ function computeStampRotations(): Map<string, number> {
   for (const level of LEVELS) {
     for (const continent of CONTINENTS) {
       for (const type of ['countries', 'capitals'] as const) {
-        const key = `${level.id}-${continent.id}-${type}`;
+        const key = `${level}-${continent}-${type}`;
         let hash = 0;
         for (let i = 0; i < key.length; i++) hash = (hash * 31 + key.charCodeAt(i)) | 0;
         rotations.set(key, (Math.abs(hash) % 17) - 8);
@@ -54,6 +43,7 @@ interface PassportViewProps {
 }
 
 export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, onStampAnimationDone }: PassportViewProps) {
+  const { t } = useTranslation('passport');
   const getStamps = useAppStore((s) => s.getStamps);
   const activeProfile = useAppStore((s) => s.getActiveProfile());
 
@@ -64,15 +54,26 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
   const stampsData = useMemo((): StampsData => {
     const data = {} as StampsData;
     for (const level of LEVELS) {
-      data[level.id] = {} as Record<Continent, { countries: boolean; capitals: boolean }>;
+      data[level] = {} as Record<Continent, { countries: boolean; capitals: boolean }>;
       for (const continent of CONTINENTS) {
-        data[level.id][continent.id] = getStamps(level.id, continent.id);
+        data[level][continent] = getStamps(level, continent);
       }
     }
     return data;
   }, [getStamps, activeProfile]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const globalLevel = useMemo(() => getGlobalLevel(stampsData), [stampsData]);
+
+  // ¿El perfil tiene al menos un sello ganado?
+  const hasAnyStamp = useMemo(() => {
+    for (const level of LEVELS) {
+      for (const continent of CONTINENTS) {
+        const s = stampsData[level]?.[continent];
+        if (s?.countries || s?.capitals) return true;
+      }
+    }
+    return false;
+  }, [stampsData]);
 
   // Limpiar animación de sello tras completarse
   useEffect(() => {
@@ -120,22 +121,27 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
     <div className="passport-view tab-overlay tab-overlay--active tab-overlay--passport">
       {/* Header con nivel global */}
       <div className="passport-header">
-        <span className="passport-header__name">Pasaporte de {activeProfile?.name ?? 'Explorador'}</span>
+        <span className="passport-header__name">{t('header.title', { name: activeProfile?.name ?? t('profile:defaultName') })}</span>
         {globalLevel && (
           <span className="passport-header__level">
-            Nivel global: {LEVELS.find((l) => l.id === globalLevel)?.label}
+            {t('header.globalLevel', { level: t(`common:level.${globalLevel}`) })}
           </span>
         )}
       </div>
+
+      {/* Empty state — solo cuando no hay ningún sello */}
+      {!hasAnyStamp && (
+        <p className="passport-empty-state">{t('emptyState')}</p>
+      )}
 
       {/* Matriz 5×3 */}
       <div className="passport-grid">
         {/* Cabecera de niveles */}
         <div className="passport-grid__corner" />
         {LEVELS.map((level) => (
-          <div key={level.id} className="passport-grid__level-header">
-            <span className="passport-grid__level-emoji">{level.emoji}</span>
-            <span className="passport-grid__level-name">{level.label}</span>
+          <div key={level} className="passport-grid__level-header">
+            <span className="passport-grid__level-emoji">{LEVEL_EMOJI[level]}</span>
+            <span className="passport-grid__level-name">{t(`common:level.${level}`)}</span>
           </div>
         ))}
 
@@ -143,21 +149,21 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
         {CONTINENTS.map((continent) => (
           <>
             <div
-              key={`label-${continent.id}`}
+              key={`label-${continent}`}
               className="passport-grid__continent-label"
-              style={{ color: `var(${continent.cssVar})` }}
+              style={{ color: `var(${CONTINENT_CSS_VAR[continent]})` }}
             >
-              {continent.label}
+              {t(`common:continent.${continent}`)}
             </div>
             {LEVELS.map((level) => {
-              const stamps = stampsData[level.id][continent.id];
-              const unlocked = isLevelUnlocked(level.id, continent.id, stampsData);
+              const stamps = stampsData[level][continent];
+              const unlocked = isLevelUnlocked(level, continent, stampsData);
               const bothEarned = stamps.countries && stamps.capitals;
-              const countryCount = levels.get(`${level.id}-${continent.id}`)?.countries.length ?? 0;
+              const countryCount = levels.get(`${level}-${continent}`)?.countries.length ?? 0;
 
               return (
                 <button
-                  key={`${level.id}-${continent.id}`}
+                  key={`${level}-${continent}`}
                   className={[
                     'passport-cell',
                     !unlocked && 'passport-cell--locked',
@@ -165,8 +171,8 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
                     unlocked && !bothEarned && 'passport-cell--available',
                   ].filter(Boolean).join(' ')}
                   disabled={!unlocked || bothEarned}
-                  onClick={() => handleCellClick(level.id, continent.id)}
-                  style={{ '--cell-color': `var(${continent.cssVar})` } as React.CSSProperties}
+                  onClick={() => handleCellClick(level, continent)}
+                  style={{ '--cell-color': `var(${CONTINENT_CSS_VAR[continent]})` } as React.CSSProperties}
                 >
                   {!unlocked ? (
                     <span className="passport-cell__lock">🔒</span>
@@ -178,10 +184,10 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
                           'passport-cell__stamp--countries',
                           stamps.countries && 'passport-cell__stamp--earned',
                           !stamps.countries && unlocked && !bothEarned && 'passport-cell__stamp--available',
-                          isRecentlyEarned(level.id, continent.id, 'countries') && 'passport-cell__stamp--animating',
+                          isRecentlyEarned(level, continent, 'countries') && 'passport-cell__stamp--animating',
                         ].filter(Boolean).join(' ')}
-                        style={stamps.countries ? { '--stamp-rotation': `${STAMP_ROTATIONS.get(`${level.id}-${continent.id}-countries`) ?? 0}deg` } as React.CSSProperties : undefined}
-                        title="Sello de Países"
+                        style={stamps.countries ? { '--stamp-rotation': `${STAMP_ROTATIONS.get(`${level}-${continent}-countries`) ?? 0}deg` } as React.CSSProperties : undefined}
+                        title={t('stampTitle.countries')}
                       />
                       <span
                         className={[
@@ -189,16 +195,14 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
                           'passport-cell__stamp--capitals',
                           stamps.capitals && 'passport-cell__stamp--earned',
                           !stamps.capitals && unlocked && !bothEarned && 'passport-cell__stamp--available',
-                          isRecentlyEarned(level.id, continent.id, 'capitals') && 'passport-cell__stamp--animating',
+                          isRecentlyEarned(level, continent, 'capitals') && 'passport-cell__stamp--animating',
                         ].filter(Boolean).join(' ')}
-                        style={stamps.capitals ? { '--stamp-rotation': `${STAMP_ROTATIONS.get(`${level.id}-${continent.id}-capitals`) ?? 0}deg` } as React.CSSProperties : undefined}
-                        title="Sello de Capitales"
+                        style={stamps.capitals ? { '--stamp-rotation': `${STAMP_ROTATIONS.get(`${level}-${continent}-capitals`) ?? 0}deg` } as React.CSSProperties : undefined}
+                        title={t('stampTitle.capitals')}
                       />
                     </div>
                   )}
-                  {unlocked && (
-                    <span className="passport-cell__count">{countryCount}</span>
-                  )}
+                  <span className="passport-cell__count">{countryCount}</span>
                 </button>
               );
             })}
@@ -208,22 +212,22 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
 
       {/* Leyenda */}
       <div className="passport-legend">
-        <span className="passport-legend__item">○ País</span>
-        <span className="passport-legend__item">◎ Capital</span>
-        <span className="passport-legend__item">★ Conseguido</span>
-        <span className="passport-legend__item passport-legend__item--muted">🔒 Bloqueado</span>
+        <span className="passport-legend__item">{t('legend.country')}</span>
+        <span className="passport-legend__item">{t('legend.capital')}</span>
+        <span className="passport-legend__item">{t('legend.earned')}</span>
+        <span className="passport-legend__item passport-legend__item--muted"><span className="passport-legend__lock-icon">🔒</span> {t('legend.locked')}</span>
       </div>
 
       {/* Modal: elegir qué sello intentar */}
       {selectedCell && (
         <div className="jugar-modal-overlay">
           <div className="jugar-modal">
-            <h3 className="jugar-modal__title">Prueba de sello</h3>
+            <h3 className="jugar-modal__title">{t('modal.title')}</h3>
             <p className="jugar-modal__text">
-              {LEVELS.find((l) => l.id === selectedCell.level)?.label} — {selectedCell.continent}
+              {t(`common:level.${selectedCell.level}`)} — {t(`common:continent.${selectedCell.continent}`)}
             </p>
             <p className="jugar-modal__text">
-              Completa la prueba sin errores para conseguir el sello.
+              {t('modal.questionCount', { count: levels.get(`${selectedCell.level}-${selectedCell.continent}`)?.countries.length ?? '?' })}
             </p>
             <div className="jugar-modal__buttons">
               {!stampsData[selectedCell.level][selectedCell.continent].countries && (
@@ -231,7 +235,7 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
                   className="jugar-modal__btn jugar-modal__btn--countries"
                   onClick={() => handleStartTest('countries')}
                 >
-                  Sello de Países
+                  {t('game:stamp.countries')}
                 </button>
               )}
               {!stampsData[selectedCell.level][selectedCell.continent].capitals && (
@@ -239,7 +243,7 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
                   className="jugar-modal__btn jugar-modal__btn--capitals"
                   onClick={() => handleStartTest('capitals')}
                 >
-                  Sello de Capitales
+                  {t('game:stamp.capitals')}
                 </button>
               )}
             </div>
@@ -247,7 +251,7 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
               className="jugar-modal__cancel"
               onClick={() => setSelectedCell(null)}
             >
-              Cancelar
+              {t('common:cancel')}
             </button>
           </div>
         </div>

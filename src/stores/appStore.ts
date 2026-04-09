@@ -1,12 +1,12 @@
-// Store global de GeoExpert (Zustand)
+// Store global de Exploris (Zustand)
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { capacitorStorage } from './persistStorage';
 import type { AppSettings, AppState, UserProfile, ProfileId, AvatarId, ProfileProgress, CountryAttempts, StampCountryAttempts } from './types';
 import type { Continent, GameLevel, QuestionType } from '../data/types';
-
-const LEVELS: GameLevel[] = ['turista', 'mochilero', 'guía'];
-const CONTINENTS: Continent[] = ['África', 'América', 'Asia', 'Europa', 'Oceanía'];
+import { CONTINENTS } from '../data/continents';
+import { LEVELS } from '../data/levels';
+import { detectLocale } from '../utils/locale';
 
 /** Genera un progreso vacío para un nuevo perfil */
 function emptyProgress(): ProfileProgress {
@@ -34,10 +34,12 @@ const DEFAULT_SETTINGS: AppSettings = {
   showMarkers: true,
   showSeaLabels: true,
   vibration: true,
-  theme: 'dark',
-  locale: 'es',
+  theme: (typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: light)').matches) ? 'light' : 'dark',
+  locale: detectLocale(),
   lastPlayed: null,
   lastStampPlayed: null,
+  lastActiveContinent: null,
+  lastTableSort: null,
 };
 
 // Perfil por defecto — sin él, recordAttempt y getAttempts no funcionan
@@ -84,6 +86,12 @@ interface AppStoreActions {
   setLastPlayed: (continent: Continent, level: GameLevel) => void;
   /** Persiste el último continente y nivel de prueba de sello */
   setLastStampPlayed: (continent: Continent, level: GameLevel) => void;
+  /** Persiste el último continente activo (de cualquier fuente: Jugar, sello, tabla) */
+  setLastActiveContinent: (continent: Continent | null) => void;
+  /** Persiste el último sorting de la tabla de Explorar */
+  setLastTableSort: (key: 'name' | 'capital' | 'population' | 'level', dir: 'asc' | 'desc') => void;
+  /** Persiste el último modo de Explorar (Globo/Tabla) */
+  setLastExploreMode: (mode: 'countries' | 'capitals') => void;
 }
 
 type AppStore = AppState & AppStoreActions;
@@ -95,6 +103,7 @@ export const useAppStore = create<AppStore>()(
   profiles: [defaultProfile],
   activeProfileId: defaultProfileId,
   settings: { ...DEFAULT_SETTINGS },
+  attemptsVersion: 0,
 
   createProfile: (name: string, avatar: AvatarId): ProfileId => {
     const id = uuid();
@@ -286,13 +295,31 @@ export const useAppStore = create<AppStore>()(
 
   setLastPlayed: (continent, level) => {
     set((state) => ({
-      settings: { ...state.settings, lastPlayed: { continent, level } },
+      settings: { ...state.settings, lastPlayed: { continent, level }, lastActiveContinent: continent },
     }));
   },
 
   setLastStampPlayed: (continent, level) => {
     set((state) => ({
-      settings: { ...state.settings, lastStampPlayed: { continent, level } },
+      settings: { ...state.settings, lastStampPlayed: { continent, level }, lastActiveContinent: continent },
+    }));
+  },
+
+  setLastActiveContinent: (continent) => {
+    set((state) => ({
+      settings: { ...state.settings, lastActiveContinent: continent },
+    }));
+  },
+
+  setLastTableSort: (key, dir) => {
+    set((state) => ({
+      settings: { ...state.settings, lastTableSort: { key, dir } },
+    }));
+  },
+
+  setLastExploreMode: (mode) => {
+    set((state) => ({
+      settings: { ...state.settings, lastExploreMode: mode },
     }));
   },
 
@@ -320,13 +347,61 @@ export const useAppStore = create<AppStore>()(
         },
       };
 
-      return { profiles: newProfiles };
+      return { profiles: newProfiles, attemptsVersion: state.attemptsVersion + 1 };
     });
   },
     }),
     {
-      name: 'geoexpert-store',
+      name: 'exploris-store',
       storage: createJSONStorage(() => capacitorStorage),
+      version: 1,
+      migrate: (persisted: unknown, version: number) => {
+        if (version === 0) {
+          // Migración v0→v1: claves de continente y nivel de español a neutras
+          const CONTINENT_MAP: Record<string, Continent> = {
+            'África': 'africa', 'América': 'america', 'Asia': 'asia',
+            'Europa': 'europe', 'Oceanía': 'oceania',
+          };
+          const LEVEL_MAP: Record<string, GameLevel> = {
+            'turista': 'tourist', 'mochilero': 'backpacker', 'guía': 'guide',
+          };
+          const s = persisted as Record<string, any>;
+
+          // Migrar profiles[].progress (Record<GameLevel, Record<Continent, ...>>)
+          if (Array.isArray(s.profiles)) {
+            for (const profile of s.profiles) {
+              if (!profile.progress) continue;
+              const oldProgress = profile.progress;
+              const newProgress: Record<string, Record<string, unknown>> = {};
+              for (const [oldLevel, continents] of Object.entries(oldProgress)) {
+                const newLevel = LEVEL_MAP[oldLevel] ?? oldLevel;
+                newProgress[newLevel] = {};
+                for (const [oldContinent, data] of Object.entries(continents as Record<string, unknown>)) {
+                  const newContinent = CONTINENT_MAP[oldContinent] ?? oldContinent;
+                  newProgress[newLevel][newContinent] = data;
+                }
+              }
+              profile.progress = newProgress;
+            }
+          }
+
+          // Migrar settings.lastPlayed, lastStampPlayed, lastActiveContinent
+          if (s.settings) {
+            if (s.settings.lastPlayed) {
+              s.settings.lastPlayed.continent = CONTINENT_MAP[s.settings.lastPlayed.continent] ?? s.settings.lastPlayed.continent;
+              s.settings.lastPlayed.level = LEVEL_MAP[s.settings.lastPlayed.level] ?? s.settings.lastPlayed.level;
+            }
+            if (s.settings.lastStampPlayed) {
+              s.settings.lastStampPlayed.continent = CONTINENT_MAP[s.settings.lastStampPlayed.continent] ?? s.settings.lastStampPlayed.continent;
+              s.settings.lastStampPlayed.level = LEVEL_MAP[s.settings.lastStampPlayed.level] ?? s.settings.lastStampPlayed.level;
+            }
+            if (s.settings.lastActiveContinent) {
+              s.settings.lastActiveContinent = CONTINENT_MAP[s.settings.lastActiveContinent] ?? s.settings.lastActiveContinent;
+            }
+          }
+        }
+        return persisted as AppState;
+      },
       partialize: (state) => ({
         profiles: state.profiles,
         activeProfileId: state.activeProfileId,

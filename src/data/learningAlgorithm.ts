@@ -524,9 +524,9 @@ export function getAttemptsWithInheritance(
   getStampsForLevel: (level: GameLevel, continent: Continent) => { countries: boolean; capitals: boolean },
   getCountriesForLevel: (level: GameLevel, continent: Continent) => string[],
 ): Record<string, CountryAttempts> {
-  if (level === 'turista') return ownAttempts;
+  if (level === 'tourist') return ownAttempts;
 
-  const prevLevel: GameLevel = level === 'guía' ? 'mochilero' : 'turista';
+  const prevLevel: GameLevel = level === 'guide' ? 'backpacker' : 'tourist';
   const prevStamps = getStampsForLevel(prevLevel, continent);
   if (!prevStamps.countries || !prevStamps.capitals) return ownAttempts;
 
@@ -595,8 +595,8 @@ export function getInheritedTypes(
 
 // --- Niveles y sellos ---
 
-const LEVELS_ORDER: GameLevel[] = ['turista', 'mochilero', 'guía'];
-const ALL_CONTINENTS: Continent[] = ['África', 'América', 'Asia', 'Europa', 'Oceanía'];
+const LEVELS_ORDER: GameLevel[] = ['tourist', 'backpacker', 'guide'];
+const ALL_CONTINENTS: Continent[] = ['africa', 'america', 'asia', 'europe', 'oceania'];
 
 /** Tipo de los sellos por nivel×continente */
 export type StampsData = Record<GameLevel, Record<Continent, { countries: boolean; capitals: boolean }>>;
@@ -610,8 +610,8 @@ export function isLevelUnlocked(
   continent: Continent,
   stamps: StampsData,
 ): boolean {
-  if (level === 'turista') return true;
-  const prevLevel = level === 'mochilero' ? 'turista' : 'mochilero';
+  if (level === 'tourist') return true;
+  const prevLevel = level === 'backpacker' ? 'tourist' : 'backpacker';
   const prev = stamps[prevLevel][continent];
   return prev.countries && prev.capitals;
 }

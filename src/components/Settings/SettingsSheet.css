@@ -4,7 +4,7 @@
   position: fixed;
   inset: 0;
   z-index: var(--z-modal);
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--color-overlay);
   animation: settings-sheet-fade-in 200ms ease-out;
 }
 
@@ -21,7 +21,7 @@
   z-index: var(--z-modal);
   padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-lg);
   padding-bottom: calc(var(--spacing-lg) + env(safe-area-inset-bottom, 0px));
-  background: rgba(12, 12, 30, 0.95);
+  background: var(--color-surface-heavy);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid var(--glass-border);
@@ -36,7 +36,7 @@
   height: 0.25rem;
   margin: 0 auto var(--spacing-xs);
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-white-20);
 }
 
 /* Cierre animado del overlay */
@@ -91,11 +91,7 @@
   border-bottom: none;
 }
 
-.settings-sheet__row--disabled {
-  opacity: 0.4;
-  pointer-events: none;
-  cursor: default;
-}
+
 
 /* Icono SVG */
 .settings-sheet__icon {
@@ -120,14 +116,12 @@
   margin-right: var(--spacing-xs);
 }
 
-/* Badge "Próximamente" */
-.settings-sheet__badge {
-  font-size: var(--font-size-xs);
+/* Chevron del selector de idioma */
+.settings-sheet__chevron {
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
-  background: rgba(255, 255, 255, 0.05);
-  padding: 0.125rem var(--spacing-sm);
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 /* Toggle switch (patrón de TableView) */
@@ -137,7 +131,7 @@
   height: 1.5rem;
   border: none;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--color-white-12);
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;
@@ -156,7 +150,7 @@
   width: 1.125rem;
   height: 1.125rem;
   border-radius: var(--radius-full);
-  background: #fff;
+  background: var(--color-toggle-thumb);
   transition: transform var(--transition-fast);
 }
 

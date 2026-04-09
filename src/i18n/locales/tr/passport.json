@@ -1,0 +1,16 @@
+{
+  "header.title": "{{name}} Pasaportu",
+  "header.globalLevel": "Genel seviye: {{level}}",
+  "emptyState": "Her damga bilgini kanıtlar. Pasaportu dolduracak mısın?",
+
+  "legend.country": "○ Ülke",
+  "legend.capital": "◎ Başkent",
+  "legend.earned": "★ Kazanıldı",
+  "legend.locked": "Kilitli",
+
+  "stampTitle.countries": "Ülkeler Damgası",
+  "stampTitle.capitals": "Başkentler Damgası",
+
+  "modal.title": "Damga sınavı",
+  "modal.questionCount": "{{count}} soruyu hatasız cevaplamalısın."
+}

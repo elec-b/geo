@@ -1,6 +1,7 @@
 // Hook de sesión de juego — gestiona el game loop de una partida
 // Paradigma: selección pregunta-a-pregunta (no cola pre-generada)
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
+import type { TFunction } from 'i18next';
 import { generateSingleQuestion, generateQuestionsByType, type GameQuestion, type QuestionTypeFilter } from '../data/gameQuestions';
 import { selectNextQuestion, isDominated } from '../data/learningAlgorithm';
 import type { CountryData, CapitalCoords, Continent, GameLevel, QuestionType } from '../data/types';
@@ -63,6 +64,8 @@ export interface GameSessionOptions {
   getAttempts?: () => Record<string, CountryAttempts>;
   /** Función para obtener los países heredados: mapa de país → tipos sin datos propios */
   getInheritedCountries?: () => Map<string, Set<QuestionType>>;
+  /** Función de traducción i18next (para prompts de preguntas) */
+  t?: TFunction;
 }
 
 /**
@@ -113,6 +116,72 @@ export function useGameSession(
   getAttemptsRef.current = options?.getAttempts;
   const getInheritedCountriesRef = useRef(options?.getInheritedCountries);
   getInheritedCountriesRef.current = options?.getInheritedCountries;
+  const tRef = useRef(options?.t);
+  tRef.current = options?.t;
+
+  // Refs espejo del state, para leerlos desde el effect de cambio de idioma
+  // sin añadirlos como dependencias (evita loops de regeneración).
+  const currentQuestionRef = useRef(currentQuestion);
+  currentQuestionRef.current = currentQuestion;
+  const feedbackStateRef = useRef(feedbackState);
+  feedbackStateRef.current = feedbackState;
+  const isActiveRef = useRef(isActive);
+  isActiveRef.current = isActive;
+  const stampTestTypeRef = useRef(stampTestType);
+  stampTestTypeRef.current = stampTestType;
+
+  /**
+   * Cambio de idioma con pregunta en curso: al recibir nuevos mapas de
+   * countries/capitals (App.tsx los recrea al cambiar locale), regeneramos la
+   * pregunta activa y la cola pendiente para que aparezcan en el nuevo idioma.
+   *
+   * Solo se regenera cuando feedbackState === 'idle' (el usuario aún no ha
+   * respondido). Si ya respondió y está viendo el feedback visual, se mantiene
+   * la pregunta en el idioma viejo hasta que pulse siguiente — la próxima
+   * pregunta llegará ya en el nuevo idioma.
+   */
+  useEffect(() => {
+    if (!isActiveRef.current || !currentQuestionRef.current) return;
+
+    const def = levels.get(levelKeyRef.current);
+    if (!def) return;
+
+    // 1. Regenerar la pregunta visible si el usuario aún no ha respondido
+    if (feedbackStateRef.current === 'idle') {
+      const current = currentQuestionRef.current;
+      const rebuilt = generateSingleQuestion(
+        { cca2: current.targetCca2, questionType: current.type as QuestionType },
+        def.countries,
+        countries,
+        capitals,
+        tRef.current,
+      );
+      if (rebuilt) setCurrentQuestion(rebuilt);
+    }
+
+    // 2. Regenerar la cola pendiente
+    if (isStampTestRef.current) {
+      // Prueba de sello: reconstruir cola con países aún no preguntados,
+      // para que no termine prematuramente
+      const askedSet = new Set(recentCountriesRef.current);
+      const remaining = def.countries.filter((c) => !askedSet.has(c));
+      const gameType: Exclude<QuestionTypeFilter, 'mixed'> =
+        stampTestTypeRef.current === 'countries' ? 'A' : 'B';
+      questionsRef.current = generateQuestionsByType(
+        gameType,
+        remaining,
+        countries,
+        capitals,
+        undefined,
+        undefined,
+        tRef.current,
+      );
+    } else {
+      // Modo tipo concreto: vaciar; requestNextQuestion repuebla lazy en el idioma nuevo
+      questionsRef.current = [];
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [countries, capitals]);
 
   /** Configura correctCca2 según el tipo de pregunta */
   const applyHighlight = useCallback((question: GameQuestion) => {
@@ -138,7 +207,7 @@ export function useGameSession(
         const pending = def.countries.filter((cca2) => !isDominated(attempts[cca2], qt as QuestionType));
         if (pending.length === 0) return null; // pool agotado
         const lastCca2 = recentCountriesRef.current[recentCountriesRef.current.length - 1];
-        questionsRef.current = generateQuestionsByType(qt, pending, countries, capitals, lastCca2, def.countries);
+        questionsRef.current = generateQuestionsByType(qt, pending, countries, capitals, lastCca2, def.countries, tRef.current);
       }
       const question = questionsRef.current.shift() ?? null;
       if (question) {
@@ -156,13 +225,13 @@ export function useGameSession(
     );
     if (!selection) return null;
 
-    let question = generateSingleQuestion(selection, def.countries, countries, capitals);
+    let question = generateSingleQuestion(selection, def.countries, countries, capitals, tRef.current);
 
     // Fallback: si no se pudo generar (ej: tipo B sin capital), intentar tipo A
     if (!question) {
       question = generateSingleQuestion(
         { cca2: selection.cca2, questionType: 'A' },
-        def.countries, countries, capitals,
+        def.countries, countries, capitals, tRef.current,
       );
     }
 
@@ -209,7 +278,7 @@ export function useGameSession(
         const attempts = getAttemptsRef.current?.() ?? {};
         const pending = def.countries.filter((cca2) => !isDominated(attempts[cca2], questionType as QuestionType));
         if (pending.length > 0) {
-          questionsRef.current = generateQuestionsByType(questionType, pending, countries, capitals, undefined, def.countries);
+          questionsRef.current = generateQuestionsByType(questionType, pending, countries, capitals, undefined, def.countries, tRef.current);
         }
       }
 
@@ -250,7 +319,7 @@ export function useGameSession(
       setStampTestProgress({ current: 0, total: def.countries.length });
 
       // Pre-generar cola completa con todos los países (sin repeticiones)
-      questionsRef.current = generateQuestionsByType(gameType, def.countries, countries, capitals);
+      questionsRef.current = generateQuestionsByType(gameType, def.countries, countries, capitals, undefined, undefined, tRef.current);
 
       const question = questionsRef.current.shift() ?? null;
       setCurrentQuestion(question);

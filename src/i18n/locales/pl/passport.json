@@ -1,0 +1,16 @@
+{
+  "header.title": "Paszport {{name}}",
+  "header.globalLevel": "Poziom globalny: {{level}}",
+  "emptyState": "Każda pieczątka potwierdza Twoją wiedzę. Zapełnisz paszport?",
+
+  "legend.country": "○ Kraj",
+  "legend.capital": "◎ Stolica",
+  "legend.earned": "★ Zdobyte",
+  "legend.locked": "Zablokowane",
+
+  "stampTitle.countries": "Pieczątka z Krajów",
+  "stampTitle.capitals": "Pieczątka ze Stolic",
+
+  "modal.title": "Próba pieczątki",
+  "modal.questionCount": "Musisz poprawnie odpowiedzieć na {{count}} pytań bez żadnego błędu."
+}

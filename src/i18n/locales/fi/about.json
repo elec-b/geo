@@ -1,0 +1,28 @@
+{
+  "title": "Tietoa Explorisista",
+  "intro": "Exploris on maantiedon oppimissovellus, jossa on interaktiivinen 3D-maapallo. Opi maita, pääkaupunkeja ja paljon muuta visuaalisesti ja viihdyttävästi.",
+  "section.countries.title": "Maat",
+  "section.countries.body": "Exploris sisältää Yhdistyneiden kansakuntien tunnustamat 195 maata, joka on maailman hyväksytyin standardi. Voit myös tutkia maapallolla tunnustamattomia tai kiistanalaisia alueita.\n\nMaapallo näyttää maapallon sellaisena kuin se näyttää avaruudesta. Näin voit hahmottaa maiden todellisen koon — jotain, mihin litteät kartat eivät kykene.",
+  "section.learn.title": "Näin opit",
+  "section.learn.tips.explore": "Aloita kohdasta Tutki: pyöritä maapalloa, napauta maita nähdäksesi niiden tietokortin ja tutustu niiden muotoon ja sijaintiin. Taulukko-näkymä auttaa sinua yhdistämään kunkin maan pääkaupunkiinsa. Napauta mitä tahansa maata tai pääkaupunkia taulukossa nähdäksesi sen maapallolla.",
+  "section.learn.tips.play": "Kun olet valmis, siirry pelaamaan. Suosittelemme Seikkailu-tilaa, joka yhdistää alla selitetyt eri pelityypit älykkäästi ja mukautuu osaamiseesi auttaakseen sinua oppimaan.",
+  "section.learn.tips.passport": "Lopullinen tavoitteesi on täyttää Passi leimoilla. Leiman saamiseksi sinun on läpäistävä leimaus-koe virheettömästi.",
+  "section.gameTypes.title": "Pelityypit",
+  "section.gameTypes.intro": "Pelityyppejä on 6, järjestyksessä helpommasta vaikeampaan:",
+  "section.gameTypes.E": "◯? — Tunnista maa — Maa korostetaan maapallolla ja valitset sen nimen neljästä vaihtoehdosta.",
+  "section.gameTypes.C": "◯→◎ — Maasta pääkaupunkiin — Saat maan ja valitset sen pääkaupungin neljästä vaihtoehdosta.",
+  "section.gameTypes.D": "◎→◯ — Pääkaupungista maahan — Saat pääkaupungin ja valitset, mihin maahan se kuuluu.",
+  "section.gameTypes.F": "◎? — Tunnista pääkaupunki — Pääkaupunki korostetaan maapallolla ja valitset sen nimen.",
+  "section.gameTypes.A": "◯ — Osoita maa — Saat nimen ja napautat maata maapallolla.",
+  "section.gameTypes.B": "◎ — Osoita pääkaupunki — Saat pääkaupungin ja napautat sen sijaintia maapallolla.",
+  "section.gameTypes.adventure": "Seikkailu-tila yhdistää kaikki tyypit ja mukautuu edistymiseesi. Se on suositeltu tapa pelata.",
+  "section.gameTypes.stamps": "Tyypit “Osoita maa” ja “Osoita pääkaupunki” ovat ne, joita käytetään Passin leimaus-kokeissa.",
+  "section.stats.title": "Tilastot",
+  "section.stats.body": "Tilastot-näkymässä on kaksi välilehteä:\n\n• Pelaa — Näyttää hallintasi jokaisessa pelityypissä.\n\n• Leimaus-kokeet — Näyttää tuloksesi Passin kokeissa.\n\nVoit vaihtaa hallintaindikaattoreiden (✓/✗) ja osumaprosenttien välillä. Napauta maata siirtyäksesi suoraan sen tietokorttiin kohdassa Tutki.",
+  "section.sources.title": "Tietolähteet",
+  "section.sources.body": "Tiedot ovat peräisin julkisista lähteistä, kuten Yhdistyneiltä kansakunnilta, Natural Earthilta, Maailmanpankilta ja Wikidatasta. Sovellus tarkistaa automaattisesti, onko uudempaa tietoa saatavilla, ja päivittää sen taustalla. Kartat muuttuvat vain sovelluksen uusien versioiden myötä.",
+
+  "section.privacy.title": "Yksityisyys",
+  "section.privacy.body": "Exploris ei kerää mitään henkilötietoja. Edistymisesi tallennetaan vain laitteellesi.",
+  "section.privacy.linkLabel": "Näytä tietosuojakäytäntö"
+}

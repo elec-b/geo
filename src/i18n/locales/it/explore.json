@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Globo",
+  "segmented.table": "Tabella",
+  "labels.countries": "Paesi",
+  "labels.capitals": "Capitali",
+
+  "table.country": "Paese",
+  "table.capital": "Capitale",
+  "table.population": "Pop.",
+  "table.nonUNToggle": "Territori non-ONU",
+
+  "card.disclaimer.antarctica": "Territorio internazionale \u2014 Trattato Antartico (1959)",
+  "card.disclaimer.territory": "Territorio {{sovereign}}",
+  "card.disclaimer.disputed": "Sovranit\u00e0 contesa",
+  "card.flagAlt": "Bandiera di {{country}}",
+  "card.aria.openWikipedia": "Apri {{country}} su Wikipedia",
+  "card.aria.dialog": "Scheda di {{country}}",
+
+  "card.field.capital": "Capitale",
+  "card.field.population": "Popolazione",
+  "card.field.area": "Superficie",
+  "card.field.density": "Densit\u00e0",
+  "card.field.currency": "Valuta",
+  "card.field.demonym": "Demonimo",
+  "card.field.languages": "Lingue",
+  "card.field.hdi": "ISU",
+  "card.field.ihdi": "IISU",
+  "card.unit.inhabitants": "ab.",
+  "card.unit.densityUnit": "ab/km\u00b2",
+  "card.na": "N/D",
+
+  "card.tooltip.hdi": "Indice di sviluppo umano: misura salute, istruzione e reddito. Scala 0\u20131.",
+  "card.tooltip.ihdi": "ISU corretto per la disuguaglianza: penalizza la disuguaglianza in salute, istruzione e reddito.",
+  "card.aria.hdiInfo": "Informazioni sull'ISU",
+  "card.aria.ihdiInfo": "Informazioni sull'IISU",
+
+  "card.antarctica.info": "L'Antartide non appartiene a nessun paese. Il Trattato Antartico, firmato nel 1959, la riserva alla ricerca scientifica e vieta le attivit\u00e0 militari e lo sfruttamento delle sue risorse.",
+
+  "card.sovereign.GB": "del Regno Unito",
+  "card.sovereign.FR": "della Francia",
+  "card.sovereign.US": "degli Stati Uniti",
+  "card.sovereign.NL": "dei Paesi Bassi",
+  "card.sovereign.DK": "della Danimarca",
+  "card.sovereign.CN": "della Cina",
+  "card.sovereign.NZ": "della Nuova Zelanda",
+  "card.sovereign.FI": "della Finlandia",
+  "card.sovereign.AU": "dell'Australia"
+}

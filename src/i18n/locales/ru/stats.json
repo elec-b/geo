@@ -1,0 +1,33 @@
+{
+  "title": "Статистика",
+  "aria.close": "Закрыть",
+  "tabs.play": "Играть",
+  "tabs.stamps": "Испытания на печать",
+
+  "table.country": "Страна",
+  "aria.showIndicators": "Показать индикаторы",
+  "aria.showPercent": "Показать проценты",
+
+  "typeLabel.E": "Определи страну",
+  "typeLabel.C": "Страна по столице",
+  "typeLabel.D": "Столица по стране",
+  "typeLabel.F": "Определи столицу",
+  "typeLabel.A": "Покажи страну",
+  "typeLabel.B": "Покажи столицу",
+
+  "stampLabel.A.short": "◯ Страны",
+  "stampLabel.A.full": "Испытание на печать по Странам",
+  "stampLabel.B.short": "◎ Столицы",
+  "stampLabel.B.full": "Испытание на печать по Столицам",
+
+  "legend.dominated": "Освоено",
+  "legend.inferred": "Выведено",
+  "legend.reinforcement": "Закрепление",
+  "legend.noData": "Нет данных",
+  "legend.correct": "Верно",
+  "legend.incorrect": "Неверно",
+
+  "reset.button": "Сбросить статистику",
+  "reset.confirm": "Сбросить статистику игры для {{level}} - {{continent}}?",
+  "stampNotice": "Печати и история испытаний постоянны, как в настоящем паспорте. Если хочешь начать с нуля, создай новый профиль."
+}

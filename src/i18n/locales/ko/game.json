@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "대륙 선택",
+  "selector.chooseLevel": "레벨 선택",
+  "selector.chooseGame": "게임 선택",
+  "selector.adventure": "어드벤처",
+  "selector.adventureDesc": "당신의 지식에 맞춰 출제",
+  "selector.specificTypes": "또는 게임 직접 선택",
+  "selector.start": "시작",
+  "selector.continue": "계속",
+  "selector.completed": "완료 ★",
+  "selector.countryCount_one": "{{count}}개국",
+  "selector.countryCount_other": "{{count}}개국",
+  "selector.lockedToast": "이전 레벨의 스탬프를 획득하세요",
+
+  "selector.stampReady.both": "스탬프 시험 준비 완료!",
+  "selector.stampReady.countries": "나라 스탬프 시험 준비 완료!",
+  "selector.stampReady.capitals": "수도 스탬프 시험 준비 완료!",
+
+  "question.locate": "찾아보세요",
+  "question.locateCapital": "수도를 찾아보세요",
+  "question.capitalOf": "{{country}}의 수도는?",
+  "question.capitalBelongsTo": "{{capital}}은(는) 어느 나라의 수도?",
+  "question.whichCountry": "강조된 나라는?",
+  "question.whichCapital": "이 나라의 수도는?",
+
+  "progress.stampTest": "스탬프 시험: {{current}} / {{total}}",
+  "progress.adventurePercent": "{{percent}}% 완료",
+  "progress.typeDominated": "{{total}}개 중 {{current}}개 마스터",
+  "progress.stampBanner.countries": "스탬프 시험: 나라",
+  "progress.stampBanner.capitals": "스탬프 시험: 수도",
+
+  "modal.stampEarned.title": "스탬프 획득",
+  "modal.stampEarned.text": "{{total}}개 중 {{correct}}개 정답. 오답 없음.",
+
+  "modal.stampFailed.veryClose": "거의 다 왔어요!",
+  "modal.stampFailed.veryCloseText": "스탬프까지 조금만 더.",
+  "modal.stampFailed.goodTry": "잘했어요!",
+  "modal.stampFailed.goodTryText": "도전할수록 가까워져요.",
+  "modal.stampFailed.onTrack": "잘 하고 있어요",
+  "modal.stampFailed.onTrackText": "계속 플레이하세요, 성장이 보여요.",
+  "modal.stampFailed.dontGiveUp": "포기하지 마세요",
+  "modal.stampFailed.dontGiveUpText": "연습이 실력을 만듭니다.",
+  "modal.stampFailed.score": "{{total}}개 중 {{correct}}개 정답.",
+
+  "modal.poolExhausted.trainingComplete": "훈련 완료",
+  "modal.poolExhausted.readyForStamp": "대단해요!<br />스탬프 준비 완료",
+  "modal.poolExhausted.completedText": "<em>{{level}}</em> 레벨의 <em>{{continent}}</em>을(를) 완료했습니다. 통계를 초기화하여 다시 연습할 수 있습니다.",
+  "modal.poolExhausted.chooseStamp": "시험을 선택하세요. 스탬프를 획득하려면 오답 없이 완료해야 합니다.",
+  "modal.poolExhausted.typePassed": "대단해요!<br /><em>{{type}}</em> 완료",
+  "modal.poolExhausted.stampReady": "스탬프 시험 준비가 되었습니다. 오답 없이 완료하여 스탬프를 획득하세요.",
+  "modal.poolExhausted.tryStamp.countries": "나라 스탬프 도전",
+  "modal.poolExhausted.tryStamp.capitals": "수도 스탬프 도전",
+  "modal.poolExhausted.selectOther": "다른 게임 선택",
+  "modal.poolExhausted.playType": "<em>{{type}}</em> 플레이",
+  "modal.poolExhausted.playAdventure": "<em>어드벤처</em> 플레이",
+
+  "stamp.countries": "나라 스탬프",
+  "stamp.capitals": "수도 스탬프",
+
+  "modal.stampChooser.title": "스탬프 시험",
+  "modal.stampChooser.text": "시험을 선택하세요. {{count}}개의 문제를 오답 없이 완료해야 합니다.",
+
+  "modal.alreadyDominated.title": "이미 마스터한<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "모든 나라를 정답 처리했습니다. 통계를 초기화하여 다시 연습할 수 있습니다.",
+  "modal.alreadyDominated.completedTraining": "<em>{{level}}</em> 레벨의 <em>{{continent}}</em> 훈련을 완료했습니다.",
+  "modal.alreadyDominated.tryStamp": "스탬프 시험 도전",
+  "modal.alreadyDominated.goToStats": "통계로 이동"
+}

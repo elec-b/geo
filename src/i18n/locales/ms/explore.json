@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Glob",
+  "segmented.table": "Jadual",
+  "labels.countries": "Negara",
+  "labels.capitals": "Ibu Negeri",
+
+  "table.country": "Negara",
+  "table.capital": "Ibu Negeri",
+  "table.population": "Pop.",
+  "table.nonUNToggle": "Wilayah bukan PBB",
+
+  "card.disclaimer.antarctica": "Wilayah antarabangsa — Perjanjian Antartika (1959)",
+  "card.disclaimer.territory": "Wilayah {{sovereign}}",
+  "card.disclaimer.disputed": "Kedaulatan dalam pertikaian",
+  "card.flagAlt": "Bendera {{country}}",
+  "card.aria.openWikipedia": "Buka {{country}} di Wikipedia",
+  "card.aria.dialog": "Kad {{country}}",
+
+  "card.field.capital": "Ibu Negeri",
+  "card.field.population": "Penduduk",
+  "card.field.area": "Keluasan",
+  "card.field.density": "Kepadatan",
+  "card.field.currency": "Mata Wang",
+  "card.field.demonym": "Demonim",
+  "card.field.languages": "Bahasa",
+  "card.field.hdi": "IPM",
+  "card.field.ihdi": "IPM-D",
+  "card.unit.inhabitants": "org",
+  "card.unit.densityUnit": "org/km²",
+  "card.na": "T/B",
+
+  "card.tooltip.hdi": "Indeks Pembangunan Manusia: mengukur kesihatan, pendidikan dan pendapatan. Julat 0–1.",
+  "card.tooltip.ihdi": "IPM diselaraskan Ketaksamaan: mengambil kira ketaksamaan dalam kesihatan, pendidikan dan pendapatan.",
+  "card.aria.hdiInfo": "Maklumat tentang IPM",
+  "card.aria.ihdiInfo": "Maklumat tentang IPM-D",
+
+  "card.antarctica.info": "Antartika tidak dimiliki oleh mana-mana negara. Perjanjian Antartika, ditandatangani pada 1959, mengkhususkannya untuk penyelidikan saintifik dan melarang aktiviti ketenteraan serta eksploitasi sumber.",
+
+  "card.sovereign.GB": "United Kingdom",
+  "card.sovereign.FR": "Perancis",
+  "card.sovereign.US": "Amerika Syarikat",
+  "card.sovereign.NL": "Belanda",
+  "card.sovereign.DK": "Denmark",
+  "card.sovereign.CN": "China",
+  "card.sovereign.NZ": "New Zealand",
+  "card.sovereign.FI": "Finland",
+  "card.sovereign.AU": "Australia"
+}

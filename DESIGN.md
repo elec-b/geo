@@ -1,9 +1,13 @@
-# GeoExpert
+# Exploris
 
 ## Filosofía de diseño
-- **Estética**: «Premium dark mode» (con tema claro como opción futura). Diseño limpio, oscuro y minimalista. Azules profundos, negros, acentos (púrpura/ámbar) y azules fríos.
+- **Estética**: Dos temas: **oscuro** (por defecto) y **claro**. Diseño limpio y minimalista en ambos. El dark mode usa negros azulados con acentos suaves; el light mode usa grises azulados claros (#f0f2f5) con acentos más saturados para mantener contraste. Toggle en Configuración.
 - **Interacción**: Animaciones fluidas. Sin recargas de página bruscas. El globo siempre es el protagonista.
 - **Feedback**: Corrección visual inmediata (filtro verde/rojo al 5% de opacidad), háptica en móvil (acierto: tap ligero único; error: doble tap ligero; toggles: tap ligero). Sin efectos de sonido (por ahora).
+
+### Orientación y dispositivos
+- **Phones** (iPhone + Android): Portrait-only.
+- **Tablets** (iPad + Android): Portrait y landscape. El layout basado en `rem` escala correctamente sin adaptaciones específicas.
 
 ---
 
@@ -404,7 +408,7 @@ Estética de **documento oficial premium**: contenedor con textura guilloché (`
 *   **Sello de Países**: borde simple. **Sello de Capitales**: borde doble (`border-style: double`).
 *   **Ganado**: fondo tintado, glow sutil, estrella (★), rotación aleatoria leve (-8° a +8°).
 *   **Pendiente en nivel activo**: pulso de opacidad (`stampPulse`).
-*   **Animación stampDrop**: al conseguir un sello nuevo, efecto de caída (scale 0→1.15→1 con rotación, 400ms). La estrella (★) gira simultáneamente con efecto «trompo» (10 vueltas en 3s, ease-out).
+*   **Animación stampDrop**: al conseguir un sello nuevo, efecto de caída (scale 0→1.15→1 con rotación, 400ms). La estrella (★) gira simultáneamente con efecto «trompo» (5 vueltas en 3s, ease-out).
 
 ---
 
@@ -450,7 +454,7 @@ Disponible en ambas pestañas. Permite alternar entre dos modos:
     - **—** — Sin intentos.
 
 ### Acciones
-*   **Resetear estadísticas**: Por nivel-continente (con confirmación). Borra solo los datos de **Jugar** de ese nivel-continente. Los datos de pruebas de sello y los sellos ganados no se borran.
+*   **Resetear estadísticas**: Por nivel-continente (con confirmación). Borra los intentos de **todos los tipos de juego** (E/C/D/F/A/B) de ese nivel-continente. No hay reset granular por tipo — por simplicidad, siempre se resetea todo. Los datos de pruebas de sello y los sellos ganados no se borran.
 *   **Permanencia de sellos**: Los sellos ganados y el historial de pruebas de sello no se pueden borrar (decisión intencional — metáfora del pasaporte real). La pestaña «Pruebas de sello» muestra un aviso explicativo en la zona equivalente al botón de reseteo, con la alternativa de crear un nuevo perfil para empezar de cero.
 
 ---
@@ -488,7 +492,7 @@ Configuración **ultra-sencilla**. Un solo punto de acceso: el **botón de engra
 |--------|----------|-------------|-------------|
 | Vibración | On/Off | On | Siempre |
 | Idioma de la app | Todos los soportados por iOS/Android | Idioma del teléfono (fallback: inglés) | Siempre |
-| Tema claro/oscuro | Claro / Oscuro | Oscuro | Siempre |
+| Tema | Oscuro / Claro (toggle) | Oscuro | Siempre |
 | Mares y océanos | On/Off | On | Siempre |
 | Marcadores de microestados y archipiélagos | On/Off | On | Siempre |
 
@@ -496,7 +500,7 @@ Configuración **ultra-sencilla**. Un solo punto de acceso: el **botón de engra
 
 **Etiquetas de países/capitales**: Son controles exclusivos de la experiencia Explorar (ver § Explorar), no forman parte de la configuración.
 
-**Nota sobre tema claro/oscuro**: Tarea de baja prioridad, a implementar cuando la app esté prácticamente terminada. La identidad visual principal sigue siendo el dark mode.
+**Implementación del tema**: Variables CSS en `:root` (dark) con override en `[data-theme="light"]`. Los colores del canvas (GlobeD3) se gestionan en `src/styles/globeTheme.ts` (objeto JS por tema, ya que el canvas no lee CSS variables). El atributo `data-theme` se sincroniza desde el store vía `useEffect` en `App.tsx`. El splash screen lee el tema del localStorage antes de que React cargue para evitar flash.
 
 **Filosofía**: Sin menús complicados. La app debe funcionar bien "out of the box".
 
@@ -528,7 +532,7 @@ La app usa **D3.js (`d3-geo`)** con **proyección ortográfica** sobre **Canvas 
 - **Licencia**: ISC (D3.js)
 - **Bundle**: ~30 KB gzip (`d3-geo`)
 
-**Por qué D3 y no MapLibre**: MapLibre GL JS v5 tiene globe projection, pero produce artefactos visibles (seams en tile boundaries) al reproyectar tiles Mercator sobre la esfera. Es un problema arquitectural sin solución a corto plazo (ver `docs/spikes/pmtiles-vs-d3.md`). D3 renderiza los polígonos directamente sobre la esfera sin tiles intermedios, eliminando los artefactos por completo.
+**Por qué D3 y no MapLibre**: MapLibre GL JS v5 tiene globe projection, pero produce artefactos visibles (seams en tile boundaries) al reproyectar tiles Mercator sobre la esfera. Es un problema arquitectural sin solución a corto plazo. D3 renderiza los polígonos directamente sobre la esfera sin tiles intermedios, eliminando los artefactos por completo.
 
 **Nota sobre la proyección**: `geoOrthographic()` no es una proyección de áreas iguales, pero la distorsión es mínima en el centro de la vista y equivalente a mirar un globo terráqueo físico desde cualquier ángulo. El usuario puede rotar para centrar cualquier país.
 
@@ -637,13 +641,20 @@ Nombres de mares, océanos y golfos principales sobre el globo, siguiendo la con
 
 ### Actualización automática de datos
 - **Estrategia**: Verificación silenciosa al abrir la app (si hay conexión)
+- **Alcance**: Todos los datos de países — `countries-base.json` (~74 KB), `capitals.json` (~14 KB) e `i18n-all.json` (~1.9 MB, todos los idiomas combinados). Total: ~2 MB raw (~600 KB gzipped). Los archivos TopoJSON (geometrías) no se actualizan vía CDN (muy pesados, rarísimo que cambien)
 - **Funcionamiento**:
-  1. Al iniciar, la app compara versión local vs versión en servidor
-  2. Si hay nueva versión, descarga en background (~200 KB)
-  3. El usuario nunca nota la actualización
+  1. Al iniciar, la app carga datos: si hay datos CDN en Preferences con versión > bundled, los usa; si no, usa bundled
+  2. Tras la carga inicial (UI lista), verifica `manifest.json` en el CDN en background
+  3. Si hay versión más nueva, descarga los 3 archivos en paralelo y los guarda en Preferences
+  4. Los datos nuevos se aplican en el **siguiente inicio** (sin hot-swap en sesión activa)
 - **Servidor**: JSON estático en CDN (GitHub Pages, Cloudflare, etc.)
+- **Versionado**: `public/data/data-version.json` define la versión bundled. El CDN sirve `manifest.json` con su versión. La app compara: si CDN > max(bundled, descargado) → descarga. Versión única compartida por todos los archivos (mismo pipeline de generación)
+- **Almacenamiento**: Capacitor Preferences (UserDefaults en iOS, SharedPreferences en Android). ~2 MB total
+- **Resiliencia**: Todos los errores se silencian (timeout 5s manifest, 15s datos). Cada archivo se descarga y guarda de forma independiente (si uno falla, los demás se guardan). La app nunca se bloquea por falta de CDN
 - **Frecuencia real**: Los datos de países cambian muy poco (~1-2 veces/año)
 - **Offline**: La app siempre funciona con datos locales empaquetados
+- **Pipeline de actualización**: `npm run update-data` → bump versión en `data-version.json` → `npm run generate-cdn` → subir `cdn-output/` al hosting
+- **Implementación**: `src/data/cdnUpdate.ts` (servicio), integrado en `countryData.ts` (carga) y `App.tsx` (check background)
 
 ### Coordenadas de capitales
 - **Fuente**: REST Countries v3.1 (`capitalInfo.latlng`)
@@ -676,9 +687,14 @@ El script `fetch-countries.ts` genera `countries.json` y `capitals.json` en el i
 *   **Nombres de idiomas**: REST Countries devuelve `languages` en inglés. Se traducen en el archivo suplementario. **Criterio de selección**: solo idiomas oficiales a nivel nacional/constitucional (no regionales ni cooficiales autonómicos).
 *   **Slugs de Wikipedia**: Slug del artículo Wikipedia para cada país y cada idioma soportado. Se construyen y validan en el pipeline de datos. Se almacenan en los datos estáticos para evitar links rotos en runtime.
 *   **Fuente suplementaria (multi-idioma)**: Wikidata (SPARQL) para capitales, monedas, idiomas, slugs de Wikipedia y otros datos que REST Countries no cubra. Para español solo, basta un archivo manual por idioma (actualmente `scripts/data/capitals-es.json`; se ampliará con los campos adicionales).
-*   **Validación con LLM**: Como capa final de QA, un LLM revisa el dataset generado y reporta anomalías (nombres en idioma incorrecto, ortografía, incoherencias). No genera traducciones — solo valida.
-*   **Pipeline completo**: REST Countries → Wikidata (gaps) → Validación LLM → Revisión humana (si hay flags) → CDN.
+*   **Validación con LLM**: Claude como validador primario para todos los idiomas. Para cada idioma genera un informe de anomalías (nombres en idioma incorrecto, ortografía, incoherencias, traducciones sospechosas). No genera traducciones — solo valida. El desarrollador valida personalmente español e inglés; para el resto de idiomas, Claude es la fuente de QA principal.
+*   **Pipeline completo**: REST Countries → Wikidata (gaps) → Validación LLM (Claude) → Revisión humana de español e inglés → CDN.
+*   **Cobertura de idiomas**: Todos los idiomas soportados por iOS y Android. El pipeline genera datos para cada idioma de forma automatizada.
 *   **Idioma actual de generación**: Español (`spa`). Cuando se implemente i18n completa, se generarán archivos por idioma o un JSON multi-idioma.
+
+### Internacionalización de UI
+*   **Librería**: `i18next` + `react-i18next`. Estándar de facto para React, con detección de idioma del dispositivo, namespaces, interpolación, pluralización y carga lazy por idioma.
+*   **Scope**: Todos los textos de UI (labels, modales, mensajes, etc.). Los datos de países se gestionan por el pipeline descrito en § Internacionalización de datos.
 
 ### Identificadores
 - **Clave primaria**: ISO 3166-1 alpha-2 (`cca2`)
@@ -719,7 +735,7 @@ A diferencia de los territorios no-ONU (que son estados de facto con población 
 
 ### Política de representación cartográfica
 
-GeoExpert usa la representación **de facto** de Natural Earth sin modificaciones cartográficas. Las fronteras reflejan el control territorial efectivo, no las reclamaciones legales.
+Exploris usa la representación **de facto** de Natural Earth sin modificaciones cartográficas. Las fronteras reflejan el control territorial efectivo, no las reclamaciones legales.
 
 *   **Criterio de países**: Estándar de la ONU (195 miembros y observadores). Este es el criterio para el juego, no el de Natural Earth.
 *   **Territorios disputados**: Se muestran tal como los representa Natural Earth (de facto). La ficha muestra «Soberanía en disputa» sin tomar partido. Los 4 casos actuales (TW, XK, EH, FK) ya siguen este criterio.

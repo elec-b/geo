@@ -1,0 +1,28 @@
+{
+  "title": "Exploris Hakkında",
+  "intro": "Exploris, etkileşimli 3D küre ile coğrafya öğrenme uygulamasıdır. Ülkeleri, başkentleri ve çok daha fazlasını görsel ve eğlenceli bir şekilde öğren.",
+  "section.countries.title": "Ülkeler",
+  "section.countries.body": "Exploris, Birleşmiş Milletler tarafından tanınan 195 ülkeyi içerir — dünya genelinde en kabul görmüş standart. Ayrıca küre üzerinde tanınmayan veya tartışmalı bölgeleri de keşfedebilirsin.\n\nKüre, Dünya'nın uzaydan görünümünü yansıtır. Bu sayede ülkelerin gerçek boyutunu kavrayabilirsin — düz haritaların gösteremediği bir şey.",
+  "section.learn.title": "Nasıl öğrenilir",
+  "section.learn.tips.explore": "\"Keşfet\" bölümünden başla: küreyi döndür, ülkelere dokunarak kartlarını gör ve şekillerini ile konumlarını aklına yerleştir. \"Tablo\" görünümü her ülkeyi başkentiyle eşleştirmene yardımcı olur. Tablodaki herhangi bir ülkeye veya başkente dokunarak onu kürede görebilirsin.",
+  "section.learn.tips.play": "Hazır olduğunda \"Oyna\" bölümüne geç. Aşağıda açıklanan tüm oyun türlerini akıllıca birleştiren ve bilgine göre uyarlanan \"Macera\" modunu öneriyoruz; öğrenmene yardımcı olur.",
+  "section.learn.tips.passport": "Nihai hedefin \"Pasaport\"u damgalarla doldurmak. Bir damga kazanmak için damga sınavını hatasız tamamlamalısın.",
+  "section.gameTypes.title": "Oyun türleri",
+  "section.gameTypes.intro": "Kolaydan zora doğru sıralanmış 6 oyun türü var:",
+  "section.gameTypes.E": "◯? — Ülkeyi tanı — Kürede bir ülke vurgulanır ve sen 4 seçenek arasından adını seçersin.",
+  "section.gameTypes.C": "◯→◎ — Ülkeden başkente — Sana bir ülke verilir ve 4 seçenek arasından başkentini seçersin.",
+  "section.gameTypes.D": "◎→◯ — Başkentten ülkeye — Sana bir başkent verilir ve hangi ülkeye ait olduğunu seçersin.",
+  "section.gameTypes.F": "◎? — Başkenti tanı — Kürede bir başkent vurgulanır ve sen adını seçersin.",
+  "section.gameTypes.A": "◯ — Ülkeyi göster — Sana bir ad verilir ve kürede ülkeye dokunursun.",
+  "section.gameTypes.B": "◎ — Başkenti göster — Sana bir başkent verilir ve kürede konumuna dokunursun.",
+  "section.gameTypes.adventure": "\"Macera\" modu tüm türleri birleştirir ve ilerlemene göre uyarlanır. Önerilen oynama şeklidir.",
+  "section.gameTypes.stamps": "\"Ülkeyi göster\" ve \"Başkenti göster\" türleri, \"Pasaport\"un damga sınavlarında kullanılır.",
+  "section.stats.title": "İstatistikler",
+  "section.stats.body": "\"İstatistikler\" görünümünde iki sekme var:\n\n• Oyna — Her oyun türündeki hakimiyet seviyeni gösterir.\n\n• Damga sınavları — \"Pasaport\" sınavlarındaki sonuçlarını gösterir. \n\nHakimiyet göstergeleri (✓/✗) ile başarı yüzdeleri arasında geçiş yapabilirsin. Bir ülkeye dokunarak doğrudan \"Keşfet\" bölümündeki kartına gidebilirsin.",
+  "section.sources.title": "Veri kaynakları",
+  "section.sources.body": "Veriler Birleşmiş Milletler, Natural Earth, Dünya Bankası ve Wikidata gibi kamuya açık kaynaklardan alınmıştır. Uygulama otomatik olarak daha güncel verileri kontrol eder ve arka planda günceller. Haritalar yalnızca uygulamanın yeni sürümleriyle değişir.",
+
+  "section.privacy.title": "Gizlilik",
+  "section.privacy.body": "Exploris hiçbir kişisel veri toplamaz. İlerlemen yalnızca cihazında saklanır.",
+  "section.privacy.linkLabel": "Gizlilik politikasını görüntüle"
+}

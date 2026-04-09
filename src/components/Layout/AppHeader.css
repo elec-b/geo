@@ -18,6 +18,13 @@
   pointer-events: none;
 }
 
+/* Grupo de botones de la izquierda */
+.app-header__left {
+  display: flex;
+  gap: var(--spacing-sm);
+  pointer-events: auto;
+}
+
 /* Grupo de botones de la derecha */
 .app-header__right {
   display: flex;

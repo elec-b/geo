@@ -1,0 +1,41 @@
+{
+  "continent.africa": "Африка",
+  "continent.america": "Америка",
+  "continent.asia": "Азія",
+  "continent.europe": "Європа",
+  "continent.oceania": "Океанія",
+  "continent.antarctica": "Антарктида",
+  "continentFilter.all": "Усі",
+
+  "level.tourist": "Турист",
+  "level.backpacker": "Мандрівник",
+  "level.guide": "Гід",
+
+  "questionType.E": "Визнач країну",
+  "questionType.C": "Країна за столицею",
+  "questionType.D": "Столиця за країною",
+  "questionType.F": "Визнач столицю",
+  "questionType.A": "Вкажи країну",
+  "questionType.B": "Вкажи столицю",
+
+  "questionTypeShort.E": "Визнач країну",
+  "questionTypeShort.C": "Країна за столицею",
+  "questionTypeShort.D": "Столиця за країною",
+  "questionTypeShort.F": "Визнач столицю",
+  "questionTypeShort.A": "Вкажи країну",
+  "questionTypeShort.B": "Вкажи столицю",
+
+  "tabs.explore": "Досліджуй",
+  "tabs.play": "Грай",
+  "tabs.passport": "Паспорт",
+
+  "loading": "Завантаження глобуса…",
+  "cancel": "Скасувати",
+  "close": "Закрити",
+  "continue": "Продовжити",
+
+  "aria.userProfile": "Профіль користувача",
+  "aria.stats": "Статистика",
+  "aria.settings": "Налаштування",
+  "aria.navigation": "Головна навігація"
+}

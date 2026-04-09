@@ -1,0 +1,34 @@
+{
+  "title": "About Exploris",
+
+  "intro": "Exploris is a geography learning app with an interactive 3D globe. Learn countries, capitals, and much more in a visual and engaging way.",
+
+  "section.countries.title": "Countries",
+  "section.countries.body": "Exploris includes the 195 countries recognized by the United Nations, the most widely accepted standard worldwide. You can also explore unrecognized or disputed territories on the globe.\n\nThe globe reproduces the view of Earth from space. This lets you appreciate the true size of countries, something flat maps can't achieve.",
+
+  "section.learn.title": "How to learn",
+  "section.learn.tips.explore": "Start in Explore: spin the globe, tap countries to see their info card, and get familiar with their shape and location. The Table view helps you associate each country with its capital. Tap any country or capital in the table to see it on the globe.",
+  "section.learn.tips.play": "When you're ready, jump into Play. We recommend playing in Adventure mode, which intelligently combines the different game types explained below; it adapts to what you know to help you learn.",
+  "section.learn.tips.passport": "Your ultimate goal is to fill the Passport with stamps. To earn a stamp, you must complete a stamp test with no mistakes.",
+
+  "section.gameTypes.title": "Game types",
+  "section.gameTypes.intro": "There are 6 game types, ordered from easiest to hardest:",
+  "section.gameTypes.E": "◯? — Identify the country — A country is highlighted on the globe and you choose its name from 4 options.",
+  "section.gameTypes.C": "◯→◎ — Country to capital — You're given a country and choose its capital from 4 options.",
+  "section.gameTypes.D": "◎→◯ — Capital to country — You're given a capital and choose which country it belongs to.",
+  "section.gameTypes.F": "◎? — Identify the capital — A capital is highlighted on the globe and you choose its name.",
+  "section.gameTypes.A": "◯ — Point to the country — You're given a name and tap the country on the globe.",
+  "section.gameTypes.B": "◎ — Point to the capital — You're given a capital and tap its location on the globe.",
+  "section.gameTypes.adventure": "Adventure mode combines all types and adapts to your progress. It's the recommended way to play.",
+  "section.gameTypes.stamps": "The \u201cPoint to the country\u201d and \u201cPoint to the capital\u201d types are the ones used in the Passport stamp tests.",
+
+  "section.stats.title": "Statistics",
+  "section.stats.body": "The Statistics view has two tabs:\n\n• Play — Shows your mastery in each game type.\n\n• Stamp tests — Shows your results in the Passport tests. \n\nYou can toggle between mastery indicators (✓/✗) and accuracy percentages. Tap a country to go directly to its info card in Explore.",
+
+  "section.sources.title": "Data sources",
+  "section.sources.body": "Data comes from public sources such as the United Nations, Natural Earth, the World Bank, and Wikidata. The app automatically checks for newer data and updates it in the background. Maps only change with new versions of the app.",
+
+  "section.privacy.title": "Privacy",
+  "section.privacy.body": "Exploris does not collect any personal data. Your progress is stored only on your device.",
+  "section.privacy.linkLabel": "View privacy policy"
+}

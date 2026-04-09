@@ -1,23 +1,23 @@
-/* Variables del tema espacial - GeoExpert */
+/* Variables del tema oscuro - Exploris */
 :root {
-  /* Colores base */
-  --color-bg-primary: #0a0a1a;
-  --color-bg-secondary: #12122a;
-  --color-bg-tertiary: #1a1a3a;
+  /* Colores base (espacio — más oscuro que el océano, con sutil tinte azul) */
+  --color-bg-primary: #04060a;
+  --color-bg-secondary: #0a0e16;
+  --color-bg-tertiary: #141a22;
 
-  /* Acentos neón */
-  --color-accent-cyan: #00f0ff;
-  --color-accent-purple: #a855f7;
+  /* Acentos */
+  --color-accent-cyan: #60a5fa;
+  --color-accent-teal: #0d9488;
   --color-accent-amber: #f59e0b;
 
   /* Colores de feedback */
-  --color-success: #22c55e;
-  --color-error: #ef4444;
+  --color-success: #34d399;
+  --color-error: #d46060;
 
   /* Texto */
   --color-text-primary: #ffffff;
-  --color-text-secondary: #a1a1aa;
-  --color-text-muted: #52525b;
+  --color-text-secondary: #b4b4bc;
+  --color-text-muted: #62626a;
 
   /* Colores de continentes (olímpicos) */
   --color-africa: #e2e8f0;
@@ -26,14 +26,58 @@
   --color-europe: #3b82f6;
   --color-oceania: #22c55e;
 
+  /* Superficies semi-transparentes (paneles, sheets) — tinte azul coherente con el globo */
+  --color-surface: rgba(8, 14, 24, 0.88);
+  --color-surface-heavy: rgba(8, 14, 24, 0.95);
+  --color-surface-solid: rgba(8, 14, 24, 0.98);
+
+  /* Overlays (fondo oscuro detrás de modales) */
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-overlay-heavy: rgba(0, 0, 0, 0.7);
+  --color-overlay-solid: rgba(0, 0, 0, 0.8);
+
+  /* Blanco con alpha (bordes, fondos sutiles) */
+  --color-white-4: rgba(255, 255, 255, 0.04);
+  --color-white-8: rgba(255, 255, 255, 0.08);
+  --color-white-12: rgba(255, 255, 255, 0.12);
+  --color-white-20: rgba(255, 255, 255, 0.20);
+
+  /* Acento con alpha (fondos activos, selección) */
+  --color-accent-bg: rgba(96, 165, 250, 0.1);
+  --color-accent-secondary-bg: rgba(13, 148, 136, 0.1);
+  --color-accent-border: rgba(96, 165, 250, 0.25);
+
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.12);
   --glass-blur: 10px;
 
   /* Sombras */
-  --shadow-glow-cyan: 0 0 20px rgba(0, 240, 255, 0.3);
-  --shadow-glow-purple: 0 0 20px rgba(168, 85, 247, 0.3);
+  --shadow-glow-cyan: 0 0 15px rgba(96, 165, 250, 0.2);
+
+
+  /* Feedback con alpha */
+  --color-success-bg: rgba(34, 197, 94, 0.2);
+  --color-error-bg: rgba(239, 68, 68, 0.2);
+  --color-success-flash: rgba(52, 211, 153, 0.02);
+  --color-error-flash: rgba(212, 96, 96, 0.02);
+  --color-error-flash-geo: rgba(212, 96, 96, 0.01);
+  --color-success-glow: rgba(52, 211, 153, 0.4);
+  --color-error-glow: rgba(212, 96, 96, 0.4);
+  --color-error-bg-subtle: rgba(255, 107, 107, 0.15);
+  --color-error-border-subtle: rgba(255, 107, 107, 0.3);
+
+  /* Amber con alpha */
+  --color-amber-bg: rgba(245, 158, 11, 0.1);
+  --color-amber-border: rgba(245, 158, 11, 0.3);
+
+  /* Misceláneos */
+  --color-surface-dark: rgba(0, 0, 0, 0.4);
+  --color-text-capital: rgba(170, 170, 180, 0.9);
+  --color-toggle-thumb: #ffffff;
+  --color-spinner-border: rgba(255, 255, 255, 0.15);
+  --color-spinner-top: rgba(255, 255, 255, 0.6);
+  --color-pill-bg: transparent;
 
   /* Tipografía */
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -67,7 +111,6 @@
   --tabbar-height: 3.75rem;
 
   /* Capas z-index */
-  --z-stars: 0;
   --z-globe: 1;
   --z-overlay: 10;
   --z-controls: 15;
@@ -75,4 +118,86 @@
   --z-tabbar: 50;
   --z-loading: 100;
   --z-modal: 200;
+}
+
+/* Tema claro */
+[data-theme="light"] {
+  /* Fondos — azul grisáceo suave, cielo diurno */
+  --color-bg-primary: #dde4ec;
+  --color-bg-secondary: #d4dbe4;
+  --color-bg-tertiary: #cad2dc;
+
+  /* Acentos — más saturados para contraste sobre fondo claro */
+  --color-accent-cyan: #2563eb;
+  --color-accent-teal: #0f766e;
+  --color-accent-amber: #d97706;
+
+  /* Feedback */
+  --color-success: #16a34a;
+  --color-error: #dc2626;
+
+  /* Texto — marrones oscuros cálidos, nunca negro puro */
+  --color-text-primary: #2a2520;
+  --color-text-secondary: #6a6258;
+  --color-text-muted: #5a5248;
+
+  /* Continentes — versiones con contraste sobre fondo claro */
+  --color-africa: #334155;
+  --color-america: #dc2626;
+  --color-asia: #ca8a04;
+  --color-europe: #2563eb;
+  --color-oceania: #16a34a;
+
+  /* Superficies — blanco cálido semitransparente */
+  --color-surface: rgba(255, 252, 248, 0.90);
+  --color-surface-heavy: rgba(255, 252, 248, 0.95);
+  --color-surface-solid: rgba(255, 252, 248, 0.98);
+
+  /* Overlays — más suaves que en dark */
+  --color-overlay: rgba(0, 0, 0, 0.25);
+  --color-overlay-heavy: rgba(0, 0, 0, 0.5);
+  --color-overlay-solid: rgba(0, 0, 0, 0.55);
+
+  /* Utility alpha — marrón cálido con alpha */
+  --color-white-4: rgba(90, 70, 40, 0.04);
+  --color-white-8: rgba(90, 70, 40, 0.07);
+  --color-white-12: rgba(90, 70, 40, 0.10);
+  --color-white-20: rgba(90, 70, 40, 0.16);
+
+  /* Acento alpha */
+  --color-accent-bg: rgba(37, 99, 235, 0.10);
+  --color-accent-secondary-bg: rgba(15, 118, 110, 0.10);
+  --color-accent-border: rgba(37, 99, 235, 0.25);
+
+  /* Glass — blanco cálido sobre fondo crema */
+  --glass-bg: rgba(255, 252, 248, 0.80);
+  --glass-border: rgba(90, 70, 40, 0.10);
+  --glass-blur: 12px;
+
+  /* Sombras — box-shadow suave en vez de glow */
+  --shadow-glow-cyan: 0 2px 8px rgba(37, 99, 235, 0.15);
+
+
+  /* Feedback con alpha */
+  --color-success-bg: rgba(22, 163, 74, 0.25);
+  --color-error-bg: rgba(220, 38, 38, 0.25);
+  --color-success-flash: rgba(22, 163, 74, 0.03);
+  --color-error-flash: rgba(220, 38, 38, 0.03);
+  --color-error-flash-geo: rgba(220, 38, 38, 0.02);
+  --color-success-glow: rgba(22, 163, 74, 0.3);
+  --color-error-glow: rgba(220, 38, 38, 0.3);
+  --color-error-bg-subtle: rgba(220, 38, 38, 0.1);
+  --color-error-border-subtle: rgba(220, 38, 38, 0.25);
+
+  /* Amber con alpha */
+  --color-amber-bg: rgba(217, 119, 6, 0.08);
+  --color-amber-border: rgba(217, 119, 6, 0.25);
+
+  /* Misceláneos */
+  --color-surface-dark: rgba(90, 70, 40, 0.08);
+  --color-text-capital: rgba(90, 75, 50, 0.85);
+  --color-toggle-thumb: #ffffff;
+  --color-spinner-border: rgba(90, 70, 40, 0.15);
+  --color-spinner-top: rgba(90, 70, 40, 0.5);
+  --color-pill-bg: rgba(210, 200, 185, 0.50);
 }

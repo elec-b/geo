@@ -1,5 +1,6 @@
-// GeoExpert - Aplicación principal
+// Exploris - Aplicación principal
 import { lazy, Suspense, useState, useCallback, useEffect, useRef, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { LoadingScreen } from './components/UI/LoadingScreen';
 import { TabBar } from './components/Navigation/TabBar';
 import { AppHeader } from './components/Layout/AppHeader';
@@ -9,14 +10,19 @@ import { JugarView, type StampTestRequest } from './components/Game/JugarView';
 import { PassportView } from './components/Passport/PassportView';
 import { ProfileSelector, getNextDefaultName } from './components/Profile/ProfileSelector';
 import { ProfileEditor } from './components/Profile/ProfileEditor';
+import { AboutSheet } from './components/About/AboutSheet';
 import { SettingsSheet } from './components/Settings/SettingsSheet';
-import { loadCountryData, loadCapitals } from './data/countryData';
+import { LanguageSheet } from './components/Settings/LanguageSheet';
+import { loadCountryData, loadCapitals, invalidateCache } from './data/countryData';
+import { checkAndUpdate } from './data/cdnUpdate';
+import { maybeRequestReview } from './utils/reviewPrompt';
+import { changeAppLanguage } from './i18n';
 import { buildRankings, type CountryRankings } from './data/rankings';
-import { buildLevelDefinitions } from './data/levels';
+import { buildLevelDefinitions, buildCountryLevelMap } from './data/levels';
 import { useAppStore } from './stores/appStore';
 import type { GlobeD3Ref } from './components/Globe';
 import type { CountryFeature } from './data/countries';
-import type { CountryData, CapitalCoords, LevelDefinition } from './data/types';
+import type { CountryData, CapitalCoords, GameLevel, LevelDefinition } from './data/types';
 import type { TabId } from './components/Navigation/types';
 import './components/Layout/AppShell.css';
 
@@ -34,12 +40,41 @@ const DEFAULT_GLOBE_CONTROL: GlobeControlProps = {
 };
 
 function App() {
+  const { t } = useTranslation('profile');
   const [globeReady, setGlobeReady] = useState(false);
   const [activeTab, setActiveTab] = useState<TabId>('explore');
   const [jugarResetSignal, setJugarResetSignal] = useState(0);
   const [showStats, setShowStats] = useState(false);
+  const [statsMinimized, setStatsMinimized] = useState(false);
+  const [exploreCountryRequest, setExploreCountryRequest] = useState<string | null>(null);
   const showMarkers = useAppStore((s) => s.settings.showMarkers);
   const showSeaLabels = useAppStore((s) => s.settings.showSeaLabels);
+  const theme = useAppStore((s) => s.settings.theme);
+
+  // Sincronizar data-theme en <html> con el store
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  // Reset de estado de sesión al abrir la app (Globo + Todos) + contador de sesiones
+  useEffect(() => {
+    useAppStore.getState().setLastExploreMode('countries');
+    useAppStore.getState().setLastActiveContinent(null);
+    const current = useAppStore.getState().settings.sessionCount ?? 0;
+    useAppStore.getState().updateSettings({ sessionCount: current + 1 });
+  }, []);
+
+  // Fix nombre de perfil por defecto hardcodeado en español
+  useEffect(() => {
+    const translatedDefault = t('defaultName');
+    if (translatedDefault === 'Explorador') return;
+    const { profiles, updateProfile } = useAppStore.getState();
+    for (const profile of profiles) {
+      if (profile.name === 'Explorador') {
+        updateProfile(profile.id, { name: translatedDefault });
+      }
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Datos cargados
   const [countries, setCountries] = useState<Map<string, CountryData> | null>(null);
@@ -57,8 +92,10 @@ function App() {
   const activeTabRef = useRef<TabId>(activeTab);
   activeTabRef.current = activeTab;
 
-  // Modal de configuración
+  // Modales
+  const [showAbout, setShowAbout] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [showLanguage, setShowLanguage] = useState(false);
 
   // Modales de gestión de perfiles
   const [showProfileSelector, setShowProfileSelector] = useState(false);
@@ -89,6 +126,32 @@ function App() {
     }
     setActiveTab(tab);
   }, [activeTab, stampTestActive, stampTestRequest]);
+
+  // Callback para navegar a un país desde Estadísticas → oculta Stats, cambia a Explorar
+  const handleStatsCountryClick = useCallback((cca2: string) => {
+    setStatsMinimized(true);
+    if (stampTestActive) {
+      setStampTestActive(false);
+      setStampTestRequest(null);
+    }
+    setExploreCountryRequest(cca2);
+    setActiveTab('explore');
+  }, [stampTestActive]);
+
+  // Abrir/restaurar Estadísticas
+  const handleOpenStats = useCallback(() => {
+    if (showStats && statsMinimized) {
+      setStatsMinimized(false);
+    } else {
+      setShowStats(true);
+    }
+  }, [showStats, statsMinimized]);
+
+  // Cerrar Estadísticas completamente (desmonta)
+  const handleCloseStats = useCallback(() => {
+    setShowStats(false);
+    setStatsMinimized(false);
+  }, []);
 
   // Callback para lanzar prueba de sello desde Pasaporte → cambia a tab Jugar
   const handleStartStampTest = useCallback(
@@ -153,18 +216,39 @@ function App() {
   }, []);
 
   const handleGlobeReady = useCallback(() => setGlobeReady(true), []);
+  const handleStampAnimationDone = useCallback(() => {
+    setRecentlyEarnedStamp(null);
+    maybeRequestReview();
+  }, []);
 
   // Precargar datos estáticos en paralelo con el globo
+  const locale = useAppStore((s) => s.settings.locale);
+  const { i18n } = useTranslation();
+
+  // Sincronizar idioma de i18n con el store (ej: store hidratado con locale persistido)
   useEffect(() => {
-    Promise.all([loadCountryData(), loadCapitals()]).then(([countriesData, capitalsData]) => {
-      const ranksData = buildRankings(countriesData);
-      const levelsData = buildLevelDefinitions(countriesData);
-      setCountries(countriesData);
-      setCapitals(capitalsData);
-      setRankings(ranksData);
-      setLevels(levelsData);
+    if (i18n.language !== locale) {
+      changeAppLanguage(locale);
+    }
+  }, [locale, i18n]);
+
+  // Cargar datos de países en el idioma activo
+  useEffect(() => {
+    invalidateCache();
+    loadCountryData(locale).then((countriesData) => {
+      loadCapitals().then((capitalsData) => {
+        const ranksData = buildRankings(countriesData);
+        const levelsData = buildLevelDefinitions(countriesData);
+        setCountries(countriesData);
+        setCapitals(capitalsData);
+        setRankings(ranksData);
+        setLevels(levelsData);
+
+        // Verificar actualizaciones CDN en background (se aplican al siguiente inicio)
+        checkAndUpdate().catch(() => {});
+      });
     });
-  }, []);
+  }, [locale]);
 
   // Mapa de poblaciones para prioridad de etiquetas en el globo
   const countryPopulations = useMemo(() => {
@@ -176,7 +260,7 @@ function App() {
     return map;
   }, [countries]);
 
-  // Mapa de nombres en español para etiquetas del globo
+  // Mapa de nombres (en el idioma activo) para etiquetas del globo
   const countryNames = useMemo(() => {
     if (!countries) return null;
     const map = new Map<string, string>();
@@ -186,6 +270,12 @@ function App() {
     return map;
   }, [countries]);
 
+  // Mapa cca2 → nivel más bajo (para columna de nivel en tabla de Explorar)
+  const countryLevelMap = useMemo(
+    () => levels ? buildCountryLevelMap(levels) : new Map<string, GameLevel>(),
+    [levels],
+  );
+
   const dataReady = countries && capitals && rankings && levels;
 
   return (
@@ -193,9 +283,10 @@ function App() {
       <LoadingScreen visible={!globeReady} />
 
       <AppHeader
-        onStatsClick={() => setShowStats(true)}
+        onStatsClick={handleOpenStats}
         onAvatarClick={() => setShowProfileSelector(true)}
         onSettingsClick={() => setShowSettings(true)}
+        onAboutClick={() => setShowAbout(true)}
       />
 
       {/* Globo: siempre montado, sin wrapper — iOS rompe touch tras re-render si se envuelve */}
@@ -228,9 +319,12 @@ function App() {
           countries={countries}
           capitals={capitals}
           rankings={rankings}
+          countryLevelMap={countryLevelMap}
           onGlobePropsChange={setGlobeControl}
           onCountryClickRef={exploreClickRef}
           onCountryDeselectRef={exploreDeselectRef}
+          pendingCountry={exploreCountryRequest}
+          onPendingCountryConsumed={() => setExploreCountryRequest(null)}
         />
       )}
 
@@ -247,7 +341,7 @@ function App() {
           stampTestRequest={stampTestRequest}
           onStampTestDone={handleStampTestDone}
           onStampTestStarted={handleStampTestStarted}
-          onNavigateStats={() => setShowStats(true)}
+          onNavigateStats={handleOpenStats}
           resetSignal={jugarResetSignal}
         />
       )}
@@ -257,7 +351,7 @@ function App() {
           levels={levels}
           onStartStampTest={handleStartStampTest}
           recentlyEarnedStamp={recentlyEarnedStamp}
-          onStampAnimationDone={() => setRecentlyEarnedStamp(null)}
+          onStampAnimationDone={handleStampAnimationDone}
         />
       )}
 
@@ -265,7 +359,8 @@ function App() {
         <StatsView
           countries={countries}
           levels={levels}
-          onClose={() => setShowStats(false)}
+          onClose={handleCloseStats}
+          onCountryClick={handleStatsCountryClick}
           context={
             (stampTestRequest || stampTestActive)
               ? { tab: 'sellos', ...(stampTestRequest && { continent: stampTestRequest.continent, level: stampTestRequest.level }) }
@@ -273,6 +368,7 @@ function App() {
                 ? { tab: 'sellos' }
                 : undefined
           }
+          style={statsMinimized ? { display: 'none' } : undefined}
         />
       )}
 
@@ -294,22 +390,39 @@ function App() {
       {showProfileEditor && (
         <ProfileEditor
           editProfile={editingProfile ?? undefined}
-          defaultName={editingProfile ? undefined : getNextDefaultName(useAppStore.getState().profiles)}
+          defaultName={editingProfile ? undefined : getNextDefaultName(useAppStore.getState().profiles, t('defaultName'))}
           onClose={() => {
             setShowProfileEditor(false);
             setEditingProfile(null);
           }}
-          onSave={() => {
+          onSave={(created) => {
             setShowProfileEditor(false);
             setShowProfileSelector(false);
             setEditingProfile(null);
+            if (created) {
+              setStampTestRequest(null);
+              setStampTestActive(false);
+              setActiveTab('explore');
+              globeRef.current?.resetToIdle();
+            }
           }}
         />
+      )}
+
+      {showAbout && (
+        <AboutSheet onClose={() => setShowAbout(false)} />
       )}
 
       {showSettings && (
         <SettingsSheet
           onClose={() => setShowSettings(false)}
+          onOpenLanguage={() => { setShowSettings(false); setShowLanguage(true); }}
+        />
+      )}
+
+      {showLanguage && (
+        <LanguageSheet
+          onClose={() => { setShowLanguage(false); setShowSettings(true); }}
         />
       )}
 

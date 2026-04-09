@@ -1,0 +1,16 @@
+{
+  "header.title": "{{name}}s pass",
+  "header.globalLevel": "Globalt niv\u00e5: {{level}}",
+  "emptyState": "Hvert stempel beviser hva du kan. Fyller du passet?",
+
+  "legend.country": "\u25cb Land",
+  "legend.capital": "\u25ce Hovedstad",
+  "legend.earned": "\u2605 Oppn\u00e5dd",
+  "legend.locked": "L\u00e5st",
+
+  "stampTitle.countries": "Landstempel",
+  "stampTitle.capitals": "Hovedstadsstempel",
+
+  "modal.title": "Stempelpr\u00f8ve",
+  "modal.questionCount": "Du m\u00e5 svare p\u00e5 {{count}} sp\u00f8rsm\u00e5l uten noen feil."
+}

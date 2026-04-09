@@ -1,0 +1,28 @@
+{
+  "title": "Az Explorisról",
+  "intro": "Az Exploris egy interaktív 3D-földgömbbel rendelkező földrajztanuló alkalmazás. Tanulj országokat, fővárosokat és még sok mást vizuális és szórakoztató módon.",
+  "section.countries.title": "Országok",
+  "section.countries.body": "Az Exploris tartalmazza az Egyesült Nemzetek által elismert 195 országot, amely a világszerte legelismertebb szabvány. A földgömbön el nem ismert vagy vitatott területeket is felfedezhetsz.\n\nA földgömb úgy mutatja a Földet, ahogy az az űrből látszik. Így érzékelheted az országok valódi méretét — amit a sík térképek nem tudnak megmutatni.",
+  "section.learn.title": "Hogyan tanulj",
+  "section.learn.tips.explore": "Kezdd a Felfedezésnél: forgasd a földgömböt, érintsd meg az országokat az infókártya megtekintéséhez, és ismerkedj meg az alakjukkal és elhelyezkedésükkel. A Táblázat nézet segít összekötni az egyes országokat a fővárosukkal. Érintsd meg bármelyik országot vagy fővárost a táblázatban, hogy meglásd a földgömbön.",
+  "section.learn.tips.play": "Ha készen állsz, vágj bele a Játékba. Javasoljuk a Kaland módot, amely intelligensen kombinálja a lentebb ismertetett különböző játéktípusokat, és alkalmazkodik a tudásodhoz, hogy segítsen tanulni.",
+  "section.learn.tips.passport": "A végső célod az Útlevél megtöltése pecsétekkel. Egy pecsét megszerzéséhez hibátlanul kell teljesítened egy pecsétpróbát.",
+  "section.gameTypes.title": "Játéktípusok",
+  "section.gameTypes.intro": "6 játéktípus van, a könnyebbtől a nehezebbig rendezve:",
+  "section.gameTypes.E": "◯? — Azonosítsd az országot — Egy ország kiemelésre kerül a földgömbön, és kiválasztod a nevét 4 lehetőség közül.",
+  "section.gameTypes.C": "◯→◎ — Országból főváros — Kapsz egy országot, és kiválasztod a fővárosát 4 lehetőség közül.",
+  "section.gameTypes.D": "◎→◯ — Fővárosból ország — Kapsz egy fővárost, és kiválasztod, melyik országhoz tartozik.",
+  "section.gameTypes.F": "◎? — Azonosítsd a fővárost — Egy főváros kiemelésre kerül a földgömbön, és kiválasztod a nevét.",
+  "section.gameTypes.A": "◯ — Mutasd meg az országot — Kapsz egy nevet, és megérinted az országot a földgömbön.",
+  "section.gameTypes.B": "◎ — Mutasd meg a fővárost — Kapsz egy fővárost, és megérinted a helyét a földgömbön.",
+  "section.gameTypes.adventure": "A Kaland mód az összes típust kombinálja, és alkalmazkodik a haladásodhoz. Ez az ajánlott játékmód.",
+  "section.gameTypes.stamps": "A „Mutasd meg az országot” és a „Mutasd meg a fővárost” típusokat használják az Útlevél pecsétpróbáin.",
+  "section.stats.title": "Statisztikák",
+  "section.stats.body": "A Statisztikák nézetnek két füle van:\n\n• Játék — Megmutatja az elsajátítási szintedet minden játéktípusban.\n\n• Pecsétpróbák — Megmutatja az eredményeidet az Útlevél próbáin.\n\nVálthatsz az elsajátítási jelzők (✓/✗) és a találati százalékok között. Érintsd meg egy országot, hogy közvetlenül az infókártyájára ugorj a Felfedezésben.",
+  "section.sources.title": "Adatforrások",
+  "section.sources.body": "Az adatok nyilvános forrásokból származnak, mint az Egyesült Nemzetek, a Natural Earth, a Világbank és a Wikidata. Az alkalmazás automatikusan ellenőrzi, hogy vannak-e frissebb adatok, és a háttérben frissíti őket. A térképek csak az alkalmazás új verzióival változnak.",
+
+  "section.privacy.title": "Adatvédelem",
+  "section.privacy.body": "Az Exploris nem gyűjt személyes adatokat. A fejlődésed csak a készülékeden van tárolva.",
+  "section.privacy.linkLabel": "Adatvédelmi szabályzat megtekintése"
+}

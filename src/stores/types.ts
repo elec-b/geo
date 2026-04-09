@@ -1,4 +1,4 @@
-// Tipos del estado global de GeoExpert
+// Tipos del estado global de Exploris
 import type { Continent, GameLevel, QuestionType } from '../data/types';
 
 /** Identificador de perfil (UUID) */
@@ -60,10 +60,15 @@ export interface AppSettings {
   showMarkers: boolean;
   showSeaLabels: boolean;
   vibration: boolean;
-  theme: 'dark';        // por ahora solo dark
-  locale: 'es';         // por ahora solo español
+  theme: 'dark' | 'light';
+  locale: string;       // código de idioma (ej. 'es', 'en')
   lastPlayed?: { continent: Continent; level: GameLevel } | null;
   lastStampPlayed?: { continent: Continent; level: GameLevel } | null;
+  lastActiveContinent?: Continent | null;
+  lastTableSort?: { key: 'name' | 'capital' | 'population' | 'level'; dir: 'asc' | 'desc' } | null;
+  lastExploreMode?: 'countries' | 'capitals';
+  /** Contador de aperturas de la app (para decidir cuándo solicitar valoración) */
+  sessionCount?: number;
 }
 
 /** Estado completo de la aplicación */
@@ -71,4 +76,6 @@ export interface AppState {
   profiles: UserProfile[];
   activeProfileId: ProfileId | null;
   settings: AppSettings;
+  /** Señal reactiva: se incrementa al resetear attempts (invalida useMemos en consumidores) */
+  attemptsVersion: number;
 }

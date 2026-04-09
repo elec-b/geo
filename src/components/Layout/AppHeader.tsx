@@ -1,4 +1,5 @@
 // AppHeader - Barra superior con avatar, estadísticas y configuración
+import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../stores/appStore';
 import { AvatarIcon } from '../Profile/AvatarIcon';
 import { DEFAULT_AVATAR } from '../../data/avatars';
@@ -8,9 +9,11 @@ interface AppHeaderProps {
   onStatsClick?: () => void;
   onAvatarClick?: () => void;
   onSettingsClick?: () => void;
+  onAboutClick?: () => void;
 }
 
-export function AppHeader({ onStatsClick, onAvatarClick, onSettingsClick }: AppHeaderProps) {
+export function AppHeader({ onStatsClick, onAvatarClick, onSettingsClick, onAboutClick }: AppHeaderProps) {
+  const { t } = useTranslation('common');
   const activeAvatar = useAppStore((s) => {
     const profile = s.profiles.find((p) => p.id === s.activeProfileId);
     return profile?.avatar ?? DEFAULT_AVATAR;
@@ -18,14 +21,26 @@ export function AppHeader({ onStatsClick, onAvatarClick, onSettingsClick }: AppH
 
   return (
     <header className="app-header">
-      {/* Avatar del perfil activo (izquierda) */}
-      <button
-        className="app-header__button app-header__button--avatar"
-        onClick={onAvatarClick}
-        aria-label="Perfil de usuario"
-      >
-        <AvatarIcon avatarId={activeAvatar} size="sm" />
-      </button>
+      {/* Grupo izquierdo: avatar + info */}
+      <div className="app-header__left">
+        <button
+          className="app-header__button app-header__button--avatar"
+          onClick={onAvatarClick}
+          aria-label={t('aria.userProfile')}
+        >
+          <AvatarIcon avatarId={activeAvatar} size="sm" />
+        </button>
+        <button
+          className="app-header__button"
+          onClick={onAboutClick}
+          aria-label={t('aria.about')}
+        >
+          <svg className="app-header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+          </svg>
+        </button>
+      </div>
 
       {/* Botones derechos: estadísticas + configuración */}
       <div className="app-header__right">
@@ -33,7 +48,7 @@ export function AppHeader({ onStatsClick, onAvatarClick, onSettingsClick }: AppH
           <button
             className="app-header__button"
             onClick={onStatsClick}
-            aria-label="Estadísticas"
+            aria-label={t('aria.stats')}
           >
             <svg className="app-header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="12" width="4" height="9" rx="1" />
@@ -45,7 +60,7 @@ export function AppHeader({ onStatsClick, onAvatarClick, onSettingsClick }: AppH
         <button
           className="app-header__button"
           onClick={onSettingsClick}
-          aria-label="Configuración"
+          aria-label={t('aria.settings')}
         >
           <svg className="app-header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="12" cy="12" r="3" />

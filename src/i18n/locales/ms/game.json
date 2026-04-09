@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Pilih benua",
+  "selector.chooseLevel": "Pilih tahap",
+  "selector.chooseGame": "Pilih permainan",
+  "selector.adventure": "Pengembaraan",
+  "selector.adventureDesc": "Menyesuaikan dengan apa yang anda tahu",
+  "selector.specificTypes": "atau pilih permainan khusus",
+  "selector.start": "Mula",
+  "selector.continue": "Teruskan",
+  "selector.completed": "Lulus ★",
+  "selector.countryCount_one": "{{count}} negara",
+  "selector.countryCount_other": "{{count}} negara",
+  "selector.lockedToast": "Dapatkan setem dari tahap sebelumnya",
+
+  "selector.stampReady.both": "Bersedia untuk ujian setem!",
+  "selector.stampReady.countries": "Bersedia untuk ujian negara!",
+  "selector.stampReady.capitals": "Bersedia untuk ujian ibu negeri!",
+
+  "question.locate": "Cari",
+  "question.locateCapital": "Cari ibu negerinya",
+  "question.capitalOf": "Apakah ibu negeri {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} ialah ibu negeri bagi...",
+  "question.whichCountry": "Negara mana yang diserlahkan?",
+  "question.whichCapital": "Apakah ibu negeri negara ini?",
+
+  "progress.stampTest": "Ujian setem: {{current}} daripada {{total}}",
+  "progress.adventurePercent": "{{percent}}% selesai",
+  "progress.typeDominated": "{{current}} daripada {{total}} dikuasai",
+  "progress.stampBanner.countries": "Ujian setem: Negara",
+  "progress.stampBanner.capitals": "Ujian setem: Ibu Negeri",
+
+  "modal.stampEarned.title": "Setem diperoleh",
+  "modal.stampEarned.text": "{{correct}} daripada {{total}} betul. Tiada kesilapan.",
+
+  "modal.stampFailed.veryClose": "Hampir berjaya!",
+  "modal.stampFailed.veryCloseText": "Tinggal sedikit sahaja.",
+  "modal.stampFailed.goodTry": "Cubaan yang baik!",
+  "modal.stampFailed.goodTryText": "Setiap cubaan mendekatkan anda.",
+  "modal.stampFailed.onTrack": "Di landasan yang betul",
+  "modal.stampFailed.onTrackText": "Teruskan bermain, kemajuan anda nyata.",
+  "modal.stampFailed.dontGiveUp": "Jangan berputus asa",
+  "modal.stampFailed.dontGiveUpText": "Latihan menjadikan sempurna.",
+  "modal.stampFailed.score": "{{correct}} daripada {{total}} betul.",
+
+  "modal.poolExhausted.trainingComplete": "Latihan selesai",
+  "modal.poolExhausted.readyForStamp": "Hebat!<br />Bersedia untuk setem",
+  "modal.poolExhausted.completedText": "Anda telah melengkapkan <em>{{continent}}</em> di tahap <em>{{level}}</em>. Anda boleh menetapkan semula statistik untuk berlatih lagi.",
+  "modal.poolExhausted.chooseStamp": "Pilih ujian. Anda perlu melengkapkannya tanpa kesilapan untuk mendapat setem.",
+  "modal.poolExhausted.typePassed": "Hebat!<br /><em>{{type}}</em> lulus",
+  "modal.poolExhausted.stampReady": "Anda bersedia untuk ujian setem. Lengkapkan tanpa kesilapan untuk mendapatkannya.",
+  "modal.poolExhausted.tryStamp.countries": "Cuba setem Negara",
+  "modal.poolExhausted.tryStamp.capitals": "Cuba setem Ibu Negeri",
+  "modal.poolExhausted.selectOther": "Pilih permainan lain",
+  "modal.poolExhausted.playType": "Main <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Main <em>Pengembaraan</em>",
+
+  "stamp.countries": "Setem Negara",
+  "stamp.capitals": "Setem Ibu Negeri",
+
+  "modal.stampChooser.title": "Ujian setem",
+  "modal.stampChooser.text": "Pilih ujian. Anda perlu melengkapkan {{count}} soalan tanpa sebarang kesilapan.",
+
+  "modal.alreadyDominated.title": "Sudah menguasai<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "Anda telah menjawab betul semua negara. Anda boleh menetapkan semula statistik untuk berlatih lagi.",
+  "modal.alreadyDominated.completedTraining": "Anda telah melengkapkan latihan <em>{{continent}}</em> di tahap <em>{{level}}</em>.",
+  "modal.alreadyDominated.tryStamp": "Cuba ujian setem",
+  "modal.alreadyDominated.goToStats": "Ke Statistik"
+}

@@ -1,0 +1,48 @@
+{
+  "segmented.globe": "Földgömb",
+  "segmented.table": "Táblázat",
+  "labels.countries": "Országok",
+  "labels.capitals": "Fővárosok",
+
+  "table.country": "Ország",
+  "table.capital": "Főváros",
+  "table.population": "Népesség",
+  "table.nonUNToggle": "ENSZ-n kívüli területek",
+
+  "card.disclaimer.antarctica": "Nemzetközi terület — Antarktiszi Egyezmény (1959)",
+  "card.disclaimer.territory": "{{sovereign}} területe",
+  "card.disclaimer.disputed": "Vitatott szuverenitás",
+  "card.flagAlt": "{{country}} zászlaja",
+  "card.aria.openWikipedia": "{{country}} megnyitása a Wikipédián",
+  "card.aria.dialog": "{{country}} adatlapja",
+
+  "card.field.capital": "Főváros",
+  "card.field.population": "Népesség",
+  "card.field.area": "Terület",
+  "card.field.density": "Népsűrűség",
+  "card.field.currency": "Pénznem",
+  "card.field.demonym": "Népnév",
+  "card.field.languages": "Nyelvek",
+  "card.field.hdi": "HDI",
+  "card.field.ihdi": "IHDI",
+  "card.unit.inhabitants": "fő",
+  "card.unit.densityUnit": "fő/km²",
+  "card.na": "N/A",
+
+  "card.tooltip.hdi": "Emberi Fejlettségi Index: az egészséget, oktatást és jövedelmet méri. Tartomány: 0–1.",
+  "card.tooltip.ihdi": "Egyenlőtlenséggel korrigált HDI: figyelembe veszi az egészségi, oktatási és jövedelmi egyenlőtlenséget.",
+  "card.aria.hdiInfo": "HDI információ",
+  "card.aria.ihdiInfo": "IHDI információ",
+
+  "card.antarctica.info": "Az Antarktisz egyetlen országé sem. Az 1959-ben aláírt Antarktiszi Egyezmény a tudományos kutatásnak tartja fenn, és tiltja a katonai tevékenységet és az erőforrások kiaknázását.",
+
+  "card.sovereign.GB": "az Egyesült Királyságé",
+  "card.sovereign.FR": "Franciaországé",
+  "card.sovereign.US": "az Egyesült Államoké",
+  "card.sovereign.NL": "Hollandiáé",
+  "card.sovereign.DK": "Dániáé",
+  "card.sovereign.CN": "Kínáé",
+  "card.sovereign.NZ": "Új-Zélandé",
+  "card.sovereign.FI": "Finnországé",
+  "card.sovereign.AU": "Ausztráliáé"
+}

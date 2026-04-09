@@ -1,0 +1,68 @@
+{
+  "selector.chooseContinent": "Choose continent",
+  "selector.chooseLevel": "Choose level",
+  "selector.chooseGame": "Choose game",
+  "selector.adventure": "Adventure",
+  "selector.adventureDesc": "Adapts to what you know",
+  "selector.specificTypes": "or pick a specific game",
+  "selector.start": "Start",
+  "selector.continue": "Continue",
+  "selector.completed": "Completed \u2605",
+  "selector.countryCount_one": "{{count}} country",
+  "selector.countryCount_other": "{{count}} countries",
+  "selector.lockedToast": "Earn the stamps from the previous level",
+
+  "selector.stampReady.both": "Ready for the stamp tests!",
+  "selector.stampReady.countries": "Ready for the countries test!",
+  "selector.stampReady.capitals": "Ready for the capitals test!",
+
+  "question.locate": "Locate",
+  "question.locateCapital": "Locate the capital",
+  "question.capitalOf": "What is the capital of {{country}}?",
+  "question.capitalBelongsTo": "{{capital}} is the capital of\u2026",
+  "question.whichCountry": "Which country is highlighted?",
+  "question.whichCapital": "What is the capital of this country?",
+
+  "progress.stampTest": "Stamp test: {{current}} of {{total}}",
+  "progress.adventurePercent": "{{percent}}% completed",
+  "progress.typeDominated": "{{current}} of {{total}} mastered",
+  "progress.stampBanner.countries": "Stamp test: Countries",
+  "progress.stampBanner.capitals": "Stamp test: Capitals",
+
+  "modal.stampEarned.title": "Stamp earned",
+  "modal.stampEarned.text": "{{correct}} of {{total}} correct. No mistakes.",
+
+  "modal.stampFailed.veryClose": "So close!",
+  "modal.stampFailed.veryCloseText": "Just one step away from the stamp.",
+  "modal.stampFailed.goodTry": "Good try!",
+  "modal.stampFailed.goodTryText": "Every attempt brings you closer.",
+  "modal.stampFailed.onTrack": "On the right track",
+  "modal.stampFailed.onTrackText": "Keep playing \u2014 your progress shows.",
+  "modal.stampFailed.dontGiveUp": "Don't give up",
+  "modal.stampFailed.dontGiveUpText": "Practice makes perfect.",
+  "modal.stampFailed.score": "{{correct}} of {{total}} correct.",
+
+  "modal.poolExhausted.trainingComplete": "Training complete",
+  "modal.poolExhausted.readyForStamp": "Awesome!<br />Ready for the stamp",
+  "modal.poolExhausted.completedText": "You've completed <em>{{continent}}</em> at the <em>{{level}}</em> level. You can reset stats to practice again.",
+  "modal.poolExhausted.chooseStamp": "Choose a test. You must complete it with no mistakes to earn the stamp.",
+  "modal.poolExhausted.typePassed": "Awesome!<br /><em>{{type}}</em> completed",
+  "modal.poolExhausted.stampReady": "You're ready for the stamp test. Complete it with no mistakes to earn it.",
+  "modal.poolExhausted.tryStamp.countries": "Try Countries stamp",
+  "modal.poolExhausted.tryStamp.capitals": "Try Capitals stamp",
+  "modal.poolExhausted.selectOther": "Select another game",
+  "modal.poolExhausted.playType": "Play <em>{{type}}</em>",
+  "modal.poolExhausted.playAdventure": "Play <em>Adventure</em>",
+
+  "stamp.countries": "Countries Stamp",
+  "stamp.capitals": "Capitals Stamp",
+
+  "modal.stampChooser.title": "Stamp test",
+  "modal.stampChooser.text": "Choose a test. You must answer {{count}} questions with no mistakes.",
+
+  "modal.alreadyDominated.title": "You've mastered<br /><em>{{type}}</em>",
+  "modal.alreadyDominated.allCorrect": "You got every country right. You can reset stats to practice again.",
+  "modal.alreadyDominated.completedTraining": "You've completed the training for <em>{{continent}}</em> at the <em>{{level}}</em> level.",
+  "modal.alreadyDominated.tryStamp": "Try stamp test",
+  "modal.alreadyDominated.goToStats": "Go to Statistics"
+}

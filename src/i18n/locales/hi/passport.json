@@ -1,0 +1,16 @@
+{
+  "header.title": "{{name}} का पासपोर्ट",
+  "header.globalLevel": "वैश्विक स्तर: {{level}}",
+  "emptyState": "हर मुहर आपके ज्ञान का प्रमाण है। क्या आप पूरा पासपोर्ट भर सकते हैं?",
+
+  "legend.country": "○ देश",
+  "legend.capital": "◎ राजधानी",
+  "legend.earned": "★ प्राप्त",
+  "legend.locked": "लॉक",
+
+  "stampTitle.countries": "देश मुहर",
+  "stampTitle.capitals": "राजधानी मुहर",
+
+  "modal.title": "मुहर परीक्षा",
+  "modal.questionCount": "{{count}} प्रश्न बिना किसी गलती के पूरे करने होंगे।"
+}
