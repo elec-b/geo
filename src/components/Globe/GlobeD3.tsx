@@ -29,7 +29,7 @@ const ADAPTIVE_ZOOM_MAX = 40;
 // Marcadores de microestados
 const MARKER_RADIUS = 8;
 const MARKER_LINE_WIDTH = 1.0;
-const MARKER_MAX_OPACITY = 0.5;
+const MARKER_MAX_OPACITY = 0.7;
 const MARKER_DASH = [3, 3];
 const MARKER_ZOOM_START = 3;
 const MARKER_ZOOM_FULL = 5;

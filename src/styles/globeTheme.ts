@@ -67,7 +67,7 @@ const LIGHT_GLOBE: GlobeThemeColors = {
   labelCapitalNonUn: 'rgba(160, 100, 20, 0.6)',
   labelShadow: 'rgba(245, 240, 230, 0.7)',
   seaLabelRgb: '15, 35, 80',
-  markerRgb: '80, 65, 35',
+  markerRgb: '60, 45, 20',
   selected: '#c49a4c',
   correct: '#3a9a5c',
   incorrect: '#c44040',
