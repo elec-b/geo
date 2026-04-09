@@ -45,10 +45,10 @@
 - [ ] Clasificación por edad: 4+ (iOS) / Everyone (Android). Dos cuestionarios separados (Apple tiene el suyo propio en App Store Connect; Google usa IARC vía Play Console). NO categorizar como «directed to children» — evita Kids Category / Families Policy (incompatibles con el enlace a Wikipedia). Respuestas preparadas en `docs/stores/age-rating.md` (enlace Wikipedia verificado como externo en iPhone); pendiente de transcribir a las consolas cuando existan los app records + verificar comportamiento equivalente en Android tras `cap add android`
 
 ### iOS — Build & Test
-- [ ] Certificados y provisioning profiles de distribución (actualmente solo Debug)
-- [ ] Crear app record en App Store Connect
-- [ ] Export compliance: `ITSAppUsesNonExemptEncryption = NO` en Info.plist (HTTPS al CDN es cifrado del sistema, exento)
-- [ ] MARKETING_VERSION + CURRENT_PROJECT_VERSION en Xcode (sync con package.json)
+- [x] Certificados y provisioning profiles de distribución (actualmente solo Debug)
+- [x] Crear app record en App Store Connect
+- [x] Export compliance: `ITSAppUsesNonExemptEncryption = NO` en Info.plist (HTTPS al CDN es cifrado del sistema, exento)
+- [x] MARKETING_VERSION + CURRENT_PROJECT_VERSION en Xcode (sync con package.json)
 - [ ] Testing en simuladores: iPhone SE, estándar, Pro Max, iPad (si se soporta)
 - [ ] Verificar safe areas, status bar, interrupciones (llamadas, notificaciones, background/foreground)
 - [ ] Verificar icono (sin alpha) y splash screen en todos los tamaños
