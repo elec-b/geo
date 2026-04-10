@@ -1,3 +1,9 @@
+# App Store Connect API Key
+.p8/
+
+# Store screenshots (pesados, no versionados)
+docs/stores/screenshots/
+
 # Logs
 logs
 *.log

@@ -43,7 +43,7 @@
 - [x] Fix: al cambiar de idioma con pregunta en curso, la pregunta se regenera al vuelo en el nuevo idioma (prompt y opciones). Prueba de sello reconstruye la cola pendiente sin terminar prematuramente. Si el usuario está viendo feedback tras responder, se mantiene hasta pulsar siguiente
 - [x] Versionado: 0.1.0 → 1.0.0 (package.json + MARKETING_VERSION en Xcode). CURRENT_PROJECT_VERSION se mantiene en 1 para primera release
 - [x] Privacy policy + URL de soporte en página pública: reutilizado repo `exploris-data` (GitHub Pages). Páginas en inglés (index/privacy/support). Sección «Privacidad» in-app en About con link externo, traducida a 32 idiomas
-- [ ] Clasificación por edad: 4+ (iOS) / Everyone (Android). Dos cuestionarios separados (Apple tiene el suyo propio en App Store Connect; Google usa IARC vía Play Console). NO categorizar como «directed to children» — evita Kids Category / Families Policy (incompatibles con el enlace a Wikipedia). Respuestas preparadas en `docs/stores/age-rating.md` (enlace Wikipedia verificado como externo en iPhone); pendiente de transcribir a las consolas cuando existan los app records + verificar comportamiento equivalente en Android tras `cap add android`
+- [x] Clasificación por edad: iOS completado (4+). Android pendiente de `cap add android`. Respuestas en `docs/stores/age-rating.md`
 
 ### iOS — Build & Test
 - [x] Certificados y provisioning profiles de distribución (actualmente solo Debug)
@@ -54,10 +54,20 @@
 - [x] Verificar safe areas, status bar, interrupciones (llamadas, notificaciones, background/foreground)
 - [x] Verificar icono (sin alpha) y splash screen en todos los tamaños
 - [x] Build de producción (Archive) + upload a App Store Connect
-- [ ] TestFlight: validar instalación + CDN + permisos en dispositivo real (5-7 días)
+- [x] TestFlight: validación en dispositivo real (testeado directamente en iPhone, sin distribución TestFlight)
 
 ### iOS — Submission
-- [ ] Metadata en App Store Connect + App Privacy label («No data collected») + screenshots (3-5, resolución 6.9" reutilizable para todos los tamaños)
+- [x] Age Rating: cuestionario completado en App Store Connect (4+)
+- [x] Metadata (32 idiomas): subida automatizada vía App Store Connect API (`scripts/upload-metadata.mjs`). Incluye name, subtitle, description, keywords, promotional text
+- [ ] App Privacy label («No data collected») — verificar que esté configurado
+- [ ] Screenshots: faltan 3 capturas + subida a App Store Connect
+  - [x] Globo en Explorar (tema claro) — 32 idiomas (`docs/stores/screenshots/globe_light/`)
+  - [x] Ficha de país (tema claro) — 32 idiomas (`docs/stores/screenshots/country_card_light/`)
+  - [ ] Jugar: pregunta de Aventura en curso (tema claro)
+  - [ ] Pasaporte con sellos ganados (tema oscuro)
+  - [ ] Globo con mares/océanos (tema oscuro)
+  - [ ] Subir screenshots a App Store Connect (automatizar con API como metadata)
+- [ ] Copyright: `© 2026 Exploris`
 - [ ] Enviar a App Store Review
 
 ### Android — Setup (iniciar en paralelo con iOS Build & Test)
