@@ -56,15 +56,29 @@
 - [x] Build de producción (Archive) + upload a App Store Connect
 - [x] TestFlight: validación en dispositivo real (testeado directamente en iPhone, sin distribución TestFlight)
 
+### Bugs de layout multi-idioma
+- [ ] Check intensivo de layout en todos los idiomas: recorrer las pantallas principales (Pasaporte, Jugar, Estadísticas, fichas de país) en los 32 idiomas buscando desbordamientos, truncados o solapamientos
+  - ¿Cuál es la mejor manera de automatizar esto?
+- [ ] Fix: nombres de nivel largos desbordan el layout del Pasaporte (detectado en finés: "Selkärepputuristi", 17 chars). Idiomas afectados: FI, CS (17), IT, DA (15). En zona de riesgo: VI (14), RU (14), TH (13). Revisar Pasaporte, selector de Jugar, Estadísticas y modales
+- [ ] Fix: pills de continente truncadas en vietnamita ("Châu Đại Dương" se corta en Explorar).
+
+
+### iOS — Re-build (tras fix de layout multi-idioma)
+- [ ] Bump `CURRENT_PROJECT_VERSION` a 2 en Xcode (App Store Connect requiere build number nuevo)
+- [ ] Build de producción (Archive) + upload a App Store Connect
+- [ ] Validación en dispositivo real
+
 ### iOS — Submission
 - [x] Age Rating: cuestionario completado en App Store Connect (4+)
 - [x] Metadata (32 idiomas): subida automatizada vía App Store Connect API (`scripts/upload-metadata.mjs`). Incluye name, subtitle, description, keywords, promotional text
-- [ ] App Privacy label («No data collected») — verificar que esté configurado
-- [ ] Screenshots: faltan 3 capturas + subida a App Store Connect
+- [x] App Privacy label («No data collected») — verificar que esté configurado
+- [ ] Screenshots + subida a App Store Connect
   - [x] Globo en Explorar (tema claro) — 32 idiomas (`docs/stores/screenshots/globe_light/`)
   - [x] Ficha de país (tema claro) — 32 idiomas (`docs/stores/screenshots/country_card_light/`)
-  - [ ] Jugar: pregunta de Aventura en curso (tema claro)
-  - [ ] Pasaporte con sellos ganados (tema oscuro)
+  - [x] Jugar: pregunta de Aventura en curso (tema claro) — 32 idiomas (`docs/stores/screenshots/play_question_light/`)
+  - [x] Jugar: pregunta de Aventura en curso (tema oscuro) — 32 idiomas (`docs/stores/screenshots/play_question_dark/`)
+  - [ ] Rehacer `globe_light_vi` y `country_card_light_vi` tras el fix de bugs de layout multi-idioma
+  - [ ] Pasaporte con sellos ganados (tema oscuro) — hacer después del fix de layout
   - [ ] Globo con mares/océanos (tema oscuro)
   - [ ] Subir screenshots a App Store Connect (automatizar con API como metadata)
 - [ ] Copyright: `© 2026 Exploris`
