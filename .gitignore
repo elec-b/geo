@@ -25,6 +25,9 @@ dist-ssr
 # CDN output (generado por npm run generate-cdn)
 cdn-output
 
+# Layout check output (generado por npm run layout-check)
+layout-check-output
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

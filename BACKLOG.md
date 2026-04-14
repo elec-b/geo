@@ -57,10 +57,11 @@
 - [x] TestFlight: validación en dispositivo real (testeado directamente en iPhone, sin distribución TestFlight)
 
 ### Bugs de layout multi-idioma
-- [ ] Check intensivo de layout en todos los idiomas: recorrer las pantallas principales (Pasaporte, Jugar, Estadísticas, fichas de país) en los 32 idiomas buscando desbordamientos, truncados o solapamientos
-  - ¿Cuál es la mejor manera de automatizar esto?
-- [ ] Fix: nombres de nivel largos desbordan el layout del Pasaporte (detectado en finés: "Selkärepputuristi", 17 chars). Idiomas afectados: FI, CS (17), IT, DA (15). En zona de riesgo: VI (14), RU (14), TH (13). Revisar Pasaporte, selector de Jugar, Estadísticas y modales
-- [ ] Fix: pills de continente truncadas en vietnamita ("Châu Đại Dương" se corta en Explorar).
+- [x] Automatización del check: script `scripts/layout-check.mjs` (Playwright + iPhone 14 viewport) que cicla los 32 idiomas × 4 pantallas (Explorar/Jugar/Pasaporte/Stats), detecta overflow DOM y captura screenshots. Ejecutar con `npm run layout-check` (dev server en localhost:5173). Output en `layout-check-output/` (ignorado en git)
+- [ ] Fix: pills de continente truncadas por la derecha. Confirmado por script en VI ("Châu Đại Dương", clipped 27px en Explorar y 18px en Stats) y JA ("オセアニア", clipped 13px en Explorar). Revisar `.continent-filter__pill` y `.stats-pill`
+- [ ] Fix: celdas bloqueadas del Pasaporte desbordan por la derecha en HU ("🔒45", "🔒54", etc.) — clipped 2px, última columna del grid. Afecta también a Stats (mismo componente). Probable issue de padding/gap
+- [ ] Revisión manual de screenshots para bugs conocidos no detectados por el script (nombres de nivel largos — el ellipsis los oculta sin overflow DOM): `layout-check-output/screenshots/{fi,cs,it,da}/03-passport.png`. Si se confirma, fix en `.passport-grid__level-name`, `.level-selector__level-name` y header de Estadísticas
+- [ ] Tras fixes: re-ejecutar `npm run layout-check`, verificar 0 issues, y merge de `fix/layout-multi-idioma` a main
 
 
 ### iOS — Re-build (tras fix de layout multi-idioma)
