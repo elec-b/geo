@@ -124,11 +124,12 @@
 /* Pills de selección */
 .stats-pills {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--spacing-xs);
+  row-gap: var(--spacing-xs);
   padding: 0 var(--spacing-md) var(--spacing-sm);
-  overflow-x: auto;
   flex-shrink: 0;
-  -webkit-overflow-scrolling: touch;
 }
 
 .stats-pill {

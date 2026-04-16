@@ -30,6 +30,8 @@
   color: var(--color-text-primary);
   text-align: center;
   max-width: 20rem;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 @keyframes question-banner-enter {

@@ -232,6 +232,11 @@ function App() {
     }
   }, [locale, i18n]);
 
+  // Sincronizar <html lang> con el idioma activo — necesario para hyphens: auto
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
+
   // Cargar datos de países en el idioma activo
   useEffect(() => {
     invalidateCache();
