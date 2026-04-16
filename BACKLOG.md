@@ -63,6 +63,7 @@
 - [x] Nombres de nivel largos: sync `<html lang>` con i18n en `App.tsx` + `overflow-wrap: break-word` + `hyphens: auto` en `.passport-grid__level-name` y `.level-selector__level-name`. Soft hyphens (`\u00AD`) en frontera de compuesto para FI (`Selkäreppu-turisti`), DE (`Back-packer`, `Reise-leiter`), NL/SV (`Back-packer`), HU (`Háti-zsákos`, `Idegen-vezető`). `:lang()` con `hyphens: manual` en esos 5 idiomas para forzar uso exclusivo de los shy (el diccionario del navegador a veces prefería corte silábico sub-óptimo)
 - [x] VI Pasaporte: continent-label con `white-space: normal` + grid `min-content` → «Châu Đại Dương» envuelve a 2 líneas, deja respirar las columnas de nivel
 - [x] ES «Mochilero» truncaba en Pasaporte: ensanchado widget a 24 rem + reducido padding de `.passport-view` y `.passport-grid` (gana ~32 px; Mochilero, Guide y equivalentes caben en 1 línea)
+- [ ] Leyenda del Pasaporte en tema claro: el texto se ve apagado / poco legible (bajo contraste con el fondo `--glass-bg` claro). Revisar `.passport-legend` en `PassportView.css` y asegurar contraste suficiente en ambos temas. Afecta a los 4 labels: «País», «Capital», «Conseguido», «Bloqueado»
 - [ ] Pre-merge a main de `fix/layout-multi-idioma`: re-ejecutar `npm run layout-check` y verificar que los 10 issues previos en VI/passport-cell quedan resueltos por el fix de `min-content`. Si queda algo, último ajuste antes del merge
 
 
