@@ -57,10 +57,14 @@
 - [x] TestFlight: validación en dispositivo real (testeado directamente en iPhone, sin distribución TestFlight)
 
 ### Bugs de layout multi-idioma
-- [ ] Check intensivo de layout en todos los idiomas: recorrer las pantallas principales (Pasaporte, Jugar, Estadísticas, fichas de país) en los 32 idiomas buscando desbordamientos, truncados o solapamientos
-  - ¿Cuál es la mejor manera de automatizar esto?
-- [ ] Fix: nombres de nivel largos desbordan el layout del Pasaporte (detectado en finés: "Selkärepputuristi", 17 chars). Idiomas afectados: FI, CS (17), IT, DA (15). En zona de riesgo: VI (14), RU (14), TH (13). Revisar Pasaporte, selector de Jugar, Estadísticas y modales
-- [ ] Fix: pills de continente truncadas en vietnamita ("Châu Đại Dương" se corta en Explorar).
+- [x] Automatización del check: script `scripts/layout-check.mjs` (Playwright + iPhone 14 viewport) que cicla los 32 idiomas × 4 pantallas (Explorar/Jugar/Pasaporte/Stats), detecta overflow DOM y captura screenshots. Ejecutar con `npm run layout-check`. Output en `layout-check-output/` (ignorado en git)
+- [x] Pills de continente: `flex-wrap: wrap` en `.continent-filter` y `.stats-pills` → saltan a 2 filas en VI/JA cuando no caben (antes: clipped 13-27 px)
+- [x] Celdas bloqueadas del Pasaporte en HU: grid `min-content repeat(3, minmax(0, 1fr))` + `min-width: 0` en `.passport-cell` y `.passport-grid__level-header` (antes: «🔒45» clipped 2 px)
+- [x] Nombres de nivel largos: sync `<html lang>` con i18n en `App.tsx` + `overflow-wrap: break-word` + `hyphens: auto` en `.passport-grid__level-name` y `.level-selector__level-name`. Soft hyphens (`\u00AD`) en frontera de compuesto para FI (`Selkäreppu-turisti`), DE (`Back-packer`, `Reise-leiter`), NL/SV (`Back-packer`), HU (`Háti-zsákos`, `Idegen-vezető`). `:lang()` con `hyphens: manual` en esos 5 idiomas para forzar uso exclusivo de los shy (el diccionario del navegador a veces prefería corte silábico sub-óptimo)
+- [x] VI Pasaporte: continent-label con `white-space: normal` + grid `min-content` → «Châu Đại Dương» envuelve a 2 líneas, deja respirar las columnas de nivel
+- [x] ES «Mochilero» truncaba en Pasaporte: ensanchado widget a 24 rem + reducido padding de `.passport-view` y `.passport-grid` (gana ~32 px; Mochilero, Guide y equivalentes caben en 1 línea)
+- [x] Leyenda del Pasaporte en tema claro: movida dentro del grid guilloché (ocupa las 4 columnas con `grid-column: 1 / -1`), separador superior sutil (`border-top`) y margen `spacing-md` para respiro. Fondo glass del grid garantiza contraste en ambos temas; los 4 labels («País», «Capital», «Conseguido», «🔒 Bloqueado») se leen con claridad en claro y oscuro
+- [x] Pre-merge a main de `fix/layout-multi-idioma`: `npm run layout-check` reporta **0 issues** en los 32 idiomas (416 s) — los 10 issues previos en VI/passport-cell resueltos por el fix de `min-content`. Spot-check visual de VI/HU/FI/DE en las 5 pantallas: OK en todas. Los safe-area-insets no se simulan en Playwright, pero eso no afecta la detección de clipping (el script es la fuente de verdad; el look & feel se valida en dispositivo real)
 
 
 ### iOS — Re-build (tras fix de layout multi-idioma)

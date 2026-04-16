@@ -2,8 +2,10 @@
 
 .continent-filter {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: var(--spacing-xs);
+  row-gap: var(--spacing-xs);
   padding: 0 var(--spacing-xs);
   max-width: 100%;
 }
