@@ -64,7 +64,7 @@
 - [x] VI Pasaporte: continent-label con `white-space: normal` + grid `min-content` → «Châu Đại Dương» envuelve a 2 líneas, deja respirar las columnas de nivel
 - [x] ES «Mochilero» truncaba en Pasaporte: ensanchado widget a 24 rem + reducido padding de `.passport-view` y `.passport-grid` (gana ~32 px; Mochilero, Guide y equivalentes caben en 1 línea)
 - [x] Leyenda del Pasaporte en tema claro: movida dentro del grid guilloché (ocupa las 4 columnas con `grid-column: 1 / -1`), separador superior sutil (`border-top`) y margen `spacing-md` para respiro. Fondo glass del grid garantiza contraste en ambos temas; los 4 labels («País», «Capital», «Conseguido», «🔒 Bloqueado») se leen con claridad en claro y oscuro
-- [ ] Pre-merge a main de `fix/layout-multi-idioma`: re-ejecutar `npm run layout-check` y verificar que los 10 issues previos en VI/passport-cell quedan resueltos por el fix de `min-content`. Si queda algo, último ajuste antes del merge
+- [x] Pre-merge a main de `fix/layout-multi-idioma`: `npm run layout-check` reporta **0 issues** en los 32 idiomas (416 s) — los 10 issues previos en VI/passport-cell resueltos por el fix de `min-content`. Spot-check visual de VI/HU/FI/DE en las 5 pantallas: OK en todas. Los safe-area-insets no se simulan en Playwright, pero eso no afecta la detección de clipping (el script es la fuente de verdad; el look & feel se valida en dispositivo real)
 
 
 ### iOS — Re-build (tras fix de layout multi-idioma)
