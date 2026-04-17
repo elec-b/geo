@@ -6,34 +6,28 @@
   "continent.oceania": "Ozeanien",
   "continent.antarctica": "Antarktis",
   "continentFilter.all": "Alle",
-
   "level.tourist": "Tourist",
-  "level.backpacker": "Back\u00ADpacker",
-  "level.guide": "Reise\u00ADleiter",
-
+  "level.backpacker": "Backpacker",
+  "level.guide": "Reiseleiter",
   "questionType.E": "Erkenne das Land",
   "questionType.C": "Land zur Hauptstadt",
   "questionType.D": "Hauptstadt zum Land",
   "questionType.F": "Erkenne die Hauptstadt",
   "questionType.A": "Zeige das Land",
   "questionType.B": "Zeige die Hauptstadt",
-
   "questionTypeShort.E": "Erkenne Land",
   "questionTypeShort.C": "Land zu Hauptstadt",
   "questionTypeShort.D": "Hauptstadt zu Land",
   "questionTypeShort.F": "Erkenne Hauptstadt",
   "questionTypeShort.A": "Zeige das Land",
   "questionTypeShort.B": "Zeige die Hauptstadt",
-
   "tabs.explore": "Entdecken",
   "tabs.play": "Spielen",
   "tabs.passport": "Reisepass",
-
-  "loading": "Globus wird geladen\u2026",
+  "loading": "Globus wird geladen…",
   "cancel": "Abbrechen",
-  "close": "Schlie\u00dfen",
+  "close": "Schließen",
   "continue": "Weiter",
-
   "aria.userProfile": "Benutzerprofil",
   "aria.stats": "Statistiken",
   "aria.settings": "Einstellungen",

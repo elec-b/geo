@@ -6,36 +6,30 @@
   "continent.oceania": "Oceanien",
   "continent.antarctica": "Antarktis",
   "continentFilter.all": "Alla",
-
   "level.tourist": "Turist",
-  "level.backpacker": "Back\u00ADpacker",
+  "level.backpacker": "Backpacker",
   "level.guide": "Guide",
-
   "questionType.E": "Identifiera landet",
   "questionType.C": "Land till huvudstad",
   "questionType.D": "Huvudstad till land",
   "questionType.F": "Identifiera huvudstaden",
   "questionType.A": "Peka ut landet",
   "questionType.B": "Peka ut huvudstaden",
-
   "questionTypeShort.E": "Identifiera land",
   "questionTypeShort.C": "Land till huvudstad",
   "questionTypeShort.D": "Huvudstad till land",
   "questionTypeShort.F": "Identifiera huvudstad",
   "questionTypeShort.A": "Peka ut landet",
   "questionTypeShort.B": "Peka ut huvudstaden",
-
   "tabs.explore": "Utforska",
   "tabs.play": "Spela",
   "tabs.passport": "Pass",
-
-  "loading": "Laddar globen\u2026",
+  "loading": "Laddar globen…",
   "cancel": "Avbryt",
-  "close": "St\u00e4ng",
-  "continue": "Forts\u00e4tt",
-
-  "aria.userProfile": "Anv\u00e4ndarprofil",
+  "close": "Stäng",
+  "continue": "Fortsätt",
+  "aria.userProfile": "Användarprofil",
   "aria.stats": "Statistik",
-  "aria.settings": "Inst\u00e4llningar",
+  "aria.settings": "Inställningar",
   "aria.navigation": "Huvudnavigation"
 }

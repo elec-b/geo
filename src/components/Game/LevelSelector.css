@@ -105,6 +105,7 @@
   display: flex;
   gap: var(--spacing-sm);
   width: 100%;
+  container-type: inline-size;
 }
 
 .level-selector__level-card {
@@ -140,18 +141,9 @@
 }
 
 .level-selector__level-name {
-  font-size: var(--font-size-sm);
+  font-size: clamp(0.65rem, 4.3cqi, 0.875rem);
   font-weight: 600;
   overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-}
-
-.level-selector__level-name:lang(de),
-.level-selector__level-name:lang(nl),
-.level-selector__level-name:lang(sv),
-.level-selector__level-name:lang(fi),
-.level-selector__level-name:lang(hu) {
   -webkit-hyphens: manual;
   hyphens: manual;
 }

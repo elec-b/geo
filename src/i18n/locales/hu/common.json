@@ -6,34 +6,28 @@
   "continent.oceania": "Óceánia",
   "continent.antarctica": "Antarktisz",
   "continentFilter.all": "Mind",
-
   "level.tourist": "Turista",
-  "level.backpacker": "Háti\u00ADzsákos",
-  "level.guide": "Idegen\u00ADvezető",
-
+  "level.backpacker": "Hátizsákos",
+  "level.guide": "Idegenvezető",
   "questionType.E": "Ismerd fel az országot",
   "questionType.C": "Ország a fővároshoz",
   "questionType.D": "Főváros az országhoz",
   "questionType.F": "Ismerd fel a fővárost",
   "questionType.A": "Mutasd meg az országot",
   "questionType.B": "Mutasd meg a fővárost",
-
   "questionTypeShort.E": "Ismerd fel az országot",
   "questionTypeShort.C": "Ország a fővároshoz",
   "questionTypeShort.D": "Főváros az országhoz",
   "questionTypeShort.F": "Ismerd fel a fővárost",
   "questionTypeShort.A": "Mutasd az országot",
   "questionTypeShort.B": "Mutasd a fővárost",
-
   "tabs.explore": "Felfedezés",
   "tabs.play": "Játék",
   "tabs.passport": "Útlevél",
-
   "loading": "Földgömb betöltése…",
   "cancel": "Mégse",
   "close": "Bezárás",
   "continue": "Tovább",
-
   "aria.userProfile": "Felhasználói profil",
   "aria.stats": "Statisztikák",
   "aria.settings": "Beállítások",
