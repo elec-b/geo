@@ -68,44 +68,44 @@
 
 
 ### iOS — Re-build (tras fix de layout multi-idioma)
-- [ ] Bump `CURRENT_PROJECT_VERSION` a 2 en Xcode (App Store Connect requiere build number nuevo)
-- [ ] Build de producción (Archive) + upload a App Store Connect
-- [ ] Validación en dispositivo real
+- [x] Bump `CURRENT_PROJECT_VERSION` a 2 en Xcode (App Store Connect requiere build number nuevo)
+- [x] Build de producción (Archive) + upload a App Store Connect
+- [x] Validación en dispositivo real (testeado intensivamente con `npm run device` previo al build)
 
 ### iOS — Submission
 - [x] Age Rating: cuestionario completado en App Store Connect (4+)
 - [x] Metadata (32 idiomas): subida automatizada vía App Store Connect API (`scripts/upload-metadata.mjs`). Incluye name, subtitle, description, keywords, promotional text
 - [x] App Privacy label («No data collected») — verificar que esté configurado
-- [ ] Screenshots + subida a App Store Connect
+- [x] Screenshots + subida a App Store Connect
   - [x] Globo en Explorar (tema claro) — 32 idiomas (`docs/stores/screenshots/globe_light/`)
   - [x] Ficha de país (tema claro) — 32 idiomas (`docs/stores/screenshots/country_card_light/`)
   - [x] Jugar: pregunta de Aventura en curso (tema claro) — 32 idiomas (`docs/stores/screenshots/play_question_light/`)
   - [x] Jugar: pregunta de Aventura en curso (tema oscuro) — 32 idiomas (`docs/stores/screenshots/play_question_dark/`)
-  - [ ] Rehacer `globe_light_vi` y `country_card_light_vi` tras el fix de bugs de layout multi-idioma
-  - [ ] Pasaporte con sellos ganados (tema oscuro) — hacer después del fix de layout
-  - [ ] Globo con mares/océanos (tema oscuro)
-  - [ ] Subir screenshots a App Store Connect (automatizar con API como metadata)
-- [ ] Copyright: `© 2026 Exploris`
-- [ ] Enviar a App Store Review
+  - [x] Rehacer `globe_light_vi` y `country_card_light_vi` tras el fix de bugs de layout multi-idioma
+  - [x] Pasaporte con sellos ganados (tema oscuro) — 32 idiomas (`docs/stores/screenshots/passport_dark/`)
+  - [x] Subir screenshots a App Store Connect — `scripts/upload-screenshots.mjs` (escalado 1206×2622 → 1290×2796, display type APP_IPHONE_67, 5 screenshots × 32 idiomas)
+- [x] Revisar que los screenshots se vean correctos en App Store Connect (thumbnails difuminados en 6.5" son escalado automático de Apple, OK)
+- [x] Screenshots iPad 13" — 1 screenshot (Jugar) × 32 idiomas, subidos vía `scripts/upload-ipad-screenshots.mjs` (escalado 2064×2752 → 2048×2732, display type APP_IPAD_PRO_3GEN_129)
+- [x] Copyright: `© 2026 Exploris`
+- [x] Privacy Policy URL + Support URL subidas a los 32 idiomas vía API (añadido a `upload-metadata.mjs`)
+- [x] App Privacy: "Data Not Collected" declarado y publicado
+- [x] DAC7: declarado (no ofrece servicios personales)
+- [x] Content Rights: declarado (contenido de terceros con licencias abiertas)
+- [x] Enviar a App Store Review — enviado 2026-04-17
 
-### Android — Setup (iniciar en paralelo con iOS Build & Test)
-- [ ] Cuenta Google Play Console + verificación de identidad ($25, pago único)
+### Android
 - [ ] `npx cap add android` + configuración del proyecto
-- [ ] Icono adaptativo (foreground + background layers, diferente del iOS)
 - [ ] Orientación portrait-only en AndroidManifest.xml
+- [ ] Icono adaptativo (foreground + background layers, diferente del iOS)
 - [ ] Signing: generar upload keystore (guardar en lugar seguro). Google gestiona la app signing key
 - [ ] Build de producción (AAB)
-- [ ] Testing en emulador y dispositivos Android reales (mínimo 2-3 resoluciones/versiones). Verificar `text-wrap: pretty/balance` (requiere Chrome 117+)
-
-### Android — Closed Testing (lanzar cuanto antes: 14 días obligatorios)
+- [ ] Testing en emulador y dispositivo real. Verificar: text-wrap: pretty/balance (Chrome 117+), botón atrás, safe areas, rendimiento
+- [ ] Crear app en Google Play Console
 - [ ] Data Safety form («No data collected»)
-- [ ] Clasificación de contenido IARC (reutilizar cuestionario de la preparación compartida)
-- [ ] Setup closed testing con ≥12 testers reales, 14 días consecutivos (requisito para cuentas personales nuevas, dic 2024)
-- [ ] Subir AAB a closed testing track → esperar 14 días
-
-### Android — Submission
-- [ ] Apply for Production en Play Console (tras completar closed testing)
-- [ ] Metadata Google Play + screenshots + Feature Graphic (1024×500, obligatoria)
+- [ ] Clasificación de contenido IARC (reutilizar respuestas de `docs/stores/age-rating.md`)
+- [ ] Metadata 32 idiomas (ya generada en `docs/stores/metadata/`, crear script de subida para Play Console)
+- [ ] Screenshots para Google Play (reutilizar los de iPhone o generar nativos con barra de Android)
+- [ ] Feature Graphic (1024×500, obligatoria en Google Play — banner promocional, no screenshot)
 - [ ] Enviar a revisión
 
 ### Post-lanzamiento

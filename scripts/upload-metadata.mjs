@@ -21,6 +21,10 @@ const ROOT = join(import.meta.dirname, '..');
 const METADATA_DIR = join(ROOT, 'fastlane', 'metadata');
 const BASE_URL = 'https://api.appstoreconnect.apple.com';
 
+// URLs globales (misma página para todos los idiomas)
+const PRIVACY_POLICY_URL = 'https://elec-b.github.io/exploris-data/privacy.html';
+const SUPPORT_URL = 'https://elec-b.github.io/exploris-data/support.html';
+
 // --- Cargar .env.local ---
 function loadEnv() {
   const envPath = join(ROOT, '.env.local');
@@ -194,8 +198,8 @@ async function main() {
     process.stdout.write(`${locale}... `);
 
     try {
-      // --- App Store Version Localization (description, keywords, promotionalText) ---
-      const versionAttrs = {};
+      // --- App Store Version Localization (description, keywords, promotionalText, supportUrl) ---
+      const versionAttrs = { supportUrl: SUPPORT_URL };
       if (meta.description) versionAttrs.description = meta.description;
       if (meta.keywords) versionAttrs.keywords = meta.keywords;
       if (meta.promotionalText) versionAttrs.promotionalText = meta.promotionalText;
@@ -214,8 +218,10 @@ async function main() {
         });
       }
 
-      // --- App Info Localization (name, subtitle) ---
-      const appInfoAttrs = {};
+      // --- App Info Localization (name, subtitle, privacy URL) ---
+      const appInfoAttrs = {
+        privacyPolicyUrl: PRIVACY_POLICY_URL,
+      };
       if (meta.name) appInfoAttrs.name = meta.name;
       if (meta.subtitle) appInfoAttrs.subtitle = meta.subtitle;
 
