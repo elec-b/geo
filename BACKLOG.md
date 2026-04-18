@@ -92,6 +92,7 @@
 - [x] DAC7: declarado (no ofrece servicios personales)
 - [x] Content Rights: declarado (contenido de terceros con licencias abiertas)
 - [x] Enviar a App Store Review — enviado 2026-04-17
+- [x] Responder a petición de info adicional del revisor (2026-04-18): notas de revisión ampliadas (propósito, flujo, fuentes de datos, diferencias regionales, permisos) en `docs/stores/app-review-notes.md` + screen recording desde iPhone real. Enviado vía App Review page
 
 ### Android
 - [ ] `npx cap add android` + configuración del proyecto
