@@ -2,7 +2,7 @@
 
 .choice-panel {
   position: fixed;
-  bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px) + 4rem);
+  bottom: calc(var(--tabbar-height) + var(--sab) + 4rem);
   left: 50%;
   transform: translateX(-50%);
   z-index: var(--z-controls);
@@ -63,7 +63,7 @@
 /* Grupo unificado: banner + opciones + progreso */
 .game-bottom-group {
   position: fixed;
-  bottom: max(var(--tabbar-height), calc(var(--tabbar-height) + env(safe-area-inset-bottom, 0px) - 1.5rem));
+  bottom: max(var(--tabbar-height), calc(var(--tabbar-height) + var(--sab) - 1.5rem));
   left: 50%;
   transform: translateX(-50%);
   z-index: var(--z-controls);

@@ -22,7 +22,7 @@
   z-index: var(--z-modal);
   display: flex;
   flex-direction: column;
-  padding: calc(env(safe-area-inset-top, 0px) + var(--spacing-md)) var(--spacing-lg) 0;
+  padding: calc(var(--sat) + var(--spacing-md)) var(--spacing-lg) 0;
   background: var(--color-surface-solid);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -87,7 +87,7 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: none;
-  padding-bottom: calc(var(--spacing-lg) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(var(--spacing-lg) + var(--sab));
 }
 
 /* Intro (siempre visible) */

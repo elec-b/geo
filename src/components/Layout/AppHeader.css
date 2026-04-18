@@ -4,8 +4,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: var(--header-height);
-  padding-top: calc(env(safe-area-inset-top) + var(--spacing-sm));
+  height: calc(var(--header-height) + var(--sat));
+  padding-top: calc(var(--sat) + var(--spacing-sm));
   z-index: var(--z-header);
 
   display: flex;

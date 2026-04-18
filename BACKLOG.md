@@ -99,7 +99,12 @@
 - [x] Orientación portrait-only (teléfonos) y landscape libre (tablets, `sw600dp`). `android:screenOrientation="@integer/screen_orientation"` en MainActivity + recursos condicionados (`values/integers.xml` = 1 portrait, `values-sw600dp/integers.xml` = 13 fullUser)
 
 ### Android — Ajustes UX (rama propia — importante mantener compatibilidad con iOS / iPhone)
+
+> Todas las tareas de este bloque se trabajan en **una única rama compartida:** fix/android-ux. Merge a `main` solo cuando todas estén completadas y verificadas en dispositivo; después se continúa con **Android — Build & Publish**.
+
 - [ ] Tab bar inferior solapada por la barra de navegación del sistema Android (gestos / 3 botones): los tabs Explorar/Jugar/Pasaporte no se ven/seleccionan bien. Gestionar safe insets inferiores (equivalente a safe-area-inset-bottom de iOS) para que el tab bar respete la zona del sistema
+- [ ] Implementar emulador. Hacer npm run device:android lleva demasiado tiempo, no es práctico para testear. Ajustar claude.md y memory.md después.
+- [ ] Bug: las estrellas no rotan bien al conseguir un sello. Es como si en vez de tener el eje de rotación en el centro de la estrella, lo tuviera desplazado.
 - [ ] Safe areas del sistema (status bar, notch/punch-hole, barra de navegación): verificar en todas las pantallas (Explorar, Jugar, Pasaporte, Stats, Acerca de, bottom sheets) que nada quede tapado ni con padding excesivo
 - [ ] Botón atrás físico/gestual de Android: definir comportamiento por pantalla. Desde Jugar/Stats/Acerca de → volver a la pantalla anterior. Desde Explorar/Jugar/Pasaporte (roots de tab) → salir de la app. Cerrar bottom sheets y modales en vez de salir cuando hay uno abierto
 - [ ] `text-wrap: pretty/balance` compat con Chrome 117+: verificar en dispositivo real que los fixes de viudas tipográficas se aplican. Fallback elegante si la versión de WebView es anterior
