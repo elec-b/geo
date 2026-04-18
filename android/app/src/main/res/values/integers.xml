@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    screen_orientation: valor por defecto (teléfonos) = 1 (SCREEN_ORIENTATION_PORTRAIT).
+    Los tablets (sw600dp) lo sobrescriben a 13 (SCREEN_ORIENTATION_FULL_USER) en values-sw600dp/integers.xml.
+    Códigos: https://developer.android.com/reference/android/content/pm/ActivityInfo
+    -->
+    <integer name="screen_orientation">1</integer>
+</resources>

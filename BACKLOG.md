@@ -96,7 +96,7 @@
 
 ### Android
 - [x] `npx cap add android` + configuración del proyecto. `@capacitor/android@8.3.1`, 4 plugins detectados (app, haptics, preferences, in-app-review), `JAVA_HOME`/`ANDROID_HOME` en `~/.zshrc` (JDK 21 bundled de Android Studio), scripts `device:android` y `device:android:live` en `package.json`, `CLAUDE.md § 5` documentado
-- [ ] Orientación portrait-only en AndroidManifest.xml
+- [x] Orientación portrait-only (teléfonos) y landscape libre (tablets, `sw600dp`). `android:screenOrientation="@integer/screen_orientation"` en MainActivity + recursos condicionados (`values/integers.xml` = 1 portrait, `values-sw600dp/integers.xml` = 13 fullUser)
 - [ ] Icono adaptativo (foreground + background layers, diferente del iOS)
 - [ ] Signing: generar upload keystore (guardar en lugar seguro). Google gestiona la app signing key
 - [ ] Build de producción (AAB)
@@ -108,6 +108,9 @@
 - [ ] Screenshots para Google Play (reutilizar los de iPhone o generar nativos con barra de Android)
 - [ ] Feature Graphic (1024×500, obligatoria en Google Play — banner promocional, no screenshot)
 - [ ] Enviar a revisión
+
+### Android — Ajustes UX (rama propia)
+- [ ] Tab bar inferior solapada por la barra de navegación del sistema Android (gestos / 3 botones): los tabs Explorar/Jugar/Pasaporte no se ven/seleccionan bien. Gestionar safe insets inferiores (equivalente a safe-area-inset-bottom de iOS) para que el tab bar respete la zona del sistema
 
 ### Post-lanzamiento
 - [ ] (Opcional) Confirmación al salir de prueba de sello en curso (diálogo si se toca otro tab)

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tablets (sw600dp+): 13 = SCREEN_ORIENTATION_FULL_USER (respeta el bloqueo de rotación del sistema). -->
+    <integer name="screen_orientation">13</integer>
+</resources>
