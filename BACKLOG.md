@@ -94,13 +94,21 @@
 - [x] Enviar a App Store Review — enviado 2026-04-17
 - [x] Responder a petición de info adicional del revisor (2026-04-18): notas de revisión ampliadas (propósito, flujo, fuentes de datos, diferencias regionales, permisos) en `docs/stores/app-review-notes.md` + screen recording desde iPhone real. Enviado vía App Review page
 
-### Android
+### Android — Setup
 - [x] `npx cap add android` + configuración del proyecto. `@capacitor/android@8.3.1`, 4 plugins detectados (app, haptics, preferences, in-app-review), `JAVA_HOME`/`ANDROID_HOME` en `~/.zshrc` (JDK 21 bundled de Android Studio), scripts `device:android` y `device:android:live` en `package.json`, `CLAUDE.md § 5` documentado
 - [x] Orientación portrait-only (teléfonos) y landscape libre (tablets, `sw600dp`). `android:screenOrientation="@integer/screen_orientation"` en MainActivity + recursos condicionados (`values/integers.xml` = 1 portrait, `values-sw600dp/integers.xml` = 13 fullUser)
-- [ ] Icono adaptativo (foreground + background layers, diferente del iOS)
+
+### Android — Ajustes UX (rama propia — importante mantener compatibilidad con iOS / iPhone)
+- [ ] Tab bar inferior solapada por la barra de navegación del sistema Android (gestos / 3 botones): los tabs Explorar/Jugar/Pasaporte no se ven/seleccionan bien. Gestionar safe insets inferiores (equivalente a safe-area-inset-bottom de iOS) para que el tab bar respete la zona del sistema
+- [ ] Safe areas del sistema (status bar, notch/punch-hole, barra de navegación): verificar en todas las pantallas (Explorar, Jugar, Pasaporte, Stats, Acerca de, bottom sheets) que nada quede tapado ni con padding excesivo
+- [ ] Botón atrás físico/gestual de Android: definir comportamiento por pantalla. Desde Jugar/Stats/Acerca de → volver a la pantalla anterior. Desde Explorar/Jugar/Pasaporte (roots de tab) → salir de la app. Cerrar bottom sheets y modales en vez de salir cuando hay uno abierto
+- [ ] `text-wrap: pretty/balance` compat con Chrome 117+: verificar en dispositivo real que los fixes de viudas tipográficas se aplican. Fallback elegante si la versión de WebView es anterior
+- [ ] Icono adaptativo (foreground + background layers, diferente del iOS). Generar desde el SVG existente de `scripts/generate-icons.mjs`
+- [ ] Testing UX final en emulador (distintos tamaños) y dispositivo real tras aplicar todos los fixes — smoke test de las 3 experiencias (Explorar, Jugar, Pasaporte) + sellos + cambio de perfil + idiomas clave
+
+### Android — Build & Publish
 - [ ] Signing: generar upload keystore (guardar en lugar seguro). Google gestiona la app signing key
 - [ ] Build de producción (AAB)
-- [ ] Testing en emulador y dispositivo real. Verificar: text-wrap: pretty/balance (Chrome 117+), botón atrás, safe areas, rendimiento
 - [ ] Crear app en Google Play Console
 - [ ] Data Safety form («No data collected»)
 - [ ] Clasificación de contenido IARC (reutilizar respuestas de `docs/stores/age-rating.md`)
@@ -108,9 +116,6 @@
 - [ ] Screenshots para Google Play (reutilizar los de iPhone o generar nativos con barra de Android)
 - [ ] Feature Graphic (1024×500, obligatoria en Google Play — banner promocional, no screenshot)
 - [ ] Enviar a revisión
-
-### Android — Ajustes UX (rama propia)
-- [ ] Tab bar inferior solapada por la barra de navegación del sistema Android (gestos / 3 botones): los tabs Explorar/Jugar/Pasaporte no se ven/seleccionan bien. Gestionar safe insets inferiores (equivalente a safe-area-inset-bottom de iOS) para que el tab bar respete la zona del sistema
 
 ### Post-lanzamiento
 - [ ] (Opcional) Confirmación al salir de prueba de sello en curso (diálogo si se toca otro tab)
