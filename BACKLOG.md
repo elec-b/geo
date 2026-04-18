@@ -95,7 +95,7 @@
 - [x] Responder a petición de info adicional del revisor (2026-04-18): notas de revisión ampliadas (propósito, flujo, fuentes de datos, diferencias regionales, permisos) en `docs/stores/app-review-notes.md` + screen recording desde iPhone real. Enviado vía App Review page
 
 ### Android
-- [ ] `npx cap add android` + configuración del proyecto
+- [x] `npx cap add android` + configuración del proyecto. `@capacitor/android@8.3.1`, 4 plugins detectados (app, haptics, preferences, in-app-review), `JAVA_HOME`/`ANDROID_HOME` en `~/.zshrc` (JDK 21 bundled de Android Studio), scripts `device:android` y `device:android:live` en `package.json`, `CLAUDE.md § 5` documentado
 - [ ] Orientación portrait-only en AndroidManifest.xml
 - [ ] Icono adaptativo (foreground + background layers, diferente del iOS)
 - [ ] Signing: generar upload keystore (guardar en lugar seguro). Google gestiona la app signing key

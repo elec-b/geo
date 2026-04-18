@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Exploris</string>
+    <string name="title_activity_main">Exploris</string>
+    <string name="package_name">com.exploris.app</string>
+    <string name="custom_url_scheme">com.exploris.app</string>
+</resources>

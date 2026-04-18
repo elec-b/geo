@@ -66,7 +66,7 @@ public/
 └── assets/           # Iconos, imágenes
 
 ios/                  # Proyecto Xcode (generado por Capacitor)
-android/              # Proyecto Android (futuro)
+android/              # Proyecto Android Studio (generado por Capacitor)
 ```
 
 ## 5. Comandos de desarrollo
@@ -78,16 +78,32 @@ npm run build         # Build de producción
 
 # iOS (requiere Xcode)
 npx cap add ios       # Añadir plataforma iOS (solo 1 vez)
-npx cap sync          # Sincronizar código web → iOS
+npx cap sync ios      # Sincronizar código web + plugins → iOS
 npx cap open ios      # Abrir en Xcode
 npx cap run ios       # Build y ejecutar en simulador/dispositivo
 
-# Despliegue directo a iPhone (inalámbrico)
-npm run device        # Build + compilar (Debug) + instalar + lanzar en iPhone
-npm run device:live   # Igual, pero apunta al dev server local (requiere npm run dev en otro terminal)
+# Android (requiere Android Studio + JDK 21)
+npx cap add android   # Añadir plataforma Android (solo 1 vez)
+npx cap sync android  # Sincronizar código web + plugins → Android
+npx cap open android  # Abrir en Android Studio
+npx cap run android   # Build y ejecutar en emulador/dispositivo
+
+# Despliegue directo a dispositivo
+npm run device              # iOS: Build + compilar (Debug) + instalar + lanzar en iPhone
+npm run device:live         # iOS con dev server local (requiere npm run dev en otro terminal)
+npm run device:android      # Android: Build APK debug + instalar + lanzar vía adb
+npm run device:android:live # Android con dev server local
 ```
 
-> **Nota**: Ambos comandos requieren un archivo `.env.local` en la raíz con los IDs del dispositivo (`IOS_DEVICE_UDID`, `IOS_DEVICE_ID`, `IOS_BUNDLE_ID`). Este archivo no se sube a git. Para obtener los IDs, ejecutar `xcrun devicectl list devices`.
+> **Nota iOS**: Requiere `.env.local` con `IOS_DEVICE_UDID`, `IOS_DEVICE_ID`, `IOS_BUNDLE_ID`. Para obtenerlos: `xcrun devicectl list devices`.
+>
+> **Nota Android**: Requiere `.env.local` con `ANDROID_DEVICE_ID` (serial del dispositivo; obtener con `$ANDROID_HOME/platform-tools/adb devices`), más las variables `JAVA_HOME` y `ANDROID_HOME` exportadas en el shell. Convención:
+> ```
+> export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+> export ANDROID_HOME="$HOME/Library/Android/sdk"
+> export PATH="$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$PATH"
+> ```
+> `.env.local` no se sube a git.
 >
 > **Live Reload**: `npm run device:live` + `npm run dev` permite ver cambios web al instante en el iPhone (HMR vía Wi-Fi). Ideal para iterar en UI. Para testing final, usar siempre `npm run device`.
 
