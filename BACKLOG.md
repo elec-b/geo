@@ -28,8 +28,6 @@
 - [x] **Marcadores de microestados**: Mejorar visibilidad en tema claro (color más oscuro + opacidad 0.5→0.7)
 - [x] **Acabados pre-lanzamiento**: Temas claro/oscuro (paleta premium, 14 variables semánticas). Mejoras de Explorar (columna nivel, spacing selectores), Pasaporte (candados, guilloché), Estadísticas (spacing leyenda). Hull dorado para archipiélagos seleccionados. Validación de coordenadas de capitales. Hit testing de hulls visibles. Auditoría y migración de fuentes de datos (UNDP HDR, World Bank API). CDN operativo (countries-base + capitals + i18n-all). Naming: Exploris
 - [x] **Metadata stores**: Redacción completa para App Store y Google Play en los 32 idiomas (`docs/stores/metadata/`). Consistencia terminológica con `about.json` de cada idioma (Aventura/Pasaporte/sello en su variante local). Validación automática de longitudes por campo (name, subtitle, shortDescription, promotionalText, description, keywords) — todos los archivos dentro de límites. Lista para subir cuando se proceda con las stores
-- [x] **Android UX — Safe insets**: Tab bar y layout respetan la barra de navegación del sistema (gestos / 3 botones). Edge-to-edge en `MainActivity.java` + listener que propaga insets del sistema a CSS variables `--sat/--sar/--sab/--sal` vía `evaluateJavascript`. 11 hojas de estilo migradas de `env(safe-area-inset-*)` a `var(--sa*)` con fallback a `env()` para iOS. TabBar y AppHeader usan `calc(base + inset)`
-- [x] **Android dev workflow — cable USB**: `npm run device:android:cable` y `device:android:cable:live` (adb -d, sin env var) validados en Samsung Galaxy A56 — build+install+launch en segundos. Reemplaza al wireless TLS (`device:android`) como opción preferida para iterar. Emulador descartado en este Mac (Intel + AMD Radeon Pro 560X): `gfxstream` cuelga el boot y `swiftshader_indirect` no representa perf real
 
 ---
 
@@ -103,7 +101,8 @@
 ### Android — Ajustes UX (rama propia — importante mantener compatibilidad con iOS / iPhone)
 
 > Todas las tareas de este bloque se trabajan en **una única rama compartida:** fix/android-ux. Merge a `main` solo cuando todas estén completadas y verificadas en dispositivo; después se continúa con **Android — Build & Publish**.
-
+- [x] **Android UX — Safe insets**: Tab bar y layout respetan la barra de navegación del sistema (gestos / 3 botones). Edge-to-edge en `MainActivity.java` + listener que propaga insets del sistema a CSS variables `--sat/--sar/--sab/--sal` vía `evaluateJavascript`. 11 hojas de estilo migradas de `env(safe-area-inset-*)` a `var(--sa*)` con fallback a `env()` para iOS. TabBar y AppHeader usan `calc(base + inset)`
+- [x] **Android dev workflow — cable USB**: `npm run device:android:cable` y `device:android:cable:live` (adb -d, sin env var) validados en Samsung Galaxy A56 — build+install+launch en segundos. Reemplaza al wireless TLS (`device:android`) como opción preferida para iterar. Emulador descartado en este Mac (Intel + AMD Radeon Pro 560X): `gfxstream` cuelga el boot y `swiftshader_indirect` no representa perf real
 - [ ] Bug: las estrellas no rotan bien al conseguir un sello. Es como si en vez de tener el eje de rotación en el centro de la estrella, lo tuviera desplazado.
 - [ ] Safe areas del sistema (status bar, notch/punch-hole, barra de navegación): verificar en todas las pantallas (Explorar, Jugar, Pasaporte, Stats, Acerca de, bottom sheets) que nada quede tapado ni con padding excesivo
 - [ ] Botón atrás físico/gestual de Android: definir comportamiento por pantalla. Desde Jugar/Stats/Acerca de → volver a la pantalla anterior. Desde Explorar/Jugar/Pasaporte (roots de tab) → salir de la app. Cerrar bottom sheets y modales en vez de salir cuando hay uno abierto
