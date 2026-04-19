@@ -3,6 +3,7 @@
 import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../stores/appStore';
+import { useBackHandler } from '../../hooks/useBackHandler';
 import { isLevelUnlocked, getGlobalLevel, type StampsData } from '../../data/learningAlgorithm';
 import type { Continent, GameLevel, LevelDefinition } from '../../data/types';
 import type { StampTestType } from '../../hooks/useGameSession';
@@ -106,6 +107,9 @@ export function PassportView({ levels, onStartStampTest, recentlyEarnedStamp, on
     },
     [stampsData],
   );
+
+  // Botón atrás (Android): cerrar modal de selección de sello si está abierto
+  useBackHandler(selectedCell !== null, () => setSelectedCell(null));
 
   // Handler: iniciar prueba de sello desde el modal
   const handleStartTest = useCallback(

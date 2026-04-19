@@ -1,6 +1,8 @@
 // Exploris - Aplicación principal
 import { lazy, Suspense, useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { App as CapacitorApp } from '@capacitor/app';
+import { Capacitor } from '@capacitor/core';
 import { LoadingScreen } from './components/UI/LoadingScreen';
 import { TabBar } from './components/Navigation/TabBar';
 import { AppHeader } from './components/Layout/AppHeader';
@@ -20,6 +22,8 @@ import { changeAppLanguage } from './i18n';
 import { buildRankings, type CountryRankings } from './data/rankings';
 import { buildLevelDefinitions, buildCountryLevelMap } from './data/levels';
 import { useAppStore } from './stores/appStore';
+import { useBackHandlerStore } from './stores/backHandlerStore';
+import { useBackHandler } from './hooks/useBackHandler';
 import type { GlobeD3Ref } from './components/Globe';
 import type { CountryFeature } from './data/countries';
 import type { CountryData, CapitalCoords, GameLevel, LevelDefinition } from './data/types';
@@ -282,6 +286,25 @@ function App() {
   );
 
   const dataReady = countries && capitals && rankings && levels;
+
+  // Botón atrás físico/gestual de Android: pop del stack LIFO; si vacío, salir de la app
+  useEffect(() => {
+    if (Capacitor.getPlatform() !== 'android') return;
+    let sub: { remove: () => void } | undefined;
+    CapacitorApp.addListener('backButton', () => {
+      const popped = useBackHandlerStore.getState().pop();
+      if (!popped) CapacitorApp.exitApp();
+    }).then((s) => { sub = s; });
+    return () => { sub?.remove(); };
+  }, []);
+
+  // Handlers de overlays gestionados desde App.tsx
+  useBackHandler(showLanguage, () => { setShowLanguage(false); setShowSettings(true); });
+  useBackHandler(showSettings, () => setShowSettings(false));
+  useBackHandler(showAbout, () => setShowAbout(false));
+  useBackHandler(showProfileEditor, () => { setShowProfileEditor(false); setEditingProfile(null); });
+  useBackHandler(showProfileSelector, () => setShowProfileSelector(false));
+  useBackHandler(showStats, handleCloseStats);
 
   return (
     <>
