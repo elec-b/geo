@@ -152,6 +152,7 @@
 /* --- Sellos circulares --- */
 
 .passport-cell__stamp {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -189,10 +190,13 @@
 }
 
 .passport-cell__stamp--earned::after {
-  content: '\2605';
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  color: var(--cell-color);
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--cell-color);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L14.23 8.93L21.51 8.91L15.61 13.17L17.88 20.09L12 15.8L6.12 20.09L8.39 13.17L2.49 8.91L9.77 8.93Z' fill='black'/%3E%3C/svg%3E") center / 58% 58% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L14.23 8.93L21.51 8.91L15.61 13.17L17.88 20.09L12 15.8L6.12 20.09L8.39 13.17L2.49 8.91L9.77 8.93Z' fill='black'/%3E%3C/svg%3E") center / 58% 58% no-repeat;
+  transform-origin: 50% 50%;
 }
 
 /* Animación stampDrop — al conseguir un sello nuevo */
