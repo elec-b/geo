@@ -1,5 +1,6 @@
 package com.exploris.app;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -18,6 +19,12 @@ public class MainActivity extends BridgeActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Orientación: phones portrait-only; tablets (sw600dp+) libre respetando bloqueo de sistema.
+        // Se fija en runtime porque lint prohíbe variar @integer/screen_orientation vía sw600dp desde el manifest.
+        boolean isTablet = getResources().getConfiguration().smallestScreenWidthDp >= 600;
+        setRequestedOrientation(isTablet
+                ? ActivityInfo.SCREEN_ORIENTATION_FULL_USER
+                : ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // Edge-to-edge: la ventana dibuja debajo de status/navigation bar.
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
     }

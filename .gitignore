@@ -1,6 +1,10 @@
 # App Store Connect API Key
 .p8/
 
+# Android signing (upload keystore + contraseñas)
+.keystore/
+android/keystore.properties
+
 # Store screenshots (pesados, no versionados)
 docs/stores/screenshots/
 

@@ -54,8 +54,7 @@
 - [x] **Icono adaptativo Android**: `scripts/generate-icons.mjs` extendido con `generateAndroidIcons()` (Sharp, ya disponible) — 5 densidades × 3 variantes: `ic_launcher_foreground.png` (canvas 108dp, fondo transparente, SVG al 70% igual que iOS → globo a ~55% del canvas, dentro de safe zone de 66dp), `ic_launcher.png` y `ic_launcher_round.png` legacy (< API 26) compuestos sobre `#060608` con máscara circular vía `sharp.composite` blend `dest-in`. `values/ic_launcher_background.xml` actualizado `#FFFFFF` → `#060608` (coherente con iOS y tema dark). Placeholders huérfanos del wizard (`drawable/ic_launcher_background.xml`, `drawable-v24/ic_launcher_foreground.xml`) eliminados. Script `npm run generate-icons` añadido. Verificado en Galaxy A56: icono squircle oscuro con globo centrado y margen proporcional al de iOS.
 
 ### Android — Build & Publish
-- [ ] Signing: generar upload keystore (guardar en lugar seguro). Google gestiona la app signing key
-- [ ] Build de producción (AAB)
+- [x] **Signing + AAB de producción**: Upload keystore RSA-2048 en `.keystore/exploris-upload.jks` (gitignored, backup en 1Password), `android/keystore.properties` con credenciales (también gitignored), `signingConfigs.release` en `android/app/build.gradle` leyendo las properties, `versionName 1.0.0`. AAB firmado (`app-release.aab`, 4.23 MB) verificado con `keytool -printcert -jarfile`. **Fix lint bloqueante**: `@integer/screen_orientation` con override `sw600dp` es válido en debug pero lint release lo rechaza (los recursos del manifest no pueden variar por qualifier). Orientación movida a `MainActivity.onCreate` (`setRequestedOrientation` basado en `smallestScreenWidthDp >= 600`). `integers.xml` eliminados. Portrait verificado en Galaxy A56.
 - [ ] Crear app en Google Play Console
 - [ ] Data Safety form («No data collected»)
 - [ ] Clasificación de contenido IARC (reutilizar respuestas de `docs/stores/age-rating.md`)
