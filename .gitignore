@@ -28,6 +28,7 @@ dist-ssr
 
 # Claude Code
 .claude/settings.local.json
+.claude/scheduled_tasks.lock
 
 # CDN output (generado por npm run generate-cdn)
 cdn-output
