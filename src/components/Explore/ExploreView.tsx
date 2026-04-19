@@ -13,6 +13,7 @@ import { TableView } from './TableView';
 import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
 import { CONTINENT_CENTERS, CONTINENT_ZOOM } from '../../data/continents';
 import { useAppStore } from '../../stores/appStore';
+import { useBackHandler } from '../../hooks/useBackHandler';
 import './ExploreView.css';
 
 type ExploreMode = 'countries' | 'capitals';
@@ -206,6 +207,9 @@ export function ExploreView({
   // Registrar handlers en refs para bridge con App.tsx
   onCountryClickRef.current = handleCountryClick;
   onCountryDeselectRef.current = handleDeselect;
+
+  // Botón atrás (Android): cerrar ficha de país si está abierta
+  useBackHandler(showCard, handleDeselect);
 
   // Modo capitales: tap en fila de la tabla → globo (país iluminado + pin, sin ficha)
   const handleCapitalsCountryTap = useCallback(

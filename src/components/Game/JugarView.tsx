@@ -15,6 +15,7 @@ import { NON_UN_TERRITORIES_BY_NAME } from '../../data/isoMapping';
 import { useAppStore, type StampType } from '../../stores/appStore';
 import { calculateProgress, isTypeFullyDominated, getNextSuggestedType, getAttemptsWithInheritance, getInheritedTypes } from '../../data/learningAlgorithm';
 import { useGameSession } from '../../hooks/useGameSession';
+import { useBackHandler } from '../../hooks/useBackHandler';
 import { LevelSelector } from './LevelSelector';
 import { QuestionBanner } from './QuestionBanner';
 import { GameFeedback } from './GameFeedback';
@@ -972,6 +973,27 @@ export function JugarView({
       handleExit();
     }
   }, [resetSignal]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Botón atrás (Android): modales y pantalla playing
+  useBackHandler(showStampChooser, () => setShowStampChooser(false));
+  useBackHandler(showAlreadyDominated, () => setShowAlreadyDominated(false));
+  useBackHandler(showPoolExhausted, handlePoolExhaustedClose);
+  useBackHandler(showStampResult, handleStampResultClose);
+  useBackHandler(screen === 'playing', () => {
+    // Prueba de sello en curso: cancelar y notificar a App (vuelve a Pasaporte)
+    if (session.stampTestResult === 'in_progress') {
+      session.end();
+      activeLevelRef.current = null;
+      activeContinentRef.current = null;
+      activeQuestionTypeRef.current = 'mixed';
+      setScreen('selector');
+      setSelectedChoice(null);
+      setFlyOutStep('idle');
+      onStampTestDone?.();
+    } else {
+      handleExit();
+    }
+  });
 
   // --- Secuencia temporal para feedback de dos pasos (A/B error) ---
 

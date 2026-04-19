@@ -28,6 +28,9 @@
 - [x] **Marcadores de microestados**: Mejorar visibilidad en tema claro (color más oscuro + opacidad 0.5→0.7)
 - [x] **Acabados pre-lanzamiento**: Temas claro/oscuro (paleta premium, 14 variables semánticas). Mejoras de Explorar (columna nivel, spacing selectores), Pasaporte (candados, guilloché), Estadísticas (spacing leyenda). Hull dorado para archipiélagos seleccionados. Validación de coordenadas de capitales. Hit testing de hulls visibles. Auditoría y migración de fuentes de datos (UNDP HDR, World Bank API). CDN operativo (countries-base + capitals + i18n-all). Naming: Exploris
 - [x] **Metadata stores**: Redacción completa para App Store y Google Play en los 32 idiomas (`docs/stores/metadata/`). Consistencia terminológica con `about.json` de cada idioma (Aventura/Pasaporte/sello en su variante local). Validación automática de longitudes por campo (name, subtitle, shortDescription, promotionalText, description, keywords) — todos los archivos dentro de límites. Lista para subir cuando se proceda con las stores
+- [x] **Preparación lanzamiento (iOS + Android)**: In-app review (`@capacitor-community/in-app-review`, trigger tras sello ganado, ≥5 sesiones y ≥7 días). Orientación portrait-only (phones) + landscape libre (tablets). i18n de strings hardcodeados (perfil «Explorador», fallbacks de preguntas, labels de avatares en 32 idiomas). Hulls de archipiélago con colores de feedback (verde/rojo/ocre). Regeneración al vuelo de pregunta al cambiar idioma (incl. cola pendiente de prueba de sello). Versión 1.0.0 (`package.json` + MARKETING_VERSION). Privacy Policy + Support URL servidas desde repo `exploris-data` (GitHub Pages); sección «Privacidad» in-app en About (32 idiomas). Age rating 4+ (respuestas en `docs/stores/age-rating.md`, reutilizables para IARC)
+- [x] **Bugs layout multi-idioma**: Script `scripts/layout-check.mjs` (Playwright + iPhone 14, 32 idiomas × 5 pantallas, detección de overflow DOM + screenshots, `npm run layout-check`). Fixes: `flex-wrap: wrap` en `.continent-filter` y `.stats-pills` (VI/JA), grid `min-content repeat(3, minmax(0, 1fr))` + `min-width: 0` en Pasaporte (HU «🔒45», VI continent-label), container queries (`container-type: inline-size` + `clamp()` con `cqi`) en LevelSelector y PassportView para nombres de nivel escalables, `hyphens: manual` global (solo FI mantiene soft hyphen), leyenda del Pasaporte dentro del grid guilloché con `grid-column: 1 / -1`. Pre-merge: 0 issues en 32 idiomas
+- [x] **iOS submission (v1.0.0 build 2)**: Certificados y provisioning de distribución. App record en App Store Connect. Export compliance (`ITSAppUsesNonExemptEncryption = NO` en Info.plist). Testing en simuladores (iPhone SE/estándar/Pro Max/iPad) + safe areas, interrupciones, icono sin alpha, splash screens. Build Archive + upload (build 1, luego build 2 tras fix layout multi-idioma). Screenshots: 5 × 32 idiomas iPhone 6.7" en `docs/stores/screenshots/{globe_light,country_card_light,play_question_light,play_question_dark,passport_dark}/` + 1 × 32 idiomas iPad 13" — subida vía `scripts/upload-screenshots.mjs` (APP_IPHONE_67, 1206×2622 → 1290×2796) y `scripts/upload-ipad-screenshots.mjs` (APP_IPAD_PRO_3GEN_129, 2064×2752 → 2048×2732). Metadata 32 idiomas + Privacy/Support URLs vía `scripts/upload-metadata.mjs` (App Store Connect API). Declaraciones ASC: App Privacy «Data Not Collected», DAC7 (no servicios personales), Content Rights (terceros con licencias abiertas), Copyright «© 2026 Exploris», Age Rating 4+. Enviado a revisión 2026-04-17; respondido petición de info adicional 2026-04-18 (notas ampliadas en `docs/stores/app-review-notes.md` + screen recording desde iPhone real, enviado vía App Review page)
 
 ---
 
@@ -35,76 +38,20 @@
 
 > Ordenados por prioridad. Cada bloque debe completarse antes de avanzar al siguiente (salvo tareas marcadas como opcionales).
 
-### Preparación compartida (iOS + Android)
-- [x] Solicitud de valoración in-app (SKStoreReviewController en iOS, Google Play In-App Review en Android). Plugin `@capacitor-community/in-app-review`, trigger tras animación de sello ganado, condiciones: ≥5 sesiones y ≥7 días
-- [x] Fix orientación portrait-only (iOS hecho; Android pendiente de `cap add`). Tablets soportados (iPad + Android) con landscape
-- [x] Fix: nombre de perfil por defecto y otros strings en español hardcodeados (perfil "Explorador" traducido al idioma activo, fallbacks de preguntas en inglés, labels de avatares i18n en 32 idiomas)
-- [x] Hulls de archipiélago con colores de feedback (verde acierto, rojo error, ocre corrección) en vez de siempre dorado. Aplica a Jugar y pruebas de sello, ambos temas
-- [x] Fix: al cambiar de idioma con pregunta en curso, la pregunta se regenera al vuelo en el nuevo idioma (prompt y opciones). Prueba de sello reconstruye la cola pendiente sin terminar prematuramente. Si el usuario está viendo feedback tras responder, se mantiene hasta pulsar siguiente
-- [x] Versionado: 0.1.0 → 1.0.0 (package.json + MARKETING_VERSION en Xcode). CURRENT_PROJECT_VERSION se mantiene en 1 para primera release
-- [x] Privacy policy + URL de soporte en página pública: reutilizado repo `exploris-data` (GitHub Pages). Páginas en inglés (index/privacy/support). Sección «Privacidad» in-app en About con link externo, traducida a 32 idiomas
-- [x] Clasificación por edad: iOS completado (4+). Android pendiente de `cap add android`. Respuestas en `docs/stores/age-rating.md`
-
-### iOS — Build & Test
-- [x] Certificados y provisioning profiles de distribución (actualmente solo Debug)
-- [x] Crear app record en App Store Connect
-- [x] Export compliance: `ITSAppUsesNonExemptEncryption = NO` en Info.plist (HTTPS al CDN es cifrado del sistema, exento)
-- [x] MARKETING_VERSION + CURRENT_PROJECT_VERSION en Xcode (sync con package.json)
-- [x] Testing en simuladores: iPhone SE, estándar, Pro Max, iPad (si se soporta)
-- [x] Verificar safe areas, status bar, interrupciones (llamadas, notificaciones, background/foreground)
-- [x] Verificar icono (sin alpha) y splash screen en todos los tamaños
-- [x] Build de producción (Archive) + upload a App Store Connect
-- [x] TestFlight: validación en dispositivo real (testeado directamente en iPhone, sin distribución TestFlight)
-
-### Bugs de layout multi-idioma
-- [x] Automatización del check: script `scripts/layout-check.mjs` (Playwright + iPhone 14 viewport) que cicla los 32 idiomas × 4 pantallas (Explorar/Jugar/Pasaporte/Stats), detecta overflow DOM y captura screenshots. Ejecutar con `npm run layout-check`. Output en `layout-check-output/` (ignorado en git)
-- [x] Pills de continente: `flex-wrap: wrap` en `.continent-filter` y `.stats-pills` → saltan a 2 filas en VI/JA cuando no caben (antes: clipped 13-27 px)
-- [x] Celdas bloqueadas del Pasaporte en HU: grid `min-content repeat(3, minmax(0, 1fr))` + `min-width: 0` en `.passport-cell` y `.passport-grid__level-header` (antes: «🔒45» clipped 2 px)
-- [x] Nombres de nivel largos: container queries (`container-type: inline-size` + `font-size: clamp()` con `cqi`) en LevelSelector y PassportView — los 3 nombres de nivel escalan uniformemente según el ancho del contenedor. `hyphens: manual` global (solo soft hyphens explícitos). Eliminados hacks previos: soft hyphens de DE/NL/SV/HU, reglas `:lang()`, override de 24rem en Pasaporte. Solo FI mantiene soft hyphen (17 chars). Pasaporte revertido a 22rem + padding original
-- [x] VI Pasaporte: continent-label con `white-space: normal` + grid `min-content` → «Châu Đại Dương» envuelve a 2 líneas, deja respirar las columnas de nivel
-- [x] ES «Mochilero» truncaba en Pasaporte: resuelto por container queries (ya no necesita ensanche de widget)
-- [x] Leyenda del Pasaporte en tema claro: movida dentro del grid guilloché (ocupa las 4 columnas con `grid-column: 1 / -1`), separador superior sutil (`border-top`) y margen `spacing-md` para respiro. Fondo glass del grid garantiza contraste en ambos temas; los 4 labels («País», «Capital», «Conseguido», «🔒 Bloqueado») se leen con claridad en claro y oscuro
-- [x] Pre-merge a main de `fix/layout-multi-idioma`: `npm run layout-check` reporta **0 issues** en los 32 idiomas (416 s) — los 10 issues previos en VI/passport-cell resueltos por el fix de `min-content`. Spot-check visual de VI/HU/FI/DE en las 5 pantallas: OK en todas. Los safe-area-insets no se simulan en Playwright, pero eso no afecta la detección de clipping (el script es la fuente de verdad; el look & feel se valida en dispositivo real)
-
-
-### iOS — Re-build (tras fix de layout multi-idioma)
-- [x] Bump `CURRENT_PROJECT_VERSION` a 2 en Xcode (App Store Connect requiere build number nuevo)
-- [x] Build de producción (Archive) + upload a App Store Connect
-- [x] Validación en dispositivo real (testeado intensivamente con `npm run device` previo al build)
-
-### iOS — Submission
-- [x] Age Rating: cuestionario completado en App Store Connect (4+)
-- [x] Metadata (32 idiomas): subida automatizada vía App Store Connect API (`scripts/upload-metadata.mjs`). Incluye name, subtitle, description, keywords, promotional text
-- [x] App Privacy label («No data collected») — verificar que esté configurado
-- [x] Screenshots + subida a App Store Connect
-  - [x] Globo en Explorar (tema claro) — 32 idiomas (`docs/stores/screenshots/globe_light/`)
-  - [x] Ficha de país (tema claro) — 32 idiomas (`docs/stores/screenshots/country_card_light/`)
-  - [x] Jugar: pregunta de Aventura en curso (tema claro) — 32 idiomas (`docs/stores/screenshots/play_question_light/`)
-  - [x] Jugar: pregunta de Aventura en curso (tema oscuro) — 32 idiomas (`docs/stores/screenshots/play_question_dark/`)
-  - [x] Rehacer `globe_light_vi` y `country_card_light_vi` tras el fix de bugs de layout multi-idioma
-  - [x] Pasaporte con sellos ganados (tema oscuro) — 32 idiomas (`docs/stores/screenshots/passport_dark/`)
-  - [x] Subir screenshots a App Store Connect — `scripts/upload-screenshots.mjs` (escalado 1206×2622 → 1290×2796, display type APP_IPHONE_67, 5 screenshots × 32 idiomas)
-- [x] Revisar que los screenshots se vean correctos en App Store Connect (thumbnails difuminados en 6.5" son escalado automático de Apple, OK)
-- [x] Screenshots iPad 13" — 1 screenshot (Jugar) × 32 idiomas, subidos vía `scripts/upload-ipad-screenshots.mjs` (escalado 2064×2752 → 2048×2732, display type APP_IPAD_PRO_3GEN_129)
-- [x] Copyright: `© 2026 Exploris`
-- [x] Privacy Policy URL + Support URL subidas a los 32 idiomas vía API (añadido a `upload-metadata.mjs`)
-- [x] App Privacy: "Data Not Collected" declarado y publicado
-- [x] DAC7: declarado (no ofrece servicios personales)
-- [x] Content Rights: declarado (contenido de terceros con licencias abiertas)
-- [x] Enviar a App Store Review — enviado 2026-04-17
-- [x] Responder a petición de info adicional del revisor (2026-04-18): notas de revisión ampliadas (propósito, flujo, fuentes de datos, diferencias regionales, permisos) en `docs/stores/app-review-notes.md` + screen recording desde iPhone real. Enviado vía App Review page
-
 ### Android — Setup
 - [x] `npx cap add android` + configuración del proyecto. `@capacitor/android@8.3.1`, 4 plugins detectados (app, haptics, preferences, in-app-review), `JAVA_HOME`/`ANDROID_HOME` en `~/.zshrc` (JDK 21 bundled de Android Studio), scripts `device:android` y `device:android:live` en `package.json`, `CLAUDE.md § 5` documentado
 - [x] Orientación portrait-only (teléfonos) y landscape libre (tablets, `sw600dp`). `android:screenOrientation="@integer/screen_orientation"` en MainActivity + recursos condicionados (`values/integers.xml` = 1 portrait, `values-sw600dp/integers.xml` = 13 fullUser)
 
 ### Android — Ajustes UX (rama propia — importante mantener compatibilidad con iOS / iPhone)
-- [ ] Tab bar inferior solapada por la barra de navegación del sistema Android (gestos / 3 botones): los tabs Explorar/Jugar/Pasaporte no se ven/seleccionan bien. Gestionar safe insets inferiores (equivalente a safe-area-inset-bottom de iOS) para que el tab bar respete la zona del sistema
-- [ ] Safe areas del sistema (status bar, notch/punch-hole, barra de navegación): verificar en todas las pantallas (Explorar, Jugar, Pasaporte, Stats, Acerca de, bottom sheets) que nada quede tapado ni con padding excesivo
-- [ ] Botón atrás físico/gestual de Android: definir comportamiento por pantalla. Desde Jugar/Stats/Acerca de → volver a la pantalla anterior. Desde Explorar/Jugar/Pasaporte (roots de tab) → salir de la app. Cerrar bottom sheets y modales en vez de salir cuando hay uno abierto
-- [ ] `text-wrap: pretty/balance` compat con Chrome 117+: verificar en dispositivo real que los fixes de viudas tipográficas se aplican. Fallback elegante si la versión de WebView es anterior
-- [ ] Icono adaptativo (foreground + background layers, diferente del iOS). Generar desde el SVG existente de `scripts/generate-icons.mjs`
-- [ ] Testing UX final en emulador (distintos tamaños) y dispositivo real tras aplicar todos los fixes — smoke test de las 3 experiencias (Explorar, Jugar, Pasaporte) + sellos + cambio de perfil + idiomas clave
+
+> Todas las tareas de este bloque se trabajan en **una única rama compartida:** fix/android-ux. Merge a `main` solo cuando todas estén completadas y verificadas en dispositivo; después se continúa con **Android — Build & Publish**.
+- [x] **Android UX — Safe insets**: Tab bar y layout respetan la barra de navegación del sistema (gestos / 3 botones). Edge-to-edge en `MainActivity.java` + listener que propaga insets del sistema a CSS variables `--sat/--sar/--sab/--sal` vía `evaluateJavascript`. 11 hojas de estilo migradas de `env(safe-area-inset-*)` a `var(--sa*)` con fallback a `env()` para iOS. TabBar y AppHeader usan `calc(base + inset)`
+- [x] **Android dev workflow — cable USB**: `npm run device:android:cable` y `device:android:cable:live` (adb -d, sin env var) validados en Samsung Galaxy A56 — build+install+launch en segundos. Reemplaza al wireless TLS (`device:android`) como opción preferida para iterar. Emulador descartado en este Mac (Intel + AMD Radeon Pro 560X): `gfxstream` cuelga el boot y `swiftshader_indirect` no representa perf real
+- [x] **Bug rotación de estrella del sello**: el glyph ★ (U+2605) no está centrado dentro de su em-box en fuentes fallback de Samsung/Chromium, así que `transform: rotate()` sobre el `::after` inline usaba un pivote descentrado. Fix en `PassportView.css`: el `::after` pasa a ser una caja absoluta (`position: absolute; inset: 0`) que renderiza una estrella SVG de 5 puntas centrada geométricamente en viewBox 24×24 vía `mask-image` (con fallback `-webkit-mask`). Color preservado vía `background-color: var(--cell-color)`. `position: relative` añadido al padre como containing block explícito. Verificado en Android (Galaxy A56) e iOS sin regresión.
+- [x] Safe areas del sistema (status bar, notch/punch-hole, barra de navegación): verificar en todas las pantallas (Explorar, Jugar, Pasaporte, Stats, Acerca de, bottom sheets) que nada quede tapado ni con padding excesivo
+- [x] **Android — Botón atrás físico/gestual**: Stack LIFO de handlers (`src/stores/backHandlerStore.ts`) con hook `useBackHandler(enabled, fn)` (`src/hooks/useBackHandler.ts`). Listener central solo Android en `App.tsx` (`@capacitor/app`): `pop()` del stack; si vacío, `exitApp()`. Handlers registrados por cada overlay: Settings/Language (Language vuelve a Settings al cerrar), About, ProfileSelector, ProfileEditor, Stats, ficha de país (Explorar), modal celda (Pasaporte), StampChooser/AlreadyDominated/PoolExhausted/StampResult (Jugar), y pantalla playing de Jugar (vuelve al selector; si hay prueba de sello en curso, la cancela y dispara `onStampTestDone` para volver a Pasaporte). Verificado en Galaxy A56; iOS no afectado (early return por plataforma).
+- [x] `text-wrap: pretty/balance` compat con Chrome 117+: verificado en Samsung Galaxy A56 en 5 idiomas (de, fi, hu, vi, es) — balanceo de títulos y anti-viudas funcionan correctamente. Samsung actualiza WebView vía Play Store, así que el fallback no llega a aplicarse en la práctica
+- [x] **Icono adaptativo Android**: `scripts/generate-icons.mjs` extendido con `generateAndroidIcons()` (Sharp, ya disponible) — 5 densidades × 3 variantes: `ic_launcher_foreground.png` (canvas 108dp, fondo transparente, SVG al 70% igual que iOS → globo a ~55% del canvas, dentro de safe zone de 66dp), `ic_launcher.png` y `ic_launcher_round.png` legacy (< API 26) compuestos sobre `#060608` con máscara circular vía `sharp.composite` blend `dest-in`. `values/ic_launcher_background.xml` actualizado `#FFFFFF` → `#060608` (coherente con iOS y tema dark). Placeholders huérfanos del wizard (`drawable/ic_launcher_background.xml`, `drawable-v24/ic_launcher_foreground.xml`) eliminados. Script `npm run generate-icons` añadido. Verificado en Galaxy A56: icono squircle oscuro con globo centrado y margen proporcional al de iOS.
 
 ### Android — Build & Publish
 - [ ] Signing: generar upload keystore (guardar en lugar seguro). Google gestiona la app signing key
