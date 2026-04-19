@@ -91,8 +91,10 @@ npx cap run android   # Build y ejecutar en emulador/dispositivo
 # Despliegue directo a dispositivo
 npm run device              # iOS: Build + compilar (Debug) + instalar + lanzar en iPhone
 npm run device:live         # iOS con dev server local (requiere npm run dev en otro terminal)
-npm run device:android      # Android: Build APK debug + instalar + lanzar vía adb
-npm run device:android:live # Android con dev server local
+npm run device:android        # Android wireless (TLS): usa $ANDROID_DEVICE_ID de .env.local
+npm run device:android:live   # Wireless con dev server local
+npm run device:android:cable  # Android por cable USB (adb -d, único USB conectado, sin env var)
+npm run device:android:cable:live # Cable + dev server local
 ```
 
 > **Nota iOS**: Requiere `.env.local` con `IOS_DEVICE_UDID`, `IOS_DEVICE_ID`, `IOS_BUNDLE_ID`. Para obtenerlos: `xcrun devicectl list devices`.
@@ -106,5 +108,7 @@ npm run device:android:live # Android con dev server local
 > `.env.local` no se sube a git.
 >
 > **Live Reload**: `npm run device:live` + `npm run dev` permite ver cambios web al instante en el iPhone (HMR vía Wi-Fi). Ideal para iterar en UI. Para testing final, usar siempre `npm run device`.
+>
+> **Android — cable vs wireless**: para iterar usar siempre **cable USB** con `npm run device:android:cable` — más rápido que TLS (no transferencia por Wi-Fi, no despertar pantalla del dispositivo) y no requiere env var (`adb -d` apunta al único dispositivo USB conectado).
 
 > **Verificación preferida**: Para testear cambios, usar `npm run device` (despliegue directo al iPhone) en vez de `npm run dev`. El testing real se hace siempre en dispositivo. Preguntar siempre al usuario antes de usar `npm run device`.
