@@ -34,7 +34,7 @@ Idem para el link de Privacy Policy en About (mismo patrón `window.open` / `tar
 
 > El código usa `window.open(url, '_blank')` sin plugin `@capacitor/browser`. En Capacitor por defecto esto sale al navegador del sistema en iOS — no se abre en WebView embebido ni en SFSafariViewController. **Si en el futuro se añade cualquier otro enlace externo a la app, verificar que mantenga este comportamiento antes de la siguiente release** (un cambio a `Browser.open()` con `presentationStyle: 'popover'` abriría in-app y haría saltar el rating a 17+).
 >
-> **Android**: no verificado todavía (pendiente `cap add android`). El comportamiento por defecto de Capacitor en Android es también abrir Chrome externo, pero conviene confirmarlo en dispositivo antes de enviar el cuestionario de Play Console.
+> **Android**: verificado en Galaxy A56 (2026-04-19) — Wikipedia y Privacy Policy abren Chrome externo correctamente.
 
 ---
 
@@ -113,7 +113,7 @@ Rating resultante esperado: **Everyone** (PEGI 3, ESRB Everyone, USK 0, ClassInd
 Marcar cuando el cuestionario esté **enviado y aprobado** en cada consola. Solo entonces la tarea se mueve a `Completado` en `BACKLOG.md`.
 
 - [x] Verificación en dispositivo iPhone: Wikipedia y Privacy Policy abren en Safari externo (2026-04-09)
-- [ ] Verificación en dispositivo Android: Wikipedia y Privacy Policy abren en Chrome externo (pendiente `cap add android`)
+- [x] Verificación en dispositivo Android: Wikipedia y Privacy Policy abren en Chrome externo (Galaxy A56, 2026-04-19)
 - [ ] Apple — Age Rating enviado en App Store Connect, rating mostrado: 4+
 - [ ] Apple — Screenshot del rating guardado como evidencia
 - [ ] Google Play — Content Rating (IARC) enviado, certificado recibido

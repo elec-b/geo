@@ -55,13 +55,15 @@
 
 ### Android — Build & Publish
 - [x] **Signing + AAB de producción**: Upload keystore RSA-2048 en `.keystore/exploris-upload.jks` (gitignored, backup en 1Password), `android/keystore.properties` con credenciales (también gitignored), `signingConfigs.release` en `android/app/build.gradle` leyendo las properties, `versionName 1.0.0`. AAB firmado (`app-release.aab`, 4.23 MB) verificado con `keytool -printcert -jarfile`. **Fix lint bloqueante**: `@integer/screen_orientation` con override `sw600dp` es válido en debug pero lint release lo rechaza (los recursos del manifest no pueden variar por qualifier). Orientación movida a `MainActivity.onCreate` (`setRequestedOrientation` basado en `smallestScreenWidthDp >= 600`). `integers.xml` eliminados. Portrait verificado en Galaxy A56.
-- [ ] Crear app en Google Play Console
-- [ ] Data Safety form («No data collected»)
-- [ ] Clasificación de contenido IARC (reutilizar respuestas de `docs/stores/age-rating.md`)
-- [ ] Metadata 32 idiomas (ya generada en `docs/stores/metadata/`, crear script de subida para Play Console)
-- [ ] Screenshots para Google Play (reutilizar los de iPhone o generar nativos con barra de Android)
-- [ ] Feature Graphic (1024×500, obligatoria en Google Play — banner promocional, no screenshot)
-- [ ] Enviar a revisión
+- [x] **Play Console setup + App content**: App record creado (`com.exploris.app`, gratis, default en-US). Todas las declaraciones de **Policy → App content** resueltas: Privacy Policy (`https://elec-b.github.io/exploris-data/privacy.html`), App access (unrestricted), Ads (ninguno), Content rating IARC (Everyone / PEGI 3 — cuestionario completo siguiendo `docs/stores/age-rating.md`, categoría «All Other App Types», News/educational=Yes), Target audience (13-17+ sin appeal a niños, no Families Policy), News apps (No), Data Safety (No data collected, HTTPS in transit), Government/Financial/Health apps (No), Advertising ID (No — verificado grep en manifests). Wikipedia y Privacy Policy verificados abriendo Chrome externo en Galaxy A56 (prerrequisito para «No unrestricted internet access»).
+- [x] **API de Google Play + subida de metadata**: Google Cloud project `exploris-playstore` con **Android Publisher API** habilitada. Service account `playstore-uploader` con JSON key en `.gcloud/playstore-uploader.json` (gitignored + backup pendiente en 1Password). Service account invitado a Play Console con permisos Draft apps/Release testing+production/Manage testing tracks/Store presence (sin Admin, sin Financial). Script `scripts/upload-playstore.mjs` modular (`--listings|--screenshots|--aab|--release|--all`) usando JWT + `fetch` (sin deps nuevas, `jsonwebtoken` ya disponible). Flujo: JWT RS256 → OAuth token → edit session → commit. Mapeo 32 locales del proyecto → Play (`en-US`, `es-ES`, `pt-BR`, `zh-CN`, `zh-TW`, etc.). `npm run upload-playstore`. **Primera ejecución `--listings` OK**: 32/32 idiomas commiteados (title + shortDescription + fullDescription); visibles en Play Console → Store listings (warning menor de Google: «No ads.» detectado como keyword promocional en la short description — no bloquea publicación, solo promoción orgánica de Google).
+- [ ] **Fix short description**: quitar «No ads / Sin anuncios / Keine Werbung / …» de los 32 `.md` + re-lanzar `npm run upload-playstore -- --listings`
+- [ ] **Subida de screenshots**: ejecutar `npm run upload-playstore -- --screenshots` (160 imágenes: 32 idiomas × 5 tipos — `globe_light`, `play_question_light`, `country_card_light`, `passport_dark`, `play_question_dark`)
+- [ ] **Feature Graphic 1024×500**: crear banner promocional desde el logo wireframe + título «Exploris» sobre fondo oscuro, subir via UI (la API también lo permite pero no está en el script aún)
+- [ ] **App icon 512×512**: verificar que Play auto-extrae del AAB (opción por defecto); si no, subir el `ic_launcher_xxxhdpi` a 512×512
+- [ ] **Subida de AAB al Internal Testing**: `npm run upload-playstore -- --aab` (activa Google Play App Signing en el primer upload)
+- [ ] **Promoción a Production + release notes**: `npm run upload-playstore -- --release` + añadir release notes en Play Console (o extender script con `releaseNotes`)
+- [ ] **Enviar a revisión**: revisar dashboard de app (todos los checks verdes), rollout production con 100% (o staged)
 
 ### Post-lanzamiento
 - [ ] (Opcional) Confirmación al salir de prueba de sello en curso (diálogo si se toca otro tab)

@@ -5,6 +5,9 @@
 .keystore/
 android/keystore.properties
 
+# Google Cloud service account JSON (Play Store API uploader)
+.gcloud/
+
 # Store screenshots (pesados, no versionados)
 docs/stores/screenshots/
 
