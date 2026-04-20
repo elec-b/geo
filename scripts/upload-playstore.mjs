@@ -5,11 +5,15 @@
  * via Android Publisher API v3.
  *
  * Uso:
- *   node scripts/upload-playstore.mjs --listings     # Textos (32 idiomas)
- *   node scripts/upload-playstore.mjs --screenshots  # Screenshots (32 idiomas × 5)
- *   node scripts/upload-playstore.mjs --aab          # Sube AAB al internal testing
- *   node scripts/upload-playstore.mjs --release      # Promueve internal → production
- *   node scripts/upload-playstore.mjs --all          # Todo en orden (una edit)
+ *   node scripts/upload-playstore.mjs --listings             # Textos (32 idiomas)
+ *   node scripts/upload-playstore.mjs --screenshots          # Phone screenshots (32 × 5)
+ *   node scripts/upload-playstore.mjs --screenshots-tablet   # 10-inch tablet (32 × 5)
+ *   node scripts/upload-playstore.mjs --screenshots-tablet7  # 7-inch tablet (reutiliza set tablet)
+ *   node scripts/upload-playstore.mjs --feature-graphic      # Feature graphic (32 × 1024×500)
+ *   node scripts/upload-playstore.mjs --aab                  # Sube AAB al internal testing (adjunta release notes si existen)
+ *   node scripts/upload-playstore.mjs --release-notes        # Actualiza release notes del release existente en internal
+ *   node scripts/upload-playstore.mjs --release              # Promueve internal → production
+ *   node scripts/upload-playstore.mjs --all                  # Todo en orden (una edit)
  *
  * Autenticación: lee .gcloud/playstore-uploader.json (service account).
  */
@@ -27,6 +31,7 @@ const METADATA_DIR = join(ROOT, 'docs', 'stores', 'metadata');
 const SCREENSHOTS_PHONE_DIR  = join(ROOT, 'docs', 'stores', 'screenshots', 'android', 'phone');
 const SCREENSHOTS_TABLET_DIR = join(ROOT, 'docs', 'stores', 'screenshots', 'android', 'tablet');
 const FEATURE_GRAPHIC_DIR    = join(ROOT, 'docs', 'stores', 'feature-graphic');
+const RELEASE_NOTES_DIR      = join(ROOT, 'docs', 'stores', 'release-notes');
 const AAB_PATH = join(ROOT, 'android', 'app', 'build', 'outputs', 'bundle', 'release', 'app-release.aab');
 const PACKAGE_NAME = 'com.exploris.app';
 const API_BASE = 'https://androidpublisher.googleapis.com/androidpublisher/v3';
@@ -331,20 +336,71 @@ async function uploadAab(editId) {
   return res.versionCode;
 }
 
-async function assignToTrack(editId, versionCode, track = 'internal') {
+// Lee docs/stores/release-notes/<lang>.txt para los 32 idiomas y devuelve
+// el array releaseNotes[] que espera Play Console (language = locale, text ≤500 chars).
+function loadReleaseNotes() {
+  if (!existsSync(RELEASE_NOTES_DIR)) return [];
+  const notes = [];
+  for (const [lang, locale] of Object.entries(LOCALE_MAP)) {
+    const path = join(RELEASE_NOTES_DIR, `${lang}.txt`);
+    if (!existsSync(path)) continue;
+    const text = readFileSync(path, 'utf-8').trim();
+    if (!text) continue;
+    if (text.length > 500) {
+      console.warn(`  ⚠ ${lang}: release note excede 500 chars (${text.length}), truncando`);
+      notes.push({ language: locale, text: text.slice(0, 500) });
+    } else {
+      notes.push({ language: locale, text });
+    }
+  }
+  return notes;
+}
+
+async function assignToTrack(editId, versionCode, track = 'internal', releaseNotes = []) {
+  const release = {
+    versionCodes: [String(versionCode)],
+    status: 'draft',
+  };
+  if (releaseNotes.length) release.releaseNotes = releaseNotes;
+
+  await api('PUT',
+    `${API_BASE}/applications/${PACKAGE_NAME}/edits/${editId}/tracks/${track}`,
+    { body: { track, releases: [release] } }
+  );
+  const notesMsg = releaseNotes.length ? `, ${releaseNotes.length} locales con release notes` : '';
+  console.log(`  → asignado al track "${track}" (status: draft${notesMsg})`);
+}
+
+// Actualiza las release notes del release existente en `track` sin re-subir AAB.
+async function updateReleaseNotes(editId, track = 'internal') {
+  const notes = loadReleaseNotes();
+  if (!notes.length) {
+    console.log(`  ⚠ No hay archivos en ${RELEASE_NOTES_DIR}, nada que actualizar.`);
+    return;
+  }
+
+  const current = await api('GET',
+    `${API_BASE}/applications/${PACKAGE_NAME}/edits/${editId}/tracks/${track}`
+  );
+  const release = current.releases?.[0];
+  if (!release?.versionCodes?.length) {
+    throw new Error(`No hay release en track "${track}". Sube un AAB primero con --aab.`);
+  }
+
   await api('PUT',
     `${API_BASE}/applications/${PACKAGE_NAME}/edits/${editId}/tracks/${track}`,
     {
       body: {
         track,
         releases: [{
-          versionCodes: [String(versionCode)],
-          status: 'draft',
+          versionCodes: release.versionCodes,
+          status: release.status || 'draft',
+          releaseNotes: notes,
         }],
       },
     }
   );
-  console.log(`  → asignado al track "${track}" (status: draft)`);
+  console.log(`  → release notes actualizadas en "${track}" (${notes.length} idiomas)`);
 }
 
 // --- Release (promote internal → production) ---
@@ -381,16 +437,18 @@ async function promoteToProduction(editId) {
 async function main() {
   const args = process.argv.slice(2);
   const flags = {
-    listings:           args.includes('--listings')           || args.includes('--all'),
-    screenshots:        args.includes('--screenshots')        || args.includes('--all'),
-    screenshotsTablet:  args.includes('--screenshots-tablet') || args.includes('--all'),
-    featureGraphic:     args.includes('--feature-graphic')    || args.includes('--all'),
-    aab:                args.includes('--aab')                || args.includes('--all'),
-    release:            args.includes('--release')            || args.includes('--all'),
+    listings:           args.includes('--listings')            || args.includes('--all'),
+    screenshots:        args.includes('--screenshots')         || args.includes('--all'),
+    screenshotsTablet:  args.includes('--screenshots-tablet')  || args.includes('--all'),
+    screenshotsTablet7: args.includes('--screenshots-tablet7') || args.includes('--all'),
+    featureGraphic:     args.includes('--feature-graphic')     || args.includes('--all'),
+    aab:                args.includes('--aab')                 || args.includes('--all'),
+    releaseNotes:       args.includes('--release-notes')       || args.includes('--all'),
+    release:            args.includes('--release')             || args.includes('--all'),
   };
 
   if (!Object.values(flags).some(Boolean)) {
-    console.error('Uso: node scripts/upload-playstore.mjs [--listings] [--screenshots] [--screenshots-tablet] [--feature-graphic] [--aab] [--release] [--all]');
+    console.error('Uso: node scripts/upload-playstore.mjs [--listings] [--screenshots] [--screenshots-tablet] [--screenshots-tablet7] [--feature-graphic] [--aab] [--release-notes] [--release] [--all]');
     process.exit(1);
   }
 
@@ -419,7 +477,17 @@ async function main() {
     await uploadScreenshots(editId, {
       sourceDir: SCREENSHOTS_TABLET_DIR,
       imageType: 'tenInchScreenshots',
-      label: 'tablet',
+      label: 'tablet-10"',
+    });
+    console.log();
+  }
+
+  if (flags.screenshotsTablet7) {
+    console.log('Subiendo tablet (7-inch) screenshots (reutiliza set de tablet, 32 idiomas × 5)...');
+    await uploadScreenshots(editId, {
+      sourceDir: SCREENSHOTS_TABLET_DIR,
+      imageType: 'sevenInchScreenshots',
+      label: 'tablet-7"',
     });
     console.log();
   }
@@ -433,7 +501,15 @@ async function main() {
   if (flags.aab) {
     console.log('Subiendo AAB al internal testing track...');
     const versionCode = await uploadAab(editId);
-    await assignToTrack(editId, versionCode, 'internal');
+    const notes = loadReleaseNotes();
+    if (notes.length) console.log(`  → ${notes.length} release notes locales encontradas, adjuntando al release`);
+    await assignToTrack(editId, versionCode, 'internal', notes);
+    console.log();
+  }
+
+  if (flags.releaseNotes && !flags.aab) {
+    console.log('Actualizando release notes en internal...');
+    await updateReleaseNotes(editId, 'internal');
     console.log();
   }
 

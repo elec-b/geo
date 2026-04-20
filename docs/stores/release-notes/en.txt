@@ -1,0 +1,3 @@
+Welcome to Exploris!
+Learn the countries and capitals of the world on an interactive 3D globe. Exploris helps you learn by playing and adapts to what you already know.
+Enjoy exploring!
