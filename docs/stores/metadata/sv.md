@@ -10,7 +10,7 @@ Exploris: Geografi · 18/30 chars
 Geografi på en 3D-jordglob · 26/30 chars
 
 ## Short Description — Android only (≤80)
-Länder, huvudstäder och geografi på en interaktiv 3D-jordglob. Reklamfri. · 73/80 chars
+Lek och lär dig var länder och huvudstäder ligger på en 3D-jordglob. · 68/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Lär dig världens länder och huvudstäder på en interaktiv 3D-jordglob. Ingen förvrängning, ingen reklam, ingen tracking. Dina framsteg, dina regler. · 147/170 chars

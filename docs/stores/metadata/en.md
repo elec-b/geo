@@ -10,7 +10,7 @@ Exploris: Geography · 19/30 chars
 Learn Geography on a 3D Globe · 29/30 chars
 
 ## Short Description — Android only (≤80)
-Learn countries, capitals and geography on a real 3D globe. No ads. · 67/80 chars
+Play and learn where countries and capitals are on a 3D globe. · 62/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Learn the world's countries and capitals on an interactive 3D globe. No distortion, no ads, no tracking. Your progress, your rules. · 131/170 chars

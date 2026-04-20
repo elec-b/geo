@@ -10,7 +10,7 @@ Exploris: Geografi · 18/30 chars
 Geografi på en 3D-jordklode · 27/30 chars
 
 ## Short Description — Android only (≤80)
-Land, hovedsteder og geografi på en interaktiv 3D-jordklode. Reklamefri. · 72/80 chars
+Lek og lær hvor land og hovedsteder ligger på en 3D-jordklode. · 62/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Lær verdens land og hovedsteder på en interaktiv 3D-jordklode. Ingen forvrengning, ingen reklame, ingen sporing. Din fremgang, dine regler. · 139/170 chars

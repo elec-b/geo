@@ -10,7 +10,7 @@ Exploris : Géographie · 21/30 chars
 Géographie sur un globe 3D · 26/30 chars
 
 ## Short Description — Android only (≤80)
-Pays, capitales et géographie sur un globe interactif. Sans pub. · 64/80 chars
+Joue et apprends où se trouvent les pays et capitales sur un globe 3D. · 70/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Apprends les pays et capitales du monde sur un globe terrestre interactif en 3D. Sans distorsion, sans pub et sans collecte de données. Ta progression, tes règles. · 163/170 chars

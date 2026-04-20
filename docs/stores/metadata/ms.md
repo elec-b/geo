@@ -10,7 +10,7 @@ Exploris: Geografi · 18/30 chars
 Geografi di glob 3D · 19/30 chars
 
 ## Short Description — Android only (≤80)
-Negara, ibu negeri dan geografi di glob 3D interaktif. Tiada iklan. · 67/80 chars
+Main dan pelajari kedudukan negara dan ibu negeri di glob 3D. · 61/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Pelajari negara dan ibu negeri dunia di glob 3D interaktif. Tiada herotan, tiada iklan, tiada penjejakan. Kemajuanmu, peraturanmu. · 130/170 chars

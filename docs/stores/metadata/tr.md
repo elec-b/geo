@@ -10,7 +10,7 @@ Exploris: Coğrafya · 18/30 chars
 Coğrafya 3D küre üzerinde · 25/30 chars
 
 ## Short Description — Android only (≤80)
-Ülkeler, başkentler ve coğrafya etkileşimli bir 3D küre üzerinde. Reklamsız. · 76/80 chars
+Oynayarak ülkelerin ve başkentlerin yerini 3D küre üzerinde öğren. · 66/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Dünyanın ülkelerini ve başkentlerini etkileşimli bir 3D küre üzerinde öğren. Çarpıtma yok, reklam yok, takip yok. Senin ilerlemen, senin kuralların. · 148/170 chars

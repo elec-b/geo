@@ -10,6 +10,9 @@ android/keystore.properties
 
 # Store screenshots (pesados, no versionados)
 docs/stores/screenshots/
+# Store assets generados (regenerables desde scripts/generate-*.mjs)
+docs/stores/feature-graphic/
+docs/stores/play-icon-512.png
 
 # Logs
 logs

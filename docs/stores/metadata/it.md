@@ -10,7 +10,7 @@ Exploris: Geografia · 19/30 chars
 Geografia su un globo 3D · 24/30 chars
 
 ## Short Description — Android only (≤80)
-Paesi, capitali e geografia su un globo interattivo. Senza pubblicità. · 70/80 chars
+Gioca e impara dove si trovano Paesi e capitali su un globo 3D. · 63/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Impara paesi e capitali del mondo su un globo terrestre interattivo in 3D. Senza distorsione, senza pubblicità e senza raccogliere dati. I tuoi progressi, le tue regole. · 169/170 chars

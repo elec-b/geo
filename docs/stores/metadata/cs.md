@@ -10,7 +10,7 @@ Exploris: Zeměpis · 17/30 chars
 Zeměpis na 3D glóbu · 19/30 chars
 
 ## Short Description — Android only (≤80)
-Země, hlavní města a zeměpis na interaktivním 3D glóbu. Bez reklam. · 67/80 chars
+Hraj a uč se, kde jsou státy a hlavní města na 3D glóbu. · 56/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Poznávej země a hlavní města světa na interaktivním 3D glóbu. Bez zkreslení, bez reklam, bez sledování. Tvůj pokrok, tvá pravidla. · 130/170 chars

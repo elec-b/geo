@@ -10,7 +10,7 @@ Exploris: Geografia · 19/30 chars
 Geografia na globusie 3D · 24/30 chars
 
 ## Short Description — Android only (≤80)
-Kraje, stolice i geografia na interaktywnym globusie 3D. Bez reklam. · 68/80 chars
+Graj i ucz się, gdzie są państwa i stolice na globusie 3D. · 58/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Poznawaj kraje i stolice świata na interaktywnym globusie 3D. Bez zniekształceń, bez reklam, bez śledzenia. Twój postęp, twoje zasady. · 134/170 chars

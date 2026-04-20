@@ -24,7 +24,9 @@ const jwt = require('jsonwebtoken');
 const ROOT = join(import.meta.dirname, '..');
 const SA_KEY_PATH = join(ROOT, '.gcloud', 'playstore-uploader.json');
 const METADATA_DIR = join(ROOT, 'docs', 'stores', 'metadata');
-const SCREENSHOTS_DIR = join(ROOT, 'docs', 'stores', 'screenshots');
+const SCREENSHOTS_PHONE_DIR  = join(ROOT, 'docs', 'stores', 'screenshots', 'android', 'phone');
+const SCREENSHOTS_TABLET_DIR = join(ROOT, 'docs', 'stores', 'screenshots', 'android', 'tablet');
+const FEATURE_GRAPHIC_DIR    = join(ROOT, 'docs', 'stores', 'feature-graphic');
 const AAB_PATH = join(ROOT, 'android', 'app', 'build', 'outputs', 'bundle', 'release', 'app-release.aab');
 const PACKAGE_NAME = 'com.exploris.app';
 const API_BASE = 'https://androidpublisher.googleapis.com/androidpublisher/v3';
@@ -71,9 +73,9 @@ const LOCALE_MAP = {
 // Orden = orden en el que Play Store los muestra en la ficha (primero = hero)
 const SCREENSHOT_TYPES = [
   { folder: 'globe_light',         prefix: 'globe_light_' },
-  { folder: 'play_question_light', prefix: 'play_question_light_' },
   { folder: 'country_card_light',  prefix: 'country_card_light_' },
-  { folder: 'passport_dark',       prefix: 'passport_dark_' },
+  { folder: 'play_pointer_light',  prefix: 'play_pointer_light_' },
+  { folder: 'play_question_light', prefix: 'play_question_light_' },
   { folder: 'play_question_dark',  prefix: 'play_question_dark_' },
 ];
 
@@ -217,7 +219,7 @@ async function uploadListings(editId) {
 
 // --- Screenshots ---
 
-async function uploadScreenshots(editId) {
+async function uploadScreenshots(editId, { sourceDir, imageType, label }) {
   const files = readdirSync(METADATA_DIR).filter(f => f.endsWith('.md'));
   let totalOk = 0, totalFail = 0;
 
@@ -226,16 +228,15 @@ async function uploadScreenshots(editId) {
     const locale = LOCALE_MAP[lang];
     if (!locale) continue;
 
-    process.stdout.write(`  ${locale} (${lang}): `);
+    process.stdout.write(`  ${locale} (${lang}) [${label}]: `);
     let langOk = 0, langFail = 0;
 
-    // Limpia screenshots previas de este idioma antes de subir
+    // Limpia screenshots previas de este idioma+imageType antes de subir
     try {
       await api('DELETE',
-        `${API_BASE}/applications/${PACKAGE_NAME}/edits/${editId}/listings/${locale}/phoneScreenshots`
+        `${API_BASE}/applications/${PACKAGE_NAME}/edits/${editId}/listings/${locale}/${imageType}`
       );
     } catch (e) {
-      // 404 si no había → ignorar
       if (e.status !== 404) {
         console.log(`reset ERROR: ${e.body?.error?.message || e.message}`);
         totalFail++;
@@ -244,7 +245,7 @@ async function uploadScreenshots(editId) {
     }
 
     for (const type of SCREENSHOT_TYPES) {
-      const path = join(SCREENSHOTS_DIR, type.folder, `${type.prefix}${lang}.png`);
+      const path = join(sourceDir, type.folder, `${type.prefix}${lang}.png`);
       if (!existsSync(path)) {
         process.stdout.write('·');
         continue;
@@ -252,7 +253,7 @@ async function uploadScreenshots(editId) {
       try {
         const img = readFileSync(path);
         await api('POST',
-          `${UPLOAD_BASE}/applications/${PACKAGE_NAME}/edits/${editId}/listings/${locale}/phoneScreenshots`,
+          `${UPLOAD_BASE}/applications/${PACKAGE_NAME}/edits/${editId}/listings/${locale}/${imageType}`,
           { body: img, contentType: 'image/png' }
         );
         process.stdout.write('✓');
@@ -267,6 +268,50 @@ async function uploadScreenshots(editId) {
     totalFail += langFail;
   }
   console.log(`  → ${totalOk} screenshots OK, ${totalFail} errores`);
+}
+
+// --- Feature Graphic (1024×500, uno por locale) ---
+
+async function uploadFeatureGraphics(editId) {
+  const files = readdirSync(METADATA_DIR).filter(f => f.endsWith('.md'));
+  let ok = 0, fail = 0;
+
+  for (const file of files) {
+    const lang = basename(file, '.md');
+    const locale = LOCALE_MAP[lang];
+    if (!locale) continue;
+
+    const path = join(FEATURE_GRAPHIC_DIR, `${lang}.png`);
+    if (!existsSync(path)) {
+      console.log(`  ${locale} (${lang}): sin archivo, skip`);
+      continue;
+    }
+
+    process.stdout.write(`  ${locale} (${lang})... `);
+    try {
+      // Reset previo del feature graphic (si existe)
+      try {
+        await api('DELETE',
+          `${API_BASE}/applications/${PACKAGE_NAME}/edits/${editId}/listings/${locale}/featureGraphic`
+        );
+      } catch (e) {
+        if (e.status !== 404) throw e;
+      }
+
+      const img = readFileSync(path);
+      await api('POST',
+        `${UPLOAD_BASE}/applications/${PACKAGE_NAME}/edits/${editId}/listings/${locale}/featureGraphic?uploadType=media`,
+        { body: img, contentType: 'image/png' }
+      );
+      console.log('OK');
+      ok++;
+    } catch (e) {
+      const detail = e.body?.error?.message || e.message;
+      console.log(`ERROR: ${detail}`);
+      fail++;
+    }
+  }
+  console.log(`  → ${ok} feature graphics OK, ${fail} errores`);
 }
 
 // --- AAB ---
@@ -336,14 +381,16 @@ async function promoteToProduction(editId) {
 async function main() {
   const args = process.argv.slice(2);
   const flags = {
-    listings:    args.includes('--listings')    || args.includes('--all'),
-    screenshots: args.includes('--screenshots') || args.includes('--all'),
-    aab:         args.includes('--aab')         || args.includes('--all'),
-    release:     args.includes('--release')     || args.includes('--all'),
+    listings:           args.includes('--listings')           || args.includes('--all'),
+    screenshots:        args.includes('--screenshots')        || args.includes('--all'),
+    screenshotsTablet:  args.includes('--screenshots-tablet') || args.includes('--all'),
+    featureGraphic:     args.includes('--feature-graphic')    || args.includes('--all'),
+    aab:                args.includes('--aab')                || args.includes('--all'),
+    release:            args.includes('--release')            || args.includes('--all'),
   };
 
   if (!Object.values(flags).some(Boolean)) {
-    console.error('Uso: node scripts/upload-playstore.mjs [--listings] [--screenshots] [--aab] [--release] [--all]');
+    console.error('Uso: node scripts/upload-playstore.mjs [--listings] [--screenshots] [--screenshots-tablet] [--feature-graphic] [--aab] [--release] [--all]');
     process.exit(1);
   }
 
@@ -358,8 +405,28 @@ async function main() {
   }
 
   if (flags.screenshots) {
-    console.log('Subiendo screenshots (32 idiomas × 5)...');
-    await uploadScreenshots(editId);
+    console.log('Subiendo phone screenshots (32 idiomas × 5)...');
+    await uploadScreenshots(editId, {
+      sourceDir: SCREENSHOTS_PHONE_DIR,
+      imageType: 'phoneScreenshots',
+      label: 'phone',
+    });
+    console.log();
+  }
+
+  if (flags.screenshotsTablet) {
+    console.log('Subiendo tablet (10-inch) screenshots (32 idiomas × 5)...');
+    await uploadScreenshots(editId, {
+      sourceDir: SCREENSHOTS_TABLET_DIR,
+      imageType: 'tenInchScreenshots',
+      label: 'tablet',
+    });
+    console.log();
+  }
+
+  if (flags.featureGraphic) {
+    console.log('Subiendo feature graphics (32 idiomas, 1024×500)...');
+    await uploadFeatureGraphics(editId);
     console.log();
   }
 

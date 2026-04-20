@@ -10,7 +10,7 @@ Exploris: Geografie · 19/30 chars
 Geografie pe un glob 3D · 23/30 chars
 
 ## Short Description — Android only (≤80)
-Țări, capitale și geografie pe un glob interactiv. Fără reclame. · 64/80 chars
+Joacă-te și învață unde se află țările și capitalele pe un glob 3D. · 66/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Învață țările și capitalele lumii pe un glob terestru interactiv 3D. Fără distorsiune, fără reclame și fără colectare de date. Progresul tău, regulile tale. · 156/170 chars

@@ -10,7 +10,7 @@ Exploris：地理 · 11/30 chars
 在 3D 地球儀上學地理 · 12/30 chars
 
 ## Short Description — Android only (≤80)
-在互動 3D 地球儀上學習國家、首都和地理。無廣告。 · 26/80 chars
+在 3D 地球儀上邊玩邊學各國和首都的位置。 · 21/80 chars
 
 ## Promotional Text — iOS only (≤170)
 在互動 3D 地球儀上學習世界上的國家和首都。沒有變形失真，沒有廣告，沒有追蹤。你的進度，由你作主。 · 50/170 chars

@@ -22,8 +22,8 @@ const jwt = require('jsonwebtoken');
 // ─── Configuración ───────────────────────────────────────────
 
 const ROOT = join(import.meta.dirname, '..');
-const SCREENSHOTS_DIR = join(ROOT, 'docs', 'stores', 'screenshots');
-const SCALED_DIR = join(ROOT, 'docs', 'stores', 'screenshots', '_scaled');
+const SCREENSHOTS_DIR = join(ROOT, 'docs', 'stores', 'screenshots', 'ios', 'iphone');
+const SCALED_DIR = join(ROOT, 'docs', 'stores', 'screenshots', 'ios', 'iphone', '_scaled');
 const BASE_URL = 'https://api.appstoreconnect.apple.com';
 
 // Candidatos de display type a probar (orden de preferencia)

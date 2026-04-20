@@ -10,7 +10,7 @@ Exploris: Geografi · 18/30 chars
 Geografi på en 3D-globus · 24/30 chars
 
 ## Short Description — Android only (≤80)
-Lande, hovedstæder og geografi på en interaktiv 3D-globus. Reklamefri. · 70/80 chars
+Leg og lær hvor lande og hovedstæder ligger på en 3D-globus. · 60/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Lær verdens lande og hovedstæder på en interaktiv 3D-globus. Ingen forvrængning, ingen reklamer, ingen tracking. Dine fremskridt, dine regler. · 142/170 chars

@@ -10,7 +10,7 @@ Exploris: Maantieto · 19/30 chars
 Maantieto 3D-maapallolla · 24/30 chars
 
 ## Short Description — Android only (≤80)
-Maat, pääkaupungit ja maantieto interaktiivisella 3D-maapallolla. · 65/80 chars
+Pelaa ja opi, missä maat ja pääkaupungit sijaitsevat 3D-maapallolla. · 68/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Opi maailman maat ja pääkaupungit interaktiivisella 3D-maapallolla. Ei vääristymää, ei mainoksia, ei seurantaa. Sinun edistymisesi, sinun säännöt. · 146/170 chars

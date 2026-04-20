@@ -10,7 +10,7 @@ Exploris: Geografia · 19/30 chars
 Geografia na 3D glóbuse · 23/30 chars
 
 ## Short Description — Android only (≤80)
-Krajiny, hlavné mestá a geografia na interaktívnom 3D glóbuse. Bez reklám. · 74/80 chars
+Hraj sa a uč sa, kde sú krajiny a hlavné mestá na 3D glóbuse. · 61/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Spoznávaj krajiny a hlavné mestá sveta na interaktívnom 3D glóbuse. Bez skreslenia, bez reklám, bez sledovania. Tvoj pokrok, tvoje pravidlá. · 140/170 chars

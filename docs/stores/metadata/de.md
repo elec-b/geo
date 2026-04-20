@@ -10,7 +10,7 @@ Exploris: Geografie · 19/30 chars
 Geografie auf dem 3D-Globus · 27/30 chars
 
 ## Short Description — Android only (≤80)
-Länder, Hauptstädte und Geografie auf einem 3D-Globus. Werbefrei. · 65/80 chars
+Spiele und lerne, wo Länder und Hauptstädte auf einem 3D-Globus liegen. · 71/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Lerne die Länder und Hauptstädte der Welt auf einem interaktiven 3D-Globus. Keine Verzerrung, keine Werbung, keine Datensammlung. Dein Fortschritt, deine Regeln. · 161/170 chars

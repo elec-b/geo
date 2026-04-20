@@ -10,7 +10,7 @@ Exploris: 지리 학습 · 15/30 chars
 3D 지구본으로 배우는 지리 · 15/30 chars
 
 ## Short Description — Android only (≤80)
-인터랙티브 3D 지구본에서 나라, 수도, 지리를 배워요. 광고 없음. · 38/80 chars
+3D 지구본에서 놀며 나라와 수도의 위치를 배워요. · 27/80 chars
 
 ## Promotional Text — iOS only (≤170)
 인터랙티브 3D 지구본에서 세계의 나라와 수도를 배워요. 왜곡 없음, 광고 없음, 추적 없음. 당신의 진행은, 당신의 규칙대로. · 71/170 chars

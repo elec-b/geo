@@ -22,8 +22,8 @@ const jwt = require('jsonwebtoken');
 // ─── Configuración ───────────────────────────────────────────
 
 const ROOT = join(import.meta.dirname, '..');
-const SCREENSHOTS_DIR = join(ROOT, 'docs', 'stores', 'screenshots', 'ipad_play_light');
-const SCALED_DIR = join(ROOT, 'docs', 'stores', 'screenshots', '_scaled_ipad');
+const SCREENSHOTS_DIR = join(ROOT, 'docs', 'stores', 'screenshots', 'ios', 'ipad', 'ipad_play_light');
+const SCALED_DIR = join(ROOT, 'docs', 'stores', 'screenshots', 'ios', 'ipad', '_scaled_ipad');
 const BASE_URL = 'https://api.appstoreconnect.apple.com';
 
 // Candidatos de display type para iPad 13"

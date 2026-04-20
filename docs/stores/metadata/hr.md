@@ -10,7 +10,7 @@ Exploris: Geografija · 20/30 chars
 Geografija na 3D globusu · 24/30 chars
 
 ## Short Description — Android only (≤80)
-Zemlje, glavni gradovi i geografija na interaktivnom 3D globusu. Bez reklama. · 77/80 chars
+Igraj i nauči gdje su zemlje i glavni gradovi na 3D globusu. · 60/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Nauči zemlje i glavne gradove svijeta na interaktivnom 3D globusu. Bez iskrivljenja, bez reklama, bez praćenja. Tvoj napredak, tvoja pravila. · 141/170 chars

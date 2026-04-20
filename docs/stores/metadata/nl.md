@@ -10,7 +10,7 @@ Exploris: Aardrijkskunde · 24/30 chars
 Aardrijkskunde op een 3D-globe · 30/30 chars
 
 ## Short Description — Android only (≤80)
-Landen, hoofdsteden en aardrijkskunde op een interactieve wereldbol. · 68/80 chars
+Speel en leer waar landen en hoofdsteden liggen op een 3D-wereldbol. · 68/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Leer de landen en hoofdsteden van de wereld op een interactieve 3D-wereldbol. Geen vervorming, geen advertenties, geen tracking. Jouw voortgang, jouw regels. · 157/170 chars

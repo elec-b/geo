@@ -10,7 +10,7 @@ Exploris: Geografia · 19/30 chars
 Geografia en un globus 3D · 25/30 chars
 
 ## Short Description — Android only (≤80)
-Països, capitals i geografia en un globus interactiu. Sense anuncis. · 68/80 chars
+Juga i aprèn on són els països i capitals en un globus 3D. · 58/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Aprèn els països i capitals del món en un globus terraqüi interactiu en 3D. Sense distorsió, sense anuncis i sense recollir dades. El teu progrés, les teves regles. · 164/170 chars

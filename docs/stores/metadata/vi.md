@@ -10,7 +10,7 @@ Exploris: Địa lý · 16/30 chars
 Địa lý trên quả địa cầu 3D · 26/30 chars
 
 ## Short Description — Android only (≤80)
-Quốc gia, thủ đô và địa lý trên quả địa cầu 3D tương tác. Không quảng cáo. · 74/80 chars
+Chơi và học vị trí các quốc gia và thủ đô trên quả địa cầu 3D. · 62/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Học các quốc gia và thủ đô trên thế giới trên quả địa cầu 3D tương tác. Không méo mó, không quảng cáo, không theo dõi. Tiến trình của bạn, luật của bạn. · 152/170 chars

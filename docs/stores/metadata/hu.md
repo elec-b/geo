@@ -10,7 +10,7 @@ Exploris: Földrajz · 18/30 chars
 Földrajz 3D-földgömbön · 22/30 chars
 
 ## Short Description — Android only (≤80)
-Országok, fővárosok és földrajz egy interaktív 3D-földgömbön. Reklámmentes. · 75/80 chars
+Játssz és tanuld meg, hol vannak az országok és fővárosok a 3D-földgömbön. · 74/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Tanuld meg a világ országait és fővárosait egy interaktív 3D-földgömbön. Torzítás nélkül, reklámok nélkül, nyomkövetés nélkül. A te haladásod, a te szabályaid. · 159/170 chars

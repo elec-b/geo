@@ -10,7 +10,7 @@ Exploris: Geografi · 18/30 chars
 Geografi di globe 3D · 20/30 chars
 
 ## Short Description — Android only (≤80)
-Negara, ibu kota, dan geografi di globe 3D interaktif. Tanpa iklan. · 67/80 chars
+Main dan pelajari letak negara dan ibu kota di globe 3D. · 56/80 chars
 
 ## Promotional Text — iOS only (≤170)
 Pelajari negara dan ibu kota dunia di globe 3D interaktif. Tanpa distorsi, tanpa iklan, tanpa pelacakan. Kemajuanmu, aturanmu. · 126/170 chars
