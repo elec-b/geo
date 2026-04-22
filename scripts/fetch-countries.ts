@@ -256,6 +256,33 @@ async function main() {
   console.log(`  Wikipedia (es): ${Object.keys(wikiEs).length} países`);
   console.log(`  Wikipedia (multi): ${Object.keys(wikiAll).length} países`);
 
+  // --- Validación: países ONU deben tener capital en todos los idiomas ---
+  // Evita que un hueco en capitals-all.json llegue silenciosamente a producción.
+  const unCapitalGaps: string[] = [];
+  for (const cca2 of UN_COUNTRY_CODES) {
+    for (const langKey of Object.keys(SUPPORTED_LANGUAGES)) {
+      if (!capitalsAll[cca2]?.[langKey]) unCapitalGaps.push(`${cca2}/${langKey}`);
+    }
+  }
+  if (unCapitalGaps.length > 0) {
+    throw new Error(
+      `Países ONU sin capital en scripts/data/capitals-all.json (${unCapitalGaps.length} huecos):\n  ` +
+      unCapitalGaps.slice(0, 20).join(', ') +
+      (unCapitalGaps.length > 20 ? `\n  … y ${unCapitalGaps.length - 20} más` : '') +
+      `\n\nCompleta las traducciones antes de regenerar.`
+    );
+  }
+  const nonUnGaps: string[] = [];
+  for (const cca2 of NON_UN_CODES) {
+    if (cca2.length !== 2) continue;
+    for (const langKey of Object.keys(SUPPORTED_LANGUAGES)) {
+      if (!capitalsAll[cca2]?.[langKey]) nonUnGaps.push(`${cca2}/${langKey}`);
+    }
+  }
+  if (nonUnGaps.length > 0) {
+    console.log(`⚠ Territorios no-ONU con capital vacía (${nonUnGaps.length}): ${nonUnGaps.slice(0, 5).join(', ')}${nonUnGaps.length > 5 ? '…' : ''}`);
+  }
+
   // --- Descargar REST Countries ---
   console.log('\nDescargando datos de REST Countries v3.1...');
 

@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Sahara Barat",
-    "capital": "",
+    "capital": "Sahara Barat",
     "demonym": "Sahara Barat",
     "languages": [
       "Arab"
@@ -851,7 +851,7 @@
   },
   "FO": {
     "name": "Kepulauan Faroe",
-    "capital": "",
+    "capital": "Kepulauan Faroe",
     "demonym": "Kepulauan Faroe",
     "languages": [
       "Faroe",
@@ -936,7 +936,7 @@
   },
   "GG": {
     "name": "Guernsey",
-    "capital": "",
+    "capital": "Guernsey",
     "demonym": "Guernsey",
     "languages": [
       "Inggeris",
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hong Kong",
-    "capital": "",
+    "capital": "Hong Kong",
     "demonym": "Hong Kong",
     "languages": [
       "Cina",
@@ -1184,7 +1184,7 @@
   },
   "IM": {
     "name": "Pulau Man",
-    "capital": "",
+    "capital": "Pulau Man",
     "demonym": "Isle of Man",
     "languages": [
       "Inggeris",
@@ -1259,7 +1259,7 @@
   },
   "JE": {
     "name": "Jersey",
-    "capital": "",
+    "capital": "Saint Helier",
     "demonym": "Jersey",
     "languages": [
       "Inggeris",
@@ -1597,7 +1597,7 @@
   },
   "MC": {
     "name": "Monaco",
-    "capital": "",
+    "capital": "Monaco",
     "demonym": "Monaco",
     "languages": [
       "Perancis"
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Makau",
-    "capital": "",
+    "capital": "Makau",
     "demonym": "Macau",
     "languages": [
       "Cina",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Kepulauan Mariana Utara",
-    "capital": "",
+    "capital": "Kepulauan Mariana Utara",
     "demonym": "Kepulauan Mariana Utara",
     "languages": [
       "Inggeris",
@@ -1906,7 +1906,7 @@
   },
   "NF": {
     "name": "Pulau Norfolk",
-    "capital": "",
+    "capital": "Pulau Norfolk",
     "demonym": "Pulau Norfolk",
     "languages": [
       "Inggeris"
@@ -2132,7 +2132,7 @@
   },
   "PN": {
     "name": "Kepulauan Pitcairn",
-    "capital": "",
+    "capital": "Kepulauan Pitcairn",
     "demonym": "Kepulauan Pitcairn",
     "languages": [
       "Inggeris"
@@ -2183,7 +2183,7 @@
   },
   "PW": {
     "name": "Palau",
-    "capital": "",
+    "capital": "Palau",
     "demonym": "Palau",
     "languages": [
       "Palauan",
@@ -2361,7 +2361,7 @@
   },
   "SH": {
     "name": "Saint Helena",
-    "capital": "",
+    "capital": "Saint Helena, Ascension and Tristan da Cunha",
     "demonym": "Saint Helena",
     "languages": [
       "Inggeris"
@@ -2495,7 +2495,7 @@
   },
   "SX": {
     "name": "Sint Maarten",
-    "capital": "",
+    "capital": "Sint Maarten",
     "demonym": "Sint Maarten",
     "languages": [
       "Belanda",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Kota Vatikan",
-    "capital": "",
+    "capital": "Vatikan",
     "demonym": "Vatikan",
     "languages": [
       "Itali",
@@ -2805,7 +2805,7 @@
   },
   "VG": {
     "name": "Kepulauan Virgin British",
-    "capital": "",
+    "capital": "Kepulauan Virgin British",
     "demonym": "Kepulauan Virgin British",
     "languages": [
       "Inggeris"

@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "西撒哈拉",
-    "capital": "",
+    "capital": "西撒哈拉",
     "demonym": "西撒哈拉的",
     "languages": [
       "阿拉伯文"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "香港",
-    "capital": "",
+    "capital": "香港",
     "demonym": "香港的",
     "languages": [
       "中文",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "澳門",
-    "capital": "",
+    "capital": "澳門",
     "demonym": "澳門的",
     "languages": [
       "中文",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "北馬利安納群島",
-    "capital": "",
+    "capital": "北马里亞納群島",
     "demonym": "北馬里亞納群島的",
     "languages": [
       "英文",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "梵蒂岡",
-    "capital": "",
+    "capital": "梵蒂岡城國",
     "demonym": "梵蒂岡的",
     "languages": [
       "義大利文",

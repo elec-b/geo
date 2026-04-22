@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Western Sahara",
-    "capital": "",
+    "capital": "Western Sahara",
     "demonym": "Sahrawi",
     "languages": [
       "Arabic"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hong Kong",
-    "capital": "",
+    "capital": "Hong Kong",
     "demonym": "Hong Konger",
     "languages": [
       "Chinese",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Macao",
-    "capital": "",
+    "capital": "Macau",
     "demonym": "Macanese",
     "languages": [
       "Chinese",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatican City",
-    "capital": "",
+    "capital": "Vatican City",
     "demonym": "Vatican",
     "languages": [
       "Italian",

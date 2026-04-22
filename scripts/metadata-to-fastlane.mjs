@@ -8,7 +8,7 @@
  * Output: fastlane/metadata/<locale>/<campo>.txt
  */
 
-import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'fs';
 import { join, basename } from 'path';
 
 // Mapeo de códigos de idioma del proyecto → locales de Apple App Store Connect
@@ -88,6 +88,7 @@ function parseMetadata(content) {
 
 const ROOT = join(import.meta.dirname, '..');
 const METADATA_DIR = join(ROOT, 'docs', 'stores', 'metadata');
+const RELEASE_NOTES_DIR = join(ROOT, 'docs', 'stores', 'release-notes');
 const OUTPUT_DIR = join(ROOT, 'fastlane', 'metadata');
 
 const files = readdirSync(METADATA_DIR).filter(f => f.endsWith('.md'));
@@ -124,8 +125,13 @@ for (const file of files) {
     }
   }
 
-  // release_notes.txt (igual para todos los idiomas en la primera versión)
-  // No lo incluimos — Fastlane usa "what's new" del campo release_notes
+  // release_notes.txt — copiado desde docs/stores/release-notes/<lang>.txt
+  // Sobreescribe si existe (cada nueva versión reescribe el "what's new").
+  const rnPath = join(RELEASE_NOTES_DIR, `${lang}.txt`);
+  if (existsSync(rnPath)) {
+    const rn = readFileSync(rnPath, 'utf-8').trim();
+    writeFileSync(join(localeDir, 'release_notes.txt'), rn + '\n');
+  }
 
   count++;
   console.log(`✓ ${locale} (${lang})`);

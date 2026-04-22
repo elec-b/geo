@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Länsi-Sahara",
-    "capital": "",
+    "capital": "Länsi-Sahara",
     "demonym": "länsisaharalainen",
     "languages": [
       "Arabia"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hongkong – Kiinan erityishallintoalue",
-    "capital": "",
+    "capital": "Hongkong",
     "demonym": "hongkongilainen",
     "languages": [
       "Kiina",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Macao – Kiinan erityishallintoalue",
-    "capital": "",
+    "capital": "Macao",
     "demonym": "macaolainen",
     "languages": [
       "Kiina",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Pohjois-Mariaanit",
-    "capital": "",
+    "capital": "Pohjois-Mariaanit",
     "demonym": "pohjois-mariaanilainen",
     "languages": [
       "Englanti",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatikaani",
-    "capital": "",
+    "capital": "Vatikaani",
     "demonym": "vatikaanilainen",
     "languages": [
       "Italia",

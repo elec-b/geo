@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Sàhara Occidental",
-    "capital": "",
+    "capital": "Sàhara Occidental",
     "demonym": "sahrauí",
     "languages": [
       "Àrab"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hong Kong (RAE Xina)",
-    "capital": "",
+    "capital": "Hong Kong",
     "demonym": "hongkonguès",
     "languages": [
       "Xinès",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Macau (RAE Xina)",
-    "capital": "",
+    "capital": "Macau",
     "demonym": "macaenc",
     "languages": [
       "Xinès",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Illes Marianes del Nord",
-    "capital": "",
+    "capital": "illes Mariannes Septentrionals",
     "demonym": "marianenc",
     "languages": [
       "Anglès",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Ciutat del Vaticà",
-    "capital": "",
+    "capital": "Ciutat del Vaticà",
     "demonym": "vaticà",
     "languages": [
       "Italià",

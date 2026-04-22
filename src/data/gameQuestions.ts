@@ -64,8 +64,9 @@ export function generateQuestionsTypeB(
   levelCountries: string[],
   capitals: Map<string, CapitalCoords>,
 ): GameQuestion[] {
+  // Excluye países sin nombre de capital en el idioma activo (evita banner vacío).
   return levelCountries
-    .filter((cca2) => capitals.has(cca2))
+    .filter((cca2) => !!capitals.get(cca2)?.name)
     .map((cca2) => ({
       type: 'B' as const,
       targetCca2: cca2,
@@ -251,7 +252,7 @@ export function generateSingleQuestion(
       return { type: 'A', targetCca2: cca2, prompt: country.name };
 
     case 'B':
-      if (!capitals.has(cca2)) return null;
+      if (!capitals.get(cca2)?.name) return null;
       return { type: 'B', targetCca2: cca2, prompt: capitals.get(cca2)!.name };
 
     case 'C':

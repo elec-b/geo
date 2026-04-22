@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Vestsahara",
-    "capital": "",
+    "capital": "Vestsahara",
     "demonym": "saharaui",
     "languages": [
       "Arabisk"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hongkong",
-    "capital": "",
+    "capital": "Hongkong",
     "demonym": "hongkongenser",
     "languages": [
       "Kinesisk",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Macao",
-    "capital": "",
+    "capital": "Macao",
     "demonym": "macaoboer",
     "languages": [
       "Kinesisk",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Nordmarianerne",
-    "capital": "",
+    "capital": "Nordmarianerne",
     "demonym": "nordmarianeboer",
     "languages": [
       "Engelsk",
@@ -2495,7 +2495,7 @@
   },
   "SX": {
     "name": "Sint Maarten",
-    "capital": "",
+    "capital": "Sint Maarten",
     "demonym": "sint-maartenboer",
     "languages": [
       "Nederlandsk",
@@ -2534,7 +2534,7 @@
   },
   "TC": {
     "name": "Turks- og Caicosøerne",
-    "capital": "",
+    "capital": "Turks- og Caicosøerne",
     "demonym": "turks- og caicosboer",
     "languages": [
       "Engelsk"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatikanstaten",
-    "capital": "",
+    "capital": "Vatikanstaten",
     "demonym": "vatikanboer",
     "languages": [
       "Italiensk",

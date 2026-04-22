@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Nyugat-Szahara",
-    "capital": "",
+    "capital": "Nyugat-Szahara",
     "demonym": "nyugat-szaharai",
     "languages": [
       "Arab"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hongkong",
-    "capital": "",
+    "capital": "Hongkong",
     "demonym": "hongkongi",
     "languages": [
       "Kínai",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Makaó",
-    "capital": "",
+    "capital": "Makaó",
     "demonym": "makaói",
     "languages": [
       "Kínai",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Északi Mariana-szigetek",
-    "capital": "",
+    "capital": "Északi-Mariana-szigetek",
     "demonym": "északi-mariana-szigeteki",
     "languages": [
       "Angol",
@@ -1770,7 +1770,7 @@
   },
   "MS": {
     "name": "Montserrat",
-    "capital": "",
+    "capital": "Montserrat",
     "demonym": "montserrati",
     "languages": [
       "Angol"
@@ -2495,7 +2495,7 @@
   },
   "SX": {
     "name": "Sint Maarten",
-    "capital": "",
+    "capital": "Sint Maarten",
     "demonym": "sint maarteni",
     "languages": [
       "Holland",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatikán",
-    "capital": "",
+    "capital": "Vatikán",
     "demonym": "vatikáni",
     "languages": [
       "Olasz",
