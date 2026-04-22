@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "서사하라",
-    "capital": "",
+    "capital": "서사하라",
     "demonym": "서사하라의",
     "languages": [
       "아랍어"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "홍콩",
-    "capital": "",
+    "capital": "홍콩",
     "demonym": "홍콩의",
     "languages": [
       "중국어",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "마카오",
-    "capital": "",
+    "capital": "마카오",
     "demonym": "마카오의",
     "languages": [
       "중국어",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "북마리아나제도",
-    "capital": "",
+    "capital": "북마리아나 제도",
     "demonym": "북마리아나 제도의",
     "languages": [
       "영어",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "바티칸 시국",
-    "capital": "",
+    "capital": "바티칸 시국",
     "demonym": "바티칸의",
     "languages": [
       "이탈리아어",

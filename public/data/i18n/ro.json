@@ -50,7 +50,7 @@
   },
   "AI": {
     "name": "Anguilla",
-    "capital": "",
+    "capital": "Anguilla",
     "demonym": "anguillan",
     "languages": [
       "Engleză"
@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Sahara Occidentală",
-    "capital": "",
+    "capital": "Sahara Occidentală",
     "demonym": "sahraui",
     "languages": [
       "Arabă"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hong Kong",
-    "capital": "",
+    "capital": "Hong Kong",
     "demonym": "din Hong Kong",
     "languages": [
       "Chineză",
@@ -1259,7 +1259,7 @@
   },
   "JE": {
     "name": "Jersey",
-    "capital": "",
+    "capital": "Saint Helier",
     "demonym": "din Jersey",
     "languages": [
       "Engleză",
@@ -1597,7 +1597,7 @@
   },
   "MC": {
     "name": "Monaco",
-    "capital": "",
+    "capital": "Monaco",
     "demonym": "monegasc",
     "languages": [
       "Franceză"
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Macao",
-    "capital": "",
+    "capital": "Macau",
     "demonym": "din Macao",
     "languages": [
       "Chineză",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Insulele Mariane de Nord",
-    "capital": "",
+    "capital": "Comunitatea Insulelor Mariane de Nord",
     "demonym": "din Insulele Mariane de Nord",
     "languages": [
       "Engleză",
@@ -2534,7 +2534,7 @@
   },
   "TC": {
     "name": "Insulele Turks și Caicos",
-    "capital": "",
+    "capital": "Cockburn Town",
     "demonym": "din Insulele Turks și Caicos",
     "languages": [
       "Engleză"
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatican",
-    "capital": "",
+    "capital": "Vatican",
     "demonym": "din Vatican",
     "languages": [
       "Italiană",

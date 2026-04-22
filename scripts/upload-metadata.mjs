@@ -105,6 +105,7 @@ function readLocaleMetadata(locale) {
     description: read('description.txt'),
     keywords: read('keywords.txt'),
     promotionalText: read('promotional_text.txt'),
+    whatsNew: read('release_notes.txt'),
   };
 }
 
@@ -161,12 +162,32 @@ async function main() {
   if (!appId) throw new Error(`App no encontrada para bundle ${BUNDLE_ID}`);
   console.log(`App encontrada: ${appId}`);
 
-  // 2. Buscar la versión más reciente
-  const versionsRes = await api(`/v1/apps/${appId}/appStoreVersions?filter[platform]=IOS&limit=1`);
-  const versionId = versionsRes.data[0]?.id;
-  const versionString = versionsRes.data[0]?.attributes?.versionString;
-  if (!versionId) throw new Error('No se encontró versión de App Store');
-  console.log(`Versión: ${versionString} (${versionId})`);
+  // 2. Buscar la versión editable (no publicada ni en revisión).
+  //    Si existe una en estado editable, es la draft de próxima release. Si no, fallamos
+  //    con instrucciones claras — nunca escribimos metadata en una versión READY_FOR_SALE.
+  const versionsRes = await api(`/v1/apps/${appId}/appStoreVersions?filter[platform]=IOS&limit=50`);
+  const EDITABLE_STATES = new Set([
+    'PREPARE_FOR_SUBMISSION',
+    'DEVELOPER_REJECTED',
+    'REJECTED',
+    'METADATA_REJECTED',
+    'INVALID_BINARY',
+    'DEVELOPER_REMOVED_FROM_SALE',
+    'WAITING_FOR_REVIEW',
+  ]);
+  const editable = versionsRes.data.find(v => EDITABLE_STATES.has(v.attributes.appStoreState));
+  if (!editable) {
+    throw new Error(
+      'No hay versión editable en App Store Connect.\n' +
+      '  Versiones existentes:\n' +
+      versionsRes.data.map(v => `    ${v.attributes.versionString} → ${v.attributes.appStoreState}`).join('\n') +
+      '\n\n  Crea la nueva versión con:\n' +
+      '    node scripts/asc-create-version.mjs <versionString>'
+    );
+  }
+  const versionId = editable.id;
+  const versionString = editable.attributes.versionString;
+  console.log(`Versión editable: ${versionString} (${versionId}) → ${editable.attributes.appStoreState}`);
 
   // 3. Obtener appInfo (para name y subtitle)
   const appInfoRes = await api(`/v1/apps/${appId}/appInfos`);
@@ -203,6 +224,7 @@ async function main() {
       if (meta.description) versionAttrs.description = meta.description;
       if (meta.keywords) versionAttrs.keywords = meta.keywords;
       if (meta.promotionalText) versionAttrs.promotionalText = meta.promotionalText;
+      if (meta.whatsNew) versionAttrs.whatsNew = meta.whatsNew;
 
       if (Object.keys(versionAttrs).length > 0) {
         await upsertLocalization({

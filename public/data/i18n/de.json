@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Westsahara",
-    "capital": "",
+    "capital": "Westsahara",
     "demonym": "sahrawisch",
     "languages": [
       "Arabisch"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hongkong",
-    "capital": "",
+    "capital": "Hongkong",
     "demonym": "hongkong-chinesisch",
     "languages": [
       "Chinesisch",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Macau",
-    "capital": "",
+    "capital": "Macau",
     "demonym": "macauisch",
     "languages": [
       "Chinesisch",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Nördliche Marianen",
-    "capital": "",
+    "capital": "Nördliche Marianen",
     "demonym": "nordmarianisch",
     "languages": [
       "Englisch",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatikanstadt",
-    "capital": "",
+    "capital": "Vatikanstadt",
     "demonym": "vatikanisch",
     "languages": [
       "Italienisch",

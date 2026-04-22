@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Západní Sahara",
-    "capital": "",
+    "capital": "Západní Sahara",
     "demonym": "západosaharský",
     "languages": [
       "Arabština"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hongkong",
-    "capital": "",
+    "capital": "Hongkong",
     "demonym": "hongkongský",
     "languages": [
       "Čínština",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Macao",
-    "capital": "",
+    "capital": "Macao",
     "demonym": "macajský",
     "languages": [
       "Čínština",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Severní Mariany",
-    "capital": "",
+    "capital": "Severní Mariany",
     "demonym": "severomariánský",
     "languages": [
       "Angličtina",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatikán",
-    "capital": "",
+    "capital": "Vatikán",
     "demonym": "vatikánský",
     "languages": [
       "Italština",

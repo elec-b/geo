@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Saara Ocidental",
-    "capital": "",
+    "capital": "Sara Ocidental",
     "demonym": "saarauí",
     "languages": [
       "Árabe"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hong Kong",
-    "capital": "",
+    "capital": "Hong Kong",
     "demonym": "honconguês",
     "languages": [
       "Chinês",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Macau",
-    "capital": "",
+    "capital": "Macau",
     "demonym": "macaense",
     "languages": [
       "Chinês",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Ilhas Marianas do Norte",
-    "capital": "",
+    "capital": "Marianas Setentrionais",
     "demonym": "marianense",
     "languages": [
       "Inglês",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Cidade do Vaticano",
-    "capital": "",
+    "capital": "Vaticano",
     "demonym": "vaticano",
     "languages": [
       "Italiano",

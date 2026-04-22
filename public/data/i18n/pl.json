@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Sahara Zachodnia",
-    "capital": "",
+    "capital": "Sahara Zachodnia",
     "demonym": "saharyjski",
     "languages": [
       "Arabski"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hongkong",
-    "capital": "",
+    "capital": "Hongkong",
     "demonym": "hongkoński",
     "languages": [
       "Chiński",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Makau",
-    "capital": "",
+    "capital": "Makau",
     "demonym": "makaoński",
     "languages": [
       "Chiński",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Mariany Północne",
-    "capital": "",
+    "capital": "Mariany Północne",
     "demonym": "północnomariański",
     "languages": [
       "Angielski",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Watykan",
-    "capital": "",
+    "capital": "Watykan",
     "demonym": "watykański",
     "languages": [
       "Włoski",

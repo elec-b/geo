@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Tây Sahara",
-    "capital": "",
+    "capital": "Tây Sahara",
     "demonym": "Tây Sahara",
     "languages": [
       "Tiếng Ả Rập"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "Hồng Kông",
-    "capital": "",
+    "capital": "Hồng Kông",
     "demonym": "Hồng Kông",
     "languages": [
       "Tiếng Trung",
@@ -1597,7 +1597,7 @@
   },
   "MC": {
     "name": "Monaco",
-    "capital": "",
+    "capital": "Monaco",
     "demonym": "Monaco",
     "languages": [
       "Tiếng Pháp"
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "Ma Cao",
-    "capital": "",
+    "capital": "Ma Cao",
     "demonym": "Ma Cao",
     "languages": [
       "Tiếng Trung",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Quần đảo Bắc Mariana",
-    "capital": "",
+    "capital": "Quần đảo Bắc Mariana",
     "demonym": "Quần đảo Bắc Mariana",
     "languages": [
       "Tiếng Anh",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Thành Vatican",
-    "capital": "",
+    "capital": "Thành Vatican",
     "demonym": "Vatican",
     "languages": [
       "Tiếng Italy",

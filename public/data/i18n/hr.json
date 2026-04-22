@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "Zapadna Sahara",
-    "capital": "",
+    "capital": "Zapadna Sahara",
     "demonym": "zapadnosaharski",
     "languages": [
       "Arapski"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "PUP Hong Kong Kina",
-    "capital": "",
+    "capital": "Hong Kong",
     "demonym": "hongkonški",
     "languages": [
       "Kineski",
@@ -1597,7 +1597,7 @@
   },
   "MC": {
     "name": "Monako",
-    "capital": "",
+    "capital": "Monako",
     "demonym": "monegaški",
     "languages": [
       "Francuski"
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "PUP Makao Kina",
-    "capital": "",
+    "capital": "Makao",
     "demonym": "makaoški",
     "languages": [
       "Kineski",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "Sjevernomarijanski Otoci",
-    "capital": "",
+    "capital": "Sjevernomarijanski otoci",
     "demonym": "sjevernomarijanski",
     "languages": [
       "Engleski",
@@ -2183,7 +2183,7 @@
   },
   "PW": {
     "name": "Palau",
-    "capital": "",
+    "capital": "Palau",
     "demonym": "palauski",
     "languages": [
       "Palauanski",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "Vatikan",
-    "capital": "",
+    "capital": "Vatikan",
     "demonym": "vatikanski",
     "languages": [
       "Talijanski",

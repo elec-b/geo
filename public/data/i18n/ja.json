@@ -748,7 +748,7 @@
   },
   "EH": {
     "name": "西サハラ",
-    "capital": "",
+    "capital": "西サハラ",
     "demonym": "西サハラの",
     "languages": [
       "アラビア語"
@@ -1084,7 +1084,7 @@
   },
   "HK": {
     "name": "香港",
-    "capital": "",
+    "capital": "香港",
     "demonym": "香港の",
     "languages": [
       "中国語",
@@ -1719,7 +1719,7 @@
   },
   "MO": {
     "name": "マカオ",
-    "capital": "",
+    "capital": "マカオ",
     "demonym": "マカオの",
     "languages": [
       "中国語",
@@ -1732,7 +1732,7 @@
   },
   "MP": {
     "name": "北マリアナ諸島",
-    "capital": "",
+    "capital": "北マリアナ諸島",
     "demonym": "北マリアナ諸島の",
     "languages": [
       "英語",
@@ -2768,7 +2768,7 @@
   },
   "VA": {
     "name": "バチカン市国",
-    "capital": "",
+    "capital": "バチカン",
     "demonym": "バチカンの",
     "languages": [
       "イタリア語",
