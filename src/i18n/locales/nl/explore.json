@@ -10,7 +10,7 @@
   "table.nonUNToggle": "Niet-VN-gebieden",
 
   "card.disclaimer.antarctica": "Internationaal gebied \u2014 Antarctisch Verdrag (1959)",
-  "card.disclaimer.territory": "Gebied van {{sovereign}}",
+  "card.disclaimer.territory": "Gebied {{sovereign}}",
   "card.disclaimer.disputed": "Betwiste soevereiniteit",
   "card.flagAlt": "Vlag van {{country}}",
   "card.aria.openWikipedia": "{{country}} openen op Wikipedia",

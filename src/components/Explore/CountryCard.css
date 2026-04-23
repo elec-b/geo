@@ -33,7 +33,7 @@
   touch-action: pan-y;
   flex: 1;
   min-height: 0;
-  padding: 0 var(--spacing-lg) var(--spacing-lg);
+  padding: 0 var(--spacing-lg) calc(var(--spacing-lg) + var(--sab));
 }
 
 /* Handle de arrastre */

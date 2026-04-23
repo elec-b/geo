@@ -10,7 +10,7 @@
   "table.nonUNToggle": "Icke-FN-territorier",
 
   "card.disclaimer.antarctica": "Internationellt territorium \u2014 Antarktisf\u00f6rdraget (1959)",
-  "card.disclaimer.territory": "Territorium tillh\u00f6rande {{sovereign}}",
+  "card.disclaimer.territory": "Territorium {{sovereign}}",
   "card.disclaimer.disputed": "Omtvistad suver\u00e4nitet",
   "card.flagAlt": "Flagga f\u00f6r {{country}}",
   "card.aria.openWikipedia": "\u00d6ppna {{country}} p\u00e5 Wikipedia",
