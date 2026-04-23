@@ -8,7 +8,7 @@
   "table.population": "Bef.",
   "table.nonUNToggle": "Ikke-FN-territorier",
   "card.disclaimer.antarctica": "Internationalt territorium — Antarktistraktaten (1959)",
-  "card.disclaimer.territory": "Territorium tilhørende {{sovereign}}",
+  "card.disclaimer.territory": "Territorium {{sovereign}}",
   "card.disclaimer.disputed": "Omstridt suverænitet",
   "card.flagAlt": "Flag for {{country}}",
   "card.aria.openWikipedia": "Åbn {{country}} på Wikipedia",

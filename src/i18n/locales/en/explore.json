@@ -10,7 +10,7 @@
   "table.nonUNToggle": "Non-UN territories",
 
   "card.disclaimer.antarctica": "International territory \u2014 Antarctic Treaty (1959)",
-  "card.disclaimer.territory": "Territory of {{sovereign}}",
+  "card.disclaimer.territory": "Territory {{sovereign}}",
   "card.disclaimer.disputed": "Disputed sovereignty",
   "card.flagAlt": "Flag of {{country}}",
   "card.aria.openWikipedia": "Open {{country}} on Wikipedia",
