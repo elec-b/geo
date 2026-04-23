@@ -189,10 +189,21 @@ async function main() {
   const versionString = editable.attributes.versionString;
   console.log(`Versión editable: ${versionString} (${versionId}) → ${editable.attributes.appStoreState}`);
 
-  // 3. Obtener appInfo (para name y subtitle)
+  // 3. Obtener appInfo (para name y subtitle) — filtrar por estado editable.
+  //    Cuando hay una versión LIVE y otra en PREPARE_FOR_SUBMISSION, Apple devuelve dos
+  //    appInfos; solo el editable acepta cambios en name/subtitle/privacyPolicyUrl.
   const appInfoRes = await api(`/v1/apps/${appId}/appInfos`);
-  const appInfoId = appInfoRes.data[0]?.id;
-  if (!appInfoId) throw new Error('No se encontró appInfo');
+  const EDITABLE_APP_INFO_STATES = new Set(['PREPARE_FOR_SUBMISSION', 'WAITING_FOR_REVIEW']);
+  const editableAppInfo = appInfoRes.data.find(ai =>
+    EDITABLE_APP_INFO_STATES.has(ai.attributes.state)
+  );
+  const appInfoId = editableAppInfo?.id;
+  if (!appInfoId) {
+    throw new Error(
+      'No hay appInfo editable. Estados encontrados:\n' +
+      appInfoRes.data.map(ai => `    ${ai.id} → ${ai.attributes.state}`).join('\n')
+    );
+  }
 
   // 4. Obtener localizaciones existentes (version + appInfo) — paginando
   const versionLocsData = await apiGetAll(`/v1/appStoreVersions/${versionId}/appStoreVersionLocalizations?limit=200`);
