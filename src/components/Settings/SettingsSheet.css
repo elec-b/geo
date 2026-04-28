@@ -15,7 +15,7 @@
 
 .settings-sheet {
   position: fixed;
-  bottom: var(--tabbar-height);
+  bottom: calc(var(--tabbar-height) + var(--sab));
   left: 0;
   right: 0;
   z-index: var(--z-modal);
