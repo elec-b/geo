@@ -2,10 +2,10 @@
 
 .country-card {
   position: fixed;
-  bottom: var(--tabbar-height);
+  bottom: calc(var(--tabbar-height) + var(--sab));
   left: 0;
   right: 0;
-  z-index: var(--z-overlay);
+  z-index: var(--z-sheet);
   max-height: 45vh;
   display: flex;
   flex-direction: column;
@@ -33,7 +33,7 @@
   touch-action: pan-y;
   flex: 1;
   min-height: 0;
-  padding: 0 var(--spacing-lg) calc(var(--spacing-lg) + var(--sab));
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
 }
 
 /* Handle de arrastre */

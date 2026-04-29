@@ -18,7 +18,7 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: var(--tabbar-height);
+  bottom: 0;
   z-index: var(--z-modal);
   display: flex;
   flex-direction: column;
