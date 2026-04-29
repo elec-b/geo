@@ -3,7 +3,7 @@
 .language-sheet-overlay {
   position: fixed;
   inset: 0;
-  z-index: var(--z-modal);
+  z-index: var(--z-sheet);
   background: var(--color-overlay);
   animation: language-sheet-fade-in 200ms ease-out;
 }
@@ -23,9 +23,8 @@
   bottom: calc(var(--tabbar-height) + var(--sab));
   left: 0;
   right: 0;
-  z-index: var(--z-modal);
+  z-index: var(--z-sheet);
   padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-lg);
-  padding-bottom: calc(var(--spacing-lg) + var(--sab));
   background: var(--color-surface-heavy);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
