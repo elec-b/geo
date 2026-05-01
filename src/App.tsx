@@ -18,6 +18,7 @@ import { LanguageSheet } from './components/Settings/LanguageSheet';
 import { loadCountryData, loadCapitals, invalidateCache } from './data/countryData';
 import { checkAndUpdate } from './data/cdnUpdate';
 import { maybeRequestReview } from './utils/reviewPrompt';
+import { syncAndroidSystemBars } from './utils/androidTheme';
 import { changeAppLanguage } from './i18n';
 import { buildRankings, type CountryRankings } from './data/rankings';
 import { buildLevelDefinitions, buildCountryLevelMap } from './data/levels';
@@ -58,6 +59,17 @@ function App() {
   // Sincronizar data-theme en <html> con el store
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  // Android: sincronizar appearance (light/dark) de status bar y navigation bar.
+  // No-op en iOS y web. Re-aplica al volver de background por si el OEM resetea flags.
+  useEffect(() => {
+    syncAndroidSystemBars(theme);
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') syncAndroidSystemBars(theme);
+    };
+    document.addEventListener('visibilitychange', onVisible);
+    return () => document.removeEventListener('visibilitychange', onVisible);
   }, [theme]);
 
   // Reset de estado de sesión al abrir la app (Globo + Todos) + contador de sesiones
