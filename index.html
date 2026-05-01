@@ -15,6 +15,12 @@
         // Fallback: preferencia del sistema, o dark si no hay media query
         if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', t);
+        // Sincronizar appearance de los system bars de Android si el bridge ya está disponible.
+        try {
+          if (window.AndroidTheme && typeof window.AndroidTheme.setAppearance === 'function') {
+            window.AndroidTheme.setAppearance(t);
+          }
+        } catch(e) {}
         var d = t === 'dark';
         document.documentElement.style.setProperty('--splash-bg', d ? '#04060a' : '#dde4ec');
         document.documentElement.style.setProperty('--splash-text', d ? '#a1a1aa' : '#6a6a76');

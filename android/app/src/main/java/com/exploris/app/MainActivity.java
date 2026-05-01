@@ -3,12 +3,14 @@ package com.exploris.app;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 import com.getcapacitor.BridgeActivity;
 
@@ -27,6 +29,12 @@ public class MainActivity extends BridgeActivity {
                 : ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // Edge-to-edge: la ventana dibuja debajo de status/navigation bar.
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+        // Bridge mínimo Web→Native para sincronizar appearance (light/dark) de los
+        // system bars con el tema activo de la app. Capacitor crea el WebView en
+        // super.onCreate(), así que el bridge ya existe aquí; loadUrl() corre después.
+        if (getBridge() != null && getBridge().getWebView() != null) {
+            getBridge().getWebView().addJavascriptInterface(new ThemeBridge(), "AndroidTheme");
+        }
     }
 
     @Override
@@ -68,5 +76,18 @@ public class MainActivity extends BridgeActivity {
                 sys.left / density
         );
         webView.post(() -> webView.evaluateJavascript(js, null));
+    }
+
+    private class ThemeBridge {
+        @JavascriptInterface
+        public void setAppearance(String mode) {
+            final boolean light = "light".equals(mode);
+            runOnUiThread(() -> {
+                WindowInsetsControllerCompat controller =
+                        WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+                controller.setAppearanceLightStatusBars(light);
+                controller.setAppearanceLightNavigationBars(light);
+            });
+        }
     }
 }
