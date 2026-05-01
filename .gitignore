@@ -49,3 +49,6 @@ layout-check-output
 *.njsproj
 *.sln
 *.sw?
+
+# Presentations
+*.pptx
