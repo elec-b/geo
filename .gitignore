@@ -50,5 +50,9 @@ layout-check-output
 *.sln
 *.sw?
 
+# Feedback (PDFs de informes externos)
+docs/feedback/
+
 # Presentations
-*.pptx
+docs/presentations/
+

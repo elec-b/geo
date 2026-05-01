@@ -492,7 +492,7 @@ Configuración **ultra-sencilla**. Un solo punto de acceso: el **botón de engra
 |--------|----------|-------------|-------------|
 | Vibración | On/Off | On | Siempre |
 | Idioma de la app | Todos los soportados por iOS/Android | Idioma del teléfono (fallback: inglés) | Siempre |
-| Tema | Oscuro / Claro (toggle) | Oscuro | Siempre |
+| Tema | Oscuro / Claro (toggle) | Tema del sistema en primera carga (fallback: Oscuro). Tras tocar el toggle, queda fijo. | Siempre |
 | Mares y océanos | On/Off | On | Siempre |
 | Marcadores de microestados y archipiélagos | On/Off | On | Siempre |
 
