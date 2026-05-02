@@ -57,7 +57,7 @@ const LOCALE_MAP = {
   'ja':      'ja-JP',
   'ko':      'ko-KR',
   'ms':      'ms',
-  'nb':      'nb-NO',
+  'nb':      'no-NO',
   'nl':      'nl-NL',
   'pl':      'pl-PL',
   'pt-BR':   'pt-BR',
